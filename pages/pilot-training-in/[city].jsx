@@ -1,6 +1,6 @@
-import Layout from '@/components/Layout';
-import LeadForm from '@/components/LeadForm';
-import ScrollReveal from '@/components/ScrollReveal';
+import Layout from '../../components/Layout';
+import LeadForm from '../../components/LeadForm';
+import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
 
 const cities = {
