@@ -1,0 +1,5 @@
+node_modules/
+.next/
+.env*
+# Keep data directory but not the leads file (sensitive)
+# data/leads.xlsx
