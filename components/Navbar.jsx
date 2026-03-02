@@ -4,10 +4,10 @@ import { useRouter } from 'next/router';
 
 const tickerMessages = [
   '🚨 Apply for March CPL Batch – Limited Seats Available',
-  '✈️ New DGCA Ground Classes Starting Soon – Register Now',
+
   '🎓 Flight Training in USA & South Africa – Enroll Today',
   '📋 DGCA Class 2 & Class 1 Medical Assistance Available',
-  '🏆 WeOne Aviation – Best Pilot Training Institute in India',
+  '🏆 We One Aviation – Best Pilot Training Institute in India',
 ];
 
 const courses = [
