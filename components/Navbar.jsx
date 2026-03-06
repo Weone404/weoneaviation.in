@@ -27,7 +27,7 @@ const courses = [
   },
   {
     label: 'Cadet Pilot Program',
-    href: '/cadet-pilot-program',
+    href: '/qatar-airways-cadet-pilot-program',
     sub: [
       { label: 'Qatar Airways Cadet Pilot Program', href: '/qatar-airways-cadet-pilot-program' },
       { label: 'Emirates Cadet Pilot Program', href: '/emirates-cadet-pilot-program' },
@@ -37,7 +37,7 @@ const courses = [
   },
   {
     label: 'Airline Preparatory Classes',
-    href: '/airline-preparatory-classes',
+    href: '/airline-preparation-course',
     sub: [
       { label: 'Airline Preparation Course', href: '/airline-preparation-course' },
       { label: 'Interview Preparation', href: '/airline-preparatory-classes/interview-preparation' },
@@ -117,7 +117,7 @@ function BreakingNewsTicker() {
       {/* BREAKING badge */}
       <div className="relative z-10 flex shrink-0 items-center bg-red-800 px-3 sm:px-5">
         <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.2em] text-white sm:text-xs">
-          Breaking
+
         </span>
         <div
           className="absolute right-0 top-0 h-full w-4 translate-x-full bg-red-800"
@@ -267,7 +267,7 @@ export default function Navbar() {
             <Link href="https://dgcaexam.com/" className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/dgca-exam-practice') ? 'text-av-orange' : 'text-white'}`}>
               DGCA Exam Practice
             </Link>
-            <Link href="/about" className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/about') ? 'text-av-orange' : 'text-white'}`}>
+            <Link href="/about-us" className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/about') ? 'text-av-orange' : 'text-white'}`}>
               About Us
             </Link>
             <Link href="/contact" className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/contact') ? 'text-av-orange' : 'text-white'}`}>

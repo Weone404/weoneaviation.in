@@ -281,7 +281,7 @@ export default function Home() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1559628233-100c798642d8?w=800&q=80"
+                  src="/assets/GroundSchool.jpg"
                   alt="Pilot in cockpit training"
                   className="w-full h-80 object-cover"
                 />
