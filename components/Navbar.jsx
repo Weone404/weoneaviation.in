@@ -202,16 +202,12 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-av-orange rounded-full flex items-center justify-center">
-              <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6">
-                <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0012 2a1.5 1.5 0 00-1.5 1.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
-              </svg>
-            </div>
-            <div>
-              <div className="font-montserrat font-800 text-white text-lg leading-none">WeOne</div>
-              <div className="text-av-orange text-xs font-semibold tracking-widest uppercase leading-none">Aviation</div>
-            </div>
+          <Link href="/" className="flex items-center">
+            <img
+              src="/assets/logo.webp"
+              alt="WeOne Aviation Academy"
+              className="h-20 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Nav */}

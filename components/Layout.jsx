@@ -18,6 +18,7 @@ export default function Layout({ children, title, description }) {
         <meta property="og:description" content={description || 'DGCA approved pilot training in India'} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og-image.jpg" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
       <main className="min-h-screen">{children}</main>

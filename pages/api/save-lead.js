@@ -1,11 +1,11 @@
 import ExcelJS from 'exceljs';
 import path from 'path';
 import fs from 'fs';
+import clientPromise from '../../lib/mongodb';
 
 const EXCEL_FILE = path.join(process.cwd(), 'data', 'leads.xlsx');
 const SHEET_NAME = 'Leads';
 
-// Column definitions
 const COLUMNS = [
   { header: 'S.No', key: 'sno', width: 8 },
   { header: 'Date', key: 'date', width: 16 },
@@ -20,7 +20,6 @@ const COLUMNS = [
 
 async function getOrCreateWorkbook() {
   const workbook = new ExcelJS.Workbook();
-
   if (fs.existsSync(EXCEL_FILE)) {
     await workbook.xlsx.readFile(EXCEL_FILE);
     let sheet = workbook.getWorksheet(SHEET_NAME);
@@ -30,8 +29,6 @@ async function getOrCreateWorkbook() {
     }
     return { workbook, sheet };
   }
-
-  // Create fresh workbook
   const sheet = workbook.addWorksheet(SHEET_NAME);
   addHeaderRow(sheet);
   return { workbook, sheet };
@@ -39,15 +36,9 @@ async function getOrCreateWorkbook() {
 
 function addHeaderRow(sheet) {
   sheet.columns = COLUMNS;
-
-  // Style header row
   const headerRow = sheet.getRow(1);
   headerRow.eachCell((cell) => {
-    cell.fill = {
-      type: 'pattern',
-      pattern: 'solid',
-      fgColor: { argb: 'FF0A2342' }, // Aviation blue
-    };
+    cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0A2342' } };
     cell.font = { bold: true, color: { argb: 'FFFFFFFF' }, name: 'Arial', size: 11 };
     cell.alignment = { vertical: 'middle', horizontal: 'center', wrapText: true };
     cell.border = {
@@ -61,30 +52,42 @@ function addHeaderRow(sheet) {
 }
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   const { name, phone, email, course, message, source } = req.body;
 
-  if (!name || !phone) {
-    return res.status(400).json({ error: 'Name and phone are required' });
+  if (!name || !phone) return res.status(400).json({ error: 'Name and phone are required' });
+
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+  const timeStr = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
+
+  // ── 1. SAVE TO MONGODB ──────────────────────────────────────────
+  try {
+    const client = await clientPromise;
+    const db = client.db('contactDB');
+    await db.collection('leads_in').insertOne({
+      name: name?.trim(),
+      phone: phone?.trim(),
+      email: email?.trim() || '',
+      course: course?.trim() || 'Not specified',
+      message: message?.trim() || '',
+      source: source?.trim() || 'weoneaviation_in',
+      createdAt: now,
+    });
+  } catch (mongoErr) {
+    console.error('MongoDB save error:', mongoErr);
+    // Don't stop execution — still try to save to Excel
   }
 
+  // ── 2. SAVE TO EXCEL ────────────────────────────────────────────
   try {
-    // Ensure data directory exists
     const dataDir = path.join(process.cwd(), 'data');
     if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
 
     const { workbook, sheet } = await getOrCreateWorkbook();
-
-    // Get next row number
     const lastRow = sheet.lastRow ? sheet.lastRow.number : 1;
-    const sno = lastRow; // Header is row 1, so sno = lastRow (already skips header)
-
-    const now = new Date();
-    const dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
-    const timeStr = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
+    const sno = lastRow;
 
     const newRow = sheet.addRow({
       sno,
@@ -98,14 +101,9 @@ export default async function handler(req, res) {
       source: source?.trim() || 'Website',
     });
 
-    // Style data rows (alternate colors)
     const isEven = sno % 2 === 0;
     newRow.eachCell((cell) => {
-      cell.fill = {
-        type: 'pattern',
-        pattern: 'solid',
-        fgColor: { argb: isEven ? 'FFE8F4FD' : 'FFFFFFFF' },
-      };
+      cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: isEven ? 'FFE8F4FD' : 'FFFFFFFF' } };
       cell.font = { name: 'Arial', size: 10, color: { argb: 'FF1A1A2E' } };
       cell.alignment = { vertical: 'middle', horizontal: 'left', wrapText: true };
       cell.border = {
@@ -116,21 +114,14 @@ export default async function handler(req, res) {
       };
     });
     newRow.height = 22;
-
-    // Freeze top row
     sheet.views = [{ state: 'frozen', ySplit: 1 }];
-
-    // Auto-filter
-    sheet.autoFilter = {
-      from: { row: 1, column: 1 },
-      to: { row: 1, column: COLUMNS.length },
-    };
+    sheet.autoFilter = { from: { row: 1, column: 1 }, to: { row: 1, column: COLUMNS.length } };
 
     await workbook.xlsx.writeFile(EXCEL_FILE);
 
     return res.status(200).json({ success: true, message: 'Lead saved successfully', rowNumber: sno });
-  } catch (err) {
-    console.error('Excel save error:', err);
-    return res.status(500).json({ error: 'Failed to save data', detail: err.message });
+  } catch (excelErr) {
+    console.error('Excel save error:', excelErr);
+    return res.status(500).json({ error: 'Failed to save data', detail: excelErr.message });
   }
 }
