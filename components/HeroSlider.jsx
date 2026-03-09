@@ -8,7 +8,7 @@ const slides = [
     tag: 'India\'s #1 Aviation Academy',
     title: 'Your Dream of Flying',
     highlight: 'Starts Here',
-    sub: 'DGCA Approved • 500+ Pilots Trained • International Tie-ups',
+    sub: '• 3500+ Pilots Trained • International Tie-ups',
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const slides = [
     tag: 'World-Class Training',
     title: 'Modern Fleet &',
     highlight: 'Simulators',
-    sub: 'Train on latest aircraft with expert DGCA-approved instructors',
+    sub: 'Train on latest aircraft with expert approved instructors',
   },
   {
     id: 4,
@@ -121,7 +121,7 @@ export default function HeroSlider({ customSlides }) {
 
             {/* Stats */}
             <div className="flex gap-8 mt-12">
-              {[['500+', 'Pilots Trained'], ['15+', 'Years Experience'], ['100%', 'Placement Support']].map(([num, label]) => (
+              {[['3500+', 'Pilots Trained'], ['16+', 'Years Experience'], ['100%', 'Placement Support']].map(([num, label]) => (
                 <div key={label}>
                   <div className="font-montserrat text-2xl font-black text-av-orange">{num}</div>
                   <div className="text-white/60 text-xs">{label}</div>

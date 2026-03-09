@@ -8,23 +8,23 @@ import Image from 'next/image';
 
 const courses = [
   { icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: '18-24 months', eligibility: '10+2 (PCM)', href: '/courses/cpl', highlight: true },
-  { icon: '🛩️', title: 'Private Pilot License (PPL)', duration: '6-12 months', eligibility: '10+2 any stream', href: '/courses/ppl' },
+
   { icon: '🏆', title: 'ATPL', duration: '36 months', eligibility: 'CPL holder', href: '/courses/atpl' },
-  { icon: '🚁', title: 'Sport Pilot License (SPL)', duration: '3-6 months', eligibility: '16+ years', href: '/courses/spl' },
+
   { icon: '📚', title: 'DGCA Ground Classes', duration: '6-12 months', eligibility: '10+2 (PCM)', href: '/courses/dgca-ground-classes' },
 ];
 
 const testimonials = [
-  { name: 'Rahul Sharma', role: 'First Officer, IndiGo Airlines', quote: 'WeOne Aviation transformed my dream into reality. The DGCA ground classes and simulator training were exceptional.', img: 'RS' },
+  { name: 'Rahul Sharma', role: 'First Officer, IndiGo Airlines', quote: 'We One Aviation transformed my dream into reality. The DGCA ground classes and simulator training were exceptional.', img: 'RS' },
   { name: 'Priya Mehta', role: 'CPL Holder, Batch 2023', quote: 'The faculty here is world-class. I got my CPL in just 20 months and now flying with a regional airline.', img: 'PM' },
   { name: 'Arjun Singh', role: 'Cadet Pilot, Air India', quote: 'Best aviation academy in India. Their international tie-ups and placement support is unmatched.', img: 'AS' },
 ];
 
 const stats = [
-  { num: '500+', label: 'Pilots Trained', icon: '👨‍✈️' },
-  { num: '15+', label: 'Years of Excellence', icon: '🏆' },
+  { num: '3500', label: 'Pilots Trained', icon: '👨‍✈️' },
+  { num: '16+', label: 'Years of Excellence', icon: '🏆' },
   { num: '98%', label: 'Success Rate', icon: '📈' },
-  { num: '50+', label: 'Partner Airlines', icon: '✈️' },
+  { num: '25+', label: 'Partner Airlines', icon: '✈️' },
 ];
 
 const cities = ['Delhi', 'Mumbai', 'Bangalore', 'Hyderabad', 'Chennai', 'Pune', 'Kolkata', 'Jaipur', 'Nagpur', 'Kerala'];
@@ -134,20 +134,20 @@ const flyingSchools = [
 const enrollSteps = [
   {
     step: 'First Step',
-    title: 'Join a Pilot Training Institute',
-    desc: 'You Have To Take Admission in Any Pilot Training Institute which Provide Course Like Dgca Ground Classes for Train Students In Dgca Exam.',
+    title: 'Complete Class 10 & 12 with Physics & Maths',
+    desc: 'You need to complete Class 10 and Class 12 with Physics and Maths. Commerce and Arts students can also qualify by completing Physics and Maths from NIOS (National Institute of Open Schooling).',
     cta: null,
   },
   {
     step: 'Second Step',
-    title: 'Prepare & Clear DGCA Exam',
-    desc: 'You have To Prepare Yourself For Dgca Exam Which Is Happen in 4 Times in a years. So You can give Exam in Every Third Months. You Have To Clear 6 exam of Dgca For Apply in Flight Training.',
+    title: 'Join Ground School & Ground Classes',
+    desc: 'Enroll in a recognized Ground School and attend Ground Classes to build your theoretical knowledge in subjects like Air Navigation, Meteorology, Air Regulations, and Technical General — essential for clearing DGCA exams.',
     cta: null,
   },
   {
     step: 'Third Step',
-    title: 'Complete Flight Training',
-    desc: 'After Clear Dgca Exam, You Have to Complete 200 hours of Flying From India and Any Other Country. Then You Can Apply For Commercial Pilot License.',
+    title: 'Join a Flying School',
+    desc: 'After clearing your DGCA ground exams, join a DGCA-approved Flying School to complete your required flying hours. You must log a minimum of 200 hours of flight training to become eligible for a Commercial Pilot License (CPL).',
     cta: null,
   },
 ];
@@ -156,7 +156,7 @@ const pilotJourneySteps = [
   {
     icon: '🩺',
     title: 'Apply For Dgca Class-1-2 Medical',
-    desc: 'You Have Do Your Medical Checkup From Any Dgca Approved Doctors. Below Is Full Process How To Get Dgca Class-1-2 Medical. If You Have Issue In Dgca Medical Then You Can Contact us For Dgca Medical',
+    desc: 'You Have Do Your Medical Checkup From Any Approved Doctors. Below Is Full Process How To Get Dgca Class-1-2 Medical. If You Have Issue In Dgca Medical Then You Can Contact us For Dgca Medical',
     alert: 'Is Your Dgca Medical Test Taking Time?',
     alertDesc: 'Apply Dgca Medical Through We One Aviation Academy. Call On Us If You Can\'t Able For Dgca Medical. just Contact us for Dgca Medical',
   },
@@ -194,7 +194,7 @@ const faqs = [
   },
   {
     q: 'Can I get a scholarship for pilot training?',
-    a: 'Yes! WeOne Aviation Academy offers up to 25% scholarship on select courses. Contact our counsellors to learn about available scholarships and loan assistance options.',
+    a: 'Yes! We One Aviation Academy offers up to 25% scholarship on select courses. Contact our counsellors to learn about available scholarships and loan assistance options.',
   },
   {
     q: 'Can I become a pilot if I wear glasses?',
@@ -216,7 +216,7 @@ const faqs = [
 
 export default function Home() {
   return (
-    <Layout title="WeOne Aviation Academy | Best Pilot Training Institute in India" description="India's premier approved aviation training academy. CPL, PPL, ATPL, SPL courses. 500+ pilots trained. Free career counselling available.">
+    <Layout title="We One Aviation Academy | Best Pilot Training Institute in India" description="India's premier approved aviation training academy. CPL, PPL, ATPL, SPL courses. 3500 pilots trained. Free career counselling available.">
       {/* Hero */}
       <HeroSlider />
 
@@ -259,10 +259,10 @@ export default function Home() {
               India's Most Trusted Aviation Academy
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              WeOne Aviation Academy has been shaping the careers of aspiring pilots since 2009. We are a approved institution offering world-class pilot training programs with international tie-ups in USA, Canada, Australia, and Europe.
+              We One Aviation Academy has been shaping the careers of aspiring pilots since 2009. We are a approved institution offering world-class pilot training programs with international tie-ups in USA, Canada, Australia, and Europe.
             </p>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Our expert faculty, modern simulators, and personalized mentoring ensure every student achieves their dream of becoming a professional pilot. With a 98% success rate and 500+ pilots trained, we are India's #1 choice for aviation training.
+              Our expert faculty, modern simulators, and personalized mentoring ensure every student achieves their dream of becoming a professional pilot. With a 98% success rate and 3500 pilots trained, we are India's #1 choice for aviation training.
             </p>
             <div className="flex flex-wrap gap-3 mb-6">
               {['DGCA Approved', 'International Tie-ups', '24/7 Support', 'Job Placement'].map(tag => (
@@ -287,7 +287,7 @@ export default function Home() {
                 />
               </div>
               <div className="absolute -bottom-5 -left-5 bg-av-orange rounded-xl p-4 shadow-xl">
-                <div className="font-montserrat text-white text-xl font-black">15+</div>
+                <div className="font-montserrat text-white text-xl font-black">16+</div>
                 <div className="text-white/80 text-xs">Years of Excellence</div>
               </div>
               <div className="absolute -top-5 -right-5 glass bg-av-blue rounded-xl p-4 shadow-xl border border-white/20">
@@ -342,7 +342,7 @@ export default function Home() {
                   This is Main Pilot Course Which Exam is Conducted By Dgca. This course is only for theoretical preparation for the DGCA exams required to obtain a pilot's license.
                 </p>
                 <div className="space-y-2 mb-6 text-sm text-gray-600">
-                  <div><span className="font-semibold text-av-blue">Fees:</span> 2.80 Lakh <span className="text-av-orange font-semibold">(25% Scholarship)</span></div>
+                  <div><span className="font-semibold text-av-blue">Fees:</span> 2.95 Lakh <span className="text-av-orange font-semibold">(25% Scholarship)</span></div>
                   <div><span className="font-semibold text-av-blue">Course Duration:</span> 6 Months</div>
                   <div><span className="font-semibold text-av-blue">Mode:</span> Offline / Online</div>
                   <div><span className="font-semibold text-av-blue">Batch Start Date:</span> Every Months Of First Week and Third Week</div>
@@ -447,7 +447,7 @@ export default function Home() {
             </h2>
             <p className="text-gray-500 mt-2 text-sm">All Your Aviation Needs Under One Roof</p>
             <p className="text-gray-500 mt-1 text-sm max-w-2xl mx-auto">
-              At WeOne Aviation Academy, we don't just train pilots—we shape future aviation leaders. Here's why students trust us for their pilot training journey:
+              At We One Aviation Academy, we don't just train pilots—we shape future aviation leaders. Here's why students trust us for their pilot training journey:
             </p>
           </ScrollReveal>
 
@@ -474,7 +474,7 @@ export default function Home() {
           </div>
 
           <ScrollReveal className="text-center mt-10">
-            <p className="text-av-blue font-semibold text-lg">Join WeOne Aviation Academy and Take Off Towards a Successful Aviation Career! ✈️</p>
+            <p className="text-av-blue font-semibold text-lg">Join We One Aviation Academy and Take Off Towards a Successful Aviation Career! ✈️</p>
             <Link href="/contact" className="inline-block mt-4 bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-av-blue transition-all text-sm">
               Contact Us
             </Link>
@@ -512,7 +512,7 @@ export default function Home() {
               <div className="bg-av-blue rounded-2xl shadow-lg p-8">
                 <h3 className="font-montserrat text-xl font-bold text-white mb-4">Our Flying School</h3>
                 <p className="text-white/70 text-sm leading-relaxed mb-6">
-                  We Provide Flight Training From 20+ Countries. We Almost Provide Flight Training to 3000+ Students Across India. If You Wants To do Flight Training From Any Country Then You Can Contact Us. After Clear Dgca Exam You Can Apply Flight Training. All Institute Provide 200 Hours of Flying But We Provide You 250+ Hours of Flying.
+                  We Provide Flight Training From 20+ Countries. We Almost Provide Flight Training to 3000+ Students Across India. If You Wants To do Flight Training From Any Country Then You Can Contact Us. After Clear Dgca Exam You Can Apply Flight Training. All Institute Provide 200 Hours of Flying But We Provide You 225+ Hours of Flying.
                 </p>
                 <Link href="/contact" className="inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">
                   Enquiry Now
@@ -737,6 +737,41 @@ export default function Home() {
         </div>
       </section>
 
+      ```jsx
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal className="text-center mb-10">
+            <div className="section-tag">Global Presence</div>
+            <h2 className="font-montserrat text-3xl font-bold text-av-blue">
+              Pilot Training Across <span className="text-av-orange">World</span>
+            </h2>
+          </ScrollReveal>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+            {[
+              { flag: '🇺🇸', country: 'USA', href: '/contact' },
+              { flag: '🇨🇦', country: 'Canada', href: '/contact' },
+              { flag: '🇮🇳', country: 'India', href: '/contact' },
+              { flag: '🇱🇰', country: 'Sri Lanka', href: '/contact' },
+              { flag: '🇲🇻', country: 'Maldives', href: '/contact' },
+              { flag: '🇿🇦', country: 'South Africa', href: '/contact' },
+              { flag: '🇦🇺', country: 'Australia', href: '/contact' },
+              { flag: '🇳🇿', country: 'New Zealand', href: '/contact' },
+            ].map((loc, i) => (
+              <ScrollReveal key={loc.country} delay={i * 60}>
+                <Link
+                  href={loc.href}
+                  className="card-hover flex items-center gap-3 p-4 rounded-xl border border-gray-200 bg-white hover:border-av-orange hover:text-av-orange hover:bg-orange-50 transition-all text-sm font-medium text-av-blue"
+                >
+                  <span className="text-xl">{loc.flag}</span>
+                  <span>{loc.country}</span>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+      ```
+
       {/* FAQ */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">
@@ -796,7 +831,7 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal delay={200}>
             <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20">
-              <h3 className="font-montserrat font-bold text-white text-center mb-4">BOOK Your SEAT NOW</h3>
+              <h3 className="font-montserrat font-bold text-white text-center mb-4">BOOK Your SEAT FOR SCHOLARSHIP</h3>
               <p className="text-white/70 text-center text-sm mb-4">Join Dgca Ground Classes</p>
               <LeadForm dark />
             </div>

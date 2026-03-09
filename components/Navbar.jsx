@@ -4,11 +4,18 @@ import { useRouter } from 'next/router';
 
 const tickerMessages = [
   '🚨 Apply for March CPL Batch – Limited Seats Available',
-
   '🎓 Flight Training in USA & South Africa – Enroll Today',
   '📋 DGCA Class 2 & Class 1 Medical Assistance Available',
   '🏆 We One Aviation – Best Pilot Training Institute in India',
+  '🎯 Class 10 & 12 Topper? Get Full Money-Back Scholarship – You Fly Free!',
+  '💸 Topper Student Money-Back Guarantee – Top Scorers Fly at Zero Cost',
+  '✈️ Flying School Scholarship Available – Apply Now & Take Off Your Career',
 ];
+
+// Wrap your ticker bar JSX with this:
+<a href="../contact" style={{ textDecoration: 'none', cursor: 'pointer', display: 'block' }}>
+  {/* your existing ticker bar component here */}
+</a>
 
 const courses = [
   {
@@ -274,7 +281,7 @@ export default function Navbar() {
             </Link>
 
             <Link href="/contact" className="ml-2 bg-av-orange text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/30">
-              Get Counselling
+              Register for Scholarship
             </Link>
           </nav>
 
