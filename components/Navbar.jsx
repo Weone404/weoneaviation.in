@@ -204,7 +204,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
-              src="/assets/logo.webp"
+              src="/Logo.webp"
               alt="WeOne Aviation Academy"
               className="h-20 w-auto object-contain"
             />
