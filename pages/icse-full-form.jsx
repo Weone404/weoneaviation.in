@@ -178,6 +178,12 @@ export default function ICSEPage() {
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <div className="section-tag">Education Board</div>
+                    <br />
+                    <br />
+                    <br />
+
+
+
                     <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
                         ICSE Full Form – What is ICSE Board?
                     </h1>

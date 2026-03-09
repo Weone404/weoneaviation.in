@@ -54,11 +54,11 @@ export default function Footer() {
           <h4 className="font-montserrat font-bold text-sm uppercase tracking-widest mb-5 text-av-orange">Courses</h4>
           <ul className="space-y-2.5">
             {[
-              { label: 'Commercial Pilot License (CPL)', href: '/courses/cpl' },
-              { label: 'Private Pilot License (PPL)', href: '/courses/ppl' },
-              { label: 'ATPL', href: '/courses/atpl' },
-              { label: 'SPL', href: '/courses/spl' },
-              { label: 'DGCA Ground Classes', href: '/courses/dgca-ground-classes' },
+              { label: 'Commercial Pilot License (CPL)', href: '/commercial-pilot-license' },
+              { label: 'Private Pilot License (PPL)', href: '/ppl-full-form' },
+              { label: 'ATPL', href: '/advanced-atpl-pilot-training' },
+              // { label: 'SPL', href: '/courses/spl' },
+              { label: 'DGCA Ground Classes', href: '/dgca-ground-classes' },
             ].map(c => (
               <li key={c.href}>
                 <Link href={c.href} className="text-white/60 hover:text-av-orange text-sm transition-all hover:translate-x-1 inline-block">
@@ -74,7 +74,7 @@ export default function Footer() {
           <h4 className="font-montserrat font-bold text-sm uppercase tracking-widest mb-5 text-av-orange">Quick Links</h4>
           <ul className="space-y-2.5">
             {[
-              { label: 'About Us', href: '/about' },
+              { label: 'About Us', href: '/about-us' },
               { label: 'Blogs', href: '/blogs' },
               { label: 'Contact', href: '/contact' },
               { label: 'How to Become a Pilot After 12th', href: '/how-to-become-a-pilot/after-12th' },

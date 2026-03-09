@@ -42,8 +42,9 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
           <div className="lg:col-span-1 space-y-5">
             {[
-              { icon: '📍', title: 'Our Office', info: 'WeOne Aviation Academy\n123 Aviation Tower, Connaught Place\nNew Delhi - 110001', action: null },
+              { icon: '📍', title: 'Our Office', info: 'C-404 , 3rd Floor , Ramphal Chowk , Dwarka , sectore - 7 , New Delhi , Delhi - 110077', action: null },
               { icon: '📞', title: 'Call Us', info: '+91 93555 66991', action: 'tel:+919355566991' },
+
               { icon: '✉️', title: 'Email', info: 'info@weoneaviation.in', action: 'mailto:info@weoneaviation.in' },
               { icon: '🕐', title: 'Office Hours', info: 'Mon–Sat: 9 AM – 7 PM\nSunday: 10 AM – 4 PM', action: null },
             ].map((item, i) => (
