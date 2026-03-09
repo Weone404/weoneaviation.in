@@ -403,7 +403,7 @@ export default function Home() {
               Commercial Pilot License
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              ✈️ Dreaming of Becoming a Commercial Pilot? Get DGCA-approved training, expert mentorship and hands-on flight experience.
+              ✈️ Dreaming of Becoming a Commercial Pilot? Get approved training, expert mentorship and hands-on flight experience.
             </p>
             <Link href="/courses/cpl" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">
               Learn More
@@ -650,7 +650,7 @@ export default function Home() {
               🚀 Your Gateway to a Global Aviation Career – <span className="text-av-orange">Train at the Best Flying Schools Worldwide!</span>
             </h2>
             <p className="text-gray-500 mt-3 max-w-3xl mx-auto text-sm">
-              🌍 Explore Our Top Flying Schools Across the World! ✈️ At WeOneAviation Academy, we collaborate with some of the best flying schools worldwide to provide aspiring pilots with world-class flight training. Whether you're looking for DGCA-approved CPL training or internationally recognized pilot courses, our global network ensures you receive top-notch aviation education. Explore our Flight training centers in India, the USA, Canada, the UK, Australia, and South Africa, with structured courses designed for aspiring commercial pilots.
+              🌍 Explore Our Top Flying Schools Across the World! ✈️ At WeOneAviation Academy, we collaborate with some of the best flying schools worldwide to provide aspiring pilots with world-class flight training. Whether you're looking for approved CPL training or internationally recognized pilot courses, our global network ensures you receive top-notch aviation education. Explore our Flight training centers in India, the USA, Canada, the UK, Australia, and South Africa, with structured courses designed for aspiring commercial pilots.
             </p>
             <p className="text-av-orange font-semibold mt-2 text-sm">🌟 Choose a Flight School That Matches Your Goals and Country Preference!</p>
           </ScrollReveal>
