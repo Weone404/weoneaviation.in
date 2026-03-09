@@ -81,7 +81,7 @@ const flyingSchools = [
     course: 'Commercial Pilot License (CPL)',
     duration: '12-18 months',
     fees: '₹35-45 Lakhs (approx.)',
-    highlights: 'DGCA-approved, state-of-the-art simulators, extensive flight hours',
+    highlights: 'approved, state-of-the-art simulators, extensive flight hours',
     href: '/flying-school/india',
   },
   {
@@ -206,7 +206,7 @@ const faqs = [
   },
   {
     q: 'What Are The Eligibility Criteria for Pilot Training?',
-    a: 'Minimum age: 17 years for CPL | Educational qualification: 10+2 with Physics and Mathematics | Medical fitness: Class 1 Medical Certificate from a DGCA-approved medical examiner',
+    a: 'Minimum age: 17 years for CPL | Educational qualification: 10+2 with Physics and Mathematics | Medical fitness: Class 1 Medical Certificate from a approved medical examiner',
   },
   {
     q: 'What is Pilot Training Institute?',
@@ -216,14 +216,14 @@ const faqs = [
 
 export default function Home() {
   return (
-    <Layout title="WeOne Aviation Academy | Best Pilot Training Institute in India" description="India's premier DGCA-approved aviation training academy. CPL, PPL, ATPL, SPL courses. 500+ pilots trained. Free career counselling available.">
+    <Layout title="WeOne Aviation Academy | Best Pilot Training Institute in India" description="India's premier approved aviation training academy. CPL, PPL, ATPL, SPL courses. 500+ pilots trained. Free career counselling available.">
       {/* Hero */}
       <HeroSlider />
 
       {/* Tagline Banner */}
       <div className="bg-av-orange py-4 text-center">
         <p className="text-white font-semibold text-lg">
-          Looking for the best pilot training institute in India? Get world-class flight training, DGCA-approved courses, and expert guidance to kickstart your aviation career. Join now and become a certified pilot with top-notch training programs.
+          Looking for the best pilot training institute in India? Get world-class flight training, approved courses, and expert guidance to kickstart your aviation career. Join now and become a certified pilot with top-notch training programs.
         </p>
         <Link href="/contact" className="inline-block mt-2 bg-white text-av-orange font-bold px-6 py-2 rounded-full text-sm hover:bg-av-blue hover:text-white transition-all">
           Contact Us →
@@ -259,7 +259,7 @@ export default function Home() {
               India's Most Trusted Aviation Academy
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              WeOne Aviation Academy has been shaping the careers of aspiring pilots since 2009. We are a DGCA-approved institution offering world-class pilot training programs with international tie-ups in USA, Canada, Australia, and Europe.
+              WeOne Aviation Academy has been shaping the careers of aspiring pilots since 2009. We are a approved institution offering world-class pilot training programs with international tie-ups in USA, Canada, Australia, and Europe.
             </p>
             <p className="text-gray-600 leading-relaxed mb-6">
               Our expert faculty, modern simulators, and personalized mentoring ensure every student achieves their dream of becoming a professional pilot. With a 98% success rate and 500+ pilots trained, we are India's #1 choice for aviation training.
@@ -453,7 +453,7 @@ export default function Home() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: '✅', title: 'DGCA-Approved Training Programs', desc: 'Our courses meet all regulatory requirements to ensure a smooth path to becoming a professional pilot.' },
+              { icon: '✅', title: 'Approved Training Programs', desc: 'Our courses meet all regulatory requirements to ensure a smooth path to becoming a professional pilot.' },
               { icon: '✅', title: 'Experienced Instructors & Mentors', desc: 'Learn from seasoned airline pilots and aviation experts who provide hands-on guidance.' },
               { icon: '✅', title: 'State-of-the-Art Training Facilities', desc: 'Get trained with modern simulators, advanced flight training devices, and real aircraft for a world-class experience.' },
               { icon: '✅', title: '100% Placement Assistance', desc: 'We help students secure jobs in leading airlines through industry connections and career support.' },

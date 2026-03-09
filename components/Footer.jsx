@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="flex items-center gap-2 mb-4">
             <div className="w-10 h-10 bg-av-orange rounded-full flex items-center justify-center">
               <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6">
-                <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0012 2a1.5 1.5 0 00-1.5 1.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0012 2a1.5 1.5 0 00-1.5 1.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
               </svg>
             </div>
             <div>
@@ -95,11 +95,11 @@ export default function Footer() {
           <div className="space-y-4 text-sm text-white/60">
             <div className="flex gap-3">
               <span className="text-av-orange mt-0.5">📍</span>
-              <span>WeOne Aviation Academy, New Delhi, India - 110001</span>
+              <span>C-404 , 3rd Floor , Ramphal Chowk , Dwarka , sectore - 7 , New Delhi , Delhi - 110077</span>
             </div>
             <div className="flex gap-3">
               <span className="text-av-orange">📞</span>
-              <a href="tel:+919355611996" className="hover:text-av-orange transition-all">+91 93556 11996</a>
+              <a href="tel:+919355611996" className="hover:text-av-orange transition-all">+91 93556 11996 , +91 9355566991</a>
             </div>
             <div className="flex gap-3">
               <span className="text-av-orange">✉️</span>
