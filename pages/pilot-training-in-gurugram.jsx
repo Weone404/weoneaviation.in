@@ -1,4 +1,4 @@
-import { CityPageTemplate } from '../../components/CityPageTemplate';
+import { CityPageTemplate } from '../components/Citypagetemplate';
 
 export default function PilotTrainingGurugram() {
     return (
