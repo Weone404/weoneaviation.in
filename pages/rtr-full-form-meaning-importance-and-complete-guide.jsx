@@ -100,6 +100,11 @@ export default function RTRPage() {
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <div className="section-tag">Aviation License</div>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
                     <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
                         RTR Full Form – Meaning, Importance, and Complete Guide
                     </h1>

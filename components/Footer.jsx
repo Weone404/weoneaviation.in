@@ -95,7 +95,7 @@ export default function Footer() {
           <div className="space-y-4 text-sm text-white/60">
             <div className="flex gap-3">
               <span className="text-av-orange mt-0.5">📍</span>
-              <span>C-404 , 3rd Floor , Ramphal Chowk , Dwarka , sectore - 7 , New Delhi , Delhi - 110077</span>
+              <span>C-404 , 3rd Floor , Ramphal Chowk , Dwarka , sector - 7 , New Delhi , Delhi - 110077</span>
             </div>
             <div className="flex gap-3">
               <span className="text-av-orange">📞</span>

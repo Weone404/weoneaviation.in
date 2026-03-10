@@ -9,22 +9,16 @@ export default function ContactPopup() {
   const router = useRouter();
 
   useEffect(() => {
-    const shown = sessionStorage.getItem('popupShown');
-    if (shown) return;
     const timer = setTimeout(() => {
-      const onScroll = () => {
-        const scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-        if (scrollPct >= 30) {
-          setShow(true);
-          sessionStorage.setItem('popupShown', '1');
-          window.removeEventListener('scroll', onScroll);
-        }
-      };
-      window.addEventListener('scroll', onScroll);
-      return () => window.removeEventListener('scroll', onScroll);
-    }, 2000);
+      setShow(true);
+    }, 5000);
     return () => clearTimeout(timer);
   }, []);
+
+  const closePopup = () => {
+    setShow(false);
+    setTimeout(() => setShow(true), 15000);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,61 +30,208 @@ export default function ContactPopup() {
         body: JSON.stringify({ ...form, source: 'popup - ' + router.pathname }),
       });
       setSaved(true);
-    } catch {}
+    } catch { }
     setLoading(false);
     const msg = encodeURIComponent(
       `Hello WeOne Aviation! 👋\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email || 'N/A'}\nCourse: ${form.course || 'N/A'}`
     );
     setTimeout(() => {
       window.open(`https://wa.me/919355611996?text=${msg}`, '_blank');
-      setShow(false);
+      closePopup();
     }, 600);
   };
 
   if (!show) return null;
 
   return (
-    <div className="popup-overlay" onClick={() => setShow(false)}>
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 overflow-hidden"
+    <div
+      onClick={closePopup}
+      style={{
+        position: 'fixed', inset: 0, zIndex: 9999,
+        background: 'rgba(0,0,0,0.65)',
+        backdropFilter: 'blur(6px)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        padding: '1rem',
+      }}
+    >
+      <div
         onClick={e => e.stopPropagation()}
-        style={{ animation: 'slideUp 0.4s ease-out forwards' }}>
-        <style>{`@keyframes slideUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }`}</style>
-        <div className="bg-gradient-to-r from-av-blue to-av-navy p-6 relative">
-          <button onClick={() => setShow(false)} className="absolute top-4 right-4 text-white/60 hover:text-white transition-all">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        style={{
+          background: '#fff',
+          borderRadius: '20px',
+          width: '100%',
+          maxWidth: '420px',
+          overflow: 'hidden',
+          boxShadow: '0 25px 60px rgba(0,0,0,0.35)',
+          animation: 'slideUp 0.4s ease-out forwards',
+        }}
+      >
+        <style>{`
+          @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px) scale(0.97); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+          }
+          .popup-input {
+            width: 100%;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+            font-family: inherit;
+            color: #1f2937;
+          }
+          .popup-input:focus { border-color: #f97316; }
+          .popup-input::placeholder { color: #9ca3af; }
+          .whatsapp-btn {
+            width: 100%;
+            background: #f97316;
+            color: #fff;
+            font-weight: 800;
+            font-size: 15px;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            letter-spacing: 0.01em;
+          }
+          .whatsapp-btn:hover:not(:disabled) { background: #ea6c0a; transform: translateY(-1px); }
+          .whatsapp-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+          .spin {
+            width: 16px; height: 16px;
+            border: 2.5px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            display: inline-block;
+          }
+          @keyframes spin { to { transform: rotate(360deg); } }
+        `}</style>
+
+        {/* ── Header ── */}
+        <div style={{
+          background: 'linear-gradient(135deg, #0f2a5e 0%, #1a3f8f 60%, #0f2a5e 100%)',
+          padding: '28px 24px 24px',
+          textAlign: 'center',
+          position: 'relative',
+        }}>
+          {/* Close button */}
+          <button
+            onClick={closePopup}
+            style={{
+              position: 'absolute', top: 14, right: 14,
+              background: 'rgba(255,255,255,0.12)',
+              border: 'none', borderRadius: '50%',
+              width: 30, height: 30,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'pointer', color: 'rgba(255,255,255,0.7)',
+              transition: 'background 0.2s, color 0.2s',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.25)'; e.currentTarget.style.color = '#fff'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)'; }}
+          >
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-          <div className="text-av-orange text-xs font-bold uppercase tracking-widest mb-1">🎓 Free Career Counselling</div>
-          <h3 className="text-white font-montserrat text-xl font-bold">Start Your Pilot Journey!</h3>
-          <p className="text-white/70 text-sm mt-1">Expert guidance from airline pilots. 100% free.</p>
+
+          {/* Big headline */}
+          <h2 style={{
+            margin: 0,
+            color: '#fff',
+            fontWeight: 900,
+            fontSize: 'clamp(1.7rem, 6vw, 2.3rem)',
+            lineHeight: 1.15,
+            letterSpacing: '-0.03em',
+            textShadow: '0 2px 16px rgba(0,0,0,0.3)',
+          }}>
+            Clear DGCA exam<br />
+            <span style={{ color: '#FFA500' }}>&amp; Pay Nothing</span>
+          </h2>
+
+          <p style={{
+            margin: '10px 0 0',
+            color: 'rgba(255,255,255,0.65)',
+            fontSize: '13px',
+            letterSpacing: '0.01em',
+          }}>
+            Expert guidance from airline pilots · 100% free
+          </p>
         </div>
-        <form onSubmit={handleSubmit} className="p-6 space-y-4">
-          {saved && <div className="p-2.5 bg-green-50 border border-green-200 rounded-xl text-green-700 text-xs">✅ Saved! Opening WhatsApp...</div>}
-          <input type="text" placeholder="Full Name *" required value={form.name}
-            onChange={e => setForm({ ...form, name: e.target.value })}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-av-orange transition-all" />
-          <input type="tel" placeholder="Phone Number *" required value={form.phone}
-            onChange={e => setForm({ ...form, phone: e.target.value })}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-av-orange transition-all" />
-          <input type="email" placeholder="Email Address" value={form.email}
-            onChange={e => setForm({ ...form, email: e.target.value })}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-av-orange transition-all" />
-          <select value={form.course} onChange={e => setForm({ ...form, course: e.target.value })}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-av-orange transition-all text-gray-600">
-            <option value="">Select Course</option>
-            <option>Commercial Pilot License (CPL)</option>
-            <option>Private Pilot License (PPL)</option>
-            <option>ATPL</option>
-            <option>Sport Pilot License (SPL)</option>
-            <option>DGCA Ground Classes</option>
-          </select>
-          <button type="submit" disabled={loading}
-            className="w-full bg-av-orange hover:bg-orange-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg text-sm flex items-center justify-center gap-2">
-            {loading ? <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"/>Saving...</> : '📱 Send on WhatsApp →'}
-          </button>
-          <p className="text-center text-xs text-gray-400">🔒 Your data is saved securely</p>
-        </form>
+
+        {/* ── Form ── */}
+        <div style={{ padding: '24px' }}>
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+
+            {saved && (
+              <div style={{
+                padding: '10px 14px',
+                background: '#f0fdf4',
+                border: '1px solid #bbf7d0',
+                borderRadius: '10px',
+                color: '#15803d',
+                fontSize: '13px',
+              }}>
+                ✅ Saved! Opening WhatsApp...
+              </div>
+            )}
+
+            <input
+              className="popup-input"
+              type="text"
+              placeholder="Full Name *"
+              required
+              value={form.name}
+              onChange={e => setForm({ ...form, name: e.target.value })}
+            />
+            <input
+              className="popup-input"
+              type="tel"
+              placeholder="Phone Number *"
+              required
+              value={form.phone}
+              onChange={e => setForm({ ...form, phone: e.target.value })}
+            />
+            <input
+              className="popup-input"
+              type="email"
+              placeholder="Email Address"
+              value={form.email}
+              onChange={e => setForm({ ...form, email: e.target.value })}
+            />
+            <select
+              className="popup-input"
+              value={form.course}
+              onChange={e => setForm({ ...form, course: e.target.value })}
+              style={{ color: form.course ? '#1f2937' : '#9ca3af' }}
+            >
+              <option value="">Select Course</option>
+              <option>Commercial Pilot License (CPL)</option>
+              <option>Private Pilot License (PPL)</option>
+              <option>ATPL</option>
+              <option>Sport Pilot License (SPL)</option>
+              <option>DGCA Ground Classes</option>
+            </select>
+
+            <button type="submit" disabled={loading} className="whatsapp-btn" style={{ marginTop: '4px' }}>
+              {loading
+                ? <><span className="spin" /> Saving...</>
+                : <>📱 Send on WhatsApp →</>
+              }
+            </button>
+
+            <p style={{ textAlign: 'center', fontSize: '11px', color: '#9ca3af', margin: 0 }}>
+              🔒 Your data is saved securely
+            </p>
+          </form>
+        </div>
       </div>
     </div>
   );
