@@ -37,7 +37,7 @@ export default function ContactPopup() {
     );
     setTimeout(() => {
       window.open(`https://wa.me/919355611996?text=${msg}`, '_blank');
-      closePopup();
+      setShow(false);
     }, 600);
   };
 
@@ -216,7 +216,6 @@ export default function ContactPopup() {
               <option>Commercial Pilot License (CPL)</option>
               <option>Private Pilot License (PPL)</option>
               <option>ATPL</option>
-              <option>Sport Pilot License (SPL)</option>
               <option>DGCA Ground Classes</option>
             </select>
 

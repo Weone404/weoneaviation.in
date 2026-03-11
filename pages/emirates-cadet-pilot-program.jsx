@@ -55,6 +55,10 @@ export default function EmiratesCadet() {
                 <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
                     <div className="lg:col-span-2">
                         <ScrollReveal>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
                             <div className="section-tag">Cadet Program</div>
                             <h1 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
                                 Emirates Cadet Pilot Program

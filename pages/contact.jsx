@@ -100,7 +100,7 @@ export default function Contact() {
                   <option>Commercial Pilot License (CPL)</option>
                   <option>Private Pilot License (PPL)</option>
                   <option>ATPL</option>
-                  <option>Sport Pilot License (SPL)</option>
+
                   <option>DGCA Ground Classes</option>
                 </select>
                 <textarea placeholder="Your Message" value={form.message}

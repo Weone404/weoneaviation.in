@@ -133,6 +133,10 @@ export default function PPLPage() {
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                     <div className="section-tag">Full Form Guide</div>
                     <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
                         PPL Full Form – What is PPL in Aviation, Chat, Business and More?

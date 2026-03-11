@@ -59,6 +59,10 @@ export default function CPLSalaryPage() {
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                     <div className="section-tag">Pilot Career</div>
                     <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
                         Commercial Pilot License Salary – 2025
