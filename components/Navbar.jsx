@@ -56,7 +56,7 @@ const courses = [
 
 const flyingCountry = [
   { label: 'Flight Training in U.S.A', href: '/best-flight-schools-in-usa' },
-  { label: 'Flight Training in South Africa', href: '/flying-country/south-africa' },
+  { label: 'Flight Training in South Africa', href: '/flying-school/south-africa' },
 ];
 
 const howTo = [
