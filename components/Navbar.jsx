@@ -12,11 +12,6 @@ const tickerMessages = [
   '✈️ Flying School Scholarship Available – Apply Now & Take Off Your Career',
 ];
 
-// Wrap your ticker bar JSX with this:
-<a href="../contact" style={{ textDecoration: 'none', cursor: 'pointer', display: 'block' }}>
-  {/* your existing ticker bar component here */}
-</a>
-
 const courses = [
   {
     label: 'Commercial Pilot License (CPL)',
@@ -267,9 +262,16 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link href="https://dgcaexam.com/" className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/dgca-exam-practice') ? 'text-av-orange' : 'text-white'}`}>
+            {/* ✅ Desktop: DGCA Exam Practice — opens external site */}
+            <a
+              href="https://dgcaexam.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-lg text-sm font-medium text-white hover:text-av-orange transition-all"
+            >
               DGCA Exam Practice
-            </Link>
+            </a>
+
             <Link href="/about-us" className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/about') ? 'text-av-orange' : 'text-white'}`}>
               About Us
             </Link>
@@ -302,10 +304,11 @@ export default function Navbar() {
       {/* ── Mobile Menu ── */}
       {menuOpen && (
         <div className="lg:hidden bg-av-blue border-t border-white/10 px-4 py-4 space-y-1 max-h-[70vh] overflow-y-auto">
+
+          {/* Static mobile links */}
           {[
             { label: 'Home', href: '/' },
             { label: 'About Us', href: '/about' },
-            { label: 'DGCA Exam Practice', href: '/dgca-exam-practice' },
             { label: 'Blogs', href: '/blogs' },
             { label: 'Contact Us', href: '/contact' },
           ].map((item) => (
@@ -314,6 +317,17 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
+
+          {/* ✅ Mobile: DGCA Exam Practice — opens https://dgcaexam.com/ in new tab */}
+          <a
+            href="https://dgcaexam.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+            className="block px-4 py-2.5 text-white hover:text-av-orange text-sm font-medium rounded-lg hover:bg-white/5 transition-all"
+          >
+            DGCA Exam Practice ↗
+          </a>
 
           {/* Mobile: Pilot Training Courses */}
           <button onClick={() => setMobileCoursesOpen(!mobileCoursesOpen)}
