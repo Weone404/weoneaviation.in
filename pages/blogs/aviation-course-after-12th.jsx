@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import ScrollReveal from '../components/ScrollReveal';
+import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
