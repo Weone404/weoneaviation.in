@@ -272,7 +272,7 @@ export default function Navbar() {
               DGCA Exam Practice
             </a>
 
-            <Link href="/about-us" className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/about') ? 'text-av-orange' : 'text-white'}`}>
+            <Link href="/about-us" className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/about-us') ? 'text-av-orange' : 'text-white'}`}>
               About Us
             </Link>
             <Link href="/contact" className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/contact') ? 'text-av-orange' : 'text-white'}`}>
