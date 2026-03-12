@@ -216,8 +216,8 @@ export default function USAFlightTraining() {
                                             key={aircraft.name}
                                             onClick={() => setActiveAircraft(i)}
                                             className={`w-full text-left px-4 py-3 rounded-xl text-xs font-semibold transition-all ${activeAircraft === i
-                                                    ? 'bg-av-blue text-white'
-                                                    : 'bg-gray-100 text-av-blue hover:bg-av-light'
+                                                ? 'bg-av-blue text-white'
+                                                : 'bg-gray-100 text-av-blue hover:bg-av-light'
                                                 }`}
                                         >
                                             {aircraft.name}
