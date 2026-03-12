@@ -308,7 +308,7 @@ export default function Navbar() {
           {/* Static mobile links */}
           {[
             { label: 'Home', href: '/' },
-            { label: 'About Us', href: '/about' },
+            { label: 'About Us', href: '/about-us' },
             { label: 'Blogs', href: '/blogs' },
             { label: 'Contact Us', href: '/contact' },
           ].map((item) => (
