@@ -33,12 +33,12 @@ export default function Footer() {
               </svg>
             </div>
             <div>
-              <div className="font-montserrat font-bold text-white text-lg leading-none">WeOne Aviation</div>
+              <div className="font-montserrat font-bold text-white text-lg leading-none">We One Aviation</div>
               <div className="text-av-orange text-xs tracking-widest uppercase">Training Academy</div>
             </div>
           </div>
           <p className="text-white/60 text-sm leading-relaxed mb-5">
-            India's premier aviation training institute, helping aspiring pilots achieve their dreams since 2015. DGCA approved, internationally recognized.
+            India's premier aviation training institute, helping aspiring pilots achieve their dreams since 2015., internationally recognized.
           </p>
           <div className="flex gap-3">
             {['facebook', 'instagram', 'youtube', 'linkedin'].map(s => (
@@ -50,24 +50,7 @@ export default function Footer() {
         </div>
 
         {/* Courses */}
-        <div>
-          <h4 className="font-montserrat font-bold text-sm uppercase tracking-widest mb-5 text-av-orange">Courses</h4>
-          <ul className="space-y-2.5">
-            {[
-              { label: 'Commercial Pilot License (CPL)', href: '/commercial-pilot-license' },
-              { label: 'Private Pilot License (PPL)', href: '/ppl-full-form' },
-              { label: 'ATPL', href: '/advanced-atpl-pilot-training' },
-              // { label: 'SPL', href: '/courses/spl' },
-              { label: 'DGCA Ground Classes', href: '/dgca-ground-classes' },
-            ].map(c => (
-              <li key={c.href}>
-                <Link href={c.href} className="text-white/60 hover:text-av-orange text-sm transition-all hover:translate-x-1 inline-block">
-                  → {c.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+
 
         {/* Quick Links */}
         <div>
@@ -77,8 +60,8 @@ export default function Footer() {
               { label: 'About Us', href: '/about-us' },
               { label: 'Blogs', href: '/blogs' },
               { label: 'Contact', href: '/contact' },
-              { label: 'How to Become a Pilot After 12th', href: '/how-to-become-a-pilot/after-12th' },
-              { label: 'How to Become a Pilot in India', href: '/how-to-become-a-pilot/in-india' },
+              { label: 'Sitemap', href: '/sitemap' },
+
             ].map(c => (
               <li key={c.href}>
                 <Link href={c.href} className="text-white/60 hover:text-av-orange text-sm transition-all hover:translate-x-1 inline-block">
@@ -110,19 +93,7 @@ export default function Footer() {
       </div>
 
       {/* Pilot Training Cities */}
-      <div className="border-t border-white/10 py-8 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h4 className="font-montserrat font-bold text-xs uppercase tracking-widest mb-4 text-av-orange text-center">Pilot Training Locations</h4>
-          <div className="flex flex-wrap justify-center gap-2">
-            {cities.map(city => (
-              <Link key={city} href={`/pilot-training-in/${city.toLowerCase()}`}
-                className="text-white/50 hover:text-av-orange text-xs transition-all hover:underline">
-                Pilot Training in {city}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
+
 
       {/* Bottom bar */}
       <div className="border-t border-white/10 py-5 px-4">

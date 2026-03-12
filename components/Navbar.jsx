@@ -3,13 +3,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const tickerMessages = [
-  '🚨 Apply for March CPL Batch – Limited Seats Available',
-  '🎓 Flight Training in USA & South Africa – Enroll Today',
-  '📋 DGCA Class 2 & Class 1 Medical Assistance Available',
-  '🏆 We One Aviation – Best Pilot Training Institute in India',
-  '🎯 Class 10 & 12 Topper? Get Full Money-Back Scholarship – You Fly Free!',
-  '💸 Topper Student Money-Back Guarantee – Top Scorers Fly at Zero Cost',
-  '✈️ Flying School Scholarship Available – Apply Now & Take Off Your Career',
+  ' Apply for March CPL Batch – Limited Seats Available',
+  ' Flight Training in USA & South Africa – Enroll Today',
+  ' DGCA Class 2 & Class 1 Medical Assistance Available',
+  ' We One Aviation – Best Pilot Training Institute in India',
+  ' Class 10 & 12 Topper? Get Full Money-Back Scholarship – You Fly Free!',
+  ' Topper Student Money-Back Guarantee – Top Scorers Fly at Zero Cost',
+  ' Flying School Scholarship Available – Apply Now & Take Off Your Career',
 ];
 
 const courses = [
@@ -50,7 +50,7 @@ const courses = [
   },
   { label: 'Private Pilot License (PPL)', href: '/private-pilot-license-ppl-course-details' },
   { label: 'ATPL', href: '/advanced-atpl-pilot-training' },
-  { label: 'SPL', href: '/student-pilot-license-spl' },
+
   { label: 'DGCA Ground Classes', href: '/dgca-ground-classes' },
 ];
 
@@ -208,15 +208,13 @@ export default function Navbar() {
             <img
               src="/Logo.webp"
               alt="WeOne Aviation Academy"
-              className="h-20 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            <Link href="/" className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/') ? 'text-av-orange' : 'text-white'}`}>
-              Home
-            </Link>
+
 
             {/* Pilot Training Courses */}
             <div className="relative" onMouseEnter={() => setCourseOpen(true)} onMouseLeave={() => setCourseOpen(false)}>
@@ -272,12 +270,8 @@ export default function Navbar() {
               DGCA Exam Practice
             </a>
 
-            <Link href="/about-us" className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/about-us') ? 'text-av-orange' : 'text-white'}`}>
-              About Us
-            </Link>
-            <Link href="/contact" className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/contact') ? 'text-av-orange' : 'text-white'}`}>
-              Contact Us
-            </Link>
+
+
             <Link href="/blogs" className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/blogs') ? 'text-av-orange' : 'text-white'}`}>
               Blogs
             </Link>

@@ -48,7 +48,7 @@ const aircraftList = [
         usedFor: 'PPL',
         description: 'A compact American aircraft with tricycle landing gear, ideal for new pilots.',
         benefits: 'Low-cost training, easy handling, widely used for basic flying lessons.',
-        image: 'https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=800&q=80',
+        image: '/Cessna 152.jpeg',
     },
     {
         name: 'Cessna 172 Skyhawk',
@@ -56,7 +56,7 @@ const aircraftList = [
         usedFor: 'PPL / CPL',
         description: 'The world\'s most popular training aircraft featuring a glass cockpit with GPS and autopilot.',
         benefits: 'Advanced avionics training, glass cockpit experience, widely accepted by airlines.',
-        image: 'https://images.unsplash.com/photo-1559628233-100c798642d8?w=800&q=80',
+        image: '/Cessna 172 Skyhawk.jpeg',
     },
     {
         name: 'Tecnam P2006T',
@@ -64,7 +64,7 @@ const aircraftList = [
         usedFor: 'Multi-Engine Rating',
         description: 'A modern Italian twin-engine aircraft designed for multi-engine training with advanced avionics.',
         benefits: 'Multi-engine experience, fuel-efficient, prepares pilots for airline twin-engine operations.',
-        image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80',
+        image: '/Tecnam P2006T.jpeg',
     },
     {
         name: 'Tecnam P2008',
@@ -72,7 +72,7 @@ const aircraftList = [
         usedFor: 'PPL / Hour Building',
         description: 'A lightweight modern aircraft ideal for hour building and basic pilot training.',
         benefits: 'Fuel-efficient, modern design, ideal for solo and cross-country flying.',
-        image: 'https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=800&q=80',
+        image: '/Tecnam P2008.jpeg',
     },
     {
         name: 'Piper PA-34 Seneca',
@@ -80,7 +80,7 @@ const aircraftList = [
         usedFor: 'Multi-Engine / CPL',
         description: 'A reliable twin-engine aircraft used for advanced commercial pilot training and instrument flying.',
         benefits: 'High performance, twin-engine proficiency, ideal for CPL and IFR training.',
-        image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80',
+        image: '/1725_piper-pa34-seneca.jpg',
     },
     {
         name: 'Piper Archer / PA-28',
@@ -88,7 +88,7 @@ const aircraftList = [
         usedFor: 'PPL / CPL / Hour Building',
         description: 'A versatile and robust training aircraft widely used across U.S. flight schools for all training phases.',
         benefits: 'Cost-efficient hour building, sturdy build, excellent visibility from cockpit.',
-        image: 'https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=800&q=80',
+        image: '/Piper Archer.jpg',
     },
     {
         name: 'Redbird / Elite Simulators',
@@ -96,7 +96,7 @@ const aircraftList = [
         usedFor: 'IR / Instrument Training',
         description: 'State-of-the-art flight simulators used for instrument rating training, emergency procedures, and cockpit familiarization.',
         benefits: 'Risk-free practice, cost-effective instrument training, realistic cockpit environment.',
-        image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80',
+        image: '/redbird and simulator.jpg',
     },
 ];
 
