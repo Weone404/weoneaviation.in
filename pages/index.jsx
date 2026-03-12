@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 const courses = [
   { icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: '18-24 months', eligibility: '10+2 (PCM)', href: '/commercial-pilot-license', highlight: true },
-  { icon: '🏆', title: 'ATPL', duration: '36 months', eligibility: 'CPL holder', href: '/courses/atpl' },
+  { icon: '🏆', title: 'ATPL', duration: '6 months', eligibility: 'CPL holder', href: '/courses/atpl' },
   { icon: '📚', title: 'DGCA Ground Classes', duration: '6-12 months', eligibility: '10+2 (PCM)', href: '/dgca-ground-classes-in-india' },
 ];
 
@@ -347,10 +347,10 @@ export default function Home() {
                 <div className="text-4xl mb-4">📚</div>
                 <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">DGCA CPL Ground Classes</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                  This is Main Pilot Course Which Exam is Conducted By Dgca. This course is only for theoretical preparation for the DGCA exams required to obtain a pilot's license.
+                  This is the main pilot course with exams conducted by DGCA, designed for theoretical preparation required to obtain a pilot's license.
                 </p>
                 <div className="space-y-2 mb-6 text-sm text-gray-600">
-                  <div><span className="font-semibold text-av-blue">Fees:</span> 2.95 Lakh <span className="text-av-orange font-semibold">(25% Scholarship)</span></div>
+                  <div><span className="font-semibold text-av-blue">Fees:</span>2 Lakh to 2.95 Lakh <span className="text-av-orange font-semibold">( Scholarship)</span></div>
                   <div><span className="font-semibold text-av-blue">Course Duration:</span> 6 Months</div>
                   <div><span className="font-semibold text-av-blue">Mode:</span> Offline / Online</div>
                   <div><span className="font-semibold text-av-blue">Batch Start Date:</span> Every Months Of First Week and Third Week</div>
@@ -367,11 +367,11 @@ export default function Home() {
                 <div className="text-4xl mb-4">🛩️</div>
                 <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">CPL Flight Training (India/Abroad)</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                  After Clear the Dgca Exam, You Have To do Flying From India And Abroad. 200 Hours of Flying is Must for Obtain Commercial Pilot Licence.
+                  After Clear the Dgca Exam, You Have To do Flying From India Or Abroad. 200 Hours of Flying is Must for Obtain Commercial Pilot Licence.
                 </p>
                 <div className="space-y-2 mb-6 text-sm text-gray-600">
                   <div><span className="font-semibold text-av-blue">Flying Duration:</span> 1 year (Abroad) / 1.5 Years (India)</div>
-                  <div><span className="font-semibold text-av-blue">Flying Training Fees:</span> 40 to 50 lakh <span className="text-gray-400">(Depends on Country)</span></div>
+                  <div><span className="font-semibold text-av-blue">Flying Training Fees:</span> 55 to 65 lakh <span className="text-gray-400">(Depends on Country)</span></div>
                   <div><span className="font-semibold text-av-blue">Registration Date:</span> Every Month You Can Apply</div>
                 </div>
                 <Link href="/courses/cpl-flight-training" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
@@ -561,7 +561,7 @@ export default function Home() {
           {/* Detailed Pilot Journey */}
           <ScrollReveal className="text-center mb-10">
             <h3 className="font-montserrat text-2xl font-bold text-white">
-              Srep By Step Guide for <span className="text-av-orange">Become a Pilot</span>
+              Step By Step Guide for <span className="text-av-orange">Become a Pilot</span>
             </h3>
           </ScrollReveal>
 
