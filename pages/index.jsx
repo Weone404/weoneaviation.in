@@ -7,11 +7,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const courses = [
-  { icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: '18-24 months', eligibility: '10+2 (PCM)', href: '/courses/cpl', highlight: true },
-
+  { icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: '18-24 months', eligibility: '10+2 (PCM)', href: '/commercial-pilot-license', highlight: true },
   { icon: '🏆', title: 'ATPL', duration: '36 months', eligibility: 'CPL holder', href: '/courses/atpl' },
-
-  { icon: '📚', title: 'DGCA Ground Classes', duration: '6-12 months', eligibility: '10+2 (PCM)', href: '/courses/dgca-ground-classes' },
+  { icon: '📚', title: 'DGCA Ground Classes', duration: '6-12 months', eligibility: '10+2 (PCM)', href: '/dgca-ground-classes-in-india' },
 ];
 
 const testimonials = [
@@ -27,49 +25,60 @@ const stats = [
   { num: '25+', label: 'Partner Airlines', icon: '✈️' },
 ];
 
-const cities = ['Delhi', 'Mumbai', 'Bangalore', 'Hyderabad', 'Chennai', 'Pune', 'Kolkata', 'Jaipur', 'Nagpur', 'Kerala'];
+const cities = [
+  { name: 'Delhi', slug: 'pilot-training-in-delhi' },
+  { name: 'Mumbai', slug: 'pilot-training-in-mumbai' },
+  { name: 'Bangalore', slug: 'pilot-training-in-bangalore' },
+  { name: 'Hyderabad', slug: 'pilot-training-in-hyderabad' },
+  { name: 'Chennai', slug: 'pilot-training-in-chennai' },
+  { name: 'Pune', slug: 'pilot-training-in-pune' },
+  { name: 'Kolkata', slug: 'pilot-training-in-kolkata' },
+  { name: 'Jaipur', slug: 'pilot-training-in-jaipur' },
+  { name: 'Nagpur', slug: 'pilot-training-in-nagpur' },
+  { name: 'Kerala', slug: 'pilot-training-in-kerala' },
+];
 
 const dgcaSubjects = [
   {
     num: '1',
     title: 'Air Navigation',
     desc: 'Air Navigation is the science of safely guiding an aircraft from one point to another using various navigational aids, instruments, and calculations. But do you know the secret behind how pilots navigate even in zero visibility? Discover the advanced techniques that make it possible—',
-    link: '#',
+    link: '/air-navigation',
     linkText: 'click to explore more! 🚀',
   },
   {
     num: '2',
     title: 'Air Regulations',
     desc: 'Air Regulations are the rules every pilot must follow to ensure safe and legal flying. These laws cover everything from airspace restrictions to communication protocols and flight operations. Want to know how these regulations shape a pilot\'s journey and why they are crucial for your aviation career?',
-    link: '#',
+    link: '/air-regulations',
     linkText: 'Click to find out more! ✈️',
   },
   {
     num: '3',
     title: 'Aviation Meteorology',
     desc: 'Aviation Meteorology helps pilots understand weather conditions that affect flight safety and performance. In this subject, students learn about weather phenomena and how they impact aviation operations.',
-    link: '#',
+    link: '/aviation-meteorology',
     linkText: 'Explore more →',
   },
   {
     num: '4',
     title: 'Technical General (Aircraft & Engines)',
     desc: 'This subject covers the fundamental workings of aircraft and their engines, helping pilots understand how their machines operate. Key topics include aircraft systems, powerplants, and airworthiness.',
-    link: '#',
+    link: '/technical-general',
     linkText: 'Explore more →',
   },
   {
     num: '5',
     title: 'Radio Telephony (RTR)',
     desc: 'Radio Telephony (RTR) is the backbone of pilot communication with Air Traffic Control (ATC). This subject teaches proper phraseology, emergency communications, and ATC procedures.',
-    link: '#',
+    link: '/rtr-a',
     linkText: 'Explore more →',
   },
   {
     num: '6',
     title: 'Technical Specific (Type of Aircraft)',
     desc: 'This subject focuses on the technical details of specific aircraft models, ensuring pilots understand their assigned aircraft inside and out. Key topics include aircraft systems, limitations, and emergency procedures.',
-    link: '#',
+    link: '/contact',
     linkText: 'Explore more →',
   },
 ];
@@ -81,7 +90,7 @@ const flyingSchools = [
     course: 'Commercial Pilot License (CPL)',
     duration: '12-18 months',
     fees: '₹35-45 Lakhs (approx.)',
-    highlights: 'approved, state-of-the-art simulators, extensive flight hours',
+    highlights: 'DGCA , state-of-the-art simulators, extensive flight hours',
     href: '/flying-school/india',
   },
   {
@@ -100,7 +109,7 @@ const flyingSchools = [
     duration: '24 months',
     fees: '£90,000 - £120,000',
     highlights: 'Airline-focused training, fast-track to commercial airlines',
-    href: '/flying-school/uk',
+    href: '/contact',
   },
   {
     flag: '🇦🇺',
@@ -241,7 +250,6 @@ export default function Home() {
             </ScrollReveal>
           ))}
         </div>
-        {/* Pilots delivered badge */}
         <div className="text-center mt-4">
           <span className="text-white/80 text-sm font-semibold">We Deliver 3000+ Pilots To India Since 2011</span>
         </div>
@@ -265,13 +273,13 @@ export default function Home() {
               Our expert faculty, modern simulators, and personalized mentoring ensure every student achieves their dream of becoming a professional pilot. With a 98% success rate and 3500 pilots trained, we are India's #1 choice for aviation training.
             </p>
             <div className="flex flex-wrap gap-3 mb-6">
-              {['DGCA Approved', 'International Tie-ups', '24/7 Support', 'Job Placement'].map(tag => (
+              {['DGCA ', 'International Tie-ups', '24/7 Support', 'Job Placement'].map(tag => (
                 <span key={tag} className="bg-av-light text-av-blue text-xs font-semibold px-4 py-2 rounded-full border border-av-sky/20">
                   ✓ {tag}
                 </span>
               ))}
             </div>
-            <Link href="/about"
+            <Link href="/about-us"
               className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm">
               Learn More About Us →
             </Link>
@@ -292,7 +300,7 @@ export default function Home() {
               </div>
               <div className="absolute -top-5 -right-5 glass bg-av-blue rounded-xl p-4 shadow-xl border border-white/20">
                 <div className="font-montserrat text-av-orange text-xl font-black">DGCA</div>
-                <div className="text-white text-xs">Approved</div>
+                <div className="text-white text-xs"></div>
               </div>
             </div>
           </ScrollReveal>
@@ -347,7 +355,7 @@ export default function Home() {
                   <div><span className="font-semibold text-av-blue">Mode:</span> Offline / Online</div>
                   <div><span className="font-semibold text-av-blue">Batch Start Date:</span> Every Months Of First Week and Third Week</div>
                 </div>
-                <Link href="/courses/dgca-ground-classes" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
+                <Link href="/dgca-ground-classes-in-india" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
                   Course Details
                 </Link>
               </div>
@@ -385,7 +393,7 @@ export default function Home() {
                   <div><span className="font-semibold text-av-orange">Full Course Fees:</span> 50–55 lakh (Depends on Country)</div>
                   <div><span className="font-semibold text-av-orange">Batch Start Date:</span> Every First and Third Week of Month</div>
                 </div>
-                <Link href="/courses/cpl" className="mt-auto inline-block text-center bg-av-orange text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">
+                <Link href="/commercial-pilot-license" className="mt-auto inline-block text-center bg-av-orange text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">
                   Course Details
                 </Link>
               </div>
@@ -405,7 +413,7 @@ export default function Home() {
             <p className="text-gray-600 leading-relaxed mb-4">
               ✈️ Dreaming of Becoming a Commercial Pilot? Get approved training, expert mentorship and hands-on flight experience.
             </p>
-            <Link href="/courses/cpl" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">
+            <Link href="/commercial-pilot-license" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">
               Learn More
             </Link>
           </ScrollReveal>
@@ -417,7 +425,7 @@ export default function Home() {
             <p className="text-gray-600 leading-relaxed mb-4">
               📖 Master Every DGCA Subject & Fly High! Our DGCA Ground Classes make learning easy & effective. Get trained by industry experts!
             </p>
-            <Link href="/courses/dgca-ground-classes" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">
+            <Link href="/dgca-ground-classes-in-india" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">
               Learn More
             </Link>
           </ScrollReveal>
@@ -430,7 +438,7 @@ export default function Home() {
             <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">
               At Our Flying School, we train future pilots with state-of-the-art aircraft, expert instructors, and guaranteed career guidance.
             </p>
-            <Link href="/flying-school" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
+            <Link href="/flying-school/india" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
               Learn More
             </Link>
           </ScrollReveal>
@@ -579,7 +587,7 @@ export default function Home() {
               {
                 title: 'After 12th Standard',
                 steps: ['Pass 12th with PCM (Physics, Chemistry, Maths)', 'Clear DGCA Medical Class 1', 'Enroll in CPL program', 'Complete 200+ flying hours', 'Clear DGCA written exams', 'Get your CPL license'],
-                href: '/how-to-become-a-pilot/after-12th',
+                href: '/how-to-become-a-pilot-after-12th',
               },
               {
                 title: 'International Training Route',
@@ -715,7 +723,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Training Locations */}
+      {/* Training Locations - India */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-10">
@@ -726,10 +734,10 @@ export default function Home() {
           </ScrollReveal>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
             {cities.map((city, i) => (
-              <ScrollReveal key={city} delay={i * 60}>
-                <Link href={`/pilot-training-in/${city.toLowerCase()}`}
+              <ScrollReveal key={city.name} delay={i * 60}>
+                <Link href={`/${city.slug}`}
                   className="card-hover block text-center p-4 rounded-xl border border-gray-200 bg-white hover:border-av-orange hover:text-av-orange hover:bg-orange-50 transition-all text-sm font-medium text-av-blue">
-                  📍 {city}
+                  📍 {city.name}
                 </Link>
               </ScrollReveal>
             ))}
@@ -737,8 +745,8 @@ export default function Home() {
         </div>
       </section>
 
-      ```jsx
-      <section className="py-20 px-4">
+      {/* Training Locations - World */}
+      <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-10">
             <div className="section-tag">Global Presence</div>
@@ -748,13 +756,13 @@ export default function Home() {
           </ScrollReveal>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
             {[
-              { flag: '🇺🇸', country: 'USA', href: '/contact' },
-              { flag: '🇨🇦', country: 'Canada', href: '/contact' },
-              { flag: '🇮🇳', country: 'India', href: '/contact' },
+              { flag: '🇺🇸', country: 'USA', href: '/flying-school/usa' },
+              { flag: '🇨🇦', country: 'Canada', href: '/flying-school/canada' },
+              { flag: '🇮🇳', country: 'India', href: '/flying-school/india' },
               { flag: '🇱🇰', country: 'Sri Lanka', href: '/contact' },
               { flag: '🇲🇻', country: 'Maldives', href: '/contact' },
-              { flag: '🇿🇦', country: 'South Africa', href: '/contact' },
-              { flag: '🇦🇺', country: 'Australia', href: '/contact' },
+              { flag: '🇿🇦', country: 'South Africa', href: '/flying-school/south-africa' },
+              { flag: '🇦🇺', country: 'Australia', href: '/flying-school/australia' },
               { flag: '🇳🇿', country: 'New Zealand', href: '/contact' },
             ].map((loc, i) => (
               <ScrollReveal key={loc.country} delay={i * 60}>
@@ -770,10 +778,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      ```
 
       {/* FAQ */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal className="text-center mb-12">
             <div className="section-tag">FAQ</div>
