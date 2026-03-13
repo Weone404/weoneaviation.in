@@ -200,7 +200,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* ── Main Navbar ── */}
-      <div className={`transition-all duration-300 ${scrolled ? 'bg-av-blue shadow-2xl py-2' : 'bg-transparent py-4'}`}>
+      <div className={`transition-all duration-300 ${scrolled ? 'bg-av-blue shadow-2xl py-2' : 'bg-transparent py-2'}`}>
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
 
           {/* Logo */}
