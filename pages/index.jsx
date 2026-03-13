@@ -9,7 +9,7 @@ import Image from 'next/image';
 const courses = [
   { icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: '18-24 months', eligibility: '10+2 (PCM)', href: '/commercial-pilot-license', highlight: true },
   { icon: '🏆', title: 'ATPL', duration: '6 months', eligibility: 'CPL holder', href: '/courses/atpl' },
-  { icon: '📚', title: 'DGCA Ground Classes', duration: '6-12 months', eligibility: '10+2 (PCM)', href: '/dgca-ground-classes-in-india' },
+  { icon: '📚', title: 'DGCA Ground Classes', duration: '6-12 months', eligibility: '10+2 (PCM)', href: '/dgca-ground-classes' },
 ];
 
 const testimonials = [
@@ -355,7 +355,7 @@ export default function Home() {
                   <div><span className="font-semibold text-av-blue">Mode:</span> Offline / Online</div>
                   <div><span className="font-semibold text-av-blue">Batch Start Date:</span> Every Months Of First Week and Third Week</div>
                 </div>
-                <Link href="/dgca-ground-classes-in-india" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
+                <Link href="/dgca-ground-classes" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
                   Course Details
                 </Link>
               </div>
@@ -425,7 +425,7 @@ export default function Home() {
             <p className="text-gray-600 leading-relaxed mb-4">
               📖 Master Every DGCA Subject & Fly High! Our DGCA Ground Classes make learning easy & effective. Get trained by industry experts!
             </p>
-            <Link href="/dgca-ground-classes-in-india" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">
+            <Link href="/dgca-ground-classes" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">
               Learn More
             </Link>
           </ScrollReveal>

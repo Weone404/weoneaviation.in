@@ -1,7 +1,5 @@
 import Link from 'next/link';
 
-const cities = ['Delhi', 'Mumbai', 'Bangalore', 'Hyderabad', 'Chennai', 'Pune', 'Kolkata', 'Jaipur', 'Nagpur', 'Kerala', 'Gujarat', 'Haryana', 'Punjab'];
-
 export default function Footer() {
   return (
     <footer className="bg-av-blue text-white">
@@ -61,7 +59,6 @@ export default function Footer() {
               { label: 'Blogs', href: '/blogs' },
               { label: 'Contact', href: '/contact' },
               { label: 'Sitemap', href: '/sitemap' },
-
             ].map(c => (
               <li key={c.href}>
                 <Link href={c.href} className="text-white/60 hover:text-av-orange text-sm transition-all hover:translate-x-1 inline-block">
@@ -88,7 +85,34 @@ export default function Footer() {
               <span className="text-av-orange">✉️</span>
               <a href="mailto:info@weoneaviation.in" className="hover:text-av-orange transition-all">info@weoneaviation.in</a>
             </div>
+
+            {/* Google Map Embed */}
+            <div className="mt-4 rounded-xl overflow-hidden border border-white/10 shadow-lg">
+              <iframe
+                title="We One Aviation Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.0!2d77.0724!3d28.5934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b3a1b3a1b3a%3A0x1b3a1b3a1b3a1b3a!2sRamphal%20Chowk%2C%20Sector%207%2C%20Dwarka%2C%20New%20Delhi%2C%20Delhi%20110077!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+
+            {/* Open in Google Maps link */}
           </div>
+          <a
+            href="https://maps.google.com/?q=Ramphal+Chowk,+Sector+7,+Dwarka,+New+Delhi,+Delhi+110077"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-av-orange hover:text-white transition-all text-xs font-semibold mt-1"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            Open in Google Maps →
+          </a>
         </div>
       </div>
 
