@@ -380,626 +380,642 @@ export default function Home() {
 
   return (
 
-    <Layout title="We One Aviation Academy | Best Pilot Training Institute in India" description="India's premier approved aviation training academy. CPL, PPL, ATPL, SPL courses. 3500 pilots trained. Free career counselling available.">
-      {/* Hero */}
-      <HeroSlider />
+    <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(courseListSchema) }}
+        />
+      </Head>
+      <Layout title="We One Aviation Academy | Best Pilot Training Institute in India" description="India's premier approved aviation training academy. CPL, PPL, ATPL, SPL courses. 3500 pilots trained. Free career counselling available.">
+        {/* Hero */}
+        <HeroSlider />
 
-      {/* Tagline Banner */}
-      <div className="bg-av-orange py-4 text-center">
-        <p className="text-white font-semibold text-lg">
-          Looking for the best pilot training institute in India? Get world-class flight training, approved courses, and expert guidance to kickstart your aviation career. Join now and become a certified pilot with top-notch training programs.
-        </p>
-        <Link href="/contact" className="inline-block mt-2 bg-white text-av-orange font-bold px-6 py-2 rounded-full text-sm hover:bg-av-blue hover:text-white transition-all">
-          Contact Us →
-        </Link>
-      </div>
-
-      {/* Stats Bar */}
-      <div className="bg-av-blue py-8">
-        <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map(s => (
-            <ScrollReveal key={s.label} className="text-center">
-              <div className="text-3xl mb-1">{s.icon}</div>
-              <div className="font-montserrat text-2xl font-black text-av-orange">{s.num}</div>
-              <div className="text-white/60 text-xs">{s.label}</div>
-            </ScrollReveal>
-          ))}
+        {/* Tagline Banner */}
+        <div className="bg-av-orange py-4 text-center">
+          <p className="text-white font-semibold text-lg">
+            Looking for the best pilot training institute in India? Get world-class flight training, approved courses, and expert guidance to kickstart your aviation career. Join now and become a certified pilot with top-notch training programs.
+          </p>
+          <Link href="/contact" className="inline-block mt-2 bg-white text-av-orange font-bold px-6 py-2 rounded-full text-sm hover:bg-av-blue hover:text-white transition-all">
+            Contact Us →
+          </Link>
         </div>
-        <div className="text-center mt-4">
-          <span className="text-white/80 text-sm font-semibold">We Deliver 3000+ Pilots To India Since 2011</span>
-        </div>
-        <div className="text-center mt-1">
-          <span className="text-av-orange text-sm font-semibold">Clear Your Dgca Exam In First Attempt With We One Aviation Academy</span>
-        </div>
-      </div>
 
-      {/* About Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <ScrollReveal>
-            <div className="section-tag">About Us</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4 underline-orange">
-              India's Most Trusted Aviation Academy
-            </h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              We One Aviation Academy has been shaping the careers of aspiring pilots since 2009. We are a approved institution offering world-class pilot training programs with international tie-ups in USA, Canada, Australia, and Europe.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-6">
-              Our expert faculty, modern simulators, and personalized mentoring ensure every student achieves their dream of becoming a professional pilot. With a 98% success rate and 3500 pilots trained, we are India's #1 choice for aviation training.
-            </p>
-            <div className="flex flex-wrap gap-3 mb-6">
-              {['DGCA ', 'International Tie-ups', '24/7 Support', 'Job Placement'].map(tag => (
-                <span key={tag} className="bg-av-light text-av-blue text-xs font-semibold px-4 py-2 rounded-full border border-av-sky/20">
-                  ✓ {tag}
-                </span>
-              ))}
-            </div>
-            <Link href="/about-us"
-              className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm">
-              Learn More About Us →
-            </Link>
-          </ScrollReveal>
-
-          <ScrollReveal delay={200}>
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src="/assets/GroundSchool.jpg"
-                  alt="Pilot in cockpit training"
-                  className="w-full h-80 object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-5 -left-5 bg-av-orange rounded-xl p-4 shadow-xl">
-                <div className="font-montserrat text-white text-xl font-black">16+</div>
-                <div className="text-white/80 text-xs">Years of Excellence</div>
-              </div>
-              <div className="absolute -top-5 -right-5 glass bg-av-blue rounded-xl p-4 shadow-xl border border-white/20">
-                <div className="font-montserrat text-av-orange text-xl font-black">DGCA</div>
-                <div className="text-white text-xs"></div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Courses */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal className="text-center mb-12">
-            <div className="section-tag">Our Programs</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-              Choose Your <span className="text-av-orange">Aviation Career Path</span>
-            </h2>
-            <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">From Private Pilot to Airline Captain – we have the right course for every aspiring aviator</p>
-          </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {courses.map((c, i) => (
-              <ScrollReveal key={c.href} delay={i * 100}>
-                <CourseCard {...c} />
+        {/* Stats Bar */}
+        <div className="bg-av-blue py-8">
+          <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map(s => (
+              <ScrollReveal key={s.label} className="text-center">
+                <div className="text-3xl mb-1">{s.icon}</div>
+                <div className="font-montserrat text-2xl font-black text-av-orange">{s.num}</div>
+                <div className="text-white/60 text-xs">{s.label}</div>
               </ScrollReveal>
             ))}
           </div>
+          <div className="text-center mt-4">
+            <span className="text-white/80 text-sm font-semibold">We Deliver 3000+ Pilots To India Since 2011</span>
+          </div>
+          <div className="text-center mt-1">
+            <span className="text-av-orange text-sm font-semibold">Clear Your Dgca Exam In First Attempt With We One Aviation Academy</span>
+          </div>
         </div>
-      </section>
 
-      {/* Course Fee & Schedule Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal className="text-center mb-12">
-            <div className="section-tag">Fee & Schedule</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-              We One Aviation <span className="text-av-orange">Course Duration, Fee, & Schedule</span>
-            </h2>
-            <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-              There is Details of Pilot Courses, Fees and Schedule of Our Batches. We Generally Start 2 Batches in a Months For Aviation Students.
-            </p>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* DGCA CPL Ground Classes */}
+        {/* About Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:border-av-orange/40 transition-all h-full flex flex-col">
-                <div className="text-4xl mb-4">📚</div>
-                <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">DGCA CPL Ground Classes</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                  This is the main pilot course with exams conducted by DGCA, designed for theoretical preparation required to obtain a pilot's license.
-                </p>
-                <div className="space-y-2 mb-6 text-sm text-gray-600">
-                  <div><span className="font-semibold text-av-blue">Fees:</span>2 Lakh to 2.95 Lakh <span className="text-av-orange font-semibold">( Scholarship)</span></div>
-                  <div><span className="font-semibold text-av-blue">Course Duration:</span> 6 Months</div>
-                  <div><span className="font-semibold text-av-blue">Mode:</span> Offline / Online</div>
-                  <div><span className="font-semibold text-av-blue">Batch Start Date:</span> Every Months Of First Week and Third Week</div>
-                </div>
-                <Link href="/dgca-ground-classes" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
-                  Course Details
-                </Link>
+              <div className="section-tag">About Us</div>
+              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4 underline-orange">
+                India's Most Trusted Aviation Academy
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                We One Aviation Academy has been shaping the careers of aspiring pilots since 2009. We are a approved institution offering world-class pilot training programs with international tie-ups in USA, Canada, Australia, and Europe.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Our expert faculty, modern simulators, and personalized mentoring ensure every student achieves their dream of becoming a professional pilot. With a 98% success rate and 3500 pilots trained, we are India's #1 choice for aviation training.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-6">
+                {['DGCA ', 'International Tie-ups', '24/7 Support', 'Job Placement'].map(tag => (
+                  <span key={tag} className="bg-av-light text-av-blue text-xs font-semibold px-4 py-2 rounded-full border border-av-sky/20">
+                    ✓ {tag}
+                  </span>
+                ))}
               </div>
+              <Link href="/about-us"
+                className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm">
+                Learn More About Us →
+              </Link>
             </ScrollReveal>
 
-            {/* CPL Flight Training */}
-            <ScrollReveal delay={100}>
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:border-av-orange/40 transition-all h-full flex flex-col">
-                <div className="text-4xl mb-4">🛩️</div>
-                <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">CPL Flight Training (India/Abroad)</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                  After Clear the Dgca Exam, You Have To do Flying From India Or Abroad. 200 Hours of Flying is Must for Obtain Commercial Pilot Licence.
-                </p>
-                <div className="space-y-2 mb-6 text-sm text-gray-600">
-                  <div><span className="font-semibold text-av-blue">Flying Duration:</span> 1 year (Abroad) / 1.5 Years (India)</div>
-                  <div><span className="font-semibold text-av-blue">Flying Training Fees:</span> 55 to 65 lakh <span className="text-gray-400">(Depends on Country)</span></div>
-                  <div><span className="font-semibold text-av-blue">Registration Date:</span> Every Month You Can Apply</div>
-                </div>
-                <Link href="/courses/cpl-flight-training" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
-                  CPL Flight Training Details
-                </Link>
-              </div>
-            </ScrollReveal>
-
-            {/* Full CPL Course */}
             <ScrollReveal delay={200}>
-              <div className="bg-av-blue rounded-2xl shadow-lg p-8 h-full flex flex-col">
-                <div className="text-4xl mb-4">✈️</div>
-                <h3 className="font-montserrat text-xl font-bold text-white mb-3">Commercial Pilot Licence (CPL) Course</h3>
-                <p className="text-white/70 text-sm leading-relaxed mb-4">
-                  This Course is a full-fledged training program that includes both theoretical and practical flight training. We Are The Only Aviation Who provide All Solutions of Aviation Under One Roof
-                </p>
-                <div className="space-y-2 mb-6 text-sm text-white/80">
-                  <div><span className="font-semibold text-av-orange">Full Course Duration:</span> 2–3 Years (Depends on Country)</div>
-                  <div><span className="font-semibold text-av-orange">Full Course Fees:</span> 50–55 lakh (Depends on Country)</div>
-                  <div><span className="font-semibold text-av-orange">Batch Start Date:</span> Every First and Third Week of Month</div>
+              <div className="relative">
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src="/assets/GroundSchool.jpg"
+                    alt="Pilot in cockpit training"
+                    className="w-full h-80 object-cover"
+                  />
                 </div>
-                <Link href="/commercial-pilot-license" className="mt-auto inline-block text-center bg-av-orange text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">
-                  Course Details
-                </Link>
+                <div className="absolute -bottom-5 -left-5 bg-av-orange rounded-xl p-4 shadow-xl">
+                  <div className="font-montserrat text-white text-xl font-black">16+</div>
+                  <div className="text-white/80 text-xs">Years of Excellence</div>
+                </div>
+                <div className="absolute -top-5 -right-5 glass bg-av-blue rounded-xl p-4 shadow-xl border border-white/20">
+                  <div className="font-montserrat text-av-orange text-xl font-black">DGCA</div>
+                  <div className="text-white text-xs"></div>
+                </div>
               </div>
             </ScrollReveal>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* DGCA Ground Classes Promo */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <ScrollReveal>
-            <div className="section-tag">DGCA Ground Classes</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">
-              Commercial Pilot License
-            </h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              ✈️ Dreaming of Becoming a Commercial Pilot? Get approved training, expert mentorship and hands-on flight experience.
-            </p>
-            <Link href="/commercial-pilot-license" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">
-              Learn More
-            </Link>
-          </ScrollReveal>
-          <ScrollReveal delay={150}>
-            <div className="section-tag">Ground Classes</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">
-              Dgca-Cpl Ground Classes
-            </h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              📖 Master Every DGCA Subject & Fly High! Our DGCA Ground Classes make learning easy & effective. Get trained by industry experts!
-            </p>
-            <Link href="/dgca-ground-classes" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">
-              Learn More
-            </Link>
-          </ScrollReveal>
-        </div>
+        {/* Courses */}
+        <section className="py-20 px-4 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <ScrollReveal className="text-center mb-12">
+              <div className="section-tag">Our Programs</div>
+              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
+                Choose Your <span className="text-av-orange">Aviation Career Path</span>
+              </h2>
+              <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">From Private Pilot to Airline Captain – we have the right course for every aspiring aviator</p>
+            </ScrollReveal>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {courses.map((c, i) => (
+                <ScrollReveal key={c.href} delay={i * 100}>
+                  <CourseCard {...c} />
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        {/* Enroll in Flying School */}
-        <div className="max-w-7xl mx-auto mt-12">
-          <ScrollReveal className="bg-av-blue rounded-2xl p-8 text-center">
-            <h3 className="font-montserrat text-2xl font-bold text-white mb-3">Enroll in Flying School</h3>
-            <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">
-              At Our Flying School, we train future pilots with state-of-the-art aircraft, expert instructors, and guaranteed career guidance.
-            </p>
-            <Link href="/flying-school/india" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
-              Learn More
-            </Link>
-          </ScrollReveal>
-        </div>
-      </section>
+        {/* Course Fee & Schedule Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <ScrollReveal className="text-center mb-12">
+              <div className="section-tag">Fee & Schedule</div>
+              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
+                We One Aviation <span className="text-av-orange">Course Duration, Fee, & Schedule</span>
+              </h2>
+              <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
+                There is Details of Pilot Courses, Fees and Schedule of Our Batches. We Generally Start 2 Batches in a Months For Aviation Students.
+              </p>
+            </ScrollReveal>
 
-      {/* Why Choose Us */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal className="text-center mb-12">
-            <div className="section-tag">Why WeOne</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-              What Makes Us <span className="text-av-orange">Different</span>
-            </h2>
-            <p className="text-gray-500 mt-2 text-sm">All Your Aviation Needs Under One Roof</p>
-            <p className="text-gray-500 mt-1 text-sm max-w-2xl mx-auto">
-              At We One Aviation Academy, we don't just train pilots—we shape future aviation leaders. Here's why students trust us for their pilot training journey:
-            </p>
-          </ScrollReveal>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { icon: '✅', title: 'Approved Training Programs', desc: 'Our courses meet all regulatory requirements to ensure a smooth path to becoming a professional pilot.' },
-              { icon: '✅', title: 'Experienced Instructors & Mentors', desc: 'Learn from seasoned airline pilots and aviation experts who provide hands-on guidance.' },
-              { icon: '✅', title: 'State-of-the-Art Training Facilities', desc: 'Get trained with modern simulators, advanced flight training devices, and real aircraft for a world-class experience.' },
-              { icon: '✅', title: '100% Placement Assistance', desc: 'We help students secure jobs in leading airlines through industry connections and career support.' },
-              { icon: '✅', title: 'Comprehensive CPL & DGCA Ground Classes', desc: 'Structured curriculum covering Air Navigation, Meteorology, Air Regulations, and Technical subjects.' },
-              { icon: '✅', title: 'Flexible Payment & Loan Options', desc: 'Making your dream of becoming a pilot financially accessible with easy EMI and loan assistance.' },
-              { icon: '✅', title: 'Personalized Learning Approach', desc: 'Small batch sizes, doubt-clearing sessions, and one-on-one mentorship to ensure better understanding.' },
-              { icon: '✅', title: 'International Training Tie-Ups', desc: 'Get global exposure with flight training options in India and abroad.' },
-              { icon: '✅', title: 'Proven Track Record of Success', desc: 'Hundreds of successful pilots flying with leading airlines, proving our commitment to excellence.' },
-            ].map((f, i) => (
-              <ScrollReveal key={f.title} delay={i * 100}>
-                <div className="card-hover p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:border-av-orange/30">
-                  <div className="text-2xl mb-4">{f.icon}</div>
-                  <h3 className="font-montserrat font-bold text-av-blue mb-2">{f.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* DGCA CPL Ground Classes */}
+              <ScrollReveal>
+                <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:border-av-orange/40 transition-all h-full flex flex-col">
+                  <div className="text-4xl mb-4">📚</div>
+                  <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">DGCA CPL Ground Classes</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">
+                    This is the main pilot course with exams conducted by DGCA, designed for theoretical preparation required to obtain a pilot's license.
+                  </p>
+                  <div className="space-y-2 mb-6 text-sm text-gray-600">
+                    <div><span className="font-semibold text-av-blue">Fees:</span>2 Lakh to 2.95 Lakh <span className="text-av-orange font-semibold">( Scholarship)</span></div>
+                    <div><span className="font-semibold text-av-blue">Course Duration:</span> 6 Months</div>
+                    <div><span className="font-semibold text-av-blue">Mode:</span> Offline / Online</div>
+                    <div><span className="font-semibold text-av-blue">Batch Start Date:</span> Every Months Of First Week and Third Week</div>
+                  </div>
+                  <Link href="/dgca-ground-classes" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
+                    Course Details
+                  </Link>
                 </div>
               </ScrollReveal>
-            ))}
+
+              {/* CPL Flight Training */}
+              <ScrollReveal delay={100}>
+                <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:border-av-orange/40 transition-all h-full flex flex-col">
+                  <div className="text-4xl mb-4">🛩️</div>
+                  <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">CPL Flight Training (India/Abroad)</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">
+                    After Clear the Dgca Exam, You Have To do Flying From India Or Abroad. 200 Hours of Flying is Must for Obtain Commercial Pilot Licence.
+                  </p>
+                  <div className="space-y-2 mb-6 text-sm text-gray-600">
+                    <div><span className="font-semibold text-av-blue">Flying Duration:</span> 1 year (Abroad) / 1.5 Years (India)</div>
+                    <div><span className="font-semibold text-av-blue">Flying Training Fees:</span> 55 to 65 lakh <span className="text-gray-400">(Depends on Country)</span></div>
+                    <div><span className="font-semibold text-av-blue">Registration Date:</span> Every Month You Can Apply</div>
+                  </div>
+                  <Link href="/courses/cpl-flight-training" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
+                    CPL Flight Training Details
+                  </Link>
+                </div>
+              </ScrollReveal>
+
+              {/* Full CPL Course */}
+              <ScrollReveal delay={200}>
+                <div className="bg-av-blue rounded-2xl shadow-lg p-8 h-full flex flex-col">
+                  <div className="text-4xl mb-4">✈️</div>
+                  <h3 className="font-montserrat text-xl font-bold text-white mb-3">Commercial Pilot Licence (CPL) Course</h3>
+                  <p className="text-white/70 text-sm leading-relaxed mb-4">
+                    This Course is a full-fledged training program that includes both theoretical and practical flight training. We Are The Only Aviation Who provide All Solutions of Aviation Under One Roof
+                  </p>
+                  <div className="space-y-2 mb-6 text-sm text-white/80">
+                    <div><span className="font-semibold text-av-orange">Full Course Duration:</span> 2–3 Years (Depends on Country)</div>
+                    <div><span className="font-semibold text-av-orange">Full Course Fees:</span> 50–55 lakh (Depends on Country)</div>
+                    <div><span className="font-semibold text-av-orange">Batch Start Date:</span> Every First and Third Week of Month</div>
+                  </div>
+                  <Link href="/commercial-pilot-license" className="mt-auto inline-block text-center bg-av-orange text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">
+                    Course Details
+                  </Link>
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
+        </section>
 
-          <ScrollReveal className="text-center mt-10">
-            <p className="text-av-blue font-semibold text-lg">Join We One Aviation Academy and Take Off Towards a Successful Aviation Career! ✈️</p>
-            <Link href="/contact" className="inline-block mt-4 bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-av-blue transition-all text-sm">
-              Contact Us
-            </Link>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* From Ground to Sky */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal className="text-center mb-12">
-            <div className="section-tag">Premier Training</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-              From Ground to Sky: <span className="text-av-orange">DGCA Exam Coaching & Flight Training</span>
-            </h2>
-            <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-              Premier DGCA Ground Classes & Flying School for Aspiring Pilots. If You Are Wants To Become Pilot Then You Have to Start Your Carrers By Dgca Ground Classes and Ending By Flight Training. So Enroll Now In Our Course.
-            </p>
-          </ScrollReveal>
-
-          <div className="grid md:grid-cols-2 gap-8">
+        {/* DGCA Ground Classes Promo */}
+        <section className="py-20 px-4 bg-gray-50">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
-                <h3 className="font-montserrat text-xl font-bold text-av-blue mb-4">Dgca Ground Classes</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                  We one Aviation Academy is Oldest Pilot Training Institute. Which Gives 100% Results Every Years Since 2011. If Your Dream To Be a Pilot Then We One Aviation Academy is Best Institute Which Give Advance Training With So Many Flexibilites Of Timing and Fees.
-                </p>
-                <Link href="/contact" className="inline-block bg-av-blue text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
-                  Enquiry Now
-                </Link>
-              </div>
+              <div className="section-tag">DGCA Ground Classes</div>
+              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">
+                Commercial Pilot License
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                ✈️ Dreaming of Becoming a Commercial Pilot? Get approved training, expert mentorship and hands-on flight experience.
+              </p>
+              <Link href="/commercial-pilot-license" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">
+                Learn More
+              </Link>
             </ScrollReveal>
-
             <ScrollReveal delay={150}>
-              <div className="bg-av-blue rounded-2xl shadow-lg p-8">
-                <h3 className="font-montserrat text-xl font-bold text-white mb-4">Our Flying School</h3>
-                <p className="text-white/70 text-sm leading-relaxed mb-6">
-                  We Provide Flight Training From 20+ Countries. We Almost Provide Flight Training to 3000+ Students Across India. If You Wants To do Flight Training From Any Country Then You Can Contact Us. After Clear Dgca Exam You Can Apply Flight Training. All Institute Provide 200 Hours of Flying But We Provide You 225+ Hours of Flying.
-                </p>
-                <Link href="/contact" className="inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">
-                  Enquiry Now
-                </Link>
-              </div>
+              <div className="section-tag">Ground Classes</div>
+              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">
+                Dgca-Cpl Ground Classes
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                📖 Master Every DGCA Subject & Fly High! Our DGCA Ground Classes make learning easy & effective. Get trained by industry experts!
+              </p>
+              <Link href="/dgca-ground-classes" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">
+                Learn More
+              </Link>
             </ScrollReveal>
           </div>
-        </div>
-      </section>
 
-      {/* How to Become a Pilot - Step by Step */}
-      <section className="py-20 px-4 bg-gradient-to-br from-av-blue via-av-navy to-av-blue">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal className="text-center mb-12">
-            <div className="section-tag">Your Journey</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white">
-              How to Become a <span className="text-av-orange">Pilot in India</span>
-            </h2>
-            <p className="text-white/60 mt-2 text-sm">
-              Steps By Step Guide To Become A Pilot. if You Are Just 12th Pass and Want To Become A Pilot Then Your Search End Here.
-            </p>
-          </ScrollReveal>
-
-          {/* Enroll Steps */}
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
-            {enrollSteps.map((s, i) => (
-              <ScrollReveal key={s.step} delay={i * 100}>
-                <div className="glass rounded-2xl p-6 text-center h-full">
-                  <div className="w-10 h-10 bg-av-orange rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">{i + 1}</div>
-                  <div className="text-av-orange font-semibold text-xs uppercase tracking-wider mb-2">{s.step}</div>
-                  <h3 className="font-montserrat font-bold text-white mb-3">{s.title}</h3>
-                  <p className="text-white/70 text-sm leading-relaxed">{s.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+          {/* Enroll in Flying School */}
+          <div className="max-w-7xl mx-auto mt-12">
+            <ScrollReveal className="bg-av-blue rounded-2xl p-8 text-center">
+              <h3 className="font-montserrat text-2xl font-bold text-white mb-3">Enroll in Flying School</h3>
+              <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">
+                At Our Flying School, we train future pilots with state-of-the-art aircraft, expert instructors, and guaranteed career guidance.
+              </p>
+              <Link href="/flying-school/india" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
+                Learn More
+              </Link>
+            </ScrollReveal>
           </div>
+        </section>
 
-          {/* Detailed Pilot Journey */}
-          <ScrollReveal className="text-center mb-10">
-            <h3 className="font-montserrat text-2xl font-bold text-white">
-              Step By Step Guide for <span className="text-av-orange">Become a Pilot</span>
-            </h3>
-          </ScrollReveal>
+        {/* Why Choose Us */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <ScrollReveal className="text-center mb-12">
+              <div className="section-tag">Why WeOne</div>
+              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
+                What Makes Us <span className="text-av-orange">Different</span>
+              </h2>
+              <p className="text-gray-500 mt-2 text-sm">All Your Aviation Needs Under One Roof</p>
+              <p className="text-gray-500 mt-1 text-sm max-w-2xl mx-auto">
+                At We One Aviation Academy, we don't just train pilots—we shape future aviation leaders. Here's why students trust us for their pilot training journey:
+              </p>
+            </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
-            {pilotJourneySteps.map((step, i) => (
-              <ScrollReveal key={step.title} delay={i * 100}>
-                <div className="glass rounded-2xl p-6">
-                  <div className="text-3xl mb-3">{step.icon}</div>
-                  <h4 className="font-montserrat font-bold text-white mb-2">{step.title}</h4>
-                  <p className="text-white/70 text-sm leading-relaxed mb-4">{step.desc}</p>
-                  <div className="bg-av-orange/20 border border-av-orange/30 rounded-xl p-4">
-                    <p className="text-av-orange font-semibold text-sm mb-1">{step.alert}</p>
-                    <p className="text-white/70 text-xs leading-relaxed">{step.alertDesc}</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { icon: '✅', title: 'Approved Training Programs', desc: 'Our courses meet all regulatory requirements to ensure a smooth path to becoming a professional pilot.' },
+                { icon: '✅', title: 'Experienced Instructors & Mentors', desc: 'Learn from seasoned airline pilots and aviation experts who provide hands-on guidance.' },
+                { icon: '✅', title: 'State-of-the-Art Training Facilities', desc: 'Get trained with modern simulators, advanced flight training devices, and real aircraft for a world-class experience.' },
+                { icon: '✅', title: '100% Placement Assistance', desc: 'We help students secure jobs in leading airlines through industry connections and career support.' },
+                { icon: '✅', title: 'Comprehensive CPL & DGCA Ground Classes', desc: 'Structured curriculum covering Air Navigation, Meteorology, Air Regulations, and Technical subjects.' },
+                { icon: '✅', title: 'Flexible Payment & Loan Options', desc: 'Making your dream of becoming a pilot financially accessible with easy EMI and loan assistance.' },
+                { icon: '✅', title: 'Personalized Learning Approach', desc: 'Small batch sizes, doubt-clearing sessions, and one-on-one mentorship to ensure better understanding.' },
+                { icon: '✅', title: 'International Training Tie-Ups', desc: 'Get global exposure with flight training options in India and abroad.' },
+                { icon: '✅', title: 'Proven Track Record of Success', desc: 'Hundreds of successful pilots flying with leading airlines, proving our commitment to excellence.' },
+              ].map((f, i) => (
+                <ScrollReveal key={f.title} delay={i * 100}>
+                  <div className="card-hover p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:border-av-orange/30">
+                    <div className="text-2xl mb-4">{f.icon}</div>
+                    <h3 className="font-montserrat font-bold text-av-blue mb-2">{f.title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          {/* After 12th & International Routes */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: 'After 12th Standard',
-                steps: ['Pass 12th with PCM (Physics, Chemistry, Maths)', 'Clear DGCA Medical Class 1', 'Enroll in CPL program', 'Complete 200+ flying hours', 'Clear DGCA written exams', 'Get your CPL license'],
-                href: '/how-to-become-a-pilot-after-12th',
-              },
-              {
-                title: 'International Training Route',
-                steps: ['Get your PPL in India or abroad', 'Complete IR (Instrument Rating)', 'Accumulate flying hours overseas', 'Appear for DGCA RTR exam', 'License conversion to DGCA', 'Start airline career'],
-                href: '/how-to-become-a-pilot/in-india',
-              },
-            ].map(route => (
-              <ScrollReveal key={route.title}>
-                <div className="glass rounded-2xl p-8 h-full">
-                  <h3 className="font-montserrat text-xl font-bold text-white mb-6">{route.title}</h3>
-                  <ol className="space-y-3">
-                    {route.steps.map((step, i) => (
-                      <li key={step} className="flex items-start gap-3">
-                        <span className="flex-shrink-0 w-6 h-6 bg-av-orange rounded-full flex items-center justify-center text-white text-xs font-bold">{i + 1}</span>
-                        <span className="text-white/80 text-sm">{step}</span>
-                      </li>
-                    ))}
-                  </ol>
-                  <Link href={route.href}
-                    className="mt-6 inline-block text-av-orange text-sm font-semibold hover:underline">
-                    Learn More →
-                  </Link>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* DGCA Subjects */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal className="text-center mb-12">
-            <div className="section-tag">DGCA Subjects</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-              Master Yourself For Dgca Exam With All These <span className="text-av-orange">Subjects</span>
-            </h2>
-            <p className="text-gray-500 mt-2 text-sm">Subjects For DGCA Ground Classes</p>
-          </ScrollReveal>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {dgcaSubjects.map((subject, i) => (
-              <ScrollReveal key={subject.title} delay={i * 100}>
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:border-av-orange/30 card-hover h-full flex flex-col">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-8 h-8 bg-av-blue rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                      {subject.num}
-                    </div>
-                    <h3 className="font-montserrat font-bold text-av-blue text-sm">{subject.title}</h3>
-                  </div>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-grow">{subject.desc}</p>
-                  <Link href={subject.link} className="text-av-orange text-xs font-semibold hover:underline">
-                    {subject.linkText}
-                  </Link>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Flying Schools Worldwide */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal className="text-center mb-12">
-            <div className="section-tag">Global Flying Schools</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-              🚀 Your Gateway to a Global Aviation Career – <span className="text-av-orange">Train at the Best Flying Schools Worldwide!</span>
-            </h2>
-            <p className="text-gray-500 mt-3 max-w-3xl mx-auto text-sm">
-              🌍 Explore Our Top Flying Schools Across the World! ✈️ At WeOneAviation Academy, we collaborate with some of the best flying schools worldwide to provide aspiring pilots with world-class flight training. Whether you're looking for approved CPL training or internationally recognized pilot courses, our global network ensures you receive top-notch aviation education. Explore our Flight training centers in India, the USA, Canada, the UK, Australia, and South Africa, with structured courses designed for aspiring commercial pilots.
-            </p>
-            <p className="text-av-orange font-semibold mt-2 text-sm">🌟 Choose a Flight School That Matches Your Goals and Country Preference!</p>
-          </ScrollReveal>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {flyingSchools.map((school, i) => (
-              <ScrollReveal key={school.country} delay={i * 100}>
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:border-av-orange/30 card-hover h-full flex flex-col">
-                  <div className="text-4xl mb-3">{school.flag}</div>
-                  <h3 className="font-montserrat font-bold text-av-blue mb-3">
-                    Flying School in {school.country}
-                  </h3>
-                  <div className="space-y-1 text-sm text-gray-600 mb-4 flex-grow">
-                    <p>✅ <span className="font-semibold">Course:</span> {school.course}</p>
-                    <p>✅ <span className="font-semibold">Duration:</span> {school.duration}</p>
-                    <p>✅ <span className="font-semibold">Fees:</span> {school.fees}</p>
-                    <p>✅ <span className="font-semibold">Highlights:</span> {school.highlights}</p>
-                  </div>
-                  <Link href={school.href} className="inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
-                    Learn More
-                  </Link>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal className="text-center mb-12">
-            <div className="section-tag">Success Stories</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-              Our <span className="text-av-orange">Pilots Speak</span>
-            </h2>
-            <p className="text-gray-500 mt-2 text-sm">
-              What Our Previous Batch Students Think About Us — These are Genuine Reviews of Our Students Who Started Pilot Training From We One Aviation in Year 2024 and Clear Dgca Exam in Year 2025 With Our Expert Training.
-            </p>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <ScrollReveal key={t.name} delay={i * 100}>
-                <div className="card-hover bg-white rounded-2xl p-6 shadow-md border border-gray-100">
-                  <div className="flex items-center gap-1 text-av-orange mb-4">
-                    {[...Array(5)].map((_, j) => <span key={j} className="text-sm">★</span>)}
-                  </div>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-5 italic">"{t.quote}"</p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-av-blue rounded-full flex items-center justify-center text-white text-xs font-bold">
-                      {t.img}
-                    </div>
-                    <div>
-                      <div className="font-semibold text-av-blue text-sm">{t.name}</div>
-                      <div className="text-gray-400 text-xs">{t.role}</div>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Training Locations - India */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal className="text-center mb-10">
-            <div className="section-tag">Pan India Presence</div>
-            <h2 className="font-montserrat text-3xl font-bold text-av-blue">
-              Pilot Training Across <span className="text-av-orange">India</span>
-            </h2>
-          </ScrollReveal>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-            {cities.map((city, i) => (
-              <ScrollReveal key={city.name} delay={i * 60}>
-                <Link href={`/${city.slug}`}
-                  className="card-hover block text-center p-4 rounded-xl border border-gray-200 bg-white hover:border-av-orange hover:text-av-orange hover:bg-orange-50 transition-all text-sm font-medium text-av-blue">
-                  📍 {city.name}
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Training Locations - World */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <ScrollReveal className="text-center mb-10">
-            <div className="section-tag">Global Presence</div>
-            <h2 className="font-montserrat text-3xl font-bold text-av-blue">
-              Pilot Training Across <span className="text-av-orange">World</span>
-            </h2>
-          </ScrollReveal>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-            {[
-              { flag: '🇺🇸', country: 'USA', href: '/flying-school/usa' },
-              { flag: '🇨🇦', country: 'Canada', href: '/flying-school/canada' },
-              { flag: '🇮🇳', country: 'India', href: '/flying-school/india' },
-              { flag: '🇱🇰', country: 'Sri Lanka', href: '/contact' },
-              { flag: '🇲🇻', country: 'Maldives', href: '/contact' },
-              { flag: '🇿🇦', country: 'South Africa', href: '/flying-school/south-africa' },
-              { flag: '🇦🇺', country: 'Australia', href: '/flying-school/australia' },
-              { flag: '🇳🇿', country: 'New Zealand', href: '/contact' },
-            ].map((loc, i) => (
-              <ScrollReveal key={loc.country} delay={i * 60}>
-                <Link
-                  href={loc.href}
-                  className="card-hover flex items-center gap-3 p-4 rounded-xl border border-gray-200 bg-white hover:border-av-orange hover:text-av-orange hover:bg-orange-50 transition-all text-sm font-medium text-av-blue"
-                >
-                  <span className="text-xl">{loc.flag}</span>
-                  <span>{loc.country}</span>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <ScrollReveal className="text-center mb-12">
-            <div className="section-tag">FAQ</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-              FAQ About <span className="text-av-orange">Pilot Training Institute</span>
-            </h2>
-            <p className="text-gray-500 mt-2 text-sm">Know Your Answers Here</p>
-          </ScrollReveal>
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
-              <ScrollReveal key={faq.q} delay={i * 60}>
-                <details className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 group cursor-pointer">
-                  <summary className="font-montserrat font-bold text-av-blue text-sm list-none flex justify-between items-center">
-                    {faq.q}
-                    <span className="text-av-orange ml-4 flex-shrink-0 group-open:rotate-45 transition-transform">+</span>
-                  </summary>
-                  <p className="text-gray-500 text-sm leading-relaxed mt-4 pt-4 border-t border-gray-100">{faq.a}</p>
-                </details>
-              </ScrollReveal>
-            ))}
-          </div>
-          <ScrollReveal className="text-center mt-8">
-            <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-av-blue transition-all text-sm">
-              Ask Question
-            </Link>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Lead Form Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-av-blue to-av-navy">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <ScrollReveal>
-            <div className="section-tag">Free Counselling</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white mb-4">
-              Take the First Step <span className="text-av-orange">Towards the Sky</span>
-            </h2>
-            <p className="text-white/70 mb-6 text-sm leading-relaxed">
-              Our aviation career counsellors will guide you through course selection, eligibility, fees, scholarships, and career prospects.
-            </p>
-            <div className="space-y-3">
-              {['Free one-on-one career counselling', 'DGCA exam preparation guidance', 'International training options', 'Scholarship & loan assistance'].map(item => (
-                <div key={item} className="flex items-center gap-3">
-                  <span className="text-av-orange">✓</span>
-                  <span className="text-white/80 text-sm">{item}</span>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
 
-            {/* Contact Info */}
-            <div className="mt-8 pt-6 border-t border-white/20 space-y-2 text-sm text-white/70">
-              <p>📧 <span className="font-semibold text-white">Office Mail:</span> Weoneaviation8@gmail.com</p>
-              <p>📍 <span className="font-semibold text-white">Office Address:</span> C-404 , 3rd floor, sector-7, near Ramphal Chowk Road, Palam Extension, Dwarka sector 7, Delhi, India 110077</p>
+            <ScrollReveal className="text-center mt-10">
+              <p className="text-av-blue font-semibold text-lg">Join We One Aviation Academy and Take Off Towards a Successful Aviation Career! ✈️</p>
+              <Link href="/contact" className="inline-block mt-4 bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-av-blue transition-all text-sm">
+                Contact Us
+              </Link>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* From Ground to Sky */}
+        <section className="py-16 px-4 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <ScrollReveal className="text-center mb-12">
+              <div className="section-tag">Premier Training</div>
+              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
+                From Ground to Sky: <span className="text-av-orange">DGCA Exam Coaching & Flight Training</span>
+              </h2>
+              <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
+                Premier DGCA Ground Classes & Flying School for Aspiring Pilots. If You Are Wants To Become Pilot Then You Have to Start Your Carrers By Dgca Ground Classes and Ending By Flight Training. So Enroll Now In Our Course.
+              </p>
+            </ScrollReveal>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <ScrollReveal>
+                <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+                  <h3 className="font-montserrat text-xl font-bold text-av-blue mb-4">Dgca Ground Classes</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                    We one Aviation Academy is Oldest Pilot Training Institute. Which Gives 100% Results Every Years Since 2011. If Your Dream To Be a Pilot Then We One Aviation Academy is Best Institute Which Give Advance Training With So Many Flexibilites Of Timing and Fees.
+                  </p>
+                  <Link href="/contact" className="inline-block bg-av-blue text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
+                    Enquiry Now
+                  </Link>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal delay={150}>
+                <div className="bg-av-blue rounded-2xl shadow-lg p-8">
+                  <h3 className="font-montserrat text-xl font-bold text-white mb-4">Our Flying School</h3>
+                  <p className="text-white/70 text-sm leading-relaxed mb-6">
+                    We Provide Flight Training From 20+ Countries. We Almost Provide Flight Training to 3000+ Students Across India. If You Wants To do Flight Training From Any Country Then You Can Contact Us. After Clear Dgca Exam You Can Apply Flight Training. All Institute Provide 200 Hours of Flying But We Provide You 225+ Hours of Flying.
+                  </p>
+                  <Link href="/contact" className="inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">
+                    Enquiry Now
+                  </Link>
+                </div>
+              </ScrollReveal>
             </div>
-          </ScrollReveal>
-          <ScrollReveal delay={200}>
-            <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20">
-              <h3 className="font-montserrat font-bold text-white text-center mb-4">BOOK Your SEAT FOR SCHOLARSHIP</h3>
-              <p className="text-white/70 text-center text-sm mb-4">Join Dgca Ground Classes</p>
-              <LeadForm dark />
+          </div>
+        </section>
+
+        {/* How to Become a Pilot - Step by Step */}
+        <section className="py-20 px-4 bg-gradient-to-br from-av-blue via-av-navy to-av-blue">
+          <div className="max-w-7xl mx-auto">
+            <ScrollReveal className="text-center mb-12">
+              <div className="section-tag">Your Journey</div>
+              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white">
+                How to Become a <span className="text-av-orange">Pilot in India</span>
+              </h2>
+              <p className="text-white/60 mt-2 text-sm">
+                Steps By Step Guide To Become A Pilot. if You Are Just 12th Pass and Want To Become A Pilot Then Your Search End Here.
+              </p>
+            </ScrollReveal>
+
+            {/* Enroll Steps */}
+            <div className="grid md:grid-cols-3 gap-6 mb-16">
+              {enrollSteps.map((s, i) => (
+                <ScrollReveal key={s.step} delay={i * 100}>
+                  <div className="glass rounded-2xl p-6 text-center h-full">
+                    <div className="w-10 h-10 bg-av-orange rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">{i + 1}</div>
+                    <div className="text-av-orange font-semibold text-xs uppercase tracking-wider mb-2">{s.step}</div>
+                    <h3 className="font-montserrat font-bold text-white mb-3">{s.title}</h3>
+                    <p className="text-white/70 text-sm leading-relaxed">{s.desc}</p>
+                  </div>
+                </ScrollReveal>
+              ))}
             </div>
-          </ScrollReveal>
-        </div>
-      </section>
-    </Layout>
+
+            {/* Detailed Pilot Journey */}
+            <ScrollReveal className="text-center mb-10">
+              <h3 className="font-montserrat text-2xl font-bold text-white">
+                Step By Step Guide for <span className="text-av-orange">Become a Pilot</span>
+              </h3>
+            </ScrollReveal>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-16">
+              {pilotJourneySteps.map((step, i) => (
+                <ScrollReveal key={step.title} delay={i * 100}>
+                  <div className="glass rounded-2xl p-6">
+                    <div className="text-3xl mb-3">{step.icon}</div>
+                    <h4 className="font-montserrat font-bold text-white mb-2">{step.title}</h4>
+                    <p className="text-white/70 text-sm leading-relaxed mb-4">{step.desc}</p>
+                    <div className="bg-av-orange/20 border border-av-orange/30 rounded-xl p-4">
+                      <p className="text-av-orange font-semibold text-sm mb-1">{step.alert}</p>
+                      <p className="text-white/70 text-xs leading-relaxed">{step.alertDesc}</p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+
+            {/* After 12th & International Routes */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  title: 'After 12th Standard',
+                  steps: ['Pass 12th with PCM (Physics, Chemistry, Maths)', 'Clear DGCA Medical Class 1', 'Enroll in CPL program', 'Complete 200+ flying hours', 'Clear DGCA written exams', 'Get your CPL license'],
+                  href: '/how-to-become-a-pilot-after-12th',
+                },
+                {
+                  title: 'International Training Route',
+                  steps: ['Get your PPL in India or abroad', 'Complete IR (Instrument Rating)', 'Accumulate flying hours overseas', 'Appear for DGCA RTR exam', 'License conversion to DGCA', 'Start airline career'],
+                  href: '/how-to-become-a-pilot/in-india',
+                },
+              ].map(route => (
+                <ScrollReveal key={route.title}>
+                  <div className="glass rounded-2xl p-8 h-full">
+                    <h3 className="font-montserrat text-xl font-bold text-white mb-6">{route.title}</h3>
+                    <ol className="space-y-3">
+                      {route.steps.map((step, i) => (
+                        <li key={step} className="flex items-start gap-3">
+                          <span className="flex-shrink-0 w-6 h-6 bg-av-orange rounded-full flex items-center justify-center text-white text-xs font-bold">{i + 1}</span>
+                          <span className="text-white/80 text-sm">{step}</span>
+                        </li>
+                      ))}
+                    </ol>
+                    <Link href={route.href}
+                      className="mt-6 inline-block text-av-orange text-sm font-semibold hover:underline">
+                      Learn More →
+                    </Link>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* DGCA Subjects */}
+        <section className="py-20 px-4 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <ScrollReveal className="text-center mb-12">
+              <div className="section-tag">DGCA Subjects</div>
+              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
+                Master Yourself For Dgca Exam With All These <span className="text-av-orange">Subjects</span>
+              </h2>
+              <p className="text-gray-500 mt-2 text-sm">Subjects For DGCA Ground Classes</p>
+            </ScrollReveal>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {dgcaSubjects.map((subject, i) => (
+                <ScrollReveal key={subject.title} delay={i * 100}>
+                  <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:border-av-orange/30 card-hover h-full flex flex-col">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 bg-av-blue rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                        {subject.num}
+                      </div>
+                      <h3 className="font-montserrat font-bold text-av-blue text-sm">{subject.title}</h3>
+                    </div>
+                    <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-grow">{subject.desc}</p>
+                    <Link href={subject.link} className="text-av-orange text-xs font-semibold hover:underline">
+                      {subject.linkText}
+                    </Link>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Flying Schools Worldwide */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <ScrollReveal className="text-center mb-12">
+              <div className="section-tag">Global Flying Schools</div>
+              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
+                🚀 Your Gateway to a Global Aviation Career – <span className="text-av-orange">Train at the Best Flying Schools Worldwide!</span>
+              </h2>
+              <p className="text-gray-500 mt-3 max-w-3xl mx-auto text-sm">
+                🌍 Explore Our Top Flying Schools Across the World! ✈️ At WeOneAviation Academy, we collaborate with some of the best flying schools worldwide to provide aspiring pilots with world-class flight training. Whether you're looking for approved CPL training or internationally recognized pilot courses, our global network ensures you receive top-notch aviation education. Explore our Flight training centers in India, the USA, Canada, the UK, Australia, and South Africa, with structured courses designed for aspiring commercial pilots.
+              </p>
+              <p className="text-av-orange font-semibold mt-2 text-sm">🌟 Choose a Flight School That Matches Your Goals and Country Preference!</p>
+            </ScrollReveal>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {flyingSchools.map((school, i) => (
+                <ScrollReveal key={school.country} delay={i * 100}>
+                  <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:border-av-orange/30 card-hover h-full flex flex-col">
+                    <div className="text-4xl mb-3">{school.flag}</div>
+                    <h3 className="font-montserrat font-bold text-av-blue mb-3">
+                      Flying School in {school.country}
+                    </h3>
+                    <div className="space-y-1 text-sm text-gray-600 mb-4 flex-grow">
+                      <p>✅ <span className="font-semibold">Course:</span> {school.course}</p>
+                      <p>✅ <span className="font-semibold">Duration:</span> {school.duration}</p>
+                      <p>✅ <span className="font-semibold">Fees:</span> {school.fees}</p>
+                      <p>✅ <span className="font-semibold">Highlights:</span> {school.highlights}</p>
+                    </div>
+                    <Link href={school.href} className="inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
+                      Learn More
+                    </Link>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="py-20 px-4 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <ScrollReveal className="text-center mb-12">
+              <div className="section-tag">Success Stories</div>
+              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
+                Our <span className="text-av-orange">Pilots Speak</span>
+              </h2>
+              <p className="text-gray-500 mt-2 text-sm">
+                What Our Previous Batch Students Think About Us — These are Genuine Reviews of Our Students Who Started Pilot Training From We One Aviation in Year 2024 and Clear Dgca Exam in Year 2025 With Our Expert Training.
+              </p>
+            </ScrollReveal>
+            <div className="grid md:grid-cols-3 gap-6">
+              {testimonials.map((t, i) => (
+                <ScrollReveal key={t.name} delay={i * 100}>
+                  <div className="card-hover bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+                    <div className="flex items-center gap-1 text-av-orange mb-4">
+                      {[...Array(5)].map((_, j) => <span key={j} className="text-sm">★</span>)}
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-5 italic">"{t.quote}"</p>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-av-blue rounded-full flex items-center justify-center text-white text-xs font-bold">
+                        {t.img}
+                      </div>
+                      <div>
+                        <div className="font-semibold text-av-blue text-sm">{t.name}</div>
+                        <div className="text-gray-400 text-xs">{t.role}</div>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Training Locations - India */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <ScrollReveal className="text-center mb-10">
+              <div className="section-tag">Pan India Presence</div>
+              <h2 className="font-montserrat text-3xl font-bold text-av-blue">
+                Pilot Training Across <span className="text-av-orange">India</span>
+              </h2>
+            </ScrollReveal>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+              {cities.map((city, i) => (
+                <ScrollReveal key={city.name} delay={i * 60}>
+                  <Link href={`/${city.slug}`}
+                    className="card-hover block text-center p-4 rounded-xl border border-gray-200 bg-white hover:border-av-orange hover:text-av-orange hover:bg-orange-50 transition-all text-sm font-medium text-av-blue">
+                    📍 {city.name}
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Training Locations - World */}
+        <section className="py-20 px-4 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <ScrollReveal className="text-center mb-10">
+              <div className="section-tag">Global Presence</div>
+              <h2 className="font-montserrat text-3xl font-bold text-av-blue">
+                Pilot Training Across <span className="text-av-orange">World</span>
+              </h2>
+            </ScrollReveal>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+              {[
+                { flag: '🇺🇸', country: 'USA', href: '/flying-school/usa' },
+                { flag: '🇨🇦', country: 'Canada', href: '/flying-school/canada' },
+                { flag: '🇮🇳', country: 'India', href: '/flying-school/india' },
+                { flag: '🇱🇰', country: 'Sri Lanka', href: '/contact' },
+                { flag: '🇲🇻', country: 'Maldives', href: '/contact' },
+                { flag: '🇿🇦', country: 'South Africa', href: '/flying-school/south-africa' },
+                { flag: '🇦🇺', country: 'Australia', href: '/flying-school/australia' },
+                { flag: '🇳🇿', country: 'New Zealand', href: '/contact' },
+              ].map((loc, i) => (
+                <ScrollReveal key={loc.country} delay={i * 60}>
+                  <Link
+                    href={loc.href}
+                    className="card-hover flex items-center gap-3 p-4 rounded-xl border border-gray-200 bg-white hover:border-av-orange hover:text-av-orange hover:bg-orange-50 transition-all text-sm font-medium text-av-blue"
+                  >
+                    <span className="text-xl">{loc.flag}</span>
+                    <span>{loc.country}</span>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal className="text-center mb-12">
+              <div className="section-tag">FAQ</div>
+              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
+                FAQ About <span className="text-av-orange">Pilot Training Institute</span>
+              </h2>
+              <p className="text-gray-500 mt-2 text-sm">Know Your Answers Here</p>
+            </ScrollReveal>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <ScrollReveal key={faq.q} delay={i * 60}>
+                  <details className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 group cursor-pointer">
+                    <summary className="font-montserrat font-bold text-av-blue text-sm list-none flex justify-between items-center">
+                      {faq.q}
+                      <span className="text-av-orange ml-4 flex-shrink-0 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <p className="text-gray-500 text-sm leading-relaxed mt-4 pt-4 border-t border-gray-100">{faq.a}</p>
+                  </details>
+                </ScrollReveal>
+              ))}
+            </div>
+            <ScrollReveal className="text-center mt-8">
+              <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-av-blue transition-all text-sm">
+                Ask Question
+              </Link>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Lead Form Section */}
+        <section className="py-20 px-4 bg-gradient-to-br from-av-blue to-av-navy">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <ScrollReveal>
+              <div className="section-tag">Free Counselling</div>
+              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white mb-4">
+                Take the First Step <span className="text-av-orange">Towards the Sky</span>
+              </h2>
+              <p className="text-white/70 mb-6 text-sm leading-relaxed">
+                Our aviation career counsellors will guide you through course selection, eligibility, fees, scholarships, and career prospects.
+              </p>
+              <div className="space-y-3">
+                {['Free one-on-one career counselling', 'DGCA exam preparation guidance', 'International training options', 'Scholarship & loan assistance'].map(item => (
+                  <div key={item} className="flex items-center gap-3">
+                    <span className="text-av-orange">✓</span>
+                    <span className="text-white/80 text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Contact Info */}
+              <div className="mt-8 pt-6 border-t border-white/20 space-y-2 text-sm text-white/70">
+                <p>📧 <span className="font-semibold text-white">Office Mail:</span> Weoneaviation8@gmail.com</p>
+                <p>📍 <span className="font-semibold text-white">Office Address:</span> C-404 , 3rd floor, sector-7, near Ramphal Chowk Road, Palam Extension, Dwarka sector 7, Delhi, India 110077</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={200}>
+              <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20">
+                <h3 className="font-montserrat font-bold text-white text-center mb-4">BOOK Your SEAT FOR SCHOLARSHIP</h3>
+                <p className="text-white/70 text-center text-sm mb-4">Join Dgca Ground Classes</p>
+                <LeadForm dark />
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+      </Layout>
+    </>
   );
 }
