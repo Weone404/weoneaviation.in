@@ -4,6 +4,7 @@ import CourseCard from '../components/CourseCard';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import Head from 'next/head';
 import Image from 'next/image';
 
 const courses = [
@@ -224,7 +225,161 @@ const faqs = [
 ];
 
 export default function Home() {
+
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does it take to complete pilot training?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PPL: 6-12 months | CPL: 12-18 months | ATPL: Additional experience after CPL."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the salary of a commercial pilot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Entry-level first officers earn ₹1.5–3 lakh/month, senior captains earn ₹5–10 lakh/month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get a scholarship for pilot training?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We One Aviation Academy offers up to 25% scholarship on select courses. Contact our counsellors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I become a pilot if I wear glasses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, if your corrected vision meets DGCA Class 1 medical standards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are DGCA ground classes and why are they important?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DGCA ground classes cover Meteorology, Navigation, Air Regulations, and Technical subjects required for a pilot license."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the eligibility criteria for pilot training?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minimum age 17 years, 10+2 with Physics and Mathematics, Class 1 Medical Certificate from an approved examiner."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a Pilot Training Institute?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Pilot Training Institute like We One Aviation Academy provides coaching to clear DGCA exams required to become a professional pilot."
+        }
+      }
+    ]
+  };
+
+  const educationalOrgSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "We One Aviation Academy",
+    "url": "https://www.weoneaviation.in",
+    "logo": "https://www.weoneaviation.in/logo.png",
+    "description": "India's premier DGCA approved aviation training academy. CPL, PPL, ATPL, SPL courses. 3500+ pilots trained since 2009 with 98% pass rate.",
+    "foundingDate": "2009",
+    "telephone": "+919355611996",
+    "email": "info@weoneaviation.in",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "C-404, 3rd Floor, Ramphal Chowk, Dwarka, Sector-7",
+      "addressLocality": "New Delhi",
+      "addressRegion": "Delhi",
+      "postalCode": "110077",
+      "addressCountry": "IN"
+    },
+    "accreditedBy": {
+      "@type": "Organization",
+      "name": "Directorate General of Civil Aviation (DGCA)",
+      "url": "https://www.dgca.gov.in"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "500",
+      "bestRating": "5"
+    }
+  };
+
+  const courseListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Aviation Courses at We One Aviation Academy",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Course",
+          "name": "Commercial Pilot License (CPL)",
+          "description": "DGCA approved CPL training. 18-24 months. Eligibility: 10+2 PCM.",
+          "url": "https://www.weoneaviation.in/commercial-pilot-license",
+          "provider": {
+            "@type": "Organization",
+            "name": "We One Aviation Academy"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Course",
+          "name": "ATPL - Airline Transport Pilot License",
+          "description": "Advanced ATPL training. 6 months. Eligibility: CPL holder.",
+          "url": "https://www.weoneaviation.in/courses/atpl",
+          "provider": {
+            "@type": "Organization",
+            "name": "We One Aviation Academy"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Course",
+          "name": "DGCA Ground Classes",
+          "description": "Comprehensive DGCA exam preparation. 6-12 months. Eligibility: 10+2 PCM.",
+          "url": "https://www.weoneaviation.in/dgca-ground-classes",
+          "provider": {
+            "@type": "Organization",
+            "name": "We One Aviation Academy"
+          }
+        }
+      }
+    ]
+  };
+
+
+
+
+
+
+
+
   return (
+
     <Layout title="We One Aviation Academy | Best Pilot Training Institute in India" description="India's premier approved aviation training academy. CPL, PPL, ATPL, SPL courses. 3500 pilots trained. Free career counselling available.">
       {/* Hero */}
       <HeroSlider />
