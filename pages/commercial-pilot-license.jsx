@@ -1,7 +1,7 @@
-import Layout from '../components/Layout';
-import HeroSlider from '../components/HeroSlider';
-import LeadForm from '../components/LeadForm';
-import ScrollReveal from '../components/ScrollReveal';
+import Layout from '../../components/Layout';
+import HeroSlider from '../../components/HeroSlider';
+import LeadForm from '../../components/LeadForm';
+import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
 
 const heroSlides = [
