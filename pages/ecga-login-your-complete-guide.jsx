@@ -128,7 +128,6 @@ export default function EGCALoginPage() {
                     <br />
                     <br />
                     <br />
-
                     <div className="section-tag">DGCA Digital Portal</div>
                     <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
                         eGCA Login: Your Complete Guide
