@@ -1,5 +1,5 @@
-import Layout from '../../components/Layout';
-import ScrollReveal from '../../components/ScrollReveal';
+import Layout from '../components/Layout';
+import ScrollReveal from '../components/ScrollReveal';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
