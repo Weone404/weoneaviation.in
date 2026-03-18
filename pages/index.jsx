@@ -1,4 +1,4 @@
-import Layout from '../components/Layout';
+  import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import CourseCard from '../components/CourseCard';
 import LeadForm from '../components/LeadForm';
