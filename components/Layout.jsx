@@ -3,7 +3,7 @@ import Footer from './Footer';
 import FloatingButtons from './FloatingButtons';
 import ContactPopup from './ContactPopup';
 import Head from 'next/head';
-
+import SpecialOfferBanner from './Specialofferbanner';
 export default function Layout({ children, title, description }) {
   return (
     <>
@@ -21,6 +21,7 @@ export default function Layout({ children, title, description }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+      <SpecialOfferBanner />
       <main className="min-h-screen">{children}</main>
       <Footer />
       <FloatingButtons />

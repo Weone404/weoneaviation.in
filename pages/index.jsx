@@ -1,4 +1,4 @@
-  import Layout from '../components/Layout';
+import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import CourseCard from '../components/CourseCard';
 import LeadForm from '../components/LeadForm';
@@ -6,6 +6,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
+import SpecialOfferBanner from '../components/Specialofferbanner'
 
 const courses = [
   { icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: '18-24 months', eligibility: '10+2 (PCM)', href: '/commercial-pilot-license', highlight: true },
@@ -398,6 +399,7 @@ export default function Home() {
       <Layout title="We One Aviation Academy | Best Pilot Training Institute in India" description="India's premier approved aviation training academy. CPL, PPL, ATPL, SPL courses. 3500 pilots trained. Free career counselling available.">
         {/* Hero */}
         <HeroSlider />
+
 
         {/* Tagline Banner */}
         <div className="bg-av-orange py-4 text-center">

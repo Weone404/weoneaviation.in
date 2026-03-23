@@ -53,6 +53,7 @@ export default function Footer() {
               { label: 'Training Programs', href: '/courses' },
               { label: 'Blog', href: '/blogs' },
               { label: 'Contact', href: '/contact' },
+              { label: 'Sitemap', href: '/sitemap' },
             ].map((item) => (
               <li key={item.href} className="flex items-center gap-2">
                 {/* chain-link icon */}
