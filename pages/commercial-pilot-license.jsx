@@ -48,7 +48,7 @@ const salaryData = [
     level: "Starting Salary (Beginners)",
     range: "₹1.5 – 3 Lakh/month",
     annual: "₹18 – 36 Lakh/year",
-    desc: "New pilots (called First Officers or Junior Pilots) can make around ₹1.5 lakh to ₹3 lakh per month. That's about ₹18 lakh to ₹36 lakh per year.",
+    desc: "If you're just starting out with a CPL, you might not earn a lot right away. In India, new pilots (called First Officers or Junior Pilots) can make around ₹1.5 lakh to ₹3 lakh per month. That's about ₹18 lakh to ₹36 lakh per year.",
   },
   {
     level: "Mid-Level Salary (With Some Experience)",
@@ -60,7 +60,7 @@ const salaryData = [
     level: "Top-Level Salary (Senior Pilots)",
     range: "₹12 – 25 Lakh/month",
     annual: "₹1.5 Crore – 3 Crore/year",
-    desc: "Senior Captains flying big planes can earn ₹12 lakh to ₹25 lakh per month—or even more! With experience, pilots can become captains and earn even higher salaries.",
+    desc: "If you've been flying for a long time (over 10–20 years) and work for a big airline, Senior Captains flying big planes can earn ₹12 lakh to ₹25 lakh per month—or even more!",
   },
 ];
 
@@ -76,9 +76,9 @@ const careerOptions = [
 ];
 
 const howToGet = [
-  { title: "Choose a Right Ground Classes", desc: "At first, you have to choose a right ground classes like One Aviation Academy which gives you advance pilot training and support you till you will not make Commercial Air Pilot." },
-  { title: "Prepare For DGCA Exam", desc: "After taking admission in DGCA Ground Classes, you have to prepare yourself for DGCA Exam for Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific and Radio Telephony (RTR)." },
-  { title: "Join Flight Training Academy", desc: "After clearing DGCA Exam, you have to join flight training and complete 200 hrs of flying from any flying schools." },
+  { title: "Choose a Right Ground Classes", desc: "At First, You Have to Choose a Right Ground Classes Like We One Aviation Academy Which Gives You Advance Pilot Training and Support You Till You will Not Make Commercial air Pilot." },
+  { title: "Prepare For Dgca Exam", desc: "After Taking Admission in Dgca Ground Classes, You Have to Prepare Yourself For Dgca Exam for Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific and Radio Telephony (RTR)." },
+  { title: "Join Flight Training Academy", desc: "After Clear Dgca Exam, You Have To Join Flight Training And Complete 200 Hrs of Flying From Any Flying Schools." },
 ];
 
 const quickFacts = [
@@ -133,14 +133,14 @@ export default function CPL() {
             <div className="section-tag mb-3">Overview</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">What is a Commercial Pilot License?</h2>
             <p className="text-gray-600 leading-relaxed mb-3 text-sm">
-              A commercial pilot license is a certification issued by the Directorate General of Civil Aviation (DGCA) in India that allows you to work as a professional pilot. Without a CPL license, you cannot earn money as a pilot.
+              A commercial pilot license is a certification issued by the Directorate General of Civil Aviation (DGCA) in India that allows you to work as a professional pilot. Without a cpl license, you cannot earn money as a pilot.
             </p>
             <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-              A CPL pilot is trained to operate aircraft safely and efficiently, making this career both challenging and rewarding. The commercial pilot course includes both theoretical and practical training, ensuring candidates gain complete aviation knowledge.
+              A cpl pilot is trained to operate aircraft safely and efficiently, making this career both challenging and rewarding. The commercial pilot course includes both theoretical and practical training, ensuring candidates gain complete aviation knowledge.
             </p>
             <h3 className="font-montserrat font-bold text-av-blue mb-2">Commercial Pilot Course Overview</h3>
             <p className="text-gray-600 leading-relaxed text-sm">
-              The commercial pilot course is designed to provide in-depth knowledge of flying and aviation systems. The CPL course typically includes: Ground school training, Simulator training, Flying training (minimum 200 hours), and DGCA exams. The duration of commercial pilot training is usually <strong>18 to 24 months</strong>, depending on the training institute and student progress.
+              The commercial pilot course is designed to provide in-depth knowledge of flying and aviation systems. The cpl course typically includes: Ground school training, Simulator training, Flying training (minimum 200 hours), and DGCA exams. The duration of commercial pilot training is usually <strong>18 to 24 months</strong>, depending on the training institute and student progress.
             </p>
           </div>
         </section>
@@ -184,7 +184,7 @@ export default function CPL() {
               CPL ground classes are the foundation of your pilot training. These classes prepare you for DGCA exams and include subjects like: Air Navigation, Meteorology, Air Regulations, Technical General, and Technical Specific. Ground training usually lasts <strong>4–6 months</strong> and is a crucial part of the pilot syllabus.
             </p>
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              The pilot syllabus is divided into theoretical and practical training. The CPL exam syllabus includes: Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, and Radio Telephony (RTR). These subjects are mandatory to pass DGCA exams and become a licensed pilot.
+              The pilot syllabus is divided into theoretical and practical training. The cpl exam syllabus includes: Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, and Radio Telephony (RTR). These subjects are mandatory to pass DGCA exams and become a licensed pilot. The syllabus is designed to build strong knowledge of aviation operations and safety.
             </p>
             <div className="space-y-3">
               {syllabus.map((phase, i) => (
@@ -220,7 +220,7 @@ export default function CPL() {
             <div className="section-tag mb-3">Admission</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Entrance Exam for Commercial Pilot</h2>
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              Many institutes conduct an entrance exam for commercial pilot admission. The CPL entrance exam generally includes: Physics, Mathematics, English, and General aptitude. Some flying schools also conduct: Pilot aptitude tests, Personal interviews, and Medical tests. This is part of the Commercial Pilot License Admission Process.
+              Many institutes conduct an entrance exam for commercial pilot admission. The cpl entrance exam generally includes: Physics, Mathematics, English, and General aptitude. Some flying schools also conduct: Pilot aptitude tests, Personal interviews, and Medical tests. This is part of the Commercial Pilot License Admission Process.
             </p>
             <h3 className="font-montserrat font-bold text-av-blue mb-3">Commercial Pilot License Admission Process</h3>
             <p className="text-gray-600 text-sm leading-relaxed mb-4">The Commercial Pilot License Admission Process involves multiple steps:</p>
@@ -229,11 +229,11 @@ export default function CPL() {
                 "Choose a DGCA-approved flying school",
                 "Clear the entrance exam or screening",
                 "Complete medical tests",
-                "Enroll in CPL ground classes",
+                "Enroll in cpl ground classes",
                 "Start flying training",
                 "Pass DGCA exams",
                 "Complete 200 flying hours",
-                "Apply for CPL license",
+                "Apply for cpl license",
               ].map((step, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl border border-gray-100 p-4 flex gap-3 items-start">
                   <div className="flex-shrink-0 w-7 h-7 bg-av-orange rounded-full flex items-center justify-center text-white font-black text-xs">{i + 1}</div>
@@ -255,7 +255,7 @@ export default function CPL() {
             <div className="section-tag mb-3">Investment</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot Course (CPL) Fees in India</h2>
             <p className="text-gray-600 text-sm leading-relaxed mb-8">
-              Cost to become a pilot in India depends on flying schools from where you will do flying. The total cost of commercial pilot training in India ranges between <strong>₹35 lakh to ₹55 lakh</strong> (approx.). This includes: Flying hours, Ground classes, Simulator training, and Examination fees. The cost may vary depending on the academy and location.
+              Cost to become a pilot in India depends on flying schools from where you will do flying. Below is a breakdown of all CPL course fees from classes to cockpit.
             </p>
 
             <h3 className="font-montserrat font-bold text-av-blue mb-2">1) DGCA Class 1-2 Medical Test</h3>
@@ -360,7 +360,7 @@ export default function CPL() {
             <div className="section-tag mb-3">Earnings</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot License Salary</h2>
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              One of the biggest attractions of this career is the commercial pilot license salary. Commercial pilot starting pay: ₹1.5 lakh to ₹3 lakh per month. The aviation industry offers excellent growth, making it a highly rewarding profession.
+              One of the biggest attractions of this career is the commercial pilot license salary. Commercial pilot starting pay: ₹1.5 lakh to ₹3 lakh per month. With experience, pilots can become captains and earn even higher salaries. The aviation industry offers excellent growth, making it a highly rewarding profession.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {salaryData.map((s, i) => (
@@ -380,9 +380,9 @@ export default function CPL() {
             <p className="text-gray-600 text-sm mb-4">Besides the salary, pilots get some cool perks:</p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
-                { icon: "✈️", text: "Free or cheap flights for themselves and their families" },
-                { icon: "🏥", text: "Health insurance and retirement plans" },
-                { icon: "🏨", text: "Hotel stays and travel allowances when they fly to other places" },
+                { icon: "✈️", text: "Free or cheap flights for themselves and their families." },
+                { icon: "🏥", text: "Health insurance and retirement plans." },
+                { icon: "🏨", text: "Hotel stays and travel allowances when they fly to other places." },
                 { icon: "🌍", text: "A fancy uniform and a job that feels adventurous!" },
               ].map((perk, i) => (
                 <div key={i} className="bg-blue-50 rounded-xl p-4 flex gap-3 items-start">
@@ -399,7 +399,7 @@ export default function CPL() {
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Why CPL</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Why Choose a CPL Course?</h2>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">Choosing a CPL course offers multiple benefits:</p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">Choosing a cpl course offers multiple benefits:</p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
               {["High-paying career", "Global job opportunities", "Prestige and respect", "Exciting lifestyle"].map((b, i) => (
                 <div key={i} className="bg-white rounded-xl border border-gray-100 shadow-sm px-4 py-3 text-sm text-av-blue font-semibold text-center card-hover hover:border-av-orange/30 transition-all">

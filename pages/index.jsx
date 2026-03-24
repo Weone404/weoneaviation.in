@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
 import SpecialOfferBanner from '../components/Specialofferbanner'
+import Passresultsslider from '../components/Passresultsslider';
 
 const courses = [
   { icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: '18-24 months', eligibility: '10+2 (PCM)', href: '/commercial-pilot-license', highlight: true },
@@ -916,6 +917,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <Passresultsslider />
 
         {/* Training Locations - World */}
         <section className="py-20 px-4 bg-gray-50">
@@ -981,6 +983,7 @@ export default function Home() {
             </ScrollReveal>
           </div>
         </section>
+
 
         {/* Lead Form Section */}
         <section className="py-20 px-4 bg-gradient-to-br from-av-blue to-av-navy">
