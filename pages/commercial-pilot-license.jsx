@@ -1,585 +1,457 @@
-import Layout from '../components/Layout';
-import HeroSlider from '../components/HeroSlider';
-import LeadForm from '../components/LeadForm';
-import ScrollReveal from '../components/ScrollReveal';
-import Link from 'next/link';
-
-const heroSlides = [
-  {
-    id: 1,
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80',
-    tag: 'Most Popular Course',
-    title: 'Commercial Pilot',
-    highlight: 'License (CPL)',
-    sub: "Fly for airlines – India's most comprehensive CPL training program",
-  },
-];
+import { useState } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const syllabus = [
   {
-    phase: 'Phase 1: Ground School',
-    duration: '3-4 months',
-    topics: ['Air Navigation', 'Meteorology', 'Air Regulations', 'Technical General', 'RTR (Radio Telephony)', 'Aviation Medicine'],
+    phase: "Phase 1: Ground School",
+    duration: "3–4 months",
+    topics: ["Air Navigation", "Meteorology", "Air Regulations", "Technical General", "RTR (Radio Telephony)", "Aviation Medicine"],
   },
   {
-    phase: 'Phase 2: PPL Training',
-    duration: '4-5 months',
-    topics: ['Solo flights', 'Cross-country flying', 'Night flying', 'Basic instrument flying', 'Emergency procedures', 'PPL skill test'],
+    phase: "Phase 2: PPL Training",
+    duration: "4–5 months",
+    topics: ["Solo flights", "Cross-country flying", "Night flying", "Basic instrument flying", "Emergency procedures", "PPL skill test"],
   },
   {
-    phase: 'Phase 3: CPL Flying',
-    duration: '8-10 months',
-    topics: ['Instrument Rating (IR)', 'Multi-engine rating', 'Advanced navigation', 'CPL skill test', 'Type rating prep', 'Airline interview prep'],
+    phase: "Phase 3: CPL Flying",
+    duration: "8–10 months",
+    topics: ["Instrument Rating (IR)", "Multi-engine rating", "Advanced navigation", "CPL skill test", "Type rating prep", "Airline interview prep"],
   },
-];
-
-const eligibility = [
-  { label: 'Age', desc: 'Candidate Must Be Atleast 18 Years For Getting Commercial Pilot License.' },
-  { label: 'Education', desc: 'The qualifications to become a pilot include passing 12th grade with Mathematics and Physics.' },
-  { label: 'Dgca Class 1-2 Medical', desc: 'The qualification of becoming a pilot requires the candidate to have no physical issues and to qualify for DGCA Class 1 and Class 2 medical examinations.' },
-  { label: 'Total Flight Hours', desc: 'Candidate must have completed a minimum of 200 hours of flight time by DGCA.' },
-  { label: 'Pilot-in-Command (PIC) Hours', desc: 'This should include 100 hours of flight time as Pilot-in-Command (PIC).' },
-  { label: 'Instrument Flying Training', desc: 'At least 10 hours of instruction in flying with instruments is required.' },
-  { label: 'Simulator Training', desc: '5 hours of training on a flight sim must be done.' },
-  {
-    label: 'Nationality & Language Proficiency',
-    desc: 'The qualification required to become a pilot includes holding Indian citizenship or being an OCI. Candidates must also demonstrate proficiency in English, both written and verbal.',
-  },
-  { label: 'Background Check', desc: 'Candidates applying for commercial pilot training must have no history of crime.' },
 ];
 
 const medicalChecks = [
-  { icon: '👁️', title: 'Vision Test', desc: 'Checks distant and near vision (should be 6/6 with or without correction). Color blindness test using the Ishihara test.' },
-  { icon: '🎧', title: 'Hearing Test', desc: 'Assesses hearing ability using Pure Tone Audiometry (PTA).' },
-  { icon: '❤️', title: 'Cardiovascular Examination', desc: 'ECG (Electrocardiogram) to check heart function. Blood pressure monitoring.' },
-  { icon: '🧠', title: 'Neurological Examination', desc: 'Evaluates reflexes, balance, and coordination. MRI or CT scan if necessary.' },
-  { icon: '🩺', title: 'General Physical Check-up', desc: 'Height, weight, and BMI assessment. Examination of lungs, liver, kidney, and other vital organs.' },
-  { icon: '🩸', title: 'Blood & Urine Tests', desc: 'Checks for diabetes, cholesterol, liver/kidney function, and infections.' },
-  { icon: '🧠', title: 'Psychological & Mental Health Assessment', desc: 'Evaluates stress management and mental well-being.' },
+  { icon: "👁️", title: "Vision Test", desc: "Checks distant and near vision (should be 6/6 with or without correction). Color blindness test using the Ishihara test." },
+  { icon: "🎧", title: "Hearing Test", desc: "Assesses hearing ability using Pure Tone Audiometry (PTA)." },
+  { icon: "❤️", title: "Cardiovascular Examination", desc: "ECG (Electrocardiogram) to check heart function. Blood pressure monitoring." },
+  { icon: "🧠", title: "Neurological Examination", desc: "Evaluates reflexes, balance, and coordination. MRI or CT scan if necessary." },
+  { icon: "🩺", title: "General Physical Check-up", desc: "Height, weight, and BMI assessment. Examination of lungs, liver, kidney, and other vital organs." },
+  { icon: "🩸", title: "Blood & Urine Tests", desc: "Checks for diabetes, cholesterol, liver/kidney function, and infections." },
+  { icon: "🧘", title: "Psychological & Mental Health Assessment", desc: "Evaluates stress management and mental well-being." },
 ];
 
 const feeTable = [
-  { num: 1, category: 'DGCA Class 2 Medical Test', cost: '₹3,000 – ₹6,000' },
-  { num: 2, category: 'DGCA Class 1 Medical Test', cost: '₹5,000 – ₹10,000' },
-  { num: 3, category: 'Computer Number Registration', cost: '₹2,000 – ₹2,500' },
-  { num: 4, category: 'DGCA Exam Fees (per paper)', cost: '₹2,500 – ₹3,000' },
-  { num: 5, category: 'CPL Ground School Fees', cost: '₹1,50,000 – ₹3,00,000' },
-  { num: 6, category: 'Flying Training (200 hours)', cost: '₹35,00,000 – ₹45,00,000' },
-  { num: 7, category: 'Simulator Training', cost: '₹2,00,000 – ₹5,00,000' },
-  { num: 8, category: 'Flight School Admission Fees', cost: '₹1,00,000 – ₹2,00,000' },
-  { num: 9, category: 'License Issuance & Other DGCA Fees', cost: '₹50,000 – ₹1,00,000' },
-  { num: 10, category: 'Visa & Travel (If Training Abroad)', cost: '₹2,00,000 – ₹5,00,000' },
-];
-
-const howToGet = [
-  {
-    title: 'Choose a Right Ground Classes',
-    desc: 'At First, You Have to Choose a Right Ground Classes Like We One Aviation Academy Which Gives You Advance Pilot Training and Support You Till You will Not Make Commercial air Pilot.',
-  },
-  {
-    title: 'Prepare For Dgca Exam',
-    desc: 'After Taking Admission in Dgca Ground Classes, You Have to Prepare Yourself For Dgca Exam for Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific and Radio Telephony (RTR).',
-  },
-  {
-    title: 'Join Flight Training Academy',
-    desc: 'After Clear Dgca Exam, You Have To Join Flight Training And Complete 200 Hrs of Flying From Any Flying Schools.',
-  },
-];
-
-const prepTips = [
-  'Attend ground classes regularly and use DGCA-approved study materials (e.g., books by authors like R.K. Bali or Oxford Aviation Academy manuals).',
-  'Practice with past question papers and mock tests.',
-  'Focus on understanding concepts rather than rote memorization, as questions can be application-based.',
+  { num: 1, category: "DGCA Class 2 Medical Test", cost: "₹3,000 – ₹6,000" },
+  { num: 2, category: "DGCA Class 1 Medical Test", cost: "₹5,000 – ₹10,000" },
+  { num: 3, category: "Computer Number Registration", cost: "₹2,000 – ₹2,500" },
+  { num: 4, category: "DGCA Exam Fees (per paper)", cost: "₹2,500 – ₹3,000" },
+  { num: 5, category: "CPL Ground School Fees", cost: "₹1,50,000 – ₹3,00,000" },
+  { num: 6, category: "Flying Training (200 hours)", cost: "₹35,00,000 – ₹45,00,000" },
+  { num: 7, category: "Simulator Training", cost: "₹2,00,000 – ₹5,00,000" },
+  { num: 8, category: "Flight School Admission Fees", cost: "₹1,00,000 – ₹2,00,000" },
+  { num: 9, category: "License Issuance & Other DGCA Fees", cost: "₹50,000 – ₹1,00,000" },
+  { num: 10, category: "Visa & Travel (If Training Abroad)", cost: "₹2,00,000 – ₹5,00,000" },
 ];
 
 const salaryData = [
   {
-    level: 'Starting Salary (Beginners)',
-    range: '₹1.5 – 3 Lakh/month',
-    annual: '₹18 – 36 Lakh/year',
-    desc: "If you're just starting out with a CPL, you might not earn a lot right away. In India, new pilots (called First Officers or Junior Pilots) can make around ₹1.5 lakh to ₹3 lakh per month. That's about ₹18 lakh to ₹36 lakh per year.",
+    level: "Starting Salary (Beginners)",
+    range: "₹1.5 – 3 Lakh/month",
+    annual: "₹18 – 36 Lakh/year",
+    desc: "New pilots (called First Officers or Junior Pilots) can make around ₹1.5 lakh to ₹3 lakh per month. That's about ₹18 lakh to ₹36 lakh per year.",
   },
   {
-    level: 'Mid-Level Salary (With Some Experience)',
-    range: '₹5 – 10 Lakh/month',
-    annual: '₹60 Lakh – 1.2 Crore/year',
-    desc: 'After a few years of flying—say 4 to 10 years—your salary goes up. You might become a Senior First Officer or even a Captain. At this stage, pilots in India can earn between ₹5 lakh to ₹10 lakh per month.',
+    level: "Mid-Level Salary (With Some Experience)",
+    range: "₹5 – 10 Lakh/month",
+    annual: "₹60 Lakh – 1.2 Crore/year",
+    desc: "After a few years of flying—say 4 to 10 years—your salary goes up. You might become a Senior First Officer or even a Captain. At this stage, pilots in India can earn between ₹5 lakh to ₹10 lakh per month.",
   },
   {
-    level: 'Top-Level Salary (Senior Pilots)',
-    range: '₹12 – 25 Lakh/month',
-    annual: '₹1.5 Crore – 3 Crore/year',
-    desc: "If you've been flying for a long time (over 10–20 years) and work for a big airline, Senior Captains flying big planes can earn ₹12 lakh to ₹25 lakh per month—or even more!",
+    level: "Top-Level Salary (Senior Pilots)",
+    range: "₹12 – 25 Lakh/month",
+    annual: "₹1.5 Crore – 3 Crore/year",
+    desc: "Senior Captains flying big planes can earn ₹12 lakh to ₹25 lakh per month—or even more! With experience, pilots can become captains and earn even higher salaries.",
   },
-];
-
-const perks = [
-  'Free or cheap flights for themselves and their families.',
-  'Health insurance and retirement plans.',
-  'Hotel stays and travel allowances when they fly to other places.',
-  'A fancy uniform and a job that feels adventurous!',
 ];
 
 const careerOptions = [
-  {
-    num: '1', title: 'Airline Pilot', icon: '✈️',
-    what: 'Fly big planes like Airbus or Boeing, taking people to their destinations safely.',
-    where: 'Airlines like IndiGo, Air India, SpiceJet, Vistara, or international ones if you gain more experience.',
-    growth: 'Start as a First Officer, and after years of flying (usually 5–10 years), you can become a Captain.',
-    salary: 'Beginners earn ₹1.5 lakh to ₹3 lakh per month. Senior pilots can make ₹10 lakh or more monthly.',
-  },
-  {
-    num: '2', title: 'Cargo Pilot', icon: '📦',
-    what: 'Fly cargo planes for companies that deliver items across India or globally.',
-    where: 'Companies like Blue Dart Aviation, Amazon Air, or logistics firms like FedEx and DHL.',
-    growth: 'Fewer passengers mean less pressure, and you might fly at night or to unique places.',
-    salary: 'Similar to airline pilots—₹2 lakh to ₹5 lakh per month to start, growing with experience.',
-  },
-  {
-    num: '3', title: 'Charter Pilot', icon: '🛩️',
-    what: "Fly smaller planes to places that big airlines don't go, like hill stations or private airstrips.",
-    where: 'Private aviation companies, rich clients, or tourism agencies.',
-    growth: 'You get to meet interesting people and visit offbeat locations.',
-    salary: '₹1 lakh to ₹4 lakh per month, depending on demand and hours flown.',
-  },
-  {
-    num: '4', title: 'Flight Instructor', icon: '🎓',
-    what: 'Teach students how to fly planes and help them get their own CPL.',
-    where: 'Flight schools like IGRUA, Bombay Flying Club, or private academies.',
-    growth: "You build more flying hours while earning, and it's a stable job.",
-    salary: '₹1 lakh to ₹3 lakh per month, plus extra hours can boost your income.',
-  },
-  {
-    num: '5', title: 'Corporate Pilot', icon: '💼',
-    what: 'Fly private jets or small planes for business leaders.',
-    where: 'Large Indian companies like Reliance, Tata, or multinational firms.',
-    growth: 'Fewer flights, more predictable schedules, and sometimes better pay.',
-    salary: '₹2 lakh to ₹6 lakh per month, depending on the company.',
-  },
-  {
-    num: '6', title: 'Agricultural Pilot', icon: '🌾',
-    what: 'Fly small planes to spray crops with water, fertilizers, or pesticides.',
-    where: 'Rural areas or companies that support farmers.',
-    growth: 'You fly low and help grow food for the country!',
-    salary: '₹1 lakh to ₹2.5 lakh per month.',
-  },
-  {
-    num: '7', title: 'Aerial Survey Pilot', icon: '🛰️',
-    what: 'Fly over areas to collect data for maps, construction, or research.',
-    where: 'Government projects, survey companies, or environmental groups.',
-    growth: 'You contribute to science and planning.',
-    salary: '₹1.5 lakh to ₹4 lakh per month.',
-  },
-  {
-    num: '8', title: 'Emergency Services Pilot (Air Ambulance)', icon: '🚑',
-    what: 'Transport sick or injured people to hospitals quickly.',
-    where: 'Hospitals, NGOs, or private ambulance services.',
-    growth: 'You help people in need.',
-    salary: '₹2 lakh to ₹5 lakh per month.',
-  },
+  { num: "1", title: "Airline Pilot", icon: "✈️", what: "Fly big planes like Airbus or Boeing, taking people to their destinations safely.", where: "Airlines like IndiGo, Air India, SpiceJet, Vistara, or international ones if you gain more experience.", salary: "Beginners earn ₹1.5 lakh to ₹3 lakh per month. Senior pilots can make ₹10 lakh or more monthly." },
+  { num: "2", title: "Cargo Pilot", icon: "📦", what: "Fly cargo planes for companies that deliver items across India or globally.", where: "Companies like Blue Dart Aviation, Amazon Air, or logistics firms like FedEx and DHL.", salary: "Similar to airline pilots—₹2 lakh to ₹5 lakh per month to start, growing with experience." },
+  { num: "3", title: "Charter Pilot", icon: "🛩️", what: "Fly smaller planes to places that big airlines don't go, like hill stations or private airstrips.", where: "Private aviation companies, rich clients, or tourism agencies.", salary: "₹1 lakh to ₹4 lakh per month, depending on demand and hours flown." },
+  { num: "4", title: "Flight Instructor", icon: "🎓", what: "Teach students how to fly planes and help them get their own CPL.", where: "Flight schools like IGRUA, Bombay Flying Club, or private academies.", salary: "₹1 lakh to ₹3 lakh per month, plus extra hours can boost your income." },
+  { num: "5", title: "Corporate Pilot", icon: "💼", what: "Fly private jets or small planes for business leaders.", where: "Large Indian companies like Reliance, Tata, or multinational firms.", salary: "₹2 lakh to ₹6 lakh per month, depending on the company." },
+  { num: "6", title: "Agricultural Pilot", icon: "🌾", what: "Fly small planes to spray crops with water, fertilizers, or pesticides.", where: "Rural areas or companies that support farmers.", salary: "₹1 lakh to ₹2.5 lakh per month." },
+  { num: "7", title: "Aerial Survey Pilot", icon: "🛰️", what: "Fly over areas to collect data for maps, construction, or research.", where: "Government projects, survey companies, or environmental groups.", salary: "₹1.5 lakh to ₹4 lakh per month." },
+  { num: "8", title: "Emergency Services Pilot (Air Ambulance)", icon: "🚑", what: "Transport sick or injured people to hospitals quickly.", where: "Hospitals, NGOs, or private ambulance services.", salary: "₹2 lakh to ₹5 lakh per month." },
 ];
 
-// ─── Quick Fact Card ───────────────────────────────────────────────────────────
-function QuickFact({ val, label }) {
-  return (
-    <div className="bg-av-light rounded-xl p-3 text-center">
-      <div className="font-montserrat font-bold text-av-blue text-xs leading-snug">{val}</div>
-      <div className="text-gray-500 text-[10px] mt-1">{label}</div>
-    </div>
-  );
-}
+const howToGet = [
+  { title: "Choose a Right Ground Classes", desc: "At first, you have to choose a right ground classes like One Aviation Academy which gives you advance pilot training and support you till you will not make Commercial Air Pilot." },
+  { title: "Prepare For DGCA Exam", desc: "After taking admission in DGCA Ground Classes, you have to prepare yourself for DGCA Exam for Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific and Radio Telephony (RTR)." },
+  { title: "Join Flight Training Academy", desc: "After clearing DGCA Exam, you have to join flight training and complete 200 hrs of flying from any flying schools." },
+];
 
-// ─── CTA Banner ───────────────────────────────────────────────────────────────
-function CTABanner({ title, body, linkHref, linkLabel }) {
-  return (
-    <div className="bg-av-blue rounded-2xl p-5 sm:p-8 text-center my-8 sm:my-10">
-      <h3 className="font-montserrat text-base sm:text-xl font-bold text-white mb-3 leading-snug">{title}</h3>
-      <p className="text-white/70 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto mb-3">{body}</p>
-      <p className="text-white/60 text-xs sm:text-sm mb-5">Join us and take the first step toward the skies! ✈️</p>
-      <Link
-        href={linkHref}
-        className="inline-block bg-av-orange text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-xs sm:text-sm"
-      >
-        {linkLabel}
-      </Link>
-    </div>
-  );
-}
+const quickFacts = [
+  { val: "18–24 months", label: "Duration" },
+  { val: "200 hours", label: "Min Flight Hours" },
+  { val: "10+2 PCM", label: "Eligibility" },
+  { val: "₹40–50 Lakh", label: "Estimated Fees" },
+];
 
 export default function CPL() {
+  const [openPhase, setOpenPhase] = useState(null);
+
   return (
-    <Layout
-      title="Commercial Pilot License (CPL) Training in India | WeOne Aviation"
-      description="DGCA approved CPL training in India. Become a commercial pilot with WeOne Aviation Academy. Expert instructors, modern aircraft, 100% placement support."
-    >
-      <HeroSlider customSlides={heroSlides} />
+    <>
+      <Navbar />
 
-      {/* ── Page body ── */}
-      <section className="py-8 px-3 sm:px-4 sm:py-14 md:py-20">
-        <div className="max-w-7xl mx-auto">
+      <div className="bg-gray-50 min-h-screen">
 
-          {/*
-            Layout grid:
-            • xs–md  : single column, sidebar rendered FIRST (order-first) so lead form
-                       appears near the top on mobile.
-            • lg+    : 2/3 main content | 1/3 sticky sidebar
-          */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+        {/* ── HEADER ── */}
+        <header className="bg-gradient-to-br from-av-blue to-av-navy text-white text-center relative overflow-hidden"
+          style={{ paddingTop: "144px", paddingBottom: "64px" }}>
+          <div className="absolute top-0 right-0 w-64 h-64 rounded-full border-2 border-white/5 -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-44 h-44 rounded-full border-2 border-white/5 translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
+            <div className="section-tag mb-3">Complete Guide</div>
+            <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white leading-tight mb-4">
+              Commercial Pilot License (CPL)
+              <br />
+              <span className="text-av-orange">Complete Guide to Pilot Course, Fees, Eligibility & Salary</span>
+            </h1>
+            <p className="text-white/70 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+              Becoming a commercial pilot is one of the most prestigious and rewarding careers in aviation. If you dream of flying high and earning a great salary, enrolling in a pilot course is the first step. A Commercial Pilot License (CPL) allows you to fly aircraft professionally and work with airlines, charter companies, and cargo operators.
+            </p>
+          </div>
+        </header>
 
-            {/* ══════════════ SIDEBAR ══════════════ */}
-            {/*
-              - On mobile/tablet it sits ABOVE the main copy (order-first).
-              - On lg it moves to the right column and sticks.
-            */}
-            <aside className="order-first lg:order-none lg:col-span-1 space-y-5 sm:space-y-6 lg:self-start lg:sticky lg:top-24">
-              <ScrollReveal delay={200}>
-                <LeadForm title="Apply for CPL" />
-              </ScrollReveal>
-
-              <ScrollReveal delay={300}>
-                <div className="bg-av-blue rounded-2xl p-5 sm:p-6 text-white">
-                  <h4 className="font-montserrat font-bold mb-4 text-sm sm:text-base">Eligibility Criteria</h4>
-                  <ul className="space-y-2 text-xs sm:text-sm text-white/80">
-                    <li>✓ 10+2 with Physics &amp; Maths</li>
-                    <li>✓ Minimum 17 years of age</li>
-                    <li>✓ DGCA Medical Class 1</li>
-                    <li>✓ English language proficiency</li>
-                    <li>✓ Valid passport (for intl. training)</li>
-                  </ul>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal delay={400}>
-                <div className="bg-av-orange rounded-2xl p-5 sm:p-6 text-white">
-                  <h4 className="font-montserrat font-bold mb-2 text-sm sm:text-base">Career After CPL</h4>
-                  <p className="text-white/80 text-xs sm:text-sm mb-3">Average starting salary for First Officers:</p>
-                  <div className="text-2xl sm:text-3xl font-montserrat font-black">₹1.8 – 2.5 LPM</div>
-                  <div className="text-white/70 text-[11px] sm:text-xs mt-1">Senior Captain: ₹5–8 LPM</div>
-                  <a
-                    href="https://wa.me/919355611996"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-xs sm:text-sm hover:bg-gray-100 transition-all"
-                  >
-                    Get Career Counselling
-                  </a>
-                </div>
-              </ScrollReveal>
-            </aside>
-
-            {/* ══════════════ MAIN CONTENT ══════════════ */}
-            <main className="lg:col-span-2 min-w-0">
-              <ScrollReveal>
-
-                {/* ── Overview ── */}
-                <div className="section-tag">CPL Program</div>
-                <h2 className="font-montserrat text-xl sm:text-3xl font-bold text-av-blue mb-3 sm:mb-4 underline-orange leading-tight">
-                  Commercial Pilot License (CPL) Training
-                </h2>
-                <p className="text-gray-600 leading-relaxed mb-3 text-xs sm:text-sm">
-                  The Commercial Pilot License (CPL) is the gateway to an airline career. Our DGCA-approved CPL program is
-                  designed to take you from ground school to the cockpit of a commercial aircraft. With 500+ hours of
-                  combined ground and flight training, you'll be fully prepared for airline interviews and line flying.
-                </p>
-                <p className="text-gray-600 leading-relaxed mb-5 sm:mb-6 text-xs sm:text-sm">
-                  We offer training in India as well as international options in the USA, Canada, and Australia. Our
-                  experienced flight instructors ensure every student meets ICAO standards and DGCA requirements.
-                </p>
-
-                {/* Quick Facts — 2 cols always, 4 on sm+ */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 mb-7 sm:mb-8">
-                  <QuickFact val="18–24 months" label="Duration" />
-                  <QuickFact val="200 hours" label="Min Flight Hours" />
-                  <QuickFact val="10+2 PCM" label="Eligibility" />
-                  <QuickFact val="₹40–70 Lakh" label="Course Fee" />
-                </div>
-
-                {/* ── Syllabus ── */}
-                <h3 className="font-montserrat text-base sm:text-xl font-bold text-av-blue mb-3 sm:mb-5">
-                  Training Syllabus
-                </h3>
-                <div className="space-y-3 sm:space-y-4 mb-8 sm:mb-10">
-                  {syllabus.map((phase) => (
-                    <div key={phase.phase} className="border border-gray-200 rounded-xl overflow-hidden">
-                      <div className="flex flex-wrap items-center justify-between bg-av-blue p-3 sm:p-4 gap-2">
-                        <h4 className="font-montserrat font-bold text-white text-[11px] sm:text-sm leading-snug">
-                          {phase.phase}
-                        </h4>
-                        <span className="text-av-orange text-[11px] sm:text-xs font-semibold whitespace-nowrap">
-                          {phase.duration}
-                        </span>
-                      </div>
-                      {/* Topics: 1 col on xs, 2 on sm, 3 on md */}
-                      <div className="p-3 sm:p-4 grid grid-cols-1 min-[400px]:grid-cols-2 md:grid-cols-3 gap-1.5 sm:gap-2">
-                        {phase.topics.map((t) => (
-                          <div key={t} className="flex items-start gap-1.5 text-gray-600 text-[11px] sm:text-xs">
-                            <span className="text-av-orange flex-shrink-0 leading-tight">▸</span>
-                            <span className="leading-snug">{t}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* ── Eligibility ── */}
-                <h3 className="font-montserrat text-base sm:text-xl font-bold text-av-blue mb-3 sm:mb-5">
-                  Eligibility Criteria
-                </h3>
-                <ul className="space-y-2.5 sm:space-y-3 mb-8 sm:mb-10">
-                  {eligibility.map((item) => (
-                    <li key={item.label} className="flex gap-2 items-start text-xs sm:text-sm text-gray-600">
-                      <span className="text-av-orange font-bold flex-shrink-0 mt-0.5">✓</span>
-                      <span>
-                        <span className="font-semibold text-av-blue">{item.label} –</span> {item.desc}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* ── CPL Fees ── */}
-                <h3 className="font-montserrat text-base sm:text-xl font-bold text-av-blue mb-2">
-                  Commercial Pilot Course (CPL) Fees in India
-                </h3>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5">
-                  Cost to become a pilot in India depends on flying schools from where you will do flying. Below is a
-                  breakdown of all CPL course fees from classes to cockpit.
-                </p>
-
-                {/* DGCA Medical */}
-                <h4 className="font-montserrat font-bold text-av-blue mb-2 sm:mb-3 text-xs sm:text-sm">
-                  1) DGCA Class 1-2 Medical Test
-                </h4>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-                  At first you have to clear DGCA Class 1-2 Medical from any DGCA Medical Doctor. Doctors check the
-                  candidate's health to ensure they meet the physical and mental fitness standards required for flying.
-                </p>
-
-                {/* Medical checks: 1 col xs, 2 col sm+ */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mb-4">
-                  {medicalChecks.map((check) => (
-                    <div key={check.title} className="flex gap-2 items-start text-xs sm:text-sm text-gray-600">
-                      <span className="flex-shrink-0 text-base">{check.icon}</span>
-                      <span className="leading-snug">
-                        <span className="font-semibold text-av-blue">{check.title}: </span>
-                        {check.desc}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                <p className="text-xs sm:text-sm text-gray-600 mb-1">
-                  💰 <span className="font-semibold text-av-blue">DGCA Medical Fees (Approximate):</span>
-                </p>
-                <p className="text-xs sm:text-sm text-gray-600 mb-1">Class 1 Medical: ₹5,000 – ₹10,000</p>
-                <p className="text-xs sm:text-sm text-gray-600 mb-6 sm:mb-8">Class 2 Medical: ₹3,000 – ₹6,000</p>
-
-                {/* DGCA Exam */}
-                <h4 className="font-montserrat font-bold text-av-blue mb-2 sm:mb-3 text-xs sm:text-sm">
-                  2) DGCA CPL Exams and Fees
-                </h4>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-2">
-                  You have to give 6 papers of the DGCA Exam. There are two processes: Regular Exam (4 times a year)
-                  and On-Demand Exam (flexible, as per candidate's choice).
-                </p>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8">
-                  Regular DGCA Exam fees: ₹2,500/subject · On-Demand DGCA Exam fees: ₹5,000/paper.
-                </p>
-
-                {/* Ground Classes */}
-                <h4 className="font-montserrat font-bold text-av-blue mb-2 sm:mb-3 text-xs sm:text-sm">
-                  3) DGCA Ground Classes
-                </h4>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-2">
-                  The right ground classes help you crack the DGCA Exam quickly with proper guidance.
-                </p>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8">
-                  Average fees of DGCA Ground Classes: ₹2.5 Lakh.
-                </p>
-
-                {/* Flying Training */}
-                <h4 className="font-montserrat font-bold text-av-blue mb-2 sm:mb-3 text-xs sm:text-sm">
-                  4) Flying Training Duration and Fees
-                </h4>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5">
-                  The CPL course takes around 8–10 months to complete. It includes 80 hours of classroom sessions and
-                  200 hours of training, covering Simulator Training and Flying Training. Most flying schools charge on
-                  an hourly basis. Candidates must have around ₹40 lakh ready for flying before joining a flight school.
-                </p>
-
-                {/* Fee Table — horizontally scrollable on small screens */}
-                <p className="text-xs sm:text-sm font-semibold text-av-blue mb-3">
-                  CPL Course Fees Breakdown (India):
-                </p>
-                <div className="overflow-x-auto rounded-xl border border-gray-200 mb-2 w-full">
-                  <table className="w-full text-xs min-w-[340px]">
-                    <thead>
-                      <tr className="bg-av-blue text-white">
-                        <th className="p-2 sm:p-3 text-left font-semibold w-7 sm:w-8">#</th>
-                        <th className="p-2 sm:p-3 text-left font-semibold">Expense Category</th>
-                        <th className="p-2 sm:p-3 text-left font-semibold whitespace-nowrap">Approx Cost (INR)</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {feeTable.map((row, i) => (
-                        <tr key={row.category} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                          <td className="p-2 sm:p-3 text-gray-500">{row.num}</td>
-                          <td className="p-2 sm:p-3 text-gray-700 leading-snug">{row.category}</td>
-                          <td className="p-2 sm:p-3 text-av-orange font-semibold whitespace-nowrap">{row.cost}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                    <tfoot>
-                      <tr className="bg-av-blue">
-                        <td colSpan={2} className="p-2 sm:p-3 text-white font-bold text-xs sm:text-sm">
-                          Total Estimated CPL Fees in India
-                        </td>
-                        <td className="p-2 sm:p-3 text-av-orange font-black text-xs sm:text-sm whitespace-nowrap">
-                          ₹40L – ₹50L
-                        </td>
-                      </tr>
-                    </tfoot>
-                  </table>
-                </div>
-                <p className="text-gray-400 text-[10px] sm:text-xs mb-6 sm:mb-8">
-                  * May vary depending on the flight school and location.
-                </p>
-
-                {/* CTA 1 */}
-                <CTABanner
-                  title="Start Your Pilot Journey With We One Aviation Academy"
-                  body="We One Aviation Academy is a premier pilot training institute dedicated to shaping future aviators. We offer world-class DGCA ground classes, commercial pilot training, and aviation courses designed to help you achieve your dream of flying."
-                  linkHref="/contact"
-                  linkLabel="Join Now"
-                />
-
-                {/* ── How to Get CPL ── */}
-                <h3 className="font-montserrat text-base sm:text-xl font-bold text-av-blue mb-3 sm:mb-5">
-                  How to Get a Commercial Pilot License in India
-                </h3>
-                <ol className="space-y-3 mb-6 sm:mb-8">
-                  {howToGet.map((item, i) => (
-                    <li key={item.title} className="flex gap-2.5 sm:gap-3 items-start text-xs sm:text-sm text-gray-600">
-                      <span className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-av-orange rounded-full flex items-center justify-center text-white text-[10px] sm:text-xs font-bold">
-                        {i + 1}
-                      </span>
-                      <span className="leading-snug">
-                        <span className="font-semibold text-av-blue">{item.title} – </span>
-                        {item.desc}
-                      </span>
-                    </li>
-                  ))}
-                </ol>
-
-                {/* Prep Tips */}
-                <h4 className="font-montserrat font-bold text-av-blue mb-2 sm:mb-3 text-xs sm:text-sm">
-                  Preparation Tips For DGCA Exam
-                </h4>
-                <ul className="space-y-2 mb-8 sm:mb-10">
-                  {prepTips.map((tip, i) => (
-                    <li key={i} className="flex gap-2 items-start text-xs sm:text-sm text-gray-600">
-                      <span className="text-av-orange font-bold flex-shrink-0 mt-0.5">–</span>
-                      <span className="leading-snug">{tip}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* ── Salary ── */}
-                <h3 className="font-montserrat text-base sm:text-xl font-bold text-av-blue mb-2">
-                  Commercial Pilot License Salary
-                </h3>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5">
-                  The salary of a commercial pilot depends on experience, employer, and aircraft type. Here's a step-by-step breakdown:
-                </p>
-
-                <div className="space-y-3 sm:space-y-4 mb-5 sm:mb-6">
-                  {salaryData.map((s) => (
-                    <div key={s.level} className="rounded-xl border border-gray-100 overflow-hidden">
-                      <div className="bg-av-blue p-3 sm:p-4 flex flex-wrap items-start sm:items-center justify-between gap-1 sm:gap-2">
-                        <h4 className="font-montserrat font-bold text-white text-[11px] sm:text-sm leading-snug">
-                          {s.level}
-                        </h4>
-                        <span className="text-av-orange font-bold text-[11px] sm:text-xs whitespace-nowrap">
-                          {s.range}
-                        </span>
-                      </div>
-                      <div className="p-3 sm:p-4 bg-white">
-                        <p className="text-av-orange text-[11px] sm:text-xs font-semibold mb-1">{s.annual}</p>
-                        <p className="text-gray-500 text-[11px] sm:text-xs leading-relaxed">{s.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Perks */}
-                <h4 className="font-montserrat font-bold text-av-blue mb-2 sm:mb-3 text-xs sm:text-sm">
-                  Extra Benefits Pilots Get
-                </h4>
-                <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">Besides the salary, pilots get some cool perks:</p>
-                <ul className="space-y-2 mb-8 sm:mb-10">
-                  {perks.map((perk, i) => (
-                    <li key={i} className="flex gap-2 items-start text-xs sm:text-sm text-gray-600">
-                      <span className="text-av-orange font-bold flex-shrink-0 mt-0.5">✓</span>
-                      <span className="leading-snug">{perk}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* ── Career Opportunities ── */}
-                <h3 className="font-montserrat text-base sm:text-xl font-bold text-av-blue mb-2">
-                  Career Opportunities for CPL Holders in India
-                </h3>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5">
-                  Getting a CPL in India opens the door to many exciting roles in aviation. Here's a look at the career
-                  paths available to you.
-                </p>
-
-                {/* Career cards: 1 col on xs–sm, 2 col on md+ */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8 sm:mb-10">
-                  {careerOptions.map((c) => (
-                    <div key={c.num} className="rounded-xl border border-gray-100 p-3 sm:p-5">
-                      <h4 className="font-montserrat font-bold text-av-blue mb-2 flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm leading-snug">
-                        <span className="text-base sm:text-lg">{c.icon}</span>
-                        {c.num}. {c.title}
-                      </h4>
-                      <ul className="space-y-1 text-[11px] sm:text-xs text-gray-600">
-                        <li className="leading-snug">
-                          <span className="font-semibold text-av-blue">What You Do: </span>{c.what}
-                        </li>
-                        <li className="leading-snug">
-                          <span className="font-semibold text-av-blue">Where You Work: </span>{c.where}
-                        </li>
-                        <li className="leading-snug">
-                          <span className="font-semibold text-av-blue">Growth/Perks: </span>{c.growth}
-                        </li>
-                        <li className="text-av-orange font-semibold leading-snug">Salary: {c.salary}</li>
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-
-                {/* CTA 2 */}
-                <CTABanner
-                  title="Start Your Commercial Flight Training With We One Aviation Academy"
-                  body="We One Aviation Academy is a premier pilot training institute dedicated to shaping future aviators. We offer Ground Classes to Flight Training. Our budget-friendly ground classes help lots of people become a pilot."
-                  linkHref="/flying-school"
-                  linkLabel="Join Flight Training Now"
-                />
-
-                {/* ── Student Reviews ── */}
-                <h3 className="font-montserrat text-base sm:text-xl font-bold text-av-blue mb-2">
-                  Our Commercial Pilot Students Reviews
-                </h3>
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                  Here are some of our students who became pilots through our academy and are now successful pilots in airlines.
-                </p>
-
-              </ScrollReveal>
-            </main>
-
-          </div>{/* /grid */}
+        {/* ── QUICK FACTS STRIP ── */}
+        <div className="bg-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4">
+            {quickFacts.map((f, i) => (
+              <div key={i} className={`py-5 text-center ${i < quickFacts.length - 1 ? "border-r border-gray-100" : ""}`}>
+                <div className="font-montserrat font-black text-lg text-av-blue">{f.val}</div>
+                <div className="text-xs text-gray-400 mt-1 uppercase tracking-widest">{f.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      </section>
-    </Layout>
+
+        {/* ── WHAT IS CPL ── */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="section-tag mb-3">Overview</div>
+            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">What is a Commercial Pilot License?</h2>
+            <p className="text-gray-600 leading-relaxed mb-3 text-sm">
+              A commercial pilot license is a certification issued by the Directorate General of Civil Aviation (DGCA) in India that allows you to work as a professional pilot. Without a CPL license, you cannot earn money as a pilot.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-6 text-sm">
+              A CPL pilot is trained to operate aircraft safely and efficiently, making this career both challenging and rewarding. The commercial pilot course includes both theoretical and practical training, ensuring candidates gain complete aviation knowledge.
+            </p>
+            <h3 className="font-montserrat font-bold text-av-blue mb-2">Commercial Pilot Course Overview</h3>
+            <p className="text-gray-600 leading-relaxed text-sm">
+              The commercial pilot course is designed to provide in-depth knowledge of flying and aviation systems. The CPL course typically includes: Ground school training, Simulator training, Flying training (minimum 200 hours), and DGCA exams. The duration of commercial pilot training is usually <strong>18 to 24 months</strong>, depending on the training institute and student progress.
+            </p>
+          </div>
+        </section>
+
+        {/* ── REQUIREMENTS ── */}
+        <section className="py-20 px-4 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="section-tag mb-3">Requirements</div>
+            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Requirements to Become a Pilot</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">Understanding the requirements to become a pilot is essential before starting your journey. Here are the basic commercial pilot requirements:</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+              {[
+                { label: "1. Educational Qualifications", desc: "10+2 with Physics and Mathematics. Minimum 50% marks. This is part of the pilot education requirements." },
+                { label: "2. Age Limit", desc: "Minimum age: 18 years." },
+                { label: "3. Medical Fitness", desc: "DGCA Class 1 medical certificate required." },
+                { label: "4. Flying Experience", desc: "Minimum 200 flying hours required." },
+              ].map((item, i) => (
+                <div key={i} className="card-hover bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex gap-3">
+                  <span className="text-av-blue font-black text-lg flex-shrink-0 mt-0.5">✓</span>
+                  <div>
+                    <div className="font-montserrat font-bold text-av-blue text-sm mb-1">{item.label}</div>
+                    <div className="text-gray-500 text-xs leading-relaxed">{item.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">These criteria define the qualifications to become a pilot and ensure that candidates meet aviation standards.</p>
+            <h3 className="font-montserrat font-bold text-av-blue mb-2">Commercial Pilot Eligibility</h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">The commercial pilot eligibility criteria include: Strong communication skills, Good eyesight and physical fitness, Basic knowledge of Physics and Mathematics, and English proficiency. These are also considered the eligibility to become a pilot and are essential for a successful aviation career.</p>
+            <h3 className="font-montserrat font-bold text-av-blue mb-2">Qualifications for Commercial Pilot</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">The qualifications for commercial pilot go beyond academics. You must have: Analytical thinking, Decision-making skills, Ability to handle pressure, and Technical understanding of aircraft. Meeting these commercial pilot requirements ensures you are ready for real-world flying conditions.</p>
+          </div>
+        </section>
+
+        {/* ── SYLLABUS ── */}
+        <section className="py-20 px-4 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <div className="section-tag mb-3">Curriculum</div>
+            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Pilot Syllabus & CPL Exam Syllabus</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-3">
+              CPL ground classes are the foundation of your pilot training. These classes prepare you for DGCA exams and include subjects like: Air Navigation, Meteorology, Air Regulations, Technical General, and Technical Specific. Ground training usually lasts <strong>4–6 months</strong> and is a crucial part of the pilot syllabus.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">
+              The pilot syllabus is divided into theoretical and practical training. The CPL exam syllabus includes: Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, and Radio Telephony (RTR). These subjects are mandatory to pass DGCA exams and become a licensed pilot.
+            </p>
+            <div className="space-y-3">
+              {syllabus.map((phase, i) => (
+                <div key={i} className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+                  <button
+                    onClick={() => setOpenPhase(openPhase === i ? null : i)}
+                    className="w-full bg-av-blue text-white px-6 py-4 flex justify-between items-center hover:bg-av-navy transition-all"
+                  >
+                    <span className="font-montserrat font-bold text-sm">{phase.phase}</span>
+                    <span className="flex items-center gap-3">
+                      <span className="text-av-orange text-xs font-semibold">{phase.duration}</span>
+                      <span className="text-white/60 text-sm">{openPhase === i ? "▲" : "▼"}</span>
+                    </span>
+                  </button>
+                  {openPhase === i && (
+                    <div className="px-6 py-4 bg-white grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                      {phase.topics.map((t, j) => (
+                        <div key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                          <span className="text-av-orange mt-0.5">▸</span> {t}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── ADMISSION ── */}
+        <section className="py-20 px-4 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="section-tag mb-3">Admission</div>
+            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Entrance Exam for Commercial Pilot</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">
+              Many institutes conduct an entrance exam for commercial pilot admission. The CPL entrance exam generally includes: Physics, Mathematics, English, and General aptitude. Some flying schools also conduct: Pilot aptitude tests, Personal interviews, and Medical tests. This is part of the Commercial Pilot License Admission Process.
+            </p>
+            <h3 className="font-montserrat font-bold text-av-blue mb-3">Commercial Pilot License Admission Process</h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">The Commercial Pilot License Admission Process involves multiple steps:</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+              {[
+                "Choose a DGCA-approved flying school",
+                "Clear the entrance exam or screening",
+                "Complete medical tests",
+                "Enroll in CPL ground classes",
+                "Start flying training",
+                "Pass DGCA exams",
+                "Complete 200 flying hours",
+                "Apply for CPL license",
+              ].map((step, i) => (
+                <div key={i} className="bg-gray-50 rounded-xl border border-gray-100 p-4 flex gap-3 items-start">
+                  <div className="flex-shrink-0 w-7 h-7 bg-av-orange rounded-full flex items-center justify-center text-white font-black text-xs">{i + 1}</div>
+                  <span className="text-gray-600 text-sm leading-relaxed">{step}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">This structured process ensures proper pilot training and certification.</p>
+            <h3 className="font-montserrat font-bold text-av-blue mb-2">Commercial Pilot Training in India</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Commercial pilot training in India is regulated by DGCA and follows strict guidelines. Training includes: Ground classes, Simulator sessions, Solo and cross-country flying, Night flying, and Instrument flying. India has many DGCA-approved academies offering world-class pilot course programs.
+            </p>
+          </div>
+        </section>
+
+        {/* ── CPL FEES ── */}
+        <section className="py-20 px-4 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <div className="section-tag mb-3">Investment</div>
+            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot Course (CPL) Fees in India</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-8">
+              Cost to become a pilot in India depends on flying schools from where you will do flying. The total cost of commercial pilot training in India ranges between <strong>₹35 lakh to ₹55 lakh</strong> (approx.). This includes: Flying hours, Ground classes, Simulator training, and Examination fees. The cost may vary depending on the academy and location.
+            </p>
+
+            <h3 className="font-montserrat font-bold text-av-blue mb-2">1) DGCA Class 1-2 Medical Test</h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              At first you have to clear DGCA Class 1-2 Medical from any DGCA Medical Doctor. Doctors check the candidate's health to ensure they meet the physical and mental fitness standards required for flying.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+              {medicalChecks.map((check, i) => (
+                <div key={i} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex gap-3">
+                  <span className="text-2xl flex-shrink-0">{check.icon}</span>
+                  <div>
+                    <div className="font-montserrat font-bold text-av-blue text-xs mb-1">{check.title}</div>
+                    <div className="text-gray-500 text-xs leading-relaxed">{check.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="bg-blue-50 border border-blue-100 rounded-xl px-5 py-4 text-sm text-gray-700 mb-8">
+              💰 <strong className="text-av-blue">DGCA Medical Fees (Approximate):</strong> Class 1 Medical: ₹5,000 – ₹10,000 &nbsp;|&nbsp; Class 2 Medical: ₹3,000 – ₹6,000
+            </div>
+
+            <h3 className="font-montserrat font-bold text-av-blue mb-2">2) DGCA CPL Exams and Fees</h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">
+              You have to give 6 papers of the DGCA Exam. There are two processes: <strong>Regular Exam</strong> (4 times a year) and <strong>On-Demand Exam</strong> (flexible, as per candidate's choice). Regular DGCA Exam fees: ₹2,500/subject · On-Demand DGCA Exam fees: ₹5,000/paper.
+            </p>
+
+            <h3 className="font-montserrat font-bold text-av-blue mb-2">3) DGCA Ground Classes</h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">
+              The right ground classes help you crack the DGCA Exam quickly with proper guidance. Average fees of DGCA Ground Classes: <strong>₹2.5 Lakh</strong>.
+            </p>
+
+            <h3 className="font-montserrat font-bold text-av-blue mb-2">4) Flying Training Duration and Fees</h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">
+              The CPL course takes around 8–10 months to complete. It includes 80 hours of classroom sessions and 200 hours of training, covering Simulator Training and Flying Training. Most flying schools charge on an hourly basis. Candidates must have around <strong>₹40 lakh</strong> ready for flying before joining a flight school.
+            </p>
+
+            <p className="font-montserrat font-bold text-av-blue text-sm mb-3">CPL Course Fees Breakdown (India):</p>
+            <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-av-blue text-white">
+                    <th className="px-5 py-3 text-left font-bold w-10">#</th>
+                    <th className="px-5 py-3 text-left font-bold">Expense Category</th>
+                    <th className="px-5 py-3 text-left font-bold whitespace-nowrap">Approx Cost (INR)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {feeTable.map((row, i) => (
+                    <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                      <td className="px-5 py-3 text-gray-400">{row.num}</td>
+                      <td className="px-5 py-3 text-gray-600">{row.category}</td>
+                      <td className="px-5 py-3 text-av-orange font-semibold whitespace-nowrap">{row.cost}</td>
+                    </tr>
+                  ))}
+                </tbody>
+                <tfoot>
+                  <tr className="bg-av-blue">
+                    <td colSpan={2} className="px-5 py-3 text-white font-bold">Total Estimated CPL Fees in India</td>
+                    <td className="px-5 py-3 text-av-orange font-black whitespace-nowrap">₹40L – ₹50L</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <p className="text-xs text-gray-400 mt-2">* May vary depending on the flight school and location.</p>
+          </div>
+        </section>
+
+        {/* ── HOW TO GET CPL ── */}
+        <section className="py-20 px-4 bg-gradient-to-br from-av-blue via-av-navy to-av-blue">
+          <div className="max-w-7xl mx-auto">
+            <div className="section-tag mb-3">Process</div>
+            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white mb-6">How to Get a Commercial Pilot License in India</h2>
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              {howToGet.map((item, i) => (
+                <div key={i} className="glass rounded-2xl p-6 flex gap-4">
+                  <div className="flex-shrink-0 w-9 h-9 bg-av-orange rounded-full flex items-center justify-center text-white font-black">{i + 1}</div>
+                  <div>
+                    <div className="font-montserrat font-bold text-white text-sm mb-2">{item.title}</div>
+                    <div className="text-white/70 text-xs leading-relaxed">{item.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <h3 className="font-montserrat font-bold text-white mb-3">Preparation Tips For DGCA Exam</h3>
+            <div className="space-y-3">
+              {[
+                "Attend ground classes regularly and use DGCA-approved study materials (e.g., books by authors like R.K. Bali or Oxford Aviation Academy manuals).",
+                "Practice with past question papers and mock tests.",
+                "Focus on understanding concepts rather than rote memorization, as questions can be application-based.",
+              ].map((tip, i) => (
+                <div key={i} className="glass rounded-xl p-4 flex gap-3 items-start text-sm text-white/80">
+                  <span className="text-av-orange font-bold flex-shrink-0">–</span> {tip}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── SALARY ── */}
+        <section className="py-20 px-4 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="section-tag mb-3">Earnings</div>
+            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot License Salary</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">
+              One of the biggest attractions of this career is the commercial pilot license salary. Commercial pilot starting pay: ₹1.5 lakh to ₹3 lakh per month. The aviation industry offers excellent growth, making it a highly rewarding profession.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              {salaryData.map((s, i) => (
+                <div key={i} className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden card-hover">
+                  <div className="bg-av-blue px-5 py-4">
+                    <div className="font-montserrat font-bold text-white text-sm mb-1">{s.level}</div>
+                    <div className="text-av-orange font-black text-base">{s.range}</div>
+                  </div>
+                  <div className="px-5 py-4">
+                    <div className="text-av-blue font-semibold text-xs mb-2">{s.annual}</div>
+                    <div className="text-gray-500 text-xs leading-relaxed">{s.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <h3 className="font-montserrat font-bold text-av-blue mb-3">Extra Benefits Pilots Get</h3>
+            <p className="text-gray-600 text-sm mb-4">Besides the salary, pilots get some cool perks:</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { icon: "✈️", text: "Free or cheap flights for themselves and their families" },
+                { icon: "🏥", text: "Health insurance and retirement plans" },
+                { icon: "🏨", text: "Hotel stays and travel allowances when they fly to other places" },
+                { icon: "🌍", text: "A fancy uniform and a job that feels adventurous!" },
+              ].map((perk, i) => (
+                <div key={i} className="bg-blue-50 rounded-xl p-4 flex gap-3 items-start">
+                  <span className="text-xl">{perk.icon}</span>
+                  <span className="text-gray-600 text-xs leading-relaxed">{perk.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── WHY CPL ── */}
+        <section className="py-20 px-4 bg-gray-50">
+          <div className="max-w-7xl mx-auto">
+            <div className="section-tag mb-3">Why CPL</div>
+            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Why Choose a CPL Course?</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">Choosing a CPL course offers multiple benefits:</p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
+              {["High-paying career", "Global job opportunities", "Prestige and respect", "Exciting lifestyle"].map((b, i) => (
+                <div key={i} className="bg-white rounded-xl border border-gray-100 shadow-sm px-4 py-3 text-sm text-av-blue font-semibold text-center card-hover hover:border-av-orange/30 transition-all">
+                  ✅ {b}
+                </div>
+              ))}
+            </div>
+            <p className="text-gray-600 text-sm leading-relaxed">A commercial pilot course opens doors to airlines, cargo services, and private aviation.</p>
+          </div>
+        </section>
+
+        {/* ── CAREER OPPORTUNITIES ── */}
+        <section className="py-20 px-4 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="section-tag mb-3">Career Paths</div>
+            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Career Opportunities After CPL</h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">After completing your commercial pilot training, you can work as:</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {careerOptions.map((c, i) => (
+                <div key={i} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 card-hover hover:border-av-orange/30 transition-all">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-2xl">{c.icon}</span>
+                    <div className="font-montserrat font-bold text-av-blue text-sm">{c.num}. {c.title}</div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="text-xs text-gray-500 leading-relaxed"><span className="font-bold text-av-blue">What You Do: </span>{c.what}</div>
+                    <div className="text-xs text-gray-500 leading-relaxed"><span className="font-bold text-av-blue">Where You Work: </span>{c.where}</div>
+                    <div className="text-xs text-av-orange font-bold mt-2">Salary: {c.salary}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── CONCLUSION ── */}
+        <section className="py-20 px-4 bg-gradient-to-br from-av-blue to-av-navy">
+          <div className="max-w-7xl mx-auto text-center">
+            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white mb-4">Conclusion</h2>
+            <p className="text-white/70 text-sm leading-relaxed max-w-3xl mx-auto mb-6">
+              The journey to becoming a commercial pilot requires dedication, investment, and proper training. By enrolling in a pilot course, meeting the commercial pilot eligibility, and completing the Commercial Pilot License Admission Process, you can achieve your dream of flying professionally. With high demand, excellent commercial pilot license salary, and global opportunities, pursuing a commercial pilot license is a smart career choice in today's aviation industry.
+            </p>
+            <a href="/contact"
+              className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm shadow-lg">
+              Get Free Counselling →
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+      <Footer />
+    </>
   );
 }
