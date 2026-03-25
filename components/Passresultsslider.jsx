@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 
 const reviewsData = [
   { id: 1, name: 'Capt. Akshay', imageSrc: '/assets/pilot1.webp', airline: 'Air India' },
-  { id: 2, name: 'Capt. Pilot', imageSrc: '/assets/pilot2.webp', airline: 'IndiGo' },
+  { id: 2, name: 'Capt. Aben Abraham', imageSrc: '/assets/pilot2.webp', airline: 'IndiGo' },
   { id: 3, name: 'Capt. Akhila', imageSrc: '/assets/pilot3.webp', airline: 'Air India Express' },
   { id: 4, name: 'Capt. Anish K.', imageSrc: '/assets/pilot4.webp', airline: 'Air India Express' },
   { id: 5, name: 'Capt. Aashish', imageSrc: '/assets/pilot5.webp', airline: 'IndiGo' },
