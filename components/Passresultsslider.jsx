@@ -3,29 +3,29 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 
 const reviewsData = [
-    { id: 1, name: 'Capt. Akshay', imageSrc: '/assets/pilot1.webp', airline: 'Air India' },
-    { id: 2, name: 'Capt. Pilot', imageSrc: '/assets/pilot2.webp', airline: 'IndiGo' },
-    { id: 3, name: 'Capt. Akhila', imageSrc: '/assets/pilot3.webp', airline: 'Air India Express' },
-    { id: 4, name: 'Capt. Anish K.', imageSrc: '/assets/pilot4.webp', airline: 'Air India Express' },
-    { id: 5, name: 'Capt. Aashish', imageSrc: '/assets/pilot5.webp', airline: 'IndiGo' },
-    { id: 6, name: 'Capt. Megha', imageSrc: '/assets/pilot6.jpg', airline: 'Air India Express' },
-    { id: 7, name: 'Capt. Keshna', imageSrc: '/assets/pilot7.jpg', airline: 'Air India' },
-    { id: 8, name: 'Capt. Tanmay', imageSrc: '/assets/pilot8.jpg', airline: 'Air India Express' },
-    { id: 9, name: 'Capt. Neha', imageSrc: '/assets/pilot9.jpg', airline: 'SpiceJet' },
-    { id: 10, name: 'Capt. Esther', imageSrc: '/assets/pilot10.jpg', airline: 'Air India' },
-    { id: 11, name: 'Capt. Akshat', imageSrc: '/assets/pilot11.jpg', airline: 'SpiceJet' },
-    { id: 12, name: 'Capt. Ashik K.', imageSrc: '/assets/pilot12.jpg', airline: 'IndiGo' },
-    { id: 13, name: 'Capt. Eshan', imageSrc: '/assets/pilot13.jpg', airline: 'IndiGo' },
-    { id: 14, name: 'Capt. Namita', imageSrc: '/assets/pilot14.webp', airline: 'SpiceJet' },
-    { id: 15, name: 'Capt. Kunal', imageSrc: '/assets/pilot15.webp', airline: 'SpiceJet' },
-    { id: 16, name: 'Capt. Sahiba', imageSrc: '/assets/pilot16.webp', airline: 'Air India Express' },
+  { id: 1, name: 'Capt. Akshay', imageSrc: '/assets/pilot1.webp', airline: 'Air India' },
+  { id: 2, name: 'Capt. Pilot', imageSrc: '/assets/pilot2.webp', airline: 'IndiGo' },
+  { id: 3, name: 'Capt. Akhila', imageSrc: '/assets/pilot3.webp', airline: 'Air India Express' },
+  { id: 4, name: 'Capt. Anish K.', imageSrc: '/assets/pilot4.webp', airline: 'Air India Express' },
+  { id: 5, name: 'Capt. Aashish', imageSrc: '/assets/pilot5.webp', airline: 'IndiGo' },
+  { id: 6, name: 'Capt. Megha', imageSrc: '/assets/pilot6.jpg', airline: 'Air India Express' },
+  { id: 7, name: 'Capt. Keshna', imageSrc: '/assets/pilot7.jpg', airline: 'Air India' },
+  { id: 8, name: 'Capt. Tanmay', imageSrc: '/assets/pilot8.jpg', airline: 'Air India Express' },
+  { id: 9, name: 'Capt. Neha', imageSrc: '/assets/pilot9.jpg', airline: 'SpiceJet' },
+  { id: 10, name: 'Capt. Esther', imageSrc: '/assets/pilot10.jpg', airline: 'Air India' },
+  { id: 11, name: 'Capt. Akshat', imageSrc: '/assets/pilot11.jpg', airline: 'SpiceJet' },
+  { id: 12, name: 'Capt. Ashik K.', imageSrc: '/assets/pilot12.jpg', airline: 'IndiGo' },
+  { id: 13, name: 'Capt. Eshan', imageSrc: '/assets/pilot13.jpg', airline: 'IndiGo' },
+  { id: 14, name: 'Capt. Namita', imageSrc: '/assets/pilot14.webp', airline: 'SpiceJet' },
+  { id: 15, name: 'Capt. Kunal', imageSrc: '/assets/pilot15.webp', airline: 'SpiceJet' },
+  { id: 16, name: 'Capt. Sahiba', imageSrc: '/assets/pilot16.webp', airline: 'Air India Express' },
 ];
 
 const AIRLINE_COLORS = {
-    'Air India': { bg: 'rgba(180,0,50,0.10)', border: 'rgba(180,0,50,0.25)', dot: '#b40032', text: '#8b0028' },
-    'IndiGo': { bg: 'rgba(6,54,190,0.10)', border: 'rgba(6,54,190,0.25)', dot: '#0636be', text: '#0636be' },
-    'Air India Express': { bg: 'rgba(249,115,22,0.10)', border: 'rgba(249,115,22,0.28)', dot: '#f97316', text: '#c2560a' },
-    'SpiceJet': { bg: 'rgba(220,53,30,0.10)', border: 'rgba(220,53,30,0.25)', dot: '#dc351e', text: '#b02a16' },
+  'Air India': { bg: 'rgba(180,0,50,0.10)', border: 'rgba(180,0,50,0.25)', dot: '#b40032', text: '#8b0028' },
+  'IndiGo': { bg: 'rgba(6,54,190,0.10)', border: 'rgba(6,54,190,0.25)', dot: '#0636be', text: '#0636be' },
+  'Air India Express': { bg: 'rgba(249,115,22,0.10)', border: 'rgba(249,115,22,0.28)', dot: '#f97316', text: '#c2560a' },
+  'SpiceJet': { bg: 'rgba(220,53,30,0.10)', border: 'rgba(220,53,30,0.25)', dot: '#dc351e', text: '#b02a16' },
 };
 
 // ── Constants ─────────────────────────────────────────────────────────────────
@@ -339,196 +339,196 @@ const PRS_CSS = `
 `;
 
 export default function PassResultsSlider() {
-    const [current, setCurrent] = useState(0);
-    const [isPaused, setIsPaused] = useState(false);
-    const [isAnim, setIsAnim] = useState(false);
-    const [dragStart, setDragStart] = useState(null);
-    const trackRef = useRef(null);
+  const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isAnim, setIsAnim] = useState(false);
+  const [dragStart, setDragStart] = useState(null);
+  const trackRef = useRef(null);
 
-    const total = reviewsData.length;
-    const maxIndex = total - VISIBLE;
+  const total = reviewsData.length;
+  const maxIndex = total - VISIBLE;
 
-    const goTo = useCallback((idx) => {
-        if (isAnim) return;
-        setIsAnim(true);
-        setCurrent(Math.max(0, Math.min(idx, maxIndex)));
-        setTimeout(() => setIsAnim(false), 520);
-    }, [isAnim, maxIndex]);
+  const goTo = useCallback((idx) => {
+    if (isAnim) return;
+    setIsAnim(true);
+    setCurrent(Math.max(0, Math.min(idx, maxIndex)));
+    setTimeout(() => setIsAnim(false), 520);
+  }, [isAnim, maxIndex]);
 
-    const next = useCallback(() => goTo(current >= maxIndex ? 0 : current + 1), [current, maxIndex, goTo]);
-    const prev = useCallback(() => goTo(current <= 0 ? maxIndex : current - 1), [current, maxIndex, goTo]);
+  const next = useCallback(() => goTo(current >= maxIndex ? 0 : current + 1), [current, maxIndex, goTo]);
+  const prev = useCallback(() => goTo(current <= 0 ? maxIndex : current - 1), [current, maxIndex, goTo]);
 
-    // Auto-play
-    useEffect(() => {
-        if (isPaused) return;
-        const t = setInterval(next, AUTO_SLIDE);
-        return () => clearInterval(t);
-    }, [isPaused, next]);
+  // Auto-play
+  useEffect(() => {
+    if (isPaused) return;
+    const t = setInterval(next, AUTO_SLIDE);
+    return () => clearInterval(t);
+  }, [isPaused, next]);
 
-    // Translate track
-    useEffect(() => {
-        if (trackRef.current) {
-            trackRef.current.style.transform = `translateX(-${current * CARD_WIDTH}px)`;
-        }
-    }, [current]);
+  // Translate track
+  useEffect(() => {
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translateX(-${current * CARD_WIDTH}px)`;
+    }
+  }, [current]);
 
-    // Keyboard navigation
-    useEffect(() => {
-        const onKey = (e) => {
-            if (e.key === 'ArrowLeft') prev();
-            if (e.key === 'ArrowRight') next();
-        };
-        window.addEventListener('keydown', onKey);
-        return () => window.removeEventListener('keydown', onKey);
-    }, [prev, next]);
-
-    // Pointer drag
-    const onPointerDown = (e) => setDragStart(e.clientX);
-    const onPointerUp = (e) => {
-        if (dragStart === null) return;
-        const delta = dragStart - e.clientX;
-        if (Math.abs(delta) > 40) delta > 0 ? next() : prev();
-        setDragStart(null);
+  // Keyboard navigation
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'ArrowRight') next();
     };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [prev, next]);
 
-    const DOT_COUNT = Math.min(total, 8);
+  // Pointer drag
+  const onPointerDown = (e) => setDragStart(e.clientX);
+  const onPointerUp = (e) => {
+    if (dragStart === null) return;
+    const delta = dragStart - e.clientX;
+    if (Math.abs(delta) > 40) delta > 0 ? next() : prev();
+    setDragStart(null);
+  };
 
-    return (
-        <>
-            {/* ✅ dangerouslySetInnerHTML prevents the server/client encoding mismatch */}
-            <style dangerouslySetInnerHTML={{ __html: PRS_CSS }} />
+  const DOT_COUNT = Math.min(total, 8);
 
-            <section
-                className="prs-section"
-                onMouseEnter={() => setIsPaused(true)}
-                onMouseLeave={() => setIsPaused(false)}
-            >
-                <div className="prs-inner">
+  return (
+    <>
+      {/* ✅ dangerouslySetInnerHTML prevents the server/client encoding mismatch */}
+      <style dangerouslySetInnerHTML={{ __html: PRS_CSS }} />
 
-                    {/* Header */}
-                    <div className="prs-header">
-                        <div className="prs-header-left">
-                            <div className="prs-tag">
-                                <span className="prs-tag-dot" />
-                                Our Alumni
-                            </div>
-                            <h2>
-                                Boasting <em>Outstanding</em><br />Pass Results
-                            </h2>
-                        </div>
-                        <div className="prs-counter">
-                            <div className="prs-counter-num">
-                                {String(reviewsData.length).padStart(2, '0')}<span>+</span>
-                            </div>
-                            <div className="prs-counter-label">Certified Pilots</div>
-                        </div>
+      <section
+        className="prs-section"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <div className="prs-inner">
+
+          {/* Header */}
+          <div className="prs-header">
+            <div className="prs-header-left">
+              <div className="prs-tag">
+                <span className="prs-tag-dot" />
+                Our Alumni
+              </div>
+              <h2>
+                Boasting <em>Outstanding</em><br />Pass Results
+              </h2>
+            </div>
+            <div className="prs-counter">
+              <div className="prs-counter-num">
+                <span>10000+</span>
+              </div>
+              <div className="prs-counter-label">Certified Pilots</div>
+            </div>
+          </div>
+
+          {/* Slider */}
+          <div
+            className="prs-viewport"
+            onPointerDown={onPointerDown}
+            onPointerUp={onPointerUp}
+            onPointerLeave={() => setDragStart(null)}
+          >
+            <div className="prs-track" ref={trackRef}>
+              {reviewsData.map((pilot) => {
+                const colors = AIRLINE_COLORS[pilot.airline] ?? {
+                  bg: 'rgba(10,35,66,0.07)', border: 'rgba(10,35,66,0.18)',
+                  dot: '#0a2342', text: '#0a2342',
+                };
+                return (
+                  <div key={pilot.id} className="prs-card">
+                    <div className="prs-card-head">
+                      <span className="prs-plane-mark">✈</span>
+                      <span className="prs-card-id">#{String(pilot.id).padStart(3, '0')}</span>
                     </div>
 
-                    {/* Slider */}
-                    <div
-                        className="prs-viewport"
-                        onPointerDown={onPointerDown}
-                        onPointerUp={onPointerUp}
-                        onPointerLeave={() => setDragStart(null)}
-                    >
-                        <div className="prs-track" ref={trackRef}>
-                            {reviewsData.map((pilot) => {
-                                const colors = AIRLINE_COLORS[pilot.airline] ?? {
-                                    bg: 'rgba(10,35,66,0.07)', border: 'rgba(10,35,66,0.18)',
-                                    dot: '#0a2342', text: '#0a2342',
-                                };
-                                return (
-                                    <div key={pilot.id} className="prs-card">
-                                        <div className="prs-card-head">
-                                            <span className="prs-plane-mark">✈</span>
-                                            <span className="prs-card-id">#{String(pilot.id).padStart(3, '0')}</span>
-                                        </div>
-
-                                        <div className="prs-avatar-wrap">
-                                            <div className="prs-avatar-inner">
-                                                <img src={pilot.imageSrc} alt={pilot.name} loading="lazy" />
-                                            </div>
-                                        </div>
-
-                                        <div className="prs-card-body">
-                                            <h3 className="prs-name">{pilot.name}</h3>
-
-                                            <span
-                                                className="prs-badge"
-                                                style={{
-                                                    background: colors.bg,
-                                                    borderColor: colors.border,
-                                                    color: colors.text,
-                                                }}
-                                            >
-                                                <span className="prs-badge-dot" style={{ background: colors.dot }} />
-                                                {pilot.airline}
-                                            </span>
-
-                                            <div className="prs-divider" />
-
-                                            <div className="prs-verified">
-                                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-                                                    <path
-                                                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                                                        stroke="#0ea5e9" strokeWidth="2"
-                                                        strokeLinecap="round" strokeLinejoin="round"
-                                                    />
-                                                </svg>
-                                                Certified
-                                            </div>
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
+                    <div className="prs-avatar-wrap">
+                      <div className="prs-avatar-inner">
+                        <img src={pilot.imageSrc} alt={pilot.name} loading="lazy" />
+                      </div>
                     </div>
 
-                    {/* Controls */}
-                    <div className="prs-controls">
-                        <div className="prs-dots">
-                            {Array.from({ length: DOT_COUNT }).map((_, i) => {
-                                const step = Math.max(1, Math.floor(maxIndex / (DOT_COUNT - 1)));
-                                const target = i === DOT_COUNT - 1 ? maxIndex : i * step;
-                                const isActive =
-                                    i === DOT_COUNT - 1
-                                        ? current === maxIndex
-                                        : current >= target && current < target + step;
-                                return (
-                                    <button
-                                        key={i}
-                                        className={`prs-dot${isActive ? ' active' : ''}`}
-                                        onClick={() => goTo(target)}
-                                        aria-label={`Go to slide group ${i + 1}`}
-                                    />
-                                );
-                            })}
-                        </div>
+                    <div className="prs-card-body">
+                      <h3 className="prs-name">{pilot.name}</h3>
 
-                        <div className="prs-slide-count">
-                            <strong>{String(current + 1).padStart(2, '0')}</strong>
-                            {' / '}
-                            {String(maxIndex + 1).padStart(2, '0')}
-                        </div>
+                      <span
+                        className="prs-badge"
+                        style={{
+                          background: colors.bg,
+                          borderColor: colors.border,
+                          color: colors.text,
+                        }}
+                      >
+                        <span className="prs-badge-dot" style={{ background: colors.dot }} />
+                        {pilot.airline}
+                      </span>
 
-                        <div className="prs-arrows">
-                            <button className="prs-arrow" onClick={prev} aria-label="Previous">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                    <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2.2"
-                                        strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </button>
-                            <button className="prs-arrow" onClick={next} aria-label="Next">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2.2"
-                                        strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </button>
-                        </div>
+                      <div className="prs-divider" />
+
+                      <div className="prs-verified">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+                          <path
+                            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                            stroke="#0ea5e9" strokeWidth="2"
+                            strokeLinecap="round" strokeLinejoin="round"
+                          />
+                        </svg>
+                        Certified
+                      </div>
                     </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
 
-                </div>
-            </section>
-        </>
-    );
+          {/* Controls */}
+          <div className="prs-controls">
+            <div className="prs-dots">
+              {Array.from({ length: DOT_COUNT }).map((_, i) => {
+                const step = Math.max(1, Math.floor(maxIndex / (DOT_COUNT - 1)));
+                const target = i === DOT_COUNT - 1 ? maxIndex : i * step;
+                const isActive =
+                  i === DOT_COUNT - 1
+                    ? current === maxIndex
+                    : current >= target && current < target + step;
+                return (
+                  <button
+                    key={i}
+                    className={`prs-dot${isActive ? ' active' : ''}`}
+                    onClick={() => goTo(target)}
+                    aria-label={`Go to slide group ${i + 1}`}
+                  />
+                );
+              })}
+            </div>
+
+            <div className="prs-slide-count">
+              <strong>{String(current + 1).padStart(2, '0')}</strong>
+              {' / '}
+              {String(maxIndex + 1).padStart(2, '0')}
+            </div>
+
+            <div className="prs-arrows">
+              <button className="prs-arrow" onClick={prev} aria-label="Previous">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2.2"
+                    strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <button className="prs-arrow" onClick={next} aria-label="Next">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2.2"
+                    strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </>
+  );
 }
