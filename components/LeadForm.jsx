@@ -75,6 +75,8 @@ export default function LeadForm({ title = 'Get Free Counselling', dark = false,
           <option value="ATPL">ATPL</option>
           <option value="Sport Pilot License (SPL)">Sport Pilot License (SPL)</option>
           <option value="DGCA Ground Classes">DGCA Ground Classes</option>
+          <option value="Air India Adapt test Preparation">Air India Adapt test Preparation</option>
+          <option value="IndiGo Adapt test Preparation">IndiGo Adapt test Preparation</option>
         </select>
         {!compact && (
           <textarea placeholder="Your Message (Optional)" value={form.message}

@@ -217,6 +217,9 @@ export default function ContactPopup() {
               <option>Private Pilot License (PPL)</option>
               <option>ATPL</option>
               <option>DGCA Ground Classes</option>
+              <option>Air India Adapt test Preparation </option>
+              <option>IndiGo  Adapt test Preparation</option>
+
             </select>
 
             <button type="submit" disabled={loading} className="whatsapp-btn" style={{ marginTop: '4px' }}>

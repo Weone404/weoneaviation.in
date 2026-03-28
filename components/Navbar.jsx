@@ -46,6 +46,15 @@ const courses = [
       { label: 'Psychometry', href: '/airline-preparatory-classes/psychometry' },
       { label: 'CASS/COMPASS', href: '/airline-preparatory-classes/cass-compass' },
       { label: 'Written Exam Preparation', href: '/airline-preparatory-classes/written-exam-preparation' },
+      {
+        label: 'Air Inda', href: '/Airindia-pilot-preparation',
+      },
+      {
+        label: 'Adapt Test For Air India', href: '/Airindia-pilot-preparation',
+      },
+      {
+        label: 'Adapt Test For IndiGo', href: '/Indigo-pilot-preparation',
+      },
     ],
   },
   { label: 'Private Pilot License (PPL)', href: '/private-pilot-license-ppl-course-details' },
@@ -335,10 +344,18 @@ export default function Navbar() {
                 {c.label}
               </Link>
               {c.sub && c.sub.map((s) => (
-                <Link key={s.href} href={s.href} onClick={() => setMenuOpen(false)}
-                  className="block px-10 py-1.5 text-white/60 hover:text-av-orange text-xs rounded-lg hover:bg-white/5 transition-all">
-                  — {s.label}
-                </Link>
+                <div key={s.href}>
+                  <Link href={s.href} onClick={() => setMenuOpen(false)}
+                    className="block px-10 py-1.5 text-white/60 hover:text-av-orange text-xs rounded-lg hover:bg-white/5 transition-all">
+                    — {s.label}
+                  </Link>
+                  {s.sub && s.sub.map((ss) => (
+                    <Link key={ss.href} href={ss.href} onClick={() => setMenuOpen(false)}
+                      className="block px-14 py-1.5 text-white/40 hover:text-av-orange text-xs rounded-lg hover:bg-white/5 transition-all">
+                      — {ss.label}
+                    </Link>
+                  ))}
+                </div>
               ))}
             </div>
           ))}
