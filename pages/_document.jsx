@@ -10,6 +10,10 @@ export default function Document() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#0a2342" />
         <link rel="icon" href="/assets/logo.webp" />
+
+        {/* Quill Editor CSS */}
+        <link rel="stylesheet" href="https://unpkg.com/react-quill@2.0.0/dist/quill.snow.css" />
+
       </Head>
       <body>
         <Main />
