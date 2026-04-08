@@ -58,18 +58,22 @@ export default function AdminBlog() {
                 method: 'POST',
                 body: formData,
             })
-            console.log('Response status:', res.status)
-            const data = await res.json()
 
-            if (!res.ok) {
-                console.error('Publish API error:', res.status, data)
-                setStatus('❌ Something went wrong. Please try again.')
+            const text = await res.text()
+            console.log('API Response Status:', res.status)
+            console.log('API Response Body:', text)
+
+            let data
+            try {
+                data = JSON.parse(text)
+            } catch (e) {
+                console.error('Failed to parse response:', text)
+                setStatus(`❌ Server error: ${text.substring(0, 100)}`)
                 setLoading(false)
                 return
             }
 
             if (data.success) {
-                console.log('Response body:', data)
                 setStatus('✅ Blog published! Redirecting...')
                 setTitle('')
                 setExcerpt('')
@@ -81,13 +85,13 @@ export default function AdminBlog() {
                     router.push('/blogs')
                 }, 1500)
             } else {
-                console.error('Publish failed response:', data)
-                setStatus('❌ Something went wrong. Please try again.')
+                console.error('API error message:', data.message)
+                setStatus(`❌ ${data.message || 'Something went wrong.'}`)
                 setLoading(false)
             }
         } catch (e) {
-            console.error('Publish request failed:', e)
-            setStatus('❌ Network error. Please try again.')
+            console.error('Network error:', e)
+            setStatus(`❌ Network error: ${e.message}`)
             setLoading(false)
         }
     }
