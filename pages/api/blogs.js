@@ -1,7 +1,12 @@
 import { MongoClient } from 'mongodb'
 import formidable from 'formidable'
-import fs from 'fs'
-import path from 'path'
+import { v2 as cloudinary } from 'cloudinary'
+
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+})
 
 export const config = {
     api: {
@@ -16,14 +21,7 @@ export default async function handler(req, res) {
     const db = client.db('weoneaviation')
 
     if (req.method === 'POST') {
-        const uploadDir = path.join(process.cwd(), 'public/uploads')
-
-        if (!fs.existsSync(uploadDir)) {
-            fs.mkdirSync(uploadDir, { recursive: true })
-        }
-
         const form = formidable({
-            uploadDir,
             keepExtensions: true,
             maxFileSize: 5 * 1024 * 1024,
         })
@@ -42,11 +40,19 @@ export default async function handler(req, res) {
                 return res.status(400).json({ success: false, message: 'Title and content are required' })
             }
 
+            // Upload image to Cloudinary
             let coverImage = ''
             if (files.coverImage) {
                 const file = Array.isArray(files.coverImage) ? files.coverImage[0] : files.coverImage
-                const filename = path.basename(file.filepath)
-                coverImage = `/uploads/${filename}`
+                try {
+                    const uploaded = await cloudinary.uploader.upload(file.filepath, {
+                        folder: 'weoneaviation/blogs',
+                    })
+                    coverImage = uploaded.secure_url // permanent https URL
+                } catch (uploadErr) {
+                    console.error('Cloudinary upload error:', uploadErr)
+                    return res.status(500).json({ success: false, message: 'Image upload failed' })
+                }
             }
 
             const slug = title.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')
