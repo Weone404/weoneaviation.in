@@ -3,9 +3,10 @@ import formidable from 'formidable'
 import { v2 as cloudinary } from 'cloudinary'
 
 cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET,
+    cloud_name: 'dw8f4vrth',
+    api_key: '646332872161894',
+    api_secret: 'pc8mCXoKkQpleIwwWs_lCHLnljc',
+    secure: true
 })
 
 export const config = {
@@ -28,6 +29,7 @@ export default async function handler(req, res) {
 
         form.parse(req, async (err, fields, files) => {
             if (err) {
+                console.error('Form parse error:', err)
                 return res.status(500).json({ success: false, message: 'File upload failed' })
             }
 
@@ -45,13 +47,15 @@ export default async function handler(req, res) {
             if (files.coverImage) {
                 const file = Array.isArray(files.coverImage) ? files.coverImage[0] : files.coverImage
                 try {
+                    console.log('Uploading to Cloudinary:', file.filepath)
                     const uploaded = await cloudinary.uploader.upload(file.filepath, {
                         folder: 'weoneaviation/blogs',
                     })
-                    coverImage = uploaded.secure_url // permanent https URL
+                    coverImage = uploaded.secure_url
+                    console.log('Cloudinary upload success:', coverImage)
                 } catch (uploadErr) {
-                    console.error('Cloudinary upload error:', uploadErr)
-                    return res.status(500).json({ success: false, message: 'Image upload failed' })
+                    console.error('Cloudinary upload error:', uploadErr.message)
+                    return res.status(500).json({ success: false, message: `Image upload failed: ${uploadErr.message}` })
                 }
             }
 
