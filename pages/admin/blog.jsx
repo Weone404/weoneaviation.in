@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 
@@ -17,6 +17,17 @@ export default function AdminBlog() {
     const [imagePreview, setImagePreview] = useState('')
     const [status, setStatus] = useState('')
     const [loading, setLoading] = useState(false)
+    const [authChecked, setAuthChecked] = useState(false)
+
+    // ✅ Client-side auth check (middleware handles server-side)
+    useEffect(() => {
+        const isLoggedIn = sessionStorage.getItem("weone_admin");
+        if (!isLoggedIn) {
+            router.replace("/admin/login");
+        } else {
+            setAuthChecked(true);
+        }
+    }, []);
 
     const modules = {
         toolbar: [
@@ -50,24 +61,15 @@ export default function AdminBlog() {
             formData.append('excerpt', excerpt)
             formData.append('content', content)
             formData.append('category', category)
-            if (imageFile) {
-                formData.append('coverImage', imageFile)
-            }
+            if (imageFile) formData.append('coverImage', imageFile)
 
-            const res = await fetch('/api/blogs', {
-                method: 'POST',
-                body: formData,
-            })
-
+            const res = await fetch('/api/blogs', { method: 'POST', body: formData })
             const text = await res.text()
-            console.log('API Response Status:', res.status)
-            console.log('API Response Body:', text)
 
             let data
             try {
                 data = JSON.parse(text)
             } catch (e) {
-                console.error('Failed to parse response:', text)
                 setStatus(`❌ Server error: ${text.substring(0, 100)}`)
                 setLoading(false)
                 return
@@ -75,34 +77,50 @@ export default function AdminBlog() {
 
             if (data.success) {
                 setStatus('✅ Blog published! Redirecting...')
-                setTitle('')
-                setExcerpt('')
-                setContent('')
-                setCategory('')
-                setImageFile(null)
-                setImagePreview('')
-                setTimeout(() => {
-                    router.push('/blogs')
-                }, 1500)
+                setTitle(''); setExcerpt(''); setContent('')
+                setCategory(''); setImageFile(null); setImagePreview('')
+                setTimeout(() => router.push('/blogs'), 1500)
             } else {
-                console.error('API error message:', data.message)
                 setStatus(`❌ ${data.message || 'Something went wrong.'}`)
                 setLoading(false)
             }
         } catch (e) {
-            console.error('Network error:', e)
             setStatus(`❌ Network error: ${e.message}`)
             setLoading(false)
         }
     }
 
+    // ✅ Clears both sessionStorage and the cookie
+    const handleLogout = () => {
+        sessionStorage.removeItem("weone_admin");
+        document.cookie = "weone_admin=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+        router.replace("/admin/login");
+    }
+
+    // ✅ Don't render page until auth is confirmed
+    if (!authChecked) return null;
+
     return (
         <>
-            <style dangerouslySetInnerHTML={{ __html: `.ql-editor { min-height: 300px; font-size: 16px; } .ql-container { border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; } .ql-toolbar { border-top-left-radius: 6px; border-top-right-radius: 6px; }` }} />
+            <style dangerouslySetInnerHTML={{
+                __html: `.ql-editor { min-height: 300px; font-size: 16px; } .ql-container { border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; } .ql-toolbar { border-top-left-radius: 6px; border-top-right-radius: 6px; }`
+            }} />
 
             <div className="max-w-4xl mx-auto p-8 pt-28">
-                <h1 className="text-3xl font-bold mb-2">Write a Blog</h1>
-                <p className="text-gray-500 mb-6">Fill in the details and click Publish — your blog will appear instantly.</p>
+
+                {/* Header with logout button */}
+                <div className="flex items-center justify-between mb-6">
+                    <div>
+                        <h1 className="text-3xl font-bold mb-1">Write a Blog</h1>
+                        <p className="text-gray-500">Fill in the details and click Publish — your blog will appear instantly.</p>
+                    </div>
+                    <button
+                        onClick={handleLogout}
+                        className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white text-sm font-medium rounded-lg transition-colors"
+                    >
+                        🚪 Logout
+                    </button>
+                </div>
 
                 <input
                     className="w-full border p-3 rounded mb-4 text-lg"
@@ -126,11 +144,7 @@ export default function AdminBlog() {
                         onClick={() => document.getElementById('imageInput').click()}
                     >
                         {imagePreview ? (
-                            <img
-                                src={imagePreview}
-                                alt="Preview"
-                                className="max-h-48 mx-auto rounded-lg object-cover"
-                            />
+                            <img src={imagePreview} alt="Preview" className="max-h-48 mx-auto rounded-lg object-cover" />
                         ) : (
                             <div>
                                 <p className="text-4xl mb-2">🖼️</p>
@@ -184,7 +198,8 @@ export default function AdminBlog() {
                 </button>
 
                 {status && (
-                    <p className={`mt-4 font-medium text-lg ${status.includes('✅') ? 'text-green-600' : 'text-red-500'}`}>
+                    <p className={`mt-4 font-medium text-lg ${status.includes('✅') ? 'text-green-600' : 'text-red-500'
+                        }`}>
                         {status}
                     </p>
                 )}
