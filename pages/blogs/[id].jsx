@@ -352,7 +352,7 @@ const waLink = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 /** Hero banner with overlay text */
 function BlogHero({ blog }) {
     return (
-        <div className="relative h-72 md:h-[420px] w-full overflow-hidden pt-16">
+        <div className="relative h-72 md:h-[420px] w-full overflow-hidden pt-16 bg-av-blue">
             <img
                 src={blog.img}
                 alt={blog.title}
