@@ -4,7 +4,12 @@ import FloatingButtons from './FloatingButtons';
 import ContactPopup from './ContactPopup';
 import Head from 'next/head';
 import SpecialOfferBanner from './Specialofferbanner';
+import { useRouter } from 'next/router';
+
 export default function Layout({ children, title, description }) {
+  const router = useRouter();
+  const isAdminPage = router.pathname.startsWith('/admin');
+
   return (
     <>
       <Head>
@@ -25,7 +30,7 @@ export default function Layout({ children, title, description }) {
       <main className="min-h-screen">{children}</main>
       <Footer />
       <FloatingButtons />
-      <ContactPopup />
+      {!isAdminPage && <ContactPopup />}
     </>
   );
 }
