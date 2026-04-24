@@ -46,20 +46,13 @@ const courses = [
       { label: 'Psychometry', href: '/airline-preparatory-classes/psychometry' },
       { label: 'CASS/COMPASS', href: '/airline-preparatory-classes/cass-compass' },
       { label: 'Written Exam Preparation', href: '/airline-preparatory-classes/written-exam-preparation' },
-      {
-        label: 'Air Inda', href: '/Airindia-pilot-preparation',
-      },
-      {
-        label: 'Adapt Test For Air India', href: '/Airindia-pilot-preparation',
-      },
-      {
-        label: 'Adapt Test For IndiGo', href: '/Indigo-pilot-preparation',
-      },
+      { label: 'Air India', href: '/Airindia-pilot-preparation' },
+      { label: 'Adapt Test For Air India', href: '/Airindia-pilot-preparation' },
+      { label: 'Adapt Test For IndiGo', href: '/Indigo-pilot-preparation' },
     ],
   },
   { label: 'Private Pilot License (PPL)', href: '/private-pilot-license-ppl-course-details' },
   { label: 'ATPL', href: '/advanced-atpl-pilot-training' },
-
   { label: 'DGCA Ground Classes', href: '/dgca-ground-classes' },
 ];
 
@@ -75,6 +68,12 @@ const howTo = [
   { label: 'Join Flying School', href: '/best-flight-schools-in-usa' },
   { label: 'After 12th', href: '/how-to-become-a-pilot/after-12th' },
   { label: 'In India', href: '/how-to-become-a-pilot/in-india' },
+];
+
+// External exam/practice links grouped together
+const examPractice = [
+  { label: 'DGCA Exam Practice', href: 'https://dgcaexam.com/' },
+  { label: 'MCQ Practice', href: 'https://mcq-weonavigation-in.vercel.app/' },
 ];
 
 function DropdownItem({ item }) {
@@ -127,9 +126,7 @@ function BreakingNewsTicker() {
     <div className="w-full flex items-stretch overflow-hidden bg-orange-600" style={{ height: '36px' }}>
       {/* BREAKING badge */}
       <div className="relative z-10 flex shrink-0 items-center bg-red-800 px-3 sm:px-5">
-        <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.2em] text-white sm:text-xs">
-
-        </span>
+        <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.2em] text-white sm:text-xs"></span>
         <div
           className="absolute right-0 top-0 h-full w-4 translate-x-full bg-red-800"
           style={{ clipPath: 'polygon(0 0, 0 100%, 100% 100%)' }}
@@ -179,10 +176,12 @@ export default function Navbar() {
   const [courseOpen, setCourseOpen] = useState(false);
   const [countryOpen, setCountryOpen] = useState(false);
   const [howOpen, setHowOpen] = useState(false);
+  const [examOpen, setExamOpen] = useState(false);
 
   const [mobileCoursesOpen, setMobileCoursesOpen] = useState(false);
   const [mobileCountryOpen, setMobileCountryOpen] = useState(false);
   const [mobileHowOpen, setMobileHowOpen] = useState(false);
+  const [mobileExamOpen, setMobileExamOpen] = useState(false);
 
   const router = useRouter();
 
@@ -223,7 +222,6 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
-
 
             {/* Pilot Training Courses */}
             <div className="relative" onMouseEnter={() => setCourseOpen(true)} onMouseLeave={() => setCourseOpen(false)}>
@@ -269,22 +267,38 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* ✅ Desktop: DGCA Exam Practice — opens external site */}
-            <a
-              href="https://dgcaexam.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 rounded-lg text-sm font-medium text-white hover:text-av-orange transition-all"
+            {/* Exam Practice — grouped dropdown */}
+            <div className="relative" onMouseEnter={() => setExamOpen(true)} onMouseLeave={() => setExamOpen(false)}>
+              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white hover:text-av-orange transition-all">
+                Exam Practice <ChevronIcon open={examOpen} />
+              </button>
+              {examOpen && (
+                <div className="absolute top-full left-0 bg-av-blue border border-white/10 rounded-xl shadow-2xl py-2 min-w-52 z-50">
+                  {examPractice.map((c) => (
+                    <a
+                      key={c.href}
+                      href={c.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between px-5 py-2.5 text-sm text-white hover:bg-av-orange/20 hover:text-av-orange transition-all"
+                    >
+                      {c.label}
+                      <span className="ml-3 text-white/40 text-xs">↗</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Blogs */}
+            <Link
+              href="/blogs"
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/blogs') ? 'text-av-orange' : 'text-white'}`}
             >
-              DGCA Exam Practice
-            </a>
-
-
-
-            <Link href="/blogs" className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/blogs') ? 'text-av-orange' : 'text-white'}`}>
               Blogs
             </Link>
 
+            {/* CTA */}
             <Link href="/contact" className="ml-2 bg-av-orange text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/30">
               Register for Scholarship
             </Link>
@@ -321,16 +335,24 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* ✅ Mobile: DGCA Exam Practice — opens https://dgcaexam.com/ in new tab */}
-          <a
-            href="https://dgcaexam.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMenuOpen(false)}
-            className="block px-4 py-2.5 text-white hover:text-av-orange text-sm font-medium rounded-lg hover:bg-white/5 transition-all"
-          >
-            DGCA Exam Practice ↗
-          </a>
+          {/* Mobile: Exam Practice */}
+          <button onClick={() => setMobileExamOpen(!mobileExamOpen)}
+            className="w-full flex items-center justify-between px-4 py-2.5 text-av-orange text-sm font-semibold uppercase tracking-widest">
+            Exam Practice <ChevronIcon open={mobileExamOpen} />
+          </button>
+          {mobileExamOpen && examPractice.map((c) => (
+            <a
+              key={c.href}
+              href={c.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center justify-between px-6 py-2 text-white/80 hover:text-av-orange text-sm rounded-lg hover:bg-white/5 transition-all"
+            >
+              {c.label}
+              <span className="text-white/40 text-xs">↗</span>
+            </a>
+          ))}
 
           {/* Mobile: Pilot Training Courses */}
           <button onClick={() => setMobileCoursesOpen(!mobileCoursesOpen)}
