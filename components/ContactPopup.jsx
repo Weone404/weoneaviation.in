@@ -17,7 +17,7 @@ export default function ContactPopup() {
 
   const closePopup = () => {
     setShow(false);
-    setTimeout(() => setShow(true), 15000);
+    setTimeout(() => setShow(true), 25000);
   };
 
   const handleSubmit = async (e) => {
