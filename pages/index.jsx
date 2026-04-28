@@ -209,8 +209,8 @@ export default function Home() {
       </Head>
 
       <Layout
-        title="We One Aviation Academy | Best Pilot Training Institute in India"
-        description="India's premier approved aviation training academy. CPL, PPL, ATPL, SPL courses. 3500 pilots trained. Free career counselling available."
+        title="We One Aviation  | Best Pilot Training Institute in India"
+        description="India's premier approved aviation training . CPL, PPL, ATPL, SPL courses. 3500 pilots trained. Free career counselling available."
       >
 
         {/* HERO */}
