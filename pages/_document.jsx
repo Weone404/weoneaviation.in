@@ -10,12 +10,9 @@ export default function Document() {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
         {/* ── Security Headers ── */}
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        {/* 
-          X-Frame-Options: Changed SAMEORIGIN → DENY to match 
-          frame-ancestors 'none' in CSP (next.config.js already sets X-Frame-Options: DENY)
-        */}
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        {/* ❌ REMOVED: <meta httpEquiv="X-Frame-Options"> — browsers ignore it in meta tags */}
+        {/* ❌ REMOVED: <meta httpEquiv="X-Content-Type-Options"> — same reason */}
+        {/* ✅ Both are set as real HTTP headers in next.config.js */}
         <meta name="referrer" content="strict-origin-when-cross-origin" />
 
         {/* ── Theme ── */}
@@ -25,24 +22,24 @@ export default function Document() {
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-        {/* Added: GTM runtime domains */}
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="dns-prefetch" href="//analytics.google.com" />
         <link rel="dns-prefetch" href="//stats.g.doubleclick.net" />
         <link rel="dns-prefetch" href="//td.doubleclick.net" />
+        <link rel="dns-prefetch" href="//www.clarity.ms" />                {/* ← NEW */}
+        <link rel="dns-prefetch" href="//googleleads.g.doubleclick.net" /> {/* ← NEW */}
 
-        {/* ── Preconnect for critical origins ── */}
+        {/* ── Preconnect ── */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Added: warm up GTM connection early */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        {/* ❌ REMOVED: preconnect for GTM — caused "preloaded but not used" warning */}
 
         {/* ── Fonts ── */}
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap"
           rel="stylesheet"
         />
-
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
         {/* ── Icons & Manifest ── */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" href="/assets/logo.webp" />
@@ -50,7 +47,7 @@ export default function Document() {
 
         {/* ── Open Graph Defaults ── */}
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Your Site Name" />
+        <meta property="og:site_name" content="WeOne Aviation" />
         <meta property="og:image" content="/assets/logo.webp" />
 
         {/* ── Twitter Card Defaults ── */}
@@ -63,11 +60,7 @@ export default function Document() {
           href="https://unpkg.com/react-quill@2.0.0/dist/quill.snow.css"
         />
 
-        {/* ── Google Tag Manager ── 
-            strategy="afterInteractive" defers execution until after hydration.
-            next/script in _document Head is intentional for GTM — it handles 
-            the injection correctly unlike a plain <script> tag.
-        ── */}
+        {/* ── Google Tag Manager ── */}
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -82,11 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </Head>
 
       <body>
-        {/* ── Google Tag Manager (noscript fallback) ──
-            Required by GTM for environments where JS is disabled.
-            The iframe src is covered by frame-src in CSP.
-            Placed immediately after <body> as GTM docs specify.
-        ── */}
+        {/* ── Google Tag Manager (noscript) ── */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KDLQQFKP"

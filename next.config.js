@@ -1,9 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+
+  // ✅ Fixed: remotePatterns replaces deprecated images.domains (works on Next.js 14.2.3)
   images: {
-    domains: ['images.unsplash.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
+
   async headers() {
     return [
       {
@@ -14,49 +22,48 @@ const nextConfig = {
             value: [
               "default-src 'self'",
 
-              // GTM script + Analytics
+              // ✅ Fixed: *.clarity.ms covers scripts.clarity.ms + any other subdomains
               "script-src 'self' 'unsafe-inline' 'unsafe-eval'" +
               " https://www.googletagmanager.com" +
               " https://www.google-analytics.com" +
-              " https://ssl.google-analytics.com",
+              " https://ssl.google-analytics.com" +
+              " https://*.clarity.ms" +
+              " https://googleleads.g.doubleclick.net" +
+              " https://googleads.g.doubleclick.net",
 
-              // GTM noscript iframe (ns.html) + tag iframes
               "frame-src" +
               " https://www.googletagmanager.com" +
               " https://td.doubleclick.net",
 
-              // GTM data collection + GA endpoints
+              // ✅ Fixed: *.clarity.ms for connect-src too
               "connect-src 'self'" +
               " https://www.google.com" +
               " https://www.google-analytics.com" +
               " https://region1.google-analytics.com" +
               " https://analytics.google.com" +
               " https://stats.g.doubleclick.net" +
-              " https://www.googletagmanager.com",
+              " https://www.googletagmanager.com" +
+              " https://*.clarity.ms" +
+              " https://googleleads.g.doubleclick.net",
 
-              // Images (GTM pixel + existing)
+              // ✅ Fixed: *.clarity.ms for img-src too
               "img-src 'self' data: blob: https:" +
               " https://images.unsplash.com" +
               " https://www.googletagmanager.com" +
               " https://www.google-analytics.com" +
-              " https://www.google.com",
+              " https://www.google.com" +
+              " https://*.clarity.ms" +
+              " https://googleleads.g.doubleclick.net",
 
-              // Styles
               "style-src 'self' 'unsafe-inline'" +
               " https://fonts.googleapis.com" +
               " https://unpkg.com",
 
-              // Fonts
               "font-src 'self' data: https://fonts.gstatic.com",
-
-              // Prevent clickjacking
               "frame-ancestors 'none'",
-
-              // Block mixed content
               "upgrade-insecure-requests",
             ].join("; "),
           },
-          // Recommended companion headers
           {
             key: "X-Frame-Options",
             value: "DENY",
