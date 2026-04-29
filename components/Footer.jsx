@@ -36,10 +36,35 @@ export default function Footer() {
         <div>
           <h4 className="font-montserrat font-bold text-av-orange text-base mb-3">We One Aviation</h4>
           <div className="border-t border-dashed border-white/20 mb-5" />
-          <p className="text-white/70 text-sm leading-relaxed">
+          <p className="text-white/70 text-sm leading-relaxed mb-5">
             We One Aviation is a leading pilot training academy dedicated to helping aspiring aviators build
             successful careers. CPL training, international flight programs, expert mentorship, and placement support.
           </p>
+          <div className="flex gap-4">
+            <a
+              href="https://www.facebook.com/share/1AokxHk8Yv/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-full bg-white/10 hover:bg-av-orange flex items-center justify-center transition-colors"
+              aria-label="We One Aviation Facebook"
+            >
+              <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/we_one_aviation?igsh=aTJ0YnphMGs3b2Fl&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-full bg-white/10 hover:bg-av-orange flex items-center justify-center transition-colors"
+              aria-label="We One Aviation Instagram"
+            >
+              <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.117.6c-.79.263-1.473.557-2.115 1.2-.643.642-.937 1.325-1.2 2.115-.267.788-.468 1.658-.528 2.936C.008 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.528 2.936.263.79.557 1.473 1.2 2.115.642.643 1.325.937 2.115 1.2.788.267 1.658.468 2.936.528C8.333 23.992 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.261 2.936-.528.79-.263 1.473-.557 2.115-1.2.643-.642.937-1.325 1.2-2.115.267-.788.468-1.658.528-2.936.064-1.28.079-1.687.079-4.947s-.015-3.667-.072-4.947c-.06-1.277-.261-2.148-.528-2.936-.263-.79-.557-1.473-1.2-2.115-.642-.643-1.325-.937-2.115-1.2-.788-.267-1.658-.468-2.936-.528C15.667.008 15.26 0 12 0zm0 2.16c3.203 0 3.585.009 4.849.070 1.171.054 1.805.244 2.227.408.561.217.96.477 1.382.898.421.421.681.82.898 1.381.164.422.354 1.056.408 2.227.061 1.264.07 1.646.07 4.849s-.009 3.585-.07 4.849c-.054 1.171-.244 1.805-.408 2.227-.217.561-.477.96-.898 1.382-.421.421-.82.681-1.381.898-.422.164-1.056.354-2.227.408-1.264.061-1.646.07-4.849.07s-3.585-.009-4.849-.07c-1.171-.054-1.805-.244-2.227-.408-.561-.217-.96-.477-1.382-.898-.421-.421-.681-.82-.898-1.381-.164-.422-.354-1.056-.408-2.227-.061-1.264-.07-1.646-.07-4.849s.009-3.585.07-4.849c.054-1.171.244-1.805.408-2.227.217-.561.477-.96.898-1.382.421-.421.82-.681 1.381-.898.422-.164 1.056-.354 2.227-.408 1.264-.061 1.646-.07 4.849-.07z" />
+                <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.322a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.881 0z" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         {/* Column 2 — Quick Links */}
@@ -140,9 +165,31 @@ export default function Footer() {
       <div className="border-t border-white/10 py-5 px-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-white/40 text-xs">
           <span>© 2024 WeOne Aviation Academy. All Rights Reserved.</span>
-          <div className="flex gap-4">
-            <Link href="/privacy-policy" className="hover:text-av-orange transition-all">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-av-orange transition-all">Terms of Service</Link>
+          <div className="flex flex-col sm:flex-row items-center gap-3">
+            <div className="flex gap-4">
+              <Link href="/privacy-policy" className="hover:text-av-orange transition-all">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-av-orange transition-all">Terms of Service</Link>
+            </div>
+            <div className="flex gap-3">
+              <a
+                href="https://www.instagram.com/we_one_aviation?igsh=aTJ0YnphMGs3b2Fl&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-av-orange transition-all"
+                aria-label="We One Aviation Instagram"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://www.facebook.com/share/1AokxHk8Yv/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-av-orange transition-all"
+                aria-label="We One Aviation Facebook"
+              >
+                Facebook
+              </a>
+            </div>
           </div>
         </div>
       </div>

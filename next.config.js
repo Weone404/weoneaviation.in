@@ -2,7 +2,6 @@
 const nextConfig = {
   reactStrictMode: false,
 
-  // ✅ Fixed: remotePatterns replaces deprecated images.domains (works on Next.js 14.2.3)
   images: {
     remotePatterns: [
       {
@@ -22,22 +21,27 @@ const nextConfig = {
             value: [
               "default-src 'self'",
 
-              // ✅ Fixed: *.clarity.ms covers scripts.clarity.ms + any other subdomains
               "script-src 'self' 'unsafe-inline' 'unsafe-eval'" +
               " https://www.googletagmanager.com" +
               " https://www.google-analytics.com" +
               " https://ssl.google-analytics.com" +
+              " https://www.googleadservices.com" +      // ✅ ADDED
               " https://*.clarity.ms" +
               " https://googleleads.g.doubleclick.net" +
               " https://googleads.g.doubleclick.net",
 
+              // ✅ Only ONE frame-src
               "frame-src" +
               " https://www.googletagmanager.com" +
               " https://td.doubleclick.net",
 
-              // ✅ Fixed: *.clarity.ms for connect-src too
               "connect-src 'self'" +
+              " https://www.googleadservices.com" +
+              " https://google.co.in" +
+              " https://www.google.co.in" +
+              " https://*.google.co.in" +               // ✅ ADDED (pagead subdomains)
               " https://www.google.com" +
+              " https://*.google.com" +                 // ✅ ADDED
               " https://www.google-analytics.com" +
               " https://region1.google-analytics.com" +
               " https://analytics.google.com" +
@@ -46,7 +50,6 @@ const nextConfig = {
               " https://*.clarity.ms" +
               " https://googleleads.g.doubleclick.net",
 
-              // ✅ Fixed: *.clarity.ms for img-src too
               "img-src 'self' data: blob: https:" +
               " https://images.unsplash.com" +
               " https://www.googletagmanager.com" +
@@ -55,9 +58,11 @@ const nextConfig = {
               " https://*.clarity.ms" +
               " https://googleleads.g.doubleclick.net",
 
+              // ✅ ADDED googletagmanager.com for GTM debug badge CSS
               "style-src 'self' 'unsafe-inline'" +
               " https://fonts.googleapis.com" +
-              " https://unpkg.com",
+              " https://unpkg.com" +
+              " https://www.googletagmanager.com",      // ✅ ADDED
 
               "font-src 'self' data: https://fonts.gstatic.com",
               "frame-ancestors 'none'",
