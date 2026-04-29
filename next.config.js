@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
 
   // ✅ Fixed: remotePatterns replaces deprecated images.domains (works on Next.js 14.2.3)
   images: {

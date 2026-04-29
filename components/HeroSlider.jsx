@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 const slides = [
@@ -100,13 +99,10 @@ export default function HeroSlider({ customSlides }) {
   return (
     <div className="relative h-screen min-h-[580px] overflow-hidden">
       {/* 
-        CRITICAL LCP FIX: Use next/image instead of CSS backgroundImage.
-        - The first slide uses priority={true} → adds <link rel="preload"> in <head>
-          so the browser fetches the image before JS even executes.
-        - Subsequent slides use loading="lazy" and are only rendered once
-          they've been "loaded" into state (i.e. we've navigated to them).
-        - next/image auto-generates srcset for responsive sizes and converts
-          to WebP/AVIF automatically.
+        CRITICAL LCP FIX: Use plain <img> instead of next/image for this Next.js
+        14.2.3 app to avoid the known fetchPriority hydration warning.
+        - The first slide is eager-loaded, later slides are lazy-loaded.
+        - This avoids the bug where next/image forwards fetchPriority to the DOM.
       */}
       {data.map((s, i) => {
         const isFirst = i === 0;
@@ -120,21 +116,14 @@ export default function HeroSlider({ customSlides }) {
             // Hide from interaction when not visible — prevents click events on bg layers
             aria-hidden={i !== current}
           >
-            {/* Only render the Image once the slide has been "unlocked" */}
+            {/* Only render the image once the slide has been "unlocked" */}
             {(isFirst || shouldRender) && (
-              <Image
+              <img
                 src={s.image}
                 alt={s.tag}
-                fill
-                // priority on first slide = <link rel="preload"> in <head> = LCP image
-                // fetched before render even begins. This is the #1 LCP fix.
-                priority={isFirst}
-                // Non-first slides: lazy by default (browser decides when to fetch)
                 loading={isFirst ? 'eager' : 'lazy'}
-                quality={75}
-                sizes="100vw"
-                className="object-cover object-center"
-              // Unsplash needs to be in next.config.js remotePatterns
+                decoding="async"
+                className="absolute inset-0 w-full h-full object-cover object-center"
               />
             )}
           </div>
