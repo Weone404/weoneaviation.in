@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
+import 'react-quill/dist/quill.snow.css'
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
