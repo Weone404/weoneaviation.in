@@ -23,22 +23,34 @@ export default function ContactPopup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    const msg = encodeURIComponent(
+      `Hello WeOne Aviation! 👋\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email || 'N/A'}\nCourse: ${form.course || 'N/A'}`
+    );
+
     try {
       await fetch('/api/save-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, source: 'popup - ' + router.pathname }),
       });
-      setSaved(true);
     } catch { }
+
     setLoading(false);
-    const msg = encodeURIComponent(
-      `Hello WeOne Aviation! 👋\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email || 'N/A'}\nCourse: ${form.course || 'N/A'}`
-    );
+    setSaved(true); // ✅ Show "Saved!" immediately after submit
+
+    // After 10 seconds: open WhatsApp and close popup
     setTimeout(() => {
-      window.open(`https://wa.me/919355611996?text=${msg}`, '_blank');
+      const whatsappUrl = `https://wa.me/919355611996?text=${msg}`;
+      const a = document.createElement('a');
+      a.href = whatsappUrl;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
       setShow(false);
-    }, 600);
+    }, 10000);
   };
 
   if (!show) return null;
@@ -122,7 +134,6 @@ export default function ContactPopup() {
           textAlign: 'center',
           position: 'relative',
         }}>
-          {/* Close button */}
           <button
             onClick={closePopup}
             style={{
@@ -142,7 +153,6 @@ export default function ContactPopup() {
             </svg>
           </button>
 
-          {/* Big headline */}
           <h2 style={{
             margin: 0,
             color: '#fff',
@@ -170,16 +180,19 @@ export default function ContactPopup() {
         <div style={{ padding: '24px' }}>
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
 
+            {/* ✅ Saved message shown immediately after submit */}
             {saved && (
               <div style={{
-                padding: '10px 14px',
+                padding: '12px 14px',
                 background: '#f0fdf4',
                 border: '1px solid #bbf7d0',
                 borderRadius: '10px',
                 color: '#15803d',
                 fontSize: '13px',
+                fontWeight: 600,
+                textAlign: 'center',
               }}>
-                ✅ Saved! Opening WhatsApp...
+                ✅ Details saved successfully! We'll be in touch soon.
               </div>
             )}
 
@@ -217,15 +230,21 @@ export default function ContactPopup() {
               <option>Private Pilot License (PPL)</option>
               <option>ATPL</option>
               <option>DGCA Ground Classes</option>
-              <option>Air India Adapt test Preparation </option>
-              <option>IndiGo  Adapt test Preparation</option>
-
+              <option>Air India Adapt test Preparation</option>
+              <option>IndiGo Adapt test Preparation</option>
             </select>
 
-            <button type="submit" disabled={loading} className="whatsapp-btn" style={{ marginTop: '4px' }}>
+            <button
+              type="submit"
+              disabled={loading || saved}
+              className="whatsapp-btn"
+              style={{ marginTop: '4px' }}
+            >
               {loading
                 ? <><span className="spin" /> Saving...</>
-                : <>📱 Send on WhatsApp →</>
+                : saved
+                  ? <>✅ Saved!</>
+                  : <>📱 Send on WhatsApp →</>
               }
             </button>
 
