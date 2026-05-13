@@ -1,0 +1,509 @@
+"use client";
+// components/DoubtChat.jsx
+// AI Doubt Chat — with auto Text-to-Speech, no PDF upload
+
+import { useState, useRef, useEffect } from "react";
+import { askDoubt, formatAnswer, QUICK_QUESTIONS } from "../../lib/doubtApi";
+
+// ── TTS Engine (browser built-in, 100% free) ──────────────────────────────────
+function cleanForSpeech(text) {
+    return text
+        .replace(/\*\*(.*?)\*\*/g, "$1")   // **bold** → plain
+        .replace(/\*(.*?)\*/g, "$1")        // *italic* → plain
+        .replace(/^[-•]\s/gm, "")           // remove bullet symbols
+        .replace(/^\d+\.\s/gm, "")          // remove "1. " numbering
+        .replace(/#+ /g, "")                // remove # headings
+        .replace(/`([^`]+)`/g, "$1")        // remove code ticks
+        .replace(/<[^>]+>/g, "")            // strip any HTML tags
+        .replace(/\n+/g, ". ")              // newlines → natural pause
+        .replace(/\.{2,}/g, ".")            // collapse "..."
+        .trim();
+}
+
+function speakText(text, onEnd) {
+    if (typeof window === "undefined" || !window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+
+    const clean = cleanForSpeech(text);
+    if (!clean) return;
+
+    const utter = new SpeechSynthesisUtterance(clean);
+    utter.rate = 0.92;
+    utter.pitch = 1.05;
+    utter.volume = 1;
+    utter.lang = "en-IN";
+
+    // Prefer a natural/neural English voice if available
+    const voices = window.speechSynthesis.getVoices();
+    const best = voices.find(v =>
+        v.lang.startsWith("en") &&
+        (v.name.includes("Google") || v.name.includes("Neural") || v.name.includes("Natural") || v.name.includes("Wavenet"))
+    ) || voices.find(v => v.lang.startsWith("en-IN"))
+        || voices.find(v => v.lang.startsWith("en"));
+    if (best) utter.voice = best;
+
+    if (onEnd) utter.onend = onEnd;
+    window.speechSynthesis.speak(utter);
+}
+
+function stopSpeaking() {
+    if (typeof window !== "undefined" && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+    }
+}
+
+// ── Main Component ────────────────────────────────────────────────────────────
+export default function DoubtChat({ compact = false }) {
+    const [messages, setMessages] = useState([
+        {
+            role: "assistant",
+            text: "👋 Hello! I'm your **captain** here, your DGCA study assistant.\n\nAsk me any aviation question and I'll answer — and read it out loud for you!",
+            id: Date.now(),
+        },
+    ]);
+    const [input, setInput] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
+    const [historyForApi, setHistory] = useState([]);
+    const [speakingId, setSpeakingId] = useState(null);   // which msg is speaking
+    const [ttsEnabled, setTtsEnabled] = useState(true);   // global TTS toggle
+    const [voicesReady, setVoicesReady] = useState(false);
+
+    const bottomRef = useRef(null);
+    const inputRef = useRef(null);
+
+    // Scroll to bottom on new messages
+    useEffect(() => {
+        bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [messages, loading]);
+
+    // Load voices (Chrome needs this event)
+    useEffect(() => {
+        if (typeof window === "undefined") return;
+        const load = () => setVoicesReady(true);
+        window.speechSynthesis.onvoiceschanged = load;
+        if (window.speechSynthesis.getVoices().length > 0) setVoicesReady(true);
+        return () => stopSpeaking();
+    }, []);
+
+    // Auto-speak latest assistant message when it arrives
+    function autoSpeak(text, msgId) {
+        if (!ttsEnabled) return;
+        setSpeakingId(msgId);
+        speakText(text, () => setSpeakingId(null));
+    }
+
+    async function sendMessage(questionText) {
+        const q = String(questionText || input).trim();
+        if (!q || loading) return;
+
+        stopSpeaking();
+        setSpeakingId(null);
+        setInput("");
+        setError("");
+
+        const userMsg = { role: "user", text: q, id: Date.now() };
+        setMessages(prev => [...prev, userMsg]);
+        setLoading(true);
+
+        try {
+            const { answer } = await askDoubt(q, null, historyForApi, "chat");
+
+            const botId = Date.now() + 1;
+            const botMsg = { role: "assistant", text: answer, id: botId };
+            setMessages(prev => [...prev, botMsg]);
+            setHistory(prev => [...prev, { question: q, answer }]);
+
+            // 🔊 Auto-speak the answer
+            autoSpeak(answer, botId);
+
+        } catch (err) {
+            setError(err.message || "Something went wrong.");
+            setMessages(prev => [...prev, {
+                role: "assistant",
+                text: "⚠️ Sorry, I couldn't process that. Please try again.",
+                id: Date.now() + 1,
+                isError: true,
+            }]);
+        } finally {
+            setLoading(false);
+            inputRef.current?.focus();
+        }
+    }
+
+    function toggleSpeak(msg) {
+        if (speakingId === msg.id) {
+            stopSpeaking();
+            setSpeakingId(null);
+        } else {
+            setSpeakingId(msg.id);
+            speakText(msg.text, () => setSpeakingId(null));
+        }
+    }
+
+    function clearChat() {
+        stopSpeaking();
+        setSpeakingId(null);
+        setMessages([{
+            role: "assistant",
+            text: "Chat cleared! Ask me anything.",
+            id: Date.now(),
+        }]);
+        setHistory([]);
+        setError("");
+    }
+
+    return (
+        <div className={`dcw ${compact ? "compact" : ""}`}>
+            <style>{CSS}</style>
+
+            {/* ── Messages ── */}
+            <div className="msgs-area">
+                {messages.map(msg => (
+                    <div key={msg.id} className={`msg-row ${msg.role === "user" ? "user" : "bot"}`}>
+
+                        <div className={`avatar ${msg.role === "user" ? "user-av" : "bot-av"}`}>
+                            {msg.role === "user" ? "S" : "🤖"}
+                        </div>
+
+                        <div className="bubble-wrap">
+                            <div
+                                className={`bubble ${msg.role === "user" ? "user-bubble" : "bot-bubble"} ${msg.isError ? "err-bubble" : ""}`}
+                                dangerouslySetInnerHTML={{ __html: formatAnswer(msg.text) }}
+                            />
+
+                            {/* 🔊 Speak button — only on assistant messages */}
+                            {msg.role === "assistant" && !msg.isError && (
+                                <button
+                                    className={`speak-btn ${speakingId === msg.id ? "speaking" : ""}`}
+                                    onClick={() => toggleSpeak(msg)}
+                                    title={speakingId === msg.id ? "Stop speaking" : "Read aloud"}
+                                >
+                                    {speakingId === msg.id ? "⏹ Stop" : "🔊 Speak"}
+                                </button>
+                            )}
+                        </div>
+                    </div>
+                ))}
+
+                {loading && (
+                    <div className="msg-row bot">
+                        <div className="avatar bot-av">🤖</div>
+                        <div className="typing-bubble">
+                            <div className="dot" /><div className="dot" /><div className="dot" />
+                        </div>
+                    </div>
+                )}
+                <div ref={bottomRef} />
+            </div>
+
+            {/* ── Quick suggestions ── */}
+            {messages.length <= 2 && (
+                <div className="quick-btns">
+                    {QUICK_QUESTIONS.map(q => (
+                        <button key={q} className="quick-btn" onClick={() => sendMessage(q)}>{q}</button>
+                    ))}
+                </div>
+            )}
+
+            {/* ── Input area ── */}
+            <div className="input-area">
+                {error && <div className="error-msg">⚠️ {error}</div>}
+
+                {/* TTS toggle bar */}
+                <div className="tts-bar">
+                    <span className="tts-label">🔊 Auto-speak answers</span>
+                    <button
+                        className={`tts-toggle ${ttsEnabled ? "on" : "off"}`}
+                        onClick={() => { setTtsEnabled(v => !v); if (ttsEnabled) stopSpeaking(); }}
+                    >
+                        {ttsEnabled ? "ON" : "OFF"}
+                    </button>
+                    {speakingId && (
+                        <button className="stop-btn" onClick={() => { stopSpeaking(); setSpeakingId(null); }}>
+                            ⏹ Stop
+                        </button>
+                    )}
+                </div>
+
+                <div className="input-row">
+                    <textarea
+                        ref={inputRef}
+                        className="input-box"
+                        placeholder="Ask any DGCA aviation question..."
+                        value={input}
+                        onChange={e => setInput(e.target.value)}
+                        onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(); } }}
+                        rows={1}
+                    />
+                    <div className="action-btns">
+                        <button className="clear-btn" onClick={clearChat} title="Clear chat">🗑️</button>
+                        <button
+                            className="send-btn"
+                            onClick={() => sendMessage()}
+                            disabled={!input.trim() || loading}
+                        >
+                            {loading ? "..." : "Ask →"}
+                        </button>
+                    </div>
+                </div>
+                <div className="footer-hint">Enter to send · Shift+Enter for new line</div>
+            </div>
+        </div>
+    );
+}
+
+// ── Styles ────────────────────────────────────────────────────────────────────
+const CSS = `
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
+
+  .dcw {
+    font-family: 'Sora', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: calc(100vh - 80px);
+    background: #0a0d14;
+    color: #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .dcw.compact { min-height: 400px; }
+
+  /* Messages */
+  .msgs-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: #1e293b transparent;
+  }
+  .msgs-area::-webkit-scrollbar { width: 4px; }
+  .msgs-area::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 2px; }
+
+  .msg-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    animation: fadeUp 0.3s ease;
+  }
+  .msg-row.user { flex-direction: row-reverse; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0; font-weight: 600;
+  }
+  .bot-av  { background: linear-gradient(135deg, #0ea5e9, #6366f1); color: white; }
+  .user-av { background: linear-gradient(135deg, #f59e0b, #ef4444); color: white; }
+
+  .bubble-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    max-width: 80%;
+  }
+  .msg-row.user .bubble-wrap { align-items: flex-end; }
+
+  .bubble {
+    padding: 12px 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .bot-bubble {
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-top-left-radius: 4px;
+    color: #cbd5e1;
+  }
+  .user-bubble {
+    background: linear-gradient(135deg, #1d4ed8, #4f46e5);
+    color: white;
+    border-top-right-radius: 4px;
+  }
+  .err-bubble { border-color: #7f1d1d !important; background: #1c0a0a !important; }
+
+  .bubble strong { color: #93c5fd; }
+  .bubble em     { color: #a5b4fc; font-style: italic; }
+  .bubble ul     { padding-left: 18px; margin: 8px 0; }
+  .bubble li     { margin: 4px 0; color: #94a3b8; }
+  .bubble p      { margin: 6px 0; }
+  .bubble p:first-child { margin-top: 0; }
+  .bubble p:last-child  { margin-bottom: 0; }
+
+  /* 🔊 Speak button under each bot bubble */
+  .speak-btn {
+    background: none;
+    border: 1px solid #1e293b;
+    color: #4b5563;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    cursor: pointer;
+    font-family: 'Sora', sans-serif;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .speak-btn:hover { border-color: #6366f1; color: #a5b4fc; }
+  .speak-btn.speaking {
+    border-color: #0ea5e9;
+    color: #38bdf8;
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.6; }
+  }
+
+  /* Typing */
+  .typing-bubble {
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    border-top-left-radius: 4px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #4f46e5;
+    animation: bounce 1.2s infinite;
+  }
+  .dot:nth-child(2) { animation-delay: 0.2s; background: #0ea5e9; }
+  .dot:nth-child(3) { animation-delay: 0.4s; background: #22c55e; }
+  @keyframes bounce {
+    0%, 60%, 100% { transform: translateY(0); }
+    30%            { transform: translateY(-6px); }
+  }
+
+  /* Quick suggestions */
+  .quick-btns {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    padding: 0 16px 10px;
+  }
+  .quick-btn {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    color: #64748b;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Sora', sans-serif;
+  }
+  .quick-btn:hover { border-color: #4f46e5; color: #a5b4fc; background: #1e1b4b22; }
+
+  /* Input area */
+  .input-area {
+    padding: 10px 16px 12px;
+    border-top: 1px solid #1e293b;
+    background: #0d1117;
+    flex-shrink: 0;
+  }
+  .error-msg {
+    color: #f87171; font-size: 12px; margin-bottom: 8px;
+    padding: 6px 10px; background: #1c0a0a;
+    border-radius: 6px; border-left: 3px solid #ef4444;
+  }
+
+  /* TTS toggle bar */
+  .tts-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .tts-label { font-size: 11px; color: #4b5563; }
+  .tts-toggle {
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    font-family: 'Sora', sans-serif;
+    transition: all 0.2s;
+  }
+  .tts-toggle.on  { background: #22c55e22; color: #4ade80; border: 1px solid #22c55e55; }
+  .tts-toggle.off { background: #374151;   color: #6b7280; border: 1px solid #374151; }
+  .stop-btn {
+    margin-left: auto;
+    background: none;
+    border: 1px solid #ef444455;
+    color: #f87171;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    cursor: pointer;
+    font-family: 'Sora', sans-serif;
+    animation: pulse 1.5s infinite;
+  }
+
+  .input-row {
+    display: flex; gap: 8px; align-items: flex-end;
+  }
+  .input-box {
+    flex: 1;
+    background: #111827;
+    border: 1px solid #1e293b;
+    color: #e2e8f0;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: 'Sora', sans-serif;
+    resize: none;
+    outline: none;
+    min-height: 42px;
+    max-height: 120px;
+    transition: border-color 0.2s;
+    line-height: 1.5;
+  }
+  .input-box:focus    { border-color: #4f46e5; }
+  .input-box::placeholder { color: #374151; }
+
+  .action-btns { display: flex; gap: 6px; }
+
+  .send-btn {
+    background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+    border: none; color: white;
+    padding: 10px 18px; border-radius: 10px;
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+    font-family: 'Sora', sans-serif; white-space: nowrap;
+  }
+  .send-btn:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+  .send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .clear-btn {
+    background: none;
+    border: 1px solid #1e293b;
+    color: #475569;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 12px; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .clear-btn:hover { border-color: #475569; color: #94a3b8; }
+
+  .footer-hint {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #374151;
+    text-align: center;
+  }
+`;

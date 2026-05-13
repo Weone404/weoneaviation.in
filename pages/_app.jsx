@@ -2,12 +2,18 @@ import '../styles/globals.css';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
-import 'react-quill/dist/quill.snow.css'
+import 'react-quill/dist/quill.snow.css';
+import dynamic from 'next/dynamic';
+
+// Prevents hydration error — renders only on client
+const FloatingDoubtChat = dynamic(
+  () => import('../components/FloatingDoubtChat'),
+  { ssr: false }
+);
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
 
-  // Custom cursor
   useEffect(() => {
     const cursor = document.createElement('div');
     cursor.className = 'custom-cursor';
@@ -16,15 +22,12 @@ export default function App({ Component, pageProps }) {
     document.body.appendChild(cursor);
     document.body.appendChild(ring);
 
-    let ringX = 0, ringY = 0;
-    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0, mouseX = 0, mouseY = 0;
 
     const onMove = (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
+      mouseX = e.clientX; mouseY = e.clientY;
       cursor.style.transform = `translate(${mouseX - 6}px, ${mouseY - 6}px)`;
     };
-
     const animateRing = () => {
       ringX += (mouseX - ringX - 18) * 0.15;
       ringY += (mouseY - ringY - 18) * 0.15;
@@ -42,9 +45,10 @@ export default function App({ Component, pageProps }) {
     };
   }, []);
 
+  const hideFloatingChat = router.pathname === '/doubt';
+
   return (
     <>
-      {/* Google Tag Manager - Head Script */}
       <Script
         id="gtm-script"
         strategy="afterInteractive"
@@ -58,18 +62,17 @@ export default function App({ Component, pageProps }) {
           `,
         }}
       />
-
-      {/* Google Tag Manager - Body Noscript Fallback */}
       <noscript>
         <iframe
           src="https://www.googletagmanager.com/ns.html?id=GTM-KDLQQFKP"
-          height="0"
-          width="0"
+          height="0" width="0"
           style={{ display: 'none', visibility: 'hidden' }}
         />
       </noscript>
 
       <Component {...pageProps} />
+
+      {!hideFloatingChat && <FloatingDoubtChat />}
     </>
   );
 }
