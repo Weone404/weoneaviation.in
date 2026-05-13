@@ -295,16 +295,17 @@ const CSS = `
   }
 
   /* ── Chat panel ── */
+  /* Only width and height changed: 360px→320px, 500px→400px. All positions unchanged. */
   .fdc-panel {
     position: fixed;
     bottom: 224px;
     right: 24px;
     z-index: 99998;
-    width: 360px;
-    height: 500px;
+    width: 320px;
+    height: 400px;
     background: #0a0d14;
     border: 1px solid #1e293b;
-    border-radius: 20px;
+    border-radius: 18px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -325,21 +326,21 @@ const CSS = `
   /* ── Header ── */
   .fdc-header {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 12px 14px;
+    padding: 10px 12px;
     border-bottom: 1px solid #1e293b;
     background: #0d1117;
     flex-shrink: 0;
   }
-  .fdc-header-left { display: flex; align-items: center; gap: 10px; }
+  .fdc-header-left { display: flex; align-items: center; gap: 8px; }
   .fdc-avatar {
-    width: 32px; height: 32px; border-radius: 50%;
+    width: 28px; height: 28px; border-radius: 50%;
     background: linear-gradient(135deg, #4f46e5, #0ea5e9);
     display: flex; align-items: center; justify-content: center;
-    font-size: 15px;
+    font-size: 13px;
   }
-  .fdc-title { font-size: 13px; font-weight: 600; color: #f1f5f9; }
+  .fdc-title { font-size: 12px; font-weight: 600; color: #f1f5f9; }
   .fdc-sub {
-    font-size: 11px; color: #4ade80;
+    font-size: 10px; color: #4ade80;
     display: flex; align-items: center; gap: 4px; margin-top: 1px;
   }
   .fdc-dot {
@@ -349,8 +350,8 @@ const CSS = `
   }
   .fdc-icon-btn {
     background: none; border: 1px solid #1e293b;
-    color: #475569; width: 26px; height: 26px;
-    border-radius: 7px; cursor: pointer;
+    color: #475569; width: 24px; height: 24px;
+    border-radius: 6px; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     transition: all 0.15s;
   }
@@ -359,30 +360,30 @@ const CSS = `
   /* ── Messages ── */
   .fdc-messages {
     flex: 1; overflow-y: auto;
-    padding: 12px 10px;
-    display: flex; flex-direction: column; gap: 10px;
+    padding: 10px 8px;
+    display: flex; flex-direction: column; gap: 8px;
     scrollbar-width: thin; scrollbar-color: #1e293b transparent;
   }
   .fdc-messages::-webkit-scrollbar { width: 3px; }
   .fdc-messages::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 2px; }
 
-  .fdc-row { display: flex; gap: 7px; align-items: flex-start; animation: fdcUp 0.2s ease; }
+  .fdc-row { display: flex; gap: 6px; align-items: flex-start; animation: fdcUp 0.2s ease; }
   .fdc-row--user { flex-direction: row-reverse; }
   @keyframes fdcUp { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
 
   .fdc-msg-av {
-    width: 24px; height: 24px; border-radius: 50%;
+    width: 22px; height: 22px; border-radius: 50%;
     background: linear-gradient(135deg, #0ea5e9, #6366f1);
     display: flex; align-items: center; justify-content: center;
-    font-size: 11px; flex-shrink: 0;
+    font-size: 10px; flex-shrink: 0;
   }
 
   .fdc-bwrap { display: flex; flex-direction: column; gap: 3px; max-width: 80%; }
   .fdc-row--user .fdc-bwrap { align-items: flex-end; }
 
   .fdc-bubble {
-    padding: 8px 12px; border-radius: 14px;
-    font-size: 13px; line-height: 1.55;
+    padding: 7px 10px; border-radius: 12px;
+    font-size: 12px; line-height: 1.5;
   }
   .fdc-bubble--bot {
     background: #111827; border: 1px solid #1e293b;
@@ -395,14 +396,14 @@ const CSS = `
   .fdc-bubble--err { border-color: #7f1d1d !important; background: #1c0a0a !important; }
   .fdc-bubble strong { color: #93c5fd; }
   .fdc-bubble ul { padding-left: 14px; margin: 4px 0; }
-  .fdc-bubble li { margin: 2px 0; color: #94a3b8; font-size: 12px; }
+  .fdc-bubble li { margin: 2px 0; color: #94a3b8; font-size: 11px; }
   .fdc-bubble p  { margin: 3px 0; }
   .fdc-bubble p:first-child { margin-top: 0; }
   .fdc-bubble p:last-child  { margin-bottom: 0; }
 
   .fdc-speak {
     background: none; border: 1px solid #1e293b;
-    color: #4b5563; padding: 2px 8px;
+    color: #4b5563; padding: 2px 7px;
     border-radius: 20px; font-size: 10px;
     cursor: pointer; transition: all 0.15s;
     font-family: inherit;
@@ -414,8 +415,8 @@ const CSS = `
   /* ── Typing indicator ── */
   .fdc-typing {
     background: #111827; border: 1px solid #1e293b;
-    border-radius: 14px; border-top-left-radius: 3px;
-    padding: 10px 14px;
+    border-radius: 12px; border-top-left-radius: 3px;
+    padding: 9px 12px;
     display: flex; gap: 4px; align-items: center;
   }
   .fdc-typing span {
@@ -428,11 +429,11 @@ const CSS = `
   @keyframes fdcBounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-4px)} }
 
   /* ── Quick questions ── */
-  .fdc-quick { display: flex; flex-direction: column; gap: 5px; }
+  .fdc-quick { display: flex; flex-direction: column; gap: 4px; }
   .fdc-quick-btn {
     background: #0f172a; border: 1px solid #1e293b;
-    color: #64748b; padding: 6px 10px;
-    border-radius: 8px; font-size: 11px;
+    color: #64748b; padding: 5px 9px;
+    border-radius: 7px; font-size: 11px;
     cursor: pointer; text-align: left;
     transition: all 0.15s; font-family: inherit;
     line-height: 1.4;
@@ -441,16 +442,16 @@ const CSS = `
 
   /* ── Input area ── */
   .fdc-input-area {
-    padding: 10px; border-top: 1px solid #1e293b;
+    padding: 8px 10px; border-top: 1px solid #1e293b;
     background: #0d1117; flex-shrink: 0;
   }
-  .fdc-input-row { display: flex; gap: 7px; align-items: flex-end; }
+  .fdc-input-row { display: flex; gap: 6px; align-items: flex-end; }
   .fdc-textarea {
     flex: 1; background: #111827; border: 1px solid #1e293b;
-    color: #e2e8f0; padding: 9px 12px;
-    border-radius: 10px; font-size: 13px;
+    color: #e2e8f0; padding: 8px 10px;
+    border-radius: 9px; font-size: 12px;
     font-family: inherit; resize: none; outline: none;
-    min-height: 38px; max-height: 100px;
+    min-height: 34px; max-height: 90px;
     transition: border-color 0.2s; line-height: 1.5;
   }
   .fdc-textarea:focus { border-color: #4f46e5; }
@@ -459,7 +460,7 @@ const CSS = `
   .fdc-send {
     background: linear-gradient(135deg, #4f46e5, #0ea5e9);
     border: none; color: white;
-    width: 38px; height: 38px; border-radius: 10px;
+    width: 34px; height: 34px; border-radius: 9px;
     cursor: pointer; display: flex;
     align-items: center; justify-content: center;
     flex-shrink: 0; transition: opacity 0.2s;
@@ -468,7 +469,7 @@ const CSS = `
   .fdc-send:disabled { opacity: 0.35; cursor: not-allowed; }
 
   .fdc-hint {
-    margin-top: 6px; font-size: 10px;
+    margin-top: 5px; font-size: 10px;
     color: #374151; text-align: center;
     font-family: inherit;
   }
@@ -476,7 +477,7 @@ const CSS = `
   /* ── Mobile ── */
   @media (max-width: 480px) {
     .fdc-trigger { bottom: 152px; right: 16px; width: 48px; height: 48px; }
-    .fdc-panel   { width: calc(100vw - 24px); right: 12px; bottom: 212px; height: 460px; }
+    .fdc-panel   { width: calc(100vw - 24px); right: 12px; bottom: 212px; height: 380px; }
     .fdc-label   { display: none; }
   }
 `;
