@@ -48,28 +48,6 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      {/* Google Tag Manager */}
-      <Script
-        id="gtm-script"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-KDLQQFKP');
-          `,
-        }}
-      />
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-KDLQQFKP"
-          height="0" width="0"
-          style={{ display: 'none', visibility: 'hidden' }}
-        />
-      </noscript>
-
       {/* ✅ Dante AI Chatbot */}
       <Script
         id="dante-ai-chatbot"
@@ -78,6 +56,20 @@ export default function App({ Component, pageProps }) {
         data-widget-key="wk_wA3D3okDcOsllaNW95HNgYW-CMoe_Uj1"
         crossOrigin="anonymous"
         strategy="afterInteractive"
+      />
+
+      {/* ✅ Tecmicra CRM Tracker */}
+      <Script
+        id="tecmicra-tracker"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `(function(){
+            var s = document.createElement("script");
+            s.src = "https://tecmicra.com/CRM-Dev/webhook/tracker.php?key=d8db0fcdb4e926af15d2cbce1ce2d1a734c398ab2ef39aef3d4230be8050f721";
+            s.async = true;
+            document.head.appendChild(s);
+          })();`,
+        }}
       />
 
       <Component {...pageProps} />
