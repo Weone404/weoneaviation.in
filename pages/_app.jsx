@@ -5,7 +5,6 @@ import Script from 'next/script';
 import 'react-quill/dist/quill.snow.css';
 import dynamic from 'next/dynamic';
 
-// Prevents hydration error — renders only on client
 const FloatingDoubtChat = dynamic(
   () => import('../components/FloatingDoubtChat'),
   { ssr: false }
@@ -49,6 +48,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      {/* Google Tag Manager */}
       <Script
         id="gtm-script"
         strategy="afterInteractive"
@@ -70,9 +70,17 @@ export default function App({ Component, pageProps }) {
         />
       </noscript>
 
-      <Component {...pageProps} />
+      {/* ✅ Dante AI Chatbot */}
+      <Script
+        id="dante-ai-chatbot"
+        src="https://agents.dante-ai.com/embed.js"
+        data-agent-id="645ae293-e07a-4ac5-9e83-fe39a10eab64"
+        data-widget-key="wk_wA3D3okDcOsllaNW95HNgYW-CMoe_Uj1"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
 
-      {!hideFloatingChat && <FloatingDoubtChat />}
+      <Component {...pageProps} />
     </>
   );
 }
