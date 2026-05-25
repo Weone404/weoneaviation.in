@@ -111,7 +111,7 @@ export default function USAFlightTraining() {
     const [activeAircraft, setActiveAircraft] = useState(0);
 
     return (
-        <Layout title="Best Flight Schools in USA – FAA Pilot Training | WeOne Aviation Academy" description="Complete 250 hours of flying in 1.6 years from the USA. FAA-approved flight training in the United States with We One Aviation Academy. PPL, CPL, IR and multi-engine rating training.">
+        <Layout title="Commercial Pilot License in USA – FAA Approved CPL Training | WeOne Aviation Academy" description="Complete 250 hours of flying in 1.6 years from the USA. FAA-approved flight training in the United States with We One Aviation Academy. PPL, CPL, IR and multi-engine rating training.">
             <HeroSlider customSlides={heroSlides} />
 
             {/* Overview */}

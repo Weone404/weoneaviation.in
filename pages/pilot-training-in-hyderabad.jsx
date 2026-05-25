@@ -6,14 +6,14 @@ export default function PilotTrainingHyderabad() {
             city="Hyderabad"
 
             meta={{
-                title: 'Pilot Training Institute in Hyderabad 2025 | CPL, PPL, DGCA | WeOne Aviation',
+                title: 'Pilot Training Institute in Hyderabad 2026 | CPL, PPL, DGCA | WeOne Aviation',
                 description: 'Best Pilot Training Institute in Hyderabad. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
             }}
 
             hero={{
                 image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80',
                 tag: 'Pilot Training in Hyderabad',
-                title: 'Pilot Training Institute in Hyderabad – 2025',
+                title: 'Pilot Training Institute in Hyderabad – 2026',
                 sub: 'World-class CPL, PPL & DGCA Ground Classes with 100% Placement Assistance',
             }}
 

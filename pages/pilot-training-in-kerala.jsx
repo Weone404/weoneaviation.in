@@ -1,23 +1,23 @@
 import { CityPageTemplate } from '../components/Citypagetemplate';
 
-export default function PilotTrainingBangalore() {
+export default function PilotTrainingKerala() {
     return (
         <CityPageTemplate
-            city="Bangalore"
+            city="Kerala"
 
             meta={{
-                title: 'Pilot Training Institute in Bangalore 2025 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Best Pilot Training Institute in Bangalore. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
+                title: 'Pilot Training Institute in Kerala 2025 | CPL, PPL, DGCA | WeOne Aviation',
+                description: 'Best Pilot Training Institute in Kerala. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
             }}
 
             hero={{
                 image: 'https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=1920&q=80',
-                tag: 'Pilot Training in Bangalore',
-                title: 'Pilot Training Institute in Bangalore – 2025',
-                sub: 'World-class CPL, PPL & DGCA Ground Classes in Bangalore with 100% Placement Assistance',
+                tag: 'Pilot Training in Kerala',
+                title: 'Pilot Training Institute in Kerala – 2025',
+                sub: 'World-class CPL, PPL & DGCA Ground Classes in Kerala with 100% Placement Assistance',
             }}
 
-            intro="Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in Bangalore is best for you if you want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Bangalore is a major aviation center in India, creating a high demand for trained pilots — and we are here to train the next generation of aviation professionals."
+            intro="Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in Kerala is best for you if you want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Kerala is a major aviation center in India, creating a high demand for trained pilots — and we are here to train the next generation of aviation professionals."
 
             features={[
                 { icon: '🏅', title: 'Certified Training Program', desc: 'Our institute follows the regulations set by the national aviation authority to ensure quality education and certification.' },
@@ -35,7 +35,7 @@ export default function PilotTrainingBangalore() {
                 {
                     num: '1', icon: '✈️',
                     title: 'Commercial Pilot Training (CPL)',
-                    desc: 'Want to fly massive planes for big airlines? Our CPL program at the Pilot Training Institute in Bangalore is your ticket to the cockpit. Our pro instructors — real pilots with real experience — teach you to handle everything like a champ. Soon, you\'ll be landing jobs with the coolest airlines!',
+                    desc: 'Want to fly massive planes for big airlines? Our CPL program at the Pilot Training Institute in Kerala is your ticket to the cockpit. Our pro instructors — real pilots with real experience — teach you to handle everything like a champ. Soon, you\'ll be landing jobs with the coolest airlines!',
                     details: [
                         { label: 'Duration', value: '12-18 months' },
                         { label: 'Aircraft Used', value: 'Cessna 172 Glass Cockpit' },
@@ -48,7 +48,7 @@ export default function PilotTrainingBangalore() {
                 {
                     num: '2', icon: '🛩️',
                     title: 'Private Pilot Training (PPL)',
-                    desc: 'Want to fly around for fun? Our PPL program at the Pilot Training Institute in Bangalore is just right for you. Take your friends up in the sky or chill above the city — we keep it simple and exciting. Fly by yourself, however you like!',
+                    desc: 'Want to fly around for fun? Our PPL program at the Pilot Training Institute in Kerala is just right for you. Take your friends up in the sky or chill above the city — we keep it simple and exciting. Fly by yourself, however you like!',
                     details: [
                         { label: 'Duration', value: '4-6 months' },
                         { label: 'Aircraft Used', value: 'Cessna 172' },
@@ -61,7 +61,7 @@ export default function PilotTrainingBangalore() {
                 {
                     num: '3', icon: '📚',
                     title: 'DGCA Ground Classes',
-                    desc: 'Our DGCA Ground Classes at the Pilot Training Institute in Bangalore make it super easy to learn air navigation, meteorology, and air regulations — all approved by DGCA. Crack your DGCA exams without any tension with We One Aviation Academy!',
+                    desc: 'Our DGCA Ground Classes at the Pilot Training Institute in Kerala make it super easy to learn air navigation, meteorology, and air regulations — all approved by DGCA. Crack your DGCA exams without any tension with We One Aviation Academy!',
                     details: [
                         { label: 'Duration', value: '3-6 months' },
                         { label: 'Subjects', value: 'Air Regulations, Aviation Meteorology, Air Navigation, Technical General, Technical Specific, Radio Telephony' },
@@ -72,7 +72,7 @@ export default function PilotTrainingBangalore() {
                 {
                     num: '4', icon: '🏆',
                     title: 'Type Rating & Multi-Engine Training',
-                    desc: 'Improve your flying skills with advanced aircraft training at our Pilot Training Institute in Bangalore. Designed for pilots who want to enhance their abilities and qualify for commercial aviation roles.',
+                    desc: 'Improve your flying skills with advanced aircraft training at our Pilot Training Institute in Kerala. Designed for pilots who want to enhance their abilities and qualify for commercial aviation roles.',
                     details: [
                         { label: 'Duration', value: '3-4 months' },
                         { label: 'Aircraft Used', value: 'Cessna 172 Glass Cockpit' },
@@ -92,7 +92,7 @@ export default function PilotTrainingBangalore() {
             ]}
 
             career={{
-                intro: 'Bangalore is a major aviation center in India with great job options for trained pilots. Once you finish your training, you can try for jobs like these:',
+                intro: 'Kerala is a major aviation center in India with great job options for trained pilots. Once you finish your training, you can try for jobs like these:',
                 options: [
                     { icon: '✈️', title: 'Commercial Pilot', desc: 'Fly big passenger planes for airlines like IndiGo, Air India, or SpiceJet.' },
                     { icon: '🛩️', title: 'Private Pilot', desc: 'Work for individuals or companies flying their personal planes.' },
@@ -105,7 +105,7 @@ export default function PilotTrainingBangalore() {
             syllabus={[
                 { num: '1', title: 'Air Regulations', desc: 'The rulebook for flying — covers all the laws and guidelines pilots must follow, including airspace rules and safety standards. The "traffic rules" of the sky.' },
                 { num: '2', title: 'Aviation Meteorology', desc: 'Learn to read weather patterns — clouds, winds, storms, and temperature changes — to plan safe flights and avoid turbulence or bad conditions.' },
-                { num: '3', title: 'Air Navigation', desc: 'Your GPS guide to flying! Learn how to find your way using maps, instruments, and calculations — from Bangalore to anywhere across India or beyond.' },
+                { num: '3', title: 'Air Navigation', desc: 'Your GPS guide to flying! Learn how to find your way using maps, instruments, and calculations — from Kerala to anywhere across India or beyond.' },
                 { num: '4', title: 'Technical General', desc: 'Get to know the "body" of the plane — covers the basics of how aircraft work, including engines, systems, and equipment.' },
                 { num: '5', title: 'Technical Specific', desc: 'Zooms in on the specific type of plane you\'ll fly — dives into your plane\'s design, controls, and performance.' },
                 { num: '6', title: 'Radio Telephony', desc: 'Learn how to communicate with ATC and other pilots using radio codes and phrases to keep everything clear and safe in the air.' },
@@ -121,7 +121,7 @@ export default function PilotTrainingBangalore() {
                 ],
                 whyChanges: [
                     { title: 'School Reputation', desc: 'Top flying schools like We One Aviation charge premium fees for quality — but we also provide scholarships.' },
-                    { title: 'City & Location (Bangalore)', desc: 'Bangalore\'s metro environment means pilot training costs are slightly higher compared to smaller towns.' },
+                    { title: 'City & Location (Kerala)', desc: 'Kerala\'s metro environment means pilot training costs are slightly higher compared to smaller towns.' },
                     { title: 'Type of Aircraft', desc: 'Basic trainer aircraft vs advanced simulators — more advanced equipment means higher training costs.' },
                     { title: 'Add-On Training', desc: 'Night flying or multi-engine training adds extra hours and cost to your program.' },
                 ],
@@ -162,12 +162,12 @@ export default function PilotTrainingBangalore() {
             ]}
 
             faqs={[
-                { q: 'How long does it take to complete pilot training in Bangalore?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months.' },
-                { q: 'What are the fees for pilot training in Bangalore?', a: 'The average fees for CPL training in Bangalore is INR 40–50 Lakh. This includes ground classes (INR 2-5 lakhs), 200 hours of flying (INR 35-45 lakhs), simulator training (INR 3-5 lakhs), and extra gear (INR 1-2 lakhs). WeOne Aviation provides scholarship and flexible payment options.' },
-                { q: 'What is the eligibility to become a pilot in Bangalore?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
-                { q: 'Does WeOne Aviation provide placement assistance in Bangalore?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
-                { q: 'Can I get a scholarship for pilot training in Bangalore?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
-                { q: 'What career options are available after pilot training in Bangalore?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Bangalore\'s thriving aviation and tech sector creates excellent demand for pilots.' },
+                { q: 'How long does it take to complete pilot training in Kerala?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months.' },
+                { q: 'What are the fees for pilot training in Kerala?', a: 'The average fees for CPL training in Kerala is INR 40–50 Lakh. This includes ground classes (INR 2-5 lakhs), 200 hours of flying (INR 35-45 lakhs), simulator training (INR 3-5 lakhs), and extra gear (INR 1-2 lakhs). WeOne Aviation provides scholarship and flexible payment options.' },
+                { q: 'What is the eligibility to become a pilot in Kerala?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
+                { q: 'Does WeOne Aviation provide placement assistance in Kerala?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
+                { q: 'Can I get a scholarship for pilot training in Kerala?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
+                { q: 'What career options are available after pilot training in Kerala?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Kerala\'s thriving aviation and tech sector creates excellent demand for pilots.' },
             ]}
         />
     );

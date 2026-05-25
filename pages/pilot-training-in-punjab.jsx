@@ -6,14 +6,14 @@ export default function PilotTrainingPunjab() {
             city="Punjab"
 
             meta={{
-                title: 'Pilot Training Institute in Punjab 2025 | CPL, PPL, DGCA | WeOne Aviation',
+                title: 'Pilot Training Institute in Punjab 2026 | CPL, PPL, DGCA | WeOne Aviation',
                 description: 'Best Pilot Training Institute in Punjab. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
             }}
 
             hero={{
                 image: 'https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=1920&q=80',
                 tag: 'Pilot Training in Punjab',
-                title: 'Pilot Training Institute in Punjab – 2025',
+                title: 'Pilot Training Institute in Punjab – 2026',
                 sub: 'World-class CPL, PPL & DGCA Ground Classes in Punjab with 100% Placement Assistance',
             }}
 

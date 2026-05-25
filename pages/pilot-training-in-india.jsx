@@ -215,7 +215,7 @@ const faqs = [
     },
     {
         q: 'What are the career options after pilot training in India?',
-        a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. With India\'s aviation sector booming, demand for pilots is at an all-time high in 2025–2026.',
+        a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. With India\'s aviation sector booming, demand for pilots is at an all-time high in 2026–2026.',
     },
 ];
 
@@ -374,7 +374,7 @@ export default function Home() {
                     <ScrollReveal>
                         <div className="section-tag">About Us</div>
                         <h1 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4 underline-orange">
-                            Pilot Training Institute in India – 2025
+                            Pilot Training Institute in India – 2026
                         </h1>
                         <p className="text-gray-600 leading-relaxed mb-4">
                             Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in India is best for you — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy.
@@ -670,7 +670,7 @@ export default function Home() {
                                 ))}
                             </div>
                             <p className="text-white/70 text-center text-sm mb-6">
-                                We One Aviation is a Premier Aviation Academy which has trained 3000+ Pilots in India till 2025. We are the only institute who fulfils all your aviation needs under one roof.
+                                We One Aviation is a Premier Aviation Academy which has trained 3000+ Pilots in India till 2026. We are the only institute who fulfils all your aviation needs under one roof.
                             </p>
                             <div className="text-center">
                                 <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
@@ -1066,7 +1066,7 @@ export default function Home() {
                             Our <span className="text-av-orange">Pilots Speak</span>
                         </h2>
                         <p className="text-gray-500 mt-2 text-sm">
-                            What Our Previous Batch Students Think About Us — These are Genuine Reviews of Our Students Who Started Pilot Training From We One Aviation in Year 2024 and Clear Dgca Exam in Year 2025 With Our Expert Training.
+                            What Our Previous Batch Students Think About Us — These are Genuine Reviews of Our Students Who Started Pilot Training From We One Aviation in Year 2024 and Clear Dgca Exam in Year 2026 With Our Expert Training.
                         </p>
                     </ScrollReveal>
                     <div className="grid md:grid-cols-3 gap-6">

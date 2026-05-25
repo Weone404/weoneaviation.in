@@ -6,14 +6,14 @@ export default function PilotTrainingMumbai() {
             city="Mumbai"
 
             meta={{
-                title: 'Pilot Training Institute in Mumbai 2025 | CPL, PPL, DGCA | WeOne Aviation',
+                title: 'Pilot Training Institute in Mumbai 2026 | CPL, PPL, DGCA | WeOne Aviation',
                 description: 'Best Pilot Training Institute in Mumbai. CPL, PPL, ATPL, DGCA Ground Classes since 2011. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
             }}
 
             hero={{
                 image: 'https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?w=1920&q=80',
                 tag: 'Pilot Training in Mumbai',
-                title: 'Pilot Training Institute in Mumbai – 2025',
+                title: 'Pilot Training Institute in Mumbai – 2026',
                 sub: 'World-class CPL, PPL & DGCA Ground Classes in Mumbai since 2011 with 100% Placement Assistance',
             }}
 

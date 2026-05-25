@@ -6,14 +6,14 @@ export default function PilotTrainingGurugram() {
             city="Gurugram"
 
             meta={{
-                title: 'Pilot Training Institute in Gurugram 2025 | CPL, PPL, DGCA | WeOne Aviation',
+                title: 'Pilot Training Institute in Gurugram 2026 | CPL, PPL, DGCA | WeOne Aviation',
                 description: 'Best Pilot Training Institute in Gurugram. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
             }}
 
             hero={{
                 image: 'https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=1920&q=80',
                 tag: 'Pilot Training in Gurugram',
-                title: 'Pilot Training Institute in Gurugram – 2025',
+                title: 'Pilot Training Institute in Gurugram – 2026',
                 sub: 'World-class CPL, PPL & DGCA Ground Classes in Gurugram with 100% Placement Assistance',
             }}
 
