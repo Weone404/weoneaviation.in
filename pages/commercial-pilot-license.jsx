@@ -1,7 +1,7 @@
 import { useState } from "react";
+import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
 const syllabus = [
   {
     phase: "Phase 1: Ground School",
@@ -93,6 +93,9 @@ export default function CPL() {
 
   return (
     <>
+      <Head>
+        <title>Commercial Pilot License (CPL) Course in India | WeOne Aviation</title>
+      </Head>
       <Navbar />
 
       <div className="bg-gray-50 min-h-screen">
