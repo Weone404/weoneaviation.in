@@ -365,7 +365,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-4">
-            <span className="text-white/80 text-sm font-semibold">We Deliver 3000+ Pilots To India Since 2009</span>
+            <span className="text-white/80 text-sm font-semibold">We have trained 3500+ pilots across India since 2009</span>
           </div>
           <div className="text-center mt-1">
             <span className="text-av-orange text-sm font-semibold">Clear Your Dgca Exam In First Attempt With We One Aviation Academy</span>
@@ -590,7 +590,7 @@ export default function Home() {
               <ScrollReveal delay={150}>
                 <div className="bg-av-blue rounded-2xl shadow-lg p-8">
                   <h3 className="font-montserrat text-xl font-bold text-white mb-4">Our Flying School</h3>
-                  <p className="text-white/70 text-sm leading-relaxed mb-6">We Provide Flight Training From 20+ Countries. 3000+ Students trained across India. We provide 225+ Hours of Flying — more than any other institute.</p>
+                  <p className="text-white/70 text-sm leading-relaxed mb-6">We provide flight training from 20+ countries. 3500+ students trained across India. We offer 225+ hours of flying — more than any other institute.</p>
                   <Link href="/contact" className="inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">Enquiry Now</Link>
                 </div>
               </ScrollReveal>

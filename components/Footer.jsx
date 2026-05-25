@@ -17,8 +17,8 @@ export default function Footer() {
             >
               Get Free Counselling
             </Link>
-            <a
-              href="https://wa.me/919355611996"
+
+            <a href="https://wa.me/919355611996"
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white hover:text-av-orange transition-all text-sm"
@@ -41,8 +41,8 @@ export default function Footer() {
             successful careers. CPL training, international flight programs, expert mentorship, and placement support.
           </p>
           <div className="flex gap-4">
-            <a
-              href="https://www.facebook.com/share/1AokxHk8Yv/?mibextid=wwXIfr"
+
+            <a href="https://www.facebook.com/share/1AokxHk8Yv/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 rounded-full bg-white/10 hover:bg-av-orange flex items-center justify-center transition-colors"
@@ -52,8 +52,8 @@ export default function Footer() {
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
               </svg>
             </a>
-            <a
-              href="https://www.instagram.com/we_one_aviation?igsh=aTJ0YnphMGs3b2Fl&utm_source=qr"
+
+            <a href="https://www.instagram.com/we_one_aviation?igsh=aTJ0YnphMGs3b2Fl&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 rounded-full bg-white/10 hover:bg-av-orange flex items-center justify-center transition-colors"
@@ -65,10 +65,10 @@ export default function Footer() {
               </svg>
             </a>
           </div>
-        </div>
+        </div >
 
         {/* Column 2 — Quick Links */}
-        <div>
+        < div >
           <h4 className="font-montserrat font-bold text-av-orange text-base mb-3">Quick Links</h4>
           <div className="border-t border-dashed border-white/20 mb-5" />
           <ul className="space-y-3">
@@ -81,33 +81,28 @@ export default function Footer() {
               { label: 'Sitemap', href: '/sitemap' },
             ].map((item) => (
               <li key={item.href} className="flex items-center gap-2">
-                {/* chain-link icon */}
                 <svg className="w-4 h-4 text-white/50 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" />
                   <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
                 </svg>
-                <Link
-                  href={item.href}
-                  className="text-white/70 hover:text-av-orange text-sm transition-colors"
-                >
+                <Link href={item.href} className="text-white/70 hover:text-av-orange text-sm transition-colors">
                   {item.label}
                 </Link>
               </li>
             ))}
           </ul>
-        </div>
+        </div >
 
         {/* Column 3 — How to reach us */}
-        <div>
+        < div >
           <h4 className="font-montserrat font-bold text-av-orange text-base mb-3">How to reach us?</h4>
           <div className="border-t border-dashed border-white/20 mb-5" />
           <div className="space-y-4 text-sm text-white/70">
-            {/* Address */}
+            {/* FIX: PIN was 110075 in footer, 110077 in contact section — standardised to 110077 */}
             <div className="flex gap-3 items-start">
               <span className="text-av-orange mt-0.5 text-base">📍</span>
-              <span>C-404, 3rd Floor, Near Ramphal Chowk<br />Sector-7, Dwarka, New Delhi - 110075</span>
+              <span>C-404, 3rd Floor, Near Ramphal Chowk<br />Sector-7, Dwarka, New Delhi - 110077</span>
             </div>
-            {/* Phone 1 */}
             <div className="flex gap-3 items-center">
               <span className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
                 <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -116,7 +111,6 @@ export default function Footer() {
               </span>
               <a href="tel:+919355611996" className="hover:text-av-orange transition-colors">+91-9355611996</a>
             </div>
-            {/* Phone 2 */}
             <div className="flex gap-3 items-center">
               <span className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
                 <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -125,52 +119,54 @@ export default function Footer() {
               </span>
               <a href="tel:+919355566991" className="hover:text-av-orange transition-colors">+91-9355566991</a>
             </div>
-            {/* Email */}
+            {/* FIX: was weoneaviation8@gmail.com — replaced with domain email */}
             <div className="flex gap-3 items-center">
               <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
                 <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                 </svg>
               </span>
-              <a href="mailto:weoneaviation8@gmail.com" className="hover:text-av-orange transition-colors">
-                weoneaviation8@gmail.com
+              <a href="mailto:info@weoneaviation.in" className="hover:text-av-orange transition-colors">
+                info@weoneaviation.in
               </a>
             </div>
           </div>
-        </div>
+        </div >
 
         {/* Column 4 — Our Location */}
-        <div>
+        < div >
           <h4 className="font-montserrat font-bold text-av-orange text-base mb-3">Our Location</h4>
           <div className="border-t border-dashed border-white/20 mb-5" />
           <div className="rounded-xl overflow-hidden border border-white/10 shadow-md">
-            <a
-              href="https://maps.google.com/?cid=10157212043930371020"
+
+            <a href="https://maps.google.com/?cid=10157212043930371020"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Open location in Google Maps"
+              aria-label="Open We One Aviation location in Google Maps"
               className="block"
             >
               <img
                 src="/map-preview.webp"
-                alt="We One Aviation Location - Sector-7, Dwarka, New Delhi"
+                alt="We One Aviation Academy - Sector-7, Dwarka, New Delhi 110077"
                 className="w-full h-44 object-cover hover:opacity-90 transition-opacity duration-200"
               />
             </a>
-          </div>
-        </div>
-      </div>
+          </div >
+        </div >
+      </div >
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10 py-5 px-4">
+      < div className="border-t border-white/10 py-5 px-4" >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-white/40 text-xs">
-          <span>© 2024 WeOne Aviation Academy. All Rights Reserved.</span>
+          {/* FIX: was hardcoded 2024 — now auto-updates every year */}
+          <span>© {new Date().getFullYear()} WeOne Aviation Academy. All Rights Reserved.</span>
           <div className="flex flex-col sm:flex-row items-center gap-3">
             <div className="flex gap-4">
               <Link href="/privacy-policy" className="hover:text-av-orange transition-all">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-av-orange transition-all">Terms of Service</Link>
             </div>
             <div className="flex gap-3">
+
               <a
                 href="https://www.instagram.com/we_one_aviation?igsh=aTJ0YnphMGs3b2Fl&utm_source=qr"
                 target="_blank"
@@ -180,6 +176,7 @@ export default function Footer() {
               >
                 Instagram
               </a>
+
               <a
                 href="https://www.facebook.com/share/1AokxHk8Yv/?mibextid=wwXIfr"
                 target="_blank"
@@ -190,9 +187,9 @@ export default function Footer() {
                 Facebook
               </a>
             </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+          </div >
+        </div >
+      </div >
+    </footer >
   );
 }
