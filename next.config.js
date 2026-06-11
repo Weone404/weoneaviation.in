@@ -42,6 +42,8 @@ const nextConfig = {
               ' https://ssl.google-analytics.com' +
               ' https://www.googleadservices.com' +
               ' https://*.clarity.ms' +
+              // Allow Dante AI chatbot embed
+              ' https://agents.dante-ai.com' +
               ' https://googleleads.g.doubleclick.net' +
               ' https://googleads.g.doubleclick.net' +
               ' https://tecmicra.com' +
@@ -51,7 +53,8 @@ const nextConfig = {
               ' https://www.googletagmanager.com' +
               ' https://td.doubleclick.net' +
               ' https://tecmicra.com' +
-              ' https://*.tecmicra.com',
+              ' https://*.tecmicra.com' +
+              ' https://agents.dante-ai.com',
 
               "frame-ancestors 'self' https://tecmicra.com https://*.tecmicra.com",
 
@@ -66,8 +69,11 @@ const nextConfig = {
               ' https://region1.google-analytics.com' +
               ' https://analytics.google.com' +
               ' https://stats.g.doubleclick.net' +
+              ' https://ad.doubleclick.net' + 
               ' https://www.googletagmanager.com' +
+              ' https://agents.dante-ai.com',+
               ' https://*.clarity.ms' +
+              ' https://agents.dante-ai.com' +
               ' https://googleleads.g.doubleclick.net' +
               ' https://tecmicra.com' +
               ' https://*.tecmicra.com',
@@ -78,6 +84,7 @@ const nextConfig = {
               ' https://www.google-analytics.com' +
               ' https://www.google.com' +
               ' https://*.clarity.ms' +
+              ' https://agents.dante-ai.com' +
               ' https://googleleads.g.doubleclick.net' +
               ' https://tecmicra.com' +
               ' https://*.tecmicra.com',

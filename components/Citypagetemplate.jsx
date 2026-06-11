@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import Head from 'next/head';
 
 // ─────────────────────────────────────────────
 // CityPageTemplate
@@ -28,12 +29,45 @@ export function CityPageTemplate({
     career, syllabus, fees, howToChoose, whyWeOne,
     usaBenefits, usaReasons, faqs, city,
 }) {
+    // LocalBusiness schema tailored to the city page
+    const localBusinessSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: 'We One Aviation Academy',
+        url: 'https://www.weoneaviation.in',
+        telephone: '+919355611996',
+        address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'C-404, 3rd Floor, Sector-7, Near Ramphal Chowk',
+            addressLocality: city,
+            addressRegion: 'Delhi',
+            postalCode: '110077',
+            addressCountry: 'IN',
+        },
+        image: hero.image,
+        sameAs: ['https://www.facebook.com/share/1AokxHk8Yv/', 'https://www.instagram.com/we_one_aviation'],
+    };
+
+    const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: (faqs || []).map(f => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+    };
     return (
         <Layout title={meta.title} description={meta.description}>
 
             {/* ── HERO ── */}
+            <Head>
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+            </Head>
+
             <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-                <img src={hero.image} alt={`Pilot Training in ${city}`} className="absolute inset-0 w-full h-full object-cover" />
+                <img src={hero.image} alt={`CPL pilot training in ${city} — We One Aviation Academy`} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-av-blue/70" />
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
                     <div className="section-tag mx-auto mb-4">{hero.tag}</div>
@@ -73,7 +107,7 @@ export function CityPageTemplate({
                     <ScrollReveal delay={200}>
                         <div className="relative">
                             <div className="rounded-2xl overflow-hidden shadow-2xl">
-                                <img src="/assets/GroundSchool.jpg" alt={`Pilot Training in ${city}`} className="w-full h-80 object-cover" />
+                                <img src="/assets/GroundSchool.jpg" alt={`CPL pilot training in ${city} — We One Aviation Academy`} className="w-full h-80 object-cover" />
                             </div>
                             <div className="absolute -bottom-5 -left-5 bg-av-orange rounded-xl p-4 shadow-xl">
                                 <div className="font-montserrat text-white text-xl font-black">3000+</div>

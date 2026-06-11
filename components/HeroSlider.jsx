@@ -9,6 +9,7 @@ const slides = [
     image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=75&fm=webp',
     tag: "India's #1 Aviation Academy",
     title: 'Your Dream of Flying',
+    alt: 'CPL pilot training in India — We One Aviation Academy',
     highlight: 'Starts Here',
     sub: '• 3500+ Pilots Trained • International Tie-ups',
   },
@@ -54,12 +55,13 @@ const PARTICLES = Array.from({ length: 8 }, (_, i) => ({
 }));
 
 export default function HeroSlider({ customSlides }) {
+  const data = customSlides?.length ? customSlides : slides; // ← ADD THIS
   const [current, setCurrent] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
-  // Track which slide indexes have been "seen" so we only render their images once loaded
   const [loaded, setLoaded] = useState(() => new Set([0]));
-  const data = customSlides || slides;
-
+            <h2 className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-shadow mb-2">
+  {data[current]?.heading ?? 'Best Pilot Training Institute in India'}
+</h2>
   // useCallback so goTo reference is stable for the interval cleanup
   const goTo = useCallback((idx) => {
     setTransitioning(true);
@@ -120,7 +122,7 @@ export default function HeroSlider({ customSlides }) {
             {(isFirst || shouldRender) && (
               <img
                 src={s.image}
-                alt={s.tag}
+                alt={s.alt || s.tag}
                 loading={isFirst ? 'eager' : 'lazy'}
                 decoding="async"
                 className="absolute inset-0 w-full h-full object-cover object-center"
