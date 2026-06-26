@@ -221,6 +221,16 @@ export default function CoursesPage() {
         >
             <HeroSlider customSlides={heroSlides} />
 
+            {/* ── H1 with Primary Keywords ── */}
+            <div className="bg-av-orange py-4 text-center">
+                <h1 className="text-white font-bold text-xl px-4">
+                    Pilot Training Courses in India – CPL, PPL, DGCA Ground Classes
+                </h1>
+                <p className="text-white/90 font-medium text-sm px-4 mt-1">
+                    Explore all DGCA-approved pilot training programs with flexible fees and international opportunities
+                </p>
+            </div>
+
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-6">
                 <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
