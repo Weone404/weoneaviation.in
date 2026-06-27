@@ -162,8 +162,8 @@ export default function ContactPopup() {
             letterSpacing: '-0.03em',
             textShadow: '0 2px 16px rgba(0,0,0,0.3)',
           }}>
-            Clear DGCA exam<br />
-            <span style={{ color: '#FFA500' }}>&amp; Pay Nothing</span>
+            Get Free Pilot <br />
+            <span style={{ color: '#FFA500' }}>Career Guidance</span>
           </h2>
 
           <p style={{
