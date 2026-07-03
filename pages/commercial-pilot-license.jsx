@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Layout from "../components/Layout";
 const syllabus = [
   {
     phase: "Phase 1: Ground School",
@@ -96,9 +95,9 @@ export default function CPL() {
       <Head>
         <title>Commercial Pilot License (CPL) Course in India | WeOne Aviation</title>
       </Head>
-      <Navbar />
 
-      <div className="bg-gray-50 min-h-screen">
+      <Layout title="Commercial Pilot License (CPL) Course in India | WeOne Aviation" description="Complete guide to CPL training, eligibility, fees, and pilot career paths with We One Aviation Academy.">
+        <div className="bg-gray-50 min-h-screen">
 
         {/* ── HEADER ── */}
         <header className="bg-gradient-to-br from-av-blue to-av-navy text-white text-center relative overflow-hidden"
@@ -454,7 +453,7 @@ export default function CPL() {
 
       </div>
 
-      <Footer />
+      </Layout>
     </>
   );
 }
