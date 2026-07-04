@@ -49,14 +49,14 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       {/* ✅ Dante AI Chatbot */}
-      <Script
+      {/* <Script
         id="dante-ai-chatbot"
         src="https://agents.dante-ai.com/embed.js"
         data-agent-id="645ae293-e07a-4ac5-9e83-fe39a10eab64"
         data-widget-key="wk_wA3D3okDcOsllaNW95HNgYW-CMoe_Uj1"
         crossOrigin="anonymous"
         strategy="afterInteractive"
-      />
+      /> */}
 
       {/* ✅ Tecmicra CRM Tracker */}
       <Script
