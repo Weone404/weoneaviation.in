@@ -3,6 +3,7 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import AutoInternalLinks from '../components/AutoInternalLinks';
 
 const heroSlides = [
     {
@@ -153,14 +154,16 @@ export default function AirIndiaPilotPreparation() {
                                 <h1 className="font-montserrat text-2xl sm:text-3xl font-bold text-av-blue mb-4 underline-orange leading-tight">
                                     ✈️ Air India Pilot Interview Preparation (2026) – We One Aviation
                                 </h1>
-                                <div className="space-y-3 mb-6">
-                                    <p className="text-gray-600 leading-relaxed text-sm">
-                                        At We One Aviation, we offer a structured and airline-focused training program designed to help pilots successfully clear the Air India recruitment process.
-                                    </p>
-                                    <p className="text-gray-600 leading-relaxed text-sm">
-                                        Whether you are a CPL holder or a Type Rated pilot (A320/B737), our training prepares you for every stage of selection with precision and confidence.
-                                    </p>
-                                </div>
+                                <AutoInternalLinks currentPath="/Airindia-pilot-preparation">
+                                    <div className="space-y-3 mb-6">
+                                        <p className="text-gray-600 leading-relaxed text-sm">
+                                            At We One Aviation, we offer a structured and airline-focused training program designed to help pilots successfully clear the Air India recruitment process.
+                                        </p>
+                                        <p className="text-gray-600 leading-relaxed text-sm">
+                                            Whether you are a CPL holder or a Type Rated pilot (A320/B737), our training prepares you for every stage of selection with precision and confidence.
+                                        </p>
+                                    </div>
+                                </AutoInternalLinks>
 
                                 {/* Quick Facts */}
                                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
@@ -183,9 +186,11 @@ export default function AirIndiaPilotPreparation() {
                                 <h3 className="font-montserrat text-lg sm:text-xl font-bold text-av-blue mb-3">
                                     🎯 Air India Selection Stages We Cover
                                 </h3>
-                                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                    Our program is built around the actual airline hiring process:
-                                </p>
+                                <AutoInternalLinks currentPath="/Airindia-pilot-preparation">
+                                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                        Our program is built around the actual airline hiring process:
+                                    </p>
+                                </AutoInternalLinks>
                                 <div className="space-y-3">
                                     {selectionStages.map((stage) => (
                                         <div key={stage} className="flex items-center gap-3 bg-av-light rounded-xl px-4 sm:px-5 py-3">
@@ -201,9 +206,11 @@ export default function AirIndiaPilotPreparation() {
                                 <h3 className="font-montserrat text-lg sm:text-xl font-bold text-av-blue mb-3">
                                     🧑‍✈️ Courses for CPL Holders
                                 </h3>
-                                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                    Designed for fresh commercial pilots preparing for airline entry.
-                                </p>
+                                <AutoInternalLinks currentPath="/Airindia-pilot-preparation">
+                                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                        Designed for fresh commercial pilots preparing for airline entry.
+                                    </p>
+                                </AutoInternalLinks>
                                 <div className="space-y-3">
                                     {cplTraining.map((item, i) => (
                                         <div key={i} className="border border-gray-100 rounded-xl p-3 sm:p-4 bg-white shadow-sm hover:border-av-orange/30 transition-all flex items-start gap-3">
@@ -219,9 +226,11 @@ export default function AirIndiaPilotPreparation() {
                                 <h3 className="font-montserrat text-lg sm:text-xl font-bold text-av-blue mb-3">
                                     🛫 Type Rated Pilot Preparation (A320 / B737)
                                 </h3>
-                                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                    Tailored for experienced pilots aiming to join Air India fleet operations.
-                                </p>
+                                <AutoInternalLinks currentPath="/Airindia-pilot-preparation">
+                                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                        Tailored for experienced pilots aiming to join Air India fleet operations.
+                                    </p>
+                                </AutoInternalLinks>
                                 <div className="space-y-3">
                                     {typeRatedTraining.map((item, i) => (
                                         <div key={i} className="border border-gray-100 rounded-xl p-3 sm:p-4 bg-white shadow-sm hover:border-av-orange/30 transition-all flex items-start gap-3">
@@ -304,14 +313,16 @@ export default function AirIndiaPilotPreparation() {
 
                             {/* ── CTA Banner ── */}
                             <ScrollReveal>
-                                <div className="bg-av-blue rounded-2xl p-6 sm:p-8 text-center">
+                                    <div className="bg-av-blue rounded-2xl p-6 sm:p-8 text-center">
                                     <h3 className="font-montserrat text-lg sm:text-xl font-bold text-white mb-3">
                                         🚀 Start Your Airline Career Today
                                     </h3>
-                                    <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-2">
-                                        Prepare Smart. Perform Better. Get Selected.
-                                    </p>
-                                    <p className="text-white/60 text-xs mb-5">✈️ Join Air India Pilot Preparation Program Now</p>
+                                        <AutoInternalLinks currentPath="/Airindia-pilot-preparation">
+                                            <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-2">
+                                                Prepare Smart. Perform Better. Get Selected.
+                                            </p>
+                                            <p className="text-white/60 text-xs mb-5">✈️ Join Air India Pilot Preparation Program Now</p>
+                                        </AutoInternalLinks>
                                     <Link
                                         href="/contact"
                                         className="inline-block bg-av-orange text-white px-6 sm:px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm"

@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import AutoInternalLinks from '../components/AutoInternalLinks';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -138,12 +139,14 @@ export default function AirArabiaMPLPage() {
                     <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
                         Airline Pilot Training Programme <span className="text-av-orange">(MPL)</span>
                     </h1>
-                    <p className="text-av-orange font-semibold text-lg mb-3">
-                        In Partnership with <strong>Air Arabia</strong> ✈️
-                    </p>
-                    <p className="text-white/70 max-w-3xl mx-auto text-sm leading-relaxed mb-6">
-                        An airline-dedicated professional pilot licence programme with a specific airline and aircraft training syllabus. Graduate with an active <strong className="text-white">MPL(A) + Validated ATPL</strong> and 1500 flying hours — ready for the cockpit of Air Arabia.
-                    </p>
+                    <AutoInternalLinks currentPath="/air-arabia">
+                        <p className="text-av-orange font-semibold text-lg mb-3">
+                            In Partnership with <strong>Air Arabia</strong> ✈️
+                        </p>
+                        <p className="text-white/70 max-w-3xl mx-auto text-sm leading-relaxed mb-6">
+                            An airline-dedicated professional pilot licence programme with a specific airline and aircraft training syllabus. Graduate with an active <strong className="text-white">MPL(A) + Validated ATPL</strong> and 1500 flying hours — ready for the cockpit of Air Arabia.
+                        </p>
+                    </AutoInternalLinks>
                     <div className="flex flex-wrap justify-center gap-3">
                         {programmeHighlights.map(h => (
                             <span key={h.label} className="bg-white/10 border border-white/20 text-white text-xs font-semibold px-4 py-2 rounded-full">
@@ -203,7 +206,9 @@ export default function AirArabiaMPLPage() {
                         <h3 className="font-montserrat text-2xl font-bold text-av-blue">
                             MPL vs ATPL – <span className="text-av-orange">What is the Difference?</span>
                         </h3>
-                        <p className="text-gray-500 mt-2 text-sm">Understand which pathway suits your aviation career goals</p>
+                        <AutoInternalLinks currentPath="/air-arabia">
+                            <p className="text-gray-500 mt-2 text-sm">Understand which pathway suits your aviation career goals</p>
+                        </AutoInternalLinks>
                     </ScrollReveal>
                     <ScrollReveal>
                         <div className="overflow-x-auto rounded-2xl shadow">
@@ -238,7 +243,9 @@ export default function AirArabiaMPLPage() {
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white">
                             Eligibility <span className="text-av-orange">Criteria</span>
                         </h2>
-                        <p className="text-white/60 mt-2 text-sm">Check if you meet the minimum requirements to apply for the Air Arabia MPL Programme</p>
+                        <AutoInternalLinks currentPath="/air-arabia">
+                            <p className="text-white/60 mt-2 text-sm">Check if you meet the minimum requirements to apply for the Air Arabia MPL Programme</p>
+                        </AutoInternalLinks>
                     </ScrollReveal>
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
@@ -273,9 +280,11 @@ export default function AirArabiaMPLPage() {
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
                             Entry <span className="text-av-orange">Assessments</span>
                         </h2>
-                        <p className="text-gray-500 mt-2 text-sm max-w-2xl mx-auto">
-                            Every applicant must complete the following entry assessments. Each stage must be passed to proceed to the next.
-                        </p>
+                        <AutoInternalLinks currentPath="/air-arabia">
+                            <p className="text-gray-500 mt-2 text-sm max-w-2xl mx-auto">
+                                Every applicant must complete the following entry assessments. Each stage must be passed to proceed to the next.
+                            </p>
+                        </AutoInternalLinks>
                     </ScrollReveal>
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -315,9 +324,11 @@ export default function AirArabiaMPLPage() {
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
                             Application <span className="text-av-orange">Process & Requirements</span>
                         </h2>
-                        <p className="text-gray-500 mt-2 text-sm max-w-2xl mx-auto">
-                            Follow these steps and prepare the required documents to submit your application to the Air Arabia Academy.
-                        </p>
+                        <AutoInternalLinks currentPath="/air-arabia">
+                            <p className="text-gray-500 mt-2 text-sm max-w-2xl mx-auto">
+                                Follow these steps and prepare the required documents to submit your application to the Air Arabia Academy.
+                            </p>
+                        </AutoInternalLinks>
                     </ScrollReveal>
 
                     <div className="grid md:grid-cols-2 gap-8 mb-10">
@@ -426,9 +437,11 @@ export default function AirArabiaMPLPage() {
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white mb-4">
                             Ready to Fly with <span className="text-av-orange">Air Arabia?</span>
                         </h2>
-                        <p className="text-white/70 text-sm mb-8 leading-relaxed">
-                            We One Aviation Academy helps aspiring pilots prepare for and apply to the Air Arabia MPL Programme — from document preparation and aptitude test coaching to interview preparation and full application support.
-                        </p>
+                        <AutoInternalLinks currentPath="/air-arabia">
+                            <p className="text-white/70 text-sm mb-8 leading-relaxed">
+                                We One Aviation Academy helps aspiring pilots prepare for and apply to the Air Arabia MPL Programme — from document preparation and aptitude test coaching to interview preparation and full application support.
+                            </p>
+                        </AutoInternalLinks>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
                                 Get Free Counselling →

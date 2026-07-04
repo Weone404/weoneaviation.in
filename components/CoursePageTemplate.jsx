@@ -1,8 +1,9 @@
 import Layout from '../components/Layout';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
+import AutoInternalLinks from '../components/AutoInternalLinks';
 
-export function CoursePageTemplate({ meta, hero, overview, facts, highlights, syllabus, career }) {
+export function CoursePageTemplate({ meta, hero, overview, facts, highlights, syllabus, career, currentPath }) {
   return (
     <Layout title={meta.title} description={meta.description}>
       {/* Hero */}
@@ -22,7 +23,9 @@ export function CoursePageTemplate({ meta, hero, overview, facts, highlights, sy
             <ScrollReveal>
               <div className="section-tag">{hero.tag}</div>
               <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mb-4 underline-orange">{hero.title}</h2>
-              <p className="text-gray-600 leading-relaxed mb-6 text-sm">{overview}</p>
+              <AutoInternalLinks currentPath={currentPath}>
+                <p className="text-gray-600 leading-relaxed mb-6 text-sm">{overview}</p>
+              </AutoInternalLinks>
 
               {/* Facts */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
@@ -69,7 +72,9 @@ export function CoursePageTemplate({ meta, hero, overview, facts, highlights, sy
               <ScrollReveal delay={300}>
                 <div className="bg-av-blue rounded-2xl p-6 text-white">
                   <h4 className="font-montserrat font-bold mb-3">Career Prospects</h4>
-                  <p className="text-white/70 text-sm mb-2">{career.text}</p>
+                  <AutoInternalLinks currentPath={currentPath}>
+                    <p className="text-white/70 text-sm mb-2">{career.text}</p>
+                  </AutoInternalLinks>
                   <div className="text-av-orange font-montserrat font-bold text-xl">{career.salary}</div>
                   <div className="text-white/50 text-xs">{career.salaryLabel}</div>
                 </div>

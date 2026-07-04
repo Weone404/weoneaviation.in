@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Head from "next/head";
 import Layout from "../components/Layout";
+import AutoInternalLinks from "../components/AutoInternalLinks";
 const syllabus = [
   {
     phase: "Phase 1: Ground School",
@@ -134,16 +135,18 @@ export default function CPL() {
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Overview</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">What is a Commercial Pilot License?</h2>
-            <p className="text-gray-600 leading-relaxed mb-3 text-sm">
-              A commercial pilot license is a certification issued by the Directorate General of Civil Aviation (DGCA) in India that allows you to work as a professional pilot. Without a cpl license, you cannot earn money as a pilot.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-              A cpl pilot is trained to operate aircraft safely and efficiently, making this career both challenging and rewarding. The commercial pilot course includes both theoretical and practical training, ensuring candidates gain complete aviation knowledge.
-            </p>
             <h3 className="font-montserrat font-bold text-av-blue mb-2">Commercial Pilot Course Overview</h3>
-            <p className="text-gray-600 leading-relaxed text-sm">
-              The commercial pilot course is designed to provide in-depth knowledge of flying and aviation systems. The cpl course typically includes: Ground school training, Simulator training, Flying training (minimum 200 hours), and DGCA exams. The duration of commercial pilot training is usually <strong>18 to 24 months</strong>, depending on the training institute and student progress.
-            </p>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 leading-relaxed mb-3 text-sm">
+                A commercial pilot license is a certification issued by the Directorate General of Civil Aviation (DGCA) in India that allows you to work as a professional pilot. Without a cpl license, you cannot earn money as a pilot.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6 text-sm">
+                A cpl pilot is trained to operate aircraft safely and efficiently, making this career both challenging and rewarding. The commercial pilot course includes both theoretical and practical training, ensuring candidates gain complete aviation knowledge.
+              </p>
+              <p className="text-gray-600 leading-relaxed text-sm">
+                The commercial pilot course is designed to provide in-depth knowledge of flying and aviation systems. The cpl course typically includes: Ground school training, Simulator training, Flying training (minimum 200 hours), and (DGCA) exams. The duration of commercial pilot training is usually <strong>18 to 24 months</strong>, depending on the training institute and student progress.
+              </p>
+            </AutoInternalLinks>
           </div>
         </section>
 
@@ -152,12 +155,14 @@ export default function CPL() {
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Requirements</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Requirements to Become a Pilot</h2>
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">Understanding the requirements to become a pilot is essential before starting your journey. Here are the basic commercial pilot requirements:</p>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">Understanding the requirements to become a pilot is essential before starting your journey. Here are the basic commercial pilot requirements:</p>
+            </AutoInternalLinks>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
               {[
                 { label: "1. Educational Qualifications", desc: "10+2 with Physics and Mathematics. Minimum 50% marks. This is part of the pilot education requirements." },
                 { label: "2. Age Limit", desc: "Minimum age: 18 years." },
-                { label: "3. Medical Fitness", desc: "DGCA Class 1 medical certificate required." },
+                { label: "3. Medical Fitness", desc: "(DGCA) Class 1 medical certificate required." },
                 { label: "4. Flying Experience", desc: "Minimum 200 flying hours required." },
               ].map((item, i) => (
                 <div key={i} className="card-hover bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex gap-3">
@@ -169,11 +174,17 @@ export default function CPL() {
                 </div>
               ))}
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">These criteria define the qualifications to become a pilot and ensure that candidates meet aviation standards.</p>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">These criteria define the qualifications to become a pilot and ensure that candidates meet aviation standards.</p>
+            </AutoInternalLinks>
             <h3 className="font-montserrat font-bold text-av-blue mb-2">Commercial Pilot Eligibility</h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">The commercial pilot eligibility criteria include: Strong communication skills, Good eyesight and physical fitness, Basic knowledge of Physics and Mathematics, and English proficiency. These are also considered the eligibility to become a pilot and are essential for a successful aviation career.</p>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">The commercial pilot eligibility criteria include: Strong communication skills, Good eyesight and physical fitness, Basic knowledge of Physics and Mathematics, and English proficiency. These are also considered the eligibility to become a pilot and are essential for a successful aviation career.</p>
+            </AutoInternalLinks>
             <h3 className="font-montserrat font-bold text-av-blue mb-2">Qualifications for Commercial Pilot</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">The qualifications for commercial pilot go beyond academics. You must have: Analytical thinking, Decision-making skills, Ability to handle pressure, and Technical understanding of aircraft. Meeting these commercial pilot requirements ensures you are ready for real-world flying conditions.</p>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 text-sm leading-relaxed">The qualifications for commercial pilot go beyond academics. You must have: Analytical thinking, Decision-making skills, Ability to handle pressure, and Technical understanding of aircraft. Meeting these commercial pilot requirements ensures you are ready for real-world flying conditions.</p>
+            </AutoInternalLinks>
           </div>
         </section>
 
@@ -182,12 +193,14 @@ export default function CPL() {
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Curriculum</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Pilot Syllabus & CPL Exam Syllabus</h2>
-            <p className="text-gray-600 text-sm leading-relaxed mb-3">
-              CPL ground classes are the foundation of your pilot training. These classes prepare you for DGCA exams and include subjects like: Air Navigation, Meteorology, Air Regulations, Technical General, and Technical Specific. Ground training usually lasts <strong>4–6 months</strong> and is a crucial part of the pilot syllabus.
-            </p>
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              The pilot syllabus is divided into theoretical and practical training. The cpl exam syllabus includes: Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, and Radio Telephony (RTR). These subjects are mandatory to pass DGCA exams and become a licensed pilot. The syllabus is designed to build strong knowledge of aviation operations and safety.
-            </p>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                CPL ground classes are the foundation of your pilot training. These classes prepare you for (DGCA) exams and include subjects like: Air Navigation, Meteorology, Air Regulations, Technical General, and Technical Specific. Ground training usually lasts <strong>4–6 months</strong> and is a crucial part of the pilot syllabus.
+              </p>
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                The pilot syllabus is divided into theoretical and practical training. The cpl exam syllabus includes: Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, and Radio Telephony (RTR). These subjects are mandatory to pass (DGCA) exams and become a licensed pilot. The syllabus is designed to build strong knowledge of aviation operations and safety.
+              </p>
+            </AutoInternalLinks>
             <div className="space-y-3">
               {syllabus.map((phase, i) => (
                 <div key={i} className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
@@ -221,11 +234,12 @@ export default function CPL() {
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Admission</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Entrance Exam for Commercial Pilot</h2>
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              Many institutes conduct an entrance exam for commercial pilot admission. The cpl entrance exam generally includes: Physics, Mathematics, English, and General aptitude. Some flying schools also conduct: Pilot aptitude tests, Personal interviews, and Medical tests. This is part of the Commercial Pilot License Admission Process.
-            </p>
-            <h3 className="font-montserrat font-bold text-av-blue mb-3">Commercial Pilot License Admission Process</h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">The Commercial Pilot License Admission Process involves multiple steps:</p>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                Many institutes conduct an entrance exam for commercial pilot admission. The cpl entrance exam generally includes: Physics, Mathematics, English, and General aptitude. Some flying schools also conduct: Pilot aptitude tests, Personal interviews, and Medical tests. This is part of the Commercial Pilot License Admission Process.
+              </p>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">The Commercial Pilot License Admission Process involves multiple steps:</p>
+            </AutoInternalLinks>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
               {[
                 "Choose a DGCA-approved flying school",
@@ -244,10 +258,11 @@ export default function CPL() {
               ))}
             </div>
             <p className="text-gray-600 text-sm leading-relaxed mb-6">This structured process ensures proper pilot training and certification.</p>
-            <h3 className="font-montserrat font-bold text-av-blue mb-2">Commercial Pilot Training in India</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Commercial pilot training in India is regulated by DGCA and follows strict guidelines. Training includes: Ground classes, Simulator sessions, Solo and cross-country flying, Night flying, and Instrument flying. India has many DGCA-approved academies offering world-class pilot course programs.
-            </p>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Commercial pilot training in India is regulated by (DGCA) and follows strict guidelines. Training includes: Ground classes, Simulator sessions, Solo and cross-country flying, Night flying, and Instrument flying. India has many (DGCA)-approved academies offering world-class pilot course programs.
+              </p>
+            </AutoInternalLinks>
           </div>
         </section>
 
@@ -256,14 +271,18 @@ export default function CPL() {
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Investment</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot Course (CPL) Fees in India</h2>
-            <p className="text-gray-600 text-sm leading-relaxed mb-8">
-              Cost to become a pilot in India depends on flying schools from where you will do flying. Below is a breakdown of all CPL course fees from classes to cockpit.
-            </p>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 text-sm leading-relaxed mb-8">
+                Cost to become a pilot in India depends on flying schools from where you will do flying. Below is a breakdown of all CPL course fees from classes to cockpit.
+              </p>
+            </AutoInternalLinks>
 
-            <h3 className="font-montserrat font-bold text-av-blue mb-2">1) DGCA Class 1-2 Medical Test</h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">
-              At first you have to clear DGCA Class 1-2 Medical from any DGCA Medical Doctor. Doctors check the candidate's health to ensure they meet the physical and mental fitness standards required for flying.
-            </p>
+            <h3 className="font-montserrat font-bold text-av-blue mb-2">1) (DGCA) Class 1-2 Medical Test</h3>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                At first you have to clear (DGCA) Class 1-2 Medical from any (DGCA) Medical Doctor. Doctors check the candidate's health to ensure they meet the physical and mental fitness standards required for flying.
+              </p>
+            </AutoInternalLinks>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
               {medicalChecks.map((check, i) => (
                 <div key={i} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex gap-3">
@@ -276,23 +295,29 @@ export default function CPL() {
               ))}
             </div>
             <div className="bg-blue-50 border border-blue-100 rounded-xl px-5 py-4 text-sm text-gray-700 mb-8">
-              💰 <strong className="text-av-blue">DGCA Medical Fees (Approximate):</strong> Class 1 Medical: ₹5,000 – ₹10,000 &nbsp;|&nbsp; Class 2 Medical: ₹3,000 – ₹6,000
+              💰 <strong className="text-av-blue">(DGCA) Medical Fees (Approximate):</strong> Class 1 Medical: ₹5,000 – ₹10,000 &nbsp;|&nbsp; Class 2 Medical: ₹3,000 – ₹6,000
             </div>
 
-            <h3 className="font-montserrat font-bold text-av-blue mb-2">2) DGCA CPL Exams and Fees</h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              You have to give 6 papers of the DGCA Exam. There are two processes: <strong>Regular Exam</strong> (4 times a year) and <strong>On-Demand Exam</strong> (flexible, as per candidate's choice). Regular DGCA Exam fees: ₹2,500/subject · On-Demand DGCA Exam fees: ₹5,000/paper.
-            </p>
+            <h3 className="font-montserrat font-bold text-av-blue mb-2">2) (DGCA) CPL Exams and Fees</h3>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                You have to give 6 papers of the (DGCA) Exam. There are two processes: <strong>Regular Exam</strong> (4 times a year) and <strong>On-Demand Exam</strong> (flexible, as per candidate's choice). Regular (DGCA) Exam fees: ₹2,500/subject · On-Demand (DGCA) Exam fees: ₹5,000/paper.
+              </p>
+            </AutoInternalLinks>
 
-            <h3 className="font-montserrat font-bold text-av-blue mb-2">3) DGCA Ground Classes</h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              The right ground classes help you crack the DGCA Exam quickly with proper guidance. Average fees of DGCA Ground Classes: <strong>₹2.5 Lakh</strong>.
-            </p>
+            <h3 className="font-montserrat font-bold text-av-blue mb-2">3) (DGCA) Ground Classes</h3>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                The right ground classes help you crack the (DGCA) Exam quickly with proper guidance. Average fees of (DGCA) Ground Classes: <strong>₹2.5 Lakh</strong>.
+              </p>
+            </AutoInternalLinks>
 
             <h3 className="font-montserrat font-bold text-av-blue mb-2">4) Flying Training Duration and Fees</h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              The CPL course takes around 8–10 months to complete. It includes 80 hours of classroom sessions and 200 hours of training, covering Simulator Training and Flying Training. Most flying schools charge on an hourly basis. Candidates must have around <strong>₹40 lakh</strong> ready for flying before joining a flight school.
-            </p>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                The CPL course takes around 8–10 months to complete. It includes 80 hours of classroom sessions and 200 hours of training, covering Simulator Training and Flying Training. Most flying schools charge on an hourly basis. Candidates must have around <strong>₹40 lakh</strong> ready for flying before joining a flight school.
+              </p>
+            </AutoInternalLinks>
 
             <p className="font-montserrat font-bold text-av-blue text-sm mb-3">CPL Course Fees Breakdown (India):</p>
             <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
@@ -341,18 +366,20 @@ export default function CPL() {
                 </div>
               ))}
             </div>
-            <h3 className="font-montserrat font-bold text-white mb-3">Preparation Tips For DGCA Exam</h3>
-            <div className="space-y-3">
-              {[
-                "Attend ground classes regularly and use DGCA-approved study materials (e.g., books by authors like R.K. Bali or Oxford Aviation Academy manuals).",
-                "Practice with past question papers and mock tests.",
-                "Focus on understanding concepts rather than rote memorization, as questions can be application-based.",
-              ].map((tip, i) => (
-                <div key={i} className="glass rounded-xl p-4 flex gap-3 items-start text-sm text-white/80">
-                  <span className="text-av-orange font-bold flex-shrink-0">–</span> {tip}
-                </div>
-              ))}
-            </div>
+            <h3 className="font-montserrat font-bold text-white mb-3">Preparation Tips For (DGCA) Exam</h3>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <div className="space-y-3">
+                {[
+                  "Attend ground classes regularly and use (DGCA)-approved study materials (e.g., books by authors like R.K. Bali or Oxford Aviation Academy manuals).",
+                  "Practice with past question papers and mock tests.",
+                  "Focus on understanding concepts rather than rote memorization, as questions can be application-based.",
+                ].map((tip, i) => (
+                  <div key={i} className="glass rounded-xl p-4 flex gap-3 items-start text-sm text-white/80">
+                    <span className="text-av-orange font-bold flex-shrink-0">–</span> {tip}
+                  </div>
+                ))}
+              </div>
+            </AutoInternalLinks>
           </div>
         </section>
 
@@ -361,9 +388,11 @@ export default function CPL() {
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Earnings</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot License Salary</h2>
-            <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              One of the biggest attractions of this career is the commercial pilot license salary. Commercial pilot starting pay: ₹1.5 lakh to ₹3 lakh per month. With experience, pilots can become captains and earn even higher salaries. The aviation industry offers excellent growth, making it a highly rewarding profession.
-            </p>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                One of the biggest attractions of this career is the commercial pilot license salary. Commercial pilot starting pay: ₹1.5 lakh to ₹3 lakh per month. With experience, pilots can become captains and earn even higher salaries. The aviation industry offers excellent growth, making it a highly rewarding profession.
+              </p>
+            </AutoInternalLinks>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {salaryData.map((s, i) => (
                 <div key={i} className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden card-hover">
@@ -401,7 +430,9 @@ export default function CPL() {
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Why CPL</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Why Choose a CPL Course?</h2>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">Choosing a cpl course offers multiple benefits:</p>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">Choosing a cpl course offers multiple benefits:</p>
+            </AutoInternalLinks>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
               {["High-paying career", "Global job opportunities", "Prestige and respect", "Exciting lifestyle"].map((b, i) => (
                 <div key={i} className="bg-white rounded-xl border border-gray-100 shadow-sm px-4 py-3 text-sm text-av-blue font-semibold text-center card-hover hover:border-av-orange/30 transition-all">
@@ -441,9 +472,11 @@ export default function CPL() {
         <section className="py-20 px-4 bg-gradient-to-br from-av-blue to-av-navy">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white mb-4">Conclusion</h2>
-            <p className="text-white/70 text-sm leading-relaxed max-w-3xl mx-auto mb-6">
-              The journey to becoming a commercial pilot requires dedication, investment, and proper training. By enrolling in a pilot course, meeting the commercial pilot eligibility, and completing the Commercial Pilot License Admission Process, you can achieve your dream of flying professionally. With high demand, excellent commercial pilot license salary, and global opportunities, pursuing a commercial pilot license is a smart career choice in today's aviation industry.
-            </p>
+            <AutoInternalLinks currentPath="/commercial-pilot-license">
+              <p className="text-white/70 text-sm leading-relaxed max-w-3xl mx-auto mb-6">
+                The journey to becoming a commercial pilot requires dedication, investment, and proper training. By enrolling in a pilot course, meeting the commercial pilot eligibility, and completing the Commercial Pilot License Admission Process, you can achieve your dream of flying professionally. With high demand, excellent commercial pilot license salary, and global opportunities, pursuing a commercial pilot license is a smart career choice in today's aviation industry.
+              </p>
+            </AutoInternalLinks>
             <a href="/contact"
               className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm shadow-lg">
               Get Free Counselling →

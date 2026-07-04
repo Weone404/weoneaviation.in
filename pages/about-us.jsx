@@ -5,6 +5,7 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import AutoInternalLinks from '../components/AutoInternalLinks';
 
 const heroSlides = [
   { id: 1, image: 'https://images.unsplash.com/photo-1559628233-100c798642d8?w=1920&q=80', tag: 'About WeOne Aviation', title: 'India\'s Most Trusted', highlight: 'Aviation Academy', sub: 'A legacy of 15+ years in shaping the next generation of pilots' },
@@ -66,12 +67,14 @@ export default function About() {
             <h2 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
               15+ Years of Aviation Excellence
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-              Founded in 2009, WeOne Aviation Academy started with a simple mission: to make quality pilot training accessible to every Indian aspiring to fly. From a small ground school in Delhi, we have grown into India's most respected aviation training institute.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-              We are DGCA approved and have international tie-ups with partner flying schools in the USA (Florida), Canada (Ontario), Australia (Queensland), and Europe (Germany). Our integrated approach combines theoretical knowledge with practical flight training.
-            </p>
+            <AutoInternalLinks currentPath="/about-us">
+              <p className="text-gray-600 leading-relaxed mb-4 text-sm">
+                Founded in 2009, WeOne Aviation Academy started with a simple mission: to make quality pilot training accessible to every Indian aspiring to fly. From a small ground school in Delhi, we have grown into India's most respected aviation training institute.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4 text-sm">
+                We are DGCA approved and have international tie-ups with partner flying schools in the USA (Florida), Canada (Ontario), Australia (Queensland), and Europe (Germany). Our integrated approach combines theoretical knowledge with practical flight training.
+              </p>
+            </AutoInternalLinks>
             <div className="grid grid-cols-3 gap-4 mt-6">
               {[['500+', 'Pilots'], ['50+', 'Airlines'], ['98%', 'Pass Rate']].map(([num, label]) => (
                 <div key={label} className="text-center p-4 bg-av-light rounded-xl">

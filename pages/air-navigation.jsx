@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import AutoInternalLinks from '../components/AutoInternalLinks';
 
 /**
  * LeadForm is below the fold (in the sidebar).
@@ -157,19 +158,21 @@ export default function AirNavigation() {
                                 Air Navigation — All Details 2025
                             </h2>
 
-                            <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                                Looking for the best Air Navigation course in India? Whether you're preparing for your{' '}
-                                <span className="font-semibold text-av-blue">Commercial Pilot License (CPL)</span> or{' '}
-                                <span className="font-semibold text-av-blue">Private Pilot License (PPL)</span>, mastering
-                                Air Navigation is essential for every{' '}
-                                <span className="font-semibold text-av-blue">pilot</span>'s success in both DGCA exams and
-                                real-world flying.
-                            </p>
-                            <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                                At We One Aviation Academy, we offer comprehensive, practical, DGCA-approved Air Navigation
-                                training in Delhi. We combine real-time navigation tools, expert faculty, and hands-on
-                                practice that goes beyond the textbook.
-                            </p>
+                            <AutoInternalLinks currentPath="/air-navigation">
+                                <p className="text-gray-600 leading-relaxed mb-4 text-sm">
+                                    Looking for the best Air Navigation course in India? Whether you're preparing for your{' '}
+                                    <span className="font-semibold text-av-blue">Commercial Pilot License (CPL)</span> or{' '}
+                                    <span className="font-semibold text-av-blue">Private Pilot License (PPL)</span>, mastering
+                                    Air Navigation is essential for every{' '}
+                                    <span className="font-semibold text-av-blue">pilot</span>'s success in both DGCA exams and
+                                    real-world flying.
+                                </p>
+                                <p className="text-gray-600 leading-relaxed mb-6 text-sm">
+                                    At We One Aviation Academy, we offer comprehensive, practical, DGCA-approved Air Navigation
+                                    training in Delhi. We combine real-time navigation tools, expert faculty, and hands-on
+                                    practice that goes beyond the textbook.
+                                </p>
+                            </AutoInternalLinks>
 
                             {/* Quick Facts */}
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
@@ -185,28 +188,32 @@ export default function AirNavigation() {
                             <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">
                                 What is Air Navigation?
                             </h3>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                                Air Navigation is the process of determining your position, deciding where you want to go,
-                                and safely guiding the aircraft there. You'll learn to use maps, measure distances, correct
-                                for wind, and utilize navigation tools such as GPS, VORs, and compasses.
-                            </p>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                                Whether flying by day or night, in clear skies or clouds, good navigation keeps you on
-                                track and safe.
-                            </p>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                                Air Navigation is the process of determining the position, planning the route, and guiding
-                                the aircraft from one point to another safely and efficiently. It involves:
-                            </p>
+                            <AutoInternalLinks currentPath="/air-navigation">
+                                <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                                    Air Navigation is the process of determining your position, deciding where you want to go,
+                                    and safely guiding the aircraft there. You'll learn to use maps, measure distances, correct
+                                    for wind, and utilize navigation tools such as GPS, VORs, and compasses.
+                                </p>
+                                <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                                    Whether flying by day or night, in clear skies or clouds, good navigation keeps you on
+                                    track and safe.
+                                </p>
+                                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                                    Air Navigation is the process of determining the position, planning the route, and guiding
+                                    the aircraft from one point to another safely and efficiently. It involves:
+                                </p>
+                            </AutoInternalLinks>
                             <IconList items={navigationTypes} />
 
                             {/* Why Our Course Stands Out */}
                             <h3 className="font-montserrat text-xl font-bold text-av-blue mb-2">
                                 Why Our Air Navigation Course Stands Out
                             </h3>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                                Here's what makes We One Aviation the preferred choice for air navigation training in India:
-                            </p>
+                            <AutoInternalLinks currentPath="/air-navigation">
+                                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                                    Here's what makes We One Aviation the preferred choice for air navigation training in India:
+                                </p>
+                            </AutoInternalLinks>
                             <div className="overflow-x-auto rounded-xl border border-gray-200 mb-10">
                                 <table className="w-full text-sm">
                                     <thead>
@@ -230,11 +237,13 @@ export default function AirNavigation() {
                             <h3 className="font-montserrat text-xl font-bold text-av-blue mb-2">
                                 Topics Covered in Air Navigation Course
                             </h3>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-2">
-                                We cover the full <span className="font-semibold text-av-blue">DGCA</span> Navigation
-                                syllabus in a practical, simplified way:
-                            </p>
-                            <p className="text-gray-600 text-sm font-semibold mb-5">Module-Wise Breakdown:</p>
+                            <AutoInternalLinks currentPath="/air-navigation">
+                                <p className="text-gray-600 text-sm leading-relaxed mb-2">
+                                    We cover the full <span className="font-semibold text-av-blue">DGCA</span> Navigation
+                                    syllabus in a practical, simplified way:
+                                </p>
+                                <p className="text-gray-600 text-sm font-semibold mb-5">Module-Wise Breakdown:</p>
+                            </AutoInternalLinks>
                             <div className="space-y-4 mb-10">
                                 {modules.map((m) => (
                                     <div key={m.num} className="border border-gray-200 rounded-xl overflow-hidden">
@@ -255,16 +264,20 @@ export default function AirNavigation() {
                             <h3 className="font-montserrat text-xl font-bold text-av-blue mb-2">
                                 What You Will Learn in Our Air Navigation Course
                             </h3>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                                Our course covers both the basics and advanced parts of navigation, including:
-                            </p>
+                            <AutoInternalLinks currentPath="/air-navigation">
+                                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                                    Our course covers both the basics and advanced parts of navigation, including:
+                                </p>
+                            </AutoInternalLinks>
                             <CheckList items={whatYouLearn} />
 
                             {/* Who Can Enroll */}
                             <h3 className="font-montserrat text-xl font-bold text-av-blue mb-2">
                                 Who Can Enroll in Air Navigation Course?
                             </h3>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-5">Perfect for:</p>
+                            <AutoInternalLinks currentPath="/air-navigation">
+                                <p className="text-gray-600 text-sm leading-relaxed mb-5">Perfect for:</p>
+                            </AutoInternalLinks>
                             <IconList items={whoCanEnroll} />
 
                             {/* Career Benefits */}
@@ -278,10 +291,12 @@ export default function AirNavigation() {
                                 <h3 className="font-montserrat text-xl font-bold text-white mb-3">
                                     Join Air Navigation Classes Now
                                 </h3>
-                                <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-5">
-                                    We One Aviation Academy is Delhi's most trusted name for DGCA Ground Classes. Join us and
-                                    take the first step toward the skies! ✈️
-                                </p>
+                                <AutoInternalLinks currentPath="/air-navigation">
+                                    <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-5">
+                                        We One Aviation Academy is Delhi's most trusted name for DGCA Ground Classes. Join us and
+                                        take the first step toward the skies! ✈️
+                                    </p>
+                                </AutoInternalLinks>
                                 <Link
                                     href="/contact"
                                     className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm"
