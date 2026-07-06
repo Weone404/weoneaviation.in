@@ -164,7 +164,7 @@ export default function PilotCourseTraining() {
           </div>
 
           {/* ── EXPERT GUIDANCE ── */}
-          <section className="py-20 px-4">
+          <section className="py-10 px-4">
             <div className="max-w-7xl mx-auto">
               <div className="section-tag mb-3">Overview</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">
@@ -182,7 +182,7 @@ export default function PilotCourseTraining() {
           </section>
 
           {/* ── WHAT IS A PILOT COURSE ── */}
-          <section className="py-20 px-4 bg-white">
+          <section className="py-10 px-4 bg-white">
             <div className="max-w-7xl mx-auto">
               <div className="section-tag mb-3">Quick Answer</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">
@@ -197,7 +197,7 @@ export default function PilotCourseTraining() {
           </section>
 
           {/* ── WHY CHOOSE A COMMERCIAL PILOT COURSE ── */}
-          <section className="py-20 px-4 bg-gray-50">
+          <section className="py-10 px-4 bg-gray-50">
             <div className="max-w-7xl mx-auto">
               <div className="section-tag mb-3">Why This Career</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">
@@ -248,7 +248,7 @@ export default function PilotCourseTraining() {
           </section>
 
           {/* ── COMMERCIAL PILOT TRAINING IN INDIA ── */}
-          <section className="py-20 px-4 bg-gray-50">
+          <section className="py-10 px-4 bg-gray-50">
             <div className="max-w-7xl mx-auto">
               <div className="section-tag mb-3">Curriculum</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">
@@ -307,7 +307,7 @@ export default function PilotCourseTraining() {
           </section>
 
           {/* ── PILOT TRAINING IN DELHI ── */}
-          <section className="py-20 px-4 bg-gray-50">
+          <section className="py-10 px-4 bg-gray-50">
             <div className="max-w-7xl mx-auto">
               <div className="section-tag mb-3">Delhi</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">
@@ -395,7 +395,7 @@ export default function PilotCourseTraining() {
           </section>
 
           {/* ── COMMERCIAL PILOT COURSE FEES ── */}
-          <section className="py-20 px-4 bg-gray-50">
+          <section className="py-10 px-4 bg-gray-50">
             <div className="max-w-7xl mx-auto">
               <div className="section-tag mb-3">Investment</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">
@@ -443,7 +443,7 @@ export default function PilotCourseTraining() {
           </section>
 
           {/* ── CAREER OPPORTUNITIES ── */}
-          <section className="py-20 px-4 bg-gray-50">
+          <section className="py-10 px-4 bg-gray-50">
             <div className="max-w-7xl mx-auto">
               <div className="section-tag mb-3">Career Paths</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">
@@ -499,7 +499,7 @@ export default function PilotCourseTraining() {
           </section>
 
           {/* ── FAQ ── */}
-          <section className="py-20 px-4 bg-gray-50">
+          <section className="py-10 px-4 bg-gray-50">
             <div className="max-w-7xl mx-auto">
               <div className="section-tag mb-3">FAQ</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-6">

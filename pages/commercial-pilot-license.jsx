@@ -207,7 +207,7 @@ export default function CPL() {
 
         {/* ── HEADER ── */}
         <header className="bg-gradient-to-br from-av-blue to-av-navy text-white text-center relative overflow-hidden"
-          style={{ paddingTop: "144px", paddingBottom: "64px" }}>
+          style={{ paddingTop: "144px", paddingBottom: "30px" }}>
           <div className="absolute top-0 right-0 w-64 h-64 rounded-full border-2 border-white/5 -translate-y-1/2 translate-x-1/2 pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-44 h-44 rounded-full border-2 border-white/5 translate-y-1/2 -translate-x-1/2 pointer-events-none" />
           <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -239,7 +239,7 @@ export default function CPL() {
         </div>
 
         {/* ── WHAT IS CPL ── */}
-        <section className="py-20 px-4">
+        <section className="py-10 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Quick Answer</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">What is a Commercial Pilot License?</h2>
@@ -252,7 +252,7 @@ export default function CPL() {
         </section>
 
         {/* ── WHY CHOOSE A COMMERCIAL PILOT COURSE ── */}
-        <section className="py-20 px-4 bg-white">
+        <section className="py-10 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Why This Course</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Why Choose a Commercial Pilot Course?</h2>
@@ -278,7 +278,7 @@ export default function CPL() {
         </section>
 
         {/* ── ELIGIBILITY ── */}
-        <section className="py-20 px-4 bg-gray-50">
+        <section className="py-10 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Eligibility</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot Eligibility</h2>
@@ -300,7 +300,7 @@ export default function CPL() {
         </section>
 
         {/* ── TRAINING PROCESS ── */}
-        <section className="py-20 px-4 bg-white">
+        <section className="py-10 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Process</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot Training Process</h2>
@@ -341,7 +341,7 @@ export default function CPL() {
         </section>
 
         {/* ── PILOT TRAINING IN INDIA ── */}
-        <section className="py-20 px-4 bg-gray-50">
+        <section className="py-10 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Training in India</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Pilot Training in India</h2>
@@ -368,7 +368,7 @@ export default function CPL() {
         </section>
 
         {/* ── PILOT TRAINING IN DELHI ── */}
-        <section className="py-20 px-4 bg-white">
+        <section className="py-10 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Training in Delhi</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Pilot Training in Delhi</h2>
@@ -384,7 +384,7 @@ export default function CPL() {
         </section>
 
         {/* ── WHY CHOOSE WE ONE AVIATION ── */}
-        <section className="py-20 px-4 bg-gray-50">
+        <section className="py-10 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Why We One Aviation</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Why Choose We One Aviation?</h2>
@@ -410,7 +410,7 @@ export default function CPL() {
         </section>
 
         {/* ── COURSE DURATION ── */}
-        <section className="py-20 px-4 bg-white">
+        <section className="py-10 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Duration</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot License Course Duration</h2>
@@ -437,7 +437,7 @@ export default function CPL() {
         </section>
 
         {/* ── COURSE FEES ── */}
-        <section className="py-20 px-4 bg-gray-50">
+        <section className="py-10 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Investment</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot Course Fees</h2>
@@ -463,7 +463,7 @@ export default function CPL() {
         </section>
 
         {/* ── FLYING TRAINING & 200 HOURS ── */}
-        <section className="py-20 px-4 bg-white">
+        <section className="py-10 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Flight Training</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Flying Training &amp; 200 Flying Hours</h2>
@@ -489,7 +489,7 @@ export default function CPL() {
         </section>
 
         {/* ── CAREER OPPORTUNITIES ── */}
-        <section className="py-20 px-4 bg-gray-50">
+        <section className="py-10 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Career Paths</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Career Opportunities After Commercial Pilot Training</h2>
@@ -516,7 +516,7 @@ export default function CPL() {
         </section>
 
         {/* ── SALARY ── */}
-        <section className="py-20 px-4 bg-white">
+        <section className="py-10 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Earnings</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot License Salary</h2>
@@ -553,7 +553,7 @@ export default function CPL() {
         </section>
 
         {/* ── WHY CHOOSE US FOR TRAINING / OUR SERVICES ── */}
-        <section className="py-20 px-4 bg-gradient-to-br from-av-blue via-av-navy to-av-blue">
+        <section className="py-10 px-4 bg-gradient-to-br from-av-blue via-av-navy to-av-blue">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Our Services</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white mb-4">Why Choose We One Aviation for Commercial Pilot Training?</h2>
@@ -565,7 +565,7 @@ export default function CPL() {
             <h3 className="font-montserrat font-bold text-white mb-4">Our Services</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
               {ourServicesList.map((s, i) => (
-                <div key={i} className="glass rounded-xl p-4 flex gap-3 items-start text-sm text-white/80">
+                <div key={i} className="glass rounded-xl p-4 flex gap-3 items-start text-sm text-white/60">
                   <span className="text-av-orange font-bold flex-shrink-0">–</span> {s}
                 </div>
               ))}
@@ -579,7 +579,7 @@ export default function CPL() {
         </section>
 
         {/* ── FAQ ── */}
-        <section className="py-20 px-4 bg-white">
+        <section className="py-10 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">FAQs</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-6">Frequently Asked Questions</h2>
@@ -614,7 +614,7 @@ export default function CPL() {
         </section>
 
         {/* ── RELATED PROGRAMS ── */}
-        <section className="py-20 px-4 bg-gray-50">
+        <section className="py-10 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Explore More</div>
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Related Pilot Training Programs</h2>
@@ -637,7 +637,7 @@ export default function CPL() {
         </section>
 
         {/* ── CONCLUSION / CTA ── */}
-        <section className="py-20 px-4 bg-gradient-to-br from-av-blue to-av-navy">
+        <section className="py-10 px-4 bg-gradient-to-br from-av-blue to-av-navy">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white mb-4">Start Your Commercial Pilot Journey Today</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
@@ -650,7 +650,7 @@ export default function CPL() {
             </AutoInternalLinks>
             <h3 className="font-montserrat text-xl font-bold text-white mb-3">Ready to Take Off?</h3>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
-              <p className="text-white/80 text-sm leading-relaxed max-w-3xl mx-auto mb-6 font-semibold">
+              <p className="text-white/60 text-sm leading-relaxed max-w-3xl mx-auto mb-6 font-semibold">
                 Book your FREE career counselling session today and let We One Aviation help you choose the right pilot course, understand the Commercial Pilot License process, and begin your journey toward an exciting career in aviation.
               </p>
             </AutoInternalLinks>
