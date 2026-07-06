@@ -15,6 +15,7 @@
  */
 
 import dynamic from 'next/dynamic';
+import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import CourseCard from '../components/CourseCard';
@@ -373,7 +374,11 @@ const breadcrumbSchema = {
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState(2026);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
     <>

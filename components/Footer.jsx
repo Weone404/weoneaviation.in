@@ -1,6 +1,13 @@
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function Footer() {
+  const [currentYear, setCurrentYear] = useState(2026);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-av-blue text-white">
       {/* Top CTA */}
@@ -159,7 +166,7 @@ export default function Footer() {
       < div className="border-t border-white/10 py-5 px-4" >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-white/40 text-xs">
           {/* FIX: was hardcoded 2024 — now auto-updates every year */}
-          <span>© {new Date().getFullYear()} WeOne Aviation Academy. All Rights Reserved.</span>
+          <span>© {currentYear} WeOne Aviation Academy. All Rights Reserved.</span>
           <div className="flex flex-col sm:flex-row items-center gap-3">
             <div className="flex gap-4">
               <Link href="/privacy-policy" className="hover:text-av-orange transition-all">Privacy Policy</Link>

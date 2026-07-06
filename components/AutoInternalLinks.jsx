@@ -2,20 +2,20 @@ import React, { useMemo } from 'react';
 import Link from 'next/link';
 import { replaceInternalLinks } from '../utils/replaceInternalLinks';
 
-const IGNORED_TAGS = new Set([
-  'a',
-  'button',
-  'iframe',
-  'svg',
-  'style',
-  'script',
-  'code',
-  'pre',
-  'textarea',
-  'input',
-  'select',
-  'option',
-]);
+// const IGNORED_TAGS = new Set([
+//   'a',
+//   'button',
+//   'iframe',
+//   'svg',
+//   'style',
+//   'script',
+//   'code',
+//   'pre',
+//   'textarea',
+//   'input',
+//   'select',
+//   'option',
+// ]);
 
 function processNode(node, state) {
   if (state.count >= state.maxTotalLinks) return node;
@@ -26,9 +26,9 @@ function processNode(node, state) {
 
   if (React.isValidElement(node)) {
     const { type, props } = node;
-    if ((typeof type === 'string' && IGNORED_TAGS.has(type)) || type === Link) {
-      return node;
-    }
+    // if ((typeof type === 'string' && IGNORED_TAGS.has(type)) || type === Link) {
+    //   return node;
+    // }
 
     const processedChildren = React.Children.toArray(props.children).flatMap((child) => {
       const processed = processNode(child, state);

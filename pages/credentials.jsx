@@ -11,6 +11,7 @@ import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
 
 const credentials = [
   {
@@ -83,6 +84,14 @@ const certifications = [
 ];
 
 export default function CredentialsPage() {
+  const [updatedLabel, setUpdatedLabel] = useState('Last updated: July 6, 2026');
+
+  useEffect(() => {
+    setUpdatedLabel(
+      `Last updated: ${new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}`
+    );
+  }, []);
+
   return (
     <>
       <Head>
@@ -185,7 +194,7 @@ export default function CredentialsPage() {
               </p>
               <div className="border-t pt-4">
                 <p className="text-sm text-gray-500">
-                  Last updated: {new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  {updatedLabel}
                 </p>
               </div>
             </ScrollReveal>
