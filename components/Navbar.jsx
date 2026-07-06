@@ -54,6 +54,8 @@ const courses = [
   { label: 'Private Pilot License (PPL)', href: '/private-pilot-license-ppl-course-details' },
   { label: 'ATPL', href: '/advanced-atpl-pilot-training' },
   { label: 'DGCA Ground Classes', href: '/dgca-ground-classes' },
+  { label: 'Pilot Course Training in India', href: '/pilot-course-training-in-india' },
+
 ];
 
 const flyingCountry = [

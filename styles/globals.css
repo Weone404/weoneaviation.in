@@ -16,11 +16,39 @@
   scroll-behavior: smooth;
 }
 
+html {
+  font-size: clamp(14px, 1vw + 0.2rem, 16px);
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: #fff;
   color: #1a1a2e;
   overflow-x: hidden;
+  word-break: break-word;
+  min-height: 100vh;
+}
+
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor-ring {
+    display: none;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

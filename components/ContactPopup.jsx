@@ -11,7 +11,7 @@ export default function ContactPopup() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(true);
-    }, 20000);
+    }, 30000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -50,7 +50,7 @@ export default function ContactPopup() {
       a.click();
       document.body.removeChild(a);
       setShow(false);
-    }, 10000);
+    }, 30000);
   };
 
   if (!show) return null;

@@ -579,39 +579,7 @@ export default function CPL() {
         </section>
 
         {/* ── FAQ ── */}
-        <section className="py-10 px-4 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="section-tag mb-3">FAQs</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-6">Frequently Asked Questions</h2>
-            <div className="space-y-3">
-              {faqs.map((f, i) => (
-                <div key={i} className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
-                  <button
-                    onClick={() => setOpenPhase(openPhase === `faq-${i}` ? null : `faq-${i}`)}
-                    className="w-full bg-gray-50 text-av-blue px-6 py-4 flex justify-between items-center hover:bg-blue-50 transition-all"
-                  >
-                    <span className="font-montserrat font-bold text-sm text-left">{f.q}</span>
-                    <span className="text-av-blue/60 text-sm flex-shrink-0 ml-3">{openPhase === `faq-${i}` ? "▲" : "▼"}</span>
-                  </button>
-                  {openPhase === `faq-${i}` && (
-                    <div className="px-6 py-4 bg-white">
-                      <p className="text-gray-600 text-sm leading-relaxed mb-2">{f.a}</p>
-                      {f.list && (
-                        <div className="grid sm:grid-cols-2 gap-2">
-                          {f.list.map((li, j) => (
-                            <div key={j} className="flex items-start gap-2 text-sm text-gray-600">
-                              <span className="text-av-orange mt-0.5">▸</span> {li}
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+      
 
         {/* ── RELATED PROGRAMS ── */}
         <section className="py-10 px-4 bg-gray-50">
