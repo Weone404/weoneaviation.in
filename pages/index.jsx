@@ -451,7 +451,7 @@ export default function Home() {
         ────────────────────────────────────────────────────────────────── */}
         <div className="bg-av-orange py-4 text-center">
           <h1 className="text-white font-bold text-xl px-4">
-            Best Pilot Training Institute in India
+            Best <a href="https://www.flystar.co.in/" className="text-white hover:underline">Pilot Training Institute</a> in India
           </h1>
           <p className="text-white/90 font-medium text-sm px-4 mt-1">
             Get world-class flight training, DGCA-approved courses, and expert guidance to kickstart your aviation career.
@@ -476,7 +476,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-4">
-            <span className="text-white/80 text-sm font-semibold">We have trained 3500+ pilots across India since 2009</span>
+            <span className="text-white/80 text-sm font-semibold">We have trained 3500+ <a href="https://www.weoneaviation.com/" className="text-white hover:underline">pilots</a> across India since 2009</span>
           </div>
           <div className="text-center mt-1">
             <span className="text-av-orange text-sm font-semibold">Clear Your Dgca Exam In First Attempt With We One Aviation Academy</span>
