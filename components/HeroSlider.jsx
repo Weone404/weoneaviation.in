@@ -58,13 +58,11 @@ const PARTICLES = Array.from({ length: 8 }, (_, i) => ({
 }));
 
 export default function HeroSlider({ customSlides }) {
-  const data = customSlides?.length ? customSlides : slides; // ← ADD THIS
+  const data = customSlides?.length ? customSlides : slides;
   const [current, setCurrent] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
   const [loaded, setLoaded] = useState(() => new Set([0]));
-            <h2 className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-shadow mb-2">
-  {data[current]?.heading ?? 'Best Pilot Training Institute in India'}
-</h2>
+
   // useCallback so goTo reference is stable for the interval cleanup
   const goTo = useCallback((idx) => {
     setTransitioning(true);
