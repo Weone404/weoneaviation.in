@@ -256,8 +256,8 @@ function BulletList({ items, dark = false }) {
 export default function PPLPage() {
     return (
         <Layout
-            title="PPL Full Form: Everything You Need to Know About a Private Pilot Licence (PPL)"
-            description="PPL stands for Private Pilot Licence (Private Pilot License). Learn what a PPL is, eligibility, skills, subjects, the step-by-step process, benefits, limitations, and PPL vs CPL vs ATPL."
+            title="PPL Full Form: Meaning, Eligibility, Course & Career Guide"
+            description="Discover the PPL full form, eligibility, training process, flying hours, privileges, limitations, fees, and career opportunities. Learn everything about a Private Pilot Licence in India."
         >
 
             {/* ── Hero Banner ── */}
