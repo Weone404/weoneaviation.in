@@ -295,7 +295,7 @@ export default function DGCAPage() {
     return (
         <Layout
             title="DGCA Full Form: Meaning, Roles, Functions & Importance in Indian Aviation"
-            description="DGCA stands for Directorate General of Civil Aviation. It is India's civil aviation regulatory authority under the Ministry of Civil Aviation. Learn its roles, functions, and importance."
+            description="Learn the DGCA full form, its meaning, history, functions, responsibilities, and role in pilot licensing and aviation safety. Complete guide for aspiring pilots."
         >
 
             {/* ── Hero Banner ── */}
