@@ -369,7 +369,7 @@ export default function DGCAPage() {
                                 Every pilot, airline, aircraft operator, maintenance organization, and approved flying school in India must comply with DGCA regulations to maintain operational safety and regulatory standards.
                             </p>
                             <p className="text-gray-600 leading-relaxed">
-                                For aspiring pilots, DGCA plays a role throughout the licensing journey—from medical examinations and theory tests to issuing the Commercial Pilot Licence (CPL).
+                                For aspiring pilots, DGCA plays a role throughout the licensing journey—from <Link href="/dgca-class-2-class-1-medical" className="text-av-orange hover:underline">DGCA medical examinations</Link> and theory tests to issuing the <Link href="/commercial-pilot-license" className="text-av-orange hover:underline">Commercial Pilot Licence (CPL)</Link>.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -530,7 +530,7 @@ export default function DGCAPage() {
                                 For students planning a career in aviation, understanding DGCA is just as important as learning to fly. Every major milestone in the pilot training journey—including medical certification, theory examinations, flight training, and licence issuance—is governed by DGCA regulations.
                             </p>
                             <p className="text-gray-600 text-sm leading-relaxed">
-                                Having a clear understanding of these requirements helps students make informed decisions, choose approved training pathways, and avoid unnecessary delays during the licensing process.
+                                Having a clear understanding of these requirements helps students make informed decisions, choose approved training pathways, and explore resources such as <Link href="/dgca-ground-classes" className="text-av-orange hover:underline">DGCA ground classes</Link>, <Link href="/dgca-computer-number" className="text-av-orange hover:underline">DGCA computer number</Link>, and <Link href="/how-to-become-a-pilot-after-12th" className="text-av-orange hover:underline">how to become a pilot after 12th</Link>.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -559,7 +559,10 @@ export default function DGCAPage() {
                             How DGCA Helps You Become a <span className="text-av-orange">Commercial Pilot in India</span>
                         </h2>
                         <p className="text-white/60 mt-3 max-w-3xl mx-auto text-sm leading-relaxed">
-                            If your goal is to become a commercial pilot, the Directorate General of Civil Aviation (DGCA) will be involved at every stage of your training and licensing journey. From verifying your eligibility to issuing your Commercial Pilot Licence (CPL), DGCA ensures that every pilot meets the required academic, medical, and operational standards.
+                            If your goal is to become a commercial pilot, the Directorate General of Civil Aviation (DGCA) will be involved at every stage of your training and licensing journey. From verifying your eligibility to issuing your <Link href="/commercial-pilot-license" className="text-av-orange hover:underline">Commercial Pilot Licence (CPL)</Link>, DGCA ensures that every pilot meets the required academic, medical, and operational standards.
+                        </p>
+                        <p className="text-white/60 mt-3 max-w-3xl mx-auto text-sm leading-relaxed">
+                            Students preparing for this path can also review <Link href="/commercial-pilot-license-eligibility" className="text-av-orange hover:underline">CPL eligibility</Link> and <Link href="/commercial-pilot-license-syllabus" className="text-av-orange hover:underline">CPL syllabus</Link> to plan their training more effectively.
                         </p>
                         <p className="text-white/60 mt-3 max-w-3xl mx-auto text-sm leading-relaxed">
                             Understanding the DGCA process early helps aspiring pilots plan their training more effectively and avoid unnecessary delays.
