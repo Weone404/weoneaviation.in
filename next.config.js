@@ -47,6 +47,9 @@ const nextConfig = {
               ' https://ssl.google-analytics.com' +
               ' https://www.googleadservices.com' +
               ' https://*.clarity.ms' +
+              ' https://b.clarity.ms' +
+              ' https://c.clarity.ms' +
+              ' https://www.clarity.ms' +
               // Allow Dante AI chatbot embed
               ' https://agents.dante-ai.com' +
               ' https://googleleads.g.doubleclick.net' +
@@ -74,11 +77,13 @@ const nextConfig = {
               ' https://region1.google-analytics.com' +
               ' https://analytics.google.com' +
               ' https://stats.g.doubleclick.net' +
-              ' https://ad.doubleclick.net' + 
+              ' https://ad.doubleclick.net' +
               ' https://www.googletagmanager.com' +
-              ' https://agents.dante-ai.com',+
-              ' https://*.clarity.ms' +
               ' https://agents.dante-ai.com' +
+              ' https://*.clarity.ms' +
+              ' https://b.clarity.ms' +
+              ' https://c.clarity.ms' +
+              ' https://www.clarity.ms' +
               ' https://googleleads.g.doubleclick.net' +
               ' https://tecmicra.com' +
               ' https://*.tecmicra.com',
