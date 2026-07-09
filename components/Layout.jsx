@@ -2,7 +2,6 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import FloatingButtons from './FloatingButtons';
 import ContactPopup from './ContactPopup';
-import FAQs from './FAQs';
 import Head from 'next/head';
 import SpecialOfferBanner from './Specialofferbanner';
 import { useRouter } from 'next/router';
@@ -41,7 +40,7 @@ export default function Layout({ children, title, description, keywords }) {
       <Navbar />
       <SpecialOfferBanner />
       <main className="min-h-screen">{children}</main>
-      <FAQs />
+      {/* <FAQs /> */}
       <Footer />
       <FloatingButtons />
       {!isAdminPage && <ContactPopup />}

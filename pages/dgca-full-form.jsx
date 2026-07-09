@@ -355,7 +355,7 @@ export default function DGCAPage() {
             <section className="py-20 px-4 bg-gray-50">
                 <div className="max-w-4xl mx-auto">
                     <ScrollReveal className="text-center mb-10">
-                        <div className="section-tag">About DGCA</div>
+                        {/* <div className="section-tag">About DGCA</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue underline-orange">
                             What is DGCA?
                         </h2>
@@ -427,7 +427,7 @@ export default function DGCAPage() {
             <section className="py-20 px-4 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Functions</div>
+                        {/* <div className="section-tag">Functions</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
                             Key Functions of <span className="text-av-orange">DGCA</span>
                         </h2>
@@ -486,7 +486,7 @@ export default function DGCAPage() {
             <section className="py-20 px-4 bg-gray-50">
                 <div className="max-w-4xl mx-auto">
                     <ScrollReveal className="text-center mb-10">
-                        <div className="section-tag">Clearing the Confusion</div>
+                        {/* <div className="section-tag">Clearing the Confusion</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue underline-orange">
                             DGCA and ICAO: What&apos;s the Relationship?
                         </h2>
@@ -638,7 +638,7 @@ export default function DGCAPage() {
             <section className="py-20 px-4 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <ScrollReveal className="text-center mb-4">
-                        <div className="section-tag">Avoid These</div>
+                        {/* <div className="section-tag">Avoid These</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
                             Common Mistakes <span className="text-av-orange">Aspiring Pilots Should Avoid</span>
                         </h2>
@@ -667,7 +667,7 @@ export default function DGCAPage() {
             <section className="py-20 px-4">
                 <div className="max-w-7xl mx-auto">
                     <ScrollReveal className="text-center mb-4">
-                        <div className="section-tag">Career Paths</div>
+                        {/* <div className="section-tag">Career Paths</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
                             Career Opportunities <span className="text-av-orange">After DGCA Certification</span>
                         </h2>
@@ -700,7 +700,7 @@ export default function DGCAPage() {
             <section className="py-20 px-4 bg-gray-50">
                 <div className="max-w-5xl mx-auto">
                     <ScrollReveal className="text-center mb-10">
-                        <div className="section-tag">Why We One</div>
+                        {/* <div className="section-tag">Why We One</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
                             Why Choose <span className="text-av-orange">We One Aviation?</span>
                         </h2>
@@ -729,7 +729,7 @@ export default function DGCAPage() {
             <section className="py-20 px-4">
                 <div className="max-w-4xl mx-auto">
                     <ScrollReveal className="text-center mb-10">
-                        <div className="section-tag">Quick Answers</div>
+                        {/* <div className="section-tag">Quick Answers</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue underline-orange">
                             At a Glance
                         </h2>
@@ -751,7 +751,7 @@ export default function DGCAPage() {
             <section className="py-20 px-4 bg-gray-50">
                 <div className="max-w-4xl mx-auto">
                     <ScrollReveal className="text-center mb-10">
-                        <div className="section-tag">FAQ</div>
+                        {/* <div className="section-tag">FAQ</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
                             Frequently Asked <span className="text-av-orange">Questions</span>
                         </h2>

@@ -22,6 +22,7 @@ import CourseCard from '../components/CourseCard';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Head from 'next/head';
+import FAQs from '../components/FAQs';
 
 // ─── LAZY LOAD HEAVY BELOW-FOLD COMPONENTS ───────────────────────────────────
 
@@ -1024,6 +1025,8 @@ export default function Home() {
             </ScrollReveal>
           </div>
         </section>
+
+        <FAQs />
 
       </Layout>
     </>
