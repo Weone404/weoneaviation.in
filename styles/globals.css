@@ -207,3 +207,11 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 0 2px 20px rgba(0,0,0,0.4);
   }
 }
+
+/* Reduce vertical spacing for sections that use `py-20` utility.
+   Many pages use `py-20` for section spacing; override it to `py-12` (3rem)
+   to create tighter spacing between sections without changing each file. */
+.py-20 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
