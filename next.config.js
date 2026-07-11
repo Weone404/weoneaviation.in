@@ -23,6 +23,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/Pilot-Course-&-Pilot-Training-in-india',
+        destination: '/pilot-course-training-in-india',
+        permanent: true,
+      },
+      {
         source: '/pilot-training-courses',
         destination: '/pilot-course-training-in-india',
         permanent: true,

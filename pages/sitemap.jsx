@@ -119,6 +119,27 @@ const sitemapData = [
         ],
     },
     {
+        category: 'Airline Preparatory Classes',
+        icon: '🎓',
+        color: 'bg-amber-50 border-amber-200',
+        headerColor: 'bg-amber-700',
+        links: [
+            { label: 'CASS Compass', href: '/airline-preparatory-classes/cass-compass' },
+            { label: 'Interview Preparation', href: '/airline-preparatory-classes/interview-preparation' },
+            { label: 'Psychometry', href: '/airline-preparatory-classes/psychometry' },
+        ],
+    },
+    {
+        category: 'Support Pages',
+        icon: '🛟',
+        color: 'bg-slate-50 border-slate-200',
+        headerColor: 'bg-slate-700',
+        links: [
+            { label: 'FAQs', href: '/faqs' },
+            { label: 'Got a Doubt?', href: '/doubt' },
+        ],
+    },
+    {
         category: 'Full Form Pages',
         icon: '📖',
         color: 'bg-teal-50 border-teal-200',
