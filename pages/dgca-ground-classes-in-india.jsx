@@ -200,14 +200,13 @@ const faqs = [
 ];
 
 const blogs = [
-    { title: 'Pilot Training in Delhi', date: 'February 13, 2025', desc: 'Complete guide to pilot training in Delhi — DGCA exam, simulator practice, PPL & CPL course fees.', href: '/blog/pilot-training-delhi' },
-    { title: 'Private Pilot License (PPL) Course Fees in India', date: 'February 10, 2025', desc: 'PPL Course Fees 2025 — everything an Indian student needs to know before enrolling.', href: '/blog/ppl-course-fees' },
-    { title: 'Full Form of CPL | Commercial Pilot License in India', date: 'January 28, 2025', desc: 'What CPL means in Indian aviation, eligibility, DGCA requirements and career scope.', href: '/blog/cpl-full-form' },
-    { title: 'Master the DGCA CPL Exam: Complete Guide for Indian Students', date: 'January 21, 2025', desc: 'Complete DGCA CPL exam guide — syllabus, subjects, exam centres, and success tips for India.', href: '/blog/dgca-exam-guide' },
-    { title: 'Aviation Course After 12th in India — Fees & Admission Guide', date: 'January 2, 2025', desc: 'All aviation courses available in India after 12th — fees, eligibility, and career paths explained.', href: '/blog/aviation-course-after-12th' },
-    { title: 'Best Aviation Academy in India', date: 'December 12, 2024', desc: 'How We One Aviation Academy became India\'s most trusted DGCA Ground Classes institute.', href: '/blog/aviation-academy' },
-];
-
+        { title: 'Pilot Training in Delhi', date: 'February 13, 2025', desc: 'Complete guide to pilot training in Delhi — DGCA exam, simulator practice, PPL & CPL course fees.', href: '/blogs/pilot-training-delhi' },
+        { title: 'Private Pilot License (PPL) Course Fees in India', date: 'February 10, 2025', desc: 'PPL Course Fees 2025 — everything an Indian student needs to know before enrolling.', href: '/blogs/ppl-course-fees' },
+        { title: 'Full Form of CPL | Commercial Pilot License in India', date: 'January 28, 2025', desc: 'What CPL means in Indian aviation, eligibility, DGCA requirements and career scope.', href: '/blogs/cpl-full-form' },
+        { title: 'Master the DGCA CPL Exam: Complete Guide for Indian Students', date: 'January 21, 2025', desc: 'Complete DGCA CPL exam guide — syllabus, subjects, exam centres, and success tips for India.', href: '/blogs/dgca-exam-guide' },
+        { title: 'Aviation Course After 12th in India — Fees & Admission Guide', date: 'January 2, 2025', desc: 'All aviation courses available in India after 12th — fees, eligibility, and career paths explained.', href: '/blogs/aviation-course-after-12th' },
+        { title: 'Best Aviation Academy in India', date: 'December 12, 2024', desc: 'How We One Aviation Academy became India\'s most trusted DGCA Ground Classes institute.', href: '/blogs/aviation-academy' },
+]
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function DGCAGroundClassesInIndia() {
