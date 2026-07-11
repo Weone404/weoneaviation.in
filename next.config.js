@@ -23,6 +23,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/pilot-training-courses',
+        destination: '/pilot-course-training-in-india',
+        permanent: true,
+      },
+      {
         source: '/:path*',
         has: [{ type: 'host', value: 'weoneaviation.in' }],
         destination: 'https://www.weoneaviation.in/:path*',
