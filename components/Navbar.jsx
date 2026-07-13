@@ -64,7 +64,7 @@ const flyingCountry = [
 ];
 
 const howTo = [
-  { label: 'Apply For DGCA Computer Number', href: 'dgca-computer-number' },
+  { label: 'Apply For DGCA Computer Number', href: '/dgca-computer-number' },
   { label: 'DGCA Class 2 & Class 1 Medical', href: '/dgca-class-2-class-1-medical' },
   { label: 'Join DGCA CPL Ground Classes', href: '/dgca-ground-classes' },
   { label: 'Join Flying School', href: '/best-flight-schools-in-usa' },
