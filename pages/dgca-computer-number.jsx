@@ -20,19 +20,19 @@ const keyHighlights = [
 ];
 
 const withoutComputerNumberList = [
-    'Register for DGCA theory examinations',
-    'Apply for CPL examination papers',
-    'Apply for PPL examinations',
-    'Register for ATPL examinations',
-    'Access examination-related services through the DGCA Pariksha portal',
+    <span>Register for <Link href="/dgca-pariksha" className="text-av-blue font-semibold hover:text-av-orange transition-colors">DGCA theory examinations</Link></span>,
+    <span>Apply for <Link href="/commercial-pilot-license" className="text-av-blue font-semibold hover:text-av-orange transition-colors">CPL</Link> examination papers</span>,
+    <span>Apply for <Link href="/private-pilot-license-ppl-course-details" className="text-av-blue font-semibold hover:text-av-orange transition-colors">PPL</Link> examinations</span>,
+    <span>Register for <Link href="/advanced-atpl-pilot-training" className="text-av-blue font-semibold hover:text-av-orange transition-colors">ATPL</Link> examinations</span>,
+    <span>Access examination-related services through the <Link href="/dgca-pariksha" className="text-av-blue font-semibold hover:text-av-orange transition-colors">DGCA Pariksha portal</Link></span>,
     'Build an official examination record with DGCA',
 ];
 
 const whoNeeds = [
     'Become a Commercial Pilot',
-    'Apply for a Commercial Pilot License (CPL)',
-    'Pursue a Private Pilot License (PPL)',
-    'Obtain an Airline Transport Pilot License (ATPL)',
+    <span>Apply for a <Link href="/commercial-pilot-license" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Commercial Pilot License (CPL)</Link></span>,
+    <span>Pursue a <Link href="/private-pilot-license-ppl-course-details" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Private Pilot License (PPL)</Link></span>,
+    <span>Obtain an <Link href="/advanced-atpl-pilot-training" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Airline Transport Pilot License (ATPL)</Link></span>,
     'Appear for DGCA Flight Crew examinations',
     'Continue advanced pilot training after basic aviation education',
 ];
@@ -176,9 +176,9 @@ const noDelayTips = [
 ];
 
 const afterApproval = [
-    'Registering for DGCA theory examinations',
-    'Enrolling in DGCA Ground Classes',
-    'Continuing your Commercial Pilot License (CPL) preparation',
+    <span>Registering for <Link href="/dgca-pariksha" className="text-av-blue font-semibold hover:text-av-orange transition-colors">DGCA theory examinations</Link></span>,
+    <span>Enrolling in <Link href="/dgca-ground-classes" className="text-av-blue font-semibold hover:text-av-orange transition-colors">DGCA Ground Classes</Link></span>,
+    <span>Continuing your <Link href="/commercial-pilot-license" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Commercial Pilot License (CPL)</Link> preparation</span>,
     'Tracking examination records',
     'Applying for future DGCA examinations',
 ];
@@ -201,24 +201,24 @@ const expertTips = [
 
 const weOneOffers = [
     'Career counselling',
-    'DGCA Ground Classes',
-    'Commercial Pilot License (CPL) guidance',
+    <span><Link href="/dgca-ground-classes" className="text-av-blue font-semibold hover:text-av-orange transition-colors">DGCA Ground Classes</Link></span>,
+    <span><Link href="/commercial-pilot-license" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Commercial Pilot License (CPL)</Link> guidance</span>,
     'Pilot training roadmap',
     'Admission assistance',
     'Interview preparation',
 ];
 
 const suggestedInternalLinks = [
-    'Commercial Pilot License (CPL)',
-    'CPL Eligibility',
-    'CPL Course Fees',
-    'DGCA Full Form',
-    'PPL Full Form',
-    'RTR Full Form',
-    'Pilot Training in India',
-    'DGCA Ground Classes',
-    'Pilot Salary in India',
-    'Cadet Pilot Program',
+    { label: 'Commercial Pilot License (CPL)', href: '/commercial-pilot-license' },
+    { label: 'CPL Eligibility', href: '/commercial-pilot-license-eligibility' },
+    { label: 'CPL Course Fees', href: '/commercial-pilot-license' },
+    { label: 'DGCA Full Form', href: '/dgca-full-form' },
+    { label: 'PPL Full Form', href: '/private-pilot-license-ppl-course-details' },
+    { label: 'RTR Full Form', href: '/rtr-full-form-meaning-importance-and-complete-guide' },
+    { label: 'Pilot Training in India', href: '/pilot-training-in-india' },
+    { label: 'DGCA Ground Classes', href: '/dgca-ground-classes' },
+    { label: 'Pilot Salary in India', href: '/commercial-pilot-license-salary' },
+    { label: 'Cadet Pilot Program', href: '/emirates-cadet-pilot-program' },
 ];
 
 export default function DGCAComputerNumber() {
@@ -237,29 +237,12 @@ export default function DGCAComputerNumber() {
                             </h1>
 
                             {/* Quick Answer */}
-                            <div className="bg-av-light rounded-2xl p-6 mb-8 border border-av-sky/20">
-                                <h2 className="font-montserrat text-lg font-bold text-av-blue mb-2">Quick Answer (Featured Snippet)</h2>
-                                <p className="text-gray-600 leading-relaxed text-sm">
-                                    A DGCA Computer Number is a unique identification number issued by the Directorate General of Civil Aviation (DGCA) through its Central Examination Organisation (CEO) to candidates pursuing aviation licenses such as the Commercial Pilot License (CPL), Private Pilot License (PPL), or Airline Transport Pilot License (ATPL). It is mandatory for appearing in DGCA examinations and remains valid throughout a pilot's career. Applicants can obtain the number by submitting the required educational and identity documents through the DGCA Pariksha portal.
-                                </p>
-                            </div>
-
-                            {/* Become Eligible */}
-                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">Become Eligible for DGCA Examinations with Your Computer Number</h2>
-                            <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                                If you dream of becoming a commercial pilot in India, obtaining a DGCA Computer Number is one of the first official steps in your aviation journey. Whether you are preparing for a Commercial Pilot License (CPL), Private Pilot License (PPL), or Airline Transport Pilot License (ATPL), you cannot register for DGCA examinations without a valid computer number.
-                            </p>
-                            <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                                Many aspiring pilots are unsure about the application process, eligibility requirements, required documents, or common reasons for application rejection. This comprehensive guide explains every aspect of the DGCA Computer Number in simple language so you can complete your registration confidently and avoid unnecessary delays.
-                            </p>
-                            <p className="text-gray-600 leading-relaxed mb-10 text-sm">
-                                At We One Aviation, we assist aspiring pilots throughout their aviation journey—from career counselling and DGCA ground classes to pilot training guidance and airline career preparation.
-                            </p>
+                            
 
                             {/* What is */}
                             <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What is a DGCA Computer Number?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                                A DGCA Computer Number is a permanent identification number issued by the Central Examination Organisation (CEO) under the Directorate General of Civil Aviation (DGCA). It serves as a unique candidate ID for all flight crew examinations conducted by DGCA.
+                                A DGCA Computer Number is a permanent identification number issued by the Central Examination Organisation (CEO) under the Directorate General of Civil Aviation  <a href="/dgca-full-form" className="text-av-blue font-semibold hover:text-av-orange transition-colors">(DGCA)</a>. It serves as a unique candidate ID for all flight crew examinations conducted by <a href='/dgca-ground-classes' className="text-av-blue font-semibold hover:text-av-orange transition-colors">DGCA</a>.
                             </p>
                             <p className="text-gray-600 text-sm leading-relaxed mb-3">
                                 Think of it as your official examination identity. Every time you register for a DGCA exam, your Computer Number is used to track your applications, examination records, and results.
@@ -268,7 +251,7 @@ export default function DGCAComputerNumber() {
                                 Unlike an examination roll number, the Computer Number is issued only once and remains associated with your aviation records throughout your professional career.
                             </p>
                             <p className="text-gray-600 text-sm leading-relaxed mb-10">
-                                Whether you plan to become a commercial airline pilot, flight instructor, or airline transport pilot, obtaining this number is one of the earliest and most important milestones in your pilot training journey.
+                                Whether you plan to become a commercial airline pilot, flight instructor, or airline transport pilot, obtaining this number is one of the earliest and most important milestones in your <Link href="/pilot-training-in-india" className="text-av-blue font-semibold hover:text-av-orange transition-colors">pilot training journey</Link>.
                             </p>
 
                             {/* Why Important */}
@@ -422,13 +405,13 @@ export default function DGCAComputerNumber() {
                                 Applying for a DGCA Computer Number may seem straightforward, but even small documentation errors can delay your pilot training timeline. At We One Aviation, our experienced aviation counsellors help students understand the registration process, prepare the required documents, and plan the next steps toward earning a Commercial Pilot License.
                             </p>
                             <p className="text-gray-600 text-sm leading-relaxed mb-10">
-                                Our support goes beyond registration—we guide aspiring pilots through DGCA ground classes, CPL planning, career counselling, and airline-focused training, helping them progress with confidence.
+                                Our support goes beyond registration—we guide aspiring pilots through <Link href="/dgca-ground-classes" className="text-av-blue font-semibold hover:text-av-orange transition-colors">DGCA ground classes</Link>, <Link href="/commercial-pilot-license" className="text-av-blue font-semibold hover:text-av-orange transition-colors">CPL</Link> planning, career counselling, and airline-focused training, helping them progress with confidence.
                             </p>
 
                             {/* How to Apply */}
                             <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">How to Apply for a DGCA Computer Number Online?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                Applying for a DGCA Computer Number is a completely online process through the DGCA's examination portal. Before starting the application, ensure that all your educational certificates, identity proof, photograph, and signature are ready in the prescribed format.
+                                Applying for a DGCA Computer Number is a completely online process through the <Link href="/dgca-pariksha" className="text-av-blue font-semibold hover:text-av-orange transition-colors">DGCA's examination portal</Link>. Before starting the application, ensure that all your educational certificates, identity proof, photograph, and signature are ready in the prescribed format.
                             </p>
                             <p className="text-gray-600 text-sm leading-relaxed mb-6">
                                 Following the correct process and uploading accurate documents can help avoid delays or rejection.
@@ -539,7 +522,7 @@ export default function DGCAComputerNumber() {
                             {/* vs eGCA */}
                             <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">DGCA Computer Number vs eGCA Registration</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                                Many students confuse a DGCA Computer Number with an eGCA account, but they serve different purposes.
+                                Many students confuse a DGCA Computer Number with an <Link href="/ecga-login-your-complete-guide" className="text-av-blue font-semibold hover:text-av-orange transition-colors">eGCA account</Link>, but they serve different purposes.
                             </p>
                             <div className="overflow-x-auto mb-6">
                                 <table className="w-full border border-gray-200 rounded-xl overflow-hidden text-sm">
@@ -607,7 +590,7 @@ export default function DGCAComputerNumber() {
                                 {suggestedInternalLinks.map((item, i) => (
                                     <li key={i} className="flex gap-2 items-start text-sm text-gray-600">
                                         <span className="text-av-orange font-bold flex-shrink-0">–</span>
-                                        {item}
+                                        <Link href={item.href} className="text-av-blue hover:text-av-orange transition-colors">{item.label}</Link>
                                     </li>
                                 ))}
                             </ul>
