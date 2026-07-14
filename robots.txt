@@ -17,7 +17,6 @@ Disallow: /package.json
 Disallow: /next.config.js
 Disallow: /*.json$
 Disallow: /*?*sort=
-Disallow: /*?*page=
 
 # ===== GOOGLE SPECIFIC =====
 User-agent: Googlebot
@@ -77,16 +76,16 @@ User-agent: NetSparker
 Disallow: /
 
 User-agent: Qualitypredictor
-Disallow: /
+Allow: /
 
 User-agent: YisouSpider
-Disallow: /
+Allow: /
 
 User-agent: SputnikBot
-Disallow: /
+Allow: /
 
 User-agent: LinkpadBot
-Disallow: /
+Allow: /
 
 # ===== ALLOW IMPORTANT CRAWLERS =====
 User-agent: YandexBot
