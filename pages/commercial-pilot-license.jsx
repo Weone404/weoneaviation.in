@@ -2,6 +2,32 @@ import { useState } from "react";
 import Head from "next/head";
 import Layout from "../components/Layout";
 import AutoInternalLinks from "../components/AutoInternalLinks";
+import JsonLd from "../components/JsonLd";
+
+const cplCourseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'Commercial Pilot License (CPL) in India',
+  description: 'Complete guide to Commercial Pilot License training in India, including eligibility, DGCA process, and pilot career pathways.',
+  url: 'https://www.weoneaviation.in/commercial-pilot-license',
+  provider: {
+    '@type': 'EducationalOrganization',
+    name: 'We One Aviation Academy',
+    url: 'https://www.weoneaviation.in',
+  },
+  timeRequired: 'P18M',
+  coursePrerequisites: '10+2 with Physics and Mathematics, DGCA Class 1 Medical, and English proficiency.',
+  offers: {
+    '@type': 'AggregateOffer',
+    lowPrice: 4000000,
+    highPrice: 5000000,
+    priceCurrency: 'INR',
+  },
+  additionalProperty: [
+    { '@type': 'PropertyValue', name: 'Duration Range', value: '18-24 months' },
+    { '@type': 'PropertyValue', name: 'Minimum Flying Hours', value: '200 hours' },
+  ],
+};
 
 const processSteps = [
   {
@@ -200,6 +226,7 @@ export default function CPL() {
     <>
       <Head>
         <title>Commercial Pilot License (CPL) Course in India | WeOne Aviation</title>
+        <JsonLd data={cplCourseSchema} />
       </Head>
 
       <Layout title="Commercial Pilot License (CPL) Course in India | WeOne Aviation" description="Complete guide to CPL training, eligibility, fees, and pilot career paths with We One Aviation Academy.">

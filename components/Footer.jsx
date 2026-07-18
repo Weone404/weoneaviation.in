@@ -108,7 +108,7 @@ export default function Footer() {
             {/* FIX: PIN was 110075 in footer, 110077 in contact section — standardised to 110077 */}
             <div className="flex gap-3 items-start">
               <span className="text-av-orange mt-0.5 text-base">📍</span>
-              <span>C-404, 3rd Floor, Near Ramphal Chowk<br />Sector-7, Dwarka, New Delhi - 110077</span>
+              <span>C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077, India</span>
             </div>
             <div className="flex gap-3 items-center">
               <span className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">

@@ -379,7 +379,7 @@ export default function TermsPage() {
                                 </p>
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     {[
-                                        { icon: '🏢', label: 'Address', value: 'C-404, 3rd Floor, Near Ramphal Chowk, Sector-7, Dwarka, New Delhi – 110075', href: null },
+                                        { icon: '🏢', label: 'Address', value: 'C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077, India', href: null },
                                         { icon: '📧', label: 'Email', value: 'weoneaviation8@gmail.com', href: 'mailto:weoneaviation8@gmail.com' },
                                         { icon: '📞', label: 'Phone', value: '+91-9355611996', href: 'tel:+919355611996' },
                                         { icon: '🌐', label: 'Website', value: 'weoneaviation.in', href: 'https://www.weoneaviation.in' },

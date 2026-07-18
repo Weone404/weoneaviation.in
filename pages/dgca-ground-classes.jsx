@@ -3,6 +3,28 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import JsonLd from '../components/JsonLd';
+
+const dgcaGroundCourseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'DGCA Ground Classes',
+  description: "India's DGCA Ground Classes for pilot training, covering core DGCA subjects and exam preparation.",
+  url: 'https://www.weoneaviation.in/dgca-ground-classes',
+  provider: {
+    '@type': 'EducationalOrganization',
+    name: 'We One Aviation Academy',
+    url: 'https://www.weoneaviation.in',
+  },
+  timeRequired: 'P6M',
+  coursePrerequisites: '10+2 with Physics and Mathematics, minimum age 17+, DGCA Class 2 Medical, and English proficiency.',
+  additionalProperty: [
+    { '@type': 'PropertyValue', name: 'Duration', value: '6 Months' },
+    { '@type': 'PropertyValue', name: 'Subjects Covered', value: '6 DGCA subjects' },
+    { '@type': 'PropertyValue', name: 'Scholarship', value: '25% scholarship available' },
+    // TODO: confirm explicit fee range on this route before adding Offer pricing.
+  ],
+};
 
 const heroSlides = [
   { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Most Popular Course', title: 'DGCA Ground', highlight: 'Classes', sub: "India's best DGCA Ground Classes — delivering 100% results every year" },
@@ -179,6 +201,7 @@ export default function DGCAGroundClasses() {
       title="DGCA Ground Classes | Best Pilot Training Institute in India | WeOne Aviation"
       description="India's best DGCA Ground Classes delivering 100% results every year. 3000+ pilots trained. CPL ground school covering all DGCA subjects. Join WeOne Aviation Academy."
     >
+      <JsonLd data={dgcaGroundCourseSchema} />
       <HeroSlider customSlides={heroSlides} />
 
       {/* Overview */}

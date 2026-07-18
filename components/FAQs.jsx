@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import JsonLd from './JsonLd';
 
 const faqs = [
   { id: 'faq1', q: 'How long does it take to complete pilot training?', a: 'The duration varies depending on the type of pilot training: Private Pilot License (PPL): 6-12 months | Commercial Pilot License (CPL): 12-18 months | ATPL (Airline Transport Pilot License) Training: Additional experience after CPL' },
@@ -11,10 +12,25 @@ const faqs = [
   { id: 'faq7', q: 'What is a Pilot Training Institute?', a: 'A Pilot Training Institute like We One Aviation Academy provides coaching to clear DGCA exams required to become a professional pilot — similar to how coaching centres help students clear NEET or IIT JEE.' },
 ];
 
+const faqPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
+
 export default function FAQs() {
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-4xl mx-auto">
+    <>
+      <JsonLd data={faqPageSchema} />
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <div className="section-tag">FAQ</div>
           <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
@@ -46,6 +62,7 @@ export default function FAQs() {
           </Link>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

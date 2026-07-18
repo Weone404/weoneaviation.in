@@ -1,5 +1,30 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
+import JsonLd from '../components/JsonLd';
+
+const footerSocialLinks = [
+  'https://www.facebook.com/share/1AokxHk8Yv/?mibextid=wwXIfr',
+  'https://www.instagram.com/we_one_aviation?igsh=aTJ0YnphMGs3b2Fl&utm_source=qr',
+];
+
+const educationalOrganizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  name: 'We One Aviation Academy',
+  url: 'https://www.weoneaviation.in',
+  logo: 'https://www.weoneaviation.in/Logo.webp',
+  foundingDate: '2009',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka',
+    addressLocality: 'New Delhi',
+    postalCode: '110077',
+    addressCountry: 'India',
+  },
+  telephone: '+91-9355611996',
+  email: 'info@weoneaviation.in',
+  sameAs: footerSocialLinks,
+};
 
 export default function Document() {
   return (
@@ -64,66 +89,7 @@ export default function Document() {
         <meta name="twitter:image" content="https://www.weoneaviation.in/og-cover.jpg" />
         <meta name="twitter:image:alt" content="We One Aviation Academy — Best Pilot Training Institute in India" />
 
-        {/*
-          EducationalOrganization schema lives here — it describes the business
-          itself, not any specific page, so _document.jsx is the right place.
-
-          FIXED: aggregateRating removed. 3500 is pilots trained, not reviews.
-          Putting a fake reviewCount here is against Google's structured data
-          guidelines and can result in a manual penalty. Add it back only when
-          you have real verified reviews (Google Business, Trustpilot, etc.)
-          and use the actual count from that platform.
-        */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'EducationalOrganization',
-              name: 'We One Aviation Academy',
-              alternateName: 'WeOne Aviation',
-              url: 'https://www.weoneaviation.in',
-              logo: 'https://www.weoneaviation.in/Logo.webp',
-              image: 'https://www.weoneaviation.in/og-cover.jpg',
-              description:
-                "India's premier DGCA-approved pilot training institute since 2009. CPL, PPL, ATPL courses. 3500+ pilots trained.",
-              foundingDate: '2009',
-              telephone: '+91-9355611996',
-              email: 'info@weoneaviation.in',
-              address: {
-                '@type': 'PostalAddress',
-                streetAddress: 'C-404, 3rd Floor, Sector-7, Near Ramphal Chowk',
-                addressLocality: 'Dwarka',
-                addressRegion: 'New Delhi',
-                postalCode: '110077',
-                addressCountry: 'IN',
-              },
-              geo: {
-                '@type': 'GeoCoordinates',
-                latitude: '28.5921',
-                longitude: '77.0460',
-              },
-              accreditedBy: {
-                '@type': 'Organization',
-                name: 'Directorate General of Civil Aviation (DGCA)',
-                url: 'https://www.dgca.gov.in',
-              },
-              sameAs: [
-                'https://www.facebook.com/share/1AokxHk8Yv/',
-                'https://www.instagram.com/we_one_aviation',
-              ],
-              hasOfferCatalog: {
-                '@type': 'OfferCatalog',
-                name: 'Pilot Training Courses',
-                itemListElement: [
-                  { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Commercial Pilot License (CPL)' } },
-                  { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'DGCA Ground Classes' } },
-                  { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'ATPL Training' } },
-                ],
-              },
-            }),
-          }}
-        />
+        <JsonLd data={educationalOrganizationSchema} />
 
         <link
           rel="stylesheet"

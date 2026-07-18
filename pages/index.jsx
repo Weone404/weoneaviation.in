@@ -279,14 +279,14 @@ const facultySchema = {
       '@type': 'Person',
       name: instr.name,
       jobTitle: instr.role,
-      workLocation: {
+      affiliation: {
         '@type': 'Organization',
         name: instr.airline || 'We One Aviation Academy',
       },
-      knowsAbout: [instr.expertise],
+      knowsAbout: instr.expertise,
       description: instr.bio,
-      'dgcaLicense/Qualification': instr.dgcaLicense || instr.qualification,
-      yearsExperience: parseInt(instr.experience) || 0,
+      identifier: instr.dgcaLicense || instr.qualification,
+      image: instr.photo ? `https://www.weoneaviation.in${instr.photo}` : undefined,
     },
   })),
 };
@@ -310,7 +310,7 @@ const educationalOrgSchema = {
   email: 'info@weoneaviation.in',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'C-404, 3rd Floor, Ramphal Chowk, Dwarka, Sector-7',
+    streetAddress: 'C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka',
     addressLocality: 'New Delhi',
     addressRegion: 'Delhi',
     postalCode: '110077',
@@ -1012,7 +1012,7 @@ export default function Home() {
                     a legitimate, established business. Update DNS/hosting panel
                     to create info@weoneaviation.in if not done yet. */}
                 <p>📧 <span className="font-semibold text-white">Office Mail:</span> info@weoneaviation.in</p>
-                <p>📍 <span className="font-semibold text-white">Office Address:</span> C-404, 3rd floor, Sector-7, near Ramphal Chowk Road, Palam Extension, Dwarka, Delhi 110077</p>
+                <p>📍 <span className="font-semibold text-white">Office Address:</span> C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077, India</p>
               </div>
             </ScrollReveal>
 

@@ -3,6 +3,32 @@ import HeroSlider from '../../components/HeroSlider';
 import LeadForm from '../../components/LeadForm';
 import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
+import JsonLd from '../../components/JsonLd';
+
+const cplFlightTrainingCourseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Commercial Pilot License (CPL) Training',
+    description: 'DGCA-approved CPL training program covering ground school, flight training, and airline career preparation.',
+    url: 'https://www.weoneaviation.in/courses/cpl-flight-training',
+    provider: {
+        '@type': 'EducationalOrganization',
+        name: 'We One Aviation Academy',
+        url: 'https://www.weoneaviation.in',
+    },
+    timeRequired: 'P18M',
+    coursePrerequisites: '10+2 with Mathematics and Physics, DGCA Class 1/2 Medical, minimum age requirements, and required flight-hour criteria.',
+    offers: {
+        '@type': 'AggregateOffer',
+        lowPrice: 4000000,
+        highPrice: 7000000,
+        priceCurrency: 'INR',
+    },
+    additionalProperty: [
+        { '@type': 'PropertyValue', name: 'Duration Range', value: '18-24 months' },
+        { '@type': 'PropertyValue', name: 'Minimum Flight Hours', value: '200 hours' },
+    ],
+};
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Most Popular Course', title: 'Commercial Pilot', highlight: 'License (CPL)', sub: 'Fly for airlines – India\'s most comprehensive CPL training program' },
@@ -136,6 +162,7 @@ const careerOptions = [
 export default function CPL() {
     return (
         <Layout title="CPL Course in India – Commercial Pilot License Training | WeOne Aviation" description="DGCA approved CPL training in India. Become a commercial pilot with WeOne Aviation Academy. Expert instructors, modern aircraft, 100% placement support.">
+            <JsonLd data={cplFlightTrainingCourseSchema} />
             <HeroSlider customSlides={heroSlides} />
 
             {/* Overview */}

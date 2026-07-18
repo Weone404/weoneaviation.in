@@ -42,7 +42,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
           <div className="lg:col-span-1 space-y-5">
             {[
-              { icon: '📍', title: 'Our Office', info: 'C-404 , 3rd Floor , Ramphal Chowk , Dwarka , sectore - 7 , New Delhi , Delhi - 110077', action: null },
+              { icon: '📍', title: 'Our Office', info: 'C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077, India', action: null },
               { icon: '📞', title: 'Call Us', info: '+91 93555 66991', action: 'tel:+919355566991' },
 
               { icon: '✉️', title: 'Email', info: 'info@weoneaviation.in', action: 'mailto:info@weoneaviation.in' },
