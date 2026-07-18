@@ -3,7 +3,15 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
-import JsonLd from '../components/JsonLd';
+import QuickAnswer from '../components/QuickAnswer';
+import ArticleTOC from '../components/ArticleTOC';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
+import Breadcrumb from '../components/Breadcrumb';
+import AuthorCard from '../components/AuthorCard';
+import RelatedArticles from '../components/RelatedArticles';
+import SummaryBox from '../components/SummaryBox';
+import StructuredData from '../components/StructuredData';
+import { generateCourseSchema, generateFAQSchema } from '../lib/schema';
 
 const dgcaGroundCourseSchema = {
   '@context': 'https://schema.org',
@@ -195,13 +203,73 @@ const sidebarQuickLinks = [
   { label: 'About Us', href: '/about-us' },
 ];
 
+const quickAnswer = {
+  question: 'What are DGCA ground classes?',
+  answer: 'DGCA ground classes are the theory coaching foundation for pilot training in India. They prepare you for DGCA exams across Air Navigation, Meteorology, Air Regulations, Technical General, Technical Specific, and RTR.',
+};
+
+const tocHeadings = [
+  { id: 'what-is-dgca', title: 'What Is DGCA?' },
+  { id: 'why-are-dgca-ground-classes-important', title: 'Why Are DGCA Ground Classes Important?' },
+  { id: 'dgca-ground-classes-subjects', title: 'DGCA Ground Classes Subjects' },
+  { id: 'eligibility-for-dgca-ground-classes', title: 'Eligibility for DGCA Ground Classes' },
+  { id: 'why-choose-we-one-aviation-academy', title: 'Why Choose We One Aviation Academy?' },
+];
+
+const summaryItems = [
+  'DGCA ground classes cover the core theory subjects required for pilot licensing.',
+  'Clear exam preparation improves your chances of moving smoothly into flying training.',
+  'We One Aviation supports students from admission guidance through DGCA exam readiness.',
+];
+
+const peopleAlsoAskItems = [
+  { q: 'How long are DGCA ground classes?', a: 'Most students complete the full DGCA syllabus in around 6 months, though timelines can vary based on exam readiness and revision pace.' },
+  { q: 'Do I need DGCA ground classes to become a pilot?', a: 'Yes. DGCA ground classes are the standard preparation route for the DGCA theory exams required for pilot licensing.' },
+  { q: 'What subjects are covered in DGCA ground classes?', a: 'The core subjects include Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, and RTR.' },
+];
+
+const relatedArticles = [
+  { href: '/commercial-pilot-license', title: 'Commercial Pilot License (CPL) in India', description: 'Understand the full CPL pathway, eligibility, and course structure.' },
+  { href: '/dgca-pariksha', title: 'DGCA Pariksha Guide', description: 'Learn about the DGCA exam pattern, preparation strategy, and key milestones.' },
+  { href: '/dgca-computer-number', title: 'DGCA Computer Number', description: 'See how to begin your licensing journey with the required registration steps.' },
+];
+
+const courseSchema = generateCourseSchema({
+  name: 'DGCA Ground Classes',
+  description: 'DGCA ground classes for pilot training in India covering navigation, meteorology, regulations, technical subjects, and RTR preparation.',
+  url: 'https://www.weoneaviation.in/dgca-ground-classes',
+  courseMode: 'Blended',
+  duration: '6 Months',
+  lowPrice: 250000,
+  highPrice: 400000,
+  additionalProperties: [
+    { name: 'Duration', value: '6 Months' },
+    { name: 'Subjects Covered', value: '6 DGCA subjects' },
+  ],
+});
+
+const faqSchema = generateFAQSchema([
+  {
+    q: 'What is the best way to prepare for DGCA ground classes?',
+    a: 'A steady study plan, consistent revision, and guidance from experienced instructors can make DGCA ground classes far more effective.',
+  },
+  {
+    q: 'Do I need DGCA ground classes to become a pilot?',
+    a: 'Yes. DGCA ground classes are the standard preparation route for the DGCA theory exams required for pilot licensing.',
+  },
+  {
+    q: 'What subjects are covered in DGCA ground classes?',
+    a: 'The core subjects include Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, and RTR.',
+  },
+]);
+
 export default function DGCAGroundClasses() {
   return (
     <Layout
       title="DGCA Ground Classes | Best Pilot Training Institute in India | WeOne Aviation"
       description="India's best DGCA Ground Classes delivering 100% results every year. 3000+ pilots trained. CPL ground school covering all DGCA subjects. Join WeOne Aviation Academy."
     >
-      <JsonLd data={dgcaGroundCourseSchema} />
+      <StructuredData data={[dgcaGroundCourseSchema, courseSchema, faqSchema]} />
       <HeroSlider customSlides={heroSlides} />
 
       {/* Overview */}
@@ -229,6 +297,10 @@ export default function DGCAGroundClasses() {
                 </Link>. It's a normal coaching class, like IIT and MBBS coaching classes. The only difference is that after taking DGCA ground classes, you will master the DGCA exam, which is required to obtain a pilot license.
               </p>
 
+              <QuickAnswer question={quickAnswer.question} answer={quickAnswer.answer} />
+              <SummaryBox title="Why this matters" items={summaryItems} />
+              <ArticleTOC headings={tocHeadings} />
+
               {/* Quick Facts */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
                 {[['6 Months', 'Course Duration'], ['6 Subjects', 'DGCA Papers'], ['17+ Years', 'Min Age'], ['25% Off', 'Scholarship']].map(([val, label]) => (
@@ -240,7 +312,7 @@ export default function DGCAGroundClasses() {
               </div>
 
               {/* What is DGCA */}
-              <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">What Is DGCA?</h3>
+              <h3 id="what-is-dgca" className="font-montserrat text-xl font-bold text-av-blue mb-3">What Is DGCA?</h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-2">
                 The Directorate General of Civil Aviation (DGCA) is the main government body that controls and regulates all aviation-related activities in India. Learn more on our{' '}
                 <Link href="/dgca-full-form" className="text-av-orange font-semibold hover:underline">
@@ -273,7 +345,7 @@ export default function DGCAGroundClasses() {
               </div>
 
               {/* Why Important */}
-              <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">
+              <h3 id="why-are-dgca-ground-classes-important" className="font-montserrat text-xl font-bold text-av-blue mb-3">
                 Why Are DGCA Ground Classes Important for Pilot Training?
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
@@ -294,7 +366,7 @@ export default function DGCAGroundClasses() {
               </ul>
 
               {/* Subjects */}
-              <h3 className="font-montserrat text-xl font-bold text-av-blue mb-2">
+              <h3 id="dgca-ground-classes-subjects" className="font-montserrat text-xl font-bold text-av-blue mb-2">
                 Dgca Ground Classes Subjects For Dgca Exam
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-5">
@@ -368,7 +440,7 @@ export default function DGCAGroundClasses() {
               </p>
 
               {/* Eligibility */}
-              <h3 className="font-montserrat text-xl font-bold text-av-blue mb-2">
+              <h3 id="eligibility-for-dgca-ground-classes" className="font-montserrat text-xl font-bold text-av-blue mb-2">
                 Eligibility for DGCA Ground Classes
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-5">
@@ -431,7 +503,7 @@ export default function DGCAGroundClasses() {
               </p>
 
               {/* Why Choose */}
-              <h3 className="font-montserrat text-xl font-bold text-av-blue mb-2">
+              <h3 id="why-choose-we-one-aviation-academy" className="font-montserrat text-xl font-bold text-av-blue mb-2">
                 Why Choose We One Aviation Academy For Dgca Ground Classes
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-5">
@@ -462,6 +534,10 @@ export default function DGCAGroundClasses() {
                 </Link>
               </div>
 
+              <Breadcrumb />
+              <AuthorCard />
+              <PeopleAlsoAsk items={peopleAlsoAskItems} />
+
               {/* Latest Blogs */}
               <h3 className="font-montserrat text-xl font-bold text-av-blue mb-5">Our Latest Blogs</h3>
               <div className="space-y-4 mb-10">
@@ -476,6 +552,8 @@ export default function DGCAGroundClasses() {
                   </div>
                 ))}
               </div>
+
+              <RelatedArticles items={relatedArticles} />
 
             </ScrollReveal>
           </div>

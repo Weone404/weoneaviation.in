@@ -1,30 +1,15 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
-import JsonLd from '../components/JsonLd';
+import StructuredData from '../components/StructuredData';
+import { generateOrganizationSchema, generateWebsiteSchema } from '../lib/schema';
 
 const footerSocialLinks = [
   'https://www.facebook.com/share/1AokxHk8Yv/?mibextid=wwXIfr',
   'https://www.instagram.com/we_one_aviation?igsh=aTJ0YnphMGs3b2Fl&utm_source=qr',
 ];
 
-const educationalOrganizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  name: 'We One Aviation Academy',
-  url: 'https://www.weoneaviation.in',
-  logo: 'https://www.weoneaviation.in/Logo.webp',
-  foundingDate: '2009',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka',
-    addressLocality: 'New Delhi',
-    postalCode: '110077',
-    addressCountry: 'India',
-  },
-  telephone: '+91-9355611996',
-  email: 'info@weoneaviation.in',
-  sameAs: footerSocialLinks,
-};
+const organizationSchema = generateOrganizationSchema({ sameAs: footerSocialLinks });
+const websiteSchema = generateWebsiteSchema();
 
 export default function Document() {
   return (
@@ -44,10 +29,7 @@ export default function Document() {
           See pages/index.jsx for the homepage canonical.
         */}
 
-        <meta
-          name="keywords"
-          content="CBSE Full Form, ICSE Full Form, DGCA Full Form, PPL Full Form, CPL Full Form, RTR Full Form, Atpl Full Form, Commercial Pilot License, Pilot course, commercial pilot, commercial pilot license salary, Pilot training, commercial pilot course, commercial pilot licence course, cpl course fees, commercial pilot training, commercial pilot eligibility, commercial pilot training in india, cpl licence cost, commercial pilot license course in india, commercial pilot fees, commercial pilot course eligibility, commercial pilot license syllabus, Commercial Pilot License Admission Process, how to become a pilot, how to become a pilot in india, how to become a pilot after 12th, Private Pilot License, pilot course fees, pilot training fees, qualifications to become a pilot, best pilot schools, eligibility for become a pilot, pilot syllabus, pilot training eligibility, eligibility for pilot course, ppl syllabus, pilot course syllabus, ppl pilot salary, private pilot license syllabus, Pilot training in India, Pilot training in Hyderabad, Pilot training in Mumbai, Pilot Training in Chennai, Pilot Training in Bangalore, Pilot training in kerala, Pilot training in Delhi, Pilot Training in Pune, Pilot training institute in Kolkata, pilot training in coimbatore, Pilot training in Gujarat, Pilot training in goa, Pilot Training in Gurgaon, Pilot training in tamil nadu, Pilot Training in Rajasthan, Pilot Training in Haryana, Pilot Training in Punjab, Pilot Training in Andhra Pradesh, Pilot Training in Arunachal Pradesh, Pilot training in Assam, Pilot Training in Bihar, Pilot Training in Chhattisgarh, Pilot Training in Himachal Pradesh, Pilot Training in Noida, Pilot Training in Ghaziabad, Pilot Training in Nagpur, Pilot Training in Maharashtra, Pilot Training in Jaipur, Airline Transport Pilot License, atpl, atpl license, airline transport license, atp licence, airline transport pilot licence cost, atpl cost, atpl requirements, atpl training, atpl pilot salary, Student Pilot License, spl, student pilot certificate, student pilot license cost, spl pilot training fees, student pilot license requirements, student pilot license eligibility, student pilot license fees, spl eligibility, spl fees, Pilot Training Course, DGCA, DGCA Ground Class, ground class, dgca pariksha, pariksha dgca, dgca exam, dgca central examination organization, pilot exam, dgca pariksha portal, dgca exam fees, dgca exam for pilot, dgca exam eligibility, dgca pilot exam, what is dgca exam, dgca exam date, dgca cpl exam, dgca exams for cpl, www pariksha dgca, how to apply for dgca exam, dgca exam age limit, dgca exam schedule, dgca pariksha com, aviation exam in india, dgca entrance exam, e pariksha dgca, egca login, egca, egca dgca, dgca login, edgca, ecga, egca full form, egca registration, DGCA Ground Class in dwarka, DGCA Ground Class in delhi"
-        />
+        <meta name="keywords" content="pilot training, cpl, dgca ground classes, pilot course" />
 
         <meta
           name="robots"
@@ -89,7 +71,7 @@ export default function Document() {
         <meta name="twitter:image" content="https://www.weoneaviation.in/og-cover.jpg" />
         <meta name="twitter:image:alt" content="We One Aviation Academy — Best Pilot Training Institute in India" />
 
-        <JsonLd data={educationalOrganizationSchema} />
+        <StructuredData data={[organizationSchema, websiteSchema]} />
 
         <link
           rel="stylesheet"

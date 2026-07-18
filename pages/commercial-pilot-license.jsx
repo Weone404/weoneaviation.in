@@ -2,7 +2,15 @@ import { useState } from "react";
 import Head from "next/head";
 import Layout from "../components/Layout";
 import AutoInternalLinks from "../components/AutoInternalLinks";
-import JsonLd from "../components/JsonLd";
+import QuickAnswer from "../components/QuickAnswer";
+import ArticleTOC from "../components/ArticleTOC";
+import PeopleAlsoAsk from "../components/PeopleAlsoAsk";
+import Breadcrumb from "../components/Breadcrumb";
+import AuthorCard from "../components/AuthorCard";
+import RelatedArticles from "../components/RelatedArticles";
+import SummaryBox from "../components/SummaryBox";
+import StructuredData from "../components/StructuredData";
+import { generateCourseSchema, generateFAQSchema } from "../lib/schema";
 
 const cplCourseSchema = {
   '@context': 'https://schema.org',
@@ -219,6 +227,23 @@ const quickFacts = [
   { val: "Class 1", label: "DGCA Medical" },
 ];
 
+const tocHeadings = [
+  { id: 'what-is-a-commercial-pilot-license', title: 'What is a Commercial Pilot License?' },
+  { id: 'why-choose-a-commercial-pilot-course', title: 'Why Choose a Commercial Pilot Course?' },
+  { id: 'commercial-pilot-eligibility', title: 'Commercial Pilot Eligibility' },
+  { id: 'commercial-pilot-training-process', title: 'Commercial Pilot Training Process' },
+  { id: 'pilot-training-in-india', title: 'Pilot Training in India' },
+  { id: 'pilot-training-in-delhi', title: 'Pilot Training in Delhi' },
+  { id: 'why-choose-we-one-aviation', title: 'Why Choose We One Aviation?' },
+  { id: 'commercial-pilot-license-course-duration', title: 'Commercial Pilot License Course Duration' },
+  { id: 'commercial-pilot-course-fees', title: 'Commercial Pilot Course Fees' },
+  { id: 'flying-training-and-200-flying-hours', title: 'Flying Training & 200 Flying Hours' },
+  { id: 'career-opportunities-after-commercial-pilot-training', title: 'Career Opportunities After Commercial Pilot Training' },
+  { id: 'commercial-pilot-license-salary', title: 'Commercial Pilot License Salary' },
+];
+
+const faqSchema = generateFAQSchema(faqs);
+
 export default function CPL() {
   const [openPhase, setOpenPhase] = useState(null);
 
@@ -226,11 +251,23 @@ export default function CPL() {
     <>
       <Head>
         <title>Commercial Pilot License (CPL) Course in India | WeOne Aviation</title>
-        <JsonLd data={cplCourseSchema} />
+        <StructuredData data={[generateCourseSchema({
+          name: 'Commercial Pilot License (CPL) in India',
+          description: 'Complete guide to Commercial Pilot License training in India, including eligibility, DGCA process, and pilot career pathways.',
+          url: 'https://www.weoneaviation.in/commercial-pilot-license',
+          courseMode: 'Blended',
+          lowPrice: 4000000,
+          highPrice: 5000000,
+          additionalProperties: [
+            { name: 'Duration Range', value: '18-24 months' },
+            { name: 'Minimum Flying Hours', value: '200 hours' },
+          ],
+        }), faqSchema]} />
       </Head>
 
       <Layout title="Commercial Pilot License (CPL) Course in India | WeOne Aviation" description="Complete guide to CPL training, eligibility, fees, and pilot career paths with We One Aviation Academy.">
         <div className="bg-gray-50 min-h-screen">
+          <Breadcrumb override={[{ href: '/courses', label: 'Courses' }, { href: '/commercial-pilot-license', label: 'Commercial Pilot License' }]} />
 
         {/* ── HEADER ── */}
         <header className="bg-gradient-to-br from-av-blue to-av-navy text-white text-center relative overflow-hidden"
@@ -244,6 +281,10 @@ export default function CPL() {
               <br />
               <span className="text-av-orange">Complete Guide to Becoming a Commercial Pilot</span>
             </h1>
+            <QuickAnswer
+              question="How do you become a commercial pilot in India?"
+              answer="You usually complete 10+2 with Physics and Mathematics, pass DGCA Class 1 medical, join DGCA ground classes, clear the required exams, and complete at least 200 flying hours at an approved flying school."
+            />
             <p className="text-white/70 max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-3">
               A Commercial Pilot License (CPL) is the qualification required to fly aircraft professionally and build a successful career in aviation. At We One Aviation, we provide complete guidance for aspiring pilots, from DGCA counselling and ground classes to flying school selection and flight training. Whether you are planning to join a commercial pilot course, looking for commercial pilot training, or searching for the best pilot course after 12th, our experts are here to guide you at every stage.
             </p>
@@ -255,6 +296,9 @@ export default function CPL() {
 
         {/* ── QUICK FACTS STRIP ── */}
         <div className="bg-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 py-5">
+            <ArticleTOC headings={tocHeadings} />
+          </div>
           <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4">
             {quickFacts.map((f, i) => (
               <div key={i} className={`py-5 text-center ${i < quickFacts.length - 1 ? "border-r border-gray-100" : ""}`}>
@@ -269,7 +313,7 @@ export default function CPL() {
         <section className="py-10 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Quick Answer</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">What is a Commercial Pilot License?</h2>
+            <h2 id="what-is-a-commercial-pilot-license" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">What is a Commercial Pilot License?</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 leading-relaxed text-sm">
                 A Commercial Pilot License (CPL) is a professional license issued by the Directorate General of Civil Aviation (DGCA) that allows pilots to fly aircraft for commercial purposes. To obtain a Commercial Pilot License in India, candidates must complete DGCA ground classes, clear the required examinations, pass DGCA medical assessments, and complete a minimum of 200 flying hours at a DGCA-approved flying school.
@@ -282,7 +326,7 @@ export default function CPL() {
         <section className="py-10 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Why This Course</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Why Choose a Commercial Pilot Course?</h2>
+            <h2 id="why-choose-a-commercial-pilot-course" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Why Choose a Commercial Pilot Course?</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 The aviation industry is expanding rapidly, creating increasing demand for trained commercial pilots. A commercial pilot course equips students with aviation theory, flight operations knowledge, simulator experience, and practical flying skills required by airlines.
@@ -308,7 +352,7 @@ export default function CPL() {
         <section className="py-10 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Eligibility</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot Eligibility</h2>
+            <h2 id="commercial-pilot-eligibility" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot Eligibility</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-6">Understanding commercial pilot eligibility is the first step before applying for a CPL course.</p>
             </AutoInternalLinks>
@@ -330,7 +374,7 @@ export default function CPL() {
         <section className="py-10 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Process</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot Training Process</h2>
+            <h2 id="commercial-pilot-training-process" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot Training Process</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 Obtaining a Commercial Pilot License involves several important stages. At We One Aviation, we guide students through every step to ensure a smooth and well-planned learning experience.
@@ -371,7 +415,7 @@ export default function CPL() {
         <section className="py-10 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Training in India</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Pilot Training in India</h2>
+            <h2 id="pilot-training-in-india" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Pilot Training in India</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 India has become one of the fastest-growing aviation markets, increasing the demand for qualified pilots. Professional pilot training in India combines classroom learning with practical flight experience, ensuring students are prepared for airline careers.
@@ -398,7 +442,7 @@ export default function CPL() {
         <section className="py-10 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Training in Delhi</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Pilot Training in Delhi</h2>
+            <h2 id="pilot-training-in-delhi" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Pilot Training in Delhi</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
                 Students searching for pilot training in Delhi can benefit from personalized aviation counselling at We One Aviation. Our team helps aspiring pilots compare flying schools, understand DGCA procedures, prepare documentation, and confidently begin their Commercial Pilot License journey.
@@ -414,7 +458,7 @@ export default function CPL() {
         <section className="py-10 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Why We One Aviation</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Why Choose We One Aviation?</h2>
+            <h2 id="why-choose-we-one-aviation" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Why Choose We One Aviation?</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 Choosing the right aviation mentor is just as important as choosing the right flying school.
@@ -440,7 +484,7 @@ export default function CPL() {
         <section className="py-10 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Duration</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot License Course Duration</h2>
+            <h2 id="commercial-pilot-license-course-duration" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot License Course Duration</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 The duration of a Commercial Pilot License (CPL) course generally ranges from 18 to 24 months. The exact timeline depends on factors such as weather conditions, aircraft availability, training schedules, and the student's progress.
@@ -467,7 +511,7 @@ export default function CPL() {
         <section className="py-10 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Investment</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot Course Fees</h2>
+            <h2 id="commercial-pilot-course-fees" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot Course Fees</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
                 The cost of a commercial pilot course varies depending on the flying school, aircraft type, location, and additional training requirements. Besides tuition fees, students should also consider expenses such as:
@@ -493,7 +537,7 @@ export default function CPL() {
         <section className="py-10 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Flight Training</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Flying Training &amp; 200 Flying Hours</h2>
+            <h2 id="flying-training-and-200-flying-hours" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Flying Training &amp; 200 Flying Hours</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 Practical flying training is one of the most important parts of earning a Commercial Pilot License. Students train on DGCA-approved aircraft under the supervision of certified flight instructors.
@@ -519,7 +563,7 @@ export default function CPL() {
         <section className="py-10 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Career Paths</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Career Opportunities After Commercial Pilot Training</h2>
+            <h2 id="career-opportunities-after-commercial-pilot-training" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Career Opportunities After Commercial Pilot Training</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 After completing commercial pilot training, graduates can explore a wide range of career opportunities in the aviation industry.
@@ -546,7 +590,7 @@ export default function CPL() {
         <section className="py-10 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Earnings</div>
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot License Salary</h2>
+            <h2 id="commercial-pilot-license-salary" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot License Salary</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 One of the biggest reasons students choose a commercial pilot course is the attractive salary and career growth.
@@ -606,7 +650,13 @@ export default function CPL() {
         </section>
 
         {/* ── FAQ ── */}
-      
+        <section className="py-10 px-4 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <AuthorCard author={{ name: 'We One Aviation Academy', role: 'Pilot training advisory team', description: 'Our team combines DGCA guidance, training-roadmap expertise, and verified aviation career support.' }} reviewedBy="Aviation mentors" updatedAt="Updated regularly" readingTime="6 min read" />
+            <PeopleAlsoAsk items={faqs.map((faq) => ({ q: faq.q, a: faq.a }))} />
+            <SummaryBox title="Key Takeaways" items={['A Commercial Pilot License is the professional license for airline-style flying.', 'Eligibility starts with 10+2 PCM, DGCA Class 1 medical, and DGCA exam preparation.', 'The training path includes ground classes, flying school admission, and 200 flying hours.', 'We One Aviation provides counselling, documentation support, and training guidance at every stage.']} />
+          </div>
+        </section>
 
         {/* ── RELATED PROGRAMS ── */}
         <section className="py-10 px-4 bg-gray-50">
@@ -616,6 +666,11 @@ export default function CPL() {
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-6">You may also be interested in:</p>
             </AutoInternalLinks>
+            <RelatedArticles items={[
+              { href: '/dgca-ground-classes', title: 'DGCA Ground Classes', description: 'Prepare for DGCA exams with structured ground classes.' },
+              { href: '/courses/cpl-flight-training', title: 'CPL Flight Training', description: 'Understand the flying phase after your DGCA training.' },
+              { href: '/pilot-training-in-india', title: 'Pilot Training in India', description: 'Compare training pathways across India.' },
+            ]} />
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
               {relatedPrograms.map((item, i) => (
                 <div key={i} className="bg-white rounded-xl border border-gray-100 shadow-sm px-4 py-3 text-sm text-av-blue font-semibold text-center card-hover hover:border-av-orange/30 transition-all">
