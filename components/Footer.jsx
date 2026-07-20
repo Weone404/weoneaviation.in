@@ -75,7 +75,7 @@ export default function Footer() {
         </div >
 
         {/* Column 2 — Quick Links */}
-        < div >
+        <div>
           <h4 className="font-montserrat font-bold text-av-orange text-base mb-3">Quick Links</h4>
           <div className="border-t border-dashed border-white/20 mb-5" />
           <ul className="space-y-3">
@@ -98,7 +98,37 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-        </div >
+
+          <div className="mt-8">
+            {/* Added high-value internal links for location and guide pages that were underlinked in footer navigation. */}
+            <h5 className="font-montserrat font-bold text-av-orange text-sm mb-3">Pilot Pages</h5>
+            <div className="grid grid-cols-2 gap-2 text-xs text-white/70">
+              {[
+                { label: 'Pilot Training in Mumbai', href: '/pilot-training-in-mumbai' },
+                { label: 'Pilot Training in Bangalore', href: '/pilot-training-in-bangalore' },
+                { label: 'Pilot Training in Chennai', href: '/pilot-training-in-chennai' },
+                { label: 'Pilot Training in Coimbatore', href: '/pilot-training-in-coimbatore' },
+                { label: 'Pilot Training in Gujarat', href: '/pilot-training-in-gujarat' },
+                { label: 'Pilot Training in Tamil Nadu', href: '/pilot-training-in-tamil-nadu' },
+                { label: 'Pilot Training in Andhra Pradesh', href: '/pilot-training-in-andhra-pradesh' },
+                { label: 'Pilot Training in Assam', href: '/pilot-training-in-assam' },
+                { label: 'Pilot Training in Chhattisgarh', href: '/pilot-training-in-chhattisgarh' },
+                { label: 'Technical General', href: '/technical-general' },
+                { label: 'RTR-A', href: '/rtr-a' },
+                { label: 'RTR Full Form Guide', href: '/rtr-full-form-meaning-importance-and-complete-guide' },
+                { label: 'PPL Full Form', href: '/ppl-full-form' },
+                { label: 'ICSE Full Form', href: '/icse-full-form' },
+                { label: 'DGCA Full Form', href: '/dgca-full-form' },
+                { label: 'Advanced ATPL Pilot Training', href: '/advanced-atpl-pilot-training' },
+                { label: 'Best Flight Schools in USA', href: '/best-flight-schools-in-usa' },
+              ].map((item) => (
+                <Link key={item.href} href={item.href} className="block hover:text-av-orange transition-colors">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Column 3 — How to reach us */}
         < div >

@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 const pages = [
     { loc: 'https://www.weoneaviation.in/', priority: '1.0', changefreq: 'weekly' },
     { loc: 'https://www.weoneaviation.in/about-us', priority: '0.9', changefreq: 'monthly' },
@@ -96,26 +99,28 @@ const pages = [
     { loc: 'https://www.weoneaviation.in/icse-full-form', priority: '0.7', changefreq: 'monthly' },
 ];
 
+function getSitemapXml() {
+    // The build-time script at scripts/generate-sitemap.js reads the git history of
+    // each matching page file and writes public/sitemap.xml with real per-URL lastmod dates.
+    // Re-run it whenever the sitemap URL list changes, or whenever you want to refresh
+    // lastmod values from git history. It should be part of your build/deploy pipeline.
+    const sitemapPath = path.join(process.cwd(), '.generated-sitemap.xml');
+
+    if (fs.existsSync(sitemapPath)) {
+        return fs.readFileSync(sitemapPath, 'utf8');
+    }
+
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+</urlset>`;
+}
+
 export default function SitemapXML() {
     return null;
 }
 
 export async function getServerSideProps({ res }) {
-    const lastmod = '2026-04-25';
-
-    const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${pages
-            .map(
-                ({ loc, priority, changefreq }) => `  <url>
-    <loc>${loc}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>
-  </url>`
-            )
-            .join('\n')}
-</urlset>`;
+    const xml = getSitemapXml();
 
     res.setHeader('Content-Type', 'text/xml; charset=utf-8');
     res.setHeader('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate');
