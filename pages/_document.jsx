@@ -31,11 +31,6 @@ export default function Document() {
 
         <meta name="keywords" content="pilot training, cpl, dgca ground classes, pilot course" />
 
-        <meta
-          name="robots"
-          content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-        />
-
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />

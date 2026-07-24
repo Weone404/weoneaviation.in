@@ -22,7 +22,7 @@ export default function Layout({ children, title, description, keywords, robots 
         <title>{title || 'WeOne Aviation Academy - Pilot Training in India'}</title>
         <meta name="description" content={description || "WeOne Aviation Academy offers DGCA approved pilot training courses including CPL, PPL, ATPL in India. Join India's most trusted aviation training institute."} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content={robots} />
+        <meta key="robots" name="robots" content={robots} />
         <link rel="canonical" href={canonicalUrl} />
 
         {/* OG */}
