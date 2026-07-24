@@ -117,7 +117,6 @@ export default function Footer() {
                 { label: 'RTR-A', href: '/rtr-a' },
                 { label: 'RTR Full Form Guide', href: '/rtr-full-form-meaning-importance-and-complete-guide' },
                 { label: 'PPL Full Form', href: '/ppl-full-form' },
-                { label: 'ICSE Full Form', href: '/icse-full-form' },
                 { label: 'DGCA Full Form', href: '/dgca-full-form' },
                 { label: 'Advanced ATPL Pilot Training', href: '/advanced-atpl-pilot-training' },
                 { label: 'Best Flight Schools in USA', href: '/best-flight-schools-in-usa' },

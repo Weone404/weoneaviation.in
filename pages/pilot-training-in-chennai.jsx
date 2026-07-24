@@ -7,7 +7,7 @@ export default function PilotTrainingChennai() {
 
             meta={{
                 title: 'Pilot Training Institute in Chennai 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Best Pilot Training Institute in Chennai. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
+                description: 'Pilot training in Chennai with DGCA ground classes, CPL, PPL, and ATPL guidance tailored for students in Tamil Nadu. Learn about Chennai airport context, scholarship support, and placement assistance at WeOne Aviation Academy.',
             }}
 
             hero={{
@@ -17,18 +17,15 @@ export default function PilotTrainingChennai() {
                 sub: 'World-class CPL, PPL & DGCA Ground Classes in Chennai with 100% Placement Assistance',
             }}
 
-            intro="Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in Chennai is best for you if you want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Chennai is a major aviation center in India, creating a high demand for trained pilots — and we are here to train the next generation of aviation professionals."
+            intro="Chennai is a strong South India aviation market because it blends a large student base, airport visibility, and real airline career ambition. With Chennai International Airport (MAA) serving as a familiar reference point, many families in Tamil Nadu want more than a generic course pitch — they want a practical understanding of DGCA subject discipline, instructor quality, and the path from theory prep to airline readiness. This Chennai page is built around that regional decision-making need: stronger local context, more grounded exam support, and a more practical explanation of how student preparation turns into pilot career momentum."
 
             features={[
-                { icon: '🏅', title: 'Certified Training Program', desc: 'Our institute follows the regulations set by the national aviation authority to ensure quality education and certification.' },
-                { icon: '👨‍✈️', title: 'Experienced & Certified Instructors', desc: 'Learn from the best — instructors who have real flying experience and have served as pilots in India.' },
-                { icon: '🛩️', title: 'Advanced Aircraft & Simulators', desc: 'Train on Cessna 172 Glass Cockpit aircraft with advanced avionics, plus high-tech flight simulators for safe, controlled practice before taking off.' },
-                { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof.' },
-                { icon: '🚀', title: 'Career Guidance & 100% Placement', desc: 'Our academy doesn\'t just train you — we help you launch your career. Graduates have joined major airlines, cargo operations, and private aviation companies worldwide.' },
-                { icon: '🎓', title: 'Full Scholarship Opportunities', desc: 'Flexible fees structure with scholarships granted for deserving candidates, making your aviation dream affordable.' },
-                { icon: '📖', title: 'Extra Guidance For Weak Students', desc: 'We give extra time and attention to students who need it, ensuring every student gets results fast.' },
-                { icon: '🏢', title: 'Prime International Airport Location', desc: 'Training at an international airport gives you real-world flying experience, ATC exposure, and a smooth transition into airline jobs.' },
-                { icon: '🏠', title: 'Accommodation & Student Support', desc: 'Comfortable accommodation near the airport so you can focus fully on your training without any hassle.' },
+                { icon: '🏅', title: 'MAA Aviation Awareness', desc: 'Students in Chennai can relate their pilot journey to a real international-airport operating environment, which makes route planning, ATC understanding, and airline professionalism more tangible.' },
+                { icon: '👨‍✈️', title: 'South India DGCA Coaching', desc: 'Ground classes focus on subject retention, mock repetition, and structured revision in the core DGCA papers that most students must clear early in the CPL path.' },
+                { icon: '🛩️', title: 'Scenario-Based Flight Prep', desc: 'Simulated cockpit activities help students sharpen radio discipline, instrument interpretation, and decision-making under pressure before they move to higher flight phases.' },
+                { icon: '📋', title: 'CPL, PPL & ATPL Planning', desc: 'Our counselling helps families compare the right pathway for age, academic background, fee capacity, and long-term aviation goals.' },
+                { icon: '🚀', title: 'Career Support for Tamil Nadu', desc: 'We guide candidates through airline-facing communication, interview preparation, and realistic expectations about where the training journey should lead.' },
+                { icon: '🎓', title: 'Fee & Scholarship Transparency', desc: 'Students can compare cost structures, scholarship support, and schedule planning more confidently before they commit to a pilot program.' },
             ]}
 
             courses={[
@@ -163,6 +160,8 @@ export default function PilotTrainingChennai() {
 
             faqs={[
                 { q: 'How long does it take to complete pilot training in Chennai?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months.' },
+                { q: 'Is there a DGCA exam center or exam-prep support option in Chennai?', a: 'Students in Chennai usually plan around a revision-friendly DGCA ground class schedule, mock tests, and coaching support to improve subject retention before exam day.' },
+                { q: 'What is the nearest major airport relevant to pilot training in Chennai?', a: 'Chennai International Airport (MAA) is the key city reference point for pilot aspirants who want to understand airline movement, airport operations, and aviation exposure.' },
                 { q: 'What are the fees for pilot training in Chennai?', a: 'The average fees for CPL training in Chennai is INR 40–50 Lakh. This includes ground classes (INR 2-5 lakhs), 200 hours of flying (INR 35-45 lakhs), simulator training (INR 3-5 lakhs), and extra gear (INR 1-2 lakhs). WeOne Aviation provides scholarship and flexible payment options.' },
                 { q: 'What is the eligibility to become a pilot in Chennai?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
                 { q: 'Does WeOne Aviation provide placement assistance in Chennai?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },

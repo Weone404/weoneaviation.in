@@ -95,8 +95,6 @@ const pages = [
     { loc: 'https://www.weoneaviation.in/private-pilot-license-ppl-course-details', priority: '0.8', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/student-pilot-license-spl', priority: '0.8', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/advanced-atpl-pilot-training', priority: '0.8', changefreq: 'monthly' },
-    { loc: 'https://www.weoneaviation.in/cbse-full-form', priority: '0.7', changefreq: 'monthly' },
-    { loc: 'https://www.weoneaviation.in/icse-full-form', priority: '0.7', changefreq: 'monthly' },
 ];
 
 function getSitemapXml() {

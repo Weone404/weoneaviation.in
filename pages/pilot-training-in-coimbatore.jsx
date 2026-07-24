@@ -7,7 +7,7 @@ export default function PilotTrainingCoimbatore() {
 
             meta={{
                 title: 'Pilot Training Institute in Coimbatore 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Best Pilot Training Institute in Coimbatore. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
+                description: 'Pilot training in Coimbatore with structured DGCA exam support, CPL and PPL course guidance, and practical counselling for students from Tamil Nadu seeking a focused aviation pathway.',
             }}
 
             hero={{
@@ -17,18 +17,15 @@ export default function PilotTrainingCoimbatore() {
                 sub: 'World-class CPL, PPL & DGCA Ground Classes in Coimbatore with 100% Placement Assistance',
             }}
 
-            intro="Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in Coimbatore is best for you if you want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Coimbatore is a growing aviation center in Tamil Nadu and India, creating a high demand for trained pilots — and we are here to train the next generation of aviation professionals."
+            intro="Coimbatore is a useful market for aviation aspirants because it combines a strong student population, practical family decision-making, and a clear demand for reliable pilot-training guidance. For students across Tamil Nadu, the real problem is usually not whether aviation is interesting — it is whether the path to DGCA theory, pilots’ career stages, and admissions planning feels manageable and trustworthy. This Coimbatore page is framed around that local reality: stronger counselling support, more realistic training expectations, and a more region-aware explanation of how students move from exam preparation into cockpit readiness."
 
             features={[
-                { icon: '🏅', title: 'Certified Training Program', desc: 'Our institute follows the regulations set by the national aviation authority to ensure quality education and certification.' },
-                { icon: '👨‍✈️', title: 'Experienced & Certified Instructors', desc: 'Learn from the best — instructors who have real flying experience and have served as pilots in India.' },
-                { icon: '🛩️', title: 'Advanced Aircraft & Simulators', desc: 'Train on Cessna 172 Glass Cockpit aircraft with advanced avionics, plus high-tech flight simulators for safe, controlled practice before taking off.' },
-                { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof.' },
-                { icon: '🚀', title: 'Career Guidance & 100% Placement', desc: 'Our academy doesn\'t just train you — we help you launch your career. Graduates have joined major airlines, cargo operations, and private aviation companies worldwide.' },
-                { icon: '🎓', title: 'Full Scholarship Opportunities', desc: 'Flexible fees structure with scholarships granted for deserving candidates, making your aviation dream affordable.' },
-                { icon: '📖', title: 'Extra Guidance For Weak Students', desc: 'We give extra time and attention to students who need it, ensuring every student gets results fast.' },
-                { icon: '🏢', title: 'Prime International Airport Location', desc: 'Training at an international airport gives you real-world flying experience, ATC exposure, and a smooth transition into airline jobs.' },
-                { icon: '🏠', title: 'Accommodation & Student Support', desc: 'Comfortable accommodation near the airport so you can focus fully on your training without any hassle.' },
+                { icon: '🏅', title: 'Regional Student Support', desc: 'Students from Coimbatore and surrounding districts can benefit from closer academic counselling, better schedule planning, and a more structured path through DGCA preparation.' },
+                { icon: '👨‍✈️', title: 'Exam-First Ground Preparation', desc: 'Our DGCA support is built around subject clarity, revision discipline, and better exam performance in the core theory papers that shape early pilot careers.' },
+                { icon: '🛩️', title: 'Simulation-Backed Habit Formation', desc: 'Students improve radio discipline, decision-making confidence, and practical cockpit familiarity before they step into higher training levels.' },
+                { icon: '📋', title: 'Pathway Comparison Support', desc: 'We help candidates compare CPL, PPL, and ATPL decisions with honest information about time, effort, and expected outcomes.' },
+                { icon: '🚀', title: 'Placement Mentoring', desc: 'Our counselling helps aspirants understand the professional standards recruiters look for and how to prepare for interviews early.' },
+                { icon: '🎓', title: 'Transparent Costs & Scholarships', desc: 'A clearer fee discussion helps families plan budgets and ask the right questions before making a high-value training commitment.' },
             ]}
 
             courses={[

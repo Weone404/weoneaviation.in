@@ -33,6 +33,26 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/our-courses',
+        destination: '/courses',
+        permanent: true,
+      },
+      {
+        source: '/our-courses/:path*',
+        destination: '/courses/:path*',
+        permanent: true,
+      },
+      {
+        source: '/tag/:path*',
+        destination: '/courses',
+        permanent: true,
+      },
+      {
+        source: '/author/:path*',
+        destination: '/about-us',
+        permanent: true,
+      },
+      {
         source: '/:path*',
         has: [{ type: 'host', value: 'weoneaviation.in' }],
         destination: 'https://www.weoneaviation.in/:path*',

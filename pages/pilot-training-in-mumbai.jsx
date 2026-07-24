@@ -7,7 +7,7 @@ export default function PilotTrainingMumbai() {
 
             meta={{
                 title: 'Pilot Training Institute in Mumbai 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Best Pilot Training Institute in Mumbai. CPL, PPL, ATPL, DGCA Ground Classes since 2011. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
+                description: 'Pilot training in Mumbai with airport-linked aviation awareness, DGCA ground classes, CPL and PPL guidance, and strong career mentoring for Maharashtra students preparing for airline-ready training.',
             }}
 
             hero={{
@@ -17,15 +17,15 @@ export default function PilotTrainingMumbai() {
                 sub: 'World-class CPL, PPL & DGCA Ground Classes in Mumbai since 2011 with 100% Placement Assistance',
             }}
 
-            intro="Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in Mumbai is best for you if you want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Mumbai is one of India's biggest aviation hubs, creating massive demand for trained pilots — and we have been training them since 2011."
+            intro="Mumbai is one of the best places for pilot aspirants to think in terms of airline exposure, schedule discipline, and real-world airside awareness. With Chhatrapati Shivaji Maharaj International Airport (BOM) acting as a major reference point, students in Maharashtra often want a training route that helps them understand the pace of commercial aviation, how ATC communication works, and what airline recruiters expect from future officers. This Mumbai page is written around that commercial-aviation mindset: airport-linked context, stronger DGCA exam strategy, and a more realistic path from ground classes into airline-ready preparation."
 
             features={[
-                { icon: '🏅', title: 'DGCA-Approved Training', desc: 'Our institute follows the guidelines set by the Directorate General of Civil Aviation (DGCA) to ensure quality education and certification.' },
-                { icon: '👨‍✈️', title: 'Experienced Teachers', desc: 'Learn from the best — instructors who have real flying experience and have served as pilots in India.' },
-                { icon: '🛩️', title: 'Modern Flight Simulators', desc: 'Get real-life flying experience through advanced flight simulators and aircraft training.' },
-                { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer Commercial Pilot License (CPL), Private Pilot License (PPL), and Airline Transport Pilot License (ATPL) training.' },
-                { icon: '🚀', title: '100% Placement Assistance', desc: 'We help students secure jobs with the top most airlines and aviation companies worldwide.' },
-                { icon: '🎓', title: 'Affordable Fees & Scholarships', desc: 'Our fees structure is more flexible than other institutes and we grant scholarships for deserving candidates.' },
+                { icon: '🏅', title: 'BOM-Airport Context', desc: 'Students in Mumbai get a clearer picture of how a major international airport shapes airline operations, route planning, flight discipline, and professional aviation behaviour.' },
+                { icon: '👨‍✈️', title: 'Metro-Focused Ground Prep', desc: 'Our DGCA support helps Mumbai students manage theory subjects, mock revisions, and fast-paced study schedules without losing quality or consistency.' },
+                { icon: '🛩️', title: 'Cockpit Decision Training', desc: 'Simulator sessions and revision drills build accuracy in radio work, navigation logic, and split-second decision-making — all vital to airline readiness.' },
+                { icon: '📋', title: 'Commercial, Private & ATPL Guidance', desc: 'We help students compare CPL, PPL, and ATPL pathways with a realistic understanding of duration, effort, and long-term career fit.' },
+                { icon: '🚀', title: 'Airline Interview Preparation', desc: 'Our career mentoring focuses on communication, professionalism, and the practical expectations airline teams look for during selection and interview rounds.' },
+                { icon: '🎓', title: 'Scholarship & Cost Clarity', desc: 'Mumbai students can plan their training investment more confidently with fee transparency, scholarship counselling, and flexible support discussions.' },
             ]}
 
             courses={[
@@ -160,6 +160,8 @@ export default function PilotTrainingMumbai() {
 
             faqs={[
                 { q: 'How long does it take to complete pilot training in Mumbai?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months.' },
+                { q: 'Is there a DGCA exam center or learning hub near Mumbai that helps with pilot preparation?', a: 'Students in and around Mumbai usually plan DGCA ground preparation with a city-based study routine, revision cycle, and coaching schedule that supports theory, mock tests, and exam-day confidence.' },
+                { q: 'What is the nearest major airport relevant to pilot training in Mumbai?', a: 'Chhatrapati Shivaji Maharaj International Airport (BOM) is the primary city reference for Mumbai-based airline operations and airport awareness during pilot preparation.' },
                 { q: 'What are the fees for pilot training in Mumbai?', a: 'The average fees for CPL training in Mumbai is INR 40–60 Lakh. This includes ground classes (INR 2-3 lakhs), 200 hours of flying (INR 35-55 lakhs), simulator training (INR 3-5 lakhs), and extra gear. WeOne Aviation provides scholarship and flexible payment options.' },
                 { q: 'What is the eligibility to become a pilot in Mumbai?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 Medical clearance, and English proficiency are required.' },
                 { q: 'Does WeOne Aviation provide placement assistance in Mumbai?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },

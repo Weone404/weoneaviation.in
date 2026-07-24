@@ -7,7 +7,7 @@ export default function PilotTrainingBangalore() {
 
             meta={{
                 title: 'Pilot Training Institute in Bangalore 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Best Pilot Training Institute in Bangalore. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
+                description: 'Pilot training in Bangalore with structured DGCA coaching, CPL and PPL pathways, and airport-focused aviation awareness for students and parents in Karnataka. Explore fees, scholarships, and placement support with WeOne Aviation.',
             }}
 
             hero={{
@@ -17,18 +17,15 @@ export default function PilotTrainingBangalore() {
                 sub: 'World-class CPL, PPL & DGCA Ground Classes in Bangalore with 100% Placement Assistance',
             }}
 
-            intro="Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in Bangalore is best for you if you want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Bangalore is a major aviation center in India, creating a high demand for trained pilots — and we are here to train the next generation of aviation professionals."
+            intro="Bangalore is a very different student market from many other Indian cities because it combines a fast-moving academic culture, strong demand for career planning, and a clear connection to modern commercial aviation. With Kempegowda International Airport (BLR) serving as a natural reference point, many aspirants from Karnataka and neighbouring states want to understand how DGCA preparation, pilot career stages, and airline-facing professionalism fit together. This Bangalore page is written around that practical need: stronger airport context, clearer student support, and a more direct explanation of what it takes to move from theory into airline readiness."
 
             features={[
-                { icon: '🏅', title: 'Certified Training Program', desc: 'Our institute follows the regulations set by the national aviation authority to ensure quality education and certification.' },
-                { icon: '👨‍✈️', title: 'Experienced & Certified Instructors', desc: 'Learn from the best — instructors who have real flying experience and have served as pilots in India.' },
-                { icon: '🛩️', title: 'Advanced Aircraft & Simulators', desc: 'Train on Cessna 172 Glass Cockpit aircraft with advanced avionics, plus high-tech flight simulators for safe, controlled practice before taking off.' },
-                { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof.' },
-                { icon: '🚀', title: 'Career Guidance & 100% Placement', desc: 'Our academy doesn\'t just train you — we help you launch your career. Graduates have joined major airlines, cargo operations, and private aviation companies worldwide.' },
-                { icon: '🎓', title: 'Full Scholarship Opportunities', desc: 'Flexible fees structure with scholarships granted for deserving candidates, making your aviation dream affordable.' },
-                { icon: '📖', title: 'Extra Guidance For Weak Students', desc: 'We give extra time and attention to students who need it, ensuring every student gets results fast.' },
-                { icon: '🏢', title: 'Prime International Airport Location', desc: 'Training at an international airport gives you real-world flying experience, ATC exposure, and a smooth transition into airline jobs.' },
-                { icon: '🏠', title: 'Accommodation & Student Support', desc: 'Comfortable accommodation near the airport so you can focus fully on your training without any hassle.' },
+                { icon: '🏅', title: 'BLR Airport & Industry Linkage', desc: 'Students in Bangalore can connect their training journey with a major airport ecosystem, where route planning, airline exposure, and real operating discipline become easier to understand.' },
+                { icon: '👨‍✈️', title: 'Structured Exam Readiness', desc: 'Our coaching model emphasises accuracy, concept retention, and disciplined revision across the six DGCA subjects that shape the early CPL path.' },
+                { icon: '🛩️', title: 'Technology-Driven Training Flow', desc: 'Simulator time, revision cycles, and scenario-based drills help students convert theory into practical cockpit confidence more efficiently.' },
+                { icon: '📋', title: 'Student-Centred Course Guidance', desc: 'We help families compare CPL, PPL, and ATPL decisions through fee awareness, course fit, and realistic career progression planning.' },
+                { icon: '🚀', title: 'Professionalism & Interview Support', desc: 'Candidates receive targeted guidance on communication, interview posture, and the day-to-day expectations that airline recruiters look for.' },
+                { icon: '🎓', title: 'Flexible Support for Working Parents', desc: 'Bangalore learners benefit from clearer counselling, more transparent budgeting, and schedule planning that reduces uncertainty before enrolment.' },
             ]}
 
             courses={[
@@ -163,6 +160,8 @@ export default function PilotTrainingBangalore() {
 
             faqs={[
                 { q: 'How long does it take to complete pilot training in Bangalore?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months.' },
+                { q: 'Is there a DGCA exam center or supported exam-prep route in Bangalore?', a: 'Students in Bangalore usually prepare for DGCA subjects through a structured ground-class flow, revision schedule, and mock testing support that fits city-based study routines.' },
+                { q: 'What is the nearest major airport relevant to pilot training in Bangalore?', a: 'Kempegowda International Airport (BLR) is the main aviation reference point for Bangalore-based training and airport-awareness discussions.' },
                 { q: 'What are the fees for pilot training in Bangalore?', a: 'The average fees for CPL training in Bangalore is INR 40–50 Lakh. This includes ground classes (INR 2-5 lakhs), 200 hours of flying (INR 35-45 lakhs), simulator training (INR 3-5 lakhs), and extra gear (INR 1-2 lakhs). WeOne Aviation provides scholarship and flexible payment options.' },
                 { q: 'What is the eligibility to become a pilot in Bangalore?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
                 { q: 'Does WeOne Aviation provide placement assistance in Bangalore?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },

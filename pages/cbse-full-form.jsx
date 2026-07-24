@@ -171,6 +171,7 @@ export default function CBSEPage() {
         <Layout
             title="CBSE Full Form Explained | Curriculum, Subjects, Board Overview, Importance & Career Relevance"
             description="CBSE stands for Central Board of Secondary Education. Learn about CBSE curriculum, subjects from Class 1–12, grading system, affiliation criteria, results 2025, and why CBSE is better than other boards."
+            robots="noindex, follow"
         >
 
             {/* ── Hero Banner ── */}

@@ -7,7 +7,7 @@ export default function PilotTrainingChhattisgarh() {
 
             meta={{
                 title: 'Pilot Training Institute in Chhattisgarh 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Best Pilot Training Institute in Chhattisgarh. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
+                description: 'Pilot training in Chhattisgarh with region-aware DGCA preparation, CPL and PPL course guidance, and practical career counselling for students planning a stronger aviation future.',
             }}
 
             hero={{
@@ -17,18 +17,15 @@ export default function PilotTrainingChhattisgarh() {
                 sub: 'World-class CPL, PPL & DGCA Ground Classes in Chhattisgarh with 100% Placement Assistance',
             }}
 
-            intro="Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in Chhattisgarh is best for you if you want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Chhattisgarh, with Raipur as its aviation hub, is a growing center for aviation in Central India — creating a high demand for trained pilots, and we are here to train the next generation of aviation professionals."
+            intro="Chhattisgarh gives many families a useful perspective on pilot training because the decision is often driven by practical concerns: reliable DGCA guidance, reasonable cost planning, and a clear route from theory preparation to airline-readiness. With Raipur (RPR) serving as the most relevant local aviation reference point, students from the state need a page that explains the real progression of pilot training rather than simply repeating a city template. This Chhattisgarh rewrite is built around that need: stronger regional context, clearer admission planning, and a more grounded understanding of how students move from core theory into professional aviation preparation."
 
             features={[
-                { icon: '🏅', title: 'Certified Training Program', desc: 'Our institute follows the regulations set by the national aviation authority to ensure quality education and certification.' },
-                { icon: '👨‍✈️', title: 'Experienced & Certified Instructors', desc: 'Learn from the best — instructors who have real flying experience and have served as pilots in India.' },
-                { icon: '🛩️', title: 'Advanced Aircraft & Simulators', desc: 'Train on Cessna 172 Glass Cockpit aircraft with advanced avionics, plus high-tech flight simulators for safe, controlled practice before taking off.' },
-                { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof.' },
-                { icon: '🚀', title: 'Career Guidance & 100% Placement', desc: 'Our academy doesn\'t just train you — we help you launch your career. Graduates have joined major airlines, cargo operations, and private aviation companies worldwide.' },
-                { icon: '🎓', title: 'Full Scholarship Opportunities', desc: 'Flexible fees structure with scholarships granted for deserving candidates, making your aviation dream affordable.' },
-                { icon: '📖', title: 'Extra Guidance For Weak Students', desc: 'We give extra time and attention to students who need it, ensuring every student gets results fast.' },
-                { icon: '🏢', title: 'Prime International Airport Location', desc: 'Training at an international airport gives you real-world flying experience, ATC exposure, and a smooth transition into airline jobs.' },
-                { icon: '🏠', title: 'Accommodation & Student Support', desc: 'Comfortable accommodation near the airport so you can focus fully on your training without any hassle.' },
+                { icon: '🏅', title: 'Central India Perspective', desc: 'Students from Chhattisgarh can approach aviation training with a more practical mindset, focusing on course clarity, discipline, and the right decision-making path rather than marketing noise.' },
+                { icon: '👨‍✈️', title: 'DGCA Subject Discipline', desc: 'Our support helps students build confidence in Air Regulations, Meteorology, Navigation, and Technical General through structured repeat practice and revision.' },
+                { icon: '🛩️', title: 'Active Exam Preparation', desc: 'We emphasise mock revision, explanation-led teaching, and consistent study habits so students are better prepared for the academic side of the CPL journey.' },
+                { icon: '📋', title: 'Course Pathway Planning', desc: 'We guide students through CPL, PPL, and ATPL options according to budget, academic background, and timeline goals.' },
+                { icon: '🚀', title: 'Career Roadmap Support', desc: 'Students receive counselling that sets realistic goals for airline, charter, and instructor roles after training.' },
+                { icon: '🎓', title: 'Budget & Scholarship Clarity', desc: 'Parents and students can compare training costs more confidently and ask better questions before enrolling.' },
             ]}
 
             courses={[
@@ -163,6 +160,8 @@ export default function PilotTrainingChhattisgarh() {
 
             faqs={[
                 { q: 'How long does it take to complete pilot training in Chhattisgarh?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months.' },
+                { q: 'Is there a DGCA exam center or study support route in Chhattisgarh?', a: 'Students in Chhattisgarh usually prepare for DGCA theory through a structured syllabus plan, targeted revision, and coaching support that helps them stay consistent while balancing academic commitments.' },
+                { q: 'What is the nearest major airport relevant to pilot training in Chhattisgarh?', a: 'Raipur Airport (RPR) is the most relevant local aviation reference point in the state for students exploring a future in aviation.' },
                 { q: 'What are the fees for pilot training in Chhattisgarh?', a: 'The average fees for CPL training in Chhattisgarh is INR 40–60 Lakh. This includes ground classes (INR 2-3 lakhs), 200 hours of flying (INR 35-55 lakhs), simulator training (INR 3-5 lakhs), and extra gear (INR 20-50 thousand). WeOne Aviation provides scholarship and flexible payment options.' },
                 { q: 'What is the eligibility to become a pilot in Chhattisgarh?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
                 { q: 'Does WeOne Aviation provide placement assistance in Chhattisgarh?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },

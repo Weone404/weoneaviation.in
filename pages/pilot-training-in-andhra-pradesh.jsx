@@ -7,7 +7,7 @@ export default function PilotTrainingAndhraPradesh() {
 
       meta={{
         title: 'Pilot Training Institute in Andhra Pradesh 2026 | CPL, PPL, DGCA | WeOne Aviation',
-        description: 'Best Pilot Training Institute in Andhra Pradesh. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
+        description: 'Pilot training in Andhra Pradesh with practical DGCA preparation, CPL and PPL guidance, and counselling support for students seeking a realistic route into the aviation industry.',
       }}
 
       hero={{
@@ -17,18 +17,18 @@ export default function PilotTrainingAndhraPradesh() {
         sub: 'World-class CPL, PPL & DGCA Ground Classes in Andhra Pradesh with 100% Placement Assistance',
       }}
 
-      intro="Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in Andhra Pradesh is best for you if you want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Andhra Pradesh, with Visakhapatnam as a key aviation hub, is a rapidly growing center for aviation in South India — creating a high demand for trained pilots, and we are here to train the next generation of aviation professionals."
+      intro="Andhra Pradesh is an important pilot-training market because students here often seek a more grounded understanding of what the CPL journey actually requires: DGCA theory discipline, realistic time commitment, fee clarity, and a clear route into airline readiness. With Visakhapatnam acting as a relevant aviation anchor for the state, families want content that explains the progression from academic preparation to practical aviation confidence rather than simply repeating general training language. This Andhra Pradesh page is written to address that need more directly with stronger regional context and a more practical training mindset."
 
       features={[
-        { icon: '🏅', title: 'Certified Training Program', desc: 'Our institute follows the regulations set by the national aviation authority to ensure quality education and certification.' },
-        { icon: '👨‍✈️', title: 'Experienced & Certified Instructors', desc: 'Learn from the best — instructors who have real flying experience and have served as pilots in India.' },
-        { icon: '🛩️', title: 'Advanced Aircraft & Simulators', desc: 'Train on Cessna 172 Glass Cockpit aircraft with advanced avionics, plus high-tech flight simulators for safe, controlled practice before taking off.' },
-        { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof.' },
-        { icon: '🚀', title: 'Career Guidance & 100% Placement', desc: 'Our academy doesn\'t just train you — we help you launch your career. Graduates have joined major airlines, cargo operations, and private aviation companies worldwide.' },
-        { icon: '🎓', title: 'Full Scholarship Opportunities', desc: 'Flexible fees structure with scholarships granted for deserving candidates, making your aviation dream affordable.' },
-        { icon: '📖', title: 'Extra Guidance For Weak Students', desc: 'We give extra time and attention to students who need it, ensuring every student gets results fast.' },
-        { icon: '🏢', title: 'Prime International Airport Location', desc: 'Training at an international airport gives you real-world flying experience, ATC exposure, and a smooth transition into airline jobs.' },
-        { icon: '🏠', title: 'Accommodation & Student Support', desc: 'Comfortable accommodation near the airport so you can focus fully on your training without any hassle.' },
+        { icon: '🏅', title: 'Region-Specific Career Planning', desc: 'Students from Andhra Pradesh can connect their pilot journey with practical goals around DGCA preparation, admission clarity, and the discipline needed for airline readiness.' },
+        { icon: '👨‍✈️', title: 'Instructional Clarity', desc: 'Our guidance helps students work through exam pressure, technical subjects, and cockpit-oriented learning habits more confidently.' },
+        { icon: '🛩️', title: 'Simulator & Scenario Practice', desc: 'Students gain better visibility into cockpit workflows, communication discipline, and instrument decision-making before moving forward in the program.' },
+        { icon: '📋', title: 'CPL, PPL & ATPL Guidance', desc: 'We help candidates choose a training path based on timeline, budget, academic ability, and their desired airline destination.' },
+        { icon: '🚀', title: 'Career Communication Support', desc: 'Students get realistic guidance on professionalism, placement support, and the expectations airline recruiters bring to trainee pilots.' },
+        { icon: '🎓', title: 'Budget & Scholarship Transparency', desc: 'Families can compare the cost of training more clearly and make decisions with fewer surprises.' },
+        { icon: '📖', title: 'Extra Support for Students', desc: 'We offer mentoring, revision assistance, and more patient academic support when students need a structured route through theory preparation.' },
+        { icon: '🏢', title: 'Airport-Awareness Exposure', desc: 'Students gain a better feel for how airline operations, communication standards, and airport ecosystems shape the profession.' },
+        { icon: '🏠', title: 'Counselling & Accommodation Support', desc: 'A more supported training journey makes it easier to remain consistent through high-pressure academic milestones.' },
       ]}
 
       courses={[

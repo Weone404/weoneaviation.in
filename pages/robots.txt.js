@@ -17,6 +17,9 @@ Disallow: /private/
 Disallow: /.git/
 Disallow: /node_modules/
 Disallow: /data/
+Disallow: /tag/
+Disallow: /author/
+Disallow: /our-courses/
 Disallow: /.env
 Disallow: /package.json
 Disallow: /next.config.js

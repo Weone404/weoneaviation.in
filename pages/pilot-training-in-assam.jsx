@@ -17,18 +17,18 @@ export default function PilotTrainingAssam() {
                 sub: 'World-class CPL, PPL & DGCA Ground Classes in Assam with 100% Placement Assistance',
             }}
 
-            intro="Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in Assam is best for you if you want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Assam, with Guwahati as the aviation gateway to Northeast India, is a growing center for aviation — creating a high demand for trained pilots, and we are here to train the next generation of aviation professionals."
+            intro="Assam is an important state for Northeast India aviation aspirations because students here often need a more practical roadmap into pilot careers, not just a generic training promise. With Guwahati (GAU) acting as a natural aviation reference point for the region, many aspirants want guidance on how DGCA theory, scholarship planning, and airline-oriented career preparation fit together. This Assam page is written around that decision path: local relevance, clearer flight-path understanding, and a stronger explanation of how Gujarat-based pilot training support can help students from the Northeast move toward CPL readiness."
 
             features={[
-                { icon: '🏅', title: 'Certified Training Program', desc: 'Our institute follows the regulations set by the national aviation authority to ensure quality education and certification.' },
-                { icon: '👨‍✈️', title: 'Experienced & Certified Instructors', desc: 'Learn from the best — instructors who have real flying experience and have served as pilots in India.' },
-                { icon: '🛩️', title: 'Advanced Aircraft & Simulators', desc: 'Train on Cessna 172 Glass Cockpit aircraft with advanced avionics, plus high-tech flight simulators for safe, controlled practice before taking off.' },
-                { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof.' },
-                { icon: '🚀', title: 'Career Guidance & 100% Placement', desc: 'Our academy doesn\'t just train you — we help you launch your career. Graduates have joined major airlines, cargo operations, and private aviation companies worldwide.' },
-                { icon: '🎓', title: 'Full Scholarship Opportunities', desc: 'Flexible fees structure with scholarships granted for deserving candidates, making your aviation dream affordable.' },
-                { icon: '📖', title: 'Extra Guidance For Weak Students', desc: 'We give extra time and attention to students who need it, ensuring every student gets results fast.' },
-                { icon: '🏢', title: 'Prime International Airport Location', desc: 'Training at an international airport gives you real-world flying experience, ATC exposure, and a smooth transition into airline jobs.' },
-                { icon: '🏠', title: 'Accommodation & Student Support', desc: 'Comfortable accommodation near the airport so you can focus fully on your training without any hassle.' },
+                { icon: '🏅', title: 'Northeast Aviation Context', desc: 'For Assam students, aviation planning starts with practical awareness of regional connectivity, airline demand, and a disciplined DGCA preparation strategy.' },
+                { icon: '👨‍✈️', title: 'DGCA Coaching Discipline', desc: 'We focus on subject clarity, exam retention, and revision consistency across the six core DGCA papers that shape the CPL journey.' },
+                { icon: '🛩️', title: 'Simulator-Backed Learning', desc: 'Students receive repeated cockpit exposure and scenario-management practice that helps convert classroom knowledge into flying confidence.' },
+                { icon: '📋', title: 'CPL, PPL & ATPL Guidance', desc: 'We help students understand which pilot path matches their budget, current academic background, and long-term career plan.' },
+                { icon: '🚀', title: 'Career Readiness Support', desc: 'Our career mentoring covers interview preparation, professionalism, and understanding what employers expect from pilot trainees.' },
+                { icon: '🎓', title: 'Scholarship & Fee Clarity', desc: 'Assam students can compare fee structures and scholarship support more clearly before committing to a pilot course.' },
+                { icon: '📖', title: 'Mentored Academic Support', desc: 'Students who need slower-paced guidance or more structured revision receive extra mentoring to stay consistent in their DGCA preparation.' },
+                { icon: '🏢', title: 'Airport-Linked Awareness', desc: 'Students gain a better sense of how major airport ecosystems shape route planning, airline expectations, and professional aviation mindset.' },
+                { icon: '🏠', title: 'Student Support Planning', desc: 'Counselling and accommodation planning help families manage the training journey more confidently from the start.' },
             ]}
 
             courses={[
@@ -162,12 +162,14 @@ export default function PilotTrainingAssam() {
             ]}
 
             faqs={[
-                { q: 'How long does it take to complete pilot training in Assam?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months.' },
-                { q: 'What are the fees for pilot training in Assam?', a: 'The average fees for CPL training in Assam is INR 40–60 Lakh. This includes ground classes (INR 2-3 lakhs), 200 hours of flying (INR 35-55 lakhs), simulator training (INR 3-5 lakhs), and extra gear (INR 20-50 thousand). WeOne Aviation provides scholarship and flexible payment options.' },
-                { q: 'What is the eligibility to become a pilot in Assam?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
-                { q: 'Does WeOne Aviation provide placement assistance in Assam?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
-                { q: 'Can I get a scholarship for pilot training in Assam?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
-                { q: 'What career options are available after pilot training in Assam?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Assam\'s growing aviation sector with Guwahati as the Northeast gateway creates excellent demand for trained pilots.' },
+                { q: 'How long does it take to complete pilot training in Assam?', a: 'PPL usually takes 4-6 months, CPL typically takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes generally run for 3-6 months depending on the candidate’s preparation pace.' },
+                { q: 'Is there a DGCA exam-prep route that fits students from Assam?', a: 'Yes. Students in Assam usually prepare through structured DGCA ground classes, revision planning, and mock-test support that makes it easier to stay consistent while studying from a distance.' },
+                { q: 'What is the nearest major airport relevant to pilot training in Assam?', a: 'Guwahati Airport (GAU) is the main regional aviation reference point for students who want to understand airport operations and connect their training ambitions to the Northeast aviation ecosystem.' },
+                { q: 'What are the fees for pilot training in Assam?', a: 'The average CPL fees for students exploring pilot training in Assam usually fall between INR 40–60 lakh, depending on the program path, flying hours, simulator support, and added training costs.' },
+                { q: 'What is the eligibility to become a pilot in Assam?', a: 'Most students need to be at least 17 years old, complete 10+2 with Physics and Mathematics, clear DGCA Class 1 and Class 2 medical checks, and demonstrate English comprehension for aviation communication.' },
+                { q: 'Does WeOne Aviation provide placement assistance for Assam students?', a: 'Yes. We support students with career counselling, job-readiness coaching, and pipeline help that moves them from DGCA preparation into practical aviation placement opportunities.' },
+                { q: 'Can I get a scholarship for pilot training in Assam?', a: 'Yes. WeOne Aviation provides scholarship guidance and flexible fee planning so students can approach the training investment with more confidence.' },
+                { q: 'What career options are available after pilot training in Assam?', a: 'After completing pilot training, candidates can move into roles such as Commercial Pilot, Private Pilot, Cargo Pilot, Flight Instructor, or Charter Pilot. Assam’s rising regional aviation awareness makes it a practical starting point for long-term pilot career planning.' },
             ]}
         />
     );

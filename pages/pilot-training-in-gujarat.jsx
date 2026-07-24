@@ -7,7 +7,7 @@ export default function PilotTrainingGujarat() {
 
             meta={{
                 title: 'Pilot Training Institute in Gujarat 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Best Pilot Training Institute in Gujarat. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
+                description: 'Pilot training in Gujarat with practical DGCA coaching, CPL and PPL planning, transparent fee guidance, and scholarship support for students preparing for a long-term aviation career.',
             }}
 
             hero={{
@@ -17,18 +17,15 @@ export default function PilotTrainingGujarat() {
                 sub: 'World-class CPL, PPL & DGCA Ground Classes in Gujarat with 100% Placement Assistance',
             }}
 
-            intro="Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in Gujarat is best for you if you want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Gujarat is a major aviation center in India, creating a high demand for trained pilots — and we are here to train the next generation of aviation professionals."
+            intro="Gujarat is a useful reference market for aviation aspirants because students here often want a clearer route into pilot careers, not just a list of course names. Families usually want practical answers about fees, DGCA theory preparation, eligibility, and career timing. This Gujarat page is written to make those decisions easier: a stronger regional angle, more realistic training expectations, and a clearer explanation of how classroom preparation evolves into airline-ready discipline."
 
             features={[
-                { icon: '🏅', title: 'Certified Training Program', desc: 'Our institute follows the regulations set by the national aviation authority to ensure quality education and certification.' },
-                { icon: '👨‍✈️', title: 'Experienced & Certified Instructors', desc: 'Learn from the best — instructors who have real flying experience and have served as pilots in India.' },
-                { icon: '🛩️', title: 'Advanced Aircraft & Simulators', desc: 'Train on Cessna 172 Glass Cockpit aircraft with advanced avionics, plus high-tech flight simulators for safe, controlled practice before taking off.' },
-                { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof.' },
-                { icon: '🚀', title: 'Career Guidance & 100% Placement', desc: 'Our academy doesn\'t just train you — we help you launch your career. Graduates have joined major airlines, cargo operations, and private aviation companies worldwide.' },
-                { icon: '🎓', title: 'Full Scholarship Opportunities', desc: 'Flexible fees structure with scholarships granted for deserving candidates, making your aviation dream affordable.' },
-                { icon: '📖', title: 'Extra Guidance For Weak Students', desc: 'We give extra time and attention to students who need it, ensuring every student gets results fast.' },
-                { icon: '🏢', title: 'Prime International Airport Location', desc: 'Training at an international airport gives you real-world flying experience, ATC exposure, and a smooth transition into airline jobs.' },
-                { icon: '🏠', title: 'Accommodation & Student Support', desc: 'Comfortable accommodation near the airport so you can focus fully on your training without any hassle.' },
+                { icon: '🏅', title: 'Regional Progression Thinking', desc: 'Students in Gujarat can plan their pilot journey with better clarity on how DGCA theory, cost, and training flow fit together over time.' },
+                { icon: '👨‍✈️', title: 'DGCA Subject Roadmap', desc: 'We focus on teaching core DGCA subjects with a strong repetition model so students can retain concepts and handle exam pressure more confidently.' },
+                { icon: '🛩️', title: 'Practical Readiness Culture', desc: 'Simulator exposure, communication drills, and structured revision help students move from academic preparation into cockpit decision-making habits.' },
+                { icon: '📋', title: 'Course Fit Guidance', desc: 'We help candidates align CPL, PPL, and ATPL options with their background, sponsorship ability, and long-term pilot goals.' },
+                { icon: '🚀', title: 'Career Communication Support', desc: 'Students receive counselling on professionalism, interview readiness, and what airline recruiters expect from future trainee pilots.' },
+                { icon: '🎓', title: 'Budget & Scholarship Planning', desc: 'Transparent fee guidance makes it easier for students and parents to make an informed, less stressful training decision.' },
             ]}
 
             courses={[

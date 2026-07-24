@@ -7,7 +7,7 @@ export default function PilotTrainingTamilNadu() {
 
             meta={{
                 title: 'Pilot Training Institute in Tamil Nadu 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Best Pilot Training Institute in Tamil Nadu. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
+                description: 'Pilot training in Tamil Nadu with focused DGCA ground classes, CPL and PPL pathway planning, and local counselling support for students preparing for airline-ready training.',
             }}
 
             hero={{
@@ -17,18 +17,18 @@ export default function PilotTrainingTamilNadu() {
                 sub: 'World-class CPL, PPL & DGCA Ground Classes in Tamil Nadu with 100% Placement Assistance',
             }}
 
-            intro="Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in Tamil Nadu is best for you if you want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Tamil Nadu is a major aviation center in South India, home to Chennai International Airport and a rapidly growing aviation sector — creating a high demand for trained pilots, and we are here to train the next generation of aviation professionals."
+            intro="Tamil Nadu is one of the most important student markets for pilot training in South India because families here often want a more reliable, decision-focused route into aviation. The question is rarely just 'Can I become a pilot?' — it is usually 'How do I manage DGCA preparation, compare the right course, and understand the real training timeline without getting lost in generic promises?' This Tamil Nadu page is written to answer that practical question more directly: better local relevance, clearer course pathway planning, and stronger emphasis on airline-readiness rather than generic city-page wording."
 
             features={[
-                { icon: '🏅', title: 'DGCA-Approved Training', desc: 'Our institute follows the guidelines set by the Directorate General of Civil Aviation (DGCA) to ensure quality education and certification.' },
-                { icon: '👨‍✈️', title: 'Experienced & Certified Instructors', desc: 'Learn from the best — instructors who have real flying experience and have served as pilots in India.' },
-                { icon: '🛩️', title: 'Modern Flight Simulators', desc: 'Get real-life flying experience on the latest Cessna 172 Glass Cockpit aircraft and high-tech flight simulators for safe, controlled practice before taking off.' },
-                { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof, training pilots in Tamil Nadu since 2011.' },
-                { icon: '🚀', title: '100% Placement Assistance', desc: 'We help students secure jobs with top airlines and aviation companies worldwide. Our graduates have joined major airlines, cargo operations, and private aviation companies.' },
-                { icon: '🎓', title: 'Affordable Fees & Scholarships', desc: 'Flexible fees structure with scholarships granted for deserving candidates, making your aviation dream affordable.' },
-                { icon: '📖', title: 'Extra Guidance For Weak Students', desc: 'We give extra time and attention to students who need it, ensuring every student gets results fast.' },
-                { icon: '🏢', title: 'Prime International Airport Location', desc: 'Training at an international airport gives you real-world flying experience, ATC exposure, and a smooth transition into airline jobs.' },
-                { icon: '🏠', title: 'Accommodation & Student Support', desc: 'Comfortable accommodation near the airport so you can focus fully on your training without any hassle.' },
+                { icon: '🏅', title: 'Strong South India Demand', desc: 'Tamil Nadu students and parents are looking for a long-term training roadmap that feels credible, realistic, and aligned with the pace of aviation job expectations.' },
+                { icon: '👨‍✈️', title: 'DGCA Coaching Discipline', desc: 'Our methodology emphasises retention, test familiarity, and structured revision across the six key DGCA subjects that shape the early pilot career path.' },
+                { icon: '🛩️', title: 'Simulation & Practical Habits', desc: 'Students strengthen cockpit awareness, instrument interpretation, and communication routines through repeated simulator-driven practice.' },
+                { icon: '📋', title: 'CPL, PPL & ATPL Career Planning', desc: 'We help candidates align their training with age, academic background, fee comfort, and realistic airline career goals.' },
+                { icon: '🚀', title: 'Placement & Communication Support', desc: 'Candidates are guided on professionalism, interview readiness, and how airline evaluators assess future trainee pilots.' },
+                { icon: '🎓', title: 'Fee & Scholarship Transparency', desc: 'Families can compare investment expectations and scholarship support more clearly before moving ahead with a crucial training decision.' },
+                { icon: '📖', title: 'Mentor-Led Academic Support', desc: 'Students who need a more structured study plan receive added guidance that keeps them consistent through DGCA theory preparation.' },
+                { icon: '🏢', title: 'Airline-World Context', desc: 'Airport-linked awareness helps students understand the culture, pace, and responsibility associated with commercial flight operations.' },
+                { icon: '🏠', title: 'Student Comfort Planning', desc: 'Counselling and accommodation support reduce the stress of a high-commitment training phase and keep students focused on outcomes.' },
             ]}
 
             courses={[
