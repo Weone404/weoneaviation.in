@@ -283,6 +283,16 @@ export default function BecomeAPilotPage() {
                 </div>
             </section>
 
+            <section className="py-6 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <ScrollReveal>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                            If you are from the Northeast and want regional guidance, our Assam page lists local flying clubs, common exam-centre choices around Guwahati, and travel tips for students: <Link href="/pilot-training-in-assam" className="text-av-blue font-semibold hover:underline">Pilot Training in Assam</Link>.
+                        </p>
+                    </ScrollReveal>
+                </div>
+            </section>
+
             {/* ── Eligibility Requirements ── */}
             <section className="py-20 px-4">
                 <div className="max-w-7xl mx-auto">

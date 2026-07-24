@@ -17,7 +17,13 @@ export default function PilotTrainingTamilNadu() {
                 sub: 'World-class CPL, PPL & DGCA Ground Classes in Tamil Nadu with 100% Placement Assistance',
             }}
 
-            intro="Tamil Nadu is one of the most important student markets for pilot training in South India because families here often want a more reliable, decision-focused route into aviation. The question is rarely just 'Can I become a pilot?' — it is usually 'How do I manage DGCA preparation, compare the right course, and understand the real training timeline without getting lost in generic promises?' This Tamil Nadu page is written to answer that practical question more directly: better local relevance, clearer course pathway planning, and stronger emphasis on airline-readiness rather than generic city-page wording."
+            intro={`Tamil Nadu is a broad and varied training market — from Chennai’s international airport to smaller regional aerodromes in Coimbatore and Tiruchirappalli. Students here need planning that respects heavy urban commutes, exam-centre scheduling, and the practicalities of combining local study or work with serious flight training. This page delivers state-level, actionable guidance: where to find simulator sessions in Chennai and Coimbatore, how to arrange DGCA Pariksha travel from smaller towns, and smart scheduling to reduce missed classes due to travel delays.
+
+Local aviation footprint: Chennai International Airport (MAA) is the province’s major operational hub, while Coimbatore (CJB) and Tiruchirappalli (TRZ) are important for quieter flying windows and block training. Many students use Chennai for ground classes and simulate half-days in the city, then complete flying blocks at Coimbatore on long weekends to build hours more affordably.
+
+DGCA and logistics: Tamil Nadu candidates commonly face heavy road traffic en route to exam centres; plan DGCA exam-day travel with at least a 2–3 hour buffer for surface transport, and consider staying overnight near the exam venue if you travel from farther districts. This page includes directions to principal exam centres, recommended local hotels for short stays, and suggestions for pre-exam simulator checks.
+
+Student workflow: Recommended approach — cluster ground classes into 2–3 full days per week, book a simulator session the week before a scheduled DGCA paper, and plan one intensive flying block per month at a quieter aerodrome. We also include local scholarship pointers and real planning notes from recent Tamil Nadu batches so you can make a choice that’s both practical and cost-aware.`}
 
             features={[
                 { icon: '🏅', title: 'Strong South India Demand', desc: 'Tamil Nadu students and parents are looking for a long-term training roadmap that feels credible, realistic, and aligned with the pace of aviation job expectations.' },

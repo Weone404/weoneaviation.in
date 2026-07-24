@@ -379,6 +379,9 @@ export default function Home() {
                         <p className="text-gray-600 leading-relaxed mb-4">
                             Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in India is best for you — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy.
                         </p>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                            If you are training from central India, our Chhattisgarh guide covers local exam-centre directions, Raipur-specific travel tips, and suggestions for nearby satellite academies that accept external students: <Link href="/pilot-training-in-chhattisgarh" className="text-av-orange font-semibold hover:underline">Pilot Training in Chhattisgarh</Link>.
+                        </p>
                         <p className="text-gray-600 leading-relaxed mb-6">
                             With India's increasing population, the country will lead in airports and aircraft. This rapid growth creates a high demand for pilots — and we are here to train the next generation of aviation professionals.
                         </p>

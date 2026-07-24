@@ -17,7 +17,13 @@ export default function PilotTrainingAndhraPradesh() {
         sub: 'World-class CPL, PPL & DGCA Ground Classes in Andhra Pradesh with 100% Placement Assistance',
       }}
 
-      intro="Andhra Pradesh is an important pilot-training market because students here often seek a more grounded understanding of what the CPL journey actually requires: DGCA theory discipline, realistic time commitment, fee clarity, and a clear route into airline readiness. With Visakhapatnam acting as a relevant aviation anchor for the state, families want content that explains the progression from academic preparation to practical aviation confidence rather than simply repeating general training language. This Andhra Pradesh page is written to address that need more directly with stronger regional context and a more practical training mindset."
+      intro={`Andhra Pradesh's pilot training choices are shaped by its long coastline, varied terrain, and the presence of several regional exam centres — Visakhapatnam (VTZ) anchors the coastal pathway, while Tirupati and Vijayawada provide inland alternatives for quieter flying blocks. This page emphasises port-city conditions, coastal wind patterns, and practical choices for students who need to coordinate travel between home districts and exam centres.
+
+    State-specific training notes: Visakhapatnam's coastal location creates predictable early-morning calm and stronger sea breezes after midday; trainers often schedule cross-country work and navigation drills in the morning and simulator-focused RT work before afternoon wind shifts. Tirupati and Vijayawada offer calmer inland conditions useful for multi-day block bookings when students prefer lower crosswind exposure.
+
+    DGCA exam-centre guidance for Andhra students: in addition to listing exam-centre addresses and recommended travel windows, we call out festival-season travel advisories for districts that share exam schedules with other states. Practical tip: book travel to the exam venue at least one day earlier if you are crossing long distances from coastal or hill districts, and try a short simulator rehearsal within 48 hours of the paper to steady RT calls and emergency responses.
+
+    Student planning for Andhra candidates: many local students combine weekly ground classes at a nearby city with one intensive flying block every 4–6 weeks, prioritising simulator sessions for radio-telephony and instrument practice. We also include region-specific scholarship pointers, housing suggestions near exam venues, and batch notes from students who trained while managing inter-district travel.`}
 
       features={[
         { icon: '🏅', title: 'Region-Specific Career Planning', desc: 'Students from Andhra Pradesh can connect their pilot journey with practical goals around DGCA preparation, admission clarity, and the discipline needed for airline readiness.' },

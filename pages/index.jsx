@@ -954,6 +954,7 @@ export default function Home() {
                 </Link>
               ))}
             </div>
+            <p className="text-gray-500 text-sm mt-4">If you are in Karnataka and need city-level exam or simulator guidance, see our Bangalore guide with local booking tips and recommended providers: <Link href="/pilot-training-in-bangalore" className="text-av-blue font-semibold hover:underline">Pilot Training in Bangalore</Link>.</p>
           </div>
         </section>
 

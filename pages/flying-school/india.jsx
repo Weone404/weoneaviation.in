@@ -193,6 +193,9 @@ export default function IndiaPilotTrainingPage() {
                         <p className="text-gray-600 leading-relaxed mb-6">
                             With <strong>300+ flying days</strong> across major bases, modern fleets, and DGCA-approved FTOs, India provides everything you need to build a strong foundation as a commercial pilot.
                         </p>
+                        <p className="text-gray-600 leading-relaxed mb-6">
+                            For students based in Gujarat, our Gujarat guide provides practical advice on booking simulator sessions in Ahmedabad, arranging block-flying, and coordinating DGCA Pariksha travel: <Link href="/pilot-training-in-gujarat" className="text-av-orange font-semibold hover:underline">Pilot Training in Gujarat</Link>.
+                        </p>
                         <div className="bg-av-blue rounded-2xl p-5 text-white">
                             <p className="font-montserrat font-bold text-av-orange mb-1">Program Highlight</p>
                             <p className="text-white text-lg font-semibold">DGCA CPL + Multi-Engine Instrument Rating</p>

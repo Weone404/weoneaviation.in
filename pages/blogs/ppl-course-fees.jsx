@@ -184,6 +184,16 @@ export default function PPLPage() {
                 </div>
             </section>
 
+            <section className="py-8 px-4 bg-gray-50">
+                <div className="max-w-7xl mx-auto text-center">
+                    <ScrollReveal>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                            For students in Tamil Nadu exploring pilot courses, our regional guide explains how to book local simulators and where to schedule DGCA ground classes in Chennai and Coimbatore: <Link href="/pilot-training-in-tamil-nadu" className="text-av-orange font-semibold hover:underline">Pilot Training in Tamil Nadu</Link>.
+                        </p>
+                    </ScrollReveal>
+                </div>
+            </section>
+
             {/* ── Other Different Full Forms ── */}
             <section className="py-10 px-4 bg-gray-50">
                 <div className="max-w-7xl mx-auto">

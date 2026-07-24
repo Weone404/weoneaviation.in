@@ -254,6 +254,10 @@ export default function DGCAComputerNumber() {
                                 Whether you plan to become a commercial airline pilot, flight instructor, or airline transport pilot, obtaining this number is one of the earliest and most important milestones in your <Link href="/pilot-training-in-india" className="text-av-blue font-semibold hover:text-av-orange transition-colors">pilot training journey</Link>.
                             </p>
 
+                            <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                                Regional students in Andhra Pradesh: for local DGCA office directions, exam-centre travel advice, and suggested pre-exam checklist items specific to the state, see our Andhra Pradesh guidance at <Link href="/pilot-training-in-andhra-pradesh" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Pilot Training in Andhra Pradesh</Link>.
+                            </p>
+
                             {/* Why Important */}
                             <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">Why is a DGCA Computer Number Important?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-4">
