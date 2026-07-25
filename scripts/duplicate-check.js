@@ -31,6 +31,11 @@ function splitSentences(text) {
     .filter(Boolean);
 }
 
+function extractIntroText(input) {
+  const introMatch = input.match(/intro\s*=\s*\{?\s*`([\s\S]*?)`\s*\}/);
+  return introMatch ? introMatch[1] : input;
+}
+
 function getTextOverlap(a, b) {
   const sentencesA = splitSentences(a);
   const sentencesB = splitSentences(b);
@@ -45,8 +50,7 @@ function getTextOverlap(a, b) {
 
 const bodies = files.map((file) => {
   const input = fs.readFileSync(path.join(process.cwd(), file), 'utf8');
-  const match = input.match(/intro=\{?`?([\s\S]*?)`?\s*\}/);
-  const body = match ? match[1] : input;
+  const body = extractIntroText(input);
   return stripHtml(body);
 });
 

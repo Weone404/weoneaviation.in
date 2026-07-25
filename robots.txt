@@ -2,7 +2,7 @@
 # Last Updated: 2026-04-25
 # Purpose: Guide search engines and bots on crawling and indexing
 
-# ===== DEFAULT RULES FOR ALL BOTS =====
+# ===== DEFAULT RULES FOR ALL BOTS (includes Googlebot, Bingbot) =====
 User-agent: *
 Allow: /
 Disallow: /api/
@@ -17,20 +17,6 @@ Disallow: /package.json
 Disallow: /next.config.js
 Disallow: /*.json$
 Disallow: /*?*sort=
-
-# ===== GOOGLE SPECIFIC =====
-User-agent: Googlebot
-Allow: /
-Disallow: /api/
-Disallow: /_next/
-Disallow: /admin/
-
-# ===== BING/YAHOO =====
-User-agent: Bingbot
-Allow: /
-Disallow: /api/
-Disallow: /_next/
-Disallow: /admin/
 
 # ===== BLOCK AGGRESSIVE/HARMFUL BOTS =====
 User-agent: AhrefsBot
