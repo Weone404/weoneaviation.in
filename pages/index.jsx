@@ -440,6 +440,15 @@ export default function Home() {
         {/* HERO */}
         <HeroSlider />
 
+        <section className="bg-white py-4 px-4">
+          <div className="max-w-7xl mx-auto text-sm text-gray-600">
+            Explore local pilot training paths in{' '}
+            <Link href="/pilot-training-in-mumbai" className="text-av-blue hover:text-av-orange underline">Mumbai</Link>,{' '}
+            <Link href="/pilot-training-in-bangalore" className="text-av-blue hover:text-av-orange underline">Bangalore</Link>, and{' '}
+            <Link href="/pilot-training-in-chennai" className="text-av-blue hover:text-av-orange underline">Chennai</Link> for city-specific DGCA preparation and career guidance.
+          </div>
+        </section>
+
         {/* ──────────────────────────────────────────────────────────────────
             TAGLINE BANNER
             ✅ SEO FIX 6: Added <h1> here with the primary keyword.

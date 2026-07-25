@@ -221,6 +221,15 @@ export default function CoursesPage() {
         >
             <HeroSlider customSlides={heroSlides} />
 
+            <section className="bg-white py-4 px-4">
+                <div className="max-w-7xl mx-auto text-sm text-gray-600">
+                    Looking for a local training hub? Compare{' '}
+                    <Link href="/pilot-training-in-mumbai" className="text-av-blue hover:text-av-orange underline">pilot training in Mumbai</Link>,{' '}
+                    <Link href="/pilot-training-in-bangalore" className="text-av-blue hover:text-av-orange underline">pilot training in Bangalore</Link>, and{' '}
+                    <Link href="/pilot-training-in-chhattisgarh" className="text-av-blue hover:text-av-orange underline">pilot training in Chhattisgarh</Link> for location-specific advice and schedules.
+                </div>
+            </section>
+
             {/* ── H1 with Primary Keywords ── */}
             <div className="bg-av-orange py-4 text-center">
                 <h1 className="text-white font-bold text-xl px-4">
