@@ -649,7 +649,7 @@ export default function BecomeAPilotPage() {
 
                     <ScrollReveal>
                         <div className="bg-av-light border border-av-sky/20 rounded-2xl p-5 text-center">
-                            <Link href="/commercial-pilot-salary" className="text-av-blue font-semibold text-sm hover:text-av-orange transition-colors">
+                            <Link href="/commercial-pilot-license-salary" className="text-av-blue font-semibold text-sm hover:text-av-orange transition-colors">
                                 Know About Commercial Pilot Salary: Everything You Need to Know (Country Wise) →
                             </Link>
                         </div>

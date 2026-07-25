@@ -27,24 +27,14 @@ function collectPageRoutes(dir) {
 }
 
 const pageRoutes = [...new Set(collectPageRoutes(pagesDir))].sort();
-const sitemapSourcePath = path.join(root, 'sitemap.xml');
-const generatedSourcePath = path.join(root, '.generated-sitemap.xml');
-const sitemapText = fs.existsSync(sitemapSourcePath)
-  ? fs.readFileSync(sitemapSourcePath, 'utf8')
-  : fs.readFileSync(generatedSourcePath, 'utf8');
+const sitemapText = fs.readFileSync(path.join(root, 'pages', 'sitemap.xml.js'), 'utf8');
 const sitemapUrls = [...new Set(
-  [...sitemapText.matchAll(/<loc>(https?:\/\/(?:www\.)?weoneaviation\.in\/[^<]*)<\/loc>/gi)]
-    .map((match) => {
-      const pathname = new URL(match[1]).pathname;
-      return pathname === '/' ? '/' : pathname.replace(/\/$/, '');
-    })
+  [...sitemapText.matchAll(/loc\s*:\s*['\"]https:\/\/(?:www\.)?weoneaviation\.in([^'\"]*)['\"]/g)].map(m => m[1] === '' ? '/' : m[1])
 )].sort();
 
-const missing = pageRoutes.filter(r => !sitemapUrls.includes(r));
-const extra = sitemapUrls.filter(u => !pageRoutes.includes(u));
 console.log('PAGE_COUNT', pageRoutes.length);
 console.log('SITEMAP_COUNT', sitemapUrls.length);
 console.log('MISSING_IN_SITEMAP');
-missing.forEach(r => console.log(r));
+for (const r of pageRoutes.filter(r => !sitemapUrls.includes(r))) console.log(r);
 console.log('EXTRA_IN_SITEMAP');
-extra.forEach(u => console.log(u));
+for (const u of sitemapUrls.filter(u => !pageRoutes.includes(u))) console.log(u);

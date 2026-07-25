@@ -213,7 +213,7 @@ export default function PilotTrainingProgramsPage() {
                     </div>
 
                     <ScrollReveal className="text-center">
-                        <Link href="/eligibility" className="inline-block bg-av-blue text-white px-8 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm">
+                        <Link href="/commercial-pilot-license-eligibility" className="inline-block bg-av-blue text-white px-8 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm">
                             Check Full Eligibility →
                         </Link>
                     </ScrollReveal>
@@ -248,7 +248,7 @@ export default function PilotTrainingProgramsPage() {
                     </div>
 
                     <ScrollReveal className="text-center">
-                        <Link href="/syllabus" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
+                        <Link href="/commercial-pilot-license-syllabus" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
                             View Complete Syllabus →
                         </Link>
                     </ScrollReveal>

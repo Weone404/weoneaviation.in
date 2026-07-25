@@ -183,7 +183,7 @@ export default function HowToBecomeAPilotInIndiaPage() {
                                 <div className="text-5xl mb-4">✅</div>
                                 <p className="font-montserrat font-black text-white text-2xl mb-2">Are You Eligible?</p>
                                 <p className="text-white/70 text-sm leading-relaxed mb-5">Check all three requirements before taking the next step toward your pilot career.</p>
-                                <Link href="/cpl-eligibility" className="inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">
+                                <Link href="/commercial-pilot-license-eligibility" className="inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">
                                     Check Full Eligibility →
                                 </Link>
                             </div>

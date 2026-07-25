@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- HOMEPAGE - Highest Priority -->
   <url>
-    <loc>https://weoneaviation.in</loc>
+    <loc>https://www.weoneaviation.in</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -547,12 +547,6 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/your-guide-on-how-to-become-a-pilot-in-india</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://weoneaviation.in/Pilot-Course-&-Pilot-Training-in-india</loc>
     <lastmod>2026-04-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

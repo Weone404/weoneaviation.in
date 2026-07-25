@@ -98,14 +98,15 @@ const pages = [
 ];
 
 function getSitemapXml() {
-    // The build-time script at scripts/generate-sitemap.js reads the git history of
-    // each matching page file and writes public/sitemap.xml with real per-URL lastmod dates.
-    // Re-run it whenever the sitemap URL list changes, or whenever you want to refresh
-    // lastmod values from git history. It should be part of your build/deploy pipeline.
-    const sitemapPath = path.join(process.cwd(), '.generated-sitemap.xml');
+    const sitemapPath = path.join(process.cwd(), 'sitemap.xml');
 
     if (fs.existsSync(sitemapPath)) {
         return fs.readFileSync(sitemapPath, 'utf8');
+    }
+
+    const generatedPath = path.join(process.cwd(), '.generated-sitemap.xml');
+    if (fs.existsSync(generatedPath)) {
+        return fs.readFileSync(generatedPath, 'utf8');
     }
 
     return `<?xml version="1.0" encoding="UTF-8"?>
