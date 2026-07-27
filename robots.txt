@@ -6,7 +6,8 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /_next/
+Disallow: /_next/data/
+Allow: /_next/static/
 Disallow: /admin/
 Disallow: /private/
 Disallow: /.git/
