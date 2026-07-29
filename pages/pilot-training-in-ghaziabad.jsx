@@ -6,15 +6,15 @@ export default function PilotTrainingGhaziabad() {
             city="Ghaziabad"
 
             meta={{
-                title: 'Pilot Training Institute in Ghaziabad 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Best Pilot Training Institute in Ghaziabad. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
+                title: 'Pilot Training in Ghaziabad – CPL, PPL & DGCA | WeOne',
+                description: 'DGCA-approved pilot training for Ghaziabad students at WeOne Aviation: CPL, PPL & ground classes, scholarships and placement support.',
             }}
 
             hero={{
                 image: 'https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=1920&q=80',
                 tag: 'Pilot Training in Ghaziabad',
                 title: 'Pilot Training Institute in Ghaziabad – 2026',
-                sub: 'World-class CPL, PPL & DGCA Ground Classes in Ghaziabad with 100% Placement Assistance',
+                sub: 'World-class CPL, PPL & DGCA Ground Classes in Ghaziabad with Placement Assistance',
             }}
 
             intro="Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in Ghaziabad is best for you if you want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Ghaziabad is a strategically located city in the NCR region — with IGI Airport and the upcoming Jewar International Airport in close proximity — making it an excellent base for aspiring pilots, and we are here to train the next generation of aviation professionals."
@@ -24,7 +24,7 @@ export default function PilotTrainingGhaziabad() {
                 { icon: '👨‍✈️', title: 'Experienced & Certified Instructors', desc: 'Learn from the best — instructors who have real flying experience and have served as pilots in India.' },
                 { icon: '🛩️', title: 'Advanced Aircraft & Simulators', desc: 'Train on Cessna 172 Glass Cockpit aircraft with advanced avionics, plus high-tech flight simulators for safe, controlled practice before taking off.' },
                 { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof.' },
-                { icon: '🚀', title: 'Career Guidance & 100% Placement', desc: 'Our academy doesn\'t just train you — we help you launch your career. Graduates have joined major airlines, cargo operations, and private aviation companies worldwide.' },
+                { icon: '🚀', title: 'Career Guidance & Placement Assistance', desc: 'Our academy doesn\'t just train you — we help you launch your career. Graduates have joined major airlines, cargo operations, and private aviation companies worldwide.' },
                 { icon: '🎓', title: 'Full Scholarship Opportunities', desc: 'Flexible fees structure with scholarships granted for deserving candidates, making your aviation dream affordable.' },
                 { icon: '📖', title: 'Extra Guidance For Weak Students', desc: 'We give extra time and attention to students who need it, ensuring every student gets results fast.' },
                 { icon: '🏢', title: 'Prime International Airport Location', desc: 'Ghaziabad\'s proximity to IGI Airport and the upcoming Jewar International Airport gives you real-world aviation exposure and hands-on ATC experience.' },
@@ -165,7 +165,7 @@ export default function PilotTrainingGhaziabad() {
                 { q: 'How long does it take to complete pilot training in Ghaziabad?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months.' },
                 { q: 'What are the fees for pilot training in Ghaziabad?', a: 'The average fees for CPL training in Ghaziabad is INR 40–60 Lakh. This includes ground classes (INR 2-3 lakhs), 200 hours of flying (INR 35-55 lakhs), simulator training (INR 3-5 lakhs), and extra gear (INR 20-50 thousand). WeOne Aviation provides scholarship and flexible payment options.' },
                 { q: 'What is the eligibility to become a pilot in Ghaziabad?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
-                { q: 'Does WeOne Aviation provide placement assistance in Ghaziabad?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
+                { q: 'Does WeOne Aviation provide placement assistance in Ghaziabad?', a: 'Yes! We provide Placement Assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
                 { q: 'Can I get a scholarship for pilot training in Ghaziabad?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
                 { q: 'What career options are available after pilot training in Ghaziabad?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Ghaziabad\'s NCR location near IGI Airport and the upcoming Jewar International Airport creates excellent demand for trained pilots.' },
             ]}

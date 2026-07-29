@@ -160,8 +160,8 @@ const relatedBlogs = [
 export default function DGCAParikshaPage() {
     return (
         <Layout
-            title="DGCA Pariksha – Complete Guide 2025 | Eligibility, Syllabus, Exam Pattern"
-            description="Complete guide to DGCA Pariksha 2025. Learn about eligibility, syllabus, exam pattern, how to apply, computer number, DGCA WR office, preparation tips, and FAQs."
+            title="DGCA Pariksha – Eligibility, Syllabus & Pattern"
+            description="DGCA Pariksha guide: eligibility, syllabus, exam pattern, how to apply, computer number, DGCA WR office and preparation tips."
         >
 
             {/* ── Hero Banner ── */}

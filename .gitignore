@@ -1,5 +1,9 @@
 node_modules/
 .next/
 .env*
+
+# SEO audit artifacts — kept on disk, not tracked
+weoneaviation.in-audit/
+seo-metadata-changes.csv
 # Keep data directory but not the leads file (sensitive)
 # data/leads.xlsx

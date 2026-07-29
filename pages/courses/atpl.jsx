@@ -32,7 +32,7 @@ export default function ATPL() {
         <>
             <JsonLd data={atplCourseSchema} />
             <CoursePageTemplate
-                meta={{ title: 'ATPL Training in India | Airline Transport Pilot License | WeOne Aviation', description: 'ATPL training in India – the highest pilot certification. Become an airline captain with WeOne Aviation Academy. DGCA ATPL exam prep and guidance.' }}
+                meta={{ title: 'ATPL Course in India – Fees & Admission | WeOne Aviation', description: 'ATPL course in India at WeOne Aviation. Fees, eligibility, DGCA exam prep & captain-track pathway. Free career counselling.' }}
                 hero={{ image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1920&q=80', tag: 'Highest Pilot Certification', title: 'Airline Transport Pilot License (ATPL)', sub: 'The Pinnacle of Aviation – Command large commercial aircraft as Captain' }}
                 currentPath="/courses/atpl"
                 overview="The Airline Transport Pilot License (ATPL) is the highest level of pilot certification. It qualifies you to act as Pilot in Command (Captain) on commercial aircraft operations. Our ATPL prep program covers all 14 EASA/DGCA ATPL subjects and includes extensive simulator sessions on Boeing 737 and Airbus A320 type aircraft."

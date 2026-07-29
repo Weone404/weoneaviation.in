@@ -82,8 +82,8 @@ function AccentCard({ icon, title, desc }) {
 export default function IndiGoPilotPrep() {
     return (
         <Layout
-            title="IndiGo Pilot Interview Preparation JFO 2026 | We One Aviation Academy"
-            description="Crack the IndiGo Junior First Officer (JFO) selection process with We One Aviation's structured interview prep — ADAPT tests, Group Discussions, HR & Technical interviews for CPL holders and A320 Type Rated pilots."
+            title="IndiGo Pilot Interview Preparation (JFO) | WeOne"
+            description="Prepare for IndiGo Junior First Officer (JFO) selection: ADAPT tests, group discussion, HR and technical interviews. WeOne Aviation."
         >
             <HeroSlider customSlides={heroSlides} />
 

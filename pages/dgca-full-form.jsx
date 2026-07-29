@@ -294,8 +294,8 @@ function BulletList({ items, dark }) {
 export default function DGCAPage() {
     return (
         <Layout
-            title="DGCA Full Form: Meaning, Roles, Functions & Importance in Indian Aviation"
-            description="Learn the DGCA full form, its meaning, history, functions, responsibilities, and role in pilot licensing and aviation safety. Complete guide for aspiring pilots."
+            title="DGCA Full Form – Meaning, Roles & Functions"
+            description="DGCA full form, meaning, history and functions: its role in pilot licensing and aviation safety, explained for aspiring pilots."
         >
 
             {/* ── Hero Banner ── */}

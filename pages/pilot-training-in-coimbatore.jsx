@@ -6,15 +6,15 @@ export default function PilotTrainingCoimbatore() {
             city="Coimbatore"
 
             meta={{
-                title: 'Pilot Training Institute in Coimbatore 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Pilot training in Coimbatore with structured DGCA exam support, CPL and PPL course guidance, and practical counselling for students from Tamil Nadu seeking a focused aviation pathway.',
+                title: 'Pilot Training in Coimbatore – CPL, PPL & DGCA | WeOne',
+                description: 'DGCA-approved pilot training for Coimbatore students at WeOne Aviation: CPL, PPL & ground classes, scholarships and placement support.',
             }}
 
             hero={{
                 image: 'https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=1920&q=80',
                 tag: 'Pilot Training in Coimbatore',
                 title: 'Pilot Training Institute in Coimbatore – 2026',
-                sub: 'World-class CPL, PPL & DGCA Ground Classes in Coimbatore with 100% Placement Assistance',
+                sub: 'World-class CPL, PPL & DGCA Ground Classes in Coimbatore with Placement Assistance',
             }}
 
             intro={`Coimbatore's training appeal comes from its mix of calm aerodrome days and convenient city support — ideal for students who prefer concentrated flying blocks rather than frequent commutes. The Coimbatore civil aerodrome (CJB) and nearby satellite fields make it possible to plan multi-day hour-building visits, while the city's strong hospitality and transport links reduce accommodation friction for visiting students.
@@ -168,7 +168,7 @@ Student workflow we recommend here: cluster theory into intensive study days at 
                 { q: 'How long does it take to complete pilot training in Coimbatore?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months.' },
                 { q: 'What are the fees for pilot training in Coimbatore?', a: 'The average fees for CPL training in Coimbatore is INR 40–60 Lakh. This includes ground classes (INR 2-3 lakhs), 200 hours of flying (INR 35-55 lakhs), simulator training (INR 3-5 lakhs), and extra gear (INR 20-50 thousand). WeOne Aviation provides scholarship and flexible payment options.' },
                 { q: 'What is the eligibility to become a pilot in Coimbatore?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
-                { q: 'Does WeOne Aviation provide placement assistance in Coimbatore?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
+                { q: 'Does WeOne Aviation provide placement assistance in Coimbatore?', a: 'Yes! We provide Placement Assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
                 { q: 'Can I get a scholarship for pilot training in Coimbatore?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
                 { q: 'What career options are available after pilot training in Coimbatore?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Coimbatore\'s growing aviation sector in Tamil Nadu creates excellent demand for trained pilots.' },
             ]}

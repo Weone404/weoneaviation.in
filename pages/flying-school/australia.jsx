@@ -123,8 +123,8 @@ const fleet = [
 export default function AustraliaPilotTrainingPage() {
     return (
         <Layout
-            title="Pilot Training in Australia – Commercial Pilot License (CPL) | CASA Accredited | AviationGuide"
-            description="Explore Commercial Pilot Training in Australia with CASA-accredited academies, Diploma in Aviation, 221 flight hours, and easy DGCA licence conversion. Your complete guide to pilot training in Australia."
+            title="Pilot Training in Australia – CASA CPL | WeOne"
+            description="CASA-accredited commercial pilot training in Australia: Diploma in Aviation, 221 flight hours and easy DGCA licence conversion."
         >
 
             {/* ── Hero Banner ── */}

@@ -655,7 +655,7 @@ export default function WeOneAviationDashboard() {
                 </div>
             </main>
             <div style={{ marginLeft: 220, background: C.sidebar, padding: "16px 32px", display: "flex", justifyContent: "space-around" }}>
-                {[["📺", "120+", "Live Classes"], ["🎬", "500+", "Recorded Lectures"], ["👨‍🏫", "25+", "Expert Instructors"], ["👥", "10K+", "Students Trained"], ["🏆", "95%", "Success Rate"], ["🤖", "24/7", "Capt. Assistant"]].map(([icon, val, label]) => (
+                {[["📺", "120+", "Live Classes"], ["🎬", "500+", "Recorded Lectures"], ["👨‍🏫", "25+", "Expert Instructors"], ["👥", "10K+", "Students Trained"], ["🏆", "All 6", "DGCA Papers"], ["🤖", "24/7", "Capt. Assistant"]].map(([icon, val, label]) => (
                     <div key={label} style={{ textAlign: "center" }}>
                         <div style={{ fontSize: 16 }}>{icon}</div>
                         <div style={{ color: "#fff", fontWeight: 800, fontSize: 15 }}>{val}</div>

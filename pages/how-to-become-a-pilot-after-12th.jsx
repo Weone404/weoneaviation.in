@@ -143,8 +143,8 @@ const faqs = [
 export default function BecomeAPilotPage() {
     return (
         <Layout
-            title="How to Become a Pilot After 12th in India | Complete Guide 2026"
-            description="Learn how to become a pilot after 12th in India. Check eligibility, DGCA requirements, pilot training process, fees, duration, salary, and career opportunities with We One Aviation."
+            title="How to Become a Pilot After 12th in India"
+            description="How to become a pilot after 12th in India: eligibility, DGCA requirements, training process, fees, duration, salary and careers."
         >
 
             {/* ── Hero Banner ── */}

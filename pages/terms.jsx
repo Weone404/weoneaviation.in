@@ -70,7 +70,7 @@ const refundItems = [
 export default function TermsPage() {
     return (
         <Layout
-            title="Terms of Service – WeOne Aviation Academy | Enrollment, Fees & Policies"
+            title="Terms of Service | WeOne Aviation Academy"
             description="Read WeOne Aviation Academy's Terms of Service covering enrollment, fees, scholarship program, user conduct, refund policy, and governing law."
         >
 

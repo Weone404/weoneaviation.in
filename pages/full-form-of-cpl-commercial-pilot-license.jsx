@@ -129,8 +129,8 @@ const otherFields = [
 export default function CPLPage() {
     return (
         <Layout
-            title="CPL Full Form: Meaning in Aviation, Cricket, Marketing, and More – 2025"
-            description="CPL Full Form stands for different things in different fields. In Aviation CPL is Commercial Pilot License. Learn CPL full form in Cricket, Marketing, Defense, Law, Gaming, Technology and more."
+            title="CPL Full Form – Meaning in Aviation & More"
+            description="CPL full form: in aviation it is Commercial Pilot License. Also learn CPL meaning in cricket, marketing, defence, law and gaming."
         >
 
             {/* ── Hero Banner ── */}

@@ -292,8 +292,8 @@ export default function CompassPage() {
 
     return (
         <Layout
-            title="COMPASS Test – SpiceJet Cadet Pilot Programme Preparation 2025 | We One Aviation"
-            description="Complete guide to the COMPASS (Computerized Pilot Aptitude Screening System) test used by SpiceJet's Spice Star Academy. Modules, phases, preparation tips, practice questions and CCT guidance."
+            title="COMPASS Test Prep – SpiceJet Cadet | WeOne"
+            description="Prepare for the COMPASS pilot aptitude test used by SpiceJet's Spice Star Academy: modules, phases, practice questions and CCT guidance."
         >
 
             {/* ── Hero ── */}

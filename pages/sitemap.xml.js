@@ -11,7 +11,6 @@ const pages = [
     { loc: 'https://www.weoneaviation.in/privacy-policy', priority: '0.7', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/terms', priority: '0.7', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/courses/cpl', priority: '0.95', changefreq: 'monthly' },
-    { loc: 'https://www.weoneaviation.in/courses/ppl', priority: '0.9', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/courses/atpl', priority: '0.9', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/courses/dgca-ground-classes', priority: '0.95', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/courses/cpl-flight-training', priority: '0.9', changefreq: 'monthly' },
@@ -38,6 +37,8 @@ const pages = [
     { loc: 'https://www.weoneaviation.in/rtr-a', priority: '0.8', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/rtr-full-form-meaning-importance-and-complete-guide', priority: '0.8', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/ppl-full-form', priority: '0.75', changefreq: 'monthly' },
+    { loc: 'https://www.weoneaviation.in/cbse-full-form', priority: '0.5', changefreq: 'yearly' },
+    { loc: 'https://www.weoneaviation.in/icse-full-form', priority: '0.5', changefreq: 'yearly' },
     { loc: 'https://www.weoneaviation.in/flying-school/india', priority: '0.9', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/flying-school/usa', priority: '0.85', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/flying-school/canada', priority: '0.85', changefreq: 'monthly' },
@@ -58,13 +59,10 @@ const pages = [
     { loc: 'https://www.weoneaviation.in/qatar-airways-cadet-pilot-program', priority: '0.85', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/ecga-login-your-complete-guide', priority: '0.75', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/faqs', priority: '0.7', changefreq: 'monthly' },
-    { loc: 'https://www.weoneaviation.in/doubt', priority: '0.7', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/blogs', priority: '0.7', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/blogs/aviation-course-after-12th', priority: '0.7', changefreq: 'monthly' },
-    { loc: 'https://www.weoneaviation.in/blogs/cpl-full-form', priority: '0.7', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/blogs/dgca-exam-guide', priority: '0.7', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/blogs/pilot-training-delhi', priority: '0.7', changefreq: 'monthly' },
-    { loc: 'https://www.weoneaviation.in/blogs/ppl-course-fees', priority: '0.7', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/pilot-training-in-delhi', priority: '0.9', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/pilot-training-in-noida', priority: '0.85', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/pilot-training-in-ghaziabad', priority: '0.85', changefreq: 'monthly' },
@@ -94,7 +92,6 @@ const pages = [
     { loc: 'https://www.weoneaviation.in/pilot-training-in-india', priority: '0.95', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/private-pilot-license-ppl-course-details', priority: '0.8', changefreq: 'monthly' },
     { loc: 'https://www.weoneaviation.in/student-pilot-license-spl', priority: '0.8', changefreq: 'monthly' },
-    { loc: 'https://www.weoneaviation.in/advanced-atpl-pilot-training', priority: '0.8', changefreq: 'monthly' },
 ];
 
 function getSitemapXml() {

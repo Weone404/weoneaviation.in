@@ -27,7 +27,7 @@ import Head from 'next/head';
 export function CityPageTemplate({
     meta, hero, intro, features, courses, eligibility,
     career, syllabus, fees, howToChoose, whyWeOne,
-    usaBenefits, usaReasons, faqs, city,
+    usaBenefits, usaReasons, faqs, city, canonical,
 }) {
     // LocalBusiness schema tailored to the city page
     const localBusinessSchema = {
@@ -58,7 +58,7 @@ export function CityPageTemplate({
         })),
     };
     return (
-        <Layout title={meta.title} description={meta.description}>
+        <Layout title={meta.title} description={meta.description} canonical={canonical}>
 
             {/* ── HERO ── */}
             <Head>
@@ -96,7 +96,7 @@ export function CityPageTemplate({
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-6">{intro}</p>
                         <div className="flex flex-wrap gap-3 mb-6">
-                            {['DGCA Approved', '3000+ Pilots Trained', '100% Placement', 'Scholarship Available'].map(tag => (
+                            {['DGCA Approved', 'Pilots Trained Across India', 'Placement Assistance', 'Scholarship Available'].map(tag => (
                                 <span key={tag} className="bg-av-light text-av-blue text-xs font-semibold px-4 py-2 rounded-full border border-av-sky/20">✓ {tag}</span>
                             ))}
                         </div>
@@ -110,7 +110,7 @@ export function CityPageTemplate({
                                 <img src="/assets/GroundSchool.jpg" alt={`CPL pilot training in ${city} — We One Aviation Academy`} className="w-full h-80 object-cover" />
                             </div>
                             <div className="absolute -bottom-5 -left-5 bg-av-orange rounded-xl p-4 shadow-xl">
-                                <div className="font-montserrat text-white text-xl font-black">3000+</div>
+                                <div className="font-montserrat text-white text-xl font-black">Pan-India</div>
                                 <div className="text-white/80 text-xs">Pilots Trained</div>
                             </div>
                             <div className="absolute -top-5 -right-5 glass bg-av-blue rounded-xl p-4 shadow-xl border border-white/20">
@@ -131,7 +131,7 @@ export function CityPageTemplate({
                             Why Choose Our Pilot Training <span className="text-av-orange">Institute in {city}?</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-                            We Provide Premium Pilot Training With 100% Placement Assistance. We Have Trained Almost 3000+ Pilots In India.
+                            We Provide Premium Pilot Training With Placement Assistance. We Have Trained Pilots Across India.
                         </p>
                     </ScrollReveal>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -359,7 +359,7 @@ export function CityPageTemplate({
                                 ))}
                             </div>
                             <p className="text-white/70 text-center text-sm mb-6">
-                                We One Aviation is a Premier Aviation Academy which has trained 3000+ Pilots in India till 2025. We are the only institute who fulfils all your aviation needs under one roof.
+                                We One Aviation is a Premier Aviation Academy which has trained pilots across India. We are the only institute who fulfils all your aviation needs under one roof.
                             </p>
                             <div className="text-center">
                                 <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">

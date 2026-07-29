@@ -19,6 +19,8 @@ export default function DoubtPage() {
             <Head>
                 <title>Doubt Solver | DGCA Aviation</title>
                 <meta name="description" content="AI-powered DGCA aviation doubt solver" />
+                {/* Thin utility tool — keep out of the index (also excluded from sitemap). */}
+                <meta name="robots" content="noindex, follow" />
             </Head>
 
             <div style={styles.page}>

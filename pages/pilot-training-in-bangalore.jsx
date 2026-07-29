@@ -6,15 +6,15 @@ export default function PilotTrainingBangalore() {
             city="Bangalore"
 
             meta={{
-                title: 'Pilot Training Institute in Bangalore 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Pilot training in Bangalore with structured DGCA coaching, CPL and PPL pathways, and airport-focused aviation awareness for students and parents in Karnataka. Explore fees, scholarships, and placement support with WeOne Aviation.',
+                title: 'Pilot Training in Bangalore – CPL, PPL & DGCA | WeOne',
+                description: 'DGCA-approved pilot training for Bangalore students at WeOne Aviation: CPL, PPL & ground classes, scholarships and placement support.',
             }}
 
             hero={{
                 image: 'https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=1920&q=80',
                 tag: 'Pilot Training in Bangalore',
                 title: 'Pilot Training Institute in Bangalore – 2026',
-                sub: 'World-class CPL, PPL & DGCA Ground Classes in Bangalore with 100% Placement Assistance',
+                sub: 'World-class CPL, PPL & DGCA Ground Classes in Bangalore with Placement Assistance',
             }}
 
             intro="Bangalore is a very different student market from many other Indian cities because it combines a fast-moving academic culture, strong demand for career planning, and a clear connection to modern commercial aviation. With Kempegowda International Airport (BLR) serving as a natural reference point, many aspirants from Karnataka and neighbouring states want to understand how DGCA preparation, pilot career stages, and airline-facing professionalism fit together. This Bangalore page is written around that practical need: stronger airport context, clearer student support, and a more direct explanation of what it takes to move from theory into airline readiness.\n\nLocal context: BLR and nearby flying schools make simulator access and short flight practice days feasible for Bangalore students. We provide city-level recommendations for local clubs, DGCA exam-centre logistics in Karnataka, and tips on commuting and accommodation during short in-person assessments."
@@ -171,7 +171,7 @@ export default function PilotTrainingBangalore() {
                 { q: 'What is the nearest major airport relevant to pilot training in Bangalore?', a: 'Kempegowda International Airport (BLR) is the main aviation reference point for Bangalore-based training and airport-awareness discussions.' },
                 { q: 'What are the fees for pilot training in Bangalore?', a: 'The average fees for CPL training in Bangalore is INR 40–50 Lakh. This includes ground classes (INR 2-5 lakhs), 200 hours of flying (INR 35-45 lakhs), simulator training (INR 3-5 lakhs), and extra gear (INR 1-2 lakhs). WeOne Aviation provides scholarship and flexible payment options.' },
                 { q: 'What is the eligibility to become a pilot in Bangalore?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
-                { q: 'Does WeOne Aviation provide placement assistance in Bangalore?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
+                { q: 'Does WeOne Aviation provide placement assistance in Bangalore?', a: 'Yes! We provide Placement Assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
                 { q: 'Can I get a scholarship for pilot training in Bangalore?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
                 { q: 'What career options are available after pilot training in Bangalore?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Bangalore\'s thriving aviation and tech sector creates excellent demand for pilots.' },
             ]}

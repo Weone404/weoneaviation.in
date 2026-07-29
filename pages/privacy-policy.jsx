@@ -92,8 +92,8 @@ const userRights = [
 export default function PrivacyPolicyPage() {
     return (
         <Layout
-            title="Privacy Policy – WeOne Aviation Academy | Data Protection & User Rights"
-            description="Read WeOne Aviation Academy's Privacy Policy to understand how we collect, use, and protect your personal information when you visit weoneaviation.in."
+            title="Privacy Policy | WeOne Aviation Academy"
+            description="How WeOne Aviation Academy collects, uses and protects your personal information when you visit weoneaviation.in."
         >
 
             {/* ── Hero Banner ── */}

@@ -161,7 +161,7 @@ const careerOptions = [
 
 export default function CPL() {
     return (
-        <Layout title="CPL Course in India – Commercial Pilot License Training | WeOne Aviation" description="DGCA approved CPL training in India. Become a commercial pilot with WeOne Aviation Academy. Expert instructors, modern aircraft, 100% placement support.">
+        <Layout title="CPL Flight Training in India | WeOne Aviation" description="DGCA approved CPL training in India. Become a commercial pilot with WeOne Aviation Academy. Expert instructors, modern aircraft, Placement Assistance.">
             <JsonLd data={cplFlightTrainingCourseSchema} />
             <HeroSlider customSlides={heroSlides} />
 

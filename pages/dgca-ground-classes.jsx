@@ -35,7 +35,7 @@ const dgcaGroundCourseSchema = {
 };
 
 const heroSlides = [
-  { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Most Popular Course', title: 'DGCA Ground', highlight: 'Classes', sub: "India's best DGCA Ground Classes — delivering 100% results every year" },
+  { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Most Popular Course', title: 'DGCA Ground', highlight: 'Classes', sub: "India's best DGCA Ground Classes — delivering structured, exam-focused coaching" },
 ];
 
 const subjects = [
@@ -140,12 +140,12 @@ const eligibility = [
 
 const whyChoose = [
   { icon: '✅', title: 'Verified Instructors', desc: "Our All Instructors Are Already Pilot Those Really Help You in All Aviation Carrier. They Don't Only Teach You, They Share their Life experience of pilot with you and Give you Right Roadmap." },
-  { icon: '✅', title: '100% Dgca Exam Results', desc: 'We One Aviation Academy is the Only Academy in India Who give 100% Results Every Years in Dgca Exam. Most of our students clear their DGCA exam on the first attempt.' },
+  { icon: '✅', title: 'Focused DGCA Exam Coaching', desc: 'We One Aviation Academy provides structured, exam-focused DGCA coaching. Most of our students clear their DGCA exam on the first attempt.' },
   { icon: '✅', title: 'Latest Technology Classroom', desc: 'Our classrooms are equipped with modern technology that provides greater comfort for studying.' },
   { icon: '✅', title: '25% Scholarship Granted', desc: 'We Provide 25% Scholarship in Dgca Ground Classes To Every Students For Push Them Towards Their Dream of Pilot.' },
   { icon: '✅', title: 'Extra Class For Weak Students', desc: 'We provide extra classes for weak students to help them clear the DGCA exam quickly.' },
   { icon: '✅', title: 'Free Books and Notes', desc: 'We provide free books and notes to students, which help them a lot.' },
-  { icon: '✅', title: '100% Placement Support', desc: 'We will support you until you become a pilot.' },
+  { icon: '✅', title: 'Placement Assistance', desc: 'We will support you until you become a pilot.' },
   { icon: '✅', title: 'Free Classes Until You Clear', desc: 'We One Aviation Academy is the Only Institute Which Give Free Classes to everyone Till They not Clear Dgca Exam.' },
 ];
 
@@ -266,8 +266,8 @@ const faqSchema = generateFAQSchema([
 export default function DGCAGroundClasses() {
   return (
     <Layout
-      title="DGCA Ground Classes | Best Pilot Training Institute in India | WeOne Aviation"
-      description="India's best DGCA Ground Classes delivering 100% results every year. 3000+ pilots trained. CPL ground school covering all DGCA subjects. Join WeOne Aviation Academy."
+      title="Best DGCA Ground Classes in India | WeOne Aviation"
+      description="India's DGCA ground classes with structured, exam-focused preparation covering all six DGCA subjects. CPL ground school with experienced faculty."
     >
       <StructuredData data={[dgcaGroundCourseSchema, courseSchema, faqSchema]} />
       <HeroSlider customSlides={heroSlides} />
@@ -282,7 +282,7 @@ export default function DGCAGroundClasses() {
                 DGCA Ground Classes
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                India's best DGCA Ground Classes — delivering 100% results every year and having trained over 3,000 pilots across India.
+                India's best DGCA Ground Classes — delivering structured, exam-focused coaching and having trained pilots across India.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4 text-sm">
                 DGCA Ground Classes are where students prepare for the DGCA exams. It's similar to regular coaching institutes like IIT or MBBS coaching — the only difference is that here you'll master all DGCA subjects required to obtain a{' '}
@@ -511,7 +511,7 @@ export default function DGCAGroundClasses() {
                 Why Choose We One Aviation Academy For Dgca Ground Classes
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                We One Aviation Academy is Premier Pilot Training institute which Give You Flexibility in study and Fees Both. We are the only pilot training institute that delivers 100% results every year. There is More Reason for You to Join We One Aviation for Dgca Ground Classes.
+                We One Aviation Academy is Premier Pilot Training institute which Give You Flexibility in study and Fees Both. We are a pilot training institute focused on structured, exam-oriented DGCA coaching. There is More Reason for You to Join We One Aviation for Dgca Ground Classes.
               </p>
               <div className="space-y-3 mb-8">
                 {whyChoose.map((item) => (
@@ -528,7 +528,7 @@ export default function DGCAGroundClasses() {
               <div className="bg-av-blue rounded-2xl p-8 text-center mb-10">
                 <h3 className="font-montserrat text-xl font-bold text-white mb-3">Book Your Seat Now</h3>
                 <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-5">
-                  We One Aviation Academy is the Only Academy in India Who give 100% Results Every Years in Dgca Exam. Join us and take the first step toward the skies! ✈️
+                  We One Aviation Academy provides structured, exam-focused DGCA coaching. Join us and take the first step toward the skies! ✈️
                 </p>
                 <Link
                   href="/contact"

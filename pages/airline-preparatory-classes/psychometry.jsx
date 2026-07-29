@@ -300,8 +300,8 @@ export default function PsychometryPage() {
 
     return (
         <Layout
-            title="Pilot Psychometry Test Preparation – Airline Cadet Guide 2025 | We One Aviation"
-            description="Complete guide to pilot psychometry tests for SpiceJet, IndiGo, Air India, Emirates & Qatar Airways cadet programmes. Types of tests, preparation tips, practice questions and airline-wise details."
+            title="Pilot Psychometry Test Preparation | WeOne"
+            description="Prepare for pilot psychometry tests for SpiceJet, IndiGo, Air India, Emirates and Qatar cadet programmes: test types, tips and practice."
         >
 
             {/* ── Hero ── */}

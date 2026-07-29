@@ -15,7 +15,7 @@ const steps = [
 
 export default function After12th() {
   return (
-    <Layout title="How to Become a Pilot After 12th | Complete Guide 2024 | WeOne Aviation" description="Complete guide on how to become a pilot after 12th standard in India. Eligibility, DGCA exams, flying hours, costs, and career path explained step-by-step.">
+    <Layout title="How to Become a Pilot After 12th – Steps & Cost" description="Become a pilot after 12th in India: eligibility, DGCA exams, flying hours, costs and career path explained step by step.">
       {/* Hero */}
       <div className="relative h-72 overflow-hidden flex items-center justify-center pt-16"
         style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}>

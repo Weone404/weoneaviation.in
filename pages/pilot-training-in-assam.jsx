@@ -6,15 +6,15 @@ export default function PilotTrainingAssam() {
             city="Assam"
 
             meta={{
-                title: 'Pilot Training Institute in Assam 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Best Pilot Training Institute in Assam. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
+                title: 'Pilot Training in Assam – CPL, PPL & DGCA | WeOne',
+                description: 'DGCA-approved pilot training for Assam students at WeOne Aviation: CPL, PPL & ground classes, scholarships and placement support.',
             }}
 
             hero={{
                 image: 'https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=1920&q=80',
                 tag: 'Pilot Training in Assam',
                 title: 'Pilot Training Institute in Assam – 2026',
-                sub: 'World-class CPL, PPL & DGCA Ground Classes in Assam with 100% Placement Assistance',
+                sub: 'World-class CPL, PPL & DGCA Ground Classes in Assam with Placement Assistance',
             }}
 
             intro="Assam is an important state for Northeast India aviation aspirations because students here often need a more practical roadmap into pilot careers, not just a generic training promise. With Guwahati (GAU) acting as a natural aviation reference point for the region, many aspirants want guidance on how DGCA theory, scholarship planning, and airline-oriented career preparation fit together. This Assam page is written around that decision path: local relevance, clearer flight-path understanding, and a stronger explanation of how regionally available training and exam-centre logistics can help students from the Northeast move toward CPL readiness.\n\nLocal context: Guwahati (GAU) and nearby airstrips provide the primary access for practical flying sessions; we include recommended local flying clubs, DGCA exam office directions, and travel advice for students planning short visits to take mock tests or attend simulator sessions."

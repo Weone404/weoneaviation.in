@@ -137,8 +137,8 @@ function SidebarContact() {
 export default function AirIndiaPilotPreparation() {
     return (
         <Layout
-            title="Air India Pilot Interview Preparation 2026 | WeOne Aviation Academy"
-            description="Crack your Air India pilot selection process with We One Aviation. Structured preparation for CPL holders and Type Rated pilots covering ADAPT, GD, HR & technical interviews."
+            title="Air India Pilot Interview Preparation | WeOne"
+            description="Crack Air India pilot selection with WeOne Aviation: prep for ADAPT, GD, HR and technical interviews for CPL and type-rated pilots."
         >
             <HeroSlider customSlides={heroSlides} />
 
@@ -171,7 +171,7 @@ export default function AirIndiaPilotPreparation() {
                                         ['CPL & Type Rated', 'Who Can Join'],
                                         ['A320 / B737', 'Fleet Coverage'],
                                         ['2026', 'Batch Year'],
-                                        ['100%', 'Placement Focus'],
+                                        ['Yes', 'Placement Assistance'],
                                     ].map(([val, label]) => (
                                         <div key={label} className="bg-av-light rounded-xl p-3 sm:p-4 text-center">
                                             <div className="font-montserrat font-bold text-av-blue text-xs sm:text-sm leading-snug">{val}</div>

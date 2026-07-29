@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 const ReactQuill = dynamic(() => import('react-quill'), {
     ssr: false,
@@ -375,6 +376,11 @@ export default function AdminBlog() {
     // ════════════════════════════════════════════════════════════════════════
     return (
         <>
+            {/* Quill editor CSS: self-hosted and loaded only on this admin route
+                (react-quill is only used here). Do not move to _app/_document. */}
+            <Head>
+                <link rel="stylesheet" href="/vendor/quill.snow.css" />
+            </Head>
             <style dangerouslySetInnerHTML={{
                 __html: `
                     @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');

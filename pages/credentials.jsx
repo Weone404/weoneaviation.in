@@ -37,11 +37,11 @@ const credentials = [
     category: 'Training Statistics (Verified)',
     icon: '📊',
     items: [
-      { title: '3500+ Pilots Trained', detail: 'Source: DGCA-approved training records (2009-2024)', verified: true },
-      { title: '98% Success Rate', detail: 'Source: DGCA exam pass rate tracking (2019-2024)', verified: true },
-      { title: '16+ Years of Operation', detail: 'Founded 2009 - Continuous operation verified', verified: true },
+      { title: 'Pilots Trained Across India', detail: 'Source: DGCA-approved training records', verified: true },
+      { title: 'Structured DGCA Exam Preparation', detail: 'Comprehensive coaching across all six DGCA papers', verified: true },
+      { title: 'Serving Since 2011', detail: 'Continuous operation since 2011, verified', verified: true },
       { title: '25+ Partner Airlines', detail: 'Source: Official MOU agreements on file', verified: true },
-      { title: '100% Placement Support', detail: 'Documented placement outcomes available upon request', verified: true },
+      { title: 'Placement Assistance', detail: 'Documented placement outcomes available upon request', verified: true },
     ]
   },
   {
@@ -97,9 +97,8 @@ export default function CredentialsPage() {
       <Head>
         <title>Credentials & Verification – We One Aviation Academy</title>
         <meta name="description" content="Published credentials of We One Aviation Academy: DGCA accreditation, faculty qualifications with DGCA license numbers, verified training statistics, and international partnerships." />
-        <link rel="canonical" href="https://www.weoneaviation.in/credentials" />
         <meta property="og:title" content="Credentials & Verification – We One Aviation Academy" />
-        <meta property="og:description" content="Verified credentials: DGCA approval, 3500+ pilots trained, instructor qualifications, student testimonials with LinkedIn verification." />
+        <meta property="og:description" content="Verified credentials: DGCA approval, pilots trained across India, instructor qualifications, student testimonials with LinkedIn verification." />
         <meta property="og:url" content="https://www.weoneaviation.in/credentials" />
         <meta property="og:type" content="website" />
 

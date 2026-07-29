@@ -184,8 +184,8 @@ const howItWorks = [
 export default function SpiceJetCadetPage() {
     return (
         <Layout
-            title="SpiceJet Cadet Pilot Programme – Join Spice Star Academy | We One Aviation"
-            description="SpiceJet's Cadet Pilot Programme at Spice Star Academy — world-class pilot training with India's favourite airline. Eligibility, selection process, fee structure, scholarships and curriculum."
+            title="SpiceJet Cadet Pilot Programme | WeOne Aviation"
+            description="SpiceJet cadet pilot programme at Spice Star Academy: eligibility, selection process, fees, scholarships and curriculum explained."
         >
 
             {/* ── Hero Banner ── */}

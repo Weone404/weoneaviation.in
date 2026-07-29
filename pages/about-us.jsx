@@ -47,8 +47,8 @@ export default function About() {
 
   return (
     <Layout
-      title="About WeOne Aviation Academy | DGCA Approved Pilot Training Institute"
-      description="Learn about WeOne Aviation Academy - India's premier DGCA-approved pilot training institute with 15+ years of excellence and 500+ pilots trained."
+      title="About WeOne Aviation | DGCA-Approved Pilot Institute"
+      description="WeOne Aviation Academy – a DGCA-approved pilot training institute in Delhi since 2011 with international flying-school tie-ups."
     >
       <HeroSlider customSlides={heroSlides} />
 
@@ -65,18 +65,18 @@ export default function About() {
           <ScrollReveal delay={200}>
             <div className="section-tag">Our Story</div>
             <h2 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
-              15+ Years of Aviation Excellence
+              Aviation Excellence Since 2011
             </h2>
             <AutoInternalLinks currentPath="/about-us">
               <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                Founded in 2009, WeOne Aviation Academy started with a simple mission: to make quality pilot training accessible to every Indian aspiring to fly. From a small ground school in Delhi, we have grown into India's most respected aviation training institute.
+                Founded in 2011, WeOne Aviation Academy started with a simple mission: to make quality pilot training accessible to every Indian aspiring to fly. From a small ground school in Delhi, we have grown into India's most respected aviation training institute.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4 text-sm">
                 We are DGCA approved and have international tie-ups with partner flying schools in the USA (Florida), Canada (Ontario), Australia (Queensland), and Europe (Germany). Our integrated approach combines theoretical knowledge with practical flight training.
               </p>
             </AutoInternalLinks>
             <div className="grid grid-cols-3 gap-4 mt-6">
-              {[['500+', 'Pilots'], ['50+', 'Airlines'], ['98%', 'Pass Rate']].map(([num, label]) => (
+              {[['Pan-India', 'Pilots'], ['50+', 'Airlines'], ['All 6', 'DGCA Papers']].map(([num, label]) => (
                 <div key={label} className="text-center p-4 bg-av-light rounded-xl">
                   <div className="font-montserrat text-xl font-black text-av-orange">{num}</div>
                   <div className="text-av-blue text-xs font-medium">{label}</div>

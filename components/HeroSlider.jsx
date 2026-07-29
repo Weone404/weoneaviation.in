@@ -11,7 +11,7 @@ const slides = [
     title: 'Your Dream of Flying',
     alt: 'Professional pilot training facility at We One Aviation Academy with modern aircraft and DGCA-approved simulators for Commercial Pilot License courses',
     highlight: 'Starts Here',
-    sub: '• 3500+ Pilots Trained • International Tie-ups',
+    sub: '• Pilots Trained Across India • International Tie-ups',
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const slides = [
     title: 'Become an Airline',
     alt: 'Commercial pilot in cockpit - CPL training at We One Aviation Academy with airline partnership opportunities',
     highlight: 'Captain',
-    sub: 'Fast-track CPL programs with 100% placement support',
+    sub: 'Fast-track CPL programs with Placement Assistance',
   },
   {
     id: 3,
@@ -44,9 +44,9 @@ const slides = [
 
 // Moved outside component — stable reference, never causes re-renders
 const STATS = [
-  ['3500+', 'Pilots Trained'],
-  ['16+', 'Years Experience'],
-  ['100%', 'Placement Support'],
+  ['Pan-India', 'Pilots Trained'],
+  ['2011', 'Serving Since'],
+  ['Yes', 'Placement Assistance'],
 ];
 
 // Particle positions computed once, not on every render

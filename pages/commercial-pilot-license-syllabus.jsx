@@ -88,8 +88,8 @@ const flightModules = [
 export default function CPLSyllabusPage() {
     return (
         <Layout
-            title="Commercial Pilot License Syllabus – Complete CPL Syllabus 2025 | DGCA"
-            description="Explore the complete Commercial Pilot License (CPL) syllabus in India. Covers DGCA ground training subjects and flight training modules including Air Navigation, Meteorology, RTR, and more."
+            title="CPL Syllabus – DGCA Ground & Flight Training"
+            description="Complete CPL syllabus in India: DGCA ground subjects and flight training modules including Air Navigation, Meteorology, RTR and more."
         >
 
             {/* ── Hero Banner ── */}

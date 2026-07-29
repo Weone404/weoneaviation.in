@@ -52,8 +52,8 @@ const additionalBenefits = [
 export default function CPLSalaryPage() {
     return (
         <Layout
-            title="Commercial Pilot License Salary – 2025 | CPL Salary in India & Abroad"
-            description="Discover the Commercial Pilot License salary in 2025. Complete breakdown of CPL salary in India and abroad, entry-level to captain pay, salary factors, and additional benefits."
+            title="Commercial Pilot Salary in India & Abroad (2025)"
+            description="Commercial pilot (CPL) salary in 2025: India vs abroad, entry-level to captain pay, factors that affect earnings and added benefits."
         >
 
             {/* ── Hero Banner ── */}

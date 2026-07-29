@@ -6,15 +6,15 @@ export default function PilotTrainingMumbai() {
             city="Mumbai"
 
             meta={{
-                title: 'Pilot Training Institute in Mumbai 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Pilot training in Mumbai with airport-linked aviation awareness, DGCA ground classes, CPL and PPL guidance, and strong career mentoring for Maharashtra students preparing for airline-ready training.',
+                title: 'Pilot Training in Mumbai – CPL, PPL & DGCA | WeOne',
+                description: 'DGCA-approved pilot training for Mumbai students at WeOne Aviation: CPL, PPL & ground classes, scholarships and placement support.',
             }}
 
             hero={{
                 image: 'https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?w=1920&q=80',
                 tag: 'Pilot Training in Mumbai',
                 title: 'Pilot Training Institute in Mumbai – 2026',
-                sub: 'World-class CPL, PPL & DGCA Ground Classes in Mumbai since 2011 with 100% Placement Assistance',
+                sub: 'World-class CPL, PPL & DGCA Ground Classes in Mumbai since 2011 with Placement Assistance',
             }}
 
             intro={`Mumbai is a distinct training market: students here live with an international airport on their doorstep, a dense metropolitan commute, and an expectation that training must align with real airline rhythms. Instead of a generic city blurb, this Mumbai page focuses on the practical realities that matter for a trainee pilot from Maharashtra — how to access simulator time near the city, where to plan short flying days without taking long-distance travel, and how to arrange DGCA-related admin visits without losing study momentum.
@@ -170,7 +170,7 @@ Training pathways and local choices: students deciding between PPL and integrate
                 { q: 'What is the nearest major airport relevant to pilot training in Mumbai?', a: 'Chhatrapati Shivaji Maharaj International Airport (BOM) is the primary city reference for Mumbai-based airline operations and airport awareness during pilot preparation.' },
                 { q: 'What are the fees for pilot training in Mumbai?', a: 'The average fees for CPL training in Mumbai is INR 40–60 Lakh. This includes ground classes (INR 2-3 lakhs), 200 hours of flying (INR 35-55 lakhs), simulator training (INR 3-5 lakhs), and extra gear. WeOne Aviation provides scholarship and flexible payment options.' },
                 { q: 'What is the eligibility to become a pilot in Mumbai?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 Medical clearance, and English proficiency are required.' },
-                { q: 'Does WeOne Aviation provide placement assistance in Mumbai?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
+                { q: 'Does WeOne Aviation provide placement assistance in Mumbai?', a: 'Yes! We provide Placement Assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
                 { q: 'Can I get a scholarship for pilot training in Mumbai?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance.' },
                 { q: 'What career options are available after pilot training in Mumbai?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Mumbai\'s booming aviation sector offers excellent opportunities.' },
             ]}

@@ -113,7 +113,7 @@ export default function EGCALoginPage() {
     return (
         <Layout
             title="eGCA Login: Your Complete Guide – 2025 | DGCA Portal"
-            description="Complete guide to eGCA login in 2025. Learn what the eGCA portal is, how to register, login steps, dashboard features, tips, and common issues for aviation professionals in India."
+            description="eGCA login guide: what the eGCA portal is, how to register, login steps, dashboard features and common issues for pilots in India."
         >
 
             {/* ── Hero Banner ── */}

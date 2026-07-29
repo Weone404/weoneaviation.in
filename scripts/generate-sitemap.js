@@ -4,7 +4,7 @@ const { execFileSync } = require('child_process');
 
 const rootDir = path.resolve(__dirname, '..');
 const sitemapSourcePath = path.join(rootDir, 'pages', 'sitemap.xml.js');
-const outputPath = path.join(rootDir, '.generated-sitemap.xml');
+const outputPath = path.join(rootDir, 'sitemap.xml');
 
 function extractPagesArray() {
   const source = fs.readFileSync(sitemapSourcePath, 'utf8');

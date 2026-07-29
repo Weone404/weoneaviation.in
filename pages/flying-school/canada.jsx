@@ -69,8 +69,8 @@ const syllabus = [
 export default function PilotTrainingProgramsPage() {
     return (
         <Layout
-            title="Pilot Training Programs – CPL & PPL in India | DGCA Approved | AviationGuide"
-            description="Explore DGCA-approved Commercial Pilot License (CPL) and Private Pilot License (PPL) training programs in India. Compare duration, cost, flying hours, eligibility, and syllabus."
+            title="Pilot Training in Canada – CPL & PPL | WeOne"
+            description="Commercial pilot training in Canada with WeOne Aviation: CPL and PPL pathway, flight hours, eligibility and DGCA conversion guidance."
         >
 
             {/* ── Hero Banner ── */}

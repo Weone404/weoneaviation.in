@@ -17,7 +17,7 @@ const heroSlides = [
 ];
 
 const stats = [
-    { num: '500+', label: 'Students Trained', icon: '🎓' },
+    { num: 'Pan-India', label: 'Students Trained', icon: '🎓' },
     { num: '3', label: 'Training Countries', icon: '🌍' },
     { num: '100%', label: 'DGCA Approved', icon: '✅' },
     { num: '₹1.5L+', label: 'Avg Starting Salary/mo', icon: '💰' },
@@ -197,7 +197,7 @@ const whyWeOne = [
     { icon: '🏛️', title: 'DGCA Approved', desc: 'All our programs are fully approved and regulated by DGCA, ensuring your license is valid nationwide.' },
     { icon: '🌍', title: 'International Training', desc: 'We offer flight training in USA and South Africa for global exposure and FAA / SACAA certification.' },
     { icon: '👨‍✈️', title: 'Expert Instructors', desc: 'Learn from experienced commercial pilots and DGCA-certified ground instructors.' },
-    { icon: '📈', title: 'Placement Support', desc: '100% placement assistance with airline interview prep and career counselling.' },
+    { icon: '📈', title: 'Placement Support', desc: 'Placement Assistance with airline interview prep and career counselling.' },
     { icon: '💸', title: 'Budget Friendly', desc: 'Affordable ground classes starting at ₹2 Lakh. Scholarship available for class toppers.' },
     { icon: '🏥', title: 'Medical Assistance', desc: 'We assist with DGCA Class 1 & Class 2 medical tests through our approved network.' },
 ];
@@ -216,8 +216,8 @@ const careerOptions = [
 export default function CoursesPage() {
     return (
         <Layout
-            title="Pilot Training Courses – CPL, PPL, DGCA Ground Classes & International Flying | WeOne Aviation"
-            description="Explore all pilot training courses at WeOne Aviation Academy – DGCA approved CPL, PPL, ground classes, and international flight training in USA & South Africa."
+            title="Pilot Training Courses – CPL, PPL & DGCA Classes"
+            description="Explore WeOne Aviation's DGCA-approved pilot training: CPL, PPL, ground classes and international flight training in the USA and abroad."
         >
             <HeroSlider customSlides={heroSlides} />
 

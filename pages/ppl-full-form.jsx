@@ -256,8 +256,8 @@ function BulletList({ items, dark = false }) {
 export default function PPLPage() {
     return (
         <Layout
-            title="PPL Full Form: Meaning, Eligibility, Course & Career Guide"
-            description="Discover the PPL full form, eligibility, training process, flying hours, privileges, limitations, fees, and career opportunities. Learn everything about a Private Pilot Licence in India."
+            title="PPL Full Form – Meaning, Eligibility & Career"
+            description="PPL full form and Private Pilot Licence guide: eligibility, training, flying hours, privileges, fees and career options in India."
         >
 
             {/* ── Hero Banner ── */}

@@ -21,9 +21,9 @@ const testimonials = [
 ];
 
 const stats = [
-    { num: '500+', label: 'Pilots Trained', icon: '👨‍✈️' },
-    { num: '15+', label: 'Years of Excellence', icon: '🏆' },
-    { num: '98%', label: 'Success Rate', icon: '📈' },
+    { num: 'Pan-India', label: 'Pilots Trained', icon: '👨‍✈️' },
+    { num: '2011', label: 'Serving Since', icon: '🏆' },
+    { num: 'All 6', label: 'DGCA Papers Covered', icon: '📈' },
     { num: '50+', label: 'Partner Airlines', icon: '✈️' },
 ];
 
@@ -90,7 +90,7 @@ const flyingSchools = [
         course: 'FAA CPL & ATPL Training',
         duration: '12-14 months',
         fees: '$80,000 - $100,000',
-        highlights: 'Largest flight training network in the USA, guaranteed instructor job opportunities',
+        highlights: 'Largest flight training network in the USA, with instructor job opportunities after certification',
         href: '/flying-school/usa',
     },
     {
@@ -226,7 +226,7 @@ const instituteFeatures = [
     { icon: '👨‍✈️', title: 'Experienced & Certified Instructors', desc: 'Learn from the best — instructors who have real flying experience and have served as pilots in India.' },
     { icon: '🛩️', title: 'Advanced Aircraft & Simulators', desc: 'Train on Cessna 172 Glass Cockpit aircraft with advanced avionics, plus high-tech flight simulators for safe, controlled practice.' },
     { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof.' },
-    { icon: '🚀', title: '100% Placement Assistance', desc: 'Strong industry connections help graduates join major airlines, cargo operations, and private aviation worldwide.' },
+    { icon: '🚀', title: 'Placement Assistance', desc: 'Strong industry connections help graduates join major airlines, cargo operations, and private aviation worldwide.' },
     { icon: '🎓', title: 'Full Scholarship Opportunities', desc: 'Flexible fees structure with scholarships granted for deserving candidates, making your aviation dream affordable.' },
     { icon: '📖', title: 'Extra Guidance For Weak Students', desc: 'We give extra time and attention to students who need it, ensuring every student gets results fast.' },
     { icon: '🏢', title: 'Prime International Airport Location', desc: 'Training at an international airport gives you real-world flying experience, ATC exposure, and a smooth transition into airline jobs.' },
@@ -335,7 +335,7 @@ const usaReasons = [
 
 export default function Home() {
     return (
-        <Layout title="WeOne Aviation Academy | Best Pilot Training Institute in India" description="India's premier DGCA-approved aviation training academy. CPL, PPL, ATPL, SPL courses. 500+ pilots trained. Free career counselling available.">
+        <Layout title="Best Pilot Training Institute in India | WeOne" description="India's premier DGCA-approved aviation training academy. CPL, PPL, ATPL, SPL courses. Trusted by aspiring pilots across India. Free career counselling.">
             {/* Hero */}
             <HeroSlider />
 
@@ -361,7 +361,7 @@ export default function Home() {
                     ))}
                 </div>
                 <div className="text-center mt-4">
-                    <span className="text-white/80 text-sm font-semibold">We Deliver 3000+ Pilots To India Since 2011</span>
+                    <span className="text-white/80 text-sm font-semibold">We Train Pilots Across India Since 2011</span>
                 </div>
                 <div className="text-center mt-1">
                     <span className="text-av-orange text-sm font-semibold">Clear Your Dgca Exam In First Attempt With We One Aviation Academy</span>
@@ -386,7 +386,7 @@ export default function Home() {
                             With India's increasing population, the country will lead in airports and aircraft. This rapid growth creates a high demand for pilots — and we are here to train the next generation of aviation professionals.
                         </p>
                         <div className="flex flex-wrap gap-3 mb-6">
-                            {['DGCA Approved', '3000+ Pilots Trained', '100% Placement', 'Scholarship Available'].map(tag => (
+                            {['DGCA Approved', 'Pilots Trained Across India', 'Placement Assistance', 'Scholarship Available'].map(tag => (
                                 <span key={tag} className="bg-av-light text-av-blue text-xs font-semibold px-4 py-2 rounded-full border border-av-sky/20">
                                     ✓ {tag}
                                 </span>
@@ -403,7 +403,7 @@ export default function Home() {
                                 <img src="/assets/GroundSchool.jpg" alt="Pilot in cockpit training" className="w-full h-80 object-cover" />
                             </div>
                             <div className="absolute -bottom-5 -left-5 bg-av-orange rounded-xl p-4 shadow-xl">
-                                <div className="font-montserrat text-white text-xl font-black">3000+</div>
+                                <div className="font-montserrat text-white text-xl font-black">Pan-India</div>
                                 <div className="text-white/80 text-xs">Pilots Trained</div>
                             </div>
                             <div className="absolute -top-5 -right-5 glass bg-av-blue rounded-xl p-4 shadow-xl border border-white/20">
@@ -424,7 +424,7 @@ export default function Home() {
                             Why Choose Our Pilot Training <span className="text-av-orange">Institute in India?</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-                            We Provide Premium Pilot Training With 100% Placement Assistance. We Have Trained Almost 3000+ Pilots In India.
+                            We Provide Premium Pilot Training With Placement Assistance. We Have Trained Pilots Across India.
                         </p>
                     </ScrollReveal>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -673,7 +673,7 @@ export default function Home() {
                                 ))}
                             </div>
                             <p className="text-white/70 text-center text-sm mb-6">
-                                We One Aviation is a Premier Aviation Academy which has trained 3000+ Pilots in India till 2026. We are the only institute who fulfils all your aviation needs under one roof.
+                                We One Aviation is a Premier Aviation Academy which has trained pilots across India. We are the only institute who fulfils all your aviation needs under one roof.
                             </p>
                             <div className="text-center">
                                 <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
@@ -844,7 +844,7 @@ export default function Home() {
                 <div className="max-w-7xl mx-auto mt-12">
                     <ScrollReveal className="bg-av-blue rounded-2xl p-8 text-center">
                         <h3 className="font-montserrat text-2xl font-bold text-white mb-3">Enroll in Flying School</h3>
-                        <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">At Our Flying School, we train future pilots with state-of-the-art aircraft, expert instructors, and guaranteed career guidance.</p>
+                        <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">At Our Flying School, we train future pilots with state-of-the-art aircraft, expert instructors, and dedicated career guidance.</p>
                         <Link href="/flying-school" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">Learn More</Link>
                     </ScrollReveal>
                 </div>
@@ -868,7 +868,7 @@ export default function Home() {
                             { icon: '✅', title: 'DGCA-Approved Training Programs', desc: 'Our courses meet all regulatory requirements to ensure a smooth path to becoming a professional pilot.' },
                             { icon: '✅', title: 'Experienced Instructors & Mentors', desc: 'Learn from seasoned airline pilots and aviation experts who provide hands-on guidance.' },
                             { icon: '✅', title: 'State-of-the-Art Training Facilities', desc: 'Get trained with modern simulators, advanced flight training devices, and real aircraft for a world-class experience.' },
-                            { icon: '✅', title: '100% Placement Assistance', desc: 'We help students secure jobs in leading airlines through industry connections and career support.' },
+                            { icon: '✅', title: 'Placement Assistance', desc: 'We help students secure jobs in leading airlines through industry connections and career support.' },
                             { icon: '✅', title: 'Comprehensive CPL & DGCA Ground Classes', desc: 'Structured curriculum covering Air Navigation, Meteorology, Air Regulations, and Technical subjects.' },
                             { icon: '✅', title: 'Flexible Payment & Loan Options', desc: 'Making your dream of becoming a pilot financially accessible with easy EMI and loan assistance.' },
                             { icon: '✅', title: 'Personalized Learning Approach', desc: 'Small batch sizes, doubt-clearing sessions, and one-on-one mentorship to ensure better understanding.' },
@@ -908,7 +908,7 @@ export default function Home() {
                             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
                                 <h3 className="font-montserrat text-xl font-bold text-av-blue mb-4">Dgca Ground Classes</h3>
                                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                                    We one Aviation Academy is Oldest Pilot Training Institute. Which Gives 100% Results Every Years Since 2011. If Your Dream To Be a Pilot Then We One Aviation Academy is Best Institute Which Give Advance Training With So Many Flexibilites Of Timing and Fees.
+                                    We one Aviation Academy is a Trusted Pilot Training Institute. Which Provides Structured, Exam-Focused DGCA Preparation Since 2011. If Your Dream To Be a Pilot Then We One Aviation Academy is Best Institute Which Give Advance Training With So Many Flexibilites Of Timing and Fees.
                                 </p>
                                 <Link href="/contact" className="inline-block bg-av-blue text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">Enquiry Now</Link>
                             </div>
@@ -917,7 +917,7 @@ export default function Home() {
                             <div className="bg-av-blue rounded-2xl shadow-lg p-8">
                                 <h3 className="font-montserrat text-xl font-bold text-white mb-4">Our Flying School</h3>
                                 <p className="text-white/70 text-sm leading-relaxed mb-6">
-                                    We Provide Flight Training From 20+ Countries. We Almost Provide Flight Training to 3000+ Students Across India. If You Wants To do Flight Training From Any Country Then You Can Contact Us. After Clear Dgca Exam You Can Apply Flight Training. All Institute Provide 200 Hours of Flying But We Provide You 250+ Hours of Flying.
+                                    We Provide Flight Training From 20+ Countries. We Provide Flight Training to Students Across India. If You Wants To do Flight Training From Any Country Then You Can Contact Us. After Clear Dgca Exam You Can Apply Flight Training. All Institute Provide 200 Hours of Flying But We Provide You 250+ Hours of Flying.
                                 </p>
                                 <Link href="/contact" className="inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">Enquiry Now</Link>
                             </div>

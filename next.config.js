@@ -52,6 +52,31 @@ const nextConfig = {
         destination: '/about-us',
         permanent: true,
       },
+      // ── Consolidate duplicate/cannibalizing pages (308 permanent) ──────────
+      // These served content identical to their canonical target; redirecting
+      // resolves the CPL/PPL/ATPL cannibalization instead of just re-titling.
+      {
+        source: '/advanced-atpl-pilot-training',
+        destination: '/courses/atpl',
+        permanent: true,
+      },
+      {
+        source: '/blogs/cpl-full-form',
+        destination: '/courses/cpl',
+        permanent: true,
+      },
+      {
+        source: '/blogs/ppl-course-fees',
+        destination: '/ppl-full-form',
+        permanent: true,
+      },
+      {
+        // /courses/ppl mistakenly served "PPL full form" content, not a course.
+        // The real PPL course page already exists at the destination.
+        source: '/courses/ppl',
+        destination: '/private-pilot-license-ppl-course-details',
+        permanent: true,
+      },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'weoneaviation.in' }],
@@ -131,7 +156,6 @@ const nextConfig = {
 
               "style-src 'self' 'unsafe-inline'" +
               ' https://fonts.googleapis.com' +
-              ' https://unpkg.com' +
               ' https://www.googletagmanager.com',
 
               "font-src 'self' data: https://fonts.gstatic.com",

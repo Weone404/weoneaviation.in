@@ -86,7 +86,7 @@ const mplVsAtpl = [
     { aspect: 'Licence Awarded', mpl: 'MPL(A) + Validated ATPL', atpl: 'CPL + ATPL (separate)' },
     { aspect: 'Flying Hours', mpl: '1500 hours with partner airline', atpl: '200 hrs (CPL) + build-up independently' },
     { aspect: 'Aircraft Type', mpl: 'Specific to partner airline fleet', atpl: 'Single engine → Multi engine progression' },
-    { aspect: 'Job Guarantee', mpl: 'With partner airline (Air Arabia)', atpl: 'Self-sourced after training' },
+    { aspect: 'Airline Pathway', mpl: 'Airline-integrated route with partner airline (Air Arabia)', atpl: 'Self-sourced after training' },
     { aspect: 'Duration', mpl: '22–24 months', atpl: '24–36 months (variable)' },
     { aspect: 'Training Focus', mpl: 'MCC & CRM from day one', atpl: 'Single pilot operations first' },
 ];
@@ -127,8 +127,8 @@ const faqs = [
 export default function AirArabiaMPLPage() {
     return (
         <Layout
-            title="Air Arabia Airline Pilot Training Programme (MPL) – Complete Guide | We One Aviation"
-            description="Air Arabia's MPL Airline Pilot Training Programme — 22–24 months, MPL(A) + ATPL, 1500 flying hours. Eligibility, entry assessments, application requirements and how to apply guide for Indian candidates."
+            title="Air Arabia MPL Cadet Pilot Programme | WeOne"
+            description="Air Arabia MPL cadet pilot programme: 22–24 months, MPL(A)+ATPL, 1500 hours. Eligibility, assessments and how to apply. WeOne Aviation."
         >
 
             {/* ── Hero ── */}

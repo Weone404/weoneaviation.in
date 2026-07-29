@@ -479,8 +479,8 @@ export default function DGCAGroundClassesPage() {
 
     return (
         <Layout
-            title="DGCA Ground Classes in India | Expert CPL Coaching & Training"
-            description="Join DGCA Ground Classes at We One Aviation. Learn Air Regulations, Navigation, Meteorology & Technical subjects with expert instructors, mock tests, and CPL exam preparation."
+            title="DGCA Ground Classes in India | WeOne Aviation"
+            description="DGCA ground classes at WeOne Aviation: Air Regulations, Navigation, Meteorology and Technical with expert instructors and CPL exam prep."
         >
 
             {/* ── Hero Banner ── */}

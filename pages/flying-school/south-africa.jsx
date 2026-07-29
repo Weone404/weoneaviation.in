@@ -138,8 +138,8 @@ const fleet = [
 export default function SouthAfricaPilotTrainingPage() {
     return (
         <Layout
-            title="Commercial Pilot Training in South Africa – SACAA CPL with MEIR | AviationGuide"
-            description="Explore Commercial Pilot Training in South Africa with SACAA-approved FTOs, 200-210 flight hours, CPL-MEIR program, and easy DGCA conversion. Cost-effective training with 300+ flying days."
+            title="Pilot Training in South Africa – SACAA CPL | WeOne"
+            description="SACAA-approved commercial pilot training in South Africa: 200–210 flight hours, CPL-MEIR and easy DGCA conversion. Cost-effective."
         >
 
             {/* ── Hero Banner ── */}

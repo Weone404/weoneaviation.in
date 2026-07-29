@@ -253,8 +253,8 @@ export default function InterviewPreparationPage() {
 
     return (
         <Layout
-            title="Airline Pilot Interview Preparation – Complete Guide 2025 | We One Aviation"
-            description="Master your airline pilot interview with We One Aviation's complete preparation guide. STAR method, airline-specific questions, body language tips, mock interview coaching for SpiceJet, IndiGo, Air India, Emirates & Qatar Airways."
+            title="Airline Pilot Interview Preparation | WeOne"
+            description="Master your airline pilot interview: STAR method, airline-specific questions and mock coaching for IndiGo, Air India, Emirates and Qatar."
         >
 
             {/* ── Hero ── */}

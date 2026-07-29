@@ -68,11 +68,6 @@ export default function Document() {
 
         <StructuredData data={[organizationSchema, websiteSchema]} />
 
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/react-quill@2.0.0/dist/quill.snow.css"
-        />
-
         <Script
           id="gtm-script"
           strategy="afterInteractive"

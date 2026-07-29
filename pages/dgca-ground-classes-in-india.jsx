@@ -13,15 +13,15 @@ const heroSlides = [
         tag: 'Pan-India DGCA Coaching',
         title: 'DGCA Ground Classes',
         highlight: 'in India',
-        sub: "From Kashmir to Kanyakumari — India's #1 DGCA Ground Classes with 100% exam results, every year",
+        sub: "From Kashmir to Kanyakumari — India's #1 DGCA Ground Classes with structured, exam-focused coaching",
     },
 ];
 
 const quickStats = [
-    { val: '3,000+', label: 'Pilots Trained Across India' },
+    { val: 'Pan-India', label: 'Pilots Trained' },
     { val: '6 Months', label: 'Full DGCA Syllabus' },
     { val: '28 States', label: 'Pan-India Reach' },
-    { val: '100%', label: 'DGCA Pass Rate' },
+    { val: 'All 6', label: 'DGCA Papers Covered' },
     { val: '25%', label: 'Scholarship for All' },
     { val: '6 Papers', label: 'DGCA India Exam' },
 ];
@@ -97,8 +97,8 @@ const eligibility = [
 const whyUs = [
     {
         icon: '🏆',
-        title: 'Only Institute in India with 100% Results',
-        desc: "We One Aviation Academy is the only DGCA coaching institute in India delivering 100% pass results every year. Most students clear all 6 papers on the first attempt.",
+        title: 'Focused DGCA Exam Preparation',
+        desc: "We One Aviation Academy delivers structured, exam-focused DGCA coaching. Most students clear all 6 papers on the first attempt.",
     },
     {
         icon: '👨‍✈️',
@@ -123,7 +123,7 @@ const whyUs = [
     {
         icon: '🔁',
         title: 'Free Repeat Classes Until You Clear',
-        desc: "If you don't clear a DGCA paper, we give you free repeat classes until you do. No extra fees, ever — because your success is our guarantee.",
+        desc: "If you don't clear a DGCA paper, we give you free repeat classes until you do. No extra fees, ever — because your success is our priority.",
     },
     {
         icon: '📝',
@@ -132,7 +132,7 @@ const whyUs = [
     },
     {
         icon: '✈️',
-        title: '100% Placement Support for Indian Airlines',
+        title: 'Placement Assistance for Indian Airlines',
         desc: 'From your first DGCA paper to your first job at IndiGo, Air India, or Akasa Air — our placement team supports you all the way.',
     },
 ];
@@ -212,8 +212,8 @@ const blogs = [
 export default function DGCAGroundClassesInIndia() {
     return (
         <Layout
-            title="DGCA Ground Classes in India | #1 Pilot Coaching — All States | WeOne Aviation"
-            description="Best DGCA Ground Classes in India — 100% pass rate, 3000+ pilots trained across all 28 states. Online & offline CPL ground coaching covering all 6 DGCA subjects. 25% scholarship available. Join WeOne Aviation Academy."
+            title="DGCA Ground Classes in India – All States | WeOne"
+            description="DGCA ground classes across India: structured, exam-focused preparation with online and offline CPL coaching on all six DGCA subjects."
         >
             <HeroSlider customSlides={heroSlides} />
 
@@ -231,7 +231,7 @@ export default function DGCAGroundClassesInIndia() {
                                     DGCA Ground Classes in India
                                 </h1>
                                 <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                                    Looking for the best <strong>DGCA Ground Classes in India</strong>? We One Aviation Academy is India's #1 DGCA coaching institute — delivering <strong>100% exam results every year</strong> and having trained over <strong>3,000 pilots from all 28 states and union territories</strong> of India.
+                                    Looking for the best <strong>DGCA Ground Classes in India</strong>? We One Aviation Academy is India's #1 DGCA coaching institute — delivering <strong>structured, exam-focused DGCA coaching</strong> and having trained <strong>pilots from all 28 states and union territories</strong> of India.
                                 </p>
                                 <p className="text-gray-600 leading-relaxed mb-4 text-sm">
                                     DGCA Ground Classes in India are the mandatory theory coaching every student pilot must complete before appearing in the 6 examinations conducted by the <strong>Directorate General of Civil Aviation (DGCA), Ministry of Civil Aviation, Government of India</strong>. Clearing these 6 papers is required to obtain a Commercial Pilot License (CPL) in India — there are no shortcuts.
@@ -497,7 +497,7 @@ export default function DGCAGroundClassesInIndia() {
                                     <div className="text-4xl mb-3">🇮🇳 ✈️</div>
                                     <h2 className="font-montserrat text-xl font-bold text-white mb-2">Start Your DGCA Journey From Anywhere in India</h2>
                                     <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-6">
-                                        Join 3,000+ pilots from across India who trusted We One Aviation Academy for their DGCA Ground Classes. 100% results guaranteed. 25% scholarship for every Indian student.
+                                        Join pilots from across India who trusted We One Aviation Academy for their DGCA Ground Classes. Structured, exam-focused coaching. 25% scholarship for every Indian student.
                                     </p>
                                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
                                         <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">

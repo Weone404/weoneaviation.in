@@ -266,8 +266,8 @@ function BulletList({ items, dark = false }) {
 export default function RTRPage() {
     return (
         <Layout
-            title="RTR Full Form: Meaning, Eligibility, Exam, Importance & Complete Guide for Pilots (2026)"
-            description="Learn the RTR full form, its meaning, eligibility, exam process, syllabus, importance, and how the RTR (A) licence helps aspiring commercial pilots in India."
+            title="RTR Full Form – Meaning, Exam & Importance"
+            description="RTR full form and complete guide: meaning, eligibility, exam process, syllabus and how the RTR(A) licence helps commercial pilots."
         >
 
             {/* ── Hero Banner ── */}

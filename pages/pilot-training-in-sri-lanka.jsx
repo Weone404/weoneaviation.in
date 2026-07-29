@@ -39,7 +39,7 @@ const programs = [
     title: 'DGCA Ground Classes',
     description: 'Comprehensive preparation for DGCA exams from expert instructors',
     duration: '4-6 months',
-    details: ['Online + offline modes', 'Mock tests & doubt sessions', 'Expert faculty', '95% pass rate'],
+    details: ['Online + offline modes', 'Mock tests & doubt sessions', 'Expert faculty', 'Structured exam preparation'],
   },
 ];
 
@@ -47,7 +47,7 @@ const advantages = [
   { icon: '🌍', title: 'International Exposure', desc: 'Train with global standards and make international connections' },
   { icon: '💰', title: 'Cost-Effective', desc: 'Competitive fees with flexible payment options and scholarships' },
   { icon: '🎓', title: 'DGCA Recognized', desc: 'All training recognized by DGCA India for license conversion' },
-  { icon: '✈️', title: 'Career Ready', desc: '100% placement assistance with airlines and aviation companies' },
+  { icon: '✈️', title: 'Career Ready', desc: 'Placement Assistance with airlines and aviation companies' },
   { icon: '👨‍🏫', title: 'Expert Trainers', desc: 'Learn from experienced commercial pilots and certified instructors' },
   { icon: '📱', title: '24/7 Support', desc: 'Continuous career guidance and mentor support throughout your journey' },
 ];
@@ -56,16 +56,15 @@ export default function PilotTrainingSriLanka() {
   return (
     <>
       <Head>
-        <title>Pilot Training in Sri Lanka – CPL, PPL & DGCA Ground Classes | We One Aviation</title>
+        <title>Pilot Training in Sri Lanka – CPL & PPL | WeOne</title>
         <meta name="description" content="DGCA-recognized pilot training for Sri Lankan students. CPL, PPL, and DGCA ground classes with international flying school partnerships. Affordable fees, expert faculty." />
-        <link rel="canonical" href="https://www.weoneaviation.in/pilot-training-in-sri-lanka" />
         <meta property="og:title" content="Pilot Training in Sri Lanka – We One Aviation Academy" />
         <meta property="og:description" content="International pilot training programs for Sri Lankan students with DGCA recognition and international flying school partnerships." />
         <meta property="og:url" content="https://www.weoneaviation.in/pilot-training-in-sri-lanka" />
       </Head>
 
       <Layout
-        title="Pilot Training in Sri Lanka – CPL, PPL & DGCA Ground Classes | We One Aviation"
+        title="Pilot Training in Sri Lanka – CPL & PPL | WeOne"
         description="DGCA-recognized pilot training for Sri Lankan students. CPL, PPL, and DGCA ground classes with international flying school partnerships."
       >
         <HeroSlider customSlides={heroSlides} />

@@ -71,7 +71,7 @@ const pilotPrepSteps = [
 
 export default function AirlinePreparation() {
     return (
-        <Layout title="Airline Preparation Course In Dwarka | WeOne Aviation Academy" description="Join We One Aviation's Airline Preparation Course in Dwarka. Comprehensive training for pilots, cabin crew, and aviation professionals. Expert faculty, state-of-the-art facilities, 100% placement support.">
+        <Layout title="Airline Preparation Course in Dwarka | WeOne" description="Airline preparation course in Dwarka, Delhi at WeOne Aviation: training for pilots and aviation professionals with placement support.">
             <HeroSlider customSlides={heroSlides} />
 
             {/* Overview */}
@@ -95,7 +95,7 @@ export default function AirlinePreparation() {
 
                             {/* Quick Facts */}
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-                                {[['Dwarka, Delhi', 'Location'], ['All Roles', 'Coverage'], ['Global', 'Recognition'], ['100%', 'Placement Support']].map(([val, label]) => (
+                                {[['Dwarka, Delhi', 'Location'], ['All Roles', 'Coverage'], ['Global', 'Recognition'], ['Yes', 'Placement Assistance']].map(([val, label]) => (
                                     <div key={label} className="bg-av-light rounded-xl p-4 text-center">
                                         <div className="font-montserrat font-bold text-av-blue text-sm">{val}</div>
                                         <div className="text-gray-500 text-xs mt-1">{label}</div>
@@ -261,7 +261,7 @@ export default function AirlinePreparation() {
                                 <p className="text-white/80 text-sm mb-3">Airline Preparation Course:</p>
                                 <div className="text-2xl font-montserrat font-black">Dwarka, Delhi</div>
                                 <div className="text-white/70 text-xs mt-1">Globally Recognized Certificate</div>
-                                <div className="text-white/70 text-xs mt-1">100% Placement Assistance</div>
+                                <div className="text-white/70 text-xs mt-1">Placement Assistance</div>
                                 <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
                                     Get Free Counselling

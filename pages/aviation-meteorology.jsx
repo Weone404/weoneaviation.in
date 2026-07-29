@@ -59,7 +59,7 @@ const courseDetails = [
 
 export default function AviationMeteorology() {
     return (
-        <Layout title="Aviation Meteorology Course — DGCA CPL/PPL | WeOne Aviation Academy" description="DGCA-approved Aviation Meteorology course in Delhi. Learn weather patterns, METAR/TAF decoding, wind systems, turbulence and more for CPL & PPL exams at We One Aviation Academy.">
+        <Layout title="Aviation Meteorology Course – DGCA CPL & PPL" description="DGCA Aviation Meteorology course in Delhi: weather patterns, METAR/TAF decoding, winds and turbulence for CPL and PPL exams. WeOne Aviation.">
             <HeroSlider customSlides={heroSlides} />
 
             {/* Overview */}

@@ -45,7 +45,7 @@ const QUICK_FACTS = [
     ['Paper 2', 'DGCA Exam'],
     ['CPL / PPL', 'Eligibility'],
     ['Delhi', 'Location'],
-    ['100%', 'Pass Rate'],
+    ['DGCA', 'Exam-Focused'],
 ];
 
 const navigationTypes = [
@@ -63,7 +63,7 @@ const courseFeatures = [
     { feature: 'Live Flight Planning', detail: 'With actual VFR/IFR charts, NOT just theory' },
     { feature: 'Simulator Sessions', detail: 'Practice navigation scenarios and in-flight re-routing' },
     { feature: 'Notes & Question Bank', detail: 'Includes DGCA pattern questions & mock tests' },
-    { feature: 'Guaranteed Results', detail: 'High success rate in DGCA Navigation Paper' },
+    { feature: 'Exam-Focused Preparation', detail: 'Structured coverage of the DGCA Navigation Paper' },
 ];
 
 const modules = [
@@ -135,8 +135,8 @@ function IconList({ items }) {
 export default function AirNavigation() {
     return (
         <Layout
-            title="Air Navigation Course — DGCA CPL/PPL | WeOne Aviation Academy 2025"
-            description="Best Air Navigation course in India for DGCA CPL & PPL exams. DGCA-approved training in Delhi with expert instructors, live flight planning, simulator sessions and full syllabus coverage."
+            title="Air Navigation Course for DGCA CPL & PPL | WeOne"
+            description="DGCA Air Navigation course in Delhi for CPL and PPL exams: flight planning, navigation systems and simulator sessions. WeOne Aviation."
         >
             <HeroSlider customSlides={heroSlides} />
 

@@ -38,7 +38,7 @@ const trainingPhases = [
 ];
 
 const keyBenefits = [
-    'Guaranteed job interview with Emirates upon successful completion',
+    'Structured pathway toward the Emirates cadet pilot selection process on successful completion',
     'World-class training facilities',
     'Fast-track to becoming an airline pilot',
     'Exposure to real-world aviation from day one',
@@ -47,7 +47,7 @@ const keyBenefits = [
 
 export default function EmiratesCadet() {
     return (
-        <Layout title="Emirates Cadet Pilot Program – Complete Guide | WeOne Aviation Academy" description="Complete guide to the Emirates Cadet Pilot Program. Learn about eligibility, training phases, costs, facilities at EFTA and how to apply for this prestigious aviation pathway.">
+        <Layout title="Emirates Cadet Pilot Program – Complete Guide" description="Emirates Cadet Pilot Program guide: eligibility, training phases, costs, EFTA facilities and how to apply. WeOne Aviation.">
             <HeroSlider customSlides={heroSlides} />
 
             {/* Overview */}

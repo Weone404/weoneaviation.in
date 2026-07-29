@@ -170,8 +170,8 @@ const quickSummary = [
 export default function ICSEPage() {
     return (
         <Layout
-            title="ICSE Full Form – What is ICSE Board? Comparison with CBSE & Full Details (2025)"
-            description="ICSE stands for Indian Certificate of Secondary Education. Learn about ICSE Board, CISCE, curriculum, grading system, affiliation criteria, advantages, disadvantages, and ICSE vs CBSE comparison 2025."
+            title="ICSE Full Form – What Is the ICSE Board?"
+            description="ICSE full form is Indian Certificate of Secondary Education. Learn about CISCE, curriculum, grading, affiliation and ICSE vs CBSE."
         >
 
             {/* ── Hero Banner ── */}

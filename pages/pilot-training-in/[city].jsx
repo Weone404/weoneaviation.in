@@ -56,8 +56,8 @@ export default function CityPage({ cityData, citySlug }) {
 
   return (
     <Layout
-      title={`Pilot Training in ${name} | Best Aviation Academy | WeOne Aviation`}
-      description={`Looking for pilot training in ${name}? WeOne Aviation offers DGCA-approved CPL, PPL, ATPL training for ${name} students. Free career counselling. 500+ pilots trained.`}
+      title={`Pilot Training in ${name} | WeOne Aviation`}
+      description={`WeOne Aviation offers DGCA-approved CPL, PPL & ATPL pilot training for ${name} students. Free career counselling — enquire today.`}
     >
       {/* Hero */}
       <div className="relative h-72 md:h-96 overflow-hidden flex items-center justify-center pt-16"
@@ -158,7 +158,7 @@ export default function CityPage({ cityData, citySlug }) {
               <div className="bg-av-blue rounded-2xl p-6 text-white">
                 <h4 className="font-montserrat font-bold mb-4">Why WeOne Aviation?</h4>
                 <ul className="space-y-2 text-sm text-white/80">
-                  {['DGCA Approved & Recognized', '500+ Pilots Trained', '98% First Attempt Pass Rate', 'International Training Options', '100% Placement Support', 'EMI & Scholarship Available', 'Expert Faculty (Ex-Airline Pilots)', 'Free Career Counselling'].map(point => (
+                  {['DGCA Approved & Recognized', 'Pilots Trained Across India', 'DGCA Exam-Focused Coaching', 'International Training Options', 'Placement Assistance', 'EMI & Scholarship Available', 'Expert Faculty (Ex-Airline Pilots)', 'Free Career Counselling'].map(point => (
                     <li key={point} className="flex items-center gap-2">
                       <span className="text-av-orange">✓</span> {point}
                     </li>

@@ -169,8 +169,8 @@ const resultCheckMethods = [
 export default function CBSEPage() {
     return (
         <Layout
-            title="CBSE Full Form Explained | Curriculum, Subjects, Board Overview, Importance & Career Relevance"
-            description="CBSE stands for Central Board of Secondary Education. Learn about CBSE curriculum, subjects from Class 1–12, grading system, affiliation criteria, results 2025, and why CBSE is better than other boards."
+            title="CBSE Full Form – Meaning, Curriculum & Subjects"
+            description="CBSE full form is Central Board of Secondary Education. Curriculum, Class 1–12 subjects, grading, affiliation and why it matters."
         >
 
             {/* ── Hero Banner ── */}

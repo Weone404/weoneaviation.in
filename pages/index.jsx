@@ -9,7 +9,7 @@
  *          og:url, og:image (absolute URL), twitter:title, twitter:description
  * 3. Head: Added BreadcrumbList schema for homepage
  * 4. educationalOrgSchema: Fixed logo URL (was logo.png, actual file is Logo.webp)
- * 5. educationalOrgSchema: Fixed aggregateRating to match _document.jsx (4.9 / 3500)
+ * 5. educationalOrgSchema: Removed self-serving aggregateRating (fabricated review count; self-serving review markup ineligible for star snippets since 2019)
  * 6. H1: Added keyword-focused <h1> in tagline banner (HeroSlider owns the hero section)
  * 7. Contact section: Changed Gmail → domain email info@weoneaviation.in
  */
@@ -58,9 +58,9 @@ const testimonials = [
 ];
 
 const stats = [
-  { id: 'pilots', num: '3500+', label: 'Pilots Trained', icon: '👨‍✈️', verified: true, source: 'DGCA-approved training records (2009-2024)' },
-  { id: 'years', num: '16+', label: 'Years of Excellence', icon: '🏆', verified: true, source: 'Founded 2009 - Still Operating' },
-  { id: 'success', num: '98%', label: 'Success Rate', icon: '📈', verified: true, source: 'DGCA exam pass rate tracking (2019-2024)' },
+  { id: 'pilots', num: 'Pan-India', label: 'Pilots Trained', icon: '👨‍✈️', verified: true, source: 'DGCA-approved training records' },
+  { id: 'years', num: '2011', label: 'Serving Since', icon: '🏆', verified: true, source: 'Operating since 2011' },
+  { id: 'success', num: 'All 6', label: 'DGCA Papers Covered', icon: '📈', verified: true, source: 'Comprehensive DGCA ground school' },
   { id: 'airlines', num: '25+', label: 'Partner Airlines', icon: '✈️', verified: true, source: 'Official MOU agreements on file' },
 ];
 
@@ -76,7 +76,7 @@ const instructors = [
     dgcaLicense: 'DGCA/LIC/1998-456',
     experience: '22 years',
     photo: '/assets/instructor-rajesh.jpg',
-    bio: 'Retired Air India Captain with 22 years of commercial flying experience. Specializes in CPL ground theory and flight training methodology. Trained 800+ pilots.',
+    bio: 'Retired Air India Captain with 22 years of commercial flying experience. Specializes in CPL ground theory and flight training methodology. Has mentored numerous aspiring pilots.',
   },
   {
     id: 'instr2',
@@ -87,7 +87,7 @@ const instructors = [
     dgcaLicense: 'DGCA/LIC/2012-782',
     experience: '12 years',
     photo: '/assets/instructor-priya.jpg',
-    bio: 'Active SpiceJet First Officer and certified DGCA ground instructor. Expert in DGCA exam preparation with a 95% student pass rate. Published research on aviation meteorology.',
+    bio: 'Active SpiceJet First Officer and certified DGCA ground instructor. Expert in structured DGCA exam preparation. Published research on aviation meteorology.',
   },
   {
     id: 'instr3',
@@ -138,7 +138,7 @@ const dgcaSubjects = [
 
 const flyingSchools = [
   { id: 'india', flag: '🇮🇳', country: 'India', course: 'Commercial Pilot License (CPL)', duration: '12-18 months', fees: '₹35-45 Lakhs (approx.)', highlights: 'DGCA approved, state-of-the-art simulators, extensive flight hours', href: '/flying-school/india' },
-  { id: 'usa', flag: '🇺🇸', country: 'USA', course: 'FAA CPL & ATPL Training', duration: '12-14 months', fees: '$80,000 - $100,000', highlights: 'Largest flight training network in the USA, guaranteed instructor job opportunities', href: '/flying-school/usa' },
+  { id: 'usa', flag: '🇺🇸', country: 'USA', course: 'FAA CPL & ATPL Training', duration: '12-14 months', fees: '$80,000 - $100,000', highlights: 'Largest flight training network in the USA, with instructor job opportunities after certification', href: '/flying-school/usa' },
   // TODO: Create /flying-school/uk page
   { id: 'uk', flag: '🇬🇧', country: 'UK', course: 'EASA ATPL Integrated Program', duration: '24 months', fees: '£90,000 - £120,000', highlights: 'Airline-focused training, fast-track to commercial airlines', href: '/contact' },
   { id: 'aus', flag: '🇦🇺', country: 'Australia', course: 'CASA CPL & ATPL', duration: '12-18 months', fees: 'AUD $90,000 - $120,000', highlights: 'High-quality flight training with a focus on international airline careers', href: '/flying-school/australia' },
@@ -183,7 +183,7 @@ const whyChooseFeatures = [
   { id: 'wc1', icon: '✅', title: 'Approved Training Programs', desc: 'Our courses meet all regulatory requirements to ensure a smooth path to becoming a professional pilot.' },
   { id: 'wc2', icon: '✅', title: 'Experienced Instructors & Mentors', desc: 'Learn from seasoned airline pilots and aviation experts who provide hands-on guidance.' },
   { id: 'wc3', icon: '✅', title: 'State-of-the-Art Training Facilities', desc: 'Get trained with modern simulators, advanced flight training devices, and real aircraft for a world-class experience.' },
-  { id: 'wc4', icon: '✅', title: '100% Placement Assistance', desc: 'We help students secure jobs in leading airlines through industry connections and career support.' },
+  { id: 'wc4', icon: '✅', title: 'Placement Assistance', desc: 'We help students secure jobs in leading airlines through industry connections and career support.' },
   { id: 'wc5', icon: '✅', title: 'Comprehensive CPL & DGCA Ground Classes', desc: 'Structured curriculum covering Air Navigation, Meteorology, Air Regulations, and Technical subjects.' },
   { id: 'wc6', icon: '✅', title: 'Flexible Payment & Loan Options', desc: 'Making your dream of becoming a pilot financially accessible with easy EMI and loan assistance.' },
   { id: 'wc7', icon: '✅', title: 'Personalized Learning Approach', desc: 'Small batch sizes, doubt-clearing sessions, and one-on-one mentorship to ensure better understanding.' },
@@ -222,51 +222,6 @@ const pilotRoutes = [
 // ─── SCHEMA MARKUP ────────────────────────────────────────────────────────────
 // Defined at module level — created once, not on every render.
 
-// Enhanced review/testimonial schema for E-E-A-T
-const reviewSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Review',
-  itemReviewed: {
-    '@type': 'EducationalOrganization',
-    name: 'We One Aviation Academy',
-  },
-  reviewRating: [
-    {
-      '@type': 'Rating',
-      ratingValue: '5',
-      bestRating: '5',
-      worstRating: '1',
-      author: {
-        '@type': 'Person',
-        name: 'Rahul Sharma',
-        description: 'First Officer, IndiGo Airlines (Verified Pilot)',
-      },
-    },
-    {
-      '@type': 'Rating',
-      ratingValue: '5',
-      bestRating: '5',
-      worstRating: '1',
-      author: {
-        '@type': 'Person',
-        name: 'Priya Mehta',
-        description: 'CPL Holder, SpiceJet Regional (Verified Pilot)',
-      },
-    },
-    {
-      '@type': 'Rating',
-      ratingValue: '5',
-      bestRating: '5',
-      worstRating: '1',
-      author: {
-        '@type': 'Person',
-        name: 'Arjun Singh',
-        description: 'Cadet Pilot, Air India (Verified)',
-      },
-    },
-  ],
-};
-
 // Faculty/instructor credentials schema - E-E-A-T
 const facultySchema = {
   '@context': 'https://schema.org',
@@ -295,7 +250,7 @@ const facultySchema = {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // ✅ SEO FIX 4: logo URL was 'logo.png' — actual file is 'Logo.webp'
-// ✅ SEO FIX 5: aggregateRating synced with _document.jsx (4.9 / 3500)
+// ✅ SEO FIX 5: aggregateRating removed (self-serving review markup, ineligible since 2019)
 // ─────────────────────────────────────────────────────────────────────────────
 const educationalOrgSchema = {
   '@context': 'https://schema.org',
@@ -304,8 +259,8 @@ const educationalOrgSchema = {
   url: 'https://www.weoneaviation.in',
   logo: 'https://www.weoneaviation.in/Logo.webp',       // ✅ FIXED: was logo.png
   image: 'https://www.weoneaviation.in/og-cover.jpg',
-  description: "India's premier DGCA approved aviation training institute. CPL, PPL, ATPL, SPL courses. 3500+ pilots trained since 2009 with 98% pass rate.",
-  foundingDate: '2009',
+  description: "India's premier DGCA approved aviation training institute. CPL, PPL, ATPL, SPL courses. Training pilots across India since 2011 with structured DGCA exam preparation.",
+  foundingDate: '2011',
   telephone: '+919355611996',
   email: 'info@weoneaviation.in',
   address: {
@@ -325,12 +280,6 @@ const educationalOrgSchema = {
     '@type': 'Organization',
     name: 'Directorate General of Civil Aviation (DGCA)',
     url: 'https://www.dgca.gov.in',
-  },
-  aggregateRating: {                                    // ✅ FIXED: synced with _document.jsx
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    reviewCount: '3500',
-    bestRating: '5',
   },
 };
 
@@ -392,12 +341,8 @@ export default function Home() {
          * network hints and console warnings — removed here.
          */}
 
-        {/* ── Page-specific canonical ───────────────────────────────────────
-            ✅ SEO FIX 2a: Canonical must be page-specific, not just in _document.
-            _document.jsx sets a global default; each page should override it.
-            Homepage canonical = root URL with trailing slash.
-        ──────────────────────────────────────────────────────────────────── */}
-        <link rel="canonical" href="https://www.weoneaviation.in/" />
+        {/* Canonical is emitted once by <Layout> (components/Layout.jsx) from
+            router.asPath — do not add a second one here or the page emits two. */}
 
         {/* ── Open Graph — page-specific ────────────────────────────────────
             ✅ SEO FIX 2b: OG title/description/url missing from this page.
@@ -406,7 +351,7 @@ export default function Home() {
             card title when someone shares the homepage link.
         ──────────────────────────────────────────────────────────────────── */}
         <meta property="og:title" content="We One Aviation | Best Pilot Training Institute in India" />
-        <meta property="og:description" content="India's #1 DGCA-approved pilot training academy since 2009. CPL, PPL & ATPL courses. 3500+ pilots trained. Get free career counselling today!" />
+        <meta property="og:description" content="India's #1 DGCA-approved pilot training academy since 2011. CPL, PPL & ATPL courses. Trusted by aspiring pilots across India. Get free career counselling today!" />
         <meta property="og:url" content="https://www.weoneaviation.in/" />
         <meta property="og:image" content="https://www.weoneaviation.in/og-cover.jpg" />
         <meta property="og:image:width" content="1200" />
@@ -419,7 +364,7 @@ export default function Home() {
             but LinkedIn and some WhatsApp versions show no description at all.
         ──────────────────────────────────────────────────────────────────── */}
         <meta name="twitter:title" content="We One Aviation | Best Pilot Training Institute in India" />
-        <meta name="twitter:description" content="India's #1 DGCA-approved pilot training academy. CPL, PPL & ATPL courses. 3500+ pilots trained since 2009." />
+        <meta name="twitter:description" content="India's #1 DGCA-approved pilot training academy. CPL, PPL & ATPL courses. Trusted by aspiring pilots across India since 2011." />
         <meta name="twitter:image" content="https://www.weoneaviation.in/og-cover.jpg" />
 
         {/* ── Schema Markup ─────────────────────────────────────────────── */}
@@ -427,14 +372,13 @@ export default function Home() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseListSchema) }} />
         {/* ✅ SEO FIX 3: BreadcrumbList schema — new addition */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-        {/* ✅ SEO FIX (E-E-A-T): Faculty credentials and testimonial/review schema */}
+        {/* ✅ SEO FIX (E-E-A-T): Faculty credentials schema (self-serving Review markup removed — ineligible for star snippets on Organization types) */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(facultySchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       </Head>
 
       <Layout
         title="We One Aviation | Best Pilot Training Institute in India"
-        description="India's premier approved aviation training institute. CPL, PPL, ATPL, SPL courses. 3500+ pilots trained. Free career counselling available."
+        description="India's premier approved aviation training institute. CPL, PPL, ATPL, SPL courses. Trusted by aspiring pilots across India. Free career counselling."
       >
 
         {/* HERO */}
@@ -486,7 +430,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-4">
-            <span className="text-white/80 text-sm font-semibold">We have trained 3500+ pilots across India since 2009</span>
+            <span className="text-white/80 text-sm font-semibold">We have trained pilots across India since 2011</span>
           </div>
           <div className="text-center mt-1">
             <span className="text-av-orange text-sm font-semibold">Clear Your Dgca Exam In First Attempt With We One Aviation Academy</span>
@@ -502,14 +446,14 @@ export default function Home() {
                 India&apos;s Most Trusted Aviation Academy
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                We One Aviation Academy has been shaping the careers of aspiring pilots since 2009.
+                We One Aviation Academy has been shaping the careers of aspiring pilots since 2011.
                 We are an approved institution offering world-class pilot training programs with
                 international tie-ups in USA, Canada, Australia, and Europe.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Our expert faculty, modern simulators, and personalized mentoring ensure every student
-                achieves their dream of becoming a professional pilot. With a 98% success rate and
-                3500+ pilots trained, we are India&apos;s #1 choice for aviation training.
+                achieves their dream of becoming a professional pilot. With structured DGCA exam
+                preparation and a nationwide community of trained pilots, we are India&apos;s #1 choice for aviation training.
               </p>
               <div className="flex flex-wrap gap-3 mb-6">
                 {['DGCA Approved', 'International Tie-ups', '24/7 Support', 'Job Placement'].map(tag => (
@@ -662,7 +606,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto mt-12">
             <ScrollReveal className="bg-av-blue rounded-2xl p-8 text-center">
               <h3 className="font-montserrat text-2xl font-bold text-white mb-3">Enroll in Flying School</h3>
-              <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">At Our Flying School, we train future pilots with state-of-the-art aircraft, expert instructors, and guaranteed career guidance.</p>
+              <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">At Our Flying School, we train future pilots with state-of-the-art aircraft, expert instructors, and dedicated career guidance.</p>
               <Link href="/flying-school/india" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">India Flying School Details</Link>
             </ScrollReveal>
           </div>
@@ -709,14 +653,14 @@ export default function Home() {
               <ScrollReveal>
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
                   <h3 className="font-montserrat text-xl font-bold text-av-blue mb-4">Dgca Ground Classes</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6">We One Aviation Academy is the Oldest Pilot Training Institute, giving 100% results every year since 2009. Advanced Training with flexibility of timing and fees.</p>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-6">We One Aviation Academy is a trusted pilot training institute, offering structured, exam-focused DGCA preparation since 2011. Advanced Training with flexibility of timing and fees.</p>
                   <Link href="/contact" className="inline-block bg-av-blue text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">Enquiry Now</Link>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={150}>
                 <div className="bg-av-blue rounded-2xl shadow-lg p-8">
                   <h3 className="font-montserrat text-xl font-bold text-white mb-4">Our Flying School</h3>
-                  <p className="text-white/70 text-sm leading-relaxed mb-6">We provide flight training from 20+ countries. 3500+ students trained across India. We offer 225+ hours of flying — more than any other institute.</p>
+                  <p className="text-white/70 text-sm leading-relaxed mb-6">We provide flight training from 20+ countries. Students trained across India nationwide. We offer 225+ hours of flying — more than any other institute.</p>
                   <Link href="/contact" className="inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">Enquiry Now</Link>
                 </div>
               </ScrollReveal>

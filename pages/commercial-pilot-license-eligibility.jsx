@@ -45,8 +45,8 @@ const medicalElements = [
 export default function CPLEligibilityPage() {
     return (
         <Layout
-            title="Commercial Pilot License (CPL) Eligibility – Complete Guide 2025"
-            description="Learn the complete CPL eligibility criteria in India. Age requirement, educational qualification, medical fitness, flying hours, Student Pilot License (SPL), and more."
+            title="CPL Eligibility in India – Age, Medical & Criteria"
+            description="CPL eligibility in India: age, educational qualifications, medical fitness, flying hours and Student Pilot Licence (SPL) requirements."
         >
 
             {/* ── Hero Banner ── */}

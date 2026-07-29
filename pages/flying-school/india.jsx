@@ -138,8 +138,8 @@ const schools = [
 export default function IndiaPilotTrainingPage() {
     return (
         <Layout
-            title="Commercial Pilot Training in India – DGCA CPL with MEIR | AviationGuide"
-            description="Explore Commercial Pilot Training in India with DGCA-approved FTOs, 200 flight hours, CPL-MEIR program, and a step-by-step guide to your pilot licence. Train close to home on modern aircraft."
+            title="Commercial Pilot Training in India – DGCA CPL"
+            description="DGCA-approved commercial pilot training in India: 200 flight hours, CPL-MEIR program and a step-by-step route to your licence."
         >
 
             {/* ── Hero Banner ── */}

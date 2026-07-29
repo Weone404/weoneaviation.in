@@ -86,7 +86,7 @@ const howWeTeach = [
 
 export default function TechnicalGeneral() {
     return (
-        <Layout title="Technical General — DGCA CPL/PPL All Details 2025 | WeOne Aviation Academy" description="Complete guide to Technical General for DGCA CPL & PPL exams. Covers aircraft structure, aerodynamics, engines, systems, instruments, landing gear and fire protection at We One Aviation Academy.">
+        <Layout title="Technical General for DGCA CPL & PPL Exams" description="DGCA Technical General guide for CPL and PPL: aircraft structure, aerodynamics, engines, systems, instruments and landing gear.">
             <HeroSlider customSlides={heroSlides} />
 
             {/* Overview */}
@@ -104,7 +104,7 @@ export default function TechnicalGeneral() {
 
                             {/* Quick Facts */}
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-                                {[['CPL / PPL', 'Eligibility'], ['7 Modules', 'Topics Covered'], ['Core Subject', 'CPL Syllabus'], ['100%', 'Pass Rate']].map(([val, label]) => (
+                                {[['CPL / PPL', 'Eligibility'], ['7 Modules', 'Topics Covered'], ['Core Subject', 'CPL Syllabus'], ['Exam-Focused', 'Preparation']].map(([val, label]) => (
                                     <div key={label} className="bg-av-light rounded-xl p-4 text-center">
                                         <div className="font-montserrat font-bold text-av-blue text-sm">{val}</div>
                                         <div className="text-gray-500 text-xs mt-1">{label}</div>

@@ -23,7 +23,7 @@ const withoutComputerNumberList = [
     <span>Register for <Link href="/dgca-pariksha" className="text-av-blue font-semibold hover:text-av-orange transition-colors">DGCA theory examinations</Link></span>,
     <span>Apply for <Link href="/commercial-pilot-license" className="text-av-blue font-semibold hover:text-av-orange transition-colors">CPL</Link> examination papers</span>,
     <span>Apply for <Link href="/private-pilot-license-ppl-course-details" className="text-av-blue font-semibold hover:text-av-orange transition-colors">PPL</Link> examinations</span>,
-    <span>Register for <Link href="/advanced-atpl-pilot-training" className="text-av-blue font-semibold hover:text-av-orange transition-colors">ATPL</Link> examinations</span>,
+    <span>Register for <Link href="/courses/atpl" className="text-av-blue font-semibold hover:text-av-orange transition-colors">ATPL</Link> examinations</span>,
     <span>Access examination-related services through the <Link href="/dgca-pariksha" className="text-av-blue font-semibold hover:text-av-orange transition-colors">DGCA Pariksha portal</Link></span>,
     'Build an official examination record with DGCA',
 ];
@@ -32,7 +32,7 @@ const whoNeeds = [
     'Become a Commercial Pilot',
     <span>Apply for a <Link href="/commercial-pilot-license" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Commercial Pilot License (CPL)</Link></span>,
     <span>Pursue a <Link href="/private-pilot-license-ppl-course-details" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Private Pilot License (PPL)</Link></span>,
-    <span>Obtain an <Link href="/advanced-atpl-pilot-training" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Airline Transport Pilot License (ATPL)</Link></span>,
+    <span>Obtain an <Link href="/courses/atpl" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Airline Transport Pilot License (ATPL)</Link></span>,
     'Appear for DGCA Flight Crew examinations',
     'Continue advanced pilot training after basic aviation education',
 ];
@@ -223,7 +223,7 @@ const suggestedInternalLinks = [
 
 export default function DGCAComputerNumber() {
     return (
-        <Layout title="DGCA Computer Number 2026 | Apply Online, Eligibility & Documents" description="Learn everything about the DGCA Computer Number, including eligibility, required documents, online registration, application process, validity, benefits, and expert guidance. Apply correctly with We One Aviation.">
+        <Layout title="DGCA Computer Number – Apply Online (2026)" description="DGCA Computer Number guide: eligibility, documents, online registration, application process, validity and benefits explained.">
             <HeroSlider customSlides={heroSlides} />
 
             {/* Overview */}

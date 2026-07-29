@@ -86,8 +86,8 @@ const courses = [
 export default function HowToBecomeAPilotInIndiaPage() {
     return (
         <Layout
-            title="Your Guide on How to Become a Pilot in India – Weone Aviation"
-            description="Step-by-step guide on how to become a pilot in India. Learn about eligibility, ground training, flight training, CPL licensing, and pilot training courses at Weone Aviation."
+            title="How to Become a Pilot in India – Full Guide"
+            description="Step-by-step guide to becoming a pilot in India: eligibility, ground training, flight training and CPL licensing with WeOne Aviation."
         >
 
             {/* ── Hero Banner ── */}

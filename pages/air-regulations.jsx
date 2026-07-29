@@ -93,7 +93,7 @@ const prepTips = [
 
 export default function AirRegulations() {
     return (
-        <Layout title="Air Regulations – Complete Guide for DGCA Exams | WeOne Aviation Academy" description="Complete guide to Air Regulations for DGCA CPL/PPL exams. Covers ICAO, Chicago Convention, DGCA structure, Rules of the Air, airspace classification, licensing rules and more.">
+        <Layout title="Air Regulations for DGCA Exams – Complete Guide" description="Air Regulations guide for DGCA CPL/PPL exams: ICAO, Chicago Convention, DGCA structure, rules of the air, airspace and licensing.">
             <HeroSlider customSlides={heroSlides} />
 
             {/* Overview */}

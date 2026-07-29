@@ -112,8 +112,8 @@ const weOneProcess = [
 export default function CPLAdmissionPage() {
     return (
         <Layout
-            title="Commercial Pilot License Admission Process – Step by Step CPL Guide 2025"
-            description="Learn the complete Commercial Pilot License (CPL) Admission Process in India. Step-by-step guide covering eligibility, DGCA-approved school selection, ground training, flight hours, and CPL application."
+            title="CPL Admission Process in India – Step by Step"
+            description="The CPL admission process in India step by step: eligibility, choosing a DGCA-approved school, ground training, flight hours and applying."
         >
 
             {/* ── Hero Banner ── */}

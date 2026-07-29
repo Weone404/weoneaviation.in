@@ -8,7 +8,7 @@ import { MongoClient, ObjectId } from 'mongodb';
 const hardcodedBlogs = [
     {
         id: 1,
-        title: 'How to Become a Commercial Pilot in India – Complete 2024 Guide',
+        title: 'How to Become a Commercial Pilot in India – 2024 Guide',
         excerpt:
             'Everything you need to know about becoming a CPL holder in India – eligibility, DGCA exams, costs, flying hours, and career prospects.',
         category: 'CPL Guide',
@@ -177,7 +177,7 @@ const hardcodedBlogs = [
     },
     {
         id: 5,
-        title: 'Medical Requirements to Become a Pilot in India – DGCA Class 1',
+        title: 'Medical Requirements to Become a Pilot – DGCA Class 1',
         excerpt: 'Detailed guide on DGCA Class 1 medical requirements.',
         category: 'Medical',
         readTime: '6 min',
@@ -530,7 +530,7 @@ export default function BlogDetail({ blog }) {
     }
 
     return (
-        <Layout title={`${blog.title} – WeOne Aviation`} description={blog.excerpt}>
+        <Layout title={blog.title} description={blog.excerpt}>
             {/* Hero */}
             <BlogHero blog={blog} />
 
