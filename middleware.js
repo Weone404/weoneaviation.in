@@ -21,6 +21,18 @@ export function middleware(request) {
         return NextResponse.redirect(new URL("/pilot-course-training-in-india", request.url));
     }
 
+    const bucketBPaths = [
+        "/jkit-header/",
+        "/jkit-footer/",
+        "/elementor-hf/",
+        "/e-floating-buttons/",
+        "/form_submission/",
+    ];
+
+    if (bucketBPaths.some(prefix => normalizedPath.startsWith(prefix))) {
+        return new NextResponse(null, { status: 410 });
+    }
+
     // ✅ Always let the login page through
     if (pathname.startsWith("/admin/login")) {
         return NextResponse.next();

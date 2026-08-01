@@ -100,13 +100,13 @@ const pages = [
 function getSitemapXml() {
     const sitemapPath = path.join(process.cwd(), 'sitemap.xml');
 
-    if (fs.existsSync(sitemapPath)) {
-        return fs.readFileSync(sitemapPath, 'utf8');
-    }
-
     const generatedPath = path.join(process.cwd(), '.generated-sitemap.xml');
     if (fs.existsSync(generatedPath)) {
         return fs.readFileSync(generatedPath, 'utf8');
+    }
+
+    if (fs.existsSync(sitemapPath)) {
+        return fs.readFileSync(sitemapPath, 'utf8');
     }
 
     return `<?xml version="1.0" encoding="UTF-8"?>

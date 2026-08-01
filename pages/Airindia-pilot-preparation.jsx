@@ -154,7 +154,7 @@ export default function AirIndiaPilotPreparation() {
                                 <h1 className="font-montserrat text-2xl sm:text-3xl font-bold text-av-blue mb-4 underline-orange leading-tight">
                                     ✈️ Air India Pilot Interview Preparation (2026) – We One Aviation
                                 </h1>
-                                <AutoInternalLinks currentPath="/Airindia-pilot-preparation">
+                                <AutoInternalLinks currentPath="/airindia-pilot-preparation">
                                     <div className="space-y-3 mb-6">
                                         <p className="text-gray-600 leading-relaxed text-sm">
                                             At We One Aviation, we offer a structured and airline-focused training program designed to help pilots successfully clear the Air India recruitment process.
@@ -186,7 +186,7 @@ export default function AirIndiaPilotPreparation() {
                                 <h3 className="font-montserrat text-lg sm:text-xl font-bold text-av-blue mb-3">
                                     🎯 Air India Selection Stages We Cover
                                 </h3>
-                                <AutoInternalLinks currentPath="/Airindia-pilot-preparation">
+                                <AutoInternalLinks currentPath="/airindia-pilot-preparation">
                                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
                                         Our program is built around the actual airline hiring process:
                                     </p>
@@ -206,7 +206,7 @@ export default function AirIndiaPilotPreparation() {
                                 <h3 className="font-montserrat text-lg sm:text-xl font-bold text-av-blue mb-3">
                                     🧑‍✈️ Courses for CPL Holders
                                 </h3>
-                                <AutoInternalLinks currentPath="/Airindia-pilot-preparation">
+                                <AutoInternalLinks currentPath="/airindia-pilot-preparation">
                                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
                                         Designed for fresh commercial pilots preparing for airline entry.
                                     </p>
@@ -226,7 +226,7 @@ export default function AirIndiaPilotPreparation() {
                                 <h3 className="font-montserrat text-lg sm:text-xl font-bold text-av-blue mb-3">
                                     🛫 Type Rated Pilot Preparation (A320 / B737)
                                 </h3>
-                                <AutoInternalLinks currentPath="/Airindia-pilot-preparation">
+                                <AutoInternalLinks currentPath="/airindia-pilot-preparation">
                                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
                                         Tailored for experienced pilots aiming to join Air India fleet operations.
                                     </p>
@@ -317,7 +317,7 @@ export default function AirIndiaPilotPreparation() {
                                     <h3 className="font-montserrat text-lg sm:text-xl font-bold text-white mb-3">
                                         🚀 Start Your Airline Career Today
                                     </h3>
-                                        <AutoInternalLinks currentPath="/Airindia-pilot-preparation">
+                                        <AutoInternalLinks currentPath="/airindia-pilot-preparation">
                                             <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-2">
                                                 Prepare Smart. Perform Better. Get Selected.
                                             </p>
