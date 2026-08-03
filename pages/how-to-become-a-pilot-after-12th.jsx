@@ -221,8 +221,8 @@ const careerPaths = [
 export default function BecomeAPilotPage() {
     return (
         <Layout
-            title="How to Become a Pilot After 12th? – Complete Guide 2025 | India"
-            description="Complete guide on how to become a pilot after 12th in India. Covers types of pilots, eligibility, physical requirements, selection process, IAF routes, salary, career outlook, and training costs."
+            title="How to Become a Pilot After 12th in India (2026) | WeOne"
+            description="Complete guide to becoming a pilot after 12th in India — eligibility, DGCA medical, exams, flying hours, IAF routes, salary and training costs."
         >
 
             {/* ── Hero Banner ── */}

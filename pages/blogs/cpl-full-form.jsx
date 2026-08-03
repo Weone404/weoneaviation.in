@@ -135,7 +135,7 @@ const careerOptions = [
 
 export default function CPL() {
     return (
-        <Layout title="Commercial Pilot License (CPL) Training in India | WeOne Aviation" description="DGCA approved CPL training in India. Become a commercial pilot with WeOne Aviation Academy. Expert instructors, modern aircraft, 100% placement support.">
+        <Layout title="CPL Course Fees in India: Full Cost Breakdown | WeOne Aviation" description="How much does a Commercial Pilot License cost in India? Full CPL fee breakdown — ground school, 200 flying hours, DGCA medical and exam fees explained.">
             <HeroSlider customSlides={heroSlides} />
 
             {/* Overview */}

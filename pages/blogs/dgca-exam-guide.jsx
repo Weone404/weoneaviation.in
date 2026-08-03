@@ -72,8 +72,8 @@ const pilotJourneySteps = [
 export default function DGCAPage() {
     return (
         <Layout
-            title="DGCA Full Form – What is DGCA in Aviation? | Directorate General of Civil Aviation"
-            description="DGCA Full Form is Directorate General of Civil Aviation. Learn what DGCA does, its role in pilot licensing, aircraft certification, safety standards, and why it matters for India's aviation industry."
+            title="What Is DGCA? Role in Pilot Licensing & Safety | WeOne"
+            description="Understand the DGCA — India's civil aviation regulator. Its functions in pilot licensing, aircraft certification and safety oversight for aspiring pilots."
         >
 
             {/* ── Hero Banner ── */}

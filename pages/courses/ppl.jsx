@@ -126,8 +126,8 @@ const whyImportant = [
 export default function PPLPage() {
     return (
         <Layout
-            title="PPL Full Form – What is PPL in Aviation, Chat, Business and More – 2025?"
-            description="PPL Full Form means different things in every field. In Aviation PPL stands for Private Pilot License. Know all PPL full forms in Chat, Music, Marketing, Chemistry, Education, Business and more."
+            title="PPL Full Form: Private Pilot License Meaning & More | WeOne"
+            description="PPL full form in aviation is Private Pilot License. Discover PPL meanings across aviation, business, chat and more, plus PPL eligibility and training in India."
         >
 
             {/* ── Hero Banner ── */}
