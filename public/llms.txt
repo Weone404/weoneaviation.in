@@ -1,0 +1,37 @@
+# We One Aviation Academy — LLM Index
+
+> DGCA-approved pilot training academy in Dwarka, New Delhi, India. Operating since 2009. 3500+ pilots trained, 98% success rate, international flight-training tie-ups in USA, Canada, Australia, UK, and South Africa.
+
+## Courses
+- [Commercial Pilot License (CPL) — Complete Guide](https://weoneaviation.in/commercial-pilot-license): CPL in India — eligibility, process, flying-hour requirements, and career path.
+- [DGCA Ground Classes](https://weoneaviation.in/dgca-ground-classes): DGCA ground school — key subjects, eligibility, class structure, and exam preparation.
+- [CPL Flight Training](https://weoneaviation.in/courses/cpl-flight-training): Detailed CPL training path — syllabus phases, medical/exam steps, and fee components.
+- [ATPL Training](https://weoneaviation.in/courses/atpl): ATPL preparation — advanced airline-level subjects, simulator-focused training, captain-track progression.
+- [CPL Program](https://weoneaviation.in/courses/cpl): DGCA-approved CPL program — duration, eligibility, and core syllabus coverage.
+
+## Flying schools by country
+- [Flying School — India](https://weoneaviation.in/flying-school/india): India-focused CPL-MEIR training route with DGCA alignment, stages, and timeline.
+- [Flying School — USA](https://weoneaviation.in/flying-school/usa): FAA-track training overview — pathway from PPL to CPL and hour-building guidance.
+- [Flying School — Canada](https://weoneaviation.in/flying-school/canada): Canada training route, mapped to the pilot training programs template and summary.
+- [Flying School — Australia](https://weoneaviation.in/flying-school/australia): CASA-accredited Australia route — CPL/MEIR pathway, visa context, DGCA conversion notes.
+- [Flying School — South Africa](https://weoneaviation.in/flying-school/south-africa): SACAA-based South Africa CPL pathway with staged training flow and DGCA conversion.
+
+## How to become a pilot
+- [How to Become a Pilot After 12th](https://weoneaviation.in/how-to-become-a-pilot-after-12th): Step-by-step guide for becoming a pilot after Class 12 — DGCA medical, exams, training flow.
+- [Pilot After 12th — Roadmap](https://weoneaviation.in/how-to-become-a-pilot/after-12th): Structured roadmap for students after 12th — eligibility, hours, and cost overview.
+- [How to Become a Pilot in India](https://weoneaviation.in/how-to-become-a-pilot/in-india): India-specific CPL guide — DGCA requirements, training routes, salary progression.
+
+## DGCA subject guides
+- [Air Navigation](https://weoneaviation.in/air-navigation): DGCA CPL/PPL Air Navigation guide — flight-planning and navigation-system fundamentals.
+- [Air Regulations](https://weoneaviation.in/air-regulations): Air Regulations guide — ICAO, DGCA frameworks, rules of the air, licensing/compliance.
+- [Aviation Meteorology](https://weoneaviation.in/aviation-meteorology): Aviation Meteorology guide — weather concepts, METAR/TAF literacy, flight-safety decisions.
+- [Technical General](https://weoneaviation.in/technical-general): Technical General guide — aircraft systems, aerodynamics, engines, core pilot technical knowledge.
+- [RTR (Aero)](https://weoneaviation.in/rtr-a): RTR (Aero) guide for aviation radio communication licensing and exam preparation.
+
+## Trust & credentials
+- [About Us](https://weoneaviation.in/about-us): Organization background, mission, and training positioning.
+- [Credentials](https://weoneaviation.in/credentials): Verification page — accreditation claims, instructor credentials, and training statistics.
+- [FAQs](https://weoneaviation.in/faqs): Frequently asked questions — pilot training, DGCA exams, eligibility, and counselling.
+
+## Contact
+- [Contact](https://weoneaviation.in/contact): Contact and enquiry page — office details, counselling form, and WhatsApp channel.

@@ -1,4 +1,5 @@
 import Layout from '../../components/Layout';
+import ArticleSchema from '../../components/ArticleSchema';
 import Link from 'next/link';
 import { MongoClient, ObjectId } from 'mongodb';
 
@@ -531,6 +532,13 @@ export default function BlogDetail({ blog }) {
 
     return (
         <Layout title={`${blog.title} – WeOne Aviation`} description={blog.excerpt}>
+            <ArticleSchema
+                headline={blog.title}
+                description={blog.excerpt}
+                image={blog.img}
+                datePublished={blog.date}
+                dateModified={blog.updatedAt || blog.date}
+            />
             {/* Hero */}
             <BlogHero blog={blog} />
 

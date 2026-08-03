@@ -88,10 +88,10 @@ export default function CredentialsPage() {
       <Head>
         <title>Credentials & Verification – We One Aviation Academy</title>
         <meta name="description" content="Published credentials of We One Aviation Academy: DGCA accreditation, faculty qualifications with DGCA license numbers, verified training statistics, and international partnerships." />
-        <link rel="canonical" href="https://www.weoneaviation.in/credentials" />
+        <link rel="canonical" href="https://weoneaviation.in/credentials" />
         <meta property="og:title" content="Credentials & Verification – We One Aviation Academy" />
         <meta property="og:description" content="Verified credentials: DGCA approval, 3500+ pilots trained, instructor qualifications, student testimonials with LinkedIn verification." />
-        <meta property="og:url" content="https://www.weoneaviation.in/credentials" />
+        <meta property="og:url" content="https://weoneaviation.in/credentials" />
         <meta property="og:type" content="website" />
 
         {/* Schema: Organization with credentials */}
@@ -100,7 +100,7 @@ export default function CredentialsPage() {
             '@context': 'https://schema.org',
             '@type': 'EducationalOrganization',
             name: 'We One Aviation Academy',
-            url: 'https://www.weoneaviation.in',
+            url: 'https://weoneaviation.in',
             accreditedBy: {
               '@type': 'Organization',
               name: 'Directorate General of Civil Aviation (DGCA)',

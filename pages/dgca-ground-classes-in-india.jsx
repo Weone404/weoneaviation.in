@@ -1,4 +1,5 @@
 import Layout from '../components/Layout';
+import FaqSchema from '../components/FaqSchema';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
@@ -216,6 +217,7 @@ export default function DGCAGroundClassesInIndia() {
             title="DGCA Ground Classes in India | #1 Pilot Coaching — All States | WeOne Aviation"
             description="Best DGCA Ground Classes in India — 100% pass rate, 3000+ pilots trained across all 28 states. Online & offline CPL ground coaching covering all 6 DGCA subjects. 25% scholarship available. Join WeOne Aviation Academy."
         >
+            <FaqSchema faqs={faqs} />
             <HeroSlider customSlides={heroSlides} />
 
             <section className="py-20 px-4">

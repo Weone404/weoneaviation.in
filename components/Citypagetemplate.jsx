@@ -34,14 +34,14 @@ export function CityPageTemplate({
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
         name: 'We One Aviation Academy',
-        url: 'https://www.weoneaviation.in',
+        url: 'https://weoneaviation.in',
         telephone: '+919355611996',
         address: {
             '@type': 'PostalAddress',
             streetAddress: 'C-404, 3rd Floor, Sector-7, Near Ramphal Chowk',
             addressLocality: city,
             addressRegion: 'Delhi',
-            postalCode: '110077',
+            postalCode: '110075',
             addressCountry: 'IN',
         },
         image: hero.image,
@@ -468,7 +468,7 @@ export function CityPageTemplate({
                         </div>
                         <div className="mt-8 pt-6 border-t border-white/20 space-y-2 text-sm text-white/70">
                             <p>📧 <span className="font-semibold text-white">Office Mail:</span> Weoneaviation8@gmail.com</p>
-                            <p>📍 <span className="font-semibold text-white">Office Address:</span> C-404, 3rd floor, sector-7, near Ramphal Chowk Road, Palam Extension, Dwarka sector 7, Delhi, India 110077</p>
+                            <p>📍 <span className="font-semibold text-white">Office Address:</span> C-404, 3rd floor, sector-7, near Ramphal Chowk Road, Palam Extension, Dwarka sector 7, Delhi, India 110075</p>
                         </div>
                     </ScrollReveal>
                     <ScrollReveal delay={200}>

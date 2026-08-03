@@ -60,7 +60,7 @@ const whoShouldJoin = [
 
 const contactDetails = [
     { icon: '📱', label: 'Phone', value: '+91 9555291956 / 9717977702', href: 'tel:+919555291956' },
-    { icon: '🌐', label: 'Website', value: 'www.weoneaviation.in', href: 'https://www.weoneaviation.in' },
+    { icon: '🌐', label: 'Website', value: 'weoneaviation.in', href: 'https://weoneaviation.in' },
     { icon: '📧', label: 'Email', value: 'info@weoneaviation.in', href: 'mailto:info@weoneaviation.in' },
     { icon: '📸', label: 'Instagram', value: '@topflyer_pilot', href: 'https://www.instagram.com/topflyer_pilot' },
 ];

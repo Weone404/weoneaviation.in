@@ -12,15 +12,17 @@ const nextConfig = {
     ],
   },
 
-  // ── 301 redirect: enforce www as the canonical domain ──────────────────────
+  // ── 301 redirect: enforce non-www as the canonical domain ──────────────────
+  // Production already serves the bare domain (weoneaviation.in) with a 200 and
+  // redirects www → non-www. This rule matches that reality so every canonical,
+  // OG tag, schema URL, sitemap entry, and llms.txt link agrees on ONE hostname.
   // Vercel runs this at the Edge — zero latency, no Lambda cold start.
-  // This eliminates the www vs non-www duplicate content split.
   async redirects() {
     return [
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'weoneaviation.in' }],
-        destination: 'https://www.weoneaviation.in/:path*',
+        has: [{ type: 'host', value: 'www.weoneaviation.in' }],
+        destination: 'https://weoneaviation.in/:path*',
         permanent: true,
       },
     ];
@@ -71,7 +73,7 @@ const nextConfig = {
               ' https://stats.g.doubleclick.net' +
               ' https://ad.doubleclick.net' + 
               ' https://www.googletagmanager.com' +
-              ' https://agents.dante-ai.com',+
+              ' https://agents.dante-ai.com' +
               ' https://*.clarity.ms' +
               ' https://agents.dante-ai.com' +
               ' https://googleleads.g.doubleclick.net' +

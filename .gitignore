@@ -3,3 +3,7 @@ node_modules/
 .env*
 # Keep data directory but not the leads file (sensitive)
 # data/leads.xlsx
+
+# GEO/AEO tooling & generated audit artifacts (not part of the site)
+geo-seo-claude/
+aeo-audit*.json

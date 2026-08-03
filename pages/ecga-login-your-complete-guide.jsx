@@ -1,4 +1,5 @@
 import Layout from '../components/Layout';
+import FaqSchema from '../components/FaqSchema';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -115,6 +116,7 @@ export default function EGCALoginPage() {
             title="eGCA Login: Your Complete Guide – 2025 | DGCA Portal"
             description="Complete guide to eGCA login in 2025. Learn what the eGCA portal is, how to register, login steps, dashboard features, tips, and common issues for aviation professionals in India."
         >
+            <FaqSchema faqs={faqs} />
 
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center relative overflow-hidden">

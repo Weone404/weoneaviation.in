@@ -167,13 +167,16 @@ export default function HeroSlider({ customSlides }) {
         <div className="max-w-7xl mx-auto px-6 w-full pt-20">
           <div className="max-w-3xl">
             <div className="section-tag mb-4">{slide.tag}</div>
-            {/* 
-              h1 uses as="h1" semantically. On page-specific slides (customSlides),
-              the page's own h1 takes precedence — but for homepage this is correct.
+            {/*
+              Hero heading is an H2, NOT an H1. HeroSlider is reused on every page,
+              so the single semantic H1 must belong to each page's own content
+              (homepage: the tagline banner; inner pages: their page heading).
+              This avoids duplicate/competing H1s site-wide. Visual styling is
+              unchanged — only the tag level changed.
             */}
-            <h1 className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-shadow mb-2">
+            <h2 className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-shadow mb-2">
               {slide.title}
-            </h1>
+            </h2>
             <p className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-shadow mb-5 gradient-text">
               {slide.highlight}
             </p>

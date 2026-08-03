@@ -98,10 +98,11 @@ export default function Footer() {
           <h4 className="font-montserrat font-bold text-av-orange text-base mb-3">How to reach us?</h4>
           <div className="border-t border-dashed border-white/20 mb-5" />
           <div className="space-y-4 text-sm text-white/70">
-            {/* FIX: PIN was 110075 in footer, 110077 in contact section — standardised to 110077 */}
+            {/* NAP: pincode standardised sitewide to 110075 — the primary Sector-7
+                Dwarka pincode and the value on the business's own Justdial listing. */}
             <div className="flex gap-3 items-start">
               <span className="text-av-orange mt-0.5 text-base">📍</span>
-              <span>C-404, 3rd Floor, Near Ramphal Chowk<br />Sector-7, Dwarka, New Delhi - 110077</span>
+              <span>C-404, 3rd Floor, Near Ramphal Chowk<br />Sector-7, Dwarka, New Delhi - 110075</span>
             </div>
             <div className="flex gap-3 items-center">
               <span className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
@@ -147,7 +148,7 @@ export default function Footer() {
             >
               <img
                 src="/map-preview.webp"
-                alt="We One Aviation Academy - Sector-7, Dwarka, New Delhi 110077"
+                alt="We One Aviation Academy - Sector-7, Dwarka, New Delhi 110075"
                 className="w-full h-44 object-cover hover:opacity-90 transition-opacity duration-200"
               />
             </a>

@@ -10,9 +10,33 @@ export default function Layout({ children, title, description }) {
   const router = useRouter();
   const canonicalPath = router.asPath ? router.asPath.split('?')[0] : '/';
 
-  // FIX 1: was weoneaviation.in (no www) — must match live domain www.weoneaviation.in
-  const canonicalUrl = `https://www.weoneaviation.in${canonicalPath === '/' ? '/' : canonicalPath}`;
+  // Canonical uses the bare (non-www) host to match the live 200 origin and the
+  // 301 in next.config.js. Keep every URL on this one hostname.
+  const canonicalUrl = `https://weoneaviation.in${canonicalPath === '/' ? '/' : canonicalPath}`;
   const isAdminPage = router.pathname.startsWith('/admin');
+
+  // Site-wide BreadcrumbList — auto-built from the URL path so AI answer engines
+  // and Google understand where every cited page sits in the hierarchy.
+  // Homepage is skipped (index.jsx ships its own richer breadcrumb).
+  const segments = canonicalPath.split('/').filter(Boolean);
+  const breadcrumbSchema =
+    segments.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://weoneaviation.in/' },
+            ...segments.map((seg, i) => ({
+              '@type': 'ListItem',
+              position: i + 2,
+              name: decodeURIComponent(seg)
+                .replace(/-/g, ' ')
+                .replace(/\b\w/g, (c) => c.toUpperCase()),
+              item: `https://weoneaviation.in/${segments.slice(0, i + 1).join('/')}`,
+            })),
+          ],
+        }
+      : null;
 
   return (
     <>
@@ -29,9 +53,16 @@ export default function Layout({ children, title, description }) {
         <meta property="og:description" content={description || 'DGCA approved pilot training in India'} />
         <meta property="og:type" content="website" />
         {/* FIX 2: was /og-image.jpg (relative) — social bots need absolute URLs */}
-        <meta property="og:image" content="https://www.weoneaviation.in/og-cover.jpg" />
+        <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+
+        {breadcrumbSchema && !isAdminPage && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          />
+        )}
 
         <link rel="icon" href="/favicon.ico" />
       </Head>

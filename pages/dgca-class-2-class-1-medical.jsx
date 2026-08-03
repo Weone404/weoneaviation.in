@@ -1,4 +1,5 @@
 import Layout from '../components/Layout';
+import FaqSchema from '../components/FaqSchema';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
@@ -91,6 +92,7 @@ const faqs = [
 export default function DGCAMedical() {
     return (
         <Layout title="DGCA Class 1 & Class 2 Medical Guide for Pilots | WeOne Aviation Academy" description="Complete guide to DGCA Class 2 and Class 1 Medical examinations for pilot aspirants in India. Requirements, steps, fees, validity and eGCA registration process explained in detail.">
+            <FaqSchema faqs={faqs} />
             <HeroSlider customSlides={heroSlides} />
 
             {/* Overview */}

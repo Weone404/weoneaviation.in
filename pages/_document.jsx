@@ -47,16 +47,24 @@ export default function Document() {
         <link rel="apple-touch-icon" href="/assets/logo.webp" />
         <link rel="manifest" href="/manifest.json" />
 
+        {/* RSS feed auto-discovery — helps AI systems & readers track new content */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="We One Aviation Academy — Blog"
+          href="https://weoneaviation.in/feed.xml"
+        />
+
         {/* Global OG defaults — pages override og:title, og:description, og:url */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="WeOne Aviation" />
-        <meta property="og:image" content="https://www.weoneaviation.in/og-cover.jpg" />
+        <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="We One Aviation Academy — Best Pilot Training Institute in India" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://www.weoneaviation.in/og-cover.jpg" />
+        <meta name="twitter:image" content="https://weoneaviation.in/og-cover.jpg" />
         <meta name="twitter:image:alt" content="We One Aviation Academy — Best Pilot Training Institute in India" />
 
         {/*
@@ -77,9 +85,9 @@ export default function Document() {
               '@type': 'EducationalOrganization',
               name: 'We One Aviation Academy',
               alternateName: 'WeOne Aviation',
-              url: 'https://www.weoneaviation.in',
-              logo: 'https://www.weoneaviation.in/Logo.webp',
-              image: 'https://www.weoneaviation.in/og-cover.jpg',
+              url: 'https://weoneaviation.in',
+              logo: 'https://weoneaviation.in/Logo.webp',
+              image: 'https://weoneaviation.in/og-cover.jpg',
               description:
                 "India's premier DGCA-approved pilot training institute since 2009. CPL, PPL, ATPL courses. 3500+ pilots trained.",
               foundingDate: '2009',
@@ -90,7 +98,7 @@ export default function Document() {
                 streetAddress: 'C-404, 3rd Floor, Sector-7, Near Ramphal Chowk',
                 addressLocality: 'Dwarka',
                 addressRegion: 'New Delhi',
-                postalCode: '110077',
+                postalCode: '110075',
                 addressCountry: 'IN',
               },
               geo: {
@@ -106,6 +114,8 @@ export default function Document() {
               sameAs: [
                 'https://www.facebook.com/share/1AokxHk8Yv/',
                 'https://www.instagram.com/we_one_aviation',
+                'https://www.youtube.com/@weoneaviationacademy',
+                'https://www.justdial.com/Delhi/We-One-Aviation-Academy-Near-By-Shiksa-Bharti-College-Dwarka-Sector-7/011PXX11-XX11-211126112621-P9X7_BZDET',
               ],
               hasOfferCatalog: {
                 '@type': 'OfferCatalog',

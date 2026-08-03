@@ -315,9 +315,9 @@ const educationalOrgSchema = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
   name: 'We One Aviation Academy',
-  url: 'https://www.weoneaviation.in',
-  logo: 'https://www.weoneaviation.in/Logo.webp',       // ✅ FIXED: was logo.png
-  image: 'https://www.weoneaviation.in/og-cover.jpg',
+  url: 'https://weoneaviation.in',
+  logo: 'https://weoneaviation.in/Logo.webp',       // ✅ FIXED: was logo.png
+  image: 'https://weoneaviation.in/og-cover.jpg',
   description: "India's premier DGCA approved aviation training institute. CPL, PPL, ATPL, SPL courses. 3500+ pilots trained since 2009 with 98% pass rate.",
   foundingDate: '2009',
   telephone: '+919355611996',
@@ -327,7 +327,7 @@ const educationalOrgSchema = {
     streetAddress: 'C-404, 3rd Floor, Ramphal Chowk, Dwarka, Sector-7',
     addressLocality: 'New Delhi',
     addressRegion: 'Delhi',
-    postalCode: '110077',
+    postalCode: '110075',
     addressCountry: 'IN',
   },
   geo: {
@@ -359,11 +359,11 @@ const courseListSchema = {
       '@type': 'Course',
       name: c.title,
       description: `${c.title} training. Duration: ${c.duration}. Eligibility: ${c.eligibility}.`,
-      url: `https://www.weoneaviation.in${c.href}`,
+      url: `https://weoneaviation.in${c.href}`,
       provider: {
         '@type': 'Organization',
         name: 'We One Aviation Academy',
-        sameAs: 'https://www.weoneaviation.in',
+        sameAs: 'https://weoneaviation.in',
       },
     },
   })),
@@ -381,7 +381,7 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://www.weoneaviation.in',
+      item: 'https://weoneaviation.in',
     },
   ],
 };
@@ -407,7 +407,7 @@ export default function Home() {
             _document.jsx sets a global default; each page should override it.
             Homepage canonical = root URL with trailing slash.
         ──────────────────────────────────────────────────────────────────── */}
-        <link rel="canonical" href="https://www.weoneaviation.in/" />
+        <link rel="canonical" href="https://weoneaviation.in/" />
 
         {/* ── Open Graph — page-specific ────────────────────────────────────
             ✅ SEO FIX 2b: OG title/description/url missing from this page.
@@ -417,8 +417,8 @@ export default function Home() {
         ──────────────────────────────────────────────────────────────────── */}
         <meta property="og:title" content="We One Aviation | Best Pilot Training Institute in India" />
         <meta property="og:description" content="India's #1 DGCA-approved pilot training academy since 2009. CPL, PPL & ATPL courses. 3500+ pilots trained. Get free career counselling today!" />
-        <meta property="og:url" content="https://www.weoneaviation.in/" />
-        <meta property="og:image" content="https://www.weoneaviation.in/og-cover.jpg" />
+        <meta property="og:url" content="https://weoneaviation.in/" />
+        <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="We One Aviation Academy — Best Pilot Training Institute in India" />
@@ -430,7 +430,7 @@ export default function Home() {
         ──────────────────────────────────────────────────────────────────── */}
         <meta name="twitter:title" content="We One Aviation | Best Pilot Training Institute in India" />
         <meta name="twitter:description" content="India's #1 DGCA-approved pilot training academy. CPL, PPL & ATPL courses. 3500+ pilots trained since 2009." />
-        <meta name="twitter:image" content="https://www.weoneaviation.in/og-cover.jpg" />
+        <meta name="twitter:image" content="https://weoneaviation.in/og-cover.jpg" />
 
         {/* ── Schema Markup ─────────────────────────────────────────────── */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -1043,7 +1043,7 @@ export default function Home() {
                     a legitimate, established business. Update DNS/hosting panel
                     to create info@weoneaviation.in if not done yet. */}
                 <p>📧 <span className="font-semibold text-white">Office Mail:</span> info@weoneaviation.in</p>
-                <p>📍 <span className="font-semibold text-white">Office Address:</span> C-404, 3rd floor, Sector-7, near Ramphal Chowk Road, Palam Extension, Dwarka, Delhi 110077</p>
+                <p>📍 <span className="font-semibold text-white">Office Address:</span> C-404, 3rd floor, Sector-7, near Ramphal Chowk Road, Palam Extension, Dwarka, Delhi 110075</p>
               </div>
             </ScrollReveal>
 

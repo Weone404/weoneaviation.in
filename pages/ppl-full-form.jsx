@@ -1,4 +1,5 @@
 import Layout from '../components/Layout';
+import FaqSchema from '../components/FaqSchema';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 
@@ -69,6 +70,7 @@ export default function PPLPage() {
             title="PPL Full Form in Aviation – Private Pilot License Complete Guide 2025"
             description="PPL Full Form in Aviation stands for Private Pilot License. Learn about PPL eligibility, subjects, cost, duration, career scope, and how it differs from CPL in India."
         >
+            <FaqSchema faqs={faqs} />
 
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">

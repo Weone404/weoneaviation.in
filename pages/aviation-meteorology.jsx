@@ -54,7 +54,7 @@ const courseDetails = [
     { label: 'Duration', value: '2 to 4 weeks' },
     { label: 'Mode', value: 'Classroom / Online / Hybrid' },
     { label: 'Location', value: 'Dwarka Sector-7, Delhi' },
-    { label: 'Website', value: 'www.weoneaviation.in' },
+    { label: 'Website', value: 'weoneaviation.in' },
 ];
 
 export default function AviationMeteorology() {

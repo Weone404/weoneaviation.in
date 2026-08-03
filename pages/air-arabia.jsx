@@ -1,4 +1,5 @@
 import Layout from '../components/Layout';
+import FaqSchema from '../components/FaqSchema';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 
@@ -129,6 +130,7 @@ export default function AirArabiaMPLPage() {
             title="Air Arabia Airline Pilot Training Programme (MPL) – Complete Guide | We One Aviation"
             description="Air Arabia's MPL Airline Pilot Training Programme — 22–24 months, MPL(A) + ATPL, 1500 flying hours. Eligibility, entry assessments, application requirements and how to apply guide for Indian candidates."
         >
+            <FaqSchema faqs={faqs} />
 
             {/* ── Hero ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">

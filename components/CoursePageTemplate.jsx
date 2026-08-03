@@ -1,10 +1,36 @@
+import Head from 'next/head';
 import Layout from '../components/Layout';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 
 export function CoursePageTemplate({ meta, hero, overview, facts, highlights, syllabus, career }) {
+  // Course structured data — helps AI answer engines (ChatGPT, Perplexity,
+  // Google AI Overviews) cite this program with the correct provider + credential.
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: hero?.title || meta?.title,
+    description: overview || meta?.description,
+    provider: {
+      '@type': 'EducationalOrganization',
+      name: 'We One Aviation Academy',
+      sameAs: 'https://weoneaviation.in',
+    },
+    educationalCredentialAwarded: 'DGCA-recognized pilot training',
+    inLanguage: 'en-IN',
+    ...(syllabus && syllabus.length
+      ? { syllabusSections: syllabus.map((s) => ({ '@type': 'Syllabus', name: s })) }
+      : {}),
+  };
+
   return (
     <Layout title={meta.title} description={meta.description}>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
+        />
+      </Head>
       {/* Hero */}
       <div className="relative h-72 md:h-96 overflow-hidden flex items-center justify-center pt-16"
         style={{ backgroundImage: `url(${hero.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
