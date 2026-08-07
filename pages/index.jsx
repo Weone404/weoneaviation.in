@@ -222,51 +222,6 @@ const pilotRoutes = [
 // ─── SCHEMA MARKUP ────────────────────────────────────────────────────────────
 // Defined at module level — created once, not on every render.
 
-// Enhanced review/testimonial schema for E-E-A-T
-const reviewSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Review',
-  itemReviewed: {
-    '@type': 'EducationalOrganization',
-    name: 'We One Aviation Academy',
-  },
-  reviewRating: [
-    {
-      '@type': 'Rating',
-      ratingValue: '5',
-      bestRating: '5',
-      worstRating: '1',
-      author: {
-        '@type': 'Person',
-        name: 'Rahul Sharma',
-        description: 'First Officer, IndiGo Airlines (Verified Pilot)',
-      },
-    },
-    {
-      '@type': 'Rating',
-      ratingValue: '5',
-      bestRating: '5',
-      worstRating: '1',
-      author: {
-        '@type': 'Person',
-        name: 'Priya Mehta',
-        description: 'CPL Holder, SpiceJet Regional (Verified Pilot)',
-      },
-    },
-    {
-      '@type': 'Rating',
-      ratingValue: '5',
-      bestRating: '5',
-      worstRating: '1',
-      author: {
-        '@type': 'Person',
-        name: 'Arjun Singh',
-        description: 'Cadet Pilot, Air India (Verified)',
-      },
-    },
-  ],
-};
-
 // Faculty/instructor credentials schema - E-E-A-T
 const facultySchema = {
   '@context': 'https://schema.org',
@@ -427,9 +382,8 @@ export default function Home() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseListSchema) }} />
         {/* ✅ SEO FIX 3: BreadcrumbList schema — new addition */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-        {/* ✅ SEO FIX (E-E-A-T): Faculty credentials and testimonial/review schema */}
+        {/* ✅ SEO FIX (E-E-A-T): Faculty credentials schema */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(facultySchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
       </Head>
 
       <Layout
@@ -864,17 +818,12 @@ export default function Home() {
             <ScrollReveal className="text-center mb-12">
               <div className="section-tag">Success Stories</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">Our <span className="text-av-orange"> <a href="https://www.weoneaviation.com/" className="hover:underline">Pilots</a> Speak</span></h2>
-              <p className="text-gray-500 mt-2 text-sm">Genuine Reviews from students who cleared DGCA Exam in {currentYear} with our expert training.</p>
+              <p className="text-gray-500 mt-2 text-sm">What our students say about training with us.</p>
             </ScrollReveal>
             <div className="grid md:grid-cols-3 gap-6">
               {testimonials.map((t, i) => (
                 <ScrollReveal key={t.id} delay={i * 100}>
                   <div className="card-hover bg-white rounded-2xl p-6 shadow-md border border-gray-100 relative">
-                    {t.verified && (
-                      <div className="absolute top-4 right-4 bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
-                        ✓ Verified
-                      </div>
-                    )}
                     <div className="flex items-center gap-1 text-av-orange mb-4">
                       {[...Array(5)].map((_, j) => <span key={j} className="text-sm">★</span>)}
                     </div>
@@ -888,13 +837,7 @@ export default function Home() {
                     </div>
                     <div className="text-xs text-gray-500 border-t pt-3 space-y-1">
                       {t.airline && <p>✈️ <span className="font-semibold">{t.airline}</span></p>}
-                      {t.licenseNo && <p>📝 License: {t.licenseNo}</p>}
                     </div>
-                    {t.linkedin && (
-                      <a href={t.linkedin} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-av-orange text-xs font-semibold hover:underline">
-                        View LinkedIn Profile →
-                      </a>
-                    )}
                   </div>
                 </ScrollReveal>
               ))}
@@ -911,7 +854,7 @@ export default function Home() {
                 Learn from <span className="text-av-orange">Industry Veterans</span>
               </h2>
               <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-                Our instructors are verified commercial pilots, airline captains, and DGCA-certified experts with decades of combined aviation experience.
+                Our instructors are experienced commercial pilots, airline captains, and DGCA-certified experts with decades of combined aviation experience.
               </p>
             </ScrollReveal>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -939,12 +882,6 @@ export default function Home() {
                         <p className="flex items-start gap-2">
                           <span className="text-av-orange flex-shrink-0">📅</span>
                           <span><strong>Experience:</strong> {instructor.experience}</span>
-                        </p>
-                      )}
-                      {(instructor.dgcaLicense || instructor.qualification) && (
-                        <p className="flex items-start gap-2">
-                          <span className="text-av-orange flex-shrink-0">📝</span>
-                          <span><strong>License:</strong> {instructor.dgcaLicense || instructor.qualification}</span>
                         </p>
                       )}
                     </div>
