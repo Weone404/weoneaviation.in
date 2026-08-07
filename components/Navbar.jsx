@@ -122,7 +122,7 @@ function DropdownItem({ item }) {
 }
 
 function BreakingNewsTicker() {
-  const items = [...tickerMessages, ...tickerMessages];
+  const items = tickerMessages;
 
   return (
     <div className="w-full flex items-stretch overflow-hidden bg-orange-600" style={{ height: '36px' }}>
@@ -137,13 +137,21 @@ function BreakingNewsTicker() {
 
       {/* Scrolling track */}
       <div className="relative flex flex-1 items-center overflow-hidden">
-        <div className="ticker-track flex items-center whitespace-nowrap">
+        <div className="ticker-track flex items-center whitespace-nowrap" aria-label="Latest announcements">
           {items.map((msg, i) => (
             <span key={i} className="inline-flex items-center gap-3 text-xs font-bold text-white sm:text-sm">
               <span className="px-6 leading-none">{msg}</span>
               <span className="text-red-300 opacity-70">◆</span>
             </span>
           ))}
+          <div aria-hidden="true" className="flex items-center whitespace-nowrap">
+            {items.map((msg, i) => (
+              <span key={`dup-${i}`} className="inline-flex items-center gap-3 text-xs font-bold text-white sm:text-sm">
+                <span className="px-6 leading-none">{msg}</span>
+                <span className="text-red-300 opacity-70">◆</span>
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -164,8 +172,8 @@ function BreakingNewsTicker() {
           animation-play-state: paused;
         }
         @keyframes ticker-scroll {
-          0%   { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
+          0%   { transform: translateX(100%); }
+          100% { transform: translateX(-100%); }
         }
       `}</style>
     </div>

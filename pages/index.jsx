@@ -138,12 +138,12 @@ const dgcaSubjects = [
 
 const flyingSchools = [
   { id: 'india', flag: '🇮🇳', country: 'India', course: 'Commercial Pilot License (CPL)', duration: '12-18 months', fees: '₹35-45 Lakhs (approx.)', highlights: 'DGCA approved, state-of-the-art simulators, extensive flight hours', href: '/flying-school/india' },
-  { id: 'usa', flag: '🇺🇸', country: 'USA', course: 'FAA CPL & ATPL Training', duration: '12-14 months', fees: '$80,000 - $100,000', highlights: 'Largest flight training network in the USA, guaranteed instructor job opportunities', href: '/flying-school/usa' },
+  { id: 'usa', flag: '🇺🇸', country: 'USA', course: 'FAA CPL & ATPL Training', duration: '12-14 months', fees: '₹67–83 Lakh (≈ $80,000–$100,000)', highlights: 'Largest flight training network in the USA, guaranteed instructor job opportunities', href: '/flying-school/usa' },
   // TODO: Create /flying-school/uk page
   { id: 'uk', flag: '🇬🇧', country: 'UK', course: 'EASA ATPL Integrated Program', duration: '24 months', fees: '£90,000 - £120,000', highlights: 'Airline-focused training, fast-track to commercial airlines', href: '/contact' },
-  { id: 'aus', flag: '🇦🇺', country: 'Australia', course: 'CASA CPL & ATPL', duration: '12-18 months', fees: 'AUD $90,000 - $120,000', highlights: 'High-quality flight training with a focus on international airline careers', href: '/flying-school/australia' },
-  { id: 'sa', flag: '🇿🇦', country: 'South Africa', course: 'SACAA CPL & ATPL', duration: '12-15 months', fees: '$60,000 - $80,000', highlights: 'Affordable pilot training, international pilot job opportunities', href: '/flying-school/south-africa' },
-  { id: 'can', flag: '🇨🇦', country: 'Canada', course: 'Transport Canada CPL & ATPL', duration: '18-24 months', fees: 'CAD $90,000 - $110,000', highlights: 'High international reputation, direct airline placement programs', href: '/flying-school/canada' },
+  { id: 'aus', flag: '🇦🇺', country: 'Australia', course: 'CASA CPL & ATPL', duration: '12-18 months', fees: '₹49–65 Lakh (≈ AUD $90,000–$120,000)', highlights: 'High-quality flight training with a focus on international airline careers', href: '/flying-school/australia' },
+  { id: 'sa', flag: '🇿🇦', country: 'South Africa', course: 'SACAA CPL & ATPL', duration: '12-15 months', fees: '₹50–67 Lakh (≈ $60,000–$80,000)', highlights: 'Affordable pilot training, international pilot job opportunities', href: '/flying-school/south-africa' },
+  { id: 'can', flag: '🇨🇦', country: 'Canada', course: 'Transport Canada CPL & ATPL', duration: '18-24 months', fees: '₹62–76 Lakh (≈ CAD $90,000–$110,000)', highlights: 'High international reputation, direct airline placement programs', href: '/flying-school/canada' },
 ];
 
 const enrollSteps = [
@@ -460,12 +460,18 @@ export default function Home() {
             The old <p> becomes a supporting <p> below it.
         ────────────────────────────────────────────────────────────────── */}
         <div className="bg-av-orange py-4 text-center">
-          <h1 className="text-white font-bold text-xl px-4">
+          <h2 className="text-white font-bold text-xl px-4">
             Best Pilot Training Institute in India
-          </h1>
+          </h2>
           <p className="text-white/90 font-medium text-sm px-4 mt-1">
             Get world-class flight training, DGCA-approved courses, and expert guidance to kickstart your aviation career.
           </p>
+          <Link
+            href="/courses/cpl#fee-table"
+            className="inline-block mt-2 bg-white/90 text-av-orange font-bold px-6 py-2 rounded-full text-sm hover:bg-av-blue hover:text-white transition-all"
+          >
+            See full fee breakdown →
+          </Link>
           <Link
             href="/contact"
             className="inline-block mt-2 bg-white text-av-orange font-bold px-6 py-2 rounded-full text-sm hover:bg-av-blue hover:text-white transition-all"

@@ -6,7 +6,7 @@ const slides = [
     id: 1,
     // Reduced quality param from q=80 to q=75, added fm=webp for explicit WebP
     // next/image will further optimize this, but explicit format helps CDN caching
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=75&fm=webp',
+    image: '/1725_piper-pa34-seneca.jpg',
     tag: "India's #1 Aviation Academy",
     title: 'Your Dream of Flying',
     alt: 'Professional pilot training facility at We One Aviation Academy with modern aircraft and DGCA-approved simulators for Commercial Pilot License courses',
@@ -15,7 +15,7 @@ const slides = [
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1569629743817-70d8db6c323b?w=1920&q=75&fm=webp',
+    image: '/Piper Archer.jpg',
     tag: 'Commercial Pilot License',
     title: 'Become an Airline',
     alt: 'Commercial pilot in cockpit - CPL training at We One Aviation Academy with airline partnership opportunities',
@@ -24,7 +24,7 @@ const slides = [
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=75&fm=webp',
+    image: '/redbird and simulator.jpg',
     tag: 'World-Class Training',
     title: 'Modern Fleet &',
     alt: 'Advanced flight simulator and training equipment at We One Aviation Academy for DGCA ground classes and CPL preparation',
@@ -33,7 +33,7 @@ const slides = [
   },
   {
     id: 4,
-    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1920&q=75&fm=webp',
+    image: '/king_air_b_350.jpeg',
     tag: 'Pilot Training Across India',
     title: 'From India to the',
     alt: 'International aviation training - We One Aviation Academy offers pilot training in USA, Canada, Australia and Europe',
@@ -59,6 +59,7 @@ const PARTICLES = Array.from({ length: 8 }, (_, i) => ({
 
 export default function HeroSlider({ customSlides }) {
   const data = customSlides?.length ? customSlides : slides;
+  const Heading = 'h1';
   const [current, setCurrent] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
   const [loaded, setLoaded] = useState(() => new Set([0]));
@@ -124,9 +125,8 @@ export default function HeroSlider({ customSlides }) {
               <img
                 src={s.image}
                 alt={s.alt || s.tag}
-                loading={isFirst ? 'eager' : 'lazy'}
-                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover object-center"
+                loading={isFirst ? 'eager' : 'lazy'}
               />
             )}
           </div>
@@ -166,12 +166,12 @@ export default function HeroSlider({ customSlides }) {
           <div className="max-w-3xl">
             <div className="section-tag mb-4">{slide.tag}</div>
             {/* 
-              h1 uses as="h1" semantically. On page-specific slides (customSlides),
-              the page's own h1 takes precedence — but for homepage this is correct.
+              Use h1 for the homepage hero and h2 for page-specific hero slides.
+              This keeps the layout intact while preserving heading structure.
             */}
-            <h1 className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-shadow mb-2">
+            <Heading className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-shadow mb-2">
               {slide.title}
-            </h1>
+            </Heading>
             <p className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-shadow mb-5 gradient-text">
               {slide.highlight}
             </p>
@@ -187,7 +187,7 @@ export default function HeroSlider({ customSlides }) {
                 Get Free Counselling
               </Link>
               <Link
-                href="/courses/cpl"
+                href="/courses"
                 className="glass text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition-all text-sm md:text-base"
               >
                 Explore Courses →

@@ -33,16 +33,19 @@ export function middleware(request) {
         return new NextResponse(null, { status: 410 });
     }
 
-    // ✅ Always let the login page through
-    if (pathname.startsWith("/admin/login")) {
+    // ✅ Always let the login page through, including the exact root admin-login URL
+    if (pathname === "/admin/login" || pathname === "/admin/login/" || pathname.startsWith("/admin/login")) {
         return NextResponse.next();
     }
 
-    // ✅ Protect all /admin routes
+    // ✅ Protect all /admin routes except login
     if (pathname.startsWith("/admin")) {
         const session = request.cookies.get("weone_admin");
         if (!session) {
-            return NextResponse.redirect(new URL("/admin/login", request.url));
+            const loginUrl = new URL("/admin/login", request.url);
+            if (request.nextUrl.pathname !== "/admin/login") {
+                return NextResponse.redirect(loginUrl);
+            }
         }
     }
 

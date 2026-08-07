@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Head from "next/head";
+import Link from "next/link";
 import Layout from "../components/Layout";
 import AutoInternalLinks from "../components/AutoInternalLinks";
 import QuickAnswer from "../components/QuickAnswer";
 import ArticleTOC from "../components/ArticleTOC";
 import PeopleAlsoAsk from "../components/PeopleAlsoAsk";
-import Breadcrumb from "../components/Breadcrumb";
 import AuthorCard from "../components/AuthorCard";
 import RelatedArticles from "../components/RelatedArticles";
 import SummaryBox from "../components/SummaryBox";
@@ -267,7 +267,6 @@ export default function CPL() {
 
       <Layout title="Commercial Pilot License (CPL) Course in India | WeOne Aviation" description="Complete guide to CPL training, eligibility, fees, and pilot career paths with We One Aviation Academy.">
         <div className="bg-gray-50 min-h-screen">
-          <Breadcrumb override={[{ href: '/courses', label: 'Courses' }, { href: '/commercial-pilot-license', label: 'Commercial Pilot License' }]} />
 
         {/* ── HEADER ── */}
         <header className="bg-gradient-to-br from-av-blue to-av-navy text-white text-center relative overflow-hidden"
@@ -517,7 +516,12 @@ export default function CPL() {
                 The cost of a commercial pilot course varies depending on the flying school, aircraft type, location, and additional training requirements. Besides tuition fees, students should also consider expenses such as:
               </p>
             </AutoInternalLinks>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <div className="mb-6">
+              <Link href="/courses/cpl#fee-table" className="inline-flex items-center text-av-orange font-semibold hover:underline">
+                See full fee breakdown →
+              </Link>
+            </div>
+            <div id="fee-table" className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
               {feeConsiderations.map((item, i) => (
                 <div key={i} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex gap-3 items-center">
                   <span className="text-av-blue font-black text-lg flex-shrink-0">✓</span>

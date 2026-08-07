@@ -4,11 +4,10 @@ const nextConfig = {
 
   images: {
     remotePatterns: [
-      // Remove unsplash once you download the hero image to /public/assets/hero-bg.webp
-      // {
-      //   protocol: 'https',
-      //   hostname: 'images.unsplash.com',
-      // },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
   },
 

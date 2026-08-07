@@ -239,12 +239,12 @@ export default function CPL() {
                             {/* 4) Flying Training */}
                             <h4 className="font-montserrat font-bold text-av-blue mb-3">4) Flying Training Duration and Fees</h4>
                             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                                The Commercial Pilot License (CPL) course takes around 8-10 months to complete. It includes 80 hours of classroom sessions and 200 hours of training, covering Simulator Training and Flying Training. This program helps you become a Commercial Pilot. However, sometimes extra hours might be required for additional checks and tests, which can increase the total fees. Most flying schools charge on an hourly basis. Candidates must have around INR 40 lakh for flying before joining a flight school.
+                                The Commercial Pilot License (CPL) course takes around 8-10 months to complete. It includes 80 hours of classroom sessions and 200 hours of training, covering Simulator Training and Flying Training. This program helps you become a Commercial Pilot. However, sometimes extra hours might be required for additional checks and tests, which can increase the total fees. Most flying schools charge on an hourly basis. Candidates should budget around ₹40–70 lakh for complete CPL training in India.
                             </p>
 
                             {/* Fee Table */}
                             <p className="text-sm font-semibold text-av-blue mb-3">Here is a table for Commercial Pilot Course (CPL) Fees in India:</p>
-                            <div className="overflow-x-auto rounded-xl border border-gray-200 mb-2">
+                            <div id="fee-table" className="overflow-x-auto rounded-xl border border-gray-200 mb-2">
                                 <table className="w-full text-sm">
                                     <thead>
                                         <tr className="bg-av-blue text-white">
@@ -265,7 +265,7 @@ export default function CPL() {
                                     <tfoot>
                                         <tr className="bg-av-blue">
                                             <td colSpan={2} className="p-3 text-white text-xs font-bold">Total Estimated CPL Fees in India</td>
-                                            <td className="p-3 text-av-orange font-black text-sm">₹40,00,000 – ₹50,00,000</td>
+                                            <td className="p-3 text-av-orange font-black text-sm">₹40,00,000 – ₹70,00,000</td>
                                         </tr>
                                     </tfoot>
                                 </table>

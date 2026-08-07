@@ -438,7 +438,7 @@ export default function CPLPage() {
                                     In the world of digital marketing, CPL stands for <strong className="text-av-blue">Cost Per Lead</strong>. This is a metric used to measure how much it costs to generate a potential customer (or lead) through online campaigns.
                                 </p>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                    For example, if a company spends $100 on an ad campaign and gets 10 leads, the CPL would be <strong className="text-av-orange">$10 per lead</strong>.
+                                    For example, if a company spends ₹8,300 on an ad campaign and gets 10 leads, the CPL would be <strong className="text-av-orange">₹830 per lead</strong>.
                                 </p>
                                 <p className="text-gray-600 text-sm leading-relaxed">
                                     Marketers use CPL to evaluate the effectiveness of their campaigns and optimize their budgets. <strong>Lower CPL means better efficiency</strong> in acquiring customers.

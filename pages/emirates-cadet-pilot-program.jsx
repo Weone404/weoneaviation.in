@@ -172,7 +172,7 @@ export default function EmiratesCadet() {
                             <ul className="space-y-2 mb-10">
                                 {[
                                     'Emirates fully sponsors selected Emirati nationals.',
-                                    'For international students, cost details may vary and should be confirmed directly with Emirates Flight Training Academy. Estimated costs range from $100,000 to $170,000 depending on modules, housing, and services.',
+                                    'For international students, cost details may vary and should be confirmed directly with Emirates Flight Training Academy. Estimated costs range from ₹83L–₹1.4Cr (≈ $100,000–$170,000) depending on modules, housing, and services.',
                                 ].map((item, i) => (
                                     <li key={i} className="flex gap-2 items-start text-sm text-gray-600">
                                         <span className="text-av-orange font-bold flex-shrink-0">–</span>

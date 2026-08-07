@@ -65,16 +65,16 @@ export default function SpecialOfferBanner() {
             {/* Main content */}
             <div className="relative z-10 flex flex-col justify-center flex-1 px-4 py-3 min-w-0">
                 <p className="text-[10px] font-semibold text-white/70 uppercase tracking-wider mb-0.5">
-                    Complete CPL Training at just
+                    Complete CPL Training from
                 </p>
                 <span
                     className="text-[#f07020] leading-none tracking-wide"
                     style={{ fontFamily: "'Bebas Neue', Impact, sans-serif", fontSize: "38px" }}
                 >
-                    $35,000
+                    ₹29–32 Lakh
                 </span>
                 <p className="text-[10px] text-white/50 mt-1">
-                    Approx. ₹29–32 Lakhs
+                    (≈ ₹29–32 Lakh; ~$35,000)
                 </p>
             </div>
 

@@ -7,7 +7,7 @@ import Link from 'next/link';
 const stats = [
     { num: '₹1.5–3L', label: 'Entry-Level / Month', icon: '🛩️' },
     { num: '₹6–10L', label: 'Captain / Month', icon: '✈️' },
-    { num: '$4K–20K+', label: 'Abroad / Month', icon: '🌍' },
+    { num: '₹3.3L–16.6L+', label: 'Abroad / Month', icon: '🌍' },
     { num: 'CPL', label: 'Required License', icon: '🪪' },
 ];
 
@@ -217,11 +217,11 @@ export default function CPLSalaryPage() {
                                 <div className="space-y-4">
                                     <div className="bg-white/10 rounded-xl p-4">
                                         <p className="text-av-orange font-semibold text-sm mb-1">Newbie / Entry-Level Pilots</p>
-                                        <p className="font-montserrat text-white font-black text-2xl">USD 4,000 – 8,000 / Month</p>
+                                        <p className="font-montserrat text-white font-black text-2xl">₹3.3L – 6.6L / Month (≈ USD 4,000 – 8,000 / Month)</p>
                                     </div>
                                     <div className="bg-av-orange/20 border border-av-orange/40 rounded-xl p-4">
                                         <p className="text-av-orange font-semibold text-sm mb-1">Experienced Captains</p>
-                                        <p className="font-montserrat text-white font-black text-2xl">USD 10,000 – 20,000+ / Month</p>
+                                        <p className="font-montserrat text-white font-black text-2xl">₹8.3L – 16.6L+ / Month (≈ USD 10,000 – 20,000+ / Month)</p>
                                         <p className="text-white/50 text-xs mt-1">According to aircraft assignments and workplace.</p>
                                     </div>
                                 </div>
@@ -231,10 +231,10 @@ export default function CPLSalaryPage() {
                         <ScrollReveal delay={200}>
                             <div className="space-y-4">
                                 {[
-                                    { flag: '🇺🇸', country: 'USA', pay: 'USD 10,000 – 20,000+' },
-                                    { flag: '🇦🇺', country: 'Australia', pay: 'AUD 12,000 – 22,000+' },
-                                    { flag: '🇦🇪', country: 'UAE', pay: 'USD 12,000 – 18,000+' },
-                                    { flag: '🇸🇬', country: 'Singapore', pay: 'USD 8,000 – 16,000+' },
+                                    { flag: '🇺🇸', country: 'USA', pay: '₹8.3L – 16.6L+ / Month (≈ USD 10,000 – 20,000+)' },
+                                    { flag: '🇦🇺', country: 'Australia', pay: '₹10L – 18.3L+ / Month (≈ AUD 12,000 – 22,000+)' },
+                                    { flag: '🇦🇪', country: 'UAE', pay: '₹10L – 15L+ / Month (≈ USD 12,000 – 18,000+)' },
+                                    { flag: '🇸🇬', country: 'Singapore', pay: '₹6.6L – 13.3L+ / Month (≈ USD 8,000 – 16,000+)' },
                                 ].map((item, i) => (
                                     <div key={item.country} className="glass rounded-xl p-4 flex items-center gap-4">
                                         <span className="text-3xl">{item.flag}</span>
