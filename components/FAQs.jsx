@@ -13,7 +13,15 @@ const faqs = [
   { id: 'faq7', q: 'What is a Pilot Training Institute?', a: 'A Pilot Training Institute like We One Aviation Academy provides coaching to clear DGCA exams required to become a professional pilot — similar to how coaching centres help students clear NEET or IIT JEE.' },
 ];
 
-const faqPageSchema = generateFAQSchema(faqs);
+const faqPageSchema = generateFAQSchema(
+  faqs
+    .filter((faq) => faq?.q && faq?.a)
+    .map((faq) => ({
+      ...faq,
+      q: faq.q.trim(),
+      a: faq.a.trim(),
+    }))
+);
 
 export default function FAQs() {
   return (

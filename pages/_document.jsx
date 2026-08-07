@@ -51,7 +51,7 @@ export default function Document() {
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/assets/logo.webp" />
+        <link rel="apple-touch-icon" href="/Logo.webp" />
         <link rel="manifest" href="/manifest.json" />
 
         {/* Global OG defaults — pages override og:title, og:description, og:url */}
