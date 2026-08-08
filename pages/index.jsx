@@ -347,14 +347,7 @@ export default function Home() {
          * network hints and console warnings — removed here.
          */}
 
-        {/* ── Page-specific canonical ───────────────────────────────────────
-            ✅ SEO FIX 2a: Canonical must be page-specific, not just in _document.
-            _document.jsx sets a global default; each page should override it.
-            Homepage canonical = root URL with trailing slash.
-        ──────────────────────────────────────────────────────────────────── */}
-        <link rel="canonical" href="https://www.weoneaviation.in/" />
-
-        {/* ── Open Graph — page-specific ────────────────────────────────────
+        {/* ── Open Graph — page-specific ───────────────────────────────────────
             ✅ SEO FIX 2b: OG title/description/url missing from this page.
             _document.jsx only sets og:image and og:type as global defaults.
             Without these, Facebook/LinkedIn/WhatsApp show a blank preview

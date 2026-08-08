@@ -58,7 +58,6 @@ export default function PilotTrainingSriLanka() {
       <Head>
         <title>Pilot Training in Sri Lanka – CPL, PPL & DGCA Ground Classes | We One Aviation</title>
         <meta name="description" content="DGCA-recognized pilot training for Sri Lankan students. CPL, PPL, and DGCA ground classes with international flying school partnerships. Affordable fees, expert faculty." />
-        <link rel="canonical" href="https://www.weoneaviation.in/pilot-training-in-sri-lanka" />
         <meta property="og:title" content="Pilot Training in Sri Lanka – We One Aviation Academy" />
         <meta property="og:description" content="International pilot training programs for Sri Lankan students with DGCA recognition and international flying school partnerships." />
         <meta property="og:url" content="https://www.weoneaviation.in/pilot-training-in-sri-lanka" />
