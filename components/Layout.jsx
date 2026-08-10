@@ -3,7 +3,6 @@ import Footer from './Footer';
 import FloatingButtons from './FloatingButtons';
 import ContactPopup from './ContactPopup';
 import Head from 'next/head';
-import SpecialOfferBanner from './Specialofferbanner';
 import { useRouter } from 'next/router';
 import StructuredData from './StructuredData';
 
@@ -72,7 +71,6 @@ export default function Layout({ children, title, description, keywords, robots,
         <StructuredData data={organizationSchema} />
       </Head>
       <Navbar />
-      <SpecialOfferBanner />
       <main className="min-h-screen">{children}</main>
       {/* <FAQs /> */}
       <Footer />
