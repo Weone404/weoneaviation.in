@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { PILOTS_TRAINED, YEARS_LABEL } from '../data/academy';
 
 const slides = [
   {
@@ -11,7 +12,7 @@ const slides = [
     title: 'Your Dream of Flying',
     alt: 'Professional pilot training facility at We One Aviation Academy with modern aircraft and DGCA-approved simulators for Commercial Pilot License courses',
     highlight: 'Starts Here',
-    sub: '• 3500+ Pilots Trained • International Tie-ups',
+    sub: `• ${PILOTS_TRAINED} Pilots Trained • International Tie-ups`,
   },
   {
     id: 2,
@@ -44,10 +45,26 @@ const slides = [
 
 // Moved outside component — stable reference, never causes re-renders
 const STATS = [
-  ['3500+', 'Pilots Trained'],
-  ['16+', 'Years Experience'],
+  [PILOTS_TRAINED, 'Pilots Trained'],
+  [YEARS_LABEL, 'Years Experience'],
   ['100%', 'Placement Support'],
 ];
+
+/**
+ * Hero slides are full-bleed, so every viewport was served the same 1920px
+ * file — Lighthouse (mobile) attributed 633 KiB of transfer to Unsplash on the
+ * homepage alone, most of it pixels a phone cannot display.
+ *
+ * Unsplash resizes on demand from the `w` query parameter, so a srcset costs
+ * nothing to produce. Slides pointing at local files under /assets have no such
+ * parameter; those return undefined and fall back to plain `src`.
+ */
+const SRCSET_WIDTHS = [640, 960, 1280, 1920];
+
+function buildSrcSet(url) {
+  if (typeof url !== 'string' || !/[?&]w=\d+/.test(url)) return undefined;
+  return SRCSET_WIDTHS.map((w) => `${url.replace(/([?&]w=)\d+/, `$1${w}`)} ${w}w`).join(', ');
+}
 
 // Particle positions computed once, not on every render
 const PARTICLES = Array.from({ length: 8 }, (_, i) => ({
@@ -57,9 +74,20 @@ const PARTICLES = Array.from({ length: 8 }, (_, i) => ({
   duration: `${2 + i * 0.5}s`,
 }));
 
-export default function HeroSlider({ customSlides }) {
+/**
+ * @param asH1  Whether the slide title should render as the page's <h1>.
+ *
+ * This was hardcoded to 'h1'. Because the slider appears on most pages, any
+ * page that also wrote its own <h1> shipped two — 18 routes did, confirmed by
+ * crawling the built site. Two <h1>s leave the page's actual subject ambiguous
+ * to anything reading the document outline.
+ *
+ * Defaults to true so pages that rely on the slider for their heading are
+ * unaffected; pages with their own <h1> pass asH1={false} and get an <h2>.
+ */
+export default function HeroSlider({ customSlides, asH1 = true }) {
   const data = customSlides?.length ? customSlides : slides;
-  const Heading = 'h1';
+  const Heading = asH1 ? 'h1' : 'h2';
   const [current, setCurrent] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
   const [loaded, setLoaded] = useState(() => new Set([0]));
@@ -124,9 +152,13 @@ export default function HeroSlider({ customSlides }) {
             {(isFirst || shouldRender) && (
               <img
                 src={s.image}
+                srcSet={buildSrcSet(s.image)}
+                sizes="100vw"
                 alt={s.alt || s.tag}
                 className="absolute inset-0 w-full h-full object-cover object-center"
                 loading={isFirst ? 'eager' : 'lazy'}
+                fetchpriority={isFirst ? 'high' : undefined}
+                decoding="async"
               />
             )}
           </div>

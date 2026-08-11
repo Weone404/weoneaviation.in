@@ -12,18 +12,30 @@ export default function Layout({ children, title, description, keywords, robots,
   const router = useRouter();
   const canonicalPath = router.asPath ? router.asPath.split('?')[0] : '/';
 
-  // FIX 1: was weoneaviation.in (no www) — must match live domain www.weoneaviation.in
-  const canonicalUrl = `https://www.weoneaviation.in${canonicalPath === '/' ? '/' : canonicalPath}`;
+  /*
+   * Apex, not www. This was previously pointed at www on the stated grounds
+   * that the canonical "must match live domain www.weoneaviation.in". The
+   * server says otherwise:
+   *
+   *   curl -sI https://weoneaviation.in/      →  200
+   *   curl -sI https://www.weoneaviation.in/  →  301 → https://weoneaviation.in/
+   *
+   * The edge already redirects www to apex, so declaring www canonical aimed
+   * every page in the site at a URL that immediately redirects somewhere else.
+   * Canonical, sitemap, llms.txt and JSON-LD must all name the host that
+   * actually returns 200 — the apex.
+   */
+  const canonicalUrl = `https://weoneaviation.in${canonicalPath === '/' ? '/' : canonicalPath}`;
   const isAdminPage = router.pathname.startsWith('/admin');
   const resolvedRobots = robots ?? (noindex ? 'noindex, follow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://www.weoneaviation.in/#organization',
+    '@id': 'https://weoneaviation.in/#organization',
     name: 'We One Aviation Academy',
     legalName: 'We One Aviation Academy',
-    url: 'https://www.weoneaviation.in',
-    logo: 'https://www.weoneaviation.in/Logo.webp',
+    url: 'https://weoneaviation.in',
+    logo: 'https://weoneaviation.in/Logo.webp',
     description: 'DGCA approved pilot training institute in India offering CPL, PPL, ATPL and aviation career guidance.',
     address: {
       '@type': 'PostalAddress',
@@ -42,9 +54,19 @@ export default function Layout({ children, title, description, keywords, robots,
       },
     ],
     email: 'info@weoneaviation.in',
+    /*
+     * Kept identical to the list in _document.jsx. Both files emit an
+     * Organization node on every page, so when their `sameAs` arrays disagree
+     * the page ships two contradictory descriptions of the same entity — the
+     * worst of both worlds for entity resolution. Change them together.
+     *
+     * (The duplication itself is worth collapsing to one owner; it is recorded
+     * in GEO-AUDIT-REPORT.md rather than restructured here.)
+     */
     sameAs: [
-      'https://www.facebook.com/share/1AokxHk8Yv/?mibextid=wwXIfr',
-      'https://www.instagram.com/we_one_aviation?igsh=aTJ0YnphMGs3b2Fl&utm_source=qr',
+      'https://www.facebook.com/share/1AokxHk8Yv/',
+      'https://www.instagram.com/we_one_aviation',
+      'https://www.linkedin.com/company/weoneaviation',
     ],
   };
 
@@ -52,18 +74,26 @@ export default function Layout({ children, title, description, keywords, robots,
     <>
       <Head>
         <title>{title || 'WeOne Aviation Academy - Pilot Training in India'}</title>
-        <meta name="description" content={description || "WeOne Aviation Academy offers DGCA approved pilot training courses including CPL, PPL, ATPL in India. Join India's most trusted aviation training institute."} />
+        {/*
+          Every tag here carries a `key`. next/head only deduplicates head
+          elements that share one — without keys, a page that declares its own
+          canonical or og:url gets BOTH its tag and this one. /, /credentials
+          and /pilot-training-in-sri-lanka were each emitting two og:url values,
+          which leaves crawlers to pick one. Page-level overrides must use these
+          same key names to replace rather than duplicate.
+        */}
+        <meta key="description" name="description" content={description || "WeOne Aviation Academy offers DGCA approved pilot training courses including CPL, PPL, ATPL in India. Join India's most trusted aviation training institute."} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta key="robots" name="robots" content={resolvedRobots} />
-        <link rel="canonical" href={canonicalUrl} />
+        <link key="canonical" rel="canonical" href={canonicalUrl} />
 
         {/* OG */}
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:title" content={title || 'WeOne Aviation Academy'} />
-        <meta property="og:description" content={description || 'DGCA approved pilot training in India'} />
-        <meta property="og:type" content="website" />
+        <meta key="og:url" property="og:url" content={canonicalUrl} />
+        <meta key="og:title" property="og:title" content={title || 'WeOne Aviation Academy'} />
+        <meta key="og:description" property="og:description" content={description || 'DGCA approved pilot training in India'} />
+        <meta key="og:type" property="og:type" content="website" />
         {/* FIX 2: was /og-image.jpg (relative) — social bots need absolute URLs */}
-        <meta property="og:image" content="https://www.weoneaviation.in/og-cover.jpg" />
+        <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 

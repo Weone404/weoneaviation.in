@@ -201,8 +201,8 @@ const faqs = [
 
 const blogs = [
         { title: 'Pilot Training in Delhi', date: 'February 13, 2025', desc: 'Complete guide to pilot training in Delhi — DGCA exam, simulator practice, PPL & CPL course fees.', href: '/blogs/pilot-training-delhi' },
-        { title: 'Private Pilot License (PPL) Course Fees in India', date: 'February 10, 2025', desc: 'PPL Course Fees 2025 — everything an Indian student needs to know before enrolling.', href: '/blogs/ppl-course-fees' },
-        { title: 'Full Form of CPL | Commercial Pilot License in India', date: 'January 28, 2025', desc: 'What CPL means in Indian aviation, eligibility, DGCA requirements and career scope.', href: '/blogs/cpl-full-form' },
+        { title: 'Private Pilot License (PPL) Course Fees in India', date: 'February 10, 2025', desc: 'PPL Course Fees 2025 — everything an Indian student needs to know before enrolling.', href: '/courses/ppl' },
+        { title: 'Full Form of CPL | Commercial Pilot License in India', date: 'January 28, 2025', desc: 'What CPL means in Indian aviation, eligibility, DGCA requirements and career scope.', href: '/courses/cpl' },
         { title: 'Master the DGCA CPL Exam: Complete Guide for Indian Students', date: 'January 21, 2025', desc: 'Complete DGCA CPL exam guide — syllabus, subjects, exam centres, and success tips for India.', href: '/blogs/dgca-exam-guide' },
         { title: 'Aviation Course After 12th in India — Fees & Admission Guide', date: 'January 2, 2025', desc: 'All aviation courses available in India after 12th — fees, eligibility, and career paths explained.', href: '/blogs/aviation-course-after-12th' },
         { title: 'Best Aviation Academy in India', date: 'December 12, 2024', desc: 'How We One Aviation Academy became India\'s most trusted DGCA Ground Classes institute.', href: '/blogs/aviation-academy' },
@@ -215,7 +215,7 @@ export default function DGCAGroundClassesInIndia() {
             title="DGCA Ground Classes in India | #1 Pilot Coaching — All States | WeOne Aviation"
             description="Best DGCA Ground Classes in India — 100% pass rate, 3000+ pilots trained across all 28 states. Online & offline CPL ground coaching covering all 6 DGCA subjects. 25% scholarship available. Join WeOne Aviation Academy."
         >
-            <HeroSlider customSlides={heroSlides} />
+            <HeroSlider customSlides={heroSlides} asH1={false} />
 
             <section className="py-20 px-4">
                 <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">

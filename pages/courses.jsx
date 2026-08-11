@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import { PILOTS_TRAINED } from '../data/academy';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -17,7 +18,7 @@ const heroSlides = [
 ];
 
 const stats = [
-    { num: '500+', label: 'Students Trained', icon: '🎓' },
+    { num: PILOTS_TRAINED, label: 'Students Trained', icon: '🎓' },
     { num: '3', label: 'Training Countries', icon: '🌍' },
     { num: '100%', label: 'DGCA Approved', icon: '✅' },
     { num: '₹1.5L+', label: 'Avg Starting Salary/mo', icon: '💰' },
@@ -219,7 +220,7 @@ export default function CoursesPage() {
             title="Pilot Training Courses – CPL, PPL, DGCA Ground Classes & International Flying | WeOne Aviation"
             description="Explore all pilot training courses at WeOne Aviation Academy – DGCA approved CPL, PPL, ground classes, and international flight training in USA & South Africa."
         >
-            <HeroSlider customSlides={heroSlides} />
+            <HeroSlider customSlides={heroSlides} asH1={false} />
 
             <section className="bg-white py-4 px-4">
                 <div className="max-w-7xl mx-auto text-sm text-gray-600">

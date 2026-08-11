@@ -11,6 +11,7 @@ import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Head from 'next/head';
+import { FOUNDED_YEAR, YEARS_LABEL, PILOTS_TRAINED, SUCCESS_RATE, PARTNER_AIRLINES } from '../data/academy';
 import { useEffect, useState } from 'react';
 
 const credentials = [
@@ -20,7 +21,9 @@ const credentials = [
     items: [
       { title: 'DGCA Approval Status', detail: 'Fully DGCA-approved aviation training institute', verified: true },
       { title: 'Approval Type', detail: 'Ground School + Flying School + Simulator Training', verified: true },
-      { title: 'Last Audited', detail: 'Q4 2024 - Full Compliance', verified: true },
+      // "Last Audited: Q4 2024 — Full Compliance" removed (GEO audit 2026-08-11):
+      // an audit date that never advances reads as abandoned rather than
+      // reassuring. Restore it with a real date when there is one to publish.
     ]
   },
   {
@@ -37,10 +40,10 @@ const credentials = [
     category: 'Training Statistics (Verified)',
     icon: '📊',
     items: [
-      { title: '3500+ Pilots Trained', detail: 'Source: DGCA-approved training records (2009-2024)', verified: true },
-      { title: '98% Success Rate', detail: 'Source: DGCA exam pass rate tracking (2019-2024)', verified: true },
-      { title: '16+ Years of Operation', detail: 'Founded 2009 - Continuous operation verified', verified: true },
-      { title: '25+ Partner Airlines', detail: 'Source: Official MOU agreements on file', verified: true },
+      { title: `${PILOTS_TRAINED} Pilots Trained`, detail: `Source: DGCA-approved training records (since ${FOUNDED_YEAR})`, verified: true },
+      { title: `${SUCCESS_RATE} Success Rate`, detail: 'Source: DGCA exam pass rate tracking', verified: true },
+      { title: `${YEARS_LABEL} Years of Operation`, detail: `Founded ${FOUNDED_YEAR} - Continuous operation verified`, verified: true },
+      { title: `${PARTNER_AIRLINES} Partner Airlines`, detail: 'Source: Official MOU agreements on file', verified: true },
       { title: '100% Placement Support', detail: 'Documented placement outcomes available upon request', verified: true },
     ]
   },
@@ -76,11 +79,18 @@ const credentials = [
   },
 ];
 
+/**
+ * Only accreditations the academy can substantiate on request are listed here.
+ *
+ * GEO audit 2026-08-11: ISO 9001:2015, "IATA Certified" and "Member IAAPI" were
+ * removed. None carried a certificate or membership number, and an unbacked
+ * certification claim is a liability on the one page whose entire premise is
+ * verifiability — answer engines increasingly cross-check these against the
+ * issuing bodies' own registries. Restore an entry only together with its
+ * certificate number, stated inline so a reader can check it.
+ */
 const certifications = [
   { name: 'DGCA Approved', icon: '🏛️', description: 'Directorate General of Civil Aviation Approval' },
-  { name: 'ISO 9001:2015', icon: '⚙️', description: 'Quality Management System Certified' },
-  { name: 'IATA Certified', icon: '✈️', description: 'International Air Transport Association Standards' },
-  { name: 'Member IAAPI', icon: '🤝', description: 'Indian Aircraft Owners & Pilots Association' },
 ];
 
 export default function CredentialsPage() {
@@ -97,10 +107,10 @@ export default function CredentialsPage() {
       <Head>
         <title>Credentials & Verification – We One Aviation Academy</title>
         <meta name="description" content="Published credentials of We One Aviation Academy: DGCA accreditation, faculty qualifications with DGCA license numbers, verified training statistics, and international partnerships." />
-        <meta property="og:title" content="Credentials & Verification – We One Aviation Academy" />
-        <meta property="og:description" content="Verified credentials: DGCA approval, 3500+ pilots trained, instructor qualifications, student testimonials with LinkedIn verification." />
-        <meta property="og:url" content="https://www.weoneaviation.in/credentials" />
-        <meta property="og:type" content="website" />
+        <meta key="og:title" property="og:title" content="Credentials & Verification – We One Aviation Academy" />
+        <meta key="og:description" property="og:description" content={`Verified credentials: DGCA approval, ${PILOTS_TRAINED} pilots trained, instructor qualifications, and published faculty licence numbers.`} />
+        <meta key="og:url" property="og:url" content="https://weoneaviation.in/credentials" />
+        <meta key="og:type" property="og:type" content="website" />
 
         {/* Schema: Organization with credentials */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{
@@ -108,13 +118,15 @@ export default function CredentialsPage() {
             '@context': 'https://schema.org',
             '@type': 'EducationalOrganization',
             name: 'We One Aviation Academy',
-            url: 'https://www.weoneaviation.in',
+            url: 'https://weoneaviation.in',
             accreditedBy: {
               '@type': 'Organization',
               name: 'Directorate General of Civil Aviation (DGCA)',
               url: 'https://www.dgca.gov.in',
             },
-            sameAs: ['https://linkedin.com/company/weoneaviation'],
+            /* Same URL string as _document.jsx's sameAs — entity matching is
+               literal, so the two must not disagree on the host. */
+            sameAs: ['https://www.linkedin.com/company/weoneaviation'],
             description: 'India\'s DGCA-approved pilot training institute with published faculty credentials, verified training statistics, and international partnerships.',
           })
         }} />
@@ -136,10 +148,13 @@ export default function CredentialsPage() {
         {/* Certifications Bar */}
         <section className="py-16 px-4 bg-av-light">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {/* flex-wrap, not a fixed 4-column grid: the list is short and may
+                shrink further as unbacked claims are retired, and a fixed grid
+                leaves stranded empty columns. */}
+            <div className="flex flex-wrap justify-center gap-6">
               {certifications.map((cert) => (
                 <ScrollReveal key={cert.name}>
-                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 text-center card-hover">
+                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 text-center card-hover w-64 max-w-full">
                     <div className="text-3xl mb-2">{cert.icon}</div>
                     <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">{cert.name}</h3>
                     <p className="text-gray-500 text-xs">{cert.description}</p>

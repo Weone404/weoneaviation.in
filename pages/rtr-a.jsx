@@ -48,7 +48,7 @@ const whoNeeds = [
 export default function RTRAero() {
     return (
         <Layout title="RTR (Aero) License — Radio Telephony for DGCA CPL Pilots | WeOne Aviation" description="Complete RTR (Aero) training at We One Aviation Academy. Prepare for Radio Telephony Restricted exam with mock vivas, phraseology drills and expert ATC instructors in Delhi.">
-            <HeroSlider customSlides={heroSlides} />
+            <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
             <section className="py-20 px-4">

@@ -5,10 +5,11 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import { YEARS_LABEL, PILOTS_TRAINED, SUCCESS_RATE, PARTNER_AIRLINES } from '../data/academy';
 import AutoInternalLinks from '../components/AutoInternalLinks';
 
 const heroSlides = [
-  { id: 1, image: 'https://images.unsplash.com/photo-1559628233-100c798642d8?w=1920&q=80', tag: 'About WeOne Aviation', title: 'India\'s Most Trusted', highlight: 'Aviation Academy', sub: 'A legacy of 15+ years in shaping the next generation of pilots' },
+  { id: 1, image: 'https://images.unsplash.com/photo-1559628233-100c798642d8?w=1920&q=80', tag: 'About WeOne Aviation', title: 'India\'s Most Trusted', highlight: 'Aviation Academy', sub: `A legacy of ${YEARS_LABEL} years in shaping the next generation of pilots` },
   { id: 2, image: 'https://images.unsplash.com/photo-1585995028913-16e7a4c9c1d3?w=1920&q=80', tag: 'Our Mission', title: 'Excellence in', highlight: 'Pilot Training', sub: 'DGCA approved, internationally recognized training with world-class faculty' },
 ];
 
@@ -48,7 +49,7 @@ export default function About() {
   return (
     <Layout
       title="About WeOne Aviation Academy | DGCA Approved Pilot Training Institute"
-      description="Learn about WeOne Aviation Academy - India's premier DGCA-approved pilot training institute with 15+ years of excellence and 500+ pilots trained."
+      description={`Learn about WeOne Aviation Academy - India's premier DGCA-approved pilot training institute with ${YEARS_LABEL} years of excellence and ${PILOTS_TRAINED} pilots trained.`}
     >
       <HeroSlider customSlides={heroSlides} />
 
@@ -65,7 +66,7 @@ export default function About() {
           <ScrollReveal delay={200}>
             <div className="section-tag">Our Story</div>
             <h2 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
-              15+ Years of Aviation Excellence
+              {YEARS_LABEL} Years of Aviation Excellence
             </h2>
             <AutoInternalLinks currentPath="/about-us">
               <p className="text-gray-600 leading-relaxed mb-4 text-sm">
@@ -76,7 +77,7 @@ export default function About() {
               </p>
             </AutoInternalLinks>
             <div className="grid grid-cols-3 gap-4 mt-6">
-              {[['500+', 'Pilots'], ['50+', 'Airlines'], ['98%', 'Pass Rate']].map(([num, label]) => (
+              {[[PILOTS_TRAINED, 'Pilots'], [PARTNER_AIRLINES, 'Airlines'], [SUCCESS_RATE, 'Pass Rate']].map(([num, label]) => (
                 <div key={label} className="text-center p-4 bg-av-light rounded-xl">
                   <div className="font-montserrat text-xl font-black text-av-orange">{num}</div>
                   <div className="text-av-blue text-xs font-medium">{label}</div>

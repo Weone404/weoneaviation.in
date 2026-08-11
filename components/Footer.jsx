@@ -181,9 +181,17 @@ export default function Footer() {
               aria-label="Open We One Aviation location in Google Maps"
               className="block"
             >
+              {/* Lives in the footer, so it is always below the fold — but it
+                  was loading eagerly, making it the largest deferrable payload
+                  on the page (137 KiB) on mobile. Explicit dimensions stop it
+                  shifting layout as it arrives. */}
               <img
                 src="/map-preview.webp"
                 alt="We One Aviation Academy - Sector-7, Dwarka, New Delhi 110077"
+                width={600}
+                height={411}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-44 object-cover hover:opacity-90 transition-opacity duration-200"
               />
             </a>

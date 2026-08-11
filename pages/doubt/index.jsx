@@ -19,6 +19,14 @@ export default function DoubtPage() {
             <Head>
                 <title>Doubt Solver | DGCA Aviation</title>
                 <meta name="description" content="AI-powered DGCA aviation doubt solver" />
+                {/* This page bypasses <Layout>, so it inherited neither a
+                    canonical nor an og:url and was the only route on the site
+                    without one. Declared explicitly here. */}
+                <link rel="canonical" href="https://weoneaviation.in/doubt" />
+                <meta property="og:url" content="https://weoneaviation.in/doubt" />
+                <meta property="og:title" content="Doubt Solver | DGCA Aviation" />
+                <meta property="og:description" content="AI-powered DGCA aviation doubt solver" />
+                <meta property="og:type" content="website" />
             </Head>
 
             <div style={styles.page}>

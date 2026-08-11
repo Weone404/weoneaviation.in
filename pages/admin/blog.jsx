@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 const ReactQuill = dynamic(() => import('react-quill'), {
     ssr: false,
@@ -375,6 +376,17 @@ export default function AdminBlog() {
     // ════════════════════════════════════════════════════════════════════════
     return (
         <>
+            {/*
+              Quill's theme stylesheet, scoped to the one view that renders the
+              editor. It used to load globally — imported in _app.jsx and linked
+              from unpkg in _document.jsx — putting ~25 KB of editor CSS and
+              887 ms of render-blocking time on every public page. Served from
+              /public so it stays on this origin; Next only allows global CSS
+              imports from _app, so a <link> is how you scope it to a page.
+            */}
+            <Head>
+                <link rel="stylesheet" href="/vendor/quill.snow.css" />
+            </Head>
             <style dangerouslySetInnerHTML={{
                 __html: `
                     @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');

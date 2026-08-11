@@ -5,7 +5,14 @@ const { execFileSync } = require('child_process');
 const rootDir = path.resolve(__dirname, '..');
 const pagesDir = path.join(rootDir, 'pages');
 const outputPath = path.join(rootDir, '.generated-sitemap.xml');
-const host = 'https://www.weoneaviation.in';
+/*
+ * Apex, not www. This script writes .generated-sitemap.xml, which
+ * pages/sitemap.xml.js serves in preference to everything else — so this one
+ * constant decides the host for every URL Google is told to crawl. It was
+ * emitting www while the edge 301s www → apex, meaning all 113 entries pointed
+ * at redirects and disagreed with the canonical tags on the pages themselves.
+ */
+const host = 'https://weoneaviation.in';
 const ignoredFiles = new Set([
   '_app.js',
   '_app.jsx',

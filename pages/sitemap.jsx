@@ -29,7 +29,7 @@ const sitemapData = [
             { label: 'CPL Salary', href: '/commercial-pilot-license-salary' },
             { label: 'CPL Syllabus', href: '/commercial-pilot-license-syllabus' },
             { label: 'CPL Admission Process', href: '/commercial-pilot-license-admission-process' },
-            { label: 'CPL Flight Training', href: '/courses/cpl-flight-training' },
+            { label: 'CPL Flight Training', href: '/courses/cpl' },
             { label: 'Full Form of CPL', href: '/full-form-of-cpl-commercial-pilot-license' },
         ],
     },
@@ -204,10 +204,10 @@ const sitemapData = [
         headerColor: 'bg-pink-700',
         links: [
             { label: 'Aviation Course After 12th', href: '/blogs/aviation-course-after-12th' },
-            { label: 'CPL Full Form Blog', href: '/blogs/cpl-full-form' },
+            { label: 'CPL Full Form Blog', href: '/courses/cpl' },
             { label: 'DGCA Exam Guide', href: '/blogs/dgca-exam-guide' },
             { label: 'Pilot Training in Delhi', href: '/blogs/pilot-training-delhi' },
-            { label: 'PPL Course Fees', href: '/blogs/ppl-course-fees' },
+            { label: 'PPL Course Fees', href: '/courses/ppl' },
         ],
     },
     {

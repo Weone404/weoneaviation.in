@@ -54,13 +54,13 @@ const courseDetails = [
     { label: 'Duration', value: '2 to 4 weeks' },
     { label: 'Mode', value: 'Classroom / Online / Hybrid' },
     { label: 'Location', value: 'Dwarka Sector-7, Delhi' },
-    { label: 'Website', value: 'www.weoneaviation.in' },
+    { label: 'Website', value: 'weoneaviation.in' },
 ];
 
 export default function AviationMeteorology() {
     return (
         <Layout title="Aviation Meteorology Course — DGCA CPL/PPL | WeOne Aviation Academy" description="DGCA-approved Aviation Meteorology course in Delhi. Learn weather patterns, METAR/TAF decoding, wind systems, turbulence and more for CPL & PPL exams at We One Aviation Academy.">
-            <HeroSlider customSlides={heroSlides} />
+            <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
             <section className="py-20 px-4">

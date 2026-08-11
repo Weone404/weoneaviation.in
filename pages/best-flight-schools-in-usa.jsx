@@ -112,7 +112,7 @@ export default function USAFlightTraining() {
 
     return (
         <Layout title="Best Flight Schools in USA – FAA Pilot Training | WeOne Aviation Academy" description="Complete 250 hours of flying in 1.6 years from the USA. FAA-approved flight training in the United States with We One Aviation Academy. PPL, CPL, IR and multi-engine rating training.">
-            <HeroSlider customSlides={heroSlides} />
+            <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
             <section className="py-20 px-4">

@@ -34,7 +34,7 @@ const eligibility = [
 export default function QatarAirwaysCadet() {
     return (
         <Layout title="Qatar Airways Cadet Pilot Program – Complete Guide | WeOne Aviation Academy" description="Learn everything about the Qatar Airways Cadet Pilot Program — eligibility, training locations, program focus and how We One Aviation Academy can help you get selected.">
-            <HeroSlider customSlides={heroSlides} />
+            <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
             <section className="py-20 px-4">

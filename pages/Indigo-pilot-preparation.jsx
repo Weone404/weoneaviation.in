@@ -85,7 +85,7 @@ export default function IndiGoPilotPrep() {
             title="IndiGo Pilot Interview Preparation JFO 2026 | We One Aviation Academy"
             description="Crack the IndiGo Junior First Officer (JFO) selection process with We One Aviation's structured interview prep — ADAPT tests, Group Discussions, HR & Technical interviews for CPL holders and A320 Type Rated pilots."
         >
-            <HeroSlider customSlides={heroSlides} />
+            <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* ── Page body ── */}
             <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">

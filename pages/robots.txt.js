@@ -135,7 +135,7 @@ User-agent: Google-Extended
 Allow: /
 
 # ===== SITEMAP LOCATION =====
-Sitemap: https://www.weoneaviation.in/sitemap.xml`;
+Sitemap: https://weoneaviation.in/sitemap.xml`;
 
     res.setHeader('Content-Type', 'text/plain; charset=utf-8');
     res.write(content);
