@@ -33,7 +33,6 @@ export default function Document() {
 
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="dns-prefetch" href="//analytics.google.com" />
         <link rel="dns-prefetch" href="//stats.g.doubleclick.net" />
@@ -73,6 +72,7 @@ export default function Document() {
           href="https://unpkg.com/react-quill@2.0.0/dist/quill.snow.css"
         />
 
+        {/* Google Tag Manager */}
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -81,7 +81,7 @@ export default function Document() {
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KDLQQFKP');`,
+})(window,document,'script','dataLayer','GTM-KC7CGFHV');`,
           }}
         />
       </Head>
@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <body>
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KDLQQFKP"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KC7CGFHV"
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}

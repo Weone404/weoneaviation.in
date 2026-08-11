@@ -443,7 +443,6 @@ const nextConfig = {
               "default-src 'self'",
 
               "script-src 'self' 'unsafe-inline' 'unsafe-eval'" +
-              ' https://www.googletagmanager.com' +
               ' https://www.google-analytics.com' +
               ' https://ssl.google-analytics.com' +
               ' https://www.googleadservices.com' +
@@ -459,7 +458,6 @@ const nextConfig = {
               ' https://*.tecmicra.com',
 
               'frame-src' +
-              ' https://www.googletagmanager.com' +
               ' https://td.doubleclick.net' +
               ' https://tecmicra.com' +
               ' https://*.tecmicra.com' +
@@ -479,7 +477,6 @@ const nextConfig = {
               ' https://analytics.google.com' +
               ' https://stats.g.doubleclick.net' +
               ' https://ad.doubleclick.net' +
-              ' https://www.googletagmanager.com' +
               ' https://agents.dante-ai.com' +
               ' https://*.clarity.ms' +
               ' https://b.clarity.ms' +
@@ -491,7 +488,6 @@ const nextConfig = {
 
               // Removed images.unsplash.com — hero image should be self-hosted
               "img-src 'self' data: blob: https:" +
-              ' https://www.googletagmanager.com' +
               ' https://www.google-analytics.com' +
               ' https://www.google.com' +
               ' https://*.clarity.ms' +
@@ -502,8 +498,7 @@ const nextConfig = {
 
               "style-src 'self' 'unsafe-inline'" +
               ' https://fonts.googleapis.com' +
-              ' https://unpkg.com' +
-              ' https://www.googletagmanager.com',
+              ' https://unpkg.com',
 
               "font-src 'self' data: https://fonts.gstatic.com",
 
