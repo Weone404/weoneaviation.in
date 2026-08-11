@@ -141,11 +141,20 @@ export default function CPLPage() {
                         CPL Full Form: Meaning in Aviation, Cricket, Marketing, and More
                     </h1>
                     <p className="text-av-orange font-semibold text-lg mb-4">2025 Complete Guide</p>
+                    {/*
+                      Rewritten 2026-08-11 (GEO audit). The previous opening was
+                      "Have you ever come across the term CPL and wondered what
+                      it means? Well, you're not alone!" followed by "In this
+                      article, we'll explore..." — a question and a table of
+                      contents, so the first extractable passage on the page
+                      answered nothing. An answer engine has to be able to quote
+                      this paragraph alone and be correct.
+                    */}
                     <p className="text-white/70 max-w-3xl mx-auto text-sm leading-relaxed mb-4">
-                        Have you ever come across the term CPL and wondered what it means? Well, you're not alone! CPL is a three-letter acronym that stands for different things in various fields. From aviation to cricket, marketing to defense, the full form of CPL changes depending on the context. In this article, we'll explore the CPL full form in detail, its significance in different industries, and answer some common questions about it.
+                        In aviation, <strong className="text-white">CPL stands for Commercial Pilot License</strong> — the licence that permits a pilot to be paid to fly. In India it is issued by the Directorate General of Civil Aviation (DGCA) and requires a minimum of 200 flying hours, passes in the DGCA theory examinations, and a Class 1 medical certificate.
                     </p>
                     <p className="text-white/60 max-w-3xl mx-auto text-sm leading-relaxed">
-                        But behind every definition of CPL lies a human story — a pilot chasing their dream to soar the skies, a marketer striving to connect with potential customers, or a gamer competing for glory in the virtual arena. Let's Start in!
+                        CPL also carries unrelated meanings outside aviation — Caribbean Premier League in cricket, Cost Per Lead in marketing, and Common Public License in software — each covered below.
                     </p>
                 </ScrollReveal>
             </div>

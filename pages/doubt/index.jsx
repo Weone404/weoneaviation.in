@@ -17,8 +17,17 @@ export default function DoubtPage() {
     return (
         <>
             <Head>
-                <title>Doubt Solver | DGCA Aviation</title>
-                <meta name="description" content="AI-powered DGCA aviation doubt solver" />
+                <title>DGCA Doubt Solver — Ask Aviation Questions | WeOne Aviation</title>
+                <meta name="description" content="Ask questions about DGCA subjects — Air Navigation, Meteorology, Air Regulations and Technical General — and get instant explanations." />
+                {/* This page renders its own <Head> without <Layout>, so it had no
+                    canonical and no og:url at all (GEO audit 2026-08-11). It is an
+                    interactive tool rather than an article, so it is deliberately
+                    NOT in sitemap.xml — but it still needs a self-canonical so any
+                    query-string variants consolidate to one URL. */}
+                <link rel="canonical" href="https://weoneaviation.in/doubt" />
+                <meta property="og:url" content="https://weoneaviation.in/doubt" />
+                <meta property="og:title" content="DGCA Doubt Solver | WeOne Aviation" />
+                <meta property="og:type" content="website" />
             </Head>
 
             <div style={styles.page}>

@@ -3,6 +3,10 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import OfficialSources, { DGCA } from '../components/OfficialSources';
+import Byline from '../components/Byline';
+import ArticleSchema from '../components/ArticleSchema';
+import { authors } from '../data/authors';
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'DGCA Subject', title: 'Aviation', highlight: 'Meteorology', sub: 'Understanding Weather for Safe Flying — DGCA-approved training at We One Aviation Academy' },
@@ -60,6 +64,15 @@ const courseDetails = [
 export default function AviationMeteorology() {
     return (
         <Layout title="Aviation Meteorology Course — DGCA CPL/PPL | WeOne Aviation Academy" description="DGCA-approved Aviation Meteorology course in Delhi. Learn weather patterns, METAR/TAF decoding, wind systems, turbulence and more for CPL & PPL exams at We One Aviation Academy.">
+            <ArticleSchema
+                headline={'Aviation Meteorology for DGCA Exams'}
+                url={'https://weoneaviation.in/aviation-meteorology'}
+                datePublished={'2026-08-03'}
+                dateModified={'2026-08-03'}
+                author={authors.priya}
+            />
+            <Byline author={authors.priya} dateModified={'2026-08-03'} />
+
             <HeroSlider customSlides={heroSlides} />
 
             {/* Overview */}
@@ -233,6 +246,9 @@ export default function AviationMeteorology() {
                     </div>
                 </div>
             </section>
-        </Layout>
+                    <div className="max-w-4xl mx-auto px-4">
+                <OfficialSources sources={[DGCA.wmoMet, DGCA.exams]} />
+            </div>
+</Layout>
     );
 }

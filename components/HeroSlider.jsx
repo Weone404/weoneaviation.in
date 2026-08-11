@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { PILOTS_TRAINED, YEARS_LABEL } from '../data/academy';
 
 const slides = [
   {
@@ -11,7 +12,7 @@ const slides = [
     title: 'Your Dream of Flying',
     alt: 'Professional pilot training facility at We One Aviation Academy with modern aircraft and DGCA-approved simulators for Commercial Pilot License courses',
     highlight: 'Starts Here',
-    sub: '• 3500+ Pilots Trained • International Tie-ups',
+    sub: `• ${PILOTS_TRAINED} Pilots Trained • International Tie-ups`,
   },
   {
     id: 2,
@@ -44,10 +45,26 @@ const slides = [
 
 // Moved outside component — stable reference, never causes re-renders
 const STATS = [
-  ['3500+', 'Pilots Trained'],
-  ['16+', 'Years Experience'],
+  [PILOTS_TRAINED, 'Pilots Trained'],
+  [YEARS_LABEL, 'Years Experience'],
   ['100%', 'Placement Support'],
 ];
+
+/**
+ * Hero slides are full-bleed, so every viewport was served the same 1920px
+ * file — Lighthouse (mobile, 2026-08-11) attributed 633 KiB of transfer to
+ * Unsplash on the homepage alone, most of it pixels a phone cannot show.
+ *
+ * Unsplash resizes on demand from the `w` query parameter, so a srcset costs
+ * nothing to produce. Slides pointing at local files under /assets have no such
+ * parameter; those return undefined and fall back to plain `src`.
+ */
+const SRCSET_WIDTHS = [640, 960, 1280, 1920];
+
+function buildSrcSet(url) {
+  if (typeof url !== 'string' || !/[?&]w=\d+/.test(url)) return undefined;
+  return SRCSET_WIDTHS.map((w) => `${url.replace(/([?&]w=)\d+/, `$1${w}`)} ${w}w`).join(', ');
+}
 
 // Particle positions computed once, not on every render
 const PARTICLES = Array.from({ length: 8 }, (_, i) => ({
@@ -57,14 +74,29 @@ const PARTICLES = Array.from({ length: 8 }, (_, i) => ({
   duration: `${2 + i * 0.5}s`,
 }));
 
-export default function HeroSlider({ customSlides }) {
-  const data = customSlides?.length ? customSlides : slides; // ← ADD THIS
+/**
+ * `asH1` promotes the hero heading from <h2> to <h1>.
+ *
+ * The hero defaults to h2 because HeroSlider is reused on every page and the
+ * page's own content usually owns the single semantic H1. But several pages
+ * (about-us, courses/cpl-flight-training, dgca-ground-classes, air-navigation
+ * and others) rendered the slider and nothing else heading-wise, so they shipped
+ * with ZERO h1 — the document outline started at h2 (GEO audit 2026-08-11).
+ *
+ * Pass asH1 on any page where the hero IS the page title. Do not pass it on
+ * pages that already declare their own h1.
+ */
+export default function HeroSlider({ customSlides, asH1 = false }) {
+  const data = customSlides?.length ? customSlides : slides;
   const [current, setCurrent] = useState(0);
   const [transitioning, setTransitioning] = useState(false);
   const [loaded, setLoaded] = useState(() => new Set([0]));
-            <h2 className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-shadow mb-2">
-  {data[current]?.heading ?? 'Best Pilot Training Institute in India'}
-</h2>
+
+  // Removed here: a stray <h2>{data[current]?.heading}</h2> that sat loose in
+  // the function body, outside any return. As a bare expression statement it
+  // was valid JS but rendered nothing — dead code referencing a `heading` field
+  // the slide objects do not even have (they use `title`).
+
   // useCallback so goTo reference is stable for the interval cleanup
   const goTo = useCallback((idx) => {
     setTransitioning(true);
@@ -125,8 +157,11 @@ export default function HeroSlider({ customSlides }) {
             {(isFirst || shouldRender) && (
               <img
                 src={s.image}
+                srcSet={buildSrcSet(s.image)}
+                sizes="100vw"
                 alt={s.alt || s.tag}
                 loading={isFirst ? 'eager' : 'lazy'}
+                fetchpriority={isFirst ? 'high' : undefined}
                 decoding="async"
                 className="absolute inset-0 w-full h-full object-cover object-center"
               />
@@ -168,15 +203,25 @@ export default function HeroSlider({ customSlides }) {
           <div className="max-w-3xl">
             <div className="section-tag mb-4">{slide.tag}</div>
             {/*
-              Hero heading is an H2, NOT an H1. HeroSlider is reused on every page,
-              so the single semantic H1 must belong to each page's own content
-              (homepage: the tagline banner; inner pages: their page heading).
-              This avoids duplicate/competing H1s site-wide. Visual styling is
-              unchanged — only the tag level changed.
+              Hero heading defaults to H2, NOT H1: HeroSlider is reused on every
+              page, so the single semantic H1 normally belongs to the page's own
+              content (homepage: the tagline banner). Pages where the hero IS the
+              title pass asH1 — see the prop docs above. Visual styling is
+              identical either way; only the tag level changes.
             */}
-            <h2 className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-shadow mb-2">
-              {slide.title}
-            </h2>
+            {/* No per-slide guard needed: data.map() closes above this block.
+                The slide loop renders only the background layers; this content
+                area renders ONCE from `slide` (= data[current]), so asH1
+                produces exactly one <h1> per page. */}
+            {asH1 ? (
+              <h1 className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-shadow mb-2">
+                {slide.title}
+              </h1>
+            ) : (
+              <h2 className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-shadow mb-2">
+                {slide.title}
+              </h2>
+            )}
             <p className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-shadow mb-5 gradient-text">
               {slide.highlight}
             </p>
@@ -192,7 +237,7 @@ export default function HeroSlider({ customSlides }) {
                 Get Free Counselling
               </Link>
               <Link
-                href="/courses/cpl"
+                href="/courses/cpl-flight-training"
                 className="glass text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition-all text-sm md:text-base"
               >
                 Explore Courses →

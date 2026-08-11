@@ -14,9 +14,11 @@ module.exports = {
         'av-sky': '#0ea5e9',
         'av-light': '#e0f0ff',
       },
+      // Resolved from the next/font variables defined in pages/_app.jsx, so the
+      // self-hosted files are used rather than a Google-hosted stylesheet.
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        poppins: ['var(--font-poppins)', 'sans-serif'],
       },
       animation: {
         'fade-up': 'fadeUp 0.6s ease-out forwards',

@@ -39,7 +39,7 @@ export default function PilotTrainingMumbai() {
                         { label: 'Includes', value: '200+ hours of flying, DGCA exam prep, and soft skills training' },
                         { label: 'Career Opportunities', value: 'Airline pilot, cargo pilot, charter pilot' },
                     ],
-                    href: '/courses/cpl',
+                    href: '/courses/cpl-flight-training',
                     highlight: true,
                 },
                 {

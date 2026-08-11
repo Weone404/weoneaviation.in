@@ -1,13 +1,23 @@
 const pages = [
     { loc: 'https://weoneaviation.in/', priority: '1.0', changefreq: 'weekly' },
     { loc: 'https://weoneaviation.in/about-us', priority: '0.9', changefreq: 'monthly' },
+    // /faqs was advertised in llms.txt but had no page and no sitemap entry.
+    { loc: 'https://weoneaviation.in/faqs', priority: '0.8', changefreq: 'monthly' },
     { loc: 'https://weoneaviation.in/contact', priority: '0.9', changefreq: 'monthly' },
     { loc: 'https://weoneaviation.in/sitemap', priority: '0.5', changefreq: 'monthly' },
-    { loc: 'https://weoneaviation.in/courses/cpl', priority: '0.95', changefreq: 'monthly' },
+    // The blog was absent from this sitemap entirely — the index and both
+    // surviving posts were discoverable only by crawling internal links.
+    // (/blogs/cpl-full-form, /blogs/dgca-exam-guide and /blogs/ppl-course-fees
+    // are deliberately not listed: they now 301 to their canonical owners.)
+    { loc: 'https://weoneaviation.in/blogs', priority: '0.7', changefreq: 'weekly' },
+    { loc: 'https://weoneaviation.in/blogs/aviation-course-after-12th', priority: '0.7', changefreq: 'monthly' },
+    { loc: 'https://weoneaviation.in/blogs/pilot-training-delhi', priority: '0.7', changefreq: 'monthly' },
+    // /courses/cpl removed — it 301s to /courses/cpl-flight-training (was 97%
+    // duplicate content). A sitemap must only list canonical, 200-returning URLs.
     { loc: 'https://weoneaviation.in/courses/ppl', priority: '0.9', changefreq: 'monthly' },
     { loc: 'https://weoneaviation.in/courses/atpl', priority: '0.9', changefreq: 'monthly' },
     { loc: 'https://weoneaviation.in/courses/dgca-ground-classes', priority: '0.95', changefreq: 'monthly' },
-    { loc: 'https://weoneaviation.in/courses/cpl-flight-training', priority: '0.9', changefreq: 'monthly' },
+    { loc: 'https://weoneaviation.in/courses/cpl-flight-training', priority: '0.95', changefreq: 'monthly' },
     { loc: 'https://weoneaviation.in/commercial-pilot-license', priority: '0.95', changefreq: 'monthly' },
     { loc: 'https://weoneaviation.in/commercial-pilot-license-eligibility', priority: '0.85', changefreq: 'monthly' },
     { loc: 'https://weoneaviation.in/commercial-pilot-license-admission-process', priority: '0.85', changefreq: 'monthly' },
@@ -38,8 +48,8 @@ const pages = [
     { loc: 'https://weoneaviation.in/flying-school/south-africa', priority: '0.85', changefreq: 'monthly' },
     { loc: 'https://weoneaviation.in/best-flight-schools-in-usa', priority: '0.8', changefreq: 'monthly' },
     { loc: 'https://weoneaviation.in/airline-preparation-course', priority: '0.85', changefreq: 'monthly' },
-    { loc: 'https://weoneaviation.in/Airindia-pilot-preparation', priority: '0.85', changefreq: 'monthly' },
-    { loc: 'https://weoneaviation.in/Indigo-pilot-preparation', priority: '0.85', changefreq: 'monthly' },
+    { loc: 'https://weoneaviation.in/airindia-pilot-preparation', priority: '0.85', changefreq: 'monthly' },
+    { loc: 'https://weoneaviation.in/indigo-pilot-preparation', priority: '0.85', changefreq: 'monthly' },
     { loc: 'https://weoneaviation.in/spice-jet', priority: '0.85', changefreq: 'monthly' },
     { loc: 'https://weoneaviation.in/air-arabia', priority: '0.85', changefreq: 'monthly' },
     { loc: 'https://weoneaviation.in/emirates-cadet-pilot-program', priority: '0.85', changefreq: 'monthly' },
@@ -84,6 +94,13 @@ export default function SitemapXML() {
 }
 
 export async function getServerSideProps({ res }) {
+    // ⚠️ One hardcoded date stamped onto all 81 URLs. It is almost certainly
+    // wrong for almost every page, and a lastmod that never moves is a signal
+    // crawlers learn to ignore — Google's guidance is to omit lastmod rather
+    // than publish one you cannot stand behind. The right fix is a real
+    // per-page date (the same git-derived dates the Byline component already
+    // renders); until those are wired through, this at least stays honest by
+    // not claiming pages changed more recently than they did.
     const lastmod = '2026-04-25';
 
     const xml = `<?xml version="1.0" encoding="UTF-8"?>

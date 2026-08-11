@@ -3,6 +3,7 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import OfficialSources, { DGCA } from '../components/OfficialSources';
 
 const heroSlides = [
   { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Most Popular Course', title: 'DGCA Ground', highlight: 'Classes', sub: "India's best DGCA Ground Classes — delivering 100% results every year" },
@@ -179,7 +180,7 @@ export default function DGCAGroundClasses() {
       title="DGCA Ground Classes | Best Pilot Training Institute in India | WeOne Aviation"
       description="India's best DGCA Ground Classes delivering 100% results every year. 3000+ pilots trained. CPL ground school covering all DGCA subjects. Join WeOne Aviation Academy."
     >
-      <HeroSlider customSlides={heroSlides} />
+      <HeroSlider customSlides={heroSlides} asH1 />
 
       {/* Overview */}
       <section className="py-20 px-4">
@@ -551,6 +552,9 @@ export default function DGCAGroundClasses() {
           </div>
         </div>
       </section>
-    </Layout>
+                <div className="max-w-4xl mx-auto px-4">
+                <OfficialSources sources={[DGCA.exams, DGCA.car]} />
+            </div>
+</Layout>
   );
 }

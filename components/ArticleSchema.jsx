@@ -3,6 +3,11 @@ import Head from 'next/head';
 // Emits BlogPosting/Article structured data with author + publisher + dates.
 // datePublished/dateModified feed the AI "recency" signal (fresh content is
 // ~3x more likely to be cited). Pass REAL dates — never fabricate them.
+// `author` (optional) accepts one of the named experts from data/authors.js.
+// Attributing an article to a licensed instructor rather than to the company is
+// a materially stronger E-E-A-T signal: it gives the claim a person with
+// verifiable credentials behind it. Falls back to the Organization when the
+// article genuinely has no individual author.
 export default function ArticleSchema({
   headline,
   description,
@@ -10,6 +15,7 @@ export default function ArticleSchema({
   url,
   datePublished,
   dateModified,
+  author,
 }) {
   if (!headline) return null;
 
@@ -30,11 +36,25 @@ export default function ArticleSchema({
     ...(description ? { description } : {}),
     ...(image ? { image } : {}),
     ...(url ? { mainEntityOfPage: { '@type': 'WebPage', '@id': url } } : {}),
-    author: {
-      '@type': 'Organization',
-      name: 'We One Aviation Academy',
-      url: 'https://weoneaviation.in',
-    },
+    author: author
+      ? {
+          '@type': 'Person',
+          name: author.name,
+          ...(author.jobTitle ? { jobTitle: author.jobTitle } : {}),
+          ...(author.description ? { description: author.description } : {}),
+          ...(author.identifier ? { identifier: author.identifier } : {}),
+          ...(author.knowsAbout ? { knowsAbout: author.knowsAbout } : {}),
+          worksFor: {
+            '@type': 'EducationalOrganization',
+            name: 'We One Aviation Academy',
+            url: 'https://weoneaviation.in',
+          },
+        }
+      : {
+          '@type': 'Organization',
+          name: 'We One Aviation Academy',
+          url: 'https://weoneaviation.in',
+        },
     publisher: {
       '@type': 'Organization',
       name: 'We One Aviation Academy',

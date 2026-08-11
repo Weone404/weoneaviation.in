@@ -1,6 +1,10 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import OfficialSources, { DGCA } from '../components/OfficialSources';
+import Byline from '../components/Byline';
+import ArticleSchema from '../components/ArticleSchema';
+import { authors } from '../data/authors';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -48,6 +52,15 @@ export default function CPLEligibilityPage() {
             title="Commercial Pilot License (CPL) Eligibility – Complete Guide 2025"
             description="Learn the complete CPL eligibility criteria in India. Age requirement, educational qualification, medical fitness, flying hours, Student Pilot License (SPL), and more."
         >
+            <ArticleSchema
+                headline={'Commercial Pilot License Eligibility in India'}
+                url={'https://weoneaviation.in/commercial-pilot-license-eligibility'}
+                datePublished={'2026-06-27'}
+                dateModified={'2026-06-27'}
+                author={authors.rajesh}
+            />
+            <Byline author={authors.rajesh} dateModified={'2026-06-27'} />
+
 
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
@@ -383,6 +396,9 @@ export default function CPLEligibilityPage() {
                 </div>
             </section>
 
-        </Layout>
+                    <div className="max-w-4xl mx-auto px-4">
+                <OfficialSources sources={[DGCA.car, DGCA.eLicensing]} />
+            </div>
+</Layout>
     );
 }

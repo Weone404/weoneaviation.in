@@ -1,6 +1,10 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import OfficialSources, { DGCA } from '../components/OfficialSources';
+import Byline from '../components/Byline';
+import ArticleSchema from '../components/ArticleSchema';
+import { authors } from '../data/authors';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -91,6 +95,15 @@ export default function CPLSyllabusPage() {
             title="Commercial Pilot License Syllabus – Complete CPL Syllabus 2025 | DGCA"
             description="Explore the complete Commercial Pilot License (CPL) syllabus in India. Covers DGCA ground training subjects and flight training modules including Air Navigation, Meteorology, RTR, and more."
         >
+            <ArticleSchema
+                headline={'Commercial Pilot License Syllabus'}
+                url={'https://weoneaviation.in/commercial-pilot-license-syllabus'}
+                datePublished={'2026-06-27'}
+                dateModified={'2026-06-27'}
+                author={authors.priya}
+            />
+            <Byline author={authors.priya} dateModified={'2026-06-27'} />
+
 
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
@@ -231,6 +244,9 @@ export default function CPLSyllabusPage() {
                 </div>
             </section>
 
-        </Layout>
+                    <div className="max-w-4xl mx-auto px-4">
+                <OfficialSources sources={[DGCA.exams, DGCA.car]} />
+            </div>
+</Layout>
     );
 }

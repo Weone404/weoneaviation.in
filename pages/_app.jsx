@@ -2,8 +2,40 @@ import '../styles/globals.css';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
-import 'react-quill/dist/quill.snow.css';
 import dynamic from 'next/dynamic';
+import { Montserrat, Poppins } from 'next/font/google';
+
+/*
+ * Self-hosted via next/font instead of a <link> to fonts.googleapis.com.
+ *
+ * WHY (GEO audit 2026-08-11): mobile Lighthouse put the homepage at LCP 8.6s
+ * with a performance score of 64, and the LCP element is the hero <h1> — text,
+ * not an image. Text paint was blocked behind a third-party stylesheet costing
+ * 880ms. next/font emits @font-face rules into the app's own CSS and serves the
+ * files from this origin, so there is no blocking request and no extra
+ * connection to open.
+ *
+ * `display: 'swap'` keeps text visible during the swap period rather than
+ * holding the paint. Weights are pinned to the ones actually used — every extra
+ * weight is another file to download.
+ *
+ * These expose CSS variables rather than class names so that `body` and the
+ * Tailwind `font-montserrat` / `font-poppins` utilities can both reference them
+ * without wrapping the whole tree in an extra <div>. See tailwind.config.js.
+ */
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-montserrat',
+  display: 'swap',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-poppins',
+  display: 'swap',
+});
 
 const FloatingDoubtChat = dynamic(
   () => import('../components/FloatingDoubtChat'),
@@ -48,6 +80,15 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      {/* Publish the font variables on :root so both globals.css and the
+          Tailwind font utilities can reach them without a wrapper element. */}
+      <style jsx global>{`
+        :root {
+          --font-montserrat: ${montserrat.style.fontFamily};
+          --font-poppins: ${poppins.style.fontFamily};
+        }
+      `}</style>
+
       {/* ✅ Dante AI Chatbot */}
       <Script
         id="dante-ai-chatbot"

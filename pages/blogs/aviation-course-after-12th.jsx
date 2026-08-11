@@ -1,6 +1,9 @@
 import Layout from '../../components/Layout';
 import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
+import Byline from '../../components/Byline';
+import ArticleSchema from '../../components/ArticleSchema';
+import { authors } from '../../data/authors';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -224,6 +227,15 @@ export default function BecomeAPilotPage() {
             title="Aviation Courses After 12th: Pilot Career Paths | WeOne"
             description="Explore aviation courses and pilot career options after 12th — CPL, IAF and cadet routes, eligibility, requirements and salaries. Plan your pilot career."
         >
+            <ArticleSchema
+                headline={'Aviation Courses After 12th'}
+                url={'https://weoneaviation.in/blogs/aviation-course-after-12th'}
+                datePublished={'2026-08-03'}
+                dateModified={'2026-08-03'}
+                author={authors.rajesh}
+            />
+            <Byline author={authors.rajesh} dateModified={'2026-08-03'} />
+
 
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
@@ -725,7 +737,7 @@ export default function BecomeAPilotPage() {
                         <p className="text-white/80 text-sm leading-relaxed mb-6">
                             Pilot training can be expensive, typically ranging from <strong className="text-av-orange text-lg">₹35 lakhs to ₹46 lakhs</strong>. Costs vary by flight school and training type but are a necessary investment for this high-demand career.
                         </p>
-                        <Link href="/courses/cpl" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
+                        <Link href="/courses/cpl-flight-training" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
                             Wants To Know Pilot Course Fees in India →
                         </Link>
                     </ScrollReveal>

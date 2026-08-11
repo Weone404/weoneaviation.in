@@ -3,6 +3,10 @@ import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import OfficialSources, { DGCA } from '../components/OfficialSources';
+import Byline from '../components/Byline';
+import ArticleSchema from '../components/ArticleSchema';
+import { authors } from '../data/authors';
 
 /**
  * LeadForm is below the fold (in the sidebar).
@@ -137,7 +141,16 @@ export default function AirNavigation() {
             title="Air Navigation Course — DGCA CPL/PPL | WeOne Aviation Academy 2025"
             description="Best Air Navigation course in India for DGCA CPL & PPL exams. DGCA-approved training in Delhi with expert instructors, live flight planning, simulator sessions and full syllabus coverage."
         >
-            <HeroSlider customSlides={heroSlides} />
+            <ArticleSchema
+                headline={'Air Navigation for DGCA Exams'}
+                url={'https://weoneaviation.in/air-navigation'}
+                datePublished={'2026-06-27'}
+                dateModified={'2026-06-27'}
+                author={authors.priya}
+            />
+            <Byline author={authors.priya} dateModified={'2026-06-27'} />
+
+            <HeroSlider customSlides={heroSlides} asH1 />
 
             {/* Overview */}
             <section className="py-20 px-4">
@@ -149,9 +162,10 @@ export default function AirNavigation() {
                             <div className="section-tag">DGCA Subject</div>
 
                             {/*
-                SEO fix: only ONE h1 per page. The HeroSlider already renders
-                an h1 for the page title. These section headings use h2/h3
-                which is correct document hierarchy and avoids duplicate h1 penalty.
+                Section headings are h2/h3 — correct hierarchy under the page h1.
+                (The old note here claimed HeroSlider "already renders an h1".
+                It did not: it rendered an h2, so this page shipped with zero h1
+                until asH1 was added to the slider. Verified 2026-08-11.)
               */}
                             <h2 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
                                 Air Navigation — All Details 2025
@@ -336,6 +350,9 @@ export default function AirNavigation() {
                     </div>
                 </div>
             </section>
-        </Layout>
+                    <div className="max-w-4xl mx-auto px-4">
+                <OfficialSources sources={[DGCA.exams, DGCA.icao]} />
+            </div>
+</Layout>
     );
 }

@@ -3,6 +3,10 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import OfficialSources, { DGCA } from '../components/OfficialSources';
+import Byline from '../components/Byline';
+import ArticleSchema from '../components/ArticleSchema';
+import { authors } from '../data/authors';
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'DGCA Subject', title: 'Technical General', highlight: 'All Details 2025', sub: 'The backbone of your pilot training — understand how your aircraft truly works' },
@@ -87,6 +91,15 @@ const howWeTeach = [
 export default function TechnicalGeneral() {
     return (
         <Layout title="Technical General — DGCA CPL/PPL All Details 2025 | WeOne Aviation Academy" description="Complete guide to Technical General for DGCA CPL & PPL exams. Covers aircraft structure, aerodynamics, engines, systems, instruments, landing gear and fire protection at We One Aviation Academy.">
+            <ArticleSchema
+                headline={'Technical General for DGCA Exams'}
+                url={'https://weoneaviation.in/technical-general'}
+                datePublished={'2026-06-27'}
+                dateModified={'2026-06-27'}
+                author={authors.rajesh}
+            />
+            <Byline author={authors.rajesh} dateModified={'2026-06-27'} />
+
             <HeroSlider customSlides={heroSlides} />
 
             {/* Overview */}
@@ -226,6 +239,9 @@ export default function TechnicalGeneral() {
                     </div>
                 </div>
             </section>
-        </Layout>
+                    <div className="max-w-4xl mx-auto px-4">
+                <OfficialSources sources={[DGCA.exams, DGCA.car]} />
+            </div>
+</Layout>
     );
 }

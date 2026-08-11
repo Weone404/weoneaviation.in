@@ -2,8 +2,13 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+// NOTE: keep these evergreen. This list previously led with "Apply for March
+// CPL Batch", which was still advertising March in August — a stale promo is a
+// freshness signal working against you, and it is the first text most content
+// extractors pull off the page. If you want a month-specific promo, change it
+// when the batch changes, or drive it from a date-aware source.
 const tickerMessages = [
-  ' Apply for March CPL Batch – Limited Seats Available',
+  ' Apply for the Next CPL Batch – Limited Seats Available',
   ' Flight Training in USA & South Africa – Enroll Today',
   ' DGCA Class 2 & Class 1 Medical Assistance Available',
   ' We One Aviation – Best Pilot Training Institute in India',
@@ -46,9 +51,9 @@ const courses = [
       { label: 'Psychometry', href: '/airline-preparatory-classes/psychometry' },
       { label: 'CASS/COMPASS', href: '/airline-preparatory-classes/cass-compass' },
       { label: 'Written Exam Preparation', href: '/airline-preparatory-classes/written-exam-preparation' },
-      { label: 'Air India', href: '/Airindia-pilot-preparation' },
-      { label: 'Adapt Test For Air India', href: '/Airindia-pilot-preparation' },
-      { label: 'Adapt Test For IndiGo', href: '/Indigo-pilot-preparation' },
+      { label: 'Air India', href: '/airindia-pilot-preparation' },
+      { label: 'Adapt Test For Air India', href: '/airindia-pilot-preparation' },
+      { label: 'Adapt Test For IndiGo', href: '/indigo-pilot-preparation' },
     ],
   },
   { label: 'Private Pilot License (PPL)', href: '/private-pilot-license-ppl-course-details' },
@@ -120,10 +125,20 @@ function DropdownItem({ item }) {
 }
 
 function BreakingNewsTicker() {
-  const items = [...tickerMessages, ...tickerMessages];
-
   return (
-    <div className="w-full flex items-stretch overflow-hidden bg-orange-600" style={{ height: '36px' }}>
+    // <aside role="complementary"> instead of a bare <div>.
+    //
+    // This promo ticker sits above every page's real content, so naive text
+    // extractors (which many AI crawlers use) were treating it as the page's
+    // opening paragraph. On all 40 pages audited on 2026-08-11 the first
+    // substantial block of text was this marquee, not the answer the page
+    // actually gives. Marking it complementary tells parsers it is chrome.
+    <aside
+      role="complementary"
+      aria-label="Announcements"
+      className="w-full flex items-stretch overflow-hidden bg-orange-600"
+      style={{ height: '36px' }}
+    >
       {/* BREAKING badge */}
       <div className="relative z-10 flex shrink-0 items-center bg-red-800 px-3 sm:px-5">
         <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.2em] text-white sm:text-xs"></span>
@@ -133,15 +148,28 @@ function BreakingNewsTicker() {
         />
       </div>
 
-      {/* Scrolling track */}
+      {/* Scrolling track.
+          The message list is rendered twice so the CSS marquee can loop
+          seamlessly. Only the FIRST copy is real content — the second is a
+          visual duplicate, so it is aria-hidden. Previously both copies were
+          exposed, which doubled this promo text in the DOM and made screen
+          readers announce all seven messages twice. */}
       <div className="relative flex flex-1 items-center overflow-hidden">
         <div className="ticker-track flex items-center whitespace-nowrap">
-          {items.map((msg, i) => (
-            <span key={i} className="inline-flex items-center gap-3 text-xs font-bold text-white sm:text-sm">
+          {tickerMessages.map((msg, i) => (
+            <span key={`a-${i}`} className="inline-flex items-center gap-3 text-xs font-bold text-white sm:text-sm">
               <span className="px-6 leading-none">{msg}</span>
               <span className="text-red-300 opacity-70">◆</span>
             </span>
           ))}
+          <span aria-hidden="true" className="flex items-center">
+            {tickerMessages.map((msg, i) => (
+              <span key={`b-${i}`} className="inline-flex items-center gap-3 text-xs font-bold text-white sm:text-sm">
+                <span className="px-6 leading-none">{msg}</span>
+                <span className="text-red-300 opacity-70">◆</span>
+              </span>
+            ))}
+          </span>
         </div>
       </div>
 
@@ -165,8 +193,15 @@ function BreakingNewsTicker() {
           0%   { transform: translateX(0%); }
           100% { transform: translateX(-50%); }
         }
+        /* Respect users who have asked the OS to reduce motion. An infinitely
+           scrolling marquee is a common vestibular trigger. */
+        @media (prefers-reduced-motion: reduce) {
+          .ticker-track {
+            animation: none;
+          }
+        }
       `}</style>
-    </div>
+    </aside>
   );
 }
 

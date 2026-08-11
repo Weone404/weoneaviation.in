@@ -41,21 +41,29 @@ export default function Layout({ children, title, description }) {
   return (
     <>
       <Head>
+        {/*
+          Every tag below carries a `key`. next/head deduplicates by key, so if a
+          page renders its own <Head> with the same key, the page's value REPLACES
+          this one instead of both being emitted. Without keys the homepage was
+          shipping two <link rel="canonical">, two og:url and two og:title tags
+          (found in the 2026-08-11 GEO audit). Keep keys on anything a page might
+          legitimately want to override.
+        */}
         <title>{title || 'WeOne Aviation Academy - Pilot Training in India'}</title>
-        <meta name="description" content={description || "WeOne Aviation Academy offers DGCA approved pilot training courses including CPL, PPL, ATPL in India. Join India's most trusted aviation training institute."} />
+        <meta key="description" name="description" content={description || "WeOne Aviation Academy offers DGCA approved pilot training courses including CPL, PPL, ATPL in India. Join India's most trusted aviation training institute."} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        <link rel="canonical" href={canonicalUrl} />
+        <meta key="robots" name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <link key="canonical" rel="canonical" href={canonicalUrl} />
 
         {/* OG */}
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:title" content={title || 'WeOne Aviation Academy'} />
-        <meta property="og:description" content={description || 'DGCA approved pilot training in India'} />
-        <meta property="og:type" content="website" />
+        <meta key="og:url" property="og:url" content={canonicalUrl} />
+        <meta key="og:title" property="og:title" content={title || 'WeOne Aviation Academy'} />
+        <meta key="og:description" property="og:description" content={description || 'DGCA approved pilot training in India'} />
+        <meta key="og:type" property="og:type" content="website" />
         {/* FIX 2: was /og-image.jpg (relative) — social bots need absolute URLs */}
-        <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta key="og:image" property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
+        <meta key="og:image:width" property="og:image:width" content="1200" />
+        <meta key="og:image:height" property="og:image:height" content="630" />
 
         {breadcrumbSchema && !isAdminPage && (
           <script

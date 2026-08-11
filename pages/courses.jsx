@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import { PILOTS_TRAINED } from '../data/academy';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -17,7 +18,7 @@ const heroSlides = [
 ];
 
 const stats = [
-    { num: '500+', label: 'Students Trained', icon: '🎓' },
+    { num: PILOTS_TRAINED, label: 'Students Trained', icon: '🎓' },
     { num: '3', label: 'Training Countries', icon: '🌍' },
     { num: '100%', label: 'DGCA Approved', icon: '✅' },
     { num: '₹1.5L+', label: 'Avg Starting Salary/mo', icon: '💰' },

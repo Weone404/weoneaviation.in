@@ -138,6 +138,21 @@ export default function CPL() {
         <Layout title="CPL Flight Training in India: Hours & Aircraft | WeOne" description="DGCA CPL flight training in India — 200 flying hours, modern fleet, MEIR, medicals and exam guidance with WeOne Aviation Academy. Start your pilot career.">
             <HeroSlider customSlides={heroSlides} />
 
+            {/*
+              H1 added 2026-08-11 (GEO audit). This page rendered ZERO <h1>
+              elements — HeroSlider emits none — so the outline began at <h2>.
+              This is now the canonical CPL training page (/courses/cpl 301s
+              here), which makes a correct h1 more important, not less.
+            */}
+            <div className="bg-av-blue py-6 text-center px-4">
+                <h1 className="font-montserrat text-white font-bold text-2xl md:text-3xl">
+                    CPL Flight Training in India
+                </h1>
+                <p className="text-white/70 text-sm mt-2 max-w-2xl mx-auto">
+                    DGCA-approved Commercial Pilot License training — 200 flying hours, ground school, medicals and exams.
+                </p>
+            </div>
+
             {/* Overview */}
             <section className="py-20 px-4">
                 <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">

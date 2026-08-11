@@ -18,6 +18,14 @@ const nextConfig = {
   // OG tag, schema URL, sitemap entry, and llms.txt link agrees on ONE hostname.
   // Vercel runs this at the Edge — zero latency, no Lambda cold start.
   async redirects() {
+    // Cities that had BOTH a flat /pilot-training-in-<city> page and a thin
+    // nested /pilot-training-in/<city> duplicate. The nested route has been
+    // deleted; these 301s preserve any equity the old URLs earned.
+    const nestedCityDuplicates = [
+      'delhi', 'mumbai', 'bangalore', 'hyderabad', 'chennai', 'pune',
+      'kolkata', 'jaipur', 'nagpur', 'kerala', 'gujarat', 'haryana', 'punjab',
+    ];
+
     return [
       {
         source: '/:path*',
@@ -25,6 +33,66 @@ const nextConfig = {
         destination: 'https://weoneaviation.in/:path*',
         permanent: true,
       },
+
+      // ── Duplicate content consolidation (GEO audit 2026-08-11) ─────────────
+      // /courses/cpl was 97% identical to /courses/cpl-flight-training and
+      // shared its exact title and meta description. Three URLs competed for
+      // the site's most valuable topic; only one should.
+      {
+        source: '/courses/cpl',
+        destination: '/courses/cpl-flight-training',
+        permanent: true,
+      },
+
+      // Three blog posts were byte-identical to a course page, and in each case
+      // the body matched neither the URL nor the title. Each now redirects to
+      // the page whose URL matches what the duplicate's URL actually promises,
+      // so one URL owns each query instead of three splitting it:
+      //   ppl-course-fees  → the PPL course page, which carries the fees
+      //   dgca-exam-guide  → the DGCA ground classes page, which is exam prep
+      //   cpl-full-form    → the CPL definition page, not the training page
+      { source: '/blogs/ppl-course-fees', destination: '/courses/ppl', permanent: true },
+      { source: '/blogs/dgca-exam-guide', destination: '/courses/dgca-ground-classes', permanent: true },
+      { source: '/blogs/cpl-full-form', destination: '/full-form-of-cpl-commercial-pilot-license', permanent: true },
+
+      // ── /blog/* → /blogs/* ────────────────────────────────────────────────
+      // Production serves this redirect but no rule for it existed in this
+      // repository — the same "live site is not built from this branch" gap
+      // that produced the www/apex split. Without it, deploying this branch
+      // would 404 every /blog/* URL that is currently indexed and redirecting.
+      // Placed after the specific /blogs rules above so a /blog/cpl-full-form
+      // request lands on the final destination, not on a second hop.
+      { source: '/blog', destination: '/blogs', permanent: true },
+      { source: '/blog/ppl-course-fees', destination: '/courses/ppl', permanent: true },
+      { source: '/blog/dgca-exam-guide', destination: '/courses/dgca-ground-classes', permanent: true },
+      { source: '/blog/cpl-full-form', destination: '/full-form-of-cpl-commercial-pilot-license', permanent: true },
+      { source: '/blog/aviation-academy', destination: '/about-us', permanent: true },
+      { source: '/blog/:slug*', destination: '/blogs/:slug*', permanent: true },
+
+      // ── Thin nested city duplicates → canonical flat city pages ───────────
+      ...nestedCityDuplicates.map((city) => ({
+        source: `/pilot-training-in/${city}`,
+        destination: `/pilot-training-in-${city}`,
+        permanent: true,
+      })),
+      // Template artifacts that were live and sitemapped but were never pages.
+      { source: '/pilot-training-in/fallback', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in/paths', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in/:city*', destination: '/pilot-training-in-india', permanent: true },
+
+      // NOTE: the capitalised→lowercase redirects for the airline pages are NOT
+      // here. next.config.js matches `source` CASE-INSENSITIVELY, so a rule
+      // `/Indigo-pilot-preparation → /indigo-pilot-preparation` also matches the
+      // lowercase URL and redirects it to itself — an infinite loop. Those two
+      // redirects live in middleware.js, which can compare case exactly.
+
+      // ── Legacy URLs that are indexed but have no page ─────────────────────
+      // /our-courses is disallowed in robots.txt yet was still serving 200 and
+      // ranking. /aviation-academy-we-one-aviation-academy returns 404 but is
+      // still in Google's index. Both now resolve to their real successors.
+      { source: '/our-courses', destination: '/courses', permanent: true },
+      { source: '/our-courses/:path*', destination: '/courses', permanent: true },
+      { source: '/aviation-academy-we-one-aviation-academy', destination: '/about-us', permanent: true },
     ];
   },
 

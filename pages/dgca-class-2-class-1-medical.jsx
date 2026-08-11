@@ -4,6 +4,10 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import OfficialSources, { DGCA } from '../components/OfficialSources';
+import Byline from '../components/Byline';
+import ArticleSchema from '../components/ArticleSchema';
+import { authors } from '../data/authors';
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Pilot Guide', title: 'DGCA Medical', highlight: 'Class 1 & Class 2', sub: 'Complete Guide for Pilot Aspirants in India — Requirements, Procedure & Fees' },
@@ -92,6 +96,15 @@ const faqs = [
 export default function DGCAMedical() {
     return (
         <Layout title="DGCA Class 1 & Class 2 Medical Guide for Pilots | WeOne Aviation Academy" description="Complete guide to DGCA Class 2 and Class 1 Medical examinations for pilot aspirants in India. Requirements, steps, fees, validity and eGCA registration process explained in detail.">
+            <ArticleSchema
+                headline={'DGCA Class 1 and Class 2 Medical Requirements'}
+                url={'https://weoneaviation.in/dgca-class-2-class-1-medical'}
+                datePublished={'2026-08-03'}
+                dateModified={'2026-08-03'}
+                author={authors.anil}
+            />
+            <Byline author={authors.anil} dateModified={'2026-08-03'} />
+
             <FaqSchema faqs={faqs} />
             <HeroSlider customSlides={heroSlides} />
 
@@ -362,6 +375,9 @@ export default function DGCAMedical() {
                     </div>
                 </div>
             </section>
-        </Layout>
+                    <div className="max-w-4xl mx-auto px-4">
+                <OfficialSources sources={[DGCA.medical, DGCA.car]} />
+            </div>
+</Layout>
     );
 }

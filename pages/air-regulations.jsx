@@ -3,6 +3,10 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import OfficialSources, { DGCA } from '../components/OfficialSources';
+import Byline from '../components/Byline';
+import ArticleSchema from '../components/ArticleSchema';
+import { authors } from '../data/authors';
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'DGCA Subject', title: 'Air Regulations', highlight: 'Complete Guide', sub: 'Complete Guide for DGCA Exams and Pilot Training — We One Aviation Academy' },
@@ -94,6 +98,15 @@ const prepTips = [
 export default function AirRegulations() {
     return (
         <Layout title="Air Regulations – Complete Guide for DGCA Exams | WeOne Aviation Academy" description="Complete guide to Air Regulations for DGCA CPL/PPL exams. Covers ICAO, Chicago Convention, DGCA structure, Rules of the Air, airspace classification, licensing rules and more.">
+            <ArticleSchema
+                headline={'Air Regulations for DGCA Exams'}
+                url={'https://weoneaviation.in/air-regulations'}
+                datePublished={'2026-06-27'}
+                dateModified={'2026-06-27'}
+                author={authors.priya}
+            />
+            <Byline author={authors.priya} dateModified={'2026-06-27'} />
+
             <HeroSlider customSlides={heroSlides} />
 
             {/* Overview */}
@@ -291,6 +304,9 @@ export default function AirRegulations() {
                     </div>
                 </div>
             </section>
-        </Layout>
+                    <div className="max-w-4xl mx-auto px-4">
+                <OfficialSources sources={[DGCA.car, DGCA.icao, DGCA.icaoAnnex1]} />
+            </div>
+</Layout>
     );
 }

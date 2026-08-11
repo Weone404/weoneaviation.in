@@ -4,10 +4,12 @@ import CourseCard from '../components/CourseCard';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import { YEARS_LABEL, PILOTS_TRAINED, PARTNER_AIRLINES } from '../data/academy';
 import Image from 'next/image';
+import FaqSchema from '../components/FaqSchema';
 
 const courses = [
-    { icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: '18-24 months', eligibility: '10+2 (PCM)', href: '/courses/cpl', highlight: true },
+    { icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: '18-24 months', eligibility: '10+2 (PCM)', href: '/courses/cpl-flight-training', highlight: true },
     { icon: '🛩️', title: 'Private Pilot License (PPL)', duration: '6-12 months', eligibility: '10+2 any stream', href: '/courses/ppl' },
     { icon: '🏆', title: 'ATPL', duration: '36 months', eligibility: 'CPL holder', href: '/courses/atpl' },
     { icon: '🚁', title: 'Sport Pilot License (SPL)', duration: '3-6 months', eligibility: '16+ years', href: '/courses/spl' },
@@ -21,10 +23,10 @@ const testimonials = [
 ];
 
 const stats = [
-    { num: '500+', label: 'Pilots Trained', icon: '👨‍✈️' },
-    { num: '15+', label: 'Years of Excellence', icon: '🏆' },
+    { num: PILOTS_TRAINED, label: 'Pilots Trained', icon: '👨‍✈️' },
+    { num: YEARS_LABEL, label: 'Years of Excellence', icon: '🏆' },
     { num: '98%', label: 'Success Rate', icon: '📈' },
-    { num: '50+', label: 'Partner Airlines', icon: '✈️' },
+    { num: PARTNER_AIRLINES, label: 'Partner Airlines', icon: '✈️' },
 ];
 
 const cities = ['Delhi', 'Mumbai', 'Bangalore', 'Hyderabad', 'Chennai', 'Pune', 'Kolkata', 'Jaipur', 'Nagpur', 'Kerala'];
@@ -244,7 +246,7 @@ const trainingCourses = [
             { label: 'Includes', value: '200+ hours of flying, DGCA exam prep, and soft skills training' },
             { label: 'Career Opportunities', value: 'Airline pilot, cargo pilot, charter pilot' },
         ],
-        href: '/courses/cpl',
+        href: '/courses/cpl-flight-training',
         highlight: true,
     },
     {
@@ -335,7 +337,9 @@ const usaReasons = [
 
 export default function Home() {
     return (
-        <Layout title="WeOne Aviation Academy | Best Pilot Training Institute in India" description="India's premier DGCA-approved aviation training academy. CPL, PPL, ATPL, SPL courses. 500+ pilots trained. Free career counselling available.">
+        <Layout title="WeOne Aviation Academy | Best Pilot Training Institute in India" description={`India's premier DGCA-approved aviation training academy. CPL, PPL, ATPL, SPL courses. ${PILOTS_TRAINED} pilots trained. Free career counselling available.`}>
+            {/* FAQPage schema built from the same `faqs` array rendered below. */}
+            <FaqSchema faqs={faqs} />
             {/* Hero */}
             <HeroSlider />
 
@@ -809,7 +813,7 @@ export default function Home() {
                                     <div><span className="font-semibold text-av-orange">Full Course Fees:</span> 50–55 lakh (Depends on Country)</div>
                                     <div><span className="font-semibold text-av-orange">Batch Start Date:</span> Every First and Third Week of Month</div>
                                 </div>
-                                <Link href="/courses/cpl" className="mt-auto inline-block text-center bg-av-orange text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">
+                                <Link href="/courses/cpl-flight-training" className="mt-auto inline-block text-center bg-av-orange text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">
                                     Course Details
                                 </Link>
                             </div>
@@ -827,7 +831,7 @@ export default function Home() {
                         <p className="text-gray-600 leading-relaxed mb-4">
                             ✈️ Dreaming of Becoming a Commercial Pilot? Get DGCA-approved training, expert mentorship and hands-on flight experience.
                         </p>
-                        <Link href="/courses/cpl" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">Learn More</Link>
+                        <Link href="/courses/cpl-flight-training" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">Learn More</Link>
                     </ScrollReveal>
                     <ScrollReveal delay={150}>
                         <div className="section-tag">Ground Classes</div>
@@ -1103,7 +1107,11 @@ export default function Home() {
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
                         {cities.map((city, i) => (
                             <ScrollReveal key={city} delay={i * 60}>
-                                <Link href={`/pilot-training-in/${city.toLowerCase()}`}
+                                {/* Flat /pilot-training-in-<city> URLs. The nested
+                                    /pilot-training-in/<city> route was removed — it
+                                    duplicated these pages at ~1/3 the depth and with
+                                    no LocalBusiness schema. */}
+                                <Link href={`/pilot-training-in-${city.toLowerCase()}`}
                                     className="card-hover block text-center p-4 rounded-xl border border-gray-200 bg-white hover:border-av-orange hover:text-av-orange hover:bg-orange-50 transition-all text-sm font-medium text-av-blue">
                                     📍 {city}
                                 </Link>

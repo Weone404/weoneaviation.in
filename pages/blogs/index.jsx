@@ -38,8 +38,13 @@ export async function getServerSideProps() {
 export default function BlogsIndex({ mongoBlogs }) {
     const allBlogs = [...mongoBlogs, ...hardcodedBlogs];
 
+    // Title was 22 chars and the description 49 — both far below the useful
+    // range for a hub page carrying 30+ article links (GEO audit 2026-08-11).
     return (
-        <Layout title="Blogs – WeOne Aviation" description="Aviation blogs, pilot guides, DGCA tips and more.">
+        <Layout
+            title="Pilot Training Blog: DGCA Exams, CPL & Career Guides | WeOne Aviation"
+            description="Guides on DGCA exams, CPL and PPL training, medical requirements, flying school selection, fees and pilot salaries in India — written by We One Aviation's instructors."
+        >
             {/* Hero */}
             <div className="relative bg-gradient-to-br from-av-blue to-av-navy pt-32 pb-16 px-4 text-center text-white">
                 <h1 className="font-montserrat text-4xl md:text-5xl font-black mb-4">Aviation Blogs</h1>

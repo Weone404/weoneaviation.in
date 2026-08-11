@@ -112,7 +112,7 @@ export default function After12th() {
               <div className="bg-av-blue rounded-2xl p-6 text-white">
                 <h4 className="font-montserrat font-bold mb-4">Quick Links</h4>
                 <div className="space-y-2">
-                  {[['CPL Course Details', '/courses/cpl'], ['PPL Course Details', '/courses/ppl'], ['DGCA Ground Classes', '/courses/dgca-ground-classes'], ['How to Become a Pilot in India', '/how-to-become-a-pilot/in-india']].map(([label, href]) => (
+                  {[['CPL Course Details', '/courses/cpl-flight-training'], ['PPL Course Details', '/courses/ppl'], ['DGCA Ground Classes', '/courses/dgca-ground-classes'], ['How to Become a Pilot in India', '/how-to-become-a-pilot/in-india']].map(([label, href]) => (
                     <Link key={href} href={href} className="block text-white/70 hover:text-av-orange text-sm py-1 transition-all hover:translate-x-1">
                       → {label}
                     </Link>

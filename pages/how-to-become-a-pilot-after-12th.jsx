@@ -1,6 +1,10 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import OfficialSources, { DGCA } from '../components/OfficialSources';
+import Byline from '../components/Byline';
+import ArticleSchema from '../components/ArticleSchema';
+import { authors } from '../data/authors';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -224,6 +228,15 @@ export default function BecomeAPilotPage() {
             title="How to Become a Pilot After 12th in India (2026) | WeOne"
             description="Complete guide to becoming a pilot after 12th in India — eligibility, DGCA medical, exams, flying hours, IAF routes, salary and training costs."
         >
+            <ArticleSchema
+                headline={'How to Become a Pilot After 12th in India'}
+                url={'https://weoneaviation.in/how-to-become-a-pilot-after-12th'}
+                datePublished={'2026-08-03'}
+                dateModified={'2026-08-03'}
+                author={authors.rajesh}
+            />
+            <Byline author={authors.rajesh} dateModified={'2026-08-03'} />
+
 
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
@@ -725,13 +738,16 @@ export default function BecomeAPilotPage() {
                         <p className="text-white/80 text-sm leading-relaxed mb-6">
                             Pilot training can be expensive, typically ranging from <strong className="text-av-orange text-lg">₹35 lakhs to ₹46 lakhs</strong>. Costs vary by flight school and training type but are a necessary investment for this high-demand career.
                         </p>
-                        <Link href="/courses/cpl" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
+                        <Link href="/courses/cpl-flight-training" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
                             Wants To Know Pilot Course Fees in India →
                         </Link>
                     </ScrollReveal>
                 </div>
             </section>
 
-        </Layout>
+                    <div className="max-w-4xl mx-auto px-4">
+                <OfficialSources sources={[DGCA.car, DGCA.medical, DGCA.eLicensing]} />
+            </div>
+</Layout>
     );
 }

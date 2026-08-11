@@ -86,16 +86,25 @@ export default function DGCAPage() {
                     <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
                         DGCA Full Form – What is DGCA in Aviation?
                     </h1>
+                    {/*
+                      This paragraph is the one an answer engine lifts: it sits
+                      immediately after the H1 and is the page's first prose. It
+                      previously opened "When You Will Take Flight Then Ever You
+                      Thinks Who is Behind The Flight safety..." followed by
+                      "Lets Start With Basic." — not quotable, and a direct drag
+                      on how the page reads as a source. Rewritten as a
+                      self-contained definition: it answers the query on its own,
+                      without needing the rest of the page for context.
+                    */}
                     <p className="text-white/70 max-w-3xl mx-auto text-sm leading-relaxed mb-4">
-                        When You Will Take Flight Then Ever You Thinks Who is Behind The Flight safety, Rules and Operation In The skies? All Of These Operation, There is a Government organization Which Is DGCA.
+                        DGCA stands for the <strong>Directorate General of Civil Aviation</strong>, India&apos;s civil aviation regulator. It operates under the Ministry of Civil Aviation and is the authority that issues every Indian pilot licence — SPL, PPL, CPL and ATPL — certifies aircraft as airworthy, and approves the flying training organisations permitted to train pilots in India.
                     </p>
-                    <p className="text-white/60 max-w-xl mx-auto text-sm mb-6">Lets Start With Basic.</p>
                     <div className="inline-block bg-av-orange/20 border border-av-orange/40 rounded-2xl px-8 py-4 mb-4">
                         <p className="text-white/70 text-sm mb-1">The DGCA Full Form is</p>
                         <p className="font-montserrat text-2xl md:text-3xl font-black text-av-orange">Directorate General of Civil Aviation</p>
                     </div>
                     <p className="text-white/60 max-w-2xl mx-auto text-sm leading-relaxed mt-4">
-                        Lets Understand That What is DGCA and What is Their Role, Its Importance and Why its Matter The Most For India's aviation industry.
+                        Established in 1971 and headquartered in New Delhi, DGCA sets the medical standards, examination syllabus and flying-hour requirements that every pilot trained in India must meet.
                     </p>
                 </ScrollReveal>
             </div>

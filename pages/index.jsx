@@ -8,10 +8,14 @@
  * 2. Head: Added page-specific canonical, og:title, og:description,
  *          og:url, og:image (absolute URL), twitter:title, twitter:description
  * 3. Head: Added BreadcrumbList schema for homepage
- * 4. educationalOrgSchema: Fixed logo URL (was logo.png, actual file is Logo.webp)
- * 5. educationalOrgSchema: Fixed aggregateRating to match _document.jsx (4.9 / 3500)
- * 6. H1: Added keyword-focused <h1> in tagline banner (HeroSlider owns the hero section)
- * 7. Contact section: Changed Gmail → domain email info@weoneaviation.in
+ * 4. H1: Added keyword-focused <h1> in tagline banner (HeroSlider owns the hero section)
+ * 5. Contact section: Changed Gmail → domain email info@weoneaviation.in
+ *
+ * GEO AUDIT FIXES (2026-08-11):
+ * 6. Removed the duplicate EducationalOrganization node — _document.jsx owns it
+ * 7. Removed the unsupported aggregateRating (4.9 / "3500 reviews")
+ * 8. Rewrote reviewSchema as valid per-alumnus Review nodes
+ * 9. facultySchema: replaced invented properties with real schema.org ones
  */
 
 import dynamic from 'next/dynamic';
@@ -21,6 +25,7 @@ import CourseCard from '../components/CourseCard';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Head from 'next/head';
+import { FOUNDED_YEAR, YEARS_LABEL, PILOTS_TRAINED, SUCCESS_RATE, PARTNER_AIRLINES } from '../data/academy';
 
 // ─── LAZY LOAD HEAVY BELOW-FOLD COMPONENTS ───────────────────────────────────
 
@@ -56,10 +61,10 @@ const testimonials = [
 ];
 
 const stats = [
-  { id: 'pilots', num: '3500+', label: 'Pilots Trained', icon: '👨‍✈️', verified: true, source: 'DGCA-approved training records (2009-2024)' },
-  { id: 'years', num: '16+', label: 'Years of Excellence', icon: '🏆', verified: true, source: 'Founded 2009 - Still Operating' },
-  { id: 'success', num: '98%', label: 'Success Rate', icon: '📈', verified: true, source: 'DGCA exam pass rate tracking (2019-2024)' },
-  { id: 'airlines', num: '25+', label: 'Partner Airlines', icon: '✈️', verified: true, source: 'Official MOU agreements on file' },
+  { id: 'pilots', num: PILOTS_TRAINED, label: 'Pilots Trained', icon: '👨‍✈️', verified: true, source: `DGCA-approved training records (since ${FOUNDED_YEAR})` },
+  { id: 'years', num: YEARS_LABEL, label: 'Years of Excellence', icon: '🏆', verified: true, source: `Founded ${FOUNDED_YEAR} - Still Operating` },
+  { id: 'success', num: SUCCESS_RATE, label: 'Success Rate', icon: '📈', verified: true, source: 'DGCA exam pass rate tracking' },
+  { id: 'airlines', num: PARTNER_AIRLINES, label: 'Partner Airlines', icon: '✈️', verified: true, source: 'Official MOU agreements on file' },
 ];
 
 // ─── VERIFIED FACULTY WITH CREDENTIALS (E-E-A-T SIGNALS) ─────────────────
@@ -228,50 +233,50 @@ const pilotRoutes = [
 // ─── SCHEMA MARKUP ────────────────────────────────────────────────────────────
 // Defined at module level — created once, not on every render.
 
-// Enhanced review/testimonial schema for E-E-A-T
-const reviewSchema = {
+// Alumni testimonial schema for E-E-A-T.
+//
+// Previously this was a single Review whose `reviewRating` was an ARRAY of
+// Ratings, each carrying its own `author`. That is invalid: schema.org Review
+// takes exactly one reviewRating, and `author` belongs on the Review, not on
+// the Rating. Google silently drops the whole node. Rewritten as one Review
+// per alumnus, emitted as a JSON-LD array.
+const reviewSchema = [
+  {
+    name: 'Rahul Sharma',
+    credential: 'First Officer, IndiGo Airlines (Verified Pilot)',
+    body: 'Completed DGCA ground classes and CPL flight training with We One Aviation. The structured subject-wise coaching is what got me through the DGCA exams.',
+  },
+  {
+    name: 'Priya Mehta',
+    credential: 'CPL Holder, SpiceJet Regional (Verified Pilot)',
+    body: 'Guidance from counselling through flying school selection was clear at every stage. The ground school covered every DGCA subject in depth.',
+  },
+  {
+    name: 'Arjun Singh',
+    credential: 'Cadet Pilot, Air India (Verified)',
+    body: 'The instructors are working airline pilots, so the training reflects what the job actually demands rather than only exam theory.',
+  },
+].map((r) => ({
   '@context': 'https://schema.org',
   '@type': 'Review',
   itemReviewed: {
     '@type': 'EducationalOrganization',
     name: 'We One Aviation Academy',
+    url: 'https://weoneaviation.in',
   },
-  reviewRating: [
-    {
-      '@type': 'Rating',
-      ratingValue: '5',
-      bestRating: '5',
-      worstRating: '1',
-      author: {
-        '@type': 'Person',
-        name: 'Rahul Sharma',
-        description: 'First Officer, IndiGo Airlines (Verified Pilot)',
-      },
-    },
-    {
-      '@type': 'Rating',
-      ratingValue: '5',
-      bestRating: '5',
-      worstRating: '1',
-      author: {
-        '@type': 'Person',
-        name: 'Priya Mehta',
-        description: 'CPL Holder, SpiceJet Regional (Verified Pilot)',
-      },
-    },
-    {
-      '@type': 'Rating',
-      ratingValue: '5',
-      bestRating: '5',
-      worstRating: '1',
-      author: {
-        '@type': 'Person',
-        name: 'Arjun Singh',
-        description: 'Cadet Pilot, Air India (Verified)',
-      },
-    },
-  ],
-};
+  author: {
+    '@type': 'Person',
+    name: r.name,
+    description: r.credential,
+  },
+  reviewBody: r.body,
+  reviewRating: {
+    '@type': 'Rating',
+    ratingValue: '5',
+    bestRating: '5',
+    worstRating: '1',
+  },
+}));
 
 // Faculty/instructor credentials schema - E-E-A-T
 const facultySchema = {
@@ -285,14 +290,33 @@ const facultySchema = {
       '@type': 'Person',
       name: instr.name,
       jobTitle: instr.role,
-      workLocation: {
+      // `workLocation` expects a Place, not an Organization. The airline is who
+      // they fly for, so it belongs in affiliation; the academy is the employer.
+      affiliation: {
         '@type': 'Organization',
         name: instr.airline || 'We One Aviation Academy',
       },
+      worksFor: {
+        '@type': 'EducationalOrganization',
+        name: 'We One Aviation Academy',
+        url: 'https://weoneaviation.in',
+      },
       knowsAbout: [instr.expertise],
       description: instr.bio,
-      'dgcaLicense/Qualification': instr.dgcaLicense || instr.qualification,
-      yearsExperience: parseInt(instr.experience) || 0,
+      // 'dgcaLicense/Qualification' and 'yearsExperience' were invented property
+      // names — not in the schema.org vocabulary, so parsers discard them.
+      // The DGCA licence is an identifier; the licence itself is a credential.
+      identifier: instr.dgcaLicense || instr.qualification,
+      hasCredential: {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'DGCA Licence',
+        identifier: instr.dgcaLicense || instr.qualification,
+        recognizedBy: {
+          '@type': 'Organization',
+          name: 'Directorate General of Civil Aviation (DGCA)',
+          url: 'https://www.dgca.gov.in',
+        },
+      },
     },
   })),
 };
@@ -308,45 +332,29 @@ const faqSchema = {
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
-// ✅ SEO FIX 4: logo URL was 'logo.png' — actual file is 'Logo.webp'
-// ✅ SEO FIX 5: aggregateRating synced with _document.jsx (4.9 / 3500)
+// educationalOrgSchema REMOVED FROM THIS FILE (2026-08-11 GEO audit).
+//
+// Two reasons:
+//
+// 1. DUPLICATE NODE. pages/_document.jsx already emits an EducationalOrganization
+//    for the business on every page, including this one. Two nodes describing the
+//    same entity on one page is a knowledge-graph conflict — the crawler has to
+//    guess which is authoritative, and the address fields disagreed between the
+//    two copies (this one said "Ramphal Chowk, Dwarka, Sector-7" /
+//    addressRegion "Delhi"; _document says "Sector-7, Near Ramphal Chowk" /
+//    addressRegion "New Delhi"). One organisation, one node, in _document.jsx.
+//
+// 2. FAKE aggregateRating. This block claimed 4.9 from "3500" reviews. 3500 is
+//    the number of PILOTS TRAINED, not reviews, and no Review nodes existed to
+//    support it. Third-party sources disagree with it outright (Justdial: 5.0
+//    from ~1,294 ratings; ProvenExpert: 4.6 from 5). A self-declared rating on
+//    your own Organization markup also violates Google's structured data
+//    policy and risks a manual action.
+//
+//    Real alumni testimonials are marked up as individual Review nodes above
+//    (reviewSchema). Only reintroduce aggregateRating when it is computed from
+//    verified first-party reviews, using that platform's real count.
 // ─────────────────────────────────────────────────────────────────────────────
-const educationalOrgSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  name: 'We One Aviation Academy',
-  url: 'https://weoneaviation.in',
-  logo: 'https://weoneaviation.in/Logo.webp',       // ✅ FIXED: was logo.png
-  image: 'https://weoneaviation.in/og-cover.jpg',
-  description: "India's premier DGCA approved aviation training institute. CPL, PPL, ATPL, SPL courses. 3500+ pilots trained since 2009 with 98% pass rate.",
-  foundingDate: '2009',
-  telephone: '+919355611996',
-  email: 'info@weoneaviation.in',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'C-404, 3rd Floor, Ramphal Chowk, Dwarka, Sector-7',
-    addressLocality: 'New Delhi',
-    addressRegion: 'Delhi',
-    postalCode: '110075',
-    addressCountry: 'IN',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: '28.5921',
-    longitude: '77.0460',
-  },
-  accreditedBy: {
-    '@type': 'Organization',
-    name: 'Directorate General of Civil Aviation (DGCA)',
-    url: 'https://www.dgca.gov.in',
-  },
-  aggregateRating: {                                    // ✅ FIXED: synced with _document.jsx
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    reviewCount: '3500',
-    bestRating: '5',
-  },
-};
 
 const courseListSchema = {
   '@context': 'https://schema.org',
@@ -402,26 +410,17 @@ export default function Home() {
          * network hints and console warnings — removed here.
          */}
 
-        {/* ── Page-specific canonical ───────────────────────────────────────
-            ✅ SEO FIX 2a: Canonical must be page-specific, not just in _document.
-            _document.jsx sets a global default; each page should override it.
-            Homepage canonical = root URL with trailing slash.
-        ──────────────────────────────────────────────────────────────────── */}
-        <link rel="canonical" href="https://weoneaviation.in/" />
+        {/* ── Canonical / OG owned by <Layout> ─────────────────────────────
+            This page previously re-declared canonical, og:title, og:url and
+            og:description. <Layout> already emits all of them, and next/head
+            only deduplicates tags that share a `key` — so the homepage was
+            shipping TWO canonical tags, two og:url and two og:title
+            (2026-08-11 GEO audit). Removed here; Layout is the single owner.
 
-        {/* ── Open Graph — page-specific ────────────────────────────────────
-            ✅ SEO FIX 2b: OG title/description/url missing from this page.
-            _document.jsx only sets og:image and og:type as global defaults.
-            Without these, Facebook/LinkedIn/WhatsApp show a blank preview
-            card title when someone shares the homepage link.
+            The stronger og:description copy that used to live here is now
+            passed to <Layout description={...}> below, so nothing is lost.
+            og:image / og:image:alt come from _document.jsx as global defaults.
         ──────────────────────────────────────────────────────────────────── */}
-        <meta property="og:title" content="We One Aviation | Best Pilot Training Institute in India" />
-        <meta property="og:description" content="India's #1 DGCA-approved pilot training academy since 2009. CPL, PPL & ATPL courses. 3500+ pilots trained. Get free career counselling today!" />
-        <meta property="og:url" content="https://weoneaviation.in/" />
-        <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="We One Aviation Academy — Best Pilot Training Institute in India" />
 
         {/* ── Twitter Card — page-specific ─────────────────────────────────
             ✅ SEO FIX 2c: twitter:title and twitter:description were missing.
@@ -429,12 +428,14 @@ export default function Home() {
             but LinkedIn and some WhatsApp versions show no description at all.
         ──────────────────────────────────────────────────────────────────── */}
         <meta name="twitter:title" content="We One Aviation | Best Pilot Training Institute in India" />
-        <meta name="twitter:description" content="India's #1 DGCA-approved pilot training academy. CPL, PPL & ATPL courses. 3500+ pilots trained since 2009." />
+        <meta name="twitter:description" content={`India's #1 DGCA-approved pilot training academy. CPL, PPL & ATPL courses. ${PILOTS_TRAINED} pilots trained since ${FOUNDED_YEAR}.`} />
         <meta name="twitter:image" content="https://weoneaviation.in/og-cover.jpg" />
 
         {/* ── Schema Markup ─────────────────────────────────────────────── */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrgSchema) }} />
+        {/* EducationalOrganization intentionally NOT emitted here — _document.jsx
+            owns the single canonical node for the business. See the comment above
+            courseListSchema for why the duplicate was removed. */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseListSchema) }} />
         {/* ✅ SEO FIX 3: BreadcrumbList schema — new addition */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -445,7 +446,7 @@ export default function Home() {
 
       <Layout
         title="We One Aviation | Best Pilot Training Institute in India"
-        description="India's premier approved aviation training institute. CPL, PPL, ATPL, SPL courses. 3500+ pilots trained. Free career counselling available."
+        description={`India's #1 DGCA-approved pilot training academy since ${FOUNDED_YEAR}. CPL, PPL & ATPL courses. ${PILOTS_TRAINED} pilots trained. Get free career counselling today!`}
       >
 
         {/* HERO */}
@@ -488,7 +489,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-4">
-            <span className="text-white/80 text-sm font-semibold">We have trained 3500+ pilots across India since 2009</span>
+            <span className="text-white/80 text-sm font-semibold">We have trained {PILOTS_TRAINED} pilots across India since {FOUNDED_YEAR}</span>
           </div>
           <div className="text-center mt-1">
             <span className="text-av-orange text-sm font-semibold">Clear Your Dgca Exam In First Attempt With We One Aviation Academy</span>
@@ -511,7 +512,7 @@ export default function Home() {
               <p className="text-gray-600 leading-relaxed mb-6">
                 Our expert faculty, modern simulators, and personalized mentoring ensure every student
                 achieves their dream of becoming a professional pilot. With a 98% success rate and
-                3500+ pilots trained, we are India&apos;s #1 choice for aviation training.
+                {PILOTS_TRAINED} pilots trained, we are India&apos;s #1 choice for aviation training.
               </p>
               <div className="flex flex-wrap gap-3 mb-6">
                 {['DGCA Approved', 'International Tie-ups', '24/7 Support', 'Job Placement'].map(tag => (
@@ -545,7 +546,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="absolute -bottom-5 -left-5 bg-av-orange rounded-xl p-4 shadow-xl">
-                  <div className="font-montserrat text-white text-xl font-black">16+</div>
+                  <div className="font-montserrat text-white text-xl font-black">{YEARS_LABEL}</div>
                   <div className="text-white/80 text-xs">Years of Excellence</div>
                 </div>
                 <div className="absolute -top-5 -right-5 glass bg-av-blue rounded-xl p-4 shadow-xl border border-white/20">
@@ -718,7 +719,7 @@ export default function Home() {
               <ScrollReveal delay={150}>
                 <div className="bg-av-blue rounded-2xl shadow-lg p-8">
                   <h3 className="font-montserrat text-xl font-bold text-white mb-4">Our Flying School</h3>
-                  <p className="text-white/70 text-sm leading-relaxed mb-6">We provide flight training from 20+ countries. 3500+ students trained across India. We offer 225+ hours of flying — more than any other institute.</p>
+                  <p className="text-white/70 text-sm leading-relaxed mb-6">We provide flight training from 20+ countries. {PILOTS_TRAINED} students trained across India. We offer 225+ hours of flying — more than any other institute.</p>
                   <Link href="/contact" className="inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">Enquiry Now</Link>
                 </div>
               </ScrollReveal>

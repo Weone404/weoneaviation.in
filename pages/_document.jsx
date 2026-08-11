@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
+import { FOUNDED_YEAR, PILOTS_TRAINED } from '../data/academy';
 
 export default function Document() {
   return (
@@ -34,14 +35,17 @@ export default function Document() {
         <link rel="dns-prefetch" href="//www.clarity.ms" />
         <link rel="dns-prefetch" href="//googleleads.g.doubleclick.net" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/*
+          Montserrat and Poppins are now self-hosted through next/font in
+          _app.jsx, so the render-blocking fonts.googleapis.com stylesheet that
+          sat here is gone (880 ms on mobile — and the LCP element on the
+          homepage is an <h1>, so text paint was waiting on exactly this).
 
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap"
-          rel="stylesheet"
-        />
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+          The Material Icons stylesheet that sat here was removed outright: a
+          search for the `material-icons` class across pages/, components/ and
+          styles/ returns nothing. It cost 163 ms of render-blocking time on
+          every page to style nothing.
+        */}
 
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/assets/logo.webp" />
@@ -89,7 +93,7 @@ export default function Document() {
               logo: 'https://weoneaviation.in/Logo.webp',
               image: 'https://weoneaviation.in/og-cover.jpg',
               description:
-                "India's premier DGCA-approved pilot training institute since 2009. CPL, PPL, ATPL courses. 3500+ pilots trained.",
+                `India's premier DGCA-approved pilot training institute since ${FOUNDED_YEAR}. CPL, PPL, ATPL courses. ${PILOTS_TRAINED} pilots trained.`,
               foundingDate: '2009',
               telephone: '+91-9355611996',
               email: 'info@weoneaviation.in',
@@ -111,10 +115,18 @@ export default function Document() {
                 name: 'Directorate General of Civil Aviation (DGCA)',
                 url: 'https://www.dgca.gov.in',
               },
+              /*
+               * `sameAs` is how a model ties this site to the same real-world
+               * entity it sees elsewhere; each additional corroborating profile
+               * strengthens entity resolution. LinkedIn added 2026-08-11 — the
+               * company page was already linked from /credentials but was
+               * missing from the organisation schema, so it counted for nothing.
+               */
               sameAs: [
                 'https://www.facebook.com/share/1AokxHk8Yv/',
                 'https://www.instagram.com/we_one_aviation',
                 'https://www.youtube.com/@weoneaviationacademy',
+                'https://www.linkedin.com/company/weoneaviation',
                 'https://www.justdial.com/Delhi/We-One-Aviation-Academy-Near-By-Shiksa-Bharti-College-Dwarka-Sector-7/011PXX11-XX11-211126112621-P9X7_BZDET',
               ],
               hasOfferCatalog: {
@@ -130,10 +142,15 @@ export default function Document() {
           }}
         />
 
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/react-quill@2.0.0/dist/quill.snow.css"
-        />
+        {/*
+          Quill's stylesheet used to be pulled from unpkg here, on every public
+          page. Lighthouse (mobile, 2026-08-11) measured it at 887 ms of
+          render-blocking time — the single largest blocker on the site — for an
+          editor that only ever renders inside /admin/blog. It was also the third
+          copy: _app.jsx imported the same file locally and the admin page loads
+          the component itself. Removed; /admin/blog now links its own copy from
+          /vendor/quill.snow.css.
+        */}
 
         <Script
           id="gtm-script"

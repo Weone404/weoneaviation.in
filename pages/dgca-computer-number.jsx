@@ -3,6 +3,7 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import OfficialSources, { DGCA } from '../components/OfficialSources';
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Pilot Guide', title: 'DGCA Computer', highlight: 'Number', sub: 'Full Guide for Pilot Aspirants — Everything You Need to Know' },
@@ -316,6 +317,9 @@ export default function DGCAComputerNumber() {
                     </div>
                 </div>
             </section>
-        </Layout>
+                    <div className="max-w-4xl mx-auto px-4">
+                <OfficialSources sources={[DGCA.eLicensing, DGCA.exams]} />
+            </div>
+</Layout>
     );
 }

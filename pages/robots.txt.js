@@ -103,6 +103,68 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
+# ===== ALLOW AI CRAWLERS (GEO) =====
+# Named explicitly on purpose. These bots are already covered by the
+# "User-agent: *  Allow: /" group, but robots.txt uses most-specific-group-wins:
+# if any future edit adds a restrictive rule, an explicit group here keeps AI
+# answer engines reading the site. Two roles per vendor — the indexing crawler
+# that builds the model's search corpus, and the live user-triggered fetcher
+# that retrieves a page while answering a question. Both need access to be cited.
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google Gemini / AI Overviews training + grounding
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl — the corpus most open models train on
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
 # ===== SITEMAP LOCATION =====
 Sitemap: https://weoneaviation.in/sitemap.xml`;
 

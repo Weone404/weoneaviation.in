@@ -3,6 +3,10 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import OfficialSources, { DGCA } from '../components/OfficialSources';
+import Byline from '../components/Byline';
+import ArticleSchema from '../components/ArticleSchema';
+import { authors } from '../data/authors';
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'DGCA Subject', title: 'RTR (Aero)', highlight: 'Radio Telephony License', sub: 'The License Every Professional Pilot Needs — We One Aviation Academy' },
@@ -48,6 +52,15 @@ const whoNeeds = [
 export default function RTRAero() {
     return (
         <Layout title="RTR (Aero) License — Radio Telephony for DGCA CPL Pilots | WeOne Aviation" description="Complete RTR (Aero) training at We One Aviation Academy. Prepare for Radio Telephony Restricted exam with mock vivas, phraseology drills and expert ATC instructors in Delhi.">
+            <ArticleSchema
+                headline={'RTR(A) Radio Telephony Guide'}
+                url={'https://weoneaviation.in/rtr-a'}
+                datePublished={'2026-06-27'}
+                dateModified={'2026-06-27'}
+                author={authors.rajesh}
+            />
+            <Byline author={authors.rajesh} dateModified={'2026-06-27'} />
+
             <HeroSlider customSlides={heroSlides} />
 
             {/* Overview */}
@@ -229,6 +242,9 @@ export default function RTRAero() {
                     </div>
                 </div>
             </section>
-        </Layout>
+                    <div className="max-w-4xl mx-auto px-4">
+                <OfficialSources sources={[DGCA.wpc, DGCA.exams]} />
+            </div>
+</Layout>
     );
 }

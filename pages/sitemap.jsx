@@ -175,11 +175,11 @@ const sitemapData = [
         color: 'bg-pink-50 border-pink-200',
         headerColor: 'bg-pink-700',
         links: [
-            { label: 'Aviation Course After 12th', href: '/blog/aviation-course-after-12th' },
-            { label: 'CPL Full Form Blog', href: '/blog/cpl-full-form' },
-            { label: 'DGCA Exam Guide', href: '/blog/dgca-exam-guide' },
-            { label: 'Pilot Training in Delhi', href: '/blog/pilot-training-delhi' },
-            { label: 'PPL Course Fees', href: '/blog/ppl-course-fees' },
+            { label: 'Aviation Course After 12th', href: '/blogs/aviation-course-after-12th' },
+            { label: 'CPL Full Form Blog', href: '/full-form-of-cpl-commercial-pilot-license' },
+            { label: 'DGCA Exam Guide', href: '/courses/dgca-ground-classes' },
+            { label: 'Pilot Training in Delhi', href: '/blogs/pilot-training-delhi' },
+            { label: 'PPL Course Fees', href: '/courses/ppl' },
         ],
     },
     {

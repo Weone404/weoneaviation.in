@@ -5,9 +5,10 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import { YEARS_LABEL, PILOTS_TRAINED, SUCCESS_RATE, PARTNER_AIRLINES } from '../data/academy';
 
 const heroSlides = [
-  { id: 1, image: 'https://images.unsplash.com/photo-1559628233-100c798642d8?w=1920&q=80', tag: 'About WeOne Aviation', title: 'India\'s Most Trusted', highlight: 'Aviation Academy', sub: 'A legacy of 15+ years in shaping the next generation of pilots' },
+  { id: 1, image: 'https://images.unsplash.com/photo-1559628233-100c798642d8?w=1920&q=80', tag: 'About WeOne Aviation', title: 'India\'s Most Trusted', highlight: 'Aviation Academy', sub: `A legacy of ${YEARS_LABEL} years in shaping the next generation of pilots` },
   { id: 2, image: 'https://images.unsplash.com/photo-1585995028913-16e7a4c9c1d3?w=1920&q=80', tag: 'Our Mission', title: 'Excellence in', highlight: 'Pilot Training', sub: 'DGCA approved, internationally recognized training with world-class faculty' },
 ];
 
@@ -47,9 +48,24 @@ export default function About() {
   return (
     <Layout
       title="About WeOne Aviation Academy | DGCA Approved Pilot Training Institute"
-      description="Learn about WeOne Aviation Academy - India's premier DGCA-approved pilot training institute with 15+ years of excellence and 500+ pilots trained."
+      description={`Learn about WeOne Aviation Academy - India's premier DGCA-approved pilot training institute with ${YEARS_LABEL} years of excellence and ${PILOTS_TRAINED} pilots trained.`}
     >
       <HeroSlider customSlides={heroSlides} />
+
+      {/*
+        H1 added 2026-08-11 (GEO audit). This page rendered ZERO <h1> elements —
+        HeroSlider owns its own internal markup and emits none, so the document
+        outline started at <h2>. A page with no h1 gives crawlers and AI
+        extractors nothing to treat as the page's subject.
+      */}
+      <div className="bg-av-blue py-6 text-center px-4">
+        <h1 className="font-montserrat text-white font-bold text-2xl md:text-3xl">
+          About We One Aviation Academy
+        </h1>
+        <p className="text-white/70 text-sm mt-2 max-w-2xl mx-auto">
+          DGCA-approved pilot training institute in Dwarka, New Delhi, operating since 2009.
+        </p>
+      </div>
 
       {/* Mission & Vision */}
       <section className="py-20 px-4">
@@ -64,7 +80,7 @@ export default function About() {
           <ScrollReveal delay={200}>
             <div className="section-tag">Our Story</div>
             <h2 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
-              15+ Years of Aviation Excellence
+              {YEARS_LABEL} Years of Aviation Excellence
             </h2>
             <p className="text-gray-600 leading-relaxed mb-4 text-sm">
               Founded in 2009, WeOne Aviation Academy started with a simple mission: to make quality pilot training accessible to every Indian aspiring to fly. From a small ground school in Delhi, we have grown into India's most respected aviation training institute.
@@ -73,7 +89,7 @@ export default function About() {
               We are DGCA approved and have international tie-ups with partner flying schools in the USA (Florida), Canada (Ontario), Australia (Queensland), and Europe (Germany). Our integrated approach combines theoretical knowledge with practical flight training.
             </p>
             <div className="grid grid-cols-3 gap-4 mt-6">
-              {[['500+', 'Pilots'], ['50+', 'Airlines'], ['98%', 'Pass Rate']].map(([num, label]) => (
+              {[[PILOTS_TRAINED, 'Pilots'], [PARTNER_AIRLINES, 'Airlines'], [SUCCESS_RATE, 'Pass Rate']].map(([num, label]) => (
                 <div key={label} className="text-center p-4 bg-av-light rounded-xl">
                   <div className="font-montserrat text-xl font-black text-av-orange">{num}</div>
                   <div className="text-av-blue text-xs font-medium">{label}</div>

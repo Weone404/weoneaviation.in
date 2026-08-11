@@ -2,6 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import OfficialSources, { DGCA } from '../components/OfficialSources';
 const syllabus = [
   {
     phase: "Phase 1: Ground School",
@@ -95,6 +96,24 @@ export default function CPL() {
     <>
       <Head>
         <title>Commercial Pilot License (CPL) Course in India | WeOne Aviation</title>
+        {/*
+          This page renders Navbar/Footer directly instead of <Layout>, so it does
+          NOT inherit Layout's canonical, meta description or OG tags. They were
+          missing entirely — added here explicitly (GEO audit 2026-08-11).
+          If this page is ever migrated to <Layout>, delete these to avoid dupes.
+        */}
+        <meta
+          name="description"
+          content="Commercial Pilot License (CPL) in India — DGCA eligibility, 200 flying hours, exam subjects, medical requirements, fees and salary. Complete guide from We One Aviation Academy."
+        />
+        <link rel="canonical" href="https://weoneaviation.in/commercial-pilot-license" />
+        <meta property="og:title" content="Commercial Pilot License (CPL) Course in India | WeOne Aviation" />
+        <meta
+          property="og:description"
+          content="DGCA eligibility, 200 flying hours, exam subjects, medical requirements, fees and salary — the complete CPL guide."
+        />
+        <meta property="og:url" content="https://weoneaviation.in/commercial-pilot-license" />
+        <meta property="og:type" content="article" />
       </Head>
       <Navbar />
 
@@ -451,6 +470,10 @@ export default function CPL() {
             </a>
           </div>
         </section>
+
+        <div className="max-w-4xl mx-auto px-4">
+          <OfficialSources sources={[DGCA.car, DGCA.eLicensing, DGCA.medical]} />
+        </div>
 
       </div>
 

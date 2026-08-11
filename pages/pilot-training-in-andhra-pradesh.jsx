@@ -42,7 +42,7 @@ export default function PilotTrainingAndhraPradesh() {
             { label: 'Includes', value: '200+ hours of flying, DGCA exam preparation, and soft skills training' },
             { label: 'Career Opportunities', value: 'Airline pilot, cargo pilot, charter pilot' },
           ],
-          href: '/courses/cpl',
+          href: '/courses/cpl-flight-training',
           highlight: true,
         },
         {
