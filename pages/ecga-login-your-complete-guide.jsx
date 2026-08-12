@@ -2,7 +2,6 @@ import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Image from 'next/image';
-import Image from 'next/image';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -505,7 +504,6 @@ export default function EGCALoginPage() {
                     </ScrollReveal>
                 </div>
             </section>
-
         </Layout>
     );
 }
