@@ -408,10 +408,10 @@ export default function Home() {
         ────────────────────────────────────────────────────────────────── */}
         <div className="bg-av-orange py-4 text-center">
           <h2 className="text-white font-bold text-xl px-4">
-            Best Pilot Training Institute in India
+            Pilot training guidance for India’s next generation of aviators
           </h2>
           <p className="text-white/90 font-medium text-sm px-4 mt-1">
-            Get world-class flight training, DGCA-approved courses, and expert guidance to kickstart your aviation career.
+            Learn about DGCA ground classes, CPL pathways, and the steps needed to build a structured aviation career.
           </p>
           <Link
             href="/courses/cpl#fee-table"
@@ -452,17 +452,13 @@ export default function Home() {
             <ScrollReveal>
               <div className="section-tag">About Us</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4 underline-orange">
-                India&apos;s Most Trusted Aviation Academy
+                Pilot training support built around career clarity
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                We One Aviation Academy has been shaping the careers of aspiring pilots since 2009.
-                We are an approved institution offering world-class pilot training programs with
-                international tie-ups in USA, Canada, Australia, and Europe.
+                We One Aviation Academy has supported aspiring pilots since 2009 with structured guidance on DGCA exam preparation, training options, and the practical steps needed to move toward a professional aviation career.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Our expert faculty, modern simulators, and personalized mentoring ensure every student
-                achieves their dream of becoming a professional pilot. With a 98% success rate and
-                3500+ pilots trained, we are India&apos;s #1 choice for aviation training.
+                Our team works with students on course planning, flight-school decisions, and foundational aviation knowledge so they can make informed choices at every stage of their journey.
               </p>
               <div className="flex flex-wrap gap-3 mb-6">
                 {['DGCA Approved', 'International Tie-ups', '24/7 Support', 'Job Placement'].map(tag => (

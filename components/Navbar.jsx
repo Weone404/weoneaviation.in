@@ -3,13 +3,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const tickerMessages = [
-  ' Apply for March CPL Batch – Limited Seats Available',
-  ' Flight Training in USA & South Africa – Enroll Today',
-  ' DGCA Class 2 & Class 1 Medical Assistance Available',
-  ' We One Aviation – Best Pilot Training Institute in India',
-  ' Class 10 & 12 Topper? Get Full Money-Back Scholarship – You Fly Free!',
-  ' Topper Student Money-Back Guarantee – Top Scorers Fly at Zero Cost',
-  ' Flying School Scholarship Available – Apply Now & Take Off Your Career',
+  ' DGCA ground classes for Indian students',
+  ' CPL, PPL, and ATPL guidance available',
+  ' Flying school and medical support for pilot aspirants',
+  ' Career counselling for pilot training in India and abroad',
+  ' Online and offline batches for DGCA preparation',
+  ' Admissions open for upcoming aviation training batches',
+  ' Study plans designed around DGCA exam readiness',
 ];
 
 const courses = [

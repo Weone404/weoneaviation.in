@@ -92,7 +92,7 @@ export function CityPageTemplate({
                     <ScrollReveal>
                         <div className="section-tag">About Us</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4 underline-orange">
-                            Pilot Training Institute in {city} – 2025
+                            Pilot training guidance for {city}
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-6">{intro}</p>
                         <div className="flex flex-wrap gap-3 mb-6">
@@ -131,7 +131,7 @@ export function CityPageTemplate({
                             Why Choose Our Pilot Training <span className="text-av-orange">Institute in {city}?</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-                            We Provide Premium Pilot Training With 100% Placement Assistance. We Have Trained Almost 3000+ Pilots In India.
+                            We focus on clear DGCA preparation, practical training guidance, and career planning for students who want to move confidently toward a pilot career.
                         </p>
                     </ScrollReveal>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -159,7 +159,7 @@ export function CityPageTemplate({
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
                             Pilot Training Courses Offered in <span className="text-av-orange">{city}</span>
                         </h2>
-                        <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">We Offer All Types of Pilot Training Courses in {city}.</p>
+                        <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">We support students with the main pilot training paths relevant to {city}, including DGCA exam preparation and career guidance.</p>
                     </ScrollReveal>
                     <div className="grid sm:grid-cols-2 gap-8">
                         {courses.map((course, i) => (

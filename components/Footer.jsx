@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-montserrat text-2xl md:text-3xl font-bold mb-3">Ready to Take Flight?</h2>
           <p className="text-white/90 mb-6 text-sm md:text-base">
-            Join India's most trusted aviation training academy. Get free career counselling today.
+            Start your aviation journey with expert guidance on DGCA preparation, flying schools, and pilot career planning.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -44,8 +44,7 @@ export default function Footer() {
           <h4 className="font-montserrat font-bold text-av-orange text-base mb-3">We One Aviation</h4>
           <div className="border-t border-dashed border-white/20 mb-5" />
           <p className="text-white/70 text-sm leading-relaxed mb-5">
-            We One Aviation is a leading pilot training academy dedicated to helping aspiring aviators build
-            successful careers. CPL training, international flight programs, expert mentorship, and placement support.
+            We One Aviation supports students who want to pursue pilot training in India and abroad. Our guidance covers DGCA ground classes, flying-school selection, and career preparation.
           </p>
           <div className="flex gap-4">
 
@@ -99,34 +98,7 @@ export default function Footer() {
             ))}
           </ul>
 
-          <div className="mt-8">
-            {/* Added high-value internal links for location and guide pages that were underlinked in footer navigation. */}
-            <h5 className="font-montserrat font-bold text-av-orange text-sm mb-3">Pilot Pages</h5>
-            <div className="grid grid-cols-2 gap-2 text-xs text-white/70">
-              {[
-                { label: 'Pilot Training in Mumbai', href: '/pilot-training-in-mumbai' },
-                { label: 'Pilot Training in Bangalore', href: '/pilot-training-in-bangalore' },
-                { label: 'Pilot Training in Chennai', href: '/pilot-training-in-chennai' },
-                { label: 'Pilot Training in Coimbatore', href: '/pilot-training-in-coimbatore' },
-                { label: 'Pilot Training in Gujarat', href: '/pilot-training-in-gujarat' },
-                { label: 'Pilot Training in Tamil Nadu', href: '/pilot-training-in-tamil-nadu' },
-                { label: 'Pilot Training in Andhra Pradesh', href: '/pilot-training-in-andhra-pradesh' },
-                { label: 'Pilot Training in Assam', href: '/pilot-training-in-assam' },
-                { label: 'Pilot Training in Chhattisgarh', href: '/pilot-training-in-chhattisgarh' },
-                { label: 'Technical General', href: '/technical-general' },
-                { label: 'RTR-A', href: '/rtr-a' },
-                { label: 'RTR Full Form Guide', href: '/rtr-full-form-meaning-importance-and-complete-guide' },
-                { label: 'PPL Full Form', href: '/ppl-full-form' },
-                { label: 'DGCA Full Form', href: '/dgca-full-form' },
-                { label: 'Advanced ATPL Pilot Training', href: '/advanced-atpl-pilot-training' },
-                { label: 'Best Flight Schools in USA', href: '/best-flight-schools-in-usa' },
-              ].map((item) => (
-                <Link key={item.href} href={item.href} className="block hover:text-av-orange transition-colors">
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
+          
         </div>
 
         {/* Column 3 — How to reach us */}

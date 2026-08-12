@@ -4,49 +4,46 @@ import Link from 'next/link';
 const slides = [
   {
     id: 1,
-    // Reduced quality param from q=80 to q=75, added fm=webp for explicit WebP
-    // next/image will further optimize this, but explicit format helps CDN caching
     image: '/1725_piper-pa34-seneca.jpg',
-    tag: "India's #1 Aviation Academy",
-    title: 'Your Dream of Flying',
+    tag: 'DGCA Approved Pilot Training',
+    title: 'Build a career in',
     alt: 'Professional pilot training facility at We One Aviation Academy with modern aircraft and DGCA-approved simulators for Commercial Pilot License courses',
-    highlight: 'Starts Here',
-    sub: '• 3500+ Pilots Trained • International Tie-ups',
+    highlight: 'commercial aviation',
+    sub: 'Structured CPL, PPL, and DGCA ground class guidance for students in India.',
   },
   {
     id: 2,
     image: '/Piper Archer.jpg',
     tag: 'Commercial Pilot License',
-    title: 'Become an Airline',
+    title: 'Learn the path from',
     alt: 'Commercial pilot in cockpit - CPL training at We One Aviation Academy with airline partnership opportunities',
-    highlight: 'Captain',
-    sub: 'Fast-track CPL programs with 100% placement support',
+    highlight: 'ground school to cockpit',
+    sub: 'Focused preparation for DGCA exams, flight training, and airline career planning.',
   },
   {
     id: 3,
     image: '/redbird and simulator.jpg',
-    tag: 'World-Class Training',
-    title: 'Modern Fleet &',
+    tag: 'Flight Simulator Training',
+    title: 'Train with modern',
     alt: 'Advanced flight simulator and training equipment at We One Aviation Academy for DGCA ground classes and CPL preparation',
-    highlight: 'Simulators',
-    sub: 'Train on latest aircraft with expert approved instructors',
+    highlight: 'aircraft systems',
+    sub: 'Practical, safety-oriented learning with aircraft operations and simulator-based practice.',
   },
   {
     id: 4,
     image: '/king_air_b_350.jpeg',
-    tag: 'Pilot Training Across India',
-    title: 'From India to the',
+    tag: 'Global Aviation Pathways',
+    title: 'Explore training options',
     alt: 'International aviation training - We One Aviation Academy offers pilot training in USA, Canada, Australia and Europe',
-    highlight: 'World',
-    sub: 'International tie-ups with USA, Canada, Australia, Europe',
+    highlight: 'in India and abroad',
+    sub: 'Understand the right path for your training, licensing, and future airline goals.',
   },
 ];
 
-// Moved outside component — stable reference, never causes re-renders
 const STATS = [
   ['3500+', 'Pilots Trained'],
   ['16+', 'Years Experience'],
-  ['100%', 'Placement Support'],
+  ['Career', 'Guidance Support'],
 ];
 
 // Particle positions computed once, not on every render

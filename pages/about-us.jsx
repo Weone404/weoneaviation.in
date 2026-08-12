@@ -8,8 +8,8 @@ import Link from 'next/link';
 import AutoInternalLinks from '../components/AutoInternalLinks';
 
 const heroSlides = [
-  { id: 1, image: 'https://images.unsplash.com/photo-1559628233-100c798642d8?w=1920&q=80', tag: 'About WeOne Aviation', title: 'India\'s Most Trusted', highlight: 'Aviation Academy', sub: 'A legacy of 15+ years in shaping the next generation of pilots' },
-  { id: 2, image: 'https://images.unsplash.com/photo-1585995028913-16e7a4c9c1d3?w=1920&q=80', tag: 'Our Mission', title: 'Excellence in', highlight: 'Pilot Training', sub: 'DGCA approved, internationally recognized training with world-class faculty' },
+  { id: 1, image: 'https://images.unsplash.com/photo-1559628233-100c798642d8?w=1920&q=80', tag: 'About We One Aviation', title: 'Aviation training built', highlight: 'around outcomes', sub: 'A grounded, practical approach to DGCA preparation and pilot career development.' },
+  { id: 2, image: 'https://images.unsplash.com/photo-1585995028913-16e7a4c9c1d3?w=1920&q=80', tag: 'Our Approach', title: 'Structured learning', highlight: 'for aspiring pilots', sub: 'Guidance for theory, flying school selection, and real-world aviation readiness.' },
 ];
 
 const team = [
@@ -65,14 +65,14 @@ export default function About() {
           <ScrollReveal delay={200}>
             <div className="section-tag">Our Story</div>
             <h2 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
-              15+ Years of Aviation Excellence
+              Practical pilot training support since 2009
             </h2>
             <AutoInternalLinks currentPath="/about-us">
               <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                Founded in 2009, WeOne Aviation Academy started with a simple mission: to make quality pilot training accessible to every Indian aspiring to fly. From a small ground school in Delhi, we have grown into India's most respected aviation training institute.
+                We One Aviation Academy began with a clear goal: help students understand the path to becoming a pilot with practical guidance, DGCA-focused coaching, and honest career support. Over the years, we have supported students from across India as they prepare for ground exams, medical checks, and flying-school decisions.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                We are DGCA approved and have international tie-ups with partner flying schools in the USA (Florida), Canada (Ontario), Australia (Queensland), and Europe (Germany). Our integrated approach combines theoretical knowledge with practical flight training.
+                Our work is designed around aviation fundamentals, student mentoring, and clear preparation for each stage of a pilot career. We support students through DGCA ground classes, route planning, and training choices in India and abroad.
               </p>
             </AutoInternalLinks>
             <div className="grid grid-cols-3 gap-4 mt-6">
@@ -91,9 +91,9 @@ export default function About() {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
           {[
-            { icon: '🎯', title: 'Our Mission', text: 'To empower every aspiring pilot with world-class training, cutting-edge simulators, and personalized mentorship to build successful aviation careers.' },
-            { icon: '🔭', title: 'Our Vision', text: "To be India's #1 aviation academy globally recognized for producing highly skilled, safety-conscious, and professional pilots." },
-            { icon: '💎', title: 'Our Values', text: 'Safety first. Integrity always. Excellence in training. We uphold the highest standards of aviation education and professional conduct.' },
+            { icon: '🎯', title: 'Our Mission', text: 'To guide students through the aviation training journey with structured coaching, practical advice, and support at every stage of preparation.' },
+            { icon: '🔭', title: 'Our Vision', text: 'To help more Indian students make informed, realistic choices about pilot training, licensing, and long-term career planning.' },
+            { icon: '💎', title: 'Our Values', text: 'Clarity, discipline, and safety-focused learning. We believe good aviation education starts with honest guidance and consistent preparation.' },
           ].map((item, i) => (
             <ScrollReveal key={item.title} delay={i * 100}>
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 text-center card-hover">
