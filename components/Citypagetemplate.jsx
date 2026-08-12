@@ -39,10 +39,14 @@ export function CityPageTemplate({
         address: {
             '@type': 'PostalAddress',
             streetAddress: 'C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka',
-            addressLocality: city,
+            addressLocality: 'New Delhi',
             addressRegion: 'Delhi',
             postalCode: '110077',
             addressCountry: 'IN',
+        },
+        areaServed: {
+            '@type': 'City',
+            name: city,
         },
         image: hero.image,
         sameAs: ['https://www.facebook.com/share/1AokxHk8Yv/', 'https://www.instagram.com/we_one_aviation'],
