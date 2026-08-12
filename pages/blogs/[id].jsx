@@ -1,5 +1,6 @@
 import Layout from '../../components/Layout';
 import Link from 'next/link';
+import Image from 'next/image';
 import { MongoClient, ObjectId } from 'mongodb';
 
 // ─────────────────────────────────────────────
@@ -353,9 +354,12 @@ const waLink = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 function BlogHero({ blog }) {
     return (
         <div className="relative h-72 md:h-[420px] w-full overflow-hidden pt-16 bg-av-blue">
-            <img
+            <Image
                 src={blog.img}
                 alt={blog.title}
+                width={1600}
+                height={900}
+                priority
                 className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />

@@ -1,6 +1,7 @@
 import Layout from '../../components/Layout';
 import HeroSlider from '../../components/HeroSlider';
 import LeadForm from '../../components/LeadForm';
+import Image from 'next/image';
 import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -228,9 +229,11 @@ export default function USAFlightTraining() {
                                 {/* Tab Content */}
                                 <div className="flex-1 border border-gray-200 rounded-2xl overflow-hidden">
                                     <div className="aspect-video overflow-hidden">
-                                        <img
+                                        <Image
                                             src={aircraftList[activeAircraft].image}
                                             alt={aircraftList[activeAircraft].name}
+                                            width={1200}
+                                            height={700}
                                             className="w-full h-full object-cover"
                                         />
                                     </div>

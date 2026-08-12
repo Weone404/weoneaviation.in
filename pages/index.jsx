@@ -16,6 +16,7 @@
 
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import CourseCard from '../components/CourseCard';
@@ -480,14 +481,11 @@ export default function Home() {
             <ScrollReveal delay={200}>
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src="/assets/GroundSchool.jpg"
                     alt="Pilot ground school training at We One Aviation Academy"
                     width={600}
                     height={320}
-                    loading="lazy"
-                    decoding="async"
                     className="w-full h-80 object-cover"
                   />
                 </div>

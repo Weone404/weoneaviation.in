@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function Footer() {
@@ -153,9 +154,11 @@ export default function Footer() {
               aria-label="Open We One Aviation location in Google Maps"
               className="block"
             >
-              <img
+              <Image
                 src="/map-preview.webp"
                 alt="We One Aviation Academy - Sector-7, Dwarka, New Delhi 110077"
+                width={640}
+                height={220}
                 className="w-full h-44 object-cover hover:opacity-90 transition-opacity duration-200"
               />
             </a>

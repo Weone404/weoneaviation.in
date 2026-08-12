@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const slides = [
   {
@@ -119,11 +120,13 @@ export default function HeroSlider({ customSlides }) {
           >
             {/* Only render the image once the slide has been "unlocked" */}
             {(isFirst || shouldRender) && (
-              <img
+              <Image
                 src={s.image}
                 alt={s.alt || s.tag}
+                width={1600}
+                height={900}
+                priority={isFirst}
                 className="absolute inset-0 w-full h-full object-cover object-center"
-                loading={isFirst ? 'eager' : 'lazy'}
               />
             )}
           </div>

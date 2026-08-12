@@ -400,7 +400,7 @@ export default function Home() {
                     <ScrollReveal delay={200}>
                         <div className="relative">
                             <div className="rounded-2xl overflow-hidden shadow-2xl">
-                                <img src="/assets/GroundSchool.jpg" alt="Pilot in cockpit training" className="w-full h-80 object-cover" />
+                                <Image src="/assets/GroundSchool.jpg" alt="Pilot in cockpit training" width={800} height={600} className="w-full h-80 object-cover" />
                             </div>
                             <div className="absolute -bottom-5 -left-5 bg-av-orange rounded-xl p-4 shadow-xl">
                                 <div className="font-montserrat text-white text-xl font-black">3000+</div>

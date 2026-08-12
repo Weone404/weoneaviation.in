@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Image from 'next/image';
+import Image from 'next/image';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -180,9 +181,11 @@ export default function EGCALoginPage() {
                         <ScrollReveal delay={200}>
                             {/* Portal screenshot / visual */}
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80"
                                     alt="eGCA digital portal dashboard"
+                                    width={600}
+                                    height={500}
                                     className="w-full h-72 object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-av-blue/80 to-transparent flex items-end p-6">
@@ -203,9 +206,11 @@ export default function EGCALoginPage() {
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <ScrollReveal>
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80"
                                     alt="Aviation professional logging into eGCA portal"
+                                    width={600}
+                                    height={500}
                                     className="w-full h-72 object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-av-navy/70 to-transparent flex items-end p-6">
@@ -294,9 +299,11 @@ export default function EGCALoginPage() {
 
                         <ScrollReveal delay={200}>
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-6">
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80"
                                     alt="Registering on eGCA portal on laptop"
+                                    width={600}
+                                    height={450}
                                     className="w-full h-64 object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-av-navy/80 to-transparent flex items-end p-6">
@@ -333,9 +340,11 @@ export default function EGCALoginPage() {
                     <div className="grid md:grid-cols-2 gap-10 items-center">
                         <ScrollReveal>
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80"
                                     alt="eGCA dashboard features aviation"
+                                    width={600}
+                                    height={600}
                                     className="w-full h-80 object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-av-blue/80 to-transparent flex items-end p-6">

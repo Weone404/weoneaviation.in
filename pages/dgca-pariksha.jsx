@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -230,9 +231,11 @@ export default function DGCAParikshaPage() {
 
                         <ScrollReveal delay={200}>
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-6">
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
                                     alt="Aviation student preparing for DGCA Pariksha exam"
+                                    width={600}
+                                    height={400}
                                     className="w-full h-64 object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-av-blue/80 to-transparent flex items-end p-6">
@@ -323,9 +326,11 @@ export default function DGCAParikshaPage() {
 
                         <ScrollReveal delay={200}>
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
                                     alt="Aviation navigation charts and instruments for DGCA exam"
+                                    width={600}
+                                    height={600}
                                     className="w-full h-80 object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-av-navy/80 to-transparent flex items-end p-6">
@@ -353,9 +358,11 @@ export default function DGCAParikshaPage() {
                     <div className="grid md:grid-cols-2 gap-10 items-center">
                         <ScrollReveal>
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80"
                                     alt="Computer based test CBT aviation DGCA exam"
+                                    width={600}
+                                    height={500}
                                     className="w-full h-72 object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-av-blue/80 to-transparent flex items-end p-6">
@@ -428,9 +435,11 @@ export default function DGCAParikshaPage() {
                     <div className="grid md:grid-cols-2 gap-10 items-center">
                         <ScrollReveal>
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80"
                                     alt="Pilot student studying for DGCA exam with books"
+                                    width={600}
+                                    height={600}
                                     className="w-full h-80 object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-av-navy/80 to-transparent flex items-end p-6">

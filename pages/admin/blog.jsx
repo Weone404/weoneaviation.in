@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 const ReactQuill = dynamic(() => import('react-quill'), {
@@ -317,9 +318,11 @@ export default function AdminBlog() {
                                     {/* thumbnail */}
                                     <div className="w-20 h-14 flex-shrink-0 rounded-xl overflow-hidden bg-slate-100">
                                         {(blog.coverImage || blog.image) ? (
-                                            <img
+                                            <Image
                                                 src={blog.coverImage || blog.image}
                                                 alt={blog.title}
+                                                width={160}
+                                                height={112}
                                                 className="w-full h-full object-cover"
                                             />
                                         ) : (
@@ -472,7 +475,7 @@ export default function AdminBlog() {
                                 onClick={() => document.getElementById('imageInput').click()}
                             >
                                 {form.imagePreview ? (
-                                    <img src={form.imagePreview} alt="Preview" className="max-h-52 mx-auto rounded-xl object-cover shadow-sm" />
+                                    <Image src={form.imagePreview} alt="Preview" width={800} height={400} className="max-h-52 mx-auto rounded-xl object-cover shadow-sm" />
                                 ) : (
                                     <div>
                                         <div style={{ fontSize: 40, marginBottom: 8 }}>🖼️</div>

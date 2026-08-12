@@ -3,6 +3,7 @@ import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image';
 
 // ─────────────────────────────────────────────
 // CityPageTemplate
@@ -71,7 +72,7 @@ export function CityPageTemplate({
             </Head>
 
             <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-                <img src={hero.image} alt={`CPL pilot training in ${city} — We One Aviation Academy`} className="absolute inset-0 w-full h-full object-cover" />
+                <Image src={hero.image} alt={`CPL pilot training in ${city} — We One Aviation Academy`} width={1600} height={900} priority className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-av-blue/70" />
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
                     <div className="section-tag mx-auto mb-4">{hero.tag}</div>
@@ -111,7 +112,7 @@ export function CityPageTemplate({
                     <ScrollReveal delay={200}>
                         <div className="relative">
                             <div className="rounded-2xl overflow-hidden shadow-2xl">
-                                <img src="/assets/GroundSchool.jpg" alt={`CPL pilot training in ${city} — We One Aviation Academy`} className="w-full h-80 object-cover" />
+                                <Image src="/assets/GroundSchool.jpg" alt={`CPL pilot training in ${city} — We One Aviation Academy`} width={800} height={600} className="w-full h-80 object-cover" />
                             </div>
                             <div className="absolute -bottom-5 -left-5 bg-av-orange rounded-xl p-4 shadow-xl">
                                 <div className="font-montserrat text-white text-xl font-black">3000+</div>

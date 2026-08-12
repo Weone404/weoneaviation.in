@@ -61,9 +61,11 @@ export default function BlogsIndex({ mongoBlogs }) {
                             className="group border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col"
                         >
                             <div className="relative h-48 overflow-hidden">
-                                <img
+                                <Image
                                     src={blog.img}
                                     alt={blog.title}
+                                    width={800}
+                                    height={600}
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
                                 <span className="absolute top-3 left-3 bg-av-orange text-white text-xs font-bold px-3 py-1 rounded-full">

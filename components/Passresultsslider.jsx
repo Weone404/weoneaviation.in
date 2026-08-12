@@ -460,7 +460,7 @@ export default function AlumniCarousel() {
 
                     <div className="ac-avatar-ring">
                       <div className="ac-avatar-inner">
-                        <img src={pilot.imageSrc} alt={pilot.name} loading="lazy" />
+                        <Image src={pilot.imageSrc} alt={pilot.name} width={120} height={120} className="object-cover" />
                       </div>
                     </div>
 

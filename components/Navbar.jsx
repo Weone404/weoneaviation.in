@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 const tickerMessages = [
@@ -223,9 +224,11 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img
+            <Image
               src="/Logo.webp"
               alt="WeOne Aviation Academy"
+              width={200}
+              height={64}
               className="h-16 w-auto object-contain"
             />
           </Link>
