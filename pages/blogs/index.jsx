@@ -1,5 +1,6 @@
 import Layout from '../../components/Layout';
 import Link from 'next/link';
+import NextImage from 'next/image';
 import { MongoClient } from 'mongodb';
 
 const hardcodedBlogs = [
@@ -61,7 +62,7 @@ export default function BlogsIndex({ mongoBlogs }) {
                             className="group border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col"
                         >
                             <div className="relative h-48 overflow-hidden">
-                                <Image
+                                <NextImage
                                     src={blog.img}
                                     alt={blog.title}
                                     width={800}

@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
-import Image from 'next/image';
+import NextImage from 'next/image';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -231,7 +231,7 @@ export default function DGCAParikshaPage() {
 
                         <ScrollReveal delay={200}>
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-6">
-                                <Image
+                                <NextImage
                                     src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
                                     alt="Aviation student preparing for DGCA Pariksha exam"
                                     width={600}
@@ -326,7 +326,7 @@ export default function DGCAParikshaPage() {
 
                         <ScrollReveal delay={200}>
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                                <Image
+                                <NextImage
                                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
                                     alt="Aviation navigation charts and instruments for DGCA exam"
                                     width={600}
@@ -358,7 +358,7 @@ export default function DGCAParikshaPage() {
                     <div className="grid md:grid-cols-2 gap-10 items-center">
                         <ScrollReveal>
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                                <Image
+                                <NextImage
                                     src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80"
                                     alt="Computer based test CBT aviation DGCA exam"
                                     width={600}
@@ -435,7 +435,7 @@ export default function DGCAParikshaPage() {
                     <div className="grid md:grid-cols-2 gap-10 items-center">
                         <ScrollReveal>
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                                <Image
+                                <NextImage
                                     src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80"
                                     alt="Pilot student studying for DGCA exam with books"
                                     width={600}

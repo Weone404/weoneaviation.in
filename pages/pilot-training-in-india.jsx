@@ -4,7 +4,7 @@ import CourseCard from '../components/CourseCard';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
-import Image from 'next/image';
+import NextImage from 'next/image';
 
 const courses = [
     { icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: '18-24 months', eligibility: '10+2 (PCM)', href: '/courses/cpl', highlight: true },
@@ -400,7 +400,14 @@ export default function Home() {
                     <ScrollReveal delay={200}>
                         <div className="relative">
                             <div className="rounded-2xl overflow-hidden shadow-2xl">
-                                <Image src="/assets/GroundSchool.jpg" alt="Pilot in cockpit training" width={800} height={600} className="w-full h-80 object-cover" />
+                                <NextImage
+                                    src="/assets/GroundSchool.jpg"
+                                    alt="Pilot in cockpit training"
+                                    width={800}
+                                    height={600}
+                                    style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+                                    className="block"
+                                />
                             </div>
                             <div className="absolute -bottom-5 -left-5 bg-av-orange rounded-xl p-4 shadow-xl">
                                 <div className="font-montserrat text-white text-xl font-black">3000+</div>

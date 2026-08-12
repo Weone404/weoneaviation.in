@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import NextImage from 'next/image';
 
 const slides = [
   {
@@ -120,7 +120,7 @@ export default function HeroSlider({ customSlides }) {
           >
             {/* Only render the image once the slide has been "unlocked" */}
             {(isFirst || shouldRender) && (
-              <Image
+              <NextImage
                 src={s.image}
                 alt={s.alt || s.tag}
                 width={1600}

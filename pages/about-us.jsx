@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import Image from 'next/image';
+import NextImage from 'next/image';
 import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
@@ -57,7 +57,7 @@ export default function About() {
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <ScrollReveal>
-            <Image
+            <NextImage
               src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?w=800&q=80"
               alt="Aviation Academy"
               width={800}

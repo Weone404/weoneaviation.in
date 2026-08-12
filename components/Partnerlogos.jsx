@@ -2,7 +2,7 @@
 // Usage: import PartnerLogos from '@/components/PartnerLogos'
 // Then add <PartnerLogos /> anywhere in your homepage JSX
 
-import Image from "next/image";
+import NextImage from "next/image";
 
 export default function PartnerLogos() {
     const partners = [
@@ -71,7 +71,7 @@ export default function PartnerLogos() {
                                     className="logo-link"
                                     aria-label={`Visit ${partner.name}`}
                                 >
-                                    <Image
+                                    <NextImage
                                         src={partner.src}
                                         alt={partner.name}
                                         width={partner.width * 2}
@@ -87,7 +87,7 @@ export default function PartnerLogos() {
                                     />
                                 </a>
                             ) : (
-                                <Image
+                                <NextImage
                                     src={partner.src}
                                     alt={partner.name}
                                     width={partner.width * 2}

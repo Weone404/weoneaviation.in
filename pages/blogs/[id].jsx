@@ -1,6 +1,6 @@
 import Layout from '../../components/Layout';
 import Link from 'next/link';
-import Image from 'next/image';
+import NextImage from 'next/image';
 import { MongoClient, ObjectId } from 'mongodb';
 
 // ─────────────────────────────────────────────
@@ -354,7 +354,7 @@ const waLink = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 function BlogHero({ blog }) {
     return (
         <div className="relative h-72 md:h-[420px] w-full overflow-hidden pt-16 bg-av-blue">
-            <Image
+            <NextImage
                 src={blog.img}
                 alt={blog.title}
                 width={1600}

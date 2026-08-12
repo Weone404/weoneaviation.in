@@ -1,5 +1,6 @@
 'use client';
 
+import NextImage from 'next/image';
 import { useState, useRef, useEffect, useCallback } from 'react';
 
 const alumniData = [
@@ -460,7 +461,7 @@ export default function AlumniCarousel() {
 
                     <div className="ac-avatar-ring">
                       <div className="ac-avatar-inner">
-                        <Image src={pilot.imageSrc} alt={pilot.name} width={120} height={120} className="object-cover" />
+                        <NextImage src={pilot.imageSrc} alt={pilot.name} width={120} height={120} className="object-cover" />
                       </div>
                     </div>
 

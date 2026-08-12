@@ -16,7 +16,7 @@
 
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
+import NextImage from 'next/image';
 import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import CourseCard from '../components/CourseCard';
@@ -481,7 +481,7 @@ export default function Home() {
             <ScrollReveal delay={200}>
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  <Image
+                  <NextImage
                     src="/assets/GroundSchool.jpg"
                     alt="Pilot ground school training at We One Aviation Academy"
                     width={600}
