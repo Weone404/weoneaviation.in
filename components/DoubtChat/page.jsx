@@ -58,7 +58,7 @@ export default function DoubtChat({ compact = false }) {
         {
             role: "assistant",
             text: "👋 Hello! I'm your **captain** here, your DGCA study assistant.\n\nAsk me any aviation question and I'll answer — and read it out loud for you!",
-            id: Date.now(),
+            id: 1,
         },
     ]);
     const [input, setInput] = useState("");
@@ -67,10 +67,14 @@ export default function DoubtChat({ compact = false }) {
     const [historyForApi, setHistory] = useState([]);
     const [speakingId, setSpeakingId] = useState(null);   // which msg is speaking
     const [ttsEnabled, setTtsEnabled] = useState(true);   // global TTS toggle
-    const [voicesReady, setVoicesReady] = useState(false);
+    const [voicesReady, setVoicesReady] = useState(() => {
+        if (typeof window === "undefined") return false;
+        return !!window.speechSynthesis && window.speechSynthesis.getVoices().length > 0;
+    });
 
     const bottomRef = useRef(null);
     const inputRef = useRef(null);
+    const nextMessageId = useRef(2);
 
     // Scroll to bottom on new messages
     useEffect(() => {
@@ -79,11 +83,19 @@ export default function DoubtChat({ compact = false }) {
 
     // Load voices (Chrome needs this event)
     useEffect(() => {
-        if (typeof window === "undefined") return;
-        const load = () => setVoicesReady(true);
+        if (typeof window === "undefined" || !window.speechSynthesis) return;
+
+        const load = () => {
+            const ready = window.speechSynthesis.getVoices().length > 0;
+            setVoicesReady(ready);
+        };
+
         window.speechSynthesis.onvoiceschanged = load;
-        if (window.speechSynthesis.getVoices().length > 0) setVoicesReady(true);
-        return () => stopSpeaking();
+
+        return () => {
+            window.speechSynthesis.onvoiceschanged = null;
+            stopSpeaking();
+        };
     }, []);
 
     // Auto-speak latest assistant message when it arrives
@@ -102,14 +114,14 @@ export default function DoubtChat({ compact = false }) {
         setInput("");
         setError("");
 
-        const userMsg = { role: "user", text: q, id: Date.now() };
+        const userMsg = { role: "user", text: q, id: nextMessageId.current++ };
         setMessages(prev => [...prev, userMsg]);
         setLoading(true);
 
         try {
             const { answer } = await askDoubt(q, null, historyForApi, "chat");
 
-            const botId = Date.now() + 1;
+            const botId = nextMessageId.current++;
             const botMsg = { role: "assistant", text: answer, id: botId };
             setMessages(prev => [...prev, botMsg]);
             setHistory(prev => [...prev, { question: q, answer }]);
@@ -122,7 +134,7 @@ export default function DoubtChat({ compact = false }) {
             setMessages(prev => [...prev, {
                 role: "assistant",
                 text: "⚠️ Sorry, I couldn't process that. Please try again.",
-                id: Date.now() + 1,
+                id: nextMessageId.current++,
                 isError: true,
             }]);
         } finally {
@@ -147,7 +159,7 @@ export default function DoubtChat({ compact = false }) {
         setMessages([{
             role: "assistant",
             text: "Chat cleared! Ask me anything.",
-            id: Date.now(),
+            id: nextMessageId.current++,
         }]);
         setHistory([]);
         setError("");

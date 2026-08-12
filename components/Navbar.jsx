@@ -78,6 +78,17 @@ const examPractice = [
   { label: 'MCQ Practice', href: 'https://mcq-weonavigation-in.vercel.app/' },
 ];
 
+const ChevronIcon = ({ open }) => (
+  <svg
+    className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : ''}`}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+  </svg>
+);
+
 function DropdownItem({ item }) {
   const [subOpen, setSubOpen] = useState(false);
   const hasSubMenu = item.sub && item.sub.length > 0;
@@ -203,17 +214,6 @@ export default function Navbar() {
 
   const isActive = (href) =>
     router.pathname === href || router.pathname.startsWith(href + '/');
-
-  const ChevronIcon = ({ open }) => (
-    <svg
-      className={`w-4 h-4 transition-transform ${open ? 'rotate-180' : ''}`}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-    </svg>
-  );
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">

@@ -56,13 +56,18 @@ export default function FloatingDoubtChat() {
 
     const bottomRef = useRef(null);
     const inputRef = useRef(null);
+    const nextMessageId = useRef(2);
 
-    useEffect(() => {
-        if (open) {
-            setUnread(0);
-            setTimeout(() => inputRef.current?.focus(), 300);
-        }
-    }, [open]);
+    const toggleOpen = () => {
+        setOpen(prev => {
+            const next = !prev;
+            if (next) {
+                setUnread(0);
+                setTimeout(() => inputRef.current?.focus(), 300);
+            }
+            return next;
+        });
+    };
 
     useEffect(() => {
         if (open) bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -80,12 +85,12 @@ export default function FloatingDoubtChat() {
         stopSpeaking();
         setSpeakingId(null);
         setInput("");
-        const userMsg = { role: "user", text: q, id: Date.now() };
+        const userMsg = { role: "user", text: q, id: nextMessageId.current++ };
         setMessages(prev => [...prev, userMsg]);
         setLoading(true);
         try {
             const { answer } = await askDoubt(q, null, historyForApi, "chat");
-            const botId = Date.now() + 1;
+            const botId = nextMessageId.current++;
             setMessages(prev => [...prev, { role: "assistant", text: answer, id: botId }]);
             setHistory(prev => [...prev, { question: q, answer }]);
             if (!open) setUnread(u => u + 1);
@@ -95,7 +100,7 @@ export default function FloatingDoubtChat() {
             setMessages(prev => [...prev, {
                 role: "assistant",
                 text: "⚠️ Something went wrong. Please try again.",
-                id: Date.now() + 1,
+                id: nextMessageId.current++,
                 isError: true,
             }]);
         } finally {
@@ -111,7 +116,7 @@ export default function FloatingDoubtChat() {
     function clearChat() {
         stopSpeaking();
         setSpeakingId(null);
-        setMessages([{ role: "assistant", text: "Chat cleared! Ask me anything.", id: Date.now() }]);
+        setMessages([{ role: "assistant", text: "Chat cleared! Ask me anything.", id: nextMessageId.current++ }]);
         setHistory([]);
     }
 
@@ -122,7 +127,7 @@ export default function FloatingDoubtChat() {
             {/* Floating Button */}
             <button
                 className={`fdc-trigger ${open ? "fdc-trigger--open" : ""}`}
-                onClick={() => setOpen(v => !v)}
+                onClick={toggleOpen}
                 aria-label="Toggle doubt chat"
             >
                 {open ? (

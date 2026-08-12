@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: false,
 
   images: {
+    qualities: [75, 100],
     remotePatterns: [
       {
         protocol: 'https',
@@ -446,6 +447,9 @@ const nextConfig = {
               ' https://www.google-analytics.com' +
               ' https://ssl.google-analytics.com' +
               ' https://www.googleadservices.com' +
+              ' https://www.googletagmanager.com' +
+              ' https://googletagmanager.com' +
+              ' https://*.googletagmanager.com' +
               ' https://*.clarity.ms' +
               ' https://b.clarity.ms' +
               ' https://c.clarity.ms' +
@@ -477,6 +481,9 @@ const nextConfig = {
               ' https://analytics.google.com' +
               ' https://stats.g.doubleclick.net' +
               ' https://ad.doubleclick.net' +
+              ' https://www.googletagmanager.com' +
+              ' https://googletagmanager.com' +
+              ' https://*.googletagmanager.com' +
               ' https://agents.dante-ai.com' +
               ' https://*.clarity.ms' +
               ' https://b.clarity.ms' +
