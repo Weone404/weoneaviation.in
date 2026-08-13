@@ -1,4 +1,5 @@
 import Layout from '../components/Layout';
+import Link from 'next/link';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 
@@ -139,12 +140,12 @@ export default function PrivacyPolicyPage() {
                                 </ul>
                                 <div className="mt-5 pt-5 border-t border-gray-100">
                                     <p className="text-xs text-gray-400 mb-3">Questions about this policy?</p>
-                                    <a
-                                        href="mailto:weoneaviation8@gmail.com"
+                                    <Link
+                                        href="/contact"
                                         className="block bg-av-blue text-white text-center py-2.5 rounded-xl text-xs font-bold hover:bg-av-orange transition-all"
                                     >
                                         Contact Us →
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </ScrollReveal>
@@ -389,14 +390,14 @@ export default function PrivacyPolicyPage() {
                                 <div className="bg-av-blue rounded-xl px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                                     <div>
                                         <p className="text-white font-montserrat font-bold text-sm">Exercise Your Rights</p>
-                                        <p className="text-white/60 text-xs mt-0.5">Send us an email to exercise any of the above rights.</p>
+                                        <p className="text-white/60 text-xs mt-0.5">Use our contact form to submit requests.</p>
                                     </div>
-                                    <a
-                                        href="mailto:weoneaviation8@gmail.com"
+                                    <Link
+                                        href="/contact"
                                         className="flex-shrink-0 bg-av-orange text-white px-5 py-2.5 rounded-xl text-xs font-bold hover:bg-white hover:text-av-blue transition-all"
                                     >
-                                        weoneaviation8@gmail.com
-                                    </a>
+                                        Contact Form →
+                                    </Link>
                                 </div>
                             </div>
                         </ScrollReveal>
@@ -412,7 +413,7 @@ export default function PrivacyPolicyPage() {
                                     Services of WeOne Aviation Academy are provided for people who are at least <strong className="text-av-blue">17 years of age</strong> (the minimum age for pilot training). We do not knowingly collect personal information from children under 13 years of age.
                                 </p>
                                 <p className="text-gray-600 text-sm leading-relaxed">
-                                    Any data we believe has been collected from a child under 13 years of age without parental consent will be deleted immediately. If you believe we have such data, please let us know at <a href="mailto:weoneaviation8@gmail.com" className="text-av-orange hover:underline">weoneaviation8@gmail.com</a>.
+                                    Any data we believe has been collected from a child under 13 years of age without parental consent will be deleted immediately. If you believe we have such data, please <Link href="/contact" className="text-av-orange hover:underline font-semibold">use our contact form</Link> to notify us.
                                 </p>
                             </div>
                         </ScrollReveal>

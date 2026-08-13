@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { decodeEmail } from '../utils/emailObfuscator';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', course: '', message: '' });
@@ -44,8 +45,7 @@ export default function Contact() {
             {[
               { icon: '📍', title: 'Our Office', info: 'C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077, India', action: null },
               { icon: '📞', title: 'Call Us', info: '+91 93555 66991', action: 'tel:+919355566991' },
-
-              { icon: '✉️', title: 'Email', info: 'info@weoneaviation.in', action: 'mailto:info@weoneaviation.in' },
+              { icon: '✉️', title: 'Email', info: decodeEmail('support'), action: `javascript:window.location.href='mailto:'+decodeURIComponent('${btoa(decodeEmail('support'))}').replace(/./g,function(c){return String.fromCharCode(c.charCodeAt()-1)})` },
               { icon: '🕐', title: 'Office Hours', info: 'Mon–Sat: 9 AM – 7 PM\nSunday: 10 AM – 4 PM', action: null },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 100}>
