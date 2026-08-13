@@ -1,7 +1,6 @@
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import ScrollReveal from '../components/ScrollReveal';
-import Link from 'next/link';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
