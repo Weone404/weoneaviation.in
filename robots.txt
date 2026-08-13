@@ -1,23 +1,46 @@
 # robots.txt for weoneaviation.in
-# Last Updated: 2026-04-25
+# Last Updated: 2026-08-13
 # Purpose: Guide search engines and bots on crawling and indexing
 
-# ===== DEFAULT RULES FOR ALL BOTS (includes Googlebot, Bingbot) =====
+# ===== DEFAULT RULES FOR ALL BOTS =====
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/data/
 Allow: /_next/static/
+Allow: /_next/image
 Disallow: /admin/
 Disallow: /private/
 Disallow: /.git/
 Disallow: /node_modules/
 Disallow: /data/
+Disallow: /tag/
+Disallow: /author/
+Disallow: /our-courses/
 Disallow: /.env
 Disallow: /package.json
 Disallow: /next.config.js
 Disallow: /*.json$
 Disallow: /*?*sort=
+Disallow: /*?*page=
+
+# ===== GOOGLE SPECIFIC =====
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /_next/data/
+Allow: /_next/static/
+Allow: /_next/image
+Disallow: /admin/
+
+# ===== BING/YAHOO =====
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /_next/data/
+Allow: /_next/static/
+Allow: /_next/image
+Disallow: /admin/
 
 # ===== BLOCK AGGRESSIVE/HARMFUL BOTS =====
 User-agent: AhrefsBot
@@ -63,16 +86,16 @@ User-agent: NetSparker
 Disallow: /
 
 User-agent: Qualitypredictor
-Allow: /
+Disallow: /
 
 User-agent: YisouSpider
-Allow: /
+Disallow: /
 
 User-agent: SputnikBot
-Allow: /
+Disallow: /
 
 User-agent: LinkpadBot
-Allow: /
+Disallow: /
 
 # ===== ALLOW IMPORTANT CRAWLERS =====
 User-agent: YandexBot
