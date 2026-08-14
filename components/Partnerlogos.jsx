@@ -74,8 +74,9 @@ export default function PartnerLogos() {
                                     <NextImage
                                         src={partner.src}
                                         alt={partner.name}
-                                        width={partner.width * 2}
-                                        height={partner.height * 2}
+                                        width={partner.width}
+                                        height={partner.height}
+                                        sizes="(max-width: 768px) 110px, 180px"
                                         style={{
                                             width: "auto",
                                             height: partner.height,
@@ -90,8 +91,9 @@ export default function PartnerLogos() {
                                 <NextImage
                                     src={partner.src}
                                     alt={partner.name}
-                                    width={partner.width * 2}
-                                    height={partner.height * 2}
+                                    width={partner.width}
+                                    height={partner.height}
+                                    sizes="(max-width: 768px) 110px, 180px"
                                     style={{
                                         width: "auto",
                                         height: partner.height,

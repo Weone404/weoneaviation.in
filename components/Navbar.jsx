@@ -229,6 +229,7 @@ export default function Navbar() {
               alt="WeOne Aviation Academy"
               width={200}
               height={64}
+              sizes="200px"
               style={{ width: '200px', height: '64px', objectFit: 'contain' }}
               className="block"
             />
