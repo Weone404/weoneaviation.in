@@ -312,7 +312,7 @@ export default function DGCAPage() {
                         What is the Full Form of DGCA?
                     </p>
                     <div className="inline-block bg-av-orange/20 border border-av-orange/40 rounded-2xl px-8 py-5 max-w-3xl">
-                        <p className="text-white/90 text-sm leading-relaxed">
+                        <p className="text-white text-sm leading-relaxed">
                             DGCA stands for Directorate General of Civil Aviation. It is India&apos;s civil aviation regulatory authority under the Ministry of Civil Aviation. DGCA is responsible for regulating civil aviation, issuing pilot licences, approving flying schools, conducting pilot examinations, monitoring aviation safety, certifying aircraft airworthiness, and ensuring compliance with national and international aviation regulations.
                         </p>
                     </div>

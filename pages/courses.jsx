@@ -235,7 +235,7 @@ export default function CoursesPage() {
                 <h1 className="text-white font-bold text-xl px-4">
                     Pilot Training Courses in India – CPL, PPL, DGCA Ground Classes
                 </h1>
-                <p className="text-white/90 font-medium text-sm px-4 mt-1">
+                <p className="text-white font-medium text-sm px-4 mt-1">
                     Explore all DGCA-approved pilot training programs with flexible fees and international opportunities
                 </p>
             </div>

@@ -412,7 +412,7 @@ export default function Home() {
           <h2 className="text-white font-bold text-xl px-4">
             Pilot training guidance for India’s next generation of aviators
           </h2>
-          <p className="text-white/90 font-medium text-sm px-4 mt-1">
+          <p className="text-white font-medium text-sm px-4 mt-1">
             Learn about DGCA ground classes, CPL pathways, and the steps needed to build a structured aviation career.
           </p>
           <Link

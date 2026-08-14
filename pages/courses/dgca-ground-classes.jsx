@@ -589,7 +589,7 @@ export default function DGCAGroundClassesPage() {
                     <ScrollReveal>
                         <div className="bg-av-orange/20 border border-av-orange/40 rounded-2xl p-8">
                             <p className="font-montserrat font-bold text-av-orange text-sm mb-2 uppercase tracking-wide">Featured Snippet: What Are DGCA Ground Classes?</p>
-                            <p className="text-white/90 leading-relaxed">
+                            <p className="text-white leading-relaxed">
                                 DGCA Ground Classes are professional aviation theory courses that prepare aspiring pilots for the DGCA examinations required for a Commercial Pilot Licence (CPL). These classes cover Air Regulations, Navigation, Meteorology, Technical General, aircraft systems, flight planning, and aviation safety, helping students build the theoretical knowledge needed for flight training and a successful aviation career.
                             </p>
                         </div>

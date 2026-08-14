@@ -267,7 +267,7 @@ export default function AirIndiaPilotPreparation() {
                                     </div>
                                     <div className="space-y-3">
                                         {batchFeatures.map((item) => (
-                                            <div key={item.label} className="flex items-start gap-3 text-white/90 text-sm">
+                                            <div key={item.label} className="flex items-start gap-3 text-white text-sm">
                                                 <span className="text-lg flex-shrink-0 leading-tight">{item.icon}</span>
                                                 <span className="leading-relaxed">{item.label}</span>
                                             </div>

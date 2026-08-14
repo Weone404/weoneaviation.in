@@ -74,7 +74,7 @@ export default function PilotTrainingSriLanka() {
           <h1 className="text-white font-bold text-xl px-4">
             Pilot Training in Sri Lanka – DGCA-Approved CPL & PPL Courses
           </h1>
-          <p className="text-white/90 font-medium text-sm px-4 mt-1">
+          <p className="text-white font-medium text-sm px-4 mt-1">
             Train with international partners and get DGCA-recognized certifications
           </p>
         </div>

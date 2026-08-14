@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="bg-gradient-to-r from-av-orange to-orange-600 py-10 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-montserrat text-2xl md:text-3xl font-bold mb-3">Ready to Take Flight?</h2>
-          <p className="text-white/90 mb-6 text-sm md:text-base">
+          <p className="text-white mb-6 text-sm md:text-base">
             Start your aviation journey with expert guidance on DGCA preparation, flying schools, and pilot career planning.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
