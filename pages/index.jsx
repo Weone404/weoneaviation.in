@@ -234,6 +234,7 @@ const facultySchema = {
     item: {
       '@type': 'Person',
       name: instr.name,
+      url: 'https://www.weoneaviation.in/about-us',
       jobTitle: instr.role,
       affiliation: {
         '@type': 'Organization',
