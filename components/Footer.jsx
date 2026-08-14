@@ -157,8 +157,9 @@ export default function Footer() {
               <NextImage
                 src="/map-preview.webp"
                 alt="We One Aviation Academy - Sector-7, Dwarka, New Delhi 110077"
-                width={640}
-                height={220}
+                width={360}
+                height={180}
+                sizes="(max-width: 768px) 100vw, 360px"
                 className="w-full h-44 object-cover hover:opacity-90 transition-opacity duration-200"
               />
             </a>

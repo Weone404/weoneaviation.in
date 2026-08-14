@@ -485,8 +485,9 @@ export default function Home() {
                   <NextImage
                     src="/assets/GroundSchool.jpg"
                     alt="Pilot ground school training at We One Aviation Academy"
-                    width={600}
-                    height={320}
+                    width={350}
+                    height={280}
+                    sizes="(max-width: 768px) 100vw, 350px"
                     className="w-full h-80 object-cover"
                   />
                 </div>

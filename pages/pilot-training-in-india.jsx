@@ -403,8 +403,9 @@ export default function Home() {
                                 <NextImage
                                     src="/assets/GroundSchool.jpg"
                                     alt="Pilot in cockpit training"
-                                    width={800}
-                                    height={600}
+                                    width={350}
+                                    height={280}
+                                    sizes="(max-width: 768px) 100vw, 350px"
                                     style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
                                     className="block"
                                 />
