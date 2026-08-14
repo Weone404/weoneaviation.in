@@ -972,7 +972,7 @@ export default function DGCAGroundClassesPage() {
                                     <div className="w-10 h-10 bg-av-orange rounded-full flex items-center justify-center text-white font-black text-sm mb-3">
                                         {s.step}
                                     </div>
-                                    <h4 className="font-montserrat font-bold text-av-blue text-sm mb-2">Step {s.step} — {s.title}</h4>
+                                    <h3 className="font-montserrat font-bold text-av-blue text-sm mb-2">Step {s.step} — {s.title}</h3>
                                     <p className="text-gray-500 text-xs leading-relaxed">{s.text}</p>
                                 </div>
                             </ScrollReveal>

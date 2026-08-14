@@ -288,7 +288,7 @@ export default function EGCALoginPage() {
                                     <div key={step.num} className="flex items-start gap-4 glass rounded-xl p-5">
                                         <div className="w-10 h-10 bg-av-orange rounded-full flex items-center justify-center text-white font-black text-sm flex-shrink-0">{step.num}</div>
                                         <div>
-                                            <h4 className="font-montserrat font-bold text-white text-sm mb-1">{step.title}</h4>
+                                            <h3 className="font-montserrat font-bold text-white text-sm mb-1">{step.title}</h3>
                                             <p className="text-white/70 text-xs leading-relaxed">{step.desc}</p>
                                         </div>
                                     </div>
@@ -361,7 +361,7 @@ export default function EGCALoginPage() {
                                     <div key={item.title} className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100 card-hover hover:border-av-orange/30">
                                         <span className="text-2xl flex-shrink-0">{item.icon}</span>
                                         <div>
-                                            <h4 className="font-montserrat font-bold text-av-blue text-sm mb-0.5">{item.title}</h4>
+                                            <h3 className="font-montserrat font-bold text-av-blue text-sm mb-0.5">{item.title}</h3>
                                             <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
                                         </div>
                                     </div>
@@ -388,7 +388,7 @@ export default function EGCALoginPage() {
                                     <div key={item.title} className="flex items-start gap-4 p-5 bg-av-light rounded-xl border border-av-sky/20 card-hover hover:border-av-orange/30">
                                         <span className="text-2xl flex-shrink-0">{item.icon}</span>
                                         <div>
-                                            <h4 className="font-montserrat font-bold text-av-blue text-sm mb-1">{item.title}</h4>
+                                            <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">{item.title}</h3>
                                             <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
                                         </div>
                                     </div>
@@ -407,7 +407,7 @@ export default function EGCALoginPage() {
                                     <div key={item.issue} className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 card-hover hover:border-av-orange/30">
                                         <div className="flex items-center gap-3 mb-2">
                                             <span className="text-2xl">{item.icon}</span>
-                                            <h4 className="font-montserrat font-bold text-av-blue text-sm">{item.issue}</h4>
+                                            <h3 className="font-montserrat font-bold text-av-blue text-sm">{item.issue}</h3>
                                         </div>
                                         <p className="text-gray-500 text-xs leading-relaxed">{item.fix}</p>
                                     </div>
@@ -432,7 +432,7 @@ export default function EGCALoginPage() {
                         {faqs.map((faq, i) => (
                             <ScrollReveal key={faq.q} delay={i * 100}>
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-                                    <h4 className="font-montserrat font-bold text-av-blue mb-3">{faq.q}</h4>
+                                    <h3 className="font-montserrat font-bold text-av-blue mb-3">{faq.q}</h3>
                                     <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
                                 </div>
                             </ScrollReveal>

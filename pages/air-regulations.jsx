@@ -123,7 +123,7 @@ export default function AirRegulations() {
                             </div>
 
                             {/* What Are Air Regulations */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">What Are Air Regulations?</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What Are Air Regulations?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-3">
                                 Air Regulations are a set of official rules, procedures, and legal guidelines that govern all aspects of civil aviation. These regulations ensure that aircraft operate safely, efficiently, legally, and harmoniously in national and international airspace.
                             </p>

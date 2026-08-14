@@ -501,7 +501,7 @@ export default function ICSEPage() {
                             <ScrollReveal key={c.title} delay={i * 80}>
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:border-av-orange/30 card-hover h-full">
                                     <div className="text-2xl mb-3">{c.icon}</div>
-                                    <h4 className="font-montserrat font-bold text-av-blue mb-3 text-sm">{c.title}</h4>
+                                    <h3 className="font-montserrat font-bold text-av-blue mb-3 text-sm">{c.title}</h3>
                                     <ul className="space-y-2">
                                         {c.points.map(p => (
                                             <li key={p} className="flex items-start gap-2 text-xs text-gray-500">

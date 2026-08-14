@@ -141,7 +141,7 @@ export default function CredentialsPage() {
                 <ScrollReveal key={cert.name}>
                   <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 text-center card-hover">
                     <div className="text-3xl mb-2">{cert.icon}</div>
-                    <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">{cert.name}</h3>
+                    <h2 className="font-montserrat font-bold text-av-blue text-sm mb-1">{cert.name}</h2>
                     <p className="text-gray-500 text-xs">{cert.description}</p>
                   </div>
                 </ScrollReveal>

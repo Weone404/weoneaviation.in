@@ -299,7 +299,7 @@ export default function InterviewPreparationPage() {
                             <ScrollReveal key={item.title} delay={i * 80}>
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 card-hover hover:border-av-orange/30 h-full text-center">
                                     <div className="text-4xl mb-4">{item.icon}</div>
-                                    <h4 className="font-montserrat font-bold text-av-blue mb-3 text-sm">{item.title}</h4>
+                                    <h3 className="font-montserrat font-bold text-av-blue mb-3 text-sm">{item.title}</h3>
                                     <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
                                 </div>
                             </ScrollReveal>
@@ -375,7 +375,7 @@ export default function InterviewPreparationPage() {
                             <ScrollReveal key={s.letter} delay={i * 80}>
                                 <div className="glass rounded-2xl p-6 text-center h-full flex flex-col">
                                     <div className={`w-14 h-14 ${s.colour} rounded-full flex items-center justify-center text-white font-black text-3xl mx-auto mb-4`}>{s.letter}</div>
-                                    <h4 className="font-montserrat font-bold text-white text-xl mb-3">{s.word}</h4>
+                                    <h3 className="font-montserrat font-bold text-white text-xl mb-3">{s.word}</h3>
                                     <p className="text-white/70 text-xs leading-relaxed flex-grow">{s.desc}</p>
                                 </div>
                             </ScrollReveal>
@@ -509,7 +509,7 @@ export default function InterviewPreparationPage() {
                                         <span className="text-2xl">{phase.icon}</span>
                                         <div>
                                             <p className="text-white/70 text-xs font-semibold">{phase.phase} · {phase.duration}</p>
-                                            <h4 className="font-montserrat font-bold text-white text-sm">{phase.title}</h4>
+                                            <h3 className="font-montserrat font-bold text-white text-sm">{phase.title}</h3>
                                         </div>
                                     </div>
                                     <ul className="p-5 space-y-2 flex-grow">

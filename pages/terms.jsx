@@ -101,7 +101,7 @@ export default function TermsPage() {
                     <aside className="lg:w-72 flex-shrink-0">
                         <ScrollReveal>
                             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 lg:sticky lg:top-24">
-                                <h3 className="font-montserrat font-bold text-av-blue mb-4 text-sm">Table of Contents</h3>
+                                <h2 className="font-montserrat font-bold text-av-blue mb-4 text-sm">Table of Contents</h2>
                                 <ul className="space-y-1">
                                     {sections.map((s) => (
                                         <li key={s.id}>

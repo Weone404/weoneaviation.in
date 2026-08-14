@@ -358,7 +358,7 @@ export default function IndiaPilotTrainingPage() {
                                     <div className="w-12 h-12 bg-av-orange rounded-full flex items-center justify-center text-white font-black text-lg mb-3 flex-shrink-0">
                                         {s.step}
                                     </div>
-                                    <h4 className="font-montserrat font-bold text-white text-sm mb-2">{s.title}</h4>
+                                    <h3 className="font-montserrat font-bold text-white text-sm mb-2">{s.title}</h3>
                                     <p className="text-white/70 text-xs leading-relaxed">{s.desc}</p>
                                 </div>
                             </ScrollReveal>

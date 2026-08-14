@@ -70,7 +70,7 @@ const contactDetails = [
 function SidebarWhoCanJoin() {
     return (
         <div className="bg-av-blue rounded-2xl p-5 sm:p-6 text-white">
-            <h4 className="font-montserrat font-bold mb-4 text-sm sm:text-base">Who Can Join</h4>
+            <h2 className="font-montserrat font-bold mb-4 text-sm sm:text-base">Who Can Join</h2>
             <ul className="space-y-2 text-sm text-white/80">
                 {[
                     'CPL holders',
@@ -92,7 +92,7 @@ function SidebarWhoCanJoin() {
 function SidebarHighlights() {
     return (
         <div className="bg-av-orange rounded-2xl p-5 sm:p-6 text-white">
-            <h4 className="font-montserrat font-bold mb-2 text-sm sm:text-base">Course Highlights</h4>
+            <h3 className="font-montserrat font-bold mb-2 text-sm sm:text-base">Course Highlights</h3>
             <p className="text-white/80 text-sm mb-3">Air India Pilot Preparation:</p>
             <div className="text-2xl font-montserrat font-black">2026 Batches</div>
             <div className="mt-2 space-y-1">
@@ -183,9 +183,9 @@ export default function AirIndiaPilotPreparation() {
 
                             {/* ── Selection Stages ── */}
                             <ScrollReveal>
-                                <h3 className="font-montserrat text-lg sm:text-xl font-bold text-av-blue mb-3">
+                                <h2 className="font-montserrat text-lg sm:text-xl font-bold text-av-blue mb-3">
                                     🎯 Air India Selection Stages We Cover
-                                </h3>
+                                </h2>
                                 <AutoInternalLinks currentPath="/airindia-pilot-preparation">
                                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
                                         Our program is built around the actual airline hiring process:

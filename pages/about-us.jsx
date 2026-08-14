@@ -31,7 +31,7 @@ function MemberCard({ member, active }) {
         </div>
       </div>
       <div className="p-4">
-        <h4 className="font-montserrat font-bold text-av-blue text-sm">{member.name}</h4>
+        <h2 className="font-montserrat font-bold text-av-blue text-sm">{member.name}</h2>
         <div className="text-av-orange text-xs font-semibold mt-1">{member.role}</div>
         <div className="text-gray-400 text-xs mt-2">{member.exp}</div>
       </div>

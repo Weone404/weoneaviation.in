@@ -89,7 +89,7 @@ export default function AviationMeteorology() {
                             </div>
 
                             {/* What is Aviation Meteorology */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">What is Aviation Meteorology?</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What is Aviation Meteorology?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-4">
                                 Aviation Meteorology is the study of weather and atmospheric conditions that impact aviation. It helps pilots:
                             </p>

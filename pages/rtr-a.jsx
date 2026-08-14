@@ -74,7 +74,7 @@ export default function RTRAero() {
                             </div>
 
                             {/* What is RTR */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">What is RTR (Aero)?</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What is RTR (Aero)?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-3">
                                 RTR (Aero) stands for <span className="font-semibold text-av-blue">Radio Telephony Restricted (Aeronautical)</span> — a government-issued license that authorizes pilots to legally operate aircraft radio communication equipment in Indian airspace.
                             </p>

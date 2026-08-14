@@ -709,7 +709,7 @@ export default function Home() {
                             <ScrollReveal key={b.title} delay={i * 80}>
                                 <div className="glass rounded-2xl p-6 h-full">
                                     <div className="text-2xl mb-3">{b.icon}</div>
-                                    <h4 className="font-montserrat font-bold text-white mb-2 text-sm">{b.title}</h4>
+                                    <h3 className="font-montserrat font-bold text-white mb-2 text-sm">{b.title}</h3>
                                     <p className="text-white/70 text-sm leading-relaxed">{b.desc}</p>
                                 </div>
                             </ScrollReveal>

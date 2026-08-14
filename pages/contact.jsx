@@ -52,7 +52,7 @@ export default function Contact() {
                 <div className="flex gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-100 card-hover">
                   <div className="text-3xl flex-shrink-0">{item.icon}</div>
                   <div>
-                    <h4 className="font-montserrat font-bold text-av-blue mb-1 text-sm">{item.title}</h4>
+                    <h2 className="font-montserrat font-bold text-av-blue mb-1 text-sm">{item.title}</h2>
                     {item.action
                       ? <a href={item.action} className="text-gray-600 text-sm hover:text-av-orange transition-all whitespace-pre-line">{item.info}</a>
                       : <p className="text-gray-600 text-sm whitespace-pre-line">{item.info}</p>}

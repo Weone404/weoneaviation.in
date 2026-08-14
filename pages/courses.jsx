@@ -344,7 +344,7 @@ export default function CoursesPage() {
                             <ScrollReveal key={phase.phase} delay={i * 100}>
                                 <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
                                     <div className="flex items-center justify-between bg-av-blue px-6 py-4">
-                                        <h4 className="font-montserrat font-bold text-white text-sm">{phase.phase}</h4>
+                                        <h3 className="font-montserrat font-bold text-white text-sm">{phase.phase}</h3>
                                         <span className="text-av-orange text-xs font-semibold bg-white/10 px-3 py-1 rounded-full">{phase.duration}</span>
                                     </div>
                                     <div className="px-6 py-4 bg-white grid sm:grid-cols-2 lg:grid-cols-3 gap-3">

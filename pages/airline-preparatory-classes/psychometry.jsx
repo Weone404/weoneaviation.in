@@ -511,7 +511,7 @@ export default function PsychometryPage() {
                                 <div className={`rounded-2xl border ${section.color} bg-white overflow-hidden h-full flex flex-col`}>
                                     <div className={`${section.iconBg} px-5 py-4 flex items-center gap-3`}>
                                         <span className="text-2xl">{section.icon}</span>
-                                        <h4 className="font-montserrat font-bold text-white">{section.category}</h4>
+                                        <h3 className="font-montserrat font-bold text-white">{section.category}</h3>
                                     </div>
                                     <ul className="p-5 space-y-2 flex-grow">
                                         {section.tips.map((tip, j) => (

@@ -389,7 +389,7 @@ export default function PPLPage() {
                         {eligibilitySections.map((item, i) => (
                             <ScrollReveal key={item.title} delay={i * 100}>
                                 <div className="glass rounded-2xl p-6 h-full">
-                                    <h4 className="font-montserrat font-bold text-av-orange mb-3 text-sm">{item.title}</h4>
+                                    <h3 className="font-montserrat font-bold text-av-orange mb-3 text-sm">{item.title}</h3>
                                     <p className="text-white/80 text-xs leading-relaxed">{item.desc}</p>
                                 </div>
                             </ScrollReveal>
@@ -421,7 +421,7 @@ export default function PPLPage() {
                         {skillsYouLearn.map((item, i) => (
                             <ScrollReveal key={item.title} delay={i * 80}>
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 h-full card-hover hover:border-av-orange/30">
-                                    <h4 className="font-montserrat font-bold text-av-blue mb-2 text-sm">{item.title}</h4>
+                                    <h3 className="font-montserrat font-bold text-av-blue mb-2 text-sm">{item.title}</h3>
                                     <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
                                 </div>
                             </ScrollReveal>
@@ -592,7 +592,7 @@ export default function PPLPage() {
                                         <div className="text-3xl">{s.icon}</div>
                                     </div>
                                     <div className="flex-1">
-                                        <h4 className="font-montserrat font-bold text-av-blue text-lg mb-2">Step {s.step}: {s.title}</h4>
+                                        <h3 className="font-montserrat font-bold text-av-blue text-lg mb-2">Step {s.step}: {s.title}</h3>
                                         <p className="text-gray-600 text-sm leading-relaxed mb-3">{s.desc}</p>
                                         {s.list && (
                                             <>
@@ -630,7 +630,7 @@ export default function PPLPage() {
                         {pplBenefits.map((item, i) => (
                             <ScrollReveal key={item.title} delay={i * 100}>
                                 <div className="glass rounded-2xl p-6 h-full">
-                                    <h4 className="font-montserrat font-bold text-av-orange mb-3 text-sm">{item.title}</h4>
+                                    <h3 className="font-montserrat font-bold text-av-orange mb-3 text-sm">{item.title}</h3>
                                     <p className="text-white/80 text-xs leading-relaxed">{item.desc}</p>
                                 </div>
                             </ScrollReveal>
@@ -733,7 +733,7 @@ export default function PPLPage() {
                         {quickAnswers.map((item, i) => (
                             <ScrollReveal key={item.q} delay={i * 60}>
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 h-full">
-                                    <h4 className="font-montserrat font-bold text-av-blue mb-2 text-sm">{item.q}</h4>
+                                    <h3 className="font-montserrat font-bold text-av-blue mb-2 text-sm">{item.q}</h3>
                                     <p className="text-gray-500 text-xs leading-relaxed">{item.a}</p>
                                 </div>
                             </ScrollReveal>
@@ -759,7 +759,7 @@ export default function PPLPage() {
                         {commonMistakes.map((item, i) => (
                             <ScrollReveal key={item.title} delay={i * 100}>
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 h-full card-hover hover:border-av-orange/30">
-                                    <h4 className="font-montserrat font-bold text-av-blue mb-2 text-sm">{item.title}</h4>
+                                    <h3 className="font-montserrat font-bold text-av-blue mb-2 text-sm">{item.title}</h3>
                                     <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
                                 </div>
                             </ScrollReveal>

@@ -544,7 +544,7 @@ export default function Home() {
               <ScrollReveal>
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:border-av-orange/40 transition-all h-full flex flex-col">
                   <div className="text-4xl mb-4">📚</div>
-                  <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">DGCA CPL Ground Classes</h3>
+                  <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">DGCA CPL Ground Classes</h2>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">
                     This is the main pilot course with exams conducted by DGCA, designed for theoretical preparation required to obtain a pilot&apos;s license.
                   </p>
@@ -561,7 +561,7 @@ export default function Home() {
               <ScrollReveal delay={100}>
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 hover:border-av-orange/40 transition-all h-full flex flex-col">
                   <div className="text-4xl mb-4">🛩️</div>
-                  <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">CPL Flight Training (India/Abroad)</h3>
+                  <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">CPL Flight Training (India/Abroad)</h2>
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">
                     After clearing the DGCA Exam, complete your flying hours from India or abroad. 200 Hours of Flying is mandatory for a Commercial Pilot Licence.
                   </p>
@@ -577,7 +577,7 @@ export default function Home() {
               <ScrollReveal delay={200}>
                 <div className="bg-av-blue rounded-2xl shadow-lg p-8 h-full flex flex-col">
                   <div className="text-4xl mb-4">✈️</div>
-                  <h3 className="font-montserrat text-xl font-bold text-white mb-3">Commercial Pilot Licence (CPL) Course</h3>
+                  <h2 className="font-montserrat text-xl font-bold text-white mb-3">Commercial Pilot Licence (CPL) Course</h2>
                   <p className="text-white/70 text-sm leading-relaxed mb-4">Full-fledged training program including both theoretical and practical flight training. All aviation solutions under one roof.</p>
                   <div className="space-y-2 mb-6 text-sm text-white/80">
                     <div><span className="font-semibold text-av-orange">Full Course Duration:</span> 2–3 Years (Depends on Country)</div>
@@ -609,7 +609,7 @@ export default function Home() {
           </div>
           <div className="max-w-7xl mx-auto mt-12">
             <ScrollReveal className="bg-av-blue rounded-2xl p-8 text-center">
-              <h3 className="font-montserrat text-2xl font-bold text-white mb-3">Enroll in Flying School</h3>
+              <h2 className="font-montserrat text-2xl font-bold text-white mb-3">Enroll in Flying School</h2>
               <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">At Our Flying School, we train future pilots with state-of-the-art aircraft, expert instructors, and guaranteed career guidance.</p>
               <Link href="/flying-school/india" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">India Flying School Details</Link>
             </ScrollReveal>
@@ -630,7 +630,7 @@ export default function Home() {
                 {whyChooseFeatures.map(f => (
                   <div key={f.id} className="card-hover p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:border-av-orange/30">
                     <div className="text-2xl mb-4">{f.icon}</div>
-                    <h3 className="font-montserrat font-bold text-av-blue mb-2">{f.title}</h3>
+                    <h2 className="font-montserrat font-bold text-av-blue mb-2">{f.title}</h2>
                     <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
                   </div>
                 ))}
@@ -656,14 +656,14 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8">
               <ScrollReveal>
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
-                  <h3 className="font-montserrat text-xl font-bold text-av-blue mb-4">Dgca Ground Classes</h3>
+                  <h2 className="font-montserrat text-xl font-bold text-av-blue mb-4">Dgca Ground Classes</h2>
                   <p className="text-gray-500 text-sm leading-relaxed mb-6">We One Aviation Academy is the Oldest Pilot Training Institute, giving 100% results every year since 2009. Advanced Training with flexibility of timing and fees.</p>
                   <Link href="/contact" className="inline-block bg-av-blue text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">Enquiry Now</Link>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={150}>
                 <div className="bg-av-blue rounded-2xl shadow-lg p-8">
-                  <h3 className="font-montserrat text-xl font-bold text-white mb-4">Our Flying School</h3>
+                  <h2 className="font-montserrat text-xl font-bold text-white mb-4">Our Flying School</h2>
                   <p className="text-white/70 text-sm leading-relaxed mb-6">We provide flight training from 20+ countries. 3500+ students trained across India. We offer 225+ hours of flying — more than any other institute.</p>
                   <Link href="/contact" className="inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">Enquiry Now</Link>
                 </div>
@@ -689,7 +689,7 @@ export default function Home() {
                   <div key={s.id} className="glass rounded-2xl p-6 text-center h-full flex flex-col">
                     <div className="w-10 h-10 bg-av-orange rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">{i + 1}</div>
                     <div className="text-av-orange font-semibold text-xs uppercase tracking-wider mb-2">{s.step}</div>
-                    <h3 className="font-montserrat font-bold text-white mb-3">{s.title}</h3>
+                    <h2 className="font-montserrat font-bold text-white mb-3">{s.title}</h2>
                     <p className="text-white/70 text-sm leading-relaxed flex-grow">{s.desc}</p>
                     {s.href && (
                       <Link href={s.href} className="mt-4 inline-block text-av-orange text-xs font-semibold hover:underline">
@@ -702,7 +702,7 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal className="text-center mb-10">
-              <h3 className="font-montserrat text-2xl font-bold text-white">Step By Step Guide for <span className="text-av-orange">Become a Pilot</span></h3>
+              <h2 className="font-montserrat text-2xl font-bold text-white">Step By Step Guide for <span className="text-av-orange">Become a Pilot</span></h2>
             </ScrollReveal>
 
             <ScrollReveal>
@@ -710,7 +710,7 @@ export default function Home() {
                 {pilotJourneySteps.map(step => (
                   <div key={step.id} className="glass rounded-2xl p-6">
                     <div className="text-3xl mb-3">{step.icon}</div>
-                    <h4 className="font-montserrat font-bold text-white mb-2">{step.title}</h4>
+                    <h2 className="font-montserrat font-bold text-white mb-2">{step.title}</h2>
                     <p className="text-white/70 text-sm leading-relaxed mb-4">{step.desc}</p>
                     <div className="bg-av-orange/20 border border-av-orange/30 rounded-xl p-4">
                       <p className="text-av-orange font-semibold text-sm mb-1">{step.alert}</p>
@@ -725,7 +725,7 @@ export default function Home() {
               {pilotRoutes.map(route => (
                 <ScrollReveal key={route.id}>
                   <div className="glass rounded-2xl p-8 h-full">
-                    <h3 className="font-montserrat text-xl font-bold text-white mb-6">{route.title}</h3>
+                    <h2 className="font-montserrat text-xl font-bold text-white mb-6">{route.title}</h2>
                     <ol className="space-y-3">
                       {route.steps.map((step, i) => (
                         <li key={`${route.id}-step-${i}`} className="flex items-start gap-3">
@@ -758,7 +758,7 @@ export default function Home() {
                   <div key={subject.id} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:border-av-orange/30 card-hover h-full flex flex-col">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-8 h-8 bg-av-blue rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">{subject.num}</div>
-                      <h3 className="font-montserrat font-bold text-av-blue text-sm">{subject.title}</h3>
+                      <h2 className="font-montserrat font-bold text-av-blue text-sm">{subject.title}</h2>
                     </div>
                     <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-grow">{subject.desc}</p>
                     <Link href={subject.link} className="text-av-orange text-xs font-semibold hover:underline">{subject.linkText}</Link>
@@ -785,7 +785,7 @@ export default function Home() {
                 {flyingSchools.map(school => (
                   <div key={school.id} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:border-av-orange/30 card-hover h-full flex flex-col">
                     <div className="text-4xl mb-3">{school.flag}</div>
-                    <h3 className="font-montserrat font-bold text-av-blue mb-3">Flying School in {school.country}</h3>
+                    <h2 className="font-montserrat font-bold text-av-blue mb-3">Flying School in {school.country}</h2>
                     <div className="space-y-1 text-sm text-gray-600 mb-4 flex-grow">
                       <p>✅ <span className="font-semibold">Course:</span> {school.course}</p>
                       <p>✅ <span className="font-semibold">Duration:</span> {school.duration}</p>
@@ -854,7 +854,7 @@ export default function Home() {
                         {instructor.name.charAt(0)}{instructor.name.split(' ')[1]?.charAt(0)}
                       </div>
                       <div>
-                        <h3 className="font-montserrat font-bold text-av-blue text-sm">{instructor.name}</h3>
+                        <h2 className="font-montserrat font-bold text-av-blue text-sm">{instructor.name}</h2>
                         <p className="text-xs text-av-orange font-semibold">{instructor.role}</p>
                       </div>
                     </div>
@@ -959,7 +959,7 @@ export default function Home() {
 
             <ScrollReveal delay={200}>
               <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20">
-                <h3 className="font-montserrat font-bold text-white text-center mb-4">BOOK Your SEAT FOR SCHOLARSHIP</h3>
+                <h2 className="font-montserrat font-bold text-white text-center mb-4">BOOK Your SEAT FOR SCHOLARSHIP</h2>
                 <p className="text-white/70 text-center text-sm mb-4">Join Dgca Ground Classes</p>
                 <LeadForm isDark={true} />
               </div>

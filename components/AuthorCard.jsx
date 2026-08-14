@@ -8,7 +8,7 @@ export default function AuthorCard({ author = {}, reviewedBy = 'We One Aviation 
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-av-orange">Author</p>
-          <h3 className="text-lg font-semibold text-av-blue">{name}</h3>
+          <h2 className="text-lg font-semibold text-av-blue">{name}</h2>
           <p className="text-sm text-gray-600">{role}</p>
         </div>
         <div className="text-sm text-gray-500 text-right">

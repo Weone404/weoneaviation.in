@@ -44,7 +44,7 @@ export default function LeadForm({ title = 'Get Free Counselling', dark = false,
 
   return (
     <div className={`rounded-2xl p-6 md:p-8 ${dark ? 'bg-white/10 backdrop-blur-md border border-white/20' : 'bg-white shadow-2xl border border-gray-100'}`}>
-      <h3 className={`font-montserrat font-bold text-xl mb-1 ${dark ? 'text-white' : 'text-av-blue'}`}>{title}</h3>
+      <h2 className={`font-montserrat font-bold text-xl mb-1 ${dark ? 'text-white' : 'text-av-blue'}`}>{title}</h2>
       <p className={`text-sm mb-5 ${dark ? 'text-white/60' : 'text-gray-400'}`}>Fill the form — our team will call you within 2 hours.</p>
 
       {status === 'success' && (

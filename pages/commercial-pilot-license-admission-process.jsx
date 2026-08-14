@@ -170,7 +170,7 @@ export default function CPLAdmissionPage() {
                                         {s.step}
                                     </div>
                                     <div className="text-2xl mb-2">{s.icon}</div>
-                                    <h4 className="font-montserrat font-bold text-white text-sm mb-2">{s.title}</h4>
+                                    <h3 className="font-montserrat font-bold text-white text-sm mb-2">{s.title}</h3>
                                     <p className="text-white/70 text-xs leading-relaxed">{s.desc}</p>
                                 </div>
                             </ScrollReveal>

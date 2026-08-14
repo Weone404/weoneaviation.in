@@ -120,7 +120,7 @@ export default function DGCAMedical() {
                             </div>
 
                             {/* Overview */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">Overview of DGCA Class II and Class I Medical Examinations</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">Overview of DGCA Class II and Class I Medical Examinations</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-4">
                                 To become a licensed pilot in India, DGCA mandates medical certifications to verify that pilots meet stringent health standards. These are designed to assess overall fitness, detect any medical conditions that could impair flying ability, and help ensure passenger and crew safety.
                             </p>

@@ -333,7 +333,7 @@ export default function SpiceJetCadetPage() {
                             <ScrollReveal key={s.step} delay={i * 100}>
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 card-hover hover:border-av-orange/30">
                                     <div className="w-10 h-10 bg-av-blue rounded-full flex items-center justify-center text-white font-bold text-lg mb-4">{s.step}</div>
-                                    <h4 className="font-montserrat font-bold text-av-blue mb-2">{s.title}</h4>
+                                    <h3 className="font-montserrat font-bold text-av-blue mb-2">{s.title}</h3>
                                     <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
                                 </div>
                             </ScrollReveal>

@@ -63,7 +63,7 @@ export default function QatarAirwaysCadet() {
                             </div>
 
                             {/* What is the Program */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">What is the Qatar Airways Cadet Pilot Program?</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What is the Qatar Airways Cadet Pilot Program?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-3">
                                 The Qatar Airways Cadet Pilot Program is a structured and comprehensive training pathway designed to train and qualify future pilots — both Qatari nationals and selected international candidates — from the ground up.
                             </p>

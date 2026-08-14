@@ -142,7 +142,7 @@ export default function USAFlightTraining() {
                             </div>
 
                             {/* Why Choose USA */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">Why Choose Flight Training in the USA?</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">Why Choose Flight Training in the USA?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-5">
                                 The United States is globally recognized for its modern aviation infrastructure, advanced aircraft, and world-class flight training standards. It's one of the few countries where you can complete 250 flying hours in minimal time, under a globally accepted FAA training system.
                             </p>

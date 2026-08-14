@@ -113,7 +113,7 @@ export default function TechnicalGeneral() {
                             </div>
 
                             {/* What Is Technical General */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">What Is Technical General in Pilot Training?</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What Is Technical General in Pilot Training?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-3">
                                 Technical General covers the mechanical, structural, and system-related aspects of an aircraft. This subject is essential for understanding what makes an airplane fly, how its systems operate, and how pilots can troubleshoot or prevent mechanical failures in real-world flight situations.
                             </p>

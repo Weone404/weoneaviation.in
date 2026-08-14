@@ -297,7 +297,7 @@ export default function AirArabiaMPLPage() {
                                         </div>
                                         <span className="text-3xl">{assessment.icon}</span>
                                     </div>
-                                    <h4 className="font-montserrat font-bold text-av-blue mb-2">{assessment.title}</h4>
+                                    <h3 className="font-montserrat font-bold text-av-blue mb-2">{assessment.title}</h3>
                                     <p className="text-gray-500 text-sm leading-relaxed mb-3 flex-grow">{assessment.desc}</p>
                                     {assessment.subItems && (
                                         <ul className="space-y-1 mt-2">

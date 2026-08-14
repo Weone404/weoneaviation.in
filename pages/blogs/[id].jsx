@@ -424,9 +424,9 @@ function BlogSidebar({ blog }) {
 function ArticleCTA() {
     return (
         <div className="mt-12 border border-gray-200 rounded-2xl p-8 text-center">
-            <h3 className="font-montserrat text-lg font-black text-av-blue mb-1">
+            <h2 className="font-montserrat text-lg font-black text-av-blue mb-1">
                 Ready to Start Your Pilot Journey?
-            </h3>
+            </h2>
             <p className="text-gray-500 text-sm mb-5">
                 Get free expert guidance from our airline pilot mentors.
             </p>

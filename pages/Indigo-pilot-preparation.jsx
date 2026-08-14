@@ -58,7 +58,7 @@ function SimpleCard({ icon, title, desc }) {
         <div className="border border-gray-100 rounded-xl p-4 sm:p-5 bg-white shadow-sm hover:border-av-orange/30 transition-all">
             <div className="flex items-start gap-3 mb-2">
                 <span className="text-xl sm:text-2xl flex-shrink-0 leading-tight">{icon}</span>
-                <h4 className="font-montserrat font-bold text-av-blue text-sm leading-snug">{title}</h4>
+                <h2 className="font-montserrat font-bold text-av-blue text-sm leading-snug">{title}</h2>
             </div>
             <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
         </div>
@@ -70,7 +70,7 @@ function AccentCard({ icon, title, desc }) {
         <div className="border border-gray-200 rounded-xl overflow-hidden">
             <div className="flex items-center gap-3 bg-av-blue p-3 sm:p-4">
                 <span className="text-lg sm:text-xl flex-shrink-0">{icon}</span>
-                <h4 className="font-montserrat font-bold text-white text-sm leading-snug">{title}</h4>
+                <h3 className="font-montserrat font-bold text-white text-sm leading-snug">{title}</h3>
             </div>
             <div className="p-3 sm:p-4 bg-white">
                 <p className="text-gray-600 text-xs leading-relaxed">{desc}</p>
@@ -132,9 +132,9 @@ export default function IndiGoPilotPrep() {
 
                             {/* ── Ace Your Selection ── */}
                             <ScrollReveal>
-                                <h3 className="font-montserrat text-lg sm:text-xl font-bold text-av-blue mb-3">
+                                <h2 className="font-montserrat text-lg sm:text-xl font-bold text-av-blue mb-3">
                                     🛫 Ace Your IndiGo JFO Selection Process
-                                </h3>
+                                </h2>
                                 <p className="text-gray-600 text-sm leading-relaxed">
                                     IndiGo's JFO selection is a multi-layered process that evaluates cognitive ability, interpersonal effectiveness, and alignment with the airline's high-performance culture. Our program at We One Aviation is architected around these exact parameters — so you walk into each round prepared, not just practiced.
                                 </p>

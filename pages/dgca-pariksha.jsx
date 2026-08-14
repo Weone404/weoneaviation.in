@@ -413,7 +413,7 @@ export default function DGCAParikshaPage() {
                             <ScrollReveal key={step.num} delay={i * 80}>
                                 <div className="glass rounded-2xl p-6 text-center h-full flex flex-col items-center">
                                     <div className="w-12 h-12 bg-av-orange rounded-full flex items-center justify-center text-white font-black text-lg mb-4 flex-shrink-0">{step.num}</div>
-                                    <h4 className="font-montserrat font-bold text-white text-sm mb-2">{step.title}</h4>
+                                    <h3 className="font-montserrat font-bold text-white text-sm mb-2">{step.title}</h3>
                                     <p className="text-white/70 text-xs leading-relaxed">{step.desc}</p>
                                 </div>
                             </ScrollReveal>
@@ -485,7 +485,7 @@ export default function DGCAParikshaPage() {
                                     <div key={step.num} className="flex items-start gap-4 p-5 bg-av-light rounded-xl border border-av-sky/20 card-hover hover:border-av-orange/30">
                                         <div className="w-9 h-9 bg-av-orange rounded-full flex items-center justify-center text-white font-black text-sm flex-shrink-0">{step.num}</div>
                                         <div>
-                                            <h4 className="font-montserrat font-bold text-av-blue text-sm mb-1">{step.title}</h4>
+                                            <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">{step.title}</h3>
                                             <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
                                         </div>
                                     </div>

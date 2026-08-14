@@ -42,7 +42,7 @@ export default function Footer() {
 
         {/* Column 1 — We One Aviation */}
         <div>
-          <h4 className="font-montserrat font-bold text-av-orange text-base mb-3">We One Aviation</h4>
+          <h3 className="font-montserrat font-bold text-av-orange text-base mb-3">We One Aviation</h3>
           <div className="border-t border-dashed border-white/20 mb-5" />
           <p className="text-white/70 text-sm leading-relaxed mb-5">
             We One Aviation supports students who want to pursue pilot training in India and abroad. Our guidance covers DGCA ground classes, flying-school selection, and career preparation.

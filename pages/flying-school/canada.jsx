@@ -239,7 +239,7 @@ export default function PilotTrainingProgramsPage() {
                                 <div className="glass rounded-2xl p-5 h-full flex items-start gap-4">
                                     <div className="text-3xl flex-shrink-0">{subject.icon}</div>
                                     <div>
-                                        <h4 className="font-montserrat font-bold text-white text-sm mb-1">{subject.title}</h4>
+                                        <h3 className="font-montserrat font-bold text-white text-sm mb-1">{subject.title}</h3>
                                         <p className="text-white/70 text-xs leading-relaxed">{subject.desc}</p>
                                     </div>
                                 </div>

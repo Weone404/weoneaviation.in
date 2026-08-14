@@ -104,7 +104,7 @@ export default function AirlinePreparation() {
                             </div>
 
                             {/* What Is Airline Preparation */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">What Is Airline Preparation?</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What Is Airline Preparation?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-3">
                                 Airline preparation refers to a specialized training program designed to equip individuals with the skills, knowledge, and practical experience needed to pursue a career in the aviation industry. This comprehensive course is tailored to prepare aspiring professionals for various roles within the airline sector, ranging from pilots and flight attendants to ground crew and aviation management.
                             </p>
