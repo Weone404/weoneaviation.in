@@ -17,7 +17,7 @@ module.exports = {
       colors: {
         'av-blue': '#0a2342',
         'av-navy': '#0d3060',
-        'av-orange': '#f97316',
+        'av-orange': '#d97706',
         'av-gold': '#f59e0b',
         'av-sky': '#0ea5e9',
         'av-light': '#e0f0ff',
