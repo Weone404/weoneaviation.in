@@ -12,8 +12,8 @@ export default function Layout({ children, title, description, keywords, robots,
   const router = useRouter();
   const canonicalPath = router.asPath ? router.asPath.split('?')[0] : '/';
 
-  // FIX 1: was weoneaviation.in (no www) — must match live domain www.weoneaviation.in
-  const canonicalUrl = `https://www.weoneaviation.in${canonicalPath === '/' ? '/' : canonicalPath}`;
+  // ✅ FIXED: Changed from www to non-www (site redirects www → non-www)
+  const canonicalUrl = `https://weoneaviation.in${canonicalPath === '/' ? '/' : canonicalPath}`;
   const isAdminPage = router.pathname.startsWith('/admin');
   const resolvedRobots = robots ?? (noindex ? 'noindex, follow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
   const organizationSchema = {
@@ -53,6 +53,8 @@ export default function Layout({ children, title, description, keywords, robots,
       <Head>
         <title>{title || 'WeOne Aviation Academy - Pilot Training in India'}</title>
         <meta name="description" content={description || "WeOne Aviation Academy offers DGCA approved pilot training courses including CPL, PPL, ATPL in India. Join India's most trusted aviation training institute."} />
+        {/* ✅ Global og:description — prevents duplicates when pages override with their own */}
+        <meta property="og:description" content={description || "DGCA-approved pilot training institute offering CPL, PPL, ATPL courses. 3500+ pilots trained since 2009."} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta key="robots" name="robots" content={resolvedRobots} />
         <link rel="canonical" href={canonicalUrl} />

@@ -260,7 +260,7 @@ const educationalOrgSchema = {
   name: 'We One Aviation Academy',
   url: 'https://www.weoneaviation.in',
   logo: 'https://www.weoneaviation.in/Logo.webp',       // ✅ FIXED: was logo.png
-  image: 'https://www.weoneaviation.in/og-cover.jpg',
+  image: 'https://weoneaviation.in/og-cover.jpg',       // ✅ FIXED: Changed www → non-www (site redirects www to non-www)
   description: "India's premier DGCA approved aviation training institute. CPL, PPL, ATPL, SPL courses. 3500+ pilots trained since 2009 with 98% pass rate.",
   foundingDate: '2009',
   telephone: '+919355611996',
