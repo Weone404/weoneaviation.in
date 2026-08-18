@@ -8,6 +8,7 @@ const footerSocialLinks = [
   'https://www.instagram.com/we_one_aviation?igsh=aTJ0YnphMGs3b2Fl&utm_source=qr',
 ];
 
+const twitterSite = process.env.NEXT_PUBLIC_TWITTER_SITE;
 const organizationSchema = generateOrganizationSchema({ sameAs: footerSocialLinks });
 const websiteSchema = generateWebsiteSchema();
 
@@ -58,6 +59,7 @@ export default function Document() {
         <meta property="og:site_name" content="WeOne Aviation" />
 
         <meta name="twitter:card" content="summary_large_image" />
+        {twitterSite ? <meta name="twitter:site" content={twitterSite} /> : null}
 
         <StructuredData data={[organizationSchema, websiteSchema]} />
 

@@ -137,7 +137,7 @@ function BreakingNewsTicker() {
   const items = tickerMessages;
 
   return (
-    <div className="w-full flex items-stretch overflow-hidden bg-orange-600" style={{ height: '36px' }}>
+    <div className="hidden w-full items-stretch overflow-hidden bg-orange-600 sm:flex" style={{ height: '36px' }}>
       {/* BREAKING badge */}
       <div className="relative z-10 flex shrink-0 items-center bg-red-800 px-3 sm:px-5">
         <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.2em] text-white sm:text-xs"></span>

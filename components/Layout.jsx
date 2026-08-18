@@ -55,7 +55,7 @@ export default function Layout({ children, title, description, keywords, robots,
         <meta name="description" content={description || "WeOne Aviation Academy offers DGCA approved pilot training courses including CPL, PPL, ATPL in India. Join India's most trusted aviation training institute."} />
         {/* ✅ Global og:description — prevents duplicates when pages override with their own */}
         <meta property="og:description" content={description || "DGCA-approved pilot training institute offering CPL, PPL, ATPL courses. 3500+ pilots trained since 2009."} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta key="robots" name="robots" content={resolvedRobots} />
         <link rel="canonical" href={canonicalUrl} />
 

@@ -191,6 +191,25 @@ const CAROUSEL_CSS = `
   }
   .ac-track:active { cursor: grabbing; }
 
+  @media (max-width: 767px) {
+    .ac-viewport {
+      width: 100% !important;
+      margin: 0;
+    }
+    .ac-track {
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 100% !important;
+      transform: none !important;
+      gap: 16px;
+      padding: 16px 0 24px;
+    }
+    .ac-card {
+      min-width: 0 !important;
+      width: 100% !important;
+    }
+  }
+
   .ac-card {
     min-width: 260px; border-radius: 20px;
     border: 1.5px solid rgba(11,99,214,0.09);
