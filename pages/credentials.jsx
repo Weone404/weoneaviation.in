@@ -101,6 +101,10 @@ export default function CredentialsPage() {
         <meta property="og:description" content="Verified credentials: DGCA approval, 3500+ pilots trained, instructor qualifications, student testimonials with LinkedIn verification." />
         <meta property="og:url" content="https://www.weoneaviation.in/credentials" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="twitter:image" content="https://weoneaviation.in/og-cover.jpg" />
 
         {/* Schema: Organization with credentials */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{

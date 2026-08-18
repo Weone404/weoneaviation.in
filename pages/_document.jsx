@@ -53,17 +53,11 @@ export default function Document() {
         <link rel="apple-touch-icon" href="/Logo.webp" />
         <link rel="manifest" href="/manifest.json" />
 
-        {/* Global OG defaults — pages override og:title, og:description, og:url */}
+        {/* Global metadata defaults are intentionally minimal to avoid duplicate OG/Twitter tags across pages. */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="WeOne Aviation" />
-        <meta property="og:image" content="https://www.weoneaviation.in/og-cover.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="We One Aviation Academy — Best Pilot Training Institute in India" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://www.weoneaviation.in/og-cover.jpg" />
-        <meta name="twitter:image:alt" content="We One Aviation Academy — Best Pilot Training Institute in India" />
 
         <StructuredData data={[organizationSchema, websiteSchema]} />
 

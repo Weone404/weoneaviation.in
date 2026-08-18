@@ -358,7 +358,7 @@ export default function Home() {
         <meta property="og:title" content="We One Aviation | Best Pilot Training Institute in India" />
         <meta property="og:description" content="India's #1 DGCA-approved pilot training academy since 2009. CPL, PPL & ATPL courses. 3500+ pilots trained. Get free career counselling today!" />
         <meta property="og:url" content="https://www.weoneaviation.in/" />
-        <meta property="og:image" content="https://www.weoneaviation.in/og-cover.jpg" />
+        <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="We One Aviation Academy — Best Pilot Training Institute in India" />
@@ -370,7 +370,7 @@ export default function Home() {
         ──────────────────────────────────────────────────────────────────── */}
         <meta name="twitter:title" content="We One Aviation | Best Pilot Training Institute in India" />
         <meta name="twitter:description" content="India's #1 DGCA-approved pilot training academy. CPL, PPL & ATPL courses. 3500+ pilots trained since 2009." />
-        <meta name="twitter:image" content="https://www.weoneaviation.in/og-cover.jpg" />
+        <meta name="twitter:image" content="https://weoneaviation.in/og-cover.jpg" />
 
         {/* ── Schema Markup ─────────────────────────────────────────────── */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrgSchema) }} />

@@ -61,6 +61,10 @@ export default function PilotTrainingSriLanka() {
         <meta property="og:title" content="Pilot Training in Sri Lanka – We One Aviation Academy" />
         <meta property="og:description" content="International pilot training programs for Sri Lankan students with DGCA recognition and international flying school partnerships." />
         <meta property="og:url" content="https://www.weoneaviation.in/pilot-training-in-sri-lanka" />
+        <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="https://weoneaviation.in/og-cover.jpg" />
       </Head>
 
       <Layout

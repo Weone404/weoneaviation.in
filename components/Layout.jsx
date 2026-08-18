@@ -57,16 +57,6 @@ export default function Layout({ children, title, description, keywords, robots,
         <meta key="robots" name="robots" content={resolvedRobots} />
         <link rel="canonical" href={canonicalUrl} />
 
-        {/* OG */}
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:title" content={title || 'WeOne Aviation Academy'} />
-        <meta property="og:description" content={description || 'DGCA approved pilot training in India'} />
-        <meta property="og:type" content="website" />
-        {/* FIX 2: was /og-image.jpg (relative) — social bots need absolute URLs */}
-        <meta property="og:image" content="https://www.weoneaviation.in/og-cover.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-
         <link rel="icon" href="/favicon.ico" />
         <StructuredData data={organizationSchema} />
       </Head>
