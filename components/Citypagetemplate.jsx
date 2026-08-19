@@ -35,7 +35,7 @@ export function CityPageTemplate({
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
         name: 'We One Aviation Academy',
-        url: 'https://www.weoneaviation.in',
+        url: 'https://weoneaviation.in',
         telephone: '+919355611996',
         address: {
             '@type': 'PostalAddress',

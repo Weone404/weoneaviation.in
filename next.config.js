@@ -37,6 +37,24 @@ const nextConfig = {
         permanent: true,
       },
       
+      // ── Duplicate content consolidation (GEO audit 2026-08-11) ────────────
+      // Measured by diffing the page sources. Targets were chosen by existing
+      // signal strength (internal links + sitemap presence), so equity flows
+      // from the weaker URL into the stronger one, never the reverse:
+      //
+      //   /blogs/ppl-course-fees      10 lines from /courses/ppl (32 inbound)
+      //   /blogs/cpl-full-form         6 lines from /courses/cpl (34 inbound)
+      //   /courses/cpl-flight-training 35 lines from /courses/cpl, and only
+      //                                5 inbound links of its own
+      //
+      // /commercial-pilot-license (55 inbound) is genuinely distinct content
+      // and remains the hub. /blogs/dgca-exam-guide was left alone — it used to
+      // duplicate the DGCA course page but has since been rewritten and is now
+      // a different article.
+      { source: '/blogs/ppl-course-fees', destination: '/courses/ppl', permanent: true },
+      { source: '/blogs/cpl-full-form', destination: '/courses/cpl', permanent: true },
+      { source: '/courses/cpl-flight-training', destination: '/courses/cpl', permanent: true },
+
       {
         source: '/our-courses',
         destination: '/courses',

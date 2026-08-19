@@ -17,11 +17,11 @@ const cplCourseSchema = {
   '@type': 'Course',
   name: 'Commercial Pilot License (CPL) in India',
   description: 'Complete guide to Commercial Pilot License training in India, including eligibility, DGCA process, and pilot career pathways.',
-  url: 'https://www.weoneaviation.in/commercial-pilot-license',
+  url: 'https://weoneaviation.in/commercial-pilot-license',
   provider: {
     '@type': 'EducationalOrganization',
     name: 'We One Aviation Academy',
-    url: 'https://www.weoneaviation.in',
+    url: 'https://weoneaviation.in',
   },
   timeRequired: 'P18M',
   coursePrerequisites: '10+2 with Physics and Mathematics, DGCA Class 1 Medical, and English proficiency.',
@@ -254,7 +254,7 @@ export default function CPL() {
         <StructuredData data={[generateCourseSchema({
           name: 'Commercial Pilot License (CPL) in India',
           description: 'Complete guide to Commercial Pilot License training in India, including eligibility, DGCA process, and pilot career pathways.',
-          url: 'https://www.weoneaviation.in/commercial-pilot-license',
+          url: 'https://weoneaviation.in/commercial-pilot-license',
           courseMode: 'Blended',
           lowPrice: 4000000,
           highPrice: 5000000,
@@ -672,7 +672,7 @@ export default function CPL() {
             </AutoInternalLinks>
             <RelatedArticles items={[
               { href: '/dgca-ground-classes', title: 'DGCA Ground Classes', description: 'Prepare for DGCA exams with structured ground classes.' },
-              { href: '/courses/cpl-flight-training', title: 'CPL Flight Training', description: 'Understand the flying phase after your DGCA training.' },
+              { href: '/courses/cpl', title: 'CPL Flight Training', description: 'Understand the flying phase after your DGCA training.' },
               { href: '/pilot-training-in-india', title: 'Pilot Training in India', description: 'Compare training pathways across India.' },
             ]} />
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">

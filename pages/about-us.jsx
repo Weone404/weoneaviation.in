@@ -6,6 +6,7 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import { YEARS_LABEL, PILOTS_TRAINED, SUCCESS_RATE, PARTNER_AIRLINES } from '../data/academy';
 import AutoInternalLinks from '../components/AutoInternalLinks';
 
 const heroSlides = [
@@ -49,7 +50,7 @@ export default function About() {
   return (
     <Layout
       title="About WeOne Aviation Academy | DGCA Approved Pilot Training Institute"
-      description="Learn about WeOne Aviation Academy - India's premier DGCA-approved pilot training institute with 15+ years of excellence and 500+ pilots trained."
+      description={`Learn about WeOne Aviation Academy - India's premier DGCA-approved pilot training institute with ${YEARS_LABEL} years of excellence and ${PILOTS_TRAINED} pilots trained.`}
     >
       <HeroSlider customSlides={heroSlides} />
 
@@ -79,7 +80,7 @@ export default function About() {
               </p>
             </AutoInternalLinks>
             <div className="grid grid-cols-3 gap-4 mt-6">
-              {[['500+', 'Pilots'], ['50+', 'Airlines'], ['98%', 'Pass Rate']].map(([num, label]) => (
+              {[[PILOTS_TRAINED, 'Pilots'], [PARTNER_AIRLINES, 'Airlines'], [SUCCESS_RATE, 'Pass Rate']].map(([num, label]) => (
                 <div key={label} className="text-center p-4 bg-av-light rounded-xl">
                   <div className="font-montserrat text-xl font-black text-av-orange">{num}</div>
                   <div className="text-av-blue text-xs font-medium">{label}</div>

@@ -9,7 +9,7 @@
  *          og:url, og:image (absolute URL), twitter:title, twitter:description
  * 3. Head: Added BreadcrumbList schema for homepage
  * 4. educationalOrgSchema: Fixed logo URL (was logo.png, actual file is Logo.webp)
- * 5. educationalOrgSchema: Fixed aggregateRating to match _document.jsx (4.9 / 3500)
+ * 5. educationalOrgSchema: aggregateRating removed (GEO audit 2026-08-11) — see note below
  * 6. H1: Added keyword-focused <h1> in tagline banner (HeroSlider owns the hero section)
  * 7. Contact section: Changed Gmail → domain email info@weoneaviation.in
  */
@@ -23,6 +23,7 @@ import CourseCard from '../components/CourseCard';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Head from 'next/head';
+import { FOUNDED_YEAR, YEARS_LABEL, PILOTS_TRAINED, SUCCESS_RATE, PARTNER_AIRLINES } from '../data/academy';
 import FAQs from '../components/FAQs';
 
 // ─── LAZY LOAD HEAVY BELOW-FOLD COMPONENTS ───────────────────────────────────
@@ -48,7 +49,7 @@ const courses = [
   { id: 'cpl', icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: '18-24 months', eligibility: '10+2 (PCM)', href: '/commercial-pilot-license', highlight: true },
   { id: 'atpl', icon: '🏆', title: 'ATPL', duration: '6 months', eligibility: 'CPL holder', href: '/courses/atpl' },
   { id: 'dgca', icon: '📚', title: 'DGCA Ground Classes', duration: '6-12 months', eligibility: '10+2 (PCM)', href: '/dgca-ground-classes' },
-  { id: 'cpl-flight', icon: '🛩️', title: 'CPL Flight Training', duration: '12-18 months', eligibility: 'DGCA exam cleared', href: '/courses/cpl-flight-training' },
+  { id: 'cpl-flight', icon: '🛩️', title: 'CPL Flight Training', duration: '12-18 months', eligibility: 'DGCA exam cleared', href: '/courses/cpl' },
 ];
 
 // TESTIMONIALS WITH VERIFIED IDENTITIES & E-E-A-T SIGNALS
@@ -59,10 +60,10 @@ const testimonials = [
 ];
 
 const stats = [
-  { id: 'pilots', num: '3500+', label: 'Pilots Trained', icon: '👨‍✈️', verified: true, source: 'DGCA-approved training records (2009-2024)' },
-  { id: 'years', num: '16+', label: 'Years of Excellence', icon: '🏆', verified: true, source: 'Founded 2009 - Still Operating' },
-  { id: 'success', num: '98%', label: 'Success Rate', icon: '📈', verified: true, source: 'DGCA exam pass rate tracking (2019-2024)' },
-  { id: 'airlines', num: '25+', label: 'Partner Airlines', icon: '✈️', verified: true, source: 'Official MOU agreements on file' },
+  { id: 'pilots', num: PILOTS_TRAINED, label: 'Pilots Trained', icon: '👨‍✈️', verified: true, source: `DGCA-approved training records (since ${FOUNDED_YEAR})` },
+  { id: 'years', num: YEARS_LABEL, label: 'Years of Excellence', icon: '🏆', verified: true, source: `Founded ${FOUNDED_YEAR} - Still Operating` },
+  { id: 'success', num: SUCCESS_RATE, label: 'Success Rate', icon: '📈', verified: true, source: 'DGCA exam pass rate tracking' },
+  { id: 'airlines', num: PARTNER_AIRLINES, label: 'Partner Airlines', icon: '✈️', verified: true, source: 'Official MOU agreements on file' },
 ];
 
 // ─── VERIFIED FACULTY WITH CREDENTIALS (E-E-A-T SIGNALS) ─────────────────
@@ -243,7 +244,7 @@ const facultySchema = {
       knowsAbout: instr.expertise,
       description: instr.bio,
       identifier: instr.dgcaLicense || instr.qualification,
-      image: instr.photo ? `https://www.weoneaviation.in${instr.photo}` : undefined,
+      image: instr.photo ? `https://weoneaviation.in${instr.photo}` : undefined,
     },
   })),
 };
@@ -252,16 +253,16 @@ const facultySchema = {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // ✅ SEO FIX 4: logo URL was 'logo.png' — actual file is 'Logo.webp'
-// ✅ SEO FIX 5: aggregateRating synced with _document.jsx (4.9 / 3500)
+// GEO audit 2026-08-11: aggregateRating removed — see the note in the object
 // ─────────────────────────────────────────────────────────────────────────────
 const educationalOrgSchema = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
   name: 'We One Aviation Academy',
-  url: 'https://www.weoneaviation.in',
-  logo: 'https://www.weoneaviation.in/Logo.webp',       // ✅ FIXED: was logo.png
-  image: 'https://weoneaviation.in/og-cover.jpg',       // ✅ FIXED: Changed www → non-www (site redirects www to non-www)
-  description: "India's premier DGCA approved aviation training institute. CPL, PPL, ATPL, SPL courses. 3500+ pilots trained since 2009 with 98% pass rate.",
+  url: 'https://weoneaviation.in',
+  logo: 'https://weoneaviation.in/Logo.webp',       // ✅ FIXED: was logo.png
+  image: 'https://weoneaviation.in/og-cover.jpg',
+  description: `India's premier DGCA approved aviation training institute. CPL, PPL, ATPL, SPL courses. ${PILOTS_TRAINED} pilots trained since ${FOUNDED_YEAR} with ${SUCCESS_RATE} pass rate.`,
   foundingDate: '2009',
   telephone: '+919355611996',
   email: 'info@weoneaviation.in',
@@ -283,12 +284,22 @@ const educationalOrgSchema = {
     name: 'Directorate General of Civil Aviation (DGCA)',
     url: 'https://www.dgca.gov.in',
   },
-  aggregateRating: {                                    // ✅ FIXED: synced with _document.jsx
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    reviewCount: '3500',
-    bestRating: '5',
-  },
+  /*
+   * aggregateRating REMOVED — do not "sync" it back.
+   *
+   * It claimed 4.9 from 3500 reviews. 3500 is the site's count of *pilots
+   * trained*, not reviews, and there was not one Review node anywhere on the
+   * site to support it. It was also an organisation rating itself, which
+   * Google's structured-data policy disallows for self-serving Organization
+   * markup, and third-party data does not corroborate the number either
+   * (Justdial: 5.0 across ~1,300 ratings; ProvenExpert: 4.6 from 5).
+   *
+   * A rating a model can trivially cross-check and find wrong damages trust
+   * scoring more than having no rating at all, and it risks a manual action.
+   * To restore one, collect real first-party reviews and mark them up as
+   * individual Review nodes, or cite Justdial's figure on-page as an
+   * attributed third-party number rather than declaring it as your own.
+   */
 };
 
 const courseListSchema = {
@@ -302,11 +313,11 @@ const courseListSchema = {
       '@type': 'Course',
       name: c.title,
       description: `${c.title} training. Duration: ${c.duration}. Eligibility: ${c.eligibility}.`,
-      url: `https://www.weoneaviation.in${c.href}`,
+      url: `https://weoneaviation.in${c.href}`,
       provider: {
         '@type': 'Organization',
         name: 'We One Aviation Academy',
-        sameAs: 'https://www.weoneaviation.in',
+        sameAs: 'https://weoneaviation.in',
       },
     },
   })),
@@ -324,7 +335,7 @@ const breadcrumbSchema = {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://www.weoneaviation.in',
+      item: 'https://weoneaviation.in',
     },
   ],
 };
@@ -355,9 +366,9 @@ export default function Home() {
             Without these, Facebook/LinkedIn/WhatsApp show a blank preview
             card title when someone shares the homepage link.
         ──────────────────────────────────────────────────────────────────── */}
-        <meta property="og:title" content="We One Aviation | Best Pilot Training Institute in India" />
-        <meta property="og:description" content="India's #1 DGCA-approved pilot training academy since 2009. CPL, PPL & ATPL courses. 3500+ pilots trained. Get free career counselling today!" />
-        <meta property="og:url" content="https://www.weoneaviation.in/" />
+        <meta key="og:title" property="og:title" content="We One Aviation | Best Pilot Training Institute in India" />
+        <meta key="og:description" property="og:description" content={`India's #1 DGCA-approved pilot training academy since ${FOUNDED_YEAR}. CPL, PPL & ATPL courses. ${PILOTS_TRAINED} pilots trained. Get free career counselling today!`} />
+        <meta key="og:url" property="og:url" content="https://weoneaviation.in/" />
         <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -387,7 +398,7 @@ export default function Home() {
       >
 
         {/* HERO */}
-        <HeroSlider />
+        <HeroSlider  asH1={false}/>
 
         <section className="bg-white py-4 px-4">
           <div className="max-w-7xl mx-auto text-sm text-gray-600">
@@ -409,9 +420,11 @@ export default function Home() {
             The old <p> becomes a supporting <p> below it.
         ────────────────────────────────────────────────────────────────── */}
         <div className="bg-av-orange py-4 text-center">
-          <h2 className="text-white font-bold text-xl px-4">
+          {/* The page's single <h1>. HeroSlider is passed asH1={false} above so
+              its heading renders as <h2>, leaving exactly one <h1> per route. */}
+          <h1 className="text-white font-bold text-xl px-4">
             Pilot training guidance for India’s next generation of aviators
-          </h2>
+          </h1>
           <p className="text-white font-medium text-sm px-4 mt-1">
             Learn about DGCA ground classes, CPL pathways, and the steps needed to build a structured aviation career.
           </p>
@@ -571,7 +584,7 @@ export default function Home() {
                     <div><span className="font-semibold text-av-blue">Fees:</span> 55 to 65 lakh <span className="text-gray-400">(Depends on Country)</span></div>
                     <div><span className="font-semibold text-av-blue">Registration:</span> Every Month</div>
                   </div>
-                  <Link href="/courses/cpl-flight-training" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">CPL Flight Training Details</Link>
+                  <Link href="/courses/cpl" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">CPL Flight Training Details</Link>
                 </div>
               </ScrollReveal>
 

@@ -36,7 +36,7 @@ export default function Breadcrumb({ override = null }) {
 
   const schemaItems = items.map((item, index) => ({
     name: item.label,
-    url: `https://www.weoneaviation.in${item.href}`,
+    url: `https://weoneaviation.in${item.href}`,
   }));
 
   return (

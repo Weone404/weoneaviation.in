@@ -19,11 +19,11 @@ export default function Layout({ children, title, description, keywords, robots,
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://www.weoneaviation.in/#organization',
+    '@id': 'https://weoneaviation.in/#organization',
     name: 'We One Aviation Academy',
     legalName: 'We One Aviation Academy',
-    url: 'https://www.weoneaviation.in',
-    logo: 'https://www.weoneaviation.in/Logo.webp',
+    url: 'https://weoneaviation.in',
+    logo: 'https://weoneaviation.in/Logo.webp',
     description: 'DGCA approved pilot training institute in India offering CPL, PPL, ATPL and aviation career guidance.',
     address: {
       '@type': 'PostalAddress',
@@ -42,9 +42,19 @@ export default function Layout({ children, title, description, keywords, robots,
       },
     ],
     email: 'info@weoneaviation.in',
+    /*
+     * Kept identical to the list in _document.jsx. Both files emit an
+     * Organization node on every page, so when their `sameAs` arrays disagree
+     * the page ships two contradictory descriptions of the same entity — the
+     * worst of both worlds for entity resolution. Change them together.
+     *
+     * (The duplication itself is worth collapsing to one owner; it is recorded
+     * in GEO-AUDIT-REPORT.md rather than restructured here.)
+     */
     sameAs: [
-      'https://www.facebook.com/share/1AokxHk8Yv/?mibextid=wwXIfr',
-      'https://www.instagram.com/we_one_aviation?igsh=aTJ0YnphMGs3b2Fl&utm_source=qr',
+      'https://www.facebook.com/share/1AokxHk8Yv/',
+      'https://www.instagram.com/we_one_aviation',
+      'https://www.linkedin.com/company/weoneaviation',
     ],
   };
 
@@ -52,12 +62,24 @@ export default function Layout({ children, title, description, keywords, robots,
     <>
       <Head>
         <title>{title || 'WeOne Aviation Academy - Pilot Training in India'}</title>
-        <meta name="description" content={description || "WeOne Aviation Academy offers DGCA approved pilot training courses including CPL, PPL, ATPL in India. Join India's most trusted aviation training institute."} />
-        {/* ✅ Global og:description — prevents duplicates when pages override with their own */}
-        <meta property="og:description" content={description || "DGCA-approved pilot training institute offering CPL, PPL, ATPL courses. 3500+ pilots trained since 2009."} />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/*
+          Every tag here carries a `key`. next/head only deduplicates head
+          elements that share one — without keys, a page that declares its own
+          canonical or og:url gets BOTH its tag and this one. /, /credentials
+          and /pilot-training-in-sri-lanka were each emitting two og:url values,
+          which leaves crawlers to pick one. Page-level overrides must use these
+          same key names to replace rather than duplicate.
+        */}
+        <meta key="description" name="description" content={description || "WeOne Aviation Academy offers DGCA approved pilot training courses including CPL, PPL, ATPL in India. Join India's most trusted aviation training institute."} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta key="robots" name="robots" content={resolvedRobots} />
-        <link rel="canonical" href={canonicalUrl} />
+        <link key="canonical" rel="canonical" href={canonicalUrl} />
+
+        {/* OG. og:type, og:image and all twitter:* live in _document.jsx —
+            they are page-independent, so emitting them here too would double them. */}
+        <meta key="og:url" property="og:url" content={canonicalUrl} />
+        <meta key="og:title" property="og:title" content={title || 'WeOne Aviation Academy'} />
+        <meta key="og:description" property="og:description" content={description || 'DGCA approved pilot training in India'} />
 
         <link rel="icon" href="/favicon.ico" />
         <StructuredData data={organizationSchema} />

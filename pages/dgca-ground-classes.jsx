@@ -18,11 +18,11 @@ const dgcaGroundCourseSchema = {
   '@type': 'Course',
   name: 'DGCA Ground Classes',
   description: "India's DGCA Ground Classes for pilot training, covering core DGCA subjects and exam preparation.",
-  url: 'https://www.weoneaviation.in/dgca-ground-classes',
+  url: 'https://weoneaviation.in/dgca-ground-classes',
   provider: {
     '@type': 'EducationalOrganization',
     name: 'We One Aviation Academy',
-    url: 'https://www.weoneaviation.in',
+    url: 'https://weoneaviation.in',
   },
   timeRequired: 'P6M',
   coursePrerequisites: '10+2 with Physics and Mathematics, minimum age 17+, DGCA Class 2 Medical, and English proficiency.',
@@ -237,7 +237,7 @@ const relatedArticles = [
 const courseSchema = generateCourseSchema({
   name: 'DGCA Ground Classes',
   description: 'DGCA ground classes for pilot training in India covering navigation, meteorology, regulations, technical subjects, and RTR preparation.',
-  url: 'https://www.weoneaviation.in/dgca-ground-classes',
+  url: 'https://weoneaviation.in/dgca-ground-classes',
   courseMode: 'Blended',
   duration: '6 Months',
   lowPrice: 250000,

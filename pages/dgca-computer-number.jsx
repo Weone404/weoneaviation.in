@@ -224,7 +224,7 @@ const suggestedInternalLinks = [
 export default function DGCAComputerNumber() {
     return (
         <Layout title="DGCA Computer Number 2026 | Apply Online, Eligibility & Documents" description="Learn everything about the DGCA Computer Number, including eligibility, required documents, online registration, application process, validity, benefits, and expert guidance. Apply correctly with We One Aviation.">
-            <HeroSlider customSlides={heroSlides} />
+            <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
             <section className="py-20 px-4">

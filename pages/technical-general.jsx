@@ -87,7 +87,7 @@ const howWeTeach = [
 export default function TechnicalGeneral() {
     return (
         <Layout title="Technical General — DGCA CPL/PPL All Details 2025 | WeOne Aviation Academy" description="Complete guide to Technical General for DGCA CPL & PPL exams. Covers aircraft structure, aerodynamics, engines, systems, instruments, landing gear and fire protection at We One Aviation Academy.">
-            <HeroSlider customSlides={heroSlides} />
+            <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
             <section className="py-20 px-4">

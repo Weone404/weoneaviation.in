@@ -6,11 +6,11 @@ const atplCourseSchema = {
     '@type': 'Course',
     name: 'Airline Transport Pilot License (ATPL)',
     description: 'ATPL preparation program covering advanced airline-level subjects, simulator training, and captain-track readiness.',
-    url: 'https://www.weoneaviation.in/courses/atpl',
+    url: 'https://weoneaviation.in/courses/atpl',
     provider: {
         '@type': 'EducationalOrganization',
         name: 'We One Aviation Academy',
-        url: 'https://www.weoneaviation.in',
+        url: 'https://weoneaviation.in',
     },
     timeRequired: 'P36M',
     coursePrerequisites: 'CPL holder with flight-hour progression toward ATPL requirements.',

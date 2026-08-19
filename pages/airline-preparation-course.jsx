@@ -22,7 +22,7 @@ const whyChoose = [
 ];
 
 const contactWays = [
-    { icon: '🌐', title: 'Visit Our Website', desc: 'The official We One Aviation website is a comprehensive resource for information. Navigate to our Contact Us page, where you\'ll find details such as our address, phone numbers, and email addresses. Visit www.weoneaviation.in for quick access.' },
+    { icon: '🌐', title: 'Visit Our Website', desc: 'The official We One Aviation website is a comprehensive resource for information. Navigate to our Contact Us page, where you\'ll find details such as our address, phone numbers, and email addresses. Visit weoneaviation.in for quick access.' },
     { icon: '📞', title: 'Phone Contact', desc: 'Give us a call to speak directly with our representatives. Dial the provided phone numbers listed on our website, and our team will be happy to assist you with any queries or concerns.' },
     { icon: '📧', title: 'Email Communication', desc: 'If you prefer written communication, you can send us an email. Visit our Contact Us page for the relevant email addresses, and our team will respond promptly to provide the information you need.' },
     { icon: '📱', title: 'Social Media Platforms', desc: 'Connect with We One Aviation through our official social media channels, such as Facebook, Twitter, or LinkedIn. Direct messages or comments on these platforms can be another effective way to get in touch.' },
@@ -72,7 +72,7 @@ const pilotPrepSteps = [
 export default function AirlinePreparation() {
     return (
         <Layout title="Airline Preparation Course In Dwarka | WeOne Aviation Academy" description="Join We One Aviation's Airline Preparation Course in Dwarka. Comprehensive training for pilots, cabin crew, and aviation professionals. Expert faculty, state-of-the-art facilities, 100% placement support.">
-            <HeroSlider customSlides={heroSlides} />
+            <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
             <section className="py-20 px-4">

@@ -3,9 +3,23 @@ import Script from 'next/script';
 import StructuredData from '../components/StructuredData';
 import { generateOrganizationSchema, generateWebsiteSchema } from '../lib/schema';
 
+/*
+ * These become the organisation's `sameAs`, which is how a model ties this site
+ * to the same real-world entity it encounters elsewhere. Each corroborating
+ * profile strengthens that resolution, so the list should be as complete as the
+ * academy's genuine presence allows.
+ *
+ * Two changes here (GEO audit 2026-08-11):
+ *  - LinkedIn added. The company page was already linked from /credentials but
+ *    was absent from the schema, so it contributed nothing.
+ *  - The share/tracking query strings were stripped. `sameAs` matching is
+ *    literal, and `?mibextid=…` / `?igsh=…` are per-share tokens, not the
+ *    canonical profile URLs a knowledge graph records.
+ */
 const footerSocialLinks = [
-  'https://www.facebook.com/share/1AokxHk8Yv/?mibextid=wwXIfr',
-  'https://www.instagram.com/we_one_aviation?igsh=aTJ0YnphMGs3b2Fl&utm_source=qr',
+  'https://www.facebook.com/share/1AokxHk8Yv/',
+  'https://www.instagram.com/we_one_aviation',
+  'https://www.linkedin.com/company/weoneaviation',
 ];
 
 const twitterSite = process.env.NEXT_PUBLIC_TWITTER_SITE;
@@ -44,11 +58,20 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap"
-          rel="stylesheet"
-        />
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        {/*
+          Montserrat and Poppins are self-hosted through next/font in _app.jsx,
+          so the render-blocking fonts.googleapis.com stylesheet that sat here is
+          gone. It measured 880 ms on mobile, and the homepage LCP element is the
+          hero heading — text — so first paint was waiting on exactly this.
+
+          Playfair Display and DM Sans were requested here too but are only used
+          under /admin (which loads its own stylesheet) and by Passresultsslider
+          (which carries its own @import).
+
+          The Material Icons stylesheet was removed outright: the `material-icons`
+          class appears nowhere in pages/, components/ or styles/. It cost 163 ms
+          of render-blocking time on every page to style nothing.
+        */}
 
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/Logo.webp" />
@@ -57,16 +80,25 @@ export default function Document() {
         {/* Global metadata defaults are intentionally minimal to avoid duplicate OG/Twitter tags across pages. */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="WeOne Aviation" />
+        <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="We One Aviation Academy — Best Pilot Training Institute in India" />
 
         <meta name="twitter:card" content="summary_large_image" />
         {twitterSite ? <meta name="twitter:site" content={twitterSite} /> : null}
+        <meta name="twitter:image" content="https://weoneaviation.in/og-cover.jpg" />
+        <meta name="twitter:image:alt" content="We One Aviation Academy — Best Pilot Training Institute in India" />
 
         <StructuredData data={[organizationSchema, websiteSchema]} />
 
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/react-quill@2.0.0/dist/quill.snow.css"
-        />
+        {/*
+          Quill's stylesheet was pulled from unpkg here, on every public page.
+          Lighthouse (mobile) measured 887 ms of render-blocking time — the
+          single largest blocker on the site — for an editor that only renders
+          inside /admin/blog. It was also the second copy; _app.jsx imported the
+          same file. /admin/blog now links its own from /vendor/quill.snow.css.
+        */}
 
         {/* Google Tag Manager */}
         <Script

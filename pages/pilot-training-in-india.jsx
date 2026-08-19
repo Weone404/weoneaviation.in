@@ -5,6 +5,7 @@ import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import NextImage from 'next/image';
+import { YEARS_LABEL, PILOTS_TRAINED, PARTNER_AIRLINES } from '../data/academy';
 
 const courses = [
     { icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: '18-24 months', eligibility: '10+2 (PCM)', href: '/courses/cpl', highlight: true },
@@ -21,10 +22,10 @@ const testimonials = [
 ];
 
 const stats = [
-    { num: '500+', label: 'Pilots Trained', icon: '👨‍✈️' },
-    { num: '15+', label: 'Years of Excellence', icon: '🏆' },
+    { num: PILOTS_TRAINED, label: 'Pilots Trained', icon: '👨‍✈️' },
+    { num: YEARS_LABEL, label: 'Years of Excellence', icon: '🏆' },
     { num: '98%', label: 'Success Rate', icon: '📈' },
-    { num: '50+', label: 'Partner Airlines', icon: '✈️' },
+    { num: PARTNER_AIRLINES, label: 'Partner Airlines', icon: '✈️' },
 ];
 
 const cities = ['Delhi', 'Mumbai', 'Bangalore', 'Hyderabad', 'Chennai', 'Pune', 'Kolkata', 'Jaipur', 'Nagpur', 'Kerala'];
@@ -337,7 +338,7 @@ export default function Home() {
     return (
         <Layout title="WeOne Aviation Academy | Best Pilot Training Institute in India" description="India's premier DGCA-approved aviation training academy. CPL, PPL, ATPL, SPL courses. 500+ pilots trained. Free career counselling available.">
             {/* Hero */}
-            <HeroSlider />
+            <HeroSlider  asH1={false}/>
 
             {/* Tagline Banner */}
             <div className="bg-av-orange py-4 text-center">
@@ -803,7 +804,7 @@ export default function Home() {
                                     <div><span className="font-semibold text-av-blue">Flying Training Fees:</span> 40 to 50 lakh <span className="text-gray-400">(Depends on Country)</span></div>
                                     <div><span className="font-semibold text-av-blue">Registration Date:</span> Every Month You Can Apply</div>
                                 </div>
-                                <Link href="/courses/cpl-flight-training" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
+                                <Link href="/courses/cpl" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
                                     CPL Flight Training Details
                                 </Link>
                             </div>

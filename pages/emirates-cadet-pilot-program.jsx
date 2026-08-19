@@ -48,7 +48,7 @@ const keyBenefits = [
 export default function EmiratesCadet() {
     return (
         <Layout title="Emirates Cadet Pilot Program – Complete Guide | WeOne Aviation Academy" description="Complete guide to the Emirates Cadet Pilot Program. Learn about eligibility, training phases, costs, facilities at EFTA and how to apply for this prestigious aviation pathway.">
-            <HeroSlider customSlides={heroSlides} />
+            <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
             <section className="py-20 px-4">
