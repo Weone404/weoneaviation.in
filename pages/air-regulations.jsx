@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
@@ -91,9 +92,30 @@ const prepTips = [
     'Stay updated with new CAR revisions on DGCA website',
 ];
 
+const LAST_UPDATED = 'August 19, 2026';
+const LAST_UPDATED_ISO = '2026-08-19';
+
+const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Air Regulations for the DGCA Commercial Pilot Licence examination',
+    description: 'Air Regulations is one of the written subjects the Directorate General of Civil Aviation examines for a Commercial Pilot Licence, required by the Aircraft Rules, 1937, Schedule II, Section J, paragraph 1(d). The syllabus covers the Aircraft Act and Rules, ICAO Annexes, rules of the air, airspace classification, and licensing requirements.',
+    inLanguage: 'en-IN',
+    dateModified: LAST_UPDATED_ISO,
+    mainEntityOfPage: 'https://weoneaviation.in/air-regulations',
+    publisher: {
+        '@type': 'EducationalOrganization',
+        name: 'We One Aviation Academy',
+        url: 'https://weoneaviation.in',
+    },
+};
+
 export default function AirRegulations() {
     return (
         <Layout title="Air Regulations – Complete Guide for DGCA Exams | WeOne Aviation Academy" description="Complete guide to Air Regulations for DGCA CPL/PPL exams. Covers ICAO, Chicago Convention, DGCA structure, Rules of the Air, airspace classification, licensing rules and more.">
+            <Head>
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+            </Head>
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
@@ -105,6 +127,47 @@ export default function AirRegulations() {
                             <h1 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
                                 Air Regulations – Complete Guide for DGCA Exams and Pilot Training
                             </h1>
+
+                            {/* Direct answer. Written to stand alone if extracted. */}
+                            <p className="text-gray-700 leading-relaxed mb-6 text-base">
+                                Air Regulations is one of the written subjects the Directorate General of Civil Aviation examines for a Commercial Pilot Licence, required by the Aircraft Rules, 1937, Schedule II, Section J, paragraph 1(d). The syllabus covers the Aircraft Act and Rules, ICAO Annexes, rules of the air, airspace classification, and licensing requirements.
+                            </p>
+
+                            <p className="text-gray-500 text-xs mb-8">{`Last updated: ${LAST_UPDATED}`}</p>
+
+                            {/* DGCA's own naming for the written papers. Schedule II, Section J,
+                                paragraph 1(d) of the Aircraft Rules, 1937 (continued in force by
+                                section 43(2) of the Bharatiya Vayuyan Adhiniyam, 2024). */}
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">Where this paper sits in the DGCA examination</h2>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                Schedule II, Section J, paragraph 1(d) of the Aircraft Rules, 1937 (continued in force by section 43(2) of the Bharatiya Vayuyan Adhiniyam, 2024) requires a Commercial Pilot Licence applicant to pass a written examination in Air Regulations, Air Navigation, Meteorology, and Aircraft and Engines, together with a Signals (practical) examination for interpretation of aural and visual signals.
+                            </p>
+                            <div className="overflow-x-auto rounded-xl border border-gray-200 mb-4">
+                                <table className="w-full text-sm">
+                                    <caption className="sr-only">DGCA written subjects for a Commercial Pilot Licence</caption>
+                                    <thead>
+                                        <tr className="bg-av-blue text-white">
+                                            <th scope="col" className="p-3 text-left text-xs font-semibold">DGCA subject name</th>
+                                            <th scope="col" className="p-3 text-left text-xs font-semibold">Commonly called</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {[['Air Regulations', 'Air Regulations'],
+                                          ['Air Navigation', 'Navigation'],
+                                          ['Meteorology', 'Aviation Meteorology'],
+                                          ['Aircraft and Engines', 'Technical General'],
+                                          ['Signals (practical)', 'Signals']].map(([a, b], i) => (
+                                            <tr key={a} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                                                <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left">{a}</th>
+                                                <td className="p-3 text-gray-600 text-xs">{b}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-10">
+                                On the DGCA Pariksha examination portal the papers are grouped into five sections: General, Oral, Technical General, Technical Specific and Technical Performance.
+                            </p>
                             <p className="text-gray-600 leading-relaxed mb-4 text-sm">
                                 Air Regulations refer to the set of rules and procedures governing civil aviation to ensure safe, efficient, and orderly air navigation. In India, these rules are laid down by the Directorate General of Civil Aviation (DGCA) under the Ministry of Civil Aviation.
                             </p>

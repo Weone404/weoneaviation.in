@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
@@ -132,13 +133,30 @@ function IconList({ items }) {
 }
 
 // ─── Page ──────────────────────────────────────────────────────────────────
+const LAST_UPDATED = 'August 19, 2026';
+const LAST_UPDATED_ISO = '2026-08-19';
+
+const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Air Navigation for the DGCA Commercial Pilot Licence examination',
+    description: 'Air Navigation is one of the written subjects the Directorate General of Civil Aviation examines for a Commercial Pilot Licence, alongside Air Regulations, Meteorology, and Aircraft and Engines. It covers position fixing, flight planning, radio aids and navigation computers. The requirement sits in the Aircraft Rules, 1937, Schedule II, Section J, paragraph 1(d).',
+    inLanguage: 'en-IN',
+    dateModified: LAST_UPDATED_ISO,
+    mainEntityOfPage: 'https://weoneaviation.in/air-navigation',
+    publisher: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+};
+
 export default function AirNavigation() {
     return (
         <Layout
             title="Air Navigation Course — DGCA CPL/PPL | WeOne Aviation Academy 2025"
-            description="Best Air Navigation course in India for DGCA CPL & PPL exams. DGCA-approved training in Delhi with expert instructors, live flight planning, simulator sessions and full syllabus coverage."
+            description="Air Navigation for the DGCA CPL and PPL written examinations: syllabus, position fixing, flight planning and radio aids. Classes in Dwarka, New Delhi."
         >
-            <HeroSlider customSlides={heroSlides} />
+            <Head>
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+            </Head>
+            <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
             <section className="py-20 px-4">
@@ -149,28 +167,62 @@ export default function AirNavigation() {
                         <ScrollReveal>
                             <div className="section-tag">DGCA Subject</div>
 
-                            {/*
-                SEO fix: only ONE h1 per page. The HeroSlider already renders
-                an h1 for the page title. These section headings use h2/h3
-                which is correct document hierarchy and avoids duplicate h1 penalty.
-              */}
-                            <h2 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
-                                Air Navigation — All Details 2025
-                            </h2>
+                            {/* The page's single <h1>. HeroSlider takes asH1={false} above. */}
+                            <h1 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
+                                Air Navigation — DGCA Commercial Pilot Licence Subject
+                            </h1>
+
+                            {/* Direct answer. Written to stand alone if extracted. */}
+                            <p className="text-gray-700 leading-relaxed mb-6 text-base">
+                                Air Navigation is one of the written subjects the Directorate General of Civil Aviation examines for a Commercial Pilot Licence, alongside Air Regulations, Meteorology, and Aircraft and Engines. It covers position fixing, flight planning, radio aids and navigation computers. The requirement sits in the Aircraft Rules, 1937, Schedule II, Section J, paragraph 1(d).
+                            </p>
+
+                            <p className="text-gray-500 text-xs mb-8">{`Last updated: ${LAST_UPDATED}`}</p>
+
+                            {/* DGCA's own naming for the written papers. Schedule II, Section J,
+                                paragraph 1(d) of the Aircraft Rules, 1937 (continued in force by
+                                section 43(2) of the Bharatiya Vayuyan Adhiniyam, 2024). */}
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">Where this paper sits in the DGCA examination</h2>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                Schedule II, Section J, paragraph 1(d) of the Aircraft Rules, 1937 (continued in force by section 43(2) of the Bharatiya Vayuyan Adhiniyam, 2024) requires a Commercial Pilot Licence applicant to pass a written examination in Air Regulations, Air Navigation, Meteorology, and Aircraft and Engines, together with a Signals (practical) examination for interpretation of aural and visual signals.
+                            </p>
+                            <div className="overflow-x-auto rounded-xl border border-gray-200 mb-4">
+                                <table className="w-full text-sm">
+                                    <caption className="sr-only">DGCA written subjects for a Commercial Pilot Licence</caption>
+                                    <thead>
+                                        <tr className="bg-av-blue text-white">
+                                            <th scope="col" className="p-3 text-left text-xs font-semibold">DGCA subject name</th>
+                                            <th scope="col" className="p-3 text-left text-xs font-semibold">Commonly called</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {[['Air Regulations', 'Air Regulations'],
+                                          ['Air Navigation', 'Navigation'],
+                                          ['Meteorology', 'Aviation Meteorology'],
+                                          ['Aircraft and Engines', 'Technical General'],
+                                          ['Signals (practical)', 'Signals']].map(([a, b], i) => (
+                                            <tr key={a} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                                                <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left">{a}</th>
+                                                <td className="p-3 text-gray-600 text-xs">{b}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-10">
+                                On the DGCA Pariksha examination portal the papers are grouped into five sections: General, Oral, Technical General, Technical Specific and Technical Performance.
+                            </p>
 
                             <AutoInternalLinks currentPath="/air-navigation">
                                 <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                                    Looking for the best Air Navigation course in India? Whether you're preparing for your{' '}
-                                    <span className="font-semibold text-av-blue">Commercial Pilot License (CPL)</span> or{' '}
-                                    <span className="font-semibold text-av-blue">Private Pilot License (PPL)</span>, mastering
-                                    Air Navigation is essential for every{' '}
-                                    <span className="font-semibold text-av-blue">pilot</span>'s success in both DGCA exams and
-                                    real-world flying.
+                                    The paper is set for both the{' '}
+                                    <span className="font-semibold text-av-blue">Commercial Pilot Licence (CPL)</span> and the{' '}
+                                    <span className="font-semibold text-av-blue">Private Pilot Licence (PPL)</span>, and the
+                                    same techniques are used in flight planning after licence issue.
                                 </p>
                                 <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                                    At We One Aviation Academy, we offer comprehensive, practical, DGCA-approved Air Navigation
-                                    training in Delhi. We combine real-time navigation tools, expert faculty, and hands-on
-                                    practice that goes beyond the textbook.
+                                    We One Aviation Academy runs Air Navigation classes in Dwarka, New Delhi, using navigation
+                                    computers and live flight-planning exercises alongside the written syllabus.
                                 </p>
                             </AutoInternalLinks>
 
