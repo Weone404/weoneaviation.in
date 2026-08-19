@@ -55,17 +55,23 @@ const courses = [
 
 
 
+/*
+ * Only Delhi still has a page of its own — the other city pages were one
+ * template with the name swapped and now 301 to the India hub (Phase 5).
+ * These tiles therefore carry an explicit href rather than deriving a slug,
+ * so nothing here links at a redirect.
+ */
 const cities = [
-  { name: 'Delhi', slug: 'pilot-training-in-delhi' },
-  { name: 'Mumbai', slug: 'pilot-training-in-mumbai' },
-  { name: 'Bangalore', slug: 'pilot-training-in-bangalore' },
-  { name: 'Hyderabad', slug: 'pilot-training-in-hyderabad' },
-  { name: 'Chennai', slug: 'pilot-training-in-chennai' },
-  { name: 'Pune', slug: 'pilot-training-in-pune' },
-  { name: 'Kolkata', slug: 'pilot-training-in-kolkata' },
-  { name: 'Jaipur', slug: 'pilot-training-in-jaipur' },
-  { name: 'Nagpur', slug: 'pilot-training-in-nagpur' },
-  { name: 'Kerala', slug: 'pilot-training-in-kerala' },
+  { name: 'Delhi', href: '/pilot-training-in-delhi' },
+  { name: 'Mumbai', href: '/pilot-training-in-india' },
+  { name: 'Bangalore', href: '/pilot-training-in-india' },
+  { name: 'Hyderabad', href: '/pilot-training-in-india' },
+  { name: 'Chennai', href: '/pilot-training-in-india' },
+  { name: 'Pune', href: '/pilot-training-in-india' },
+  { name: 'Kolkata', href: '/pilot-training-in-india' },
+  { name: 'Jaipur', href: '/pilot-training-in-india' },
+  { name: 'Nagpur', href: '/pilot-training-in-india' },
+  { name: 'Kerala', href: '/pilot-training-in-india' },
 ];
 
 const dgcaSubjects = [
@@ -730,12 +736,12 @@ export default function Home() {
             </ScrollReveal>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
               {cities.map(city => (
-                <Link key={city.slug} href={`/${city.slug}`} className="card-hover block text-center p-4 rounded-xl border border-gray-200 bg-white hover:border-av-orange hover:text-av-orange hover:bg-orange-50 transition-all text-sm font-medium text-av-blue">
+                <Link key={city.name} href={city.href} className="card-hover block text-center p-4 rounded-xl border border-gray-200 bg-white hover:border-av-orange hover:text-av-orange hover:bg-orange-50 transition-all text-sm font-medium text-av-blue">
                   📍 {city.name}
                 </Link>
               ))}
             </div>
-            <p className="text-gray-500 text-sm mt-4">If you are in Karnataka and need city-level exam or simulator guidance, see our Bangalore guide with local booking tips and recommended providers: <Link href="/pilot-training-in-india" className="text-av-blue font-semibold hover:underline">Pilot Training in Bangalore</Link>.</p>
+            <p className="text-gray-500 text-sm mt-4">City-level guidance on exam centres, batch timings and flying-school selection is covered on the India page: <Link href="/pilot-training-in-india" className="text-av-blue font-semibold hover:underline">Pilot Training in Bangalore</Link>.</p>
           </div>
         </section>
 

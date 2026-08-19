@@ -21,7 +21,11 @@ const stats = [
     { num: 'DGCA', label: 'Approved', icon: '🏛️' },
 ];
 
-const cities = ['Delhi', 'Mumbai', 'Bangalore', 'Hyderabad', 'Chennai', 'Pune', 'Kolkata', 'Jaipur', 'Nagpur', 'Kerala'];
+/*
+ * This page IS the India hub, so a grid of city tiles pointing back at it would
+ * be nine self-links. Delhi is the only city with a page of its own.
+ */
+const cities = [{ name: 'Delhi', href: '/pilot-training-in-delhi' }];
 
 const dgcaSubjects = [
     {
@@ -1058,10 +1062,10 @@ export default function Home() {
                     </ScrollReveal>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
                         {cities.map((city, i) => (
-                            <ScrollReveal key={city} delay={i * 60}>
-                                <Link href={`/pilot-training-in/${city.toLowerCase()}`}
+                            <ScrollReveal key={city.name} delay={i * 60}>
+                                <Link href={city.href}
                                     className="card-hover block text-center p-4 rounded-xl border border-gray-200 bg-white hover:border-av-orange hover:text-av-orange hover:bg-orange-50 transition-all text-sm font-medium text-av-blue">
-                                    📍 {city}
+                                    📍 {city.name}
                                 </Link>
                             </ScrollReveal>
                         ))}
