@@ -297,7 +297,8 @@ export default function Home() {
         ──────────────────────────────────────────────────────────────────── */}
         <meta name="twitter:title" content="We One Aviation | Pilot Training Institute in India" />
         <meta name="twitter:description" content="DGCA-approved pilot training academy in Dwarka, New Delhi, running CPL, PPL and ATPL courses since 2009." />
-        <meta name="twitter:image" content="https://weoneaviation.in/og-cover.jpg" />
+        {/* twitter:image and twitter:image:alt are page-independent and emitted
+            once in _document.jsx; repeating the identical tag here shipped it twice. */}
 
         {/* ── Schema Markup ─────────────────────────────────────────────── */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrgSchema) }} />
