@@ -384,7 +384,7 @@ export default function DGCAGroundClasses() {
               </p>
 
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                Local students: if you are planning block-flying around Coimbatore, our Coimbatore guide explains how to book multi-day hour-building visits, which local operators commonly accept external students, and recommended nearby accommodation for short stays — see <Link href="/pilot-training-in-coimbatore" className="text-av-blue font-semibold hover:underline">Pilot Training in Coimbatore</Link>.
+                Local students: if you are planning block-flying around Coimbatore, our Coimbatore guide explains how to book multi-day hour-building visits, which local operators commonly accept external students, and recommended nearby accommodation for short stays — see <Link href="/pilot-training-in-india" className="text-av-blue font-semibold hover:underline">Pilot Training in Coimbatore</Link>.
               </p>
 
               {/* What Does DGCA Do */}

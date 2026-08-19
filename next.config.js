@@ -55,6 +55,62 @@ const nextConfig = {
       { source: '/blogs/cpl-full-form', destination: '/courses/cpl', permanent: true },
       { source: '/courses/cpl-flight-training', destination: '/courses/cpl', permanent: true },
 
+      // ── City-page consolidation (Phase 5, 2026-08-19) ────────────────────
+      // The city pages were one template with the place name swapped. Only
+      // Delhi describes a real location — the Dwarka Sector 7 branch — so it
+      // is the only one kept. Everything else folds into the India hub.
+      //
+      // Every rule below lands on its FINAL destination in one hop. The nested
+      // /pilot-training-in/<city> routes point straight at the hub rather than
+      // at their flat twin, because the flat twin is itself redirected.
+
+      // 13 nested routes (pages/pilot-training-in/[city].jsx, now deleted)
+      { source: '/pilot-training-in/bangalore', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in/chennai', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in/delhi', destination: '/pilot-training-in-delhi', permanent: true },
+      { source: '/pilot-training-in/gujarat', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in/haryana', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in/hyderabad', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in/jaipur', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in/kerala', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in/kolkata', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in/mumbai', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in/nagpur', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in/pune', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in/punjab', destination: '/pilot-training-in-india', permanent: true },
+
+      // 25 flat city and state pages -> the India hub
+      { source: '/pilot-training-in-andhra-pradesh', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-arunachal-pradesh', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-assam', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-bangalore', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-bihar', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-chennai', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-chhattisgarh', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-coimbatore', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-ghaziabad', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-goa', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-gujarat', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-gurugram', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-haryana', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-hyderabad', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-jaipur', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-kerala', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-kolkata', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-maharashtra', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-mumbai', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-nagpur', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-noida', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-pune', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-punjab', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-rajasthan', destination: '/pilot-training-in-india', permanent: true },
+      { source: '/pilot-training-in-tamil-nadu', destination: '/pilot-training-in-india', permanent: true },
+
+      // Near-exact twin: identical to /pilot-training-in-delhi apart from the
+      // import path and a 2025/2026 date.
+      { source: '/blogs/pilot-training-delhi', destination: '/pilot-training-in-delhi', permanent: true },
+
+
       {
         source: '/our-courses',
         destination: '/courses',
@@ -321,7 +377,8 @@ const nextConfig = {
       
       {
         source: '/pilot-course-fees',
-        destination: '/blogs/ppl-course-fees',
+        // was /blogs/ppl-course-fees, which now 301s on to the same target
+        destination: '/courses/ppl',
         permanent: true,
       },
       
@@ -393,7 +450,8 @@ const nextConfig = {
       
       {
         source: '/blog/cpl-full-form',
-        destination: '/blogs/cpl-full-form',
+        // was /blogs/cpl-full-form, which now 301s on to the same target
+        destination: '/courses/cpl',
         permanent: true,
       },
       
@@ -405,13 +463,15 @@ const nextConfig = {
       
       {
         source: '/blog/pilot-training-delhi',
-        destination: '/blogs/pilot-training-delhi',
+        // was /blogs/pilot-training-delhi, which now 301s on to the same target
+        destination: '/pilot-training-in-delhi',
         permanent: true,
       },
       
       {
         source: '/blog/ppl-course-fees',
-        destination: '/blogs/ppl-course-fees',
+        // was /blogs/ppl-course-fees, which now 301s on to the same target
+        destination: '/courses/ppl',
         permanent: true,
       },
       
@@ -429,7 +489,8 @@ const nextConfig = {
       
       {
         source: '/pilot-training-in-kerela',
-        destination: '/pilot-training-in-assam',
+        // was /pilot-training-in-assam, which now 301s on to the hub
+        destination: '/pilot-training-in-india',
         permanent: true,
       },
       

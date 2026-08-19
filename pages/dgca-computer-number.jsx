@@ -255,7 +255,7 @@ export default function DGCAComputerNumber() {
                             </p>
 
                             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                                Regional students in Andhra Pradesh: for local DGCA office directions, exam-centre travel advice, and suggested pre-exam checklist items specific to the state, see our Andhra Pradesh guidance at <Link href="/pilot-training-in-andhra-pradesh" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Pilot Training in Andhra Pradesh</Link>.
+                                Regional students in Andhra Pradesh: for local DGCA office directions, exam-centre travel advice, and suggested pre-exam checklist items specific to the state, see our Andhra Pradesh guidance at <Link href="/pilot-training-in-india" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Pilot Training in Andhra Pradesh</Link>.
                             </p>
 
                             {/* Why Important */}

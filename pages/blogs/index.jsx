@@ -48,7 +48,7 @@ export default function BlogsIndex({ mongoBlogs }) {
                     Expert guides on pilot training, DGCA exams, careers, and everything aviation.
                 </p>
                 <p className="text-white/70 text-sm max-w-2xl mx-auto mt-3">
-                    If you are comparing training hubs and want Chennai-specific exam-centre addresses, simulator providers, and travel tips, see our Chennai guide: <Link href="/pilot-training-in-chennai" className="font-semibold underline">Pilot Training in Chennai</Link>.
+                    If you are comparing training hubs and want Chennai-specific exam-centre addresses, simulator providers, and travel tips, see our Chennai guide: <Link href="/pilot-training-in-india" className="font-semibold underline">Pilot Training in Chennai</Link>.
                 </p>
             </div>
 

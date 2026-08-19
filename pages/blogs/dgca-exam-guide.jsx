@@ -234,7 +234,7 @@ export default function DGCAPage() {
                                     ))}
                                 </div>
                                     <p className="text-gray-600 text-sm leading-relaxed mt-4">
-                                        If you are preparing for DGCA exams in Maharashtra, our Mumbai guide includes exam-centre addresses, local travel tips and recommended nearby simulators to help you plan effectively: <Link href="/pilot-training-in-mumbai" className="text-av-orange font-semibold hover:underline">Pilot Training in Mumbai</Link>.
+                                        If you are preparing for DGCA exams in Maharashtra, our Mumbai guide includes exam-centre addresses, local travel tips and recommended nearby simulators to help you plan effectively: <Link href="/pilot-training-in-india" className="text-av-orange font-semibold hover:underline">Pilot Training in Mumbai</Link>.
                                     </p>
                             </div>
                         </ScrollReveal>

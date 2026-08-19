@@ -200,7 +200,7 @@ const faqs = [
 ];
 
 const blogs = [
-        { title: 'Pilot Training in Delhi', date: 'February 13, 2025', desc: 'Complete guide to pilot training in Delhi — DGCA exam, simulator practice, PPL & CPL course fees.', href: '/blogs/pilot-training-delhi' },
+        { title: 'Pilot Training in Delhi', date: 'February 13, 2025', desc: 'Complete guide to pilot training in Delhi — DGCA exam, simulator practice, PPL & CPL course fees.', href: '/pilot-training-in-delhi' },
         { title: 'Private Pilot License (PPL) Course Fees in India', date: 'February 10, 2025', desc: 'PPL Course Fees 2025 — everything an Indian student needs to know before enrolling.', href: '/courses/ppl' },
         { title: 'Full Form of CPL | Commercial Pilot License in India', date: 'January 28, 2025', desc: 'What CPL means in Indian aviation, eligibility, DGCA requirements and career scope.', href: '/courses/cpl' },
         { title: 'Master the DGCA CPL Exam: Complete Guide for Indian Students', date: 'January 21, 2025', desc: 'Complete DGCA CPL exam guide — syllabus, subjects, exam centres, and success tips for India.', href: '/blogs/dgca-exam-guide' },

@@ -321,9 +321,9 @@ export default function Home() {
         <section className="bg-white py-4 px-4">
           <div className="max-w-7xl mx-auto text-sm text-gray-600">
             Explore local pilot training paths in{' '}
-            <Link href="/pilot-training-in-mumbai" className="text-av-blue hover:text-av-orange underline">Mumbai</Link>,{' '}
-            <Link href="/pilot-training-in-bangalore" className="text-av-blue hover:text-av-orange underline">Bangalore</Link>, and{' '}
-            <Link href="/pilot-training-in-chennai" className="text-av-blue hover:text-av-orange underline">Chennai</Link> for city-specific DGCA preparation and career guidance.
+            <Link href="/pilot-training-in-india" className="text-av-blue hover:text-av-orange underline">Mumbai</Link>,{' '}
+            <Link href="/pilot-training-in-india" className="text-av-blue hover:text-av-orange underline">Bangalore</Link>, and{' '}
+            <Link href="/pilot-training-in-india" className="text-av-blue hover:text-av-orange underline">Chennai</Link> for city-specific DGCA preparation and career guidance.
           </div>
         </section>
 
@@ -735,7 +735,7 @@ export default function Home() {
                 </Link>
               ))}
             </div>
-            <p className="text-gray-500 text-sm mt-4">If you are in Karnataka and need city-level exam or simulator guidance, see our Bangalore guide with local booking tips and recommended providers: <Link href="/pilot-training-in-bangalore" className="text-av-blue font-semibold hover:underline">Pilot Training in Bangalore</Link>.</p>
+            <p className="text-gray-500 text-sm mt-4">If you are in Karnataka and need city-level exam or simulator guidance, see our Bangalore guide with local booking tips and recommended providers: <Link href="/pilot-training-in-india" className="text-av-blue font-semibold hover:underline">Pilot Training in Bangalore</Link>.</p>
           </div>
         </section>
 
