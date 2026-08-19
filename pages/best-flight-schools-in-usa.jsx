@@ -264,7 +264,7 @@ export default function USAFlightTraining() {
                             <div className="bg-av-blue rounded-2xl p-8 text-center">
                                 <h3 className="font-montserrat text-xl font-bold text-white mb-3">Start Your USA Flight Training Journey</h3>
                                 <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-5">
-                                    We One Aviation Academy is India's most trusted partner for USA flight training. Get expert guidance, FAA license pathway support, and direct airline career preparation. ✈️
+                                    We One Aviation Academy arranges USA flight training placements. Get expert guidance, FAA license pathway support, and direct airline career preparation. ✈️
                                 </p>
                                 <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
                                     Contact Now

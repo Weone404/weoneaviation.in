@@ -1,11 +1,10 @@
 # We One Aviation Academy — LLM Index
 
-DGCA-approved pilot training academy in Dwarka, New Delhi, India. Operating since 2009. 3500+ pilots trained, 98% success rate, international flight-training tie-ups in USA, Canada, Australia, UK, and South Africa.
+DGCA-approved pilot training academy in Dwarka, New Delhi, India. Operating since 2009. DGCA ground classes for the CPL written examinations, plus flight-training placement with partner schools in the USA, Canada, Australia, UK, and South Africa.
 
 ## Courses
 - https://weoneaviation.in/commercial-pilot-license — Complete guide to Commercial Pilot License (CPL) in India, including eligibility, process, flying-hour requirements, and career path.
 - https://weoneaviation.in/dgca-ground-classes — DGCA ground school page covering key subjects, eligibility, class structure, and preparation for DGCA exams.
-- https://weoneaviation.in/courses/cpl-flight-training — Detailed CPL training path with syllabus phases, medical/exam steps, and fee components from classes to cockpit.
 - https://weoneaviation.in/courses/atpl — ATPL preparation page covering advanced airline-level subjects, simulator-focused training, and captain-track progression.
 - https://weoneaviation.in/courses/cpl — Program page for DGCA-approved CPL training, including duration, eligibility, and core syllabus coverage.
 

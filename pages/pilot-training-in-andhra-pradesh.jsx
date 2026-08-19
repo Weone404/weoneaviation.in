@@ -14,7 +14,7 @@ export default function PilotTrainingAndhraPradesh() {
         image: 'https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=1920&q=80',
         tag: 'Pilot Training in Andhra Pradesh',
         title: 'Pilot Training Institute in Andhra Pradesh – 2026',
-        sub: 'World-class CPL, PPL & DGCA Ground Classes in Andhra Pradesh with 100% Placement Assistance',
+        sub: 'CPL, PPL and DGCA ground classes in Andhra Pradesh',
       }}
 
       intro={`Andhra Pradesh's pilot training choices are shaped by its long coastline, varied terrain, and the presence of several regional exam centres — Visakhapatnam (VTZ) anchors the coastal pathway, while Tirupati and Vijayawada provide inland alternatives for quieter flying blocks. This page emphasises port-city conditions, coastal wind patterns, and practical choices for students who need to coordinate travel between home districts and exam centres.
@@ -171,7 +171,7 @@ export default function PilotTrainingAndhraPradesh() {
         { q: 'How long does it take to complete pilot training in Andhra Pradesh?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months.' },
         { q: 'What are the fees for pilot training in Andhra Pradesh?', a: 'The average fees for CPL training in Andhra Pradesh is INR 40–60 Lakh. This includes ground classes (INR 2-3 lakhs), 200 hours of flying (INR 35-55 lakhs), simulator training (INR 3-5 lakhs), and extra gear (INR 20-50 thousand). WeOne Aviation provides scholarship and flexible payment options.' },
         { q: 'What is the eligibility to become a pilot in Andhra Pradesh?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
-        { q: 'Does WeOne Aviation provide placement assistance in Andhra Pradesh?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
+        { q: 'Does WeOne Aviation provide placement assistance in Andhra Pradesh?', a: 'Yes! We provide placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
         { q: 'Can I get a scholarship for pilot training in Andhra Pradesh?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
         { q: 'What career options are available after pilot training in Andhra Pradesh?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Andhra Pradesh\'s growing aviation sector with Visakhapatnam as a key hub creates excellent demand for trained pilots.' },
       ]}

@@ -238,7 +238,7 @@ export default function Sitemap() {
                         Site<span className="text-av-orange">map</span>
                     </h1>
                     <p className="text-white/70 text-sm">
-                        Browse all pages of We One Aviation Academy — India's Most Trusted Pilot Training Institute
+                        Browse all pages of We One Aviation Academy — DGCA-approved pilot training institute
                     </p>
                     {/* Breadcrumb */}
                     <div className="mt-4 flex items-center justify-center gap-2 text-sm text-white/60">

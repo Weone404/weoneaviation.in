@@ -195,7 +195,7 @@ const faqs = [
     },
     {
         q: 'Is a DGCA CPL valid only in India?',
-        a: 'A DGCA India CPL allows you to fly in India. For international operations, pilots typically convert to an ICAO-aligned license. However, clearing DGCA exams is the first step regardless of your long-term goal.',
+        a: 'A DGCA CPL lets you fly aircraft on the Indian register. To fly commercially in another country you convert the licence through that country\'s own regulator, and the conversion route differs by state. Clearing the DGCA exams is the first step either way.',
     },
 ];
 
@@ -205,15 +205,15 @@ const blogs = [
         { title: 'Full Form of CPL | Commercial Pilot License in India', date: 'January 28, 2025', desc: 'What CPL means in Indian aviation, eligibility, DGCA requirements and career scope.', href: '/courses/cpl' },
         { title: 'Master the DGCA CPL Exam: Complete Guide for Indian Students', date: 'January 21, 2025', desc: 'Complete DGCA CPL exam guide — syllabus, subjects, exam centres, and success tips for India.', href: '/blogs/dgca-exam-guide' },
         { title: 'Aviation Course After 12th in India — Fees & Admission Guide', date: 'January 2, 2025', desc: 'All aviation courses available in India after 12th — fees, eligibility, and career paths explained.', href: '/blogs/aviation-course-after-12th' },
-        { title: 'Best Aviation Academy in India', date: 'December 12, 2024', desc: 'How We One Aviation Academy became India\'s most trusted DGCA Ground Classes institute.', href: '/blogs/aviation-academy' },
+        { title: 'Choosing an Aviation Academy in India', date: 'December 12, 2024', desc: 'What to check before enrolling in a DGCA ground-classes institute.', href: '/blogs/aviation-academy' },
 ]
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function DGCAGroundClassesInIndia() {
     return (
         <Layout
-            title="DGCA Ground Classes in India | #1 Pilot Coaching — All States | WeOne Aviation"
-            description="Best DGCA Ground Classes in India — 100% pass rate, 3000+ pilots trained across all 28 states. Online & offline CPL ground coaching covering all 6 DGCA subjects. 25% scholarship available. Join WeOne Aviation Academy."
+            title="DGCA Ground Classes in India | Pilot Coaching, All States | WeOne Aviation"
+            description="DGCA ground classes in India, available online and offline across all 28 states. Online & offline CPL ground coaching covering all 6 DGCA subjects. 25% scholarship available. Join WeOne Aviation Academy."
         >
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
@@ -354,7 +354,7 @@ export default function DGCAGroundClassesInIndia() {
                                     ))}
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed mt-5">
-                                    Met all criteria? You're ready to begin. Join We One Aviation Academy — India's most trusted DGCA Ground Classes institute — and start your journey today. 🇮🇳✈️
+                                    Met all criteria? You're ready to begin. Join We One Aviation Academy — DGCA-approved, based in Dwarka, New Delhi. trusted DGCA Ground Classes institute — and start your journey today. 🇮🇳✈️
                                 </p>
                             </div>
 
@@ -497,7 +497,7 @@ export default function DGCAGroundClassesInIndia() {
                                     <div className="text-4xl mb-3">🇮🇳 ✈️</div>
                                     <h2 className="font-montserrat text-xl font-bold text-white mb-2">Start Your DGCA Journey From Anywhere in India</h2>
                                     <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-6">
-                                        Join 3,000+ pilots from across India who trusted We One Aviation Academy for their DGCA Ground Classes. 100% results guaranteed. 25% scholarship for every Indian student.
+                                        DGCA ground classes for students anywhere in India, online or offline. 25% scholarship for every Indian student.
                                     </p>
                                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
                                         <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">

@@ -293,7 +293,7 @@ export default function AirNavigation() {
                                 </h3>
                                 <AutoInternalLinks currentPath="/air-navigation">
                                     <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-5">
-                                        We One Aviation Academy is Delhi's most trusted name for DGCA Ground Classes. Join us and
+                                        We One Aviation Academy runs DGCA ground classes in Dwarka, Delhi. Join us and
                                         take the first step toward the skies! ✈️
                                     </p>
                                 </AutoInternalLinks>

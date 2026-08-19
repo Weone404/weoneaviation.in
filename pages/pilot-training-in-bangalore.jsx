@@ -14,7 +14,7 @@ export default function PilotTrainingBangalore() {
                 image: 'https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=1920&q=80',
                 tag: 'Pilot Training in Bangalore',
                 title: 'Pilot Training Institute in Bangalore – 2026',
-                sub: 'World-class CPL, PPL & DGCA Ground Classes in Bangalore with 100% Placement Assistance',
+                sub: 'CPL, PPL and DGCA ground classes in Bangalore',
             }}
 
             intro={`Bangalore (BLR) is a uniquely tech-driven and time-pressured student market where efficient scheduling and realistic career advice matter. With Kempegowda International Airport as a major nearby operational reference, Bangalore aspirants can access both advanced simulators and several nearby flying clubs — but they must balance training with heavy commuting and academic or work commitments. This page is aimed at helping Bangalore students plan efficient training blocks, book the right simulator providers, and manage DGCA exam logistics without losing study momentum.
@@ -170,7 +170,7 @@ export default function PilotTrainingBangalore() {
                 { q: 'What is the nearest major airport relevant to pilot training in Bangalore?', a: 'Kempegowda International Airport (BLR) is the main aviation reference point for Bangalore-based training and airport-awareness discussions.' },
                 { q: 'What are the fees for pilot training in Bangalore?', a: 'The average fees for CPL training in Bangalore is INR 40–50 Lakh. This includes ground classes (INR 2-5 lakhs), 200 hours of flying (INR 35-45 lakhs), simulator training (INR 3-5 lakhs), and extra gear (INR 1-2 lakhs). WeOne Aviation provides scholarship and flexible payment options.' },
                 { q: 'What is the eligibility to become a pilot in Bangalore?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
-                { q: 'Does WeOne Aviation provide placement assistance in Bangalore?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
+                { q: 'Does WeOne Aviation provide placement assistance in Bangalore?', a: 'Yes! We provide placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
                 { q: 'Can I get a scholarship for pilot training in Bangalore?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
                 { q: 'What career options are available after pilot training in Bangalore?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Bangalore\'s thriving aviation and tech sector creates excellent demand for pilots.' },
             ]}

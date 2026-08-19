@@ -7,28 +7,27 @@ export default function PilotTrainingDelhi() {
 
             meta={{
                 title: 'Pilot Training Institute in Delhi 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Best Pilot Training Institute in Delhi. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
+                description: 'DGCA-approved pilot training in Delhi. CPL, PPL and ATPL courses plus DGCA ground classes. Scholarship options available. WeOne Aviation Academy.',
             }}
 
             hero={{
                 image: 'https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=1920&q=80',
                 tag: 'Pilot Training in Delhi',
                 title: 'Pilot Training Institute in Delhi – 2026',
-                sub: 'World-class CPL, PPL & DGCA Ground Classes in Delhi with 100% Placement Assistance',
+                sub: 'CPL, PPL and DGCA ground classes in Delhi',
             }}
 
-            intro="Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in Delhi is best for you if you want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Delhi is home to IGI Airport — one of India's busiest international airports — making it one of the greatest aviation hubs for students willing to become a pilot. We are here to train the next generation of aviation professionals."
+            intro="Are you dreaming of a career in aviation? Our Pilot Training Institute in Delhi is built for students who want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Delhi is home to IGI Airport — one of India's busiest international airports — making it one of the greatest aviation hubs for students willing to become a pilot. We are here to train the next generation of aviation professionals."
 
             features={[
                 { icon: '🏅', title: 'Certified Training Program', desc: 'Our institute follows the regulations set by the national aviation authority to ensure quality education and certification.' },
-                { icon: '👨‍✈️', title: 'DGCA Qualified Instructors', desc: 'Learn from the best — DGCA-qualified instructors with real flying experience who have served as pilots in India.' },
+                { icon: '👨‍✈️', title: 'DGCA Qualified Instructors', desc: 'Learn from DGCA-qualified instructors with real flying experience who have served as pilots in India.' },
                 { icon: '🛩️', title: 'Advanced Aircraft & Simulators', desc: 'Train on the latest Cessna 172 Glass Cockpit aircraft with advanced avionics, plus high-tech full motion flight simulators for safe, controlled practice before taking off.' },
                 { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof, available both offline and online.' },
-                { icon: '🚀', title: 'Career Guidance & 100% Placement', desc: 'Our academy doesn\'t just train you — we help you launch your career. Graduates have joined major airlines, cargo operations, and private aviation companies worldwide.' },
-                { icon: '🌍', title: '20+ Country Flying School', desc: 'We have 20+ flying schools across the world including the USA, South Africa, and India — where you complete 200 hours of flying for your Commercial Pilot License.' },
+                { icon: '🚀', title: 'Career Guidance', desc: 'Our academy doesn\'t just train you — we help you launch your career. Graduates have joined major airlines, cargo operations, and private aviation companies worldwide.' },
+                { icon: '🌍', title: 'International Flying School Options', desc: 'Flight training placements with partner schools in the USA, South Africa and India, where you build the 200 hours of flying required for a Commercial Pilot Licence.' },
                 { icon: '📖', title: 'Small Batch Sizes', desc: 'Only 20 students per batch — ensuring personal attention, daily doubt sessions, and faster results for every student.' },
                 { icon: '🏢', title: 'Prime Location in Dwarka, Delhi', desc: 'Conveniently located in Dwarka, Delhi — close to IGI Airport, giving you real-world aviation exposure in India\'s top aviation hub.' },
-                { icon: '🏆', title: '100% Result Every Year', desc: 'Students who regularly attend our classes are guaranteed success in their first attempt at DGCA exams and can become a pilot in just 15 months.' },
             ]}
 
             courses={[
@@ -166,7 +165,7 @@ export default function PilotTrainingDelhi() {
                 { q: 'How long does it take to complete pilot training in Delhi?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months. With WeOne Aviation, students who attend regularly can become a pilot in as little as 15 months.' },
                 { q: 'What are the fees for pilot training in Delhi?', a: 'The average fees for CPL training in Delhi is INR 40–60 Lakh. This includes ground classes, 200 hours of flying, simulator training, and extra gear. WeOne Aviation provides scholarship and flexible payment options to make pilot training affordable.' },
                 { q: 'What is the eligibility to become a pilot in Delhi?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
-                { q: 'Does WeOne Aviation provide placement assistance in Delhi?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
+                { q: 'Does WeOne Aviation provide placement assistance in Delhi?', a: 'Yes! We provide placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
                 { q: 'Can I get a scholarship for pilot training in Delhi?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
                 { q: 'Where is WeOne Aviation Academy located in Delhi?', a: 'WeOne Aviation Academy is located in Dwarka, Delhi — close to IGI Airport, one of India\'s busiest international airports, giving students excellent real-world aviation exposure.' },
                 { q: 'What career options are available after pilot training in Delhi?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Delhi\'s position as India\'s aviation hub creates excellent demand for trained pilots.' },

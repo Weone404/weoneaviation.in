@@ -71,7 +71,7 @@ export const emailTemplates = {
             </div>
 
             <div class="footer">
-              <p>info.weoneaviation@gmail.com | +91-XXXXX-XXXXX | www.weoneaviation.in</p>
+              <p>info.weoneaviation@gmail.com | +91-XXXXX-XXXXX | weoneaviation.in</p>
               <p>© 2026 WeOne Aviation. All rights reserved.</p>
             </div>
           </div>
@@ -156,7 +156,7 @@ export const emailTemplates = {
             </div>
 
             <div class="footer">
-              <p>info.weoneaviation@gmail.com | www.weoneaviation.in</p>
+              <p>info.weoneaviation@gmail.com | weoneaviation.in</p>
               <p>Not interested? <a href="#" style="color: #ccc;">Unsubscribe</a></p>
             </div>
           </div>
@@ -244,7 +244,7 @@ export const emailTemplates = {
             </div>
 
             <div class="footer">
-              <p>info.weoneaviation@gmail.com | www.weoneaviation.in</p>
+              <p>info.weoneaviation@gmail.com | weoneaviation.in</p>
             </div>
           </div>
         </body>
@@ -320,7 +320,7 @@ export const emailTemplates = {
             </div>
 
             <div class="footer">
-              <p>info.weoneaviation@gmail.com | www.weoneaviation.in</p>
+              <p>info.weoneaviation@gmail.com | weoneaviation.in</p>
             </div>
           </div>
         </body>

@@ -14,7 +14,7 @@ export default function PilotTrainingGujarat() {
                 image: 'https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=1920&q=80',
                 tag: 'Pilot Training in Gujarat',
                 title: 'Pilot Training Institute in Gujarat – 2026',
-                sub: 'World-class CPL, PPL & DGCA Ground Classes in Gujarat with 100% Placement Assistance',
+                sub: 'CPL, PPL and DGCA ground classes in Gujarat',
             }}
 
             intro={`Gujarat students often balance strong industrial careers and family commitments with a need for focused, logistically simple pilot training. Ahmedabad (AMD) and Vadodara (BDQ) are the state’s main aviation anchors, while Surat and Rajkot are important feeder cities whose students must carefully plan travel for flying hours and DGCA exams. This page is written to be a practical planning guide: where to book simulator slots, which local flying clubs accept short practice blocks, and how to minimise travel and accommodation costs when attending DGCA Pariksha sessions.
@@ -168,7 +168,7 @@ export default function PilotTrainingGujarat() {
                 { q: 'How long does it take to complete pilot training in Gujarat?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months.' },
                 { q: 'What are the fees for pilot training in Gujarat?', a: 'The average fees for CPL training in Gujarat is INR 40–50 Lakh. This includes ground classes (INR 2-5 lakhs), 200 hours of flying (INR 35-45 lakhs), simulator training (INR 3-5 lakhs), and extra gear (INR 1-2 lakhs). WeOne Aviation provides scholarship and flexible payment options.' },
                 { q: 'What is the eligibility to become a pilot in Gujarat?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
-                { q: 'Does WeOne Aviation provide placement assistance in Gujarat?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
+                { q: 'Does WeOne Aviation provide placement assistance in Gujarat?', a: 'Yes! We provide placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
                 { q: 'Can I get a scholarship for pilot training in Gujarat?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
                 { q: 'What career options are available after pilot training in Gujarat?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Gujarat\'s thriving industrial and aviation sector creates excellent demand for trained pilots.' },
             ]}

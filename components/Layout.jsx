@@ -70,7 +70,7 @@ export default function Layout({ children, title, description, keywords, robots,
           which leaves crawlers to pick one. Page-level overrides must use these
           same key names to replace rather than duplicate.
         */}
-        <meta key="description" name="description" content={description || "WeOne Aviation Academy offers DGCA approved pilot training courses including CPL, PPL, ATPL in India. Join India's most trusted aviation training institute."} />
+        <meta key="description" name="description" content={description || "WeOne Aviation Academy offers DGCA approved pilot training courses including CPL, PPL, ATPL in India. Ground classes and flight-training placement from a DGCA-approved institute in Dwarka, New Delhi."} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta key="robots" name="robots" content={resolvedRobots} />
         <link key="canonical" rel="canonical" href={canonicalUrl} />

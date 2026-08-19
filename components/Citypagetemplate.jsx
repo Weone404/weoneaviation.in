@@ -101,7 +101,7 @@ export function CityPageTemplate({
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-6">{intro}</p>
                         <div className="flex flex-wrap gap-3 mb-6">
-                            {['DGCA Approved', '3000+ Pilots Trained', '100% Placement', 'Scholarship Available'].map(tag => (
+                            {['DGCA Approved', 'Scholarship Available'].map(tag => (
                                 <span key={tag} className="bg-av-light text-av-blue text-xs font-semibold px-4 py-2 rounded-full border border-av-sky/20">✓ {tag}</span>
                             ))}
                         </div>
@@ -113,10 +113,6 @@ export function CityPageTemplate({
                         <div className="relative">
                             <div className="rounded-2xl overflow-hidden shadow-2xl">
                                 <Image src="/assets/GroundSchool.jpg" alt={`CPL pilot training in ${city} — We One Aviation Academy`} width={350} height={280} sizes="(max-width: 768px) 100vw, 350px" className="w-full h-80 object-cover" />
-                            </div>
-                            <div className="absolute -bottom-5 -left-5 bg-av-orange rounded-xl p-4 shadow-xl">
-                                <div className="font-montserrat text-white text-xl font-black">3000+</div>
-                                <div className="text-white/80 text-xs">Pilots Trained</div>
                             </div>
                             <div className="absolute -top-5 -right-5 glass bg-av-blue rounded-xl p-4 shadow-xl border border-white/20">
                                 <div className="font-montserrat text-av-orange text-xl font-black">DGCA</div>
@@ -364,7 +360,7 @@ export function CityPageTemplate({
                                 ))}
                             </div>
                             <p className="text-white/70 text-center text-sm mb-6">
-                                We One Aviation is a Premier Aviation Academy which has trained 3000+ Pilots in India till 2025. We are the only institute who fulfils all your aviation needs under one roof.
+                                We One Aviation Academy has run DGCA ground classes and flight-training placement since 2009, covering ground school, flying school selection and licence conversion.
                             </p>
                             <div className="text-center">
                                 <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">

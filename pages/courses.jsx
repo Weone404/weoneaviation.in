@@ -2,7 +2,6 @@ import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
-import { PILOTS_TRAINED } from '../data/academy';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -18,7 +17,6 @@ const heroSlides = [
 ];
 
 const stats = [
-    { num: PILOTS_TRAINED, label: 'Students Trained', icon: '🎓' },
     { num: '3', label: 'Training Countries', icon: '🌍' },
     { num: '100%', label: 'DGCA Approved', icon: '✅' },
     { num: '₹1.5L+', label: 'Avg Starting Salary/mo', icon: '💰' },
@@ -198,7 +196,7 @@ const whyWeOne = [
     { icon: '🏛️', title: 'DGCA Approved', desc: 'All our programs are fully approved and regulated by DGCA, ensuring your license is valid nationwide.' },
     { icon: '🌍', title: 'International Training', desc: 'We offer flight training in USA and South Africa for global exposure and FAA / SACAA certification.' },
     { icon: '👨‍✈️', title: 'Expert Instructors', desc: 'Learn from experienced commercial pilots and DGCA-certified ground instructors.' },
-    { icon: '📈', title: 'Placement Support', desc: '100% placement assistance with airline interview prep and career counselling.' },
+    { icon: '📈', title: 'Placement Support', desc: 'placement assistance with airline interview prep and career counselling.' },
     { icon: '💸', title: 'Budget Friendly', desc: 'Affordable ground classes starting at ₹2 Lakh. Scholarship available for class toppers.' },
     { icon: '🏥', title: 'Medical Assistance', desc: 'We assist with DGCA Class 1 & Class 2 medical tests through our approved network.' },
 ];
@@ -447,7 +445,7 @@ export default function CoursesPage() {
                             Why WeOne <span className="text-av-orange">Aviation Academy?</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-                            We are India's most trusted pilot training institute with a proven track record of producing successful commercial pilots.
+                            DGCA-approved ground classes and flight-training placement for students working toward a commercial licence.
                         </p>
                     </ScrollReveal>
 
@@ -490,7 +488,7 @@ export default function CoursesPage() {
                             Ready to Become a <span className="text-av-orange">Commercial Pilot?</span>
                         </h2>
                         <p className="text-white/70 text-sm leading-relaxed mb-8 max-w-xl mx-auto">
-                            Join India's most trusted aviation training academy. Get free career counselling today and take the first step toward the skies. ✈️
+                            Get free career counselling today and take the first step toward the skies. ✈️
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <Link

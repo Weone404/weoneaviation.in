@@ -7,14 +7,14 @@ export default function PilotTrainingAssam() {
 
             meta={{
                 title: 'Pilot Training Institute in Assam 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Best Pilot Training Institute in Assam. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
+                description: 'DGCA-approved pilot training in Assam. CPL, PPL and ATPL courses plus DGCA ground classes. Scholarship options available. WeOne Aviation Academy.',
             }}
 
             hero={{
                 image: 'https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=1920&q=80',
                 tag: 'Pilot Training in Assam',
                 title: 'Pilot Training Institute in Assam – 2026',
-                sub: 'World-class CPL, PPL & DGCA Ground Classes in Assam with 100% Placement Assistance',
+                sub: 'CPL, PPL and DGCA ground classes in Assam',
             }}
 
             intro={`Assam's geography and transport patterns make pilot training planning distinct from mainland states. Guwahati (GAU) is the primary aviation link to the rest of India, and many Northeast students use Guwahati as a staging point for simulator sessions, DGCA exam travel, and initial flying exposures. This page focuses on pragmatic advice for regional candidates: coordinating exam travel, locating trusted local flying clubs, and arranging block-flying sessions that reduce the need for frequent long-distance travel.

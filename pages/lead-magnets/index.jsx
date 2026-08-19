@@ -162,8 +162,7 @@ export default function LeadMagnetsHub() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 { stat: '5000+', label: 'Downloads', desc: 'Students using our guides' },
-                { stat: '98%', label: 'Success Rate', desc: 'Students who used our checklists' },
-                { stat: '4.9/5', label: 'Rating', desc: 'Average feedback score' },
+                                { stat: '4.9/5', label: 'Rating', desc: 'Average feedback score' },
               ].map((item, i) => (
                 <ScrollReveal key={i}>
                   <div className="text-center">

@@ -39,7 +39,7 @@ const programs = [
     title: 'DGCA Ground Classes',
     description: 'Comprehensive preparation for DGCA exams from expert instructors',
     duration: '4-6 months',
-    details: ['Online + offline modes', 'Mock tests & doubt sessions', 'Expert faculty', '95% pass rate'],
+    details: ['Online + offline modes', 'Mock tests & doubt sessions', 'Expert faculty'],
   },
 ];
 
@@ -47,7 +47,7 @@ const advantages = [
   { icon: '🌍', title: 'International Exposure', desc: 'Train with global standards and make international connections' },
   { icon: '💰', title: 'Cost-Effective', desc: 'Competitive fees with flexible payment options and scholarships' },
   { icon: '🎓', title: 'DGCA Recognized', desc: 'All training recognized by DGCA India for license conversion' },
-  { icon: '✈️', title: 'Career Ready', desc: '100% placement assistance with airlines and aviation companies' },
+  { icon: '✈️', title: 'Career Ready', desc: 'placement assistance with airlines and aviation companies' },
   { icon: '👨‍🏫', title: 'Expert Trainers', desc: 'Learn from experienced commercial pilots and certified instructors' },
   { icon: '📱', title: '24/7 Support', desc: 'Continuous career guidance and mentor support throughout your journey' },
 ];

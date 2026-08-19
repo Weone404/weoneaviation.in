@@ -83,12 +83,12 @@ export default function Document() {
         <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="We One Aviation Academy — Best Pilot Training Institute in India" />
+        <meta property="og:image:alt" content="We One Aviation Academy — Pilot Training Institute in India" />
 
         <meta name="twitter:card" content="summary_large_image" />
         {twitterSite ? <meta name="twitter:site" content={twitterSite} /> : null}
         <meta name="twitter:image" content="https://weoneaviation.in/og-cover.jpg" />
-        <meta name="twitter:image:alt" content="We One Aviation Academy — Best Pilot Training Institute in India" />
+        <meta name="twitter:image:alt" content="We One Aviation Academy — Pilot Training Institute in India" />
 
         <StructuredData data={[organizationSchema, websiteSchema]} />
 

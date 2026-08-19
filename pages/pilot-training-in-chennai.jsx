@@ -14,7 +14,7 @@ export default function PilotTrainingChennai() {
                 image: 'https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=1920&q=80',
                 tag: 'Pilot Training in Chennai',
                 title: 'Pilot Training Institute in Chennai – 2026',
-                sub: 'World-class CPL, PPL & DGCA Ground Classes in Chennai with 100% Placement Assistance',
+                sub: 'CPL, PPL and DGCA ground classes in Chennai',
             }}
 
             intro={`Chennai is a high-value training market because it offers direct access to an international airport ecosystem while still providing quiet pockets for focused flying practice. Chennai International Airport (MAA) defines the maritime-airline context students encounter in later careers, but much of the early practical training happens at nearby flying schools and private aerodromes. This page gives Chennai candidates step-by-step planning: simulator providers, examiner-centre directions, affordable short-stay accommodation, and how to schedule ground classes around city commuting.
@@ -170,7 +170,7 @@ Practical student planning: Recommended workflow — cluster ground classes into
                 { q: 'What is the nearest major airport relevant to pilot training in Chennai?', a: 'Chennai International Airport (MAA) is the key city reference point for pilot aspirants who want to understand airline movement, airport operations, and aviation exposure.' },
                 { q: 'What are the fees for pilot training in Chennai?', a: 'The average fees for CPL training in Chennai is INR 40–50 Lakh. This includes ground classes (INR 2-5 lakhs), 200 hours of flying (INR 35-45 lakhs), simulator training (INR 3-5 lakhs), and extra gear (INR 1-2 lakhs). WeOne Aviation provides scholarship and flexible payment options.' },
                 { q: 'What is the eligibility to become a pilot in Chennai?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
-                { q: 'Does WeOne Aviation provide placement assistance in Chennai?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
+                { q: 'Does WeOne Aviation provide placement assistance in Chennai?', a: 'Yes! We provide placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
                 { q: 'Can I get a scholarship for pilot training in Chennai?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
                 { q: 'What career options are available after pilot training in Chennai?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Chennai\'s growing aviation sector offers excellent career opportunities.' },
             ]}

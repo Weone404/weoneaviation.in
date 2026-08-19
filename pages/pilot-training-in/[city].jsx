@@ -49,15 +49,15 @@ export default function CityPage({ cityData, citySlug }) {
 
   const nearbyFAQs = [
     { q: `How can I become a pilot in ${name}?`, a: `To become a pilot in ${name}, you need to enroll in a DGCA-approved flying school, clear 9 DGCA written exams, complete 200+ flying hours, and pass the CPL skill test. WeOne Aviation Academy provides free career counselling and can guide you through the entire process from ${name}.` },
-    { q: `What are the best pilot training schools near ${name}?`, a: `WeOne Aviation Academy is the most trusted DGCA-approved aviation training partner for students from ${name}, ${state}. We offer CPL, PPL, ATPL, SPL, and DGCA ground classes with international training options.` },
+    { q: `What pilot training schools are available near ${name}?`, a: `WeOne Aviation Academy is a DGCA-approved aviation training provider for students from ${name}, ${state}. We offer CPL, PPL, ATPL, SPL, and DGCA ground classes with international training options.` },
     { q: `How much does pilot training cost for students from ${name}?`, a: `Pilot training costs vary by program: PPL costs ₹6-10 Lakh, CPL in India costs ₹40-70 Lakh, and CPL abroad costs ₹50-90 Lakh. We offer EMI options and scholarship guidance for students from ${name}.` },
     { q: `What is the eligibility to become a pilot from ${name}?`, a: `Students from ${name} need to have completed 10+2 with Physics and Mathematics (50% minimum), be at least 17 years old, and clear the DGCA Class 1 medical examination. Contact us for personalized eligibility assessment.` },
   ];
 
   return (
     <Layout
-      title={`Pilot Training in ${name} | Best Aviation Academy | WeOne Aviation`}
-      description={`Looking for pilot training in ${name}? WeOne Aviation offers DGCA-approved CPL, PPL, ATPL training for ${name} students. Free career counselling. 500+ pilots trained.`}
+      title={`Pilot Training in ${name} | WeOne Aviation Academy`}
+      description={`Pilot training for students in ${name}. WeOne Aviation offers DGCA-approved CPL, PPL and ATPL training. Free career counselling.`}
     >
       {/* Hero */}
       <div className="relative h-72 md:h-96 overflow-hidden flex items-center justify-center pt-16"
@@ -81,7 +81,7 @@ export default function CityPage({ cityData, citySlug }) {
                 Best Pilot Training for {name} Students
               </h2>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                WeOne Aviation Academy is the most trusted aviation training partner for aspiring pilots from {name}, {state}. We have helped hundreds of students from {name} achieve their dream of becoming professional pilots through our comprehensive DGCA-approved training programs.
+                WeOne Aviation Academy provides DGCA-approved training for aspiring pilots from {name}, {state}. We have helped hundreds of students from {name} achieve their dream of becoming professional pilots through our comprehensive DGCA-approved training programs.
               </p>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Students from {name} can choose to train at our partner flying schools across India or internationally in the USA, Canada, Australia, and Europe. Our expert counsellors based in {name} will guide you through every step of your aviation journey.
@@ -158,7 +158,7 @@ export default function CityPage({ cityData, citySlug }) {
               <div className="bg-av-blue rounded-2xl p-6 text-white">
                 <h4 className="font-montserrat font-bold mb-4">Why WeOne Aviation?</h4>
                 <ul className="space-y-2 text-sm text-white/80">
-                  {['DGCA Approved & Recognized', '500+ Pilots Trained', '98% First Attempt Pass Rate', 'International Training Options', '100% Placement Support', 'EMI & Scholarship Available', 'Expert Faculty (Ex-Airline Pilots)', 'Free Career Counselling'].map(point => (
+                  {['DGCA Approved & Recognized', 'International Training Options', 'EMI & Scholarship Available', 'Expert Faculty (Ex-Airline Pilots)', 'Free Career Counselling'].map(point => (
                     <li key={point} className="flex items-center gap-2">
                       <span className="text-av-orange">✓</span> {point}
                     </li>

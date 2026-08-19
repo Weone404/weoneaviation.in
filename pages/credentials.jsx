@@ -11,7 +11,7 @@ import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Head from 'next/head';
-import { FOUNDED_YEAR, YEARS_LABEL, PILOTS_TRAINED, SUCCESS_RATE, PARTNER_AIRLINES } from '../data/academy';
+import { FOUNDED_YEAR, YEARS_LABEL } from '../data/academy';
 import { useEffect, useState } from 'react';
 
 const credentials = [
@@ -27,24 +27,11 @@ const credentials = [
     ]
   },
   {
-    category: 'Faculty Credentials',
-    icon: '👨‍✈️',
-    items: [
-      { title: 'Capt. Rajesh Kumar', detail: 'Air India Captain (Retired) | DGCA/LIC/1998-456 | 22 years experience', verified: true },
-      { title: 'Ms. Priya Sharma', detail: 'SpiceJet First Officer | DGCA/LIC/2012-782 | 12 years experience', verified: true },
-      { title: 'Capt. Vikas Patel', detail: 'IndiGo Captain | DGCA/LIC/2008-334 | 16 years experience', verified: true },
-      { title: 'Dr. Anil Verma', detail: 'DGCA Aviation Medical Examiner | AME/2005-123 | 18 years experience', verified: true },
-    ]
-  },
-  {
-    category: 'Training Statistics (Verified)',
+    category: 'Training Record',
     icon: '📊',
     items: [
-      { title: `${PILOTS_TRAINED} Pilots Trained`, detail: `Source: DGCA-approved training records (since ${FOUNDED_YEAR})`, verified: true },
-      { title: `${SUCCESS_RATE} Success Rate`, detail: 'Source: DGCA exam pass rate tracking', verified: true },
       { title: `${YEARS_LABEL} Years of Operation`, detail: `Founded ${FOUNDED_YEAR} - Continuous operation verified`, verified: true },
-      { title: `${PARTNER_AIRLINES} Partner Airlines`, detail: 'Source: Official MOU agreements on file', verified: true },
-      { title: '100% Placement Support', detail: 'Documented placement outcomes available upon request', verified: true },
+      { title: 'Placement Support', detail: 'Documented placement outcomes available upon request', verified: true },
     ]
   },
   {
@@ -55,16 +42,6 @@ const credentials = [
       { title: 'Canada', detail: 'Transport Canada-approved training facilities in Ontario, Alberta', verified: true },
       { title: 'Australia', detail: 'CASA-approved flying schools in Queensland, Victoria', verified: true },
       { title: 'South Africa', detail: 'SACAA-approved training centers', verified: true },
-      { title: 'Europe', detail: 'EASA-compliant training partners in Germany, Portugal', verified: true },
-    ]
-  },
-  {
-    category: 'Student Testimonials (Verified)',
-    icon: '⭐',
-    items: [
-      { title: 'Rahul Sharma', detail: 'First Officer, IndiGo Airlines | LinkedIn Verified | DGCA/PIL/2022-001', verified: true },
-      { title: 'Priya Mehta', detail: 'CPL Holder, SpiceJet Regional | LinkedIn Verified | DGCA/CPL/2023-156', verified: true },
-      { title: 'Arjun Singh', detail: 'Cadet Pilot, Air India | LinkedIn Verified | DGCA/CAT/2024-089', verified: true },
     ]
   },
   {
@@ -82,8 +59,8 @@ const credentials = [
 /**
  * Only accreditations the academy can substantiate on request are listed here.
  *
- * GEO audit 2026-08-11: ISO 9001:2015, "IATA Certified" and "Member IAAPI" were
- * removed. None carried a certificate or membership number, and an unbacked
+ * GEO audit 2026-08-11: three certification and trade-body claims were removed.
+ * None carried a certificate or membership number, and an unbacked
  * certification claim is a liability on the one page whose entire premise is
  * verifiability — answer engines increasingly cross-check these against the
  * issuing bodies' own registries. Restore an entry only together with its
@@ -108,7 +85,7 @@ export default function CredentialsPage() {
         <title>Credentials & Verification – We One Aviation Academy</title>
         <meta name="description" content="Published credentials of We One Aviation Academy: DGCA accreditation, faculty qualifications with DGCA license numbers, verified training statistics, and international partnerships." />
         <meta key="og:title" property="og:title" content="Credentials & Verification – We One Aviation Academy" />
-        <meta key="og:description" property="og:description" content={`Verified credentials: DGCA approval, ${PILOTS_TRAINED} pilots trained, instructor qualifications, and published faculty licence numbers.`} />
+        <meta key="og:description" property="og:description" content="Verified credentials for We One Aviation Academy: DGCA approval status, training record, facilities and international flying-school partnerships." />
         <meta key="og:url" property="og:url" content="https://weoneaviation.in/credentials" />
 
         {/* Schema: Organization with credentials */}
@@ -218,7 +195,7 @@ export default function CredentialsPage() {
         <section className="py-20 px-4 bg-gradient-to-br from-av-blue to-av-navy">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-montserrat text-3xl font-bold text-white mb-4">
-              Ready to Train with India's Most <span className="text-av-orange">Transparent Aviation Academy?</span>
+              Ready to Train with <span className="text-av-orange">We One Aviation Academy?</span>
             </h2>
             <p className="text-white/70 mb-8 text-sm max-w-2xl mx-auto">
               Enroll today and get access to our verified faculty, state-of-the-art facilities, and proven placement support.

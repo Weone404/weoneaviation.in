@@ -117,7 +117,7 @@ const nextConfig = {
       
       {
         source: '/courses/cpl-flight-training/',
-        destination: '/courses/cpl-flight-training',
+        destination: '/courses/cpl',
         permanent: true,
       },
       
@@ -213,7 +213,7 @@ const nextConfig = {
       
       {
         source: '/best-flight-training-institute-for-aspiring-pilots',
-        destination: '/courses/cpl-flight-training',
+        destination: '/courses/cpl',
         permanent: true,
       },
       
@@ -237,7 +237,7 @@ const nextConfig = {
       
       {
         source: '/cpl-training-in-abroad',
-        destination: '/courses/cpl-flight-training',
+        destination: '/courses/cpl',
         permanent: true,
       },
       

@@ -7,24 +7,24 @@ export default function PilotTrainingHyderabad() {
 
             meta={{
                 title: 'Pilot Training Institute in Hyderabad 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'Best Pilot Training Institute in Hyderabad. CPL, PPL, ATPL, DGCA Ground Classes. 3000+ pilots trained. 100% placement assistance. Scholarship available. Join WeOne Aviation Academy.',
+                description: 'DGCA-approved pilot training in Hyderabad. CPL, PPL and ATPL courses plus DGCA ground classes. Scholarship options available. WeOne Aviation Academy.',
             }}
 
             hero={{
                 image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80',
                 tag: 'Pilot Training in Hyderabad',
                 title: 'Pilot Training Institute in Hyderabad – 2026',
-                sub: 'World-class CPL, PPL & DGCA Ground Classes with 100% Placement Assistance',
+                sub: 'World-class CPL, PPL & DGCA Ground Classes with placement assistance',
             }}
 
-            intro="Are you dreaming of a career in aviation? Our World Class Pilot Training Institute in Hyderabad is best for you if you want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Hyderabad is a big aviation center in India, creating a high demand for trained pilots — and we are here to train the next generation."
+            intro="Are you dreaming of a career in aviation? Our Pilot Training Institute in Hyderabad is built for students who want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Hyderabad is a big aviation center in India, creating a high demand for trained pilots — and we are here to train the next generation."
 
             features={[
                 { icon: '🏅', title: 'Certified Training Program', desc: 'Our institute follows regulations set by the national aviation authority to ensure quality education and certification.' },
-                { icon: '👨‍✈️', title: 'Experienced & Certified Instructors', desc: 'Learn from the best — instructors who have real flying experience and have served as pilots in India.' },
+                { icon: '👨‍✈️', title: 'Experienced & Certified Instructors', desc: 'Learn from instructors who have real flying experience and have served as pilots in India.' },
                 { icon: '🛩️', title: 'Advanced Aircraft & Simulators', desc: 'Train on Cessna 172 Glass Cockpit aircraft with advanced avionics, plus high-tech flight simulators for safe, controlled practice.' },
                 { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof.' },
-                { icon: '🚀', title: '100% Placement Assistance', desc: 'Strong industry connections help graduates join major airlines, cargo operations, and private aviation worldwide.' },
+                { icon: '🚀', title: 'Placement Assistance', desc: 'Strong industry connections help graduates join major airlines, cargo operations, and private aviation worldwide.' },
                 { icon: '🎓', title: 'Full Scholarship Opportunities', desc: 'Flexible fees structure with scholarships granted for deserving candidates, making your aviation dream affordable.' },
                 { icon: '📖', title: 'Extra Guidance For Weak Students', desc: 'We give extra time and attention to students who need it, ensuring every student gets results fast.' },
                 { icon: '🏢', title: 'Prime International Airport Location', desc: 'Training at an international airport gives you real-world flying experience, ATC exposure, and a smooth transition into airline jobs.' },
@@ -165,7 +165,7 @@ export default function PilotTrainingHyderabad() {
                 { q: 'How long does it take to complete pilot training in Hyderabad?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months.' },
                 { q: 'What are the fees for pilot training in Hyderabad?', a: 'The average fees for CPL training in Hyderabad is INR 40–60 Lakh. This includes ground classes (INR 2-3 lakhs), 200 hours of flying (INR 35-55 lakhs), simulator training (INR 3-5 lakhs), and extra gear. WeOne Aviation provides scholarship and flexible payment options.' },
                 { q: 'What is the eligibility to become a pilot in Hyderabad?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
-                { q: 'Does WeOne Aviation provide placement assistance in Hyderabad?', a: 'Yes! We provide 100% placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
+                { q: 'Does WeOne Aviation provide placement assistance in Hyderabad?', a: 'Yes! We provide placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
                 { q: 'Can I get a scholarship for pilot training in Hyderabad?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student. We also offer flexible fees structure and loan assistance to make pilot training affordable.' },
                 { q: 'What career options are available after pilot training in Hyderabad?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Hyderabad\'s aviation sector is growing rapidly.' },
             ]}

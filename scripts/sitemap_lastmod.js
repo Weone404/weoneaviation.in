@@ -16,6 +16,6 @@ for(const c of chunks){
 }
 
 for(const slug of urlsToCheck){
-  const loc = `https://www.weoneaviation.in/${slug}`;
+  const loc = `https://weoneaviation.in/${slug}`;
   console.log(`${loc} => ${map[loc] || 'NOT FOUND'}`);
 }

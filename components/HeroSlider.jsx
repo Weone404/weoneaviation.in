@@ -42,8 +42,8 @@ const slides = [
 ];
 
 const STATS = [
-  ['3500+', 'Pilots Trained'],
-  ['16+', 'Years Experience'],
+  ['Since 2009', 'In Operation'],
+  ['DGCA', 'Approved'],
   ['Career', 'Guidance Support'],
 ];
 

@@ -179,7 +179,7 @@ export default function TechnicalGeneral() {
                             <div className="bg-av-blue rounded-2xl p-8 text-center">
                                 <h3 className="font-montserrat text-xl font-bold text-white mb-3">Join Technical General Classes</h3>
                                 <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-5">
-                                    We One Aviation Academy is Delhi's most trusted name for DGCA Ground Classes. Join us and take the first step toward the skies! ✈️
+                                    We One Aviation Academy runs DGCA ground classes in Dwarka, Delhi. Join us and take the first step toward the skies! ✈️
                                 </p>
                                 <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
                                     Book Free Counselling

@@ -6,7 +6,7 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
-import { YEARS_LABEL, PILOTS_TRAINED, SUCCESS_RATE, PARTNER_AIRLINES } from '../data/academy';
+import { YEARS_LABEL } from '../data/academy';
 import AutoInternalLinks from '../components/AutoInternalLinks';
 
 const heroSlides = [
@@ -50,7 +50,7 @@ export default function About() {
   return (
     <Layout
       title="About WeOne Aviation Academy | DGCA Approved Pilot Training Institute"
-      description={`Learn about WeOne Aviation Academy - India's premier DGCA-approved pilot training institute with ${YEARS_LABEL} years of excellence and ${PILOTS_TRAINED} pilots trained.`}
+      description={`WeOne Aviation Academy is a DGCA-approved pilot training institute in Dwarka, New Delhi, operating for ${YEARS_LABEL} years.`}
     >
       <HeroSlider customSlides={heroSlides} />
 
@@ -80,7 +80,7 @@ export default function About() {
               </p>
             </AutoInternalLinks>
             <div className="grid grid-cols-3 gap-4 mt-6">
-              {[[PILOTS_TRAINED, 'Pilots'], [PARTNER_AIRLINES, 'Airlines'], [SUCCESS_RATE, 'Pass Rate']].map(([num, label]) => (
+              {[[YEARS_LABEL, 'Years in Operation'], ['DGCA', 'Approved']].map(([num, label]) => (
                 <div key={label} className="text-center p-4 bg-av-light rounded-xl">
                   <div className="font-montserrat text-xl font-black text-av-orange">{num}</div>
                   <div className="text-av-blue text-xs font-medium">{label}</div>
@@ -181,7 +181,7 @@ export default function About() {
               Approvals & Accreditations
             </h2>
             <div className="flex flex-wrap justify-center gap-4">
-              {['DGCA Approved', 'ICAO Aligned', 'ISO 9001:2015', 'Ministry of Civil Aviation', 'International IATA Partner', 'EASA Compliant Training'].map(item => (
+              {['DGCA Approved'].map(item => (
                 <div key={item} className="glass rounded-full px-5 py-2.5 text-white text-sm font-medium border border-white/20">
                   ✓ {item}
                 </div>
