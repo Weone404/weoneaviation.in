@@ -226,7 +226,7 @@ const instituteFeatures = [
     { icon: '🚀', title: 'Placement Assistance', desc: 'Strong industry connections help graduates join major airlines, cargo operations, and private aviation worldwide.' },
     { icon: '🎓', title: 'Full Scholarship Opportunities', desc: 'Flexible fees structure with scholarships granted for deserving candidates, making your aviation dream affordable.' },
     { icon: '📖', title: 'Extra Guidance For Weak Students', desc: 'We give extra time and attention to students who need it, ensuring every student gets results fast.' },
-    { icon: '🏢', title: 'Prime International Airport Location', desc: 'Training at an international airport gives you real-world flying experience, ATC exposure, and a smooth transition into airline jobs.' },
+    { icon: '🏢', title: 'Dwarka, New Delhi Centre', desc: 'Classroom batches run at Sector 7, Dwarka. Online batches cover students elsewhere in India; flight training is done at partner flying schools.' },
     { icon: '🏠', title: 'Accommodation & Student Support', desc: 'Comfortable accommodation near the airport so you can focus fully on your training without any hassle.' },
 ];
 
@@ -366,10 +366,21 @@ export default function Home() {
                             Pilot Training Institute in India – 2026
                         </h1>
                         <p className="text-gray-600 leading-relaxed mb-4">
-                            Are you dreaming of a career in aviation? Our Pilot Training Institute in India is best for you — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy.
+                            We One Aviation Academy prepares students for the DGCA written examinations and arranges the flight training that follows. The routes covered here are the Commercial Pilot Licence, the Private Pilot Licence and the airline-transport progression beyond them.
                         </p>
-                        <p className="text-gray-600 leading-relaxed mb-4">
-                            If you are training from central India, our Chhattisgarh guide covers local exam-centre directions, Raipur-specific travel tips, and suggestions for nearby satellite academies that accept external students: <Link href="/pilot-training-in-india" className="text-av-orange font-semibold hover:underline">Pilot Training in Chhattisgarh</Link>.
+                        {/* Where teaching actually happens. The city pages were consolidated
+                            into this page in Phase 5, so this is now the only place that
+                            answers "where are you". Dwarka is the one verified location. */}
+                        <h2 className="font-montserrat text-xl font-bold text-av-blue mt-8 mb-3">Where the classes run</h2>
+                        <p className="text-gray-600 leading-relaxed mb-3">
+                            Classroom batches run at one place: the We One Aviation Academy centre at Sector 7, Dwarka, New Delhi. There is no classroom in any other city.
+                        </p>
+                        <p className="text-gray-600 leading-relaxed mb-3">
+                            Students elsewhere in India take the same DGCA ground-class syllabus in online batches. The syllabus, the papers and the examination are identical either way — the DGCA examination itself is booked separately through the DGCA Pariksha portal.
+                        </p>
+                        <p className="text-gray-600 leading-relaxed mb-6">
+                            Flight training is a separate stage, done at partner flying schools in India and abroad rather than at the Dwarka centre. For the in-person ground classes, see{' '}
+                            <Link href="/pilot-training-in-delhi" className="text-av-orange font-semibold hover:underline">pilot training in Delhi</Link>.
                         </p>
                         <p className="text-gray-600 leading-relaxed mb-6">
                             With India's increasing population, the country will lead in airports and aircraft. This rapid growth creates a high demand for pilots — and we are here to train the next generation of aviation professionals.

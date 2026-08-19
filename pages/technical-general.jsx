@@ -207,10 +207,10 @@ export default function TechnicalGeneral() {
                                 ))}
                             </div>
 
-                            {/* Why Crucial */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-2">Why Technical General is Crucial for Every Pilot</h3>
+                            {/* Why the paper matters */}
+                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-2">What Technical General is for</h3>
                             <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                                Technical General forms the backbone of safe flight operations. Here's why every serious pilot must master this subject:
+                                Technical General is the paper DGCA names Aircraft and Engines. It covers what a pilot needs to know about the machine itself:
                             </p>
                             <div className="space-y-3 mb-10">
                                 {whyCrucial.map((item) => (
