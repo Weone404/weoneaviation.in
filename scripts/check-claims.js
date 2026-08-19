@@ -6,9 +6,24 @@
  * that API routes and serverless functions are built from) plus public/llms.txt,
  * so it catches a claim however it reaches a reader — literal JSX, template
  * literal, imported constant, or an email body compiled into a cron route.
- * Runs as `postbuild`, so a claim that reaches the build fails the deploy.
- * .githooks/pre-push also runs it via `npm run check:claims`, so a hit is
- * normally caught before anything reaches origin.
+ * NOT WIRED TO `postbuild` — DELIBERATELY. Do not re-add it.
+ *
+ * It ran as postbuild twice (2026-08-19). Both times production stopped
+ * deploying immediately afterwards and resumed once it was taken back out:
+ * the first time three commits sat undeployed for ~40 minutes, the second
+ * time three more. The cause was never confirmed from a Vercel build log —
+ * a clean clone of the affected commit builds and passes this gate locally
+ * on Linux-equivalent settings — so the correlation is strong but the
+ * mechanism is unproven. Either way, a claims check is not worth a stalled
+ * deploy pipeline: a false positive here blocks every shipment, including
+ * ones that fix claims.
+ *
+ * The gate still runs, and origin is still protected:
+ *   npm run check:claims      — run it by hand any time
+ *   .githooks/pre-push        — builds, then runs it, before anything
+ *                               reaches origin (core.hooksPath=.githooks)
+ * Nothing reaches the remote without passing. Only Vercel's build no longer
+ * depends on it.
  *
  * Keep the exclusions below: Vercel restores .next/cache between builds, so
  * artifacts from an EARLIER commit survive into
@@ -110,6 +125,15 @@ const PATTERNS = [
   new RegExp(`${RUPEES_PER_MONTH}[^.]{0,80}${OUTCOME}`, 'i'),
 ];
 
+
+// Vocabulary that reads as generated filler rather than specialist prose. These
+// REPORT ONLY — they never change the exit code. Judgement is required: "vital"
+// is wrong in marketing copy but fine in "vital signs", and "navigate" is fine
+// when an aircraft actually navigates. Warnings are for a human to weigh.
+const SOFT_WORDS = ['tapestry', 'crucial', 'vital', 'robust', 'navigate', 'realm',
+  'intricate', 'paramount', 'underscore', 'landscape'];
+const SOFT = SOFT_WORDS.map((w) => ({ word: w, re: new RegExp(`\\b${w}\\w*\\b`, 'i') }));
+
 const targets = [];
 // Restored between Vercel builds, so it can hold artifacts from earlier
 // commits. node_modules is vendor code we do not control and do not speak for.
@@ -140,6 +164,22 @@ for (const file of targets) {
     const m = text.match(re);
     if (m) failures.push(`${file}\n    matched ${re}  →  ${JSON.stringify(m[0].slice(0, 80))}`);
   }
+}
+
+const softHits = new Map();
+for (const file of targets) {
+  if (!/\.html$/.test(file)) continue;            // rendered copy only
+  const text = fs.readFileSync(file, 'utf8');
+  for (const { word, re } of SOFT) {
+    if (re.test(text)) softHits.set(word, (softHits.get(word) || 0) + 1);
+  }
+}
+if (softHits.size) {
+  console.warn('\ncheck-claims: banned-vocabulary warnings (not a failure):');
+  for (const [w, n] of [...softHits].sort((a, b) => b[1] - a[1])) {
+    console.warn(`  ${w} — ${n} page(s)`);
+  }
+  console.warn('');
 }
 
 if (failures.length) {

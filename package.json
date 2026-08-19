@@ -8,8 +8,7 @@
     "build": "npm run generate:sitemap && next build",
     "start": "next start",
     "lint": "eslint .",
-    "check:claims": "node scripts/check-claims.js",
-    "postbuild": "node scripts/check-claims.js"
+    "check:claims": "node scripts/check-claims.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.79.0",
