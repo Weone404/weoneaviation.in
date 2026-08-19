@@ -6,13 +6,12 @@
  * that API routes and serverless functions are built from) plus public/llms.txt,
  * so it catches a claim however it reaches a reader — literal JSX, template
  * literal, imported constant, or an email body compiled into a cron route.
- * TEMPORARILY OUT OF THE DEPLOY PATH (2026-08-19). It ran as `postbuild`, which
- * means a hit fails the Vercel build and blocks production. It now runs from
- * .githooks/pre-push via `npm run check:claims`, so nothing reaches origin
- * without passing, but a false positive can no longer hold up a deploy.
+ * Runs as `postbuild`, so a claim that reaches the build fails the deploy.
+ * .githooks/pre-push also runs it via `npm run check:claims`, so a hit is
+ * normally caught before anything reaches origin.
  *
- * To move it back to `postbuild`, keep the exclusions below: Vercel restores
- * .next/cache between builds, so artifacts from an EARLIER commit survive into
+ * Keep the exclusions below: Vercel restores .next/cache between builds, so
+ * artifacts from an EARLIER commit survive into
  * the current .next tree. Scanning those would fail a build over a claim that
  * has already been removed. .next/cache is skipped outright; if the scan is
  * ever widened again, prefer filtering to files whose mtime is from the current
@@ -22,6 +21,56 @@
  * word. Bare mentions are legitimate on this site: the Air Regulations syllabus
  * covers ICAO Annexes, and DGCA genuinely does sit under the Ministry of Civil
  * Aviation. It is "ICAO Aligned" and "IATA Partner" that were unfounded.
+ */
+/*
+ * ── REGULATORY SOURCING BASIS (recorded 2026-08-19) ────────────────────────
+ * Read this before re-verifying any DGCA figure. It exists so the next session
+ * does not repeat the search.
+ *
+ * WHERE THE NUMBERS COME FROM
+ *   Aircraft Rules, 1937, Schedule II — consolidated text published by India
+ *   Code (upload.indiacode.nic.in, actid AC_CEN_36_0_00013_193422_1523351174422).
+ *   236 pages, real text layer. Amendment annotations run to 2018.
+ *     Section B  Student Pilot's Licence          16 years
+ *     Section E  Private Pilot's Licence (A)      17 years
+ *     Section J  Commercial Pilot's Licence (A)   18 years; 1(e) = 200 hours
+ *     Section M  Airline Transport Pilot (A)      21 years
+ *   The Rules remain in force: the Bharatiya Vayuyan Adhiniyam, 2024 (16 of
+ *   2024) repealed the Aircraft Act 1934 at s.43(1) but s.43(2) saves rules
+ *   made under it. Cite as "Aircraft Rules, 1937 (continued in force by
+ *   s.43(2) of the Bharatiya Vayuyan Adhiniyam, 2024)".
+ *
+ * AMENDMENT STATE — checked against civilaviation.gov.in
+ *   Sections B, E and J: no post-2018 amendment found. Safe to cite.
+ *   Section M and N: AMENDED TWICE. Re-check before using either.
+ *     G.S.R. 22(E), 7 Jan 2020  (Aircraft (First Amendment) Rules, 2020)
+ *       rewrote Section M 1(e) and Section N 1(e) — the ATPL experience
+ *       figures (500->250, 200->100, 1000->500, 100->75, 10->20 hours).
+ *       Ages untouched.
+ *     G.S.R. 731(E), 10 Oct 2023 (Aircraft (First Amendment) Rules, 2023)
+ *       rules 13, 38(2), 39C; Schedule II Section A para 9->10 and
+ *       Section M para 4(e) (instrument rating).
+ *   GAP: G.S.R. 579(E), 9 Aug 2019 is named in the 2020 notification as the
+ *   then-latest amendment. Its text could not be retrieved from any
+ *   government source. It is the one unclosed gap for Sections B, E and J.
+ *
+ * RTR(A) — different instrument entirely, do not cite Schedule II for it.
+ *   Radio Telephone Operator (Restricted) Certificate and Licence Rules, 2025,
+ *   G.S.R. 413(E), 25 June 2025, made under the Bharatiya Vayuyan Adhiniyam,
+ *   2024. Administered by the DGCA, NOT by WPC/DoT — that route is superseded.
+ *   r.6 age 16 + Class X; r.8(4) written then practical; r.8(5) syllabus;
+ *   r.8(6) practical within three years of the written.
+ *
+ * STILL UNVERIFIED — must not appear on the site until sourced
+ *   - the DGCA theory pass mark (set under CAR Section 7, not in the Rules)
+ *   - the Class 1 / Class 2 medical split and when each applies. Rule 39B is
+ *     the instrument but delegates the standards to the Director-General; the
+ *     split lives in a DGCA medical CAR served only through DGCA's
+ *     AES-encrypted JS portal.
+ *   - the ATPL-from-defence 500 h / 200 h PIC figure is a Pariksha
+ *     computer-number document rule for defence applicants in lieu of a CPL.
+ *     It is NOT a CPL requirement and must stay off the CPL pages.
+ * ───────────────────────────────────────────────────────────────────────────
  */
 const fs = require('fs');
 const path = require('path');
