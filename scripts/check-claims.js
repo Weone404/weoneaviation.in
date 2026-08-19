@@ -6,7 +6,17 @@
  * that API routes and serverless functions are built from) plus public/llms.txt,
  * so it catches a claim however it reaches a reader — literal JSX, template
  * literal, imported constant, or an email body compiled into a cron route.
- * Runs as `postbuild`, since .next/server does not exist until next build has.
+ * TEMPORARILY OUT OF THE DEPLOY PATH (2026-08-19). It ran as `postbuild`, which
+ * means a hit fails the Vercel build and blocks production. It now runs from
+ * .githooks/pre-push via `npm run check:claims`, so nothing reaches origin
+ * without passing, but a false positive can no longer hold up a deploy.
+ *
+ * To move it back to `postbuild`, keep the exclusions below: Vercel restores
+ * .next/cache between builds, so artifacts from an EARLIER commit survive into
+ * the current .next tree. Scanning those would fail a build over a claim that
+ * has already been removed. .next/cache is skipped outright; if the scan is
+ * ever widened again, prefer filtering to files whose mtime is from the current
+ * build (>= the mtime of .next/BUILD_ID) over adding more path exclusions.
  *
  * Certification bodies (ICAO/IATA/EASA/MoCA) are matched only next to a claim
  * word. Bare mentions are legitimate on this site: the Air Regulations syllabus
@@ -37,19 +47,25 @@ const PATTERNS = [
 ];
 
 const targets = [];
+// Restored between Vercel builds, so it can hold artifacts from earlier
+// commits. node_modules is vendor code we do not control and do not speak for.
+const SKIP_DIRS = new Set(['cache', 'node_modules']);
 const walk = (dir) => {
   if (!fs.existsSync(dir)) return;
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, e.name);
-    if (e.isDirectory()) walk(p);
-    else if (/\.(html|js|json|txt)$/.test(e.name)) targets.push(p);
+    if (e.isDirectory()) {
+      if (!SKIP_DIRS.has(e.name)) walk(p);
+    } else if (/\.(html|js|json|txt)$/.test(e.name) && !e.name.endsWith('.map')) {
+      targets.push(p);
+    }
   }
 };
 walk(path.join('.next', 'server'));
 if (fs.existsSync(path.join('public', 'llms.txt'))) targets.push(path.join('public', 'llms.txt'));
 
 if (!targets.length) {
-  console.error('check-claims: nothing to scan — run `next build` first.');
+  console.error('check-claims: nothing to scan — run `npm run build` first.');
   process.exit(1);
 }
 

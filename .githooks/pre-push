@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# Claims gate. Runs before anything reaches origin.
+#
+# check-claims lives here rather than in `postbuild` because a failing gate in
+# the build script fails the Vercel deploy, and on 2026-08-19 production sat
+# 30+ minutes behind master while that was being diagnosed. Blocking a push is
+# recoverable in seconds; blocking production is not. This is temporary — see
+# scripts/check-claims.js for the conditions to move it back.
+#
+# The gate reads compiled output, so the build has to run first: claims are
+# routinely assembled from template literals and imported constants and are
+# invisible in the source tree.
+#
+# To bypass in a genuine emergency: git push --no-verify (and say so).
+
+set -e
+
+echo "pre-push: building so check-claims can read compiled output..."
+npm run build
+
+echo "pre-push: checking claims..."
+npm run check:claims
+
+echo "pre-push: claims gate passed."

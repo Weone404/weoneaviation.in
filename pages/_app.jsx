@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import Script from 'next/script';
 import dynamic from 'next/dynamic';
 import { Montserrat, Poppins } from 'next/font/google';
@@ -77,8 +78,24 @@ export default function App({ Component, pageProps }) {
 
   const hideFloatingChat = router.pathname === '/doubt';
 
+  /*
+   * /admin/* is operator tooling and must never be indexed. It is declared here
+   * rather than on the pages themselves: each admin page returns early while it
+   * checks auth, and those early returns skip the page's own <Head>, so the
+   * prerendered HTML shipped no robots tag at all — /admin/login carried a
+   * noindex in source that never reached the output. _app renders on every
+   * branch, so the tag is always present. robots.txt Disallow only stops
+   * crawling; it does not stop a linked URL being indexed without a fetch.
+   */
+  const isAdminRoute = router.pathname.startsWith('/admin');
+
   return (
     <>
+      {isAdminRoute && (
+        <Head>
+          <meta key="robots" name="robots" content="noindex, nofollow" />
+        </Head>
+      )}
       {/* Publish the font variables on :root so both globals.css and the
           Tailwind font utilities can reach them without a wrapper element. */}
       <style jsx global>{`
