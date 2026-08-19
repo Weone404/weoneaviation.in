@@ -22,7 +22,6 @@ export default function PilotTrainingDelhi() {
             features={[
                 { icon: '🏅', title: 'Certified Training Program', desc: 'Our institute follows the regulations set by the national aviation authority to ensure quality education and certification.' },
                 { icon: '👨‍✈️', title: 'DGCA Qualified Instructors', desc: 'Learn from DGCA-qualified instructors with real flying experience who have served as pilots in India.' },
-                { icon: '🛩️', title: 'Advanced Aircraft & Simulators', desc: 'Train on the latest Cessna 172 Glass Cockpit aircraft with advanced avionics, plus high-tech full motion flight simulators for safe, controlled practice before taking off.' },
                 { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof, available both offline and online.' },
                 { icon: '🚀', title: 'Career Guidance', desc: 'Our academy doesn\'t just train you — we help you launch your career. Graduates have joined major airlines, cargo operations, and private aviation companies worldwide.' },
                 { icon: '🌍', title: 'International Flying School Options', desc: 'Flight training placements with partner schools in the USA, South Africa and India, where you build the 200 hours of flying required for a Commercial Pilot Licence.' },
@@ -37,7 +36,6 @@ export default function PilotTrainingDelhi() {
                     desc: 'Want to fly massive planes for big airlines? Our CPL program at the Pilot Training Institute in Delhi is your ticket to the cockpit. Our pro instructors — real pilots with real experience — teach you to handle everything like a champ. Soon, you\'ll be landing jobs with the coolest airlines!',
                     details: [
                         { label: 'Duration', value: '12-18 months' },
-                        { label: 'Aircraft Used', value: 'Cessna 172 Glass Cockpit' },
                         { label: 'Includes', value: '200+ hours of flying, DGCA exam preparation, and soft skills training' },
                         { label: 'Career Opportunities', value: 'Airline pilot, cargo pilot, charter pilot' },
                     ],
@@ -50,7 +48,6 @@ export default function PilotTrainingDelhi() {
                     desc: 'Want to fly around for fun? Our PPL program at the Pilot Training Institute in Delhi is just right for you. Take your friends up in the sky or chill above the city — we keep it simple and exciting. Fly by yourself, however you like!',
                     details: [
                         { label: 'Duration', value: '4-6 months' },
-                        { label: 'Aircraft Used', value: 'Cessna 172' },
                         { label: 'Includes', value: 'Minimum 40 hours of flight training' },
                         { label: 'Best For', value: 'Individuals who want to fly privately or as a hobby' },
                     ],
@@ -74,7 +71,6 @@ export default function PilotTrainingDelhi() {
                     desc: 'Improve your flying skills with advanced aircraft training at our Pilot Training Institute in Delhi. Designed for pilots who want to enhance their abilities and qualify for commercial aviation roles.',
                     details: [
                         { label: 'Duration', value: '3-4 months' },
-                        { label: 'Aircraft Used', value: 'Cessna 172 Glass Cockpit' },
                         { label: 'Includes', value: 'Advanced flight training in low-visibility conditions' },
                         { label: 'Best For', value: 'Pilots looking to enhance skills and qualify for commercial aviation' },
                     ],
@@ -138,7 +134,6 @@ export default function PilotTrainingDelhi() {
                 'Flexible fees structure',
                 'DGCA-qualified aviation instructors',
                 'Well-built infrastructure in Dwarka, Delhi',
-                'Free 200 hrs of flying on full motion simulators',
                 'Study library for students',
                 'Only 20 students per batch — personalized attention',
                 'Established on 15th Jan 2002 — 20+ years of excellence',
@@ -151,12 +146,10 @@ export default function PilotTrainingDelhi() {
                 { icon: '✅', title: 'Accommodation Near the Airport', desc: 'Comfortable accommodation provided near the airport for your convenience — no hassle during training.' },
                 { icon: '✅', title: 'Full Scholarship After CPL', desc: 'Complete your USA CPL training and you may qualify for a FULL SCHOLARSHIP for advanced flight training!' },
                 { icon: '✅', title: '1500-Hour Flight Building at No Extra Cost!', desc: 'Build flight hours up to 1500 hours after CPL — a key requirement for airline jobs — at no additional cost!' },
-                { icon: '✅', title: 'Train on the Most Advanced Aircraft', desc: 'All training is on Cessna 172 Glass Cockpit aircraft with cutting-edge aviation technology.' },
             ]}
 
             usaReasons={[
                 { icon: '🚀', title: 'Globally Recognized FAA License', desc: 'Opens doors to airline careers worldwide.' },
-                { icon: '🚀', title: 'State-of-the-Art Training Facilities', desc: 'Modern aircraft & advanced simulators.' },
                 { icon: '🚀', title: 'Ideal Flying Conditions', desc: 'More flying days per year for faster completion.' },
                 { icon: '🚀', title: 'Direct Airline Pathway', desc: 'Structured programs designed to help you secure airline jobs quickly!' },
             ]}

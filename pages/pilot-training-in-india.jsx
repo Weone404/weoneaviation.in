@@ -218,7 +218,6 @@ const faqs = [
 const instituteFeatures = [
     { icon: '🏅', title: 'Certified Training Program', desc: 'Our institute follows regulations set by the national aviation authority to ensure quality education and certification.' },
     { icon: '👨‍✈️', title: 'Experienced & Certified Instructors', desc: 'Learn from instructors who have real flying experience and have served as pilots in India.' },
-    { icon: '🛩️', title: 'Advanced Aircraft & Simulators', desc: 'Train on Cessna 172 Glass Cockpit aircraft with advanced avionics, plus high-tech flight simulators for safe, controlled practice.' },
     { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof.' },
     { icon: '🚀', title: 'Placement Assistance', desc: 'Strong industry connections help graduates join major airlines, cargo operations, and private aviation worldwide.' },
     { icon: '🎓', title: 'Full Scholarship Opportunities', desc: 'Flexible fees structure with scholarships granted for deserving candidates, making your aviation dream affordable.' },
@@ -234,7 +233,6 @@ const trainingCourses = [
         desc: 'Want to fly massive planes for big airlines? Our CPL program features pro instructors with real experience, teaching you to handle everything like a champ. Soon, you\'ll be landing jobs with top airlines!',
         details: [
             { label: 'Duration', value: '12-18 months' },
-            { label: 'Aircraft Used', value: 'Cessna 172 Glass Cockpit' },
             { label: 'Includes', value: '200+ hours of flying, DGCA exam prep, and soft skills training' },
             { label: 'Career Opportunities', value: 'Airline pilot, cargo pilot, charter pilot' },
         ],
@@ -247,7 +245,6 @@ const trainingCourses = [
         desc: 'Want to fly around for fun? Our PPL program is perfect for those who want to fly privately or as a hobby. Simple, exciting, and entirely on your terms!',
         details: [
             { label: 'Duration', value: '4-6 months' },
-            { label: 'Aircraft Used', value: 'Cessna 172' },
             { label: 'Includes', value: 'Minimum 40 hours of flight training' },
             { label: 'Best For', value: 'Individuals who want to fly privately or as a hobby' },
         ],
@@ -271,7 +268,6 @@ const trainingCourses = [
         desc: 'Improve your flying skills with advanced aircraft training. Designed for pilots who want to enhance their abilities and qualify for commercial aviation roles.',
         details: [
             { label: 'Duration', value: '3-4 months' },
-            { label: 'Aircraft Used', value: 'Cessna 172 Glass Cockpit' },
             { label: 'Includes', value: 'Advanced flight training in low-visibility conditions' },
             { label: 'Best For', value: 'Pilots looking to enhance skills and qualify for commercial aviation' },
         ],
@@ -317,12 +313,10 @@ const usaBenefits = [
     { icon: '✅', title: 'Accommodation Near the Airport', desc: 'Comfortable accommodation provided near the airport for your convenience.' },
     { icon: '✅', title: 'Full Scholarship After CPL', desc: 'Complete your USA CPL training and you may qualify for a FULL SCHOLARSHIP for advanced flight training!' },
     { icon: '✅', title: '1500-Hour Flight Building at No Extra Cost!', desc: 'Build flight hours up to 1500 hours after CPL — a key requirement for airline jobs — at no additional cost!' },
-    { icon: '✅', title: 'Train on the Most Advanced Aircraft', desc: 'All training is on Cessna 172 Glass Cockpit aircraft with cutting-edge aviation technology.' },
 ];
 
 const usaReasons = [
     { icon: '🚀', title: 'Globally Recognized FAA License', desc: 'Opens doors to airline careers worldwide.' },
-    { icon: '🚀', title: 'State-of-the-Art Training Facilities', desc: 'Modern aircraft & advanced simulators.' },
     { icon: '🚀', title: 'Ideal Flying Conditions', desc: 'More flying days per year for faster completion.' },
     { icon: '🚀', title: 'Direct Airline Pathway', desc: 'Structured programs designed to help you secure airline jobs quickly!' },
 ];
@@ -656,7 +650,6 @@ export default function Home() {
                                     'Flexible fees structure',
                                     'Experienced aviation teachers',
                                     'Well-built infrastructure',
-                                    'Free 200 hrs of flying on simulators',
                                     'Study library for students',
                                     'We train students from the U.S.A',
                                     'Limited seats available — Apply Now!',
@@ -862,7 +855,6 @@ export default function Home() {
                         {[
                             { icon: '✅', title: 'DGCA-Approved Training Programs', desc: 'Our courses meet all regulatory requirements to ensure a smooth path to becoming a professional pilot.' },
                             { icon: '✅', title: 'Experienced Instructors & Mentors', desc: 'Learn from seasoned airline pilots and aviation experts who provide hands-on guidance.' },
-                            { icon: '✅', title: 'State-of-the-Art Training Facilities', desc: 'Get trained with modern simulators, advanced flight training devices, and real aircraft for a world-class experience.' },
                             { icon: '✅', title: 'Placement Assistance', desc: 'We help students secure jobs in leading airlines through industry connections and career support.' },
                             { icon: '✅', title: 'Comprehensive CPL & DGCA Ground Classes', desc: 'Structured curriculum covering Air Navigation, Meteorology, Air Regulations, and Technical subjects.' },
                             { icon: '✅', title: 'Flexible Payment & Loan Options', desc: 'Making your dream of becoming a pilot financially accessible with easy EMI and loan assistance.' },

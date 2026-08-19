@@ -41,7 +41,6 @@ export default function PilotTrainingGujarat() {
                     desc: 'Want to fly massive planes for big airlines? Our CPL program at the Pilot Training Institute in Gujarat is your ticket to the cockpit. Our pro instructors — real pilots with real experience — teach you to handle everything like a champ. Soon, you\'ll be landing jobs with the coolest airlines!',
                     details: [
                         { label: 'Duration', value: '12-18 months' },
-                        { label: 'Aircraft Used', value: 'Cessna 172 Glass Cockpit' },
                         { label: 'Includes', value: '200+ hours of flying, DGCA exam preparation, and soft skills training' },
                         { label: 'Career Opportunities', value: 'Airline pilot, cargo pilot, charter pilot' },
                     ],
@@ -54,7 +53,6 @@ export default function PilotTrainingGujarat() {
                     desc: 'Want to fly around for fun? Our PPL program at the Pilot Training Institute in Gujarat is just right for you. Take your friends up in the sky or chill above the city — we keep it simple and exciting. Fly by yourself, however you like!',
                     details: [
                         { label: 'Duration', value: '4-6 months' },
-                        { label: 'Aircraft Used', value: 'Cessna 172' },
                         { label: 'Includes', value: 'Minimum 40 hours of flight training' },
                         { label: 'Best For', value: 'Individuals who want to fly privately or as a hobby' },
                     ],
@@ -78,7 +76,6 @@ export default function PilotTrainingGujarat() {
                     desc: 'Improve your flying skills with advanced aircraft training at our Pilot Training Institute in Gujarat. Designed for pilots who want to enhance their abilities and qualify for commercial aviation roles.',
                     details: [
                         { label: 'Duration', value: '3-4 months' },
-                        { label: 'Aircraft Used', value: 'Cessna 172 Glass Cockpit' },
                         { label: 'Includes', value: 'Advanced flight training in low-visibility conditions' },
                         { label: 'Best For', value: 'Pilots looking to enhance skills and qualify for commercial aviation' },
                     ],
@@ -142,7 +139,6 @@ export default function PilotTrainingGujarat() {
                 'Flexible fees structure',
                 'Experienced aviation teachers',
                 'Well-built infrastructure',
-                'Free 200 hrs of flying on simulators',
                 'Study library for students',
                 'We train students from the U.S.A',
                 'Limited seats available — Apply Now!',
@@ -154,12 +150,10 @@ export default function PilotTrainingGujarat() {
                 { icon: '✅', title: 'Accommodation Near the Airport', desc: 'Comfortable accommodation provided near the airport for your convenience — no hassle during training.' },
                 { icon: '✅', title: 'Full Scholarship After CPL', desc: 'Complete your USA CPL training and you may qualify for a FULL SCHOLARSHIP for advanced flight training!' },
                 { icon: '✅', title: '1500-Hour Flight Building at No Extra Cost!', desc: 'Build flight hours up to 1500 hours after CPL — a key requirement for airline jobs — at no additional cost!' },
-                { icon: '✅', title: 'Train on the Most Advanced Aircraft', desc: 'All training is on Cessna 172 Glass Cockpit aircraft with cutting-edge aviation technology.' },
             ]}
 
             usaReasons={[
                 { icon: '🚀', title: 'Globally Recognized FAA License', desc: 'Opens doors to airline careers worldwide.' },
-                { icon: '🚀', title: 'State-of-the-Art Training Facilities', desc: 'Modern aircraft & advanced simulators.' },
                 { icon: '🚀', title: 'Ideal Flying Conditions', desc: 'More flying days per year for faster completion.' },
                 { icon: '🚀', title: 'Direct Airline Pathway', desc: 'Structured programs designed to help you secure airline jobs quickly!' },
             ]}

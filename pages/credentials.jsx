@@ -12,7 +12,6 @@ import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Head from 'next/head';
 import { FOUNDED_YEAR, YEARS_LABEL } from '../data/academy';
-import { useEffect, useState } from 'react';
 
 const credentials = [
   {
@@ -20,7 +19,6 @@ const credentials = [
     icon: '✅',
     items: [
       { title: 'DGCA Approval Status', detail: 'Fully DGCA-approved aviation training institute', verified: true },
-      { title: 'Approval Type', detail: 'Ground School + Flying School + Simulator Training', verified: true },
       // "Last Audited: Q4 2024 — Full Compliance" removed (GEO audit 2026-08-11):
       // an audit date that never advances reads as abandoned rather than
       // reassuring. Restore it with a real date when there is one to publish.
@@ -31,17 +29,6 @@ const credentials = [
     icon: '📊',
     items: [
       { title: `${YEARS_LABEL} Years of Operation`, detail: `Founded ${FOUNDED_YEAR} - Continuous operation verified`, verified: true },
-      { title: 'Placement Support', detail: 'Documented placement outcomes available upon request', verified: true },
-    ]
-  },
-  {
-    category: 'Facilities & Equipment',
-    icon: '🛩️',
-    items: [
-      { title: 'Simulators', detail: 'CAE Simaero A320/B737, Level C approved', verified: true },
-      { title: 'Aircraft Fleet', detail: 'Cessna 172, Cessna 182, Piper PA-28 for flight training', verified: true },
-      { title: 'Ground School', detail: '5,000+ sqft facility with modern classrooms and interactive labs', verified: true },
-      { title: 'Medical Facility', detail: 'In-house DGCA Medical Examiner and aviation medicine clinic', verified: true },
     ]
   },
 ];
@@ -61,21 +48,22 @@ const certifications = [
 ];
 
 export default function CredentialsPage() {
-  const [updatedLabel, setUpdatedLabel] = useState('Last updated: July 6, 2026');
-
-  useEffect(() => {
-    setUpdatedLabel(
-      `Last updated: ${new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}`
-    );
-  }, []);
+  /*
+   * Static, and deliberately so. This previously recomputed to the current date
+   * on mount, so the page always claimed to have been updated today no matter
+   * how long the content had sat unchanged — an unverifiable freshness signal on
+   * the one page whose premise is verifiability. Bump it by hand when the
+   * credentials above actually change.
+   */
+  const updatedLabel = 'Last updated: August 19, 2026';
 
   return (
     <>
       <Head>
         <title>Credentials & Verification – We One Aviation Academy</title>
-        <meta name="description" content="Published credentials of We One Aviation Academy: DGCA approval status, years in operation, and training facilities and equipment." />
+        <meta name="description" content="Published credentials of We One Aviation Academy: DGCA approval status and years in operation, from its Dwarka, New Delhi address." />
         <meta key="og:title" property="og:title" content="Credentials & Verification – We One Aviation Academy" />
-        <meta key="og:description" property="og:description" content="Verified credentials for We One Aviation Academy: DGCA approval status, training record, and facilities." />
+        <meta key="og:description" property="og:description" content="Credentials for We One Aviation Academy: DGCA approval status and years in operation." />
         <meta key="og:url" property="og:url" content="https://weoneaviation.in/credentials" />
 
         {/* Schema: Organization with credentials */}
@@ -93,12 +81,12 @@ export default function CredentialsPage() {
             /* Same URL string as _document.jsx's sameAs — entity matching is
                literal, so the two must not disagree on the host. */
             sameAs: ['https://www.linkedin.com/company/weoneaviation'],
-            description: 'DGCA-approved pilot training institute in Dwarka, New Delhi, publishing its approval status, years in operation, and training facilities.',
+            description: 'DGCA-approved pilot training institute in Dwarka, New Delhi, publishing its approval status and years in operation.',
           })
         }} />
       </Head>
 
-      <Layout title="Credentials & Verification – We One Aviation Academy" description="Published credentials and verifications: DGCA approval status, years in operation, and training facilities.">
+      <Layout title="Credentials & Verification – We One Aviation Academy" description="Published credentials: DGCA approval status and years in operation.">
         {/* Hero */}
         <div className="bg-gradient-to-br from-av-blue to-av-navy py-20 px-4">
           <div className="max-w-5xl mx-auto text-center text-white">
@@ -106,7 +94,7 @@ export default function CredentialsPage() {
               Our Credentials & <span className="text-av-orange">Verifications</span>
             </h1>
             <p className="text-white/80 text-lg max-w-3xl mx-auto leading-relaxed">
-              Transparency builds trust. Here we publish information about our DGCA accreditation, years in operation, and training facilities — each of which can be checked.
+              Here we publish what can actually be checked: our DGCA accreditation and how long we have been operating. Anything we cannot evidence has been removed from this page rather than restated.
             </p>
           </div>
         </div>
@@ -166,9 +154,6 @@ export default function CredentialsPage() {
           <div className="max-w-4xl mx-auto">
             <ScrollReveal className="bg-white rounded-2xl p-8 shadow-lg border border-green-200">
               <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-4">Verification Statement</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                All information on this page is publicly verifiable and maintained in accordance with DGCA regulations and aviation industry standards. We welcome third-party verification of our credentials and statistics.
-              </p>
               <p className="text-gray-600 leading-relaxed mb-6">
                 <strong>For verification inquiries:</strong> Contact us at <a href="mailto:info@weoneaviation.in" className="text-av-orange font-semibold hover:underline">info@weoneaviation.in</a>
               </p>
@@ -188,7 +173,7 @@ export default function CredentialsPage() {
               Ready to Train with <span className="text-av-orange">We One Aviation Academy?</span>
             </h2>
             <p className="text-white/70 mb-8 text-sm max-w-2xl mx-auto">
-              Enroll today and get access to our verified faculty, state-of-the-art facilities, and proven placement support.
+              DGCA ground classes in Dwarka, New Delhi. Ask us about batch timings, fees and the DGCA exam route.
             </p>
             <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all">
               Start Your Aviation Career →

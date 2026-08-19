@@ -124,7 +124,6 @@ const pilotJourneySteps = [
 const whyChooseFeatures = [
   { id: 'wc1', icon: '✅', title: 'Approved Training Programs', desc: 'Our courses meet all regulatory requirements to ensure a smooth path to becoming a professional pilot.' },
   { id: 'wc2', icon: '✅', title: 'Experienced Instructors & Mentors', desc: 'Learn from seasoned airline pilots and aviation experts who provide hands-on guidance.' },
-  { id: 'wc3', icon: '✅', title: 'State-of-the-Art Training Facilities', desc: 'Get trained with modern simulators, advanced flight training devices, and real aircraft for a world-class experience.' },
   { id: 'wc4', icon: '✅', title: 'Placement Assistance', desc: 'We help students secure jobs in leading airlines through industry connections and career support.' },
   { id: 'wc5', icon: '✅', title: 'Comprehensive CPL & DGCA Ground Classes', desc: 'Structured curriculum covering Air Navigation, Meteorology, Air Regulations, and Technical subjects.' },
   { id: 'wc6', icon: '✅', title: 'Flexible Payment & Loan Options', desc: 'Making your dream of becoming a pilot financially accessible with easy EMI and loan assistance.' },

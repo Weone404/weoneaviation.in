@@ -28,6 +28,7 @@ const path = require('path');
 
 const CLAIM = '(certified|approved|aligned|compliant|accredited|affiliat|partner|member|recognis|recogniz)';
 const OUTCOME = '(graduate|alumni|student|placement|placed|hired|our pilots|trainee)';
+const OWNS = '(our fleet|our aircraft|our simulator|we operate|owned by us|in-house|Aircraft Used|Aircraft Fleet)';
 const RUPEES_PER_MONTH = '\u20b9\\d[\\d.,]*L\\s*/\\s*month';
 const PATTERNS = [
   /3500\+/i, /3000\+/i, /500\+\s*pilots/i,
@@ -42,6 +43,20 @@ const PATTERNS = [
   // rupee-per-month figure tied to our own graduates is not.
   /avg\.?\s*starting salary/i, /average starting salary/i,
   /hired within/i, /placement within/i,
+  // Facilities, fleet and verifiability claims (2026-08-19 /credentials pass).
+  // We do not own simulators, aircraft, a ground-school building or a medical
+  // clinic; the flying is done at partner schools.
+  /Level C\b/i, /CAE Simaero/i, /sqft facility/i, /in-house DGCA/i,
+  /aviation medicine clinic/i, /verified faculty/i, /publicly verifiable/i,
+  /Train on the Most Advanced Aircraft/i, /State-of-the-Art Training Facilities/i,
+  /Free \d+ hrs of flying/i,
+  // Aircraft types are matched only where they are framed as OURS. Bare type
+  // names are legitimate all over this site: the Technical Specific syllabus is
+  // taught on a Cessna 172, the PPL flight test is flown on a 152/172, and the
+  // flying-school pages list the fleets of partner schools abroad. It is
+  // "Aircraft Used"/"our fleet" that was the false claim, not the word Cessna.
+  new RegExp(`${OWNS}[^.]{0,60}(Cessna\\s*\\d|Piper\\s*PA-)`, 'i'),
+  new RegExp(`(Cessna\\s*\\d|Piper\\s*PA-)[^.]{0,60}${OWNS}`, 'i'),
   new RegExp(`${OUTCOME}[^.]{0,80}${RUPEES_PER_MONTH}`, 'i'),
   new RegExp(`${RUPEES_PER_MONTH}[^.]{0,80}${OUTCOME}`, 'i'),
 ];
