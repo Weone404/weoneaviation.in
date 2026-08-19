@@ -92,7 +92,7 @@ export default function PilotTrainingMaharashtra() {
             ]}
 
             career={{
-                intro: 'Maharashtra is one of India\'s premier aviation states — with Mumbai, Pune, and Nagpur all serving as major aviation hubs — creating excellent job options for trained pilots. Once you finish your training, you can try for jobs like these:',
+                intro: 'Maharashtra is one of India\'s major aviation states — with Mumbai, Pune, and Nagpur all serving as major aviation hubs — creating excellent job options for trained pilots. Once you finish your training, you can try for jobs like these:',
                 options: [
                     { icon: '✈️', title: 'Commercial Pilot', desc: 'Fly big passenger planes for airlines like IndiGo, Air India, or SpiceJet.' },
                     { icon: '🛩️', title: 'Private Pilot', desc: 'Work for individuals or companies flying their personal planes.' },

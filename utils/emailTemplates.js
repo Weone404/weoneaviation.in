@@ -254,7 +254,7 @@ export const emailTemplates = {
 
   // 4. Day 5 Follow-up (Success stories)
   dayFiveFollowUp: (name) => ({
-    subject: '✈️ Real Pilot Success Stories: From WeOne Aviation to Airlines (Day 5)',
+    subject: '✈️ Book Your Free Pilot Counselling Call (Day 5)',
     html: `
       <!DOCTYPE html>
       <html>
@@ -268,48 +268,17 @@ export const emailTemplates = {
             .cta-button { display: inline-block; background: #FF8C00; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 15px 0; }
             .footer { background: #333; color: white; padding: 20px; text-align: center; font-size: 12px; border-radius: 0 0 8px 8px; }
             .section { margin: 20px 0; }
-            .story { background: white; padding: 20px; border-left: 4px solid #FF8C00; margin: 15px 0; }
-            .story strong { color: #0066CC; }
           </style>
         </head>
         <body>
           <div class="container">
             <div class="header">
-              <h1>✈️ Pilot Success Stories</h1>
-              <p>Real outcomes from WeOne Aviation graduates</p>
+              <h1>✈️ WeOne Aviation Academy</h1>
             </div>
             
             <div class="content">
               <p>Hi ${name},</p>
               
-              <p>Want to know what's possible? Here are 3 real pilots who started where you are now:</p>
-              
-              <div class="story">
-                <strong>Raj Kumar | Air India First Officer</strong><br>
-                "I completed my CPL at WeOne Aviation in 22 months. The structured training and experienced instructors helped me clear all DGCA exams in the first attempt. I joined Air India as an FO within 6 months of graduation. The investment paid back in 18 months through salary alone." <br>
-                <em>— Raj (2024)</em>
-              </div>
-
-              <div class="story">
-                <strong>Priya Sharma | Indigo Captain-Track</strong><br>
-                "I was worried about costs, but WeOne Aviation's flexible payment plan made it possible. I took an education loan and the company helped me with admission support. Now I'm in Indigo's captain development program earning ₹3.5L/month." <br>
-                <em>— Priya (2023)</em>
-              </div>
-
-              <div class="story">
-                <strong>Arjun Singh | Emirates Cadet Program</strong><br>
-                "WeOne Aviation's groundwork was so solid that I qualified for Emirates' cadet program. They sponsored 80% of my remaining training. I'm now based in Dubai earning ₹2.8L/month + benefits." <br>
-                <em>— Arjun (2024)</em>
-              </div>
-
-              <div class="section">
-                <h2>🎯 Common Success Patterns</h2>
-                <p>✓ Graduates get hired within 3-6 months<br>
-                   ✓ Average starting salary: ₹75,000-100,000/month<br>
-                   ✓ Promotion to First Officer: 2-3 years<br>
-                   ✓ Career ceiling: ₹6L-10L+ per month as Captain</p>
-              </div>
-
               <div class="section">
                 <a href="https://weoneaviation.in/contact" class="cta-button">📞 Talk to Our Advisors</a>
               </div>

@@ -35,16 +35,6 @@ const credentials = [
     ]
   },
   {
-    category: 'International Partnerships (MOUs)',
-    icon: '🌍',
-    items: [
-      { title: 'USA', detail: 'FAA-approved flying schools in Florida, Tennessee, Texas', verified: true },
-      { title: 'Canada', detail: 'Transport Canada-approved training facilities in Ontario, Alberta', verified: true },
-      { title: 'Australia', detail: 'CASA-approved flying schools in Queensland, Victoria', verified: true },
-      { title: 'South Africa', detail: 'SACAA-approved training centers', verified: true },
-    ]
-  },
-  {
     category: 'Facilities & Equipment',
     icon: '🛩️',
     items: [
@@ -83,9 +73,9 @@ export default function CredentialsPage() {
     <>
       <Head>
         <title>Credentials & Verification – We One Aviation Academy</title>
-        <meta name="description" content="Published credentials of We One Aviation Academy: DGCA accreditation, faculty qualifications with DGCA license numbers, verified training statistics, and international partnerships." />
+        <meta name="description" content="Published credentials of We One Aviation Academy: DGCA approval status, years in operation, and training facilities and equipment." />
         <meta key="og:title" property="og:title" content="Credentials & Verification – We One Aviation Academy" />
-        <meta key="og:description" property="og:description" content="Verified credentials for We One Aviation Academy: DGCA approval status, training record, facilities and international flying-school partnerships." />
+        <meta key="og:description" property="og:description" content="Verified credentials for We One Aviation Academy: DGCA approval status, training record, and facilities." />
         <meta key="og:url" property="og:url" content="https://weoneaviation.in/credentials" />
 
         {/* Schema: Organization with credentials */}
@@ -103,12 +93,12 @@ export default function CredentialsPage() {
             /* Same URL string as _document.jsx's sameAs — entity matching is
                literal, so the two must not disagree on the host. */
             sameAs: ['https://www.linkedin.com/company/weoneaviation'],
-            description: 'India\'s DGCA-approved pilot training institute with published faculty credentials, verified training statistics, and international partnerships.',
+            description: 'DGCA-approved pilot training institute in Dwarka, New Delhi, publishing its approval status, years in operation, and training facilities.',
           })
         }} />
       </Head>
 
-      <Layout title="Credentials & Verification – We One Aviation Academy" description="Published credentials and verifications: DGCA approval, faculty qualifications, training statistics, partnerships.">
+      <Layout title="Credentials & Verification – We One Aviation Academy" description="Published credentials and verifications: DGCA approval status, years in operation, and training facilities.">
         {/* Hero */}
         <div className="bg-gradient-to-br from-av-blue to-av-navy py-20 px-4">
           <div className="max-w-5xl mx-auto text-center text-white">
@@ -116,7 +106,7 @@ export default function CredentialsPage() {
               Our Credentials & <span className="text-av-orange">Verifications</span>
             </h1>
             <p className="text-white/80 text-lg max-w-3xl mx-auto leading-relaxed">
-              Transparency builds trust. Here we publish verified information about our DGCA accreditation, faculty credentials, training statistics, and partnerships.
+              Transparency builds trust. Here we publish information about our DGCA accreditation, years in operation, and training facilities — each of which can be checked.
             </p>
           </div>
         </div>

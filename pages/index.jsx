@@ -116,7 +116,7 @@ const pilotJourneySteps = [
   { id: 'medical', icon: '🩺', title: 'Apply For Dgca Class-1-2 Medical', desc: 'You Have Do Your Medical Checkup From Any Approved Doctors. Below Is Full Process How To Get Dgca Class-1-2 Medical. If You Have Issue In Dgca Medical Then You Can Contact us For Dgca Medical', alert: 'Is Your Dgca Medical Test Taking Time?', alertDesc: "Apply Dgca Medical Through We One Aviation Academy. Call On Us If You Can't Able For Dgca Medical. just Contact us for Dgca Medical" },
   { id: 'computer', icon: '🖥️', title: 'Apply For Dgca Computer Number', desc: 'To start your journey as a pilot, obtaining a DGCA Computer Number is essential. This unique identification is required to appear for DGCA exams and progress in your aviation career.', alert: 'Worry About Computer Number?', alertDesc: "If You Are Facing Any Issue While Applying Dgca Computer Numbers Then Contacts Us. Don't Be Tense About Aviation. We are Here To Solve Your All Aviation Query" },
   { id: 'exam', icon: '📝', title: 'Clear Dgca Exam', desc: 'After Applying These Both, You Have To Book Your Exam Which is Conducted By Dgca Called Dgca Exam. In Dgca Exam , You Have To Give Paper of Six Subjects.', alert: 'Issue While Apply For Dgca Paper.', alertDesc: "Can't Able To Apply Dgca Paper? Don't Worry Aviators, We One Aviation Is Here For Solve All your Aviation Problems. Just Contacts us" },
-  { id: 'flying', icon: '✈️', title: 'Apply For Flying Schools', desc: 'After Clear Dgca Exam, You Have To do 200hours of Flying From Any Flying Schools. Apply now For Do Flight Training From We One Aviation Academy.', alert: 'Worry About Loan For Flying schools?', alertDesc: 'We Provide 100% Loan For Flight Training From Any Country. If You Wants To do Premier Flight Training Then We One Aviation Is Solution For You.' },
+  { id: 'flying', icon: '✈️', title: 'Apply For Flying Schools', desc: 'After Clear Dgca Exam, You Have To do 200hours of Flying From Any Flying Schools. Apply now For Do Flight Training From We One Aviation Academy.', alert: 'Worry About Loan For Flying schools?', alertDesc: 'We Provide 100% Loan For Flight Training From Any Country. If You Wants To do Flight Training Then We One Aviation Is Solution For You.' },
 ];
 
 
@@ -557,11 +557,11 @@ export default function Home() {
         <section className="py-16 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal className="text-center mb-12">
-              <div className="section-tag">Premier Training</div>
+              <div className="section-tag">Training</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
                 From Ground to Sky: <span className="text-av-orange">DGCA Exam Coaching &amp; Flight Training</span>
               </h2>
-              <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">Premier DGCA Ground Classes &amp; Flying School for Aspiring Pilots.</p>
+              <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">DGCA ground classes and flying school placement for aspiring pilots.</p>
             </ScrollReveal>
             <div className="grid md:grid-cols-2 gap-8">
               <ScrollReveal>

@@ -19,7 +19,6 @@ const heroSlides = [
 const stats = [
     { num: '3', label: 'Training Countries', icon: '🌍' },
     { num: '100%', label: 'DGCA Approved', icon: '✅' },
-    { num: '₹1.5L+', label: 'Avg Starting Salary/mo', icon: '💰' },
 ];
 
 const courses = [
@@ -241,7 +240,7 @@ export default function CoursesPage() {
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-6">
-                <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 gap-6">
                     {stats.map((s, i) => (
                         <ScrollReveal key={s.label} delay={i * 80} className="text-center">
                             <div className="text-2xl mb-1">{s.icon}</div>

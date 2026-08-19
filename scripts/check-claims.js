@@ -2,10 +2,11 @@
 /**
  * Build gate: bars claims the academy cannot substantiate from ever shipping again.
  *
- * Scans the compiled pages (rendered HTML + server bundles) and public/llms.txt,
- * so it catches a claim however it reaches the page — literal JSX, template
- * literal, or imported constant. Runs as `postbuild`, since `.next/server/pages`
- * does not exist until `next build` has run.
+ * Scans all of .next/server (rendered HTML, page bundles and the shared chunks
+ * that API routes and serverless functions are built from) plus public/llms.txt,
+ * so it catches a claim however it reaches a reader — literal JSX, template
+ * literal, imported constant, or an email body compiled into a cron route.
+ * Runs as `postbuild`, since .next/server does not exist until next build has.
  *
  * Certification bodies (ICAO/IATA/EASA/MoCA) are matched only next to a claim
  * word. Bare mentions are legitimate on this site: the Air Regulations syllabus
@@ -16,6 +17,8 @@ const fs = require('fs');
 const path = require('path');
 
 const CLAIM = '(certified|approved|aligned|compliant|accredited|affiliat|partner|member|recognis|recogniz)';
+const OUTCOME = '(graduate|alumni|student|placement|placed|hired|our pilots|trainee)';
+const RUPEES_PER_MONTH = '\u20b9\\d[\\d.,]*L\\s*/\\s*month';
 const PATTERNS = [
   /3500\+/i, /3000\+/i, /500\+\s*pilots/i,
   /98%\s*success/i, /100%\s*result/i, /100%\s*placement/i, /95%\s*pass/i,
@@ -24,6 +27,13 @@ const PATTERNS = [
   /aggregateRating/i, /ISO 9001/i, /www\.weoneaviation\.in/i,
   new RegExp(`(ICAO|IATA|EASA|Ministry of Civil Aviation)[\\s-]*${CLAIM}`, 'i'),
   new RegExp(`${CLAIM}[a-z]*\\s+(by\\s+)?(ICAO|IATA|EASA|Ministry of Civil Aviation)`, 'i'),
+  // Graduate-outcome promises: hiring windows and salary figures the academy
+  // cannot stand behind. Industry-wide pay ranges stated as such are fine; a
+  // rupee-per-month figure tied to our own graduates is not.
+  /avg\.?\s*starting salary/i, /average starting salary/i,
+  /hired within/i, /placement within/i,
+  new RegExp(`${OUTCOME}[^.]{0,80}${RUPEES_PER_MONTH}`, 'i'),
+  new RegExp(`${RUPEES_PER_MONTH}[^.]{0,80}${OUTCOME}`, 'i'),
 ];
 
 const targets = [];
@@ -35,7 +45,7 @@ const walk = (dir) => {
     else if (/\.(html|js|json|txt)$/.test(e.name)) targets.push(p);
   }
 };
-walk(path.join('.next', 'server', 'pages'));
+walk(path.join('.next', 'server'));
 if (fs.existsSync(path.join('public', 'llms.txt'))) targets.push(path.join('public', 'llms.txt'));
 
 if (!targets.length) {

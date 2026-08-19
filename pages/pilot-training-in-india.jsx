@@ -170,7 +170,7 @@ const pilotJourneySteps = [
         title: 'Apply For Flying Schools',
         desc: 'After Clear Dgca Exam, You Have To do 200hours of Flying From Any Flying Schools. Apply now For Do Flight Training From We One Aviation Academy.',
         alert: 'Worry About Loan For Flying schools?',
-        alertDesc: 'We Provide 100% Loan For Flight Training From Any Country. If You Wants To do Premier Flight Training Then We One Aviation Is Solution For You.',
+        alertDesc: 'We Provide 100% Loan For Flight Training From Any Country. If You Wants To do Flight Training Then We One Aviation Is Solution For You.',
     },
 ];
 
@@ -890,12 +890,12 @@ export default function Home() {
             <section className="py-16 px-4 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Premier Training</div>
+                        <div className="section-tag">Training</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
                             From Ground to Sky: <span className="text-av-orange">DGCA Exam Coaching & Flight Training</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-                            Premier DGCA Ground Classes & Flying School for Aspiring Pilots. If You Are Wants To Become Pilot Then You Have to Start Your Carrers By Dgca Ground Classes and Ending By Flight Training. So Enroll Now In Our Course.
+                            DGCA ground classes and flying school placement for aspiring pilots. If You Are Wants To Become Pilot Then You Have to Start Your Carrers By Dgca Ground Classes and Ending By Flight Training. So Enroll Now In Our Course.
                         </p>
                     </ScrollReveal>
                     <div className="grid md:grid-cols-2 gap-8">

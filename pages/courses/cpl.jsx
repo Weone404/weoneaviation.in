@@ -276,7 +276,7 @@ export default function CPL() {
                             <div className="bg-av-blue rounded-2xl p-8 text-center mb-10">
                                 <h3 className="font-montserrat text-xl font-bold text-white mb-3">Start Your Pilot Journey With We One Aviation Academy</h3>
                                 <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-3">
-                                    We One Aviation Academy is a premier pilot training institute dedicated to shaping future aviators. We offer world-class DGCA ground classes, commercial pilot training, and aviation courses designed to help you achieve your dream of flying. With expert instructors, state-of-the-art facilities, and a structured training program, we prepare you for a successful aviation career.
+                                    We One Aviation Academy is a DGCA-approved pilot training institute. We offer DGCA ground classes, commercial pilot training, and aviation courses designed to help you achieve your dream of flying. With expert instructors, state-of-the-art facilities, and a structured training program, we prepare you for a successful aviation career.
                                 </p>
                                 <p className="text-white/60 text-sm mb-5">Join us and take the first step toward the skies! ✈️</p>
                                 <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
@@ -363,7 +363,7 @@ export default function CPL() {
                             <div className="bg-av-blue rounded-2xl p-8 text-center mb-10">
                                 <h3 className="font-montserrat text-xl font-bold text-white mb-3">Start Your Commercial Flight Training With We One Aviation Academy</h3>
                                 <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-3">
-                                    We One Aviation Academy is a premier pilot training institute dedicated to shaping future aviators. We Offers Ground Classes to Flight Training. Our Budget Friendly Ground Classes Help Lots of People To Become a Pilot.
+                                    We One Aviation Academy is a DGCA-approved pilot training institute. We Offers Ground Classes to Flight Training. Our Budget Friendly Ground Classes Help Lots of People To Become a Pilot.
                                 </p>
                                 <p className="text-white/60 text-sm mb-5">Join us and take the first step toward the skies! ✈️</p>
                                 <Link href="/flying-school" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
@@ -402,9 +402,7 @@ export default function CPL() {
                         <ScrollReveal delay={400}>
                             <div className="bg-av-orange rounded-2xl p-6 text-white">
                                 <h4 className="font-montserrat font-bold mb-2">Career After CPL</h4>
-                                <p className="text-white/80 text-sm mb-3">Average starting salary for First Officers:</p>
-                                <div className="text-2xl font-montserrat font-black">₹1.8 – 2.5 LPM</div>
-                                <div className="text-white/70 text-xs mt-1">Senior Captain: ₹5-8 LPM</div>
+                                <p className="text-white/80 text-sm mb-3">Talk through licence routes, timelines and what the CPL leads to.</p>
                                 <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
                                     Get Career Counselling
