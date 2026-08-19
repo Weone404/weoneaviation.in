@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Layout from '../../components/Layout';
 import HeroSlider from '../../components/HeroSlider';
 import LeadForm from '../../components/LeadForm';
@@ -133,10 +134,27 @@ const careerOptions = [
     },
 ];
 
+const LAST_UPDATED = 'August 19, 2026';
+const LAST_UPDATED_ISO = '2026-08-19';
+
+const cplCourseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Commercial Pilot Licence (CPL) Training',
+    description: 'CPL (Aeroplanes) training and DGCA ground classes. Statutory requirements under Schedule II, Section J of the Aircraft Rules, 1937.',
+    inLanguage: 'en-IN',
+    dateModified: LAST_UPDATED_ISO,
+    url: 'https://weoneaviation.in/courses/cpl',
+    provider: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+};
+
 export default function CPL() {
     return (
         <Layout title="Commercial Pilot License (CPL) Training in India | WeOne Aviation" description="DGCA approved CPL training in India. Become a commercial pilot with WeOne Aviation Academy. Expert instructors, modern aircraft, placement support.">
-            <HeroSlider customSlides={heroSlides} />
+            <Head>
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(cplCourseSchema) }} />
+            </Head>
+            <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
             <section className="py-20 px-4">
@@ -144,14 +162,117 @@ export default function CPL() {
                     <div className="lg:col-span-2">
                         <ScrollReveal>
                             <div className="section-tag">CPL Program</div>
-                            <h2 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
+                            <h1 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
                                 Commercial Pilot License (CPL) Training
-                            </h2>
+                            </h1>
+
+                            {/* Direct answer. Written to stand alone if extracted. */}
+                            <p className="text-gray-700 leading-relaxed mb-6 text-base">
+                                The Commercial Pilot Licence (Aeroplanes) is the licence required to fly commercially in India. Schedule II, Section J of the Aircraft Rules, 1937 sets a minimum age of 18, Class Ten plus Two with Physics and Mathematics, 200 hours of flight time, a medical certificate, and a Flight Radio Telephone Operator&rsquo;s Licence.
+                            </p>
+
+                            <p className="text-gray-500 text-xs mb-8">{`Last updated: ${LAST_UPDATED}`}</p>
+
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">CPL eligibility under the Aircraft Rules, 1937</h2>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                The requirements below are set by the Aircraft Rules, 1937 (continued in force by section 43(2) of the Bharatiya Vayuyan Adhiniyam, 2024), Schedule II, Section J. They apply to a Commercial Pilot&rsquo;s Licence (Aeroplanes) and hold wherever the training is done.
+                            </p>
+                            <div className="overflow-x-auto rounded-xl border border-gray-200 mb-6">
+                                <table className="w-full text-sm">
+                                    <caption className="sr-only">CPL (Aeroplanes) eligibility, Aircraft Rules 1937 Schedule II Section J</caption>
+                                    <thead>
+                                        <tr className="bg-av-blue text-white">
+                                            <th scope="col" className="p-3 text-left text-xs font-semibold">Requirement</th>
+                                            <th scope="col" className="p-3 text-left text-xs font-semibold">What Schedule II requires</th>
+                                            <th scope="col" className="p-3 text-left text-xs font-semibold">Clause</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr className="bg-white">
+                                            <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left">Minimum age</th>
+                                            <td className="p-3 text-gray-600 text-xs">Not less than 18 years on the date of application</td>
+                                            <td className="p-3 text-av-orange font-semibold text-xs whitespace-nowrap">1(a)</td>
+                                        </tr>
+                                        <tr className="bg-gray-50">
+                                            <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left">Educational qualification</th>
+                                            <td className="p-3 text-gray-600 text-xs">Class Ten plus Two, or equivalent, with Physics and Mathematics from a recognised Board or University</td>
+                                            <td className="p-3 text-av-orange font-semibold text-xs whitespace-nowrap">1(b)</td>
+                                        </tr>
+                                        <tr className="bg-white">
+                                            <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left">Medical fitness</th>
+                                            <td className="p-3 text-gray-600 text-xs">Certificate of physical fitness from an approved Medical Board, against the standards notified by the Director-General under Rule 39B</td>
+                                            <td className="p-3 text-av-orange font-semibold text-xs whitespace-nowrap">1(c)</td>
+                                        </tr>
+                                        <tr className="bg-gray-50">
+                                            <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left">Written examination</th>
+                                            <td className="p-3 text-gray-600 text-xs">Air Regulations, Air Navigation, Meteorology, and Aircraft and Engines, plus a Signals (practical) examination for interpretation of aural and visual signals</td>
+                                            <td className="p-3 text-av-orange font-semibold text-xs whitespace-nowrap">1(d)</td>
+                                        </tr>
+                                        <tr className="bg-white">
+                                            <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left">Radio telephony</th>
+                                            <td className="p-3 text-gray-600 text-xs">A current Flight Radio Telephone Operator’s Licence for operating radio telephone apparatus on board an aircraft</td>
+                                            <td className="p-3 text-av-orange font-semibold text-xs whitespace-nowrap">1(g)</td>
+                                        </tr>
+                                        <tr className="bg-gray-50">
+                                            <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left">Skill test</th>
+                                            <td className="p-3 text-gray-600 text-xs">Competency demonstrated to an examiner on the type applied for, within the six months preceding the application</td>
+                                            <td className="p-3 text-av-orange font-semibold text-xs whitespace-nowrap">1(h)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">CPL flight-time requirement</h2>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                Paragraph 1(e) of Section J sets the flying experience. The 200 hours is a total; the rows beneath it are minimums that sit inside that total, not additions to it.
+                            </p>
+                            <div className="overflow-x-auto rounded-xl border border-gray-200 mb-6">
+                                <table className="w-full text-sm">
+                                    <caption className="sr-only">CPL (Aeroplanes) flight-time requirement, Schedule II Section J paragraph 1(e)</caption>
+                                    <thead>
+                                        <tr className="bg-av-blue text-white">
+                                            <th scope="col" className="p-3 text-left text-xs font-semibold">Component</th>
+                                            <th scope="col" className="p-3 text-left text-xs font-semibold">What Schedule II requires</th>
+                                            <th scope="col" className="p-3 text-left text-xs font-semibold">Clause</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr className="bg-white">
+                                            <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left">Total flight time</th>
+                                            <td className="p-3 text-gray-600 text-xs">Not less than 200 hours as pilot of an aeroplane, completed within the five years immediately preceding the application</td>
+                                            <td className="p-3 text-av-orange font-semibold text-xs whitespace-nowrap">1(e)</td>
+                                        </tr>
+                                        <tr className="bg-gray-50">
+                                            <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left">Pilot-in-command</th>
+                                            <td className="p-3 text-gray-600 text-xs">Not less than 100 hours, of which not less than 15 hours in the six months immediately preceding the application</td>
+                                            <td className="p-3 text-av-orange font-semibold text-xs whitespace-nowrap">1(e)(i)</td>
+                                        </tr>
+                                        <tr className="bg-white">
+                                            <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left">Cross-country as PIC</th>
+                                            <td className="p-3 text-gray-600 text-xs">Not less than 20 hours, including one cross-country flight of not less than 300 nautical miles with full-stop landings at two different aerodromes</td>
+                                            <td className="p-3 text-av-orange font-semibold text-xs whitespace-nowrap">1(e)(ii)</td>
+                                        </tr>
+                                        <tr className="bg-gray-50">
+                                            <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left">Instrument time</th>
+                                            <td className="p-3 text-gray-600 text-xs">Not less than 10 hours, of which not more than 5 hours may be on an approved simulator</td>
+                                            <td className="p-3 text-av-orange font-semibold text-xs whitespace-nowrap">1(e)(iii)</td>
+                                        </tr>
+                                        <tr className="bg-white">
+                                            <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left">Night flying</th>
+                                            <td className="p-3 text-gray-600 text-xs">Not less than 5 hours, including at least 10 take-offs and 10 landings as pilot-in-command (sole manipulator of the controls), within the preceding six months</td>
+                                            <td className="p-3 text-av-orange font-semibold text-xs whitespace-nowrap">1(e)(iv)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p className="text-gray-500 text-xs mb-10">
+                                A holder of a Commercial Pilot&rsquo;s Licence (Helicopters) or Airline Transport Pilot&rsquo;s Licence (Helicopters) with not less than 1,000 hours as pilot-in-command of a helicopter has the 200-hour requirement reduced to 100 hours, under the proviso to paragraph 1(e).
+                            </p>
                             <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                                The Commercial Pilot License (CPL) is the gateway to an airline career. Our DGCA-approved CPL program is designed to take you from ground school to the cockpit of a commercial aircraft. With 500+ hours of combined ground and flight training, you'll be fully prepared for airline interviews and line flying.
+                                The Commercial Pilot Licence is the licence a pilot needs to be paid to fly. We One Aviation Academy runs the DGCA ground classes for the written papers and arranges the flight training that builds the hours listed above.
                             </p>
                             <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                                We offer training in India as well as international options in the USA, Canada, and Australia. Our experienced flight instructors ensure every student meets ICAO standards and DGCA requirements.
+                                Training is available in India and with partner schools in the USA, Canada and Australia. Hours flown abroad count towards the Schedule II total, and the licence is issued after conversion by the DGCA.
                             </p>
 
                             {/* Quick Facts */}

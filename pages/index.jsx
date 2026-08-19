@@ -160,6 +160,9 @@ const pilotRoutes = [
   },
 ];
 
+const LAST_UPDATED = 'August 19, 2026';
+const LAST_UPDATED_ISO = '2026-08-19';
+
 // ─── SCHEMA MARKUP ────────────────────────────────────────────────────────────
 // Defined at module level — created once, not on every render.
 
@@ -179,6 +182,7 @@ const educationalOrgSchema = {
   image: 'https://weoneaviation.in/og-cover.jpg',
   description: `DGCA-approved pilot training institute in Dwarka, New Delhi. CPL, PPL, ATPL and SPL courses plus DGCA ground classes, running since ${FOUNDED_YEAR}.`,
   foundingDate: '2009',
+  dateModified: LAST_UPDATED_ISO,
   telephone: '+919355611996',
   email: 'info@weoneaviation.in',
   address: {
@@ -339,6 +343,13 @@ export default function Home() {
           <h1 className="text-white font-bold text-xl px-4">
             Pilot training guidance for India’s next generation of aviators
           </h1>
+
+          {/* Direct answer. Written to stand alone if extracted. */}
+          <p className="text-white/90 leading-relaxed text-sm px-4 mt-3 max-w-3xl mx-auto">
+              We One Aviation Academy is a DGCA-approved pilot training institute in Dwarka, New Delhi, operating since 2009. It runs DGCA ground classes for the Commercial Pilot Licence written examinations and arranges flight training placements with partner schools in India and abroad. A CPL requires 200 hours of flight time and a minimum age of 18.
+          </p>
+
+          <p className="text-white/60 text-xs px-4 mt-2">{`Last updated: ${LAST_UPDATED}`}</p>
           <p className="text-white font-medium text-sm px-4 mt-1">
             Learn about DGCA ground classes, CPL pathways, and the steps needed to build a structured aviation career.
           </p>

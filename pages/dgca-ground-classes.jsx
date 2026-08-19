@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
@@ -262,14 +263,31 @@ const faqSchema = generateFAQSchema([
   },
 ]);
 
+const LAST_UPDATED = 'August 19, 2026';
+const LAST_UPDATED_ISO = '2026-08-19';
+
+const groundCourseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'DGCA Ground Classes',
+    description: 'Ground classes for the DGCA written examinations required for a Commercial Pilot Licence: Air Regulations, Air Navigation, Meteorology, and Aircraft and Engines.',
+    inLanguage: 'en-IN',
+    dateModified: LAST_UPDATED_ISO,
+    url: 'https://weoneaviation.in/dgca-ground-classes',
+    provider: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+};
+
 export default function DGCAGroundClasses() {
   return (
     <Layout
       title="DGCA Ground Classes | Pilot Training Institute in India | WeOne Aviation"
       description="DGCA ground classes for the CPL written examinations. CPL ground school covering all DGCA subjects. Join WeOne Aviation Academy."
     >
+            <Head>
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(groundCourseSchema) }} />
+            </Head>
       <StructuredData data={[dgcaGroundCourseSchema, courseSchema, faqSchema]} />
-      <HeroSlider customSlides={heroSlides} />
+      <HeroSlider customSlides={heroSlides} asH1={false} />
 
       {/* Overview */}
       <section className="py-20 px-4">
@@ -277,9 +295,42 @@ export default function DGCAGroundClasses() {
           <div className="lg:col-span-2">
             <ScrollReveal>
               <div className="section-tag">DGCA Ground Classes</div>
-              <h2 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
+              <h1 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
                 DGCA Ground Classes
-              </h2>
+              </h1>
+
+              {/* Direct answer. Written to stand alone if extracted. */}
+              <p className="text-gray-700 leading-relaxed mb-6 text-base">
+                  DGCA ground classes prepare candidates for the written examinations required for a Commercial Pilot Licence. Schedule II, Section J, paragraph 1(d) of the Aircraft Rules, 1937 requires passes in Air Regulations, Air Navigation, Meteorology, and Aircraft and Engines, plus a Signals practical examination. We One Aviation Academy runs these classes in Dwarka, New Delhi.
+              </p>
+
+              <p className="text-gray-500 text-xs mb-8">{`Last updated: ${LAST_UPDATED}`}</p>
+
+              <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">The DGCA subjects</h2>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                Schedule II, Section J, paragraph 1(d) of the Aircraft Rules, 1937 (continued in force by section 43(2) of the Bharatiya Vayuyan Adhiniyam, 2024) names the written papers Air Regulations, Air Navigation, Meteorology, and Aircraft and Engines. On the DGCA Pariksha portal the papers are grouped into five sections: General, Oral, Technical General, Technical Specific and Technical Performance.
+              </p>
+              <div className="overflow-x-auto rounded-xl border border-gray-200 mb-10">
+                <table className="w-full text-sm">
+                  <caption className="sr-only">DGCA ground-class subjects and what each covers</caption>
+                  <thead>
+                    <tr className="bg-av-blue text-white">
+                      <th scope="col" className="p-3 text-left text-xs font-semibold">Subject</th>
+                      <th scope="col" className="p-3 text-left text-xs font-semibold">What it covers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {subjects.map((sub, i) => (
+                      <tr key={sub.title} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                        <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left align-top">
+                          <Link href={sub.href} className="hover:text-av-orange">{sub.title}</Link>
+                        </th>
+                        <td className="p-3 text-gray-600 text-xs">{sub.detail}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
               <p className="text-gray-600 leading-relaxed mb-4 text-sm">
                 DGCA ground classes covering every subject in the CPL written examination set.
               </p>
