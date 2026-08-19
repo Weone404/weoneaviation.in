@@ -245,7 +245,7 @@ export default function IndiaPilotTrainingPage() {
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
-                            { icon: '🎂', title: 'Age', desc: 'Minimum 17 years to begin pilot training and 18 years for a Commercial Pilot License.' },
+                            { icon: '🎂', title: 'Age', desc: 'A Student Pilot Licence, which allows flight training to begin, requires 16 years; a Commercial Pilot Licence requires 18 (Aircraft Rules, 1937, Schedule II, Sections B and J).' },
                             { icon: '📚', title: 'Education', desc: '10+2 with Physics & Math or equivalent is required. Non-science students can qualify via NIOS.' },
                             { icon: '🏥', title: 'Medical', desc: 'Must hold a valid DGCA Class 1 Medical Certificate issued by a DGCA medical examiner to ensure physical fitness for flying.' },
                             { icon: '🛂', title: 'Valid Passport', desc: 'A current passport is mandatory for identification and for students pursuing any part of their training abroad.' },

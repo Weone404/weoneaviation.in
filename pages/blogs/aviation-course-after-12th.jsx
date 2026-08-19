@@ -308,7 +308,7 @@ export default function BecomeAPilotPage() {
                         <ScrollReveal>
                             <div className="space-y-4">
                                 {[
-                                    { icon: '🎂', label: 'Age', value: 'Minimum 17 years.' },
+                                    { icon: '🎂', label: 'Age', value: '16 years for a Student Pilot Licence; 18 for a Commercial Pilot Licence.' },
                                     { icon: '📚', label: 'Education', value: 'Completion of 12th grade with Physics and Mathematics.' },
                                     { icon: '🩺', label: 'Medical', value: 'Obtain a Class 2 medical certificate from a DGCA-approved doctor.' },
                                 ].map(item => (

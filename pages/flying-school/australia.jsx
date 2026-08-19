@@ -227,7 +227,7 @@ export default function AustraliaPilotTrainingPage() {
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
-                            { icon: '🎂', title: 'Age', desc: 'Minimum 17 years to begin pilot training and 18 years for a Commercial Pilot License.' },
+                            { icon: '🎂', title: 'Age', desc: 'A Student Pilot Licence, which allows flight training to begin, requires 16 years; a Commercial Pilot Licence requires 18 (Aircraft Rules, 1937, Schedule II, Sections B and J).' },
                             { icon: '📚', title: 'Education', desc: '10+2 with Physics & Math or equivalent is required. Non-science students can qualify via NIOS.' },
                             { icon: '🗣️', title: 'English Proficiency', desc: 'IELTS 5.5 in each band and 6.0 overall is required for the Australian Student Visa.' },
                             { icon: '🏥', title: 'Medical', desc: 'Both CASA Class 1 and DGCA Class 1 medicals must be completed before commencing training.' },

@@ -50,7 +50,7 @@ export default function PreAdmissionChecklist() {
                   </h3>
                   <div className="space-y-3">
                     {[
-                      { criteria: 'Age', requirement: '✓ Minimum 17 years old', status: 'Your Age: _____' },
+                      { criteria: 'Age', requirement: '✓ 16+ to start training; 18+ for a CPL', status: 'Your Age: _____' },
                       { criteria: 'Education', requirement: '✓ 10+2 (12th pass) with Physics & Math', status: 'Completed: ✓/✗' },
                       { criteria: 'English Proficiency', requirement: '✓ Fluent in spoken & written English', status: 'Status: _____' },
                       { criteria: 'Medical Fitness', requirement: '✓ No disqualifying medical conditions', status: 'Pre-check: _____' },

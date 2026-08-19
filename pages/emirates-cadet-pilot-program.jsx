@@ -234,7 +234,7 @@ export default function EmiratesCadet() {
                             <div className="bg-av-blue rounded-2xl p-6 text-white">
                                 <h4 className="font-montserrat font-bold mb-4">Eligibility at a Glance</h4>
                                 <ul className="space-y-2 text-sm text-white/80">
-                                    <li>✓ Age: 17+ years</li>
+                                    <li>✓ Age: 18 for a CPL, 16 for a Student Pilot Licence</li>
                                     <li>✓ 12th with Math, Physics & English</li>
                                     <li>✓ IELTS 6.0+ (English proficiency)</li>
                                     <li>✓ Class 1 Medical Certificate</li>

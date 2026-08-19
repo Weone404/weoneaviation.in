@@ -86,7 +86,7 @@ Training pathways and local choices: students deciding between PPL and integrate
 
             eligibility={[
                 { icon: '🎓', title: 'Education', desc: '10+2 with Physics & Mathematics (We can help with additional courses if needed!)' },
-                { icon: '🎂', title: 'Age', desc: 'Minimum age of 17 years' },
+                { icon: '🎂', title: 'Age', desc: '18 years for a CPL; 16 for a Student Pilot Licence' },
                 { icon: '🩺', title: 'Medical Fitness', desc: 'Medical fitness as per DGCA Class 1 Medical standards' },
                 { icon: '🗣️', title: 'English Proficiency', desc: 'English proficiency for effective communication' },
             ]}
@@ -163,7 +163,7 @@ Training pathways and local choices: students deciding between PPL and integrate
                 { q: 'Is there a DGCA exam center or learning hub near Mumbai that helps with pilot preparation?', a: 'Students in and around Mumbai usually plan DGCA ground preparation with a city-based study routine, revision cycle, and coaching schedule that supports theory, mock tests, and exam-day confidence.' },
                 { q: 'What is the nearest major airport relevant to pilot training in Mumbai?', a: 'Chhatrapati Shivaji Maharaj International Airport (BOM) is the primary city reference for Mumbai-based airline operations and airport awareness during pilot preparation.' },
                 { q: 'What are the fees for pilot training in Mumbai?', a: 'The average fees for CPL training in Mumbai is INR 40–60 Lakh. This includes ground classes (INR 2-3 lakhs), 200 hours of flying (INR 35-55 lakhs), simulator training (INR 3-5 lakhs), and extra gear. WeOne Aviation provides scholarship and flexible payment options.' },
-                { q: 'What is the eligibility to become a pilot in Mumbai?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 Medical clearance, and English proficiency are required.' },
+                { q: 'What is the eligibility to become a pilot in Mumbai?', a: 'A Commercial Pilot Licence requires a minimum age of 18 years on the date of application (Aircraft Rules, 1937, Schedule II, Section J). Flight training can begin earlier: a Student Pilot Licence requires 16 years (Schedule II, Section B). 10+2 with Physics & Mathematics, DGCA Class 1 Medical clearance, and English proficiency are also required.' },
                 { q: 'Does WeOne Aviation provide placement assistance in Mumbai?', a: 'Yes! We provide placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
                 { q: 'Can I get a scholarship for pilot training in Mumbai?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance.' },
                 { q: 'What career options are available after pilot training in Mumbai?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Mumbai\'s booming aviation sector offers excellent opportunities.' },

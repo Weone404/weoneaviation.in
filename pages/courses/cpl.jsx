@@ -391,7 +391,7 @@ export default function CPL() {
                                 <h4 className="font-montserrat font-bold mb-4">Eligibility Criteria</h4>
                                 <ul className="space-y-2 text-sm text-white/80">
                                     <li>✓ 10+2 with Physics & Maths</li>
-                                    <li>✓ Minimum 17 years of age</li>
+                                    <li>✓ Minimum 18 years of age (Aircraft Rules, 1937, Schedule II, Section J)</li>
                                     <li>✓ DGCA Medical Class 1</li>
                                     <li>✓ English language proficiency</li>
                                     <li>✓ Valid passport (for intl. training)</li>

@@ -576,7 +576,7 @@ export default function DGCAGroundClasses() {
                       ✓ 10+2 with Physics &amp; Maths
                     </Link>
                   </li>
-                  <li>✓ Minimum 17 years of age</li>
+                  <li>✓ Minimum 18 years of age for a CPL; 16 for a Student Pilot Licence</li>
                   <li>
                     <Link href="/dgca-class-2-class-1-medical" className="hover:text-av-orange transition-colors">
                       ✓ DGCA Class 2 Medical

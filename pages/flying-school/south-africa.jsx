@@ -242,7 +242,7 @@ export default function SouthAfricaPilotTrainingPage() {
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
-                            { icon: '🎂', title: 'Age', desc: 'Minimum 17 years to begin pilot training and 18 years for a Commercial Pilot License.' },
+                            { icon: '🎂', title: 'Age', desc: 'A Student Pilot Licence, which allows flight training to begin, requires 16 years; a Commercial Pilot Licence requires 18 (Aircraft Rules, 1937, Schedule II, Sections B and J).' },
                             { icon: '📚', title: 'Education', desc: '10+2 with Physics & Math or equivalent is required. Non-science students can qualify via NIOS.' },
                             { icon: '🏥', title: 'Medical', desc: 'Must hold an SACAA Class 1 Medical and DGCA Class 1 Medical Certificate to qualify for Commercial Pilot Training.' },
                             { icon: '🛂', title: 'Visa', desc: 'South African Study Visa — which requires medicals for application — allowing full-time flight training in South Africa.' },

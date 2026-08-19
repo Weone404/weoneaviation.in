@@ -278,7 +278,7 @@ const trainingCourses = [
 
 const eligibilityCriteria = [
     { icon: '🎓', title: 'Education', desc: '10+2 with Physics & Mathematics (We can help with additional courses if needed!)' },
-    { icon: '🎂', title: 'Age', desc: 'Minimum age of 17 years' },
+    { icon: '🎂', title: 'Age', desc: '18 years for a CPL; 16 for a Student Pilot Licence' },
     { icon: '🩺', title: 'Medical Fitness', desc: 'Must clear DGCA Class 1 & Class 2 Medical Exams' },
     { icon: '🗣️', title: 'English Proficiency', desc: 'Must be able to read, write, and communicate effectively in English' },
 ];

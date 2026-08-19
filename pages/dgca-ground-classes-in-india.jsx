@@ -74,8 +74,8 @@ const eligibility = [
     },
     {
         icon: '🎂',
-        title: 'Age: 17+ Years',
-        desc: 'Minimum 17 years to join ground classes. 18+ years required to apply for DGCA India CPL.',
+        title: 'Age: 18 for a CPL',
+        desc: 'A Commercial Pilot Licence requires 18 years on the date of application (Aircraft Rules, 1937, Schedule II, Section J). A Student Pilot Licence, which allows flight training to begin, requires 16 (Section B).',
     },
     {
         icon: '🩺',
@@ -559,7 +559,7 @@ export default function DGCAGroundClassesInIndia() {
                                 <p className="text-white/50 text-xs mb-4">As per DGCA India regulations</p>
                                 <ul className="space-y-2 text-sm text-white/80">
                                     <li>✓ Class 12 — Physics & Maths (any Indian board)</li>
-                                    <li>✓ Age: 17+ years</li>
+                                    <li>✓ Age: 18 for a CPL, 16 for a Student Pilot Licence</li>
                                     <li>✓ DGCA Class 2 Medical (India AME)</li>
                                     <li>✓ English proficiency</li>
                                     <li>✓ DGCA Computer Number</li>

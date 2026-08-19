@@ -86,7 +86,7 @@ Career and cost planning: We provide state-aware fee guidance and scholarship ti
 
             eligibility={[
                 { icon: '🎓', title: 'Education', desc: '10+2 with Physics & Mathematics (We can help with additional courses if needed!)' },
-                { icon: '🎂', title: 'Age', desc: 'Minimum age of 17 years' },
+                { icon: '🎂', title: 'Age', desc: '18 years for a CPL; 16 for a Student Pilot Licence' },
                 { icon: '🩺', title: 'Medical Fitness', desc: 'Must clear DGCA Class 1 & Class 2 Medical Exams' },
                 { icon: '🗣️', title: 'English Proficiency', desc: 'Must be able to read, write, and communicate effectively in English' },
             ]}
@@ -163,7 +163,7 @@ Career and cost planning: We provide state-aware fee guidance and scholarship ti
                 { q: 'Is there a DGCA exam center or study support route in Chhattisgarh?', a: 'Students in Chhattisgarh usually prepare for DGCA theory through a structured syllabus plan, targeted revision, and coaching support that helps them stay consistent while balancing academic commitments.' },
                 { q: 'What is the nearest major airport relevant to pilot training in Chhattisgarh?', a: 'Raipur Airport (RPR) is the most relevant local aviation reference point in the state for students exploring a future in aviation.' },
                 { q: 'What are the fees for pilot training in Chhattisgarh?', a: 'The average fees for CPL training in Chhattisgarh is INR 40–60 Lakh. This includes ground classes (INR 2-3 lakhs), 200 hours of flying (INR 35-55 lakhs), simulator training (INR 3-5 lakhs), and extra gear (INR 20-50 thousand). WeOne Aviation provides scholarship and flexible payment options.' },
-                { q: 'What is the eligibility to become a pilot in Chhattisgarh?', a: 'Minimum age of 17 years, 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are required.' },
+                { q: 'What is the eligibility to become a pilot in Chhattisgarh?', a: 'A Commercial Pilot Licence requires a minimum age of 18 years on the date of application (Aircraft Rules, 1937, Schedule II, Section J). Flight training can begin earlier: a Student Pilot Licence requires 16 years (Schedule II, Section B). 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are also required.' },
                 { q: 'Does WeOne Aviation provide placement assistance in Chhattisgarh?', a: 'Yes! We provide placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
                 { q: 'Can I get a scholarship for pilot training in Chhattisgarh?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
                 { q: 'What career options are available after pilot training in Chhattisgarh?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Chhattisgarh\'s growing aviation sector with Raipur as its hub creates excellent demand for trained pilots.' },

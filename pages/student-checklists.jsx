@@ -17,7 +17,7 @@ export default function StudentChecklistsHub() {
         {
           name: 'Eligibility Verification',
           items: [
-            '✓ Age: 17+ years old',
+            '✓ Age: 18 years for a CPL; 16 for a Student Pilot Licence',
             '✓ Education: 10+2 (12th pass) with Physics & Math',
             '✓ English proficiency: Fluent in spoken & written',
             '✓ Medical fitness: No disqualifying conditions',

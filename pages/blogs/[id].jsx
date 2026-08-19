@@ -211,7 +211,7 @@ const hardcodedBlogs = [
       <h2>Minimum Eligibility</h2>
       <ul>
         <li>10+2 with Physics and Mathematics (minimum 50% marks)</li>
-        <li>Age: Minimum 17 years for SPL, 18 for CPL</li>
+        <li>Age: minimum 16 years for an SPL, 17 for a PPL, 18 for a CPL (Aircraft Rules, 1937, Schedule II, Sections B, E and J)</li>
       </ul>
 
       <h2>Step-by-Step Roadmap</h2>
