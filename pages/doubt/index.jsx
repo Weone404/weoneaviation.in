@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Head from "next/head";
 import DoubtChat from "../../components/DoubtChat/page.jsx";
+import FAQSection from "../../components/FAQSection";
 
 const TOPICS = [
     { label: "Air Regulations", icon: "📜", color: "#6366f1" },
@@ -168,6 +169,16 @@ export default function DoubtPage() {
                     </div>
 
                 </div>
+
+                <FAQSection
+                    title="DGCA Doubt Solver: FAQs"
+                    faqs={[
+                        { question: "Which DGCA subjects can I ask about?", answer: "You can use the doubt solver for Air Regulations, Navigation, Meteorology, Technical General, airframes, engines, and related DGCA exam topics." },
+                        { question: "Can the doubt solver explain a difficult aviation concept simply?", answer: "Yes. Ask for a beginner-friendly explanation, an analogy, worked steps, or an exam-style example for the aviation concept you are studying." },
+                        { question: "Can I request practice questions?", answer: "Yes. Ask for topic-based practice questions or DGCA-style multiple-choice questions, and specify the subject and difficulty you want to practise." },
+                        { question: "Should I verify answers before using them for an exam?", answer: "Yes. Use the solver as a study aid and confirm regulatory, operational, and licensing details against current DGCA publications or an experienced instructor." },
+                    ]}
+                />
             </div>
         </>
     );

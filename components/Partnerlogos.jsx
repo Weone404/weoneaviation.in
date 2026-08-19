@@ -79,7 +79,7 @@ export default function PartnerLogos() {
                                         sizes="(max-width: 768px) 110px, 180px"
                                         style={{
                                             width: "auto",
-                                            height: partner.height,
+                                            height: "auto",
                                             objectFit: "contain",
                                             maxWidth: "100%",
                                         }}
@@ -96,7 +96,7 @@ export default function PartnerLogos() {
                                     sizes="(max-width: 768px) 110px, 180px"
                                     style={{
                                         width: "auto",
-                                        height: partner.height,
+                                        height: "auto",
                                         objectFit: "contain",
                                         maxWidth: "100%",
                                     }}

@@ -313,6 +313,13 @@ export default function Navbar() {
               Blogs
             </Link>
 
+            <Link
+              href="/faq"
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/faq') ? 'text-av-orange' : 'text-white'}`}
+            >
+              FAQ
+            </Link>
+
             {/* CTA */}
             <Link href="/contact" className="ml-2 bg-av-orange text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/30">
               Register for Scholarship
@@ -342,6 +349,7 @@ export default function Navbar() {
             { label: 'Home', href: '/' },
             { label: 'About Us', href: '/about-us' },
             { label: 'Blogs', href: '/blogs' },
+            { label: 'FAQ', href: '/faq' },
             { label: 'Contact Us', href: '/contact' },
           ].map((item) => (
             <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)}
