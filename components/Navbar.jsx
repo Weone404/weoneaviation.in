@@ -151,14 +151,14 @@ function BreakingNewsTicker() {
       <div className="relative flex flex-1 items-center overflow-hidden">
         <div className="ticker-track flex items-center whitespace-nowrap" aria-label="Latest announcements">
           {items.map((msg, i) => (
-            <span key={i} className="inline-flex items-center gap-3 text-xs font-bold text-white sm:text-sm">
+            <span key={i} className="inline-flex shrink-0 items-center gap-3 text-xs font-bold text-white sm:text-sm">
               <span className="px-6 leading-none">{msg}</span>
               <span className="text-red-300 opacity-70">◆</span>
             </span>
           ))}
-          <div aria-hidden="true" className="flex items-center whitespace-nowrap">
+          <div aria-hidden="true" className="flex shrink-0 items-center whitespace-nowrap">
             {items.map((msg, i) => (
-              <span key={`dup-${i}`} className="inline-flex items-center gap-3 text-xs font-bold text-white sm:text-sm">
+              <span key={`dup-${i}`} className="inline-flex shrink-0 items-center gap-3 text-xs font-bold text-white sm:text-sm">
                 <span className="px-6 leading-none">{msg}</span>
                 <span className="text-red-300 opacity-70">◆</span>
               </span>
@@ -178,14 +178,15 @@ function BreakingNewsTicker() {
 
       <style jsx>{`
         .ticker-track {
+          width: max-content;
           animation: ticker-scroll 35s linear infinite;
         }
         .ticker-track:hover {
           animation-play-state: paused;
         }
         @keyframes ticker-scroll {
-          0%   { transform: translateX(100%); }
-          100% { transform: translateX(-100%); }
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
       `}</style>
     </div>
@@ -313,13 +314,7 @@ export default function Navbar() {
               Blogs
             </Link>
 
-            <Link
-              href="/faq"
-              className={`shrink-0 whitespace-nowrap rounded-lg px-4 py-2 text-sm font-medium transition-all hover:text-av-orange ${isActive('/faq') ? 'text-av-orange' : 'text-white'}`}
-            >
-              FAQ
-            </Link>
-
+            
             {/* CTA */}
             <Link href="/contact" className="ml-2 shrink-0 whitespace-nowrap rounded-full bg-av-orange px-5 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-orange-500/30">
               Register for Scholarship

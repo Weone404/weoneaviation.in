@@ -113,7 +113,7 @@ export default function HeroSlider({ customSlides, asH1 = true }) {
         }, 300);
         return prev; // keep prev during transition
       });
-    }, 5000);
+    }, 8000);
     return () => clearInterval(interval);
   }, [data.length]);
 
