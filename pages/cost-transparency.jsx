@@ -7,7 +7,7 @@ export default function CostTransparency() {
   return (
     <>
       <Head>
-        <title>Pilot Training Cost Transparency | Complete Fee Breakdown | WeOne Aviation</title>
+        <title>Pilot Training Cost Transparency | Complete Fee Breakdown | We One Aviation</title>
         <meta name="description" content="Complete cost transparency: All-in pilot training fees, payment options, what's included, hidden costs to watch out for, and honest pricing breakdown." />
       </Head>
 
@@ -232,7 +232,7 @@ export default function CostTransparency() {
                     </thead>
                     <tbody>
                       {[
-                        { option: 'CPL in India (WeOne)', cost: '₹40-55L', duration: '18-24 mo', best: 'Budget-conscious students' },
+                        { option: 'CPL in India (We One)', cost: '₹40-55L', duration: '18-24 mo', best: 'Budget-conscious students' },
                         { option: 'PPL + CPL in India', cost: '₹50-65L', duration: '22-28 mo', best: 'Building strong foundation' },
                         { option: 'CPL in USA', cost: '₹80-110L', duration: '12-18 mo', best: 'International experience' },
                         { option: 'CPL in Australia', cost: '₹70-90L', duration: '12-15 mo', best: 'Good balance' },

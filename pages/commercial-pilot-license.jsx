@@ -264,7 +264,7 @@ export default function CPL() {
   return (
     <>
       <Head>
-        <title>Commercial Pilot License (CPL) Course in India | WeOne Aviation</title>
+        <title>Commercial Pilot License (CPL) Course in India | We One Aviation</title>
         <StructuredData data={[generateCourseSchema({
           name: 'Commercial Pilot License (CPL) in India',
           description: 'Complete guide to Commercial Pilot License training in India, including eligibility, DGCA process, and pilot career pathways.',
@@ -279,7 +279,7 @@ export default function CPL() {
         }), faqSchema]} />
       </Head>
 
-      <Layout title="Commercial Pilot License (CPL) Course in India | WeOne Aviation" description="Complete guide to CPL training, eligibility, fees, and pilot career paths with We One Aviation Academy.">
+      <Layout title="Commercial Pilot License (CPL) Course in India | We One Aviation" description="Complete guide to CPL training, eligibility, fees, and pilot career paths with We One Aviation Academy.">
             <Head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
             </Head>

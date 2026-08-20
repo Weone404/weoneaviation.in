@@ -10,10 +10,10 @@ const categories = [
     id: 'general',
     title: 'General',
     faqs: [
-      { question: 'What is WeOne Aviation Academy?', answer: 'WeOne Aviation Academy guides aspiring pilots through DGCA ground preparation, pilot-training route selection, medical readiness, flying-school choices, and aviation career planning.' },
-      { question: 'Which students does WeOne Aviation support?', answer: 'We support students at different stages, from people exploring aviation after school to candidates preparing for DGCA examinations, flying training, airline selection, and advanced pilot qualifications.' },
-      { question: 'Why choose WeOne Aviation for pilot-training guidance?', answer: 'Students receive structured counselling, DGCA-focused preparation, experienced aviation guidance, support with training decisions, and help comparing India and international pathways.' },
-      { question: 'Does WeOne Aviation offer online and offline learning?', answer: 'Course delivery depends on the selected batch and program. Contact the academy to confirm the current online, classroom, hybrid, and doubt-clearing options.' },
+      { question: 'What is We One Aviation Academy?', answer: 'We One Aviation Academy guides aspiring pilots through DGCA ground preparation, pilot-training route selection, medical readiness, flying-school choices, and aviation career planning.' },
+      { question: 'Which students does We One Aviation support?', answer: 'We support students at different stages, from people exploring aviation after school to candidates preparing for DGCA examinations, flying training, airline selection, and advanced pilot qualifications.' },
+      { question: 'Why choose We One Aviation for pilot-training guidance?', answer: 'Students receive structured counselling, DGCA-focused preparation, experienced aviation guidance, support with training decisions, and help comparing India and international pathways.' },
+      { question: 'Does We One Aviation offer online and offline learning?', answer: 'Course delivery depends on the selected batch and program. Contact the academy to confirm the current online, classroom, hybrid, and doubt-clearing options.' },
       { question: 'How can I speak with an aviation counsellor?', answer: 'You can use the contact form, call the academy, or start a WhatsApp conversation. A counsellor can explain eligibility, course choices, documents, and the next step for your situation.' },
     ],
   },
@@ -21,7 +21,7 @@ const categories = [
     id: 'courses',
     title: 'Courses & Eligibility',
     faqs: [
-      { question: 'What pilot-training courses are available?', answer: 'WeOne Aviation provides guidance for Commercial Pilot License (CPL), Private Pilot License (PPL), Airline Transport Pilot License (ATPL), Sport Pilot License (SPL), and DGCA ground classes.' },
+      { question: 'What pilot-training courses are available?', answer: 'We One Aviation provides guidance for Commercial Pilot License (CPL), Private Pilot License (PPL), Airline Transport Pilot License (ATPL), Sport Pilot License (SPL), and DGCA ground classes.' },
       { question: 'What are the usual CPL eligibility requirements?', answer: 'The Indian CPL route generally requires 10+2 with Physics and Mathematics, the applicable DGCA medical certification, English proficiency, and the minimum age prescribed for the CPL skill test.' },
       { question: 'What are the usual PPL eligibility requirements?', answer: 'PPL applicants generally need to meet the applicable minimum age, education, English, and DGCA Class 2 medical requirements. Requirements should be confirmed under current DGCA rules.' },
       { question: 'Who can begin ATPL preparation?', answer: 'ATPL preparation is intended for pilots who hold a CPL and are progressing through the examinations, flight experience, ratings, and operator requirements needed for airline command.' },
@@ -48,7 +48,7 @@ const categories = [
       { question: 'What can I do after earning a CPL?', answer: 'CPL holders can work toward airline first-officer roles, instructing, charter, corporate, cargo, and other commercial aviation opportunities, subject to employer and regulatory requirements.' },
       { question: 'Can a PPL lead to an airline career?', answer: 'A PPL does not permit commercial flying, but it can provide foundational experience before progressing through the additional training and licensing requirements for a CPL.' },
       { question: 'What does an ATPL enable a pilot to do?', answer: 'An ATPL supports progression toward acting as pilot in command of commercial aircraft after the required flight experience, ratings, examinations, and operator requirements are completed.' },
-      { question: 'Does WeOne Aviation provide placement support?', answer: 'Career guidance may include airline preparation, interview readiness, route planning, and introductions or information about relevant opportunities. Confirm the current scope of support for your course.' },
+      { question: 'Does We One Aviation provide placement support?', answer: 'Career guidance may include airline preparation, interview readiness, route planning, and introductions or information about relevant opportunities. Confirm the current scope of support for your course.' },
       { question: 'What affects a pilot career and salary?', answer: 'Employers consider licence status, ratings, flight hours, aircraft experience, medical fitness, interview performance, language skills, market conditions, and the role being applied for.' },
     ],
   },
@@ -57,9 +57,9 @@ const categories = [
     title: 'Locations & City Training',
     faqs: [
       { question: 'Where can I complete pilot training?', answer: 'Students can compare flying-school options in India and international destinations. The right location depends on regulator approval, weather, aircraft availability, total cost, documentation, and personal circumstances.' },
-      { question: 'Are there good pilot-training options in my city?', answer: 'Pilot-training options vary by city and nearby airfields. WeOne Aviation can help compare available schools, commute or relocation needs, training capacity, and the applicable licensing route.' },
+      { question: 'Are there good pilot-training options in my city?', answer: 'Pilot-training options vary by city and nearby airfields. We One Aviation can help compare available schools, commute or relocation needs, training capacity, and the applicable licensing route.' },
       { question: 'What is the cost of pilot training in a city?', answer: 'City-specific costs depend on the selected school, aircraft hourly rate, fuel and airport charges, accommodation, flying hours, and extra attempts. Request a current written estimate for the city you are considering.' },
-      { question: 'Does WeOne Aviation have a presence in every listed city?', answer: 'WeOne Aviation provides counselling for students across listed Indian cities and can discuss partner-school or training options. Confirm whether an in-person office, classroom, or flying partner is currently available in your city.' },
+      { question: 'Does We One Aviation have a presence in every listed city?', answer: 'We One Aviation provides counselling for students across listed Indian cities and can discuss partner-school or training options. Confirm whether an in-person office, classroom, or flying partner is currently available in your city.' },
       { question: 'Can I train abroad and convert my licence in India?', answer: 'International training is possible, but returning pilots must complete the applicable DGCA conversion, examinations, documents, verification, and other regulatory requirements.' },
     ],
   },
@@ -89,14 +89,14 @@ export default function FAQPage() {
 
   return (
     <Layout
-      title="Frequently Asked Questions | WeOne Aviation Academy"
-      description="Find answers about WeOne Aviation Academy, pilot-training courses, DGCA eligibility, fees, duration, careers, locations, admissions, and documents."
+      title="Frequently Asked Questions | We One Aviation Academy"
+      description="Find answers about We One Aviation Academy, pilot-training courses, DGCA eligibility, fees, duration, careers, locations, admissions, and documents."
     >
       <StructuredData data={generateFAQSchema(allFaqs.map(({ question, answer }) => ({ q: question, a: answer })))} />
 
       <section className="relative h-64 md:h-80 bg-gradient-to-br from-av-blue to-av-navy flex items-center justify-center pt-16">
         <div className="text-center px-4">
-          <div className="section-tag mb-3">WeOne Aviation Academy</div>
+          <div className="section-tag mb-3">We One Aviation Academy</div>
           <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white">Frequently Asked <span className="text-av-orange">Questions</span></h1>
           <p className="text-white/70 mt-3 text-sm">Clear answers for your pilot-training and aviation career journey</p>
         </div>
@@ -141,7 +141,7 @@ export default function FAQPage() {
         <ScrollReveal>
           <div className="max-w-4xl mx-auto rounded-2xl bg-av-blue p-8 md:p-10 text-center">
             <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-white mb-3">Still have a question?</h2>
-            <p className="text-white/70 text-sm mb-6">Speak with the WeOne Aviation team about your eligibility, course, and next step.</p>
+            <p className="text-white/70 text-sm mb-6">Speak with the We One Aviation team about your eligibility, course, and next step.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href="/contact" className="bg-av-orange text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-orange-600 transition-all">Contact Us</a>
               <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer" className="border border-white/40 text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-white hover:text-av-blue transition-all">WhatsApp Us</a>

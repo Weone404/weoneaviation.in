@@ -71,6 +71,17 @@ export default function Footer() {
                 <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.322a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.881 0z" />
               </svg>
             </a>
+
+            <a href="https://www.linkedin.com/company/we-one-aviation/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-full bg-white/10 hover:bg-av-orange flex items-center justify-center transition-colors"
+              aria-label="We One Aviation LinkedIn"
+            >
+              <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.98 1.98 0 103.27 5a1.98 1.98 0 001.98-2zM20.44 13.41c0-3.47-1.85-5.09-4.32-5.09-1.99 0-2.88 1.1-3.38 1.87V8.5H9.36V20h3.38v-6.4c0-1.69.32-3.32 2.41-3.32 2.06 0 2.09 1.93 2.09 3.43V20h3.38l-.18-6.59z" />
+              </svg>
+            </a>
           </div>
         </div >
 
@@ -129,15 +140,22 @@ export default function Footer() {
               </span>
               <a href="tel:+919355566991" className="hover:text-av-orange transition-colors">+91-9355566991</a>
             </div>
-            {/* FIX: was weoneaviation8@gmail.com — replaced with domain email */}
+            <div className="flex gap-3 items-center">
+              <span className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
+                <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.01l-2.2 2.21z" />
+                </svg>
+              </span>
+              <a href="tel:+919667370747" className="hover:text-av-orange transition-colors">+91-9667370747</a>
+            </div>
             <div className="flex gap-3 items-center">
               <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
                 <svg className="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                 </svg>
               </span>
-              <a href="mailto:info@weoneaviation.in" className="hover:text-av-orange transition-colors">
-                info@weoneaviation.in
+              <a href="mailto:info.weoneaviation@gmail.com" className="hover:text-av-orange transition-colors">
+                info.weoneaviation@gmail.com
               </a>
             </div>
           </div>
@@ -172,7 +190,7 @@ export default function Footer() {
       < div className="border-t border-white/10 py-5 px-4" >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-white/40 text-xs">
           {/* FIX: was hardcoded 2024 — now auto-updates every year */}
-          <span>© {currentYear} WeOne Aviation Academy. All Rights Reserved.</span>
+          <span>© {currentYear} We One Aviation Academy. All Rights Reserved.</span>
           <div className="flex flex-col sm:flex-row items-center gap-3">
             <div className="flex gap-4">
               <Link href="/privacy-policy" className="hover:text-av-orange transition-all">Privacy Policy</Link>

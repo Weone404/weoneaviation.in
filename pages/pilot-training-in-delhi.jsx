@@ -6,8 +6,8 @@ export default function PilotTrainingDelhi() {
             city="Delhi"
 
             meta={{
-                title: 'Pilot Training Institute in Delhi 2026 | CPL, PPL, DGCA | WeOne Aviation',
-                description: 'DGCA-approved pilot training in Delhi. CPL, PPL and ATPL courses plus DGCA ground classes. Scholarship options available. WeOne Aviation Academy.',
+                title: 'Pilot Training Institute in Delhi 2026 | CPL, PPL, DGCA | We One Aviation',
+                description: 'DGCA-approved pilot training in Delhi. CPL, PPL and ATPL courses plus DGCA ground classes. Scholarship options available. We One Aviation Academy.',
             }}
 
             hero={{
@@ -155,12 +155,12 @@ export default function PilotTrainingDelhi() {
             ]}
 
             faqs={[
-                { q: 'How long does it take to complete pilot training in Delhi?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months. With WeOne Aviation, students who attend regularly can become a pilot in as little as 15 months.' },
-                { q: 'What are the fees for pilot training in Delhi?', a: 'The average fees for CPL training in Delhi is INR 40–60 Lakh. This includes ground classes, 200 hours of flying, simulator training, and extra gear. WeOne Aviation provides scholarship and flexible payment options to make pilot training affordable.' },
+                { q: 'How long does it take to complete pilot training in Delhi?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months. With We One Aviation, students who attend regularly can become a pilot in as little as 15 months.' },
+                { q: 'What are the fees for pilot training in Delhi?', a: 'The average fees for CPL training in Delhi is INR 40–60 Lakh. This includes ground classes, 200 hours of flying, simulator training, and extra gear. We One Aviation provides scholarship and flexible payment options to make pilot training affordable.' },
                 { q: 'What is the eligibility to become a pilot in Delhi?', a: 'A Commercial Pilot Licence requires a minimum age of 18 years on the date of application (Aircraft Rules, 1937, Schedule II, Section J). Flight training can begin earlier: a Student Pilot Licence requires 16 years (Schedule II, Section B). 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are also required.' },
-                { q: 'Does WeOne Aviation provide placement assistance in Delhi?', a: 'Yes! We provide placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
-                { q: 'Can I get a scholarship for pilot training in Delhi?', a: 'Yes! WeOne Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
-                { q: 'Where is WeOne Aviation Academy located in Delhi?', a: 'WeOne Aviation Academy is located in Dwarka, Delhi — close to IGI Airport, one of India\'s busiest international airports, giving students excellent real-world aviation exposure.' },
+                { q: 'Does We One Aviation provide placement assistance in Delhi?', a: 'Yes! We provide placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
+                { q: 'Can I get a scholarship for pilot training in Delhi?', a: 'Yes! We One Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
+                { q: 'Where is We One Aviation Academy located in Delhi?', a: 'We One Aviation Academy is located in Dwarka, Delhi — close to IGI Airport, one of India\'s busiest international airports, giving students excellent real-world aviation exposure.' },
                 { q: 'What career options are available after pilot training in Delhi?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Delhi\'s position as India\'s aviation hub creates excellent demand for trained pilots.' },
             ]}
         />

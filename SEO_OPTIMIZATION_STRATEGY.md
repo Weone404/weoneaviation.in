@@ -118,7 +118,7 @@ AFTER (Keyword-rich):
 
 #### Option B: Unique Content Strategy
 - `/commercial-pilot-license` - Educational guide ("How to get CPL")
-- `/courses/cpl` - Enrollment page ("Enroll in CPL at WeOne")
+- `/courses/cpl` - Enrollment page ("Enroll in CPL at We One")
 - Both can rank if content is sufficiently different
 
 **Recommended Action:**

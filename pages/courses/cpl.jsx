@@ -150,7 +150,7 @@ const cplCourseSchema = {
 
 export default function CPL() {
     return (
-        <Layout title="Commercial Pilot License (CPL) Training in India | WeOne Aviation" description="DGCA approved CPL training in India. Become a commercial pilot with WeOne Aviation Academy. Expert instructors, modern aircraft, placement support.">
+        <Layout title="Commercial Pilot License (CPL) Training in India | We One Aviation" description="DGCA approved CPL training in India. Become a commercial pilot with We One Aviation Academy. Expert instructors, modern aircraft, placement support.">
             <Head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(cplCourseSchema) }} />
             </Head>
@@ -393,7 +393,7 @@ export default function CPL() {
                             </div>
                             <p className="text-gray-400 text-xs mb-10">May vary depending on the flight school and location.</p>
 
-                            {/* WeOne CTA */}
+                            {/* We One CTA */}
                             <div className="bg-av-blue rounded-2xl p-8 text-center mb-10">
                                 <h3 className="font-montserrat text-xl font-bold text-white mb-3">Start Your Pilot Journey With We One Aviation Academy</h3>
                                 <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-3">

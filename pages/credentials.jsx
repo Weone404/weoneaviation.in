@@ -155,7 +155,7 @@ export default function CredentialsPage() {
             <ScrollReveal className="bg-white rounded-2xl p-8 shadow-lg border border-green-200">
               <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-4">Verification Statement</h2>
               <p className="text-gray-600 leading-relaxed mb-6">
-                <strong>For verification inquiries:</strong> Contact us at <a href="mailto:info@weoneaviation.in" className="text-av-orange font-semibold hover:underline">info@weoneaviation.in</a>
+                <strong>For verification inquiries:</strong> Contact us at <a href="mailto:info.weoneaviation@gmail.com" className="text-av-orange font-semibold hover:underline">info.weoneaviation@gmail.com</a>
               </p>
               <div className="border-t pt-4">
                 <p className="text-sm text-gray-500">

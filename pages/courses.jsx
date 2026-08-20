@@ -9,7 +9,7 @@ const heroSlides = [
     {
         id: 1,
         image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80',
-        tag: 'WeOne Aviation Academy',
+        tag: 'We One Aviation Academy',
         title: 'Pilot Training',
         highlight: 'Courses & Programs',
         sub: 'DGCA Approved Ground Classes, CPL, PPL & International Flight Training — everything you need to fly professionally.',
@@ -143,7 +143,7 @@ const courses = [
         hours: 'All programs',
         eligibility: 'Class 10 / 12 Toppers',
         fee: 'Money-Back Guarantee',
-        authority: 'WeOne Aviation',
+        authority: 'We One Aviation',
         highlights: [
             'Full money-back guarantee for toppers',
             'Applicable on CPL & Ground Class programs',
@@ -214,8 +214,8 @@ const careerOptions = [
 export default function CoursesPage() {
     return (
         <Layout
-            title="Pilot Training Courses – CPL, PPL, DGCA Ground Classes & International Flying | WeOne Aviation"
-            description="Explore all pilot training courses at WeOne Aviation Academy – DGCA approved CPL, PPL, ground classes, and international flight training in USA & South Africa."
+            title="Pilot Training Courses – CPL, PPL, DGCA Ground Classes & International Flying | We One Aviation"
+            description="Explore all pilot training courses at We One Aviation Academy – DGCA approved CPL, PPL, ground classes, and international flight training in USA & South Africa."
         >
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
@@ -368,7 +368,7 @@ export default function CoursesPage() {
                             Eligibility <span className="text-av-orange">Criteria</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">
-                            Here are the basic requirements to enroll in a pilot training program at WeOne Aviation.
+                            Here are the basic requirements to enroll in a pilot training program at We One Aviation.
                         </p>
                     </ScrollReveal>
 
@@ -435,13 +435,13 @@ export default function CoursesPage() {
                 </div>
             </section>
 
-            {/* ── Why WeOne ── */}
+            {/* ── Why We One ── */}
             <section className="py-20 px-4 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <ScrollReveal className="text-center mb-12">
                         <div className="section-tag">Why Choose Us</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Why WeOne <span className="text-av-orange">Aviation Academy?</span>
+                            Why We One <span className="text-av-orange">Aviation Academy?</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
                             DGCA-approved ground classes and flight-training placement for students working toward a commercial licence.

@@ -49,8 +49,8 @@ export default function About() {
 
   return (
     <Layout
-      title="About WeOne Aviation Academy | DGCA Approved Pilot Training Institute"
-      description={`WeOne Aviation Academy is a DGCA-approved pilot training institute in Dwarka, New Delhi, operating for ${YEARS_LABEL} years.`}
+      title="About We One Aviation Academy | DGCA Approved Pilot Training Institute"
+      description={`We One Aviation Academy is a DGCA-approved pilot training institute in Dwarka, New Delhi, operating for ${YEARS_LABEL} years.`}
     >
       <HeroSlider customSlides={heroSlides} />
 

@@ -6,8 +6,8 @@
 
 // Email addresses encoded in base64 (obfuscated in source)
 const EMAIL_CONTACTS = {
-  support: 'aW5mb0B3ZW9uZWF2aWF0aW9uLmlu', // info@weoneaviation.in
-  admin: 'd2VvbmVhdmlhdGlvbkBnbWFpbC5jb20=', // weoneaviation8@gmail.com (Note: should be domain email)
+  support: 'aW5mby53ZW9uZWF2aWF0aW9uQGdtYWlsLmNvbQ==', // info.weoneaviation@gmail.com
+  admin: 'aW5mby53ZW9uZWF2aWF0aW9uQGdtYWlsLmNvbQ==', // info.weoneaviation@gmail.com
 };
 
 /**

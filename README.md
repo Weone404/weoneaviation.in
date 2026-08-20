@@ -1,4 +1,4 @@
-# ✈️ WeOne Aviation Academy — Next.js Website
+# ✈️ We One Aviation Academy — Next.js Website
 
 A complete, production-ready multi-page aviation training website built with Next.js 14, Tailwind CSS, and automatic Excel lead saving.
 

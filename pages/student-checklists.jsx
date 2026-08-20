@@ -280,7 +280,7 @@ export default function StudentChecklistsHub() {
   return (
     <>
       <Head>
-        <title>Student Checklists - Pilot Training Progress Tracker | WeOne Aviation</title>
+        <title>Student Checklists - Pilot Training Progress Tracker | We One Aviation</title>
         <meta name="description" content="Complete checklists for pilot training journey: pre-admission, during training, and post-training success guides. Track your progress at every stage." />
       </Head>
 

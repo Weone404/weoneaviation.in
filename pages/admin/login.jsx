@@ -322,7 +322,7 @@ export default function AdminLogin() {
     return (
         <>
             <Head>
-                <title>Admin Login — WeOne Aviation</title>
+                <title>Admin Login — We One Aviation</title>
                 <meta name="robots" content="noindex, nofollow" />
                 <link
                     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap"
@@ -339,7 +339,7 @@ export default function AdminLogin() {
                     <div className="al-left-content">
                         <span className="al-plane-icon">✈️</span>
                         <h2 className="al-left-title">
-                            WeOne<br /><span>Aviation</span> Academy
+                            We One<br /><span>Aviation</span> Academy
                         </h2>
                         <div className="al-divider" />
                         <p className="al-left-sub">
@@ -361,7 +361,7 @@ export default function AdminLogin() {
                     <div className="al-card">
                         <div className="al-logo">
                             <div className="al-logo-icon">✈</div>
-                            <div className="al-logo-text">WeOne <span>Admin</span></div>
+                            <div className="al-logo-text">We One <span>Admin</span></div>
                         </div>
 
                         <h1 className="al-heading">Welcome back,<br />Admin.</h1>
@@ -436,7 +436,7 @@ export default function AdminLogin() {
                         </form>
 
                         <div className="al-footer">
-                            🔒 Restricted access · WeOne Aviation Admin Panel
+                            🔒 Restricted access · We One Aviation Admin Panel
                         </div>
                     </div>
                 </div>

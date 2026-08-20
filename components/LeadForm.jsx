@@ -28,7 +28,7 @@ export default function LeadForm({ title = 'Get Free Counselling', dark = false,
     }
 
     const msg = encodeURIComponent(
-      `Hello WeOne Aviation! 👋\n\nI'm interested in pilot training.\n\n` +
+      `Hello We One Aviation! 👋\n\nI'm interested in pilot training.\n\n` +
       `📛 Name: ${form.name}\n📞 Phone: ${form.phone}\n📧 Email: ${form.email || 'Not provided'}\n✈️ Course: ${form.course || 'Not selected'}\n💬 Message: ${form.message || 'Please guide me.'}`
     );
     setTimeout(() => {

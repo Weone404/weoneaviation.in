@@ -280,8 +280,8 @@ const groundCourseSchema = {
 export default function DGCAGroundClasses() {
   return (
     <Layout
-      title="DGCA Ground Classes | Pilot Training Institute in India | WeOne Aviation"
-      description="DGCA ground classes for the CPL written examinations. CPL ground school covering all DGCA subjects. Join WeOne Aviation Academy."
+      title="DGCA Ground Classes | Pilot Training Institute in India | We One Aviation"
+      description="DGCA ground classes for the CPL written examinations. CPL ground school covering all DGCA subjects. Join We One Aviation Academy."
     >
             <Head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(groundCourseSchema) }} />

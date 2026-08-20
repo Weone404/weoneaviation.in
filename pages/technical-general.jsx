@@ -105,7 +105,7 @@ const articleSchema = {
 
 export default function TechnicalGeneral() {
     return (
-        <Layout title="Technical General — DGCA CPL/PPL All Details 2025 | WeOne Aviation Academy" description="Complete guide to Technical General for DGCA CPL & PPL exams. Covers aircraft structure, aerodynamics, engines, systems, instruments, landing gear and fire protection at We One Aviation Academy.">
+        <Layout title="Technical General — DGCA CPL/PPL All Details 2025 | We One Aviation Academy" description="Complete guide to Technical General for DGCA CPL & PPL exams. Covers aircraft structure, aerodynamics, engines, systems, instruments, landing gear and fire protection at We One Aviation Academy.">
             <Head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
             </Head>

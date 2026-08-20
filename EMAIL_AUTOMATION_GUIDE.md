@@ -30,7 +30,7 @@
 
 ### Step 1: Get Gmail App Password
 
-WeOne Aviation uses Gmail SMTP for sending emails. Follow these steps:
+We One Aviation uses Gmail SMTP for sending emails. Follow these steps:
 
 1. Go to **myaccount.google.com** (logged in as info.weoneaviation@gmail.com)
 2. Click **Security** in the left menu
@@ -107,7 +107,7 @@ Choose ONE of these options:
 
 1. Open **Task Scheduler**
 2. Create **Basic Task**
-3. Name: "WeOne Email Scheduler"
+3. Name: "We One Email Scheduler"
 4. Trigger: **Hourly**
 5. Action: **Start a program**
    - Program: `C:\Program Files\nodejs\node.exe`

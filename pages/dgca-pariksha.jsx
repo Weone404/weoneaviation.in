@@ -571,7 +571,7 @@ export default function DGCAParikshaPage() {
             <section className="py-20 px-4 bg-gradient-to-br from-av-blue via-av-navy to-av-blue">
                 <div className="max-w-7xl mx-auto">
                     <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Weone Aviation</div>
+                        <div className="section-tag">We One Aviation</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white">
                             Prepare Yourself for DGCA Pariksha and <span className="text-av-orange">Practice Online</span>
                         </h2>

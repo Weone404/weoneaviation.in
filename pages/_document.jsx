@@ -79,7 +79,7 @@ export default function Document() {
 
         {/* Global metadata defaults are intentionally minimal to avoid duplicate OG/Twitter tags across pages. */}
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="WeOne Aviation" />
+        <meta property="og:site_name" content="We One Aviation" />
         <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />

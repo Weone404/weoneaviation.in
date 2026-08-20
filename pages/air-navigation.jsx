@@ -150,7 +150,7 @@ const articleSchema = {
 export default function AirNavigation() {
     return (
         <Layout
-            title="Air Navigation Course — DGCA CPL/PPL | WeOne Aviation Academy 2025"
+            title="Air Navigation Course — DGCA CPL/PPL | We One Aviation Academy 2025"
             description="Air Navigation for the DGCA CPL and PPL written examinations: syllabus, position fixing, flight planning and radio aids. Classes in Dwarka, New Delhi."
         >
             <Head>

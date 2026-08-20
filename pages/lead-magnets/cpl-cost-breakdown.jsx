@@ -8,7 +8,7 @@ export default function CostBreakdownGuide() {
   return (
     <>
       <Head>
-        <title>CPL Training Cost Breakdown India vs Abroad - Free PDF | WeOne Aviation</title>
+        <title>CPL Training Cost Breakdown India vs Abroad - Free PDF | We One Aviation</title>
         <meta name="description" content="Free CPL cost breakdown guide comparing India vs USA vs Australia pilot training. Detailed fee breakdown, hidden costs, and payment options." />
       </Head>
 
@@ -41,7 +41,7 @@ export default function CostBreakdownGuide() {
                 {/* Cost Summary Cards */}
                 <div className="grid md:grid-cols-2 gap-4 mb-8">
                   {[
-                    { location: '🇮🇳 India (Weone Aviation)', cost: '₹40-55 Lakhs', duration: '18-24 months', pros: 'Affordable, DGCA-direct, family close' },
+                    { location: '🇮🇳 India (We One Aviation)', cost: '₹40-55 Lakhs', duration: '18-24 months', pros: 'Affordable, DGCA-direct, family close' },
                     { location: '🇺🇸 USA (Florida)', cost: '$100-130K', duration: '12-18 months', pros: 'Best infrastructure, faster completion' },
                     { location: '🇦🇺 Australia (Queensland)', cost: 'A$80-100K', duration: '12-15 months', pros: 'Good weather, quality facilities' },
                     { location: '🇨🇦 Canada (Ontario)', cost: 'C$90-120K', duration: '14-18 months', pros: 'International recognition, structured' },
@@ -60,7 +60,7 @@ export default function CostBreakdownGuide() {
               <ScrollReveal>
                 <div className="bg-white rounded-xl border-2 border-av-blue p-6">
                   <h3 className="font-montserrat font-bold text-lg text-av-blue mb-4">
-                    💰 Detailed Cost Breakdown - India (Weone Aviation)
+                    💰 Detailed Cost Breakdown - India (We One Aviation)
                   </h3>
                   
                   <div className="space-y-3">

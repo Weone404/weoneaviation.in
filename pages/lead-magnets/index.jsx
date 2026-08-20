@@ -67,7 +67,7 @@ export default function LeadMagnetsHub() {
   return (
     <>
       <Head>
-        <title>Free Pilot Training Guides & Checklists - Download PDFs | WeOne Aviation</title>
+        <title>Free Pilot Training Guides & Checklists - Download PDFs | We One Aviation</title>
         <meta name="description" content="Free downloadable guides for pilot training: DGCA exam checklist, cost breakdown, pre-admission checklist, interview prep. Expert tips and practical checklists." />
       </Head>
 

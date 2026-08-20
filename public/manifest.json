@@ -1,7 +1,7 @@
 {
-  "name": "WeOne Aviation",
-  "short_name": "WeOne",
-  "description": "WeOne Aviation - Your trusted aviation partner",
+  "name": "We One Aviation",
+  "short_name": "We One",
+  "description": "We One Aviation - Your trusted aviation partner",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

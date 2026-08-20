@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <Layout title="404 – Page Not Found | WeOne Aviation">
+    <Layout title="404 – Page Not Found | We One Aviation">
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-av-blue to-av-navy">
         <div className="text-center px-4">
           <div className="text-8xl font-montserrat font-black text-av-orange mb-4">404</div>

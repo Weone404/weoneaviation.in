@@ -112,7 +112,7 @@ const articleSchema = {
 
 export default function AirRegulations() {
     return (
-        <Layout title="Air Regulations – Complete Guide for DGCA Exams | WeOne Aviation Academy" description="Complete guide to Air Regulations for DGCA CPL/PPL exams. Covers ICAO, Chicago Convention, DGCA structure, Rules of the Air, airspace classification, licensing rules and more.">
+        <Layout title="Air Regulations – Complete Guide for DGCA Exams | We One Aviation Academy" description="Complete guide to Air Regulations for DGCA CPL/PPL exams. Covers ICAO, Chicago Convention, DGCA structure, Rules of the Air, airspace classification, licensing rules and more.">
             <Head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
             </Head>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function InIndia() {
   return (
-    <Layout title="How to Become a Pilot in India 2024 | Complete DGCA Guide | WeOne Aviation" description="Complete guide on becoming a commercial pilot in India. DGCA requirements, CPL eligibility, flying schools, fees, career prospects and salary in 2024.">
+    <Layout title="How to Become a Pilot in India 2024 | Complete DGCA Guide | We One Aviation" description="Complete guide on becoming a commercial pilot in India. DGCA requirements, CPL eligibility, flying schools, fees, career prospects and salary in 2024.">
       {/* Hero */}
       <div className="relative h-72 overflow-hidden flex items-center justify-center pt-16"
         style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}>

@@ -92,8 +92,8 @@ const userRights = [
 export default function PrivacyPolicyPage() {
     return (
         <Layout
-            title="Privacy Policy – WeOne Aviation Academy | Data Protection & User Rights"
-            description="Read WeOne Aviation Academy's Privacy Policy to understand how we collect, use, and protect your personal information when you visit weoneaviation.in."
+            title="Privacy Policy – We One Aviation Academy | Data Protection & User Rights"
+            description="Read We One Aviation Academy's Privacy Policy to understand how we collect, use, and protect your personal information when you visit weoneaviation.in."
         >
 
             {/* ── Hero Banner ── */}
@@ -161,7 +161,7 @@ export default function PrivacyPolicyPage() {
                                     <h2 className="font-montserrat font-bold text-av-blue text-xl">Introduction</h2>
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                                    Welcome to <strong className="text-av-blue">WeOne Aviation Academy</strong> ("we," "our," or "us"). We value your personal information and are dedicated to protecting your privacy. This Privacy Policy describes how we collect, use, disclose, and protect the personal information you provide during a visit to our website <strong className="text-av-blue">weoneaviation.in</strong> or when you contact us for pilot training enquiries.
+                                    Welcome to <strong className="text-av-blue">We One Aviation Academy</strong> ("we," "our," or "us"). We value your personal information and are dedicated to protecting your privacy. This Privacy Policy describes how we collect, use, disclose, and protect the personal information you provide during a visit to our website <strong className="text-av-blue">weoneaviation.in</strong> or when you contact us for pilot training enquiries.
                                 </p>
                                 <div className="bg-av-orange/10 border border-av-orange/20 rounded-xl px-4 py-3 text-sm text-av-blue font-medium">
                                     ⚠️ Please do not continue to use our site if you do not agree with this policy.
@@ -409,7 +409,7 @@ export default function PrivacyPolicyPage() {
                                     <h2 className="font-montserrat font-bold text-av-blue text-xl">Children's Privacy</h2>
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                                    Services of WeOne Aviation Academy are provided for people who are at least <strong className="text-av-blue">17 years of age</strong> (the minimum age for pilot training). We do not knowingly collect personal information from children under 13 years of age.
+                                    Services of We One Aviation Academy are provided for people who are at least <strong className="text-av-blue">17 years of age</strong> (the minimum age for pilot training). We do not knowingly collect personal information from children under 13 years of age.
                                 </p>
                                 <p className="text-gray-600 text-sm leading-relaxed">
                                     Any data we believe has been collected from a child under 13 years of age without parental consent will be deleted immediately. If you believe we have such data, please <Link href="/contact" className="text-av-orange hover:underline font-semibold">use our contact form</Link> to notify us.
@@ -467,7 +467,7 @@ export default function PrivacyPolicyPage() {
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     {[
                                         { icon: '🏢', label: 'Address', value: 'C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077, India' },
-                                        { icon: '📧', label: 'Email', value: 'weoneaviation8@gmail.com', href: 'mailto:weoneaviation8@gmail.com' },
+                                        { icon: '📧', label: 'Email', value: 'info.weoneaviation@gmail.com', href: 'mailto:info.weoneaviation@gmail.com' },
                                         { icon: '📞', label: 'Phone', value: '+91-9355611996 / +91-9355566991', href: 'tel:+919355611996' },
                                         { icon: '🌐', label: 'Website', value: 'weoneaviation.in', href: 'https://weoneaviation.in' },
                                     ].map((item, i) => (

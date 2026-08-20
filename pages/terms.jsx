@@ -32,7 +32,7 @@ const enrollmentItems = [
     { icon: '💳', text: 'Course fees are to be paid as per the schedule agreed at the time of enrollment.' },
     { icon: '🚫', text: 'All fees are non-refundable once the batch has started unless otherwise notified in writing.' },
     { icon: '📖', text: 'Course material is for personal use only. No sharing or resale is permitted.' },
-    { icon: '🔔', text: 'WeOne Aviation Academy reserves the right to change course fees with prior notice.' },
+    { icon: '🔔', text: 'We One Aviation Academy reserves the right to change course fees with prior notice.' },
 ];
 
 const scholarshipItems = [
@@ -40,7 +40,7 @@ const scholarshipItems = [
     { icon: '📚', text: 'Only applicable on ground class fees, not on flying training fees.' },
     { icon: '📝', text: 'Eligibility is subject to verification of original mark sheets.' },
     { icon: '⚠️', text: 'Any false or forged documents will lead to immediate disqualification.' },
-    { icon: '⚖️', text: 'WeOne Aviation Academy alone makes the final decision on eligibility.' },
+    { icon: '⚖️', text: 'We One Aviation Academy alone makes the final decision on eligibility.' },
 ];
 
 const conductItems = [
@@ -61,7 +61,7 @@ const disclaimerItems = [
 const refundItems = [
     { icon: '🚫', title: 'No Refund After Batch Starts', desc: 'No fee is refundable once a batch has commenced.' },
     { icon: '💸', title: '10% Cancellation Fee', desc: 'If cancelled before batch starts, 10% of the total fee will be charged as a cancellation fee.' },
-    { icon: '✅', title: 'Full Refund if We Cancel', desc: 'If WeOne Aviation Academy cancels a batch, the fee will be fully refunded.' },
+    { icon: '✅', title: 'Full Refund if We Cancel', desc: 'If We One Aviation Academy cancels a batch, the fee will be fully refunded.' },
     { icon: '🏆', title: 'Scholarship Refund Window', desc: 'Scholarship refund requests must be sent within 30 days from the completion of the course.' },
 ];
 
@@ -70,8 +70,8 @@ const refundItems = [
 export default function TermsPage() {
     return (
         <Layout
-            title="Terms of Service – WeOne Aviation Academy | Enrollment, Fees & Policies"
-            description="Read WeOne Aviation Academy's Terms of Service covering enrollment, fees, scholarship program, user conduct, refund policy, and governing law."
+            title="Terms of Service – We One Aviation Academy | Enrollment, Fees & Policies"
+            description="Read We One Aviation Academy's Terms of Service covering enrollment, fees, scholarship program, user conduct, refund policy, and governing law."
         >
 
             {/* ── Hero Banner ── */}
@@ -118,7 +118,7 @@ export default function TermsPage() {
                                 <div className="mt-5 pt-5 border-t border-gray-100">
                                     <p className="text-xs text-gray-400 mb-3">Questions about these terms?</p>
                                     <a
-                                        href="mailto:weoneaviation8@gmail.com"
+                                        href="mailto:info.weoneaviation@gmail.com"
                                         className="block bg-av-blue text-white text-center py-2.5 rounded-xl text-xs font-bold hover:bg-av-orange transition-all"
                                     >
                                         Contact Us →
@@ -155,7 +155,7 @@ export default function TermsPage() {
                                     <h2 className="font-montserrat font-bold text-av-blue text-xl">About Us</h2>
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                    WeOne Aviation Academy is a DGCA-approved pilot training institute based in New Delhi, India. We provide ground classes and career counselling with avenues for CPL, PPL, and international flight training programs.
+                                    We One Aviation Academy is a DGCA-approved pilot training institute based in New Delhi, India. We provide ground classes and career counselling with avenues for CPL, PPL, and international flight training programs.
                                 </p>
                                 <div className="bg-av-blue rounded-xl px-5 py-4 flex items-center gap-3">
                                     <span className="text-2xl flex-shrink-0">✈️</span>
@@ -254,7 +254,7 @@ export default function TermsPage() {
                                     <h2 className="font-montserrat font-bold text-av-blue text-xl">Intellectual Property</h2>
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                    All text, images, logos, course materials, and videos on this website are the property of <strong className="text-av-blue">WeOne Aviation Academy</strong> and are protected under Indian Copyright Law.
+                                    All text, images, logos, course materials, and videos on this website are the property of <strong className="text-av-blue">We One Aviation Academy</strong> and are protected under Indian Copyright Law.
                                 </p>
                                 <div className="grid sm:grid-cols-3 gap-3 mb-4">
                                     {['Text & Articles', 'Images & Logos', 'Course Materials', 'Videos & Media', 'Brand & Trademarks', 'Study Resources'].map((item, i) => (
@@ -313,10 +313,10 @@ export default function TermsPage() {
                                         <p className="text-white/60 text-xs mt-0.5">Send your enrollment details and reason to our email.</p>
                                     </div>
                                     <a
-                                        href="mailto:weoneaviation8@gmail.com"
+                                        href="mailto:info.weoneaviation@gmail.com"
                                         className="flex-shrink-0 bg-av-orange text-white px-5 py-2.5 rounded-xl text-xs font-bold hover:bg-white hover:text-av-blue transition-all"
                                     >
-                                        weoneaviation8@gmail.com
+                                        info.weoneaviation@gmail.com
                                     </a>
                                 </div>
                             </div>
@@ -330,7 +330,7 @@ export default function TermsPage() {
                                     <h2 className="font-montserrat font-bold text-av-blue text-xl">Limitation of Liability</h2>
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed">
-                                    WeOne Aviation Academy does not bear any direct or indirect damages caused due to the use of our services, DGCA exam results, medical test results, admission decisions at flying schools, or any issues arising from third-party websites or services.
+                                    We One Aviation Academy does not bear any direct or indirect damages caused due to the use of our services, DGCA exam results, medical test results, admission decisions at flying schools, or any issues arising from third-party websites or services.
                                 </p>
                             </div>
                         </ScrollReveal>
@@ -380,7 +380,7 @@ export default function TermsPage() {
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     {[
                                         { icon: '🏢', label: 'Address', value: 'C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077, India', href: null },
-                                        { icon: '📧', label: 'Email', value: 'weoneaviation8@gmail.com', href: 'mailto:weoneaviation8@gmail.com' },
+                                        { icon: '📧', label: 'Email', value: 'info.weoneaviation@gmail.com', href: 'mailto:info.weoneaviation@gmail.com' },
                                         { icon: '📞', label: 'Phone', value: '+91-9355611996', href: 'tel:+919355611996' },
                                         { icon: '🌐', label: 'Website', value: 'weoneaviation.in', href: 'https://weoneaviation.in' },
                                     ].map((item, i) => (

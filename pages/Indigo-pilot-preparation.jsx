@@ -365,7 +365,7 @@ function SidebarContact() {
                 {[
                     { icon: '📱', href: 'tel:+919555291956', label: '+91 9555291956' },
                     { icon: '📱', href: 'tel:+919717977702', label: '+91 9717977702' },
-                    { icon: '📧', href: 'mailto:info@weoneaviation.in', label: 'info@weoneaviation.in' },
+                    { icon: '📧', href: 'mailto:info.weoneaviation@gmail.com', label: 'info.weoneaviation@gmail.com' },
                 ].map(({ icon, href, label }) => (
                     <div key={href} className="flex items-center gap-2 min-w-0">
                         <span className="flex-shrink-0">{icon}</span>

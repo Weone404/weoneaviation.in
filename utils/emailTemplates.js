@@ -3,7 +3,7 @@
 export const emailTemplates = {
   // 1. Welcome Email (sent immediately on lead capture)
   welcome: (name) => ({
-    subject: '🎉 Welcome to WeOne Aviation | Your Path to Becoming a Pilot Starts Here',
+    subject: '🎉 Welcome to We One Aviation | Your Path to Becoming a Pilot Starts Here',
     html: `
       <!DOCTYPE html>
       <html>
@@ -26,14 +26,14 @@ export const emailTemplates = {
         <body>
           <div class="container">
             <div class="header">
-              <h1>Welcome to WeOne Aviation! ✈️</h1>
+              <h1>Welcome to We One Aviation! ✈️</h1>
               <p>Your journey to becoming a pilot starts now</p>
             </div>
             
             <div class="content">
               <p>Hi ${name},</p>
               
-              <p>Thank you for downloading our guide and joining the WeOne Aviation community! We're thrilled to have you on this exciting journey to become a professional pilot.</p>
+              <p>Thank you for downloading our guide and joining the We One Aviation community! We're thrilled to have you on this exciting journey to become a professional pilot.</p>
               
               <div class="section">
                 <h2>📚 What to Expect Next</h2>
@@ -66,13 +66,13 @@ export const emailTemplates = {
 
               <div class="section">
                 <p>Have questions? Reply to this email or use our live chat on the website.</p>
-                <p><strong>Best regards,<br>The WeOne Aviation Team</strong></p>
+                <p><strong>Best regards,<br>The We One Aviation Team</strong></p>
               </div>
             </div>
 
             <div class="footer">
               <p>info.weoneaviation@gmail.com | +91-XXXXX-XXXXX | weoneaviation.in</p>
-              <p>© 2026 WeOne Aviation. All rights reserved.</p>
+              <p>© 2026 We One Aviation. All rights reserved.</p>
             </div>
           </div>
         </body>
@@ -110,7 +110,7 @@ export const emailTemplates = {
             <div class="content">
               <p>Hi ${name},</p>
               
-              <p>Yesterday you downloaded our DGCA Exam Checklist. Today, we're sharing the <strong>complete preparation strategy</strong> used by successful WeOne Aviation pilots.</p>
+              <p>Yesterday you downloaded our DGCA Exam Checklist. Today, we're sharing the <strong>complete preparation strategy</strong> used by successful We One Aviation pilots.</p>
               
               <div class="section">
                 <h2>🎯 The 9 DGCA Exam Papers (Your Focus Areas)</h2>
@@ -239,7 +239,7 @@ export const emailTemplates = {
               </div>
 
               <div class="section">
-                <p>Next email (Day 4): Real success stories from pilots who completed WeOne Aviation training.</p>
+                <p>Next email (Day 4): Real success stories from pilots who completed We One Aviation training.</p>
               </div>
             </div>
 
@@ -273,7 +273,7 @@ export const emailTemplates = {
         <body>
           <div class="container">
             <div class="header">
-              <h1>✈️ WeOne Aviation Academy</h1>
+              <h1>✈️ We One Aviation Academy</h1>
             </div>
             
             <div class="content">
@@ -369,13 +369,13 @@ export const emailTemplates = {
 
               <div class="section">
                 <p><strong>Best regards,</strong><br>
-                The WeOne Aviation Team<br>
+                The We One Aviation Team<br>
                 info.weoneaviation@gmail.com</p>
               </div>
             </div>
 
             <div class="footer">
-              <p>© 2026 WeOne Aviation. All rights reserved.</p>
+              <p>© 2026 We One Aviation. All rights reserved.</p>
               <p>You're receiving this email because you downloaded one of our guides.</p>
             </div>
           </div>

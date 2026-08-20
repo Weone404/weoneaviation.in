@@ -75,7 +75,7 @@ const hardcodedBlogs = [
       <p>After obtaining a CPL, most pilots join regional airlines or charter operators as First Officers. The aviation industry in India is growing rapidly with significant pilot demand expected over the next decade.</p>
 
       <h2>Conclusion</h2>
-      <p>Becoming a commercial pilot in India is a challenging but rewarding career path. WeOne Aviation is here to guide you every step of the way.</p>
+      <p>Becoming a commercial pilot in India is a challenging but rewarding career path. We One Aviation is here to guide you every step of the way.</p>
     `,
       faqs: [],
     },
@@ -121,7 +121,7 @@ const hardcodedBlogs = [
           <div class="step-number">2</div>
           <div class="step-body">
             <p class="step-title">Practice Mock Tests</p>
-            <p class="step-desc">WeOne Aviation provides comprehensive question banks for all 9 subjects.</p>
+            <p class="step-desc">We One Aviation provides comprehensive question banks for all 9 subjects.</p>
           </div>
         </div>
       </div>
@@ -349,7 +349,7 @@ const blogContentStyles = `
 // ─────────────────────────────────────────────
 const WA_NUMBER = '919355611996';
 const WA_MESSAGE = encodeURIComponent(
-    'Hello WeOne Aviation! I read your blog and want to learn more about pilot training.'
+    'Hello We One Aviation! I read your blog and want to learn more about pilot training.'
 );
 const waLink = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
 
@@ -530,7 +530,7 @@ export async function getStaticProps({ params }) {
 export default function BlogDetail({ blog }) {
     if (!blog) {
         return (
-            <Layout title="Blog Not Found – WeOne Aviation">
+            <Layout title="Blog Not Found – We One Aviation">
                 <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
                     <h1 className="text-3xl font-black text-av-blue mb-4">Blog Not Found</h1>
                     <Link href="/blogs" className="text-av-orange font-semibold hover:underline">
@@ -542,7 +542,7 @@ export default function BlogDetail({ blog }) {
     }
 
     return (
-        <Layout title={`${blog.title} – WeOne Aviation`} description={blog.excerpt}>
+        <Layout title={`${blog.title} – We One Aviation`} description={blog.excerpt}>
             {/* Hero */}
             <BlogHero blog={blog} />
 

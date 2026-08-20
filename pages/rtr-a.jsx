@@ -94,7 +94,7 @@ const articleSchema = {
 export default function RTRAero() {
     return (
         <Layout
-            title="RTR (Aero) Licence — Radio Telephone Operator (Restricted) | WeOne Aviation"
+            title="RTR (Aero) Licence — Radio Telephone Operator (Restricted) | We One Aviation"
             description="RTR (Aero) under the Radio Telephone Operator (Restricted) Certificate and Licence Rules, 2025: eligibility, written and practical examination structure, and exemptions. Classes in Dwarka, New Delhi."
         >
             <Head>

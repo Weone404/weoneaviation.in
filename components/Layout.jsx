@@ -44,7 +44,7 @@ export default function Layout({ children, title, description, keywords, robots,
         availableLanguage: 'English',
       },
     ],
-    email: 'info@weoneaviation.in',
+    email: 'info.weoneaviation@gmail.com',
     /*
      * Kept identical to the list in _document.jsx. Both files emit an
      * Organization node on every page, so when their `sameAs` arrays disagree
@@ -64,7 +64,7 @@ export default function Layout({ children, title, description, keywords, robots,
   return (
     <>
       <Head>
-        <title>{title || 'WeOne Aviation Academy - Pilot Training in India'}</title>
+        <title>{title || 'We One Aviation Academy - Pilot Training in India'}</title>
         {/*
           Every tag here carries a `key`. next/head only deduplicates head
           elements that share one — without keys, a page that declares its own
@@ -73,7 +73,7 @@ export default function Layout({ children, title, description, keywords, robots,
           which leaves crawlers to pick one. Page-level overrides must use these
           same key names to replace rather than duplicate.
         */}
-        <meta key="description" name="description" content={description || "WeOne Aviation Academy offers DGCA approved pilot training courses including CPL, PPL, ATPL in India. Ground classes and flight-training placement from a DGCA-approved institute in Dwarka, New Delhi."} />
+        <meta key="description" name="description" content={description || "We One Aviation Academy offers DGCA approved pilot training courses including CPL, PPL, ATPL in India. Ground classes and flight-training placement from a DGCA-approved institute in Dwarka, New Delhi."} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta key="robots" name="robots" content={resolvedRobots} />
         <link key="canonical" rel="canonical" href={canonicalUrl} />
@@ -81,7 +81,7 @@ export default function Layout({ children, title, description, keywords, robots,
         {/* OG. og:type, og:image and all twitter:* live in _document.jsx —
             they are page-independent, so emitting them here too would double them. */}
         <meta key="og:url" property="og:url" content={canonicalUrl} />
-        <meta key="og:title" property="og:title" content={title || 'WeOne Aviation Academy'} />
+        <meta key="og:title" property="og:title" content={title || 'We One Aviation Academy'} />
         <meta key="og:description" property="og:description" content={description || 'DGCA approved pilot training in India'} />
 
         <link rel="icon" href="/favicon.ico" />

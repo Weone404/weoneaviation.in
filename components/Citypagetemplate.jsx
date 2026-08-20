@@ -345,7 +345,7 @@ export function CityPageTemplate({
                         ))}
                     </div>
 
-                    {/* Why WeOne specifically */}
+                    {/* Why We One specifically */}
                     <ScrollReveal>
                         <div className="bg-av-blue rounded-2xl p-8">
                             <h3 className="font-montserrat text-2xl font-bold text-white text-center mb-8">
@@ -468,7 +468,7 @@ export function CityPageTemplate({
                             ))}
                         </div>
                         <div className="mt-8 pt-6 border-t border-white/20 space-y-2 text-sm text-white/70">
-                            <p>📧 <span className="font-semibold text-white">Office Mail:</span> Weoneaviation8@gmail.com</p>
+                            <p>📧 <span className="font-semibold text-white">Office Mail:</span> info.weoneaviation@gmail.com</p>
                             <p>📍 <span className="font-semibold text-white">Office Address:</span> C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077, India</p>
                         </div>
                     </ScrollReveal>

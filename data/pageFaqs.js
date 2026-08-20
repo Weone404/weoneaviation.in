@@ -19,21 +19,21 @@ const existingFaqRoutes = new Set([
 
 const routeContent = {
   '/about-us': {
-    title: 'About WeOne Aviation Academy: FAQs',
+    title: 'About We One Aviation Academy: FAQs',
     questions: [
-      ['When was WeOne Aviation Academy established?', 'WeOne Aviation Academy has supported aspiring pilots since 2009 with DGCA-focused ground training, career counselling, and guidance for flying-school selection.'],
-      ['What approvals and affiliations does WeOne Aviation Academy have?', 'Our programs are aligned with DGCA requirements and aviation standards. We explain the current approval and partner-school status for your selected training route before admission.'],
+      ['When was We One Aviation Academy established?', 'We One Aviation Academy has supported aspiring pilots since 2009 with DGCA-focused ground training, career counselling, and guidance for flying-school selection.'],
+      ['What approvals and affiliations does We One Aviation Academy have?', 'Our programs are aligned with DGCA requirements and aviation standards. We explain the current approval and partner-school status for your selected training route before admission.'],
       ['Who teaches at the academy?', 'Students learn from experienced airline pilots, DGCA ground instructors, simulator instructors, and aviation medical advisors with practical industry experience.'],
       ['What facilities and support are available?', 'The academy provides structured ground classes, doubt-clearing support, career counselling, training-route guidance, and access to partner flying-school options in India and abroad.'],
     ],
   },
   '/contact': {
-    title: 'Contact WeOne Aviation: FAQs',
+    title: 'Contact We One Aviation: FAQs',
     questions: [
-      ['How quickly will WeOne Aviation respond to my enquiry?', 'A counsellor generally calls back within two hours during office hours. Enquiries received outside those hours are handled on the next working day.'],
+      ['How quickly will We One Aviation respond to my enquiry?', 'A counsellor generally calls back within two hours during office hours. Enquiries received outside those hours are handled on the next working day.'],
       ['What is the best way to contact the academy?', 'You can submit the contact form, call +91 93555 66991, or start a WhatsApp conversation for course, medical, and admission guidance.'],
       ['What are the academy office hours?', 'The office is open Monday to Saturday from 9 AM to 7 PM and Sunday from 10 AM to 4 PM.'],
-      ['Where is the WeOne Aviation office located?', 'Our office is at C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077.'],
+      ['Where is the We One Aviation office located?', 'Our office is at C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077.'],
     ],
   },
   '/courses/cpl': {
@@ -249,13 +249,13 @@ const routeContent = {
       ['Do all US flight schools offer the same training pathway?', 'No. Most follow the general FAA route of PPL, Instrument Rating, and CPL, but the number of aircraft, simulator access, scheduling flexibility, and optional flight-instructor or 1,500-hour building support vary by school.'],
       ['How do I check whether a US flight school is genuinely FAA-approved?', 'Ask for the school’s FAA Part 61 or Part 141 certification details and verify them independently rather than relying only on marketing claims, since approval status affects both training quality and visa eligibility.'],
       ['What red flags should I watch for when picking a flight school?', 'Be cautious of vague fee breakdowns, no clarity on aircraft downtime or maintenance, no named instructors, and no transparent policy on refunds or extra hours if training runs longer than expected.'],
-      ['How can WeOne Aviation help me choose the right school?', 'Our counsellors compare shortlisted US flight schools on cost, fleet, weather, and support, and help match the option to your budget, timeline, and career goals before you commit.'],
+      ['How can We One Aviation help me choose the right school?', 'Our counsellors compare shortlisted US flight schools on cost, fleet, weather, and support, and help match the option to your budget, timeline, and career goals before you commit.'],
     ],
   },
   '/courses': {
     title: 'Pilot Training Courses FAQs',
     questions: [
-      ['What pilot-training courses does WeOne Aviation offer?', 'The courses page lists Commercial Pilot License, Private Pilot License, DGCA Ground Classes, international flight training in the USA and South Africa, and scholarship opportunities.'],
+      ['What pilot-training courses does We One Aviation offer?', 'The courses page lists Commercial Pilot License, Private Pilot License, DGCA Ground Classes, international flight training in the USA and South Africa, and scholarship opportunities.'],
       ['What are the main CPL course details?', 'The listed CPL pathway takes approximately 18-24 months, includes 200 flying hours, requires 10+2 with Physics and Mathematics, and is presented as a DGCA India programme costing approximately ₹40-50 lakh.'],
       ['What are the PPL course details?', 'The listed PPL programme takes approximately 6-12 months, includes around 40-50 flying hours, accepts 10+2 from any stream, and is shown at approximately ₹7.5-10 lakh.'],
       ['What do the DGCA Ground Classes cover?', 'The ground programme covers Air Navigation, Meteorology, Air Regulations, Technical General, Technical Specific, RTR preparation, mock tests, past papers, and doubt-clearing sessions.'],
@@ -277,10 +277,10 @@ const routeContent = {
   '/credentials': {
     title: 'Academy Credentials and Verification FAQs',
     questions: [
-      ['What credential is published on the WeOne Aviation credentials page?', 'The page publishes WeOne Aviation Academy’s DGCA approval status as its primary accreditation and verification credential.'],
-      ['How long has WeOne Aviation been operating?', 'The page publishes the academy’s founded year and years of operation using the academy data maintained on the site.'],
+      ['What credential is published on the We One Aviation credentials page?', 'The page publishes We One Aviation Academy’s DGCA approval status as its primary accreditation and verification credential.'],
+      ['How long has We One Aviation been operating?', 'The page publishes the academy’s founded year and years of operation using the academy data maintained on the site.'],
       ['What does the DGCA approval claim represent?', 'The page identifies the academy as a DGCA-approved aviation training institute and links that status to the Directorate General of Civil Aviation.'],
-      ['How can I request credential verification?', 'Verification enquiries can be sent to info@weoneaviation.in using the contact information published on the page.'],
+      ['How can I request credential verification?', 'Verification enquiries can be sent to info.weoneaviation@gmail.com using the contact information published on the page.'],
       ['What information is deliberately excluded from the page?', 'The page states that unsupported certification, trade-body, and partnership claims have been removed rather than published without evidence.'],
       ['When was the credentials page last updated?', 'The page currently displays a manually maintained last-updated label of August 19, 2026.'],
     ],
@@ -381,7 +381,7 @@ const routeContent = {
       ['What aircraft systems do students study?', 'Students study fuel, hydraulic, electrical, cooling, lubrication, ignition, landing-gear, brake, propeller-pitch, RPM-control, fire-detection, and fire-suppression systems.'],
       ['Why is Technical General important for pilots?', 'Technical knowledge improves situational awareness during system failures, supports safer decision-making, improves communication with engineers and ground teams, and prepares candidates for DGCA examinations.'],
       ['Who should study Technical General?', 'The subject is intended for CPL and PPL candidates preparing for DGCA examinations and pilots who want a stronger understanding of the aircraft they operate.'],
-      ['How does WeOne Aviation teach Technical General?', 'The page describes aircraft models, system diagrams, animations, real-aircraft visits, interactive sessions, recorded lectures, DGCA-style mock tests, and question-bank practice.'],
+      ['How does We One Aviation teach Technical General?', 'The page describes aircraft models, system diagrams, animations, real-aircraft visits, interactive sessions, recorded lectures, DGCA-style mock tests, and question-bank practice.'],
     ],
   },
   '/full-form-of-cpl-commercial-pilot-license': {
@@ -506,10 +506,10 @@ const routeContent = {
     title: 'Pilot Training in Sri Lanka: FAQs',
     questions: [
       ['Can Indian students pursue pilot training in Sri Lanka?', 'Indian students may explore Sri Lankan flight-training options subject to the school’s admission rules, visa requirements, medical standards, and the DGCA conversion pathway.'],
-      ['What is the cost of pilot training in Sri Lanka?', 'Costs vary by aircraft, flying hours, accommodation, exchange rates, and school. WeOne Aviation can help compare a Sri Lankan quote with Indian and other international routes.'],
+      ['What is the cost of pilot training in Sri Lanka?', 'Costs vary by aircraft, flying hours, accommodation, exchange rates, and school. We One Aviation can help compare a Sri Lankan quote with Indian and other international routes.'],
       ['How long does training in Sri Lanka take?', 'The timeline depends on the licence, weather, aircraft availability, and student progress; a complete CPL route commonly takes around 18 to 24 months.'],
       ['What should I check before selecting a Sri Lankan flying school?', 'Confirm regulator approval, aircraft availability, instructor credentials, transparent hourly rates, refund terms, student visa support, and the documentation needed for Indian licence conversion.'],
-      ['Does WeOne Aviation help with Sri Lanka training options?', 'WeOne Aviation provides route counselling and can help students evaluate partner-school options, documentation, costs, and the next steps for their intended licence.'],
+      ['Does We One Aviation help with Sri Lanka training options?', 'We One Aviation provides route counselling and can help students evaluate partner-school options, documentation, costs, and the next steps for their intended licence.'],
     ],
   },
 };
@@ -520,10 +520,10 @@ function fallbackContent(pathname) {
   return {
     title: `${label}: Frequently Asked Questions`,
     questions: [
-      [`What is ${label} about?`, `${label} covers a focused part of aviation education or pilot career planning. WeOne Aviation explains the relevant requirements, preparation, and next steps for this topic.`],
+      [`What is ${label} about?`, `${label} covers a focused part of aviation education or pilot career planning. We One Aviation explains the relevant requirements, preparation, and next steps for this topic.`],
       [`Who should learn about ${label}?`, `Students and aviation professionals researching ${topic} can use this guide to understand the terminology, eligibility, preparation, and practical decisions involved.`],
       [`What requirements apply to ${label}?`, `Requirements depend on the licence, examination, authority, or career route involved. Confirm the current DGCA or applicable regulator rules before applying.`],
-      [`How can WeOne Aviation help with ${label}?`, `Our counsellors can clarify the training route, documents, expected timeline, and suitable course options for your ${topic} goal.`],
+      [`How can We One Aviation help with ${label}?`, `Our counsellors can clarify the training route, documents, expected timeline, and suitable course options for your ${topic} goal.`],
     ],
   };
 }

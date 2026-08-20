@@ -89,7 +89,7 @@ export default function DgcaExamChecklist() {
   return (
     <>
       <Head>
-        <title>DGCA Exam Checklist PDF - Free Download | WeOne Aviation</title>
+        <title>DGCA Exam Checklist PDF - Free Download | We One Aviation</title>
         <meta name="description" content="Download your free DGCA exam checklist. Complete preparation guide covering documentation, study prep, exam day timeline, and common mistakes to avoid." />
       </Head>
 

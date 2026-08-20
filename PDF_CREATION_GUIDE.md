@@ -1,4 +1,4 @@
-# How to Create Lead Magnet PDFs for WeOne Aviation
+# How to Create Lead Magnet PDFs for We One Aviation
 
 ## 3 Approaches (Pick One):
 

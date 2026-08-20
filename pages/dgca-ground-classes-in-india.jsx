@@ -212,8 +212,8 @@ const blogs = [
 export default function DGCAGroundClassesInIndia() {
     return (
         <Layout
-            title="DGCA Ground Classes in India | Pilot Coaching, All States | WeOne Aviation"
-            description="DGCA ground classes in India, available online and offline across all 28 states. Online & offline CPL ground coaching covering all 6 DGCA subjects. 25% scholarship available. Join WeOne Aviation Academy."
+            title="DGCA Ground Classes in India | Pilot Coaching, All States | We One Aviation"
+            description="DGCA ground classes in India, available online and offline across all 28 states. Online & offline CPL ground coaching covering all 6 DGCA subjects. 25% scholarship available. Join We One Aviation Academy."
         >
             <HeroSlider customSlides={heroSlides} asH1={false} />
 

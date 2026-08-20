@@ -227,7 +227,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center">
             <NextImage
               src="/Logo.webp"
-              alt="WeOne Aviation Academy"
+              alt="We One Aviation Academy"
               width={200}
               height={64}
               sizes="200px"

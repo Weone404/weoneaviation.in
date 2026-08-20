@@ -36,7 +36,7 @@ export default async function handler(req, res) {
     }
 
     // Send welcome email
-    const result = await sendWelcomeEmail(email, name, pdfTitle || 'WeOne Aviation Guide');
+    const result = await sendWelcomeEmail(email, name, pdfTitle || 'We One Aviation Guide');
 
     if (result.success) {
       return res.status(200).json({

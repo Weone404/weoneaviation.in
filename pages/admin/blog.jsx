@@ -224,7 +224,7 @@ export default function AdminBlog() {
                     {/* top bar */}
                     <div className="flex items-start justify-between mb-10">
                         <div>
-                            <p className="text-xs font-semibold text-blue-500 uppercase tracking-widest mb-1">WeOne Admin</p>
+                            <p className="text-xs font-semibold text-blue-500 uppercase tracking-widest mb-1">We One Admin</p>
                             <h1 className="text-4xl font-extrabold text-slate-900 mb-1" style={{ letterSpacing: '-0.5px' }}>
                                 Blog Manager
                             </h1>

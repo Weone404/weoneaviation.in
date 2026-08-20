@@ -70,7 +70,7 @@ const pilotPrepSteps = [
 
 export default function AirlinePreparation() {
     return (
-        <Layout title="Airline Preparation Course In Dwarka | WeOne Aviation Academy" description="Join We One Aviation's Airline Preparation Course in Dwarka. Comprehensive training for pilots, cabin crew, and aviation professionals. Expert faculty, state-of-the-art facilities, placement support.">
+        <Layout title="Airline Preparation Course In Dwarka | We One Aviation Academy" description="Join We One Aviation's Airline Preparation Course in Dwarka. Comprehensive training for pilots, cabin crew, and aviation professionals. Expert faculty, state-of-the-art facilities, placement support.">
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}

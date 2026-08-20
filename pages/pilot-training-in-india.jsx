@@ -189,7 +189,7 @@ const faqs = [
     },
     {
         q: 'Can I get a scholarship for pilot training?',
-        a: 'Yes! WeOne Aviation Academy offers up to 25% scholarship on select courses. Contact our counsellors to learn about available scholarships and loan assistance options.',
+        a: 'Yes! We One Aviation Academy offers up to 25% scholarship on select courses. Contact our counsellors to learn about available scholarships and loan assistance options.',
     },
     {
         q: 'Can I become a pilot if I wear glasses?',
@@ -209,7 +209,7 @@ const faqs = [
     },
     {
         q: 'What are the fees for Commercial Pilot Training in India?',
-        a: 'The average fees for CPL training in India is INR 40–60 Lakh. This includes Ground Classes (INR 2-3 lakhs), 200 hours of flying (INR 35-55 lakhs), Simulator training (INR 3-5 lakhs), and extra gear like books, uniforms, medicals, DGCA exams (INR 20–50 thousand). WeOne Aviation also provides scholarship and flexible payment options.',
+        a: 'The average fees for CPL training in India is INR 40–60 Lakh. This includes Ground Classes (INR 2-3 lakhs), 200 hours of flying (INR 35-55 lakhs), Simulator training (INR 3-5 lakhs), and extra gear like books, uniforms, medicals, DGCA exams (INR 20–50 thousand). We One Aviation also provides scholarship and flexible payment options.',
     },
     {
         q: 'What are the career options after pilot training in India?',
@@ -327,7 +327,7 @@ const usaReasons = [
 
 export default function Home() {
     return (
-        <Layout title="WeOne Aviation Academy | Pilot Training Institute in India" description="DGCA-approved pilot training in India. CPL, PPL, ATPL and SPL courses plus DGCA ground classes. Free career counselling available.">
+        <Layout title="We One Aviation Academy | Pilot Training Institute in India" description="DGCA-approved pilot training in India. CPL, PPL, ATPL and SPL courses plus DGCA ground classes. Free career counselling available.">
             {/* Hero */}
             <HeroSlider  asH1={false}/>
 
@@ -857,13 +857,13 @@ export default function Home() {
             <section className="py-20 px-4">
                 <div className="max-w-7xl mx-auto">
                     <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Why WeOne</div>
+                        <div className="section-tag">Why We One</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
                             What Makes Us <span className="text-av-orange">Different</span>
                         </h2>
                         <p className="text-gray-500 mt-2 text-sm">All Your Aviation Needs Under One Roof</p>
                         <p className="text-gray-500 mt-1 text-sm max-w-2xl mx-auto">
-                            At WeOne Aviation Academy, we don't just train pilots—we shape future aviation leaders. Here's why students trust us for their pilot training journey:
+                            At We One Aviation Academy, we don't just train pilots—we shape future aviation leaders. Here's why students trust us for their pilot training journey:
                         </p>
                     </ScrollReveal>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -887,7 +887,7 @@ export default function Home() {
                         ))}
                     </div>
                     <ScrollReveal className="text-center mt-10">
-                        <p className="text-av-blue font-semibold text-lg">Join WeOne Aviation Academy and Take Off Towards a Successful Aviation Career! ✈️</p>
+                        <p className="text-av-blue font-semibold text-lg">Join We One Aviation Academy and Take Off Towards a Successful Aviation Career! ✈️</p>
                         <Link href="/contact" className="inline-block mt-4 bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-av-blue transition-all text-sm">Contact Us</Link>
                     </ScrollReveal>
                 </div>
@@ -1038,7 +1038,7 @@ export default function Home() {
                             🚀 Your Gateway to a Global Aviation Career – <span className="text-av-orange">Train at the Best Flying Schools Worldwide!</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-3xl mx-auto text-sm">
-                            🌍 Explore Our Top Flying Schools Across the World! ✈️ At WeOne Aviation Academy, we collaborate with some of the best flying schools worldwide to provide aspiring pilots with world-class flight training.
+                            🌍 Explore Our Top Flying Schools Across the World! ✈️ At We One Aviation Academy, we collaborate with some of the best flying schools worldwide to provide aspiring pilots with world-class flight training.
                         </p>
                         <p className="text-av-orange font-semibold mt-2 text-sm">🌟 Choose a Flight School That Matches Your Goals and Country Preference!</p>
                     </ScrollReveal>
@@ -1133,7 +1133,7 @@ export default function Home() {
                             ))}
                         </div>
                         <div className="mt-8 pt-6 border-t border-white/20 space-y-2 text-sm text-white/70">
-                            <p>📧 <span className="font-semibold text-white">Office Mail:</span> Weoneaviation8@gmail.com</p>
+                            <p>📧 <span className="font-semibold text-white">Office Mail:</span> info.weoneaviation@gmail.com</p>
                             <p>📍 <span className="font-semibold text-white">Office Address:</span> C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077, India</p>
                         </div>
                     </ScrollReveal>

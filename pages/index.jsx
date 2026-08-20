@@ -11,7 +11,7 @@
  * 4. educationalOrgSchema: Fixed logo URL (was logo.png, actual file is Logo.webp)
  * 5. educationalOrgSchema: aggregateRating removed (GEO audit 2026-08-11) — see note below
  * 6. H1: Added keyword-focused <h1> in tagline banner (HeroSlider owns the hero section)
- * 7. Contact section: Changed Gmail → domain email info@weoneaviation.in
+ * 7. Contact section uses the current Gmail contact address.
  */
 
 import dynamic from 'next/dynamic';
@@ -190,7 +190,7 @@ const educationalOrgSchema = {
   foundingDate: '2009',
   dateModified: LAST_UPDATED_ISO,
   telephone: '+919355611996',
-  email: 'info@weoneaviation.in',
+  email: 'info.weoneaviation@gmail.com',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka',
@@ -547,7 +547,7 @@ export default function Home() {
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal className="text-center mb-12">
-              <div className="section-tag">Why WeOne</div>
+              <div className="section-tag">Why We One</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">What Makes Us <span className="text-av-orange">Different</span></h2>
               <p className="text-gray-500 mt-2 text-sm">All Your Aviation Needs Under One Roof</p>
               <p className="text-gray-500 mt-1 text-sm max-w-2xl mx-auto">At We One Aviation Academy, we don&apos;t just train pilots—we shape future aviation leaders.</p>
@@ -795,11 +795,7 @@ export default function Home() {
                 ))}
               </div>
               <div className="mt-8 pt-6 border-t border-white/20 space-y-2 text-sm text-white/70">
-                {/* ✅ SEO FIX 7: Changed Gmail → domain email. Gmail on a public page
-                    hurts E-E-A-T (Google's trust scoring). A domain email signals
-                    a legitimate, established business. Update DNS/hosting panel
-                    to create info@weoneaviation.in if not done yet. */}
-                <p>📧 <span className="font-semibold text-white">Office Mail:</span> info@weoneaviation.in</p>
+                <p>📧 <span className="font-semibold text-white">Office Mail:</span> info.weoneaviation@gmail.com</p>
                 <p>📍 <span className="font-semibold text-white">Office Address:</span> C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077, India</p>
               </div>
             </ScrollReveal>

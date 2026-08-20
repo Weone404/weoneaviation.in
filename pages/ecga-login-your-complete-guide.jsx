@@ -480,7 +480,7 @@ export default function EGCALoginPage() {
                     <ScrollReveal className="text-center mb-14">
                         <div className="section-tag">Fly High</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-3">
-                            FLY HIGH WITH <span className="text-av-orange">WEONE AVIATION ACADEMY</span>
+                            FLY HIGH WITH <span className="text-av-orange">WE ONE AVIATION ACADEMY</span>
                         </h2>
                         <p className="text-gray-500 mb-6 text-sm">Make Your Dream Possible Today to "Become a Pilot"</p>
                         <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-av-blue transition-all text-sm">

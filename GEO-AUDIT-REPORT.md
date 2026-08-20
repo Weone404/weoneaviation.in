@@ -80,7 +80,7 @@ Measured by 8-gram shingle overlap on visible text:
 | `/courses/cpl` | `/blogs/cpl-full-form` | **98%** |
 | `/courses/cpl-flight-training` | `/blogs/cpl-full-form` | **99%** |
 
-All three are ~2,575 words and self-canonical. `/courses/cpl` and `/courses/cpl-flight-training` also share the duplicate title *"Commercial Pilot License (CPL) Training in India | WeOne Aviation"* and an identical meta description.
+All three are ~2,575 words and self-canonical. `/courses/cpl` and `/courses/cpl-flight-training` also share the duplicate title *"Commercial Pilot License (CPL) Training in India | We One Aviation"* and an identical meta description.
 
 **Impact:** AI systems deduplicate near-identical passages and keep at most one. Three URLs compete for the same citation slot, and none accrues authority. This is also the single clearest low-quality signal on the site.
 

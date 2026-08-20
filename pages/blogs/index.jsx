@@ -41,7 +41,7 @@ export default function BlogsIndex({ mongoBlogs }) {
     const allBlogs = [...mongoBlogs, ...hardcodedBlogs];
 
     return (
-        <Layout title="Blogs – WeOne Aviation" description="Aviation blogs, pilot guides, DGCA tips and more.">
+        <Layout title="Blogs – We One Aviation" description="Aviation blogs, pilot guides, DGCA tips and more.">
             {/* Hero */}
             <div className="relative bg-gradient-to-br from-av-blue to-av-navy pt-32 pb-16 px-4 text-center text-white">
                 <h1 className="font-montserrat text-4xl md:text-5xl font-black mb-4">Aviation Blogs</h1>
@@ -49,7 +49,7 @@ export default function BlogsIndex({ mongoBlogs }) {
                     Expert guides on pilot training, DGCA exams, careers, and everything aviation.
                 </p>
                 <p className="text-white/70 text-sm max-w-2xl mx-auto mt-3">
-                    If you are comparing training hubs and want Chennai-specific exam-centre addresses, simulator providers, and travel tips, see our Chennai guide: <Link href="/pilot-training-in-india" className="font-semibold underline">Pilot Training in Chennai</Link>.
+                    If you are comparing pilot training options across India and want exam-centre guidance, simulator providers, and travel tips, see our India guide: <Link href="/pilot-training-in-india" className="font-semibold underline">Pilot Training in India</Link>.
                 </p>
             </div>
 

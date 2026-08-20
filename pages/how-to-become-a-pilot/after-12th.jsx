@@ -6,7 +6,7 @@ import Link from 'next/link';
 const steps = [
   { num: 1, title: 'Pass 12th with PCM', desc: 'You need Physics, Chemistry, and Maths in your 12th standard. A minimum of 50% marks is required for DGCA eligibility. Some foreign flying schools accept any 12th pass.' },
   { num: 2, title: 'Get DGCA Class 1 Medical', desc: 'Before starting pilot training, you must clear the DGCA Class 1 medical examination. This checks vision, hearing, cardiovascular health, and overall fitness. Schedule it early.' },
-  { num: 3, title: 'Enroll in a DGCA-Approved Flying School', desc: 'Choose a DGCA-approved flying school like WeOne Aviation. Decide between training in India or abroad (USA, Canada, Australia, Europe).' },
+  { num: 3, title: 'Enroll in a DGCA-Approved Flying School', desc: 'Choose a DGCA-approved flying school like We One Aviation. Decide between training in India or abroad (USA, Canada, Australia, Europe).' },
   { num: 4, title: 'Complete Ground School Training', desc: 'You\'ll study 9 DGCA subjects including Air Navigation, Meteorology, Air Regulations, Technical General, and more. Clear all written exams before progressing to flying.' },
   { num: 5, title: 'Complete 200+ Flying Hours', desc: 'Log a minimum of 200 flying hours as required by DGCA for CPL. This includes solo, cross-country, instrument, and night flying hours.' },
   { num: 6, title: 'Clear DGCA CPL Skill Test', desc: 'Appear for the DGCA CPL skill test (flight test) conducted by a DGCA examiner. Successfully demonstrate all flying maneuvers and procedures.' },
@@ -15,7 +15,7 @@ const steps = [
 
 export default function After12th() {
   return (
-    <Layout title="How to Become a Pilot After 12th | Complete Guide 2024 | WeOne Aviation" description="Complete guide on how to become a pilot after 12th standard in India. Eligibility, DGCA exams, flying hours, costs, and career path explained step-by-step.">
+    <Layout title="How to Become a Pilot After 12th | Complete Guide 2024 | We One Aviation" description="Complete guide on how to become a pilot after 12th standard in India. Eligibility, DGCA exams, flying hours, costs, and career path explained step-by-step.">
       {/* Hero */}
       <div className="relative h-72 overflow-hidden flex items-center justify-center pt-16"
         style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}>

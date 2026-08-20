@@ -30,7 +30,7 @@ const steps = [
         title: 'Enroll in a Pilot Training Program',
         shortDesc: 'Join a reputed flight school.',
         details: [],
-        note: 'Once you meet the eligibility criteria, you can enroll in a pilot training program offered by reputed flight schools like Weone Aviation. This training program will provide you with the necessary theoretical knowledge and practical flying experience required to become a pilot.',
+        note: 'Once you meet the eligibility criteria, you can enroll in a pilot training program offered by reputed flight schools like We One Aviation. This training program will provide you with the necessary theoretical knowledge and practical flying experience required to become a pilot.',
     },
     {
         num: '03',
@@ -86,8 +86,8 @@ const courses = [
 export default function HowToBecomeAPilotInIndiaPage() {
     return (
         <Layout
-            title="Your Guide on How to Become a Pilot in India – Weone Aviation"
-            description="Step-by-step guide on how to become a pilot in India. Learn about eligibility, ground training, flight training, CPL licensing, and pilot training courses at Weone Aviation."
+            title="Your Guide on How to Become a Pilot in India – We One Aviation"
+            description="Step-by-step guide on how to become a pilot in India. Learn about eligibility, ground training, flight training, CPL licensing, and pilot training courses at We One Aviation."
         >
 
             {/* ── Hero Banner ── */}
@@ -98,10 +98,10 @@ export default function HowToBecomeAPilotInIndiaPage() {
                         Your Guide on How to Become a Pilot in India
                     </h1>
                     <p className="text-white/70 max-w-3xl mx-auto text-sm leading-relaxed mb-4">
-                        Are you passionate about flying and aspire to become a pilot in India? <strong className="text-white">Weone Aviation</strong> is here to guide you through the process of achieving your dream career in aviation.
+                        Are you passionate about flying and aspire to become a pilot in India? <strong className="text-white">We One Aviation</strong> is here to guide you through the process of achieving your dream career in aviation.
                     </p>
                     <p className="text-white/60 max-w-3xl mx-auto text-sm leading-relaxed mb-6">
-                        In this article, we will provide you with a step-by-step guide on how to become a pilot in India, with a focus on the professional training provided by Weone Aviation.
+                        In this article, we will provide you with a step-by-step guide on how to become a pilot in India, with a focus on the professional training provided by We One Aviation.
                     </p>
                     <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
                         Start Your Journey →
@@ -221,16 +221,16 @@ export default function HowToBecomeAPilotInIndiaPage() {
                 </div>
             </section>
 
-            {/* ── Pilot Training at Weone Aviation ── */}
+            {/* ── Pilot Training at We One Aviation ── */}
             <section className="py-20 px-4 bg-gradient-to-br from-av-blue via-av-navy to-av-blue">
                 <div className="max-w-7xl mx-auto">
                     <ScrollReveal className="text-center mb-12">
                         <div className="section-tag">Our Academy</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white">
-                            Pilot Training at <span className="text-av-orange">Weone Aviation</span>
+                            Pilot Training at <span className="text-av-orange">We One Aviation</span>
                         </h2>
                         <p className="text-white/60 mt-3 max-w-3xl mx-auto text-sm leading-relaxed">
-                            Weone Aviation is a leading flight training academy in India that offers top-notch pilot training programs for aspiring aviators. With state-of-the-art facilities, experienced instructors, and a fleet of modern aircraft, Weone Aviation equips you with the skills and knowledge needed to excel in the aviation industry.
+                            We One Aviation is a leading flight training academy in India that offers top-notch pilot training programs for aspiring aviators. With state-of-the-art facilities, experienced instructors, and a fleet of modern aircraft, We One Aviation equips you with the skills and knowledge needed to excel in the aviation industry.
                         </p>
                     </ScrollReveal>
 
@@ -238,7 +238,7 @@ export default function HowToBecomeAPilotInIndiaPage() {
                         {/* Why Choose */}
                         <ScrollReveal>
                             <h3 className="font-montserrat font-bold text-white text-2xl mb-6">
-                                Why Choose <span className="text-av-orange">Weone Aviation?</span>
+                                Why Choose <span className="text-av-orange">We One Aviation?</span>
                             </h3>
                             <div className="space-y-4">
                                 {whyWeOne.map(item => (
@@ -253,7 +253,7 @@ export default function HowToBecomeAPilotInIndiaPage() {
                         {/* Courses */}
                         <ScrollReveal delay={200}>
                             <h3 className="font-montserrat font-bold text-white text-2xl mb-6">
-                                Training Courses <span className="text-av-orange">Offered by Weone Aviation</span>
+                                Training Courses <span className="text-av-orange">Offered by We One Aviation</span>
                             </h3>
                             <div className="space-y-3">
                                 {courses.map((course, i) => (
@@ -279,11 +279,11 @@ export default function HowToBecomeAPilotInIndiaPage() {
                         </h2>
                         <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-8 mb-8">
                             <p className="text-gray-600 text-sm leading-relaxed">
-                                Becoming a pilot in India is a rewarding career path that requires commitment, perseverance, and proper training. By enrolling in a pilot training program at <strong className="text-av-blue">Weone Aviation</strong>, you can turn your dream of flying into reality. Follow the steps outlined in this guide and start your journey towards a successful career as a pilot in India.
+                                Becoming a pilot in India is a rewarding career path that requires commitment, perseverance, and proper training. By enrolling in a pilot training program at <strong className="text-av-blue">We One Aviation</strong>, you can turn your dream of flying into reality. Follow the steps outlined in this guide and start your journey towards a successful career as a pilot in India.
                             </p>
                         </div>
                         <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-av-blue transition-all text-sm">
-                            Enroll at Weone Aviation →
+                            Enroll at We One Aviation →
                         </Link>
                     </ScrollReveal>
                 </div>

@@ -25,7 +25,7 @@ export default function ContactPopup() {
     setLoading(true);
 
     const msg = encodeURIComponent(
-      `Hello WeOne Aviation! 👋\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email || 'N/A'}\nCourse: ${form.course || 'N/A'}`
+      `Hello We One Aviation! 👋\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email || 'N/A'}\nCourse: ${form.course || 'N/A'}`
     );
 
     try {

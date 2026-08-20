@@ -78,7 +78,7 @@ const articleSchema = {
 
 export default function AviationMeteorology() {
     return (
-        <Layout title="Aviation Meteorology Course — DGCA CPL/PPL | WeOne Aviation Academy" description="DGCA-approved Aviation Meteorology course in Delhi. Learn weather patterns, METAR/TAF decoding, wind systems, turbulence and more for CPL & PPL exams at We One Aviation Academy.">
+        <Layout title="Aviation Meteorology Course — DGCA CPL/PPL | We One Aviation Academy" description="DGCA-approved Aviation Meteorology course in Delhi. Learn weather patterns, METAR/TAF decoding, wind systems, turbulence and more for CPL & PPL exams at We One Aviation Academy.">
             <Head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
             </Head>

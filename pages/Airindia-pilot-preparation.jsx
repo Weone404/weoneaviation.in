@@ -62,7 +62,7 @@ const whoShouldJoin = [
 const contactDetails = [
     { icon: '📱', label: 'Phone', value: '+91 9555291956 / 9717977702', href: 'tel:+919555291956' },
     { icon: '🌐', label: 'Website', value: 'weoneaviation.in', href: 'https://weoneaviation.in' },
-    { icon: '📧', label: 'Email', value: 'info@weoneaviation.in', href: 'mailto:info@weoneaviation.in' },
+    { icon: '📧', label: 'Email', value: 'info.weoneaviation@gmail.com', href: 'mailto:info.weoneaviation@gmail.com' },
     { icon: '📸', label: 'Instagram', value: '@topflyer_pilot', href: 'https://www.instagram.com/topflyer_pilot' },
 ];
 
@@ -137,7 +137,7 @@ function SidebarContact() {
 export default function AirIndiaPilotPreparation() {
     return (
         <Layout
-            title="Air India Pilot Interview Preparation 2026 | WeOne Aviation Academy"
+            title="Air India Pilot Interview Preparation 2026 | We One Aviation Academy"
             description="Crack your Air India pilot selection process with We One Aviation. Structured preparation for CPL holders and Type Rated pilots covering ADAPT, GD, HR & technical interviews."
         >
             <HeroSlider customSlides={heroSlides} asH1={false} />

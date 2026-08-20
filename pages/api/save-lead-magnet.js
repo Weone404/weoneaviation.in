@@ -33,7 +33,7 @@ export default async function handler(req, res) {
     client.close();
 
     // Send welcome email asynchronously (don't wait for it)
-    sendWelcomeEmail(email, name, pdfTitle || 'WeOne Aviation Guide').catch((err) => {
+    sendWelcomeEmail(email, name, pdfTitle || 'We One Aviation Guide').catch((err) => {
       console.error('Failed to send welcome email:', err);
     });
 

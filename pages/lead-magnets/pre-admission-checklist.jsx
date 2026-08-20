@@ -8,7 +8,7 @@ export default function PreAdmissionChecklist() {
   return (
     <>
       <Head>
-        <title>Pre-Admission Checklist for Pilot Training - Free PDF | WeOne Aviation</title>
+        <title>Pre-Admission Checklist for Pilot Training - Free PDF | We One Aviation</title>
         <meta name="description" content="Free pre-admission checklist for pilot training. Complete documentation requirements, medical tests, eligibility criteria, and application process guide." />
       </Head>
 
