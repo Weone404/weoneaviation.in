@@ -1,4 +1,5 @@
 import Layout from '../../components/Layout';
+import FAQSection from '../../components/FAQSection';
 import Link from 'next/link';
 import NextImage from 'next/image';
 import { MongoClient, ObjectId } from 'mongodb';
@@ -76,6 +77,7 @@ const hardcodedBlogs = [
       <h2>Conclusion</h2>
       <p>Becoming a commercial pilot in India is a challenging but rewarding career path. WeOne Aviation is here to guide you every step of the way.</p>
     `,
+      faqs: [],
     },
     {
         id: 2,
@@ -127,6 +129,7 @@ const hardcodedBlogs = [
       <h2>Conclusion</h2>
       <p>With consistent study and proper guidance, clearing all 9 DGCA exams is very achievable.</p>
     `,
+      faqs: [],
     },
     {
         id: 3,
@@ -148,6 +151,7 @@ const hardcodedBlogs = [
       <h2>Our Recommendation</h2>
       <p>For most Indian students, training in India offers the best value for money.</p>
     `,
+      faqs: [],
     },
     {
         id: 4,
@@ -175,6 +179,7 @@ const hardcodedBlogs = [
       <h2>Additional Perks</h2>
       <p>Beyond base salary, pilots receive flying allowances, travel benefits, medical insurance, and more.</p>
     `,
+      faqs: [],
     },
     {
         id: 5,
@@ -197,6 +202,7 @@ const hardcodedBlogs = [
       <h2>Where to Get Your Class 1 Medical</h2>
       <p>DGCA-approved centres are in Delhi, Mumbai, Chennai, Kolkata, Hyderabad, and Bengaluru.</p>
     `,
+      faqs: [],
     },
     {
         id: 6,
@@ -253,6 +259,7 @@ const hardcodedBlogs = [
       <h2>Timeline</h2>
       <p>The entire process typically takes <strong>2 to 3 years</strong>.</p>
     `,
+      faqs: [],
     },
 ];
 
@@ -505,6 +512,7 @@ export async function getStaticProps({ params }) {
                         'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80',
                     content: raw.content,
                     slug: raw.slug || '',
+                    faqs: Array.isArray(raw.faqs) ? raw.faqs : [],
                 },
             },
             revalidate: 30,
@@ -559,6 +567,10 @@ export default function BlogDetail({ blog }) {
                                 className="blog-content"
                                 dangerouslySetInnerHTML={{ __html: blog.content }}
                             />
+
+                            {blog.faqs?.length > 0 && (
+                              <FAQSection faqs={blog.faqs} title="Frequently Asked Questions" idPrefix={`blog-${blog.id}-faq`} />
+                            )}
 
                             <ArticleCTA />
                         </article>
