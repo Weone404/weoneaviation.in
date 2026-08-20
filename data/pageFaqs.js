@@ -53,13 +53,13 @@ const routeContent = {
       ['How long does a PPL course take?', 'Most students complete PPL training in about 6 to 12 months, though weather, aircraft availability, and individual progress can change the timeline.'],
       ['How much does PPL training cost?', 'A PPL in India commonly costs approximately ₹7.5-10 lakh, including ground classes, flying, medicals, and examination-related expenses.'],
       ['What subjects are covered in PPL training?', 'PPL preparation covers air regulations, aviation meteorology, air navigation, aircraft technical knowledge, and radio telephony alongside practical flying.'],
-      ['Can a PPL lead to an airline career?', 'A PPL does not permit commercial flying, but it can be an early step toward additional training and the CPL pathway.'],
+      ['Can a PPL lead to further pilot training?', 'A PPL does not permit commercial flying, but it can be an early step toward additional flight training and a higher pilot licence.'],
     ],
   },
   '/courses/atpl': {
     title: 'ATPL Training FAQs',
     questions: [
-      ['Who can start ATPL preparation?', 'ATPL preparation is intended for pilots who hold a CPL and are progressing through the experience, examinations, and ratings required for airline command.'],
+      ['Who can start ATPL preparation?', 'ATPL preparation is intended for pilots who hold a commercial pilot licence and are progressing through the experience, examinations, and ratings required for airline command.'],
       ['How long does ATPL training take?', 'The complete progression toward an ATPL commonly spans 36 months or more because it includes flight-hour building, advanced theory, simulator work, and airline experience.'],
       ['What does ATPL preparation cost?', 'The ATPL preparation component is commonly around ₹15-25 lakh, while the full progression cost varies with flight hours, type rating, simulator, and employer pathway.'],
       ['Which subjects are taught for ATPL?', 'Training covers advanced navigation, air law, meteorology, aircraft performance, flight planning, human factors, aircraft systems, communications, and multi-crew operations.'],
@@ -69,7 +69,7 @@ const routeContent = {
   '/advanced-atpl-pilot-training': {
     title: 'ATPL Training FAQs',
     questions: [
-      ['Who can start ATPL preparation?', 'ATPL preparation is intended for pilots who hold a CPL and are progressing through the experience, examinations, and ratings required for airline command.'],
+      ['Who can start ATPL preparation?', 'ATPL preparation is intended for pilots who hold a commercial pilot licence and are progressing through the experience, examinations, and ratings required for airline command.'],
       ['How long does ATPL training take?', 'The complete progression toward an ATPL commonly spans 36 months or more because it includes flight-hour building, advanced theory, simulator work, and airline experience.'],
       ['What does ATPL preparation cost?', 'The ATPL preparation component is commonly around ₹15-25 lakh, while the full progression cost varies with flight hours, type rating, simulator, and employer pathway.'],
       ['Which subjects are taught for ATPL?', 'Training covers advanced navigation, air law, meteorology, aircraft performance, flight planning, human factors, aircraft systems, communications, and multi-crew operations.'],
@@ -131,7 +131,7 @@ const routeContent = {
       ['What fee instalments are listed for the programme?', 'The page lists four instalments of ₹10 lakh, ₹30 lakh, ₹25 lakh, and ₹24.50 lakh plus taxes. It also lists separate application and selection-process fees. SpiceJet’s current official cadet page is presently marked “Coming Soon,” so confirm these amounts and payment terms before applying.'],
     ],
   },
-  '/Airindia-pilot-preparation': {
+  '/airindia-pilot-preparation': {
     title: 'Air India Pilot Interview Preparation FAQs',
     questions: [
       ['Who is the Air India Pilot Interview Preparation course for?', 'The programme is designed for CPL holders preparing for airline recruitment and Type Rated pilots, including A320 and B737 pilots, targeting Air India fleet opportunities.'],
@@ -142,7 +142,7 @@ const routeContent = {
       ['How does We One Aviation tailor the preparation to Air India?', 'The programme uses airline-professional mentorship, realistic mock assessments, personalized feedback, improvement plans, and preparation focused on Air India hiring patterns.'],
     ],
   },
-  '/Indigo-pilot-preparation': {
+  '/indigo-pilot-preparation': {
     title: 'IndiGo JFO Interview Preparation FAQs',
     questions: [
       ['Who should join IndiGo JFO interview preparation?', 'The programme is designed for fresh CPL holders entering airline recruitment, A320 Type Rated pilots targeting IndiGo fleet operations, airline interview candidates, and pilots seeking stronger group-discussion and personal-interview performance.'],
@@ -244,12 +244,12 @@ const routeContent = {
   '/best-flight-schools-in-usa': {
     title: 'Best Flight Schools in the USA FAQs',
     questions: [
-      ['What training pathway is described for the best flight schools in the USA?', 'The page describes an FAA-approved pathway from PPL to Instrument Rating, CPL, optional Flight Instructor Rating, and 1,500-hour flight building, with approximately 250 flying hours and a listed duration of about 1.6 years.'],
-      ['Why choose FAA flight training in the USA?', 'The page highlights FAA licensing, more than 300 sunny flying days in key locations, modern aircraft, international-airport training environments, and a pathway accepted in more than 100 countries.'],
-      ['What aircraft are listed for USA flight training?', 'The listed aircraft include Cessna 152, Cessna 172 glass-cockpit aircraft, Tecnam P2006T, Tecnam P2008, Piper PA-34 Seneca, Piper Archer, and instrument-training simulators.'],
-      ['What benefits are described for students at the partnered USA schools?', 'The page describes a 40-hour PPL challenge with possible free IR training, near-airport accommodation, a potential full scholarship after CPL, and free post-CPL flight-hour building up to 1,500 hours, subject to eligibility and terms.'],
-      ['What career sequence is shown for USA pilot training?', 'The roadmap progresses from PPL to Instrument Rating, CPL, optional instructor rating, 1,500-hour flight building, and applications for airline roles worldwide.'],
-      ['Who is the USA flight-school programme intended for?', 'The page targets students seeking a fast-track aviation career, aspiring international pilots, graduates wanting FAA credentials, and Indian students looking for structured training abroad.'],
+      ['What makes a flight school in the USA a good choice for Indian students?', 'Look for FAA approval, a modern and well-maintained fleet, low student-to-aircraft ratios, consistent flying weather, experienced instructors, and a clear pathway from PPL through CPL and instrument rating.'],
+      ['What should I compare across shortlisted US flight schools?', 'Compare aircraft type and availability, average weather-cancellation rates, hourly rental and instructor rates, total course cost, accommodation options, and how quickly students typically complete their hours.'],
+      ['Do all US flight schools offer the same training pathway?', 'No. Most follow the general FAA route of PPL, Instrument Rating, and CPL, but the number of aircraft, simulator access, scheduling flexibility, and optional flight-instructor or 1,500-hour building support vary by school.'],
+      ['How do I check whether a US flight school is genuinely FAA-approved?', 'Ask for the school’s FAA Part 61 or Part 141 certification details and verify them independently rather than relying only on marketing claims, since approval status affects both training quality and visa eligibility.'],
+      ['What red flags should I watch for when picking a flight school?', 'Be cautious of vague fee breakdowns, no clarity on aircraft downtime or maintenance, no named instructors, and no transparent policy on refunds or extra hours if training runs longer than expected.'],
+      ['How can WeOne Aviation help me choose the right school?', 'Our counsellors compare shortlisted US flight schools on cost, fleet, weather, and support, and help match the option to your budget, timeline, and career goals before you commit.'],
     ],
   },
   '/courses': {
@@ -443,11 +443,11 @@ const routeContent = {
     title: 'How to Become a Pilot in India FAQs',
     questions: [
       ['What are the basic requirements to become a pilot in India?', 'The page lists 10+2 with Physics and Mathematics, a Class 2 Medical Certificate, English fluency, and compliance with DGCA requirements as the starting eligibility criteria.'],
-      ['What are the main steps to become a commercial pilot?', 'The guide covers eligibility, joining a pilot-training programme, ground training, flight training, completing DGCA examinations and flying requirements, obtaining a CPL, and building experience after licensing.'],
+      ['What are the main steps to become a commercial pilot?', 'The guide covers eligibility, joining a pilot-training programme, ground training, flight training, completing DGCA examinations and flying requirements, obtaining a commercial pilot licence, and building experience after licensing.'],
       ['What subjects are taught during ground training?', 'Ground training covers aviation regulations, meteorology, navigation, and aircraft systems before the student progresses to practical flight training.'],
       ['What happens during flight training?', 'Students learn basic and advanced manoeuvres, aircraft operation, and solo flying under the supervision of certified flight instructors.'],
-      ['What can pilots do after obtaining a CPL?', 'After obtaining a CPL, pilots can build experience through flight instruction, aerial surveys, charter operations, or co-pilot roles before applying for larger airline opportunities.'],
-      ['Which additional pilot courses are listed?', 'The page lists PPL, CPL, Multi-Engine Rating, Instrument Rating, and ATPL as training and qualification options along the pilot-career pathway.'],
+      ['What can pilots do after obtaining a commercial pilot licence?', 'After obtaining a commercial pilot licence, pilots can build experience through flight instruction, aerial surveys, charter operations, or co-pilot roles before applying for larger airline opportunities.'],
+      ['Which additional pilot courses are listed?', 'The page lists Private Pilot Licence, Commercial Pilot Licence, Multi-Engine Rating, Instrument Rating, and Airline Transport Pilot Licence as training and qualification options along the pilot-career pathway.'],
     ],
   },
   '/blogs/aviation-course-after-12th': {
@@ -464,7 +464,7 @@ const routeContent = {
   '/blogs/dgca-exam-guide': {
     title: 'DGCA Exam Guide FAQs',
     questions: [
-      ['How many DGCA written examinations are described in the guide?', 'The article describes nine written examinations for the CPL route, covering subjects such as navigation, meteorology, regulations, technical knowledge, RTR, instruments, aviation medicine, and principles of flight.'],
+      ['How many DGCA written examinations are described in the guide?', 'The article describes nine written examinations for the commercial pilot licence route, covering subjects such as navigation, meteorology, regulations, technical knowledge, RTR, instruments, aviation medicine, and principles of flight.'],
       ['What subjects are included in the DGCA exam guide?', 'The listed subjects include Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, Radio Telephony, Instruments and Electronics, Aviation Medicine, and Principles of Flight.'],
       ['What exam format is described?', 'The article describes multiple-choice examinations with a stated passing score of 70% and up to six attempts per subject. Candidates should confirm current DGCA rules before relying on these details.'],
       ['How should students prepare for DGCA examinations?', 'The guide recommends starting early, studying alongside flying training, reviewing the syllabus, using structured materials, and practising mock tests and question banks.'],
@@ -479,36 +479,26 @@ const routeContent = {
       ['How long does SPL training take?', 'SPL training can often be completed in about 3 to 6 months, depending on flying availability, weather, and student progress.'],
       ['What is the approximate SPL course fee?', 'The indicative SPL training range is ₹2-4 lakh, subject to aircraft type, flying hours, school charges, and examination requirements.'],
       ['What does the SPL syllabus cover?', 'The syllabus includes basic air regulations, navigation and weather, aircraft familiarisation, normal and emergency procedures, dual flying, solo circuits, and skill-test preparation.'],
-      ['Can SPL training be followed by PPL or CPL training?', 'Yes. SPL can provide foundational flying experience before progressing to the additional requirements for a PPL and, later, a CPL.'],
-    ],
-  },
-  '/courses/dgca-ground-classes': {
-    title: 'DGCA Ground Classes FAQs',
-    questions: [
-      ['Who should join DGCA ground classes?', 'Students preparing for DGCA pilot-licensing examinations, including aspiring CPL and PPL candidates, can join structured ground classes for subject guidance and exam preparation.'],
-      ['How long do DGCA ground classes take?', 'The schedule is commonly 6 to 12 months depending on the subjects selected, exam attempts, batch timetable, and the student’s preparation level.'],
-      ['What subjects are covered?', 'Classes cover subjects such as Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, and Radio Telephony as applicable to the licence.'],
-      ['Do ground classes include flying training?', 'Ground classes prepare students for the theoretical examinations. Flying hours must be completed separately through a DGCA-approved flying school.'],
-      ['How do DGCA ground classes help with exams?', 'Faculty-led lessons, revision, doubt clearing, mock tests, and exam-focused study plans help students understand the syllabus and prepare systematically.'],
+      ['Can SPL training lead to further pilot licences?', 'Yes. SPL can provide foundational flying experience before progressing to the additional training and requirements for higher-level pilot licences.'],
     ],
   },
   '/how-to-become-a-pilot/after-12th': {
     title: 'Becoming a Pilot After 12th: FAQs',
     questions: [
-      ['Which subjects are required in 12th to become a pilot?', 'For the Indian CPL route, students generally need Physics and Mathematics in 10+2, commonly with the required minimum marks under DGCA rules.'],
-      ['What is the minimum age to begin pilot training?', 'Students can begin planning and completing early steps before 18, but the applicable age requirements differ for training, examinations, and the CPL skill test.'],
-      ['What are the entrance steps after 12th?', 'The usual sequence is medical assessment, DGCA documentation and examinations, ground training, selection of a DGCA-approved flying school, flying hours, and the CPL skill test.'],
-      ['How much does pilot training cost after 12th?', 'A complete CPL route in India is commonly around ₹40-70 lakh, while PPL and international routes have different costs. Exact fees depend on the school and hours flown.'],
-      ['How long does it take to become a commercial pilot?', 'Many students complete the CPL pathway in approximately 18 to 24 months, but exams, weather, medicals, and aircraft availability can affect the timeline.'],
+      ['Which subjects are required in 12th to become a pilot?', 'For the Indian pilot licence route, students generally need Physics and Mathematics in 10+2, commonly with the required minimum marks under DGCA rules.'],
+      ['What is the minimum age to begin pilot training?', 'Students can begin planning and completing early steps before 18, but the applicable age requirements differ for training, examinations, and the final skill test.'],
+      ['What are the entrance steps after 12th?', 'The usual sequence is medical assessment, DGCA documentation and examinations, ground training, selection of a DGCA-approved flying school, flying hours, and the final skill test.'],
+      ['How much does pilot training cost after 12th?', 'A complete commercial pilot licence route in India is commonly around ₹40-70 lakh, while other licence types and international routes have different costs. Exact fees depend on the school and hours flown.'],
+      ['How long does it take to become a commercial pilot?', 'Many students complete the training pathway in approximately 18 to 24 months, but exams, weather, medicals, and aircraft availability can affect the timeline.'],
     ],
   },
   '/how-to-become-a-pilot/in-india': {
     title: 'Becoming a Pilot in India: FAQs',
     questions: [
       ['What is the first step to becoming a pilot in India?', 'Start by checking 10+2 Physics and Mathematics eligibility and completing the relevant DGCA medical assessment before committing to a training route.'],
-      ['How many DGCA exams are required for a CPL?', 'CPL candidates must clear the DGCA subjects applicable to their licence, including navigation, meteorology, air regulations, technical knowledge, and radio telephony requirements.'],
-      ['How much does pilot training cost in India?', 'A full CPL pathway is commonly estimated at ₹40-70 lakh, including flying and associated training costs. Actual fees vary by school, location, and additional hours.'],
-      ['How long is the pilot training timeline?', 'A realistic India CPL timeline is often 18 to 24 months, although exam attempts, weather, aircraft availability, and regulatory processing can extend it.'],
+      ['How many DGCA exams are required to become a pilot?', 'Candidates must clear the DGCA subjects applicable to their licence, including navigation, meteorology, air regulations, technical knowledge, and radio telephony requirements.'],
+      ['How much does pilot training cost in India?', 'A full pilot training pathway is commonly estimated at ₹40-70 lakh, including flying and associated training costs. Actual fees vary by school, location, and additional hours.'],
+      ['How long is the pilot training timeline?', 'A realistic pilot training timeline in India is often 18 to 24 months, although exam attempts, weather, aircraft availability, and regulatory processing can extend it.'],
       ['Can students train abroad and convert the licence in India?', 'Yes, international training is possible, but pilots must complete the applicable DGCA conversion, examination, documentation, and verification requirements.'],
     ],
   },
