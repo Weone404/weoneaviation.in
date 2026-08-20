@@ -220,7 +220,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* ── Main Navbar ── */}
       <div className={`transition-all duration-300 ${scrolled ? 'bg-av-blue shadow-2xl py-2' : 'bg-transparent py-2'}`}>
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
+        <div className="mx-auto flex w-full items-center justify-between px-4 sm:px-8 lg:px-16">
 
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -236,11 +236,11 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden shrink-0 items-center gap-1 lg:flex">
 
             {/* Pilot Training Courses */}
             <div className="relative" onMouseEnter={() => setCourseOpen(true)} onMouseLeave={() => setCourseOpen(false)}>
-              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white hover:text-av-orange transition-all">
+              <button className="flex shrink-0 items-center gap-1 whitespace-nowrap px-4 py-2 text-sm font-medium text-white transition-all hover:text-av-orange">
                 Pilot Training Courses <ChevronIcon open={courseOpen} />
               </button>
               {courseOpen && (
@@ -252,7 +252,7 @@ export default function Navbar() {
 
             {/* Flying Country */}
             <div className="relative" onMouseEnter={() => setCountryOpen(true)} onMouseLeave={() => setCountryOpen(false)}>
-              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white hover:text-av-orange transition-all">
+              <button className="flex shrink-0 items-center gap-1 whitespace-nowrap px-4 py-2 text-sm font-medium text-white transition-all hover:text-av-orange">
                 Flying Country <ChevronIcon open={countryOpen} />
               </button>
               {countryOpen && (
@@ -268,7 +268,7 @@ export default function Navbar() {
 
             {/* How To Become a Pilot */}
             <div className="relative" onMouseEnter={() => setHowOpen(true)} onMouseLeave={() => setHowOpen(false)}>
-              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white hover:text-av-orange transition-all">
+              <button className="flex shrink-0 items-center gap-1 whitespace-nowrap px-4 py-2 text-sm font-medium text-white transition-all hover:text-av-orange">
                 How To Become a Pilot <ChevronIcon open={howOpen} />
               </button>
               {howOpen && (
@@ -284,7 +284,7 @@ export default function Navbar() {
 
             {/* Exam Practice — grouped dropdown */}
             <div className="relative" onMouseEnter={() => setExamOpen(true)} onMouseLeave={() => setExamOpen(false)}>
-              <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white hover:text-av-orange transition-all">
+              <button className="flex shrink-0 items-center gap-1 whitespace-nowrap px-4 py-2 text-sm font-medium text-white transition-all hover:text-av-orange">
                 Exam Practice <ChevronIcon open={examOpen} />
               </button>
               {examOpen && (
@@ -308,20 +308,20 @@ export default function Navbar() {
             {/* Blogs */}
             <Link
               href="/blogs"
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/blogs') ? 'text-av-orange' : 'text-white'}`}
+              className={`shrink-0 whitespace-nowrap rounded-lg px-4 py-2 text-sm font-medium transition-all hover:text-av-orange ${isActive('/blogs') ? 'text-av-orange' : 'text-white'}`}
             >
               Blogs
             </Link>
 
             <Link
               href="/faq"
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all hover:text-av-orange ${isActive('/faq') ? 'text-av-orange' : 'text-white'}`}
+              className={`shrink-0 whitespace-nowrap rounded-lg px-4 py-2 text-sm font-medium transition-all hover:text-av-orange ${isActive('/faq') ? 'text-av-orange' : 'text-white'}`}
             >
               FAQ
             </Link>
 
             {/* CTA */}
-            <Link href="/contact" className="ml-2 bg-av-orange text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/30">
+            <Link href="/contact" className="ml-2 shrink-0 whitespace-nowrap rounded-full bg-av-orange px-5 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-orange-500/30">
               Register for Scholarship
             </Link>
           </nav>
