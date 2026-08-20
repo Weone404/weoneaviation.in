@@ -127,11 +127,18 @@ export default function PartnerLogos() {
                 .partners-inner {
                     display: flex;
                     align-items: center;
-                    justify-content: center;
-                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    flex-wrap: nowrap;
                     max-width: 1400px;
                     width: 100%;
                     gap: 0;
+                    overflow-x: auto;
+                    scrollbar-width: none;
+                    -ms-overflow-style: none;
+                }
+
+                .partners-inner::-webkit-scrollbar {
+                    display: none;
                 }
 
                 .partner-item {
