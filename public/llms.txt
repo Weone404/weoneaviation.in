@@ -25,11 +25,11 @@ DGCA-approved pilot training academy in Dwarka, New Delhi, India. Operating sinc
 - https://weoneaviation.in/air-regulations — Air Regulations guide covering ICAO, DGCA frameworks, rules of the air, and licensing/compliance topics.
 - https://weoneaviation.in/aviation-meteorology — Aviation Meteorology guide focused on weather concepts, METAR/TAF literacy, and flight-safety decisions.
 - https://weoneaviation.in/technical-general — Technical General guide covering aircraft systems, aerodynamics, engines, and core pilot technical knowledge.
-- https://weoneaviation.in/rtr-a — RTR (Aero) guide for aviation radio communication licensing and exam preparation.
+- https://weoneaviation.in/rtr-a — RTR (Aero) guide under the Radio Telephone Operator (Restricted) Certificate and Licence Rules, 2025, covering eligibility, the written and practical examination structure, and exemptions.
 
 ## Trust & credentials
-- https://weoneaviation.in/about-us — Organization background, mission, and training-positioning page.
-- https://weoneaviation.in/credentials — Published verification page with accreditation claims, instructor credentials, and training statistics.
+- https://weoneaviation.in/about-us — Organization background, mission and values, the named instructor panel (chief flying instructor and DGCA aviation medical examiners), and the approvals list.
+- https://weoneaviation.in/credentials — Verification page listing only what the academy can evidence on request: DGCA approval status and years in continuous operation since 2009. Instructor licence numbers, testimonials and training statistics were removed rather than restated.
 - https://weoneaviation.in/faqs — Frequently asked questions covering pilot training, DGCA exams, eligibility, and counselling topics.
 
 ## Contact
