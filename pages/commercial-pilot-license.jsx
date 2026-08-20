@@ -297,9 +297,13 @@ export default function CPL() {
               <br />
               <span className="text-av-orange">Complete Guide to Becoming a Commercial Pilot</span>
             </h1>
+          </div>
+        </header>
 
+        <section className="bg-white py-10 px-4">
+          <div className="max-w-7xl mx-auto">
             {/* Direct answer. Written to stand alone if extracted. */}
-            <p className="text-gray-700 leading-relaxed mb-6 text-base">
+            <p className="text-gray-600 leading-relaxed mb-6 text-base">
                 A Commercial Pilot Licence (Aeroplanes) in India requires a minimum age of 18, Class Ten plus Two with Physics and Mathematics, and not less than 200 hours of flight time completed within the preceding five years. The requirements are set by the Aircraft Rules, 1937, Schedule II, Section J.
             </p>
 
@@ -404,14 +408,14 @@ export default function CPL() {
               question="How do you become a commercial pilot in India?"
               answer="You usually complete 10+2 with Physics and Mathematics, pass DGCA Class 1 medical, join DGCA ground classes, clear the required exams, and complete at least 200 flying hours at an approved flying school."
             />
-            <p className="text-white/70 max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-3">
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-3">
               A Commercial Pilot License (CPL) is the qualification required to fly aircraft professionally and build a successful career in aviation. At We One Aviation, we provide complete guidance for aspiring pilots, from DGCA counselling and ground classes to flying school selection and flight training. Whether you are planning to join a commercial pilot course, looking for commercial pilot training, or searching for the best pilot course after 12th, our experts are here to guide you at every stage.
             </p>
-            <p className="text-white/70 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
               With over a decade of aviation counselling experience, We One Aviation helps students understand the complete CPL journey, including eligibility, DGCA exams, medical requirements, flying hours, and career opportunities. Our goal is to simplify the process so you can focus on achieving your dream of becoming a commercial pilot.
             </p>
           </div>
-        </header>
+        </section>
 
         {/* ── QUICK FACTS STRIP ── */}
         <div className="bg-white border-b border-gray-100">
