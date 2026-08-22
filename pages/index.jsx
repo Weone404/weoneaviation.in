@@ -305,7 +305,7 @@ export default function Home() {
             but LinkedIn and some WhatsApp versions show no description at all.
         ──────────────────────────────────────────────────────────────────── */}
         <meta name="twitter:title" content="We One Aviation | Pilot Training Institute in India" />
-        <meta name="twitter:description" content="DGCA pilot training academy in Dwarka, New Delhi, running CPL, PPL and ATPL courses since 2009." />
+        <meta name="twitter:description" content="Start your pilot career with We One Aviation. Explore CPL courses, pilot training, DGCA ground classes, eligibility, fees and aviation career guidance in India." />
         {/* twitter:image and twitter:image:alt are page-independent and emitted
             once in _document.jsx; repeating the identical tag here shipped it twice. */}
 
@@ -318,7 +318,7 @@ export default function Home() {
 
       <Layout
         title="We One Aviation | Pilot Training Institute in India"
-        description="DGCA-approved pilot training institute in Dwarka, New Delhi. CPL, PPL, ATPL and SPL courses plus DGCA ground classes. Free career counselling available."
+        description="Start your pilot career with We One Aviation. Explore CPL courses, pilot training, DGCA ground classes, eligibility, fees and aviation career guidance in India."
       >
 
         {/* HERO */}
