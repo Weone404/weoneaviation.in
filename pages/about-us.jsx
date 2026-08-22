@@ -63,6 +63,7 @@ export default function About() {
               alt="Aviation Academy"
               width={800}
               height={600}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="rounded-2xl shadow-2xl w-full h-72 object-cover"
             />
           </ScrollReveal>

@@ -12,7 +12,7 @@ const styles = `
   .al-root {
     min-height: 100vh;
     display: flex;
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     background: #060e1c;
   }
 
@@ -72,7 +72,7 @@ const styles = `
   }
 
   .al-left-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-playfair-display), serif;
     font-size: 2.2rem;
     font-weight: 700;
     line-height: 1.2;
@@ -161,7 +161,7 @@ const styles = `
   }
 
   .al-logo-text {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-playfair-display), serif;
     font-size: 1.25rem;
     color: #fff;
     font-weight: 700;
@@ -170,7 +170,7 @@ const styles = `
   .al-logo-text span { color: #f97316; }
 
   .al-heading {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-playfair-display), serif;
     font-size: 1.85rem;
     color: #fff;
     font-weight: 700;
@@ -206,7 +206,7 @@ const styles = `
     border-radius: 8px;
     padding: 0.8rem 1rem;
     color: #fff;
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-size: 0.9rem;
     outline: none;
     transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
@@ -257,7 +257,7 @@ const styles = `
     border: none;
     border-radius: 8px;
     padding: 0.9rem;
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
@@ -324,10 +324,6 @@ export default function AdminLogin() {
             <Head>
                 <title>Admin Login — We One Aviation</title>
                 <meta name="robots" content="noindex, nofollow" />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap"
-                    rel="stylesheet"
-                />
                 <style>{styles}</style>
             </Head>
 

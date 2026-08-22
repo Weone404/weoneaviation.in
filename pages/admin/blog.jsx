@@ -204,9 +204,8 @@ export default function AdminBlog() {
         <>
             <style dangerouslySetInnerHTML={{
                 __html: `
-                    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
-                    .admin-root { font-family: 'DM Sans', sans-serif; }
-                    .admin-root h1, .admin-root h2 { font-family: 'Syne', sans-serif; }
+                    .admin-root { font-family: var(--font-dm-sans), sans-serif; }
+                    .admin-root h1, .admin-root h2 { font-family: var(--font-syne), sans-serif; }
                     .blog-row { transition: all 0.18s ease; }
                     .blog-row:hover { transform: translateX(3px); }
                     .stat-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
@@ -392,10 +391,9 @@ export default function AdminBlog() {
             </Head>
             <style dangerouslySetInnerHTML={{
                 __html: `
-                    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
-                    .admin-root { font-family: 'DM Sans', sans-serif; }
-                    .admin-root h1, .admin-root h2 { font-family: 'Syne', sans-serif; }
-                    .ql-editor { min-height: 300px; font-size: 16px; font-family: 'DM Sans', sans-serif; }
+                    .admin-root { font-family: var(--font-dm-sans), sans-serif; }
+                    .admin-root h1, .admin-root h2 { font-family: var(--font-syne), sans-serif; }
+                    .ql-editor { min-height: 300px; font-size: 16px; font-family: var(--font-dm-sans), sans-serif; }
                     .ql-container { border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; border-color: #e2e8f0 !important; }
                     .ql-toolbar { border-top-left-radius: 12px; border-top-right-radius: 12px; border-color: #e2e8f0 !important; background: #f8fafc; }
                     .ql-container.ql-snow:focus-within { border-color: #93c5fd !important; box-shadow: 0 0 0 3px rgba(147,197,253,0.25); }

@@ -186,7 +186,7 @@ const educationalOrgSchema = {
   url: 'https://weoneaviation.in',
   logo: 'https://weoneaviation.in/Logo.webp',       // ✅ FIXED: was logo.png
   image: 'https://weoneaviation.in/og-cover.jpg',
-  description: `DGCA-approved pilot training institute in Dwarka, New Delhi. CPL, PPL, ATPL and SPL courses plus DGCA ground classes, running since ${FOUNDED_YEAR}.`,
+  description: `DGCA pilot training institute in Dwarka, New Delhi. CPL, PPL, ATPL and SPL courses plus DGCA ground classes, running since ${FOUNDED_YEAR}.`,
   foundingDate: '2009',
   dateModified: LAST_UPDATED_ISO,
   telephone: '+919355611996',

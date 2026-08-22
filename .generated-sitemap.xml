@@ -1,716 +1,470 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.weoneaviation.in/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <loc>https://weoneaviation.in/</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/about-us</loc>
+    <loc>https://weoneaviation.in/Airindia-pilot-preparation</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/Indigo-pilot-preparation</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/about-us</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/advanced-atpl-pilot-training</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/air-arabia</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/advanced-atpl-pilot-training</loc>
-    <lastmod>2026-07-04</lastmod>
+    <loc>https://weoneaviation.in/air-navigation</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/air-arabia</loc>
+    <loc>https://weoneaviation.in/air-regulations</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/airline-preparation-course</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/airline-preparatory-classes/cass-compass</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/air-navigation</loc>
-    <lastmod>2026-07-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/air-regulations</loc>
+    <loc>https://weoneaviation.in/airline-preparatory-classes/interview-preparation</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/airindia-pilot-preparation</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/airline-preparation-course</loc>
+    <loc>https://weoneaviation.in/airline-preparatory-classes/psychometry</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/airline-preparatory-classes/cass-compass</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://weoneaviation.in/aviation-meteorology</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/airline-preparatory-classes/interview-preparation</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://weoneaviation.in/best-flight-schools-in-usa</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/airline-preparatory-classes/psychometry</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/aviation-meteorology</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/best-flight-schools-in-usa</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/blogs</loc>
-    <lastmod>2026-08-12</lastmod>
+    <loc>https://weoneaviation.in/blogs</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/blogs/1</loc>
+    <loc>https://weoneaviation.in/blogs/1</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/blogs/2</loc>
+    <loc>https://weoneaviation.in/blogs/2</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/blogs/3</loc>
+    <loc>https://weoneaviation.in/blogs/3</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/blogs/4</loc>
+    <loc>https://weoneaviation.in/blogs/4</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/blogs/5</loc>
+    <loc>https://weoneaviation.in/blogs/5</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/blogs/6</loc>
+    <loc>https://weoneaviation.in/blogs/6</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/blogs/aviation-course-after-12th</loc>
-    <lastmod>2026-07-25</lastmod>
+    <loc>https://weoneaviation.in/blogs/aviation-course-after-12th</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/blogs/cpl-full-form</loc>
-    <lastmod>2026-03-12</lastmod>
+    <loc>https://weoneaviation.in/blogs/dgca-exam-guide</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/blogs/dgca-exam-guide</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/blogs/pilot-training-delhi</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/blogs/ppl-course-fees</loc>
-    <lastmod>2026-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/cbse-full-form</loc>
+    <loc>https://weoneaviation.in/cbse-full-form</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/commercial-pilot-license</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://weoneaviation.in/commercial-pilot-license</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/commercial-pilot-license-admission-process</loc>
+    <loc>https://weoneaviation.in/commercial-pilot-license-admission-process</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/commercial-pilot-license-eligibility</loc>
+    <loc>https://weoneaviation.in/commercial-pilot-license-eligibility</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/commercial-pilot-license-salary</loc>
+    <loc>https://weoneaviation.in/commercial-pilot-license-salary</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/commercial-pilot-license-syllabus</loc>
+    <loc>https://weoneaviation.in/commercial-pilot-license-syllabus</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/contact</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://weoneaviation.in/contact</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/cost-transparency</loc>
-    <lastmod>2026-08-18</lastmod>
+    <loc>https://weoneaviation.in/cost-transparency</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/courses</loc>
+    <loc>https://weoneaviation.in/courses</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/courses/atpl</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/courses/cpl</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/courses/dgca-ground-classes</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/courses/atpl</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/courses/cpl</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/courses/cpl-flight-training</loc>
-    <lastmod>2026-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/courses/dgca-ground-classes</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/courses/ppl</loc>
+    <loc>https://weoneaviation.in/courses/ppl</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/credentials</loc>
-    <lastmod>2026-08-18</lastmod>
+    <loc>https://weoneaviation.in/credentials</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/dgca-class-2-class-1-medical</loc>
+    <loc>https://weoneaviation.in/dgca-class-2-class-1-medical</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/dgca-computer-number</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/dgca-full-form</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/dgca-computer-number</loc>
-    <lastmod>2026-07-24</lastmod>
+    <loc>https://weoneaviation.in/dgca-ground-classes</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/dgca-full-form</loc>
+    <loc>https://weoneaviation.in/dgca-ground-classes-in-india</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/dgca-pariksha</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/doubt</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/ecga-login-your-complete-guide</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/emirates-cadet-pilot-program</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/faq</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/faqs</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/flying-school/australia</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/flying-school/canada</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/dgca-ground-classes</loc>
-    <lastmod>2026-07-24</lastmod>
+    <loc>https://weoneaviation.in/flying-school/india</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/dgca-ground-classes-in-india</loc>
-    <lastmod>2026-08-12</lastmod>
+    <loc>https://weoneaviation.in/flying-school/south-africa</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/dgca-pariksha</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://weoneaviation.in/flying-school/usa</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/doubt</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/ecga-login-your-complete-guide</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/emirates-cadet-pilot-program</loc>
+    <loc>https://weoneaviation.in/full-form-of-cpl-commercial-pilot-license</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/faq</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/faqs</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/flying-school/australia</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/flying-school/canada</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/flying-school/india</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/flying-school/south-africa</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/flying-school/usa</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/full-form-of-cpl-commercial-pilot-license</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/how-to-become-a-pilot-after-12th</loc>
-    <lastmod>2026-07-08</lastmod>
+    <loc>https://weoneaviation.in/how-to-become-a-pilot-after-12th</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/how-to-become-a-pilot/after-12th</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://weoneaviation.in/how-to-become-a-pilot/after-12th</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/how-to-become-a-pilot/in-india</loc>
-    <lastmod>2026-03-02</lastmod>
+    <loc>https://weoneaviation.in/how-to-become-a-pilot/in-india</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/icse-full-form</loc>
+    <loc>https://weoneaviation.in/icse-full-form</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/indigo-pilot-preparation</loc>
+    <loc>https://weoneaviation.in/lead-magnets</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/lead-magnets</loc>
-    <lastmod>2026-08-18</lastmod>
+    <loc>https://weoneaviation.in/lead-magnets/cpl-cost-breakdown</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/lead-magnets/cpl-cost-breakdown</loc>
-    <lastmod>2026-08-18</lastmod>
+    <loc>https://weoneaviation.in/lead-magnets/dgca-exam-checklist</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/lead-magnets/dgca-exam-checklist</loc>
-    <lastmod>2026-08-18</lastmod>
+    <loc>https://weoneaviation.in/lead-magnets/pre-admission-checklist</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/lead-magnets/pre-admission-checklist</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-course-training-in-india</loc>
+    <loc>https://weoneaviation.in/pilot-course-training-in-india</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-andhra-pradesh</loc>
-    <lastmod>2026-07-24</lastmod>
+    <loc>https://weoneaviation.in/pilot-training-in-delhi</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-arunachal-pradesh</loc>
-    <lastmod>2026-05-25</lastmod>
+    <loc>https://weoneaviation.in/pilot-training-in-india</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-assam</loc>
-    <lastmod>2026-08-12</lastmod>
+    <loc>https://weoneaviation.in/pilot-training-in-sri-lanka</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-bangalore</loc>
-    <lastmod>2026-08-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-bihar</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-chennai</loc>
-    <lastmod>2026-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-chhattisgarh</loc>
-    <lastmod>2026-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-coimbatore</loc>
-    <lastmod>2026-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-delhi</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-ghaziabad</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-goa</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-gujarat</loc>
-    <lastmod>2026-08-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-gurugram</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-haryana</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-hyderabad</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-india</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-jaipur</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-kerala</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-kolkata</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-maharashtra</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-mumbai</loc>
-    <lastmod>2026-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-nagpur</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-noida</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-pune</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-punjab</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-rajasthan</loc>
-    <lastmod>2026-05-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-sri-lanka</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in-tamil-nadu</loc>
-    <lastmod>2026-07-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/bangalore</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/chennai</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/delhi</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/fallback</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/gujarat</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/haryana</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/hyderabad</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/jaipur</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/kerala</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/kolkata</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/mumbai</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/nagpur</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/paths</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/pune</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/pilot-training-in/punjab</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.weoneaviation.in/ppl-full-form</loc>
+    <loc>https://weoneaviation.in/ppl-full-form</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/privacy-policy</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://weoneaviation.in/privacy-policy</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/private-pilot-license-ppl-course-details</loc>
-    <lastmod>2026-07-04</lastmod>
+    <loc>https://weoneaviation.in/private-pilot-license-ppl-course-details</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/qatar-airways-cadet-pilot-program</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://weoneaviation.in/qatar-airways-cadet-pilot-program</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/rtr-a</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://weoneaviation.in/rtr-a</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/rtr-full-form-meaning-importance-and-complete-guide</loc>
+    <loc>https://weoneaviation.in/rtr-full-form-meaning-importance-and-complete-guide</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/sitemap</loc>
-    <lastmod>2026-07-11</lastmod>
+    <loc>https://weoneaviation.in/sitemap</loc>
+    <lastmod>2026-08-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/spice-jet</loc>
+    <loc>https://weoneaviation.in/spice-jet</loc>
     <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/student-checklists</loc>
-    <lastmod>2026-08-18</lastmod>
+    <loc>https://weoneaviation.in/student-checklists</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/student-pilot-license-spl</loc>
-    <lastmod>2026-07-04</lastmod>
+    <loc>https://weoneaviation.in/student-pilot-license-spl</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/technical-general</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://weoneaviation.in/technical-general</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/terms</loc>
-    <lastmod>2026-08-14</lastmod>
+    <loc>https://weoneaviation.in/terms</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.weoneaviation.in/your-guide-on-how-to-become-a-pilot-in-india</loc>
-    <lastmod>2026-07-25</lastmod>
+    <loc>https://weoneaviation.in/your-guide-on-how-to-become-a-pilot-in-india</loc>
+    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

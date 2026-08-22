@@ -46,17 +46,12 @@ export default function Document() {
 
         <meta name="keywords" content="pilot training, cpl, dgca ground classes, pilot course" />
 
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="dns-prefetch" href="//analytics.google.com" />
         <link rel="dns-prefetch" href="//stats.g.doubleclick.net" />
         <link rel="dns-prefetch" href="//td.doubleclick.net" />
         <link rel="dns-prefetch" href="//www.clarity.ms" />
         <link rel="dns-prefetch" href="//googleleads.g.doubleclick.net" />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/*
           Montserrat and Poppins are self-hosted through next/font in _app.jsx,

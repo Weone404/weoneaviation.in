@@ -72,7 +72,7 @@ export function CityPageTemplate({
             </Head>
 
             <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-                <Image src={hero.image} alt={`CPL pilot training in ${city} — We One Aviation Academy`} width={1600} height={900} priority className="absolute inset-0 w-full h-full object-cover" />
+                <Image src={hero.image} alt={`CPL pilot training in ${city} — We One Aviation Academy`} width={1600} height={900} priority sizes="100vw" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-av-blue/70" />
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
                     <div className="section-tag mx-auto mb-4">{hero.tag}</div>

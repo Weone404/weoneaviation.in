@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Script from 'next/script';
 import dynamic from 'next/dynamic';
-import { Montserrat, Poppins } from 'next/font/google';
+import { DM_Sans, Montserrat, Playfair_Display, Poppins, Sora, Syne } from 'next/font/google';
 
 /*
  * Self-hosted via next/font instead of a <link> to fonts.googleapis.com.
@@ -34,6 +34,34 @@ const poppins = Poppins({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-poppins',
+  display: 'swap',
+});
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  variable: '--font-playfair-display',
+  display: 'swap',
+});
+
+const sora = Sora({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-sora',
+  display: 'swap',
+});
+
+const syne = Syne({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '800'],
+  variable: '--font-syne',
   display: 'swap',
 });
 
@@ -102,6 +130,10 @@ export default function App({ Component, pageProps }) {
         :root {
           --font-montserrat: ${montserrat.style.fontFamily};
           --font-poppins: ${poppins.style.fontFamily};
+          --font-dm-sans: ${dmSans.style.fontFamily};
+          --font-playfair-display: ${playfairDisplay.style.fontFamily};
+          --font-sora: ${sora.style.fontFamily};
+          --font-syne: ${syne.style.fontFamily};
         }
       `}</style>
 

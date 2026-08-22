@@ -31,8 +31,7 @@ export default function DoubtPage() {
             </Head>
 
             <div style={styles.page}>
-                <style>{`
-          @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
+                    <style>{`
           * { box-sizing: border-box; margin: 0; padding: 0; }
           body { background: #060810; }
           ::-webkit-scrollbar { width: 4px; }
@@ -49,7 +48,7 @@ export default function DoubtPage() {
             border-radius: 10px;
             cursor: pointer;
             transition: all 0.2s;
-            font-family: 'Sora', sans-serif;
+            font-family: var(--font-sora), sans-serif;
             font-size: 13px;
             color: #94a3b8;
             text-align: left;

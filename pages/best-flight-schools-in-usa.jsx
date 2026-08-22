@@ -234,6 +234,7 @@ export default function USAFlightTraining() {
                                             alt={aircraftList[activeAircraft].name}
                                             width={1200}
                                             height={700}
+                                            sizes="(max-width: 768px) 100vw, 60vw"
                                             className="w-full h-full object-cover"
                                         />
                                     </div>

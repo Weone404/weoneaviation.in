@@ -267,10 +267,8 @@ export default function DoubtChat({ compact = false }) {
 
 // ── Styles ────────────────────────────────────────────────────────────────────
 const CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap');
-
   .dcw {
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-sora), sans-serif;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -362,7 +360,7 @@ const CSS = `
     border-radius: 20px;
     font-size: 11px;
     cursor: pointer;
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-sora), sans-serif;
     transition: all 0.2s;
     display: flex;
     align-items: center;
@@ -416,7 +414,7 @@ const CSS = `
     font-size: 12px;
     cursor: pointer;
     transition: all 0.2s;
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-sora), sans-serif;
   }
   .quick-btn:hover { border-color: #4f46e5; color: #a5b4fc; background: #1e1b4b22; }
 
@@ -448,7 +446,7 @@ const CSS = `
     font-weight: 700;
     cursor: pointer;
     border: none;
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-sora), sans-serif;
     transition: all 0.2s;
   }
   .tts-toggle.on  { background: #22c55e22; color: #4ade80; border: 1px solid #22c55e55; }
@@ -462,7 +460,7 @@ const CSS = `
     border-radius: 20px;
     font-size: 11px;
     cursor: pointer;
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-sora), sans-serif;
     animation: pulse 1.5s infinite;
   }
 
@@ -477,7 +475,7 @@ const CSS = `
     padding: 10px 14px;
     border-radius: 12px;
     font-size: 14px;
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-sora), sans-serif;
     resize: none;
     outline: none;
     min-height: 42px;
@@ -496,7 +494,7 @@ const CSS = `
     padding: 10px 18px; border-radius: 10px;
     font-size: 14px; font-weight: 600; cursor: pointer;
     transition: opacity 0.2s, transform 0.1s;
-    font-family: 'Sora', sans-serif; white-space: nowrap;
+    font-family: var(--font-sora), sans-serif; white-space: nowrap;
   }
   .send-btn:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
   .send-btn:disabled { opacity: 0.4; cursor: not-allowed; }

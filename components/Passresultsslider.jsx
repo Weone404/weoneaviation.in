@@ -83,10 +83,8 @@ const VISIBLE = 4;
 const AUTO_DELAY = 2000;
 
 const CAROUSEL_CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap');
-
   .ac-section {
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--font-dm-sans), sans-serif;
     background: #f0f5ff;
     padding: 96px 0 108px;
     overflow: hidden;
@@ -142,7 +140,7 @@ const CAROUSEL_CSS = `
     50%      { transform: scale(1.5); opacity: 0.65; }
   }
   .ac-heading {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-syne), sans-serif;
     font-size: clamp(2rem, 4.5vw, 3.4rem);
     font-weight: 800; color: #0b3a7a;
     line-height: 1.1; margin: 0;
@@ -159,7 +157,7 @@ const CAROUSEL_CSS = `
 
   .ac-stat { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
   .ac-stat-num {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-syne), sans-serif;
     font-size: 3.2rem; font-weight: 800;
     color: #0b3a7a; line-height: 1; letter-spacing: -0.04em;
   }
@@ -266,7 +264,7 @@ const CAROUSEL_CSS = `
   }
   .ac-card-serial {
     position: absolute; left: 14px; bottom: 12px;
-    font-family: 'Syne', monospace;
+    font-family: var(--font-syne), monospace;
     font-size: 0.6rem; font-weight: 700;
     letter-spacing: 2px; color: rgba(255,255,255,0.3);
   }
@@ -302,7 +300,7 @@ const CAROUSEL_CSS = `
     gap: 0; width: 100%; box-sizing: border-box;
   }
   .ac-pilot-name {
-    font-family: 'Syne', sans-serif;
+    font-family: var(--font-syne), sans-serif;
     font-size: 0.97rem; font-weight: 700;
     color: #0b3a7a; margin: 0 0 10px; letter-spacing: 0.01em;
   }

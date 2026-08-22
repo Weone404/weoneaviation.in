@@ -236,6 +236,7 @@ export default function DGCAParikshaPage() {
                                     alt="Aviation student preparing for DGCA Pariksha exam"
                                     width={600}
                                     height={400}
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                     className="w-full h-64 object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-av-blue/80 to-transparent flex items-end p-6">
@@ -331,6 +332,7 @@ export default function DGCAParikshaPage() {
                                     alt="Aviation navigation charts and instruments for DGCA exam"
                                     width={600}
                                     height={600}
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                     className="w-full h-80 object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-av-navy/80 to-transparent flex items-end p-6">
@@ -363,6 +365,7 @@ export default function DGCAParikshaPage() {
                                     alt="Computer based test CBT aviation DGCA exam"
                                     width={600}
                                     height={500}
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                     className="w-full h-72 object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-av-blue/80 to-transparent flex items-end p-6">
@@ -440,6 +443,7 @@ export default function DGCAParikshaPage() {
                                     alt="Pilot student studying for DGCA exam with books"
                                     width={600}
                                     height={600}
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                     className="w-full h-80 object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-av-navy/80 to-transparent flex items-end p-6">

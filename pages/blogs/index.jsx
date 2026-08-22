@@ -68,6 +68,7 @@ export default function BlogsIndex({ mongoBlogs }) {
                                     alt={blog.title}
                                     width={800}
                                     height={600}
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
                                 <span className="absolute top-3 left-3 bg-av-orange text-white text-xs font-bold px-3 py-1 rounded-full">
