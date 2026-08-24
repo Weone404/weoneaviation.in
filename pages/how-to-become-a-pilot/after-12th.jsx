@@ -2,6 +2,7 @@ import Layout from '../../components/Layout';
 import LeadForm from '../../components/LeadForm';
 import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const steps = [
   { num: 1, title: 'Pass 12th with PCM', desc: 'You need Physics, Chemistry, and Maths in your 12th standard. A minimum of 50% marks is required for DGCA eligibility. Some foreign flying schools accept any 12th pass.' },
@@ -17,8 +18,15 @@ export default function After12th() {
   return (
     <Layout title="How to Become a Pilot After 12th | Complete Guide 2024 | We One Aviation" description="Complete guide on how to become a pilot after 12th standard in India. Eligibility, DGCA exams, flying hours, costs, and career path explained step-by-step.">
       {/* Hero */}
-      <div className="relative h-72 overflow-hidden flex items-center justify-center pt-16"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="relative h-72 overflow-hidden flex items-center justify-center pt-16">
+        <Image
+          src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80"
+          alt="Aircraft on a runway with a dramatic sunset sky during pilot training preparation"
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+        />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative z-10 text-center px-4">
           <div className="section-tag mb-3">Complete Guide</div>
