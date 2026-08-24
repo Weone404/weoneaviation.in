@@ -224,16 +224,17 @@ export default function Navbar() {
         <div className="mx-auto flex w-full items-center justify-between px-4 sm:px-8 lg:px-16">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <NextImage
-              src="/Logo.webp"
-              alt="We One Aviation Academy"
-              width={200}
-              height={64}
-              sizes="200px"
-              style={{ width: '200px', height: '64px', objectFit: 'contain' }}
-              className="block"
-            />
+          <Link href="/" className="flex h-16 w-[200px] items-center">
+            <div className="relative h-16 w-16 shrink-0">
+              <NextImage
+                src="/Logo.webp"
+                alt="We One Aviation Academy"
+                fill
+                sizes="64px"
+                style={{ objectFit: 'contain' }}
+                className="block"
+              />
+            </div>
           </Link>
 
           {/* Desktop Nav */}

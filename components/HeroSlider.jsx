@@ -52,17 +52,9 @@ const STATS = [
  * file — Lighthouse (mobile) attributed 633 KiB of transfer to Unsplash on the
  * homepage alone, most of it pixels a phone cannot display.
  *
- * Unsplash resizes on demand from the `w` query parameter, so a srcset costs
- * nothing to produce. Slides pointing at local files under /assets have no such
- * parameter; those return undefined and fall back to plain `src`.
+ * Next Image handles responsive sizing and format negotiation for both local
+ * and remote slide assets.
  */
-const SRCSET_WIDTHS = [640, 960, 1280, 1920];
-
-function buildSrcSet(url) {
-  if (typeof url !== 'string' || !/[?&]w=\d+/.test(url)) return undefined;
-  return SRCSET_WIDTHS.map((w) => `${url.replace(/([?&]w=)\d+/, `$1${w}`)} ${w}w`).join(', ');
-}
-
 // Particle positions computed once, not on every render
 const PARTICLES = Array.from({ length: 8 }, (_, i) => ({
   left: `${10 + i * 12}%`,
@@ -149,13 +141,12 @@ export default function HeroSlider({ customSlides, asH1 = true }) {
             {(isFirst || shouldRender) && (
               <NextImage
                 src={s.image}
-                srcSet={buildSrcSet(s.image)}
                 sizes="100vw"
                 alt={s.alt || s.tag}
-                width={1600}
-                height={900}
+                fill
                 priority={isFirst}
-                className="absolute inset-0 w-full h-full object-cover object-center"
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                className="absolute inset-0"
               />
             )}
           </div>

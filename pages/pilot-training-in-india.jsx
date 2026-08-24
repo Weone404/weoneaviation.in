@@ -399,14 +399,14 @@ export default function Home() {
 
                     <ScrollReveal delay={200}>
                         <div className="relative">
-                            <div className="rounded-2xl overflow-hidden shadow-2xl">
+                            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                                 <NextImage
                                     src="/assets/GroundSchool.jpg"
                                     alt="Pilot in cockpit training"
                                     width={350}
-                                    height={280}
+                                    height={195}
                                     sizes="(max-width: 768px) 100vw, 350px"
-                                    style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+                                    style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
                                     className="block"
                                 />
                             </div>
