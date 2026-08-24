@@ -150,15 +150,9 @@ export default function App({ Component, pageProps }) {
       {/* ✅ Tecmicra CRM Tracker */}
       <Script
         id="tecmicra-tracker"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `(function(){
-            var s = document.createElement("script");
-            s.src = "https://tecmicra.com/CRM-Dev/webhook/tracker.php?key=d8db0fcdb4e926af15d2cbce1ce2d1a734c398ab2ef39aef3d4230be8050f721";
-            s.async = true;
-            document.head.appendChild(s);
-          })();`,
-        }}
+        src="https://tecmicra.com/CRM-Dev/webhook/tracker.php?key=d8db0fcdb4e926af15d2cbce1ce2d1a734c398ab2ef39aef3d4230be8050f721"
+        strategy="lazyOnload"
+        async
       />
 
       <Component {...pageProps} />
