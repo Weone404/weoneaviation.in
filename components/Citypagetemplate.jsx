@@ -112,7 +112,7 @@ export function CityPageTemplate({
                     <ScrollReveal delay={200}>
                         <div className="relative">
                             <div className="rounded-2xl overflow-hidden shadow-2xl">
-                                <Image src="/assets/GroundSchool.jpg" alt={`CPL pilot training in ${city} — We One Aviation Academy`} width={350} height={280} sizes="(max-width: 768px) 100vw, 350px" className="w-full h-80 object-cover" />
+                                <Image src="/assets/GroundSchool.jpg" alt={`CPL pilot training in ${city} — We One Aviation Academy`} width={350} height={195} sizes="(max-width: 768px) 100vw, 350px" style={{ objectFit: 'contain' }} className="w-full h-auto object-contain" />
                             </div>
                             <div className="absolute -top-5 -right-5 glass bg-av-blue rounded-xl p-4 shadow-xl border border-white/20">
                                 <div className="font-montserrat text-av-orange text-xl font-black">DGCA</div>

@@ -409,9 +409,10 @@ export default function Home() {
                     src="/assets/GroundSchool.jpg"
                     alt="Pilot ground school training at We One Aviation Academy"
                     width={350}
-                    height={280}
+                    height={195}
                     sizes="(max-width: 768px) 100vw, 350px"
-                    className="w-full h-80 object-cover"
+                    style={{ objectFit: 'contain' }}
+                    className="w-full h-auto object-contain"
                   />
                 </div>
                 <div className="absolute -bottom-5 -left-5 bg-av-orange rounded-xl p-4 shadow-xl">
