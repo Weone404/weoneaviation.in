@@ -450,7 +450,9 @@ export default function Home() {
           </div>
         </section>
 
-        <PartnerLogos />
+        <LazyMount placeholderClassName="min-h-32">
+          <PartnerLogos />
+        </LazyMount>
 
         {/* COURSE FEE & SCHEDULE */}
         <section className="py-20 px-4">

@@ -109,12 +109,6 @@ export default function HeroSlider({ customSlides, asH1 = true }) {
     return () => clearInterval(interval);
   }, [data.length]);
 
-  // Pre-load the *next* slide whenever current changes
-  useEffect(() => {
-    const nextIdx = (current + 1) % data.length;
-    setLoaded(prev => new Set(prev).add(nextIdx));
-  }, [current, data.length]);
-
   const slide = data[current];
 
   return (
