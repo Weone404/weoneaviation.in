@@ -143,10 +143,11 @@ export default function HeroSlider({ customSlides, asH1 = true }) {
                 src={s.image}
                 sizes="100vw"
                 alt={s.alt || s.tag}
-                fill
+                width={1920}
+                height={1080}
                 priority={isFirst}
                 style={{ objectFit: 'cover', objectPosition: 'center' }}
-                className="absolute inset-0"
+                className="absolute inset-0 w-full h-full"
               />
             )}
           </div>
