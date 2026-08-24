@@ -84,7 +84,6 @@ export default function PartnerLogos() {
                                             maxWidth: "100%",
                                         }}
                                         quality={100}
-                                        unoptimized
                                     />
                                 </a>
                             ) : (
@@ -101,7 +100,6 @@ export default function PartnerLogos() {
                                         maxWidth: "100%",
                                     }}
                                     quality={100}
-                                    unoptimized
                                 />
                             )}
                         </div>

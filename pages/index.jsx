@@ -20,6 +20,7 @@ import NextImage from 'next/image';
 import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import CourseCard from '../components/CourseCard';
+import PartnerLogos from '../components/Partnerlogos';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -36,11 +37,6 @@ const LeadForm = dynamic(() => import('../components/LeadForm'), {
 const Passresultsslider = dynamic(() => import('../components/Passresultsslider'), {
   ssr: false,
   loading: () => <div className="h-40 bg-gray-100 rounded-2xl animate-pulse my-4" />,
-});
-
-const PartnerLogos = dynamic(() => import('../components/Partnerlogos'), {
-  ssr: false,
-  loading: () => <div className="h-24 bg-gray-50 animate-pulse" />,
 });
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
@@ -268,11 +264,7 @@ const breadcrumbSchema = {
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
-  const [currentYear, setCurrentYear] = useState(2026);
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
+  const [currentYear] = useState(() => new Date().getFullYear());
 
   return (
     <>
