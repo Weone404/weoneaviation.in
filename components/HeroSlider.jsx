@@ -184,10 +184,10 @@ export default function HeroSlider({ customSlides, asH1 = true }) {
               Use h1 for the homepage hero and h2 for page-specific hero slides.
               This keeps the layout intact while preserving heading structure.
             */}
-            <Heading className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-shadow mb-2">
+            <Heading className="font-montserrat text-4xl md:text-6xl lg:text-6xl font-black text-white leading-tight text-shadow mb-2">
               {slide.title}
             </Heading>
-            <p className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-shadow mb-5 gradient-text">
+            <p className="font-montserrat text-4xl md:text-6xl lg:text-6xl font-black leading-tight text-shadow mb-5 gradient-text">
               {slide.highlight}
             </p>
             <p className="text-white/80 text-base md:text-lg mb-8 max-w-xl leading-relaxed">
@@ -197,13 +197,13 @@ export default function HeroSlider({ customSlides, asH1 = true }) {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="bg-av-orange hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full transition-all shadow-2xl hover:shadow-orange-500/40 hover:scale-105 text-sm md:text-base"
+                className="button-primary bg-av-orange hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full transition-all shadow-2xl hover:shadow-orange-500/40 hover:scale-105 text-sm md:text-base"
               >
                 Get Free Counselling
               </Link>
               <Link
                 href="/courses"
-                className="glass text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition-all text-sm md:text-base"
+                className="button-secondary glass text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition-all text-sm md:text-base"
               >
                 Explore Courses →
               </Link>

@@ -14,6 +14,8 @@
   --av-navy: #0d3060;
   --av-orange: #b45309;
   --av-sky: #0ea5e9;
+  --text-muted: #4b5563;
+  --text-on-dark-muted: rgb(255 255 255 / 0.8);
 }
 
 * {
@@ -47,6 +49,51 @@ input,
 select,
 textarea {
   font: inherit;
+}
+
+/* Shared action treatments keep repeated CTAs visually consistent. */
+.button-primary,
+.button-secondary {
+  display: inline-block;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-primary {
+  background: var(--av-orange) !important;
+  color: #fff !important;
+}
+
+.button-primary:hover {
+  background: var(--av-blue) !important;
+}
+
+.button-secondary {
+  border: 1px solid var(--av-blue);
+  background: #fff !important;
+  color: var(--av-blue) !important;
+}
+
+.button-secondary:hover {
+  background: var(--av-light) !important;
+  color: var(--av-blue) !important;
+}
+
+/* These utility colors are aliases of the same two readable text roles. */
+[class~="text-gray-500"],
+[class~="text-gray-600"] {
+  color: var(--text-muted) !important;
+}
+
+[class~="text-white/60"],
+[class~="text-white/70"],
+[class~="text-white/80"],
+[class~="text-white/90"] {
+  color: var(--text-on-dark-muted) !important;
 }
 
 @media (hover: none), (pointer: coarse) {

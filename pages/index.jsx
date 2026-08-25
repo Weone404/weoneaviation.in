@@ -358,13 +358,13 @@ export default function Home() {
           </p>
           <Link
             href="/courses/cpl#fee-table"
-            className="inline-block mt-2 bg-white/90 text-av-orange font-bold px-6 py-2 rounded-full text-sm hover:bg-av-blue hover:text-white transition-all"
+            className="button-secondary inline-block mt-2 bg-white/90 text-av-orange font-bold px-6 py-2 rounded-full text-sm hover:bg-av-blue hover:text-white transition-all"
           >
             See full fee breakdown →
           </Link>
           <Link
             href="/contact"
-            className="inline-block mt-2 bg-white text-av-orange font-bold px-6 py-2 rounded-full text-sm hover:bg-av-blue hover:text-white transition-all"
+            className="button-secondary inline-block mt-2 bg-white text-av-orange font-bold px-6 py-2 rounded-full text-sm hover:bg-av-blue hover:text-white transition-all"
           >
             Contact Us →
           </Link>
@@ -393,10 +393,10 @@ export default function Home() {
                 ))}
               </div>
               <div className="flex gap-3">
-                <Link href="/about-us" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm">
+                <Link href="/about-us" className="button-primary inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm">
                   Learn More About Us →
                 </Link>
-                <Link href="/credentials" className="inline-block bg-white border border-av-blue text-av-blue px-7 py-3 rounded-full font-semibold hover:bg-av-light transition-all text-sm">
+                <Link href="/credentials" className="button-secondary inline-block bg-white border border-av-blue text-av-blue px-7 py-3 rounded-full font-semibold hover:bg-av-light transition-all text-sm">
                   View Credentials & Verification
                 </Link>
               </div>
@@ -481,7 +481,7 @@ export default function Home() {
                     <div><span className="font-semibold text-av-blue">Mode:</span> Offline / Online</div>
                     <div><span className="font-semibold text-av-blue">Batch Start:</span> Every 1st &amp; 3rd Week of Month</div>
                   </div>
-                  <Link href="/dgca-ground-classes" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">Course Details</Link>
+                  <Link href="/dgca-ground-classes" className="button-primary mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">Course Details</Link>
                 </div>
               </ScrollReveal>
 
@@ -497,7 +497,7 @@ export default function Home() {
                     <div><span className="font-semibold text-av-blue">Fees:</span> 55 to 65 lakh <span className="text-gray-400">(Depends on Country)</span></div>
                     <div><span className="font-semibold text-av-blue">Registration:</span> Every Month</div>
                   </div>
-                  <Link href="/courses/cpl" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">CPL Flight Training Details</Link>
+                  <Link href="/courses/cpl" className="button-primary mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">CPL Flight Training Details</Link>
                 </div>
               </ScrollReveal>
 
@@ -511,7 +511,7 @@ export default function Home() {
                     <div><span className="font-semibold text-av-orange">Full Course Fees:</span> 50–55 lakh (Depends on Country)</div>
                     <div><span className="font-semibold text-av-orange">Batch Start:</span> Every 1st &amp; 3rd Week of Month</div>
                   </div>
-                  <Link href="/commercial-pilot-license" className="mt-auto inline-block text-center bg-av-orange text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">Course Details</Link>
+                  <Link href="/commercial-pilot-license" className="button-primary mt-auto inline-block text-center bg-av-orange text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">Course Details</Link>
                 </div>
               </ScrollReveal>
             </div>
@@ -525,20 +525,20 @@ export default function Home() {
               <div className="section-tag">DGCA Ground Classes</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot License</h2>
               <p className="text-gray-600 leading-relaxed mb-4">✈️ Dreaming of Becoming a Commercial Pilot? Get approved training, expert mentorship and hands-on flight experience.</p>
-              <Link href="/commercial-pilot-license" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">CPL Training Details</Link>
+              <Link href="/commercial-pilot-license" className="button-primary inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">CPL Training Details</Link>
             </ScrollReveal>
             <ScrollReveal delay={150}>
               <div className="section-tag">Ground Classes</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Dgca-Cpl Ground Classes</h2>
               <p className="text-gray-600 leading-relaxed mb-4">📖 Master Every DGCA Subject &amp; Fly High! Our DGCA Ground Classes make learning easy &amp; effective. Get trained by industry experts!</p>
-              <Link href="/dgca-ground-classes" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">Explore DGCA Ground Classes</Link>
+              <Link href="/dgca-ground-classes" className="button-primary inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">Explore DGCA Ground Classes</Link>
             </ScrollReveal>
           </div>
           <div className="max-w-7xl mx-auto mt-12">
             <ScrollReveal className="bg-av-blue rounded-2xl p-8 text-center">
               <h2 className="font-montserrat text-2xl font-bold text-white mb-3">Enroll in Flying School</h2>
               <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">At Our Flying School, we train future pilots with state-of-the-art aircraft, expert instructors, and guaranteed career guidance.</p>
-              <Link href="/flying-school/india" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">India Flying School Details</Link>
+              <Link href="/flying-school/india" className="button-primary inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">India Flying School Details</Link>
             </ScrollReveal>
           </div>
         </section>
@@ -565,7 +565,7 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal className="text-center mt-10">
               <p className="text-av-blue font-semibold text-lg">Join We One Aviation Academy and Take Off Towards a Successful Aviation Career! ✈️</p>
-              <Link href="/contact" className="inline-block mt-4 bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-av-blue transition-all text-sm">Get Free Pilot Career Counselling →</Link>
+              <Link href="/contact" className="button-primary inline-block mt-4 bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-av-blue transition-all text-sm">Get Free Pilot Career Counselling →</Link>
             </ScrollReveal>
           </div>
         </section>
@@ -585,14 +585,14 @@ export default function Home() {
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
                   <h3 className="font-montserrat text-xl font-bold text-av-blue mb-4">Dgca Ground Classes</h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-6">DGCA ground classes for the CPL subject set, running since 2009. Batch timings and fee instalments are flexible.</p>
-                  <Link href="/contact" className="inline-block bg-av-blue text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">Enquiry Now</Link>
+                  <Link href="/contact" className="button-primary inline-block bg-av-blue text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">Enquiry Now</Link>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={150}>
                 <div className="bg-av-blue rounded-2xl shadow-lg p-8">
                   <h3 className="font-montserrat text-xl font-bold text-white mb-4">Our Flying School</h3>
                   <p className="text-white/70 text-sm leading-relaxed mb-6">Flight training placements with partner flying schools in India and abroad. We handle school selection, documentation and the DGCA licence conversion that follows.</p>
-                  <Link href="/contact" className="inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">Enquiry Now</Link>
+                  <Link href="/contact" className="button-primary inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">Enquiry Now</Link>
                 </div>
               </ScrollReveal>
             </div>
@@ -724,7 +724,7 @@ export default function Home() {
                       <p>✅ <span className="font-semibold">Fees:</span> {school.fees}</p>
                       <p>✅ <span className="font-semibold">Highlights:</span> {school.highlights}</p>
                     </div>
-                    <Link href={school.href} className="inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">Learn More</Link>
+                    <Link href={school.href} className="button-primary inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">Learn More</Link>
                   </div>
                 )}
               />
@@ -779,7 +779,7 @@ export default function Home() {
                </ScrollReveal>
             
             <div className="text-center mt-8">
-              <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-av-blue transition-all text-sm">Ask Question</Link>
+              <Link href="/contact" className="button-primary inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-av-blue transition-all text-sm">Ask Question</Link>
             </div>
           </div>
         </section>
