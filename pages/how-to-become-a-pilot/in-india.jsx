@@ -1,7 +1,11 @@
 import Layout from '../../components/Layout';
 import StructuredData from '../../components/StructuredData';
 import { generateHowToSchema } from '../../lib/schema';
-import { papersSummary } from '../../lib/facts';
+import { papersSummary, cplHoursSummary, CPL_HOURS, EDUCATION, MEDICAL, LICENCES } from '../../lib/facts';
+import QuickAnswer from '../../components/QuickAnswer';
+import SummaryBox from '../../components/SummaryBox';
+import PeopleAlsoAsk from '../../components/PeopleAlsoAsk';
+import Breadcrumb from '../../components/Breadcrumb';
 import LeadForm from '../../components/LeadForm';
 import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
@@ -37,6 +41,34 @@ const howToSchema = generateHowToSchema({
   steps: pilotSteps,
 });
 
+/*
+ * Disjoint from this route's pageFaqs entries and from the nine pilotSteps
+ * rendered below — these answer the decisions AROUND the process, not the
+ * process itself.
+ */
+const peopleAlsoAsk = [
+  {
+    q: 'Is a DGCA licence recognised outside India?',
+    a: 'It is an Indian licence, and other authorities convert rather than accept it — the same way the DGCA converts a foreign one. If you intend to fly abroad long-term, research that authority conversion path before you choose where to train.',
+  },
+  {
+    q: 'Does the five-year rule apply to the theory papers too?',
+    a: 'No. The five-year window in paragraph 1(e) governs flight time, not cleared papers. Papers do not lapse the same way. What it means in practice is that the flying should follow the theory without a long gap, not the reverse.',
+  },
+  {
+    q: 'Can I work while training?',
+    a: 'During ground classes, many students do — we run online and classroom batches partly for that reason. During the flying phase it is harder: flying is scheduled around weather and aircraft availability, not around your calendar.',
+  },
+  {
+    q: 'What does an Instrument Rating add?',
+    a: 'It permits flight by sole reference to instruments, which is the condition most commercial flying is actually conducted in. It is required before the CPL is issued, so treat it as part of the licence rather than an optional extra.',
+  },
+  {
+    q: 'How do I know a flying school is genuine?',
+    a: 'Ask for the approval, the aircraft availability per student, and what happens to your money if the school stops operating. Our credentials page sets out the seven questions worth asking any academy, including us.',
+  },
+];
+
 export default function InIndia() {
   return (
     <Layout title="How to Become a Pilot in India 2024 | Complete DGCA Guide | We One Aviation" description="Complete guide on becoming a commercial pilot in India. DGCA requirements, CPL eligibility, flying schools, fees, career prospects and salary in 2024.">
@@ -55,7 +87,56 @@ export default function InIndia() {
         </div>
       </div>
 
-      <section className="py-20 px-4">
+      <section className="pt-14 px-4">
+        <div className="max-w-4xl mx-auto">
+          <Breadcrumb />
+
+          <QuickAnswer
+            question="How do you become a pilot in India?"
+            answer={`You clear 10+2 with Physics and Mathematics, pass the ${MEDICAL.short}, clear the DGCA written papers, then build ${CPL_HOURS.total} hours of flight time at a flying school and pass the CPL skill test. The Commercial Pilot Licence issues at ${LICENCES.find((l) => l.code === 'CPL').minAge}.`}
+          />
+
+          <SummaryBox
+            title="The requirements, in one place"
+            items={[
+              `Education: ${EDUCATION.requirement} (${EDUCATION.clause})`,
+              `Minimum age for the CPL: ${LICENCES.find((l) => l.code === 'CPL').minAge} years, Schedule II, Section J`,
+              `Flight time: ${cplHoursSummary()}`,
+              `Written papers: ${papersSummary()} — cleared individually, not in one sitting`,
+              'RTR (A): examined separately under its own 2025 Rules, required for licence issue',
+              'Instrument Rating: required before the CPL is issued',
+              `Medical: a ${MEDICAL.short}`,
+            ]}
+          />
+
+          <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What makes the Indian route different?</h2>
+          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            One thing above all: no conversion step. A licence earned in India is issued by the DGCA directly, so the day you finish is the day you hold an Indian licence. Train abroad and you finish with a foreign licence plus a conversion process still ahead of you — Indian papers and a medical to Indian standards.
+          </p>
+          <p className="text-gray-600 text-sm leading-relaxed mb-8">
+            What you trade for that is pace. Indian flying schools contend with monsoon months and aircraft availability, and both stretch the calendar in ways a brochure timeline rarely reflects. Neither route is simply better; they fail in different places, and the right answer depends on whether your constraint is time or paperwork.
+          </p>
+
+          <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What actually sets the timeline?</h2>
+          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            Not the theory. The written papers are cleared individually across exam cycles, and a student working steadily gets through them. The flying is what moves — {CPL_HOURS.total} hours accumulate at the speed of weather, serviceable aircraft and instructor availability, none of which you control.
+          </p>
+          <p className="text-gray-600 text-sm leading-relaxed mb-8">
+            There is a deadline hidden inside that. Paragraph 1(e) requires the {CPL_HOURS.total} hours to fall within the {CPL_HOURS.recencyYears} years immediately preceding your licence application. Hours logged before that window stop counting. Students who pause after building most of their time — for money, for a job, for family — are the ones this rule catches, and the cost is measured in hours re-flown.
+          </p>
+
+          <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">Where does the money actually go?</h2>
+          <p className="text-gray-600 text-sm leading-relaxed mb-8">
+            Overwhelmingly into flying. Ground classes, examination fees, the medical and the computer number are real costs but small ones beside the hours. That is why the order matters: every concept you settle in a classroom is one you are not working out with a meter running. Our{' '}
+            <Link href="/cost-transparency" className="text-av-orange font-semibold hover:underline">cost transparency page</Link>{' '}
+            breaks the line items down, and{' '}
+            <Link href="/commercial-pilot-license-eligibility" className="text-av-orange font-semibold hover:underline">CPL eligibility</Link>{' '}
+            covers the conditions in full.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 space-y-10">
             <ScrollReveal>
@@ -171,6 +252,12 @@ export default function InIndia() {
           </div>
         </div>
       </section>
+      <section className="pb-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <PeopleAlsoAsk items={peopleAlsoAsk} />
+        </div>
+      </section>
+
     </Layout>
   );
 }

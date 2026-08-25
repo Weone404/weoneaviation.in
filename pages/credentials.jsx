@@ -12,6 +12,10 @@ import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Head from 'next/head';
 import { FOUNDED_YEAR, YEARS_LABEL } from '../data/academy';
+import { ACADEMY, papersSummary, MEDICAL } from '../lib/facts';
+import QuickAnswer from '../components/QuickAnswer';
+import SummaryBox from '../components/SummaryBox';
+import Breadcrumb from '../components/Breadcrumb';
 
 const credentials = [
   {
@@ -43,6 +47,48 @@ const credentials = [
  * issuing bodies' own registries. Restore an entry only together with its
  * certificate number, stated inline so a reader can check it.
  */
+/*
+ * The verification checklist.
+ *
+ * This page's premise is that we publish only what we can evidence. That is a
+ * short list, and a short list on its own reads as a thin page. The fix is not
+ * to pad it with claims — it is to turn the standard itself into the content.
+ * A student who reads this section leaves able to interrogate ANY academy,
+ * including us. That is genuinely useful, it is impossible for a competitor to
+ * copy without meeting the same bar, and list content of this shape is exactly
+ * what an answer engine lifts wholesale.
+ */
+const verificationChecklist = [
+  {
+    ask: 'Is the academy DGCA-approved, and for what exactly?',
+    why: 'Approval is not one thing. Ask which approval the institute holds and for which activity. A ground school and a Flying Training Organisation are approved for different things, and an academy that answers this vaguely is telling you something.',
+  },
+  {
+    ask: 'Can I see instructor licence numbers on request?',
+    why: 'Not published on a website — requested, and provided. Any institute confident in its panel will show you. Published year-counts and type ratings with no licence number behind them prove nothing at all.',
+  },
+  {
+    ask: 'What exactly does the fee cover, line by line?',
+    why: 'Ask for the breakdown in writing: ground classes, examination fees, medical, computer number, flying hours, and what happens if you need to re-sit a paper. A single headline figure hides where the money actually goes.',
+  },
+  {
+    ask: 'Is there a written syllabus per paper?',
+    why: 'A real ground school can hand you the syllabus for each of the five DGCA written papers and tell you how many hours each gets. If the answer is a brochure rather than a schedule, keep asking.',
+  },
+  {
+    ask: 'Who provides the flying, and where?',
+    why: 'If the institute does not own aircraft — most ground schools do not — ask which flying schools they place students with, in which country, and what the conversion path looks like on return. Vagueness here costs you a year.',
+  },
+  {
+    ask: 'What are you promising about a job, in writing?',
+    why: 'Nobody can promise you an airline seat. Hiring rests with the operator. An academy that guarantees you a job is either misunderstanding its own position or hoping you will not read the contract.',
+  },
+  {
+    ask: 'What happens if I fail a paper?',
+    why: 'Ask whether re-sit support is included or charged, and how many attempts the fee covers. Papers are cleared individually and re-sits are normal — the honest answer is a policy, not reassurance.',
+  },
+];
+
 const certifications = [
   { name: 'DGCA Approved', icon: '🏛️', description: 'Directorate General of Civil Aviation Approval' },
 ];
@@ -98,6 +144,30 @@ export default function CredentialsPage() {
             </p>
           </div>
         </div>
+
+        {/* ── What we can evidence, stated before anything else ── */}
+        <section className="pt-14 px-4">
+          <div className="max-w-4xl mx-auto">
+            <Breadcrumb />
+            <QuickAnswer
+              question="What can We One Aviation actually prove about itself?"
+              answer={`Two things, and we will evidence both on request: DGCA approval status, and continuous operation since ${FOUNDED_YEAR} from our Dwarka, New Delhi address. Instructor licence numbers, testimonials and training statistics were removed from this site rather than restated without proof.`}
+            />
+
+            <SummaryBox
+              title="What we publish, and what we deliberately do not"
+              items={[
+                `DGCA approval status — evidenced on request`,
+                `Continuous operation since ${FOUNDED_YEAR} — ${YEARS_LABEL} years, evidenced on request`,
+                `Address: ${ACADEMY.streetAddress}, ${ACADEMY.addressLocality} ${ACADEMY.postalCode}`,
+                'NOT published: instructor licence numbers (available on request instead of on a page anyone can copy)',
+                'NOT published: pass rates, placement rates or student counts — we could not substantiate them, so they were deleted rather than revised downward',
+                'NOT published: testimonials — unverifiable by a reader by definition',
+                'NOT claimed: aircraft, simulators, or any promise of an airline job',
+              ]}
+            />
+          </div>
+        </section>
 
         {/* Certifications Bar */}
         <section className="py-16 px-4 bg-av-light">
@@ -163,6 +233,32 @@ export default function CredentialsPage() {
                 </p>
               </div>
             </ScrollReveal>
+          </div>
+        </section>
+
+        {/* ── The verification checklist ── */}
+        <section className="py-20 px-4 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mb-4">
+              What should you demand from any pilot training academy?
+            </h2>
+            <p className="text-gray-600 text-sm leading-relaxed mb-3">
+              Seven questions. Ask them of us, and ask them of everyone else you are considering. A school that answers all seven straight is worth your time; one that deflects on three of them has told you what you needed to know for free.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed mb-8">
+              We publish this because the alternative — competing on who claims the most — is a race we would rather lose.
+            </p>
+            <ol className="space-y-4">
+              {verificationChecklist.map((item, i) => (
+                <li key={item.ask} className="flex gap-4 p-5 rounded-xl border border-gray-200 bg-gray-50">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-av-orange text-white font-montserrat font-bold text-sm flex items-center justify-center" aria-hidden="true">{i + 1}</span>
+                  <span>
+                    <span className="block font-montserrat font-bold text-av-blue text-sm mb-2">{item.ask}</span>
+                    <span className="block text-gray-600 text-sm leading-relaxed">{item.why}</span>
+                  </span>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 

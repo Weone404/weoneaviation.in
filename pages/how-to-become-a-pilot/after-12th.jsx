@@ -4,6 +4,11 @@ import { generateHowToSchema } from '../../lib/schema';
 import LeadForm from '../../components/LeadForm';
 import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
+import QuickAnswer from '../../components/QuickAnswer';
+import SummaryBox from '../../components/SummaryBox';
+import PeopleAlsoAsk from '../../components/PeopleAlsoAsk';
+import Breadcrumb from '../../components/Breadcrumb';
+import { LICENCES, CPL_HOURS, EDUCATION, MEDICAL, papersSummary, cplHoursSummary } from '../../lib/facts';
 
 const steps = [
   { num: 1, title: 'Pass 12th with PCM', desc: 'You need Physics, Chemistry, and Maths in your 12th standard. A minimum of 50% marks is required for DGCA eligibility. Some foreign flying schools accept any 12th pass.' },
@@ -24,6 +29,33 @@ const howToSchema = generateHowToSchema({
   steps,
 });
 
+/*
+ * Kept disjoint from this route's pageFaqs entries. These are the questions a
+ * Class 12 student actually asks first, and none of them repeats the step list.
+ */
+const peopleAlsoAsk = [
+  {
+    q: 'Do I need Chemistry, or only Physics and Maths?',
+    a: 'The licence requirement is Physics and Mathematics — paragraph 1(b) of Schedule II, Section J. Chemistry is part of the usual PCM combination Indian schools offer, but it is the Physics and Maths the DGCA looks for.',
+  },
+  {
+    q: 'I took Biology or Commerce. Is it over?',
+    a: 'No. Students clear Physics and Mathematics as private candidates through NIOS and then apply. It adds a few months, not a barrier. Start it early, because the requirement arrives at the CPL stage regardless of how far along the flying is.',
+  },
+  {
+    q: 'Can I start before my Class 12 results arrive?',
+    a: 'You can start ground classes and book the medical. You cannot hold the licence: Section J requires you to be 18 on the date of application, and the DGCA needs your marksheet in hand. Most students use that gap to clear the theory.',
+  },
+  {
+    q: 'Is training abroad faster than training in India?',
+    a: 'Usually yes, mostly because of weather and aircraft availability rather than teaching. The trade-off is a conversion step on return — Indian papers and a medical to Indian standards. Budget the conversion time rather than treating a foreign licence as the finish line.',
+  },
+  {
+    q: 'What is the single most common mistake at this stage?',
+    a: 'Paying a flying school before booking the medical. A disqualifying condition found after a deposit is the most expensive discovery in this process, and it is entirely avoidable by reversing the order.',
+  },
+];
+
 export default function After12th() {
   return (
     <Layout title="How to Become a Pilot After 12th | Complete Guide 2024 | We One Aviation" description="Complete guide on how to become a pilot after 12th standard in India. Eligibility, DGCA exams, flying hours, costs, and career path explained step-by-step.">
@@ -42,7 +74,64 @@ export default function After12th() {
         </div>
       </div>
 
-      <section className="py-20 px-4">
+      <section className="pt-14 px-4">
+        <div className="max-w-4xl mx-auto">
+          <Breadcrumb />
+
+          <QuickAnswer
+            question="How do you become a pilot after 12th in India?"
+            answer={`Clear 10+2 with Physics and Mathematics, book the ${MEDICAL.short}, join DGCA ground classes for the written papers, then build ${CPL_HOURS.total} hours at a flying school and pass the CPL skill test. The licence issues at 18 under Schedule II, Section J.`}
+          />
+
+          <SummaryBox
+            title="What the licence actually requires"
+            items={[
+              `Education: ${EDUCATION.requirement} (${EDUCATION.clause})`,
+              `Minimum age: ${LICENCES.find((l) => l.code === 'CPL').minAge} on the date you apply for the CPL — you can train earlier`,
+              `Flying: ${cplHoursSummary()}`,
+              `Written papers: ${papersSummary()}`,
+              'RTR (A): examined separately, and required before the licence is issued',
+              `Medical: a ${MEDICAL.short} — book this first, before spending on training`,
+            ]}
+          />
+
+          <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What should you do first, the week results are out?</h2>
+          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            Book the medical. Not the flying school, not the ground classes — the medical. It is the cheapest step in the whole process and the only one that can end the plan outright, which makes doing it first the single highest-value decision available to you right now.
+          </p>
+          <p className="text-gray-600 text-sm leading-relaxed mb-8">
+            Students who reverse that order are the ones who lose real money. A flying-school deposit is not refundable because your eyesight turned out to be a problem, and finding out in month one instead of month six changes nothing except how much it costs you.
+          </p>
+
+          <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">Which subjects do you need in Class 12?</h2>
+          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            Physics and Mathematics, from a recognised Board or University. That is what paragraph 1(b) of Schedule II, Section J asks for, and it is checked at the licence application rather than at the flying school gate — which is why students sometimes get most of the way through training before discovering a gap.
+          </p>
+          <p className="text-gray-600 text-sm leading-relaxed mb-8">
+            {EDUCATION.altRoute} If a commercial licence is the goal and your stream did not include both subjects, start that route now rather than after the flying. It is the cheapest correction available and it only gets more expensive the longer it waits.
+          </p>
+
+          <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">Should you train in India or abroad?</h2>
+          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            Both routes end at the same Indian licence, so the question is really about time, weather and paperwork. Training in India means DGCA-direct licensing with no conversion step. Training abroad usually means more aircraft, more predictable flying weather and a faster path to the hours — followed by conversion when you return.
+          </p>
+          <p className="text-gray-600 text-sm leading-relaxed mb-8">
+            Neither is simply better. Read the country pages before deciding:{' '}
+            <Link href="/flying-school/india" className="text-av-orange font-semibold hover:underline">India</Link>,{' '}
+            <Link href="/flying-school/usa" className="text-av-orange font-semibold hover:underline">the USA</Link>,{' '}
+            <Link href="/flying-school/canada" className="text-av-orange font-semibold hover:underline">Canada</Link>,{' '}
+            <Link href="/flying-school/australia" className="text-av-orange font-semibold hover:underline">Australia</Link> and{' '}
+            <Link href="/flying-school/south-africa" className="text-av-orange font-semibold hover:underline">South Africa</Link>.
+          </p>
+
+          <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">How long does the whole thing take?</h2>
+          <p className="text-gray-600 text-sm leading-relaxed mb-8">
+            The theory is the shorter half. What sets the timeline is the flying: {CPL_HOURS.total} hours accumulate at the speed of weather, aircraft availability and your own consistency. One detail catches people out — paragraph 1(e) requires those hours to fall inside the {CPL_HOURS.recencyYears} years immediately before you apply. Hours older than that stop counting, so a long gap between finishing training and filing the paperwork is expensive in a way nobody warns you about.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
             <ScrollReveal>
@@ -70,7 +159,7 @@ export default function After12th() {
 
             {/* Eligibility Table */}
             <ScrollReveal className="mt-10">
-              <h3 className="font-montserrat text-xl font-bold text-av-blue mb-4">Eligibility at a Glance</h3>
+              <h3 className="font-montserrat text-xl font-bold text-av-blue mb-4">Who is eligible, at a glance?</h3>
               <div className="overflow-x-auto rounded-xl border border-gray-200">
                 <table className="w-full text-sm">
                   <thead>
@@ -100,7 +189,7 @@ export default function After12th() {
 
             {/* Cost Section */}
             <ScrollReveal className="mt-10">
-              <h3 className="font-montserrat text-xl font-bold text-av-blue mb-4">Cost of Pilot Training in India</h3>
+              <h3 className="font-montserrat text-xl font-bold text-av-blue mb-4">What does pilot training cost in India?</h3>
               <div className="grid sm:grid-cols-3 gap-4">
                 {[
                   { course: 'PPL (India)', cost: '₹6-10 Lakh' },
@@ -135,6 +224,12 @@ export default function After12th() {
           </div>
         </div>
       </section>
+      <section className="pb-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <PeopleAlsoAsk items={peopleAlsoAsk} />
+        </div>
+      </section>
+
     </Layout>
   );
 }

@@ -7,6 +7,10 @@ import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import { YEARS_LABEL } from '../data/academy';
+import { LICENCES, ACADEMY, papersSummary, MEDICAL } from '../lib/facts';
+import QuickAnswer from '../components/QuickAnswer';
+import SummaryBox from '../components/SummaryBox';
+import Breadcrumb from '../components/Breadcrumb';
 import AutoInternalLinks from '../components/AutoInternalLinks';
 
 const heroSlides = [
@@ -14,13 +18,28 @@ const heroSlides = [
   { id: 2, image: 'https://images.unsplash.com/photo-1585995028913-16e7a4c9c1d3?w=1920&q=80', tag: 'Our Approach', title: 'Structured learning', highlight: 'for aspiring pilots', sub: 'Guidance for theory, flying school selection, and real-world aviation readiness.' },
 ];
 
+/*
+ * CLAIMS GATE (Workstream C). The `exp` field previously carried unsourced
+ * statistics — "25+ years, Boeing 737 rated", "18+ years, DGCA Examiner",
+ * "20+ years, Airbus A320 rated". /credentials states plainly that instructor
+ * licence numbers and training statistics were removed rather than restated,
+ * so publishing year-counts and type ratings here contradicted the academy's
+ * own verification page. One role was worse: "Simulator Instructor" implies a
+ * simulator the academy does not own, which scripts/check-claims.js bans
+ * outright.
+ *
+ * Names and roles stay — public/llms.txt already states that this page names
+ * the instructor panel. The unverifiable numbers go. Supply real, evidencable
+ * credentials and they can return.
+ * {{TODO-BUSINESS-INPUT}} — verified experience or licence detail per instructor
+ */
 const team = [
-  { name: 'Capt. Nitin', role: 'Chief Flying Instructor', exp: '25+ years, Boeing 737 rated', img: 'RV' },
-  { name: 'Capt. Sanskar', role: 'Aviation Medical Advisor', exp: 'DGCA AME, 15+ years', img: 'MS' },
-  { name: 'Capt. Uday', role: 'Ground Training Head', exp: '18+ years, DGCA Examiner', img: 'AN' },
-  { name: 'Capt. Pankaj', role: 'Aviation Medical Advisor', exp: 'DGCA AME, 15+ years', img: 'MS' },
-  { name: 'Capt. Kamal', role: 'Simulator Instructor', exp: '20+ years, Airbus A320 rated', img: 'SK' },
-  { name: 'Capt. Manoj', role: 'Aviation Medical Advisor', exp: 'DGCA AME, 15+ years', img: 'MS' },
+  { name: 'Capt. Nitin', role: 'Chief Flying Instructor', exp: 'Leads flight-training guidance', img: 'RV' },
+  { name: 'Capt. Sanskar', role: 'Aviation Medical Advisor', exp: 'DGCA-approved medical examiner', img: 'MS' },
+  { name: 'Capt. Uday', role: 'Ground Training Head', exp: 'Leads the DGCA ground syllabus', img: 'AN' },
+  { name: 'Capt. Pankaj', role: 'Aviation Medical Advisor', exp: 'DGCA-approved medical examiner', img: 'MS' },
+  { name: 'Capt. Kamal', role: 'Ground Instructor', exp: 'Technical subjects', img: 'SK' },
+  { name: 'Capt. Manoj', role: 'Aviation Medical Advisor', exp: 'DGCA-approved medical examiner', img: 'MS' },
 ];
 
 function MemberCard({ member, active }) {
@@ -32,7 +51,12 @@ function MemberCard({ member, active }) {
         </div>
       </div>
       <div className="p-4">
-        <h2 className="font-montserrat font-bold text-av-blue text-sm">{member.name}</h2>
+        {/*
+          Was an <h2>. A person's name is not a document section, and six of
+          them flattened this page's heading outline into a list of captains.
+          Styled to look identical; carries no heading weight.
+        */}
+        <p className="font-montserrat font-bold text-av-blue text-sm">{member.name}</p>
         <div className="text-av-orange text-xs font-semibold mt-1">{member.role}</div>
         <div className="text-gray-400 text-xs mt-2">{member.exp}</div>
       </div>
@@ -52,7 +76,88 @@ export default function About() {
       title="About We One Aviation Academy | DGCA Approved Pilot Training Institute"
       description={`We One Aviation Academy is a DGCA-approved pilot training institute in Dwarka, New Delhi, operating for ${YEARS_LABEL} years.`}
     >
-      <HeroSlider customSlides={heroSlides} />
+      <HeroSlider customSlides={heroSlides} asH1={false} />
+
+      {/* ── Opening block. Inverted pyramid: what we are, what we are not,
+             and the licence chain a student is walking into — above the fold
+             of the article, before any story. ── */}
+      <section className="pt-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <Breadcrumb />
+          <h1 className="font-montserrat text-3xl md:text-4xl font-black text-av-blue mb-5 underline-orange">
+            About We One Aviation Academy
+          </h1>
+
+          <QuickAnswer
+            question="What is We One Aviation Academy, and what does it actually do?"
+            answer={`We One Aviation Academy is a DGCA-approved pilot training institute in Dwarka, New Delhi, operating since ${ACADEMY.foundedYear}. We teach the DGCA ground subjects for the written examinations behind a Commercial Pilot Licence, and we place students with partner flying schools for the flying hours.`}
+          />
+
+          <SummaryBox
+            title="What we are, and what we are not"
+            items={[
+              `Founded ${ACADEMY.foundedYear}, operating continuously since — one of two facts our credentials page can evidence on request`,
+              `Located at ${ACADEMY.streetAddress}, ${ACADEMY.addressLocality} ${ACADEMY.postalCode}`,
+              `We teach: the ${papersSummary()} written papers, plus RTR (A) preparation`,
+              'We arrange: flight training with partner schools in India, the USA, Canada, Australia and South Africa',
+              'We do NOT own aircraft or simulators — the flying happens at partner flying schools',
+              'We do NOT employ pilots or place students into airline jobs — hiring rests with the operator',
+              'What we provide instead: classroom teaching, examination preparation, licence-route planning, interview preparation and career guidance',
+            ]}
+          />
+
+          <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What does a ground school actually do — and what does it not?</h2>
+          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            This is the question worth settling before you pay anyone anything, because the answer decides who you talk to next. A ground school teaches theory. A flying school provides aircraft and instructors and puts hours in your logbook. The DGCA issues the licence. Three different organisations, three different jobs, and an academy that blurs them is doing you no favours.
+          </p>
+          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            We are the first of those three. Our instructors teach the written papers, run mock examinations in the DGCA pattern, and sit with students until the difficult topics land. When the theory is behind you, we help you choose a flying school and prepare the application — in India or abroad, depending on your budget, your timeline and how you weigh a conversion step against a longer wait for weather.
+          </p>
+          <p className="text-gray-600 text-sm leading-relaxed mb-8">
+            What we will not tell you is that we can hand you an airline job. Nobody can. Airlines run their own selection, on their own schedule, against their own criteria. We prepare you for that process and we are candid about where our part ends.
+          </p>
+
+          <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What is the licence chain you are joining?</h2>
+          <p className="text-gray-600 text-sm leading-relaxed mb-5">
+            Four licences, each with an age gate set by Schedule II of the Aircraft Rules, 1937. Most students arrive knowing they want to fly commercially and discover the ladder underneath it only later. Seeing it early makes the timeline honest.
+          </p>
+          <div className="overflow-x-auto rounded-xl border border-gray-200 mb-4">
+            <table className="w-full text-sm">
+              <caption className="sr-only">Indian pilot licence chain with minimum ages from Schedule II</caption>
+              <thead>
+                <tr className="bg-av-blue text-white">
+                  <th scope="col" className="p-3 text-left text-xs font-semibold">Licence</th>
+                  <th scope="col" className="p-3 text-left text-xs font-semibold">Minimum age</th>
+                  <th scope="col" className="p-3 text-left text-xs font-semibold">What it permits</th>
+                </tr>
+              </thead>
+              <tbody>
+                {LICENCES.map((l, i) => (
+                  <tr key={l.code} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                    <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left whitespace-nowrap">{l.code} &mdash; {l.name}</th>
+                    <td className="p-3 text-av-orange font-semibold text-xs whitespace-nowrap">{l.minAge} years <span className="text-gray-400 font-normal">({l.section})</span></td>
+                    <td className="p-3 text-gray-600 text-xs">{l.permits}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-gray-500 text-xs mb-8">
+            Ages are set by the Aircraft Rules, 1937, continued in force by section 43(2) of the Bharatiya Vayuyan Adhiniyam, 2024.
+          </p>
+
+          <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">How do we teach?</h2>
+          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            Instructor-led sessions rather than recorded playlists, in both classroom and online modes. Every session leaves room for questions, because aviation theory rewards the student who asks why a rule exists over the one who memorises it. Mock examinations run in the DGCA pattern and under time pressure, which is the only way to find out whether you actually know a subject or merely recognise it.
+          </p>
+          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+            Progress is tracked between mocks. That matters more than it sounds: it is what tells a student in week four that Air Navigation needs more time, while there is still time to give it. A student who discovers the same thing the week before the paper has run out of options.
+          </p>
+          <p className="text-gray-600 text-sm leading-relaxed mb-8">
+            Before any of it, book the {MEDICAL.short}. {MEDICAL.advice}
+          </p>
+        </div>
+      </section>
 
       {/* Mission & Vision */}
       <section className="py-20 px-4">
