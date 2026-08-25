@@ -1,5 +1,5 @@
 const existingFaqRoutes = new Set([
-  '/', '/faqs', '/faqs', '/air-arabia', '/blogs', '/blogs/[id]', '/commercial-pilot-license', '/courses/dgca-ground-classes', '/dgca-ground-classes', '/doubt',
+  '/', '/faqs', '/faqs', '/air-arabia', '/blogs', '/blogs/[id]', '/commercial-pilot-license', '/dgca-ground-classes', '/dgca-ground-classes', '/doubt',
   '/courses/atpl', '/student-pilot-license-spl',
   '/dgca-computer-number', '/dgca-full-form',
   '/dgca-ground-classes-in-india', '/dgca-pariksha', '/ecga-login-your-complete-guide',

@@ -189,7 +189,7 @@ const nextConfig = {
       
       {
         source: '/courses/dgca-ground-classes/',
-        destination: '/courses/dgca-ground-classes',
+        destination: '/dgca-ground-classes',
         permanent: true,
       },
       
@@ -573,6 +573,19 @@ const nextConfig = {
        */
       { source: '/Airindia-pilot-preparation', destination: '/airindia-pilot-preparation', permanent: true },
       { source: '/Indigo-pilot-preparation', destination: '/indigo-pilot-preparation', permanent: true },
+      /*
+       * DGCA cluster consolidated (Workstream B).
+       *
+       * /courses/dgca-ground-classes carried 1,060 lines against the root
+       * slug's 686 — the deeper content was sitting on the weaker URL while
+       * the two competed for the same query. Everything unique to it (who it
+       * is for, why theory precedes flying, class structure, online vs
+       * classroom, study material, preparation method, the eight-stage
+       * journey, careers, skills) was merged into /dgca-ground-classes, which
+       * keeps the root slug, the llms.txt citation and the Course node.
+       * Nothing was lost; the loser now 301s here.
+       */
+      { source: '/courses/dgca-ground-classes', destination: '/dgca-ground-classes', permanent: true },
     ];
   },
 

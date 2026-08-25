@@ -12,7 +12,7 @@ const courses = [
     { icon: '🛩️', title: 'Private Pilot License (PPL)', duration: '6-12 months', eligibility: '10+2 any stream', href: '/ppl-full-form' },
     { icon: '🏆', title: 'ATPL', duration: '36 months', eligibility: 'CPL holder', href: '/courses/atpl' },
     { icon: '🚁', title: 'Student Pilot License (SPL)', duration: '3-6 months', eligibility: '16+ years', href: '/student-pilot-license-spl' },
-    { icon: '📚', title: 'DGCA Ground Classes', duration: '6-12 months', eligibility: '10+2 (PCM)', href: '/courses/dgca-ground-classes' },
+    { icon: '📚', title: 'DGCA Ground Classes', duration: '6-12 months', eligibility: '10+2 (PCM)', href: '/dgca-ground-classes' },
 ];
 
 
@@ -263,7 +263,7 @@ const trainingCourses = [
             { label: 'Duration', value: '3-6 months' },
             { label: 'Subjects', value: 'Air Regulations, Aviation Meteorology, Air Navigation, Technical General, Technical Specific, Radio Telephony' },
         ],
-        href: '/courses/dgca-ground-classes',
+        href: '/dgca-ground-classes',
         highlight: false,
     },
     {
@@ -781,7 +781,7 @@ export default function Home() {
                                     <div><span className="font-semibold text-av-blue">Mode:</span> Offline / Online</div>
                                     <div><span className="font-semibold text-av-blue">Batch Start Date:</span> Every Months Of First Week and Third Week</div>
                                 </div>
-                                <Link href="/courses/dgca-ground-classes" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
+                                <Link href="/dgca-ground-classes" className="mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">
                                     Course Details
                                 </Link>
                             </div>
@@ -841,7 +841,7 @@ export default function Home() {
                         <p className="text-gray-600 leading-relaxed mb-4">
                             📖 Master Every DGCA Subject & Fly High! Our DGCA Ground Classes make learning easy & effective. Get trained by industry experts!
                         </p>
-                        <Link href="/courses/dgca-ground-classes" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">Learn More</Link>
+                        <Link href="/dgca-ground-classes" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">Learn More</Link>
                     </ScrollReveal>
                 </div>
                 <div className="max-w-7xl mx-auto mt-12">

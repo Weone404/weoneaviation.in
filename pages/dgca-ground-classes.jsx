@@ -13,6 +13,7 @@ import RelatedArticles from '../components/RelatedArticles';
 import SummaryBox from '../components/SummaryBox';
 import StructuredData from '../components/StructuredData';
 import { generateCourseSchema, generateFAQSchema } from '../lib/schema';
+import { DGCA_PAPERS, RTR, papersSummary, MEDICAL, EDUCATION } from '../lib/facts';
 
 const heroSlides = [
   { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Most Popular Course', title: 'DGCA Ground', highlight: 'Classes', sub: "DGCA ground classes covering every subject in the CPL written examination set" },
@@ -208,10 +209,19 @@ const summaryItems = [
   'Statutory basis: Aircraft Rules, 1937, Schedule II, Section J, paragraph 1(d)',
 ];
 
+/*
+ * Kept DISJOINT from faqSchema below. Two of the three items here previously
+ * repeated FAQ questions word for word ("Do I need DGCA ground classes...",
+ * "What subjects are covered..."), so one URL answered the same question
+ * twice and split what an engine extracts. Replaced with questions the FAQ
+ * block does not cover.
+ */
 const peopleAlsoAskItems = [
+  { q: 'Can I start DGCA ground classes before I turn 18?', a: 'Yes, and most students do. The papers have no bearing on the CPL age bar — Schedule II, Section J requires you to be 18 on the date you apply for the licence, not on the day you sit a paper. Starting at 17 means the theory is behind you when you become eligible.' },
+  { q: 'Do I have to clear every paper in one sitting?', a: 'No. The papers are cleared individually, and students routinely spread them across several exam cycles. Plan the order around your flying schedule — a failed paper costs you a full cycle, not a day.' },
+  { q: 'Does clearing the papers expire?', a: 'Cleared papers do not lapse the way flight time does. What does carry a limit is the flying: Section J requires your 200 hours to fall inside the five years before your licence application, so the flying should follow the theory without a long gap.' },
+  { q: 'What happens if I fail a paper?', a: 'You re-sit it in a later cycle. Nothing else you have cleared is affected. The practical cost is time — cycles run on the DGCA calendar, not on yours, which is why paper order is worth planning.' },
   { q: 'How long are DGCA ground classes?', a: 'Most students complete the full DGCA syllabus in around 6 months, though timelines can vary based on exam readiness and revision pace.' },
-  { q: 'Do I need DGCA ground classes to become a pilot?', a: 'Yes. DGCA ground classes are the standard preparation route for the DGCA theory exams required for pilot licensing.' },
-  { q: 'What subjects are covered in DGCA ground classes?', a: 'The core subjects include Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, and RTR.' },
 ];
 
 const relatedArticles = [
@@ -230,7 +240,7 @@ const relatedArticles = [
  */
 const courseSchema = generateCourseSchema({
   name: 'DGCA Ground Classes',
-  description: 'DGCA ground classes for pilot training in India covering navigation, meteorology, regulations, technical subjects, and RTR preparation.',
+  description: `DGCA ground classes for the five written papers — ${papersSummary()} — plus RTR (A) preparation. Online and offline, in Dwarka, New Delhi.`,
   url: 'https://weoneaviation.in/dgca-ground-classes',
   courseMode: 'Blended',
   duration: '6 Months',
@@ -238,12 +248,33 @@ const courseSchema = generateCourseSchema({
   highPrice: 400000,
   additionalProperties: [
     { name: 'Duration', value: '6 Months' },
-    { name: 'Subjects Covered', value: '6 DGCA subjects' },
+    // Derived from lib/facts.js. Was hardcoded "6 DGCA subjects", which
+    // contradicted the sourced position: FIVE written papers, RTR (A) separate.
+    { name: 'Written Papers', value: `${DGCA_PAPERS.length} DGCA written papers` },
+    { name: 'Radio Licence', value: 'RTR (A), examined separately' },
     { name: 'Scholarship', value: '25% scholarship available' },
   ],
 });
 
+/*
+ * FAQ set merged from both routes and deduped by question. Three questions
+ * came from /courses/dgca-ground-classes; its "what subjects" and "how long"
+ * entries were dropped as duplicates of what this page already answers in the
+ * FAQ and the PAA block respectively. Kept DISJOINT from peopleAlsoAskItems.
+ */
 const faqSchema = generateFAQSchema([
+  {
+    q: 'What are DGCA ground classes?',
+    a: `DGCA ground classes are the aviation theory course behind the written examinations required for a Commercial Pilot Licence. They cover ${papersSummary()}, and RTR (A) is prepared for alongside them though it is examined separately.`,
+  },
+  {
+    q: 'Who is eligible to join DGCA ground classes?',
+    a: `The classes themselves are open to anyone building a theory foundation. The licence is what carries the requirement: ${EDUCATION.requirement} (${EDUCATION.clause}), plus a ${MEDICAL.short}. Many students start the theory before they meet every licence condition.`,
+  },
+  {
+    q: 'Why choose We One Aviation for DGCA ground classes?',
+    a: 'Instructors who teach to the current examination pattern, a paper-by-paper structure, timed mock tests, live doubt sessions, and both online and classroom modes. We are honest about our scope: we teach the theory and place students with flying schools for the hours. We do not own aircraft and we do not place anyone into an airline job.',
+  },
   {
     q: 'What is the best way to prepare for DGCA ground classes?',
     a: 'A steady study plan, consistent revision, and guidance from experienced instructors can make DGCA ground classes far more effective.',
@@ -257,6 +288,100 @@ const faqSchema = generateFAQSchema([
     a: 'The core subjects include Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, and RTR.',
   },
 ]);
+
+
+/* ─────────────────────────────────────────────────────────────────────────
+ * MERGED FROM /courses/dgca-ground-classes (Workstream B).
+ *
+ * That route carried 1,060 lines against this page's 686, and the extra was
+ * not padding — it held nine sections this page had nothing equivalent to.
+ * The two competed for the same query with the deeper content sitting on the
+ * weaker URL. Everything unique is ported below and the loser now 301s here.
+ * Nothing was dropped; where both pages covered a topic, this page's version
+ * won on structure (question H2s, sourced clause citations, tables).
+ * ───────────────────────────────────────────────────────────────────────── */
+
+const whoShouldJoin = [
+  'Students planning to pursue a Commercial Pilot Licence.',
+  'Candidates preparing for the DGCA theory examinations.',
+  'Students already enrolled at a Flying Training Organisation who need structured theory support.',
+  'Graduates moving into aviation from another field.',
+  'Pilots preparing for ATPL theory.',
+  'Students who want online, classroom, or a mix of both.',
+];
+
+const whyItMatters = [
+  'You understand the theory before you are paying by the flying hour to learn it.',
+  'You sit the DGCA papers with a structured plan instead of a stack of PDFs.',
+  'Weather, navigation and systems decisions in the air rest on this material.',
+  'Mock tests and doubt sessions show you where you actually stand, early.',
+  'You stay current with the examination pattern rather than last year\'s.',
+];
+
+const classStructure = [
+  { icon: '🏫', title: 'Instructor-led sessions', text: 'Classes taught by instructors who work through the concepts with real operational examples rather than reading slides.' },
+  { icon: '💬', title: 'Interactive discussion', text: 'Every session leaves room for questions. Aviation theory rewards the student who asks why, not the one who memorises.' },
+  { icon: '📝', title: 'Mock examinations', text: 'Regular mocks in the DGCA pattern, so exam day is familiar rather than a surprise.' },
+  { icon: '📊', title: 'Performance tracking', text: 'Periodic assessment shows which subjects need more time, while there is still time to give them.' },
+  { icon: '🎯', title: 'Doubt-clearing sessions', text: 'Dedicated time to close gaps before the syllabus moves on to material that builds on them.' },
+];
+
+const learningModes = [
+  { feature: 'Live instructor sessions', online: 'Yes', classroom: 'Yes' },
+  { feature: 'Recorded lectures', online: 'Yes', classroom: 'Yes' },
+  { feature: 'Doubt clearing', online: 'Yes', classroom: 'Yes' },
+  { feature: 'Study material', online: 'Yes', classroom: 'Yes' },
+  { feature: 'Mock tests', online: 'Yes', classroom: 'Yes' },
+  { feature: 'Schedule flexibility', online: 'High', classroom: 'Moderate' },
+  { feature: 'Classroom interaction', online: 'Limited', classroom: 'Extensive' },
+];
+
+const studyMaterial = [
+  'Subject notes kept current with the examination pattern',
+  'DGCA-focused reading material per paper',
+  'Practice question banks',
+  'Numerical problem sets, especially for Air Navigation',
+  'Revision modules',
+  'Mock examinations under timed conditions',
+  'Guidance on previous exam patterns',
+  'Instructor-led revision before each cycle',
+];
+
+const prepareSteps = [
+  { title: 'Build the fundamentals first', text: 'Understand the principle before attempting advanced numericals. Students who skip this stall at the same place every time.' },
+  { title: 'Work to a study plan', text: 'Give each subject dedicated time and revise on a cycle. Last-minute preparation does not survive contact with a DGCA paper.' },
+  { title: 'Practise the numericals', text: 'Air Navigation in particular rewards repetition — speed and accuracy under time pressure come only from practice.' },
+  { title: 'Sit mock papers under timed conditions', text: 'Timed mocks expose weak areas that untimed reading hides completely.' },
+  { title: 'Revise on a schedule', text: 'Frequent short revision beats one long pass before the exam. The material is cumulative.' },
+  { title: 'Clear doubts early', text: 'A misconception carried forward contaminates everything built on top of it. Ask in week two, not week ten.' },
+];
+
+const learningJourney = [
+  { step: '1', title: 'Counselling', text: 'We map the CPL pathway against where you actually are — your subjects, your age, your timeline.' },
+  { step: '2', title: 'Enrolment', text: 'Choose the learning mode and batch that fits your schedule.' },
+  { step: '3', title: 'Foundation classes', text: 'Aviation fundamentals before the advanced material that assumes them.' },
+  { step: '4', title: 'Subject-wise learning', text: 'Each of the five written papers taught as its own structured module.' },
+  { step: '5', title: 'Assessment', text: 'Regular mock tests with feedback specific enough to act on.' },
+  { step: '6', title: 'Revision and exam strategy', text: 'Intensive revision, question discussion, and paper-order planning before the cycle.' },
+  { step: '7', title: 'DGCA examinations', text: 'You sit the papers with the theory behind you.' },
+  { step: '8', title: 'On to flight training', text: 'Theory cleared, you move to a flying school for the hours Section J requires.' },
+];
+
+const careersAfter = [
+  { icon: '✈️', title: 'Commercial pilot', text: 'Flying passenger or cargo aircraft once you hold the licence and the flight experience behind it.' },
+  { icon: '🛫', title: 'Airline first officer', text: 'Airline operations follow a CPL, further experience, and the operator\'s own selection process.' },
+  { icon: '🎓', title: 'Flight instructor', text: 'Instructing builds hours while you teach, and it is steady work between flying jobs.' },
+  { icon: '🛩️', title: 'Charter pilot', text: 'Private and corporate aircraft, flying routes and schedules airlines do not serve.' },
+  { icon: '📦', title: 'Cargo pilot', text: 'Freight operations, often at night, with fewer passengers and different pressures.' },
+  { icon: '💼', title: 'Corporate aviation', text: 'Business aircraft for companies and executive travel.' },
+];
+
+const skillsDeveloped = [
+  'Analytical thinking', 'Flight planning', 'Decision-making', 'Problem-solving',
+  'Weather interpretation', 'Navigation planning', 'Aviation communication',
+  'Risk assessment', 'Operational awareness', 'Safety management',
+  'Time management', 'Professional discipline',
+];
 
 const LAST_UPDATED = 'August 19, 2026';
 const LAST_UPDATED_ISO = '2026-08-19';
@@ -566,6 +691,151 @@ export default function DGCAGroundClasses() {
 
               <Breadcrumb />
               <AuthorCard />
+
+              {/* ── Merged from /courses/dgca-ground-classes ── */}
+
+              <section aria-labelledby="who-for">
+                <h2 id="who-for" className="font-montserrat text-xl font-bold text-av-blue mb-3">Who are DGCA ground classes for?</h2>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                  Anyone heading for a Commercial Pilot Licence, and quite a few people who are already flying. The papers gate the licence, so the theory has to happen either way — the only question is whether you do it with structure or alone with a stack of PDFs.
+                </p>
+                <ul className="space-y-2 mb-10">
+                  {whoShouldJoin.map((item) => (
+                    <li key={item} className="flex gap-2 items-start text-sm text-gray-600">
+                      <span className="text-av-orange font-bold flex-shrink-0">&#8250;</span><span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              <section aria-labelledby="why-before-flying">
+                <h2 id="why-before-flying" className="font-montserrat text-xl font-bold text-av-blue mb-3">Why do ground classes come before flight training?</h2>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                  Because the alternative is learning navigation and meteorology while an aircraft meter runs. Flying hours are the most expensive part of this licence by a wide margin, and every concept you have to work out mid-air is one you could have settled in a classroom.
+                </p>
+                <ul className="space-y-2 mb-10">
+                  {whyItMatters.map((item) => (
+                    <li key={item} className="flex gap-2 items-start text-sm text-gray-600">
+                      <span className="text-av-orange font-bold flex-shrink-0">&#10003;</span><span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              <section aria-labelledby="how-structured">
+                <h2 id="how-structured" className="font-montserrat text-xl font-bold text-av-blue mb-3">How are the classes structured?</h2>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                  Five parts, running in parallel rather than in sequence: teaching, discussion, mock testing, performance tracking and doubt clearing. The tracking matters more than students expect — it is what tells you a subject needs more time while there is still time to give it.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4 mb-10">
+                  {classStructure.map((item) => (
+                    <div key={item.title} className="rounded-xl border border-gray-200 p-4">
+                      <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">{item.icon} {item.title}</h3>
+                      <p className="text-gray-600 text-xs leading-relaxed">{item.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              <section aria-labelledby="online-or-classroom">
+                <h2 id="online-or-classroom" className="font-montserrat text-xl font-bold text-av-blue mb-3">Should you choose online or classroom ground classes?</h2>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                  For the theory itself, online holds up — provided the doubt sessions are live rather than recorded. What online cannot replace is the informal exam-strategy conversation that happens in a room. We run both modes; the table below is the honest comparison.
+                </p>
+                <div className="overflow-x-auto rounded-xl border border-gray-200 mb-10">
+                  <table className="w-full text-sm">
+                    <caption className="sr-only">Online versus classroom DGCA ground classes, feature by feature</caption>
+                    <thead>
+                      <tr className="bg-av-blue text-white">
+                        <th scope="col" className="p-3 text-left text-xs font-semibold">Feature</th>
+                        <th scope="col" className="p-3 text-left text-xs font-semibold">Online</th>
+                        <th scope="col" className="p-3 text-left text-xs font-semibold">Classroom</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {learningModes.map((row, i) => (
+                        <tr key={row.feature} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                          <th scope="row" className="p-3 text-av-blue font-semibold text-xs text-left">{row.feature}</th>
+                          <td className="p-3 text-gray-600 text-xs">{row.online}</td>
+                          <td className="p-3 text-gray-600 text-xs">{row.classroom}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section aria-labelledby="study-material">
+                <h2 id="study-material" className="font-montserrat text-xl font-bold text-av-blue mb-3">What study material do you get?</h2>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                  Notes per paper, question banks, numerical problem sets and timed mocks. The numerical sets carry most of the weight for Air Navigation, where speed under time pressure is the thing being tested as much as the method.
+                </p>
+                <ul className="grid sm:grid-cols-2 gap-2 mb-10">
+                  {studyMaterial.map((item) => (
+                    <li key={item} className="flex gap-2 items-start text-sm text-gray-600">
+                      <span className="text-av-orange flex-shrink-0">&#8250;</span><span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              <section aria-labelledby="how-to-prepare">
+                <h2 id="how-to-prepare" className="font-montserrat text-xl font-bold text-av-blue mb-3">How do you prepare effectively for the DGCA papers?</h2>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                  Six habits separate students who clear papers on the first cycle from students who repeat them. None of them is talent.
+                </p>
+                <ol className="space-y-3 mb-10">
+                  {prepareSteps.map((step, i) => (
+                    <li key={step.title} className="flex gap-4 p-4 bg-gray-50 rounded-xl">
+                      <span className="flex-shrink-0 w-7 h-7 rounded-full bg-av-orange text-white font-montserrat font-bold text-xs flex items-center justify-center" aria-hidden="true">{i + 1}</span>
+                      <span>
+                        <span className="block font-montserrat font-bold text-av-blue text-sm mb-1">{step.title}</span>
+                        <span className="block text-gray-600 text-sm leading-relaxed">{step.text}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+
+              <section aria-labelledby="the-journey">
+                <h2 id="the-journey" className="font-montserrat text-xl font-bold text-av-blue mb-3">What does the journey look like, start to finish?</h2>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                  Eight stages from the first counselling call to walking into a flying school with the theory behind you.
+                </p>
+                <ol className="space-y-3 mb-10">
+                  {learningJourney.map((step) => (
+                    <li key={step.step} className="flex gap-4 p-4 rounded-xl border border-gray-200">
+                      <span className="flex-shrink-0 w-7 h-7 rounded-full bg-av-blue text-white font-montserrat font-bold text-xs flex items-center justify-center" aria-hidden="true">{step.step}</span>
+                      <span>
+                        <span className="block font-montserrat font-bold text-av-blue text-sm mb-1">{step.title}</span>
+                        <span className="block text-gray-600 text-sm leading-relaxed">{step.text}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+
+              <section aria-labelledby="careers-after">
+                <h2 id="careers-after" className="font-montserrat text-xl font-bold text-av-blue mb-3">What careers open up after DGCA ground classes?</h2>
+                <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                  Ground classes are theory, not a licence — the careers below all sit behind a CPL and the flying hours that go with it. Hiring rests with the operator, not with us. What the theory does is put the licence within reach.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                  {careersAfter.map((c) => (
+                    <div key={c.title} className="rounded-xl border border-gray-200 p-4">
+                      <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">{c.icon} {c.title}</h3>
+                      <p className="text-gray-600 text-xs leading-relaxed">{c.text}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed mb-3">Along the way the syllabus builds skills that outlast any one exam:</p>
+                <ul className="flex flex-wrap gap-2 mb-10">
+                  {skillsDeveloped.map((skill) => (
+                    <li key={skill} className="bg-av-light text-av-blue text-xs font-semibold px-3 py-1.5 rounded-full">{skill}</li>
+                  ))}
+                </ul>
+              </section>
+
               <PeopleAlsoAsk items={peopleAlsoAskItems} />
 
               {/* Latest Blogs */}

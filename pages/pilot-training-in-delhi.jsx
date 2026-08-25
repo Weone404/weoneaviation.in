@@ -62,7 +62,7 @@ export default function PilotTrainingDelhi() {
                         { label: 'Duration', value: '3-6 months' },
                         { label: 'Subjects', value: 'Air Regulations, Aviation Meteorology, Air Navigation, Technical General, Technical Specific, Radio Telephony (RTR Exam)' },
                     ],
-                    href: '/courses/dgca-ground-classes',
+                    href: '/dgca-ground-classes',
                     highlight: false,
                 },
                 {
