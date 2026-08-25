@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const stats = [
     { num: '10+2', label: 'Min. Education', icon: '🎓' },
-    { num: 'Class 2', label: 'Medical Required', icon: '🩺' },
+    { num: 'DGCA', label: 'Medical Required', icon: '🩺' },
     { num: 'DGCA', label: 'Approved Body', icon: '🏛️' },
     { num: 'CPL', label: 'Goal License', icon: '🪪' },
 ];
@@ -19,7 +19,7 @@ const steps = [
         shortDesc: 'Meet DGCA requirements before enrolling.',
         details: [
             'Minimum educational qualification of 10+2 with Physics and Mathematics.',
-            'A Class 2 Medical Certificate.',
+            'A DGCA medical certificate.',
             'Fluency in English.',
         ],
         note: 'Before enrolling in a pilot training program, you must ensure that you meet the eligibility criteria set by the Directorate General of Civil Aviation (DGCA) in India.',
@@ -70,7 +70,7 @@ const whyWeOne = [
     { icon: '🏆', text: 'Industry-recognized training programs.' },
     { icon: '🛡️', text: 'Emphasis on safety and professionalism.' },
     { icon: '🛩️', text: 'Practical hands-on training.' },
-    { icon: '💼', text: 'Placement assistance for aspiring pilots.' },
+    { icon: '💼', text: 'Interview preparation and career guidance for aspiring pilots.' },
 ];
 
 const courses = [
@@ -91,7 +91,7 @@ export default function HowToBecomeAPilotInIndiaPage() {
         >
 
             {/* ── Hero Banner ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <div className="section-tag">Pilot Career Guide</div>
                     <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
@@ -107,7 +107,7 @@ export default function HowToBecomeAPilotInIndiaPage() {
                         Start Your Journey →
                     </Link>
                 </ScrollReveal>
-            </div>
+            </header>>
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-8">

@@ -1,4 +1,6 @@
 import Layout from '../components/Layout';
+import StructuredData from '../components/StructuredData';
+import { generateHowToSchema } from '../lib/schema';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 
@@ -25,7 +27,7 @@ const eligibilityChecks = [
     {
         icon: '🩺',
         title: 'Medical Fitness',
-        desc: 'Applicants must get their Class 2 followed by Class 1 Medical Certificates from medical examiners recognized by DGCA.',
+        desc: 'Applicants must get their DGCA medical certificates from medical examiners recognized by DGCA.',
     },
     {
         icon: '🗣️',
@@ -70,7 +72,7 @@ const admissionSteps = [
         step: '05',
         icon: '🪪',
         title: 'Apply for Commercial Pilot License',
-        desc: 'Submit logbook and documents to DGCA, undergo Class 1 medical revalidation, and apply for CPL issuance.',
+        desc: 'Submit logbook and documents to DGCA, undergo DGCA medical revalidation, and apply for CPL issuance.',
     },
 ];
 
@@ -93,7 +95,7 @@ const weOneProcess = [
     {
         icon: '🩺',
         title: 'Medical Support',
-        desc: 'Assistance in scheduling Class 2 and Class 1 medical tests.',
+        desc: 'Assistance in scheduling DGCA-mandated medical fitness assessments.',
     },
     {
         icon: '🎓',
@@ -109,12 +111,22 @@ const weOneProcess = [
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
+// Built from the SAME `admissionSteps` array the page renders.
+const howToSchema = generateHowToSchema({
+  name: 'CPL admission process in India',
+  description: 'How to apply for Commercial Pilot Licence training in India: checking eligibility, choosing a DGCA-approved flying school, ground school and the DGCA examinations, flight training and hour logging, and the licence application.',
+  url: 'https://weoneaviation.in/commercial-pilot-license-admission-process',
+  steps: admissionSteps,
+});
+
 export default function CPLAdmissionPage() {
     return (
         <Layout
             title="Commercial Pilot License Admission Process – Step by Step CPL Guide 2025"
             description="Learn the complete Commercial Pilot License (CPL) Admission Process in India. Step-by-step guide covering eligibility, DGCA-approved school selection, ground training, flight hours, and CPL application."
         >
+            <StructuredData data={howToSchema} />
+
 
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
@@ -310,7 +322,7 @@ export default function CPLAdmissionPage() {
                     <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
                         {[
                             { num: '1', icon: '📁', text: 'Submit your logbook and documents to DGCA' },
-                            { num: '2', icon: '🩺', text: 'Undergo Class 1 medical revalidation' },
+                            { num: '2', icon: '🩺', text: 'Undergo DGCA medical revalidation' },
                             { num: '3', icon: '🪪', text: 'Apply for CPL issuance' },
                         ].map((item, i) => (
                             <ScrollReveal key={item.num} delay={i * 100}>

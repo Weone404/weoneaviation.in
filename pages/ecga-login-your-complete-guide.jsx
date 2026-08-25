@@ -103,7 +103,7 @@ const faqs = [
 
 const relatedBlogs = [
     { label: 'Commercial Pilot Salary', href: '/commercial-pilot-salary' },
-    { label: 'Ultimate Guide to Pilot Training', href: '/ultimate-guide-to-pilot-training' },
+    { label: 'Ultimate Guide to Pilot Training', href: '/your-guide-on-how-to-become-a-pilot-in-india' },
     { label: 'Pilot Course Fees in India', href: '/pilot-course-fees-in-india' },
 ];
 
@@ -168,10 +168,10 @@ export default function EGCALoginPage() {
                                 {portalFeatures.map((item, i) => (
                                     <div key={item.title} className="flex items-start gap-4 p-5 bg-av-light rounded-2xl border border-av-sky/20 card-hover hover:border-av-orange/30">
                                         <span className="text-3xl flex-shrink-0">{item.icon}</span>
-                                        <div>
+                                        <section>
                                             <h3 className="font-montserrat font-bold text-av-blue mb-1">{item.title}</h3>
                                             <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-                                        </div>
+                                        </section>>
                                     </div>
                                 ))}
                             </div>
@@ -287,10 +287,10 @@ export default function EGCALoginPage() {
                                 {registrationSteps.map((step, i) => (
                                     <div key={step.num} className="flex items-start gap-4 glass rounded-xl p-5">
                                         <div className="w-10 h-10 bg-av-orange rounded-full flex items-center justify-center text-white font-black text-sm flex-shrink-0">{step.num}</div>
-                                        <div>
+                                        <section>
                                             <h3 className="font-montserrat font-bold text-white text-sm mb-1">{step.title}</h3>
                                             <p className="text-white/70 text-xs leading-relaxed">{step.desc}</p>
-                                        </div>
+                                        </section>>
                                     </div>
                                 ))}
                             </div>
@@ -360,10 +360,10 @@ export default function EGCALoginPage() {
                                 {dashboardFeatures.map((item, i) => (
                                     <div key={item.title} className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100 card-hover hover:border-av-orange/30">
                                         <span className="text-2xl flex-shrink-0">{item.icon}</span>
-                                        <div>
+                                        <section>
                                             <h3 className="font-montserrat font-bold text-av-blue text-sm mb-0.5">{item.title}</h3>
                                             <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
-                                        </div>
+                                        </section>>
                                     </div>
                                 ))}
                                 <p className="text-gray-400 text-xs pt-2 leading-relaxed">Each feature is designed to make regulatory processes quicker, more efficient, and fully accessible online.</p>
@@ -387,10 +387,10 @@ export default function EGCALoginPage() {
                                 {loginTips.map(item => (
                                     <div key={item.title} className="flex items-start gap-4 p-5 bg-av-light rounded-xl border border-av-sky/20 card-hover hover:border-av-orange/30">
                                         <span className="text-2xl flex-shrink-0">{item.icon}</span>
-                                        <div>
+                                        <section>
                                             <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">{item.title}</h3>
                                             <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-                                        </div>
+                                        </section>>
                                     </div>
                                 ))}
                             </div>

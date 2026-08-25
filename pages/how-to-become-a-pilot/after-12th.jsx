@@ -1,21 +1,34 @@
 import Layout from '../../components/Layout';
+import StructuredData from '../../components/StructuredData';
+import { generateHowToSchema } from '../../lib/schema';
 import LeadForm from '../../components/LeadForm';
 import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
 
 const steps = [
   { num: 1, title: 'Pass 12th with PCM', desc: 'You need Physics, Chemistry, and Maths in your 12th standard. A minimum of 50% marks is required for DGCA eligibility. Some foreign flying schools accept any 12th pass.' },
-  { num: 2, title: 'Get DGCA Class 1 Medical', desc: 'Before starting pilot training, you must clear the DGCA Class 1 medical examination. This checks vision, hearing, cardiovascular health, and overall fitness. Schedule it early.' },
+  { num: 2, title: 'Get DGCA Medical', desc: 'Before starting pilot training, you must clear the DGCA medical examination. This checks vision, hearing, cardiovascular health, and overall fitness. Schedule it early.' },
   { num: 3, title: 'Enroll in a DGCA-Approved Flying School', desc: 'Choose a DGCA-approved flying school like We One Aviation. Decide between training in India or abroad (USA, Canada, Australia, Europe).' },
-  { num: 4, title: 'Complete Ground School Training', desc: 'You\'ll study 9 DGCA subjects including Air Navigation, Meteorology, Air Regulations, Technical General, and more. Clear all written exams before progressing to flying.' },
+  { num: 4, title: 'Complete Ground School Training', desc: 'You study the five DGCA written papers — Air Navigation, Aviation Meteorology, Air Regulations, Technical General, and more. Clear all written exams before progressing to flying.' },
   { num: 5, title: 'Complete 200+ Flying Hours', desc: 'Log a minimum of 200 flying hours as required by DGCA for CPL. This includes solo, cross-country, instrument, and night flying hours.' },
   { num: 6, title: 'Clear DGCA CPL Skill Test', desc: 'Appear for the DGCA CPL skill test (flight test) conducted by a DGCA examiner. Successfully demonstrate all flying maneuvers and procedures.' },
   { num: 7, title: 'Get Your CPL & Start Flying Career', desc: 'Receive your Commercial Pilot License from DGCA. Apply to airlines, appear for PABT, group discussion, and interview. Start as First Officer!' },
 ];
 
+// Built from the SAME `steps` array the page renders, so schema and markup
+// cannot drift apart.
+const howToSchema = generateHowToSchema({
+  name: 'How to become a pilot after 12th in India',
+  description: 'The route from Class 12 to a Commercial Pilot Licence in India: subjects, the DGCA medical, ground school, the DGCA theory papers, flying hours and the CPL skill test.',
+  url: 'https://weoneaviation.in/how-to-become-a-pilot/after-12th',
+  steps,
+});
+
 export default function After12th() {
   return (
     <Layout title="How to Become a Pilot After 12th | Complete Guide 2024 | We One Aviation" description="Complete guide on how to become a pilot after 12th standard in India. Eligibility, DGCA exams, flying hours, costs, and career path explained step-by-step.">
+            <StructuredData data={howToSchema} />
+
       {/* Hero */}
       <div className="relative h-72 overflow-hidden flex items-center justify-center pt-16"
         style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
@@ -46,10 +59,10 @@ export default function After12th() {
                     <div className="flex-shrink-0 w-10 h-10 bg-av-orange rounded-full flex items-center justify-center text-white font-montserrat font-bold">
                       {step.num}
                     </div>
-                    <div>
+                    <section>
                       <h3 className="font-montserrat font-bold text-av-blue mb-2">{step.title}</h3>
                       <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
-                    </div>
+                    </section>>
                   </div>
                 </ScrollReveal>
               ))}
@@ -71,7 +84,6 @@ export default function After12th() {
                     {[
                       ['Minimum Age', '17 years', '18 years'],
                       ['Education', '10+2 (any)', '10+2 PCM (50%)'],
-                      ['Medical', 'DGCA Class 2', 'DGCA Class 1'],
                       ['Min Flight Hours', '40 hours', '200 hours'],
                       ['Duration', '6-12 months', '18-24 months'],
                     ].map(([crit, ppl, cpl], i) => (
@@ -112,7 +124,7 @@ export default function After12th() {
               <div className="bg-av-blue rounded-2xl p-6 text-white">
                 <h4 className="font-montserrat font-bold mb-4">Quick Links</h4>
                 <div className="space-y-2">
-                  {[['CPL Course Details', '/courses/cpl'], ['PPL Course Details', '/courses/ppl'], ['DGCA Ground Classes', '/courses/dgca-ground-classes'], ['How to Become a Pilot in India', '/how-to-become-a-pilot/in-india']].map(([label, href]) => (
+                  {[['CPL Course Details', '/courses/cpl'], ['PPL Course Details', '/ppl-full-form'], ['DGCA Ground Classes', '/courses/dgca-ground-classes'], ['How to Become a Pilot in India', '/how-to-become-a-pilot/in-india']].map(([label, href]) => (
                     <Link key={href} href={href} className="block text-white/70 hover:text-av-orange text-sm py-1 transition-all hover:translate-x-1">
                       → {label}
                     </Link>

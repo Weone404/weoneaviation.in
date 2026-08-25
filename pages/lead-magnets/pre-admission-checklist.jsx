@@ -102,31 +102,29 @@ export default function PreAdmissionChecklist() {
                   <h3 className="font-montserrat font-bold text-lg text-av-blue mb-4">
                     🏥 Phase 3: Medical Clearance (Critical!)
                   </h3>
-                  <div className="grid md:grid-cols-2 gap-4 mb-4">
-                    <div className="bg-yellow-50 rounded-lg p-4 border border-yellow-200">
-                      <p className="font-bold text-yellow-900 mb-2">DGCA Class 2 Medical</p>
-                      <ul className="text-xs text-yellow-800 space-y-1">
-                        <li>✓ Eye test (visual acuity)</li>
-                        <li>✓ Hearing test</li>
-                        <li>✓ Color blindness test</li>
-                        <li>✓ Blood pressure check</li>
-                        <li>✓ Blood & urine tests</li>
-                        <li><strong>Validity: 2 years</strong></li>
-                        <li><strong>Cost: ₹5,000-10,000</strong></li>
-                      </ul>
-                    </div>
-                    <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-                      <p className="font-bold text-green-900 mb-2">DGCA Class 1 Medical</p>
-                      <ul className="text-xs text-green-800 space-y-1">
-                        <li>✓ All Class 2 tests</li>
-                        <li>✓ ECG (heart check)</li>
-                        <li>✓ Chest X-ray</li>
-                        <li>✓ Comprehensive lab work</li>
-                        <li>✓ Psychological evaluation</li>
-                        <li><strong>Validity: 1 year</strong></li>
-                        <li><strong>Cost: ₹10,000-15,000</strong></li>
-                      </ul>
-                    </div>
+                  {/*
+                    WAS a two-column panel contrasting the Class 2 and Class 1
+                    medicals. With the class split removed both headings read
+                    identically, so the comparison carried nothing and looked
+                    broken. Merged into one panel: the test list and the cost
+                    band are the parts a student can act on, and neither
+                    depends on naming a class.
+                  */}
+                  <div className="bg-yellow-50 rounded-lg p-4 border border-yellow-200 mb-4">
+                    <p className="font-bold text-yellow-900 mb-2">What the DGCA medical examination covers</p>
+                    <ul className="text-xs text-yellow-800 space-y-1">
+                      <li>✓ Eye test (visual acuity)</li>
+                      <li>✓ Hearing test</li>
+                      <li>✓ Colour blindness test</li>
+                      <li>✓ Blood pressure check</li>
+                      <li>✓ Blood and urine tests</li>
+                      <li>✓ ECG (heart check)</li>
+                      <li>✓ Chest X-ray</li>
+                      <li>✓ Laboratory work</li>
+                      <li>✓ Psychological evaluation</li>
+                      <li><strong>Cost: roughly ₹5,000&ndash;15,000, depending on the centre</strong></li>
+                      <li><strong>Validity and scope: confirm with your DGCA-approved examiner</strong></li>
+                    </ul>
                   </div>
                   <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded">
                     📌 <strong>Note:</strong> Disqualifying conditions include color blindness, poor eyesight, hearing problems, heart conditions, high blood pressure. Get checked first!
@@ -146,7 +144,7 @@ export default function PreAdmissionChecklist() {
                       <ol className="text-sm text-blue-800 space-y-2 list-decimal list-inside">
                         <li>Visit <a href="https://dgcaonline.nic.in" target="_blank" rel="noopener" className="text-blue-600 underline">dgcaonline.nic.in</a></li>
                         <li>Create account with email & mobile</li>
-                        <li>Upload Class 1 Medical certificate</li>
+                        <li>Upload DGCA Medical certificate</li>
                         <li>Upload educational documents (10+2)</li>
                         <li>Fill personal & training details</li>
                         <li>Pay registration fee (₹2,000-3,000)</li>
@@ -192,7 +190,7 @@ export default function PreAdmissionChecklist() {
                     {[
                       '□ Schedule admission meeting 1 week before start date',
                       '□ Bring all original documents + photocopies',
-                      '□ Bring medical certificates (Class 1 & 2)',
+                      '□ Bring your DGCA medical certificates',
                       '□ Sign admission agreement & terms',
                       '□ Collect academy ID card',
                       '□ Get hostel/accommodation details',

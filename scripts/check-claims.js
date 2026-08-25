@@ -93,7 +93,23 @@ const path = require('path');
 const CLAIM = '(certified|approved|aligned|compliant|accredited|affiliat|partner|member|recognis|recogniz)';
 const OUTCOME = '(graduate|alumni|student|placement|placed|hired|our pilots|trainee)';
 const OWNS = '(our fleet|our aircraft|our simulator|we operate|owned by us|in-house|Aircraft Used|Aircraft Fleet)';
-const RUPEES_PER_MONTH = '\u20b9\\d[\\d.,]*L\\s*/\\s*month';
+/*
+ * Rupee-per-month notation, used only in combination with OUTCOME below —
+ * "our graduates earn X per month" is the claim, not the number itself.
+ *
+ * The original pattern matched "₹1.5L / month" and nothing else, so it walked
+ * straight past "₹5-8 LPM", the notation the ATPL and how-to-become-a-pilot
+ * pages actually shipped. Same claim, different shorthand, zero coverage.
+ *
+ * The trailing per-month marker is DELIBERATELY MANDATORY. An earlier draft of
+ * this widening made it optional, which made the pattern match a bare
+ * "₹40-70 lakh" — i.e. every legitimate course FEE on the site. Sitting next
+ * to the word "student" inside the 80-character window, that would have failed
+ * the build on correct copy. A false positive here blocks every shipment,
+ * including the ones that fix claims. Either the unit carries the period in
+ * itself (LPM) or an explicit "/month" or "per month" must follow.
+ */
+const RUPEES_PER_MONTH = '₹\\s*\\d[\\d.,]*(\\s*[-–to]+\\s*\\d[\\d.,]*)?\\s*(LPM|(L|lakh|Lakh|lakhs|crore|Crore)\\s*(/|per\\s+)\\s*(month|PM|p\\.m\\.))';
 const PATTERNS = [
   /3500\+/i, /3000\+/i, /500\+\s*pilots/i,
   /98%\s*success/i, /100%\s*result/i, /100%\s*placement/i, /95%\s*pass/i,

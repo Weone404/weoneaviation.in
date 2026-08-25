@@ -4,15 +4,15 @@ import FloatingButtons from './FloatingButtons';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import StructuredData from './StructuredData';
 import FAQSection from './FAQSection';
+import StructuredData from './StructuredData';
+import { buildBreadcrumbItems } from './Breadcrumb';
+import { generateBreadcrumbSchema } from '../lib/schema';
 import { getPageFAQs } from '../data/pageFaqs';
 
 const ContactPopup = dynamic(() => import('./ContactPopup'), { ssr: false });
 
-const DEFAULT_KEYWORDS = "CBSE Full Form, ICSE Full Form, DGCA Full Form, PPL Full Form, CPL Full Form, RTR Full Form, Atpl Full Form, Commercial Pilot License, Pilot course, commercial pilot, commercial pilot license salary, Pilot training, commercial pilot course, commercial pilot licence course, cpl course fees, commercial pilot training, commercial pilot eligibility, commercial pilot training in india, cpl licence cost, commercial pilot license course in india, commercial pilot fees, commercial pilot course eligibility, commercial pilot license syllabus, Commercial Pilot License Admission Process, how to become a pilot, how to become a pilot in india, how to become a pilot after 12th, Private Pilot License, pilot course fees, pilot training fees, qualifications to become a pilot, best pilot schools, eligibility for become a pilot, pilot syllabus, pilot training eligibility, eligibility for pilot course, ppl syllabus, pilot course syllabus, ppl pilot salary, private pilot license syllabus, Pilot training in India, Pilot training in Hyderabad, Pilot training in Mumbai, Pilot Training in Chennai, Pilot Training in Bangalore, Pilot training in kerala, Pilot training in Delhi, Pilot Training in Pune, Pilot training institute in Kolkata, pilot training in coimbatore, Pilot training in Gujarat, Pilot training in goa, Pilot Training in Gurgaon, Pilot training in tamil nadu, Pilot Training in Rajasthan, Pilot Training in Haryana, Pilot Training in Punjab, Pilot Training in Andhra Pradesh, Pilot Training in Arunachal Pradesh, Pilot training in Assam, Pilot Training in Bihar, Pilot Training in Chhattisgarh, Pilot Training in Himachal Pradesh, Pilot Training in Noida, Pilot Training in Ghaziabad, Pilot Training in Nagpur, Pilot Training in Maharashtra, Pilot Training in Jaipur, Airline Transport Pilot License, atpl, atpl license, airline transport license, atp licence, airline transport pilot licence cost, atpl cost, atpl requirements, atpl training, atpl pilot salary, Student Pilot License, spl, student pilot certificate, student pilot license cost, spl pilot training fees, student pilot license requirements, student pilot license eligibility, student pilot license fees, spl eligibility, spl fees, Pilot Training Course, DGCA, DGCA Ground Class, ground class, dgca pariksha, pariksha dgca, dgca exam, dgca central examination organization, pilot exam, dgca pariksha portal, dgca exam fees, dgca exam for pilot, dgca exam eligibility, dgca pilot exam, what is dgca exam, dgca exam date, dgca cpl exam, dgca exams for cpl, www pariksha dgca, how to apply for dgca exam, dgca exam age limit, dgca exam schedule, dgca pariksha com, aviation exam in india, dgca entrance exam, e pariksha dgca, egca login, egca, egca dgca, dgca login, edgca, ecga, egca full form, egca registration, DGCA Ground Class in dwarka, DGCA Ground Class in delhi";
-
-export default function Layout({ children, title, description, keywords, robots, noindex = false }) {
+export default function Layout({ children, title, description, robots, noindex = false }) {
   const router = useRouter();
   const canonicalPath = router.asPath ? router.asPath.split('?')[0] : '/';
 
@@ -21,47 +21,40 @@ export default function Layout({ children, title, description, keywords, robots,
   const isAdminPage = router.pathname.startsWith('/admin');
   const pageFAQs = isAdminPage ? null : getPageFAQs(router.pathname);
   const resolvedRobots = robots ?? (noindex ? 'noindex, follow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': 'https://weoneaviation.in/#organization',
-    name: 'We One Aviation Academy',
-    legalName: 'We One Aviation Academy',
-    url: 'https://weoneaviation.in',
-    logo: 'https://weoneaviation.in/Logo.webp',
-    description: 'DGCA approved pilot training institute in India offering CPL, PPL, ATPL and aviation career guidance.',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka',
-      addressLocality: 'New Delhi',
-      postalCode: '110077',
-      addressCountry: 'India',
-    },
-    contactPoint: [
-      {
-        '@type': 'ContactPoint',
-        telephone: '+91-9355611996',
-        contactType: 'customer service',
-        areaServed: 'IN',
-        availableLanguage: 'English',
-      },
-    ],
-    email: 'info.weoneaviation@gmail.com',
-    /*
-     * Kept identical to the list in _document.jsx. Both files emit an
-     * Organization node on every page, so when their `sameAs` arrays disagree
-     * the page ships two contradictory descriptions of the same entity — the
-     * worst of both worlds for entity resolution. Change them together.
-     *
-     * (The duplication itself is worth collapsing to one owner; it is recorded
-     * in GEO-AUDIT-REPORT.md rather than restructured here.)
-     */
-    sameAs: [
-      'https://www.facebook.com/share/1AokxHk8Yv/',
-      'https://www.instagram.com/we_one_aviation',
-      'https://www.linkedin.com/company/weoneaviation',
-    ],
-  };
+
+  /*
+   * BreadcrumbList for every route.
+   *
+   * components/Breadcrumb.jsx used to emit this, which meant the site shipped
+   * it on the four pages that happened to render the visible nav and nowhere
+   * else — 71 routes with no site-architecture signal at all. Layout wraps
+   * every page and already knows the path, so it owns the node now and the
+   * visible component owns the markup. Both read the same
+   * buildBreadcrumbItems() helper, so they cannot disagree.
+   *
+   * Skipped where a trail would be meaningless or unwanted: the homepage,
+   * whose trail is just "Home", and /admin, which is noindex anyway.
+   */
+  const breadcrumbItems = buildBreadcrumbItems(canonicalPath);
+  const breadcrumbSchema = (!isAdminPage && breadcrumbItems.length > 1)
+    ? generateBreadcrumbSchema(breadcrumbItems.map((item) => ({
+        name: item.label,
+        url: `https://weoneaviation.in${item.href}`,
+      })))
+    : null;
+  /*
+   * The Organization node USED TO BE BUILT HERE and emitted on every page, in
+   * parallel with the one _document.jsx builds from lib/schema.js. Two nodes
+   * described the same entity on every URL and had already drifted apart:
+   * this copy said @type Organization and addressLocality "New Delhi", the
+   * lib/schema.js copy says EducationalOrganization and "Delhi".
+   *
+   * Removed rather than reconciled. lib/schema.js is the single owner, it
+   * carries the stronger type for a training academy, and _document.jsx
+   * renders on every page too — so coverage is unchanged and there is now one
+   * description of the entity instead of two contradictory ones.
+   * Do not reintroduce an Organization node here.
+   */
 
   return (
     <>
@@ -86,8 +79,9 @@ export default function Layout({ children, title, description, keywords, robots,
         <meta key="og:title" property="og:title" content={title || 'We One Aviation Academy'} />
         <meta key="og:description" property="og:description" content={description || 'DGCA approved pilot training in India'} />
 
+        {breadcrumbSchema && <StructuredData data={breadcrumbSchema} />}
+
         <link rel="icon" href="/favicon.ico" />
-        <StructuredData data={organizationSchema} />
       </Head>
       <Navbar />
       <main className="min-h-screen">{children}</main>

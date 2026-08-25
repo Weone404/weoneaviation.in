@@ -56,7 +56,7 @@ export default function LeadMagnetsHub() {
       icon: '🧑‍⚕️',
       title: 'Medical Requirements Guide (Coming Soon)',
       description: 'DGCA medical standards, disqualifying conditions, and how to prepare for medical exam',
-      topics: ['Class 1 medical', 'Class 2 medical', 'Disqualifiers', 'Exam prep'],
+      topics: ['DGCA medical', 'Disqualifiers', 'Exam prep'],
       link: '#',
       color: 'from-red-500 to-rose-500',
       label: 'Medical Info',

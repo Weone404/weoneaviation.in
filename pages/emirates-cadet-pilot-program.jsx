@@ -26,7 +26,7 @@ const eligibility = [
     { icon: '🎂', label: 'Age', desc: 'Minimum 17 years old' },
     { icon: '🎓', label: 'Education', desc: 'Completed high school with strong grades in Math, Physics, and English' },
     { icon: '🗣️', label: 'English Proficiency', desc: 'IELTS score of 6.0+ or equivalent' },
-    { icon: '🩺', label: 'Medical Fitness', desc: 'Must pass a Class 1 Aviation Medical Exam' },
+    { icon: '🩺', label: 'Medical Fitness', desc: 'Must pass a DGCA Aviation Medical Exam' },
     { icon: '✈️', label: 'Prior Experience', desc: 'No Prior Flight Experience Required' },
 ];
 
@@ -75,7 +75,7 @@ export default function EmiratesCadet() {
 
                             {/* Quick Facts */}
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-                                {[['17+ Years', 'Min Age'], ['Zero to CPL', 'Training Level'], ['Dubai, UAE', 'Training Base'], ['Class 1', 'Medical Required']].map(([val, label]) => (
+                                {[['17+ Years', 'Min Age'], ['Zero to CPL', 'Training Level'], ['Dubai, UAE', 'Training Base'], ['DGCA', 'Medical Required']].map(([val, label]) => (
                                     <div key={label} className="bg-av-light rounded-xl p-4 text-center">
                                         <div className="font-montserrat font-bold text-av-blue text-sm">{val}</div>
                                         <div className="text-gray-500 text-xs mt-1">{label}</div>
@@ -237,7 +237,7 @@ export default function EmiratesCadet() {
                                     <li>✓ Age: 18 for a CPL, 16 for a Student Pilot Licence</li>
                                     <li>✓ 12th with Math, Physics & English</li>
                                     <li>✓ IELTS 6.0+ (English proficiency)</li>
-                                    <li>✓ Class 1 Medical Certificate</li>
+                                    <li>✓ DGCA medical certificate</li>
                                     <li>✓ No prior flying experience needed</li>
                                     <li>✓ Zero to CPL + MEIR training</li>
                                 </ul>

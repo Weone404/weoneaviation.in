@@ -31,19 +31,19 @@ const nextConfig = {
     return [
       {
         source: '/Pilot-Course-&-Pilot-Training-in -ndia',
-        destination: '/pilot-course-training-in-india',
+        destination: '/pilot-training-in-india',
         permanent: true,
       },
       
       {
         source: '/Pilot-Course-&-Pilot-Training-in-india',
-        destination: '/pilot-course-training-in-india',
+        destination: '/pilot-training-in-india',
         permanent: true,
       },
       
       {
         source: '/pilot-training-courses',
-        destination: '/pilot-course-training-in-india',
+        destination: '/pilot-training-in-india',
         permanent: true,
       },
       
@@ -61,7 +61,7 @@ const nextConfig = {
       // and remains the hub. /blogs/dgca-exam-guide was left alone — it used to
       // duplicate the DGCA course page but has since been rewritten and is now
       // a different article.
-      { source: '/blogs/ppl-course-fees', destination: '/courses/ppl', permanent: true },
+      { source: '/blogs/ppl-course-fees', destination: '/ppl-full-form', permanent: true },
       { source: '/blogs/cpl-full-form', destination: '/courses/cpl', permanent: true },
       { source: '/courses/cpl-flight-training', destination: '/courses/cpl', permanent: true },
 
@@ -195,7 +195,7 @@ const nextConfig = {
       
       {
         source: '/courses/ppl/',
-        destination: '/courses/ppl',
+        destination: '/ppl-full-form',
         permanent: true,
       },
       
@@ -285,7 +285,7 @@ const nextConfig = {
       
       {
         source: '/best-flight-simulators-classes-for-pilot-training',
-        destination: '/advanced-atpl-pilot-training',
+        destination: '/courses/atpl',
         permanent: true,
       },
       
@@ -321,7 +321,7 @@ const nextConfig = {
       
       {
         source: '/commercial-pilot-training-course',
-        destination: '/pilot-course-training-in-india',
+        destination: '/pilot-training-in-india',
         permanent: true,
       },
       
@@ -381,20 +381,20 @@ const nextConfig = {
       
       {
         source: '/how-to-obtain-dgca-class-2-class-1-medical',
-        destination: '/dgca-class-2-class-1-medical',
+        destination: '/commercial-pilot-license-eligibility',
         permanent: true,
       },
       
       {
         source: '/pilot-course-fees',
         // was /blogs/ppl-course-fees, which now 301s on to the same target
-        destination: '/courses/ppl',
+        destination: '/ppl-full-form',
         permanent: true,
       },
       
       {
         source: '/pilot-course-fees-in-india',
-        destination: '/pilot-course-training-in-india',
+        destination: '/pilot-training-in-india',
         permanent: true,
       },
       
@@ -412,19 +412,19 @@ const nextConfig = {
       
       {
         source: '/pilot-training',
-        destination: '/advanced-atpl-pilot-training',
+        destination: '/courses/atpl',
         permanent: true,
       },
       
       {
         source: '/pilot-training-academy',
-        destination: '/advanced-atpl-pilot-training',
+        destination: '/courses/atpl',
         permanent: true,
       },
       
       {
         source: '/private-pilot-license-ppl-course-fees',
-        destination: '/private-pilot-license-ppl-course-details',
+        destination: '/ppl-full-form',
         permanent: true,
       },
       
@@ -481,7 +481,7 @@ const nextConfig = {
       {
         source: '/blog/ppl-course-fees',
         // was /blogs/ppl-course-fees, which now 301s on to the same target
-        destination: '/courses/ppl',
+        destination: '/ppl-full-form',
         permanent: true,
       },
       
@@ -521,6 +521,58 @@ const nextConfig = {
         destination: '/rtr-a',
         permanent: true,
       },
+
+      /*
+       * ── DUPLICATE-INTENT CLUSTER CONSOLIDATION (GEO pass) ──────────────
+       * Four sets of URLs were competing for the same query. Each set now has
+       * one winner; the rest 301 to it. Winners were picked on content depth
+       * and URL structure, and the legacy redirects above were repointed at
+       * the winners in the same pass so nothing takes two hops.
+       *
+       * The page files for the losing routes are intentionally left in place.
+       * next.config redirects run before filesystem routing, so these win
+       * regardless — and keeping the files means the content is recoverable
+       * if a decision is reversed. They are excluded from the sitemap.
+       *
+       * NOT consolidated here: the DGCA ground-classes cluster
+       * (/dgca-ground-classes, /courses/dgca-ground-classes,
+       * /dgca-ground-classes-in-india). The nested URL is the DEEPEST of the
+       * three at 1,060 lines while the root-level exact-match slug is the one
+       * cited in public/llms.txt and the one carrying Course schema. Choosing
+       * between them means merging content first, not redirecting 1,060 lines
+       * into oblivion. Left alone deliberately.
+       */
+      { source: '/courses/ppl', destination: '/ppl-full-form', permanent: true },
+      { source: '/private-pilot-license-ppl-course-details', destination: '/ppl-full-form', permanent: true },
+      { source: '/advanced-atpl-pilot-training', destination: '/courses/atpl', permanent: true },
+      { source: '/faq', destination: '/faqs', permanent: true },
+      { source: '/pilot-course-training-in-india', destination: '/pilot-training-in-india', permanent: true },
+      /*
+       * The dedicated DGCA medical-class page. Its slug, title, H1 and whole
+       * subject were the Class 1 / Class 2 distinction, which sits on the
+       * unsourced list in scripts/check-claims.js. Sanitising the copy would
+       * have left the URL asserting what the page no longer said, so the route
+       * retires to the sanitised eligibility page instead. Internal links and
+       * the Navbar entry were repointed in the same pass.
+       */
+      { source: '/dgca-class-2-class-1-medical', destination: '/commercial-pilot-license-eligibility', permanent: true },
+      /*
+       * Capitalised slugs retired.
+       *
+       * /Airindia-pilot-preparation and /Indigo-pilot-preparation shipped with
+       * capital letters, which cost them their curated FAQs: getPageFAQs keys
+       * on router.pathname, the routeContent keys were lowercase, and the two
+       * never matched — both pages silently served generic fallback content.
+       * Capitalised paths are also fragile against case-sensitive origins and
+       * inconsistent inbound links.
+       *
+       * The page files are renamed to lowercase (a two-step `git mv`, since the
+       * repo sits on a case-insensitive filesystem) and the old casings 301
+       * here. Nothing links to the capitalised forms any more; these exist for
+       * inbound links and anything already in an index.
+       */
+      { source: '/Airindia-pilot-preparation', destination: '/airindia-pilot-preparation', permanent: true },
+      { source: '/Indigo-pilot-preparation', destination: '/indigo-pilot-preparation', permanent: true },
     ];
   },
 

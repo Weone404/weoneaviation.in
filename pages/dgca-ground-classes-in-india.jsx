@@ -79,7 +79,7 @@ const eligibility = [
     },
     {
         icon: '🩺',
-        title: 'DGCA Class 2 Medical',
+        title: 'DGCA Medical',
         desc: 'Must be obtained from a DGCA-approved Aviation Medical Examiner (AME) listed on the official DGCA India website.',
     },
     {
@@ -201,7 +201,7 @@ const faqs = [
 
 const blogs = [
         { title: 'Pilot Training in Delhi', date: 'February 13, 2025', desc: 'Complete guide to pilot training in Delhi — DGCA exam, simulator practice, PPL & CPL course fees.', href: '/pilot-training-in-delhi' },
-        { title: 'Private Pilot License (PPL) Course Fees in India', date: 'February 10, 2025', desc: 'PPL Course Fees 2025 — everything an Indian student needs to know before enrolling.', href: '/courses/ppl' },
+        { title: 'Private Pilot License (PPL) Course Fees in India', date: 'February 10, 2025', desc: 'PPL Course Fees 2025 — everything an Indian student needs to know before enrolling.', href: '/ppl-full-form' },
         { title: 'Full Form of CPL | Commercial Pilot License in India', date: 'January 28, 2025', desc: 'What CPL means in Indian aviation, eligibility, DGCA requirements and career scope.', href: '/courses/cpl' },
         { title: 'Master the DGCA CPL Exam: Complete Guide for Indian Students', date: 'January 21, 2025', desc: 'Complete DGCA CPL exam guide — syllabus, subjects, exam centres, and success tips for India.', href: '/blogs/dgca-exam-guide' },
         { title: 'Aviation Course After 12th in India — Fees & Admission Guide', date: 'January 2, 2025', desc: 'All aviation courses available in India after 12th — fees, eligibility, and career paths explained.', href: '/blogs/aviation-course-after-12th' },
@@ -252,7 +252,7 @@ export default function DGCAGroundClassesInIndia() {
                             </div>
 
                             {/* ── What is DGCA India ── */}
-                            <div>
+                            <section>
                                 <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What Is DGCA? — India's Aviation Authority</h2>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-3">
                                     The <strong>Directorate General of Civil Aviation (DGCA)</strong> is the central regulatory body for civil aviation in India, functioning under the Ministry of Civil Aviation, Government of India. It is headquartered in New Delhi and has regional offices across the country.
@@ -276,10 +276,10 @@ export default function DGCAGroundClassesInIndia() {
                                         </div>
                                     ))}
                                 </div>
-                            </div>
+                            </section>>
 
                             {/* ── How to Become a Pilot in India — Process ── */}
-                            <div>
+                            <section>
                                 <h2 className="font-montserrat text-xl font-bold text-av-blue mb-2">How to Become a Pilot in India — Step-by-Step</h2>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-6">
                                     DGCA Ground Classes in India are Step 1. Here is the complete roadmap from student to commercial pilot in India:
@@ -295,10 +295,10 @@ export default function DGCAGroundClassesInIndia() {
                                         </div>
                                     ))}
                                 </div>
-                            </div>
+                            </section>>
 
                             {/* ── 6 DGCA Subjects ── */}
-                            <div>
+                            <section>
                                 <h2 className="font-montserrat text-xl font-bold text-av-blue mb-2">6 DGCA Subjects — India Exam Pattern</h2>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-6">
                                     The DGCA India exam consists of <strong>6 compulsory theory papers</strong>. All 6 must be cleared to be eligible for a CPL in India. Our DGCA Ground Classes in India cover every subject in full depth.
@@ -318,10 +318,10 @@ export default function DGCAGroundClassesInIndia() {
                                         </div>
                                     ))}
                                 </div>
-                            </div>
+                            </section>>
 
                             {/* ── DGCA Exam Centres in India ── */}
-                            <div>
+                            <section>
                                 <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">DGCA Exam Centres Across India</h2>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
                                     DGCA India conducts theory examinations at designated centres across the country. Students can choose the centre nearest to them in their Indian state. We assist all our students with exam registration and centre selection.
@@ -332,10 +332,10 @@ export default function DGCAGroundClassesInIndia() {
                                     ))}
                                 </div>
                                 <p className="text-gray-400 text-xs italic">* DGCA India periodically updates examination centre lists. We help every student confirm the latest centre for their state.</p>
-                            </div>
+                            </section>>
 
                             {/* ── Eligibility ── */}
-                            <div>
+                            <section>
                                 <h2 className="font-montserrat text-xl font-bold text-av-blue mb-2">Eligibility for DGCA Ground Classes in India</h2>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-6">
                                     To join DGCA Ground Classes in India and work toward a Commercial Pilot License (CPL) from DGCA India, you must meet these requirements:
@@ -356,10 +356,10 @@ export default function DGCAGroundClassesInIndia() {
                                 <p className="text-gray-600 text-sm leading-relaxed mt-5">
                                     Met all criteria? You're ready to begin. Join We One Aviation Academy — DGCA-approved, based in Dwarka, New Delhi. trusted DGCA Ground Classes institute — and start your journey today. 🇮🇳✈️
                                 </p>
-                            </div>
+                            </section>>
 
                             {/* ── Why Choose ── */}
-                            <div>
+                            <section>
                                 <h2 className="font-montserrat text-xl font-bold text-av-blue mb-2">Why Choose We One Aviation for DGCA Ground Classes in India?</h2>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-6">
                                     Hundreds of institutes across India offer DGCA coaching. Here is why thousands of student pilots from Delhi to Chennai, Kolkata to Ahmedabad consistently choose We One Aviation Academy:
@@ -375,10 +375,10 @@ export default function DGCAGroundClassesInIndia() {
                                         </div>
                                     ))}
                                 </div>
-                            </div>
+                            </section>>
 
                             {/* ── DGCA-Approved Flying Schools in India ── */}
-                            <div>
+                            <section>
                                 <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">DGCA-Approved Flying Schools in India</h2>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-5">
                                     After clearing your DGCA Ground Exams, you complete your flying hours at a DGCA-approved flying school in India or abroad. Here are some of India's top DGCA-approved flying academies:
@@ -411,10 +411,10 @@ export default function DGCAGroundClassesInIndia() {
                                     </table>
                                 </div>
                                 <p className="text-gray-400 text-xs italic mt-3">* We One Aviation helps every student select the right flying school in India or abroad based on budget, location, and career goals.</p>
-                            </div>
+                            </section>>
 
                             {/* ── Indian Airlines Hiring Pilots ── */}
-                            <div>
+                            <section>
                                 <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">Indian Airlines Actively Hiring Pilots — Your Future Employers</h2>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-5">
                                     India is the <strong>3rd largest aviation market in the world</strong> and is projected to need over <strong>10,000 new pilots in the next decade</strong>. After you clear your DGCA exams and obtain your CPL, these are the airlines that could be your employer:
@@ -435,10 +435,10 @@ export default function DGCAGroundClassesInIndia() {
                                     <p className="text-av-blue font-semibold text-sm mb-2">💡 Pilot Salary in India</p>
                                     <p className="text-gray-600 text-xs leading-relaxed">Starting salary for First Officers at Indian airlines ranges from <strong>₹1.5 lakh to ₹3 lakh per month</strong>. Experienced Captains earn ₹5–15 lakh per month. Your DGCA Ground Classes in India are the first investment in this career.</p>
                                 </div>
-                            </div>
+                            </section>>
 
                             {/* ── States We Serve ── */}
-                            <div>
+                            <section>
                                 <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">DGCA Ground Classes Available Across All of India</h2>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-5">
                                     We One Aviation Academy serves aspiring pilots from every corner of India through our live online platform. No matter which state or city you are in, you can join our DGCA Ground Classes in India right from your home:
@@ -450,10 +450,10 @@ export default function DGCAGroundClassesInIndia() {
                                     <span className="text-xs bg-av-orange text-white px-3 py-1.5 rounded-full font-bold">+ Every Indian State</span>
                                 </div>
                                 <p className="text-gray-400 text-xs italic">All you need is a smartphone or laptop and an internet connection. Our online DGCA Ground Classes cover the full India syllabus through live sessions with recorded backups.</p>
-                            </div>
+                            </section>>
 
                             {/* ── Online vs Offline ── */}
-                            <div>
+                            <section>
                                 <h2 className="font-montserrat text-xl font-bold text-av-blue mb-5">Online vs Offline DGCA Ground Classes in India</h2>
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     <div className="rounded-2xl border-2 border-av-blue p-5">
@@ -489,7 +489,7 @@ export default function DGCAGroundClassesInIndia() {
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </section>>
 
                             {/* ── CTA Banner ── */}
                             <div className="rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #003580 0%, #0a5abf 100%)' }}>
@@ -512,7 +512,7 @@ export default function DGCAGroundClassesInIndia() {
                             </div>
 
                             {/* ── FAQs ── */}
-                            <div>
+                            <section>
                                 <h2 className="font-montserrat text-xl font-bold text-av-blue mb-5">FAQs — DGCA Ground Classes in India</h2>
                                 <div className="space-y-3">
                                     {faqs.map(({ q, a }) => (
@@ -526,10 +526,10 @@ export default function DGCAGroundClassesInIndia() {
                                         </div>
                                     ))}
                                 </div>
-                            </div>
+                            </section>>
 
                             {/* ── Blogs ── */}
-                            <div>
+                            <section>
                                 <h2 className="font-montserrat text-xl font-bold text-av-blue mb-5">Latest Blogs on DGCA & Pilot Training in India</h2>
                                 <div className="space-y-4">
                                     {blogs.map((blog) => (
@@ -541,7 +541,7 @@ export default function DGCAGroundClassesInIndia() {
                                         </div>
                                     ))}
                                 </div>
-                            </div>
+                            </section>>
 
                         </ScrollReveal>
                     </div>
@@ -560,7 +560,7 @@ export default function DGCAGroundClassesInIndia() {
                                 <ul className="space-y-2 text-sm text-white/80">
                                     <li>✓ Class 12 — Physics & Maths (any Indian board)</li>
                                     <li>✓ Age: 18 for a CPL, 16 for a Student Pilot Licence</li>
-                                    <li>✓ DGCA Class 2 Medical (India AME)</li>
+                                    <li>✓ DGCA Medical (India AME)</li>
                                     <li>✓ English proficiency</li>
                                     <li>✓ DGCA Computer Number</li>
                                 </ul>

@@ -51,7 +51,7 @@ export default function PilotTrainingDelhi() {
                         { label: 'Includes', value: 'Minimum 40 hours of flight training' },
                         { label: 'Best For', value: 'Individuals who want to fly privately or as a hobby' },
                     ],
-                    href: '/courses/ppl',
+                    href: '/ppl-full-form',
                     highlight: false,
                 },
                 {
@@ -74,7 +74,7 @@ export default function PilotTrainingDelhi() {
                         { label: 'Includes', value: 'Advanced flight training in low-visibility conditions' },
                         { label: 'Best For', value: 'Pilots looking to enhance skills and qualify for commercial aviation' },
                     ],
-                    href: '/courses/type-rating',
+                    href: '/courses',
                     highlight: false,
                 },
             ]}
@@ -82,7 +82,7 @@ export default function PilotTrainingDelhi() {
             eligibility={[
                 { icon: '🎓', title: 'Education', desc: '10+2 with Physics & Mathematics (We can help with additional courses if needed!)' },
                 { icon: '🎂', title: 'Age', desc: '18 years for a CPL; 16 for a Student Pilot Licence' },
-                { icon: '🩺', title: 'Medical Fitness', desc: 'Must clear DGCA Class 1 & Class 2 Medical Exams' },
+                { icon: '🩺', title: 'Medical Fitness', desc: 'Must clear DGCA Medical Examinations' },
                 { icon: '🗣️', title: 'English Proficiency', desc: 'Must be able to read, write, and communicate effectively in English' },
             ]}
 
@@ -157,8 +157,8 @@ export default function PilotTrainingDelhi() {
             faqs={[
                 { q: 'How long does it take to complete pilot training in Delhi?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months. With We One Aviation, students who attend regularly can become a pilot in as little as 15 months.' },
                 { q: 'What are the fees for pilot training in Delhi?', a: 'The average fees for CPL training in Delhi is INR 40–60 Lakh. This includes ground classes, 200 hours of flying, simulator training, and extra gear. We One Aviation provides scholarship and flexible payment options to make pilot training affordable.' },
-                { q: 'What is the eligibility to become a pilot in Delhi?', a: 'A Commercial Pilot Licence requires a minimum age of 18 years on the date of application (Aircraft Rules, 1937, Schedule II, Section J). Flight training can begin earlier: a Student Pilot Licence requires 16 years (Schedule II, Section B). 10+2 with Physics & Mathematics, DGCA Class 1 & Class 2 Medical clearance, and English proficiency are also required.' },
-                { q: 'Does We One Aviation provide placement assistance in Delhi?', a: 'Yes! We provide placement assistance. Our graduates have successfully joined major airlines, cargo operations, and private aviation companies worldwide.' },
+                { q: 'What is the eligibility to become a pilot in Delhi?', a: 'A Commercial Pilot Licence requires a minimum age of 18 years on the date of application (Aircraft Rules, 1937, Schedule II, Section J). Flight training can begin earlier: a Student Pilot Licence requires 16 years (Schedule II, Section B). 10+2 with Physics & Mathematics, DGCA medical clearance, and English proficiency are also required.' },
+                { q: 'What career support does We One Aviation provide in Delhi?', a: 'We run interview preparation and career guidance from the Dwarka centre: airline interview practice, licence-route planning, and help reading what an operator is asking for. We do not place students in jobs, and hiring stays with the airline.' },
                 { q: 'Can I get a scholarship for pilot training in Delhi?', a: 'Yes! We One Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
                 { q: 'Where is We One Aviation Academy located in Delhi?', a: 'We One Aviation Academy is located in Dwarka, Delhi — close to IGI Airport, one of India\'s busiest international airports, giving students excellent real-world aviation exposure.' },
                 { q: 'What career options are available after pilot training in Delhi?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Delhi\'s position as India\'s aviation hub creates excellent demand for trained pilots.' },

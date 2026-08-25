@@ -22,8 +22,8 @@ const keyHighlights = [
 const withoutComputerNumberList = [
     <span>Register for <Link href="/dgca-pariksha" className="text-av-blue font-semibold hover:text-av-orange transition-colors">DGCA theory examinations</Link></span>,
     <span>Apply for <Link href="/commercial-pilot-license" className="text-av-blue font-semibold hover:text-av-orange transition-colors">CPL</Link> examination papers</span>,
-    <span>Apply for <Link href="/private-pilot-license-ppl-course-details" className="text-av-blue font-semibold hover:text-av-orange transition-colors">PPL</Link> examinations</span>,
-    <span>Register for <Link href="/advanced-atpl-pilot-training" className="text-av-blue font-semibold hover:text-av-orange transition-colors">ATPL</Link> examinations</span>,
+    <span>Apply for <Link href="/ppl-full-form" className="text-av-blue font-semibold hover:text-av-orange transition-colors">PPL</Link> examinations</span>,
+    <span>Register for <Link href="/courses/atpl" className="text-av-blue font-semibold hover:text-av-orange transition-colors">ATPL</Link> examinations</span>,
     <span>Access examination-related services through the <Link href="/dgca-pariksha" className="text-av-blue font-semibold hover:text-av-orange transition-colors">DGCA Pariksha portal</Link></span>,
     'Build an official examination record with DGCA',
 ];
@@ -31,8 +31,8 @@ const withoutComputerNumberList = [
 const whoNeeds = [
     'Become a Commercial Pilot',
     <span>Apply for a <Link href="/commercial-pilot-license" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Commercial Pilot License (CPL)</Link></span>,
-    <span>Pursue a <Link href="/private-pilot-license-ppl-course-details" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Private Pilot License (PPL)</Link></span>,
-    <span>Obtain an <Link href="/advanced-atpl-pilot-training" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Airline Transport Pilot License (ATPL)</Link></span>,
+    <span>Pursue a <Link href="/ppl-full-form" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Private Pilot License (PPL)</Link></span>,
+    <span>Obtain an <Link href="/courses/atpl" className="text-av-blue font-semibold hover:text-av-orange transition-colors">Airline Transport Pilot License (ATPL)</Link></span>,
     'Appear for DGCA Flight Crew examinations',
     'Continue advanced pilot training after basic aviation education',
 ];
@@ -213,7 +213,7 @@ const suggestedInternalLinks = [
     { label: 'CPL Eligibility', href: '/commercial-pilot-license-eligibility' },
     { label: 'CPL Course Fees', href: '/commercial-pilot-license' },
     { label: 'DGCA Full Form', href: '/dgca-full-form' },
-    { label: 'PPL Full Form', href: '/private-pilot-license-ppl-course-details' },
+    { label: 'PPL Full Form', href: '/ppl-full-form' },
     { label: 'RTR Full Form', href: '/rtr-full-form-meaning-importance-and-complete-guide' },
     { label: 'Pilot Training in India', href: '/pilot-training-in-india' },
     { label: 'DGCA Ground Classes', href: '/dgca-ground-classes' },

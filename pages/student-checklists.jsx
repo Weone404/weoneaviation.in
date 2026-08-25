@@ -43,8 +43,7 @@ export default function StudentChecklistsHub() {
         {
           name: 'Medical Clearance',
           items: [
-            '□ DGCA Class 2 Medical Exam',
-            '□ DGCA Class 1 Medical Exam',
+            '□ DGCA medical exam',
             '□ Medical reports downloaded',
             '□ No disqualifying conditions',
             '□ Eye vision satisfactory',
@@ -138,7 +137,7 @@ export default function StudentChecklistsHub() {
         {
           name: 'Health & Fitness',
           items: [
-            '□ Maintain Class 1 medical fitness',
+            '□ Maintain DGCA medical fitness',
             '□ Do physical exercise regularly',
             '□ Sleep 7-8 hours daily',
             '□ No substance abuse',

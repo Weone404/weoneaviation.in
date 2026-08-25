@@ -28,7 +28,7 @@ const cplAviationKeyPoints = [
 
 const cplSteps = [
     { step: 'Step 1', desc: 'Apply For DGCA Computer Number From dgcapariksha Portal' },
-    { step: 'Step 2', desc: 'Clear Your Class-1 and Class 2 Medical Test By DGCA Doctors' },
+    { step: 'Step 2', desc: 'Clear Your DGCA Medical Test By DGCA Doctors' },
     { step: 'Step 3', desc: 'Join DGCA Ground Classes From We One Aviation Academy' },
     { step: 'Step 4', desc: 'Clear DGCA Exam of Six Subjects.' },
     { step: 'Step 5', desc: 'Complete Your 200 Hrs. Of Flying from Any Country.' },
@@ -134,7 +134,7 @@ export default function CPLPage() {
         >
 
             {/* ── Hero Banner ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <div className="section-tag">Full Form Guide</div>
                     <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
@@ -148,7 +148,7 @@ export default function CPLPage() {
                         But behind every definition of CPL lies a human story — a pilot chasing their dream to soar the skies, a marketer striving to connect with potential customers, or a gamer competing for glory in the virtual arena. Let's Start in!
                     </p>
                 </ScrollReveal>
-            </div>
+            </header>>
 
             {/* ── Intro Para ── */}
             <div className="bg-av-orange py-5 px-4 text-center">

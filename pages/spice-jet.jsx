@@ -11,7 +11,7 @@ const eligibilityCriteria = [
     { criteria: 'Language', details: 'Fluent in English (verbal and written)' },
     { criteria: 'Education', details: '10+2 with minimum 60% in English, Physics & Mathematics' },
     { criteria: 'Passport', details: 'Must hold a valid Indian passport' },
-    { criteria: 'Medical', details: 'Clearance of Class II Medical Test as per DGCA guidelines' },
+    { criteria: 'Medical', details: 'Clearance of DGCA medical test as per DGCA guidelines' },
 ];
 
 const selectionPhases = [
@@ -189,7 +189,7 @@ export default function SpiceJetCadetPage() {
         >
 
             {/* ── Hero Banner ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <br /><br /><br /><br />
                     <div className="section-tag">Airline Cadet Programme</div>
@@ -208,7 +208,7 @@ export default function SpiceJetCadetPage() {
                         ))}
                     </div>
                 </ScrollReveal>
-            </div>
+            </header>>
 
             {/* ── About the Programme ── */}
             <section className="py-20 px-4">

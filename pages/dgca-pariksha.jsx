@@ -23,7 +23,7 @@ const keyDetails = [
 const eligibility = [
     { icon: '🎂', label: 'Age Requirement', value: 'Minimum age is 17 for PPL and 18 for CPL.' },
     { icon: '📚', label: 'Educational Qualification', value: 'At least 10+2 with Physics and Mathematics (or equivalent).' },
-    { icon: '🩺', label: 'Medical Fitness', value: 'Must hold a valid Class 2 or Class 1 medical certificate from DGCA-approved medical examiners.' },
+    { icon: '🩺', label: 'Medical Fitness', value: 'Must hold a valid a DGCA medical certificate from DGCA-approved medical examiners.' },
 ];
 
 const syllabusTopics = [
@@ -150,9 +150,9 @@ const importantQueries = [
 
 const relatedBlogs = [
     { label: 'How to Become a Pilot', href: '/how-to-become-a-pilot' },
-    { label: 'Different Types of Pilot Licences', href: '/pilot-licences' },
+    { label: 'Different Types of Pilot Licences', href: '/courses' },
     { label: 'Best DGCA Classes', href: '/best-dgca-classes' },
-    { label: 'eGCA Login', href: '/egca-login' },
+    { label: 'eGCA Login', href: '/ecga-login-your-complete-guide' },
     { label: 'Pilot Course Fees After 12th', href: '/pilot-course-fees' },
 ];
 
@@ -191,7 +191,7 @@ export default function DGCAParikshaPage() {
             </div>
 
             {/* ── Stats Bar ── */}
-            <div className="bg-av-blue py-8">
+            <section className="bg-av-blue py-8">
                 <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
                     {stats.map(s => (
                         <ScrollReveal key={s.label} className="text-center">
@@ -201,7 +201,7 @@ export default function DGCAParikshaPage() {
                         </ScrollReveal>
                     ))}
                 </div>
-            </div>
+            </section>>
 
             {/* ── What is + Why Important ── */}
             <section className="py-20 px-4">
@@ -488,10 +488,10 @@ export default function DGCAParikshaPage() {
                                 {computerNumberSteps.map((step, i) => (
                                     <div key={step.num} className="flex items-start gap-4 p-5 bg-av-light rounded-xl border border-av-sky/20 card-hover hover:border-av-orange/30">
                                         <div className="w-9 h-9 bg-av-orange rounded-full flex items-center justify-center text-white font-black text-sm flex-shrink-0">{step.num}</div>
-                                        <div>
+                                        <section>
                                             <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">{step.title}</h3>
                                             <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
-                                        </div>
+                                        </section>>
                                     </div>
                                 ))}
                             </div>

@@ -49,7 +49,7 @@ const programs = [
 const eligibility = [
     { icon: '🎂', title: 'Minimum Age', desc: '17 years (PPL), 18 years (CPL)' },
     { icon: '📚', title: 'Education', desc: '10+2 with Physics & Mathematics' },
-    { icon: '🏥', title: 'Medical', desc: 'Class 1/2 Medical Certificate' },
+    { icon: '🏥', title: 'Medical', desc: 'DGCA medical certificate' },
     { icon: '🗣️', title: 'English', desc: 'ICAO Level 4 proficiency' },
     { icon: '👁️', title: 'Vision', desc: '6/6 (correctable)' },
     { icon: '📏', title: 'Height', desc: 'No specific requirement' },
@@ -74,7 +74,7 @@ export default function PilotTrainingProgramsPage() {
         >
 
             {/* ── Hero Banner ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <div className="section-tag">Pilot Training Programs</div>
                     <br />
@@ -94,7 +94,7 @@ export default function PilotTrainingProgramsPage() {
                         Choose the right program to kickstart your aviation career. Compare eligibility, costs, and syllabus below.
                     </p>
                 </ScrollReveal>
-            </div>
+            </header>>
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-8">

@@ -25,7 +25,7 @@ const courses = [
       { label: 'Air Regulations', href: '/air-regulations' },
       { label: 'Technical General', href: '/technical-general' },
       { label: 'RTR (A)', href: '/rtr-a' },
-      { label: 'Commercial Pilot License Simulator', href: '/simulator' },
+      { label: 'Commercial Pilot License Simulator', href: '/courses' },
     ],
   },
   {
@@ -46,16 +46,16 @@ const courses = [
       { label: 'Interview Preparation', href: '/airline-preparatory-classes/interview-preparation' },
       { label: 'Psychometry', href: '/airline-preparatory-classes/psychometry' },
       { label: 'CASS/COMPASS', href: '/airline-preparatory-classes/cass-compass' },
-      { label: 'Written Exam Preparation', href: '/airline-preparatory-classes/written-exam-preparation' },
-      { label: 'Air India', href: '/Airindia-pilot-preparation' },
-      { label: 'Adapt Test For Air India', href: '/Airindia-pilot-preparation' },
-      { label: 'Adapt Test For IndiGo', href: '/Indigo-pilot-preparation' },
+      { label: 'Written Exam Preparation', href: '/airline-preparatory-classes/interview-preparation' },
+      { label: 'Air India', href: '/airindia-pilot-preparation' },
+      { label: 'Adapt Test For Air India', href: '/airindia-pilot-preparation' },
+      { label: 'Adapt Test For IndiGo', href: '/indigo-pilot-preparation' },
     ],
   },
-  { label: 'Private Pilot License (PPL)', href: '/private-pilot-license-ppl-course-details' },
-  { label: 'ATPL', href: '/advanced-atpl-pilot-training' },
+  { label: 'Private Pilot License (PPL)', href: '/ppl-full-form' },
+  { label: 'ATPL', href: '/courses/atpl' },
   { label: 'DGCA Ground Classes', href: '/dgca-ground-classes' },
-  { label: 'Pilot Course Training in India', href: '/pilot-course-training-in-india' },
+  { label: 'Pilot Course Training in India', href: '/pilot-training-in-india' },
 
 ];
 
@@ -66,7 +66,7 @@ const flyingCountry = [
 
 const howTo = [
   { label: 'Apply For DGCA Computer Number', href: '/dgca-computer-number' },
-  { label: 'DGCA Class 2 & Class 1 Medical', href: '/dgca-class-2-class-1-medical' },
+  { label: 'DGCA Medical & Eligibility', href: '/commercial-pilot-license-eligibility' },
   { label: 'Join DGCA CPL Ground Classes', href: '/dgca-ground-classes' },
   { label: 'Join Flying School', href: '/best-flight-schools-in-usa' },
   { label: 'After 12th', href: '/how-to-become-a-pilot/after-12th' },
@@ -344,7 +344,7 @@ export default function Navbar() {
             { label: 'Home', href: '/' },
             { label: 'About Us', href: '/about-us' },
             { label: 'Blogs', href: '/blogs' },
-            { label: 'FAQ', href: '/faq' },
+            { label: 'FAQ', href: '/faqs' },
             { label: 'Contact Us', href: '/contact' },
           ].map((item) => (
             <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)}

@@ -12,14 +12,15 @@ export default function DgcaExamChecklist() {
         '□ DGCA Computer Number printout',
         '□ Valid government ID (Aadhaar/Passport)',
         '□ Hall ticket/Admit card',
-        '□ Medical certificate (Class 1 or Class 2)',
+        '□ DGCA medical certificate',
         '□ Proof of address (utility bill)',
       ]
     },
     {
       title: '🧠 Study Preparation',
       items: [
-        '□ Completed all 9 DGCA subjects',
+        '□ Cleared all five DGCA written papers',
+        '□ Cleared RTR (A) — examined separately from the DGCA papers',
         '□ Solved previous year papers (at least 3 sets)',
         '□ Marked weak topics for last-minute revision',
         '□ Created flashcards for key formulas',

@@ -31,7 +31,7 @@ const pplOtherTable = [
 const pplEligibility = [
     { criteria: 'Age', details: 'Minimum 17 years' },
     { criteria: 'Education', details: '10+2 with Physics & Mathematics' },
-    { criteria: 'Medical Fitness', details: 'Class 2 Medical Certificate (DGCA approved)' },
+    { criteria: 'Medical Fitness', details: 'DGCA medical certificate (DGCA approved)' },
     { criteria: 'Nationality', details: 'Indian or foreign nationals (as per DGCA rules)' },
 ];
 
@@ -131,7 +131,7 @@ export default function PPLPage() {
         >
 
             {/* ── Hero Banner ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <br />
                     <br />
@@ -146,7 +146,7 @@ export default function PPLPage() {
                         PPL Meaning Different in Every Field. So If You Land On This Page Then Here You Will Get Knowledge of all PPL Full Form. The full form of PPL in Aviation is <strong className="text-white">Private Pilot License</strong>. There is More Different field Like Marketing, Internet Slang, Music, Government Sector Have Different Full Form of PPL. So Just Relax, And Know All The Full Form of PPL.
                     </p>
                 </ScrollReveal>
-            </div>
+            </header>>
 
             {/* ── What is The Full Form of PPL ── */}
             <section className="py-20 px-4">

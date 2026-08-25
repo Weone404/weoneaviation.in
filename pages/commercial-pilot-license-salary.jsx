@@ -57,7 +57,7 @@ export default function CPLSalaryPage() {
         >
 
             {/* ── Hero Banner ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <br />
                     <br />
@@ -74,7 +74,7 @@ export default function CPLSalaryPage() {
                         Commercial pilot salary bases its amount on a combination of flight experience with the aircraft type and airline partnership and geographic location. A comprehensive breakdown on this page explains the earnings opportunities for CPL holders.
                     </p>
                 </ScrollReveal>
-            </div>
+            </header>>
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-8">

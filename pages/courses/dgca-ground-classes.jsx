@@ -77,7 +77,7 @@ const relatedPages = [
     { label: 'Ground School', href: '/dgca-ground-classes-in-india' },
     { label: 'Aviation Subjects', href: '/commercial-pilot-license-syllabus' },
     { label: 'Aviation Safety', href: '/air-regulations' },
-    { label: 'Airline Pilot Training', href: '/advanced-atpl-pilot-training' },
+    { label: 'Airline Pilot Training', href: '/courses/atpl' },
 ];
 
 const syllabusSubjects = [

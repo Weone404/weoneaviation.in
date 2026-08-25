@@ -1,6 +1,10 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import Breadcrumb from '../components/Breadcrumb';
+import QuickAnswer from '../components/QuickAnswer';
+import SummaryBox from '../components/SummaryBox';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -106,10 +110,10 @@ const internalLinks = [
     { label: 'DGCA Ground Classes', href: '/dgca-ground-classes' },
     { label: 'How to Become a Pilot After 12th', href: '/how-to-become-a-pilot-after-12th' },
     { label: 'Pilot Training in India', href: '/pilot-training-in-india' },
-    { label: 'CPL Eligibility', href: '/cpl-eligibility' },
-    { label: 'CPL Syllabus', href: '/cpl-syllabus' },
-    { label: 'ATPL Full Form', href: '/atpl-full-form' },
-    { label: 'RTR Full Form', href: '/rtr-full-form' },
+    { label: 'CPL Eligibility', href: '/commercial-pilot-license-eligibility' },
+    { label: 'CPL Syllabus', href: '/commercial-pilot-license-syllabus' },
+    { label: 'ATPL Full Form', href: '/courses/atpl' },
+    { label: 'RTR Full Form', href: '/rtr-full-form-meaning-importance-and-complete-guide' },
 ];
 
 const pplSteps = [
@@ -251,13 +255,64 @@ function BulletList({ items, dark = false }) {
     );
 }
 
+/*
+ * People-also-ask. This route sits in existingFaqRoutes, so Layout injects
+ * nothing at the foot — the page's own "More About the Private Pilot Licence"
+ * block is the FAQ. These questions are the ones that block a 17-year-old
+ * before they ever get to a flying school, and none of them repeat that block.
+ */
+const peopleAlsoAsk = [
+    {
+        q: 'What is the minimum age for a PPL in India?',
+        a: 'Seventeen. Schedule II, Section E of the Aircraft Rules, 1937 sets the minimum age for a Private Pilot Licence (Aeroplanes) at 17 years. You can start ground school and log training hours before that birthday; the licence itself will not issue until you reach it.',
+    },
+    {
+        q: 'Can I get a PPL without Physics and Maths in Class 12?',
+        a: 'The Physics and Mathematics requirement belongs to the Commercial Pilot Licence, not the PPL. If you intend to go on to a CPL later, clear both subjects early — through NIOS if your school stream did not include them — because that requirement will catch you at the CPL stage.',
+    },
+    {
+        q: 'Does a PPL let me get paid to fly?',
+        a: 'No. A Private Pilot Licence covers personal and recreational flying only. The moment money changes hands for the flying itself you need a Commercial Pilot Licence. Pilots build hours on a PPL precisely so the CPL flight-time requirement is within reach.',
+    },
+    {
+        q: 'Do the hours I fly on a PPL count towards my CPL?',
+        a: 'Yes. The 200 hours Section J requires for a CPL is a total of time as pilot of an aeroplane, and PPL hours sit inside it. The catch is the five-year window: hours flown more than five years before you apply for the CPL stop counting.',
+    },
+    {
+        q: 'Is a PPL from abroad valid in India?',
+        a: 'A foreign licence is not an Indian licence. The DGCA converts it, and conversion means Indian papers and a medical to Indian standards. Many students train abroad for the flying and come back for the paperwork, which works, but budget the conversion time.',
+    },
+];
+
+/*
+ * Course schema. This page is the canonical PPL destination after the cluster
+ * consolidation, so it carries the Course node the old /courses/ppl never had.
+ * Only figures that trace to Schedule II or to the page's own copy appear here.
+ */
+const pplCourseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Private Pilot Licence (PPL) Training',
+    description: 'Private Pilot Licence (Aeroplanes) training and DGCA ground school. Minimum age 17 under Schedule II, Section E of the Aircraft Rules, 1937. Covers ground subjects, flight training, and the route on to a Commercial Pilot Licence.',
+    inLanguage: 'en-IN',
+    url: 'https://weoneaviation.in/ppl-full-form',
+    educationalCredentialAwarded: 'Private Pilot Licence (Aeroplanes), issued by the DGCA',
+    teaches: ['Air Regulations', 'Aviation Meteorology', 'Air Navigation', 'Aircraft Technical Knowledge', 'Radio Telephony'],
+    provider: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+    hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseMode: 'onsite',
+        location: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'Dwarka, New Delhi', addressCountry: 'IN' } },
+    },
+};
+
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function PPLPage() {
     return (
         <Layout
-            title="PPL Full Form: Meaning, Eligibility, Course & Career Guide"
-            description="Discover the PPL full form, eligibility, training process, flying hours, privileges, limitations, fees, and career opportunities. Learn everything about a Private Pilot Licence in India."
+            title="PPL Full Form: Private Pilot Licence Eligibility & Training in India"
+            description="PPL stands for Private Pilot Licence. Minimum age 17 under Schedule II, Section E of the Aircraft Rules, 1937. Ground subjects, flight training, what a PPL lets you fly, and how its hours carry into a CPL."
         >
 
             {/* ── Hero Banner ── */}
@@ -271,10 +326,38 @@ export default function PPLPage() {
                 </ScrollReveal>
             </div>
 
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pplCourseSchema) }} />
+
             {/* ── What is the Full Form of PPL ── */}
             <section className="py-20 px-4">
                 <div className="max-w-5xl mx-auto">
                     <ScrollReveal className="mb-10">
+                        <Breadcrumb />
+
+                        {/*
+                          Inverted pyramid. The statutory answer goes above the
+                          long-form explanation so an extraction pass that reads
+                          only the opening block leaves with the right age and
+                          the right scope of the licence.
+                        */}
+                        <QuickAnswer
+                            question="What is the full form of PPL, and what does the licence allow?"
+                            answer="PPL stands for Private Pilot Licence. It lets you fly an aircraft for personal and recreational purposes, never for payment. The DGCA issues it under Schedule II, Section E of the Aircraft Rules, 1937, which sets a minimum age of 17."
+                        />
+
+                        <SummaryBox
+                            title="PPL at a glance"
+                            items={[
+                                'Full form: Private Pilot Licence (Aeroplanes)',
+                                'Minimum age: 17 years (Aircraft Rules, 1937, Schedule II, Section E)',
+                                'Issued by: the Directorate General of Civil Aviation',
+                                'What it permits: personal and recreational flying — never flying for payment',
+                                'What it requires: ground subjects, flight training, and a DGCA medical certificate',
+                                'Ground subjects: Air Regulations, Aviation Meteorology, Air Navigation, Aircraft Technical Knowledge, Radio Telephony',
+                                'Next step: the Commercial Pilot Licence, whose 200-hour total absorbs your PPL hours',
+                            ]}
+                        />
+
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-6">
                             What is the Full Form of <span className="text-av-orange">PPL?</span>
                         </h2>
@@ -288,7 +371,7 @@ export default function PPLPage() {
 
                     {/* PPL at a Glance */}
                     <ScrollReveal>
-                        <h3 className="font-montserrat font-bold text-av-blue text-xl mb-4">PPL at a Glance</h3>
+                        <h3 className="font-montserrat font-bold text-av-blue text-xl mb-4">What does a PPL cover at a glance?</h3>
                         <div className="overflow-x-auto rounded-2xl shadow border border-gray-100">
                             <table className="w-full text-sm">
                                 <thead>
@@ -316,7 +399,7 @@ export default function PPLPage() {
                 <div className="max-w-5xl mx-auto">
                     <ScrollReveal>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-6">
-                            What is a <span className="text-av-orange">Private Pilot Licence (PPL)?</span>
+                            What is a <span className="text-av-orange">Private Pilot Licence, and who is it for?</span>
                         </h2>
                         <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-8 space-y-4">
                             <p className="text-gray-600 text-sm leading-relaxed">
@@ -341,7 +424,7 @@ export default function PPLPage() {
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
                     <ScrollReveal>
                         <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-8 h-full">
-                            <h3 className="font-montserrat font-bold text-av-blue text-xl mb-4">Why is a PPL Important?</h3>
+                            <h3 className="font-montserrat font-bold text-av-blue text-xl mb-4">Why does a PPL matter if you want an airline career?</h3>
                             <p className="text-gray-600 text-sm leading-relaxed mb-4">
                                 Every professional pilot begins by mastering the fundamentals of aviation. A Private Pilot Licence introduces students to these essential concepts while helping them build confidence in real flying conditions.
                             </p>
@@ -378,7 +461,7 @@ export default function PPLPage() {
                     <ScrollReveal className="text-center mb-10">
                         {/* <div className="section-tag">Eligibility</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white">
-                            Eligibility for a <span className="text-av-orange">Private Pilot Licence</span>
+                            What are the eligibility requirements for a <span className="text-av-orange">PPL in India?</span>
                         </h2>
                         <p className="text-white/70 mt-3 text-sm max-w-2xl mx-auto">
                             To begin PPL training in India, candidates should generally meet the applicable DGCA requirements. Typical eligibility includes:
@@ -410,7 +493,7 @@ export default function PPLPage() {
                     <ScrollReveal className="text-center mb-10">
                         {/* <div className="section-tag">Skills</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Skills You Learn During <span className="text-av-orange">PPL Training</span>
+                            What skills do you learn during <span className="text-av-orange">PPL training?</span>
                         </h2>
                         <p className="text-gray-500 mt-3 text-sm max-w-2xl mx-auto">
                             Flying an aircraft requires much more than controlling the flight controls. Throughout PPL training, students develop technical knowledge, practical abilities, and professional habits that contribute to safe aviation operations.
@@ -535,7 +618,7 @@ export default function PPLPage() {
                     <ScrollReveal>
                         <div className="bg-av-blue rounded-2xl p-8 md:p-10 text-white">
                             {/* <div className="section-tag">Expert Insight</div> */}
-                            <h3 className="font-montserrat font-bold text-white text-xl md:text-2xl mb-4">Is a PPL Worth It?</h3>
+                            <h3 className="font-montserrat font-bold text-white text-xl md:text-2xl mb-4">Is a PPL worth the money?</h3>
                             <p className="text-white/80 text-sm leading-relaxed mb-4">
                                 For students who genuinely enjoy flying, a Private Pilot Licence is much more than a certificate—it is an opportunity to develop disciplined flying habits, understand aviation principles, and experience aircraft operations firsthand.
                             </p>
@@ -553,7 +636,7 @@ export default function PPLPage() {
                     <ScrollReveal>
                         <h3 className="font-montserrat font-bold text-av-blue text-xl mb-2 text-center">Related Reading</h3>
                         <p className="text-gray-500 text-sm text-center max-w-2xl mx-auto mb-8">
-                            To strengthen topical authority and improve user navigation, naturally link this page to:
+                            Where to go next, depending on which part of the licence you are working on:
                         </p>
                         <div className="flex flex-wrap justify-center gap-3">
                             {internalLinks.map((link) => (
@@ -576,7 +659,7 @@ export default function PPLPage() {
                     <ScrollReveal className="text-center mb-6">
                         {/* <div className="section-tag">The Process</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Step-by-Step Process to Get a <span className="text-av-orange">Private Pilot Licence (PPL)</span>
+                            How do you get a Private Pilot Licence in India, <span className="text-av-orange">step by step?</span>
                         </h2>
                         <p className="text-gray-500 mt-3 text-sm max-w-3xl mx-auto">
                             Obtaining a Private Pilot Licence (PPL) is a structured process that combines aviation theory, practical flight training, and regulatory compliance. Each stage helps aspiring pilots build the knowledge and skills needed to fly safely and confidently.
@@ -619,7 +702,7 @@ export default function PPLPage() {
                     <ScrollReveal className="text-center mb-10">
                         {/* <div className="section-tag">Benefits</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white">
-                            What Are the Benefits of a <span className="text-av-orange">PPL?</span>
+                            What are the benefits of holding a <span className="text-av-orange">PPL?</span>
                         </h2>
                         <p className="text-white/70 mt-3 text-sm max-w-2xl mx-auto">
                             A Private Pilot Licence offers several advantages for aviation enthusiasts and aspiring professionals.
@@ -658,7 +741,7 @@ export default function PPLPage() {
                 <div className="max-w-4xl mx-auto">
                     <ScrollReveal>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4 text-center">
-                            Limitations of a <span className="text-av-orange">Private Pilot Licence</span>
+                            What are the limitations of a <span className="text-av-orange">Private Pilot Licence?</span>
                         </h2>
                         <p className="text-gray-500 text-sm text-center max-w-2xl mx-auto mb-8">
                             Understanding what a PPL does not allow is just as important as understanding its privileges.
@@ -680,7 +763,7 @@ export default function PPLPage() {
                     <ScrollReveal className="text-center mb-12">
                         {/* <div className="section-tag">Licence Levels</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            PPL vs SPL vs CPL vs <span className="text-av-orange">ATPL</span>
+                            How does a PPL compare with an SPL, CPL and <span className="text-av-orange">ATPL?</span>
                         </h2>
                         <p className="text-gray-500 mt-2 text-sm max-w-2xl mx-auto">
                             Understanding the different pilot licences helps aspiring aviators choose the right training pathway.
@@ -720,13 +803,20 @@ export default function PPLPage() {
                 </div>
             </section>
 
+            {/* ── People also ask ── */}
+            <section className="pt-16 px-4">
+                <div className="max-w-5xl mx-auto">
+                    <PeopleAlsoAsk items={peopleAlsoAsk} />
+                </div>
+            </section>
+
             {/* ── Quick Answers ── */}
             <section className="py-20 px-4">
                 <div className="max-w-5xl mx-auto">
                     <ScrollReveal className="text-center mb-12">
                         {/* <div className="section-tag">Quick Answers</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            More About the <span className="text-av-orange">Private Pilot Licence</span>
+                            What else do students ask about the <span className="text-av-orange">Private Pilot Licence?</span>
                         </h2>
                     </ScrollReveal>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -748,7 +838,7 @@ export default function PPLPage() {
                     <ScrollReveal className="text-center mb-12">
                         {/* <div className="section-tag">Avoid These</div> */}
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Common Mistakes Students Should <span className="text-av-orange">Avoid</span>
+                            What mistakes do PPL students most often <span className="text-av-orange">make?</span>
                         </h2>
                         <p className="text-gray-500 mt-2 text-sm max-w-2xl mx-auto">
                             Starting pilot training is exciting, but avoiding common mistakes can make the journey smoother.

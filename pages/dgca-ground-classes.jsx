@@ -14,27 +14,6 @@ import SummaryBox from '../components/SummaryBox';
 import StructuredData from '../components/StructuredData';
 import { generateCourseSchema, generateFAQSchema } from '../lib/schema';
 
-const dgcaGroundCourseSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Course',
-  name: 'DGCA Ground Classes',
-  description: "India's DGCA Ground Classes for pilot training, covering core DGCA subjects and exam preparation.",
-  url: 'https://weoneaviation.in/dgca-ground-classes',
-  provider: {
-    '@type': 'EducationalOrganization',
-    name: 'We One Aviation Academy',
-    url: 'https://weoneaviation.in',
-  },
-  timeRequired: 'P6M',
-  coursePrerequisites: '10+2 with Physics and Mathematics, minimum age 17+, DGCA Class 2 Medical, and English proficiency.',
-  additionalProperty: [
-    { '@type': 'PropertyValue', name: 'Duration', value: '6 Months' },
-    { '@type': 'PropertyValue', name: 'Subjects Covered', value: '6 DGCA subjects' },
-    { '@type': 'PropertyValue', name: 'Scholarship', value: '25% scholarship available' },
-    // TODO: confirm explicit fee range on this route before adding Offer pricing.
-  ],
-};
-
 const heroSlides = [
   { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Most Popular Course', title: 'DGCA Ground', highlight: 'Classes', sub: "DGCA ground classes covering every subject in the CPL written examination set" },
 ];
@@ -120,8 +99,8 @@ const eligibility = [
   {
     icon: '🩺', title: 'Medical Fitness',
     points: [
-      'You must obtain a DGCA Class 2 Medical Certificate before starting your ground classes.',
-      'Eventually, a Class 1 Medical Certificate is required for flying and CPL issuance.',
+      'You must obtain a DGCA medical certificate before starting your ground classes.',
+      'Eventually, a DGCA medical certificate is required for flying and CPL issuance.',
       'Medical certificates must be issued by DGCA-approved doctors only.',
     ],
   },
@@ -145,7 +124,7 @@ const whyChoose = [
   { icon: '✅', title: '25% Scholarship Granted', desc: 'We Provide 25% Scholarship in Dgca Ground Classes To Every Students For Push Them Towards Their Dream of Pilot.' },
   { icon: '✅', title: 'Extra Class For Weak Students', desc: 'We provide extra classes for weak students to help them clear the DGCA exam quickly.' },
   { icon: '✅', title: 'Free Books and Notes', desc: 'We provide free books and notes to students, which help them a lot.' },
-  { icon: '✅', title: 'Placement Support', desc: 'We will support you until you become a pilot.' },
+  { icon: '✅', title: 'Career Guidance', desc: 'Interview preparation and career guidance through every stage of the licence.' },
   { icon: '✅', title: 'Free Classes Until You Clear', desc: 'We One Aviation Academy is the Only Institute Which Give Free Classes to everyone Till They not Clear Dgca Exam.' },
 ];
 
@@ -194,7 +173,6 @@ const sidebarQuickLinks = [
   { label: 'CPL Salary in India', href: '/commercial-pilot-license-salary' },
   { label: 'DGCA Exam (Pariksha)', href: '/dgca-pariksha' },
   { label: 'DGCA Computer Number', href: '/dgca-computer-number' },
-  { label: 'DGCA Class 1 & 2 Medical', href: '/dgca-class-2-class-1-medical' },
   { label: 'Student Pilot License (SPL)', href: '/student-pilot-license-spl' },
   { label: 'How to Become a Pilot After 12th', href: '/how-to-become-a-pilot-after-12th' },
   { label: 'Flying School in India', href: '/flying-school/india' },
@@ -209,17 +187,25 @@ const quickAnswer = {
 };
 
 const tocHeadings = [
-  { id: 'what-is-dgca', title: 'What Is DGCA?' },
-  { id: 'why-are-dgca-ground-classes-important', title: 'Why Are DGCA Ground Classes Important?' },
-  { id: 'dgca-ground-classes-subjects', title: 'DGCA Ground Classes Subjects' },
-  { id: 'eligibility-for-dgca-ground-classes', title: 'Eligibility for DGCA Ground Classes' },
-  { id: 'why-choose-we-one-aviation-academy', title: 'Why Choose We One Aviation Academy?' },
+  { id: 'what-is-dgca', title: 'What is the DGCA?' },
+  { id: 'why-are-dgca-ground-classes-important', title: 'Why are DGCA ground classes important?' },
+  { id: 'dgca-ground-classes-subjects', title: 'Which subjects come up in the DGCA exam?' },
+  { id: 'eligibility-for-dgca-ground-classes', title: 'Who is eligible to join?' },
+  { id: 'why-choose-we-one-aviation-academy', title: 'Why choose We One Aviation Academy?' },
 ];
 
+/*
+ * Rewritten from three soft marketing lines ("improves your chances of moving
+ * smoothly") into the figures a student is actually looking for. A summary box
+ * an engine lifts wholesale should carry facts, not reassurance.
+ */
 const summaryItems = [
-  'DGCA ground classes cover the core theory subjects required for pilot licensing.',
-  'Clear exam preparation improves your chances of moving smoothly into flying training.',
-  'We One Aviation supports students from admission guidance through DGCA exam readiness.',
+  'Written papers: Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific',
+  'RTR (A) is examined separately, under the Radio Telephone Operator (Restricted) Certificate and Licence Rules, 2025',
+  'Course duration: about 6 months, run in both online and offline modes',
+  'Papers are cleared one at a time — you do not have to sit them all in a single cycle',
+  'No age bar on the classes; the minimum age of 18 applies when you apply for the CPL itself',
+  'Statutory basis: Aircraft Rules, 1937, Schedule II, Section J, paragraph 1(d)',
 ];
 
 const peopleAlsoAskItems = [
@@ -234,6 +220,14 @@ const relatedArticles = [
   { href: '/dgca-computer-number', title: 'DGCA Computer Number', description: 'See how to begin your licensing journey with the required registration steps.' },
 ];
 
+/*
+ * The single Course node for this route. It replaces three overlapping nodes
+ * that all shipped on every render: dgcaGroundCourseSchema at the top of this
+ * file, this one, and an inline groundCourseSchema rendered a second time
+ * through next/head. Three @type Course nodes for one course is not three
+ * times the signal — it is one course an engine cannot resolve, carrying three
+ * different descriptions. Fields below are the union of what the three held.
+ */
 const courseSchema = generateCourseSchema({
   name: 'DGCA Ground Classes',
   description: 'DGCA ground classes for pilot training in India covering navigation, meteorology, regulations, technical subjects, and RTR preparation.',
@@ -245,6 +239,7 @@ const courseSchema = generateCourseSchema({
   additionalProperties: [
     { name: 'Duration', value: '6 Months' },
     { name: 'Subjects Covered', value: '6 DGCA subjects' },
+    { name: 'Scholarship', value: '25% scholarship available' },
   ],
 });
 
@@ -266,27 +261,15 @@ const faqSchema = generateFAQSchema([
 const LAST_UPDATED = 'August 19, 2026';
 const LAST_UPDATED_ISO = '2026-08-19';
 
-const groundCourseSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Course',
-    name: 'DGCA Ground Classes',
-    description: 'Ground classes for the DGCA written examinations required for a Commercial Pilot Licence: Air Regulations, Air Navigation, Meteorology, and Aircraft and Engines.',
-    inLanguage: 'en-IN',
-    dateModified: LAST_UPDATED_ISO,
-    url: 'https://weoneaviation.in/dgca-ground-classes',
-    provider: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
-};
-
 export default function DGCAGroundClasses() {
   return (
     <Layout
       title="DGCA Ground Classes | Pilot Training Institute in India | We One Aviation"
-      description="DGCA ground classes for the CPL written examinations. CPL ground school covering all DGCA subjects. Join We One Aviation Academy."
+      description="DGCA ground classes for the CPL written papers: Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, plus RTR (A). Six months, online and offline. We One Aviation Academy."
     >
             <Head>
-                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(groundCourseSchema) }} />
             </Head>
-      <StructuredData data={[dgcaGroundCourseSchema, courseSchema, faqSchema]} />
+      <StructuredData data={[courseSchema, faqSchema]} />
       <HeroSlider customSlides={heroSlides} asH1={false} />
 
       {/* Overview */}
@@ -299,14 +282,17 @@ export default function DGCAGroundClasses() {
                 DGCA Ground Classes
               </h1>
 
-              {/* Direct answer. Written to stand alone if extracted. */}
+              <QuickAnswer question={quickAnswer.question} answer={quickAnswer.answer} />
+              <SummaryBox title="DGCA ground classes at a glance" items={summaryItems} />
+
+              {/* Supporting detail. The direct answer is above, not here. */}
               <p className="text-gray-700 leading-relaxed mb-6 text-base">
                   DGCA ground classes prepare candidates for the written examinations required for a Commercial Pilot Licence. Schedule II, Section J, paragraph 1(d) of the Aircraft Rules, 1937 requires passes in Air Regulations, Air Navigation, Meteorology, and Aircraft and Engines, plus a Signals practical examination. We One Aviation Academy runs these classes in Dwarka, New Delhi.
               </p>
 
               <p className="text-gray-500 text-xs mb-8">{`Last updated: ${LAST_UPDATED}`}</p>
 
-              <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">The DGCA subjects</h2>
+              <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">Which subjects do the DGCA ground classes cover?</h2>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
                 Schedule II, Section J, paragraph 1(d) of the Aircraft Rules, 1937 (continued in force by section 43(2) of the Bharatiya Vayuyan Adhiniyam, 2024) names the written papers Air Regulations, Air Navigation, Meteorology, and Aircraft and Engines. On the DGCA Pariksha portal the papers are grouped into five sections: General, Oral, Technical General, Technical Specific and Technical Performance.
               </p>
@@ -347,8 +333,6 @@ export default function DGCAGroundClasses() {
                 </Link>. It's a normal coaching class, like IIT and MBBS coaching classes. The only difference is that after taking DGCA ground classes, you will master the DGCA exam, which is required to obtain a pilot license.
               </p>
 
-              <QuickAnswer question={quickAnswer.question} answer={quickAnswer.answer} />
-              <SummaryBox title="Why this matters" items={summaryItems} />
               <ArticleTOC headings={tocHeadings} />
 
               {/* Quick Facts */}
@@ -362,7 +346,7 @@ export default function DGCAGroundClasses() {
               </div>
 
               {/* What is DGCA */}
-              <h3 id="what-is-dgca" className="font-montserrat text-xl font-bold text-av-blue mb-3">What Is DGCA?</h3>
+              <h3 id="what-is-dgca" className="font-montserrat text-xl font-bold text-av-blue mb-3">What is the DGCA?</h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-2">
                 The Directorate General of Civil Aviation (DGCA) is the main government body that controls and regulates all aviation-related activities in India. Learn more on our{' '}
                 <Link href="/dgca-full-form" className="text-av-orange font-semibold hover:underline">
@@ -388,7 +372,7 @@ export default function DGCAGroundClasses() {
               </p>
 
               {/* What Does DGCA Do */}
-              <h3 className="font-montserrat text-xl font-bold text-av-blue mb-5">What Does DGCA Do?</h3>
+              <h3 className="font-montserrat text-xl font-bold text-av-blue mb-5">What does the DGCA actually do?</h3>
               <div className="space-y-3 mb-10">
                 {dgcaDoes.map((item) => (
                   <div key={item.title} className="flex gap-3 items-start text-sm text-gray-600">
@@ -400,7 +384,7 @@ export default function DGCAGroundClasses() {
 
               {/* Why Important */}
               <h3 id="why-are-dgca-ground-classes-important" className="font-montserrat text-xl font-bold text-av-blue mb-3">
-                Why Are DGCA Ground Classes Important for Pilot Training?
+                Why are DGCA ground classes important for pilot training?
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-3">
                 DGCA Ground Classes are the first step toward becoming a pilot. If your dream is to become a pilot, you must clear the{' '}
@@ -421,7 +405,7 @@ export default function DGCAGroundClasses() {
 
               {/* Subjects */}
               <h3 id="dgca-ground-classes-subjects" className="font-montserrat text-xl font-bold text-av-blue mb-2">
-                Dgca Ground Classes Subjects For Dgca Exam
+                Which subjects come up in the DGCA exam?
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-5">
                 There Are Mainly 6 Subjects in{' '}
@@ -454,7 +438,7 @@ export default function DGCAGroundClasses() {
 
               {/* DGCA CPL Subjects Syllabus */}
               <h3 className="font-montserrat text-xl font-bold text-av-blue mt-10 mb-5">
-                DGCA CPL Subjects, Syllabus and Topics (with Explanation)
+                What does each DGCA CPL subject actually cover?
               </h3>
               <div className="space-y-3 mb-10">
                 {subjects.filter(s => s.detail).map((s) => (
@@ -477,7 +461,7 @@ export default function DGCAGroundClasses() {
 
               {/* Duration */}
               <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">
-                Duration of DGCA Ground Classes
+                How long do DGCA ground classes take?
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-2">
                 The duration of DGCA Ground Classes may vary between academies.
@@ -495,7 +479,7 @@ export default function DGCAGroundClasses() {
 
               {/* Eligibility */}
               <h3 id="eligibility-for-dgca-ground-classes" className="font-montserrat text-xl font-bold text-av-blue mb-2">
-                Eligibility for DGCA Ground Classes
+                Who is eligible to join DGCA ground classes?
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-5">
                 To enroll in DGCA Ground Classes and begin your journey toward becoming a{' '}
@@ -523,21 +507,13 @@ export default function DGCAGroundClasses() {
                                 </Link>
                                 {pt.split('Commercial Pilot License (CPL)')[1]}
                               </span>
-                            ) : pt.includes('DGCA Class 2 Medical Certificate') ? (
+                            ) : pt.includes('DGCA medical certificate') ? (
                               <span>
-                                {pt.split('DGCA Class 2 Medical Certificate')[0]}
-                                <Link href="/dgca-class-2-class-1-medical" className="text-av-orange font-semibold hover:underline">
-                                  DGCA Class 2 Medical Certificate
+                                {pt.split('DGCA medical certificate')[0]}
+                                <Link href="/commercial-pilot-license-eligibility" className="text-av-orange font-semibold hover:underline">
+                                  DGCA medical certificate
                                 </Link>
-                                {pt.split('DGCA Class 2 Medical Certificate')[1]}
-                              </span>
-                            ) : pt.includes('Class 1 Medical Certificate') ? (
-                              <span>
-                                {pt.split('Class 1 Medical Certificate')[0]}
-                                <Link href="/dgca-class-2-class-1-medical" className="text-av-orange font-semibold hover:underline">
-                                  Class 1 Medical Certificate
-                                </Link>
-                                {pt.split('Class 1 Medical Certificate')[1]}
+                                {pt.split('DGCA medical certificate')[1]}
                               </span>
                             ) : (
                               pt
@@ -558,7 +534,7 @@ export default function DGCAGroundClasses() {
 
               {/* Why Choose */}
               <h3 id="why-choose-we-one-aviation-academy" className="font-montserrat text-xl font-bold text-av-blue mb-2">
-                Why Choose We One Aviation Academy For Dgca Ground Classes
+                Why choose We One Aviation Academy for DGCA ground classes?
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-5">
                 We One Aviation Academy offers flexibility in both study schedule and fee instalments. The points below cover what the ground-class programme includes.
@@ -629,8 +605,8 @@ export default function DGCAGroundClasses() {
                   </li>
                   <li>✓ Minimum 18 years of age for a CPL; 16 for a Student Pilot Licence</li>
                   <li>
-                    <Link href="/dgca-class-2-class-1-medical" className="hover:text-av-orange transition-colors">
-                      ✓ DGCA Class 2 Medical
+                    <Link href="/commercial-pilot-license-eligibility" className="hover:text-av-orange transition-colors">
+                      ✓ DGCA Medical
                     </Link>
                   </li>
                   <li>✓ English language proficiency</li>

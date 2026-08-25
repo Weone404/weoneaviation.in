@@ -162,7 +162,43 @@ function getChangefreq(route) {
   return route === '/' ? 'weekly' : 'monthly';
 }
 
+/*
+ * Routes that 301 must not appear in the sitemap.
+ *
+ * This generator walks pages/ and emits a URL for every file it finds. That
+ * was correct until the GEO pass retired six duplicate-intent routes by
+ * redirect while intentionally leaving their page files on disk (next.config
+ * redirects run before filesystem routing, so the files are inert but
+ * recoverable). The files stayed, so the sitemap kept advertising all six —
+ * telling crawlers to fetch URLs that immediately bounce, which wastes crawl
+ * budget and is a documented sitemap-quality problem.
+ *
+ * Reading the redirect table straight from next.config.js keeps the two in
+ * step: retire a route there and it leaves the sitemap automatically, with no
+ * second list for anyone to forget.
+ */
+function redirectSources() {
+  try {
+    const cfg = fs.readFileSync(path.join(process.cwd(), 'next.config.js'), 'utf8');
+    const out = new Set();
+    const re = /source:\s*'([^']+)'/g;
+    let m;
+    while ((m = re.exec(cfg)) !== null) {
+      // Skip wildcard/param patterns — they never match a literal page route.
+      // Compare EXACTLY. Do not normalise the trailing slash: a source of
+      // '/courses/' is a trailing-slash normaliser pointing AT the live
+      // '/courses', so treating them as equal would delist a real page.
+      if (!m[1].includes(':') && !m[1].includes('*') && !m[1].endsWith('/')) out.add(m[1]);
+    }
+    return out;
+  } catch (e) {
+    console.warn('generate-sitemap: could not read next.config.js redirects —', e.message);
+    return new Set();
+  }
+}
+
 function buildSitemapXml() {
+  const redirected = redirectSources();
   const pageFiles = collectPageFiles(pagesDir);
   const routes = pageFiles
     .map(pageFileToRoute)
@@ -173,7 +209,13 @@ function buildSitemapXml() {
     ...extractBlogIds(),
   ];
 
-  const allRoutes = Array.from(new Set([...routes, ...dynamicRoutes].map(normalizeRoute))).sort();
+  const allRoutes = Array.from(new Set([...routes, ...dynamicRoutes].map(normalizeRoute)))
+    .filter((route) => {
+      const dropped = redirected.has(route);
+      if (dropped) console.log(`generate-sitemap: excluding ${route} (301)`);
+      return !dropped;
+    })
+    .sort();
 
   const urlsXml = allRoutes
     .map((route) => {

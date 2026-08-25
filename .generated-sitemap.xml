@@ -7,26 +7,8 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://weoneaviation.in/Airindia-pilot-preparation</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://weoneaviation.in/Indigo-pilot-preparation</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://weoneaviation.in/about-us</loc>
     <lastmod>2026-08-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://weoneaviation.in/advanced-atpl-pilot-training</loc>
-    <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -45,6 +27,11 @@
   <url>
     <loc>https://weoneaviation.in/air-regulations</loc>
     <lastmod>2026-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/airindia-pilot-preparation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -205,19 +192,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://weoneaviation.in/courses/ppl</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://weoneaviation.in/credentials</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://weoneaviation.in/dgca-class-2-class-1-medical</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -266,12 +241,6 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/emirates-cadet-pilot-program</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://weoneaviation.in/faq</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -343,6 +312,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://weoneaviation.in/indigo-pilot-preparation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://weoneaviation.in/lead-magnets</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -363,12 +337,6 @@
   <url>
     <loc>https://weoneaviation.in/lead-magnets/pre-admission-checklist</loc>
     <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://weoneaviation.in/pilot-course-training-in-india</loc>
-    <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -398,12 +366,6 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/privacy-policy</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://weoneaviation.in/private-pilot-license-ppl-course-details</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

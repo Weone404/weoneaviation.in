@@ -1,6 +1,35 @@
 import Layout from '../../components/Layout';
 import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
+import StructuredData from '../../components/StructuredData';
+/*
+ * BlogPosting. This route is a hand-written page rather than a CMS record, so
+ * the dates are constants maintained here. Update dateModified when the copy
+ * changes — a dateModified that never moves is worse than none, because it
+ * tells a crawler the page is stale.
+ */
+const DATE_PUBLISHED = '2025-01-02';
+const DATE_MODIFIED = '2026-08-24';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: 'DGCA Full Form and What the DGCA Does',
+  description: 'What the Directorate General of Civil Aviation is, its role in pilot licensing, aircraft certification and safety oversight, and how it governs the examinations behind an Indian pilot licence.',
+  inLanguage: 'en-IN',
+  datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
+  articleSection: 'DGCA guide',
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://weoneaviation.in/blogs/dgca-exam-guide' },
+  author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+  publisher: {
+    '@type': 'EducationalOrganization',
+    name: 'We One Aviation Academy',
+    url: 'https://weoneaviation.in',
+    logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+  },
+};
+
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -61,7 +90,7 @@ const functions = [
 
 const pilotJourneySteps = [
     { step: '01', title: 'Get Admission', desc: 'Get admission to a DGCA-approved flying school' },
-    { step: '02', title: 'Medical Tests', desc: 'Pass Class 2 and Class 1 medical tests (as per DGCA norms)' },
+    { step: '02', title: 'Medical Tests', desc: 'Pass DGCA-mandated medical fitness assessments (as per DGCA norms)' },
     { step: '03', title: 'Clear DGCA Exams', desc: 'Clear DGCA exams (Air Navigation, Meteorology, Regulations, etc.)' },
     { step: '04', title: 'Log Flying Hours', desc: 'Log the minimum flying hours (typically 200 hours for CPL)' },
     { step: '05', title: 'Receive License', desc: 'Finally, receive your license from DGCA' },
@@ -75,9 +104,11 @@ export default function DGCAPage() {
             title="DGCA Full Form – What is DGCA in Aviation? | Directorate General of Civil Aviation"
             description="DGCA Full Form is Directorate General of Civil Aviation. Learn what DGCA does, its role in pilot licensing, aircraft certification, safety standards, and why it matters for India's aviation industry."
         >
+            <StructuredData data={articleSchema} />
+
 
             {/* ── Hero Banner ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <div className="section-tag">Aviation Authority</div>
                     <br />
@@ -98,7 +129,7 @@ export default function DGCAPage() {
                         Lets Understand That What is DGCA and What is Their Role, Its Importance and Why its Matter The Most For India's aviation industry.
                     </p>
                 </ScrollReveal>
-            </div>
+            </header>>
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-8">

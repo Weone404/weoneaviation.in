@@ -9,9 +9,9 @@ import { YEARS_LABEL } from '../data/academy';
 
 const courses = [
     { icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: '18-24 months', eligibility: '10+2 (PCM)', href: '/courses/cpl', highlight: true },
-    { icon: '🛩️', title: 'Private Pilot License (PPL)', duration: '6-12 months', eligibility: '10+2 any stream', href: '/courses/ppl' },
+    { icon: '🛩️', title: 'Private Pilot License (PPL)', duration: '6-12 months', eligibility: '10+2 any stream', href: '/ppl-full-form' },
     { icon: '🏆', title: 'ATPL', duration: '36 months', eligibility: 'CPL holder', href: '/courses/atpl' },
-    { icon: '🚁', title: 'Sport Pilot License (SPL)', duration: '3-6 months', eligibility: '16+ years', href: '/courses/spl' },
+    { icon: '🚁', title: 'Student Pilot License (SPL)', duration: '3-6 months', eligibility: '16+ years', href: '/student-pilot-license-spl' },
     { icon: '📚', title: 'DGCA Ground Classes', duration: '6-12 months', eligibility: '10+2 (PCM)', href: '/courses/dgca-ground-classes' },
 ];
 
@@ -150,8 +150,8 @@ const enrollSteps = [
 const pilotJourneySteps = [
     {
         icon: '🩺',
-        title: 'Apply For Dgca Class-1-2 Medical',
-        desc: 'You Have Do Your Medical Checkup From Any Dgca Approved Doctors. Below Is Full Process How To Get Dgca Class-1-2 Medical. If You Have Issue In Dgca Medical Then You Can Contact us For Dgca Medical',
+        title: 'Apply For Dgca DGCA Medical',
+        desc: 'You Have Do Your Medical Checkup From Any Dgca Approved Doctors. Below Is Full Process How To Get Dgca DGCA Medical. If You Have Issue In Dgca Medical Then You Can Contact us For Dgca Medical',
         alert: 'Is Your Dgca Medical Test Taking Time?',
         alertDesc: 'Apply Dgca Medical Through We One Aviation Academy. Call On Us If You Can\'t Able For Dgca Medical. just Contact us for Dgca Medical',
     },
@@ -193,7 +193,7 @@ const faqs = [
     },
     {
         q: 'Can I become a pilot if I wear glasses?',
-        a: 'Yes, you can become a pilot if you wear glasses, provided your corrected vision meets DGCA Class 1 medical standards. Contact us for detailed medical eligibility guidance.',
+        a: 'Yes, you can become a pilot if you wear glasses, provided your corrected vision meets DGCA medical standards. Contact us for detailed medical eligibility guidance.',
     },
     {
         q: 'What are DGCA ground classes, and why are they important?',
@@ -201,7 +201,7 @@ const faqs = [
     },
     {
         q: 'What Are The Eligibility Criteria for Pilot Training?',
-        a: 'Minimum age: 17 years for CPL | Educational qualification: 10+2 with Physics and Mathematics | Medical fitness: Class 1 Medical Certificate from a DGCA-approved medical examiner',
+        a: 'Minimum age: 17 years for CPL | Educational qualification: 10+2 with Physics and Mathematics | Medical fitness: DGCA medical certificate from a DGCA-approved medical examiner',
     },
     {
         q: 'What is Pilot Training Institute?',
@@ -223,7 +223,7 @@ const instituteFeatures = [
     { icon: '🏅', title: 'Certified Training Program', desc: 'Our institute follows regulations set by the national aviation authority to ensure quality education and certification.' },
     { icon: '👨‍✈️', title: 'Experienced & Certified Instructors', desc: 'Learn from instructors who have real flying experience and have served as pilots in India.' },
     { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof.' },
-    { icon: '🚀', title: 'Placement Assistance', desc: 'Strong industry connections help graduates join major airlines, cargo operations, and private aviation worldwide.' },
+    { icon: '🚀', title: 'Interview Preparation', desc: 'Interview preparation and career guidance for applications to major airlines, cargo operations, and private aviation worldwide.' },
     { icon: '🎓', title: 'Full Scholarship Opportunities', desc: 'Flexible fees structure with scholarships granted for deserving candidates, making your aviation dream affordable.' },
     { icon: '📖', title: 'Extra Guidance For Weak Students', desc: 'We give extra time and attention to students who need it, ensuring every student gets results fast.' },
     { icon: '🏢', title: 'Dwarka, New Delhi Centre', desc: 'Classroom batches run at Sector 7, Dwarka. Online batches cover students elsewhere in India; flight training is done at partner flying schools.' },
@@ -252,7 +252,7 @@ const trainingCourses = [
             { label: 'Includes', value: 'Minimum 40 hours of flight training' },
             { label: 'Best For', value: 'Individuals who want to fly privately or as a hobby' },
         ],
-        href: '/courses/ppl',
+        href: '/ppl-full-form',
         highlight: false,
     },
     {
@@ -275,7 +275,7 @@ const trainingCourses = [
             { label: 'Includes', value: 'Advanced flight training in low-visibility conditions' },
             { label: 'Best For', value: 'Pilots looking to enhance skills and qualify for commercial aviation' },
         ],
-        href: '/courses/type-rating',
+        href: '/courses',
         highlight: false,
     },
 ];
@@ -283,7 +283,7 @@ const trainingCourses = [
 const eligibilityCriteria = [
     { icon: '🎓', title: 'Education', desc: '10+2 with Physics & Mathematics (We can help with additional courses if needed!)' },
     { icon: '🎂', title: 'Age', desc: '18 years for a CPL; 16 for a Student Pilot Licence' },
-    { icon: '🩺', title: 'Medical Fitness', desc: 'Must clear DGCA Class 1 & Class 2 Medical Exams' },
+    { icon: '🩺', title: 'Medical Fitness', desc: 'Must clear DGCA Medical Examinations' },
     { icon: '🗣️', title: 'English Proficiency', desc: 'Must be able to read, write, and communicate effectively in English' },
 ];
 
@@ -342,7 +342,7 @@ export default function Home() {
             </div>
 
             {/* Stats Bar */}
-            <div className="bg-av-blue py-8">
+            <section className="bg-av-blue py-8">
                 <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
                     {stats.map(s => (
                         <ScrollReveal key={s.label} className="text-center">
@@ -355,7 +355,7 @@ export default function Home() {
                 <div className="text-center mt-1">
                     <span className="text-av-orange text-sm font-semibold">Clear Your Dgca Exam In First Attempt With We One Aviation Academy</span>
                 </div>
-            </div>
+            </section>>
 
             {/* ── PILOT TRAINING INSTITUTE INTRO ── */}
             <section className="py-20 px-4">
@@ -870,7 +870,7 @@ export default function Home() {
                         {[
                             { icon: '✅', title: 'DGCA-Approved Training Programs', desc: 'Our courses meet all regulatory requirements to ensure a smooth path to becoming a professional pilot.' },
                             { icon: '✅', title: 'Experienced Instructors & Mentors', desc: 'Learn from seasoned airline pilots and aviation experts who provide hands-on guidance.' },
-                            { icon: '✅', title: 'Placement Assistance', desc: 'We help students secure jobs in leading airlines through industry connections and career support.' },
+                            { icon: '✅', title: 'Interview Preparation', desc: 'Interview preparation and career guidance for jobs in leading airlines through industry connections and career support.' },
                             { icon: '✅', title: 'Comprehensive CPL & DGCA Ground Classes', desc: 'Structured curriculum covering Air Navigation, Meteorology, Air Regulations, and Technical subjects.' },
                             { icon: '✅', title: 'Flexible Payment & Loan Options', desc: 'Making your dream of becoming a pilot financially accessible with easy EMI and loan assistance.' },
                             { icon: '✅', title: 'Personalized Learning Approach', desc: 'Small batch sizes, doubt-clearing sessions, and one-on-one mentorship to ensure better understanding.' },
@@ -974,7 +974,7 @@ export default function Home() {
                         {[
                             {
                                 title: 'After 12th Standard',
-                                steps: ['Pass 12th with PCM (Physics, Chemistry, Maths)', 'Clear DGCA Medical Class 1', 'Enroll in CPL program', 'Complete 200+ flying hours', 'Clear DGCA written exams', 'Get your CPL license'],
+                                steps: ['Pass 12th with PCM (Physics, Chemistry, Maths)', 'Clear the DGCA medical', 'Enroll in CPL program', 'Complete 200+ flying hours', 'Clear DGCA written exams', 'Get your CPL license'],
                                 href: '/how-to-become-a-pilot/after-12th',
                             },
                             {

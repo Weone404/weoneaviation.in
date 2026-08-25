@@ -7,9 +7,9 @@ const faqs = [
   { id: 'faq1', q: 'How long does it take to complete pilot training?', a: 'The duration varies depending on the type of pilot training: Private Pilot License (PPL): 6-12 months | Commercial Pilot License (CPL): 12-18 months | ATPL (Airline Transport Pilot License) Training: Additional experience after CPL' },
   { id: 'faq2', q: 'What is the salary of a commercial pilot?', a: 'Commercial pilot salaries vary by airline, experience, and aircraft type. Entry-level first officers can earn ₹1.5–3 lakh/month, while senior captains earn ₹5–10 lakh/month or more.' },
   { id: 'faq3', q: 'Can I get a scholarship for pilot training?', a: 'Yes! We One Aviation Academy offers up to 25% scholarship on select courses. Contact our counsellors to learn about available scholarships and loan assistance options.' },
-  { id: 'faq4', q: 'Can I become a pilot if I wear glasses?', a: 'Yes, you can become a pilot if you wear glasses, provided your corrected vision meets DGCA Class 1 medical standards. Contact us for detailed medical eligibility guidance.' },
+  { id: 'faq4', q: 'Can I become a pilot if I wear glasses?', a: 'Yes, you can become a pilot if you wear glasses, provided your corrected vision meets DGCA medical standards. Contact us for detailed medical eligibility guidance.' },
   { id: 'faq5', q: 'What are DGCA ground classes, and why are they important?', a: 'DGCA ground classes cover aviation subjects like Meteorology, Navigation, Air Regulations, and Technical General, preparing students for DGCA exams required for obtaining a pilot license.' },
-  { id: 'faq6', q: 'What Are The Eligibility Criteria for Pilot Training?', a: 'Minimum age: 17 years for CPL | Educational qualification: 10+2 with Physics and Mathematics | Medical fitness: Class 1 Medical Certificate from an approved medical examiner' },
+  { id: 'faq6', q: 'What Are The Eligibility Criteria for Pilot Training?', a: 'Minimum age: 17 years for CPL | Educational qualification: 10+2 with Physics and Mathematics | Medical fitness: DGCA medical certificate from an approved medical examiner' },
   { id: 'faq7', q: 'What is a Pilot Training Institute?', a: 'A Pilot Training Institute like We One Aviation Academy provides coaching to clear DGCA exams required to become a professional pilot — similar to how coaching centres help students clear NEET or IIT JEE.' },
 ];
 

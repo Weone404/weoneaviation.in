@@ -16,7 +16,7 @@ const quickDetails = [
     { sr: 2, topic: 'Duration', details: '14–16 Months' },
     { sr: 3, topic: 'Flying Hours', details: '200 Hours (SPL to CPL including IR and Multi-Engine)' },
     { sr: 4, topic: 'Course Fee', details: 'INR 58 Lakhs – 60 Lakhs' },
-    { sr: 5, topic: 'Eligibility', details: '17+ years, 10+2 (Physics & Math), DGCA Class 1 Medical' },
+    { sr: 5, topic: 'Eligibility', details: '17+ years, 10+2 (Physics & Math), DGCA Medical' },
     { sr: 6, topic: 'Certification', details: 'DGCA Commercial Pilot Licence (CPL)' },
 ];
 
@@ -103,7 +103,7 @@ const trainingStages = [
 ];
 
 const trainingSteps = [
-    { step: '01', title: 'Medicals', desc: 'Obtain a valid DGCA Class 1 Medical from an authorised AME to confirm fitness for professional flying.' },
+    { step: '01', title: 'Medicals', desc: 'Obtain a valid DGCA Medical from an authorised AME to confirm fitness for professional flying.' },
     { step: '02', title: 'DGCA Theory Class', desc: 'Attend DGCA-prescribed ground school covering Air Regulations, Navigation, Meteorology, Technical Subjects and Human Performance.' },
     { step: '03', title: 'DGCA Theory Exam', desc: 'Sit the DGCA written papers and clear the required theory exams to progress to practical training stages.' },
     { step: '04', title: 'RTR (Radio Telephony)', desc: 'Complete the RTR/RT licence course and exam to obtain mandatory aviation radio telephony endorsement.' },
@@ -247,7 +247,7 @@ export default function IndiaPilotTrainingPage() {
                         {[
                             { icon: '🎂', title: 'Age', desc: 'A Student Pilot Licence, which allows flight training to begin, requires 16 years; a Commercial Pilot Licence requires 18 (Aircraft Rules, 1937, Schedule II, Sections B and J).' },
                             { icon: '📚', title: 'Education', desc: '10+2 with Physics & Math or equivalent is required. Non-science students can qualify via NIOS.' },
-                            { icon: '🏥', title: 'Medical', desc: 'Must hold a valid DGCA Class 1 Medical Certificate issued by a DGCA medical examiner to ensure physical fitness for flying.' },
+                            { icon: '🏥', title: 'Medical', desc: 'Must hold a valid DGCA medical certificate issued by a DGCA medical examiner to ensure physical fitness for flying.' },
                             { icon: '🛂', title: 'Valid Passport', desc: 'A current passport is mandatory for identification and for students pursuing any part of their training abroad.' },
                             { icon: '📄', title: 'Police Clearance (PCC)', desc: 'A valid Police Clearance Certificate (PCC), valid for 6 months, is required to begin flight training at any Indian FTO.' },
                             { icon: '✅', title: 'Overall', desc: 'Meet all criteria above and you are ready to begin your CPL training journey at a DGCA-approved Flying Training Organization in India.' },

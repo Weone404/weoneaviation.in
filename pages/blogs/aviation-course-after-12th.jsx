@@ -1,6 +1,35 @@
 import Layout from '../../components/Layout';
 import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
+import StructuredData from '../../components/StructuredData';
+/*
+ * BlogPosting. This route is a hand-written page rather than a CMS record, so
+ * the dates are constants maintained here. Update dateModified when the copy
+ * changes — a dateModified that never moves is worse than none, because it
+ * tells a crawler the page is stale.
+ */
+const DATE_PUBLISHED = '2025-01-02';
+const DATE_MODIFIED = '2026-08-24';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: 'How to Become a Pilot After 12th in India',
+  description: 'Routes into a flying career after Class 12 in India: pilot types, eligibility, physical requirements, entrance and selection processes, and the DGCA licence chain.',
+  inLanguage: 'en-IN',
+  datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
+  articleSection: 'Pilot career guide',
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://weoneaviation.in/blogs/aviation-course-after-12th' },
+  author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+  publisher: {
+    '@type': 'EducationalOrganization',
+    name: 'We One Aviation Academy',
+    url: 'https://weoneaviation.in',
+    logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+  },
+};
+
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -33,7 +62,7 @@ const selectionSteps = [
         num: '1',
         icon: '✅',
         title: 'Meeting Basic Eligibility Criteria',
-        desc: 'Age, educational qualifications (12th with Physics & Maths), and Class 2 Medical Certificate from a DGCA-approved doctor are mandatory to begin the pilot selection process.',
+        desc: 'Age, educational qualifications (12th with Physics & Maths), and DGCA medical certificate from a DGCA-approved doctor are mandatory to begin the pilot selection process.',
     },
     {
         num: '2',
@@ -51,7 +80,7 @@ const selectionSteps = [
         num: '4',
         icon: '🩺',
         title: 'Medical Examination',
-        desc: 'Class 2 Medical for Student Pilots and Class 1 Medical for Commercial Pilots. Includes vision tests, ECG, blood tests, and hearing tests.',
+        desc: 'DGCA Medical for Student Pilots and DGCA Medical for Commercial Pilots. Includes vision tests, ECG, blood tests, and hearing tests.',
     },
     {
         num: '5',
@@ -224,9 +253,11 @@ export default function BecomeAPilotPage() {
             title="How to Become a Pilot After 12th? – Complete Guide 2025 | India"
             description="Complete guide on how to become a pilot after 12th in India. Covers types of pilots, eligibility, physical requirements, selection process, IAF routes, salary, career outlook, and training costs."
         >
+            <StructuredData data={articleSchema} />
+
 
             {/* ── Hero Banner ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <div className="section-tag">Pilot Career Guide</div>
                     <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
@@ -239,10 +270,10 @@ export default function BecomeAPilotPage() {
                         Flying airplanes is a dream many people hold, captivated by the freedom, excitement, and perspective it offers. If you're one of those who envision a career as a pilot, you're in the right place! Becoming a pilot requires dedication, hard work, and specific qualifications, but with the right steps, you can achieve this incredible goal.
                     </p>
                 </ScrollReveal>
-            </div>
+            </header>>
 
             {/* ── Stats Bar ── */}
-            <div className="bg-av-blue py-8">
+            <section className="bg-av-blue py-8">
                 <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
                     {stats.map(s => (
                         <ScrollReveal key={s.label} className="text-center">
@@ -252,7 +283,7 @@ export default function BecomeAPilotPage() {
                         </ScrollReveal>
                     ))}
                 </div>
-            </div>
+            </section>>
 
             {/* ── Types of Pilots ── */}
             <section className="py-20 px-4 bg-gray-50">
@@ -310,7 +341,7 @@ export default function BecomeAPilotPage() {
                                 {[
                                     { icon: '🎂', label: 'Age', value: '16 years for a Student Pilot Licence; 18 for a Commercial Pilot Licence.' },
                                     { icon: '📚', label: 'Education', value: 'Completion of 12th grade with Physics and Mathematics.' },
-                                    { icon: '🩺', label: 'Medical', value: 'Obtain a Class 2 medical certificate from a DGCA-approved doctor.' },
+                                    { icon: '🩺', label: 'Medical', value: 'Obtain a DGCA medical certificate from a DGCA-approved doctor.' },
                                 ].map(item => (
                                     <div key={item.label} className="flex items-start gap-4 p-4 bg-av-light rounded-xl border border-av-sky/20">
                                         <span className="text-2xl flex-shrink-0">{item.icon}</span>

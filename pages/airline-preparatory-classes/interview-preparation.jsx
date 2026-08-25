@@ -258,7 +258,7 @@ export default function InterviewPreparationPage() {
         >
 
             {/* ── Hero ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <br /><br /><br /><br />
                     <div className="section-tag">Airline Preparatory Classes</div>
@@ -279,7 +279,7 @@ export default function InterviewPreparationPage() {
                         ))}
                     </div>
                 </ScrollReveal>
-            </div>
+            </header>>
 
             {/* ── Why the Interview Matters ── */}
             <section className="py-20 px-4">
@@ -327,10 +327,10 @@ export default function InterviewPreparationPage() {
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-7 card-hover hover:border-av-orange/30 h-full flex flex-col">
                                     <div className="flex items-start gap-4 mb-4">
                                         <span className="text-4xl flex-shrink-0">{type.icon}</span>
-                                        <div>
+                                        <section>
                                             <h3 className="font-montserrat font-bold text-av-blue text-lg">{type.title}</h3>
                                             <p className="text-av-orange text-xs font-semibold mt-0.5">{type.airlines}</p>
-                                        </div>
+                                        </section>>
                                     </div>
                                     <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-grow">{type.desc}</p>
                                     <div className="mb-3">
@@ -462,10 +462,10 @@ export default function InterviewPreparationPage() {
                                 <div className={`bg-white rounded-2xl border-2 ${airline.colour} shadow-lg overflow-hidden`}>
                                     <div className={`${airline.headerBg} px-8 py-5 flex items-center gap-4`}>
                                         <span className="text-4xl">{airline.flag}</span>
-                                        <div>
+                                        <section>
                                             <h3 className="font-montserrat font-black text-white text-2xl">{airline.airline}</h3>
                                             <p className="text-white/70 text-sm">Commonly asked interview questions — prepare a unique, honest answer for each</p>
-                                        </div>
+                                        </section>>
                                     </div>
                                     <div className="p-8 grid sm:grid-cols-2 gap-4">
                                         {airline.questions.map((q, j) => (

@@ -16,7 +16,7 @@ const quickDetails = [
     { sr: 2, topic: 'Duration', details: '14–15 Months' },
     { sr: 3, topic: 'Flying Hours', details: '200–210 Hours (Under SACAA regulations for DGCA conversion)' },
     { sr: 4, topic: 'Course Fee', details: 'ZAR 860k – 995k (Comprehensive training package)' },
-    { sr: 5, topic: 'Eligibility', details: '17+ years, 10+2 (Physics & Math), SACAA & DGCA Class 1 Medical' },
+    { sr: 5, topic: 'Eligibility', details: '17+ years, 10+2 (Physics & Math), SACAA and DGCA medical certificates' },
     { sr: 6, topic: 'Certification', details: 'SACAA CPL — valid for DGCA conversion' },
 ];
 
@@ -95,7 +95,7 @@ const trainingStages = [
 ];
 
 const trainingSteps = [
-    { step: '01', title: 'DGCA Medicals', desc: 'Complete your DGCA Class 2 & 1 Medicals and join reputed DGCA Ground Classes to clear theory exams.' },
+    { step: '01', title: 'DGCA Medicals', desc: 'Complete your DGCA medical certification and join reputed DGCA Ground Classes to clear theory exams.' },
     { step: '02', title: 'DGCA Theory Class', desc: 'Attend DGCA-prescribed ground school covering Air Regulations, Navigation, Meteorology, and Technical Subjects.' },
     { step: '03', title: 'Choose Flight School', desc: 'Select a SACAA-approved flight school in South Africa. Compare fleet, instructor experience, and training environment.' },
     { step: '04', title: 'Admission & Documentation', desc: 'Receive your Letter of Acceptance and all documents required for the South African Study Visa application.' },
@@ -244,7 +244,7 @@ export default function SouthAfricaPilotTrainingPage() {
                         {[
                             { icon: '🎂', title: 'Age', desc: 'A Student Pilot Licence, which allows flight training to begin, requires 16 years; a Commercial Pilot Licence requires 18 (Aircraft Rules, 1937, Schedule II, Sections B and J).' },
                             { icon: '📚', title: 'Education', desc: '10+2 with Physics & Math or equivalent is required. Non-science students can qualify via NIOS.' },
-                            { icon: '🏥', title: 'Medical', desc: 'Must hold an SACAA Class 1 Medical and DGCA Class 1 Medical Certificate to qualify for Commercial Pilot Training.' },
+                            { icon: '🏥', title: 'Medical', desc: 'Must hold an SACAA Class 1 Medical and a DGCA medical certificate to qualify for Commercial Pilot Training.' },
                             { icon: '🛂', title: 'Visa', desc: 'South African Study Visa — which requires medicals for application — allowing full-time flight training in South Africa.' },
                             { icon: '🗣️', title: 'English (ELP)', desc: 'English Language Proficiency (ELP) assessment with the Chief Flying Instructor is required before commencing flight operations.' },
                             { icon: '✅', title: 'Overall', desc: 'Meet all criteria above and you are ready to begin your SACAA CPL training at a recognised South African flight school.' },

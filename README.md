@@ -183,3 +183,7 @@ Navy:           #0d3060
 Orange:         #f97316
 Sky Blue:       #0ea5e9
 ```
+
+## IndexNow
+
+After a deploy goes live, run `npm run submit:indexnow` to push the sitemap URLs to Bing (and therefore Copilot) instead of waiting for a recrawl — never during the build, because IndexNow verifies ownership by fetching `https://weoneaviation.in/4cc6d0657659c9c7cbc7fc012ab389ee.txt` from the live site. Add `-- --dry` to preview without submitting.

@@ -65,7 +65,7 @@ export default function CostBreakdownGuide() {
                   
                   <div className="space-y-3">
                     {[
-                      { item: 'DGCA Medical Tests (Class 2 + Class 1)', cost: '₹15,000 - ₹20,000' },
+                      { item: 'Medical Examination Fees', cost: '₹15,000 - ₹20,000' },
                       { item: 'DGCA Ground School Fees', cost: '₹1,50,000 - ₹2,50,000' },
                       { item: 'DGCA Exam Fees (9 papers × ₹3,000)', cost: '₹25,000 - ₹30,000' },
                       { item: 'Flying Training (200+ hours)', cost: '₹30,00,000 - ₹40,00,000' },

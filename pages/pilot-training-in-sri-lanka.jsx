@@ -27,7 +27,7 @@ const programs = [
     title: 'CPL Training Program',
     description: 'Complete Commercial Pilot License training with international exposure',
     duration: '18-24 months',
-    details: ['DGCA theory from India', 'Flight training in Sri Lanka or abroad', '200+ flight hours', 'Airline placement support'],
+    details: ['DGCA theory from India', 'Flight training in Sri Lanka or abroad', '200+ flight hours', 'Airline interview preparation and career guidance'],
   },
   {
     title: 'PPL Program',
@@ -47,7 +47,7 @@ const advantages = [
   { icon: '🌍', title: 'International Exposure', desc: 'Train with global standards and make international connections' },
   { icon: '💰', title: 'Cost-Effective', desc: 'Competitive fees with flexible payment options and scholarships' },
   { icon: '🎓', title: 'DGCA Recognized', desc: 'All training recognized by DGCA India for license conversion' },
-  { icon: '✈️', title: 'Career Ready', desc: 'placement assistance with airlines and aviation companies' },
+  { icon: '✈️', title: 'Career Ready', desc: 'Interview preparation and career guidance for airline and aviation-company applies' },
   { icon: '👨‍🏫', title: 'Expert Trainers', desc: 'Learn from experienced commercial pilots and certified instructors' },
   { icon: '📱', title: '24/7 Support', desc: 'Continuous career guidance and mentor support throughout your journey' },
 ];

@@ -305,7 +305,7 @@ export default function PsychometryPage() {
         >
 
             {/* ── Hero ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <br /><br /><br /><br />
                     <div className="section-tag">Airline Preparatory Classes</div>
@@ -324,7 +324,7 @@ export default function PsychometryPage() {
                         ))}
                     </div>
                 </ScrollReveal>
-            </div>
+            </header>>
 
             {/* ── What is Psychometry ── */}
             <section className="py-20 px-4">
@@ -439,10 +439,10 @@ export default function PsychometryPage() {
                                 <div className={`bg-white rounded-2xl border-2 ${airline.color} shadow-lg overflow-hidden`}>
                                     <div className={`${airline.headerBg} px-8 py-5`}>
                                         <div className="flex flex-wrap items-center justify-between gap-4">
-                                            <div>
+                                            <section>
                                                 <h3 className="font-montserrat font-black text-white text-2xl">{airline.flag} {airline.airline}</h3>
                                                 <p className="text-white/80 text-sm">{airline.programme}</p>
-                                            </div>
+                                            </section>>
                                             <div className="bg-white/20 rounded-xl px-4 py-2 text-center">
                                                 <p className="text-white/70 text-xs">Assessment System</p>
                                                 <p className="text-white font-bold text-sm">{airline.system}</p>

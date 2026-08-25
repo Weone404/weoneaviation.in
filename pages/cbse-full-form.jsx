@@ -174,7 +174,7 @@ export default function CBSEPage() {
         >
 
             {/* ── Hero Banner ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <div className="section-tag">Education Board</div>
                     <br />
@@ -194,7 +194,7 @@ export default function CBSEPage() {
                     </p>
                     <p className="text-av-orange font-bold mt-4">So, let's get started!</p>
                 </ScrollReveal>
-            </div>
+            </header>>
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-8">

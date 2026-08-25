@@ -134,7 +134,7 @@ const licensingSteps = [
         title: 'Complete DGCA Medical Examinations',
         desc: 'Medical fitness is an essential requirement for every pilot.',
         listIntro: 'Candidates typically undergo:',
-        list: ['DGCA Class II Medical Examination', 'DGCA Class I Medical Examination'],
+        list: ['DGCA medical examination'],
         outro: 'These assessments evaluate eyesight, hearing, cardiovascular health, neurological condition, and overall fitness to ensure candidates are medically suitable for flying.',
     },
     {
@@ -265,11 +265,11 @@ const faqs = [
 const relatedPages = [
     { label: 'Commercial Pilot License', href: '/commercial-pilot-license' },
     { label: 'DGCA Ground Classes', href: '/dgca-ground-classes' },
-    { label: 'CPL Eligibility', href: '/cpl-eligibility' },
-    { label: 'CPL Syllabus', href: '/cpl-syllabus' },
+    { label: 'CPL Eligibility', href: '/commercial-pilot-license-eligibility' },
+    { label: 'CPL Syllabus', href: '/commercial-pilot-license-syllabus' },
     { label: 'How to Become a Pilot After 12th', href: '/how-to-become-a-pilot-after-12th' },
     { label: 'Pilot Training in India', href: '/pilot-training-in-india' },
-    { label: 'RTR Full Form', href: '/rtr-full-form' },
+    { label: 'RTR Full Form', href: '/rtr-full-form-meaning-importance-and-complete-guide' },
     { label: 'PPL Full Form', href: '/ppl-full-form' },
     { label: 'CPL Full Form', href: '/cpl-full-form' },
 ];
@@ -369,7 +369,7 @@ export default function DGCAPage() {
                                 Every pilot, airline, aircraft operator, maintenance organization, and approved flying school in India must comply with DGCA regulations to maintain operational safety and regulatory standards.
                             </p>
                             <p className="text-gray-600 leading-relaxed">
-                                For aspiring pilots, DGCA plays a role throughout the licensing journey—from <Link href="/dgca-class-2-class-1-medical" className="text-av-orange hover:underline">DGCA medical examinations</Link> and theory tests to issuing the <Link href="/commercial-pilot-license" className="text-av-orange hover:underline">Commercial Pilot Licence (CPL)</Link>.
+                                For aspiring pilots, DGCA plays a role throughout the licensing journey—from <Link href="/commercial-pilot-license-eligibility" className="text-av-orange hover:underline">DGCA medical examinations</Link> and theory tests to issuing the <Link href="/commercial-pilot-license" className="text-av-orange hover:underline">Commercial Pilot Licence (CPL)</Link>.
                             </p>
                         </div>
                     </ScrollReveal>

@@ -132,7 +132,7 @@ export default function AirArabiaMPLPage() {
         >
 
             {/* ── Hero ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <br /><br /><br /><br />
                     <div className="section-tag">Airline Pilot Training</div>
@@ -155,7 +155,7 @@ export default function AirArabiaMPLPage() {
                         ))}
                     </div>
                 </ScrollReveal>
-            </div>
+            </header>>
 
             {/* ── Programme Overview ── */}
             <section className="py-20 px-4">

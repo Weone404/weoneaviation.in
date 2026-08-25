@@ -11,7 +11,7 @@ import RelatedArticles from "../components/RelatedArticles";
 import SummaryBox from "../components/SummaryBox";
 import StructuredData from "../components/StructuredData";
 import Breadcrumb from "../components/Breadcrumb";
-import { generateFAQSchema } from "../lib/schema";
+import { generateCourseSchema, generateFAQSchema } from "../lib/schema";
 
 const LAST_UPDATED_ISO = '2026-08-19';
 
@@ -31,7 +31,7 @@ const cplCourseSchema = {
   courseMode: 'Blended',
   timeRequired: 'P18M',
   /*
-   * Was "DGCA Medical". The Class 1 / Class 2 split is on the
+   * Was "DGCA Class 1 Medical". The Class 1 / Class 2 split is on the
    * unsourced list in scripts/check-claims.js — the standard sits in a DGCA
    * medical CAR that could not be retrieved from any government source. What
    * Schedule II, Section J, paragraph 1(c) actually requires is a certificate
@@ -95,7 +95,7 @@ const eligibilityItems = [
   },
   {
     label: "DGCA Medical",
-    desc: "Every aspiring pilot must successfully complete DGCA medical examinations. Good physical and mental fitness are essential for safe flight operations.",
+    desc: "Every aspiring pilot must successfully complete DGCA Class 1 Medical examinations. Good physical and mental fitness are essential for safe flight operations.",
   },
   {
     label: "English Proficiency",
@@ -205,7 +205,7 @@ const faqs = [
   {
     q: "What is the commercial pilot eligibility?",
     a: "Candidates generally need:",
-    list: ["10+2 with Physics & Mathematics", "DGCA Medical", "Good English communication skills", "Completion of DGCA requirements"],
+    list: ["10+2 with Physics & Mathematics", "DGCA Class 1 Medical", "Good English communication skills", "Completion of DGCA requirements"],
   },
   {
     q: "How long does a commercial pilot course take?",
@@ -242,7 +242,7 @@ const quickFacts = [
   { val: "18–24 months", label: "Course Duration" },
   { val: "200 hours", label: "Min Flying Hours" },
   { val: "10+2 PCM", label: "Eligibility" },
-  { val: "Required", label: "DGCA Medical" },
+  { val: "Class 1", label: "DGCA Medical" },
 ];
 
 const tocHeadings = [
@@ -315,7 +315,7 @@ export default function CPL() {
           <div className="absolute bottom-0 left-0 w-44 h-44 rounded-full border-2 border-white/5 translate-y-1/2 -translate-x-1/2 pointer-events-none" />
           <div className="max-w-7xl mx-auto px-4 relative z-10">
             <div className="section-tag mb-3">Complete Guide</div>
-            <Breadcrumb />
+            <Breadcrumb override={[{ href: '/commercial-pilot-license', label: 'Commercial Pilot Licence (CPL)' }]} />
             <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white leading-tight mb-4">
               Commercial Pilot License (CPL) in India
               <br />
@@ -430,7 +430,7 @@ export default function CPL() {
             </p>
             <QuickAnswer
               question="How do you become a commercial pilot in India?"
-              answer="You usually complete 10+2 with Physics and Mathematics, pass DGCA medical, join DGCA ground classes, clear the required exams, and complete at least 200 flying hours at an approved flying school."
+              answer="You usually complete 10+2 with Physics and Mathematics, pass DGCA Class 1 medical, join DGCA ground classes, clear the required exams, and complete at least 200 flying hours at an approved flying school."
             />
             <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-3">
               A Commercial Pilot License (CPL) is the qualification required to fly aircraft professionally and build a successful career in aviation. At We One Aviation, we provide complete guidance for aspiring pilots, from DGCA counselling and ground classes to flying school selection and flight training. Whether you are planning to join a commercial pilot course, looking for commercial pilot training, or searching for the best pilot course after 12th, our experts are here to guide you at every stage.
@@ -715,7 +715,7 @@ export default function CPL() {
         <section className="py-10 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Career Paths</div>
-            <h2 id="career-opportunities-after-commercial-pilot-training" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">What careers open up after commercial pilot training?</h2>
+            <h2 id="career-opportunities-after-commercial-pilot-training" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">What careers open up after commercial pilot training</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 After completing commercial pilot training, graduates can explore a wide range of career opportunities in the aviation industry.
@@ -813,7 +813,7 @@ export default function CPL() {
               list does not reach.
             */}
             <PeopleAlsoAsk items={peopleAlsoAsk} />
-            <SummaryBox title="Key Takeaways" items={['A Commercial Pilot License is the professional license for airline-style flying.', 'Eligibility starts with 10+2 PCM, DGCA medical, and DGCA exam preparation.', 'The training path includes ground classes, flying school admission, and 200 flying hours.', 'We One Aviation provides counselling, documentation support, and training guidance at every stage.']} />
+            <SummaryBox title="Key Takeaways" items={['A Commercial Pilot License is the professional license for airline-style flying.', 'Eligibility starts with 10+2 PCM, DGCA Class 1 medical, and DGCA exam preparation.', 'The training path includes ground classes, flying school admission, and 200 flying hours.', 'We One Aviation provides counselling, documentation support, and training guidance at every stage.']} />
           </div>
         </section>
 

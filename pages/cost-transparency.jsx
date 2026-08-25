@@ -48,8 +48,8 @@ export default function CostTransparency() {
                 <div className="space-y-4">
                   {[
                     { category: 'Medical & Documentation', items: [
-                      { desc: 'DGCA Class 2 Medical Test', cost: '₹5,000 - ₹10,000', included: '✓' },
-                      { desc: 'DGCA Class 1 Medical Test', cost: '₹5,000 - ₹10,000', included: '✓' },
+                      { desc: 'DGCA medical test', cost: '₹5,000 - ₹10,000', included: '✓' },
+                      { desc: 'DGCA medical test', cost: '₹5,000 - ₹10,000', included: '✓' },
                       { desc: 'DGCA Computer Number Registration', cost: '₹2,000 - ₹3,000', included: '✓' },
                       { desc: 'Document verification & processing', cost: '₹1,000 - ₹2,000', included: '✓' },
                     ]},
@@ -312,7 +312,7 @@ export default function CostTransparency() {
 
         {/* Final CTA */}
         <section className="py-16 px-4 bg-gradient-to-r from-av-blue to-av-navy">
-          <div className="max-w-3xl mx-auto text-center">
+          <section className="max-w-3xl mx-auto text-center">
             <h2 className="font-montserrat font-bold text-3xl text-white mb-4">
               Need a Personalized Cost Estimate?
             </h2>
@@ -322,7 +322,7 @@ export default function CostTransparency() {
             <Link href="/contact" className="inline-block bg-av-orange hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold transition-all hover:shadow-lg hover:scale-105">
               📞 Get Free Quote
             </Link>
-          </div>
+          </section>>
         </section>
 
       </Layout>

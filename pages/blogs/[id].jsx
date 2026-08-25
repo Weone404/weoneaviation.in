@@ -1,4 +1,5 @@
 import Layout from '../../components/Layout';
+import StructuredData from '../../components/StructuredData';
 import FAQSection from '../../components/FAQSection';
 import Link from 'next/link';
 import NextImage from 'next/image';
@@ -25,7 +26,7 @@ const hardcodedBlogs = [
       <ul>
         <li>Minimum age: 18 years</li>
         <li>Educational qualification: 10+2 with Physics and Mathematics</li>
-        <li>Valid DGCA Class 1 Medical Certificate</li>
+        <li>Valid DGCA medical certificate</li>
         <li>Minimum 200 hours of total flight time</li>
       </ul>
 
@@ -34,8 +35,8 @@ const hardcodedBlogs = [
         <div class="step-card">
           <div class="step-number">1</div>
           <div class="step-body">
-            <p class="step-title">Get your Class 1 Medical</p>
-            <p class="step-desc">Visit an approved DGCA medical centre and clear the Class 1 medical examination.</p>
+            <p class="step-title">Get your DGCA Medical</p>
+            <p class="step-desc">Visit an approved DGCA medical centre and clear the DGCA medical examination.</p>
           </div>
         </div>
         <div class="step-card">
@@ -183,8 +184,8 @@ const hardcodedBlogs = [
     },
     {
         id: 5,
-        title: 'Medical Requirements to Become a Pilot in India – DGCA Class 1',
-        excerpt: 'Detailed guide on DGCA Class 1 medical requirements.',
+        title: 'Medical Requirements to Become a Pilot in India',
+        excerpt: 'Detailed guide on DGCA medical requirements.',
         category: 'Medical',
         readTime: '6 min',
         date: 'Nov 20, 2024',
@@ -199,7 +200,7 @@ const hardcodedBlogs = [
         <li><strong>Mental Health:</strong> No history of psychiatric disorders</li>
       </ul>
 
-      <h2>Where to Get Your Class 1 Medical</h2>
+      <h2>Where to Get Your DGCA Medical</h2>
       <p>DGCA-approved centres are in Delhi, Mumbai, Chennai, Kolkata, Hyderabad, and Bengaluru.</p>
     `,
       faqs: [],
@@ -224,7 +225,7 @@ const hardcodedBlogs = [
       <div class="steps-list">
         <div class="step-card">
           <div class="step-number">1</div>
-          <div class="step-body"><p class="step-title">Clear Class 1 Medical</p></div>
+          <div class="step-body"><p class="step-title">Clear DGCA Medical</p></div>
         </div>
         <div class="step-card">
           <div class="step-number">2</div>
@@ -370,7 +371,7 @@ function BlogHero({ blog }) {
                 className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 px-6 py-8 md:px-12 md:py-10 max-w-5xl mx-auto">
+            <section className="absolute bottom-0 left-0 right-0 px-6 py-8 md:px-12 md:py-10 max-w-5xl mx-auto">
                 <span className="bg-av-orange text-white text-[11px] font-semibold px-3 py-1 rounded-full inline-block mb-3 uppercase tracking-wider">
                     {blog.category}
                 </span>
@@ -382,7 +383,7 @@ function BlogHero({ blog }) {
                     <span className="text-white/30">·</span>
                     <span>{blog.readTime} read</span>
                 </div>
-            </div>
+            </section>>
         </div>
     );
 }
@@ -498,6 +499,15 @@ export async function getStaticProps({ params }) {
             ? `${new Date(raw.updatedAt).toDateString()} (edited)`
             : new Date(raw.createdAt).toDateString();
 
+        /*
+         * Machine-readable siblings of displayDate. BlogPosting wants ISO-8601;
+         * "Mon Dec 15 2024 (edited)" is for the reader, not for a crawler.
+         * dateModified falls back to createdAt so the field is never absent —
+         * an Article node without dates is the one Google reliably ignores.
+         */
+        const datePublishedISO = new Date(raw.createdAt).toISOString();
+        const dateModifiedISO = new Date(raw.updatedAt || raw.createdAt).toISOString();
+
         return {
             props: {
                 blog: {
@@ -507,6 +517,8 @@ export async function getStaticProps({ params }) {
                     category: raw.category || 'Blog',
                     readTime: '5 min',
                     date: displayDate,
+                    datePublishedISO,
+                    dateModifiedISO,
                     img:
                         raw.coverImage ||
                         'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80',
@@ -543,6 +555,27 @@ export default function BlogDetail({ blog }) {
 
     return (
         <Layout title={`${blog.title} – We One Aviation`} description={blog.excerpt}>
+            <StructuredData
+                data={{
+                    '@context': 'https://schema.org',
+                    '@type': 'BlogPosting',
+                    headline: blog.title,
+                    description: blog.excerpt,
+                    image: blog.img,
+                    inLanguage: 'en-IN',
+                    datePublished: blog.datePublishedISO,
+                    dateModified: blog.dateModifiedISO,
+                    articleSection: blog.category,
+                    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://weoneaviation.in/blogs/${blog.id}` },
+                    author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+                    publisher: {
+                        '@type': 'EducationalOrganization',
+                        name: 'We One Aviation Academy',
+                        url: 'https://weoneaviation.in',
+                        logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+                    },
+                }}
+            />
             {/* Hero */}
             <BlogHero blog={blog} />
 

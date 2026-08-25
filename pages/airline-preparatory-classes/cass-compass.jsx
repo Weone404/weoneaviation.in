@@ -297,7 +297,7 @@ export default function CompassPage() {
         >
 
             {/* ── Hero ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <br /><br /><br /><br />
                     <div className="section-tag">CASS – Cadet Aptitude Selection System</div>
@@ -318,7 +318,7 @@ export default function CompassPage() {
                         ))}
                     </div>
                 </ScrollReveal>
-            </div>
+            </header>>
 
             {/* ── What is COMPASS ── */}
             <section className="py-20 px-4">
@@ -364,7 +364,7 @@ export default function CompassPage() {
                                         { label: 'Test Type', value: 'Computerized aptitude + psychomotor + personality battery' },
                                         { label: 'Total Duration', value: '3–5 hours (all 4 phases on the same day)' },
                                         { label: 'Number of Attempts', value: '1–2 attempts maximum — preparation is critical' },
-                                        { label: 'Eligibility', value: '10+2 with Physics & Maths, Class 2 Medical, 17–26 years (approx.)' },
+                                        { label: 'Eligibility', value: '10+2 with Physics & Maths, DGCA Medical, 17–26 years (approx.)' },
                                         { label: 'Selection Outcome', value: 'Shortlisted candidates are sponsored for CPL training at partner FTOs' },
                                     ].map((item, i) => (
                                         <div key={i} className="bg-white/10 rounded-xl p-4">
@@ -626,7 +626,7 @@ export default function CompassPage() {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                         {[
                             { icon: '🎓', label: 'Education', value: '10+2 with Physics & Mathematics (minimum 50%)' },
-                            { icon: '🏥', label: 'Medical', value: 'DGCA Class 2 Medical Certificate (Class 1 before solo)' },
+                            { icon: '🏥', label: 'Medical', value: 'DGCA medical certificate, in place before first solo' },
                             { icon: '🗓️', label: 'Age', value: 'Typically 17–26 years at the time of application' },
                             { icon: '🌐', label: 'Language', value: 'English proficiency — spoken and written' },
                             { icon: '🇮🇳', label: 'Nationality', value: 'Indian citizens (NRIs may apply — check current batch criteria)' },

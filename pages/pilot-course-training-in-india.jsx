@@ -14,7 +14,7 @@ const whyChooseCourse = [
 const eligibility = [
   { title: "Educational Qualification", desc: "Applicants should have completed 10+2 with Physics and Mathematics from a recognized board. Students who did not study these subjects may still qualify by completing them through an approved open schooling program." },
   { title: "Age Requirement", desc: "The minimum age to begin pilot training is generally 17 years, while a Commercial Pilot License is issued after meeting DGCA requirements." },
-  { title: "Medical Fitness", desc: "Every aspiring pilot must obtain a DGCA Class 1 Medical Certificate. Good eyesight, overall fitness, and medical compliance are essential for a successful aviation career." },
+  { title: "Medical Fitness", desc: "Every aspiring pilot must obtain a DGCA medical certificate. Good eyesight, overall fitness, and medical compliance are essential for a successful aviation career." },
   { title: "English Proficiency", desc: "Since aviation communication is conducted in English, students should have good reading, writing, and speaking skills." },
 ];
 
@@ -113,7 +113,7 @@ const quickFacts = [
   { val: "17 Years", label: "Min Age" },
   { val: "18–24 Months", label: "Duration" },
   { val: "10+2 PCM", label: "Eligibility" },
-  { val: "Class 1", label: "DGCA Medical" },
+  { val: "Required", label: "DGCA Medical" },
 ];
 
 export default function PilotCourseTraining() {

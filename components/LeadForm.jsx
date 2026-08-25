@@ -73,7 +73,7 @@ export default function LeadForm({ title = 'Get Free Counselling', dark = false,
           <option value="Commercial Pilot License (CPL)">Commercial Pilot License (CPL)</option>
           <option value="Private Pilot License (PPL)">Private Pilot License (PPL)</option>
           <option value="ATPL">ATPL</option>
-          <option value="Sport Pilot License (SPL)">Sport Pilot License (SPL)</option>
+          <option value="Student Pilot License (SPL)">Student Pilot License (SPL)</option>
           <option value="DGCA Ground Classes">DGCA Ground Classes</option>
           <option value="Air India Adapt test Preparation">Air India Adapt test Preparation</option>
           <option value="IndiGo Adapt test Preparation">IndiGo Adapt test Preparation</option>

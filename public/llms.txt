@@ -1,36 +1,117 @@
 # We One Aviation Academy — LLM Index
 
-DGCA-approved pilot training academy in Dwarka, New Delhi, India. Operating since 2009. DGCA ground classes for the CPL written examinations, plus flight-training placement with partner schools in the USA, Canada, Australia, UK, and South Africa.
+DGCA-approved pilot training academy in Dwarka, New Delhi, India. Operating since 2009. We teach the DGCA ground subjects for the written examinations behind a Commercial Pilot Licence, and we arrange flight training with partner flying schools in India, the USA, Canada, Australia and South Africa.
+
+We are a ground school and a placement route into flying schools. We do not own aircraft or simulators, we do not employ pilots, and we do not place students into airline jobs — hiring decisions rest with the operator. What we provide is classroom teaching, examination preparation, licence-route planning, interview preparation and career guidance.
+
+## Services
+
+- **DGCA Ground Classes** — Classroom and online teaching for the five DGCA written papers: Air Navigation, Aviation Meteorology, Air Regulations, Technical General and Technical Specific. Roughly six months, with mock tests and live doubt sessions. https://weoneaviation.in/dgca-ground-classes
+- **CPL preparation (Commercial Pilot Licence)** — The full route to the licence that lets a pilot be paid to fly: eligibility, the DGCA papers, and placement with a flying school for the 200 hours of flight time. https://weoneaviation.in/courses/cpl
+- **PPL guidance (Private Pilot Licence)** — The recreational licence and the usual stepping stone to a CPL, since PPL hours count towards the commercial total. https://weoneaviation.in/ppl-full-form
+- **SPL guidance (Student Pilot Licence)** — The first licence in the Indian chain, available from age 16, which permits flight training including solo flying under instructor authorisation. https://weoneaviation.in/student-pilot-license-spl
+- **ATPL ground preparation** — Advanced theory for pilots already holding a CPL and building command experience towards airline command. https://weoneaviation.in/courses/atpl
+- **RTR (A) preparation** — The Radio Telephone Operator (Restricted) certificate, examined separately from the DGCA papers under the Radio Telephone Operator (Restricted) Certificate and Licence Rules, 2025. https://weoneaviation.in/rtr-a
+- **Flight-training placement abroad** — Routes through partner schools in the USA, Canada, Australia and South Africa, with DGCA conversion on return. https://weoneaviation.in/courses
+- **Airline interview preparation** — Interview practice, licence-route planning and career guidance for pilots applying to operators. https://weoneaviation.in/airline-preparation-course
+
+## Key Data
+
+Minimum ages, set by the Aircraft Rules, 1937, Schedule II (continued in force by section 43(2) of the Bharatiya Vayuyan Adhiniyam, 2024):
+
+- Student Pilot Licence (SPL): **16 years** — Section B
+- Private Pilot Licence (PPL, Aeroplanes): **17 years** — Section E
+- Commercial Pilot Licence (CPL, Aeroplanes): **18 years** — Section J
+- Airline Transport Pilot Licence (ATPL, Aeroplanes): **21 years** — Section M
+
+CPL requirements, Schedule II Section J:
+
+- Education: Class 10+2 with Physics and Mathematics from a recognised Board or University — para 1(b)
+- Total flight time: **200 hours** as pilot of an aeroplane, flown within the **five years** immediately preceding the application — para 1(e)
+- Inside that 200: 100 hours pilot-in-command, 20 hours cross-country as PIC (including one flight of at least 300 nautical miles with full-stop landings at two different aerodromes), 10 hours instrument time (at most 5 on an approved simulator), 5 hours night flying — paras 1(e)(i) to (iv)
+- Medical: a certificate of physical fitness from an approved Medical Board — para 1(c)
+- Radio: a current Flight Radio Telephone Operator Licence, RTR (A) — para 1(g)
+- Skill test: flown for an examiner on the type applied for, within the six months before applying — para 1(h)
+
+DGCA written papers for a CPL: Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific. RTR (A) is examined separately. Papers are cleared individually, not in a single sitting.
+
+ATPL experience: the table in Schedule II Section M was amended by G.S.R. 22(E) of 7 January 2020 and again by G.S.R. 731(E) of 10 October 2023. Any hours figure from an older source may be out of date — confirm against the current notified Schedule.
+
+Academy facts: founded 2009; located at C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, New Delhi 110077; phone +91-9355611996; email info.weoneaviation@gmail.com.
 
 ## Courses
-- https://weoneaviation.in/commercial-pilot-license — Complete guide to Commercial Pilot License (CPL) in India, including eligibility, process, flying-hour requirements, and career path.
-- https://weoneaviation.in/dgca-ground-classes — DGCA ground school page covering key subjects, eligibility, class structure, and preparation for DGCA exams.
-- https://weoneaviation.in/courses/atpl — ATPL preparation page covering advanced airline-level subjects, simulator-focused training, and captain-track progression.
-- https://weoneaviation.in/courses/cpl — Program page for DGCA-approved CPL training, including duration, eligibility, and core syllabus coverage.
 
-## Flying schools by country
-- https://weoneaviation.in/flying-school/india — India-focused CPL-MEIR training route with DGCA alignment, stages, and typical timeline.
-- https://weoneaviation.in/flying-school/usa — FAA-track training overview in the USA with pathway from PPL to CPL and hour-building guidance.
-- https://weoneaviation.in/flying-school/canada — Canada route page currently mapped to the pilot training programs template and summary.
-- https://weoneaviation.in/flying-school/australia — CASA-accredited Australia training route with CPL/MEIR pathway, visa context, and DGCA conversion notes.
-- https://weoneaviation.in/flying-school/south-africa — SACAA-based South Africa CPL pathway with staged training flow and DGCA conversion intent.
+- https://weoneaviation.in/commercial-pilot-license — Complete guide to the Commercial Pilot Licence in India: eligibility, process, flying-hour requirements and career path.
+- https://weoneaviation.in/courses/cpl — CPL programme page with the Schedule II eligibility and flight-time tables, fee breakdown and step-by-step route.
+- https://weoneaviation.in/dgca-ground-classes — DGCA ground school: subjects, duration, eligibility and exam preparation.
+- https://weoneaviation.in/ppl-full-form — Private Pilot Licence: what PPL stands for, eligibility, training, privileges and limitations.
+- https://weoneaviation.in/student-pilot-license-spl — Student Pilot Licence: minimum age 16, what it permits, and how it leads to a PPL and CPL. Note: SPL in India is the Student Pilot Licence, not the United States Sport Pilot certificate.
+- https://weoneaviation.in/courses/atpl — ATPL ground preparation: minimum age 21, prerequisites, subjects, and what the licence does not give you.
+- https://weoneaviation.in/courses — All programmes in one place.
 
-## How to become a pilot
-- https://weoneaviation.in/how-to-become-a-pilot-after-12th — Step-by-step guide for becoming a pilot after Class 12 in India, including DGCA medical, exams, and training flow.
-- https://weoneaviation.in/how-to-become-a-pilot/after-12th — Structured roadmap page for students after 12th with eligibility, hours, and cost overview.
-- https://weoneaviation.in/how-to-become-a-pilot/in-india — India-specific CPL guide covering DGCA requirements, training routes, and salary progression context.
+## CPL detail pages
+
+- https://weoneaviation.in/commercial-pilot-license-eligibility — Eligibility criteria in full, including the education and medical requirements.
+- https://weoneaviation.in/commercial-pilot-license-syllabus — Subject-by-subject CPL syllabus.
+- https://weoneaviation.in/commercial-pilot-license-admission-process — Step-by-step admission route.
+- https://weoneaviation.in/commercial-pilot-license-salary — Commercial pilot pay in India, described as industry-wide ranges rather than promises.
+- https://weoneaviation.in/cost-transparency — What CPL training actually costs, line by line.
 
 ## DGCA subject guides
-- https://weoneaviation.in/air-navigation — Air Navigation guide for DGCA CPL/PPL preparation with flight-planning and navigation-system fundamentals.
-- https://weoneaviation.in/air-regulations — Air Regulations guide covering ICAO, DGCA frameworks, rules of the air, and licensing/compliance topics.
-- https://weoneaviation.in/aviation-meteorology — Aviation Meteorology guide focused on weather concepts, METAR/TAF literacy, and flight-safety decisions.
-- https://weoneaviation.in/technical-general — Technical General guide covering aircraft systems, aerodynamics, engines, and core pilot technical knowledge.
-- https://weoneaviation.in/rtr-a — RTR (Aero) guide under the Radio Telephone Operator (Restricted) Certificate and Licence Rules, 2025, covering eligibility, the written and practical examination structure, and exemptions.
 
-## Trust & credentials
-- https://weoneaviation.in/about-us — Organization background, mission and values, the named instructor panel (chief flying instructor and DGCA aviation medical examiners), and the approvals list.
-- https://weoneaviation.in/credentials — Verification page listing only what the academy can evidence on request: DGCA approval status and years in continuous operation since 2009. Instructor licence numbers, testimonials and training statistics were removed rather than restated.
-- https://weoneaviation.in/faqs — Frequently asked questions covering pilot training, DGCA exams, eligibility, and counselling topics.
+- https://weoneaviation.in/air-navigation — Flight planning and navigation-system fundamentals for the DGCA papers.
+- https://weoneaviation.in/air-regulations — ICAO Annexes, DGCA frameworks, rules of the air, licensing and compliance.
+- https://weoneaviation.in/aviation-meteorology — Weather concepts, METAR and TAF literacy, flight-safety decisions.
+- https://weoneaviation.in/technical-general — Aircraft systems, aerodynamics, engines and core technical knowledge.
+- https://weoneaviation.in/rtr-a — RTR (Aero) under the Radio Telephone Operator (Restricted) Certificate and Licence Rules, 2025: eligibility, written and practical structure, exemptions.
+
+## DGCA process
+
+- https://weoneaviation.in/dgca-pariksha — The DGCA examination system, schedule and preparation.
+- https://weoneaviation.in/dgca-computer-number — Obtaining a DGCA computer number, the prerequisite for sitting the papers.
+- https://weoneaviation.in/dgca-full-form — What the DGCA is and what it regulates.
+
+## How to become a pilot
+
+- https://weoneaviation.in/how-to-become-a-pilot-after-12th — Step-by-step route after Class 12, including the medical, exams and training flow.
+- https://weoneaviation.in/how-to-become-a-pilot/after-12th — Roadmap for students after 12th: eligibility, hours and cost overview.
+- https://weoneaviation.in/how-to-become-a-pilot/in-india — India-specific CPL guide covering DGCA requirements and training routes.
+- https://weoneaviation.in/your-guide-on-how-to-become-a-pilot-in-india — Longer-form guide to the whole path.
+
+## Flying schools by country
+
+- https://weoneaviation.in/flying-school/india — India CPL-MEIR route with DGCA alignment, stages and timeline.
+- https://weoneaviation.in/flying-school/usa — FAA-track training with the pathway from PPL to CPL and hour building.
+- https://weoneaviation.in/flying-school/canada — Canada training route and programme summary.
+- https://weoneaviation.in/flying-school/australia — CASA-accredited route with CPL/MEIR pathway, visa context and DGCA conversion.
+- https://weoneaviation.in/flying-school/south-africa — SACAA-based CPL pathway with staged training and DGCA conversion.
+- https://weoneaviation.in/best-flight-schools-in-usa — Comparison of United States training options.
+
+## Airline cadet and interview preparation
+
+- https://weoneaviation.in/airline-preparation-course — Airline interview preparation and career guidance for pilots, cabin crew and aviation professionals.
+- https://weoneaviation.in/airindia-pilot-preparation — Air India pilot selection and Adapt test preparation.
+- https://weoneaviation.in/indigo-pilot-preparation — IndiGo Junior First Officer selection and Adapt test preparation.
+- https://weoneaviation.in/emirates-cadet-pilot-program — Emirates cadet pilot programme overview.
+- https://weoneaviation.in/qatar-airways-cadet-pilot-program — Qatar Airways cadet pilot programme overview.
+- https://weoneaviation.in/airline-preparatory-classes/interview-preparation — Airline interview technique and preparation.
+- https://weoneaviation.in/airline-preparatory-classes/psychometry — Psychometric assessment preparation.
+- https://weoneaviation.in/airline-preparatory-classes/cass-compass — CASS and COMPASS assessment preparation.
+
+## Locations
+
+- https://weoneaviation.in/pilot-training-in-india — Pilot training across India: routes, schools and requirements.
+- https://weoneaviation.in/pilot-training-in-delhi — Training from the Dwarka, New Delhi centre.
+
+## Trust and credentials
+
+- https://weoneaviation.in/about-us — Organisation background, mission, the named instructor panel, and the approvals list.
+- https://weoneaviation.in/credentials — Only what the academy can evidence on request: DGCA approval status and continuous operation since 2009. Instructor licence numbers, testimonials and training statistics were removed rather than restated.
+- https://weoneaviation.in/faqs — Frequently asked questions on training, DGCA exams, eligibility and counselling.
+- https://weoneaviation.in/student-checklists — Practical checklists for each stage of the licence.
+- https://weoneaviation.in/lead-magnets — Free downloadable guides and checklists.
+- https://weoneaviation.in/blogs — Articles on DGCA exams, training routes and aviation careers.
 
 ## Contact
-- https://weoneaviation.in/contact — Contact and enquiry page with office details, counselling form, and WhatsApp channel.
+
+- https://weoneaviation.in/contact — Office details, counselling form and WhatsApp channel.

@@ -8,7 +8,7 @@ import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import StructuredData from '../components/StructuredData';
 import { generateFAQSchema } from '../lib/schema';
-import { LICENCES } from '../lib/facts';
+import { LICENCES, MIN_AGE, CPL_HOURS } from '../lib/facts';
 
 /*
  * REWRITTEN FROM A 16-LINE STUB — AND CORRECTED ON THE FACTS.

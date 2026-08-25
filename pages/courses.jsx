@@ -37,7 +37,7 @@ const courses = [
         highlights: [
             'Ground school + simulator + flight training',
             'DGCA exam preparation included',
-            'Airline interview prep & placement support',
+            'Airline interview preparation and career guidance',
             'Training options in India, USA & South Africa',
         ],
         href: '/commercial-pilot-license',
@@ -62,7 +62,7 @@ const courses = [
             'Foundation for CPL upgrade',
             'Flexible full-time & weekend batches',
         ],
-        href: '/private-pilot-license',
+        href: '/ppl-full-form',
         ctaLabel: 'Explore PPL Course →',
         bg: 'from-slate-700 to-slate-900',
     },
@@ -106,7 +106,7 @@ const courses = [
             'Convert FAA license to DGCA on return',
             'Visa & travel assistance provided',
         ],
-        href: '/flight-training-usa',
+        href: '/flying-school/usa',
         ctaLabel: 'Explore USA Training →',
         bg: 'from-red-800 to-red-950',
     },
@@ -128,7 +128,7 @@ const courses = [
             'Budget-friendly vs USA & Australia',
             'Convert license to DGCA on return',
         ],
-        href: '/flight-training-south-africa',
+        href: '/flying-school/south-africa',
         ctaLabel: 'Explore South Africa Training →',
         bg: 'from-yellow-700 to-yellow-900',
     },
@@ -177,7 +177,7 @@ const syllabus = [
 const eligibilityList = [
     { label: 'Age', desc: 'Minimum 17 years for PPL; 18 years for CPL.' },
     { label: 'Education', desc: '10+2 with Physics and Mathematics (PCM). Minimum 50% marks.' },
-    { label: 'DGCA Class 1–2 Medical', desc: 'Candidate must clear DGCA Class 1 and Class 2 medical examinations.' },
+    { label: 'DGCA medical', desc: 'Candidate must clear the DGCA-mandated medical fitness assessment.' },
     { label: 'Total Flight Hours', desc: 'Minimum 200 hours of flight time required for CPL (DGCA mandate).' },
     { label: 'PIC Hours', desc: '100 hours as Pilot-in-Command (PIC) for CPL eligibility.' },
     { label: 'Instrument Flying', desc: 'At least 10 hours of instrument flying instruction required.' },
@@ -195,9 +195,9 @@ const whyWeOne = [
     { icon: '🏛️', title: 'DGCA Approved', desc: 'All our programs are fully approved and regulated by DGCA, ensuring your license is valid nationwide.' },
     { icon: '🌍', title: 'International Training', desc: 'We offer flight training in USA and South Africa for global exposure and FAA / SACAA certification.' },
     { icon: '👨‍✈️', title: 'Expert Instructors', desc: 'Learn from experienced commercial pilots and DGCA-certified ground instructors.' },
-    { icon: '📈', title: 'Placement Support', desc: 'placement assistance with airline interview prep and career counselling.' },
+    { icon: '📈', title: 'Career Guidance', desc: 'Interview preparation and career guidance, including airline interview practice and counselling.' },
     { icon: '💸', title: 'Budget Friendly', desc: 'Affordable ground classes starting at ₹2 Lakh. Scholarship available for class toppers.' },
-    { icon: '🏥', title: 'Medical Assistance', desc: 'We assist with DGCA Class 1 & Class 2 medical tests through our approved network.' },
+    { icon: '🏥', title: 'Medical Assistance', desc: 'We assist with DGCA medical fitness assessments through our approved network.' },
 ];
 
 const careerOptions = [
@@ -453,10 +453,10 @@ export default function CoursesPage() {
                             <ScrollReveal key={item.title} delay={i * 80}>
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 card-hover hover:border-av-orange/30 transition-all h-full flex gap-4">
                                     <div className="text-3xl flex-shrink-0">{item.icon}</div>
-                                    <div>
+                                    <section>
                                         <h3 className="font-montserrat font-bold text-av-blue mb-2">{item.title}</h3>
                                         <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-                                    </div>
+                                    </section>>
                                 </div>
                             </ScrollReveal>
                         ))}

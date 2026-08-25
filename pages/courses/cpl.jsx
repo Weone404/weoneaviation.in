@@ -4,6 +4,10 @@ import HeroSlider from '../../components/HeroSlider';
 import LeadForm from '../../components/LeadForm';
 import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
+import Breadcrumb from '../../components/Breadcrumb';
+import QuickAnswer from '../../components/QuickAnswer';
+import SummaryBox from '../../components/SummaryBox';
+import PeopleAlsoAsk from '../../components/PeopleAlsoAsk';
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Most Popular Course', title: 'Commercial Pilot', highlight: 'License (CPL)', sub: 'Fly for airlines – India\'s most comprehensive CPL training program' },
@@ -18,7 +22,7 @@ const syllabus = [
 const eligibility = [
     { label: 'Age', desc: 'Candidate Must Be Atleast 18 Years For Getting Commercial Pilot License.' },
     { label: 'Education', desc: 'The qualifications to become a pilot include passing 12th grade with Mathematics and Physics.' },
-    { label: 'Dgca Class 1-2 Medical', desc: 'The qualification of becoming a pilot requires the candidate to have no physical issues and to qualify for DGCA Class 1 and Class 2 medical examinations.' },
+    { label: 'DGCA medical', desc: 'The qualification of becoming a pilot requires the candidate to have no physical issues and to qualify for DGCA-mandated medical fitness assessments.' },
     { label: 'Total Flight Hours', desc: 'Candidate must have completed a minimum of 200 hours of flight time by DGCA.' },
     { label: 'Pilot-in-Command (PIC) Hours', desc: 'This should include 100 hours of flight time as Pilot-in-Command (PIC).' },
     { label: 'Instrument Flying Training', desc: 'At least 10 hours of instruction in flying with instruments is required.' },
@@ -38,8 +42,8 @@ const medicalChecks = [
 ];
 
 const feeTable = [
-    { num: 1, category: 'DGCA Class 2 Medical Test', cost: '₹3,000 - ₹6,000' },
-    { num: 2, category: 'DGCA Class 1 Medical Test', cost: '₹5,000 - ₹10,000' },
+    { num: 1, category: 'Medical Examination Fees', cost: '₹3,000 - ₹6,000' },
+    { num: 2, category: 'Medical Examination Fees', cost: '₹5,000 - ₹10,000' },
     { num: 3, category: 'Computer Number Registration', cost: '₹2,000 - ₹2,500' },
     { num: 4, category: 'DGCA Exam Fees (per paper)', cost: '₹2,500 - ₹3,000' },
     { num: 5, category: 'CPL Ground School Fees', cost: '₹1,50,000 - ₹3,00,000' },
@@ -51,9 +55,9 @@ const feeTable = [
 ];
 
 const howToGet = [
-    { title: 'Choose a Right Ground Classes', desc: 'At First, You Have to Choose a Right Ground Classes Like We One Aviation Academy Which Gives You Advance Pilot Training and Support You Till You will Not Make Commercial air Pilot.' },
-    { title: 'Prepare For Dgca Exam', desc: 'After Taking Admission in Dgca Ground Classes, You Have to Prepare Yourself For Dgca Exam for Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific and Radio Telephony (RTR).' },
-    { title: 'Join Flight Training Academy', desc: 'After Clear Dgca Exam, You Have To Join Flight Training And Complete 200 Hrs of Flying From Any Flying Schools.' },
+    { title: 'Choose a Right Ground Classes', desc: 'Pick your ground school first. The DGCA papers gate everything that follows, and a school teaching to the current syllabus saves you a full exam cycle. We run these classes in Dwarka, New Delhi, and stay with students through each attempt.' },
+    { title: 'Prepare For Dgca Exam', desc: 'Then sit the papers. You prepare Air Navigation, Aviation Meteorology, Air Regulations, Technical General and Technical Specific, and you clear RTR (A) separately under the Radio Telephone Operator (Restricted) Certificate and Licence Rules, 2025.' },
+    { title: 'Join Flight Training Academy', desc: 'Then fly. You join a flying school in India or abroad and build the 200 hours Section J requires, including the 100 hours as pilot-in-command that sit inside that total.' },
 ];
 
 const prepTips = [
@@ -134,6 +138,35 @@ const careerOptions = [
     },
 ];
 
+/*
+ * People-also-ask block. Deliberately disjoint from the nine questions in
+ * data/pageFaqs.js['/courses/cpl'], which Layout already renders with FAQPage
+ * schema at the foot of this page. Asking the same question twice on one URL
+ * splits the answer an engine extracts; these pick up what the FAQ leaves out.
+ */
+const peopleAlsoAsk = [
+    {
+        q: 'Can I start CPL training right after my Class 12 board exams?',
+        a: 'You can start DGCA ground classes while your results are pending. The licence itself is a different matter: paragraph 1(a) of Section J requires you to be 18 on the date you apply, and the DGCA will not accept the application until your 10+2 marksheet showing Physics and Mathematics is in hand.',
+    },
+    {
+        q: 'What if I did not take Mathematics in Class 12?',
+        a: 'Paragraph 1(b) asks for Physics and Mathematics at 10+2 level from a recognised Board or University. Students who took Biology or Commerce clear both subjects as private candidates through NIOS and then apply. It adds time, not a barrier.',
+    },
+    {
+        q: 'Do the 200 hours have to be flown in India?',
+        a: 'No. Section J counts total flight time as pilot of an aeroplane, wherever it was logged. Hours built with a partner school in the USA, Canada or Australia count towards the same total, and the DGCA issues the Indian licence after conversion.',
+    },
+    {
+        q: 'What happens if my flying hours are more than five years old?',
+        a: 'Paragraph 1(e) requires the 200 hours to fall inside the five years immediately preceding your application. Hours flown before that window stop counting. A long gap between finishing the flying and filing the application costs real money, so plan the two together.',
+    },
+    {
+        q: 'Is RTR (A) one of the DGCA CPL papers?',
+        a: 'No. RTR (A) sits under a separate instrument, the Radio Telephone Operator (Restricted) Certificate and Licence Rules, 2025, and the DGCA administers it directly. You still need it: paragraph 1(g) makes a current Flight Radio Telephone Operator Licence a condition of CPL issue.',
+    },
+];
+
 const LAST_UPDATED = 'August 19, 2026';
 const LAST_UPDATED_ISO = '2026-08-19';
 
@@ -150,7 +183,7 @@ const cplCourseSchema = {
 
 export default function CPL() {
     return (
-        <Layout title="Commercial Pilot License (CPL) Training in India | We One Aviation" description="DGCA approved CPL training in India. Become a commercial pilot with We One Aviation Academy. Expert instructors, modern aircraft, placement support.">
+        <Layout title="CPL Training in India: Eligibility, 200 Hours, Fees | We One Aviation" description="Commercial Pilot Licence requirements in India under the Aircraft Rules, 1937: minimum age 18, 10+2 with Physics and Maths, 200 hours of flight time, DGCA papers and RTR (A). Ground classes in Dwarka, New Delhi.">
             <Head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(cplCourseSchema) }} />
             </Head>
@@ -161,19 +194,38 @@ export default function CPL() {
                 <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
                     <div className="lg:col-span-2">
                         <ScrollReveal>
+                            <Breadcrumb />
                             <div className="section-tag">CPL Program</div>
                             <h1 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
-                                Commercial Pilot License (CPL) Training
+                                Commercial Pilot License (CPL) Training in India
                             </h1>
 
-                            {/* Direct answer. Written to stand alone if extracted. */}
-                            <p className="text-gray-700 leading-relaxed mb-6 text-base">
-                                The Commercial Pilot Licence (Aeroplanes) is the licence required to fly commercially in India. Schedule II, Section J of the Aircraft Rules, 1937 sets a minimum age of 18, Class Ten plus Two with Physics and Mathematics, 200 hours of flight time, a medical certificate, and a Flight Radio Telephone Operator&rsquo;s Licence.
-                            </p>
+                            {/*
+                              Inverted pyramid. The statutory answer sits above everything
+                              else on the page, so an extraction pass that reads only the
+                              first block still comes away with the right numbers.
+                            */}
+                            <QuickAnswer
+                                question="What is a Commercial Pilot Licence and who can apply for one in India?"
+                                answer="A CPL (Aeroplanes) is the licence you need to be paid to fly. Schedule II, Section J of the Aircraft Rules, 1937 sets the bar: minimum age 18, Class 10+2 with Physics and Mathematics, 200 hours of flight time, a medical certificate, and a Flight Radio Telephone Operator Licence."
+                            />
+
+                            <SummaryBox
+                                title="CPL requirements at a glance"
+                                items={[
+                                    'Minimum age: 18 years on the date of application (Section J, para 1(a))',
+                                    'Education: Class 10+2 with Physics and Mathematics from a recognised Board or University (para 1(b))',
+                                    'Total flight time: 200 hours as pilot of an aeroplane, flown within the five years before you apply (para 1(e))',
+                                    'Inside that 200: 100 hours pilot-in-command, 20 hours cross-country PIC, 10 hours instrument, 5 hours night (paras 1(e)(i) to (iv))',
+                                    'Written papers: Air Regulations, Air Navigation, Meteorology, Aircraft and Engines, plus a Signals practical (para 1(d))',
+                                    'Radio: a current Flight Radio Telephone Operator Licence, RTR (A) (para 1(g))',
+                                    'Skill test: flown for an examiner on the type applied for, within the six months before you apply (para 1(h))',
+                                ]}
+                            />
 
                             <p className="text-gray-500 text-xs mb-8">{`Last updated: ${LAST_UPDATED}`}</p>
 
-                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">CPL eligibility under the Aircraft Rules, 1937</h2>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What are the eligibility requirements for a CPL in India?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-4">
                                 The requirements below are set by the Aircraft Rules, 1937 (continued in force by section 43(2) of the Bharatiya Vayuyan Adhiniyam, 2024), Schedule II, Section J. They apply to a Commercial Pilot&rsquo;s Licence (Aeroplanes) and hold wherever the training is done.
                             </p>
@@ -221,8 +273,11 @@ export default function CPL() {
                                     </tbody>
                                 </table>
                             </div>
+                            <p className="text-gray-500 text-xs mb-6">
+                                Medical examination fees are subject to DGCA medical cell and examiner rates, which vary by centre and are revised from time to time. Treat every figure above as an estimate to budget against, not a quotation.
+                            </p>
 
-                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">CPL flight-time requirement</h2>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">How many flying hours do you need for a CPL?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-4">
                                 Paragraph 1(e) of Section J sets the flying experience. The 200 hours is a total; the rows beneath it are minimums that sit inside that total, not additions to it.
                             </p>
@@ -286,7 +341,7 @@ export default function CPL() {
                             </div>
 
                             {/* Syllabus */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-5">Training Syllabus</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-5">What does the CPL training syllabus cover?</h2>
                             <div className="space-y-4">
                                 {syllabus.map((phase, i) => (
                                     <div key={phase.phase} className="border border-gray-200 rounded-xl overflow-hidden">
@@ -306,7 +361,7 @@ export default function CPL() {
                             </div>
 
                             {/* Eligibility */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mt-10 mb-5">Eligibility Criteria</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mt-10 mb-5">What else does the DGCA check before it issues a CPL?</h2>
                             <ul className="space-y-3 mb-10">
                                 {eligibility.map((item) => (
                                     <li key={item.label} className="flex gap-2 items-start text-sm text-gray-600">
@@ -317,15 +372,15 @@ export default function CPL() {
                             </ul>
 
                             {/* CPL Fees */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-2">Commercial Pilot Course (CPL) Fees in India</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-2">How much does CPL training cost in India?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                                Cost to become a pilot in India is Depend on Flying Schools From Where you will do Flying. So There is All Details of Cpl Course fees From Classes to Cockpit-
+                                What you pay depends almost entirely on where you fly, because flying is the largest line item by a wide margin. The table below breaks the India pathway down from the first medical to licence issue, so you can see which costs the DGCA fixes and which move with the school you pick.
                             </p>
 
                             {/* 1) DGCA Medical */}
-                            <h4 className="font-montserrat font-bold text-av-blue mb-3">1) DGCA Class 1-2 Medical Test</h4>
+                            <h4 className="font-montserrat font-bold text-av-blue mb-3">1) DGCA medical examination</h4>
                             <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                At First You Have To Clear Dgca Class 1-2 Medical From Any Dgca Medical Doctors. In Dgca Medical, Doctors Check candidate's health to ensure they meet the physical and mental fitness standards required for flying. The Dgca Medical examination includes:
+                                Book the medical before you spend anything on training. A DGCA-approved examiner checks that you meet the fitness standards the licence requires, and finding a disqualifying condition after you have paid a flying-school deposit is an expensive way to learn it. The examination covers:
                             </p>
                             <div className="space-y-2 mb-4">
                                 {medicalChecks.map((check) => (
@@ -336,8 +391,8 @@ export default function CPL() {
                                 ))}
                             </div>
                             <p className="text-sm text-gray-600 mb-1">💰 <span className="font-semibold text-av-blue">DGCA Medical Fees (Approximate):</span></p>
-                            <p className="text-sm text-gray-600 mb-1">Class 1 Medical: ₹5,000 – ₹10,000 (at DGCA-approved hospitals)</p>
-                            <p className="text-sm text-gray-600 mb-8">Class 2 Medical: ₹3,000 – ₹6,000 (at DGCA-approved doctors)</p>
+                            <p className="text-sm text-gray-600 mb-1">DGCA Medical: ₹5,000 – ₹10,000 (at DGCA-approved hospitals)</p>
+                            <p className="text-sm text-gray-600 mb-8">DGCA Medical: ₹3,000 – ₹6,000 (at DGCA-approved doctors)</p>
 
                             {/* 2) DGCA Exam */}
                             <h4 className="font-montserrat font-bold text-av-blue mb-3">2) DGCA CPL Exams and Fees</h4>
@@ -376,7 +431,7 @@ export default function CPL() {
                                     </thead>
                                     <tbody>
                                         {feeTable.map((row, i) => (
-                                            <tr key={row.category} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                                            <tr key={row.num} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                                                 <td className="p-3 text-gray-500 text-xs">{row.num}</td>
                                                 <td className="p-3 text-gray-700 text-xs">{row.category}</td>
                                                 <td className="p-3 text-av-orange font-semibold text-xs">{row.cost}</td>
@@ -406,7 +461,7 @@ export default function CPL() {
                             </div>
 
                             {/* How to Get CPL */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-5">How to Get a Commercial Pilot License in India</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-5">How do you get a Commercial Pilot Licence in India, step by step?</h2>
                             <ol className="space-y-3 mb-8">
                                 {howToGet.map((item, i) => (
                                     <li key={item.title} className="flex gap-3 items-start text-sm text-gray-600">
@@ -428,7 +483,7 @@ export default function CPL() {
                             </ul>
 
                             {/* Salary */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-2">Commercial Pilot License Salary</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-2">How much does a commercial pilot earn in India?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-6">
                                 The salary of a commercial pilot depends on a few things, like where they work, how much experience they have, and what kind of plane they fly. Let's look at it step by step:
                             </p>
@@ -460,7 +515,7 @@ export default function CPL() {
                             </ul>
 
                             {/* Career Opportunities */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-2">Career Opportunities for Commercial Pilot License Holders in India</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-2">What jobs can you do with a Commercial Pilot Licence?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-6">
                                 Getting a Commercial Pilot License (CPL) in India opens the door to an exciting and rewarding career in aviation. With a CPL, you're allowed to fly planes for money, and there are many job options to explore. Let's look at the different career paths you can take as a CPL holder in India, explained in simple and easy language.
                             </p>
@@ -480,22 +535,24 @@ export default function CPL() {
                                 ))}
                             </div>
 
+                            <PeopleAlsoAsk items={peopleAlsoAsk} />
+
                             {/* Final CTA */}
-                            <div className="bg-av-blue rounded-2xl p-8 text-center mb-10">
+                            <aside className="bg-av-blue rounded-2xl p-8 text-center my-10">
                                 <h3 className="font-montserrat text-xl font-bold text-white mb-3">Start Your Commercial Flight Training With We One Aviation Academy</h3>
                                 <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-3">
-                                    We One Aviation Academy is a DGCA-approved pilot training institute. We Offers Ground Classes to Flight Training. Our Budget Friendly Ground Classes Help Lots of People To Become a Pilot.
+                                    We One Aviation Academy is a DGCA-approved pilot training institute in Dwarka, New Delhi. We teach the ground subjects for the DGCA papers and place students with flying schools in India and abroad for the 200 hours.
                                 </p>
                                 <p className="text-white/60 text-sm mb-5">Join us and take the first step toward the skies! ✈️</p>
                                 <Link href="/flying-school" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
                                     Join Flight Training Now
                                 </Link>
-                            </div>
+                            </aside>
 
                             {/* Student Reviews */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-2">Our Commercial Pilot Students Reviews</h3>
+                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-2">What do students say about the DGCA ground classes?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed">
-                                There is Some of Our Students Who Become Pilot Through Our Academy And Right Now They All Are Success Pilot in Airlines.
+                                Students who sat these ground classes describe the pace, the paper-by-paper workload and the support they got, in their own words.
                             </p>
 
                         </ScrollReveal>
@@ -513,7 +570,7 @@ export default function CPL() {
                                 <ul className="space-y-2 text-sm text-white/80">
                                     <li>✓ 10+2 with Physics & Maths</li>
                                     <li>✓ Minimum 18 years of age (Aircraft Rules, 1937, Schedule II, Section J)</li>
-                                    <li>✓ DGCA Medical Class 1</li>
+                                    <li>✓ DGCA medical certificate</li>
                                     <li>✓ English language proficiency</li>
                                     <li>✓ Valid passport (for intl. training)</li>
                                 </ul>

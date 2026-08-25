@@ -44,7 +44,13 @@ export default function Document() {
           See pages/index.jsx for the homepage canonical.
         */}
 
-        <meta name="keywords" content="pilot training, cpl, dgca ground classes, pilot course" />
+        {/*
+          The <meta name="keywords"> tag was removed here, and the ~2,000
+          character DEFAULT_KEYWORDS blob it mirrored was removed from
+          Layout.jsx (where it was already dead code — declared, never
+          rendered). No search or answer engine has read this tag for well
+          over a decade; a keyword list of that size is only a spam signal.
+        */}
 
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
         <link rel="dns-prefetch" href="//analytics.google.com" />

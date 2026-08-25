@@ -17,7 +17,7 @@ const whyChoose = [
     { icon: '🛩️', title: 'Hands-On Training', desc: 'Practical experience is a cornerstone of our courses. Through hands-on training, including simulator sessions and industry visits, students gain valuable exposure to real-world scenarios, enhancing their readiness for the field.' },
     { icon: '🤝', title: 'Networking Opportunities', desc: 'Our institution facilitates networking events, connecting students with industry professionals, fellow aviators, and potential employers. Building a strong network is crucial in the competitive aviation landscape.' },
     { icon: '🌍', title: 'Global Recognition', desc: "We One Aviation's courses are globally recognized, opening doors for graduates to pursue opportunities not only in India but also internationally. Our reputation is a testament to the quality of education provided." },
-    { icon: '💼', title: 'Placement Assistance', desc: 'A dedicated placement cell at We One Aviation assists students in securing job opportunities with leading airlines globally. Our commitment extends beyond education to supporting graduates in launching their careers.' },
+    { icon: '💼', title: 'Interview Preparation', desc: 'Interview preparation and career guidance at We One Aviation assists students in securing job opportunities with leading airlines globally. Our commitment extends beyond education to supporting graduates in launching their careers.' },
 ];
 
 const contactWays = [
@@ -70,7 +70,7 @@ const pilotPrepSteps = [
 
 export default function AirlinePreparation() {
     return (
-        <Layout title="Airline Preparation Course In Dwarka | We One Aviation Academy" description="Join We One Aviation's Airline Preparation Course in Dwarka. Comprehensive training for pilots, cabin crew, and aviation professionals. Expert faculty, state-of-the-art facilities, placement support.">
+        <Layout title="Airline Preparation Course In Dwarka | We One Aviation Academy" description="Airline Preparation Course in Dwarka, New Delhi. Interview preparation and career guidance for pilots, cabin crew, and aviation professionals. Airline interview practice, licence-route planning and career guidance.">
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
@@ -94,7 +94,7 @@ export default function AirlinePreparation() {
 
                             {/* Quick Facts */}
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-                                {[['Dwarka, Delhi', 'Location'], ['All Roles', 'Coverage'], ['Global', 'Recognition'], ['100%', 'Placement Support']].map(([val, label]) => (
+                                {[['Dwarka, Delhi', 'Location'], ['All Roles', 'Coverage'], ['Global', 'Recognition'], ['Every batch', 'Interview Prep']].map(([val, label]) => (
                                     <div key={label} className="bg-av-light rounded-xl p-4 text-center">
                                         <div className="font-montserrat font-bold text-av-blue text-sm">{val}</div>
                                         <div className="text-gray-500 text-xs mt-1">{label}</div>
@@ -260,7 +260,7 @@ export default function AirlinePreparation() {
                                 <p className="text-white/80 text-sm mb-3">Airline Preparation Course:</p>
                                 <div className="text-2xl font-montserrat font-black">Dwarka, Delhi</div>
                                 <div className="text-white/70 text-xs mt-1">Globally Recognized Certificate</div>
-                                <div className="text-white/70 text-xs mt-1">Placement Assistance</div>
+                                <div className="text-white/70 text-xs mt-1">Career Guidance</div>
                                 <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
                                     Get Free Counselling

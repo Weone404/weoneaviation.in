@@ -60,7 +60,7 @@ const advantages = [
 ];
 
 const trainingSteps = [
-    { step: '01', title: 'DGCA Medicals', desc: 'Complete your DGCA Class 2 & 1 Medicals and join DGCA Ground Classes to clear theory exams.' },
+    { step: '01', title: 'DGCA Medicals', desc: 'Complete your DGCA medical certification and join DGCA Ground Classes to clear theory exams.' },
     { step: '02', title: 'DGCA Theory', desc: 'Complete ground theory preparation and clear DGCA theory examinations before departure.' },
     { step: '03', title: 'Choose Flight School', desc: 'Select a CASA-approved Australian flight school with structured Diploma programs and modern aircraft.' },
     { step: '04', title: 'CASA Medicals', desc: 'Obtain your CASA Class 1 Medical Certificate — mandatory before commencing any flight training in Australia.' },
@@ -230,7 +230,7 @@ export default function AustraliaPilotTrainingPage() {
                             { icon: '🎂', title: 'Age', desc: 'A Student Pilot Licence, which allows flight training to begin, requires 16 years; a Commercial Pilot Licence requires 18 (Aircraft Rules, 1937, Schedule II, Sections B and J).' },
                             { icon: '📚', title: 'Education', desc: '10+2 with Physics & Math or equivalent is required. Non-science students can qualify via NIOS.' },
                             { icon: '🗣️', title: 'English Proficiency', desc: 'IELTS 5.5 in each band and 6.0 overall is required for the Australian Student Visa.' },
-                            { icon: '🏥', title: 'Medical', desc: 'Both CASA Class 1 and DGCA Class 1 medicals must be completed before commencing training.' },
+                            { icon: '🏥', title: 'Medical', desc: 'Both the CASA Class 1 Medical and the DGCA medical certificate must be completed before commencing training.' },
                             { icon: '🛂', title: 'Visa', desc: 'Australian Student Visa (Subclass 500) allows students to study full-time and work part-time during training.' },
                             { icon: '✅', title: 'Overall', desc: 'Meet all criteria above and you are ready to begin your pilot training journey in Australia with a CASA-approved school.' },
                         ].map((item, i) => (

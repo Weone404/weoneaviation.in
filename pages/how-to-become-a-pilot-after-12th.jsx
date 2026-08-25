@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import StructuredData from '../components/StructuredData';
+import { generateHowToSchema } from '../lib/schema';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 
@@ -21,10 +23,10 @@ const processSteps = [
     {
         num: '3',
         icon: '🩺',
-        title: 'Clear DGCA Class II & Class I Medical Examination',
+        title: 'Clear DGCA Medical Examination',
         desc: 'Medical fitness is one of the most important requirements for pilot training.',
         note: 'You must undergo:',
-        list: ['DGCA Class II Medical Examination', 'DGCA Class I Medical Examination'],
+        list: ['DGCA medical examination'],
         footnote: 'These medical assessments evaluate vision, hearing, cardiovascular health, neurological fitness, and overall physical condition to ensure candidates meet aviation medical standards.',
     },
     {
@@ -155,12 +157,22 @@ const articleSchema = {
     publisher: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
 };
 
+// Built from the SAME `processSteps` array the page renders.
+const howToSchema = generateHowToSchema({
+  name: 'How to become a pilot after 12th in India',
+  description: 'Step-by-step route from Class 12 to a Commercial Pilot Licence: the DGCA computer number, the medical, ground classes, the theory papers, an approved flying school, the required hours and licence issue.',
+  url: 'https://weoneaviation.in/how-to-become-a-pilot-after-12th',
+  steps: processSteps,
+});
+
 export default function BecomeAPilotPage() {
     return (
         <Layout
             title="How to Become a Pilot After 12th in India | Complete Guide 2026"
             description="Learn how to become a pilot after 12th in India. Check eligibility, DGCA requirements, pilot training process, fees, duration, salary, and career opportunities with We One Aviation."
         >
+            <StructuredData data={howToSchema} />
+
             <Head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
             </Head>

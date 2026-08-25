@@ -61,10 +61,19 @@ export const questions = {
         },
         {
             id: 'ar4',
-            question: 'A pilot\'s medical certificate Class 1 is required for which license?',
-            options: ['SPL only', 'PPL only', 'CPL and ATPL', 'All licenses'],
+            /*
+             * REPLACED. The previous ar4 asked which licence needs a Class 1
+             * medical. Once the Class 1 / Class 2 distinction was removed from
+             * the site — it sits on the unsourced list in
+             * scripts/check-claims.js — the question had no distinguishable
+             * correct answer left and its explanation restated both options
+             * identically. Swapped for a requirement that IS sourced:
+             * Aircraft Rules, 1937, Schedule II, Section J, paragraph 1(e).
+             */
+            question: 'Within what period before applying for a CPL must the required 200 hours of flight time have been completed?',
+            options: ['2 years', '3 years', '5 years', 'No time limit applies'],
             correct: 2,
-            explanation: 'A Class 1 medical certificate is mandatory for holders of CPL and ATPL. PPL holders require a Class 2 medical certificate.',
+            explanation: 'Schedule II, Section J, paragraph 1(e) of the Aircraft Rules, 1937 requires the 200 hours to have been flown within the five years immediately preceding the application. Hours logged earlier than that do not count toward the total.',
         },
         {
             id: 'ar5',
@@ -99,10 +108,10 @@ export const questions = {
         },
         {
             id: 'ar8',
-            question: 'What is the validity period of a Class 1 medical certificate for a pilot below 40 years of age?',
+            question: 'What is the validity period of a DGCA medical certificate for a pilot below 40 years of age?',
             options: ['6 months', '12 months', '24 months', '36 months'],
             correct: 1,
-            explanation: 'For CPL/ATPL holders below 40 years of age, the Class 1 medical certificate is valid for 12 months.',
+            explanation: 'For CPL/ATPL holders below 40 years of age, the DGCA medical certificate is valid for 12 months.',
         },
         {
             id: 'ar9',

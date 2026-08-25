@@ -27,7 +27,7 @@ const eligibility = [
     { icon: '🎂', label: 'Age', desc: 'Typically between 18 and 26 years' },
     { icon: '🌍', label: 'Nationality', desc: 'Primarily Qatari nationals, but some international positions open occasionally' },
     { icon: '🗣️', label: 'Language', desc: 'Fluent in English (IELTS may be required)' },
-    { icon: '🩺', label: 'Medical Fitness', desc: 'Must pass a Class 1 Aviation Medical Exam' },
+    { icon: '🩺', label: 'Medical Fitness', desc: 'Must pass a DGCA Aviation Medical Exam' },
     { icon: '✈️', label: 'Prior Experience', desc: 'No prior flying experience is required – the program is designed to train from zero to ATPL' },
 ];
 
@@ -54,7 +54,7 @@ export default function QatarAirwaysCadet() {
 
                             {/* Quick Facts */}
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-                                {[['18–26 Years', 'Age Limit'], ['Zero to ATPL', 'Training Level'], ['Doha, Qatar', 'Training Base'], ['Class 1', 'Medical Required']].map(([val, label]) => (
+                                {[['18–26 Years', 'Age Limit'], ['Zero to ATPL', 'Training Level'], ['Doha, Qatar', 'Training Base'], ['DGCA', 'Medical Required']].map(([val, label]) => (
                                     <div key={label} className="bg-av-light rounded-xl p-4 text-center">
                                         <div className="font-montserrat font-bold text-av-blue text-sm">{val}</div>
                                         <div className="text-gray-500 text-xs mt-1">{label}</div>
@@ -143,7 +143,7 @@ export default function QatarAirwaysCadet() {
                                     <li>✓ Age: 18–26 years</li>
                                     <li>✓ 12th with Math, English & Physics</li>
                                     <li>✓ Fluent English (IELTS preferred)</li>
-                                    <li>✓ Class 1 Medical Certificate</li>
+                                    <li>✓ DGCA medical certificate</li>
                                     <li>✓ No prior flying experience needed</li>
                                     <li>✓ Zero to ATPL training</li>
                                 </ul>

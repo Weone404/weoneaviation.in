@@ -14,7 +14,7 @@ const stats = [
 const eligibilitySteps = [
     { step: '01', icon: '🎂', title: 'Age Requirement', short: '17 years minimum' },
     { step: '02', icon: '📚', title: 'Educational Qualification', short: '10+2 with Physics & Maths' },
-    { step: '03', icon: '🩺', title: 'Medical Fitness', short: 'Class 1 & 2 Certificate' },
+    { step: '03', icon: '🩺', title: 'Medical Fitness', short: 'DGCA Medical Certificate' },
     { step: '04', icon: '🗣️', title: 'Language Proficiency', short: 'English (ELP Test)' },
     { step: '05', icon: '🌍', title: 'Nationality', short: 'Open to all nationalities' },
     { step: '06', icon: '🪪', title: 'Student Pilot License', short: 'SPL required first' },
@@ -32,7 +32,7 @@ const flyingHours = [
 const splRequirements = [
     'Be at least 16 years old',
     'Students must pass an oral/written examination on aviation subjects.',
-    'Pass a Class 2 medical exam',
+    'Pass a DGCA medical exam',
 ];
 
 const medicalElements = [
@@ -50,7 +50,7 @@ export default function CPLEligibilityPage() {
         >
 
             {/* ── Hero Banner ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <br />
                     <br />
@@ -67,10 +67,10 @@ export default function CPLEligibilityPage() {
                         Before starting a pilot training program students need to understand the specifications that will determine their admission. Here's a detailed overview of the eligibility to become a pilot and apply for a commercial pilot licence course in India.
                     </p>
                 </ScrollReveal>
-            </div>
+            </header>>
 
             {/* ── Stats Bar ── */}
-            <div className="bg-av-blue py-8">
+            <section className="bg-av-blue py-8">
                 <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
                     {stats.map(s => (
                         <ScrollReveal key={s.label} className="text-center">
@@ -80,7 +80,7 @@ export default function CPLEligibilityPage() {
                         </ScrollReveal>
                     ))}
                 </div>
-            </div>
+            </section>>
 
             {/* ── Eligibility Overview ── */}
             <section className="py-20 px-4 bg-gray-50">
@@ -188,8 +188,8 @@ export default function CPLEligibilityPage() {
                                 <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-6">
                                     <div className="space-y-3 mb-5">
                                         {[
-                                            { label: 'Class 2 Medical Certificate', note: 'Initial requirement for Student Pilot License' },
-                                            { label: 'Class 1 Medical Certificate', note: 'Mandatory for CPL issuance' },
+                                            { label: 'DGCA medical certificate', note: 'Initial requirement for Student Pilot License' },
+                                            { label: 'DGCA medical certificate', note: 'Mandatory for CPL issuance' },
                                         ].map(item => (
                                             <div key={item.label} className="flex items-start gap-3 p-3 bg-av-light rounded-xl border border-av-sky/20">
                                                 <span className="text-av-orange mt-0.5 flex-shrink-0 text-lg">🩺</span>
