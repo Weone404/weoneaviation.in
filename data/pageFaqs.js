@@ -617,6 +617,19 @@ const routeContent = {
     ['What happens to my money if I stop training partway?', 'It depends entirely on what you signed. This is why refund conditions and a milestone-linked payment schedule matter more than a discount for paying in advance. Get both in writing before any large transfer.'],
   ],
 },
+  '/blogs/best-flying-school-in-india': {
+  title: 'Choosing a Flying School: FAQs',
+  questions: [
+    ['Is DGCA approval enough to judge a flying school by?', 'No. Approval confirms the organisation meets the regulatory standard to train, which every school worth considering also meets. It says nothing about how often aircraft are serviceable, how long instructors stay, or how many students finish on time. Approval is where the shortlist starts, not where it ends.'],
+    ['What is the DGCA FTO ranking and how should I use it?', 'It is published ranking information comparing approved Flying Training Organisations on measured criteria. Use it to build a shortlist, then verify the current position yourself - fleet serviceability and instructor retention move faster than a publication cycle, and a placing quoted without naming its edition is being quoted selectively.'],
+    ['What single number best predicts how fast I will finish?', 'The ratio of serviceable aircraft to active students. It decides how often you fly, and flying frequency decides your timeline more than syllabus length, instructor quality or your own ability. Ask for both numbers and divide them yourself.'],
+    ['How many flying days does weather typically cost at an Indian base?', 'It varies by region and season - fog in the north, monsoon in the west and east, heat limits in central India. There is no national figure worth quoting. Ask each shortlisted school how many days it lost last year and in which months; a school that tracks it will answer.'],
+    ['Should I visit a flying school before enrolling?', 'If you can, and unannounced on a weekday morning rather than on a scheduled tour. What you are looking for is how many aircraft are flying, how many are in the hangar, and whether students are waiting around. Thirty minutes of that tells you more than any brochure.'],
+    ['What should never appear in a flying school\'s marketing?', 'A guaranteed airline job, a placement percentage, or any promise about employment. Hiring decisions rest with the operator, so a school promising an outcome is promising something it does not control. Treat it as a signal about everything else it says.'],
+    ['Does it matter whether maintenance is in-house or outsourced?', 'It affects turnaround, which affects serviceability, which affects how often you fly. In-house engineering usually returns an aircraft to line faster. Ask what the arrangement is and what the typical turnaround has been, rather than assuming either model is better.'],
+    ['Can I keep ground school and flying school separate?', 'Yes, and many students do. The DGCA examines the written papers regardless of where you studied for them, so the two are separable decisions. Clearing theory first usually costs less overall, because ground study is a fraction of the price of an hour in an aircraft.'],
+  ],
+},
 };
 
 function fallbackContent(pathname) {

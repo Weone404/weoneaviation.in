@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'best-flying-school-in-india',
+        title: 'Best Flying School in India: How to Choose One (2026)',
+        excerpt: 'Every credible school is DGCA-approved, so approval cannot be your deciding factor. What separates them: fleet-to-student ratio, daily serviceability, instructor turnover, weather losses at that base — and the eight questions that get you those numbers.',
+        category: 'Flying school selection',
+        readTime: '13 min',
+        date: 'Aug 26, 2026',
+        image: { src: '/blog/best-flying-school/hero-school-comparison.webp', width: 1200, height: 630, promptId: '28' },
+    },
+    {
         slug: 'pilot-training-cost-in-india',
         title: 'Pilot Training Cost in India: Complete Breakdown for 2026',
         excerpt: 'Every line, from ground school and examination fees to the flying phase, ratings, and living costs — plus the seven triggers that push a budget past its quote and the questions that expose an understated fee.',

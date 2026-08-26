@@ -118,6 +118,39 @@ Append this to every prompt below:
 
 ---
 
+## Post: `/blogs/best-flying-school-in-india`
+
+### Prompt 28 — Hero / OpenGraph and card
+- **File:** `public/blog/best-flying-school/hero-school-comparison.webp`
+- **Dimensions:** 1200 × 630
+- **Alt:** "Three small flying school hangars with training aircraft parked outside, viewed side by side for comparison"
+
+> Three small hangar-and-office buildings standing in a row on a flat apron, each
+> with one or two light training aircraft parked outside. The buildings are similar
+> but not identical, and the number of aircraft outside each differs visibly. Wide,
+> even, comparative composition — no building favoured over the others.
+
+### Prompt 29 — Fleet-to-student ratio
+- **File:** `public/blog/best-flying-school/fleet-ratio.webp`
+- **Dimensions:** 1200 × 800
+- **Alt:** "Two groups showing a few aircraft with a small crowd of students beside many aircraft with a much larger crowd"
+
+> The frame split into two halves by generous empty space. Left: three small
+> aircraft with a group of about six simplified student figures. Right: eight
+> aircraft with a crowd of about forty figures. The point is that the right side has
+> more aircraft and a far worse ratio. Orange accent on the left group.
+
+### Prompt 30 — Verification process
+- **File:** `public/blog/best-flying-school/verification-steps.webp`
+- **Dimensions:** 1200 × 675
+- **Alt:** "A checklist clipboard beside a magnifying glass held over a small hangar and aircraft"
+
+> A clipboard holding a sheet with a column of tick marks (marks only, never
+> letters), lying flat. Beside it, a large magnifying glass hovering over a small
+> hangar with an aircraft, rendering that portion in sharper focus. Calm, methodical.
+
+---
+
 ## Post: `/blogs/pilot-training-cost-in-india`
 
 ### Prompt 24 — Hero / OpenGraph and card
