@@ -87,7 +87,7 @@ const aircraftList = [
         name: 'Piper Archer / PA-28',
         type: 'Four-Seater, Single Engine',
         usedFor: 'PPL / CPL / Hour Building',
-        description: 'A versatile and robust training aircraft widely used across U.S. flight schools for all training phases.',
+        description: 'A versatile, hard-wearing training aircraft widely used across U.S. flight schools for all training phases.',
         benefits: 'Cost-efficient hour building, sturdy build, excellent visibility from cockpit.',
         image: '/Piper Archer.jpg',
     },

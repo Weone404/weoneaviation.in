@@ -30,7 +30,7 @@ const compassModules = [
         title: 'Spatial Reasoning',
         duration: '10 min',
         questions: '20 Qs',
-        desc: 'Measures your ability to mentally rotate 3D objects and visualize spatial relationships — crucial for instrument reading and situational awareness.',
+        desc: 'Measures your ability to mentally rotate 3D objects and visualize spatial relationships — important for instrument reading and situational awareness.',
         skills: ['3D object rotation', 'Pattern folding', 'Mirror imaging', 'Instrument orientation'],
     },
     {

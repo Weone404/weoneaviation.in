@@ -391,7 +391,7 @@ export default function BecomeAPilotPage() {
                             Selection Process to <span className="text-av-orange">Become a Pilot</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-3xl mx-auto text-sm leading-relaxed">
-                            Becoming a pilot is an exciting and challenging journey, and the selection process is one of the most crucial steps in achieving this dream. Whether you aspire to be a commercial pilot, private pilot, or even a pilot in the Indian Air Force, the process includes several stages that assess your physical, mental, and academic readiness for flight training.
+                            Becoming a pilot is an exciting and challenging journey, and the selection process is one of the most important steps in achieving this dream. Whether you aspire to be a commercial pilot, private pilot, or even a pilot in the Indian Air Force, the process includes several stages that assess your physical, mental, and academic readiness for flight training.
                         </p>
                         <p className="text-gray-500 mt-2 text-sm font-semibold">Here's a detailed look at the selection process to become a pilot:</p>
                     </ScrollReveal>

@@ -82,7 +82,7 @@ const whyMattersTable = [
     { industry: 'Sports', meaning: 'Cricket & Soccer Leagues', why: 'Global entertainment & regional pride' },
     { industry: 'Military', meaning: 'Corporal Rank', why: 'Leadership in armed forces' },
     { industry: 'Logistics', meaning: 'Certified Logistician', why: 'Recognized in global supply chain careers' },
-    { industry: 'Healthcare', meaning: 'Protein Level', why: 'Vital for diagnosing brain diseases' },
+    { industry: 'Healthcare', meaning: 'Protein Level', why: 'Essential for diagnosing brain diseases' },
 ];
 
 const otherFields = [
@@ -120,7 +120,7 @@ const otherFields = [
         num: '10',
         icon: '🖥️',
         title: 'CPL in Technology: Current Privilege Level',
-        desc: 'In computing and cybersecurity, CPL stands for Current Privilege Level. It is a concept used in CPU architecture to define the access level of a running process. CPL determines what resources a process can access, such as memory or hardware. Lower CPL values indicate higher privileges. CPL is crucial for maintaining system security by restricting unauthorized access to critical resources.',
+        desc: 'In computing and cybersecurity, CPL stands for Current Privilege Level. It is a concept used in CPU architecture to define the access level of a running process. CPL determines what resources a process can access, such as memory or hardware. Lower CPL values indicate higher privileges. CPL is important for maintaining system security by restricting unauthorized access to critical resources.',
     },
 ];
 
@@ -282,7 +282,7 @@ export default function CPLPage() {
                                     It's one of the most important steps in becoming a professional pilot, and it's recognized all over the world.
                                 </p>
                                 <p className="text-white/70 text-sm leading-relaxed">
-                                    In the world of aviation, CPL stands for Commercial Pilot License. This is a crucial license for anyone who wants to fly commercial aircraft and get paid for it. Its Like a Driving License For Fly Pilot. There Are So Many Types of Pilot Licenses and Commercial Pilot License is one of Them.
+                                    In the world of aviation, CPL stands for Commercial Pilot License. This is a important license for anyone who wants to fly commercial aircraft and get paid for it. Its Like a Driving License For Fly Pilot. There Are So Many Types of Pilot Licenses and Commercial Pilot License is one of Them.
                                 </p>
                             </div>
                         </ScrollReveal>
@@ -526,7 +526,7 @@ export default function CPLPage() {
                         <div className="bg-gradient-to-br from-av-blue to-av-navy rounded-2xl p-8 text-center">
                             <div className="section-tag mb-4">Why is CPL Important?</div>
                             <p className="text-white/80 text-sm leading-relaxed max-w-3xl mx-auto">
-                                The term CPL is important because it represents key concepts in different fields. Whether you're talking about a pilot's license, a cricket league, or a marketing metric, <strong className="text-av-orange">CPL plays a vital role in shaping industries and careers.</strong>
+                                The term CPL is important because it represents key concepts in different fields. Whether you're talking about a pilot's license, a cricket league, or a marketing metric, <strong className="text-av-orange">CPL plays a essential role in shaping industries and careers.</strong>
                             </p>
                         </div>
                     </ScrollReveal>

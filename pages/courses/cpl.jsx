@@ -36,7 +36,7 @@ const medicalChecks = [
     { icon: '🎧', title: 'Hearing Test', desc: 'Assesses hearing ability using Pure Tone Audiometry (PTA).' },
     { icon: '❤️', title: 'Cardiovascular Examination', desc: 'ECG (Electrocardiogram) to check heart function. Blood pressure monitoring.' },
     { icon: '🧠', title: 'Neurological Examination', desc: 'Evaluates reflexes, balance, and coordination. MRI or CT scan if necessary.' },
-    { icon: '🩺', title: 'General Physical Check-up', desc: 'Height, weight, and BMI assessment. Examination of lungs, liver, kidney, and other vital organs.' },
+    { icon: '🩺', title: 'General Physical Check-up', desc: 'Height, weight, and BMI assessment. Examination of lungs, liver, kidney, and other essential organs.' },
     { icon: '🩸', title: 'Blood & Urine Tests', desc: 'Checks for diabetes, cholesterol, liver/kidney function, and infections.' },
     { icon: '🧠', title: 'Psychological & Mental Health Assessment', desc: 'Evaluates stress management and mental well-being.' },
 ];

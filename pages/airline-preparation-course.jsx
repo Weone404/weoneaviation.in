@@ -17,13 +17,13 @@ const whyChoose = [
     { icon: '✈️', title: 'Industry-Relevant Modules', desc: 'The course at We One Aviation is designed with industry relevance in mind. Specialized modules address current trends and challenges in the aviation sector, ensuring graduates are well-prepared for the workforce.' },
     { icon: '🏆', title: 'Alumni Success Stories', desc: 'We One Aviation takes pride in the success stories of its alumni, who have excelled in various roles within the aviation industry. These achievements highlight the effectiveness of our training programs.' },
     { icon: '🛩️', title: 'Hands-On Training', desc: 'Practical experience is a cornerstone of our courses. Through hands-on training, including simulator sessions and industry visits, students gain valuable exposure to real-world scenarios, enhancing their readiness for the field.' },
-    { icon: '🤝', title: 'Networking Opportunities', desc: 'Our institution facilitates networking events, connecting students with industry professionals, fellow aviators, and potential employers. Building a strong network is crucial in the competitive aviation landscape.' },
+    { icon: '🤝', title: 'Networking Opportunities', desc: 'Our institution facilitates networking events, connecting students with industry professionals, fellow aviators, and potential employers. Building a strong network is important in a competitive aviation industry.' },
     { icon: '🌍', title: 'Global Recognition', desc: "We One Aviation's courses are globally recognized, opening doors for graduates to pursue opportunities not only in India but also internationally. Our reputation is a testament to the quality of education provided." },
     { icon: '💼', title: 'Interview Preparation', desc: 'Interview preparation and career guidance at We One Aviation assists students in securing job opportunities with leading airlines globally. Our commitment extends beyond education to supporting graduates in launching their careers.' },
 ];
 
 const contactWays = [
-    { icon: '🌐', title: 'Visit Our Website', desc: 'The official We One Aviation website is a comprehensive resource for information. Navigate to our Contact Us page, where you\'ll find details such as our address, phone numbers, and email addresses. Visit weoneaviation.in for quick access.' },
+    { icon: '🌐', title: 'Visit Our Website', desc: 'The official We One Aviation website is a comprehensive resource for information. Go to our Contact Us page, where you\'ll find details such as our address, phone numbers, and email addresses. Visit weoneaviation.in for quick access.' },
     { icon: '📞', title: 'Phone Contact', desc: 'Give us a call to speak directly with our representatives. Dial the provided phone numbers listed on our website, and our team will be happy to assist you with any queries or concerns.' },
     { icon: '📧', title: 'Email Communication', desc: 'If you prefer written communication, you can send us an email. Visit our Contact Us page for the relevant email addresses, and our team will respond promptly to provide the information you need.' },
     { icon: '📱', title: 'Social Media Platforms', desc: 'Connect with We One Aviation through our official social media channels, such as Facebook, Twitter, or LinkedIn. Direct messages or comments on these platforms can be another effective way to get in touch.' },
@@ -35,7 +35,7 @@ const contactWays = [
 const requirements = [
     { icon: '🎓', label: 'Educational Qualifications', desc: 'Candidates should have completed their high school education or its equivalent. A minimum educational background is typically required to ensure a basic level of academic proficiency.' },
     { icon: '🎂', label: 'Age Criteria', desc: 'Most aviation training programs, including the Airline Preparation Course at We One Aviation, have age criteria. Candidates should meet the specified age requirements for enrollment.' },
-    { icon: '🗣️', label: 'Communication Skills', desc: 'Proficiency in English is crucial for success in aviation. Applicants are often required to demonstrate adequate communication skills, both written and verbal, to effectively navigate the coursework and interact in a professional aviation environment.' },
+    { icon: '🗣️', label: 'Communication Skills', desc: 'Proficiency in English is important for success in aviation. Applicants are often required to demonstrate adequate communication skills, both written and verbal, to handle the coursework and interact in a professional aviation environment.' },
     { icon: '🩺', label: 'Physical Fitness', desc: 'Due to the physical demands of certain aviation roles, candidates may be required to meet specific health and fitness standards. This ensures that students can safely participate in practical training sessions and perform the duties associated with aviation professions.' },
     { icon: '📐', label: 'Basic Understanding Of Mathematics And Physics', desc: 'Aviation involves principles of mathematics and physics. Candidates aspiring to enrol in the program are typically expected to have a basic understanding of these subjects. This foundational knowledge is essential for them to grasp the technical aspects of aviation training comprehensively.' },
     { icon: '❤️', label: 'Passion For Aviation', desc: 'We One Aviation values candidates who demonstrate a genuine passion for aviation. A strong interest in pursuing a career in the airline industry is essential for motivation and success in the program.' },
@@ -48,7 +48,7 @@ const examPrepSteps = [
     { title: 'Review Course Materials', desc: 'Thoroughly go through the course materials provided by We One Aviation for the Airline Preparation Course In Dwarka. Pay special attention to topics emphasized in the curriculum.' },
     { title: 'Create A Study Schedule', desc: 'Develop a study schedule that covers all relevant subjects. Allocate specific time slots for different topics to ensure comprehensive coverage.' },
     { title: 'Practice Regularly', desc: 'Practice with sample questions and previous exam papers to familiarize yourself with the exam pattern. This will improve your time management and boost your confidence.' },
-    { title: 'Seek Guidance', desc: "If you encounter challenging concepts, don't hesitate to seek guidance from instructors or fellow students. Understanding key concepts is crucial for success." },
+    { title: 'Seek Guidance', desc: "If you encounter challenging concepts, don't hesitate to seek guidance from instructors or fellow students. Understanding key concepts is important for success." },
     { title: 'Utilize Additional Resources', desc: 'Supplement your study materials with relevant books, online resources, and articles. This broader approach can provide diverse perspectives on the subject matter.' },
     { title: 'Take Mock Exams', desc: 'Simulate exam conditions by taking mock exams. This will help you assess your readiness, identify areas for improvement, and build exam endurance.' },
     { title: 'Stay Healthy And Rested', desc: 'Ensure you maintain a healthy lifestyle during your preparation. A well-rested mind and body are essential for effective learning and optimal performance during the exam.' },
@@ -66,8 +66,8 @@ const airlineSteps = [
 const pilotPrepSteps = [
     { title: 'Aircraft Inspection', desc: 'Pilots conduct a thorough pre-flight inspection of the aircraft, checking for any mechanical issues or anomalies. This includes reviewing maintenance logs and ensuring all systems are functioning correctly.' },
     { title: 'Weather Analysis', desc: 'Pilots analyze current and forecasted weather conditions along the flight route. This includes considerations for turbulence, storms, and any other weather-related challenges.' },
-    { title: 'Coordination with Crew', desc: 'Pilots communicate and coordinate with the entire flight crew, ensuring everyone is aware of their roles and responsibilities. Effective teamwork is crucial for a smooth flight.' },
-    { title: 'Flight Plan Review', desc: 'Pilots review the detailed flight plan, including navigation charts, waypoints, and alternate routes. This step is vital for understanding the entire journey and potential deviations.' },
+    { title: 'Coordination with Crew', desc: 'Pilots communicate and coordinate with the entire flight crew, ensuring everyone is aware of their roles and responsibilities. Effective teamwork is important for a smooth flight.' },
+    { title: 'Flight Plan Review', desc: 'Pilots review the detailed flight plan, including navigation charts, waypoints, and alternate routes. This step is essential for understanding the entire journey and potential deviations.' },
 ];
 
 
@@ -141,7 +141,7 @@ export default function AirlinePreparation() {
                                 ))}
                             </div>
                             <p className="text-gray-600 text-sm leading-relaxed mb-10">
-                                Choosing We One Aviation for an Airline Preparation Course in Dwarka ensures a holistic and industry-driven education. From a robust curriculum to experienced faculty and global recognition, our institution is dedicated to nurturing the next generation of aviation professionals, providing them with the wings to soar in their careers.
+                                Choosing We One Aviation for an Airline Preparation Course in Dwarka ensures a holistic and industry-driven education. From a demanding curriculum to experienced faculty and global recognition, our institution is dedicated to nurturing the next generation of aviation professionals, providing them with the wings to soar in their careers.
                             </p>
 
                             {/* How to Contact */}

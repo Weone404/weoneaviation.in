@@ -54,7 +54,7 @@ const admissionSteps = [
         step: '02',
         icon: '🏫',
         title: 'Choose a DGCA-Approved Flying School',
-        desc: 'Choosing the correct training institution stands as a vital component. Look for a school that is DGCA-approved with experienced instructors and modern aircraft.',
+        desc: 'Choosing the correct training institution stands as a essential component. Look for a school that is DGCA-approved with experienced instructors and modern aircraft.',
     },
     {
         step: '03',
@@ -235,7 +235,7 @@ export default function CPLAdmissionPage() {
                             Choose a DGCA-Approved Flying School
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-5">
-                            Choosing the correct training institution stands as a vital component throughout the Commercial <strong>Pilot License</strong> Admission Process. Look for a school that:
+                            Choosing the correct training institution stands as a essential component throughout the Commercial <strong>Pilot License</strong> Admission Process. Look for a school that:
                         </p>
                         <ul className="space-y-3 mb-5">
                             {schoolCriteria.map(c => (

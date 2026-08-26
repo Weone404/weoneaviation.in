@@ -38,7 +38,7 @@ const dgcaSubjects = [
     {
         num: '2',
         title: 'Air Regulations',
-        desc: 'Air Regulations are the rules every pilot must follow to ensure safe and legal flying. These laws cover everything from airspace restrictions to communication protocols and flight operations. Want to know how these regulations shape a pilot\'s journey and why they are crucial for your aviation career?',
+        desc: 'Air Regulations are the rules every pilot must follow to ensure safe and legal flying. These laws cover everything from airspace restrictions to communication protocols and flight operations. Want to know how these regulations shape a pilot\'s journey and why they are important for your aviation career?',
         link: '#',
         linkText: 'Click to find out more! ✈️',
     },
@@ -641,7 +641,7 @@ export default function Home() {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                         {[
                             { icon: '🏢', title: 'Institute Infrastructure', desc: 'Check the environment and infrastructure. What facilities do they provide for comfortable study and flying?' },
-                            { icon: '👨‍🏫', title: 'Institute Instructors', desc: 'Teachers play a vital role in student success. Check the faculty level — great teachers make great pilots.' },
+                            { icon: '👨‍🏫', title: 'Institute Instructors', desc: 'Teachers play a essential role in student success. Check the faculty level — great teachers make great pilots.' },
                             { icon: '💰', title: 'Payment Flexibility', desc: 'Check their fees structure. Choose institutes that don\'t burden you all at once with flexible payment options.' },
                             { icon: '🎓', title: 'Scholarship & Loan Facility', desc: 'If an institute gives scholarship and loan facility, it makes fulfilling your dream much more affordable.' },
                         ].map((item, i) => (

@@ -160,7 +160,7 @@ const resultCheckMethods = [
         icon: '🔒',
         title: '3. DigiLocker',
         desc: 'Visit digilocker.gov.in.',
-        steps: ['Sign in using your registered mobile number and the last six digits of your CBSE roll number as the security PIN.', 'Navigate to the "Issued Documents" section to find and download your Class 10 or 12 certificate.'],
+        steps: ['Sign in using your registered mobile number and the last six digits of your CBSE roll number as the security PIN.', 'Open the "Issued Documents" section to find and download your Class 10 or 12 certificate.'],
     },
 ];
 

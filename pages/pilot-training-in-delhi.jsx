@@ -98,7 +98,7 @@ export default function PilotTrainingDelhi() {
             }}
 
             syllabus={[
-                { num: '1', title: 'Air Navigation', desc: 'A crucial DGCA exam subject — equips pilots with the knowledge to safely navigate an aircraft from one location to another using flight planning, navigation techniques, instruments, and radio aids.' },
+                { num: '1', title: 'Air Navigation', desc: 'A important DGCA exam subject — equips pilots with the knowledge to safely navigate an aircraft from one location to another using flight planning, navigation techniques, instruments, and radio aids.' },
                 { num: '2', title: 'Air Regulations', desc: 'The rulebook for flying — provides a deep understanding of aviation laws, operational procedures, and international standards to ensure safe and legal flight operations.' },
                 { num: '3', title: 'Aviation Meteorology', desc: 'Weather is a big deal when you\'re a pilot. Learn to read atmospheric behavior, weather patterns, and forecasting techniques to make informed decisions and plan safe flights.' },
                 { num: '4', title: 'Technical General', desc: 'Get to know the "body" of the plane — covers the basics of how aircraft work, including engines, systems, and equipment.' },
@@ -124,7 +124,7 @@ export default function PilotTrainingDelhi() {
 
             howToChoose={[
                 { icon: '🏢', title: 'Institute Infrastructure', desc: 'Check the institute\'s environment and infrastructure. What facilities do they provide for comfortable study and flying?' },
-                { icon: '👨‍🏫', title: 'Institute Instructors', desc: 'Teachers play a vital role in student success. Check the faculty level before joining — great teachers make great pilots.' },
+                { icon: '👨‍🏫', title: 'Institute Instructors', desc: 'Teachers play a essential role in student success. Check the faculty level before joining — great teachers make great pilots.' },
                 { icon: '💰', title: 'Payment Flexibility', desc: 'Check their fees structure. Choose institutes that don\'t burden you all at once with flexible payment options.' },
                 { icon: '🎓', title: 'Scholarship & Loan Facility', desc: 'If an institute gives scholarship and loan facility, it makes fulfilling your dream much more affordable.' },
             ]}

@@ -402,7 +402,7 @@ export default function DGCAPage() {
                             <p className="text-av-blue font-semibold text-sm mb-3">DGCA was established to:</p>
                             <div className="flex-grow"><BulletList items={whyEstablished} /></div>
                             <p className="text-gray-500 text-sm leading-relaxed mt-4 pt-4 border-t border-gray-100">
-                                Today, DGCA continues to play a vital role in supporting one of the world&apos;s fastest-growing aviation markets.
+                                Today, DGCA continues to play a essential role in supporting one of the world&apos;s fastest-growing aviation markets.
                             </p>
                         </div>
                     </ScrollReveal>

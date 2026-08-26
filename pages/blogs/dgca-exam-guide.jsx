@@ -254,7 +254,7 @@ export default function DGCAPage() {
                                 <div className="text-4xl mb-4">🏢</div>
                                 <h3 className="font-montserrat font-bold text-av-blue text-xl mb-3">Regional Offices</h3>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                                    Moreover, it operates regional offices in major cities to keep local aviation activities in check.
+                                    It also operates regional offices in major cities to keep local aviation activities in check.
                                 </p>
                                 <div className="grid grid-cols-2 gap-3">
                                     {['Mumbai', 'Kolkata', 'Chennai', 'Hyderabad'].map(city => (

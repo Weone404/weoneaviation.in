@@ -46,7 +46,7 @@ const steps = [
         title: 'Flight Training',
         shortDesc: 'Fly under experienced instructors.',
         details: [],
-        note: 'After completing the ground training, you will progress to flight training, where you will learn how to operate an aircraft under the guidance of experienced flight instructors. This hands-on experience is crucial for developing your piloting skills and gaining confidence in the cockpit.',
+        note: 'After completing the ground training, you will progress to flight training, where you will learn how to operate an aircraft under the guidance of experienced flight instructors. This hands-on experience is important for developing your piloting skills and gaining confidence in the cockpit.',
     },
     {
         num: '05',

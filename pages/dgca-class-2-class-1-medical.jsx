@@ -106,7 +106,7 @@ export default function DGCAMedical() {
                                 Aspiring pilots in India are required to undergo specific medical assessments to ensure they meet the necessary mental and physical health standards for aviation. The Directorate General of Civil Aviation (DGCA) mandates two primary medical examinations — DGCA Class II and DGCA Class I medical certifications.
                             </p>
                             <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                                Both assessments are critical to starting and progressing in a pilot's career. In this guide, we will delve into the requirements, procedures, and validity for each of these medical certifications, ensuring that you are well-prepared for each step.
+                                Both assessments are critical to starting and progressing in a pilot's career. In this guide, we will look at the requirements, procedures, and validity for each of these medical certifications, ensuring that you are well-prepared for each step.
                             </p>
 
                             {/* Quick Facts */}

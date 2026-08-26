@@ -522,7 +522,7 @@ export default function DGCAParikshaPage() {
                             DGCA Pariksha – Related <span className="text-av-orange">Important Queries</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-3xl mx-auto text-sm leading-relaxed">
-                            The DGCA Pariksha is a crucial examination for aspiring pilots in India, conducted by the Directorate General of Civil Aviation (DGCA). To make it easier for candidates, it's important to understand the key steps, procedures, and requirements involved, as well as the relevant terms like "computer number," DGCA regional offices, and the DGCA entrance exam itself.
+                            The DGCA Pariksha is a important examination for aspiring pilots in India, conducted by the Directorate General of Civil Aviation (DGCA). To make it easier for candidates, it's important to understand the key steps, procedures, and requirements involved, as well as the relevant terms like "computer number," DGCA regional offices, and the DGCA entrance exam itself.
                         </p>
                     </ScrollReveal>
 
