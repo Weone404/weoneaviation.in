@@ -276,7 +276,7 @@ export default function DGCAGroundClassesInIndia() {
                                         </div>
                                     ))}
                                 </div>
-                            </section>>
+                            </section>
 
                             {/* ── How to Become a Pilot in India — Process ── */}
                             <section>
@@ -295,7 +295,7 @@ export default function DGCAGroundClassesInIndia() {
                                         </div>
                                     ))}
                                 </div>
-                            </section>>
+                            </section>
 
                             {/* ── 6 DGCA Subjects ── */}
                             <section>
@@ -318,7 +318,7 @@ export default function DGCAGroundClassesInIndia() {
                                         </div>
                                     ))}
                                 </div>
-                            </section>>
+                            </section>
 
                             {/* ── DGCA Exam Centres in India ── */}
                             <section>
@@ -332,7 +332,7 @@ export default function DGCAGroundClassesInIndia() {
                                     ))}
                                 </div>
                                 <p className="text-gray-400 text-xs italic">* DGCA India periodically updates examination centre lists. We help every student confirm the latest centre for their state.</p>
-                            </section>>
+                            </section>
 
                             {/* ── Eligibility ── */}
                             <section>
@@ -356,7 +356,7 @@ export default function DGCAGroundClassesInIndia() {
                                 <p className="text-gray-600 text-sm leading-relaxed mt-5">
                                     Met all criteria? You're ready to begin. Join We One Aviation Academy — DGCA-approved, based in Dwarka, New Delhi. trusted DGCA Ground Classes institute — and start your journey today. 🇮🇳✈️
                                 </p>
-                            </section>>
+                            </section>
 
                             {/* ── Why Choose ── */}
                             <section>
@@ -375,7 +375,7 @@ export default function DGCAGroundClassesInIndia() {
                                         </div>
                                     ))}
                                 </div>
-                            </section>>
+                            </section>
 
                             {/* ── DGCA-Approved Flying Schools in India ── */}
                             <section>
@@ -411,7 +411,7 @@ export default function DGCAGroundClassesInIndia() {
                                     </table>
                                 </div>
                                 <p className="text-gray-400 text-xs italic mt-3">* We One Aviation helps every student select the right flying school in India or abroad based on budget, location, and career goals.</p>
-                            </section>>
+                            </section>
 
                             {/* ── Indian Airlines Hiring Pilots ── */}
                             <section>
@@ -435,7 +435,7 @@ export default function DGCAGroundClassesInIndia() {
                                     <p className="text-av-blue font-semibold text-sm mb-2">💡 Pilot Salary in India</p>
                                     <p className="text-gray-600 text-xs leading-relaxed">Starting salary for First Officers at Indian airlines ranges from <strong>₹1.5 lakh to ₹3 lakh per month</strong>. Experienced Captains earn ₹5–15 lakh per month. Your DGCA Ground Classes in India are the first investment in this career.</p>
                                 </div>
-                            </section>>
+                            </section>
 
                             {/* ── States We Serve ── */}
                             <section>
@@ -450,7 +450,7 @@ export default function DGCAGroundClassesInIndia() {
                                     <span className="text-xs bg-av-orange text-white px-3 py-1.5 rounded-full font-bold">+ Every Indian State</span>
                                 </div>
                                 <p className="text-gray-400 text-xs italic">All you need is a smartphone or laptop and an internet connection. Our online DGCA Ground Classes cover the full India syllabus through live sessions with recorded backups.</p>
-                            </section>>
+                            </section>
 
                             {/* ── Online vs Offline ── */}
                             <section>
@@ -489,7 +489,7 @@ export default function DGCAGroundClassesInIndia() {
                                         </ul>
                                     </div>
                                 </div>
-                            </section>>
+                            </section>
 
                             {/* ── CTA Banner ── */}
                             <div className="rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #003580 0%, #0a5abf 100%)' }}>
@@ -526,7 +526,7 @@ export default function DGCAGroundClassesInIndia() {
                                         </div>
                                     ))}
                                 </div>
-                            </section>>
+                            </section>
 
                             {/* ── Blogs ── */}
                             <section>
@@ -541,7 +541,7 @@ export default function DGCAGroundClassesInIndia() {
                                         </div>
                                     ))}
                                 </div>
-                            </section>>
+                            </section>
 
                         </ScrollReveal>
                     </div>

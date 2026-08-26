@@ -4,3 +4,7 @@ node_modules/
 # Keep data directory but not the leads file (sensitive)
 # data/leads.xlsx
 .vercel
+
+# Orphans left by the Cowork device bridge (FUSE cannot unlink)
+.fuse_hidden*
+_to_delete/

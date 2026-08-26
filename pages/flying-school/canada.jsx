@@ -94,7 +94,7 @@ export default function PilotTrainingProgramsPage() {
                         Choose the right program to kickstart your aviation career. Compare eligibility, costs, and syllabus below.
                     </p>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-8">

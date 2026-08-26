@@ -383,7 +383,7 @@ function BlogHero({ blog }) {
                     <span className="text-white/30">·</span>
                     <span>{blog.readTime} read</span>
                 </div>
-            </section>>
+            </section>
         </div>
     );
 }

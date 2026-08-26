@@ -148,7 +148,7 @@ export default function CPLPage() {
                         But behind every definition of CPL lies a human story — a pilot chasing their dream to soar the skies, a marketer striving to connect with potential customers, or a gamer competing for glory in the virtual arena. Let's Start in!
                     </p>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── Intro Para ── */}
             <div className="bg-av-orange py-5 px-4 text-center">

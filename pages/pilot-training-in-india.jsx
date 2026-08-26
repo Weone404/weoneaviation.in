@@ -355,7 +355,7 @@ export default function Home() {
                 <div className="text-center mt-1">
                     <span className="text-av-orange text-sm font-semibold">Clear Your Dgca Exam In First Attempt With We One Aviation Academy</span>
                 </div>
-            </section>>
+            </section>
 
             {/* ── PILOT TRAINING INSTITUTE INTRO ── */}
             <section className="py-20 px-4">

@@ -107,7 +107,7 @@ export default function HowToBecomeAPilotInIndiaPage() {
                         Start Your Journey →
                     </Link>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-8">

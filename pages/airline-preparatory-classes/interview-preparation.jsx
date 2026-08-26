@@ -279,7 +279,7 @@ export default function InterviewPreparationPage() {
                         ))}
                     </div>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── Why the Interview Matters ── */}
             <section className="py-20 px-4">
@@ -330,7 +330,7 @@ export default function InterviewPreparationPage() {
                                         <section>
                                             <h3 className="font-montserrat font-bold text-av-blue text-lg">{type.title}</h3>
                                             <p className="text-av-orange text-xs font-semibold mt-0.5">{type.airlines}</p>
-                                        </section>>
+                                        </section>
                                     </div>
                                     <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-grow">{type.desc}</p>
                                     <div className="mb-3">
@@ -465,7 +465,7 @@ export default function InterviewPreparationPage() {
                                         <section>
                                             <h3 className="font-montserrat font-black text-white text-2xl">{airline.airline}</h3>
                                             <p className="text-white/70 text-sm">Commonly asked interview questions — prepare a unique, honest answer for each</p>
-                                        </section>>
+                                        </section>
                                     </div>
                                     <div className="p-8 grid sm:grid-cols-2 gap-4">
                                         {airline.questions.map((q, j) => (

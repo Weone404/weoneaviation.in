@@ -270,7 +270,7 @@ export default function BecomeAPilotPage() {
                         Flying airplanes is a dream many people hold, captivated by the freedom, excitement, and perspective it offers. If you're one of those who envision a career as a pilot, you're in the right place! Becoming a pilot requires dedication, hard work, and specific qualifications, but with the right steps, you can achieve this incredible goal.
                     </p>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── Stats Bar ── */}
             <section className="bg-av-blue py-8">
@@ -283,7 +283,7 @@ export default function BecomeAPilotPage() {
                         </ScrollReveal>
                     ))}
                 </div>
-            </section>>
+            </section>
 
             {/* ── Types of Pilots ── */}
             <section className="py-20 px-4 bg-gray-50">

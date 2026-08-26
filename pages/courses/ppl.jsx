@@ -146,7 +146,7 @@ export default function PPLPage() {
                         PPL Meaning Different in Every Field. So If You Land On This Page Then Here You Will Get Knowledge of all PPL Full Form. The full form of PPL in Aviation is <strong className="text-white">Private Pilot License</strong>. There is More Different field Like Marketing, Internet Slang, Music, Government Sector Have Different Full Form of PPL. So Just Relax, And Know All The Full Form of PPL.
                     </p>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── What is The Full Form of PPL ── */}
             <section className="py-20 px-4">

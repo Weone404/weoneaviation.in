@@ -208,7 +208,7 @@ export default function SpiceJetCadetPage() {
                         ))}
                     </div>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── About the Programme ── */}
             <section className="py-20 px-4">

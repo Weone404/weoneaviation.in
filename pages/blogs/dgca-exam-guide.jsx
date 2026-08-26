@@ -129,7 +129,7 @@ export default function DGCAPage() {
                         Lets Understand That What is DGCA and What is Their Role, Its Importance and Why its Matter The Most For India's aviation industry.
                     </p>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-8">

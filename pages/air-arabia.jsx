@@ -155,7 +155,7 @@ export default function AirArabiaMPLPage() {
                         ))}
                     </div>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── Programme Overview ── */}
             <section className="py-20 px-4">

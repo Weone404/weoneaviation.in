@@ -324,7 +324,7 @@ export default function PsychometryPage() {
                         ))}
                     </div>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── What is Psychometry ── */}
             <section className="py-20 px-4">
@@ -442,7 +442,7 @@ export default function PsychometryPage() {
                                             <section>
                                                 <h3 className="font-montserrat font-black text-white text-2xl">{airline.flag} {airline.airline}</h3>
                                                 <p className="text-white/80 text-sm">{airline.programme}</p>
-                                            </section>>
+                                            </section>
                                             <div className="bg-white/20 rounded-xl px-4 py-2 text-center">
                                                 <p className="text-white/70 text-xs">Assessment System</p>
                                                 <p className="text-white font-bold text-sm">{airline.system}</p>

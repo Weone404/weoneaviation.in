@@ -194,7 +194,7 @@ export default function CBSEPage() {
                     </p>
                     <p className="text-av-orange font-bold mt-4">So, let's get started!</p>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-8">

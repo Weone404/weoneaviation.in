@@ -67,7 +67,7 @@ export default function CPLEligibilityPage() {
                         Before starting a pilot training program students need to understand the specifications that will determine their admission. Here's a detailed overview of the eligibility to become a pilot and apply for a commercial pilot licence course in India.
                     </p>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── Stats Bar ── */}
             <section className="bg-av-blue py-8">
@@ -80,7 +80,7 @@ export default function CPLEligibilityPage() {
                         </ScrollReveal>
                     ))}
                 </div>
-            </section>>
+            </section>
 
             {/* ── Eligibility Overview ── */}
             <section className="py-20 px-4 bg-gray-50">

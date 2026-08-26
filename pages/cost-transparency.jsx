@@ -322,7 +322,7 @@ export default function CostTransparency() {
             <Link href="/contact" className="inline-block bg-av-orange hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold transition-all hover:shadow-lg hover:scale-105">
               📞 Get Free Quote
             </Link>
-          </section>>
+          </section>
         </section>
 
       </Layout>

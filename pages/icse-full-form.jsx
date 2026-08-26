@@ -194,7 +194,7 @@ export default function ICSEPage() {
                         <strong className="text-white">ICSE stands for Indian Certificate of Secondary Education.</strong> It is an examination conducted by the Council for the Indian School Certificate Examinations (CISCE) for students of Class 10. It is primarily known as one of the Best Boards in India. It is simply considered a Hard Board compared to others because its Syllabus is very deep. This exam is held by a group called the CISCE (Council for the Indian School Certificate Examinations).
                     </p>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-8">

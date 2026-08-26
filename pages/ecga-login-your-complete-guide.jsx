@@ -171,7 +171,7 @@ export default function EGCALoginPage() {
                                         <section>
                                             <h3 className="font-montserrat font-bold text-av-blue mb-1">{item.title}</h3>
                                             <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-                                        </section>>
+                                        </section>
                                     </div>
                                 ))}
                             </div>
@@ -290,7 +290,7 @@ export default function EGCALoginPage() {
                                         <section>
                                             <h3 className="font-montserrat font-bold text-white text-sm mb-1">{step.title}</h3>
                                             <p className="text-white/70 text-xs leading-relaxed">{step.desc}</p>
-                                        </section>>
+                                        </section>
                                     </div>
                                 ))}
                             </div>
@@ -363,7 +363,7 @@ export default function EGCALoginPage() {
                                         <section>
                                             <h3 className="font-montserrat font-bold text-av-blue text-sm mb-0.5">{item.title}</h3>
                                             <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
-                                        </section>>
+                                        </section>
                                     </div>
                                 ))}
                                 <p className="text-gray-400 text-xs pt-2 leading-relaxed">Each feature is designed to make regulatory processes quicker, more efficient, and fully accessible online.</p>
@@ -390,7 +390,7 @@ export default function EGCALoginPage() {
                                         <section>
                                             <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">{item.title}</h3>
                                             <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-                                        </section>>
+                                        </section>
                                     </div>
                                 ))}
                             </div>

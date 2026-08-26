@@ -74,7 +74,7 @@ export default function CPLSalaryPage() {
                         Commercial pilot salary bases its amount on a combination of flight experience with the aircraft type and airline partnership and geographic location. A comprehensive breakdown on this page explains the earnings opportunities for CPL holders.
                     </p>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-8">

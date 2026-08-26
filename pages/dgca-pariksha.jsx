@@ -201,7 +201,7 @@ export default function DGCAParikshaPage() {
                         </ScrollReveal>
                     ))}
                 </div>
-            </section>>
+            </section>
 
             {/* ── What is + Why Important ── */}
             <section className="py-20 px-4">
@@ -491,7 +491,7 @@ export default function DGCAParikshaPage() {
                                         <section>
                                             <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">{step.title}</h3>
                                             <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
-                                        </section>>
+                                        </section>
                                     </div>
                                 ))}
                             </div>

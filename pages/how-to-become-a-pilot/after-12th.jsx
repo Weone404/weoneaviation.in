@@ -159,7 +159,7 @@ export default function After12th() {
                     <section>
                       <h3 className="font-montserrat font-bold text-av-blue mb-2">{step.title}</h3>
                       <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
-                    </section>>
+                    </section>
                   </div>
                 </ScrollReveal>
               ))}

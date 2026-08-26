@@ -318,7 +318,7 @@ export default function CompassPage() {
                         ))}
                     </div>
                 </ScrollReveal>
-            </header>>
+            </header>
 
             {/* ── What is COMPASS ── */}
             <section className="py-20 px-4">

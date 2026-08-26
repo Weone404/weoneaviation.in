@@ -456,7 +456,7 @@ export default function CoursesPage() {
                                     <section>
                                         <h3 className="font-montserrat font-bold text-av-blue mb-2">{item.title}</h3>
                                         <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-                                    </section>>
+                                    </section>
                                 </div>
                             </ScrollReveal>
                         ))}
