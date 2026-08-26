@@ -118,6 +118,34 @@ Append this to every prompt below:
 
 ---
 
+## Post: `/blogs/dgca-exam-guide`
+
+### Prompt 8 — Card and hero
+- **File:** `public/blog/dgca-exam-guide/hero-dgca-regulator.webp`
+- **Dimensions:** 1200 × 630
+- **Alt to use on swap:** "A government regulatory building beside an aircraft and a licence document, representing the DGCA's oversight of Indian pilot licensing"
+
+> A calm institutional scene: a simple government-style building with columns on
+> the left, a single-engine aircraft on an apron to the right, and a certificate
+> document floating between them connecting the two. Flat, orderly, no clutter.
+> Orange accent on the certificate only.
+
+---
+
+## Post: `/blogs/aviation-course-after-12th`
+
+### Prompt 9 — Card and hero
+- **File:** `public/blog/aviation-course-after-12th/hero-after-12th-routes.webp`
+- **Dimensions:** 1200 × 630
+- **Alt to use on swap:** "A school gate opening onto several diverging paths leading to different aviation careers"
+
+> A school gate on the left opening onto three or four paths that fan outward to
+> the right, each ending at a different simple destination: a training aircraft,
+> an air traffic control tower, a maintenance hangar, and a university building.
+> Equal visual weight to each path. Orange accent on the aircraft path.
+
+---
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
