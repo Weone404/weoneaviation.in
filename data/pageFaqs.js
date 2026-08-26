@@ -578,6 +578,19 @@ const routeContent = {
     ['Can commerce students become pilots?', 'Yes. The requirement is Physics and Mathematics at 10+2 level, not a science stream as such. Commerce and Biology students clear both subjects as private candidates through NIOS and then apply on the same footing as anyone else. It adds time rather than closing the door.'],
   ],
 },
+  '/blogs/commercial-pilot-training-programs-complete-guide': {
+  title: 'Choosing a Commercial Pilot Training Program: FAQs',
+  questions: [
+    ['Do flying schools provide airline placement after CPL training?', 'No. A CPL is a licence, not a job offer. Airlines run their own selection - written screening, assessment, interview and a simulator check - and a type rating on the operator\'s aircraft sits between the licence and the seat. Treat any institute promising airline placement as describing something it does not control.'],
+    ['What should I verify before paying a flying school deposit?', 'Approval status checked with the regulator rather than from a certificate image, the average total hours students actually logged to licence last year, how many finished within the quoted timeline, the student-to-aircraft ratio, and written fee terms covering inclusions, payment schedule and refunds. A school that will not answer these in writing has told you something.'],
+    ['What does the student-to-aircraft ratio tell me?', 'It predicts how often you will actually fly, which decides your timeline more than the syllabus does. A large fleet photographed well means little if the student roll has grown faster than the fleet. Ask for both numbers and work out the ratio yourself.'],
+    ['Is a DGCA-approved flying school automatically a good one?', 'Approval is a floor, not a ranking. It confirms the organisation meets the regulatory standard to train; it says nothing about aircraft serviceability, instructor turnover, scheduling discipline or how long students take to finish. Every school worth considering is approved, so approval cannot be your deciding factor.'],
+    ['Can I do ground classes at one institute and flying at another?', 'Yes, and many students do. The written papers are examined by the DGCA regardless of where you studied for them, so ground school and flying school are separable choices. Clearing theory before the expensive flying phase is often the cheaper sequence.'],
+    ['What is an FTO, and how is it different from a ground school?', 'A Flying Training Organisation is approved to conduct flight training and put hours in your logbook. A ground school teaches the theory behind the written examinations and does not fly aircraft. Both stages are required; they are frequently run by different organisations.'],
+    ['How do I check whether a school\'s stated timelines are realistic?', 'Ask for the completion record of the batch that enrolled two years ago, not the syllabus duration. Then ask how many aircraft were unserviceable on an average day last month, and how many flying days were lost to weather last season. Those three answers predict your own timeline.'],
+    ['What happens to my training if a flying school loses approval midway?', 'Hours already logged and examinations already cleared remain yours - they sit with the DGCA and in your logbook, not with the school. What you can lose is prepaid fees, which is why payment schedules tied to training milestones are safer than large advances.'],
+  ],
+},
 };
 
 function fallbackContent(pathname) {

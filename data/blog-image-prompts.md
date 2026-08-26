@@ -118,6 +118,83 @@ Append this to every prompt below:
 
 ---
 
+## Post: `/blogs/commercial-pilot-training-programs-complete-guide`
+
+Prompts 11 to 14 are deliberate near-repeats of 4, 5, 6 and 7 from the pilot-training
+guide, rendered as separate files so the two posts do not share an asset. Vary the
+camera angle or colour weighting slightly between the pair so a reader landing on both
+does not see the same picture twice.
+
+### Prompt 10 — Hero / OpenGraph and card
+- **File:** `public/blog/commercial-pilot-training-programs/hero-training-programme.webp`
+- **Dimensions:** 1200 × 630
+- **Alt:** "An Indian student pilot at a ground-school desk with charts, and the same student in the cockpit of a training aircraft, shown as one continuous programme"
+
+> A wide scene reading left to right as one continuous programme: a South Asian
+> student at a desk with navigation charts and a flight computer, then the same
+> student walking out to a single-engine training aircraft on an apron, then seated
+> at its controls. Three moments, one unbroken flow, no dividing lines.
+
+### Prompt 11 — Flying hours composition
+- **File:** `public/blog/commercial-pilot-training-programs/flying-hours-composition.webp`
+- **Dimensions:** 1200 × 800
+- **Alt:** "One large circle containing four smaller nested segments, showing that command, cross-country, instrument and night flying sit inside a single total"
+
+> One large circle with four smaller shapes nested entirely inside it — contained,
+> never stacked alongside. The largest inner shape fills about half the circle. The
+> containment must read instantly: nothing sits outside the outer ring. Use a
+> top-down flat composition, distinct from a side-on treatment elsewhere.
+
+### Prompt 12 — Training timeline
+- **File:** `public/blog/commercial-pilot-training-programs/training-timeline.webp`
+- **Dimensions:** 1200 × 675
+- **Alt:** "A horizontal path running from a school building through a classroom and a training aircraft to a licence document"
+
+> A horizontal ribbon running left to right past four waypoints in order: a school
+> building, a desk with a stethoscope beside it, a single-engine aircraft in flight,
+> and a certificate. Add small gaps or breaks in the ribbon between waypoints to
+> suggest that the stages do not run continuously.
+
+### Prompt 13 — Cost buckets
+- **File:** `public/blog/commercial-pilot-training-programs/cost-buckets.webp`
+- **Dimensions:** 1200 × 800
+- **Alt:** "Three containers of clearly different sizes side by side, the largest representing flight training costs"
+
+> Three containers side by side on a level surface, dramatically different in size.
+> The centre one is roughly five times the volume of the smallest and is filled with
+> the orange accent; the other two are navy. The size difference is the entire point.
+
+### Prompt 14 — India vs abroad
+- **File:** `public/blog/commercial-pilot-training-programs/india-vs-abroad.webp`
+- **Dimensions:** 1200 × 675
+- **Alt:** "Two flight paths leaving one airport, one looping back domestically and the other crossing an ocean before returning"
+
+> A simplified world arc seen from above. Two dotted paths leave the same point on
+> the Indian subcontinent: one loops short and domestic, the other crosses an ocean
+> to a distant landmass and returns to the same origin. Both end where they started.
+
+### Prompt 15 — Aircraft categories
+- **File:** `public/blog/commercial-pilot-training-programs/aircraft-categories.webp`
+- **Dimensions:** 1200 × 675
+- **Alt:** "Three aircraft of increasing complexity beside a flight training device, representing single-engine, multi-engine and simulator training"
+
+> Four objects in a row, all in clean side profile: a small two-seat single-engine
+> trainer, a slightly larger four-seat single, a twin-engine light aircraft, and a
+> boxy ground-based flight training device with a screen. Increasing complexity left
+> to right. Generic shapes — do not attempt any identifiable manufacturer or model.
+
+### Prompt 16 — Career paths after CPL
+- **File:** `public/blog/commercial-pilot-training-programs/career-paths.webp`
+- **Dimensions:** 1200 × 800
+- **Alt:** "One path branching into four routes ending at an airliner, a training aircraft, a charter aircraft and a business jet"
+
+> A single path starting bottom-centre and branching into four routes fanning
+> upward, each ending at a different aircraft silhouette: an airliner, a small
+> training aircraft, a light charter aircraft and a business jet. Equal visual
+> weight to all four branches — none presented as the destination.
+
+---
+
 ## Post: `/blogs/dgca-exam-guide`
 
 ### Prompt 8 — Card and hero

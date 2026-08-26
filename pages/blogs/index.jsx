@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'commercial-pilot-training-programs-complete-guide',
+        title: 'Commercial Pilot Training Programs in India: Complete Guide for 2026',
+        excerpt: 'How the programmes actually work: Schedule II eligibility, the 200-hour breakdown, what really moves your timeline, the three cost buckets, and an eight-point checklist for verifying a flying school before you pay.',
+        category: 'Commercial pilot training',
+        readTime: '16 min',
+        date: 'Aug 26, 2026',
+        image: { src: '/blog/commercial-pilot-training-programs/hero-training-programme.webp', width: 1200, height: 630, promptId: '10' },
+    },
+    {
         slug: 'what-is-pilot-training-complete-guide',
         title: 'What is Pilot Training? Complete Guide to PPL and CPL Courses in India (2026)',
         excerpt: 'The licence ladder from SPL to ATPL, DGCA eligibility with Schedule II clause references, the five written papers, RTR (A), the full 200-hour flight-time breakdown, timelines and cost buckets.',
