@@ -118,6 +118,52 @@ Append this to every prompt below:
 
 ---
 
+## Post: `/blogs/pilot-training-cost-in-india`
+
+### Prompt 24 — Hero / OpenGraph and card
+- **File:** `public/blog/pilot-training-cost/hero-cost-breakdown.webp`
+- **Dimensions:** 1200 × 630
+- **Alt:** "A desk with a calculator, a notebook of figures and a small model training aircraft, representing the cost of pilot training"
+
+> A tidy desk seen from slightly above: a simple calculator, an open notebook with
+> ruled lines and neat handwritten-looking marks (abstract strokes, never legible
+> characters), a pen, and a small model single-engine training aircraft resting
+> beside them. Calm, considered, unglamorous — this is a planning scene, not an
+> aspirational one.
+
+### Prompt 25 — Cost proportions
+- **File:** `public/blog/pilot-training-cost/cost-proportions.webp`
+- **Dimensions:** 1200 × 800
+- **Alt:** "Three stacked bars of very different heights showing flying training dominating ground school and living costs"
+
+> Three vertical bars standing on a common baseline, dramatically different in
+> height. The tallest is roughly eight times the shortest and carries the orange
+> accent; a middle bar sits at about a third of its height; the shortest is small
+> enough to read as almost negligible. Clean, flat, no axis marks or gridlines.
+
+### Prompt 27 — India compared with abroad
+- **File:** `public/blog/pilot-training-cost/india-vs-abroad-cost.webp`
+- **Dimensions:** 1200 × 675
+- **Alt:** "Two sets of stacked coins of similar total height, one built from fewer large discs and the other from many small ones"
+
+> Two stacks of coins standing side by side on a flat surface, reaching almost
+> exactly the same height. The left stack is made of a few large thick discs; the
+> right of many thin ones. The point is that two very different compositions add up
+> to nearly the same total. Neither stack is highlighted over the other.
+
+### Prompt 26 — Overrun triggers
+- **File:** `public/blog/pilot-training-cost/overrun-triggers.webp`
+- **Dimensions:** 1200 × 675
+- **Alt:** "A budget line rising gently then stepping upward at several points, each step representing an unplanned training cost"
+
+> A single line running left to right, rising gently at first, then jumping upward
+> in four distinct vertical steps at irregular intervals before continuing. A faint
+> dashed horizontal line runs across the frame at the height of the original gentle
+> slope, showing how far above the plan the real line finished. Orange accent on the
+> steps only.
+
+---
+
 ## Post: `/blogs/flight-school-prerequisites-admission-guide`
 
 Prompts 18, 20 and 22 repeat subjects used elsewhere in the cluster. Render them as

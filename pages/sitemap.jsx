@@ -177,6 +177,7 @@ const sitemapData = [
         color: 'bg-pink-50 border-pink-200',
         headerColor: 'bg-pink-700',
         links: [
+            { label: 'Pilot Training Cost in India', href: '/blogs/pilot-training-cost-in-india' },
             { label: 'Flight School Prerequisites: Admission Guide', href: '/blogs/flight-school-prerequisites-admission-guide' },
             { label: 'Commercial Pilot Training Programs: Complete Guide', href: '/blogs/commercial-pilot-training-programs-complete-guide' },
             { label: 'What is Pilot Training? Complete Guide', href: '/blogs/what-is-pilot-training-complete-guide' },

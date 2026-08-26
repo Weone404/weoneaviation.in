@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'pilot-training-cost-in-india',
+        title: 'Pilot Training Cost in India: Complete Breakdown for 2026',
+        excerpt: 'Every line, from ground school and examination fees to the flying phase, ratings, and living costs — plus the seven triggers that push a budget past its quote and the questions that expose an understated fee.',
+        category: 'Pilot training cost',
+        readTime: '12 min',
+        date: 'Aug 26, 2026',
+        image: { src: '/blog/pilot-training-cost/hero-cost-breakdown.webp', width: 1200, height: 630, promptId: '24' },
+    },
+    {
         slug: 'flight-school-prerequisites-admission-guide',
         title: 'Flight School Prerequisites in India: Step-by-Step Admission Guide (2026)',
         excerpt: 'The admission mechanics: academic and medical eligibility, the computer number application and the document mismatches that get it rejected, the four-stage paperwork checklist, and the order the steps have to happen in.',

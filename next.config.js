@@ -29,6 +29,44 @@ const nextConfig = {
   // ── 301 redirect: enforce non-www as the canonical domain ───────────────
   // Vercel runs this at the Edge — zero latency, no Lambda cold start.
   // This eliminates the www vs non-www duplicate content split.
+  /*
+   * ── PREPARED, NOT ACTIVE: database-post consolidation ──────────────────────
+   *
+   * Thirty posts authored through /admin/blog live at MongoDB ObjectId URLs and
+   * self-canonicalise to them. /blogs/6a040a0da7f96236c2f7ea90 is "Pilot Training
+   * Cost in India Explained" — a URL carrying no keyword signal, which no answer
+   * engine will prefer over a competitor's readable slug.
+   *
+   * Three topics are also duplicated across seven URLs, which splits their own
+   * ranking signal:
+   *   How Pilots Build Hours ............ 6a7034d8cf8e38fea1c417a5
+   *                                       6a1d00f816d7f55288a22710
+   *                                       6a0bf3f4a8c579faedcb51e6
+   *   Aviation Jobs Besides Airline ..... 6a38b7aece6bdc909efab785
+   *                                       6a13dbf1ad864b831525ec3b
+   *   DGCA Ground School Guide .......... 6a7178c67cef5b2241a02159
+   *                                       6a06b251216e3de16875f5b0
+   *
+   * Uncommenting a line below 301s that ObjectId onto the file-based replacement.
+   * This is deliberately left inert: it supersedes a post written through the
+   * admin panel, and that is a business decision rather than a technical one.
+   *
+   * Activate a line ONLY when the file-based replacement is live and its content
+   * covers what the database post covered.
+   *
+   * { source: '/blogs/6a040a0da7f96236c2f7ea90', destination: '/blogs/pilot-training-cost-in-india', permanent: true },
+   *
+   * Still to be written before their redirects can be activated:
+   * { source: '/blogs/6a01656be977bff6d3d6bd42', destination: '/blogs/best-flying-school-in-india', permanent: true },
+   * { source: '/blogs/6a7178c67cef5b2241a02159', destination: '/blogs/dgca-ground-school-guide', permanent: true },
+   * { source: '/blogs/6a06b251216e3de16875f5b0', destination: '/blogs/dgca-ground-school-guide', permanent: true },
+   * { source: '/blogs/6a7034d8cf8e38fea1c417a5', destination: '/blogs/how-pilots-build-hours', permanent: true },
+   * { source: '/blogs/6a1d00f816d7f55288a22710', destination: '/blogs/how-pilots-build-hours', permanent: true },
+   * { source: '/blogs/6a0bf3f4a8c579faedcb51e6', destination: '/blogs/how-pilots-build-hours', permanent: true },
+   * { source: '/blogs/6a38b7aece6bdc909efab785', destination: '/blogs/aviation-jobs-besides-airline-pilot', permanent: true },
+   * { source: '/blogs/6a13dbf1ad864b831525ec3b', destination: '/blogs/aviation-jobs-besides-airline-pilot', permanent: true },
+   */
+
   async redirects() {
     return [
       {

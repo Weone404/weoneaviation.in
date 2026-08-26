@@ -604,6 +604,19 @@ const routeContent = {
     ['Can I start ground classes before I finish Class 12?', 'Many students do, in the gap between the final examinations and the results. It uses months that would otherwise be idle, and it means the written papers can be attempted as soon as the computer number is in place. The licence age applies at issue, not at enrolment.'],
   ],
 },
+  '/blogs/pilot-training-cost-in-india': {
+  title: 'Pilot Training Cost: FAQs',
+  questions: [
+    ['Why is flying training so much more expensive than ground school?', 'Because an aircraft, its fuel, its maintenance and an instructor are all being consumed by the hour while you fly, and none of that scales across a class the way a ground lesson does. Ground school teaches thirty students at once; a training flight teaches one.'],
+    ['Does the quoted fee cover the whole path to a licence?', 'Rarely. Most quotes cover flying to the syllabus minimum and stop there. The instrument rating is sometimes inside, a type rating never is, and living costs sit outside every school invoice. Ask what the fee does not include - it is a more useful question than what it does.'],
+    ['What is the difference between airborne time and block time billing?', 'Block time is charged from engine start to engine shutdown, airborne time only from wheels-up to touchdown. Taxiing, holding and run-ups fall in the gap. Across two hundred hours that difference is substantial, and schools rarely volunteer which basis they use.'],
+    ['Can I pay for pilot training in instalments?', 'Most schools accept a schedule rather than a lump sum. Ask for one tied to training milestones rather than to calendar dates, so that a disruption at the school does not leave you having paid for training you have not received.'],
+    ['Is training abroad cheaper once everything is counted?', 'Not reliably. Hourly rates may look lower, and then living costs, visa expenses and DGCA conversion add back. Compare the total cost to a usable Indian licence rather than the headline training fee, and include the months you will spend on conversion after returning.'],
+    ['How much should a family budget above the quoted fee?', 'Enough to absorb extra flying hours and several extra months of living costs, since both are more likely than not. A budget that only balances if nothing goes wrong is the most common reason students pause training partway through.'],
+    ['Do scholarships meaningfully reduce the total?', 'A ground-school scholarship reduces the smallest of the three buckets, so it helps without transforming the total. What reduces the total materially is flying consistently and clearing the written papers before the expensive phase begins.'],
+    ['What happens to my money if I stop training partway?', 'It depends entirely on what you signed. This is why refund conditions and a milestone-linked payment schedule matter more than a discount for paying in advance. Get both in writing before any large transfer.'],
+  ],
+},
 };
 
 function fallbackContent(pathname) {
