@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'flight-school-prerequisites-admission-guide',
+        title: 'Flight School Prerequisites in India: Step-by-Step Admission Guide (2026)',
+        excerpt: 'The admission mechanics: academic and medical eligibility, the computer number application and the document mismatches that get it rejected, the four-stage paperwork checklist, and the order the steps have to happen in.',
+        category: 'Flight school admission',
+        readTime: '13 min',
+        date: 'Aug 26, 2026',
+        image: { src: '/blog/flight-school-prerequisites/hero-admission-checklist.webp', width: 1200, height: 630, promptId: '17' },
+    },
+    {
         slug: 'commercial-pilot-training-programs-complete-guide',
         title: 'Commercial Pilot Training Programs in India: Complete Guide for 2026',
         excerpt: 'How the programmes actually work: Schedule II eligibility, the 200-hour breakdown, what really moves your timeline, the three cost buckets, and an eight-point checklist for verifying a flying school before you pay.',

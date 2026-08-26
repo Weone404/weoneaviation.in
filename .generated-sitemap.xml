@@ -116,12 +116,18 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/blogs/commercial-pilot-training-programs-complete-guide</loc>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weoneaviation.in/blogs/dgca-exam-guide</loc>
     <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/blogs/flight-school-prerequisites-admission-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

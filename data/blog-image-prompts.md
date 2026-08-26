@@ -118,6 +118,83 @@ Append this to every prompt below:
 
 ---
 
+## Post: `/blogs/flight-school-prerequisites-admission-guide`
+
+Prompts 18, 20 and 22 repeat subjects used elsewhere in the cluster. Render them as
+separate files with a different camera angle or colour weighting so a reader moving
+between the three guides does not meet the same picture twice.
+
+### Prompt 17 — Hero / OpenGraph and card
+- **File:** `public/blog/flight-school-prerequisites/hero-admission-checklist.webp`
+- **Dimensions:** 1200 × 630
+- **Alt:** "A student assembling academic certificates, a medical file and identity documents at a desk, with a training aircraft visible through the window behind"
+
+> A South Asian student at a desk, calmly sorting three neat stacks of documents into
+> folders. Through a large window behind, a single-engine training aircraft sits on an
+> apron in soft daylight. The desk is orderly, not cluttered. The aircraft is small in
+> frame — the paperwork is the subject, the flying is the destination.
+
+### Prompt 18 — Licence ladder
+- **File:** `public/blog/flight-school-prerequisites/licence-ladder.webp`
+- **Dimensions:** 1200 × 800
+- **Alt:** "Four ascending steps representing the progression from Student Pilot Licence through Private and Commercial to Airline Transport Pilot Licence"
+
+> Four ascending platforms rising left to right, each carrying an aircraft silhouette
+> that grows larger and more capable from a light trainer to an airliner. Use a lower,
+> more head-on viewpoint than any other ladder illustration in this file so the two do
+> not read as the same image.
+
+### Prompt 19 — Admission process
+- **File:** `public/blog/flight-school-prerequisites/admission-process.webp`
+- **Dimensions:** 1200 × 675
+- **Alt:** "A stepped path running from a certificate through a medical file and a portal screen to a training aircraft and a licence document"
+
+> A path of flat stepping stones running left to right across the frame, each stone
+> carrying one simple icon in order: an academic certificate, a medical file with a
+> stethoscope, a laptop screen, a single-engine aircraft, and a licence document. The
+> stones are evenly spaced and clearly sequential. Orange accent on the final stone.
+
+### Prompt 20 — Flying hours composition
+- **File:** `public/blog/flight-school-prerequisites/flying-hours-composition.webp`
+- **Dimensions:** 1200 × 800
+- **Alt:** "One large circle containing four smaller nested segments, showing that the component hour requirements sit inside a single total"
+
+> One large circle with four smaller shapes nested completely inside it. Nothing sits
+> outside the outer ring. Weight this version toward the pale blue end of the palette
+> so it reads differently from the other two nested-circle illustrations in this file.
+
+### Prompt 21 — Document checklist
+- **File:** `public/blog/flight-school-prerequisites/documents-checklist.webp`
+- **Dimensions:** 1200 × 800
+- **Alt:** "A neat stack of document folders in categories beside a scanner and a passport-size photograph"
+
+> Six labelled-by-colour folders fanned in a neat overlapping stack — no text on the
+> folders, colour alone distinguishes them. Beside the stack, a flatbed scanner with
+> its lid open and a single small photograph resting on the glass. Clean desk surface,
+> generous empty space above.
+
+### Prompt 22 — Cost buckets
+- **File:** `public/blog/flight-school-prerequisites/cost-buckets.webp`
+- **Dimensions:** 1200 × 800
+- **Alt:** "Three containers of clearly different sizes side by side, the largest representing flight training costs"
+
+> Three containers side by side, dramatically different in size, the centre one roughly
+> five times the volume of the smallest and filled with the orange accent. Use a
+> straight-on elevation rather than a three-quarter view to distinguish it from the
+> other cost illustrations in this file.
+
+### Prompt 23 — Choosing a flight school
+- **File:** `public/blog/flight-school-prerequisites/school-selection.webp`
+- **Dimensions:** 1200 × 675
+- **Alt:** "A magnifying glass held over three small flight school buildings with aircraft parked beside them"
+
+> Three small hangar-and-office buildings sitting on a flat plane, each with a light
+> aircraft parked beside it. A large magnifying glass hovers over the middle one,
+> enlarging it slightly and rendering it in sharper detail than the other two. The
+> examination is the subject, not the buildings.
+
+---
+
 ## Post: `/blogs/commercial-pilot-training-programs-complete-guide`
 
 Prompts 11 to 14 are deliberate near-repeats of 4, 5, 6 and 7 from the pilot-training

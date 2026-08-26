@@ -591,6 +591,19 @@ const routeContent = {
     ['What happens to my training if a flying school loses approval midway?', 'Hours already logged and examinations already cleared remain yours - they sit with the DGCA and in your logbook, not with the school. What you can lose is prepaid fees, which is why payment schedules tied to training milestones are safer than large advances.'],
   ],
 },
+  '/blogs/flight-school-prerequisites-admission-guide': {
+  title: 'Flight School Admission: FAQs',
+  questions: [
+    ['How long does a DGCA computer number application take?', 'Processing times vary with the volume the portal is handling, and the application is outside your control once submitted. What you can control is submitting it once, correctly. Apply well before the examination cycle you are aiming at rather than in the weeks before it, and start ground classes while it processes.'],
+    ['Why do computer number applications get rejected?', 'Almost always a mismatch rather than a missing qualification. A name spelled differently between Class 10, Class 12 and Aadhaar, a date of birth that disagrees across records, or a scan too cropped or compressed to read. Lay the three documents side by side and compare them character by character before applying.'],
+    ['Does my name have to match exactly across all my documents?', 'Yes, and this is worth resolving before you apply anywhere. An expanded initial, a dropped surname or a changed spelling will surface at the computer number stage and again at licence issue. Correcting a school record takes weeks; correcting it after a rejection costs those weeks plus a missed examination cycle.'],
+    ['Can I do pilot training if I wear spectacles?', 'Vision that corrects to the required standard is assessed on the corrected result, so spectacles are not in themselves a barrier. Declare your prescription at the assessment rather than leaving it to be found. It surfaces either way, and a declaration made late reads very differently from one made openly.'],
+    ['Can I apply to a flying school before my medical is complete?', 'You can enquire and shortlist, but do not pay. The medical is what determines whether the rest of the path is open to you, and a deposit paid before it is a deposit at risk. Sequence the medical first, then commit money.'],
+    ['Do I need a passport for pilot training in India?', 'Not for training within India, though it is one of the identity documents a school may accept. You will need one if you train abroad or if you intend to convert or use your licence outside India later, and applying for it early costs nothing and removes a delay from a decision you may make later.'],
+    ['What should a flying school admission letter actually specify?', 'The total fee and exactly what it includes, the payment schedule tied to training milestones rather than dates, the hourly rate for instruction beyond the syllabus minimum, refund conditions, and what happens if training is interrupted. Anything agreed verbally and absent from the letter does not exist.'],
+    ['Can I start ground classes before I finish Class 12?', 'Many students do, in the gap between the final examinations and the results. It uses months that would otherwise be idle, and it means the written papers can be attempted as soon as the computer number is in place. The licence age applies at issue, not at enrolment.'],
+  ],
+},
 };
 
 function fallbackContent(pathname) {
