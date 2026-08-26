@@ -108,4 +108,113 @@ head('7. Facts consistency (lib/facts.js is the source of truth)');
   badCounts.length ? badCounts.forEach(bad) : ok('no contradictory paper counts or medical-class claims in page sources');
 }
 
+head('8. llms.txt <-> sitemap parity');
+{
+  const smPath = '.generated-sitemap.xml';
+  if (!fs.existsSync(smPath)) { ok('sitemap not generated yet - skipped'); }
+  else {
+    const sm = new Set([...fs.readFileSync(smPath,'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)]
+      .map(m => m[1].replace(/\/$/,'') || 'https://weoneaviation.in'));
+    const ll = new Set(urls.map(u => 'https://weoneaviation.in' + (u === '/' ? '' : u)));
+    const missing = [...sm].filter(u => !ll.has(u));
+    const extra   = [...ll].filter(u => !sm.has(u));
+    console.log('  sitemap ' + sm.size + ' / llms.txt ' + ll.size);
+    missing.length ? bad('in sitemap but not llms.txt: ' + missing.join(', ')) : ok('every sitemap URL is in llms.txt');
+    extra.length   ? bad('in llms.txt but not sitemap: ' + extra.join(', '))   : ok('llms.txt advertises nothing outside the sitemap');
+    const money = ['/courses/cpl','/dgca-ground-classes','/commercial-pilot-license','/courses/atpl','/ppl-full-form','/student-pilot-license-spl','/rtr-a','/contact'];
+    const mm = money.filter(r => !ll.has('https://weoneaviation.in' + r));
+    mm.length ? bad('money routes absent from llms.txt: ' + mm.join(', ')) : ok('every money route present in llms.txt');
+  }
+}
+
+head('9. Schema singletons per route');
+{
+  // Only TOP-LEVEL nodes count. A nested '@type': 'Organization' under provider,
+  // accreditedBy or publisher is a legitimate entity reference, not a duplicate.
+  const SINGLE = ['EducationalOrganization','Course','FAQPage','BreadcrumbList','HowTo'];
+  const offenders = [];
+  const scanS = (d) => { for (const e of fs.readdirSync(d,{withFileTypes:true})) { const p2 = path.join(d,e.name);
+    if (e.isDirectory()) { if(!/node_modules|\.git|\.next|_to_delete/.test(e.name)) scanS(p2); continue; }
+    if (!/\.jsx$/.test(p2)) continue;
+    const t = fs.readFileSync(p2,'utf8');
+    for (const ty of SINGLE) {
+      const direct = (t.match(new RegExp('^\\s{0,4}[\'"]@type[\'"]\\s*:\\s*[\'"]' + ty + '[\'"]','gm')) || []).length;
+      const viaGen = ty === 'Course'         ? (t.match(/generateCourseSchema\(/g)   || []).length
+                   : ty === 'FAQPage'        ? (t.match(/generateFAQSchema\(/g)      || []).length
+                   : ty === 'BreadcrumbList' ? (t.match(/generateBreadcrumbSchema\(/g)|| []).length
+                   : ty === 'HowTo'          ? (t.match(/generateHowToSchema\(/g)    || []).length : 0;
+      if (direct + viaGen > 1) offenders.push(p2 + ': ' + ty + ' x' + (direct + viaGen));
+    }
+  } };
+  scanS('pages');
+  offenders.length ? offenders.forEach(bad) : ok('no route builds a duplicate singleton schema node');
+}
+
+head('10. Route-specific FAQ coverage');
+{
+  const covered = new Set([...setKeys, ...rcKeys]);
+  const uncovered = [...routes].filter(r =>
+    !covered.has(r) && !redir[r] && !/^\/(404|500)$/.test(r) && !r.startsWith('/admin') && !r.startsWith('/api')
+    && !/^\/_/.test(r) && !/\.(txt|xml)$/.test(r));
+  uncovered.length ? bad('routes with no route-specific FAQs: ' + uncovered.join(', '))
+                   : ok('every live route has route-specific FAQs');
+}
+
+head('11. Server-rendered content guard');
+{
+  const problems = [];
+  const gate = [
+    [/\{\s*open\s*&&/,            'collapsible content gated behind state - answers absent from SSR HTML'],
+    [/\.slice\(0,\s*initialCount/, 'list sliced before render - hidden items absent from SSR HTML'],
+    [/mounted\s*\?\s*children\s*:\s*null/, 'children gated on mount - section absent from SSR HTML'],
+  ];
+  for (const f of ['components/CollapsibleFAQ.jsx','components/ShowMoreList.jsx','components/LazyMount.jsx']) {
+    if (!fs.existsSync(f)) continue;
+    const t = fs.readFileSync(f,'utf8')
+      .replace(/\/\*[\s\S]*?\*\//g,'')   // block comments describe the defect; do not match them
+      .replace(/\/\/[^\n]*/g,'');
+    for (const [re,msg] of gate) if (re.test(t)) problems.push(f + ': ' + msg);
+  }
+  const rb = fs.readFileSync('pages/robots.txt.js','utf8');
+  if (/Disallow: \/_next\/\s*$/m.test(rb)) problems.push('robots.txt.js: /_next/ blocked wholesale - render-critical bundles unreachable');
+  problems.length ? problems.forEach(bad) : ok('no component withholds content from the server-rendered HTML');
+}
+
+head('12. Image dimensions in page templates');
+{
+  const bare = [];
+  const scanI = (d) => { for (const e of fs.readdirSync(d,{withFileTypes:true})) { const p2 = path.join(d,e.name);
+    if (e.isDirectory()) { if(!/node_modules|\.git|\.next|_to_delete/.test(e.name)) scanI(p2); continue; }
+    if (!/\.jsx$/.test(p2)) continue;
+    const t = fs.readFileSync(p2,'utf8');
+    for (const m of t.matchAll(/<img\s[^>]*>/g))
+      if (!/width=/.test(m[0]) || !/height=/.test(m[0])) bare.push(p2 + ': ' + m[0].slice(0,60));
+  } };
+  scanI('pages'); scanI('components');
+  bare.length ? bare.forEach(bad) : ok('no raw <img> without explicit width and height');
+}
+
+head('13. FAQ / PAA disjointness on money routes');
+{
+  const norm = q => q.toLowerCase().replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim();
+  const overlaps = [];
+  const scanP = (d) => { for (const e of fs.readdirSync(d,{withFileTypes:true})) { const p2 = path.join(d,e.name);
+    if (e.isDirectory()) { if(!/node_modules|\.git|\.next|_to_delete/.test(e.name)) scanP(p2); continue; }
+    if (!/\.jsx$/.test(p2)) continue;
+    const t = fs.readFileSync(p2,'utf8');
+    if (!/PeopleAlsoAsk/.test(t)) continue;
+    const route = '/' + p2.replace(/^pages\//,'').replace(/\.jsx$/,'').replace(/\/index$/,'');
+    const paa = [...t.matchAll(/q:\s*'((?:[^'\\]|\\.)*)'/g)].map(m => norm(m[1]));
+    if (!paa.length) return;
+    const idx = pf.indexOf("'" + route + "': {");
+    if (idx < 0) continue;
+    const block = pf.slice(idx, pf.indexOf("\n  '/", idx + 10));
+    const faqs = [...block.matchAll(/\[\s*'((?:[^'\\]|\\.)*)'/g)].map(m => norm(m[1]));
+    const dup = paa.filter(q => faqs.includes(q));
+    if (dup.length) overlaps.push(route + ': ' + dup.length + ' question(s) duplicated between FAQ and PAA');
+  } };
+  scanP('pages');
+  overlaps.length ? overlaps.forEach(bad) : ok('no route duplicates a question between its FAQ set and People Also Ask');
+}
+
 console.log('\n'+(FAIL?FAIL+' CHECK(S) FAILED':'ALL CHECKS PASSED'));
