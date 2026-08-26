@@ -41,6 +41,7 @@ Academy facts: founded 2009; located at C-404, 3rd Floor, Near Ramphal Chowk Roa
 
 ## Courses
 
+- https://weoneaviation.in/ — Academy homepage: programmes, eligibility summary, fee and schedule overview, and the step-by-step route to a licence.
 - https://weoneaviation.in/commercial-pilot-license — Complete guide to the Commercial Pilot Licence in India: eligibility, process, flying-hour requirements and career path.
 - https://weoneaviation.in/courses/cpl — CPL programme page with the Schedule II eligibility and flight-time tables, fee breakdown and step-by-step route.
 - https://weoneaviation.in/dgca-ground-classes — DGCA ground school: subjects, duration, eligibility and exam preparation.
@@ -56,6 +57,7 @@ Academy facts: founded 2009; located at C-404, 3rd Floor, Near Ramphal Chowk Roa
 - https://weoneaviation.in/commercial-pilot-license-admission-process — Step-by-step admission route.
 - https://weoneaviation.in/commercial-pilot-license-salary — Commercial pilot pay in India, described as industry-wide ranges rather than promises.
 - https://weoneaviation.in/cost-transparency — What CPL training actually costs, line by line.
+- https://weoneaviation.in/full-form-of-cpl-commercial-pilot-license — What CPL stands for, what the licence permits, and how it differs from a PPL and an ATPL.
 
 ## DGCA subject guides
 
@@ -70,6 +72,9 @@ Academy facts: founded 2009; located at C-404, 3rd Floor, Near Ramphal Chowk Roa
 - https://weoneaviation.in/dgca-pariksha — The DGCA examination system, schedule and preparation.
 - https://weoneaviation.in/dgca-computer-number — Obtaining a DGCA computer number, the prerequisite for sitting the papers.
 - https://weoneaviation.in/dgca-full-form — What the DGCA is and what it regulates.
+- https://weoneaviation.in/dgca-ground-classes-in-india — Ground-class options across India, subject coverage and how classes are structured.
+- https://weoneaviation.in/rtr-full-form-meaning-importance-and-complete-guide — What RTR (A) stands for, why it is examined separately from the DGCA papers, and how the examination is structured.
+- https://weoneaviation.in/ecga-login-your-complete-guide — Using the DGCA eGCA portal: registration, login, and the actions students complete there.
 
 ## How to become a pilot
 
@@ -97,11 +102,14 @@ Academy facts: founded 2009; located at C-404, 3rd Floor, Near Ramphal Chowk Roa
 - https://weoneaviation.in/airline-preparatory-classes/interview-preparation — Airline interview technique and preparation.
 - https://weoneaviation.in/airline-preparatory-classes/psychometry — Psychometric assessment preparation.
 - https://weoneaviation.in/airline-preparatory-classes/cass-compass — CASS and COMPASS assessment preparation.
+- https://weoneaviation.in/air-arabia — Air Arabia pilot selection and what the process involves.
+- https://weoneaviation.in/spice-jet — SpiceJet pilot selection and what the process involves.
 
 ## Locations
 
 - https://weoneaviation.in/pilot-training-in-india — Pilot training across India: routes, schools and requirements.
 - https://weoneaviation.in/pilot-training-in-delhi — Training from the Dwarka, New Delhi centre.
+- https://weoneaviation.in/pilot-training-in-sri-lanka — Sri Lanka as a training destination and what DGCA conversion involves on return.
 
 ## Trust and credentials
 
@@ -111,6 +119,32 @@ Academy facts: founded 2009; located at C-404, 3rd Floor, Near Ramphal Chowk Roa
 - https://weoneaviation.in/student-checklists — Practical checklists for each stage of the licence.
 - https://weoneaviation.in/lead-magnets — Free downloadable guides and checklists.
 - https://weoneaviation.in/blogs — Articles on DGCA exams, training routes and aviation careers.
+
+## Student guides and reference
+
+- https://weoneaviation.in/cbse-full-form — What CBSE stands for and how the board relates to DGCA education eligibility.
+- https://weoneaviation.in/icse-full-form — What ICSE stands for and how the board relates to DGCA education eligibility.
+- https://weoneaviation.in/lead-magnets/cpl-cost-breakdown — Line-by-line CPL cost breakdown comparing training in India against training abroad.
+- https://weoneaviation.in/lead-magnets/dgca-exam-checklist — Preparation checklist for the DGCA written papers.
+- https://weoneaviation.in/lead-magnets/pre-admission-checklist — What to verify and assemble before paying any flying-school deposit.
+- https://weoneaviation.in/doubt — Ask a training question and get an answer from the academy.
+
+## Articles
+
+- https://weoneaviation.in/blogs/dgca-exam-guide — Guide to the DGCA written examinations: the five papers, how they are cleared, and common preparation errors.
+- https://weoneaviation.in/blogs/aviation-course-after-12th — Aviation course options after Class 12 and how each route leads to a licence.
+- https://weoneaviation.in/blogs/1 — Academy article.
+- https://weoneaviation.in/blogs/2 — Academy article.
+- https://weoneaviation.in/blogs/3 — Academy article.
+- https://weoneaviation.in/blogs/4 — Academy article.
+- https://weoneaviation.in/blogs/5 — Academy article.
+- https://weoneaviation.in/blogs/6 — Academy article.
+
+## Site policies and navigation
+
+- https://weoneaviation.in/sitemap — Human-readable index of every page on the site.
+- https://weoneaviation.in/privacy-policy — How the academy handles enquiry and student data.
+- https://weoneaviation.in/terms — Terms governing use of the site and enrolment enquiries.
 
 ## Contact
 
