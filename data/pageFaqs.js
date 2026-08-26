@@ -630,6 +630,19 @@ const routeContent = {
     ['Can I keep ground school and flying school separate?', 'Yes, and many students do. The DGCA examines the written papers regardless of where you studied for them, so the two are separable decisions. Clearing theory first usually costs less overall, because ground study is a fraction of the price of an hour in an aircraft.'],
   ],
 },
+  '/blogs/dgca-ground-school-guide': {
+  title: 'DGCA Ground School: FAQs',
+  questions: [
+    ['How many papers do I attempt in one examination cycle?', 'Two suits most students. Papers clear individually, so small groups across successive cycles spreads the load instead of concentrating it. Attempting all five at once is the most reliable way to turn a six-month ground phase into an eighteen-month one.'],
+    ['Which paper should I start studying first?', 'Air Navigation, on day one. It is the most calculation-heavy paper and the one that punishes a late start hardest, because what it examines is speed rather than volume. Air Regulations can be left later - it is mostly memory work and responds well to a short intensive run.'],
+    ['Is a failed paper recorded against my other papers?', 'No. Each paper stands alone, so a failure in one does not affect passes already secured or attempts in others. Keep attempting the remaining papers rather than pausing the whole plan while you re-prepare the failed one.'],
+    ['How do I know whether I failed on knowledge or on time?', 'Ask yourself how many questions you left unanswered. Running out of time needs timed drills; wrong answers on questions you completed need the underlying concept. The two failures look identical on a result slip and need opposite responses, so diagnose before re-booking.'],
+    ['Do I need to nominate an aircraft type before ground school?', 'Not to begin. You need it before Technical Specific, which is examined against the type named in your application. Most students settle it once their flying school is chosen, since the type they will train on is the natural nomination.'],
+    ['Can I study for the DGCA papers entirely on my own?', 'Some students do, and it takes longer for most. What self-study rarely provides is timed mock tests marked by someone who has sat the paper, and a person to ask when a Navigation method will not come out. Those two things are what the six months buy.'],
+    ['How much mathematics does ground school involve?', 'Enough that Class 12 Mathematics is a genuine requirement. Air Navigation is applied trigonometry and vector work; Technical General is applied physics. Neither exceeds school level, but both are examined at speed, which is a different skill from doing them slowly.'],
+    ['Should I finish all papers before starting to fly?', 'Not necessarily. Flying can begin once your medical and computer number are in place, and the phases overlap well - weather cancellations become study time. What is usually unwise is the reverse: leaving all theory until after the flying, when you are paying rent at a flying school to revise.'],
+  ],
+},
 };
 
 function fallbackContent(pathname) {

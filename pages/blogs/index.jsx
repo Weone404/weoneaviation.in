@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'dgca-ground-school-guide',
+        title: 'DGCA Ground School: The Complete Guide to Clearing the Papers (2026)',
+        excerpt: 'The five written papers subject by subject with honest difficulty ratings, where RTR (A) actually sits, why attempting all five in one cycle backfires, a six-month study plan, and what to do after a failed paper.',
+        category: 'DGCA ground school',
+        readTime: '13 min',
+        date: 'Aug 26, 2026',
+        image: { src: '/blog/dgca-ground-school/hero-ground-school.webp', width: 1200, height: 630, promptId: '31' },
+    },
+    {
         slug: 'best-flying-school-in-india',
         title: 'Best Flying School in India: How to Choose One (2026)',
         excerpt: 'Every credible school is DGCA-approved, so approval cannot be your deciding factor. What separates them: fleet-to-student ratio, daily serviceability, instructor turnover, weather losses at that base — and the eight questions that get you those numbers.',

@@ -177,6 +177,7 @@ const sitemapData = [
         color: 'bg-pink-50 border-pink-200',
         headerColor: 'bg-pink-700',
         links: [
+            { label: 'DGCA Ground School Guide', href: '/blogs/dgca-ground-school-guide' },
             { label: 'Best Flying School in India', href: '/blogs/best-flying-school-in-india' },
             { label: 'Pilot Training Cost in India', href: '/blogs/pilot-training-cost-in-india' },
             { label: 'Flight School Prerequisites: Admission Guide', href: '/blogs/flight-school-prerequisites-admission-guide' },

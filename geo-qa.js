@@ -5,9 +5,31 @@ const routes=new Set(),dynamic=[];
  if(e.isDirectory()){if(!/api|admin/.test(e.name))w(p)} else if(/\.(jsx?|tsx?)$/.test(e.name)){
  let r='/'+p.replace(/^pages\//,'').replace(/\.[jt]sx?$/,'');r=r.replace(/\/index$/,'')||'/';if(r==='/index')r='/';
  routes.add(r);if(r.includes('['))dynamic.push(r);}}})('pages');
-const cfg=fs.readFileSync('next.config.js','utf8'),redir={};
+// Comments are stripped first. A commented-out redirect is not a redirect, and
+// parsing them as live made every prepared-but-inactive entry count towards the
+// total and pass the destination check.
+const cfg=fs.readFileSync('next.config.js','utf8')
+  .replace(/\/\*[\s\S]*?\*\//g,'')
+  .split('\n').filter(l=>!l.trim().startsWith('//')).join('\n'),redir={};
 for(const m of cfg.matchAll(/source:\s*'([^']+)'[\s\S]{0,160}?destination:\s*'([^']+)'/g))redir[m[1]]=m[2];
-const live=h=>routes.has(h)||dynamic.some(d=>h.startsWith(d.split('[')[0])&&h.length>d.split('[')[0].length);
+/*
+ * A dynamic route makes every path beneath it look live. /blogs/[id] is a
+ * catch-all, so without this exclusion a redirect pointing at a blog slug that
+ * does not exist as a file would silently pass the destination check.
+ * Blog destinations must therefore resolve to a real file, not to the catch-all.
+ */
+const CATCHALL_EXCLUDED = ['/blogs/[id]'];
+/*
+ * /blogs/[id] prerenders a fixed set of numeric ids from hardcodedBlogs, and
+ * serves everything else through fallback: 'blocking' against MongoDB. So a
+ * numeric /blogs/N is genuinely live, while /blogs/some-slug is live only if a
+ * file exists for it. Treating the whole catch-all as live hid a broken link.
+ */
+const HARDCODED_BLOG_IDS = new Set(
+  [...fs.readFileSync('pages/blogs/[id].jsx','utf8').matchAll(/^\s*\{\s*id:\s*(\d+)/gm)].map(m => '/blogs/' + m[1])
+);
+const live=h=>routes.has(h)||HARDCODED_BLOG_IDS.has(h)||dynamic.filter(d=>!CATCHALL_EXCLUDED.includes(d))
+  .some(d=>h.startsWith(d.split('[')[0])&&h.length>d.split('[')[0].length);
 
 head('1. llms.txt URLs');
 const urls=[...new Set([...fs.readFileSync('public/llms.txt','utf8').matchAll(/https:\/\/weoneaviation\.in(\/[^\s)\]]*)?/g)].map(m=>(m[1]||'/').replace(/\/$/,'')||'/'))];

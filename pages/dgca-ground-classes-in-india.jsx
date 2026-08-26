@@ -205,7 +205,7 @@ const blogs = [
         { title: 'Full Form of CPL | Commercial Pilot License in India', date: 'January 28, 2025', desc: 'What CPL means in Indian aviation, eligibility, DGCA requirements and career scope.', href: '/courses/cpl' },
         { title: 'Master the DGCA CPL Exam: Complete Guide for Indian Students', date: 'January 21, 2025', desc: 'Complete DGCA CPL exam guide — syllabus, subjects, exam centres, and success tips for India.', href: '/blogs/dgca-exam-guide' },
         { title: 'Aviation Course After 12th in India — Fees & Admission Guide', date: 'January 2, 2025', desc: 'All aviation courses available in India after 12th — fees, eligibility, and career paths explained.', href: '/blogs/aviation-course-after-12th' },
-        { title: 'Choosing an Aviation Academy in India', date: 'December 12, 2024', desc: 'What to check before enrolling in a DGCA ground-classes institute.', href: '/blogs/aviation-academy' },
+        { title: 'Choosing an Aviation Academy in India', date: 'December 12, 2024', desc: 'What to check before enrolling in a DGCA ground-classes institute.', href: '/blogs/best-flying-school-in-india' },
 ]
 // ─── Component ────────────────────────────────────────────────────────────────
 

@@ -39,8 +39,6 @@ const nextConfig = {
    * A line moves into the ACTIVE block above in the same commit as the rebuild
    * that gives it a destination. Never before.
    *
-   * { source: '/blogs/6a7178c67cef5b2241a02159', destination: '/blogs/dgca-ground-school-guide', permanent: true },
-   * { source: '/blogs/6a06b251216e3de16875f5b0', destination: '/blogs/dgca-ground-school-guide', permanent: true },
    * { source: '/blogs/6a7034d8cf8e38fea1c417a5', destination: '/blogs/how-pilots-build-hours', permanent: true },
    * { source: '/blogs/6a1d00f816d7f55288a22710', destination: '/blogs/how-pilots-build-hours', permanent: true },
    * { source: '/blogs/6a0bf3f4a8c579faedcb51e6', destination: '/blogs/how-pilots-build-hours', permanent: true },
@@ -60,6 +58,8 @@ const nextConfig = {
        */
       { source: '/blogs/6a040a0da7f96236c2f7ea90', destination: '/blogs/pilot-training-cost-in-india', permanent: true },
       { source: '/blogs/6a01656be977bff6d3d6bd42', destination: '/blogs/best-flying-school-in-india', permanent: true },
+      { source: '/blogs/6a7178c67cef5b2241a02159', destination: '/blogs/dgca-ground-school-guide', permanent: true },
+      { source: '/blogs/6a06b251216e3de16875f5b0', destination: '/blogs/dgca-ground-school-guide', permanent: true },
 
       {
         source: '/Pilot-Course-&-Pilot-Training-in -ndia',

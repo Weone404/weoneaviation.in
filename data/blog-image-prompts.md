@@ -118,6 +118,40 @@ Append this to every prompt below:
 
 ---
 
+## Post: `/blogs/dgca-ground-school-guide`
+
+### Prompt 31 — Hero / OpenGraph and card
+- **File:** `public/blog/dgca-ground-school/hero-ground-school.webp`
+- **Dimensions:** 1200 × 630
+- **Alt:** "Students at desks working through navigation charts and a flight computer in a ground school classroom"
+
+> Four or five South Asian students at simple desks in a bright classroom, each
+> working over a large navigation chart with a circular slide-rule flight computer
+> and a plotter. Heads down, working, not posed. A whiteboard behind carries
+> abstract diagram shapes only — never letters or numbers.
+
+### Prompt 32 — Relative paper difficulty
+- **File:** `public/blog/dgca-ground-school/subject-difficulty.webp`
+- **Dimensions:** 1200 × 800
+- **Alt:** "Five columns of clearly different heights representing the relative preparation load of each DGCA written paper"
+
+> Five vertical columns on a common baseline, clearly different in height. The
+> tallest and the second tallest carry the orange accent; the shortest is roughly a
+> third of the tallest. No axis marks, no gridlines, no labels — the comparison is
+> carried entirely by height.
+
+### Prompt 33 — Six-month study plan
+- **File:** `public/blog/dgca-ground-school/study-timeline.webp`
+- **Dimensions:** 1200 × 675
+- **Alt:** "A six-segment horizontal band with study intensity rising and falling across the months of a ground school course"
+
+> A horizontal band divided into six equal segments left to right, each segment
+> filled to a different height like a simple bar sequence inside the band. The
+> fourth segment is marked with the orange accent to indicate the first examination
+> attempt. Clean, flat, no text.
+
+---
+
 ## Post: `/blogs/best-flying-school-in-india`
 
 ### Prompt 28 — Hero / OpenGraph and card
