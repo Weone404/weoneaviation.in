@@ -6,7 +6,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const isProduction = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
-  reactStrictMode: false,
+  reactStrictMode: true,
+  poweredByHeader: false,
+  productionBrowserSourceMaps: false,
 
   images: {
     formats: ['image/avif', 'image/webp'],

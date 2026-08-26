@@ -37,7 +37,8 @@ export async function getServerSideProps({ res }) {
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /_next/
+Allow: /_next/static/
+Disallow: /_next/data/
 Disallow: /admin/
 Disallow: /private/
 Disallow: /.git/
@@ -56,14 +57,16 @@ Disallow: /*?*page=
 User-agent: Googlebot
 Allow: /
 Disallow: /api/
-Disallow: /_next/
+Allow: /_next/static/
+Disallow: /_next/data/
 Disallow: /admin/
 
 # ===== BING/YAHOO =====
 User-agent: Bingbot
 Allow: /
 Disallow: /api/
-Disallow: /_next/
+Allow: /_next/static/
+Disallow: /_next/data/
 Disallow: /admin/
 
 # ===== BLOCK AGGRESSIVE/HARMFUL BOTS =====

@@ -1,30 +1,13 @@
-'use client';
-
-import { useEffect, useRef, useState } from 'react';
-
-export default function LazyMount({ children, placeholderClassName = 'min-h-40' }) {
-  const [mounted, setMounted] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const element = ref.current;
-    if (!element || typeof window === 'undefined') return undefined;
-
-    if (typeof window.IntersectionObserver === 'undefined') {
-      const fallback = window.setTimeout(() => setMounted(true), 0);
-      return () => window.clearTimeout(fallback);
-    }
-
-    const observer = new window.IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting)) {
-        setMounted(true);
-        observer.disconnect();
-      }
-    }, { rootMargin: '400px' });
-
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
-
-  return <div ref={ref} className={mounted ? '' : placeholderClassName}>{mounted ? children : null}</div>;
+/*
+ * Passthrough by design.
+ *
+ * This previously rendered `null` until an IntersectionObserver fired, which
+ * removed the wrapped section from the server-rendered HTML. The components it
+ * wraps are already server-rendered by Next.js, so gating them saved a little
+ * hydration work and cost the whole section its crawlability.
+ *
+ * Kept as a component so call sites do not change.
+ */
+export default function LazyMount({ children, placeholderClassName = '' }) {
+  return <div className={placeholderClassName || undefined}>{children}</div>;
 }
