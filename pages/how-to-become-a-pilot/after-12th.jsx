@@ -4,6 +4,7 @@ import { generateHowToSchema } from '../../lib/schema';
 import LeadForm from '../../components/LeadForm';
 import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
+import Image from 'next/image';
 import QuickAnswer from '../../components/QuickAnswer';
 import SummaryBox from '../../components/SummaryBox';
 import PeopleAlsoAsk from '../../components/PeopleAlsoAsk';
@@ -62,8 +63,15 @@ export default function After12th() {
             <StructuredData data={howToSchema} />
 
       {/* Hero */}
-      <div className="relative h-72 overflow-hidden flex items-center justify-center pt-16"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="relative h-72 overflow-hidden flex items-center justify-center pt-16">
+        <Image
+          src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80"
+          alt="Aircraft on a runway with a dramatic sunset sky during pilot training preparation"
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+        />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative z-10 text-center px-4">
           <div className="section-tag mb-3">Complete Guide</div>

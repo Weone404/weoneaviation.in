@@ -64,7 +64,7 @@ export default function SpecialOfferBanner() {
 
             {/* Main content */}
             <div className="relative z-10 flex flex-col justify-center flex-1 px-4 py-3 min-w-0">
-                <p className="text-[10px] font-semibold text-white/70 uppercase tracking-wider mb-0.5">
+                <p className="text-xs font-semibold text-white/70 uppercase tracking-wider mb-0.5">
                     Complete CPL Training from
                 </p>
                 <span
@@ -73,7 +73,7 @@ export default function SpecialOfferBanner() {
                 >
                     ₹29–32 Lakh
                 </span>
-                <p className="text-[10px] text-white/50 mt-1">
+                <p className="text-xs text-white/50 mt-1">
                     (≈ ₹29–32 Lakh; ~$35,000)
                 </p>
             </div>

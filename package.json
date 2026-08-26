@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "generate:sitemap": "node scripts/generate-sitemap.js",
-    "build": "npm run generate:sitemap && next build",
+    "build": "npm run generate:sitemap && next build --webpack",
     "start": "next start",
     "lint": "eslint .",
     "check:claims": "node scripts/check-claims.js",

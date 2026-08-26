@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import StructuredData from './StructuredData';
+import CollapsibleFAQ from './CollapsibleFAQ';
 import { generateFAQSchema } from '../lib/schema';
 
 const faqs = [
@@ -39,20 +40,9 @@ export default function FAQs() {
 
         <div className="space-y-4">
           {faqs.map((faq) => (
-              <details
-                key={faq.id}
-                className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 group cursor-pointer"
-                onToggle={(e) => e.currentTarget.setAttribute('aria-expanded', e.currentTarget.open ? 'true' : 'false')}
-                aria-expanded="false"
-              >
-                <summary className="font-montserrat font-bold text-av-blue text-sm list-none flex justify-between items-center">
-                  {faq.q}
-                  <span className="text-av-orange ml-4 flex-shrink-0 group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
-                </summary>
-                <p className="text-gray-500 text-sm leading-relaxed mt-4 pt-4 border-t border-gray-100">{faq.a}</p>
-              </details>
-            ))}
-          </div>
+            <CollapsibleFAQ key={faq.id} id={faq.id} question={faq.q} answer={faq.a} />
+          ))}
+        </div>
 
         <div className="text-center mt-8">
           <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-av-blue transition-all text-sm">

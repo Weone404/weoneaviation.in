@@ -140,7 +140,7 @@ function BreakingNewsTicker() {
     <div className="hidden w-full items-stretch overflow-hidden bg-orange-600 sm:flex" style={{ height: '36px' }}>
       {/* BREAKING badge */}
       <div className="relative z-10 flex shrink-0 items-center bg-red-800 px-3 sm:px-5">
-        <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-[0.2em] text-white sm:text-xs"></span>
+        <span className="whitespace-nowrap text-xs font-black uppercase tracking-[0.2em] text-white"></span>
         <div
           className="absolute right-0 top-0 h-full w-4 translate-x-full bg-red-800"
           style={{ clipPath: 'polygon(0 0, 0 100%, 100% 100%)' }}
@@ -149,20 +149,22 @@ function BreakingNewsTicker() {
 
       {/* Scrolling track */}
       <div className="relative flex flex-1 items-center overflow-hidden">
-        <div className="ticker-track flex items-center whitespace-nowrap" aria-label="Latest announcements">
-          {items.map((msg, i) => (
-            <span key={i} className="inline-flex shrink-0 items-center gap-3 text-xs font-bold text-white sm:text-sm">
-              <span className="px-6 leading-none">{msg}</span>
-              <span className="text-red-300 opacity-70">◆</span>
-            </span>
-          ))}
-          <div aria-hidden="true" className="flex shrink-0 items-center whitespace-nowrap">
+        <div className="ticker-viewport min-w-0 flex-1 overflow-hidden" aria-label="Latest announcements">
+          <div className="ticker-track flex w-max items-center whitespace-nowrap">
             {items.map((msg, i) => (
-              <span key={`dup-${i}`} className="inline-flex shrink-0 items-center gap-3 text-xs font-bold text-white sm:text-sm">
+              <span key={i} className="inline-flex shrink-0 items-center gap-3 text-xs font-bold text-white sm:text-sm">
                 <span className="px-6 leading-none">{msg}</span>
                 <span className="text-red-300 opacity-70">◆</span>
               </span>
             ))}
+            <div aria-hidden="true" className="flex shrink-0 items-center whitespace-nowrap">
+              {items.map((msg, i) => (
+                <span key={`dup-${i}`} className="inline-flex shrink-0 items-center gap-3 text-xs font-bold text-white sm:text-sm">
+                  <span className="px-6 leading-none">{msg}</span>
+                  <span className="text-red-300 opacity-70">◆</span>
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -173,12 +175,11 @@ function BreakingNewsTicker() {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
         </span>
-        <span className="hidden text-[10px] font-black uppercase tracking-widest text-white sm:inline">Live</span>
+        <span className="hidden text-xs font-black uppercase tracking-widest text-white sm:inline">Live</span>
       </div>
 
       <style jsx>{`
         .ticker-track {
-          width: max-content;
           animation: ticker-scroll 35s linear infinite;
         }
         .ticker-track:hover {
@@ -224,16 +225,17 @@ export default function Navbar() {
         <div className="mx-auto flex w-full items-center justify-between px-4 sm:px-8 lg:px-16">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <NextImage
-              src="/Logo.webp"
-              alt="We One Aviation Academy"
-              width={200}
-              height={64}
-              sizes="200px"
-              style={{ width: '200px', height: '64px', objectFit: 'contain' }}
-              className="block"
-            />
+          <Link href="/" className="flex h-16 w-[200px] items-center">
+            <div className="relative h-16 w-16 shrink-0">
+              <NextImage
+                src="/Logo.webp"
+                alt="We One Aviation Academy"
+                fill
+                sizes="64px"
+                style={{ objectFit: 'contain' }}
+                className="block"
+              />
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -316,7 +318,7 @@ export default function Navbar() {
 
             
             {/* CTA */}
-            <Link href="/contact" className="ml-2 shrink-0 whitespace-nowrap rounded-full bg-av-orange px-5 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-orange-500/30">
+            <Link href="/contact" className="button-primary ml-2 shrink-0 whitespace-nowrap rounded-full bg-av-orange px-5 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-orange-500/30">
               Register for Scholarship
             </Link>
           </nav>

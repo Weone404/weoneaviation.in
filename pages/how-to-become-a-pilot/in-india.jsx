@@ -9,6 +9,7 @@ import Breadcrumb from '../../components/Breadcrumb';
 import LeadForm from '../../components/LeadForm';
 import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
+import Image from 'next/image';
 
 /*
  * The nine steps below are drawn from what this page already stated in prose —
@@ -75,8 +76,15 @@ export default function InIndia() {
       <StructuredData data={howToSchema} />
 
       {/* Hero */}
-      <div className="relative h-72 overflow-hidden flex items-center justify-center pt-16"
-        style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=80)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="relative h-72 overflow-hidden flex items-center justify-center pt-16">
+        <Image
+          src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=80"
+          alt="Air travel and runway scene representing pilot training and aviation careers in India"
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+        />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative z-10 text-center px-4">
           <div className="section-tag mb-3">India Guide</div>

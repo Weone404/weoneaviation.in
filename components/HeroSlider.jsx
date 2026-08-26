@@ -52,17 +52,9 @@ const STATS = [
  * file — Lighthouse (mobile) attributed 633 KiB of transfer to Unsplash on the
  * homepage alone, most of it pixels a phone cannot display.
  *
- * Unsplash resizes on demand from the `w` query parameter, so a srcset costs
- * nothing to produce. Slides pointing at local files under /assets have no such
- * parameter; those return undefined and fall back to plain `src`.
+ * Next Image handles responsive sizing and format negotiation for both local
+ * and remote slide assets.
  */
-const SRCSET_WIDTHS = [640, 960, 1280, 1920];
-
-function buildSrcSet(url) {
-  if (typeof url !== 'string' || !/[?&]w=\d+/.test(url)) return undefined;
-  return SRCSET_WIDTHS.map((w) => `${url.replace(/([?&]w=)\d+/, `$1${w}`)} ${w}w`).join(', ');
-}
-
 // Particle positions computed once, not on every render
 const PARTICLES = Array.from({ length: 8 }, (_, i) => ({
   left: `${10 + i * 12}%`,
@@ -117,12 +109,6 @@ export default function HeroSlider({ customSlides, asH1 = true }) {
     return () => clearInterval(interval);
   }, [data.length]);
 
-  // Pre-load the *next* slide whenever current changes
-  useEffect(() => {
-    const nextIdx = (current + 1) % data.length;
-    setLoaded(prev => new Set(prev).add(nextIdx));
-  }, [current, data.length]);
-
   const slide = data[current];
 
   return (
@@ -149,13 +135,13 @@ export default function HeroSlider({ customSlides, asH1 = true }) {
             {(isFirst || shouldRender) && (
               <NextImage
                 src={s.image}
-                srcSet={buildSrcSet(s.image)}
                 sizes="100vw"
                 alt={s.alt || s.tag}
-                width={1600}
-                height={900}
+                width={1920}
+                height={1080}
                 priority={isFirst}
-                className="absolute inset-0 w-full h-full object-cover object-center"
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
+                className="absolute inset-0 w-full h-full"
               />
             )}
           </div>
@@ -198,10 +184,10 @@ export default function HeroSlider({ customSlides, asH1 = true }) {
               Use h1 for the homepage hero and h2 for page-specific hero slides.
               This keeps the layout intact while preserving heading structure.
             */}
-            <Heading className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight text-shadow mb-2">
+            <Heading className="font-montserrat text-4xl md:text-6xl lg:text-6xl font-black text-white leading-tight text-shadow mb-2">
               {slide.title}
             </Heading>
-            <p className="font-montserrat text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-shadow mb-5 gradient-text">
+            <p className="font-montserrat text-4xl md:text-6xl lg:text-6xl font-black leading-tight text-shadow mb-5 gradient-text">
               {slide.highlight}
             </p>
             <p className="text-white/80 text-base md:text-lg mb-8 max-w-xl leading-relaxed">
@@ -211,13 +197,13 @@ export default function HeroSlider({ customSlides, asH1 = true }) {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="bg-av-orange hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full transition-all shadow-2xl hover:shadow-orange-500/40 hover:scale-105 text-sm md:text-base"
+                className="button-primary bg-av-orange hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full transition-all shadow-2xl hover:shadow-orange-500/40 hover:scale-105 text-sm md:text-base"
               >
                 Get Free Counselling
               </Link>
               <Link
                 href="/courses"
-                className="glass text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition-all text-sm md:text-base"
+                className="button-secondary glass text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition-all text-sm md:text-base"
               >
                 Explore Courses →
               </Link>
