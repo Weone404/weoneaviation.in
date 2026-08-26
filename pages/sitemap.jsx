@@ -177,6 +177,7 @@ const sitemapData = [
         color: 'bg-pink-50 border-pink-200',
         headerColor: 'bg-pink-700',
         links: [
+            { label: 'What is Pilot Training? Complete Guide', href: '/blogs/what-is-pilot-training-complete-guide' },
             { label: 'Aviation Course After 12th', href: '/blogs/aviation-course-after-12th' },
             { label: 'CPL Full Form Blog', href: '/courses/cpl' },
             { label: 'DGCA Exam Guide', href: '/blogs/dgca-exam-guide' },

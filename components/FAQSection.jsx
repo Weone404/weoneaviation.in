@@ -34,11 +34,20 @@ export default function FAQSection({ faqs, title = 'Frequently Asked Questions',
                     <span>{faq.question}</span>
                     <span className={`text-av-orange text-xl flex-shrink-0 transition-transform ${isOpen ? 'rotate-45' : ''}`} aria-hidden="true">+</span>
                   </button>
-                  {isOpen && (
-                    <div id={`${idPrefix}-answer-${index}`} className="px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
-                      {faq.answer}
-                    </div>
-                  )}
+                  {/*
+                    * Always rendered. Collapsing hides it with CSS.
+                    *
+                    * This was `{isOpen && ...}`, which put only the first answer of
+                    * every FAQ set into the server-rendered HTML. Across the site that
+                    * left roughly 300 answers readable only after a click - invisible to
+                    * every answer engine that does not execute JavaScript.
+                    */}
+                  <div
+                    id={`${idPrefix}-answer-${index}`}
+                    className={`px-5 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 ${isOpen ? '' : 'hidden'}`}
+                  >
+                    {faq.answer}
+                  </div>
                 </div>
               </ScrollReveal>
             );

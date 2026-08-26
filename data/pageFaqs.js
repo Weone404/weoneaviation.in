@@ -565,6 +565,19 @@ const routeContent = {
     ['Does DGCA Ground Classes offer both online and offline modes?', 'Yes, the DGCA Ground Classes program is offered in both online and offline modes, including mock tests and doubt-clearing sessions.'],
   ],
 },
+  '/blogs/what-is-pilot-training-complete-guide': {
+  title: 'Pilot Training in India: FAQs',
+  questions: [
+    ['Is pilot training a college degree?', 'No. A pilot licence is issued by the DGCA against written examinations, a medical fitness assessment and logged flight time. It carries no academic credit and no university awards it. Some students take an aviation degree alongside their licence, but the two are separate qualifications serving separate purposes.'],
+    ['Can I start pilot training after 12th?', 'Yes, with Physics and Mathematics at 10+2 level. Students from Biology or Commerce streams clear both subjects as private candidates through NIOS and then apply. Ground classes can begin at 17; the Commercial Pilot Licence itself requires 18.'],
+    ['What is the difference between PPL and CPL?', 'A Private Pilot Licence permits personal and recreational flying and never permits flying for payment. A Commercial Pilot Licence permits paid flying. PPL hours count towards the commercial flight-time total, which is why taking the PPL first costs little extra when it is planned properly.'],
+    ['Do I need to clear the DGCA exams before I start flying?', 'Not strictly. Flight training can begin once the medical assessment and the DGCA computer number are in place. Most students clear the written papers first anyway, because ground study is far cheaper than an hour in an aircraft and weather-driven gaps in flying are the only study time you get.'],
+    ['What is RTR (A), and is it one of the DGCA papers?', 'No. RTR (A) is the Radio Telephone Operator (Restricted) certificate, examined separately under its own rules and required for licence issue. Counting it among the written papers is the most common planning error students make, and it leads them to prepare for an examination structure that does not exist.'],
+    ['Is pilot training in India cheaper than training abroad?', 'Not reliably, once conversion is counted. Ground study costs much the same either way. Flying rates vary by country, and overseas training adds visa costs, higher living expenses and a licence conversion on return. Compare the total cost to a usable Indian licence rather than the headline training fee.'],
+    ['What happens if I fail a DGCA paper?', 'You retake it. Papers are cleared individually rather than in a single sitting, so a failed paper does not affect the ones you have already passed. At We One Aviation, students who do not clear a paper keep attending classes at no further cost until they do.'],
+    ['Can commerce students become pilots?', 'Yes. The requirement is Physics and Mathematics at 10+2 level, not a science stream as such. Commerce and Biology students clear both subjects as private candidates through NIOS and then apply on the same footing as anyone else. It adds time rather than closing the door.'],
+  ],
+},
 };
 
 function fallbackContent(pathname) {

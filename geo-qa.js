@@ -167,8 +167,12 @@ head('11. Server-rendered content guard');
     [/\{\s*open\s*&&/,            'collapsible content gated behind state - answers absent from SSR HTML'],
     [/\.slice\(0,\s*initialCount/, 'list sliced before render - hidden items absent from SSR HTML'],
     [/mounted\s*\?\s*children\s*:\s*null/, 'children gated on mount - section absent from SSR HTML'],
+    [/\{\s*isOpen\s*&&/,        'accordion body gated behind state - answers absent from SSR HTML'],
   ];
-  for (const f of ['components/CollapsibleFAQ.jsx','components/ShowMoreList.jsx','components/LazyMount.jsx']) {
+  const comps = fs.readdirSync('components')
+    .filter(n => /\.jsx$/.test(n))
+    .map(n => 'components/' + n);
+  for (const f of comps) {
     if (!fs.existsSync(f)) continue;
     const t = fs.readFileSync(f,'utf8')
       .replace(/\/\*[\s\S]*?\*\//g,'')   // block comments describe the defect; do not match them
