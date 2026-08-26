@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import StructuredData from '../components/StructuredData';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import { generateCourseSchema } from '../lib/schema';
 
 /*
  * Rewritten 2026-08-19 against primary text.
@@ -91,19 +93,30 @@ const articleSchema = {
     },
 };
 
+
+const courseSchema = generateCourseSchema({
+  name: 'RTR (A) Preparation — Radio Telephone Operator (Restricted) Certificate',
+  description: 'Preparation for the RTR (A) examination, the Radio Telephone Operator (Restricted) Certificate required for licence issue and examined separately from the DGCA written papers.',
+  url: 'https://weoneaviation.in/rtr-a',
+  courseMode: 'blended',
+  duration: 'PT3M',
+});
+
 export default function RTRAero() {
     return (
         <Layout
             title="RTR (Aero) Licence — Radio Telephone Operator (Restricted) | We One Aviation"
             description="RTR (Aero) under the Radio Telephone Operator (Restricted) Certificate and Licence Rules, 2025: eligibility, written and practical examination structure, and exemptions. Classes in Dwarka, New Delhi."
         >
+      <StructuredData data={courseSchema} />
+
             <Head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
             </Head>
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
             <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
+                <section className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
                     <div className="lg:col-span-2">
                         <ScrollReveal>
                             <div className="section-tag">DGCA Subject</div>
@@ -279,7 +292,7 @@ export default function RTRAero() {
                             </div>
                         </ScrollReveal>
                     </div>
-                </div>
+                </section>
             </section>
         </Layout>
     );

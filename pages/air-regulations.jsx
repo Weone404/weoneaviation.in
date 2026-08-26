@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import StructuredData from '../components/StructuredData';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import { generateCourseSchema } from '../lib/schema';
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'DGCA Subject', title: 'Air Regulations', highlight: 'Complete Guide', sub: 'Complete Guide for DGCA Exams and Pilot Training — We One Aviation Academy' },
@@ -110,9 +112,20 @@ const articleSchema = {
     },
 };
 
+
+const courseSchema = generateCourseSchema({
+  name: 'Air Regulations — DGCA Ground Class',
+  description: 'Ground instruction in Air Regulations, one of the five DGCA written papers, covering the Aircraft Rules, ICAO annexes, licensing provisions and rules of the air.',
+  url: 'https://weoneaviation.in/air-regulations',
+  courseMode: 'blended',
+  duration: 'PT2M',
+});
+
 export default function AirRegulations() {
     return (
         <Layout title="Air Regulations – Complete Guide for DGCA Exams | We One Aviation Academy" description="Complete guide to Air Regulations for DGCA CPL/PPL exams. Covers ICAO, Chicago Convention, DGCA structure, Rules of the Air, airspace classification, licensing rules and more.">
+      <StructuredData data={courseSchema} />
+
             <Head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
             </Head>
@@ -120,7 +133,7 @@ export default function AirRegulations() {
 
             {/* Overview */}
             <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
+                <section className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
                     <div className="lg:col-span-2">
                         <ScrollReveal>
                             <div className="section-tag">DGCA Subject</div>
@@ -352,7 +365,7 @@ export default function AirRegulations() {
                             </div>
                         </ScrollReveal>
                     </div>
-                </div>
+                </section>
             </section>
         </Layout>
     );

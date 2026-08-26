@@ -434,7 +434,7 @@ export default function Home() {
             <ScrollReveal className="text-center mb-12">
               <div className="section-tag">Our Programs</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                Choose Your <span className="text-av-orange">Aviation Career Path</span>
+                Which <span className="text-av-orange">Aviation Career Path</span> Should You Choose?
               </h2>
               <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
                 From Private Pilot to Airline Captain – we have the right course for every aspiring aviator
@@ -460,7 +460,7 @@ export default function Home() {
             <ScrollReveal className="text-center mb-12">
               <div className="section-tag">Fee &amp; Schedule</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                We One Aviation <span className="text-av-orange">Course Duration, Fee, &amp; Schedule</span>
+                What Are the <span className="text-av-orange">Course Durations, Fees, and Schedules?</span>
               </h2>
               <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
                 Details of Pilot Courses, Fees and Schedule of Our Batches. We Generally Start 2 Batches in a Month For Aviation Students.
@@ -548,7 +548,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <ScrollReveal className="text-center mb-12">
               <div className="section-tag">Why We One</div>
-              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">What Makes Us <span className="text-av-orange">Different</span></h2>
+              <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">What Makes We One Aviation <span className="text-av-orange">Different?</span></h2>
               <p className="text-gray-500 mt-2 text-sm">All Your Aviation Needs Under One Roof</p>
               <p className="text-gray-500 mt-1 text-sm max-w-2xl mx-auto">At We One Aviation Academy, we don&apos;t just train pilots—we shape future aviation leaders.</p>
             </ScrollReveal>
@@ -576,7 +576,7 @@ export default function Home() {
             <ScrollReveal className="text-center mb-12">
               <div className="section-tag">Training</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                From Ground to Sky: <span className="text-av-orange">DGCA Exam Coaching &amp; Flight Training</span>
+                What Does <span className="text-av-orange">DGCA Exam Coaching and Flight Training</span> Involve?
               </h2>
               <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">DGCA ground classes and flying school placement for aspiring pilots.</p>
             </ScrollReveal>
@@ -605,7 +605,7 @@ export default function Home() {
             <ScrollReveal className="text-center mb-12">
               <div className="section-tag">Your Journey</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white">
-                How to Become a <span className="text-av-orange">Pilot in India</span>
+                How Do You Become a <span className="text-av-orange">Pilot in India?</span>
               </h2>
               <p className="text-white/60 mt-2 text-sm">Step By Step Guide. If you just passed 12th and want to become a Pilot — your search ends here.</p>
             </ScrollReveal>
@@ -629,7 +629,7 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal className="text-center mb-10">
-              <h2 className="font-montserrat text-2xl font-bold text-white">Step By Step Guide for <span className="text-av-orange">Become a Pilot</span></h2>
+              <h2 className="font-montserrat text-2xl font-bold text-white">What Are the Steps to <span className="text-av-orange">Become a Pilot?</span></h2>
             </ScrollReveal>
 
             <ShowMoreList
@@ -676,7 +676,7 @@ export default function Home() {
             <ScrollReveal className="text-center mb-12">
               <div className="section-tag">DGCA Subjects</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                Master Yourself For Dgca Exam With All These <span className="text-av-orange">Subjects</span>
+                Which <span className="text-av-orange">Subjects</span> Do the DGCA Exams Cover?
               </h2>
               <p className="text-gray-500 mt-2 text-sm">Subjects For DGCA Ground Classes</p>
             </ScrollReveal>
@@ -737,7 +737,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <ScrollReveal className="text-center mb-10">
               <div className="section-tag">Pan India Presence</div>
-              <h2 className="font-montserrat text-3xl font-bold text-av-blue">Pilot Training Across <span className="text-av-orange">India</span></h2>
+              <h2 className="font-montserrat text-3xl font-bold text-av-blue">Where Can You Train for a Pilot Licence <span className="text-av-orange">Across India?</span></h2>
             </ScrollReveal>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
               {cities.map(city => (
@@ -759,7 +759,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <ScrollReveal className="text-center mb-10">
               <div className="section-tag">Global Presence</div>
-              <h2 className="font-montserrat text-3xl font-bold text-av-blue">Pilot Training Across <span className="text-av-orange">World</span></h2>
+              <h2 className="font-montserrat text-3xl font-bold text-av-blue">Which Countries Can You Train In <span className="text-av-orange">Around the World?</span></h2>
             </ScrollReveal>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {worldLocations.map(loc => (

@@ -55,13 +55,13 @@ const whoShouldJoin = [
 /* ── Reusable card components ── */
 function SimpleCard({ icon, title, desc }) {
     return (
-        <div className="border border-gray-100 rounded-xl p-4 sm:p-5 bg-white shadow-sm hover:border-av-orange/30 transition-all">
+        <section className="border border-gray-100 rounded-xl p-4 sm:p-5 bg-white shadow-sm hover:border-av-orange/30 transition-all">
             <div className="flex items-start gap-3 mb-2">
                 <span className="text-xl sm:text-2xl flex-shrink-0 leading-tight">{icon}</span>
                 <h2 className="font-montserrat font-bold text-av-blue text-sm leading-snug">{title}</h2>
             </div>
             <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
-        </div>
+        </section>
     );
 }
 

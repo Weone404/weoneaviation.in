@@ -228,7 +228,7 @@ export default function DGCAComputerNumber() {
 
             {/* Overview */}
             <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
+                <section className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
                     <div className="lg:col-span-2">
                         <ScrollReveal>
                             <div className="section-tag">Pilot Guide</div>
@@ -659,7 +659,7 @@ export default function DGCAComputerNumber() {
                             </div>
                         </ScrollReveal>
                     </div>
-                </div>
+                </section>
             </section>
         </Layout>
     );

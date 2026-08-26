@@ -1,8 +1,10 @@
 import Layout from '../components/Layout';
+import StructuredData from '../components/StructuredData';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import { generateCourseSchema } from '../lib/schema';
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Aviation Course', title: 'Airline Preparation', highlight: 'Course In Dwarka', sub: 'Step into the world of aviation success with We One Aviation Academy' },
@@ -68,14 +70,25 @@ const pilotPrepSteps = [
     { title: 'Flight Plan Review', desc: 'Pilots review the detailed flight plan, including navigation charts, waypoints, and alternate routes. This step is vital for understanding the entire journey and potential deviations.' },
 ];
 
+
+const courseSchema = generateCourseSchema({
+  name: 'Airline Preparation Course',
+  description: 'Structured preparation for airline selection, covering written screening, psychometric assessment, group exercises and the interview stages Indian carriers use.',
+  url: 'https://weoneaviation.in/airline-preparation-course',
+  courseMode: 'blended',
+  duration: 'PT3M',
+});
+
 export default function AirlinePreparation() {
     return (
         <Layout title="Airline Preparation Course In Dwarka | We One Aviation Academy" description="Airline Preparation Course in Dwarka, New Delhi. Interview preparation and career guidance for pilots, cabin crew, and aviation professionals. Airline interview practice, licence-route planning and career guidance.">
+      <StructuredData data={courseSchema} />
+
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
             <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
+                <section className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
                     <div className="lg:col-span-2">
                         <ScrollReveal>
                             <div className="section-tag">Aviation Course</div>
@@ -268,7 +281,7 @@ export default function AirlinePreparation() {
                             </div>
                         </ScrollReveal>
                     </div>
-                </div>
+                </section>
             </section>
         </Layout>
     );

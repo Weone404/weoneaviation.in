@@ -1,10 +1,12 @@
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import Layout from '../components/Layout';
+import StructuredData from '../components/StructuredData';
 import HeroSlider from '../components/HeroSlider';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import AutoInternalLinks from '../components/AutoInternalLinks';
+import { generateCourseSchema } from '../lib/schema';
 
 /**
  * LeadForm is below the fold (in the sidebar).
@@ -147,12 +149,23 @@ const articleSchema = {
     publisher: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
 };
 
+
+const courseSchema = generateCourseSchema({
+  name: 'Air Navigation — DGCA Ground Class',
+  description: 'Ground instruction in Air Navigation, one of the five DGCA written papers, covering charts, flight planning, dead reckoning, radio navigation aids and position fixing.',
+  url: 'https://weoneaviation.in/air-navigation',
+  courseMode: 'blended',
+  duration: 'PT2M',
+});
+
 export default function AirNavigation() {
     return (
         <Layout
             title="Air Navigation Course — DGCA CPL/PPL | We One Aviation Academy 2025"
             description="Air Navigation for the DGCA CPL and PPL written examinations: syllabus, position fixing, flight planning and radio aids. Classes in Dwarka, New Delhi."
         >
+      <StructuredData data={courseSchema} />
+
             <Head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
             </Head>
@@ -160,7 +173,7 @@ export default function AirNavigation() {
 
             {/* Overview */}
             <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
+                <section className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
 
                     {/* ── Main content ── */}
                     <div className="lg:col-span-2">
@@ -401,7 +414,7 @@ export default function AirNavigation() {
                             </div>
                         </ScrollReveal>
                     </div>
-                </div>
+                </section>
             </section>
         </Layout>
     );

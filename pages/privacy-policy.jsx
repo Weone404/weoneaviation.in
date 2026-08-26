@@ -117,7 +117,7 @@ export default function PrivacyPolicyPage() {
 
             {/* ── Main Content + Sidebar ── */}
             <section className="py-16 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
+                <section className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10">
 
                     {/* ── Sticky Table of Contents (Sidebar) ── */}
                     <aside className="lg:w-72 flex-shrink-0">
@@ -493,7 +493,7 @@ export default function PrivacyPolicyPage() {
                         </ScrollReveal>
 
                     </div>
-                </div>
+                </section>
             </section>
 
             {/* ── Bottom CTA ── */}

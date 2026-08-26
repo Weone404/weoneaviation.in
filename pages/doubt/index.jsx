@@ -30,7 +30,7 @@ export default function DoubtPage() {
                 <meta property="og:type" content="website" />
             </Head>
 
-            <div style={styles.page}>
+            <header style={styles.page}>
                     <style>{`
           * { box-sizing: border-box; margin: 0; padding: 0; }
           body { background: #060810; }
@@ -178,7 +178,7 @@ export default function DoubtPage() {
                         { question: "Should I verify answers before using them for an exam?", answer: "Yes. Use the solver as a study aid and confirm regulatory, operational, and licensing details against current DGCA publications or an experienced instructor." },
                     ]}
                 />
-            </div>
+            </header>
         </>
     );
 }

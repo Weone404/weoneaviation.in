@@ -84,7 +84,7 @@ export default function CPLEligibilityPage() {
 
             {/* ── Eligibility Overview ── */}
             <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
+                <section className="max-w-7xl mx-auto">
                     <ScrollReveal className="text-center mb-12">
                         <div className="section-tag">At a Glance</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
@@ -105,12 +105,12 @@ export default function CPLEligibilityPage() {
                             </ScrollReveal>
                         ))}
                     </div>
-                </div>
+                </section>
             </section>
 
             {/* ── Detailed Sections ── */}
             <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto space-y-16">
+                <section className="max-w-7xl mx-auto space-y-16">
 
                     {/* 1. Age Requirement */}
                     <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -267,12 +267,12 @@ export default function CPLEligibilityPage() {
                         </ScrollReveal>
                     </div>
 
-                </div>
+                </section>
             </section>
 
             {/* ── Student Pilot License ── */}
             <section className="py-20 px-4 bg-gradient-to-br from-av-blue via-av-navy to-av-blue">
-                <div className="max-w-7xl mx-auto">
+                <section className="max-w-7xl mx-auto">
                     <ScrollReveal className="text-center mb-12">
                         <div className="section-tag">06 – SPL</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white">
@@ -308,12 +308,12 @@ export default function CPLEligibilityPage() {
                             </div>
                         </ScrollReveal>
                     </div>
-                </div>
+                </section>
             </section>
 
             {/* ── Flying Hours ── */}
             <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
+                <section className="max-w-7xl mx-auto">
                     <ScrollReveal className="text-center mb-12">
                         <div className="section-tag">07 – Flying Hours</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
@@ -359,12 +359,12 @@ export default function CPLEligibilityPage() {
                             </div>
                         </ScrollReveal>
                     </div>
-                </div>
+                </section>
             </section>
 
             {/* ── Final Thoughts ── */}
             <section className="py-20 px-4 bg-gradient-to-br from-av-blue to-av-navy">
-                <div className="max-w-4xl mx-auto text-center">
+                <section className="max-w-4xl mx-auto text-center">
                     <ScrollReveal>
                         <div className="section-tag">Final Thoughts</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white mb-6">
@@ -380,7 +380,7 @@ export default function CPLEligibilityPage() {
                             Start Your CPL Journey →
                         </Link>
                     </ScrollReveal>
-                </div>
+                </section>
             </section>
 
         </Layout>

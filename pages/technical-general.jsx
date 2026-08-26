@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import StructuredData from '../components/StructuredData';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import { generateCourseSchema } from '../lib/schema';
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'DGCA Subject', title: 'Technical General', highlight: 'All Details 2025', sub: 'The backbone of your pilot training — understand how your aircraft truly works' },
@@ -103,9 +105,20 @@ const articleSchema = {
     },
 };
 
+
+const courseSchema = generateCourseSchema({
+  name: 'Technical General — DGCA Ground Class',
+  description: 'Ground instruction in Technical General, one of the five DGCA written papers, covering aerodynamics, aircraft systems, engines, instruments and airframe structures.',
+  url: 'https://weoneaviation.in/technical-general',
+  courseMode: 'blended',
+  duration: 'PT2M',
+});
+
 export default function TechnicalGeneral() {
     return (
         <Layout title="Technical General — DGCA CPL/PPL All Details 2025 | We One Aviation Academy" description="Complete guide to Technical General for DGCA CPL & PPL exams. Covers aircraft structure, aerodynamics, engines, systems, instruments, landing gear and fire protection at We One Aviation Academy.">
+      <StructuredData data={courseSchema} />
+
             <Head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
             </Head>
@@ -113,7 +126,7 @@ export default function TechnicalGeneral() {
 
             {/* Overview */}
             <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
+                <section className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
                     <div className="lg:col-span-2">
                         <ScrollReveal>
                             <div className="section-tag">DGCA Subject</div>
@@ -287,7 +300,7 @@ export default function TechnicalGeneral() {
                             </div>
                         </ScrollReveal>
                     </div>
-                </div>
+                </section>
             </section>
         </Layout>
     );

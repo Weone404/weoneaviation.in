@@ -69,7 +69,7 @@ const contactDetails = [
 /* ── Sidebar sub-components (shared between mobile + desktop renders) ── */
 function SidebarWhoCanJoin() {
     return (
-        <div className="bg-av-blue rounded-2xl p-5 sm:p-6 text-white">
+        <section className="bg-av-blue rounded-2xl p-5 sm:p-6 text-white">
             <h2 className="font-montserrat font-bold mb-4 text-sm sm:text-base">Who Can Join</h2>
             <ul className="space-y-2 text-sm text-white/80">
                 {[
@@ -85,7 +85,7 @@ function SidebarWhoCanJoin() {
                     </li>
                 ))}
             </ul>
-        </div>
+        </section>
     );
 }
 

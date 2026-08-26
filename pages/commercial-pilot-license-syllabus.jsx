@@ -93,7 +93,7 @@ export default function CPLSyllabusPage() {
         >
 
             {/* ── Hero Banner ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
+            <section className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <br />
                     <br />
@@ -110,7 +110,7 @@ export default function CPLSyllabusPage() {
                         The following sections provide an in-depth review of the learning subjects in Commercial Pilot License training programs within India.
                     </p>
                 </ScrollReveal>
-            </div>
+            </section>
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-8">
@@ -127,7 +127,7 @@ export default function CPLSyllabusPage() {
 
             {/* ── Ground Training Subjects ── */}
             <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
+                <section className="max-w-7xl mx-auto">
                     <ScrollReveal className="text-center mb-6">
                         <div className="section-tag">Theory</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
@@ -162,12 +162,12 @@ export default function CPLSyllabusPage() {
                             </p>
                         </div>
                     </ScrollReveal>
-                </div>
+                </section>
             </section>
 
             {/* ── Flight Training Modules ── */}
             <section className="py-20 px-4 bg-gradient-to-br from-av-blue via-av-navy to-av-blue">
-                <div className="max-w-7xl mx-auto">
+                <section className="max-w-7xl mx-auto">
                     <ScrollReveal className="text-center mb-10">
                         <div className="section-tag">Practical</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white">
@@ -202,12 +202,12 @@ export default function CPLSyllabusPage() {
                             </p>
                         </div>
                     </ScrollReveal>
-                </div>
+                </section>
             </section>
 
             {/* ── Conclusion ── */}
             <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-4xl mx-auto text-center">
+                <section className="max-w-4xl mx-auto text-center">
                     <ScrollReveal>
                         <div className="section-tag">Conclusion</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-6">
@@ -228,7 +228,7 @@ export default function CPLSyllabusPage() {
                             Enroll in CPL Program →
                         </Link>
                     </ScrollReveal>
-                </div>
+                </section>
             </section>
 
         </Layout>

@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import StructuredData from '../components/StructuredData';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import { generateCourseSchema } from '../lib/schema';
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'DGCA Subject', title: 'Aviation', highlight: 'Meteorology', sub: 'Understanding Weather for Safe Flying — DGCA-approved training at We One Aviation Academy' },
@@ -76,9 +78,20 @@ const articleSchema = {
     },
 };
 
+
+const courseSchema = generateCourseSchema({
+  name: 'Aviation Meteorology — DGCA Ground Class',
+  description: 'Ground instruction in Aviation Meteorology, one of the five DGCA written papers, covering the atmosphere, pressure systems, cloud, visibility, icing, turbulence and aviation weather reports.',
+  url: 'https://weoneaviation.in/aviation-meteorology',
+  courseMode: 'blended',
+  duration: 'PT2M',
+});
+
 export default function AviationMeteorology() {
     return (
         <Layout title="Aviation Meteorology Course — DGCA CPL/PPL | We One Aviation Academy" description="DGCA-approved Aviation Meteorology course in Delhi. Learn weather patterns, METAR/TAF decoding, wind systems, turbulence and more for CPL & PPL exams at We One Aviation Academy.">
+      <StructuredData data={courseSchema} />
+
             <Head>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
             </Head>
@@ -86,7 +99,7 @@ export default function AviationMeteorology() {
 
             {/* Overview */}
             <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
+                <section className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
                     <div className="lg:col-span-2">
                         <ScrollReveal>
                             <div className="section-tag">DGCA Subject</div>
@@ -294,7 +307,7 @@ export default function AviationMeteorology() {
                             </div>
                         </ScrollReveal>
                     </div>
-                </div>
+                </section>
             </section>
         </Layout>
     );

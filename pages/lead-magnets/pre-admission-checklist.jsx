@@ -15,7 +15,7 @@ export default function PreAdmissionChecklist() {
       <Layout title="Pre-Admission Checklist for Pilot Training" description="Complete pre-admission checklist with all documents, medical tests, eligibility criteria needed for pilot training enrollment.">
         
         {/* Hero */}
-        <div className="relative h-80 overflow-hidden flex items-center justify-center pt-16 bg-gradient-to-br from-av-green to-emerald-700">
+        <header className="relative h-80 overflow-hidden flex items-center justify-center pt-16 bg-gradient-to-br from-av-green to-emerald-700">
           <div className="relative z-10 text-center px-4">
             <div className="section-tag mb-3" style={{backgroundColor: 'rgba(255,255,255,0.2)'}}>Free Download</div>
             <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4">
@@ -25,7 +25,7 @@ export default function PreAdmissionChecklist() {
               Everything you need before joining pilot training
             </p>
           </div>
-        </div>
+        </header>
 
         {/* Main Content */}
         <section className="py-16 px-4 bg-white">
