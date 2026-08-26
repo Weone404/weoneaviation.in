@@ -67,7 +67,7 @@ export default function CostBreakdownGuide() {
                     {[
                       { item: 'Medical Examination Fees', cost: '₹15,000 - ₹20,000' },
                       { item: 'DGCA Ground School Fees', cost: '₹1,50,000 - ₹2,50,000' },
-                      { item: 'DGCA Exam Fees (9 papers × ₹3,000)', cost: '₹25,000 - ₹30,000' },
+                      { item: 'DGCA Exam Fees (5 papers × ₹3,000)', cost: '₹25,000 - ₹30,000' },
                       { item: 'Flying Training (200+ hours)', cost: '₹30,00,000 - ₹40,00,000' },
                       { item: 'Simulator Training (50+ hours)', cost: '₹2,50,000 - ₹3,50,000' },
                       { item: 'Instrument Rating (IR) Add-on', cost: '₹3,00,000 - ₹4,50,000' },

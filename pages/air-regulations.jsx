@@ -190,7 +190,7 @@ export default function AirRegulations() {
 
                             {/* Quick Facts */}
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-                                {[['CPL / PPL', 'Eligibility'], ['ICAO & DGCA', 'Standards'], ['6 Papers', 'DGCA Exam'], ['Core Subject', 'CPL Syllabus']].map(([val, label]) => (
+                                {[['CPL / PPL', 'Eligibility'], ['ICAO & DGCA', 'Standards'], ['5 Papers', 'DGCA Exam'], ['Core Subject', 'CPL Syllabus']].map(([val, label]) => (
                                     <div key={label} className="bg-av-light rounded-xl p-4 text-center">
                                         <div className="font-montserrat font-bold text-av-blue text-sm">{val}</div>
                                         <div className="text-gray-500 text-xs mt-1">{label}</div>

@@ -156,7 +156,7 @@ export default function InIndia() {
                 India is one of the fastest-growing aviation markets in the world, and the demand for commercial pilots has never been higher. The Directorate General of Civil Aviation (DGCA) is the regulatory body governing pilot training in India.
               </p>
               <p className="text-gray-600 text-sm leading-relaxed">
-                To become a commercial pilot in India, you must obtain a Commercial Pilot License (CPL) issued by the DGCA. This requires clearing 9 written exams, completing 200+ flying hours, and passing a CPL skill test conducted by a DGCA examiner.
+                To become a commercial pilot in India, you must obtain a Commercial Pilot License (CPL) issued by the DGCA. This requires clearing the five DGCA written papers, with RTR (A) examined separately, completing 200+ flying hours, and passing a CPL skill test conducted by a DGCA examiner.
               </p>
             </ScrollReveal>
 

@@ -82,7 +82,8 @@ head('7. Facts consistency (lib/facts.js is the source of truth)');
   const scan = (d) => { for (const e of fs.readdirSync(d,{withFileTypes:true})) { const p2=path.join(d,e.name);
     if (e.isDirectory()) { if(!/node_modules|\.git|\.next|_to_delete/.test(e.name)) scan(p2); }
     else if (/\.(jsx?|txt)$/.test(p2) && !/geo-qa|lib\/facts/.test(p2)) { const t=fs.readFileSync(p2,'utf8');
-      for (const pat of [/\b9 DGCA subjects\b/, /\ball 9 CPL subjects\b/, /\bnine DGCA (papers|subjects)\b/, /\bsix DGCA papers\b/, /\b9 CPL subjects\b/])
+      for (const pat of [/\b9 DGCA subjects\b/, /\ball 9 CPL subjects\b/, /\bnine DGCA (papers|subjects)\b/, /\bsix DGCA papers\b/, /\b9 CPL subjects\b/,
+                         /\(9 subjects\)/, /\b9 papers\b/, /\b9 DGCA (papers|written)\b/, /\ball 9 DGCA\b/, /\b6 subjects\b/, /\bsix subjects\b/])
         if (pat.test(t)) badCounts.push(`${p2}: ${t.match(pat)[0]}`);
       /*
        * Banned DGCA medical-class split. Two exclusions, both deliberate:

@@ -30,7 +30,7 @@ const cplSteps = [
     { step: 'Step 1', desc: 'Apply For DGCA Computer Number From dgcapariksha Portal' },
     { step: 'Step 2', desc: 'Clear Your DGCA Medical Test By DGCA Doctors' },
     { step: 'Step 3', desc: 'Join DGCA Ground Classes From We One Aviation Academy' },
-    { step: 'Step 4', desc: 'Clear DGCA Exam of Six Subjects.' },
+    { step: 'Step 4', desc: 'Clear the five DGCA written papers, plus RTR (A) examined separately.' },
     { step: 'Step 5', desc: 'Complete Your 200 Hrs. Of Flying from Any Country.' },
     { step: 'Step 6', desc: 'Obtain your Commercial Pilot License (CPL).' },
 ];

@@ -462,7 +462,7 @@ export default function DGCAGroundClasses() {
 
               {/* Quick Facts */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-                {[['6 Months', 'Course Duration'], ['6 Subjects', 'DGCA Papers'], ['17+ Years', 'Min Age'], ['25% Off', 'Scholarship']].map(([val, label]) => (
+                {[['6 Months', 'Course Duration'], ['5 Papers', 'DGCA Written'], ['17+ Years', 'Min Age'], ['25% Off', 'Scholarship']].map(([val, label]) => (
                   <div key={label} className="bg-av-light rounded-xl p-4 text-center">
                     <div className="font-montserrat font-bold text-av-blue text-sm">{val}</div>
                     <div className="text-gray-500 text-xs mt-1">{label}</div>
@@ -533,7 +533,7 @@ export default function DGCAGroundClasses() {
                 Which subjects come up in the DGCA exam?
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                There Are Mainly 6 Subjects in{' '}
+                There are five DGCA written papers, plus RTR (A) examined separately, in{' '}
                 <Link href="/dgca-pariksha" className="text-av-orange font-semibold hover:underline">
                   DGCA Exam
                 </Link>.

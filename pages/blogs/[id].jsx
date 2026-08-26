@@ -50,7 +50,7 @@ const hardcodedBlogs = [
           <div class="step-number">3</div>
           <div class="step-body">
             <p class="step-title">Complete Ground Training</p>
-            <p class="step-desc">You must pass 9 DGCA written theory exams before proceeding.</p>
+            <p class="step-desc">You must pass the five DGCA written theory papers, with RTR (A) examined separately, before proceeding.</p>
           </div>
         </div>
         <div class="step-card">
@@ -84,7 +84,7 @@ const hardcodedBlogs = [
         id: 2,
         title: 'DGCA Written Exams: Subjects, Pattern & Preparation Tips',
         excerpt:
-            'Ace all 9 DGCA written exams with our expert preparation strategy. Know the syllabus, exam pattern, and recommended study materials.',
+            'Prepare for the five DGCA written papers, with RTR (A) examined separately. Know the syllabus, the exam pattern, and how papers are cleared one at a time.',
         category: 'DGCA',
         readTime: '6 min',
         date: 'Dec 10, 2024',
@@ -122,13 +122,13 @@ const hardcodedBlogs = [
           <div class="step-number">2</div>
           <div class="step-body">
             <p class="step-title">Practice Mock Tests</p>
-            <p class="step-desc">We One Aviation provides comprehensive question banks for all 9 subjects.</p>
+            <p class="step-desc">We One Aviation provides comprehensive question banks for all 5 papers plus RTR (A).</p>
           </div>
         </div>
       </div>
 
       <h2>Conclusion</h2>
-      <p>With consistent study and proper guidance, clearing all 9 DGCA exams is very achievable.</p>
+      <p>With consistent study and proper guidance, clearing the five DGCA papers is very achievable. They are cleared individually rather than in one sitting.</p>
     `,
       faqs: [],
     },

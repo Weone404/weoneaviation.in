@@ -49,13 +49,12 @@ export default function CostTransparency() {
                   {[
                     { category: 'Medical & Documentation', items: [
                       { desc: 'DGCA medical test', cost: '₹5,000 - ₹10,000', included: '✓' },
-                      { desc: 'DGCA medical test', cost: '₹5,000 - ₹10,000', included: '✓' },
                       { desc: 'DGCA Computer Number Registration', cost: '₹2,000 - ₹3,000', included: '✓' },
                       { desc: 'Document verification & processing', cost: '₹1,000 - ₹2,000', included: '✓' },
                     ]},
                     { category: 'Ground School', items: [
-                      { desc: 'Ground Class Tuition (9 subjects)', cost: '₹1,50,000 - ₹2,50,000', included: '✓' },
-                      { desc: 'DGCA Exam Fees (9 papers @ ₹3,000)', cost: '₹25,000 - ₹30,000', included: '✓' },
+                      { desc: 'Ground Class Tuition (5 papers + RTR (A))', cost: '₹1,50,000 - ₹2,50,000', included: '✓' },
+                      { desc: 'DGCA Exam Fees (5 papers @ ₹3,000)', cost: '₹25,000 - ₹30,000', included: '✓' },
                       { desc: 'Study Materials & Books', cost: '₹30,000 - ₹50,000', included: '~' },
                       { desc: 'Mock Test & Practice Papers', cost: '₹10,000 - ₹20,000', included: '✓' },
                     ]},
@@ -119,7 +118,7 @@ export default function CostTransparency() {
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   {[
-                    'DGCA Ground Classes (9 subjects)',
+                    'DGCA Ground Classes (5 papers plus RTR (A))',
                     'DGCA Exam Registration & Fees',
                     'All 200+ Flying Hours',
                     'All 50+ Simulator Hours',

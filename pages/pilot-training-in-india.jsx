@@ -165,7 +165,7 @@ const pilotJourneySteps = [
     {
         icon: '📝',
         title: 'Clear Dgca Exam',
-        desc: 'After Applying These Both, You Have To Book Your Exam Which is Conducted By Dgca Called Dgca Exam. In Dgca Exam , You Have To Give Paper of Six Subjects.',
+        desc: 'After Applying These Both, You Have To Book Your Exam Which is Conducted By Dgca Called Dgca Exam. In the DGCA examination you sit five written papers, and RTR (A) is examined separately.',
         alert: 'Issue While Apply For Dgca Paper.',
         alertDesc: 'Can\'t Able To Apply Dgca Paper? Don\'t Worry Aviators, We One Aviation Is Here For Solve All your Aviation Problems. Just Contacts us',
     },

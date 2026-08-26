@@ -23,7 +23,7 @@ const quickStats = [
     { val: '28 States', label: 'Pan-India Reach' },
     { val: '100%', label: 'DGCA Pass Rate' },
     { val: '25%', label: 'Scholarship for All' },
-    { val: '6 Papers', label: 'DGCA India Exam' },
+    { val: '5 Papers', label: 'DGCA India Exam' },
 ];
 
 const subjects = [
@@ -163,9 +163,9 @@ const examCenters = [
 const process = [
     { step: '01', title: 'Enroll in DGCA Ground Classes', desc: 'Join We One Aviation Academy — online (any Indian state) or offline (Delhi). Get your batch schedule and study material.' },
     { step: '02', title: 'Get Your DGCA Computer Number', desc: 'We help you register with DGCA India to obtain the unique Computer Number required to appear in any DGCA exam.' },
-    { step: '03', title: 'Complete the 6-Month India Syllabus', desc: 'Cover all 6 DGCA subjects thoroughly under active commercial pilots. Practice with DGCA India past papers.' },
+    { step: '03', title: 'Complete the 6-Month India Syllabus', desc: 'Cover the five DGCA papers and RTR (A) thoroughly under active commercial pilots. Practice with DGCA India past papers.' },
     { step: '04', title: 'Appear at DGCA Exam Centre', desc: 'Sit for DGCA exams at the nearest designated centre in your Indian state — Delhi, Mumbai, Chennai, Kolkata & more.' },
-    { step: '05', title: 'Clear All 6 Papers & Get CPL', desc: 'After clearing all DGCA papers and completing flying hours at a DGCA-approved school, apply for your CPL from DGCA India.' },
+    { step: '05', title: 'Clear All 5 Papers & Get CPL', desc: 'After clearing all DGCA papers and completing flying hours at a DGCA-approved school, apply for your CPL from DGCA India.' },
 ];
 
 const faqs = [
@@ -175,7 +175,7 @@ const faqs = [
     },
     {
         q: 'Is the DGCA syllabus the same across all of India?',
-        a: 'Yes. The DGCA syllabus — all 6 papers — is centrally set by the Directorate General of Civil Aviation, Government of India. It is uniform at every approved institute across the country.',
+        a: 'Yes. The DGCA syllabus — all five written papers — is centrally set by the Directorate General of Civil Aviation, Government of India. It is uniform at every approved institute across the country.',
     },
     {
         q: 'Where are DGCA exams conducted in India?',
@@ -213,7 +213,7 @@ export default function DGCAGroundClassesInIndia() {
     return (
         <Layout
             title="DGCA Ground Classes in India | Pilot Coaching, All States | We One Aviation"
-            description="DGCA ground classes in India, available online and offline across all 28 states. Online & offline CPL ground coaching covering all 6 DGCA subjects. 25% scholarship available. Join We One Aviation Academy."
+            description="DGCA ground classes in India, available online and offline across all 28 states. Online & offline CPL ground coaching covering the five DGCA papers and RTR (A). 25% scholarship available. Join We One Aviation Academy."
         >
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
@@ -297,9 +297,9 @@ export default function DGCAGroundClassesInIndia() {
                                 </div>
                             </section>
 
-                            {/* ── 6 DGCA Subjects ── */}
+                            {/* ── DGCA subjects ── */}
                             <section>
-                                <h2 className="font-montserrat text-xl font-bold text-av-blue mb-2">6 DGCA Subjects — India Exam Pattern</h2>
+                                <h2 className="font-montserrat text-xl font-bold text-av-blue mb-2">DGCA Subjects and the India Exam Pattern</h2>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-6">
                                     The DGCA India exam consists of <strong>6 compulsory theory papers</strong>. All 6 must be cleared to be eligible for a CPL in India. Our DGCA Ground Classes in India cover every subject in full depth.
                                 </p>

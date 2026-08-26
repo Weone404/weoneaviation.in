@@ -114,7 +114,7 @@ export default function StudentChecklistsHub() {
             '□ Attend 100% ground classes',
             '□ Complete all assignments on time',
             '□ Score 60%+ on mock tests',
-            '□ Clear all 9 DGCA papers',
+            '□ Clear all the five DGCA papers',
             '□ Maintain study schedule',
             '□ Ask instructors about weak topics',
             '□ Form study groups with peers',
