@@ -154,19 +154,15 @@ export default function BlogsIndex({ mongoBlogs }) {
                             key={post.slug}
                             className="group border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col"
                         >
-                            <div className="relative h-48 overflow-hidden bg-av-light/40 border-b-2 border-dashed border-av-sky/40 flex items-center justify-center">
-                                <div className="text-center px-4">
-                                    <p className="font-montserrat text-[10px] font-bold uppercase tracking-[0.18em] text-av-orange mb-1">
-                                        Image placeholder
-                                    </p>
-                                    <p className="font-mono text-[11px] text-av-blue break-all leading-snug">{post.image.src}</p>
-                                    <p className="font-mono text-[11px] text-gray-500 mt-1">
-                                        {post.image.width} &times; {post.image.height} px
-                                    </p>
-                                    <p className="font-mono text-[10px] text-gray-400 mt-1">
-                                        Prompt {post.image.promptId} &rarr; data/blog-image-prompts.md
-                                    </p>
-                                </div>
+                            <div className="relative h-48 overflow-hidden border-b border-gray-200 bg-white">
+                                <NextImage
+                                    src={post.image.src}
+                                    alt={post.title}
+                                    width={post.image.width}
+                                    height={post.image.height}
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                />
                                 <span className="absolute top-3 left-3 bg-av-orange text-white text-xs font-bold px-3 py-1 rounded-full">
                                     {post.category}
                                 </span>
