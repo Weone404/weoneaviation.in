@@ -2,6 +2,13 @@
   "name": "weoneaviation",
   "version": "1.0.0",
   "private": true,
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead",
+    "not IE 11"
+  ],
   "scripts": {
     "dev": "next dev",
     "generate:sitemap": "node scripts/generate-sitemap.js",

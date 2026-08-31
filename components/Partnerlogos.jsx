@@ -83,7 +83,7 @@ export default function PartnerLogos() {
                                             objectFit: "contain",
                                             maxWidth: "100%",
                                         }}
-                                        quality={100}
+                                        quality={75}
                                     />
                                 </a>
                             ) : (
@@ -99,7 +99,7 @@ export default function PartnerLogos() {
                                         objectFit: "contain",
                                         maxWidth: "100%",
                                     }}
-                                    quality={100}
+                                    quality={75}
                                 />
                             )}
                         </div>

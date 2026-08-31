@@ -20,13 +20,11 @@ import NextImage from 'next/image';
 import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import CourseCard from '../components/CourseCard';
-import PartnerLogos from '../components/Partnerlogos';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Head from 'next/head';
 import { FOUNDED_YEAR } from '../data/academy';
 import ShowMoreList from '../components/ShowMoreList';
-import LazyMount from '../components/LazyMount';
 
 // ─── LAZY LOAD HEAVY BELOW-FOLD COMPONENTS ───────────────────────────────────
 
@@ -35,12 +33,18 @@ const LeadForm = dynamic(() => import('../components/LeadForm'), {
   loading: () => <div className="h-64 bg-white/10 rounded-2xl animate-pulse" />,
 });
 
-const Passresultsslider = dynamic(() => import('../components/Passresultsslider'), {
+const HomepagePartnerLogos = dynamic(() => import('../components/Partnerlogos'), {
+  ssr: true,
+  loading: () => <div className="h-24 bg-gray-100 animate-pulse" />,
+});
+
+const HomepagePassResults = dynamic(() => import('../components/Passresultsslider'), {
   ssr: false,
   loading: () => <div className="h-40 bg-gray-100 rounded-2xl animate-pulse my-4" />,
 });
 
 const HomepageFAQs = dynamic(() => import('../components/FAQs'), {
+  ssr: true,
   loading: () => <div className="h-64 bg-gray-50 animate-pulse" />,
 });
 
@@ -450,9 +454,7 @@ export default function Home() {
           </div>
         </section>
 
-        <LazyMount placeholderClassName="min-h-32">
-          <PartnerLogos />
-        </LazyMount>
+        <HomepagePartnerLogos />
 
         {/* COURSE FEE & SCHEDULE */}
         <section className="py-20 px-4">
@@ -750,9 +752,7 @@ export default function Home() {
           </div>
         </section>
 
-        <LazyMount placeholderClassName="min-h-[520px]">
-          <Passresultsslider />
-        </LazyMount>
+        <HomepagePassResults />
 
         {/* WORLD LOCATIONS */}
         <section className="py-20 px-4 bg-gray-50">
