@@ -129,7 +129,7 @@ export default function BlogsIndex({ mongoBlogs }) {
         <Layout title="Blogs – We One Aviation" description="Aviation blogs, pilot guides, DGCA tips and more.">
             {/* Hero */}
             <div className="relative bg-gradient-to-br from-av-blue to-av-navy pt-32 pb-16 px-4 text-center text-white">
-                <h1 className="font-montserrat text-4xl md:text-5xl font-black mb-4">Aviation Blogs</h1>
+                <h1 className="font-montserrat text-4xl md:text-5xl font-black mb-4 text-white drop-shadow-lg">Aviation Blogs</h1>
                 <p className="text-white/70 text-lg max-w-2xl mx-auto">
                     Expert guides on pilot training, DGCA exams, careers, and everything aviation.
                 </p>
@@ -140,8 +140,8 @@ export default function BlogsIndex({ mongoBlogs }) {
 
             {/* In-depth guides — file-based posts, listed first */}
             <section className="pt-16 px-4 max-w-7xl mx-auto" aria-labelledby="in-depth-guides">
-                <div className="flex items-baseline justify-between gap-4 mb-8">
-                    <h2 id="in-depth-guides" className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue">
+                <div className="flex items-baseline justify-between gap-4 mb-10">
+                    <h2 id="in-depth-guides" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue drop-shadow">
                         In-depth guides
                     </h2>
                     <p className="text-sm text-gray-500">Long-form, sourced against DGCA rules</p>
@@ -184,7 +184,7 @@ export default function BlogsIndex({ mongoBlogs }) {
 
             {/* Blog Grid */}
             <section className="py-16 px-4 max-w-7xl mx-auto" aria-labelledby="latest-articles">
-                <h2 id="latest-articles" className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mb-8">
+                <h2 id="latest-articles" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue drop-shadow mb-10">
                     Latest articles
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

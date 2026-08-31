@@ -260,7 +260,7 @@ export default function BecomeAPilotPage() {
             <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <div className="section-tag">Pilot Career Guide</div>
-                    <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                    <h1 className="font-montserrat text-4xl md:text-6xl font-black text-white mb-4 leading-[3] drop-shadow-lg" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
                         How to Become a Pilot After 12th?
                     </h1>
                     <p className="text-white/70 max-w-3xl mx-auto text-sm leading-relaxed mb-4">
@@ -507,7 +507,7 @@ export default function BecomeAPilotPage() {
                                     <div className="flex items-center gap-3 mb-4">
                                         <div className="w-8 h-8 bg-av-orange rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">{route.num}</div>
                                         <span className="text-2xl">{route.icon}</span>
-                                        <h3 className="font-montserrat font-bold text-white text-sm leading-snug">{route.title}</h3>
+                                        <h3 className="font-montserrat font-bold text-white text-sm leading-[3]">{route.title}</h3>
                                     </div>
                                     <div className="space-y-2">
                                         <div><p className="text-av-orange text-xs font-semibold">Eligibility:</p><p className="text-white/70 text-xs leading-relaxed">{route.eligibility}</p></div>
