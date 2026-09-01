@@ -43,7 +43,7 @@ const slides = [
 
 const STATS = [
   ['Since 2009', 'In Operation'],
-  ['DGCA', 'Approved'],
+  ['DGCA', 'Ground Classes'],
   ['Career', 'Guidance Support'],
 ];
 

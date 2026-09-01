@@ -57,7 +57,7 @@ export default function PilotTrainingDelhi() {
                 {
                     num: '3', icon: '📚',
                     title: 'DGCA Ground Classes',
-                    desc: 'Our DGCA Ground Classes at the Pilot Training Institute in Delhi make it super easy to learn air navigation, meteorology, and air regulations — all approved by DGCA. Crack your DGCA exams without any tension with We One Aviation Academy!',
+                    desc: 'Our DGCA Ground Classes at the Pilot Training Institute in Delhi make it super easy to learn air navigation, meteorology, and air regulations — all aligned with the DGCA syllabus. Crack your DGCA exams without any tension with We One Aviation Academy!',
                     details: [
                         { label: 'Duration', value: '3-6 months' },
                         { label: 'Subjects', value: 'Air Regulations, Aviation Meteorology, Air Navigation, Technical General, Technical Specific, Radio Telephony (RTR Exam)' },

@@ -186,7 +186,7 @@ export default function About() {
               </p>
             </AutoInternalLinks>
             <div className="grid grid-cols-3 gap-4 mt-6">
-              {[[YEARS_LABEL, 'Years in Operation'], ['DGCA', 'Approved']].map(([num, label]) => (
+              {[[YEARS_LABEL, 'Years in Operation'], ['DGCA', 'Ground Classes']].map(([num, label]) => (
                 <div key={label} className="text-center p-4 bg-av-light rounded-xl">
                   <div className="font-montserrat text-xl font-black text-av-orange">{num}</div>
                   <div className="text-av-blue text-xs font-medium">{label}</div>

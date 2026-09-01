@@ -21,7 +21,7 @@ const cplQuickTable = [
 
 const cplAviationKeyPoints = [
     'Required to work as a commercial pilot',
-    'Approved by DGCA in India',
+    'Regulated under DGCA in India',
     'Requires ground training + flying hours',
     'Can lead to ATPL (Airline Transport Pilot License)',
 ];
