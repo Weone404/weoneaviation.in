@@ -1,0 +1,63 @@
+name: Auto-merge daily blog
+
+# Fires when the routine pushes a claude/blog-* branch.
+# Builds, runs the claims gate, and only then merges into master.
+# Vercel deploys master to production on its own.
+
+on:
+  push:
+    branches:
+      - 'claude/blog-**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-merge-blog
+  cancel-in-progress: false
+
+jobs:
+  verify-and-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci
+
+      # Runs generate:sitemap then next build (see package.json "build")
+      - name: Build
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        run: npm run build
+
+      # The claims gate. Deliberately NOT wired to postbuild in this repo —
+      # see the header comment in scripts/check-claims.js. Running it here
+      # keeps the gate without touching the Vercel build.
+      - name: Claims gate
+        run: npm run check:claims
+
+      - name: Merge into master
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin master
+          git checkout master
+          git merge --no-ff "$GITHUB_SHA" -m "Auto-merge ${GITHUB_REF_NAME}"
+          git push origin master
+
+      - name: Delete the merged branch
+        run: git push origin --delete "${GITHUB_REF_NAME}"
+
+      # Tells Bing/Yandex the new URL exists immediately instead of waiting
+      # for a crawl. Non-fatal: a failed ping must never fail the merge.
+      - name: Submit to IndexNow
+        continue-on-error: true
+        run: npm run submit:indexnow
