@@ -78,6 +78,15 @@ const guidePosts = [
         image: { src: '/blog/what-is-pilot-training/hero-classroom-to-cockpit.webp', width: 1200, height: 630, promptId: '1' },
     },
     {
+        slug: 'how-to-become-an-airline-pilot-in-india',
+        title: 'How to Become an Airline Pilot in India: Complete 2026 Guide',
+        excerpt: 'Step-by-step roadmap after 12th: educational eligibility, DGCA medical, DGCA exams, flight training, CPL, cost, timeline and airline selection realities.',
+        category: 'Pilot career guide',
+        readTime: '12 min',
+        date: 'Sep 1, 2026',
+        image: { src: '/blog/how-to-become-an-airline-pilot-in-india/hero-pilot-roadmap.webp', width: 1200, height: 630, promptId: '1' },
+    },
+    {
         slug: 'dgca-exam-guide',
         title: 'DGCA Full Form and What the DGCA Does',
         excerpt: 'What the Directorate General of Civil Aviation is, its role in pilot licensing and safety oversight, and how it governs the examinations behind an Indian pilot licence.',

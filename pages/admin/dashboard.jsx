@@ -1,4 +1,3 @@
-"use client";
 import { useState, useEffect, useCallback } from "react";
 
 // ─── STATIC DATA (non-student) ────────────────────────────────────────────────
