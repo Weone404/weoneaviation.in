@@ -1,4 +1,4 @@
-import Navbar from './Navbar';
+﻿import Navbar from './Navbar';
 import Footer from './Footer';
 import FloatingButtons from './FloatingButtons';
 import Head from 'next/head';
@@ -68,7 +68,7 @@ export default function Layout({ children, title, description, robots, noindex =
           which leaves crawlers to pick one. Page-level overrides must use these
           same key names to replace rather than duplicate.
         */}
-        <meta key="description" name="description" content={description || "We One Aviation Academy offers DGCA approved pilot training courses including CPL, PPL, ATPL in India. Ground classes and flight-training placement from a DGCA-approved institute in Dwarka, New Delhi."} />
+        <meta key="description" name="description" content={description || "We One Aviation Academy offers DGCA pilot training courses including CPL, PPL, ATPL in India. Ground classes and flight-training placement from a DGCA institute in Dwarka, New Delhi."} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta key="robots" name="robots" content={resolvedRobots} />
         <link key="canonical" rel="canonical" href={canonicalUrl} />
@@ -77,7 +77,7 @@ export default function Layout({ children, title, description, robots, noindex =
             they are page-independent, so emitting them here too would double them. */}
         <meta key="og:url" property="og:url" content={canonicalUrl} />
         <meta key="og:title" property="og:title" content={title || 'We One Aviation Academy'} />
-        <meta key="og:description" property="og:description" content={description || 'DGCA approved pilot training in India'} />
+        <meta key="og:description" property="og:description" content={description || 'DGCA pilot training in India'} />
 
         {breadcrumbSchema && <StructuredData data={breadcrumbSchema} />}
 

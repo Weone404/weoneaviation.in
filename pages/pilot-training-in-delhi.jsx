@@ -7,7 +7,7 @@ export default function PilotTrainingDelhi() {
 
             meta={{
                 title: 'Pilot Training Institute in Delhi 2026 | CPL, PPL, DGCA | We One Aviation',
-                description: 'DGCA-approved pilot training in Delhi. CPL, PPL and ATPL courses plus DGCA ground classes. Scholarship options available. We One Aviation Academy.',
+                description: 'DGCA pilot training in Delhi. CPL, PPL and ATPL courses plus DGCA ground classes. Scholarship options available. We One Aviation Academy.',
             }}
 
             hero={{

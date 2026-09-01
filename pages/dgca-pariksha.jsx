@@ -23,7 +23,7 @@ const keyDetails = [
 const eligibility = [
     { icon: '🎂', label: 'Age Requirement', value: 'Minimum age is 17 for PPL and 18 for CPL.' },
     { icon: '📚', label: 'Educational Qualification', value: 'At least 10+2 with Physics and Mathematics (or equivalent).' },
-    { icon: '🩺', label: 'Medical Fitness', value: 'Must hold a valid a DGCA medical certificate from DGCA-approved medical examiners.' },
+    { icon: '🩺', label: 'Medical Fitness', value: 'Must hold a valid a DGCA medical certificate from DGCA medical examiners.' },
 ];
 
 const syllabusTopics = [

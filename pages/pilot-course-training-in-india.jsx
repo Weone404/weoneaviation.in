@@ -105,7 +105,7 @@ const faqs = [
   { q: "What is a Commercial Pilot License?", a: "A Commercial Pilot License (CPL) is a professional license issued by the Directorate General of Civil Aviation (DGCA) that authorizes a pilot to operate aircraft commercially after meeting all training, examination, and flying hour requirements." },
   { q: "Who is eligible for a commercial pilot course?", a: "Students who have completed 10+2 with Physics and Mathematics, meet DGCA medical standards, and satisfy the minimum age requirements are generally eligible to enroll in a commercial pilot course." },
   { q: "How long does pilot training take?", a: "Most pilot training programs are completed within 18 to 24 months, depending on weather conditions, flying schedules, and individual progress." },
-  { q: "Can I pursue pilot training in Delhi?", a: "Yes. Students looking for pilot training in Delhi can receive complete counselling, admission support, and guidance from We One Aviation before joining a DGCA-approved flying school." },
+  { q: "Can I pursue pilot training in Delhi?", a: "Yes. Students looking for pilot training in Delhi can receive complete counselling, admission support, and guidance from We One Aviation before joining a DGCA flying school." },
   { q: "What is the average commercial pilot license salary?", a: "Fresh commercial pilots typically earn between ₹12–20 LPA, while experienced captains and international airline pilots can earn substantially higher salaries." },
 ];
 
@@ -315,7 +315,7 @@ export default function PilotCourseTraining() {
               </h2>
               <AutoInternalLinks currentPath="/pilot-course-training">
                 <p className="text-gray-600 leading-relaxed text-sm mb-3">
-                  Students searching for pilot training in Delhi often need expert guidance before selecting a flying school. While flight training may take place at different DGCA-approved academies across India, proper counselling ensures you choose the most suitable option.
+                  Students searching for pilot training in Delhi often need expert guidance before selecting a flying school. While flight training may take place at different DGCA academies across India, proper counselling ensures you choose the most suitable option.
                 </p>
                 <p className="text-gray-600 leading-relaxed text-sm mb-6">
                   We One Aviation supports aspiring pilots in Delhi by assisting with:

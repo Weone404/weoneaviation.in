@@ -12,13 +12,13 @@ const heroSlides = [
         tag: 'We One Aviation Academy',
         title: 'Pilot Training',
         highlight: 'Courses & Programs',
-        sub: 'DGCA Approved Ground Classes, CPL, PPL & International Flight Training — everything you need to fly professionally.',
+        sub: 'DGCA Ground Classes, CPL, PPL & International Flight Training — everything you need to fly professionally.',
     },
 ];
 
 const stats = [
     { num: '3', label: 'Training Countries', icon: '🌍' },
-    { num: '100%', label: 'DGCA Approved', icon: '✅' },
+    { num: '100%', label: 'DGCA', icon: '✅' },
 ];
 
 const courses = [
@@ -192,7 +192,7 @@ const salaryData = [
 ];
 
 const whyWeOne = [
-    { icon: '🏛️', title: 'DGCA Approved', desc: 'All our programs are fully approved and regulated by DGCA, ensuring your license is valid nationwide.' },
+    { icon: '🏛️', title: 'DGCA', desc: 'All our programs are fully approved and regulated by DGCA, ensuring your license is valid nationwide.' },
     { icon: '🌍', title: 'International Training', desc: 'We offer flight training in USA and South Africa for global exposure and FAA / SACAA certification.' },
     { icon: '👨‍✈️', title: 'Expert Instructors', desc: 'Learn from experienced commercial pilots and DGCA-certified ground instructors.' },
     { icon: '📈', title: 'Career Guidance', desc: 'Interview preparation and career guidance, including airline interview practice and counselling.' },
@@ -215,7 +215,7 @@ export default function CoursesPage() {
     return (
         <Layout
             title="Pilot Training Courses – CPL, PPL, DGCA Ground Classes & International Flying | We One Aviation"
-            description="Explore all pilot training courses at We One Aviation Academy – DGCA approved CPL, PPL, ground classes, and international flight training in USA & South Africa."
+            description="Explore all pilot training courses at We One Aviation Academy – DGCA CPL, PPL, ground classes, and international flight training in USA & South Africa."
         >
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
@@ -234,7 +234,7 @@ export default function CoursesPage() {
                     Pilot Training Courses in India – CPL, PPL, DGCA Ground Classes
                 </h1>
                 <p className="text-white font-medium text-sm px-4 mt-1">
-                    Explore all DGCA-approved pilot training programs with flexible fees and international opportunities
+                    Explore all DGCA pilot training programs with flexible fees and international opportunities
                 </p>
             </div>
 
@@ -444,7 +444,7 @@ export default function CoursesPage() {
                             Why We One <span className="text-av-orange">Aviation Academy?</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-                            DGCA-approved ground classes and flight-training placement for students working toward a commercial licence.
+                            DGCA ground classes and flight-training placement for students working toward a commercial licence.
                         </p>
                     </ScrollReveal>
 

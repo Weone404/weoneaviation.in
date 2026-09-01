@@ -66,7 +66,7 @@ const functions = [
         num: '3',
         icon: '🏫',
         title: 'Monitoring Aviation Institutes',
-        desc: 'No Any Aviation Academy Will Run Without the Permission Of DGCA – They Must Have Meet All The Eligibility Criteria That Given By DGCA. They Should Have DGCA Approved Instructors, training and aircraft meet national and international standards.',
+        desc: 'No Any Aviation Academy Will Run Without the Permission Of DGCA – They Must Have Meet All The Eligibility Criteria That Given By DGCA. They Should Have DGCA Instructors, training and aircraft meet national and international standards.',
     },
     {
         num: '4',
@@ -89,7 +89,7 @@ const functions = [
 ];
 
 const pilotJourneySteps = [
-    { step: '01', title: 'Get Admission', desc: 'Get admission to a DGCA-approved flying school' },
+    { step: '01', title: 'Get Admission', desc: 'Get admission to a DGCA flying school' },
     { step: '02', title: 'Medical Tests', desc: 'Pass DGCA-mandated medical fitness assessments (as per DGCA norms)' },
     { step: '03', title: 'Clear DGCA Exams', desc: 'Clear DGCA exams (Air Navigation, Meteorology, Regulations, etc.)' },
     { step: '04', title: 'Log Flying Hours', desc: 'Log the minimum flying hours (typically 200 hours for CPL)' },

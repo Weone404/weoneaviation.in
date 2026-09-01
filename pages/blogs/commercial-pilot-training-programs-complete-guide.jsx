@@ -135,7 +135,7 @@ const steps = [
   'Join ground classes for the five written papers, and start timed mock tests early rather than in the last month.',
   'Attempt the DGCA papers across examination cycles, clearing them individually as you become ready.',
   `Sit ${RTR.name} separately, under its own rules. It is not one of the five papers.`,
-  'Join a DGCA-approved Flying Training Organisation once your medical and computer number are in hand.',
+  'Join a DGCA Flying Training Organisation once your medical and computer number are in hand.',
   `Build ${CPL_HOURS.total} hours of flight time against the Schedule II breakdown, keeping the logbook clean as you go.`,
   'Pass the skill test with an examiner, then file for licence issue with a complete document set.',
 ];

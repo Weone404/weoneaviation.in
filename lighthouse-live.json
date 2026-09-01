@@ -1,4 +1,4 @@
-{
+﻿{
   "lighthouseVersion": "13.4.1",
   "requestedUrl": "https://weoneaviation.in/",
   "mainDocumentUrl": "https://weoneaviation.in/",
@@ -3487,7 +3487,7 @@
                 "height": 119
               },
               "snippet": "<p class=\"text-white/90 leading-relaxed text-sm px-4 mt-3 max-w-3xl mx-auto\">",
-              "nodeLabel": "We One Aviation Academy is a DGCA-approved pilot training institute in Dwarka, …",
+              "nodeLabel": "We One Aviation Academy is a DGCA pilot training institute in Dwarka, …",
               "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.39 (foreground color: #f8eee6, background color: #b45309, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
             },
             "subItems": {

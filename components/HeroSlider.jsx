@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+﻿import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import NextImage from 'next/image';
 
@@ -6,9 +6,9 @@ const slides = [
   {
     id: 1,
     image: '/1725_piper-pa34-seneca.jpg',
-    tag: 'DGCA Approved Pilot Training',
+    tag: 'DGCA Pilot Training',
     title: 'Build a career in',
-    alt: 'Professional pilot training facility at We One Aviation Academy with modern aircraft and DGCA-approved simulators for Commercial Pilot License courses',
+    alt: 'Professional pilot training facility at We One Aviation Academy with modern aircraft and DGCA simulators for Commercial Pilot License courses',
     highlight: 'commercial aviation',
     sub: 'Structured CPL, PPL, and DGCA ground class guidance for students in India.',
   },

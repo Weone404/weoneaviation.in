@@ -79,7 +79,7 @@ const flyingSchools = [
         course: 'Commercial Pilot License (CPL)',
         duration: '12-18 months',
         fees: '₹35-45 Lakhs (approx.)',
-        highlights: 'DGCA-approved, state-of-the-art simulators, extensive flight hours',
+        highlights: 'DGCA, state-of-the-art simulators, extensive flight hours',
         href: '/flying-school/india',
     },
     {
@@ -151,7 +151,7 @@ const pilotJourneySteps = [
     {
         icon: '🩺',
         title: 'Apply For Dgca DGCA Medical',
-        desc: 'You Have Do Your Medical Checkup From Any Dgca Approved Doctors. Below Is Full Process How To Get Dgca DGCA Medical. If You Have Issue In Dgca Medical Then You Can Contact us For Dgca Medical',
+        desc: 'You Have Do Your Medical Checkup From Any DGCA Doctors. Below Is Full Process How To Get Dgca DGCA Medical. If You Have Issue In Dgca Medical Then You Can Contact us For Dgca Medical',
         alert: 'Is Your Dgca Medical Test Taking Time?',
         alertDesc: 'Apply Dgca Medical Through We One Aviation Academy. Call On Us If You Can\'t Able For Dgca Medical. just Contact us for Dgca Medical',
     },
@@ -201,7 +201,7 @@ const faqs = [
     },
     {
         q: 'What Are The Eligibility Criteria for Pilot Training?',
-        a: 'Minimum age: 17 years for CPL | Educational qualification: 10+2 with Physics and Mathematics | Medical fitness: DGCA medical certificate from a DGCA-approved medical examiner',
+        a: 'Minimum age: 17 years for CPL | Educational qualification: 10+2 with Physics and Mathematics | Medical fitness: DGCA medical certificate from a DGCA medical examiner',
     },
     {
         q: 'What is Pilot Training Institute?',
@@ -327,14 +327,14 @@ const usaReasons = [
 
 export default function Home() {
     return (
-        <Layout title="We One Aviation Academy | Pilot Training Institute in India" description="DGCA-approved pilot training in India. CPL, PPL, ATPL and SPL courses plus DGCA ground classes. Free career counselling available.">
+        <Layout title="We One Aviation Academy | Pilot Training Institute in India" description="DGCA pilot training in India. CPL, PPL, ATPL and SPL courses plus DGCA ground classes. Free career counselling available.">
             {/* Hero */}
             <HeroSlider  asH1={false}/>
 
             {/* Tagline Banner */}
             <div className="bg-av-orange py-4 text-center">
                 <p className="text-white font-semibold text-lg">
-                    DGCA-approved ground classes and flight training, DGCA-approved courses, and expert guidance to kickstart your aviation career. Join now and become a certified pilot with top-notch training programs.
+                    DGCA ground classes and flight training, DGCA courses, and expert guidance to kickstart your aviation career. Join now and become a certified pilot with top-notch training programs.
                 </p>
                 <Link href="/contact" className="inline-block mt-2 bg-white text-av-orange font-bold px-6 py-2 rounded-full text-sm hover:bg-av-blue hover:text-white transition-all">
                     Contact Us →
@@ -386,7 +386,7 @@ export default function Home() {
                             With India's increasing population, the country will lead in airports and aircraft. This rapid growth creates a high demand for pilots — and we are here to train the next generation of aviation professionals.
                         </p>
                         <div className="flex flex-wrap gap-3 mb-6">
-                            {['DGCA Approved', 'Scholarship Available'].map(tag => (
+                            {['DGCA', 'Scholarship Available'].map(tag => (
                                 <span key={tag} className="bg-av-light text-av-blue text-xs font-semibold px-4 py-2 rounded-full border border-av-sky/20">
                                     ✓ {tag}
                                 </span>
@@ -831,7 +831,7 @@ export default function Home() {
                         <div className="section-tag">DGCA Ground Classes</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot License</h2>
                         <p className="text-gray-600 leading-relaxed mb-4">
-                            ✈️ Dreaming of Becoming a Commercial Pilot? Get DGCA-approved training, expert mentorship and hands-on flight experience.
+                            ✈️ Dreaming of Becoming a Commercial Pilot? Get DGCA training, expert mentorship and hands-on flight experience.
                         </p>
                         <Link href="/courses/cpl" className="inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">Learn More</Link>
                     </ScrollReveal>
@@ -868,7 +868,7 @@ export default function Home() {
                     </ScrollReveal>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
-                            { icon: '✅', title: 'DGCA-Approved Training Programs', desc: 'Our courses meet all regulatory requirements to ensure a smooth path to becoming a professional pilot.' },
+                            { icon: '✅', title: 'DGCA Training Programs', desc: 'Our courses meet all regulatory requirements to ensure a smooth path to becoming a professional pilot.' },
                             { icon: '✅', title: 'Experienced Instructors & Mentors', desc: 'Learn from seasoned airline pilots and aviation experts who provide hands-on guidance.' },
                             { icon: '✅', title: 'Interview Preparation', desc: 'Interview preparation and career guidance for jobs in leading airlines through industry connections and career support.' },
                             { icon: '✅', title: 'Comprehensive CPL & DGCA Ground Classes', desc: 'Structured curriculum covering Air Navigation, Meteorology, Air Regulations, and Technical subjects.' },

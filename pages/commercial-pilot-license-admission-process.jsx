@@ -53,8 +53,8 @@ const admissionSteps = [
     {
         step: '02',
         icon: '🏫',
-        title: 'Choose a DGCA-Approved Flying School',
-        desc: 'Choosing the correct training institution stands as a essential component. Look for a school that is DGCA-approved with experienced instructors and modern aircraft.',
+        title: 'Choose a DGCA Flying School',
+        desc: 'Choosing the correct training institution stands as a essential component. Look for a school that is DGCA with experienced instructors and modern aircraft.',
     },
     {
         step: '03',
@@ -114,7 +114,7 @@ const weOneProcess = [
 // Built from the SAME `admissionSteps` array the page renders.
 const howToSchema = generateHowToSchema({
   name: 'CPL admission process in India',
-  description: 'How to apply for Commercial Pilot Licence training in India: checking eligibility, choosing a DGCA-approved flying school, ground school and the DGCA examinations, flight training and hour logging, and the licence application.',
+  description: 'How to apply for Commercial Pilot Licence training in India: checking eligibility, choosing a DGCA flying school, ground school and the DGCA examinations, flight training and hour logging, and the licence application.',
   url: 'https://weoneaviation.in/commercial-pilot-license-admission-process',
   steps: admissionSteps,
 });
@@ -123,7 +123,7 @@ export default function CPLAdmissionPage() {
     return (
         <Layout
             title="Commercial Pilot License Admission Process – Step by Step CPL Guide 2025"
-            description="Learn the complete Commercial Pilot License (CPL) Admission Process in India. Step-by-step guide covering eligibility, DGCA-approved school selection, ground training, flight hours, and CPL application."
+            description="Learn the complete Commercial Pilot License (CPL) Admission Process in India. Step-by-step guide covering eligibility, DGCA school selection, ground training, flight hours, and CPL application."
         >
             <StructuredData data={howToSchema} />
 
@@ -232,7 +232,7 @@ export default function CPLAdmissionPage() {
                     <ScrollReveal>
                         <div className="section-tag">Step 2</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4 underline-orange">
-                            Choose a DGCA-Approved Flying School
+                            Choose a DGCA Flying School
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-5">
                             Choosing the correct training institution stands as a essential component throughout the Commercial <strong>Pilot License</strong> Admission Process. Look for a school that:
@@ -255,7 +255,7 @@ export default function CPLAdmissionPage() {
                             <div className="text-4xl mb-4">🏫</div>
                             <h3 className="font-montserrat font-bold text-white text-xl mb-3">We One Aviation Academy</h3>
                             <p className="text-white/70 text-sm leading-relaxed mb-5">
-                                We One Aviation Academy is a DGCA-approved institution with experienced instructors, modern simulators, and comprehensive ground and flight training programs.
+                                We One Aviation Academy is a DGCA institution with experienced instructors, modern simulators, and comprehensive ground and flight training programs.
                             </p>
                             <Link href="/contact" className="inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">
                                 Enquire About Admission →
@@ -382,7 +382,7 @@ export default function CPLAdmissionPage() {
                         </h2>
                         <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-8 mb-8">
                             <p className="text-gray-600 text-sm leading-relaxed">
-                                The Commercial Pilot License Admission Process consists of multiple stages which let only the most dedicated and qualified candidates progress toward their aviation career. With the right guidance and a DGCA-approved institution like We One Aviation Academy, every step of the journey becomes clear and achievable.
+                                The Commercial Pilot License Admission Process consists of multiple stages which let only the most dedicated and qualified candidates progress toward their aviation career. With the right guidance and a DGCA institution like We One Aviation Academy, every step of the journey becomes clear and achievable.
                             </p>
                         </div>
                         <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-av-blue transition-all text-sm">

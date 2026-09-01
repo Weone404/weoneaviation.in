@@ -32,7 +32,7 @@ const articleSchema = {
   datePublished: DATE_PUBLISHED,
   dateModified: DATE_MODIFIED,
   articleSection: 'Flying school selection',
-  keywords: 'best flying school in India, how to choose flying school, DGCA approved flying schools, FTO ranking, flying training organisation India',
+  keywords: 'best flying school in India, how to choose flying school, DGCA flying schools, FTO ranking, flying training organisation India',
   mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
   image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
   author: { '@type': 'Organization', name: ACADEMY.name, url: ACADEMY.url },
@@ -174,7 +174,7 @@ export default function BestFlyingSchoolInIndia() {
       readingTime="13 min"
       quickAnswer={{
         question: 'Which is the best flying school in India?',
-        answer: 'There is no single best one. Every school worth considering is DGCA-approved, so approval cannot be your deciding factor. What separates them is fleet-to-student ratio, daily serviceability, instructor turnover, weather losses at that base, and whether recent batches finished on time. Those figures are obtainable — you have to ask for them.',
+        answer: 'There is no single best one. Every school worth considering is DGCA, so approval cannot be your deciding factor. What separates them is fleet-to-student ratio, daily serviceability, instructor turnover, weather losses at that base, and whether recent batches finished on time. Those figures are obtainable — you have to ask for them.',
       }}
       summaryTitle="How to judge a flying school"
       summaryItems={[
@@ -200,7 +200,7 @@ export default function BestFlyingSchoolInIndia() {
       <h2 id="no-single-best" className={H2}>Is there a single best flying school in India?</h2>
       <p>
         No, and any page that names one is either selling that school or guessing. What exists is a
-        set of DGCA-approved organisations that differ enormously in how often you will actually fly,
+        set of DGCA organisations that differ enormously in how often you will actually fly,
         and a set of measurable questions that expose the difference before you pay.
       </p>
       <p>

@@ -67,7 +67,7 @@ const subjects = [
 const dgcaDoes = [
   { icon: '📜', title: 'Issues Licenses', desc: 'To pilots, aircraft engineers, and flight instructors.' },
   { icon: '🛡️', title: 'Ensures Safety', desc: 'Makes sure all aircraft, airports, and airlines follow safety standards.' },
-  { icon: '🏫', title: 'Approves Flying Schools', desc: 'Only DGCA-approved schools can train pilots in India.' },
+  { icon: '🏫', title: 'Approves Flying Schools', desc: 'Only DGCA schools can train pilots in India.' },
   { icon: '📝', title: 'Conducts Exams', desc: 'Organizes theory exams (called DGCA Ground Exams) for student pilots.' },
 ];
 
@@ -102,7 +102,7 @@ const eligibility = [
     points: [
       'You must obtain a DGCA medical certificate before starting your ground classes.',
       'Eventually, a DGCA medical certificate is required for flying and CPL issuance.',
-      'Medical certificates must be issued by DGCA-approved doctors only.',
+      'Medical certificates must be issued by DGCA doctors only.',
     ],
   },
   {

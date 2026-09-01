@@ -61,7 +61,7 @@ const howToGet = [
 ];
 
 const prepTips = [
-    'Attend ground classes regularly and use DGCA-approved study materials (e.g., books by authors like R.K. Bali or Oxford Aviation Academy manuals).',
+    'Attend ground classes regularly and use DGCA study materials (e.g., books by authors like R.K. Bali or Oxford Aviation Academy manuals).',
     'Practice with past question papers and mock tests.',
     'Focus on understanding concepts rather than rote memorization, as questions can be application-based.',
 ];
@@ -380,7 +380,7 @@ export default function CPL() {
                             {/* 1) DGCA Medical */}
                             <h4 className="font-montserrat font-bold text-av-blue mb-3">1) DGCA medical examination</h4>
                             <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                Book the medical before you spend anything on training. A DGCA-approved examiner checks that you meet the fitness standards the licence requires, and finding a disqualifying condition after you have paid a flying-school deposit is an expensive way to learn it. The examination covers:
+                                Book the medical before you spend anything on training. A DGCA examiner checks that you meet the fitness standards the licence requires, and finding a disqualifying condition after you have paid a flying-school deposit is an expensive way to learn it. The examination covers:
                             </p>
                             <div className="space-y-2 mb-4">
                                 {medicalChecks.map((check) => (
@@ -391,8 +391,8 @@ export default function CPL() {
                                 ))}
                             </div>
                             <p className="text-sm text-gray-600 mb-1">💰 <span className="font-semibold text-av-blue">DGCA Medical Fees (Approximate):</span></p>
-                            <p className="text-sm text-gray-600 mb-1">DGCA Medical: ₹5,000 – ₹10,000 (at DGCA-approved hospitals)</p>
-                            <p className="text-sm text-gray-600 mb-8">DGCA Medical: ₹3,000 – ₹6,000 (at DGCA-approved doctors)</p>
+                            <p className="text-sm text-gray-600 mb-1">DGCA Medical: ₹5,000 – ₹10,000 (at DGCA hospitals)</p>
+                            <p className="text-sm text-gray-600 mb-8">DGCA Medical: ₹3,000 – ₹6,000 (at DGCA doctors)</p>
 
                             {/* 2) DGCA Exam */}
                             <h4 className="font-montserrat font-bold text-av-blue mb-3">2) DGCA CPL Exams and Fees</h4>
@@ -452,7 +452,7 @@ export default function CPL() {
                             <div className="bg-av-blue rounded-2xl p-8 text-center mb-10">
                                 <h3 className="font-montserrat text-xl font-bold text-white mb-3">Start Your Pilot Journey With We One Aviation Academy</h3>
                                 <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-3">
-                                    We One Aviation Academy is a DGCA-approved pilot training institute. We offer DGCA ground classes, commercial pilot training, and aviation courses designed to help you achieve your dream of flying. With expert instructors, state-of-the-art facilities, and a structured training program, we prepare you for a successful aviation career.
+                                    We One Aviation Academy is a DGCA pilot training institute. We offer DGCA ground classes, commercial pilot training, and aviation courses designed to help you achieve your dream of flying. With expert instructors, state-of-the-art facilities, and a structured training program, we prepare you for a successful aviation career.
                                 </p>
                                 <p className="text-white/60 text-sm mb-5">Join us and take the first step toward the skies! ✈️</p>
                                 <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
@@ -541,7 +541,7 @@ export default function CPL() {
                             <aside className="bg-av-blue rounded-2xl p-8 text-center my-10">
                                 <h3 className="font-montserrat text-xl font-bold text-white mb-3">Start Your Commercial Flight Training With We One Aviation Academy</h3>
                                 <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-3">
-                                    We One Aviation Academy is a DGCA-approved pilot training institute in Dwarka, New Delhi. We teach the ground subjects for the DGCA papers and place students with flying schools in India and abroad for the 200 hours.
+                                    We One Aviation Academy is a DGCA pilot training institute in Dwarka, New Delhi. We teach the ground subjects for the DGCA papers and place students with flying schools in India and abroad for the 200 hours.
                                 </p>
                                 <p className="text-white/60 text-sm mb-5">Join us and take the first step toward the skies! ✈️</p>
                                 <Link href="/flying-school" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">

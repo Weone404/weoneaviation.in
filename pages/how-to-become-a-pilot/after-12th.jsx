@@ -14,7 +14,7 @@ import { LICENCES, CPL_HOURS, EDUCATION, MEDICAL, papersSummary, cplHoursSummary
 const steps = [
   { num: 1, title: 'Pass 12th with PCM', desc: 'You need Physics, Chemistry, and Maths in your 12th standard. A minimum of 50% marks is required for DGCA eligibility. Some foreign flying schools accept any 12th pass.' },
   { num: 2, title: 'Get DGCA Medical', desc: 'Before starting pilot training, you must clear the DGCA medical examination. This checks vision, hearing, cardiovascular health, and overall fitness. Schedule it early.' },
-  { num: 3, title: 'Enroll in a DGCA-Approved Flying School', desc: 'Choose a DGCA-approved flying school like We One Aviation. Decide between training in India or abroad (USA, Canada, Australia, Europe).' },
+  { num: 3, title: 'Enroll in a DGCA Flying School', desc: 'Choose a DGCA flying school like We One Aviation. Decide between training in India or abroad (USA, Canada, Australia, Europe).' },
   { num: 4, title: 'Complete Ground School Training', desc: 'You study the five DGCA written papers — Air Navigation, Aviation Meteorology, Air Regulations, Technical General, and more. Clear all written exams before progressing to flying.' },
   { num: 5, title: 'Complete 200+ Flying Hours', desc: 'Log a minimum of 200 flying hours as required by DGCA for CPL. This includes solo, cross-country, instrument, and night flying hours.' },
   { num: 6, title: 'Clear DGCA CPL Skill Test', desc: 'Appear for the DGCA CPL skill test (flight test) conducted by a DGCA examiner. Successfully demonstrate all flying maneuvers and procedures.' },

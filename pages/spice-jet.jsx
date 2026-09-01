@@ -255,8 +255,8 @@ export default function SpiceJetCadetPage() {
                                 </div>
                                 <div className="border-t border-white/20 pt-5">
                                     <p className="text-white/70 text-xs font-semibold mb-2">Infrastructure:</p>
-                                    <p className="text-white/60 text-xs mb-2">🏢 <strong className="text-white">Ground Training:</strong> SpiceJet Aviation Training Academy, Gurgaon — DGCA-approved, 10,000+ sq. ft. classroom facilities.</p>
-                                    <p className="text-white/60 text-xs">✈️ <strong className="text-white">Flight Training:</strong> SpiceJet-affiliated, DGCA-approved flying schools with a fleet of 20 single-engine trainer aircraft.</p>
+                                    <p className="text-white/60 text-xs mb-2">🏢 <strong className="text-white">Ground Training:</strong> SpiceJet Aviation Training Academy, Gurgaon — DGCA, 10,000+ sq. ft. classroom facilities.</p>
+                                    <p className="text-white/60 text-xs">✈️ <strong className="text-white">Flight Training:</strong> SpiceJet-affiliated, DGCA flying schools with a fleet of 20 single-engine trainer aircraft.</p>
                                 </div>
                             </div>
                         </ScrollReveal>
@@ -579,15 +579,15 @@ export default function SpiceJetCadetPage() {
                                 <div className="space-y-4">
                                     <div className="bg-white/10 rounded-xl p-4">
                                         <p className="text-av-orange font-semibold text-sm mb-1">Faculty</p>
-                                        <p className="text-white/80 text-sm">DGCA-approved SpiceJet Ground School and Flight Instructors.</p>
+                                        <p className="text-white/80 text-sm">DGCA SpiceJet Ground School and Flight Instructors.</p>
                                     </div>
                                     <div className="bg-white/10 rounded-xl p-4">
                                         <p className="text-av-orange font-semibold text-sm mb-1">Ground Training</p>
-                                        <p className="text-white/80 text-sm">SpiceJet Aviation Training Academy, Gurgaon. 10,000+ sq. ft. fully equipped DGCA-approved facilities.</p>
+                                        <p className="text-white/80 text-sm">SpiceJet Aviation Training Academy, Gurgaon. 10,000+ sq. ft. fully equipped DGCA facilities.</p>
                                     </div>
                                     <div className="bg-white/10 rounded-xl p-4">
                                         <p className="text-av-orange font-semibold text-sm mb-1">Flight Training</p>
-                                        <p className="text-white/80 text-sm">SpiceJet-affiliated DGCA-approved flying schools with 20 single-engine trainer aircraft.</p>
+                                        <p className="text-white/80 text-sm">SpiceJet-affiliated DGCA flying schools with 20 single-engine trainer aircraft.</p>
                                     </div>
                                 </div>
                             </div>

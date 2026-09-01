@@ -69,7 +69,7 @@ const keyFunctions = [
         icon: '🏫',
         title: 'Approval of Flying Training Organizations (FTOs)',
         intro: 'DGCA approves Flying Training Organizations (FTOs) that meet its operational, infrastructure, maintenance, and training standards.',
-        outro: 'Training with a DGCA-approved FTO is essential for candidates pursuing pilot licences recognized in India.',
+        outro: 'Training with a DGCA FTO is essential for candidates pursuing pilot licences recognized in India.',
     },
     {
         num: '4',
@@ -94,7 +94,7 @@ const keyFunctions = [
         icon: '🩺',
         title: 'Medical Certification',
         intro: 'Professional pilots must meet aviation medical standards before receiving or renewing licences.',
-        listIntro: 'DGCA-approved medical examinations evaluate:',
+        listIntro: 'DGCA medical examinations evaluate:',
         list: ['Vision', 'Hearing', 'Cardiovascular health', 'Neurological fitness', 'Overall physical condition'],
         outro: 'Medical fitness is an essential component of aviation safety.',
     },
@@ -154,7 +154,7 @@ const licensingSteps = [
     {
         step: '06',
         title: 'Complete Flight Training',
-        desc: 'Students then undergo practical flight training at a DGCA-approved Flying Training Organization (FTO).',
+        desc: 'Students then undergo practical flight training at a DGCA Flying Training Organization (FTO).',
         listIntro: 'Training generally includes:',
         list: ['Aircraft familiarization', 'Pre-flight inspection', 'Take-off and landing practice', 'Solo flying', 'Cross-country flying', 'Instrument flying', 'Night flying', 'Emergency procedures', 'Radio communication'],
         outro: 'This phase develops the practical flying skills required for safe aircraft operations.',
@@ -610,16 +610,16 @@ export default function DGCAPage() {
                 </div>
             </section>
 
-            {/* ── Why DGCA-Approved Flying Schools Matter ── */}
+            {/* ── Why DGCA Flying Schools Matter ── */}
             <section className="py-20 px-4">
                 <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
                     <ScrollReveal>
                         <div className="section-tag">Choosing Right</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4 underline-orange">
-                            Why DGCA-Approved Flying Schools Matter
+                            Why DGCA Flying Schools Matter
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-3">
-                            Choosing a DGCA-approved Flying Training Organization is one of the most important decisions for aspiring pilots.
+                            Choosing a DGCA Flying Training Organization is one of the most important decisions for aspiring pilots.
                         </p>
                         <p className="text-gray-600 leading-relaxed">
                             Before enrolling, always verify that the academy is approved to conduct the relevant training.

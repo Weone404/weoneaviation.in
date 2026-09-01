@@ -62,7 +62,7 @@ const selectionSteps = [
         num: '1',
         icon: '✅',
         title: 'Meeting Basic Eligibility Criteria',
-        desc: 'Age, educational qualifications (12th with Physics & Maths), and DGCA medical certificate from a DGCA-approved doctor are mandatory to begin the pilot selection process.',
+        desc: 'Age, educational qualifications (12th with Physics & Maths), and DGCA medical certificate from a DGCA doctor are mandatory to begin the pilot selection process.',
     },
     {
         num: '2',
@@ -341,7 +341,7 @@ export default function BecomeAPilotPage() {
                                 {[
                                     { icon: '🎂', label: 'Age', value: '16 years for a Student Pilot Licence; 18 for a Commercial Pilot Licence.' },
                                     { icon: '📚', label: 'Education', value: 'Completion of 12th grade with Physics and Mathematics.' },
-                                    { icon: '🩺', label: 'Medical', value: 'Obtain a DGCA medical certificate from a DGCA-approved doctor.' },
+                                    { icon: '🩺', label: 'Medical', value: 'Obtain a DGCA medical certificate from a DGCA doctor.' },
                                 ].map(item => (
                                     <div key={item.label} className="flex items-start gap-4 p-4 bg-av-light rounded-xl border border-av-sky/20">
                                         <span className="text-2xl flex-shrink-0">{item.icon}</span>

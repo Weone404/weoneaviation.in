@@ -48,9 +48,9 @@ const class2MedicalTests = [
 
 const class2Steps = [
     { num: '1', title: 'Register on the eGCA Portal', desc: 'Create your account on the official eGCA portal at https://egca.gov.in. Follow the full registration steps below.' },
-    { num: '2', title: 'Choose a DGCA-Approved Doctor', desc: 'Use the DGCA\'s list of approved doctors and schedule an appointment. Doctors listed on the DGCA website are qualified to conduct this examination.' },
+    { num: '2', title: 'Choose a DGCA Doctor', desc: 'Use the DGCA\'s list of approved doctors and schedule an appointment. Doctors listed on the DGCA website are qualified to conduct this examination.' },
     { num: '3', title: 'Undergo the Necessary Medical Tests', desc: 'Complete all required tests including blood tests, X-rays, ECG, ENT exam, vision tests, and urine analysis.' },
-    { num: '4', title: 'Submit Medical Reports to the DGCA-Approved Doctor', desc: 'The doctor will review your test results and, if satisfactory, submit them to DGCA for processing.' },
+    { num: '4', title: 'Submit Medical Reports to the DGCA Doctor', desc: 'The doctor will review your test results and, if satisfactory, submit them to DGCA for processing.' },
     { num: '5', title: 'Receive Your Medical Assessment Certificate', desc: 'After processing, access the certificate on the eGCA portal or pick it up in person.' },
 ];
 
@@ -82,8 +82,8 @@ const class1Steps = [
 
 const faqs = [
     { q: 'What is the purpose of the DGCA medical examination?', a: 'DGCA medical examinations verify that pilots meet stringent health standards. They are designed to assess overall fitness, detect any medical conditions that could impair flying ability, and help ensure passenger and crew safety.' },
-    { q: 'Can I apply for both Class I and Class II medical exams together?', a: 'Generally, Class II is obtained first as an entry-level certification for student pilots. Class I is pursued after completing initial training when applying for a CPL. Contact a DGCA-approved doctor for specific guidance.' },
-    { q: 'Where can I find a list of DGCA-approved doctors for Class II medical exams?', a: 'The list of DGCA-approved doctors is available on the official DGCA website at www.dgca.gov.in. You can also contact We One Aviation Academy for guidance on finding approved medical examiners near you.' },
+    { q: 'Can I apply for both Class I and Class II medical exams together?', a: 'Generally, Class II is obtained first as an entry-level certification for student pilots. Class I is pursued after completing initial training when applying for a CPL. Contact a DGCA doctor for specific guidance.' },
+    { q: 'Where can I find a list of DGCA doctors for Class II medical exams?', a: 'The list of DGCA doctors is available on the official DGCA website at www.dgca.gov.in. You can also contact We One Aviation Academy for guidance on finding approved medical examiners near you.' },
     { q: 'What happens if my Class I medical certificate expires?', a: 'If your Class I medical certificate expires, you are not legally permitted to exercise the privileges of your commercial pilot license until it is renewed. Apply for renewal 0-30 days before the expiry date.' },
     { q: 'Are there any special medical centers for Class I renewal exams?', a: 'Yes, Class I medical exams can be conducted at IAF (Indian Air Force) hospitals or designated civil medical centres approved by DGCA. Contact DGCA directly for a list of approved Class I examination centres.' },
 ];

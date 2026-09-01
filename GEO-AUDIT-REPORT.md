@@ -1,4 +1,4 @@
-# GEO Audit Report: We One Aviation Academy
+﻿# GEO Audit Report: We One Aviation Academy
 
 **Audit Date:** 2026-08-11
 **URL:** https://weoneaviation.in
@@ -147,7 +147,7 @@ Re-running with a corrected pattern (`<p(?:\s[^>]*)?>`), and scoping extraction 
 
 | Page | True first paragraph |
 |---|---|
-| `/` | "Get world-class flight training, DGCA-approved courses, and expert guidance to kickstart your aviation career." |
+| `/` | "Get world-class flight training, DGCA courses, and expert guidance to kickstart your aviation career." |
 | `/commercial-pilot-license` | "You usually complete 10+2 with Physics and Mathematics, pass DGCA Class 1 medical, join DGCA ground classes…" |
 | `/how-to-become-a-pilot-after-12th` | "If you've just completed your 12th grade and dream of flying commercial aircraft, you're already at the right stage…" |
 | `/dgca-ground-classes` | "India's best DGCA Ground Classes — delivering 100% results every year and having trained over 3,000 pilots across India." |
@@ -260,7 +260,7 @@ A model will not quote that. Compare with the `/commercial-pilot-license` exampl
 
 **Expertise — undermined by lack of sourcing.** See H1: zero authoritative outbound links sitewide.
 
-**Authoritativeness — weak.** Claims like "98% success rate" and "100% DGCA Exam Pass Rate" cite "Source: DGCA exam pass rate tracking" — i.e. themselves. "3500+ Pilots Trained" is sourced to "DGCA-approved training records" with no external verification path. `/credentials` claims ISO 9001:2015, IATA certification, and IAAPI membership with no certificate numbers or verification links.
+**Authoritativeness — weak.** Claims like "98% success rate" and "100% DGCA Exam Pass Rate" cite "Source: DGCA exam pass rate tracking" — i.e. themselves. "3500+ Pilots Trained" is sourced to "DGCA training records" with no external verification path. `/credentials` claims ISO 9001:2015, IATA certification, and IAAPI membership with no certificate numbers or verification links.
 
 **Trustworthiness — damaged by H2.** The 4.9/3500 `AggregateRating` is contradicted by every third-party source. On a page set that is otherwise trying hard to be transparent, an unverifiable rating is self-defeating. The stale "Last Audited Q4 2024" (L4) compounds it.
 
@@ -810,3 +810,4 @@ score as indicative; the structural changes are not in doubt.
    mobile. Moving it to `lazyOnload` would help; that is an analytics decision.
 5. The two Organization schema nodes should collapse to one owner.
 6. Off-site authority (YouTube, Wikidata, Reddit/Quora) — none of it in code.
+

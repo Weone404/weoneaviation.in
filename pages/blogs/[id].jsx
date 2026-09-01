@@ -43,7 +43,7 @@ const hardcodedBlogs = [
           <div class="step-number">2</div>
           <div class="step-body">
             <p class="step-title">Enroll in a Flying School</p>
-            <p class="step-desc">Choose a DGCA-approved flying academy in India or abroad.</p>
+            <p class="step-desc">Choose a DGCA flying academy in India or abroad.</p>
           </div>
         </div>
         <div class="step-card">
@@ -201,7 +201,7 @@ const hardcodedBlogs = [
       </ul>
 
       <h2>Where to Get Your DGCA Medical</h2>
-      <p>DGCA-approved centres are in Delhi, Mumbai, Chennai, Kolkata, Hyderabad, and Bengaluru.</p>
+      <p>DGCA centres are in Delhi, Mumbai, Chennai, Kolkata, Hyderabad, and Bengaluru.</p>
     `,
       faqs: [],
     },

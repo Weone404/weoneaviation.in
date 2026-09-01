@@ -48,8 +48,8 @@ const processSteps = [
     {
         num: '6',
         icon: '🛩️',
-        title: 'Join a DGCA-Approved Flying Training Organization (FTO)',
-        desc: 'After completing the initial academic requirements, students enroll in a DGCA-approved flying school to begin practical flight training.',
+        title: 'Join a DGCA Flying Training Organization (FTO)',
+        desc: 'After completing the initial academic requirements, students enroll in a DGCA flying school to begin practical flight training.',
         note: 'During this phase, students learn:',
         list: ['Aircraft familiarization', 'Pre-flight inspections', 'Aircraft handling', 'Take-off procedures', 'Navigation flights', 'Instrument flying', 'Emergency procedures', 'Cross-country flying', 'Night flying', 'Radio communication'],
         footnote: 'Flight training combines simulator sessions, instructor-led flights, and solo flying experience.',

@@ -76,7 +76,7 @@ const processSteps = [
   },
   {
     phase: "Step 5 – Flying School Admission",
-    desc: "After clearing the required examinations, students join a DGCA-approved Flying School to begin practical flying training.",
+    desc: "After clearing the required examinations, students join a DGCA Flying School to begin practical flying training.",
   },
   {
     phase: "Step 6 – Complete 200 Flying Hours",
@@ -463,7 +463,7 @@ export default function CPL() {
             <h2 id="what-is-a-commercial-pilot-license" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">What is a Commercial Pilot License?</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 leading-relaxed text-sm">
-                A Commercial Pilot License (CPL) is a professional license issued by the Directorate General of Civil Aviation (DGCA) that allows pilots to fly aircraft for commercial purposes. To obtain a Commercial Pilot License in India, candidates must complete DGCA ground classes, clear the required examinations, pass DGCA medical assessments, and complete a minimum of 200 flying hours at a DGCA-approved flying school.
+                A Commercial Pilot License (CPL) is a professional license issued by the Directorate General of Civil Aviation (DGCA) that allows pilots to fly aircraft for commercial purposes. To obtain a Commercial Pilot License in India, candidates must complete DGCA ground classes, clear the required examinations, pass DGCA medical assessments, and complete a minimum of 200 flying hours at a DGCA flying school.
               </p>
             </AutoInternalLinks>
           </div>
@@ -692,7 +692,7 @@ export default function CPL() {
             <h2 id="flying-training-and-200-flying-hours" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">How do you build the 200 flying hours for a CPL?</h2>
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                Practical flying training is one of the most important parts of earning a Commercial Pilot License. Students train on DGCA-approved aircraft under the supervision of certified flight instructors.
+                Practical flying training is one of the most important parts of earning a Commercial Pilot License. Students train on DGCA aircraft under the supervision of certified flight instructors.
               </p>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">During training, students gain experience in:</p>
             </AutoInternalLinks>

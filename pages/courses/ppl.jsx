@@ -31,7 +31,7 @@ const pplOtherTable = [
 const pplEligibility = [
     { criteria: 'Age', details: 'Minimum 17 years' },
     { criteria: 'Education', details: '10+2 with Physics & Mathematics' },
-    { criteria: 'Medical Fitness', details: 'DGCA medical certificate (DGCA approved)' },
+    { criteria: 'Medical Fitness', details: 'DGCA medical certificate (DGCA)' },
     { criteria: 'Nationality', details: 'Indian or foreign nationals (as per DGCA rules)' },
 ];
 

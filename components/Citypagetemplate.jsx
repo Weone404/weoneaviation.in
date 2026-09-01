@@ -1,4 +1,4 @@
-import Layout from '../components/Layout';
+﻿import Layout from '../components/Layout';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
@@ -101,7 +101,7 @@ export function CityPageTemplate({
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-6">{intro}</p>
                         <div className="flex flex-wrap gap-3 mb-6">
-                            {['DGCA Approved', 'Scholarship Available'].map(tag => (
+                            {['DGCA', 'Scholarship Available'].map(tag => (
                                 <span key={tag} className="bg-av-light text-av-blue text-xs font-semibold px-4 py-2 rounded-full border border-av-sky/20">✓ {tag}</span>
                             ))}
                         </div>

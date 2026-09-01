@@ -1,4 +1,4 @@
-const existingFaqRoutes = new Set([
+﻿const existingFaqRoutes = new Set([
   '/', '/faqs', '/faqs', '/air-arabia', '/blogs', '/blogs/[id]', '/commercial-pilot-license', '/dgca-ground-classes', '/dgca-ground-classes', '/doubt',
   '/courses/atpl', '/student-pilot-license-spl',
   '/dgca-computer-number', '/dgca-full-form',
@@ -184,7 +184,7 @@ const routeContent = {
     ['Why choose India for pilot training?', 'The page highlights DGCA-recognised licensing, no international visa requirement, modern fleets, experienced instructors, training close to home, and more than 300 potential flying days at selected locations.'],
     ['What age do I need to be to start pilot training in India?', 'A Student Pilot Licence, which allows flight training to begin, requires a minimum age of 16, while a Commercial Pilot Licence requires a minimum age of 18.'],
     ['Which locations in India offer the best flying conditions?', 'The page highlights Rajasthan (320+ flying days), Gujarat (300+ flying days), and Maharashtra (270+ flying days) as key training locations known for favourable weather.'],
-    ['How many flight training academies are listed on this page?', 'The page lists three DGCA-approved flying academies based in Maharashtra, Gujarat, and Rajasthan/Gujarat, each offering a 14-16 month, 200-hour CPL program with different fleet compositions.'],
+    ['How many flight training academies are listed on this page?', 'The page lists three DGCA flying academies based in Maharashtra, Gujarat, and Rajasthan/Gujarat, each offering a 14-16 month, 200-hour CPL program with different fleet compositions.'],
   ],
 },
  '/flying-school/usa': {
@@ -288,7 +288,7 @@ const routeContent = {
   questions: [
     ['What credential is published on the We One Aviation credentials page?', 'The page publishes We One Aviation Academy\'s DGCA approval status as its primary accreditation and verification credential.'],
     ['How long has We One Aviation been operating?', 'The page publishes the academy\'s founded year and years of operation using the academy data maintained on the site.'],
-    ['What does the DGCA approval claim represent?', 'The page identifies the academy as a DGCA-approved aviation training institute and links that status to the Directorate General of Civil Aviation.'],
+    ['What does the DGCA approval claim represent?', 'The page identifies the academy as a DGCA aviation training institute and links that status to the Directorate General of Civil Aviation.'],
     ['How can I request credential verification?', 'Verification enquiries can be sent to info.weoneaviation@gmail.com using the contact information published on the page.'],
     ['What information is deliberately excluded from the page?', 'The page states that unsupported certification, trade-body, and partnership claims have been removed rather than published without evidence.'],
     ['When was the credentials page last updated?', 'The page currently displays a manually maintained last-updated label of August 19, 2026.'],
@@ -315,7 +315,7 @@ const routeContent = {
     questions: [
       ['What eligibility should I check before pilot-training admission?', 'The checklist includes age, 10+2 with Physics and Mathematics, English proficiency, medical fitness, and Indian citizenship or valid visa status.'],
       ['Which documents should students gather before admission?', 'The checklist includes birth certificate, 10th and 12th certificates, Aadhaar, passport where available, PAN, identity and address proof, bank passbook, domicile and character certificates, and passport-size photographs.'],
-      ['What does the DGCA medical examination cover?', 'The checklist covers eye, hearing and colour-vision testing, blood pressure, blood and urine work, ECG, chest X-ray, laboratory investigations and a psychological evaluation. Which of these apply to you depends on the certificate you are being examined for, so confirm the scope with your DGCA-approved examiner.'],
+      ['What does the DGCA medical examination cover?', 'The checklist covers eye, hearing and colour-vision testing, blood pressure, blood and urine work, ECG, chest X-ray, laboratory investigations and a psychological evaluation. Which of these apply to you depends on the certificate you are being examined for, so confirm the scope with your DGCA examiner.'],
       ['What is the DGCA Computer Number registration process?', 'The checklist directs students to create a DGCA account, upload medical and educational documents, submit personal and training details, pay the registration fee, and obtain the unique Computer Number used for DGCA examinations.'],
       ['What financial preparation is recommended?', 'Students should finalise the total training cost, arrange the first payment, seek loan approval if needed, identify sponsors, agree on the academy payment plan, and organise financial documents.'],
       ['What should students confirm at the admission meeting?', 'The checklist recommends confirming original documents, medical certificates, admission terms, accommodation, first-day timing, instructor contact details, payment schedule, curriculum, training plan, and start date.'],
@@ -326,7 +326,7 @@ const routeContent = {
   questions: [
     ['What is the first step in the CPL admission process?', 'The first step is checking age, education, medical fitness, and English proficiency before applying for professional pilot training.'],
     ['What are the main CPL eligibility requirements?', 'The page lists training from age 17, CPL issuance after age 18, 10+2 with Physics and Mathematics, DGCA medical certification, English proficiency, and the applicable flying-hour requirements.'],
-    ['How should I choose a DGCA-approved flying school?', 'The page recommends checking DGCA approval, instructor experience, modern aircraft and simulators, and whether the school provides complete ground and flight training.'],
+    ['How should I choose a DGCA flying school?', 'The page recommends checking DGCA approval, instructor experience, modern aircraft and simulators, and whether the school provides complete ground and flight training.'],
     ['What happens during ground training and DGCA exams?', 'Students study Air Navigation, Meteorology, Air Regulations, Technical General, and Technical Specific before completing the required DGCA written examinations.'],
     ['How many flight hours are required in the admission guide?', 'The guide describes 200 flight hours, including solo, cross-country, instrument, and night flying, with logbook maintenance throughout the training.'],
     ['What does the final CPL application involve?', 'Applicants submit their logbook and supporting documents to DGCA, complete DGCA medical revalidation, and apply for CPL issuance after meeting the licensing requirements.'],
@@ -502,7 +502,7 @@ const routeContent = {
   '/blogs/aviation-course-after-12th': {
   title: 'How to Become a Pilot After 12th FAQs',
   questions: [
-    ['What are the eligibility requirements to become a pilot after 12th?', 'Candidates need a minimum age of 16 for a Student Pilot Licence (18 for CPL), completion of 12th grade with Physics and Mathematics, and a DGCA medical certificate from a DGCA-approved doctor.'],
+    ['What are the eligibility requirements to become a pilot after 12th?', 'Candidates need a minimum age of 16 for a Student Pilot Licence (18 for CPL), completion of 12th grade with Physics and Mathematics, and a DGCA medical certificate from a DGCA doctor.'],
     ['What are the physical eligibility requirements to become a pilot?', 'For both male and female candidates, the page lists a minimum height of 5 feet 5 inches (165 cm), BMI between 18.5-25, normal color vision, 6/6 visual acuity in each eye, and hearing at or below 20 decibels.'],
     ['What does the pilot selection process involve?', 'The process includes meeting basic eligibility, entrance exams, a personal interview, medical examination, flight school selection, ground school training, flight training, license examinations (PPL then CPL), additional ratings, and building flight hours.'],
     ['How can I become a pilot in the Indian Air Force after 12th?', 'The National Defence Academy (NDA) exam is the main route after 12th — unmarried candidates aged 16.5-19.5 with Physics and Mathematics can sit the UPSC-conducted written exam, followed by physical/medical tests and an interview, leading to 3 years of training at NDA and specialised flying training.'],
@@ -521,7 +521,7 @@ const routeContent = {
     ['What are DGCA\'s main functions?', 'DGCA issues pilot licenses, certifies aircraft, monitors aviation training institutes, sets and enforces safety standards, handles passenger complaints, and investigates aviation incidents.'],
     ['Which pilot licenses does DGCA issue?', 'DGCA issues all pilot licenses in India, including the Student Pilot License (SPL), Private Pilot License (PPL), Commercial Pilot License (CPL), and Airline Transport Pilot License (ATPL), after exams and flying-hour requirements are met.'],
     ['What does DGCA check before an aircraft can fly in India?', 'DGCA certifies aircraft to ensure they are safe and ready to operate before they are allowed to fly in Indian airspace.'],
-    ['What is a pilot\'s typical journey with DGCA?', 'It involves getting admission to a DGCA-approved flying school, passing DGCA-mandated medical fitness assessments, clearing DGCA exams (Air Navigation, Meteorology, Regulations, etc.), logging the required flying hours (typically 200 for CPL), and receiving the license from DGCA.'],
+    ['What is a pilot\'s typical journey with DGCA?', 'It involves getting admission to a DGCA flying school, passing DGCA-mandated medical fitness assessments, clearing DGCA exams (Air Navigation, Meteorology, Regulations, etc.), logging the required flying hours (typically 200 for CPL), and receiving the license from DGCA.'],
     ['Does DGCA follow international aviation standards?', 'Yes, DGCA works closely with ICAO (International Civil Aviation Organization) to keep India aligned with global aviation safety standards.'],
     ['What is DGCA\'s official website?', 'DGCA\'s official website is dgca.gov.in.'],
   ],
@@ -531,7 +531,7 @@ const routeContent = {
   questions: [
     ['Which subjects are required in 12th to become a pilot?', 'For the Indian pilot licence route, students need Physics, Chemistry, and Mathematics (PCM) in 12th, with a minimum of 50% marks required for DGCA eligibility. Some foreign flying schools accept any 12th pass.'],
     ['What is the minimum age to begin pilot training?', 'The page lists a minimum age of 17 years for PPL and 18 years for CPL, with different medical, education, and flight-hour requirements for each.'],
-    ['What are the entrance steps after 12th?', 'The usual sequence is passing 12th with PCM, clearing the DGCA medical, enrolling in a DGCA-approved flying school, completing ground school for the five DGCA written papers, logging the required 200 hours, clearing the DGCA CPL skill test, and receiving the CPL.'],
+    ['What are the entrance steps after 12th?', 'The usual sequence is passing 12th with PCM, clearing the DGCA medical, enrolling in a DGCA flying school, completing ground school for the five DGCA written papers, logging the required 200 hours, clearing the DGCA CPL skill test, and receiving the CPL.'],
     ['How much does pilot training cost after 12th?', 'The page lists ₹6-10 lakh for PPL in India, ₹40-70 lakh for CPL in India, and ₹50-90 lakh for CPL abroad, noting that fees vary by school and country, with EMI and scholarships available.'],
     ['How long does it take to become a commercial pilot?', 'The page lists a duration of 6-12 months for PPL and 18-24 months for CPL, though exams, weather, medicals, and aircraft availability can affect the timeline.'],
     ['How many flight hours are required for PPL versus CPL?', 'The page lists a minimum of 40 flight hours for PPL and 200 hours for CPL, which for CPL includes solo, cross-country, instrument, and night flying.'],
@@ -584,7 +584,7 @@ const routeContent = {
     ['Do flying schools provide airline placement after CPL training?', 'No. A CPL is a licence, not a job offer. Airlines run their own selection - written screening, assessment, interview and a simulator check - and a type rating on the operator\'s aircraft sits between the licence and the seat. Treat any institute promising airline placement as describing something it does not control.'],
     ['What should I verify before paying a flying school deposit?', 'Approval status checked with the regulator rather than from a certificate image, the average total hours students actually logged to licence last year, how many finished within the quoted timeline, the student-to-aircraft ratio, and written fee terms covering inclusions, payment schedule and refunds. A school that will not answer these in writing has told you something.'],
     ['What does the student-to-aircraft ratio tell me?', 'It predicts how often you will actually fly, which decides your timeline more than the syllabus does. A large fleet photographed well means little if the student roll has grown faster than the fleet. Ask for both numbers and work out the ratio yourself.'],
-    ['Is a DGCA-approved flying school automatically a good one?', 'Approval is a floor, not a ranking. It confirms the organisation meets the regulatory standard to train; it says nothing about aircraft serviceability, instructor turnover, scheduling discipline or how long students take to finish. Every school worth considering is approved, so approval cannot be your deciding factor.'],
+    ['Is a DGCA flying school automatically a good one?', 'Approval is a floor, not a ranking. It confirms the organisation meets the regulatory standard to train; it says nothing about aircraft serviceability, instructor turnover, scheduling discipline or how long students take to finish. Every school worth considering is approved, so approval cannot be your deciding factor.'],
     ['Can I do ground classes at one institute and flying at another?', 'Yes, and many students do. The written papers are examined by the DGCA regardless of where you studied for them, so ground school and flying school are separable choices. Clearing theory before the expensive flying phase is often the cheaper sequence.'],
     ['What is an FTO, and how is it different from a ground school?', 'A Flying Training Organisation is approved to conduct flight training and put hours in your logbook. A ground school teaches the theory behind the written examinations and does not fly aircraft. Both stages are required; they are frequently run by different organisations.'],
     ['How do I check whether a school\'s stated timelines are realistic?', 'Ask for the completion record of the batch that enrolled two years ago, not the syllabus duration. Then ask how many aircraft were unserviceable on an average day last month, and how many flying days were lost to weather last season. Those three answers predict your own timeline.'],

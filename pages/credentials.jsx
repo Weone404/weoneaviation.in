@@ -22,7 +22,7 @@ const credentials = [
     category: 'DGCA Accreditation',
     icon: '✅',
     items: [
-      { title: 'DGCA Approval Status', detail: 'Fully DGCA-approved aviation training institute', verified: true },
+      { title: 'DGCA Approval Status', detail: 'Fully DGCA aviation training institute', verified: true },
       // "Last Audited: Q4 2024 — Full Compliance" removed (GEO audit 2026-08-11):
       // an audit date that never advances reads as abandoned rather than
       // reassuring. Restore it with a real date when there is one to publish.
@@ -60,7 +60,7 @@ const credentials = [
  */
 const verificationChecklist = [
   {
-    ask: 'Is the academy DGCA-approved, and for what exactly?',
+    ask: 'Is the academy DGCA, and for what exactly?',
     why: 'Approval is not one thing. Ask which approval the institute holds and for which activity. A ground school and a Flying Training Organisation are approved for different things, and an academy that answers this vaguely is telling you something.',
   },
   {
@@ -90,7 +90,7 @@ const verificationChecklist = [
 ];
 
 const certifications = [
-  { name: 'DGCA Approved', icon: '🏛️', description: 'Directorate General of Civil Aviation Approval' },
+  { name: 'DGCA', icon: '🏛️', description: 'Directorate General of Civil Aviation Approval' },
 ];
 
 export default function CredentialsPage() {
@@ -127,7 +127,7 @@ export default function CredentialsPage() {
             /* Same URL string as _document.jsx's sameAs — entity matching is
                literal, so the two must not disagree on the host. */
             sameAs: ['https://www.linkedin.com/company/weoneaviation'],
-            description: 'DGCA-approved pilot training institute in Dwarka, New Delhi, publishing its approval status and years in operation.',
+            description: 'DGCA pilot training institute in Dwarka, New Delhi, publishing its approval status and years in operation.',
           })
         }} />
       </Head>

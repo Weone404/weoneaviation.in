@@ -155,7 +155,7 @@ export default function TermsPage() {
                                     <h2 className="font-montserrat font-bold text-av-blue text-xl">About Us</h2>
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                    We One Aviation Academy is a DGCA-approved pilot training institute based in New Delhi, India. We provide ground classes and career counselling with avenues for CPL, PPL, and international flight training programs.
+                                    We One Aviation Academy is a DGCA pilot training institute based in New Delhi, India. We provide ground classes and career counselling with avenues for CPL, PPL, and international flight training programs.
                                 </p>
                                 <div className="bg-av-blue rounded-xl px-5 py-4 flex items-center gap-3">
                                     <span className="text-2xl flex-shrink-0">✈️</span>

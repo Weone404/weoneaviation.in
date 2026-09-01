@@ -35,11 +35,11 @@ const heroSlides = [
  */
 const team = [
   { name: 'Capt. Nitin', role: 'Chief Flying Instructor', exp: 'Leads flight-training guidance', img: 'RV' },
-  { name: 'Capt. Sanskar', role: 'Aviation Medical Advisor', exp: 'DGCA-approved medical examiner', img: 'MS' },
+  { name: 'Capt. Sanskar', role: 'Aviation Medical Advisor', exp: 'DGCA medical examiner', img: 'MS' },
   { name: 'Capt. Uday', role: 'Ground Training Head', exp: 'Leads the DGCA ground syllabus', img: 'AN' },
-  { name: 'Capt. Pankaj', role: 'Aviation Medical Advisor', exp: 'DGCA-approved medical examiner', img: 'MS' },
+  { name: 'Capt. Pankaj', role: 'Aviation Medical Advisor', exp: 'DGCA medical examiner', img: 'MS' },
   { name: 'Capt. Kamal', role: 'Ground Instructor', exp: 'Technical subjects', img: 'SK' },
-  { name: 'Capt. Manoj', role: 'Aviation Medical Advisor', exp: 'DGCA-approved medical examiner', img: 'MS' },
+  { name: 'Capt. Manoj', role: 'Aviation Medical Advisor', exp: 'DGCA medical examiner', img: 'MS' },
 ];
 
 function MemberCard({ member, active }) {
@@ -73,8 +73,8 @@ export default function About() {
 
   return (
     <Layout
-      title="About We One Aviation Academy | DGCA Approved Pilot Training Institute"
-      description={`We One Aviation Academy is a DGCA-approved pilot training institute in Dwarka, New Delhi, operating for ${YEARS_LABEL} years.`}
+      title="About We One Aviation Academy | DGCA Pilot Training Institute"
+      description={`We One Aviation Academy is a DGCA pilot training institute in Dwarka, New Delhi, operating for ${YEARS_LABEL} years.`}
     >
       <HeroSlider customSlides={heroSlides} asH1={false} />
 
@@ -90,7 +90,7 @@ export default function About() {
 
           <QuickAnswer
             question="What is We One Aviation Academy, and what does it actually do?"
-            answer={`We One Aviation Academy is a DGCA-approved pilot training institute in Dwarka, New Delhi, operating since ${ACADEMY.foundedYear}. We teach the DGCA ground subjects for the written examinations behind a Commercial Pilot Licence, and we place students with partner flying schools for the flying hours.`}
+            answer={`We One Aviation Academy is a DGCA pilot training institute in Dwarka, New Delhi, operating since ${ACADEMY.foundedYear}. We teach the DGCA ground subjects for the written examinations behind a Commercial Pilot Licence, and we place students with partner flying schools for the flying hours.`}
           />
 
           <SummaryBox
@@ -287,7 +287,7 @@ export default function About() {
               Approvals & Accreditations
             </h2>
             <div className="flex flex-wrap justify-center gap-4">
-              {['DGCA Approved'].map(item => (
+              {['DGCA'].map(item => (
                 <div key={item} className="glass rounded-full px-5 py-2.5 text-white text-sm font-medium border border-white/20">
                   ✓ {item}
                 </div>

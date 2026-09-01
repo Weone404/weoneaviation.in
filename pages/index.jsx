@@ -90,7 +90,7 @@ const dgcaSubjects = [
 ];
 
 const flyingSchools = [
-  { id: 'india', flag: '🇮🇳', country: 'India', course: 'Commercial Pilot License (CPL)', duration: '12-18 months', fees: '₹35-45 Lakhs (approx.)', highlights: 'DGCA approved, state-of-the-art simulators, extensive flight hours', href: '/flying-school/india' },
+  { id: 'india', flag: '🇮🇳', country: 'India', course: 'Commercial Pilot License (CPL)', duration: '12-18 months', fees: '₹35-45 Lakhs (approx.)', highlights: 'DGCA, state-of-the-art simulators, extensive flight hours', href: '/flying-school/india' },
   { id: 'usa', flag: '🇺🇸', country: 'USA', course: 'FAA CPL & ATPL Training', duration: '12-14 months', fees: '₹67–83 Lakh (≈ $80,000–$100,000)', highlights: 'Largest flight training network in the USA, guaranteed instructor job opportunities', href: '/flying-school/usa' },
   // TODO: Create /flying-school/uk page
   { id: 'uk', flag: '🇬🇧', country: 'UK', course: 'EASA ATPL Integrated Program', duration: '24 months', fees: '£90,000 - £120,000', highlights: 'Airline-focused training, fast-track to commercial airlines', href: '/contact' },
@@ -118,7 +118,7 @@ const enrollSteps = [
     id: 'step3',
     step: 'Third Step',
     title: 'Join a Flying School',
-    desc: 'After clearing your DGCA ground exams, join a DGCA-approved Flying School to complete your required flying hours. You must log a minimum of 200 hours of flight training to become eligible for a Commercial Pilot License (CPL).',
+    desc: 'After clearing your DGCA ground exams, join a DGCA Flying School to complete your required flying hours. You must log a minimum of 200 hours of flight training to become eligible for a Commercial Pilot License (CPL).',
     href: '/flying-school/india',
   },
 ];
@@ -293,7 +293,7 @@ export default function Home() {
             card title when someone shares the homepage link.
         ──────────────────────────────────────────────────────────────────── */}
         <meta key="og:title" property="og:title" content="We One Aviation | Pilot Training Institute in India" />
-        <meta key="og:description" property="og:description" content={`DGCA-approved pilot training academy in Dwarka, New Delhi, running CPL, PPL and ATPL courses since ${FOUNDED_YEAR}. Free career counselling available.`} />
+        <meta key="og:description" property="og:description" content={`DGCA pilot training academy in Dwarka, New Delhi, running CPL, PPL and ATPL courses since ${FOUNDED_YEAR}. Free career counselling available.`} />
         <meta key="og:url" property="og:url" content="https://weoneaviation.in/" />
         <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
         <meta property="og:image:width" content="1200" />
@@ -353,7 +353,7 @@ export default function Home() {
 
           {/* Direct answer. Written to stand alone if extracted. */}
           <p className="text-white/90 leading-relaxed text-sm px-4 mt-3 max-w-3xl mx-auto">
-              We One Aviation Academy is a DGCA-approved pilot training institute in Dwarka, New Delhi, operating since 2009. It runs DGCA ground classes for the Commercial Pilot Licence written examinations and arranges flight training placements with partner schools in India and abroad. A CPL requires 200 hours of flight time and a minimum age of 18.
+              We One Aviation Academy is a DGCA pilot training institute in Dwarka, New Delhi, operating since 2009. It runs DGCA ground classes for the Commercial Pilot Licence written examinations and arranges flight training placements with partner schools in India and abroad. A CPL requires 200 hours of flight time and a minimum age of 18.
           </p>
 
           <p className="text-white/60 text-xs px-4 mt-2">{`Last updated: ${LAST_UPDATED}`}</p>
@@ -390,7 +390,7 @@ export default function Home() {
                 Our team works with students on course planning, flight-school decisions, and foundational aviation knowledge so they can make informed choices at every stage of their journey.
               </p>
               <div className="flex flex-wrap gap-3 mb-6">
-                {['DGCA Approved', 'International Tie-ups', '24/7 Support', 'Job Placement'].map(tag => (
+                {['DGCA', 'International Tie-ups', '24/7 Support', 'Job Placement'].map(tag => (
                   <span key={tag} className="bg-av-light text-av-blue text-xs font-semibold px-4 py-2 rounded-full border border-av-sky/20">
                     ✓ {tag}
                   </span>

@@ -49,8 +49,8 @@ const subjects = [
     },
     {
         num: '05', icon: '🛩️', title: 'Technical Specific',
-        short: 'Master the exact aircraft flown at DGCA-approved flying schools across India (e.g., Cessna 172).',
-        detail: 'Aircraft systems, limitations, performance, normal and emergency procedures for the specific type used at DGCA-approved Indian flying academies.',
+        short: 'Master the exact aircraft flown at DGCA flying schools across India (e.g., Cessna 172).',
+        detail: 'Aircraft systems, limitations, performance, normal and emergency procedures for the specific type used at DGCA Indian flying academies.',
     },
     {
         num: '06', icon: '📻', title: 'Radio Telephony (RTR)',
@@ -80,7 +80,7 @@ const eligibility = [
     {
         icon: '🩺',
         title: 'DGCA Medical',
-        desc: 'Must be obtained from a DGCA-approved Aviation Medical Examiner (AME) listed on the official DGCA India website.',
+        desc: 'Must be obtained from a DGCA Aviation Medical Examiner (AME) listed on the official DGCA India website.',
     },
     {
         icon: '🗣️',
@@ -165,7 +165,7 @@ const process = [
     { step: '02', title: 'Get Your DGCA Computer Number', desc: 'We help you register with DGCA India to obtain the unique Computer Number required to appear in any DGCA exam.' },
     { step: '03', title: 'Complete the 6-Month India Syllabus', desc: 'Cover the five DGCA papers and RTR (A) thoroughly under active commercial pilots. Practice with DGCA India past papers.' },
     { step: '04', title: 'Appear at DGCA Exam Centre', desc: 'Sit for DGCA exams at the nearest designated centre in your Indian state — Delhi, Mumbai, Chennai, Kolkata & more.' },
-    { step: '05', title: 'Clear All 5 Papers & Get CPL', desc: 'After clearing all DGCA papers and completing flying hours at a DGCA-approved school, apply for your CPL from DGCA India.' },
+    { step: '05', title: 'Clear All 5 Papers & Get CPL', desc: 'After clearing all DGCA papers and completing flying hours at a DGCA school, apply for your CPL from DGCA India.' },
 ];
 
 const faqs = [
@@ -264,7 +264,7 @@ export default function DGCAGroundClassesInIndia() {
                                     {[
                                         { icon: '📜', t: 'Issues all pilot licenses in India', d: 'SPL, PPL, CPL — issued only by DGCA India after clearing all eligibility criteria.' },
                                         { icon: '🛡️', t: 'Regulates aviation safety across India', d: 'Sets safety standards for all aircraft, airports, airlines, and flying schools in India.' },
-                                        { icon: '🏫', t: 'Approves flying schools in India', d: 'Only DGCA-approved academies can legally train pilots in India.' },
+                                        { icon: '🏫', t: 'Approves flying schools in India', d: 'Only DGCA academies can legally train pilots in India.' },
                                         { icon: '📝', t: 'Conducts DGCA Ground Exams', d: 'Organizes theory exams at designated centres in Delhi, Mumbai, Hyderabad, Chennai & more.' },
                                     ].map(({ icon, t, d }) => (
                                         <div key={t} className="flex gap-3 items-start bg-av-light rounded-xl p-4">
@@ -354,7 +354,7 @@ export default function DGCAGroundClassesInIndia() {
                                     ))}
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed mt-5">
-                                    Met all criteria? You're ready to begin. Join We One Aviation Academy — DGCA-approved, based in Dwarka, New Delhi. trusted DGCA Ground Classes institute — and start your journey today. 🇮🇳✈️
+                                    Met all criteria? You're ready to begin. Join We One Aviation Academy — DGCA, based in Dwarka, New Delhi. trusted DGCA Ground Classes institute — and start your journey today. 🇮🇳✈️
                                 </p>
                             </section>
 
@@ -377,11 +377,11 @@ export default function DGCAGroundClassesInIndia() {
                                 </div>
                             </section>
 
-                            {/* ── DGCA-Approved Flying Schools in India ── */}
+                            {/* ── DGCA Flying Schools in India ── */}
                             <section>
-                                <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">DGCA-Approved Flying Schools in India</h2>
+                                <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">DGCA Flying Schools in India</h2>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                                    After clearing your DGCA Ground Exams, you complete your flying hours at a DGCA-approved flying school in India or abroad. Here are some of India's top DGCA-approved flying academies:
+                                    After clearing your DGCA Ground Exams, you complete your flying hours at a DGCA flying school in India or abroad. Here are some of India's top DGCA flying academies:
                                 </p>
                                 <div className="overflow-x-auto rounded-xl border border-gray-100">
                                     <table className="w-full text-xs text-left">

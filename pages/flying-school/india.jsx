@@ -31,7 +31,7 @@ const advantages = [
         num: '2',
         icon: '🛩️',
         title: 'Modern Fleet',
-        desc: 'Train on Cessna 172, Tecnam, Piper Archer, and Diamond aircraft with advanced avionics. India\'s DGCA-approved FTOs operate modern, well-maintained fleets designed for thorough pilot development.',
+        desc: 'Train on Cessna 172, Tecnam, Piper Archer, and Diamond aircraft with advanced avionics. India\'s DGCA FTOs operate modern, well-maintained fleets designed for thorough pilot development.',
     },
     {
         num: '3',
@@ -49,7 +49,7 @@ const advantages = [
         num: '5',
         icon: '👨‍✈️',
         title: 'Experienced Instructors',
-        desc: 'India\'s DGCA-approved FTOs employ experienced instructors with strong backgrounds in commercial aviation. Their guidance ensures you build the right skills and confidence from day one.',
+        desc: 'India\'s DGCA FTOs employ experienced instructors with strong backgrounds in commercial aviation. Their guidance ensures you build the right skills and confidence from day one.',
     },
     {
         num: '6',
@@ -107,7 +107,7 @@ const trainingSteps = [
     { step: '02', title: 'DGCA Theory Class', desc: 'Attend DGCA-prescribed ground school covering Air Regulations, Navigation, Meteorology, Technical Subjects and Human Performance.' },
     { step: '03', title: 'DGCA Theory Exam', desc: 'Sit the DGCA written papers and clear the required theory exams to progress to practical training stages.' },
     { step: '04', title: 'RTR (Radio Telephony)', desc: 'Complete the RTR/RT licence course and exam to obtain mandatory aviation radio telephony endorsement.' },
-    { step: '05', title: 'Choose Flight School', desc: 'Select a DGCA-approved FTO based on fleet, instructor experience, placement outcomes and student support services.' },
+    { step: '05', title: 'Choose Flight School', desc: 'Select a DGCA FTO based on fleet, instructor experience, placement outcomes and student support services.' },
     { step: '06', title: 'SPL', desc: 'Apply for and obtain your Student Pilot Licence after initial training and checks — this authorises supervised solo flying.' },
     { step: '07', title: 'FRTOL', desc: 'Obtain the Flight Radio Telephony Operator\'s Licence from WPC after passing the RTR exam, authorising aircraft radio operation.' },
     { step: '08', title: 'Flight Training', desc: 'Complete structured practical training from PPL through hour-building to CPL (including IR/ME), with regular checks and final DGCA skill tests.' },
@@ -139,13 +139,13 @@ export default function IndiaPilotTrainingPage() {
     return (
         <Layout
             title="Commercial Pilot Training in India – DGCA CPL with MEIR | AviationGuide"
-            description="Explore Commercial Pilot Training in India with DGCA-approved FTOs, 200 flight hours, CPL-MEIR program, and a step-by-step guide to your pilot licence. Train close to home on modern aircraft."
+            description="Explore Commercial Pilot Training in India with DGCA FTOs, 200 flight hours, CPL-MEIR program, and a step-by-step guide to your pilot licence. Train close to home on modern aircraft."
         >
 
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
-                    <div className="section-tag">DGCA Approved Training</div>
+                    <div className="section-tag">DGCA Training</div>
                     <br />
                     <br />
                     <br />
@@ -191,7 +191,7 @@ export default function IndiaPilotTrainingPage() {
                             India offers <strong>globally recognised DGCA licences</strong> with a solid pathway to both domestic and international aviation careers. Training at home means lower overall costs, no visa complexity, and a familiar environment.
                         </p>
                         <p className="text-gray-600 leading-relaxed mb-6">
-                            With <strong>300+ flying days</strong> across major bases, modern fleets, and DGCA-approved FTOs, India provides everything you need to build a strong foundation as a commercial pilot.
+                            With <strong>300+ flying days</strong> across major bases, modern fleets, and DGCA FTOs, India provides everything you need to build a strong foundation as a commercial pilot.
                         </p>
                         <p className="text-gray-600 leading-relaxed mb-6">
                             For students based in Gujarat, our Gujarat guide provides practical advice on booking simulator sessions in Ahmedabad, arranging block-flying, and coordinating DGCA Pariksha travel: <Link href="/pilot-training-in-india" className="text-av-orange font-semibold hover:underline">Pilot Training in Gujarat</Link>.
@@ -250,7 +250,7 @@ export default function IndiaPilotTrainingPage() {
                             { icon: '🏥', title: 'Medical', desc: 'Must hold a valid DGCA medical certificate issued by a DGCA medical examiner to ensure physical fitness for flying.' },
                             { icon: '🛂', title: 'Valid Passport', desc: 'A current passport is mandatory for identification and for students pursuing any part of their training abroad.' },
                             { icon: '📄', title: 'Police Clearance (PCC)', desc: 'A valid Police Clearance Certificate (PCC), valid for 6 months, is required to begin flight training at any Indian FTO.' },
-                            { icon: '✅', title: 'Overall', desc: 'Meet all criteria above and you are ready to begin your CPL training journey at a DGCA-approved Flying Training Organization in India.' },
+                            { icon: '✅', title: 'Overall', desc: 'Meet all criteria above and you are ready to begin your CPL training journey at a DGCA Flying Training Organization in India.' },
                         ].map((item, i) => (
                             <ScrollReveal key={item.title} delay={i * 80}>
                                 <div className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-av-orange/30 h-full flex flex-col">
@@ -273,7 +273,7 @@ export default function IndiaPilotTrainingPage() {
                             Benefits of Training <span className="text-av-orange">in India</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm leading-relaxed">
-                            India's DGCA-approved training ecosystem offers a comprehensive, cost-effective path to your commercial pilot licence. Here's what makes it stand out:
+                            India's DGCA training ecosystem offers a comprehensive, cost-effective path to your commercial pilot licence. Here's what makes it stand out:
                         </p>
                     </ScrollReveal>
 
@@ -384,7 +384,7 @@ export default function IndiaPilotTrainingPage() {
                             Pilot Academies <span className="text-av-orange">in India</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">
-                            DGCA-approved flying schools with modern fleets and experienced instructors.
+                            DGCA flying schools with modern fleets and experienced instructors.
                         </p>
                     </ScrollReveal>
 
@@ -489,9 +489,9 @@ export default function IndiaPilotTrainingPage() {
                         <ScrollReveal>
                             <div className="bg-white/10 rounded-2xl p-7 h-full border border-white/20">
                                 <div className="text-4xl mb-4">🏅</div>
-                                <h3 className="font-montserrat font-bold text-white text-xl mb-3">DGCA-Approved Training</h3>
+                                <h3 className="font-montserrat font-bold text-white text-xl mb-3">DGCA Training</h3>
                                 <p className="text-white/70 text-sm leading-relaxed">
-                                    Training is conducted in DGCA-approved Flying Training Organizations where students receive intensive ground school alongside actual flying experience in different weather conditions.
+                                    Training is conducted in DGCA Flying Training Organizations where students receive intensive ground school alongside actual flying experience in different weather conditions.
                                 </p>
                             </div>
                         </ScrollReveal>
@@ -511,7 +511,7 @@ export default function IndiaPilotTrainingPage() {
                                 <div className="text-4xl mb-4">🌍</div>
                                 <h3 className="font-montserrat font-bold text-white text-xl mb-3">Airline Career Ready</h3>
                                 <p className="text-white/70 text-sm leading-relaxed">
-                                    Upon completing the program, students are awarded a DGCA-approved CPL, opening up opportunities for airline careers in India as well as the rest of the world.
+                                    Upon completing the program, students are awarded a DGCA CPL, opening up opportunities for airline careers in India as well as the rest of the world.
                                 </p>
                             </div>
                         </ScrollReveal>

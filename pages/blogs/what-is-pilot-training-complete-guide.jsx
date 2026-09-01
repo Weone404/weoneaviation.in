@@ -106,7 +106,7 @@ const steps = [
   'Join ground classes for the five written papers and begin timed mock tests early rather than at the end.',
   'Attempt the DGCA papers across examination cycles, clearing them individually as you become ready.',
   `Sit ${RTR.name} separately, under its own rules — it is not one of the five papers.`,
-  'Join a DGCA-approved Flying Training Organisation, in India or abroad, once your medical and computer number are in hand.',
+  'Join a DGCA Flying Training Organisation, in India or abroad, once your medical and computer number are in hand.',
   `Build ${CPL_HOURS.total} hours of flight time against the Schedule II breakdown, keeping your logbook clean as you go.`,
   'Pass the skill test with an examiner, then file for licence issue with your complete document set.',
 ];

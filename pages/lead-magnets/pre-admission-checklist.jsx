@@ -123,7 +123,7 @@ export default function PreAdmissionChecklist() {
                       <li>✓ Laboratory work</li>
                       <li>✓ Psychological evaluation</li>
                       <li><strong>Cost: roughly ₹5,000&ndash;15,000, depending on the centre</strong></li>
-                      <li><strong>Validity and scope: confirm with your DGCA-approved examiner</strong></li>
+                      <li><strong>Validity and scope: confirm with your DGCA examiner</strong></li>
                     </ul>
                   </div>
                   <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded">

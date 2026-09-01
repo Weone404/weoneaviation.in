@@ -353,7 +353,7 @@ export default function CPLEligibilityPage() {
                                 <p className="text-white/70 text-center text-sm mb-5">Total Flying Hours Required</p>
                                 <div className="bg-white/10 rounded-xl p-4">
                                     <p className="text-white/80 text-sm leading-relaxed text-center">
-                                        Flying education must take place under <strong className="text-av-orange">DGCA-approved academic institutions</strong> which provide flight instruction.
+                                        Flying education must take place under <strong className="text-av-orange">DGCA academic institutions</strong> which provide flight instruction.
                                     </p>
                                 </div>
                             </div>

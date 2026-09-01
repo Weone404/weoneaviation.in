@@ -35,7 +35,7 @@ const guidePosts = [
     {
         slug: 'best-flying-school-in-india',
         title: 'Best Flying School in India: How to Choose One (2026)',
-        excerpt: 'Every credible school is DGCA-approved, so approval cannot be your deciding factor. What separates them: fleet-to-student ratio, daily serviceability, instructor turnover, weather losses at that base — and the eight questions that get you those numbers.',
+        excerpt: 'Every credible school is DGCA, so approval cannot be your deciding factor. What separates them: fleet-to-student ratio, daily serviceability, instructor turnover, weather losses at that base — and the eight questions that get you those numbers.',
         category: 'Flying school selection',
         readTime: '13 min',
         date: 'Aug 26, 2026',

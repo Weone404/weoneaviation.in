@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { generateCourseSchema } from '../lib/schema';
 
 const heroSlides = [
-    { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'DGCA Subject', title: 'Aviation', highlight: 'Meteorology', sub: 'Understanding Weather for Safe Flying — DGCA-approved training at We One Aviation Academy' },
+    { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'DGCA Subject', title: 'Aviation', highlight: 'Meteorology', sub: 'Understanding Weather for Safe Flying — DGCA training at We One Aviation Academy' },
 ];
 
 const meteorologyTopics = [
@@ -89,7 +89,7 @@ const courseSchema = generateCourseSchema({
 
 export default function AviationMeteorology() {
     return (
-        <Layout title="Aviation Meteorology Course — DGCA CPL/PPL | We One Aviation Academy" description="DGCA-approved Aviation Meteorology course in Delhi. Learn weather patterns, METAR/TAF decoding, wind systems, turbulence and more for CPL & PPL exams at We One Aviation Academy.">
+        <Layout title="Aviation Meteorology Course — DGCA CPL/PPL | We One Aviation Academy" description="DGCA Aviation Meteorology course in Delhi. Learn weather patterns, METAR/TAF decoding, wind systems, turbulence and more for CPL & PPL exams at We One Aviation Academy.">
       <StructuredData data={courseSchema} />
 
             <Head>
