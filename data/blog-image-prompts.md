@@ -413,6 +413,52 @@ does not see the same picture twice.
 
 ---
 
+## Post: `/blogs/type-rating-for-pilots-in-india`
+
+### Prompt 34 — Hero / OpenGraph
+- **File:** `public/blog/type-rating/hero-type-specific.webp`
+- **Dimensions:** 1200 × 630 (also serves as the OG card)
+- **Alt to use on swap:** "A pilot in uniform standing between two different aircraft silhouettes, a certificate connecting to only one of them"
+
+> A South Asian pilot in a simple uniform stands centred in the frame. To their
+> left, a turboprop aircraft silhouette; to their right, a jet aircraft
+> silhouette — clearly different shapes, not the same aircraft twice. A single
+> thin connecting line runs from the pilot to only ONE of the two aircraft
+> (the jet), rendered in the orange accent; the connection to the other
+> aircraft is faint grey or absent entirely. The asymmetry is the whole point:
+> one pilot, one aircraft, not both. Wide horizontal composition, sky
+> background, generous negative space above the figures.
+
+### Prompt 35 — Branching pathway
+- **File:** `public/blog/type-rating/branching-pathway.webp`
+- **Dimensions:** 1200 × 800
+- **Alt:** "A single certificate icon branching into several aircraft silhouettes, with only one branch highlighted"
+
+> A single flat certificate/document shape sits at the bottom centre of the
+> frame. From its top edge, four thin paths fan upward and outward, each
+> ending at a different aircraft silhouette (a light single-engine trainer, a
+> light twin, a turboprop, a jet). Three of the four paths and their end
+> aircraft are rendered in muted navy/grey; exactly one path and its aircraft
+> (the jet) is rendered in the orange accent to show a single chosen outcome
+> among several possible ones. Clean top-down or three-quarter composition,
+> plenty of white space between branches so they never overlap.
+
+### Prompt 36 — MCC then type rating stages
+- **File:** `public/blog/type-rating/mcc-then-type-rating-stages.webp`
+- **Dimensions:** 1200 × 675
+- **Alt:** "Three ascending platforms of increasing height representing MCC training, type-specific ground school, and line training with an operator"
+
+> Three flat platforms of increasing height, arranged left to right like
+> ascending steps, each holding one simple scene: the shortest (left) holds two
+> small pilot-seat silhouettes side by side facing forward (multi-crew
+> training); the middle, taller platform holds a single aircraft-type
+> silhouette with a small flight-training-device box beside it; the tallest
+> (right) holds one aircraft silhouette in flight with a faint upward arrow.
+> Consistent flat side-on style across all three, orange accent used only on
+> the tallest, rightmost platform to mark it as the destination stage.
+
+---
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.

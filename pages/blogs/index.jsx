@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'type-rating-for-pilots-in-india',
+        title: 'What Is a Type Rating for Pilots in India? Cost, MCC and How to Get One',
+        excerpt: 'What a type rating actually authorises, which aircraft trigger the requirement, how it differs from a CPL and from MCC, indicative cost, and why the mistake most pilots make is paying for one before an airline has offered them the seat.',
+        category: 'Type rating',
+        readTime: '9 min',
+        date: 'Sep 1, 2026',
+        image: { src: '/blog/type-rating/hero-type-specific.webp', width: 1200, height: 630, promptId: '34' },
+    },
+    {
         slug: 'dgca-ground-school-guide',
         title: 'DGCA Ground School: The Complete Guide to Clearing the Papers (2026)',
         excerpt: 'The five written papers subject by subject with honest difficulty ratings, where RTR (A) actually sits, why attempting all five in one cycle backfires, a six-month study plan, and what to do after a failed paper.',
