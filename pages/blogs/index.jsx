@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'become-pilot-without-physics-and-maths-class-12',
+        title: 'How to Become a Pilot in India Without Physics and Maths in Class 12',
+        excerpt: 'Commerce and Biology stream students are not shut out. How the NIOS bridge route for Physics and Mathematics actually works, what it adds to your timeline, and the mistakes that cost a training cycle.',
+        category: 'Pilot eligibility',
+        readTime: '8 min',
+        date: 'Sep 2, 2026',
+        image: { src: '/blog/become-pilot-without-physics-maths/hero-two-paths-converge.webp', width: 1200, height: 630, promptId: '34' },
+    },
+    {
         slug: 'dgca-ground-school-guide',
         title: 'DGCA Ground School: The Complete Guide to Clearing the Papers (2026)',
         excerpt: 'The five written papers subject by subject with honest difficulty ratings, where RTR (A) actually sits, why attempting all five in one cycle backfires, a six-month study plan, and what to do after a failed paper.',
