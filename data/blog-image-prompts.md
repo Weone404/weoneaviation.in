@@ -413,6 +413,36 @@ does not see the same picture twice.
 
 ---
 
+## Post: `/blogs/become-pilot-without-physics-and-maths-class-12`
+
+### Prompt 34 — Hero / OpenGraph and card
+- **File:** `public/blog/become-pilot-without-physics-maths/hero-two-paths-converge.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "Two separate paths, one starting from a science classroom and one from a commerce or biology classroom, converging at the same pilot training gate"
+
+> A wide horizontal scene split into two starting points that merge into one. On
+> the left, a simple science classroom silhouette — a desk with a beaker and a
+> ruler. On the far left-of-centre, a second classroom silhouette with a ledger
+> and a book, representing a commerce or biology background. Both are connected
+> by paths that curve inward and meet at a single gate on the right, beyond which
+> sits a small training aircraft. The two starting paths are equal in visual
+> weight — neither looks like the "wrong" one. Orange accent only on the gate
+> where the paths meet.
+
+### Prompt 35 — NIOS registration steps
+- **File:** `public/blog/become-pilot-without-physics-maths/nios-registration-steps.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A simple five-step flow from checking a subject gap through NIOS registration, study, examination and marksheet to computer number application"
+
+> Five simple circular nodes connected left to right by a thin line, each node
+> holding one small flat icon: a magnifying glass over a document (checking the
+> gap), a pencil and a registration form, an open book, an exam paper with a
+> checkmark, and a certificate. The fifth node connects onward to a faint sixth
+> shape representing a folder, kept visually secondary to show it is the next
+> stage, not part of this process. Orange accent on the exam-paper node only.
+
+---
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
