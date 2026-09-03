@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'type-rating-for-pilots-in-india',
+        title: 'Type Rating for Pilots in India: What It Is and How CPL Holders Get One',
+        excerpt: 'A type rating is a separate, aircraft-specific qualification a CPL does not include. Which aircraft need one, the prerequisites, how DGCA-approved TRTO training works, and airline-sponsored versus self-sponsored routes.',
+        category: 'Pilot career guide',
+        readTime: '9 min',
+        date: 'Sep 3, 2026',
+        image: { src: '/blog/type-rating/hero-type-rating-simulator.webp', width: 1200, height: 630, promptId: '36' },
+    },
+    {
         slug: 'become-pilot-without-physics-and-maths-class-12',
         title: 'How to Become a Pilot in India Without Physics and Maths in Class 12',
         excerpt: 'Commerce and Biology stream students are not shut out. How the NIOS bridge route for Physics and Mathematics actually works, what it adds to your timeline, and the mistakes that cost a training cycle.',

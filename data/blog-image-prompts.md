@@ -443,6 +443,35 @@ does not see the same picture twice.
 
 ---
 
+## Post: `/blogs/type-rating-for-pilots-in-india`
+
+### Prompt 36 — Hero / OpenGraph and card
+- **File:** `public/blog/type-rating/hero-type-rating-simulator.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A pilot in the cockpit of a full-flight simulator built to resemble a specific airliner type, with an instructor seated behind"
+
+> A wide interior view of a full-flight simulator cockpit built to resemble a
+> commercial airliner flight deck: two seats facing an instrument panel and
+> windscreen showing a stylised sky, a South Asian pilot in the left seat with
+> hands on the controls, an instructor seated slightly behind and to the side
+> observing. The simulator's external boxy housing is suggested at the frame
+> edges so it reads clearly as a simulator, not a real cockpit. Calm, focused
+> mood, soft interior lighting.
+
+### Prompt 37 — TRTO training stages
+- **File:** `public/blog/type-rating/trto-training-stages.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A five-stage horizontal flow from TRTO enrolment through ground school, simulator training and a skill test to base or line training"
+
+> Five simple circular nodes connected left to right by a thin line, each
+> holding one small flat icon: a building with a checkmark (TRTO enrolment and
+> approval), an open book (ground school), a boxy simulator shape (simulator
+> training), a certificate with a checkmark (skill test), and an aircraft in
+> flight (base or line training). Even spacing, clearly sequential. Orange
+> accent on the skill-test node only.
+
+---
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
