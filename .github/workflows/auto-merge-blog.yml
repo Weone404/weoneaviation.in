@@ -19,6 +19,11 @@ concurrency:
 jobs:
   verify-and-merge:
     runs-on: ubuntu-latest
+    # A normal run finishes in well under a minute. Without a bound, a runner
+    # that stalls mid-step (seen twice on 2026-09-04, both times stuck on
+    # `npm ci` with zero progress) blocks this job — and, via the concurrency
+    # group above, every later push — for GitHub's full default timeout.
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
