@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'cpl-vs-atpl-difference-india',
+        title: "CPL vs ATPL: What's the Difference and Which Licence Do You Need?",
+        excerpt: 'A Commercial Pilot Licence qualifies you to be paid to fly and is what most airline pilots start with. An Airline Transport Pilot Licence is required for command. Age, prerequisites and why you cannot skip straight to ATPL.',
+        category: 'Pilot licence guide',
+        readTime: '8 min',
+        date: 'Sep 4, 2026',
+        image: { src: '/blog/cpl-vs-atpl/hero-two-cockpit-seats.webp', width: 1200, height: 630, promptId: '38' },
+    },
+    {
         slug: 'type-rating-for-pilots-in-india',
         title: 'Type Rating for Pilots in India: What It Is and How CPL Holders Get One',
         excerpt: 'A type rating is a separate, aircraft-specific qualification a CPL does not include. Which aircraft need one, the prerequisites, how DGCA-approved TRTO training works, and airline-sponsored versus self-sponsored routes.',

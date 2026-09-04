@@ -472,6 +472,39 @@ does not see the same picture twice.
 
 ---
 
+## Post: `/blogs/cpl-vs-atpl-difference-india`
+
+### Prompt 38 — Hero / OpenGraph and card
+- **File:** `public/blog/cpl-vs-atpl/hero-two-cockpit-seats.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A single path forking into two, one ending at a small single-engine training aircraft and the other continuing further to a larger commercial aeroplane cockpit"
+
+> A wide horizontal scene: a single simple path starts at the left from a small
+> licence-card shape and forks into two branches partway along. The upper branch
+> is short and ends at a small single-engine training aircraft silhouette,
+> centred in the upper right. The lower branch continues further to the right
+> and ends at a larger twin-engine commercial aeroplane silhouette shown in a
+> three-quarter angled cockpit-forward view, positioned lower right, clearly
+> bigger and further along than the training aircraft. Nothing on either branch
+> looks like the "wrong" path — both are calm, professional destinations. Orange
+> accent only on the fork point where the path splits. Flat vector, generous
+> negative space above and below the path.
+
+### Prompt 39 — CPL to ATPL progression
+- **File:** `public/blog/cpl-vs-atpl/cpl-to-atpl-progression.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A three-stage horizontal flow from a commercial pilot licence being issued, through years of logged command experience as a First Officer, to an airline transport pilot licence"
+
+> Three simple circular nodes connected left to right by a thin line, each
+> holding one small flat icon: a licence card with a checkmark (CPL issued), an
+> hourglass beside a small aircraft silhouette (years of logged command
+> experience), and a second, slightly larger licence card with a checkmark
+> (ATPL issued). Even spacing, clearly sequential, the third node drawn a touch
+> larger than the first to suggest progression rather than repetition. Orange
+> accent on the hourglass node only.
+
+---
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
