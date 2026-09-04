@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/blogs</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -133,6 +133,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://weoneaviation.in/blogs/cpl-vs-atpl-difference-india</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://weoneaviation.in/blogs/dgca-exam-guide</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -164,6 +169,7 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/blogs/type-rating-for-pilots-in-india</loc>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
