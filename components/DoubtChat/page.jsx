@@ -1,4 +1,3 @@
-"use client";
 // components/DoubtChat.jsx
 // AI Doubt Chat — with auto Text-to-Speech, no PDF upload
 

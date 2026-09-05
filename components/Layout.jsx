@@ -1,4 +1,4 @@
-﻿import Navbar from './Navbar';
+import Navbar from './Navbar';
 import Footer from './Footer';
 import FloatingButtons from './FloatingButtons';
 import Head from 'next/head';

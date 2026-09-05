@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'pilot-salary-in-india',
+        title: 'Pilot Salary in India 2026: Complete Guide to First Officer, Captain & Commercial Pilot Pay',
+        excerpt: 'How much does a pilot earn in India? Salary breakdown for trainee pilots, First Officers, Senior First Officers, Captains, airline allowances and the key pay factors that change compensation in 2026.',
+        category: 'Pilot career guide',
+        readTime: '7 min',
+        date: 'Sep 5, 2026',
+        image: { src: '/salary.webp', width: 1200, height: 630, promptId: '1' },
+    },
+    {
         slug: 'mcc-training-for-pilots-in-india',
         title: 'Multi-Crew Cooperation (MCC) Training in India: What It Is and Why CPL Holders Need It',
         excerpt: 'MCC teaches the two-pilot working method airline flight decks run on — task-sharing, monitoring and CRM. How it differs from a type rating and an ATPL, what it costs, and when to take it.',
