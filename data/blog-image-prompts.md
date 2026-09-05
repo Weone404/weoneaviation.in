@@ -505,6 +505,40 @@ does not see the same picture twice.
 
 ---
 
+## Post: `/blogs/mcc-training-for-pilots-in-india`
+
+### Prompt 40 — Hero / OpenGraph and card
+- **File:** `public/blog/mcc-training/hero-two-pilot-crew.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "Two pilots seated side by side in an airliner-style simulator cockpit, both hands-on and visibly coordinating, one pointing at an instrument while the other monitors"
+
+> A wide horizontal cockpit-interior scene, viewed from just behind the two
+> seats: two South Asian pilots in modest professional uniform sit side by
+> side at a simplified airliner-style instrument panel, angled slightly toward
+> each other rather than both facing forward, suggesting active communication.
+> The pilot on the left points toward a panel instrument; the pilot on the
+> right is turned slightly toward them, visibly monitoring. The panel itself
+> is a soft suggestion of dials and screens with no legible detail. Calm,
+> focused, collaborative mood, soft even cabin lighting. Orange accent limited
+> to a single small indicator light on the panel between them. Flat vector,
+> generous negative space above the panel line.
+
+### Prompt 41 — Pilot Flying and Pilot Monitoring roles
+- **File:** `public/blog/mcc-training/pilot-flying-monitoring-roles.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A simple split diagram contrasting a single pilot alone in a small aircraft cockpit on one side with two pilots sharing Pilot Flying and Pilot Monitoring roles in a larger cockpit on the other"
+
+> A single flat-vector scene split down the centre by a thin vertical line.
+> Left half: one small single-engine training aircraft cockpit silhouette with
+> one pilot alone at the controls, framed with slightly more empty space
+> around the figure to suggest solitude. Right half: a larger multi-pilot
+> cockpit silhouette with two pilots seated side by side, connected by a short
+> curved arrow between them to suggest active coordination. No text or icons
+> beyond the simple cockpit and figure shapes. Orange accent only on the
+> connecting arrow in the right half.
+
+---
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.

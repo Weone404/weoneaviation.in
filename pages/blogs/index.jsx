@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'mcc-training-for-pilots-in-india',
+        title: 'Multi-Crew Cooperation (MCC) Training in India: What It Is and Why CPL Holders Need It',
+        excerpt: 'MCC teaches the two-pilot working method airline flight decks run on — task-sharing, monitoring and CRM. How it differs from a type rating and an ATPL, what it costs, and when to take it.',
+        category: 'Pilot career guide',
+        readTime: '9 min',
+        date: 'Sep 5, 2026',
+        image: { src: '/blog/mcc-training/hero-two-pilot-crew.webp', width: 1200, height: 630, promptId: '40' },
+    },
+    {
         slug: 'cpl-vs-atpl-difference-india',
         title: "CPL vs ATPL: What's the Difference and Which Licence Do You Need?",
         excerpt: 'A Commercial Pilot Licence qualifies you to be paid to fly and is what most airline pilots start with. An Airline Transport Pilot Licence is required for command. Age, prerequisites and why you cannot skip straight to ATPL.',
