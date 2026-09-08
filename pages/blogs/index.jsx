@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'instrument-rating-for-pilots-in-india',
+        title: 'Instrument Rating for Pilots in India: What It Is and Why CPL Holders Need One',
+        excerpt: 'An Instrument Rating is a separate qualification from the instrument time already inside CPL hours. What it costs, how it differs from a type rating and MCC, and why most flying schools sell it either bundled or separate.',
+        category: 'Pilot career guide',
+        readTime: '9 min',
+        date: 'Sep 8, 2026',
+        image: { src: '/blog/instrument-rating/hero-instrument-panel.webp', width: 1200, height: 630, promptId: '42' },
+    },
+    {
         slug: 'mcc-training-for-pilots-in-india',
         title: 'Multi-Crew Cooperation (MCC) Training in India: What It Is and Why CPL Holders Need It',
         excerpt: 'MCC teaches the two-pilot working method airline flight decks run on — task-sharing, monitoring and CRM. How it differs from a type rating and an ATPL, what it costs, and when to take it.',

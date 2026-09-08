@@ -539,6 +539,35 @@ does not see the same picture twice.
 
 ---
 
+## Post: `/blogs/instrument-rating-for-pilots-in-india`
+
+### Prompt 42 — Hero / OpenGraph and card
+- **File:** `public/blog/instrument-rating/hero-instrument-panel.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A pilot's view from the cockpit seat looking at a simplified instrument panel, with low cloud outside the windscreen and no ground reference visible"
+
+> A first-person cockpit view from the pilot's seat of a single-engine
+> training aircraft: a simplified instrument panel in the lower foreground
+> with soft, unlabelled dial shapes, and a windscreen above showing dense
+> flat cloud with no horizon, ground or landmarks visible — conveying flying
+> by instruments alone. A South Asian pilot's hands rest on the yoke at the
+> bottom edge of frame, calm and focused posture. Orange accent limited to
+> one small glowing indicator on the panel.
+
+### Prompt 43 — CPL to Instrument Rating to type rating progression
+- **File:** `public/blog/instrument-rating/rating-progression-stages.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A three-stage horizontal flow from a Commercial Pilot Licence being issued, through Instrument Rating ground school and procedural flight training, to a type rating course"
+
+> Three simple circular nodes connected left to right by a thin line, each
+> holding one small flat icon: a licence card with a checkmark (CPL issued),
+> a cloud shape with a small aircraft flying through it (Instrument Rating
+> training), and a boxy simulator shape (type rating course beginning). Even
+> spacing, clearly sequential, each node slightly larger than the last to
+> suggest progression. Orange accent on the cloud-and-aircraft node only.
+
+---
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
