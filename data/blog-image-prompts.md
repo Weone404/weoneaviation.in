@@ -568,6 +568,37 @@ does not see the same picture twice.
 
 ---
 
+## Post: `/blogs/flying-instructor-rating-for-pilots-in-india`
+
+### Prompt 44 — Hero / OpenGraph and card
+- **File:** `public/blog/flying-instructor-rating/hero-instructor-and-student.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A flight instructor in the right seat of a small single-engine training aircraft, gesturing toward the instrument panel while a student pilot in the left seat looks on"
+
+> A cockpit interior of a small single-engine training aircraft seen from
+> slightly behind and between the two seats. In the right seat, an
+> experienced-looking South Asian flight instructor gestures with one hand
+> toward the instrument panel in front of them; in the left seat, a younger
+> South Asian student pilot looks toward where the instructor is pointing,
+> hands resting near the controls. Calm, attentive, teaching mood, soft even
+> cabin lighting. Orange accent limited to a single small indicator light on
+> the panel between them. Flat vector, generous negative space above the
+> panel line.
+
+### Prompt 45 — AFI to FI progression
+- **File:** `public/blog/flying-instructor-rating/afi-to-fi-progression.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A simple two-stage flow showing a CPL holder moving from Assistant Flying Instructor training, working under supervision, into the Flying Instructor upgrade that removes that supervision requirement"
+
+> Two simple circular nodes connected left to right by a thin line with an
+> arrow. The left node holds a small flat icon of two overlapping figure
+> silhouettes close together (an instructor working under supervision); the
+> right node holds a single figure silhouette standing alone, slightly larger
+> (an instructor working independently). Even spacing, clearly sequential.
+> Orange accent on the connecting arrow only. No text or labels.
+
+---
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
