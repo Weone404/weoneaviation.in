@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'flying-instructor-rating-for-pilots-in-india',
+        title: 'Flying Instructor Rating for Pilots in India: What It Is and How CPL Holders Get One',
+        excerpt: 'A Flying Instructor Rating is a separate DGCA qualification, earned after a CPL, that lets a pilot teach student pilots. The two-stage AFI-to-FI structure, prerequisites, and how it differs from a type rating and MCC.',
+        category: 'Pilot career guide',
+        readTime: '9 min',
+        date: 'Sep 9, 2026',
+        image: { src: '/blog/flying-instructor-rating/hero-instructor-and-student.webp', width: 1200, height: 630, promptId: '44' },
+    },
+    {
         slug: 'instrument-rating-for-pilots-in-india',
         title: 'Instrument Rating for Pilots in India: What It Is and Why CPL Holders Need One',
         excerpt: 'An Instrument Rating is a separate qualification from the instrument time already inside CPL hours. What it costs, how it differs from a type rating and MCC, and why most flying schools sell it either bundled or separate.',

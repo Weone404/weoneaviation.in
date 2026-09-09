@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/blogs</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -157,6 +157,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://weoneaviation.in/blogs/flying-instructor-rating-for-pilots-in-india</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://weoneaviation.in/blogs/how-to-become-an-airline-pilot-in-india</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -164,6 +169,7 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/blogs/instrument-rating-for-pilots-in-india</loc>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
