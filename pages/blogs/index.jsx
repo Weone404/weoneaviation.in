@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'multi-engine-rating-for-pilots-in-india',
+        title: 'Multi-Engine Rating for Pilots in India: What It Is and Why CPL Holders Need One',
+        excerpt: 'A multi-engine rating is a class rating, not a type rating, certifying a CPL holder to handle a twin-engine aeroplane and an engine failure. Prerequisites, what training involves, and how it differs from an Instrument Rating and a type rating.',
+        category: 'Pilot career guide',
+        readTime: '8 min',
+        date: 'Sep 10, 2026',
+        image: { src: '/blog/multi-engine-rating/hero-twin-engine-aircraft.webp', width: 1200, height: 630, promptId: '46' },
+    },
+    {
         slug: 'flying-instructor-rating-for-pilots-in-india',
         title: 'Flying Instructor Rating for Pilots in India: What It Is and How CPL Holders Get One',
         excerpt: 'A Flying Instructor Rating is a separate DGCA qualification, earned after a CPL, that lets a pilot teach student pilots. The two-stage AFI-to-FI structure, prerequisites, and how it differs from a type rating and MCC.',

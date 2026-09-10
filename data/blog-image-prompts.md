@@ -599,6 +599,36 @@ does not see the same picture twice.
 
 ---
 
+## Post: `/blogs/multi-engine-rating-for-pilots-in-india`
+
+### Prompt 46 — Hero / OpenGraph and card
+- **File:** `public/blog/multi-engine-rating/hero-twin-engine-aircraft.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A small twin-engine training aircraft on the tarmac with both propellers visible, a pilot walking toward it for a pre-flight inspection"
+
+> A small twin-engine training aeroplane parked on a sunlit tarmac, viewed
+> from a three-quarter front angle so both engine nacelles and propellers on
+> the wings are clearly visible. A South Asian pilot in modest professional
+> flying attire walks toward the aircraft from the right side of frame,
+> carrying a small flight bag, mid-stride, focused and calm. Open sky behind
+> with a few soft clouds, no other aircraft or buildings crowding the scene.
+> Orange accent limited to a single stripe on the aircraft's fuselage.
+
+### Prompt 47 — CPL to multi-engine rating to type rating progression
+- **File:** `public/blog/multi-engine-rating/cpl-to-me-to-type-rating-progression.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A three-stage horizontal flow from a Commercial Pilot Licence being issued, through multi-engine rating training on a light twin aircraft, to type rating training on a specific airliner"
+
+> Three simple circular nodes connected left to right by a thin line, each
+> holding one small flat icon: a licence card with a checkmark (CPL issued),
+> a small twin-engine aeroplane silhouette with both propellers visible
+> (multi-engine rating training), and a larger airliner silhouette (type
+> rating beginning). Even spacing, clearly sequential, each node slightly
+> larger than the last to suggest progression. Orange accent on the
+> twin-engine aeroplane node only. No text or labels.
+
+---
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
