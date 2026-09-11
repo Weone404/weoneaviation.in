@@ -1134,7 +1134,7 @@ export default function Home() {
                         </div>
                         <div className="mt-8 pt-6 border-t border-white/20 space-y-2 text-sm text-white/70">
                             <p>📧 <span className="font-semibold text-white">Office Mail:</span> info.weoneaviation@gmail.com</p>
-                            <p>📍 <span className="font-semibold text-white">Office Address:</span> C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077, India</p>
+                            <p>📍 <span className="font-semibold text-white">Office Address:</span> C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, Delhi 110077, India</p>
                         </div>
                     </ScrollReveal>
                     <ScrollReveal delay={200}>

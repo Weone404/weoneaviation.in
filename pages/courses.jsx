@@ -497,7 +497,7 @@ export default function CoursesPage() {
                                 Get Free Counselling →
                             </Link>
                             <a
-                                href="https://wa.me/919355611996"
+                                href="https://wa.me/919667370747"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-block bg-white/10 border border-white/30 text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm"

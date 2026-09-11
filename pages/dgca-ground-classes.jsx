@@ -899,7 +899,7 @@ export default function DGCAGroundClasses() {
                 <div className="text-white/70 text-xs mt-1">Full DGCA Syllabus Coverage</div>
                 <div className="text-white/70 text-xs mt-1">25% Scholarship Available</div>
                 <a
-                  href="https://wa.me/919355611996"
+                  href="https://wa.me/919667370747"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all"

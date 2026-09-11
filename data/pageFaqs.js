@@ -30,7 +30,7 @@ const routeContent = {
     ['How quickly will We One Aviation respond to my enquiry?', 'A counsellor generally calls back within two hours during office hours. Enquiries received outside those hours are handled on the next working day.'],
     ['What is the best way to contact the academy?', 'You can submit the contact form, call +91 93555 66991, or start a WhatsApp conversation for course, medical, and admission guidance.'],
     ['What are the academy office hours?', 'The office is open Monday to Saturday from 9 AM to 7 PM and Sunday from 10 AM to 4 PM.'],
-    ['Where is the We One Aviation office located?', 'Our office is at C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077.'],
+    ['Where is the We One Aviation office located?', 'Our office is at C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, Delhi 110077.'],
     ['Can I contact the academy by email?', 'Yes, you can write to us at info.weoneaviation@gmail.com and our team will respond with the guidance you need.'],
     ['Is my information safe when I submit the contact form?', 'Yes, your details are saved securely to our system for counsellor follow-up and are never shared or spammed.'],
     ['What should I select when filling out the contact form?', 'You can choose the course you\'re interested in — such as CPL, PPL, ATPL, or DGCA Ground Classes — so our team can connect you with the right counsellor.'],

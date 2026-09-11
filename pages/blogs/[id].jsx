@@ -348,7 +348,7 @@ const blogContentStyles = `
 // ─────────────────────────────────────────────
 // WhatsApp URL helper
 // ─────────────────────────────────────────────
-const WA_NUMBER = '919355611996';
+const WA_NUMBER = '919667370747';
 const WA_MESSAGE = encodeURIComponent(
     'Hello We One Aviation! I read your blog and want to learn more about pilot training.'
 );

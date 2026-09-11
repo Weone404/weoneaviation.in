@@ -144,7 +144,7 @@ export default function FAQPage() {
             <p className="text-white/70 text-sm mb-6">Speak with the We One Aviation team about your eligibility, course, and next step.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href="/contact" className="bg-av-orange text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-orange-600 transition-all">Contact Us</a>
-              <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer" className="border border-white/40 text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-white hover:text-av-blue transition-all">WhatsApp Us</a>
+              <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer" className="border border-white/40 text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-white hover:text-av-blue transition-all">WhatsApp Us</a>
             </div>
           </div>
         </ScrollReveal>

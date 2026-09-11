@@ -41,7 +41,7 @@ export default function ContactPopup() {
 
     // After 10 seconds: open WhatsApp and close popup
     setTimeout(() => {
-      const whatsappUrl = `https://wa.me/919355611996?text=${msg}`;
+      const whatsappUrl = `https://wa.me/919667370747?text=${msg}`;
       const a = document.createElement('a');
       a.href = whatsappUrl;
       a.target = '_blank';

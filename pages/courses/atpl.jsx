@@ -223,7 +223,7 @@ export default function ATPL() {
                   Talk to us about the ground subjects, the paper order that fits your roster, and where the current Section M experience table actually stands.
                 </p>
                 <a
-                  href="https://wa.me/919355611996"
+                  href="https://wa.me/919667370747"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm"

@@ -351,7 +351,7 @@ export default function DGCAMedical() {
                                     <p>🌐 pariksha.dgca.gov.in</p>
                                     <p>🌐 dgca.gov.in</p>
                                 </div>
-                                <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer"
+                                <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
                                     Get Free Help
                                 </a>

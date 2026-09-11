@@ -215,7 +215,7 @@ export default function SPL() {
                   Tell us where you are in school and we will map the medical, the ground subjects and the licence gates against your dates.
                 </p>
                 <a
-                  href="https://wa.me/919355611996"
+                  href="https://wa.me/919667370747"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm"

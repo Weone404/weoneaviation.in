@@ -581,7 +581,7 @@ export default function CPL() {
                             <div className="bg-av-orange rounded-2xl p-6 text-white">
                                 <h4 className="font-montserrat font-bold mb-2">Career After CPL</h4>
                                 <p className="text-white/80 text-sm mb-3">Talk through licence routes, timelines and what the CPL leads to.</p>
-                                <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer"
+                                <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
                                     Get Career Counselling
                                 </a>

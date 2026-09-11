@@ -76,8 +76,16 @@
  *   r.6 age 16 + Class X; r.8(4) written then practical; r.8(5) syllabus;
  *   r.8(6) practical within three years of the written.
  *
+ * VERIFIED SINCE — 2026-09-11
+ *   - the DGCA theory pass mark. It is 70% per subject, set by CAR Section 7,
+ *     Series 'B', Part I, Rev. 2 dated 13 February 2019, para 5.6, read from
+ *     two independent copies of the DGCA-issued document (the 2019 text and
+ *     the older Rev. 3 of 7 September 2007, para 5.5) because DGCA's own CAR
+ *     library is served through a JavaScript portal that cannot be fetched.
+ *     Same pass encoded the oral marks (para 5.7) and paper validity (6.7).
+ *     It lives in lib/facts.js EXAM_RULES. Import it; do not retype it.
+ *
  * STILL UNVERIFIED — must not appear on the site until sourced
- *   - the DGCA theory pass mark (set under CAR Section 7, not in the Rules)
  *   - the Class 1 / Class 2 medical split and when each applies. Rule 39B is
  *     the instrument but delegates the standards to the Director-General; the
  *     split lives in a DGCA medical CAR served only through DGCA's

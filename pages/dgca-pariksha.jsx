@@ -2,13 +2,13 @@ import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import NextImage from 'next/image';
-import { PARIKSHA, inr } from '../lib/facts';
+import { PARIKSHA, inr, EXAM_RULES } from '../lib/facts';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const stats = [
     { num: '3–4x', label: 'Exams Per Year', icon: '📅' },
-    { num: '70%', label: 'Passing Marks', icon: '✅' },
+    { num: `${EXAM_RULES.theory.passMark}%`, label: 'Passing Marks', icon: '✅' },
     { num: 'CBT', label: 'Online Mode', icon: '💻' },
     { num: 'MCQs', label: 'Question Type', icon: '📝' },
 ];
@@ -66,7 +66,7 @@ const examPattern = [
     { label: 'Mode', value: 'Online, Computer-Based Test (CBT)' },
     { label: 'Question Type', value: 'Multiple-choice questions (MCQs)' },
     { label: 'Duration', value: 'Varies for each subject' },
-    { label: 'Passing Marks', value: 'Minimum of 70% in each subject to pass', highlight: true },
+    { label: 'Passing Marks', value: `Minimum of ${EXAM_RULES.theory.passMark}% in each subject, under ${EXAM_RULES.car.citation}, ${EXAM_RULES.theory.clause}`, highlight: true },
 ];
 
 /*
@@ -475,7 +475,7 @@ export default function DGCAParikshaPage() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-av-blue/80 to-transparent flex items-end p-6">
                                     <div>
                                         <p className="text-av-orange font-bold font-montserrat">Computer-Based Test</p>
-                                        <p className="text-white/80 text-xs mt-1">Online MCQ format — 70% passing marks required</p>
+                                        <p className="text-white/80 text-xs mt-1">Online MCQ format — {EXAM_RULES.theory.passMark}% passing marks required</p>
                                     </div>
                                 </div>
                             </div>
@@ -502,6 +502,71 @@ export default function DGCAParikshaPage() {
                             </div>
                         </ScrollReveal>
                     </div>
+                </div>
+            </section>
+
+            {/* ── Pass marks and paper validity (sourced: lib/facts.js EXAM_RULES) ── */}
+            <section className="py-20 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <ScrollReveal className="text-center mb-4">
+                        <div className="section-tag">Passing</div>
+                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
+                            What Counts as a <span className="text-av-orange">Pass</span>
+                        </h2>
+                    </ScrollReveal>
+                    <p className="text-center text-gray-500 text-xs max-w-3xl mx-auto mb-10">
+                        The threshold is set by {EXAM_RULES.car.citation}, not by the examination centre or the flying school.
+                    </p>
+
+                    <div className="grid lg:grid-cols-3 gap-6 mb-8">
+                        <ScrollReveal>
+                            <div className="bg-av-blue rounded-2xl p-6 text-white h-full">
+                                <p className="text-av-orange font-montserrat font-bold text-sm mb-2">Written papers</p>
+                                <p className="text-5xl font-montserrat font-black mb-3">{EXAM_RULES.theory.passMark}%</p>
+                                <p className="text-white/80 text-sm leading-relaxed mb-3">{EXAM_RULES.theory.statement}</p>
+                                <p className="text-white/60 text-xs leading-relaxed">{EXAM_RULES.theory.perSubject}</p>
+                            </div>
+                        </ScrollReveal>
+
+                        <ScrollReveal delay={120}>
+                            <div className="border border-gray-200 rounded-2xl overflow-hidden h-full">
+                                <table className="w-full text-sm">
+                                    <thead>
+                                        <tr className="bg-av-blue text-white">
+                                            <th className="px-4 py-3 text-left">Oral examination</th>
+                                            <th className="px-4 py-3 text-left">Pass mark</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {EXAM_RULES.oral.map((row, i) => (
+                                            <tr key={row.licence} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                                                <td className="px-4 py-3 text-xs font-semibold text-av-blue">{row.licence}</td>
+                                                <td className="px-4 py-3 text-xs font-bold text-av-orange whitespace-nowrap">{row.passMark}% <span className="text-gray-400 font-normal">{row.clause}</span></td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                                <p className="px-4 py-3 text-[11px] text-gray-500 leading-relaxed">{EXAM_RULES.oralRetake.statement}</p>
+                            </div>
+                        </ScrollReveal>
+
+                        <ScrollReveal delay={240}>
+                            <div className="border border-gray-200 rounded-2xl p-6 h-full">
+                                <p className="font-montserrat font-bold text-av-blue text-sm mb-3">How long a pass lasts</p>
+                                <p className="text-gray-600 text-sm leading-relaxed mb-3">{EXAM_RULES.paperValidity.general}</p>
+                                <p className="text-av-orange text-sm font-semibold leading-relaxed mb-3">{EXAM_RULES.paperValidity.cplAtpl}</p>
+                                <p className="text-gray-500 text-xs leading-relaxed mb-3">{EXAM_RULES.paperValidity.planningNote}</p>
+                                <p className="text-gray-400 text-[11px]">{EXAM_RULES.car.citation}, {EXAM_RULES.paperValidity.clause}</p>
+                            </div>
+                        </ScrollReveal>
+                    </div>
+
+                    <p className="text-center text-xs text-gray-500 max-w-3xl mx-auto">
+                        Booking, fees and documents are handled on the Pariksha portal — the sourced walkthrough is on our{' '}
+                        <Link href="/dgca-computer-number" className="text-av-blue font-semibold hover:text-av-orange transition-colors">
+                            DGCA computer number guide
+                        </Link>.
+                    </p>
                 </div>
             </section>
 
@@ -668,8 +733,8 @@ export default function DGCAParikshaPage() {
                         <div className="bg-av-blue rounded-2xl p-8 text-center">
                             <div className="text-4xl mb-3">📊</div>
                             <p className="text-av-orange font-bold text-lg font-montserrat mb-2">Passing Marks</p>
-                            <p className="text-white text-3xl font-black font-montserrat mb-2">70%</p>
-                            <p className="text-white/70 text-sm">To pass the DGCA Pariksha, you need at least 70% in each subject.</p>
+                            <p className="text-white text-3xl font-black font-montserrat mb-2">{EXAM_RULES.theory.passMark}%</p>
+                            <p className="text-white/70 text-sm">To pass, you need at least {EXAM_RULES.theory.passMark}% in each subject on its own — {EXAM_RULES.car.citation}, {EXAM_RULES.theory.clause}.</p>
                         </div>
                     </ScrollReveal>
                 </div>

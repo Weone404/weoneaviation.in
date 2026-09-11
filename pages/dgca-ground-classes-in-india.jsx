@@ -503,7 +503,7 @@ export default function DGCAGroundClassesInIndia() {
                                         <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
                                             Book Free Counselling — Pan India
                                         </Link>
-                                        <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer"
+                                        <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer"
                                             className="inline-block border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
                                             WhatsApp Us Now
                                         </a>
@@ -576,7 +576,7 @@ export default function DGCAGroundClassesInIndia() {
                                 <div className="text-white/70 text-xs mt-1">25% Scholarship — All Indian Students</div>
                                 <div className="text-white/70 text-xs mt-1">Online — Every Indian State</div>
                                 <div className="text-white/70 text-xs mt-1">Free Books, Notes & Mock Papers</div>
-                                <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer"
+                                <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
                                     Get Free Counselling
                                 </a>
