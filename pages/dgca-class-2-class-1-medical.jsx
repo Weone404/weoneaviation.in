@@ -2,363 +2,399 @@ import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
+import StructuredData from '../components/StructuredData';
 import Link from 'next/link';
+import { MEDICAL_STANDARDS as MED, LICENCES, ACADEMY } from '../lib/facts';
+
+/*
+ * /dgca-class-2-class-1-medical — restored and rewritten 2026-09-11.
+ *
+ * This route was 301'd to /commercial-pilot-license-eligibility in the 2026-08
+ * claims pass: the Class 1 / Class 2 distinction was the page's whole subject
+ * and could not be sourced, so retiring the URL beat leaving it asserting
+ * something the copy no longer said. The CAR behind the distinction has since
+ * been found, so the page is back — every statement below renders from
+ * lib/facts.js MEDICAL_STANDARDS, which carries the sourcing note.
+ *
+ * WHAT THIS PAGE MUST NEVER DO. We do not conduct medicals, book them, or
+ * influence their outcome, and nothing here may suggest otherwise — see the
+ * facility patterns in scripts/check-claims.js. No pass rates. No exhaustive
+ * list of disqualifying conditions, because a partial list read as complete is
+ * how a reader talks themselves out of a career. No page can tell someone
+ * whether they will clear a medical; the examiner does that.
+ *
+ * The centres list moves. MEDICAL_STANDARDS.centresAsOf is the date it was
+ * read, and it is printed on the page so a reader can judge its age.
+ */
+
+const CANONICAL = 'https://weoneaviation.in/dgca-class-2-class-1-medical';
+
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+function longDate(iso) {
+    const [y, m, d] = iso.split('-');
+    return `${Number(d)} ${MONTHS[Number(m) - 1]} ${y}`;
+}
+const CHECKED_ON = longDate(MED.verifiedOn);
 
 const heroSlides = [
-    { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Pilot Guide', title: 'DGCA Medical', highlight: 'Class 1 & Class 2', sub: 'Complete Guide for Pilot Aspirants in India — Requirements, Procedure & Fees' },
+    { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'DGCA Medical', title: 'Class 1 and Class 2', highlight: 'Medical', sub: 'Which licence needs which class, how long each lasts, and where DGCA says you can get it done' },
 ];
 
-const overview = [
-    { icon: '🩺', title: 'Class II Medical Certificate', desc: 'Required initially for a Student Pilot License (SPL) and to start flight training.' },
-    { icon: '✈️', title: 'Class I Medical Certificate', desc: 'Necessary for obtaining a Commercial Pilot License (CPL) and for ongoing operation as a commercial pilot.' },
+const contents = [
+    ['which-class', 'Which class your licence needs'],
+    ['validity', 'How long each medical lasts'],
+    ['examination', 'What the examination covers'],
+    ['centres', 'Where DGCA says you can get it done'],
+    ['rules', 'The rules behind all of this'],
+    ['order', 'The order to do things in'],
+    ['faqs', 'Frequently asked questions'],
+    ['sources', 'Sources'],
 ];
 
-const class2WhoNeeds = [
-    'Private Pilot License (PPL) holders.',
-    'Student Pilot License (SPL) applicants (for various aircraft types).',
-    "Flight Radio Telephone Operator's License holders.",
-];
-
-const class2Standards = [
-    { label: 'Physical Requirements', desc: 'Basic physical health requirements.' },
-    { label: 'Vision Requirements', desc: 'Good eyesight (with corrective lenses if necessary).' },
-    { label: 'Hearing Requirements', desc: 'Standard hearing ability for clear communication.' },
-];
-
-const egcaSteps = [
-    { title: 'Visit the eGCA Website', desc: 'Go to the official eGCA portal at https://egca.gov.in or https://dgcaexam.com/ — Click on \'Login/Register\' button typically in the top right corner, then select \'Register as New User\'.' },
-    { title: 'Select User Type', desc: 'Choose the appropriate user type based on your role — Pilot (for pilot-related services), Aircraft Maintenance Engineer (AME), or Airline/Aviation Personnel.' },
-    { title: 'Enter Personal Details', desc: 'Fill in your name, date of birth, nationality, and gender. Provide your Aadhar number or Passport number (optional but recommended for verification).' },
-    { title: 'Provide Contact Details', desc: 'Enter a valid email address and mobile number. Ensure these details are accurate, as verification codes will be sent to them.' },
-    { title: 'Create Username and Password', desc: 'Choose a unique username and secure password for your eGCA account. The password should meet the portal\'s security requirements (must include uppercase letters, lowercase letters, numbers, and special characters).' },
-    { title: 'Verification', desc: 'After submitting the registration form, you\'ll receive verification codes via email and SMS. Enter these codes to verify your contact details.' },
-    { title: 'Upload Documents (if required)', desc: 'Some user types may require document uploads (e.g., proof of identity, education certificates). Ensure that you upload the documents in the required format and size.' },
-    { title: 'Submit Registration', desc: 'Review all details for accuracy and submit the form. Once submitted, the system will process your registration, and you\'ll receive a confirmation email upon successful account creation.' },
-    { title: 'Login to eGCA', desc: 'After registration, return to the eGCA homepage and log in using your newly created username and password.' },
-];
-
-const class2MedicalTests = [
-    { icon: '🩸', title: 'Blood Tests', desc: 'Check hemoglobin, blood sugar, lipid profile, liver function, etc.' },
-    { icon: '🫁', title: 'Radiology Tests', desc: 'Chest and sinus X-rays.' },
-    { icon: '❤️', title: 'ECG', desc: 'To check heart function.' },
-    { icon: '👂', title: 'ENT Exam', desc: 'Ear, nose, and throat examination.' },
-    { icon: '👁️', title: 'Vision Tests', desc: 'Assessment of visual acuity and color vision.' },
-    { icon: '🧪', title: 'Urine Analysis', desc: 'Check for normal sugar and protein levels.' },
-];
-
-const class2Steps = [
-    { num: '1', title: 'Register on the eGCA Portal', desc: 'Create your account on the official eGCA portal at https://egca.gov.in. Follow the full registration steps below.' },
-    { num: '2', title: 'Choose a DGCA Doctor', desc: 'Use the DGCA\'s list of approved doctors and schedule an appointment. Doctors listed on the DGCA website are qualified to conduct this examination.' },
-    { num: '3', title: 'Undergo the Necessary Medical Tests', desc: 'Complete all required tests including blood tests, X-rays, ECG, ENT exam, vision tests, and urine analysis.' },
-    { num: '4', title: 'Submit Medical Reports to the DGCA Doctor', desc: 'The doctor will review your test results and, if satisfactory, submit them to DGCA for processing.' },
-    { num: '5', title: 'Receive Your Medical Assessment Certificate', desc: 'After processing, access the certificate on the eGCA portal or pick it up in person.' },
-];
-
-const class1WhoNeeds = [
-    'Commercial Pilot License (CPL) holders.',
-    'Airline Transport Pilot License (ATPL) holders.',
-    'Flight Engineers.',
-];
-
-const class1Requirements = [
-    { label: 'Minimum Age', desc: '17 years' },
-    { label: 'Documents Needed', desc: 'Last Medical Assessment, CA-35 form, two passport-size photos, and ID.' },
-    { label: 'Eyeglasses', desc: 'If you wear corrective lenses, bring them and a recent prescription.' },
-];
-
-const class1AdditionalTests = [
-    { icon: '🩺', title: 'Physical Exam', desc: 'Full physical examination.' },
-    { icon: '👁️', title: 'Visual and Hearing Tests', desc: 'Evaluates acuity and clarity.' },
-    { icon: '❤️', title: 'ECG and Blood Pressure Check', desc: 'To ensure cardiovascular health.' },
-    { icon: '🩸', title: 'Blood and Urine Analysis', desc: 'Basic health screening.' },
-    { icon: '🫁', title: 'Lung Function', desc: 'Test for respiratory function.' },
-];
-
-const class1Steps = [
-    { num: '1', title: 'Determine Type of Medical Examination Needed', desc: 'Initial Medical: Required if the Class I assessment is being obtained for the first time. Renewal Medical: Regular renewal for those already holding a Class I certificate.' },
-    { num: '2', title: 'Scheduling and Appointments', desc: 'IAF Centres: Book in advance by contacting the DGCA. Civil Centres: Contact directly without PMR forwarding if a Class I initial medical is conducted here.' },
-    { num: '3', title: 'Submit Documentation', desc: 'Send all necessary documents, including a No Objection Certificate (NOC) if needed.' },
-];
+const ncrCentres = [...MED.centres.airForce, ...MED.centres.civil].filter((c) => /Delhi|Gurugram/.test(c.city));
 
 const faqs = [
-    { q: 'What is the purpose of the DGCA medical examination?', a: 'DGCA medical examinations verify that pilots meet stringent health standards. They are designed to assess overall fitness, detect any medical conditions that could impair flying ability, and help ensure passenger and crew safety.' },
-    { q: 'Can I apply for both Class I and Class II medical exams together?', a: 'Generally, Class II is obtained first as an entry-level certification for student pilots. Class I is pursued after completing initial training when applying for a CPL. Contact a DGCA doctor for specific guidance.' },
-    { q: 'Where can I find a list of DGCA doctors for Class II medical exams?', a: 'The list of DGCA doctors is available on the official DGCA website at www.dgca.gov.in. You can also contact We One Aviation Academy for guidance on finding DGCA-listed medical examiners near you.' },
-    { q: 'What happens if my Class I medical certificate expires?', a: 'If your Class I medical certificate expires, you are not legally permitted to exercise the privileges of your commercial pilot license until it is renewed. Apply for renewal 0-30 days before the expiry date.' },
-    { q: 'Are there any special medical centers for Class I renewal exams?', a: 'Yes, Class I medical exams can be conducted at IAF (Indian Air Force) hospitals or designated civil medical centres approved by DGCA. Contact DGCA directly for a list of approved Class I examination centres.' },
+    {
+        q: 'Do I need a Class 1 or a Class 2 medical to start pilot training?',
+        a: `A Class 2, to begin with. ${MED.classes[1].licences[2]} sits in the Class 2 list, and that is the licence you train on. The Class 1 is what the ${MED.classes[0].licences[0]} needs, so you will need one before the licence you are actually training towards. ${MED.timingAdvice}`,
+    },
+    {
+        q: 'How long is a DGCA Class 1 medical valid?',
+        a: `${MED.classes[0].validity} That age boundary is current because rule 39C of the Aircraft Rules, 1937 was amended on 27 December 2019 to raise it from forty years to sixty. Any source still saying the six-monthly band starts at 40 is quoting the pre-2020 rule.`,
+    },
+    {
+        q: 'How long is a Class 2 medical valid?',
+        a: MED.classes[1].validity,
+    },
+    {
+        q: 'Where can I do my Class 1 medical in Delhi?',
+        a: `Of the ${MED.centres.airForce.length + MED.centres.civil.length} centres on DGCA's list as of ${MED.centresAsOf}, ${ncrCentres.length} are in Delhi and the NCR: ${ncrCentres.map((c) => `${c.name} (${c.city})`).join(', ')}. ${MED.centres.listNote}`,
+    },
+    {
+        q: 'Who is allowed to conduct the examination?',
+        a: `Class 1: ${MED.classes[0].conductedBy} Class 2: ${MED.classes[1].conductedBy}`,
+    },
+    {
+        q: 'What does the medical actually test?',
+        a: `${MED.examination.groups.join(', ')}. ${MED.examination.standardsFrom} ${MED.examination.note}`,
+    },
+    {
+        q: 'Can DGCA ask me to take a medical outside the normal schedule?',
+        a: MED.rules.anyTime,
+    },
+    {
+        q: 'Which medical does an air traffic controller need?',
+        a: `${MED.classes[2].cls}. ${MED.classes[2].validity} It is set by the same CAR as the pilot classes.`,
+    },
+    {
+        q: 'Does a Private Pilot Licence ever need a Class 1?',
+        a: 'Yes, in one case: where instrument rating privileges are required. A Private Pilot Licence otherwise sits in the Class 2 list.',
+    },
+    {
+        q: 'Will I pass?',
+        a: `That is the one question this page will not answer, and you should be wary of any page that does. ${MED.examination.note} Book early, be honest with the examiner, and get the answer from the people DGCA authorises to give it.`,
+    },
 ];
+
+const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'DGCA Class 1 and Class 2 Medical: What Each Licence Needs',
+    description: 'Which pilot licence needs a Class 1 medical and which needs a Class 2, how long each assessment stays valid by age, what the examination covers, and the DGCA-approved centres where it is conducted.',
+    inLanguage: 'en-IN',
+    dateModified: MED.verifiedOn,
+    articleSection: 'DGCA medical',
+    keywords: 'dgca class 1 medical, dgca class 2 medical, class 1 medical validity, dgca medical centres, class 1 medical delhi, pilot medical india',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
+    image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+    author: { '@type': 'Organization', name: ACADEMY.name, url: ACADEMY.url },
+    publisher: {
+        '@type': 'EducationalOrganization',
+        name: ACADEMY.name,
+        url: ACADEMY.url,
+        logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+    },
+    citation: MED.sources.map((s) => ({ '@type': 'CreativeWork', name: s.label, url: s.url })),
+};
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+};
+
+const H2 = 'font-montserrat text-xl font-bold text-av-blue mb-3';
+const P = 'text-gray-600 text-sm leading-relaxed mb-4';
+const TH = 'text-left p-3 font-montserrat font-bold';
+const A = 'text-av-blue font-semibold hover:text-av-orange transition-colors';
 
 export default function DGCAMedical() {
     return (
-        <Layout title="DGCA Class 1 & Class 2 Medical Guide for Pilots | We One Aviation Academy" description="Complete guide to DGCA Class 2 and Class 1 Medical examinations for pilot aspirants in India. Requirements, steps, fees, validity and eGCA registration process explained in detail.">
+        <Layout
+            title="DGCA Class 1 and Class 2 Medical: Rules and Centres"
+            description="Which licence needs a Class 1 and which a Class 2, how long each lasts, what the examination covers, and the DGCA-approved centres — every figure cited."
+        >
+            <StructuredData data={[articleSchema, faqSchema]} />
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
-            {/* Overview */}
             <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
+                <section className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
                     <div className="lg:col-span-2">
                         <ScrollReveal>
-                            <div className="section-tag">Pilot Guide</div>
-                            <h1 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
-                                Guide for DGCA Class 2 Medical and DGCA Class 1 Medical
+                            <div className="section-tag">DGCA Medical</div>
+                            <h1 className="font-montserrat text-3xl font-bold text-av-blue mb-3 underline-orange">
+                                DGCA Class 1 and Class 2 Medical: What Each Licence Needs
                             </h1>
-                            <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                                Aspiring pilots in India are required to undergo specific medical assessments to ensure they meet the necessary mental and physical health standards for aviation. The Directorate General of Civil Aviation (DGCA) mandates two primary medical examinations — DGCA Class II and DGCA Class I medical certifications.
-                            </p>
-                            <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                                Both assessments are critical to starting and progressing in a pilot's career. In this guide, we will look at the requirements, procedures, and validity for each of these medical certifications, ensuring that you are well-prepared for each step.
-                            </p>
 
-                            {/* Quick Facts */}
-                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-                                {[['Class 2', 'For SPL / PPL'], ['Class 1', 'For CPL / ATPL'], ['17 Years', 'Min Age'], ['eGCA Portal', 'Registration']].map(([val, label]) => (
-                                    <div key={label} className="bg-av-light rounded-xl p-4 text-center">
-                                        <div className="font-montserrat font-bold text-av-blue text-sm">{val}</div>
-                                        <div className="text-gray-500 text-xs mt-1">{label}</div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* Overview */}
-                            <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">Overview of DGCA Class II and Class I Medical Examinations</h2>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                To become a licensed pilot in India, DGCA mandates medical certifications to verify that pilots meet stringent health standards. These are designed to assess overall fitness, detect any medical conditions that could impair flying ability, and help ensure passenger and crew safety.
-                            </p>
-                            <div className="space-y-3 mb-10">
-                                {overview.map((item) => (
-                                    <div key={item.title} className="flex gap-3 items-start text-sm text-gray-600">
-                                        <span className="text-2xl flex-shrink-0">{item.icon}</span>
-                                        <span><span className="font-semibold text-av-blue">{item.title} –</span> {item.desc}</span>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* ===== CLASS 2 ===== */}
-                            <div className="bg-av-blue rounded-2xl p-6 mb-6">
-                                <h2 className="font-montserrat text-2xl font-bold text-white">DGCA Class II Medical Examination</h2>
-                            </div>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                                The DGCA Class II medical examination is the entry-level certification for those aspiring to begin their pilot training. This certification is mandatory for obtaining a Student Pilot License and enrolling in a flight school for further training.
+                            <p className="text-xs text-gray-500 mb-6">
+                                Checked against the Aircraft Rules and the DGCA medical CAR on {CHECKED_ON}; the centres list is
+                                DGCA&rsquo;s own, as it stood on {MED.centresAsOf}. Every figure is{' '}
+                                <a href="#sources" className={A}>sourced below</a>.
                             </p>
 
-                            <h3 className="font-montserrat text-lg font-bold text-av-blue mb-3">Who Needs a Class II Medical Certificate?</h3>
-                            <ul className="space-y-2 mb-8">
-                                {class2WhoNeeds.map((item, i) => (
-                                    <li key={i} className="flex gap-2 items-start text-sm text-gray-600">
-                                        <span className="text-av-orange font-bold flex-shrink-0">✓</span>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <h3 className="font-montserrat text-lg font-bold text-av-blue mb-3">Class II Medical Standards</h3>
-                            <div className="space-y-2 mb-8">
-                                {class2Standards.map((item) => (
-                                    <div key={item.label} className="flex gap-2 items-start text-sm text-gray-600">
-                                        <span className="text-av-orange font-bold flex-shrink-0">–</span>
-                                        <span><span className="font-semibold text-av-blue">{item.label} –</span> {item.desc}</span>
-                                    </div>
-                                ))}
+                            <div className="bg-av-light border-l-4 border-av-orange rounded-xl p-5 mb-8">
+                                <p className="text-gray-700 text-sm leading-relaxed">
+                                    A Commercial or Airline Transport Pilot Licence needs a Class 1 medical. A Student or Private
+                                    Pilot Licence needs a Class 2. A Class 1 stays valid for one year up to age 60 and six months
+                                    after that; a Class 2 for two years up to age 50, then one year. DGCA lists{' '}
+                                    {MED.centres.airForce.length + MED.centres.civil.length} approved centres, {ncrCentres.length} of
+                                    them in Delhi and the NCR.
+                                </p>
                             </div>
 
-                            <h3 className="font-montserrat text-lg font-bold text-av-blue mb-3">Steps to Obtain a Class II Medical Certificate</h3>
-                            <div className="space-y-4 mb-6">
-                                {class2Steps.map((step) => (
-                                    <div key={step.num} className="border border-gray-200 rounded-xl overflow-hidden">
-                                        <div className="flex items-center gap-3 bg-av-blue p-4">
-                                            <span className="w-7 h-7 bg-av-orange rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">{step.num}</span>
-                                            <h4 className="font-montserrat font-bold text-white text-sm">{step.title}</h4>
-                                        </div>
-                                        <div className="p-4 bg-white">
-                                            <p className="text-gray-600 text-xs leading-relaxed">{step.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* eGCA Registration */}
-                            <div className="bg-av-light rounded-2xl p-6 mb-6 border border-av-sky/20">
-                                <h4 className="font-montserrat font-bold text-av-blue mb-4">Steps to Register on the eGCA Portal</h4>
-                                <div className="space-y-3">
-                                    {egcaSteps.map((step, i) => (
-                                        <div key={step.title} className="flex gap-3 items-start text-xs text-gray-600">
-                                            <span className="flex-shrink-0 w-5 h-5 bg-av-blue rounded-full flex items-center justify-center text-white text-xs font-bold">{i + 1}</span>
-                                            <span><span className="font-semibold text-av-blue">{step.title}:</span> {step.desc}</span>
-                                        </div>
+                            <div className="border border-gray-200 rounded-xl p-5 mb-10">
+                                <p className="font-montserrat font-bold text-av-blue text-sm mb-3">On this page</p>
+                                <ol className="grid sm:grid-cols-2 gap-y-1.5 gap-x-4 text-sm list-decimal list-inside">
+                                    {contents.map(([id, label]) => (
+                                        <li key={id} className="text-gray-600"><a href={`#${id}`} className={A}>{label}</a></li>
                                     ))}
-                                </div>
+                                </ol>
                             </div>
 
-                            {/* Medical Tests */}
-                            <h4 className="font-montserrat font-bold text-av-blue mb-3">Necessary Medical Tests for Class II</h4>
-                            <div className="grid sm:grid-cols-2 gap-3 mb-8">
-                                {class2MedicalTests.map((test) => (
-                                    <div key={test.title} className="flex gap-3 items-start p-3 rounded-xl border border-gray-100 bg-white shadow-sm text-sm text-gray-600">
-                                        <span className="text-xl flex-shrink-0">{test.icon}</span>
-                                        <span><span className="font-semibold text-av-blue">{test.title}:</span> {test.desc}</span>
+                            {/* Which class */}
+                            <h2 id="which-class" className={H2}>Which class your licence needs</h2>
+                            <p className={P}>
+                                This is the question the page exists for, and the answer is set by{' '}
+                                {MED.car.citation} — {MED.car.title}. It is not a matter of opinion, and it does not vary between
+                                flying schools.
+                            </p>
+                            <div className="space-y-5 mb-10">
+                                {MED.classes.map((c) => (
+                                    <div key={c.cls} className="border border-gray-200 rounded-xl p-5">
+                                        <p className="font-montserrat font-bold text-av-blue text-base mb-3">{c.cls}</p>
+                                        <p className="font-semibold text-av-blue text-xs mb-2">Required for</p>
+                                        <ul className="space-y-1.5 mb-4">
+                                            {c.licences.map((l) => (
+                                                <li key={l} className="flex gap-2 items-start text-sm text-gray-600">
+                                                    <span className="text-av-orange font-bold flex-shrink-0">✓</span>{l}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        <p className="text-sm text-gray-600 leading-relaxed mb-1">
+                                            <span className="font-semibold text-av-blue">Valid for:</span> {c.validity}
+                                        </p>
+                                        <p className="text-sm text-gray-600 leading-relaxed">
+                                            <span className="font-semibold text-av-blue">Conducted by:</span> {c.conductedBy}
+                                        </p>
                                     </div>
                                 ))}
                             </div>
 
-                            {/* Class 2 Validity & Fees */}
-                            <div className="grid sm:grid-cols-2 gap-4 mb-10">
-                                <div className="bg-av-light rounded-xl p-5 border border-av-sky/20">
-                                    <h4 className="font-montserrat font-bold text-av-blue mb-3">Validity & Renewal</h4>
-                                    <ul className="space-y-1 text-xs text-gray-600">
-                                        <li><span className="font-semibold text-av-blue">SPL Holders (India):</span> Valid for 24 months.</li>
-                                        <li><span className="font-semibold text-av-blue">PPL Holders:</span> Valid for 24 months (requires periodic renewal).</li>
-                                        <li className="text-av-orange text-xs">Apply for renewal 0-30 days before expiry.</li>
-                                    </ul>
-                                </div>
-                                <div className="bg-av-light rounded-xl p-5 border border-av-sky/20">
-                                    <h4 className="font-montserrat font-bold text-av-blue mb-3">Fees</h4>
-                                    <ul className="space-y-1 text-xs text-gray-600">
-                                        <li><span className="font-semibold text-av-blue">Air Force Hospital:</span> Approx. INR 3,000 – 4,000</li>
-                                        <li><span className="font-semibold text-av-blue">Private Hospitals:</span> INR 6,000 – 8,000 (cost may vary by hospital)</li>
-                                    </ul>
-                                </div>
+                            {/* Validity */}
+                            <h2 id="validity" className={H2}>How long each medical lasts</h2>
+                            <div className="overflow-x-auto mb-4">
+                                <table className="w-full border border-gray-200 rounded-xl overflow-hidden text-sm">
+                                    <thead>
+                                        <tr className="bg-av-blue text-white">
+                                            <th className={TH}>Class</th>
+                                            <th className={TH}>Period of validity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {MED.classes.map((c, i) => (
+                                            <tr key={c.cls} className={i % 2 === 0 ? 'bg-white' : 'bg-av-light'}>
+                                                <td className="p-3 text-gray-700 font-semibold align-top whitespace-nowrap">{c.cls}</td>
+                                                <td className="p-3 text-gray-600 align-top">{c.validity}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
                             </div>
-
-                            {/* ===== CLASS 1 ===== */}
-                            <div className="bg-av-orange rounded-2xl p-6 mb-6">
-                                <h2 className="font-montserrat text-2xl font-bold text-white">DGCA Class I Medical Examination</h2>
-                            </div>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                                After obtaining a Class II medical certificate, pilots pursuing a Commercial Pilot License (CPL) must pass the DGCA Class I medical examination. This assessment is more rigorous, verifying mental and physical fitness for commercial aviation duties.
+                            <p className={P}>
+                                One detail worth checking against anything else you read: {MED.rules.validityAmendment} A page still
+                                saying the six-monthly band starts at forty is quoting the rule as it stood before 2020.
                             </p>
 
-                            <h3 className="font-montserrat text-lg font-bold text-av-blue mb-3">Who Needs a Class I Medical Certificate?</h3>
-                            <ul className="space-y-2 mb-8">
-                                {class1WhoNeeds.map((item, i) => (
-                                    <li key={i} className="flex gap-2 items-start text-sm text-gray-600">
-                                        <span className="text-av-orange font-bold flex-shrink-0">✓</span>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <h3 className="font-montserrat text-lg font-bold text-av-blue mb-3">Requirements for Class I Medical Examination</h3>
-                            <div className="space-y-2 mb-5">
-                                {class1Requirements.map((item) => (
-                                    <div key={item.label} className="flex gap-2 items-start text-sm text-gray-600">
-                                        <span className="text-av-orange font-bold flex-shrink-0">–</span>
-                                        <span><span className="font-semibold text-av-blue">{item.label}:</span> {item.desc}</span>
+                            {/* Examination */}
+                            <h2 id="examination" className={H2}>What the examination covers</h2>
+                            <p className={P}>The CAR groups the assessment into three heads.</p>
+                            <div className="grid sm:grid-cols-3 gap-4 mb-4">
+                                {MED.examination.groups.map((g) => (
+                                    <div key={g} className="bg-av-blue rounded-xl p-5 text-white">
+                                        <p className="font-montserrat font-bold text-sm">{g}</p>
                                     </div>
                                 ))}
                             </div>
-                            <p className="text-gray-600 text-sm font-semibold mb-3">Additional assessments include:</p>
-                            <div className="grid sm:grid-cols-2 gap-3 mb-8">
-                                {class1AdditionalTests.map((test) => (
-                                    <div key={test.title} className="flex gap-3 items-start p-3 rounded-xl border border-gray-100 bg-white shadow-sm text-sm text-gray-600">
-                                        <span className="text-xl flex-shrink-0">{test.icon}</span>
-                                        <span><span className="font-semibold text-av-blue">{test.title}:</span> {test.desc}</span>
+                            <p className={P}>{MED.examination.standardsFrom} {MED.examination.note}</p>
+
+                            {/* Centres */}
+                            <h2 id="centres" className={H2}>Where DGCA says you can get it done</h2>
+                            <p className={P}>
+                                DGCA publishes the list of approved aeromedical evaluation centres and empanelled Class 1 examiners.
+                                This is that list as it stood on {MED.centresAsOf}. {MED.centres.listNote} We have no role in it and
+                                no view on which centre to choose.
+                            </p>
+                            <div className="overflow-x-auto mb-4">
+                                <table className="w-full border border-gray-200 rounded-xl overflow-hidden text-sm">
+                                    <thead>
+                                        <tr className="bg-av-blue text-white">
+                                            <th className={TH}>Centre</th>
+                                            <th className={TH}>Location</th>
+                                            <th className={TH}>Type</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {MED.centres.airForce.map((c, i) => (
+                                            <tr key={c.name} className={i % 2 === 0 ? 'bg-white' : 'bg-av-light'}>
+                                                <td className="p-3 text-gray-700 font-semibold align-top">{c.name}</td>
+                                                <td className="p-3 text-gray-600 align-top">{c.city}</td>
+                                                <td className="p-3 text-gray-600 align-top">Air Force boarding centre</td>
+                                            </tr>
+                                        ))}
+                                        {MED.centres.civil.map((c, i) => (
+                                            <tr key={`${c.name}-${c.city}`} className={(i + MED.centres.airForce.length) % 2 === 0 ? 'bg-white' : 'bg-av-light'}>
+                                                <td className="p-3 text-gray-700 font-semibold align-top">{c.name}</td>
+                                                <td className="p-3 text-gray-600 align-top">{c.city}</td>
+                                                <td className="p-3 text-gray-600 align-top">{c.note}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p className={P}>
+                                If you are training from Delhi, {ncrCentres.length} of the{' '}
+                                {MED.centres.airForce.length + MED.centres.civil.length} are within reach without travel:{' '}
+                                {ncrCentres.map((c) => c.name).join(', ')}.
+                            </p>
+
+                            {/* Rules */}
+                            <h2 id="rules" className={H2}>The rules behind all of this</h2>
+                            <div className="space-y-3 mb-10">
+                                {[MED.rules.duty, MED.rules.anyTime, MED.rules.validityAmendment].map((r) => (
+                                    <div key={r} className="border-l-4 border-av-orange bg-av-light rounded-r-xl p-4">
+                                        <p className="text-gray-700 text-sm leading-relaxed">{r}</p>
                                     </div>
                                 ))}
                             </div>
 
-                            <h3 className="font-montserrat text-lg font-bold text-av-blue mb-3">Steps to Obtain a Class I Medical Certificate</h3>
-                            <div className="space-y-4 mb-8">
-                                {class1Steps.map((step) => (
-                                    <div key={step.num} className="border border-gray-200 rounded-xl overflow-hidden">
-                                        <div className="flex items-center gap-3 bg-av-blue p-4">
-                                            <span className="w-7 h-7 bg-av-orange rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">{step.num}</span>
-                                            <h4 className="font-montserrat font-bold text-white text-sm">{step.title}</h4>
-                                        </div>
-                                        <div className="p-4 bg-white">
-                                            <p className="text-gray-600 text-xs leading-relaxed">{step.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* Class 1 Validity & Fees */}
-                            <div className="grid sm:grid-cols-2 gap-4 mb-10">
-                                <div className="bg-av-light rounded-xl p-5 border border-av-sky/20">
-                                    <h4 className="font-montserrat font-bold text-av-blue mb-3">Validity & Renewal</h4>
-                                    <ul className="space-y-1 text-xs text-gray-600">
-                                        <li><span className="font-semibold text-av-blue">Under 40 (Multi-crew Operations):</span> Valid for 12 months.</li>
-                                        <li><span className="font-semibold text-av-blue">Over 40 (Single-crew Operations):</span> Valid for six months.</li>
-                                    </ul>
-                                </div>
-                                <div className="bg-av-light rounded-xl p-5 border border-av-sky/20">
-                                    <h4 className="font-montserrat font-bold text-av-blue mb-3">Fees</h4>
-                                    <ul className="space-y-1 text-xs text-gray-600">
-                                        <li><span className="font-semibold text-av-blue">Air Force Hospital:</span> INR 4,000 – 5,000</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            {/* Order */}
+                            <h2 id="order" className={H2}>The order to do things in</h2>
+                            <p className={P}>{MED.timingAdvice}</p>
+                            <p className={P}>
+                                The licence ladder those classes attach to runs{' '}
+                                {LICENCES.map((l) => `${l.code} from age ${l.minAge}`).join(', ')}. The{' '}
+                                <Link href="/dgca-computer-number" className={A}>computer number</Link> and the{' '}
+                                <Link href="/dgca-pariksha" className={A}>written papers</Link> are a separate track and need no
+                                medical certificate at all — a point worth knowing, because waiting for a medical before registering
+                                for examinations costs students a session every year.
+                            </p>
 
                             {/* FAQs */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-5">Frequently Asked Questions (FAQs)</h3>
+                            <h2 id="faqs" className={H2}>Frequently asked questions</h2>
                             <div className="space-y-3 mb-10">
-                                {faqs.map((faq, i) => (
-                                    <details key={faq.q} className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 group cursor-pointer">
-                                        <summary className="font-montserrat font-bold text-av-blue text-sm list-none flex justify-between items-center">
-                                            {i + 1}. {faq.q}
-                                            <span className="text-av-orange ml-4 flex-shrink-0 group-open:rotate-45 transition-transform">+</span>
-                                        </summary>
-                                        <p className="text-gray-500 text-xs leading-relaxed mt-4 pt-4 border-t border-gray-100">{faq.a}</p>
+                                {faqs.map((faq) => (
+                                    <details key={faq.q} className="border border-gray-200 rounded-xl p-4">
+                                        <summary className="font-semibold text-av-blue text-sm cursor-pointer">{faq.q}</summary>
+                                        <p className="text-gray-600 text-sm leading-relaxed mt-2">{faq.a}</p>
                                     </details>
                                 ))}
                             </div>
 
-                            {/* CTA Banner */}
-                            <div className="bg-av-blue rounded-2xl p-8 text-center">
-                                <h3 className="font-montserrat text-xl font-bold text-white mb-3">Need Help with DGCA Medical or Pilot Training?</h3>
-                                <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-5">
-                                    Join our Pilot Training course for Clear class Medical 2 Exam. We One Aviation Academy helps students with DGCA medical guidance, computer number registration, and full exam preparation. ✈️
-                                </p>
-                                <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
-                                    Book Free Counselling
-                                </Link>
-                            </div>
+                            {/* Sources */}
+                            <h2 id="sources" className={H2}>Sources</h2>
+                            <p className={P}>Read on {CHECKED_ON}. Where two of these disagree, the later one governs and this page says so.</p>
+                            <ul className="space-y-2 mb-10">
+                                {MED.sources.map((s) => (
+                                    <li key={s.url} className="flex gap-2 items-start text-sm text-gray-600">
+                                        <span className="text-av-orange font-bold flex-shrink-0">–</span>
+                                        <a href={s.url} target="_blank" rel="noopener noreferrer" className={A}>{s.label}</a>
+                                    </li>
+                                ))}
+                            </ul>
 
+                            {/* CTA */}
+                            <div className="bg-av-blue rounded-2xl p-8">
+                                <h3 className="font-montserrat text-xl font-bold text-white mb-3">Not sure which medical to book first?</h3>
+                                <p className="text-white/70 text-sm leading-relaxed mb-4">
+                                    We do not conduct medicals and we have no influence over the result — that sits entirely with the
+                                    examiner DGCA authorises. What we can do is tell you which class your intended licence needs, where
+                                    the approved centres are, and how to sequence the medical against your ground classes and
+                                    examinations so you are not waiting on one to start the other.
+                                </p>
+                                <div className="flex flex-wrap gap-3">
+                                    <Link href="/contact" className="inline-block bg-av-orange text-white px-7 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
+                                        Talk to a counsellor
+                                    </Link>
+                                    <Link href="/dgca-ground-classes" className="inline-block bg-white/10 text-white px-7 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
+                                        DGCA ground classes
+                                    </Link>
+                                </div>
+                            </div>
                         </ScrollReveal>
                     </div>
 
                     {/* Sidebar */}
                     <div className="space-y-6">
                         <ScrollReveal delay={200}>
-                            <LeadForm title="Get Medical Guidance" />
+                            <LeadForm title="Ask About the DGCA Medical" />
                         </ScrollReveal>
 
                         <ScrollReveal delay={300}>
-                            <div className="bg-av-blue rounded-2xl p-6 text-white">
-                                <h4 className="font-montserrat font-bold mb-4">Class 2 vs Class 1</h4>
-                                <div className="space-y-3 text-xs text-white/80">
-                                    <div>
-                                        <p className="font-semibold text-av-orange mb-1">Class 2 Medical</p>
-                                        <p>For: SPL / PPL students</p>
-                                        <p>Valid: 24 months</p>
-                                        <p>Cost: ₹3,000 – ₹8,000</p>
-                                    </div>
-                                    <div className="border-t border-white/20 pt-3">
-                                        <p className="font-semibold text-av-orange mb-1">Class 1 Medical</p>
-                                        <p>For: CPL / ATPL holders</p>
-                                        <p>Valid: 6–12 months</p>
-                                        <p>Cost: ₹4,000 – ₹5,000</p>
-                                    </div>
-                                </div>
+                            <div className="bg-av-orange rounded-2xl p-6 text-white">
+                                <h4 className="font-montserrat font-bold mb-3">At a glance</h4>
+                                <p className="text-white/90 text-sm font-semibold">Class 1</p>
+                                <p className="text-white/70 text-xs mb-3">CPL and ATPL · 1 year to age 60, then 6-monthly</p>
+                                <p className="text-white/90 text-sm font-semibold">Class 2</p>
+                                <p className="text-white/70 text-xs mb-3">SPL and PPL · 2 years to age 50, then 1 year</p>
+                                <p className="text-white/90 text-sm font-semibold">Class 3</p>
+                                <p className="text-white/70 text-xs">Air traffic controllers</p>
+                                <a href={ACADEMY.whatsapp} target="_blank" rel="noopener noreferrer"
+                                    className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
+                                    Ask a question
+                                </a>
                             </div>
                         </ScrollReveal>
 
                         <ScrollReveal delay={400}>
-                            <div className="bg-av-orange rounded-2xl p-6 text-white">
-                                <h4 className="font-montserrat font-bold mb-2">Quick Links</h4>
-                                <p className="text-white/80 text-sm mb-3">Official Portals:</p>
-                                <div className="space-y-2 text-xs text-white/80">
-                                    <p>🌐 egca.gov.in</p>
-                                    <p>🌐 pariksha.dgca.gov.in</p>
-                                    <p>🌐 dgca.gov.in</p>
-                                </div>
-                                <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer"
-                                    className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
-                                    Get Free Help
-                                </a>
+                            <div className="bg-av-blue rounded-2xl p-6 text-white">
+                                <h4 className="font-montserrat font-bold mb-3">Approved centres in Delhi NCR</h4>
+                                <ul className="space-y-2 text-sm text-white/80">
+                                    {ncrCentres.map((c) => (
+                                        <li key={c.name}>✓ {c.name} — {c.city}</li>
+                                    ))}
+                                </ul>
+                                <p className="text-white/50 text-xs mt-3">DGCA list as of {MED.centresAsOf}</p>
+                            </div>
+                        </ScrollReveal>
+
+                        <ScrollReveal delay={500}>
+                            <div className="border border-gray-200 rounded-2xl p-6">
+                                <h4 className="font-montserrat font-bold text-av-blue mb-3 text-sm">Next steps</h4>
+                                <ul className="space-y-2 text-sm">
+                                    <li><Link href="/dgca-computer-number" className={A}>DGCA computer number</Link></li>
+                                    <li><Link href="/dgca-pariksha" className={A}>DGCA Pariksha: papers and fees</Link></li>
+                                    <li><Link href="/commercial-pilot-license-eligibility" className={A}>CPL eligibility</Link></li>
+                                    <li><Link href="/student-pilot-license-spl" className={A}>Student Pilot Licence</Link></li>
+                                    <li><Link href="/dgca-ground-classes" className={A}>DGCA ground classes</Link></li>
+                                </ul>
                             </div>
                         </ScrollReveal>
                     </div>
-                </div>
+                </section>
             </section>
         </Layout>
     );

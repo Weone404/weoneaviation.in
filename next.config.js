@@ -414,8 +414,10 @@ const nextConfig = {
       },
       
       {
+        // Repointed 2026-09-11 from /commercial-pilot-license-eligibility now
+        // that the medical page it was always about exists again.
         source: '/how-to-obtain-dgca-class-2-class-1-medical',
-        destination: '/commercial-pilot-license-eligibility',
+        destination: '/dgca-class-2-class-1-medical',
         permanent: true,
       },
       
@@ -582,14 +584,16 @@ const nextConfig = {
       { source: '/faq', destination: '/faqs', permanent: true },
       { source: '/pilot-course-training-in-india', destination: '/pilot-training-in-india', permanent: true },
       /*
-       * The dedicated DGCA medical-class page. Its slug, title, H1 and whole
-       * subject were the Class 1 / Class 2 distinction, which sits on the
-       * unsourced list in scripts/check-claims.js. Sanitising the copy would
-       * have left the URL asserting what the page no longer said, so the route
-       * retires to the sanitised eligibility page instead. Internal links and
-       * the Navbar entry were repointed in the same pass.
+       * RESTORED 2026-09-11. This route was retired in the 2026-08 claims pass
+       * because the Class 1 / Class 2 distinction — its whole subject — could
+       * not be sourced, and a URL that asserts what its page no longer says is
+       * worse than no URL. The CAR that sets the distinction has since been
+       * found (Section 7, Series 'C', Part I, Rev. 6 of 18 October 2022,
+       * with rules 39B and 39C behind it), so the page is back and rendered
+       * from lib/facts.js MEDICAL_STANDARDS. The redirect below is deleted
+       * rather than commented, because a 301 to the eligibility page was
+       * sending away every search for a medical class.
        */
-      { source: '/dgca-class-2-class-1-medical', destination: '/commercial-pilot-license-eligibility', permanent: true },
       /*
        * Capitalised slugs retired.
        *

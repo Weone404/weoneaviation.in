@@ -51,6 +51,19 @@ DGCA Computer Number and exam booking (checked 11 September 2026 against the DGC
 - 2026 sessions, published by DGCA as tentative — regular: 10–14 March, 16–20 June, 22–26 September, 15–19 December. OLODE: 21–23 January, 4–6 February, 22–24 April, 20–22 May, 15–17 July, 19–21 August, 28–30 October, 18–20 November.
 - Full sourced guide: https://weoneaviation.in/dgca-computer-number
 
+DGCA medical, Class 1 and Class 2 (checked 11 September 2026 against Aircraft Rules 1937 rules 39B and 39C, CAR Section 7 Series 'C' Part I Rev. 6 of 18 October 2022, and DGCA's list of approved centres updated 27 August 2026):
+
+- Class 1 is required for the Commercial Pilot Licence and the Airline Transport Pilot Licence (aeroplane and helicopter), and for a Private Pilot Licence where instrument rating privileges are required. Valid one year up to age 60, six-monthly thereafter; six-monthly above 40 for single-crew operations.
+- Class 2 is required for the Private Pilot Licence, microlight pilot licence, the Student Pilot Licence in all its forms, and Flight Radio Telephone Operator Licences. Valid two years up to age 50, one year thereafter.
+- Class 3 is for air traffic controller licences: four years up to 40, two years from 40 to 50, one year above 50.
+- Rule 39C was amended on 27 December 2019 to raise the age limit for Class 1 validity from forty years to sixty. Sources still placing the six-monthly band at 40 are quoting the pre-2020 rule.
+- Class 1 is conducted at Air Force medical centres, approved civil medical centres and by DGCA-empanelled Class 1 examiners; Class 2 also by Class 2 examiners holding an MBBS with approved aviation medicine training.
+- DGCA listed 13 approved centres as of 27 August 2026 — 3 Air Force and 10 civil. Four are in Delhi and the NCR: AFCME New Delhi, Indraprastha Apollo New Delhi, Max Multi Specialty Centre New Delhi, and Medanta in Gurugram.
+- The examination covers physical and mental, visual and colour perception, and hearing, against ICAO Annex 1 Chapter 6 paragraphs 6.3.2 to 6.3.4. No pass rate is published.
+- A computer number and the written examinations need no medical certificate. Full sourced guide: https://weoneaviation.in/dgca-class-2-class-1-medical
+
+DGCA examination pass marks (CAR Section 7, Series 'B', Part I, Rev. 2 of 13 February 2019): 70% in the theoretical knowledge examination of each subject, per subject, not an aggregate (para 5.6). Oral examinations: 50% for SPL and Glider, 70% for ATPL and the instructor ratings (para 5.7). A failed first ATPL oral allows two further chances within two years. Passed papers must fall within two and a half years before the licence application, except for CPL and ATPL where the period is five years (para 6.7).
+
 Academy facts: founded 2009; located at C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, New Delhi 110077; phone +91-9667370747; email info.weoneaviation@gmail.com.
 
 ## Courses
