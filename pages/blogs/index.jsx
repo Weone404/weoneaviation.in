@@ -3,13 +3,20 @@ import Link from 'next/link';
 import NextImage from 'next/image';
 import { MongoClient } from 'mongodb';
 
+/*
+ * These five mirror the posts in pages/blogs/[id].jsx and must match them
+ * exactly. Corrected 2026-09-11: the titles and dates here read 2026 while the
+ * posts themselves read 2024, so every card advertised a publication date in
+ * the future. The post is the source of truth — change it there first, then
+ * here. Never ship a date later than the day of the build.
+ */
 const hardcodedBlogs = [
-    { id: 1, title: 'How to Become a Commercial Pilot in India – Complete 2026 Guide', excerpt: 'Everything you need to know about becoming a CPL holder in India – eligibility, DGCA exams, costs, flying hours, and career prospects.', category: 'CPL Guide', readTime: '8 min', date: 'Dec 15, 2026', img: '/how to Become a Commercial pilot in India.jpeg', faqs: [] },
-    { id: 2, title: 'DGCA Written Exams: Subjects, Pattern & Preparation Tips', excerpt: 'Prepare for the five DGCA written papers, with RTR (A) examined separately. Know the syllabus, the exam pattern, and how papers are cleared one at a time.', category: 'DGCA', readTime: '6 min', date: 'Dec 10, 2026', img: '/Dgca written exam subject pattern and preparation tips.jpeg', faqs: [] },
-    { id: 3, title: 'CPL Training in India vs Abroad – Which is Better?', excerpt: 'Pros and cons of training in India vs USA, Canada, Australia. Cost comparison, timelines, and license conversion process explained.', category: 'Training', readTime: '7 min', date: 'Dec 5, 2026', img: '/Cpl training in india vs abroad which is better.jpeg', faqs: [] },
-    { id: 4, title: 'Pilot Salary in India 2026 – Complete Breakdown by Airline', excerpt: 'How much do pilots earn in India? Salary breakdown for trainee pilots, first officers, and captains at IndiGo, Air India, SpiceJet.', category: 'Career', readTime: '5 min', date: 'Nov 28, 2026', img: '/salary.webp', faqs: [] },
-    { id: 5, title: 'Medical Requirements to Become a Pilot in India', excerpt: 'Detailed guide on DGCA medical requirements, what conditions are disqualifying, and how to prepare for the medical exam.', category: 'Medical', readTime: '6 min', date: 'Nov 20, 2026', img: '/Pilot-Salary.webp', faqs: [] },
-    // { id: 6, title: 'How to Become a Pilot After 12th Science – Step-by-Step', excerpt: 'A complete roadmap for 12th PCM students aspiring to become commercial pilots. Colleges, entrance exams, fees, and timelines.', category: 'After 12th', readTime: '9 min', date: 'Nov 15, 2026', img: '/Pilot-Salary.webp' },
+    { id: 1, title: 'How to Become a Commercial Pilot in India – Complete 2024 Guide', excerpt: 'Everything you need to know about becoming a CPL holder in India – eligibility, DGCA exams, costs, flying hours, and career prospects.', category: 'CPL Guide', readTime: '8 min', date: 'Dec 15, 2024', img: '/how to Become a Commercial pilot in India.jpeg', faqs: [] },
+    { id: 2, title: 'DGCA Written Exams: Subjects, Pattern & Preparation Tips', excerpt: 'Prepare for the five DGCA written papers, with RTR (A) examined separately. Know the syllabus, the exam pattern, and how papers are cleared one at a time.', category: 'DGCA', readTime: '6 min', date: 'Dec 10, 2024', img: '/Dgca written exam subject pattern and preparation tips.jpeg', faqs: [] },
+    { id: 3, title: 'CPL Training in India vs Abroad – Which is Better?', excerpt: 'Pros and cons of training in India vs USA, Canada, Australia. Cost comparison, timelines, and license conversion process explained.', category: 'Training', readTime: '7 min', date: 'Dec 5, 2024', img: '/Cpl training in india vs abroad which is better.jpeg', faqs: [] },
+    { id: 4, title: 'Pilot Salary in India 2024 – Complete Breakdown by Airline', excerpt: 'How much do pilots earn in India? Salary breakdown for trainee pilots, first officers, and captains at IndiGo, Air India, SpiceJet.', category: 'Career', readTime: '5 min', date: 'Nov 28, 2024', img: '/salary.webp', faqs: [] },
+    { id: 5, title: 'Medical Requirements to Become a Pilot in India', excerpt: 'Detailed guide on DGCA medical requirements, what conditions are disqualifying, and how to prepare for the medical exam.', category: 'Medical', readTime: '6 min', date: 'Nov 20, 2024', img: '/Pilot-Salary.webp', faqs: [] },
+    // { id: 6, title: 'How to Become a Pilot After 12th Science – Step-by-Step', excerpt: 'A complete roadmap for 12th PCM students aspiring to become commercial pilots. Colleges, entrance exams, fees, and timelines.', category: 'After 12th', readTime: '9 min', date: 'Nov 15, 2024', img: '/Pilot-Salary.webp' },
 ];
 
 /*

@@ -37,6 +37,19 @@ DGCA written papers for a CPL: Air Navigation, Aviation Meteorology, Air Regulat
 
 ATPL experience: the table in Schedule II Section M was amended by G.S.R. 22(E) of 7 January 2020 and again by G.S.R. 731(E) of 10 October 2023. Any hours figure from an older source may be out of date — confirm against the current notified Schedule.
 
+DGCA Computer Number and exam booking (checked 11 September 2026 against the DGCA Pariksha FAQ, the Flight Crew User Manual Issue III Rev 0 of October 2024, the official rejection-reasons list and the Programme of Examinations 2026):
+
+- The computer number is the identification number the Central Examination Organisation (CEO), DGCA — East Block III, Level III, R.K. Puram, New Delhi 110066 — allots for flight crew examinations, under Rule 41A of the Aircraft Rules, 1937.
+- Apply online only, at pariksha.dgca.gov.in. Minimum age 16; no maximum age. Lifetime validity; one number per candidate. Issued within 15 working days of a complete application. No hard copy and no notary attestation for the computer number application (separately, the examination application PDF with documents must reach CEO for a new candidate).
+- Education: every category other than PPL needs 10+2 passed with Physics and Mathematics; both the marksheet and the pass certificate are needed for Class 10 and Class 12.
+- A Board Verification Certificate is mandatory for every new candidate for Class 10 and Class 12. Addressed to CEO or "To Whomsoever": processed on the original already being at CEO. Addressed to the flying school: upload a copy attested by the Chief Flying Instructor. Addressed to the candidate: attested or self-attested copy. Coloured photocopies are not accepted.
+- Name exactly as on the Class 10 marksheet or the passport, whichever was issued later; a mismatch in basic details causes complete rejection. Date of birth proved only by the Class 10 certificate and marksheet or a birth certificate — not by Aadhaar.
+- Uploads: photograph JPG up to 70 KB (45 × 35 mm, white background, face about 70%, under 3 months old); signature JPG up to 20 KB (20 × 45 mm); marksheets and pass certificates PDF up to 500 KB; date-of-birth, board verification, equivalence, address, Aadhaar and other certificates PDF up to 100 KB; logbook, passport and visa PDF up to 200 KB. Nothing can be added after Final Submit.
+- Rejection: partial rejection is corrected under the same Temporary ID, a maximum of three times; complete rejection means applying again as a fresh applicant. Appeals go to the Director, CEO — ceo.dgca@nic.in, by post, or in person Tuesday and Thursday 3 PM to 5 PM.
+- Examination fees: ₹2,500 per paper in a regular session, ₹5,000 per paper for an Online On-Demand Examination (OLODE), ₹500 per oral paper for the second and third attempt only. Payment through Bharatkosh only, completed by 2300 hrs on the closing date; no change or refund once submitted. One application per session, two centre choices, one specific-aircraft paper per session.
+- 2026 sessions, published by DGCA as tentative — regular: 10–14 March, 16–20 June, 22–26 September, 15–19 December. OLODE: 21–23 January, 4–6 February, 22–24 April, 20–22 May, 15–17 July, 19–21 August, 28–30 October, 18–20 November.
+- Full sourced guide: https://weoneaviation.in/dgca-computer-number
+
 Academy facts: founded 2009; located at C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, New Delhi 110077; phone +91-9355611996; email info.weoneaviation@gmail.com.
 
 ## Courses

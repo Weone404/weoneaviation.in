@@ -91,23 +91,23 @@ const hardcodedBlogs = [
         img: 'https://images.unsplash.com/photo-1569629743817-70d8db6c323b?w=1200&q=80',
         content: `
       <h2>Overview of DGCA Written Exams</h2>
-      <p>To obtain a CPL in India, candidates must pass 9 written examinations conducted by the DGCA.</p>
+      <p>To obtain a CPL in India, candidates clear <strong>five</strong> DGCA written papers. RTR (A) is required as well, but it is examined separately under its own rules rather than as a sixth DGCA paper.</p>
 
-      <h2>The 9 DGCA Exam Subjects</h2>
+      <h2>The 5 DGCA Written Papers</h2>
       <ul>
         <li>Air Navigation</li>
         <li>Aviation Meteorology</li>
         <li>Air Regulations</li>
         <li>Technical General (Airframes &amp; Engines)</li>
         <li>Technical Specific (Aircraft Type)</li>
-        <li>Radio Telephony (RTR)</li>
-        <li>Instruments &amp; Electronics</li>
-        <li>Aviation Medicine</li>
-        <li>Principles of Flight</li>
       </ul>
+      <p>Aviation Medicine, Human Performance, Instruments and Principles of Flight are taught as part of the syllabus above — they are not separate DGCA papers. Lists of "9 DGCA subjects" count these, and RTR (A), as papers of their own.</p>
 
       <h2>Exam Pattern</h2>
-      <p>Each exam consists of MCQs. The passing score is <strong>70%</strong> and you have up to <strong>6 attempts</strong> per subject.</p>
+      <p>Each paper consists of MCQs, and papers are cleared one at a time rather than in a single sitting. The passing score is <strong>70%</strong>.</p>
+
+      <h2>Examination Fees</h2>
+      <p>DGCA charges <strong>&#8377;2,500</strong> per paper in a regular session and <strong>&#8377;5,000</strong> per paper in an Online On-Demand Examination (OLODE). Payment is made through Bharatkosh, and the fee is not refunded or carried to a later session. See our <a href="/dgca-computer-number">DGCA computer number guide</a> for the sourced fee and session details.</p>
 
       <h2>Preparation Tips</h2>
       <div class="steps-list">

@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import NextImage from 'next/image';
+import { PARIKSHA, inr } from '../lib/facts';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -68,26 +69,34 @@ const examPattern = [
     { label: 'Passing Marks', value: 'Minimum of 70% in each subject to pass', highlight: true },
 ];
 
+/*
+ * The four steps DGCA actually describes, in order. The previous version told
+ * students to upload "medical certificates" at step two — nothing in the
+ * Pariksha FAQ or the Flight Crew User Manual asks for a medical certificate
+ * at any point in the examination or computer-number flow, and a student who
+ * waits for a medical before registering loses a session for no reason.
+ * Sourced from lib/facts.js PARIKSHA — see the provenance note there.
+ */
 const applySteps = [
     {
         num: '01',
-        title: 'Register on the DGCA Pariksha Portal',
-        desc: 'Create an account on the DGCA website through the DGCA exam website. Fill in all required personal and educational details.',
+        title: 'Get your computer number first',
+        desc: 'No paper can be booked without one. It is a separate online application, issued within ' + PARIKSHA.processing.days + ' working days.',
     },
     {
         num: '02',
-        title: 'Upload Required Documents',
-        desc: 'Educational certificates, ID proof, and medical certificates.',
+        title: 'Wait for the session public notice',
+        desc: 'CEO opens each session on the Pariksha portal with a public notice giving the exact application window and closing date.',
     },
     {
         num: '03',
-        title: 'Select Subjects and Exam Date',
-        desc: 'Choose the subjects you wish to appear for in the upcoming session.',
+        title: 'Fill the examination form',
+        desc: 'One application per session. Pick your papers and fill two choices of centre — the second is used if the first cannot be allotted.',
     },
     {
         num: '04',
-        title: 'Pay the Exam Fee',
-        desc: 'Submit the application fee online and confirm the payment.',
+        title: 'Pay through Bharatkosh by 2300 hrs',
+        desc: 'Payment is made only through the Government of India NTRP portal Bharatkosh. Complete it by 2300 hrs on the closing date; the fee is not refunded or adjusted afterwards.',
     },
 ];
 
@@ -99,12 +108,19 @@ const prepTips = [
     { icon: '⏱️', tip: 'Focus on Time Management: Practicing within time limits helps build confidence for the actual exam.' },
 ];
 
+/*
+ * Corrected 2026-09-11: this list previously asked for a "medical fitness
+ * certificate" and included a payment step. Neither appears in any Pariksha
+ * document for the computer-number application. The full, sourced version of
+ * this process lives on /dgca-computer-number — keep this summary short and
+ * send the reader there rather than duplicating it.
+ */
 const computerNumberSteps = [
-    { num: '01', title: 'Create a DGCA Account', desc: 'You will need to register on the DGCA portal to start the process.' },
-    { num: '02', title: 'Fill in the Details', desc: 'Provide accurate personal, educational, and medical details as required.' },
-    { num: '03', title: 'Upload Required Documents', desc: 'Submit documents such as your educational certificates, medical fitness certificate, and identity proof.' },
-    { num: '04', title: 'Payment', desc: 'Pay the applicable fees to complete the application process.' },
-    { num: '05', title: 'Computer Number Issuance', desc: 'Once your application is processed, DGCA will issue a unique computer number. This number will be required to apply for exams and track your results.' },
+    { num: '01', title: 'Register on the Pariksha portal', desc: 'NEW Candidate Registration at pariksha.dgca.gov.in. Enter your name, date of birth and parents\u2019 names exactly as on your Class 10 record.' },
+    { num: '02', title: 'Activate within 24 hours', desc: 'The activation link emailed to you is valid for 24 hours only. After that you have to register again.' },
+    { num: '03', title: 'Complete the application', desc: 'Addresses, category, nationality, any licence held, flying details and your education record with subjects.' },
+    { num: '04', title: 'Upload the documents', desc: 'Class 10 and Class 12 marksheets and pass certificates, the Board Verification Certificate for both, date-of-birth proof and address proof. Photo and signature as JPG; everything else as PDF.' },
+    { num: '05', title: 'Final Submit, then wait', desc: 'Nothing can be added afterwards. A Temporary ID is issued, and the computer number follows within ' + PARIKSHA.processing.days + ' working days of a complete application.' },
 ];
 
 const importantQueries = [
@@ -161,8 +177,8 @@ const relatedBlogs = [
 export default function DGCAParikshaPage() {
     return (
         <Layout
-            title="DGCA Pariksha – Complete Guide 2025 | Eligibility, Syllabus, Exam Pattern"
-            description="Complete guide to DGCA Pariksha 2025. Learn about eligibility, syllabus, exam pattern, how to apply, computer number, DGCA WR office, preparation tips, and FAQs."
+            title="DGCA Pariksha 2026: Exam Fees, Dates, How to Apply"
+            description="DGCA Pariksha 2026: the four regular session dates, eight OLODE sessions, fees per paper, booking rules, eligibility, syllabus and how to apply on the portal."
         >
 
             {/* ── Hero Banner ── */}
@@ -344,6 +360,94 @@ export default function DGCAParikshaPage() {
                             </div>
                         </ScrollReveal>
                     </div>
+                </div>
+            </section>
+
+            {/* ── Fees and 2026 calendar (sourced: lib/facts.js PARIKSHA) ── */}
+            <section className="py-20 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <ScrollReveal className="text-center mb-4">
+                        <div className="section-tag">Fees &amp; Dates</div>
+                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
+                            Exam Fees and <span className="text-av-orange">2026 Session Dates</span>
+                        </h2>
+                    </ScrollReveal>
+                    <p className="text-center text-gray-500 text-xs max-w-2xl mx-auto mb-10">
+                        Checked against DGCA Pariksha documents on 11 September 2026.{' '}
+                        <a href={PARIKSHA.portal} target="_blank" rel="noopener noreferrer" className="text-av-blue font-semibold hover:text-av-orange transition-colors">
+                            Confirm on pariksha.dgca.gov.in
+                        </a>{' '}before you pay — see our{' '}
+                        <Link href="/dgca-computer-number" className="text-av-blue font-semibold hover:text-av-orange transition-colors">
+                            computer number guide
+                        </Link>{' '}for the full sourced process.
+                    </p>
+
+                    <div className="grid lg:grid-cols-3 gap-6 mb-8">
+                        <div className="overflow-x-auto rounded-2xl shadow">
+                            <table className="w-full text-sm">
+                                <thead>
+                                    <tr className="bg-av-blue text-white">
+                                        <th className="px-5 py-3 text-left" colSpan={2}>Fee per paper</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr className="bg-white">
+                                        <td className="px-5 py-3 text-xs font-semibold text-av-blue">Regular session</td>
+                                        <td className="px-5 py-3 text-xs font-bold text-av-orange">{inr(PARIKSHA.fees.regularPerPaper)}</td>
+                                    </tr>
+                                    <tr className="bg-gray-50">
+                                        <td className="px-5 py-3 text-xs font-semibold text-av-blue">Online On-Demand (OLODE)</td>
+                                        <td className="px-5 py-3 text-xs font-bold text-av-orange">{inr(PARIKSHA.fees.olodePerPaper)}</td>
+                                    </tr>
+                                    <tr className="bg-white">
+                                        <td className="px-5 py-3 text-xs font-semibold text-av-blue">Oral paper</td>
+                                        <td className="px-5 py-3 text-xs font-bold text-av-orange">{inr(PARIKSHA.fees.oralPerPaper)}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p className="bg-white px-5 py-3 text-[11px] text-gray-500 leading-relaxed">
+                                {PARIKSHA.fees.oralNote} {PARIKSHA.fees.serviceCharge}
+                            </p>
+                        </div>
+
+                        <div className="overflow-x-auto rounded-2xl shadow">
+                            <table className="w-full text-sm">
+                                <thead>
+                                    <tr className="bg-av-blue text-white">
+                                        <th className="px-5 py-3 text-left" colSpan={2}>Regular examinations 2026</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {PARIKSHA.calendar2026.regular.map((row, i) => (
+                                        <tr key={row.session} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                                            <td className="px-5 py-3 text-xs font-semibold text-av-blue whitespace-nowrap">{row.session}</td>
+                                            <td className="px-5 py-3 text-xs text-gray-600">{row.dates}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div className="overflow-x-auto rounded-2xl shadow">
+                            <table className="w-full text-sm">
+                                <thead>
+                                    <tr className="bg-av-blue text-white">
+                                        <th className="px-5 py-3 text-left" colSpan={2}>OLODE sessions 2026</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {PARIKSHA.calendar2026.olode.map((row, i) => (
+                                        <tr key={row.session} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                                            <td className="px-5 py-3 text-xs font-semibold text-av-blue whitespace-nowrap">{row.session}</td>
+                                            <td className="px-5 py-3 text-xs text-gray-600">{row.dates}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <p className="text-center text-xs text-gray-500 max-w-3xl mx-auto">{PARIKSHA.calendar2026.tentative}</p>
                 </div>
             </section>
 
