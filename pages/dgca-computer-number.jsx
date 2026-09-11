@@ -210,7 +210,7 @@ const faqs = [
     },
     {
         q: 'Who do I contact if the portal will not accept my application?',
-        a: `Email ${PARIKSHA.help.email}. ${PARIKSHA.help.portalDesk} For a complete rejection you disagree with, the appeal route is to the Director, CEO — by email to ${PARIKSHA.rejection.appeal.email}, by post, or in person on ${PARIKSHA.rejection.appeal.inPerson.replace('Tuesday and Thursday, ', 'Tuesday and Thursday between ').replace(', at the same address.', '.')}`,
+        a: `Email ${PARIKSHA.help.email}. ${PARIKSHA.help.portalDesk} For a complete rejection you disagree with, the appeal route is to the Director, CEO — by email to ${PARIKSHA.rejection.appeal.email}, by post, or in person ${PARIKSHA.rejection.appeal.inPerson.replace(', at the same address.', '.')}`,
     },
 ];
 
