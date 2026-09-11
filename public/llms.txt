@@ -51,6 +51,17 @@ DGCA Computer Number and exam booking (checked 11 September 2026 against the DGC
 - 2026 sessions, published by DGCA as tentative — regular: 10–14 March, 16–20 June, 22–26 September, 15–19 December. OLODE: 21–23 January, 4–6 February, 22–24 April, 20–22 May, 15–17 July, 19–21 August, 28–30 October, 18–20 November.
 - Full sourced guide: https://weoneaviation.in/dgca-computer-number
 
+eGCA versus DGCA Pariksha — the two DGCA portals (checked 11 September 2026 against PIB releases of 30 December 2019, 22 December 2022 and 21 January 2026, and DGCA's own eGCA user manuals):
+
+- Pariksha is the examination portal: computer number, booking and paying for written papers, results. Conducted under rule 41A of the Aircraft Rules, 1937.
+- eGCA is the licensing portal: issuance, renewal and endorsement of licences, the e-logbook, and medical assessment records. It is a single window platform through which the approvals, certificates and licences issued by DGCA are applied for online. Address: https://egca.gov.in
+- They meet at one field: the computer number allotted by Pariksha appears in the basic details section of the eGCA licence application. Neither replaces the other.
+- eGCA Phase 1 launched on 30 December 2019, automating issue of the CPL (Aeroplane) with FRTOL and Instrument Rating, and starting online Class 1 renewal medical assessment.
+- Electronic Personnel Licence: a secure digital licence with ICAO-aligned security features for authenticity, tamper prevention and real-time verification, accessed through the eGCA mobile application. Rolled out for CPL and FRTOL(R) in February 2025, and for ATPL on 21 January 2026.
+- Before a CPL application on eGCA a candidate needs: an eGCA ID; a valid Class 1 medical certificate and assessment sheet; a valid FRTOL or FRTOL(R) with RTR certificate; an e-logbook updated and e-validated by the flying training organisation; English Language Proficiency at Level 4 or above; and the written examinations conducted by the Central Examination Organisation.
+- Licence service fees are paid through Bharatkosh within 48 hours of submission. The date of submission to DGCA is the date the whole process including payment completes. There is no provision to correct an application once submitted, and e-logbook entries made after submission are not considered for that application.
+- Full sourced guide: https://weoneaviation.in/ecga-login-your-complete-guide
+
 DGCA medical, Class 1 and Class 2 (checked 11 September 2026 against Aircraft Rules 1937 rules 39B and 39C, CAR Section 7 Series 'C' Part I Rev. 6 of 18 October 2022, and DGCA's list of approved centres updated 27 August 2026):
 
 - Class 1 is required for the Commercial Pilot Licence and the Airline Transport Pilot Licence (aeroplane and helicopter), and for a Private Pilot Licence where instrument rating privileges are required. Valid one year up to age 60, six-monthly thereafter; six-monthly above 40 for single-crew operations.
