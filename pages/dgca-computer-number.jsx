@@ -59,6 +59,7 @@ const heroSlides = [
 const contents = [
     ['what-it-is', 'What a computer number is'],
     ['key-facts', 'Key facts at a glance'],
+    ['routes', 'Two routes: DigiLocker or manual'],
     ['who-needs-it', 'Who needs one, and who does not'],
     ['documents', 'Documents and file sizes'],
     ['matching', 'Name, date of birth, address and AIU'],
@@ -81,6 +82,7 @@ const keyFacts = [
     ['Validity', PARIKSHA.basics.validity],
     ['How many', PARIKSHA.basics.oneOnly],
     ['Time to issue', PARIKSHA.processing.statement],
+    ['DigiLocker route', `Available since ${PARIKSHA.digilocker.since}. ${PARIKSHA.digilocker.allotment}`],
     ['Hard copy', PARIKSHA.hardCopy.computerNumber],
     ['Login after allotment', PARIKSHA.basics.loginAfterAllotment],
 ];
@@ -169,12 +171,20 @@ const faqs = [
         a: `${PARIKSHA.basics.minAge} years. ${PARIKSHA.basics.maxAgeNote} You do not need to have started flight training, and you do not need a medical certificate to apply.`,
     },
     {
+        q: 'Can I get a DGCA computer number instantly?',
+        a: `Yes, on the DigiLocker route, which DGCA opened on ${PARIKSHA.digilocker.since}. ${PARIKSHA.digilocker.allotment} You need Indian nationality, Class 10 and Class 12 from recognised boards whose records are in DigiLocker, and an Aadhaar that matches the DigiLocker data exactly. ${PARIKSHA.digilocker.failureMode}`,
+    },
+    {
         q: 'Do I need a Board Verification Certificate?',
         a: `Yes, if you are a new candidate. ${PARIKSHA.bvc.whoNeedsIt} Which copy you upload depends on who the certificate is addressed to — the three cases are set out in the BVC section above. ${PARIKSHA.bvc.noColourPhotocopies}`,
     },
     {
         q: 'How long does a computer number take?',
         a: `${PARIKSHA.processing.statement} ${PARIKSHA.processing.partialNote}`,
+    },
+    {
+        q: 'Has the Board Verification Certificate been abolished?',
+        a: `No. ${PARIKSHA.digilocker.bvcEffect} That is a waiver for those specific documents, under ${PARIKSHA.digilocker.bvcWaiverNotice}, not the end of the requirement. A candidate whose board does not publish to DigiLocker still needs it.`,
     },
     {
         q: 'Do I have to post hard copies of my documents?',
@@ -279,9 +289,9 @@ export default function DGCAComputerNumber() {
                                 <p className="text-gray-700 text-sm leading-relaxed">
                                     A DGCA computer number is the identification number the Central Examination Organisation allots
                                     to a candidate for DGCA flight crew examinations. You apply online at pariksha.dgca.gov.in from
-                                    age {PARIKSHA.basics.minAge}, with your Class 10 and Class 12 records, a Board Verification
-                                    Certificate and an address proof. It is issued within {PARIKSHA.processing.days} working days and
-                                    lasts a lifetime.
+                                    age {PARIKSHA.basics.minAge}. Register through DigiLocker and the number is allotted immediately,
+                                    with no Board Verification Certificate for the documents DigiLocker supplies. Apply manually and it
+                                    takes {PARIKSHA.processing.days} working days. Either way it lasts a lifetime.
                                 </p>
                             </div>
 
@@ -332,6 +342,62 @@ export default function DGCAComputerNumber() {
                                     </tbody>
                                 </table>
                             </div>
+
+                            {/* Two routes */}
+                            <h2 id="routes" className={H2}>Two routes: DigiLocker or manual</h2>
+                            <p className={P}>
+                                Most guides to this subject describe one process. Since {PARIKSHA.digilocker.since} there are two, and
+                                which one you are on decides whether you wait {PARIKSHA.processing.days} working days or no time at all.
+                                {' '}{PARIKSHA.digilocker.bvcEffect} That waiver came in on {PARIKSHA.digilocker.bvcWaiverSince} under{' '}
+                                {PARIKSHA.digilocker.bvcWaiverNotice}.
+                            </p>
+                            <div className="grid sm:grid-cols-2 gap-5 mb-6">
+                                <div className="border-2 border-av-orange rounded-xl p-5">
+                                    <p className="font-montserrat font-bold text-av-blue text-sm mb-1">Route 1 — DigiLocker</p>
+                                    <p className="text-av-orange text-xs font-bold mb-3">Number allotted immediately</p>
+                                    <p className="text-gray-600 text-sm leading-relaxed mb-3">{PARIKSHA.digilocker.allotment}</p>
+                                    <p className="font-semibold text-av-blue text-xs mb-1">You must meet all of these</p>
+                                    <ul className="space-y-1.5 mb-3">
+                                        {PARIKSHA.digilocker.conditions.map((c) => (
+                                            <li key={c} className="flex gap-2 items-start text-xs text-gray-600">
+                                                <span className="text-av-orange font-bold flex-shrink-0">✓</span>{c}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <p className="font-semibold text-av-blue text-xs mb-1">Pulled from DigiLocker for you</p>
+                                    <ul className="space-y-1.5 mb-3">
+                                        {PARIKSHA.digilocker.fetched.map((c) => (
+                                            <li key={c} className="flex gap-2 items-start text-xs text-gray-600">
+                                                <span className="text-av-orange font-bold flex-shrink-0">→</span>{c}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <p className="font-semibold text-av-blue text-xs mb-1">You still upload</p>
+                                    <ul className="space-y-1.5">
+                                        {PARIKSHA.digilocker.stillUpload.map((c) => (
+                                            <li key={c} className="flex gap-2 items-start text-xs text-gray-600">
+                                                <span className="text-av-orange font-bold flex-shrink-0">–</span>{c}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className="border border-gray-200 rounded-xl p-5">
+                                    <p className="font-montserrat font-bold text-av-blue text-sm mb-1">Route 2 — Manual</p>
+                                    <p className="text-gray-500 text-xs font-bold mb-3">{PARIKSHA.processing.days} working days</p>
+                                    <p className="text-gray-600 text-sm leading-relaxed mb-3">{PARIKSHA.digilocker.whoStillGoesManual}</p>
+                                    <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                                        This is the route the rest of this page describes: upload every document yourself, include the
+                                        Board Verification Certificate, and wait for scrutiny by the Central Examination Organisation.
+                                    </p>
+                                    <p className="text-av-orange text-sm font-semibold leading-relaxed">{PARIKSHA.digilocker.failureMode}</p>
+                                </div>
+                            </div>
+                            <p className={P}>
+                                One caution worth stating plainly, because it is being repeated wrongly elsewhere: the Board
+                                Verification Certificate has not been abolished. It is waived for the Class X and XII documents
+                                DigiLocker supplies, and for nothing else. If your board does not publish to DigiLocker, or the
+                                automatic check rejects you, you need it.
+                            </p>
 
                             {/* Who needs it */}
                             <h2 id="who-needs-it" className={H2}>Who needs one, and who does not</h2>
@@ -434,10 +500,10 @@ export default function DGCAComputerNumber() {
                             {/* BVC */}
                             <h2 id="bvc" className={H2}>The Board Verification Certificate</h2>
                             <p className={P}>
-                                This is the step most candidates have never heard of, and the one that sends applications back.
-                                {' '}{PARIKSHA.bvc.whoNeedsIt} It is a certificate from your education board confirming that the
-                                marksheet you uploaded is genuine — and which copy you may upload depends entirely on who the board
-                                addressed it to.
+                                This is the step most candidates have never heard of, and the one that sends applications back on
+                                the manual route. It is a certificate from your education board confirming that the marksheet you
+                                uploaded is genuine, and which copy you may upload depends entirely on who the board addressed it to.
+                                {' '}{PARIKSHA.bvc.whoNeedsIt}
                             </p>
                             <div className="space-y-3 mb-6">
                                 {PARIKSHA.bvc.cases.map((c, i) => (
