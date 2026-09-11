@@ -373,7 +373,7 @@ export default function DGCAParikshaPage() {
                         </h2>
                     </ScrollReveal>
                     <p className="text-center text-gray-500 text-xs max-w-2xl mx-auto mb-10">
-                        Checked against DGCA Pariksha documents on 11 September 2026.{' '}
+                        Checked against DGCA Pariksha documents on {PARIKSHA.verifiedOn.split('-').reverse().join('/')}.{' '}
                         <a href={PARIKSHA.portal} target="_blank" rel="noopener noreferrer" className="text-av-blue font-semibold hover:text-av-orange transition-colors">
                             Confirm on pariksha.dgca.gov.in
                         </a>{' '}before you pay — see our{' '}

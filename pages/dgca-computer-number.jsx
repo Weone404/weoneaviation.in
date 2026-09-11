@@ -38,6 +38,20 @@ import { PARIKSHA, inr, ACADEMY } from '../lib/facts';
 
 const CANONICAL = 'https://weoneaviation.in/dgca-computer-number';
 
+/*
+ * "2026-09-11" -> "11 September 2026". Hand-rolled for the same reason inr()
+ * is: toLocaleDateString('en-IN') silently falls back to US ordering on an
+ * ICU-light Node, and a "last checked" line that renders as September 11, 2026
+ * on one build and 11 September 2026 on the next is the sort of thing nobody
+ * notices until a reader does.
+ */
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+function longDate(iso) {
+    const [y, m, d] = iso.split('-');
+    return `${Number(d)} ${MONTHS[Number(m) - 1]} ${y}`;
+}
+const CHECKED_ON = longDate(PARIKSHA.verifiedOn);
+
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'DGCA Portal Guide', title: 'DGCA Computer', highlight: 'Number', sub: 'How to apply on the Pariksha portal — documents, file sizes, fees and 2026 exam dates' },
 ];
@@ -255,7 +269,7 @@ export default function DGCAComputerNumber() {
                             </h1>
 
                             <p className="text-xs text-gray-500 mb-6">
-                                Last checked against DGCA Pariksha documents on 11 September 2026. Every figure on this page is
+                                Last checked against DGCA Pariksha documents on {CHECKED_ON}. Every figure on this page is
                                 {' '}<a href="#sources" className={A}>sourced below</a>. DGCA can change a rule without notice — confirm on{' '}
                                 <a href={PARIKSHA.portal} target="_blank" rel="noopener noreferrer" className={A}>pariksha.dgca.gov.in</a> before you submit.
                             </p>
@@ -620,8 +634,8 @@ export default function DGCAComputerNumber() {
                             {/* Sources */}
                             <h2 id="sources" className={H2}>Sources</h2>
                             <p className={P}>
-                                Read on {new Date(PARIKSHA.verifiedOn).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}.
-                                Where these documents disagree with each other, this page leaves the figure out rather than picking one.
+                                Read on {CHECKED_ON}. Where these documents disagree with each other, this page leaves the figure
+                                out rather than picking one.
                             </p>
                             <ul className="space-y-2 mb-10">
                                 {PARIKSHA.sources.map((s) => (
