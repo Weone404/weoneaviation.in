@@ -629,6 +629,39 @@ does not see the same picture twice.
 
 ---
 
+## Post: `/blogs/cpl-simulator-hours-dgca-rules`
+
+### Prompt 48 — Hero / OpenGraph and card
+- **File:** `public/blog/cpl-simulator-hours/hero-simulator-and-aircraft.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A flight simulator device on the left and a small single-engine training aircraft on the right, representing the split between simulator and actual flight hours in CPL training"
+
+> A wide horizontal composition split left to right. On the left, a compact
+> flight simulator device with a simplified instrument panel and a South Asian
+> student pilot seated inside, hands on the controls, viewed from a
+> three-quarter angle. On the right, the same student standing beside a small
+> single-engine training aeroplane on an open tarmac under clear sky. A subtle
+> visual gap between the two halves suggests they are related but distinct
+> stages, not a continuous scene. Orange accent limited to one stripe on the
+> aircraft fuselage.
+
+### Prompt 49 — 200-hour proportion diagram
+- **File:** `public/blog/cpl-simulator-hours/cpl-hours-proportion.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A large circle representing 200 hours with a small distinct wedge marked out to show the 5 simulator hours as a tiny fraction of the total"
+
+> A single large circle filled almost entirely with small aeroplane
+> silhouettes arranged in a dense radial pattern, representing the great
+> majority of the training as real aircraft time. At the edge of the circle, a
+> small, clearly separated wedge shape containing a single simplified
+> simulator-screen icon instead of an aeroplane silhouette, visually tiny
+> compared to the rest of the circle. The wedge sits at the one-o'clock
+> position with slightly more negative space around it so it reads as a
+> distinct, minor exception rather than an equal share. Orange accent on the
+> wedge only. No text or labels.
+
+---
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
