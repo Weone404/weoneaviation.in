@@ -80,6 +80,7 @@ const sitemapData = [
         color: 'bg-sky-50 border-sky-200',
         headerColor: 'bg-sky-700',
         links: [
+            { label: 'How to Check an Aviation Academy', href: '/how-to-choose-an-aviation-academy' },
             { label: 'Flying School Overview', href: '/flying-school/india' },
             { label: 'Flying School in India', href: '/flying-school/india' },
             { label: 'Flying School in USA', href: '/flying-school/usa' },

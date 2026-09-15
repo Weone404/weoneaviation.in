@@ -23,6 +23,7 @@ const labelMap = {
   'commercial-pilot-license-admission-process': 'CPL admission process',
   'pilot-training-in-dwarka': 'Pilot training in Dwarka',
   'cadet-pilot-program': 'Cadet pilot programmes',
+  'how-to-choose-an-aviation-academy': 'Choosing an aviation academy',
   'dgca-ground-classes': 'DGCA ground classes',
   'dgca-ground-classes-in-india': 'DGCA ground classes in India',
   'dgca-pariksha': 'DGCA Pariksha',

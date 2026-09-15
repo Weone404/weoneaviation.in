@@ -58,7 +58,30 @@ codebase, so 15 are unexplained and may be pages we want indexed.
 
 ## 2. Open and unblocked
 
-**2.1 — STARTED 2026-09-15. 2 of 29 done.** The largest post, "Aviation Jobs
+**2.1 — STARTED 2026-09-15. 12 of 41 URLs now resolved, and the set was never 29.**
+
+CORRECTION 2026-09-15: the supplied keyword spreadsheet said 29 database posts.
+The live blog index, read the same day, shows 36 — plus five more posts on
+numeric ids (/blogs/1 to /blogs/5) that are not in the database at all and were
+missing from every count so far. 41 legacy URLs in total. The full inventory,
+with a status and a destination decision for each, is now written down in
+data/legacy-blog-inventory.md. Work from that file rather than from any
+spreadsheet: it was read from the site itself.
+
+Resolved so far (12): 6a040a0d, 6a01656b, 6a7178c6, 6a06b251, 6a13dbf1,
+6a38b7ae, 69ef4fb9, and as of this commit 69f1a52d (to the new
+/how-to-choose-an-aviation-academy), 69dc860c, 69f970e6, 6a87eae0, 6a893d2e
+and 6a240cea. Two lines remain correctly parked because their destinations do
+not exist: the three "How Pilots Build Hours" duplicates, and 6a8be2f7
+(Aviation Safety Procedures), whose old mapping pointed at a medical page and
+is a topic mismatch.
+
+Next by value among what is left: the five numeric-id posts, three of which
+(/blogs/1, /blogs/2, /blogs/5) are straight duplicates of pages that are now
+sourced and deeper, and about a dozen opinion pieces with no regulatory content
+that need a keep-or-consolidate decision rather than a rebuild.
+
+Original note: **2 of 29 done.** The largest post, "Aviation Jobs
 Besides Airline Pilot" (23,190 volume, 24 keywords) and its duplicate, now
 live at /blogs/aviation-jobs-besides-pilot with both ObjectIds 301'd to it in
 the same commit, per the standing rule. Rebuilt around the licensed/unlicensed
@@ -131,6 +154,35 @@ either be cited to that airline's own current page with the date it was read,
 or removed and replaced with a line saying the airline publishes it per intake.
 Doing this well means reading six airline sites; it is the largest remaining
 sourcing job on the site.
+
+**2.11 — Duplicate FAQ blocks, found and fixed 2026-09-15.** components/Layout.jsx
+injects an FAQ block and an FAQPage schema node on every route that is not
+listed in the `existingFaqRoutes` gate in data/pageFaqs.js. Five pages that
+write their own FAQs were missing from that gate, so each shipped two visible
+FAQ blocks and two competing FAQPage nodes: /cadet-pilot-program,
+/pilot-training-in-dwarka, /dgca-class-2-class-1-medical,
+/blogs/aviation-jobs-besides-pilot and /faq. Three of those five were pages
+built in this branch, so this was self-inflicted. All five are now gated, and
+a comment in the gate says any new page writing its own FAQs must be added in
+the same commit. Worth a spot check on the rendered HTML after the next
+deploy, since two FAQPage nodes on one URL is the kind of thing that
+suppresses a rich result silently.
+
+**2.12 — /about-us contradicts the honest scope statement.** The FAQ content
+for /about-us in data/pageFaqs.js says students "learn from experienced airline
+pilots, DGCA ground instructors, simulator instructors, and aviation medical
+advisors". ACADEMY.scope, which every other page is built on, says the academy
+does not employ pilots and does not own simulators. Both statements are on the
+same site. The owner asked that instructor claims be left untouched, so this is
+recorded rather than changed. It needs an owner decision: either the scope
+statement is too narrow, or the /about-us copy overstates. It cannot be both.
+
+**2.13 — Credentials are hard-coded in pages/api/blogs.js.** The Cloudinary
+cloud name, API key and API secret are written in plain text in the file and
+are in git history. This is not an SEO item and it is outside the brief, but it
+was found while reading that file and it would be wrong not to say so. The
+secret should be rotated in Cloudinary and moved to an environment variable.
+Owner decision — no change made.
 
 **2.4 — No pilot career counselling page.** Keyword 50, and it matches a
 service the academy actually offers.

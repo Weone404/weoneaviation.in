@@ -357,6 +357,7 @@ export default function CadetPilotProgram() {
                   <li><Link href="/your-guide-on-how-to-become-a-pilot-in-india" className={A}>The full route</Link></li>
                   <li><Link href="/dgca-computer-number" className={A}>Start the exams first</Link></li>
                   <li><Link href="/cost-transparency" className={A}>What it costs</Link></li>
+                  <li><Link href="/how-to-choose-an-aviation-academy" className={A}>How to check an academy</Link></li>
                 </ul>
               </div>
             </ScrollReveal>

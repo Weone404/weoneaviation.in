@@ -45,25 +45,25 @@ const nextConfig = {
    * { source: '/blogs/6a1d00f816d7f55288a22710', destination: '/blogs/how-pilots-build-hours', permanent: true },
    * { source: '/blogs/6a0bf3f4a8c579faedcb51e6', destination: '/blogs/how-pilots-build-hours', permanent: true },
    * { source: '/blogs/6a8be2f757898ec159830c3e', destination: '/blogs/dgca-medical-requirements', permanent: true },
-   * { source: '/blogs/6a240cea7b692cb9fe764c82', destination: '/blogs/multi-engine-rating-explained', permanent: true },
-   * { source: '/blogs/69f970e6d58c9676b0a61c01', destination: '/blogs/cpl-vs-cadet-program', permanent: true },
    *
-   * VERIFIED 2026-09-15: all four destinations above are still missing.
-   * how-pilots-build-hours, dgca-medical-requirements,
-   * multi-engine-rating-explained and cpl-vs-cadet-program do not exist as
-   * pages. Do not activate any of these lines until they do.
+   * STILL MISSING as at 2026-09-15: /blogs/how-pilots-build-hours and
+   * /blogs/dgca-medical-requirements do not exist as pages. Do not activate
+   * either line until they do.
    *
-   * TWO CORRECTIONS, so nobody activates this list as written:
+   * ONE CORRECTION, so nobody activates this list as written:
    *   6a8be2f757898ec159830c3e is "Aviation Safety Procedures Every Student
    *   Must Know". Pointing it at a DGCA medical page is a topic mismatch and
    *   would be a bad 301. Re-decide its destination; do not use the line above.
    *
-   *   6a240cea7b692cb9fe764c82 is mapped to multi-engine-rating-explained,
-   *   which does not exist — but /blogs/multi-engine-rating-for-pilots-in-india
-   *   does. Confirm the post's actual topic before repointing it there. It
-   *   carries no keyword mappings, so there is no hurry.
+   * The two other lines that used to sit here — 6a240cea (Multi Engine Rating
+   * Explained) and 69f970e6 (CPL vs Cadet Program) — named destinations that
+   * never existed. Both now point at destinations that do, and have moved into
+   * the ACTIVE block below.
    *
-   * The remaining ~14 database posts stay live and untouched pending GSC data.
+   * THE FULL INVENTORY is now written down, which it was not before:
+   * data/legacy-blog-inventory.md lists all 36 database posts and all 5
+   * numeric-id posts with a status for each, read from the live blog index on
+   * 15 September 2026. Work from that file, not from memory.
    */
   async redirects() {
     return [
@@ -94,6 +94,51 @@ const nextConfig = {
        * own, because it self-canonicalises to the id. No new page needed.
        */
       { source: '/blogs/69ef4fb93a29bf8490327d34', destination: '/how-to-become-a-pilot-after-12th', permanent: true },
+      /*
+       * Added 2026-09-15 with /how-to-choose-an-aviation-academy, which is the
+       * rebuild of this post. "Best Aviation Academy Near Me — Start Your
+       * Career in Aviation Today" carries 16,630 mapped monthly searches, the
+       * largest term on the owner's list that had no honest home. The old post
+       * answered "which academy is best" by nominating itself; the new page
+       * answers it with DGCA's own approved-FTO list and published ranking,
+       * and says plainly that a ground school — this one included — is not on
+       * that list.
+       */
+      { source: '/blogs/69f1a52df3ae4e86333eac32', destination: '/how-to-choose-an-aviation-academy', permanent: true },
+      /*
+       * Added 2026-09-15. Four consolidations onto destinations that already
+       * exist and are deeper and sourced. Each source is a database post that
+       * self-canonicalises to its ObjectId, is absent from the sitemap and
+       * carries no ranking signal of its own.
+       *
+       * 69dc860c  "DGCA Subjects Coaching — Best Training for Pilot Ground
+       *           Classes in India" -> /dgca-ground-classes. Same subject,
+       *           and the destination is the service page for it.
+       * 69f970e6  "CPL vs Cadet Program: Which Is Better for Pilot Training?"
+       *           -> /cadet-pilot-program. Its old mapping named
+       *           /blogs/cpl-vs-cadet-program, which was never built. The hub
+       *           shipped on 15 Sep 2026 answers exactly this question, and
+       *           answers it without airline-specific figures that go stale.
+       * 6a87eae0  "Importance of Simulator Training in Aviation" ->
+       *           /blogs/cpl-simulator-hours-dgca-rules, which states the
+       *           Schedule II cap rather than describing simulators in general.
+       * 6a893d2e  "What is CRM (Crew Resource Management)?" ->
+       *           /blogs/mcc-training-for-pilots-in-india. Not an identical
+       *           topic: CRM is taught inside MCC rather than being the same
+       *           thing. It is the closest real page on the site, and a
+       *           near-topic 301 beats a thin orphan. Revisit if a dedicated
+       *           CRM page is ever written.
+       * 6a240cea  "Multi Engine Rating Explained" ->
+       *           /blogs/multi-engine-rating-for-pilots-in-india. This is the
+       *           correction of the old commented line, which named
+       *           /blogs/multi-engine-rating-explained — a slug that has never
+       *           existed on this site.
+       */
+      { source: '/blogs/69dc860c1f57ee917ebdcd84', destination: '/dgca-ground-classes', permanent: true },
+      { source: '/blogs/69f970e6d58c9676b0a61c01', destination: '/cadet-pilot-program', permanent: true },
+      { source: '/blogs/6a87eae016c8bc859396901b', destination: '/blogs/cpl-simulator-hours-dgca-rules', permanent: true },
+      { source: '/blogs/6a893d2e2c2fb9efee8153ca', destination: '/blogs/mcc-training-for-pilots-in-india', permanent: true },
+      { source: '/blogs/6a240cea7b692cb9fe764c82', destination: '/blogs/multi-engine-rating-for-pilots-in-india', permanent: true },
 
       {
         source: '/Pilot-Course-&-Pilot-Training-in -ndia',

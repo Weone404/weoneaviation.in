@@ -7,7 +7,17 @@
   '/how-to-become-a-pilot-after-12th', '/lead-magnets', '/lead-magnets/dgca-exam-checklist',
   '/pilot-training-in-india',
   '/ppl-full-form', '/rtr-full-form-meaning-importance-and-complete-guide', '/student-checklists',
-  '/pilot-training-in-delhi', 
+  '/pilot-training-in-delhi', '/pilot-training-in-dwarka',
+  /*
+   * Added 2026-09-15. Each of these renders its own FAQ section and its own
+   * FAQPage node. Without this gate Layout injected a second FAQ block and a
+   * second FAQPage node underneath it, so the page shipped two competing
+   * FAQPage nodes and a visibly duplicated block. Any new page that writes
+   * its own FAQs must be listed here in the same commit.
+   */
+  '/cadet-pilot-program', '/dgca-class-2-class-1-medical',
+  '/blogs/aviation-jobs-besides-pilot', '/faq',
+  '/how-to-choose-an-aviation-academy',
   '/privacy-policy', '/terms', '/sitemap', '/404',
 ]);
 

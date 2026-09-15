@@ -131,6 +131,12 @@ const whyChoose = [
 
 const blogs = [
   {
+    title: 'Aviation Academy Near Me: How to Check One',
+    date: 'September 15, 2026',
+    desc: "DGCA publishes an approved flying school list and a twice-yearly ranking against five weighted parameters. How to read both, why no approved flying base is in Delhi, and the questions to ask a ground school \u2014 which is on no such list, ours included.",
+    href: '/how-to-choose-an-aviation-academy',
+  },
+  {
     title: 'Pilot Training in Dwarka',
     date: 'September 15, 2026',
     desc: 'Ground classes from Sector 7, and the three DGCA institutions a Delhi student needs that are already in the city — the Central Examination Organisation, four approved medical centres, and the equivalence body.',
