@@ -155,6 +155,34 @@ or removed and replaced with a line saying the airline publishes it per intake.
 Doing this well means reading six airline sites; it is the largest remaining
 sourcing job on the site.
 
+**2.14 — The six numeric-id posts: unsourced claims removed, deletion still
+an owner call.** /blogs/1 to /blogs/6 predate every sourcing rule here.
+/blogs/6 is not even linked from the blog index. Three of them were shipping
+figures that nothing supports: /blogs/3 a "₹40–80 lakhs" training cost (the
+same figure removed from /cost-transparency in this branch), /blogs/4
+per-airline pilot salaries quoted to the lakh, /blogs/5 a 6/6 vision standard
+and a 140/90 blood-pressure limit presented as DGCA requirements (the same
+unsourced standard removed from /commercial-pilot-license-eligibility). All
+removed 2026-09-15 and replaced with what can be shown, including an explicit
+paragraph in each saying what was taken out and why.
+
+Four of the six (/blogs/1, 2, 5, 6) now carry a canonical to the page that
+supersedes them plus noindex, which stops them competing with the real page
+without removing a URL anyone may be holding. /blogs/3 and /blogs/4 have no
+superseding page and stay indexable, now rewritten honestly.
+
+**Needs from owner:** whether /blogs/1, /blogs/2, /blogs/5 and /blogs/6 should
+be 301'd to their canonical targets and removed outright. That is a deletion,
+so it is not being done without a decision. The canonical plus noindex already
+achieves most of the benefit.
+
+**2.15 — /commercial-pilot-license-salary is unsourced.** While consolidating
+/blogs/4 it became clear the destination has the same problem the source did:
+₹1.5–3 lakh entry, ₹6–10 lakh captain, and per-country monthly bands, none of
+them traceable. It was not redirected there for that reason. This page is
+already blocked on the owner in section 1 for a rebuild; this note records that
+what is currently live on it should not be treated as verified in the meantime.
+
 **2.11 — Duplicate FAQ blocks, found and fixed 2026-09-15.** components/Layout.jsx
 injects an FAQ block and an FAQPage schema node on every route that is not
 listed in the `existingFaqRoutes` gate in data/pageFaqs.js. Five pages that

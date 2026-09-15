@@ -77,6 +77,15 @@ predate every sourcing rule on this site.
 | /blogs/4 | Pilot Salary in India | Overlaps /commercial-pilot-license-salary, which is blocked on the owner |
 | /blogs/5 | Medical Requirements to Become a Pilot in India | Duplicates /dgca-class-2-class-1-medical, which is fully sourced |
 
-/blogs/1, /blogs/2 and /blogs/5 are straight duplicates of pages that are now
-sourced and deeper. They should 301 to those pages and be removed from both
-arrays in the same commit. /blogs/3 and /blogs/4 need a decision first.
+There is a sixth, /blogs/6 ("How to Become a Pilot After 12th Science"), which
+is live but absent from the index grid because its card is commented out there.
+It had been missing from every count of this set.
+
+RESOLVED 2026-09-15, short of deletion. /blogs/1, /blogs/2, /blogs/5 and
+/blogs/6 now carry a canonical to the page that supersedes them, plus noindex,
+so they stop competing for the same queries while the URLs keep working.
+/blogs/3 and /blogs/4 have no superseding page and remain indexable. Every
+unsourced figure across the six was removed in the same commit.
+
+Still an owner decision: whether the four canonicalised URLs should be 301'd
+and deleted outright.

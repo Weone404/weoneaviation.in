@@ -5,95 +5,81 @@ import Link from 'next/link';
 import NextImage from 'next/image';
 import { MongoClient, ObjectId } from 'mongodb';
 
-// ─────────────────────────────────────────────
-// Static blog data
-// ─────────────────────────────────────────────
+/*
+ * ── Static blog data ──────────────────────────────────────────────────────
+ *
+ * These six posts predate every sourcing rule on this site. They are reachable
+ * at /blogs/1 to /blogs/6, they carry 2024 dates, and five of the six restate
+ * a page that is now deeper and fully sourced. /blogs/6 is not even linked
+ * from the blog index — its card is commented out there — so it has sat as an
+ * orphan.
+ *
+ * WHAT CHANGED 2026-09-15, and what deliberately did not.
+ *
+ * Did not: none of these URLs was deleted or redirected. Removing a live URL
+ * is the owner's call, and it is recorded as an open question in
+ * SEO-BACKLOG.md with the inventory in data/legacy-blog-inventory.md.
+ *
+ * Did: two things that do not need that call.
+ *   1. `canonicalTo` points a post at the page that supersedes it, so the
+ *      duplicate stops competing with the real page for the same query, and
+ *      `noindex` keeps it out of the index while leaving the URL working for
+ *      anyone holding the link. Layout applies both.
+ *   2. Unsourced figures were removed. /blogs/3 printed a "₹40–80 lakhs"
+ *      training cost with no source — the same figure removed from
+ *      /cost-transparency in this branch. /blogs/4 printed per-airline pilot
+ *      salaries down to the lakh, which no airline publishes and which
+ *      nothing supports. /blogs/5 printed a 6/6 vision standard and a 140/90
+ *      blood-pressure limit as DGCA requirements — the same unsourced
+ *      standard removed from /commercial-pilot-license-eligibility. All three
+ *      are gone. What replaces them is what can be shown.
+ */
 const hardcodedBlogs = [
     {
         id: 1,
-        title: 'How to Become a Commercial Pilot in India – Complete 2024 Guide',
+        title: 'How to Become a Commercial Pilot in India',
         excerpt:
-            'Everything you need to know about becoming a CPL holder in India – eligibility, DGCA exams, costs, flying hours, and career prospects.',
+            'The licence route in outline — the education gate, the medical, the computer number, the written papers and the flying hours. The fully sourced version, with the rule behind each stage, is the route guide.',
         category: 'CPL Guide',
-        readTime: '8 min',
+        readTime: '4 min',
         date: 'Dec 15, 2024',
+        canonicalTo: '/your-guide-on-how-to-become-a-pilot-in-india',
         img: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80',
         content: `
-      <h2>What is a Commercial Pilot License (CPL)?</h2>
-      <p>A Commercial Pilot License (CPL) allows you to fly aircraft for compensation or hire. In India, the CPL is issued by the Directorate General of Civil Aviation (DGCA) and is the primary qualification required to work as a pilot for an airline.</p>
+      <p><strong>This is a short, older summary.</strong> The current and fully sourced version of this route, with the rule or regulation behind every stage, is at <a href="/your-guide-on-how-to-become-a-pilot-in-india">your guide on how to become a pilot in India</a>.</p>
 
-      <h2>Eligibility Requirements</h2>
+      <h2>What a Commercial Pilot Licence is</h2>
+      <p>A Commercial Pilot Licence (CPL) permits you to fly an aeroplane for hire or reward. In India it is issued by the Directorate General of Civil Aviation.</p>
+
+      <h2>The gates, in order</h2>
       <ul>
-        <li>Minimum age: 18 years</li>
-        <li>Educational qualification: 10+2 with Physics and Mathematics</li>
-        <li>Valid DGCA medical certificate</li>
-        <li>Minimum 200 hours of total flight time</li>
+        <li>Class 12 with Physics and Mathematics. If you did not take both, the National Institute of Open Schooling route is the bridge.</li>
+        <li>Minimum age 18 for a CPL. See <a href="/commercial-pilot-license-eligibility">CPL eligibility</a> for each licence and its rule.</li>
+        <li>A DGCA medical at an approved centre — Class 2 to begin, Class 1 for the CPL. The approved centres are listed on <a href="/dgca-class-2-class-1-medical">the medical page</a>.</li>
+        <li>A computer number, then the DGCA written papers. See <a href="/dgca-computer-number">the computer number guide</a>.</li>
+        <li>200 hours as pilot of an aeroplane, flown at a flying training organisation.</li>
+        <li>RTR (A), examined separately under its own rules.</li>
       </ul>
 
-      <h2>Step-by-Step Process</h2>
-      <div class="steps-list">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <div class="step-body">
-            <p class="step-title">Get your DGCA Medical</p>
-            <p class="step-desc">Visit an approved DGCA medical centre and clear the DGCA medical examination.</p>
-          </div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <div class="step-body">
-            <p class="step-title">Enroll in a Flying School</p>
-            <p class="step-desc">Choose a DGCA flying academy in India or abroad.</p>
-          </div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <div class="step-body">
-            <p class="step-title">Complete Ground Training</p>
-            <p class="step-desc">You must pass the five DGCA written theory papers, with RTR (A) examined separately, before proceeding.</p>
-          </div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">4</div>
-          <div class="step-body">
-            <p class="step-title">Log Flying Hours</p>
-            <p class="step-desc">Complete at least 200 hours of total flight time.</p>
-          </div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">5</div>
-          <div class="step-body">
-            <p class="step-title">Skill Test</p>
-            <p class="step-desc">Appear for the DGCA CPL skill test conducted by an authorised examiner.</p>
-          </div>
-        </div>
-      </div>
-
-      <h2>Cost of CPL Training in India</h2>
-      <p>The total cost typically ranges from <strong>₹40 lakhs to ₹80 lakhs</strong> depending on the flying school and aircraft type.</p>
-
-      <h2>Career Prospects</h2>
-      <p>After obtaining a CPL, most pilots join regional airlines or charter operators as First Officers. The aviation industry in India is growing rapidly with significant pilot demand expected over the next decade.</p>
-
-      <h2>Conclusion</h2>
-      <p>Becoming a commercial pilot in India is a challenging but rewarding career path. We One Aviation is here to guide you every step of the way.</p>
+      <h2>What this page does not tell you</h2>
+      <p>A total cost, or a duration. Both vary by school and by how quickly aircraft are available, and any single figure quoted here would be unverifiable. <a href="/cost-transparency">The cost page</a> sets out what is known and what is not.</p>
     `,
-      faqs: [],
+        faqs: [],
     },
     {
         id: 2,
         title: 'DGCA Written Exams: Subjects, Pattern & Preparation Tips',
         excerpt:
-            'Prepare for the five DGCA written papers, with RTR (A) examined separately. Know the syllabus, the exam pattern, and how papers are cleared one at a time.',
+            'Five DGCA written papers, with RTR (A) examined separately. The subjects, the 70% threshold per paper, and the fees DGCA charges.',
         category: 'DGCA',
-        readTime: '6 min',
+        readTime: '5 min',
         date: 'Dec 10, 2024',
+        canonicalTo: '/blogs/dgca-ground-school-guide',
         img: 'https://images.unsplash.com/photo-1569629743817-70d8db6c323b?w=1200&q=80',
         content: `
-      <h2>Overview of DGCA Written Exams</h2>
-      <p>To obtain a CPL in India, candidates clear <strong>five</strong> DGCA written papers. RTR (A) is required as well, but it is examined separately under its own rules rather than as a sixth DGCA paper.</p>
+      <p><strong>This is a short, older summary.</strong> The current treatment, with every figure cited to its DGCA document, is at <a href="/blogs/dgca-ground-school-guide">the DGCA ground school guide</a>.</p>
 
-      <h2>The 5 DGCA Written Papers</h2>
+      <h2>The five DGCA written papers</h2>
       <ul>
         <li>Air Navigation</li>
         <li>Aviation Meteorology</li>
@@ -101,166 +87,131 @@ const hardcodedBlogs = [
         <li>Technical General (Airframes &amp; Engines)</li>
         <li>Technical Specific (Aircraft Type)</li>
       </ul>
-      <p>Aviation Medicine, Human Performance, Instruments and Principles of Flight are taught as part of the syllabus above — they are not separate DGCA papers. Lists of "9 DGCA subjects" count these, and RTR (A), as papers of their own.</p>
+      <p>Aviation Medicine, Human Performance, Instruments and Principles of Flight are taught within the syllabus above; they are not separate DGCA papers. Lists of "9 DGCA subjects" count these, and RTR (A), as papers of their own. RTR (A) is required, but it is examined separately under its own rules rather than as a sixth DGCA paper.</p>
 
-      <h2>Exam Pattern</h2>
-      <p>Each paper consists of MCQs, and papers are cleared one at a time rather than in a single sitting. The passing score is <strong>70%</strong>.</p>
+      <h2>Pattern and pass mark</h2>
+      <p>Each paper is multiple choice and is cleared on its own rather than in one sitting. The pass mark is <strong>70% per paper</strong>, set by the Civil Aviation Requirement that governs the examinations — an aggregate does not exist, so a strong paper cannot carry a weak one.</p>
 
-      <h2>Examination Fees</h2>
-      <p>DGCA charges <strong>&#8377;2,500</strong> per paper in a regular session and <strong>&#8377;5,000</strong> per paper in an Online On-Demand Examination (OLODE). Payment is made through Bharatkosh, and the fee is not refunded or carried to a later session. See our <a href="/dgca-computer-number">DGCA computer number guide</a> for the sourced fee and session details.</p>
+      <h2>Examination fees</h2>
+      <p>DGCA charges <strong>&#8377;2,500</strong> per paper in a regular session and <strong>&#8377;5,000</strong> per paper in an Online On-Demand Examination. Payment is through Bharatkosh, and the fee is not refunded or carried to a later session. The sourced fee and session detail is in the <a href="/dgca-computer-number">DGCA computer number guide</a>.</p>
 
-      <h2>Preparation Tips</h2>
-      <div class="steps-list">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <div class="step-body">
-            <p class="step-title">Start Early</p>
-            <p class="step-desc">Begin ground school preparation alongside flying training.</p>
-          </div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <div class="step-body">
-            <p class="step-title">Practice Mock Tests</p>
-            <p class="step-desc">We One Aviation provides comprehensive question banks for all 5 papers plus RTR (A).</p>
-          </div>
-        </div>
-      </div>
-
-      <h2>Conclusion</h2>
-      <p>With consistent study and proper guidance, clearing the five DGCA papers is very achievable. They are cleared individually rather than in one sitting.</p>
+      <h2>Preparing</h2>
+      <p>Because papers are cleared individually, the sensible order is to clear what you are ready for rather than waiting to be ready for everything. Subject pages: <a href="/air-navigation">Air Navigation</a>, <a href="/aviation-meteorology">Aviation Meteorology</a>, <a href="/air-regulations">Air Regulations</a>, <a href="/technical-general">Technical General</a>, and <a href="/rtr-a">RTR (A)</a>.</p>
     `,
-      faqs: [],
+        faqs: [],
     },
     {
         id: 3,
-        title: 'CPL Training in India vs Abroad – Which is Better?',
-        excerpt: 'Pros and cons of training in India vs USA, Canada, Australia.',
+        title: 'CPL Training in India vs Abroad',
+        excerpt:
+            'What actually differs between training in India and training overseas — and why the cost comparison you have read is probably unsourced.',
         category: 'Training',
-        readTime: '7 min',
+        readTime: '5 min',
         date: 'Dec 5, 2024',
         img: 'https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1200&q=80',
         content: `
-      <h2>Training in India</h2>
-      <p><strong>Pros:</strong> Lower cost (₹40–80 lakhs), no visa needed, direct DGCA CPL.</p>
-      <p><strong>Cons:</strong> Weather disruptions, some older aircraft fleets.</p>
+      <h2>What genuinely differs</h2>
+      <p><strong>Training in India.</strong> No visa. The licence issued is a DGCA licence, so there is no conversion step at the end. Flying is interrupted by the monsoon in much of the country, and how fast you finish depends heavily on how many aircraft your school has and how many students share them.</p>
+      <p><strong>Training abroad.</strong> Often better year-round flying weather and a larger fleet, which is the real driver of how quickly hours accumulate. Against that, the licence is issued by that country's regulator and has to be converted to a DGCA licence afterwards, which adds time and cost that a headline fee will not show.</p>
 
-      <h2>Training Abroad (USA, Canada, Australia)</h2>
-      <p><strong>Pros:</strong> Better weather, modern aircraft, international exposure.</p>
-      <p><strong>Cons:</strong> Higher cost, license conversion adds time and money.</p>
+      <h2>On cost, and why no range is printed here</h2>
+      <p>This page used to quote a total for training in India. It was removed on 15 September 2026 because nothing supported it. Private flying schools publish very little, the figures circulating online are largely unsourced, and a number stated confidently here would be a number a reader could not check.</p>
+      <p>The one publicly comparable figure is Indira Gandhi Rashtriya Uran Akademi's published course fee, and <a href="/cost-transparency">the cost page</a> sets it out alongside what it does and does not include. Compare any quote line by line, and keep DGCA's own charges — &#8377;2,500 per examination paper, plus the medical — separate from what a school charges.</p>
 
-      <h2>Our Recommendation</h2>
-      <p>For most Indian students, training in India offers the best value for money.</p>
+      <h2>The question worth asking either way</h2>
+      <p>Not "which is cheaper" but "how many aircraft are flying, and how many students are waiting for them". DGCA weights aircraft utilisation and student-to-aircraft ratio at 40% of its own ranking of Indian flying schools, because that is what decides whether 200 hours take eighteen months or four years. <a href="/how-to-choose-an-aviation-academy">How to check an aviation academy</a> explains how to look it up.</p>
     `,
-      faqs: [],
+        faqs: [],
     },
     {
         id: 4,
-        title: 'Pilot Salary in India 2024 – Complete Breakdown by Airline',
+        title: 'Pilot Pay in India: What Can and Cannot Be Verified',
         excerpt:
-            'How much do pilots earn in India? Salary breakdown for trainee pilots, first officers, and captains.',
+            'Airline pilot pay scales in India are not published by the airlines. What that means for every salary figure you have read, including the ones that used to be on this page.',
         category: 'Career',
-        readTime: '5 min',
+        readTime: '4 min',
         date: 'Nov 28, 2024',
         img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=80',
         content: `
-      <h2>First Officer Salaries</h2>
+      <h2>What this page used to say</h2>
+      <p>Until 15 September 2026 this page carried per-airline salary bands for first officers and captains, quoted to the lakh. They were removed because nothing supported them. Indian airlines do not publish pilot pay scales, the figures are negotiated and vary by fleet, seniority, contract type and roster, and no public document exists that a reader could check them against.</p>
+
+      <h2>What is actually knowable</h2>
       <ul>
-        <li><strong>IndiGo:</strong> ₹3 lakh – ₹5 lakh/month</li>
-        <li><strong>Air India:</strong> ₹4 lakh – ₹6 lakh/month</li>
-        <li><strong>SpiceJet:</strong> ₹2.5 lakh – ₹4.5 lakh/month</li>
+        <li>Pay rises with command. A captain is paid materially more than a first officer at the same airline, because the responsibility and the qualification differ.</li>
+        <li>A large part of pilot pay is flying-hour linked rather than fixed, so it moves with the roster and with how much the airline is flying.</li>
+        <li>Wide-body operations generally pay more than narrow-body at the same carrier.</li>
+        <li>There is a gap between a fresh CPL holder and an employed first officer. The licence does not carry a job with it, and the wait varies with the hiring cycle.</li>
       </ul>
 
-      <h2>Captain Salaries</h2>
-      <ul>
-        <li><strong>IndiGo Captain:</strong> ₹7 lakh – ₹12 lakh/month</li>
-        <li><strong>Air India Captain:</strong> ₹8 lakh – ₹14 lakh/month</li>
-      </ul>
+      <h2>Why we will not print a number</h2>
+      <p>Because a prospective student cannot verify one, and a figure you cannot verify is worth less than an honest blank. If a page shows you an exact monthly salary for a named airline, ask where it came from. We One Aviation does not employ pilots and does not place students into airline jobs — hiring decisions rest with the operator — so any earnings figure from us would be a claim about somebody else's payroll.</p>
 
-      <h2>Additional Perks</h2>
-      <p>Beyond base salary, pilots receive flying allowances, travel benefits, medical insurance, and more.</p>
+      <h2>What to do with this</h2>
+      <p>Plan against the cost, which is knowable, rather than against the income, which is not. <a href="/cost-transparency">The cost page</a> sets out what can be shown. If you are weighing whether the career is worth the outlay, that is the honest arithmetic to do.</p>
     `,
-      faqs: [],
+        faqs: [],
     },
     {
         id: 5,
         title: 'Medical Requirements to Become a Pilot in India',
-        excerpt: 'Detailed guide on DGCA medical requirements.',
+        excerpt:
+            'Which DGCA medical class you need and when. The full sourced treatment, including the approved centres, is on the medical page.',
         category: 'Medical',
-        readTime: '6 min',
+        readTime: '4 min',
         date: 'Nov 20, 2024',
+        canonicalTo: '/dgca-class-2-class-1-medical',
         img: 'https://images.unsplash.com/photo-1585995028913-16e7a4c9c1d3?w=1200&q=80',
         content: `
-      <h2>Key Requirements</h2>
+      <p><strong>This is a short, older summary.</strong> The current version — with the classes, their validity, and DGCA's own list of approved examination centres — is at <a href="/dgca-class-2-class-1-medical">DGCA Class 2 and Class 1 medical</a>.</p>
+
+      <h2>Which class, and when</h2>
       <ul>
-        <li><strong>Vision:</strong> 6/6 in each eye, no colour blindness</li>
-        <li><strong>Hearing:</strong> Normal hearing in both ears</li>
-        <li><strong>Cardiovascular:</strong> Normal ECG, no history of heart disease</li>
-        <li><strong>Blood Pressure:</strong> Within normal limits (max 140/90)</li>
-        <li><strong>Mental Health:</strong> No history of psychiatric disorders</li>
+        <li><strong>Class 2</strong> is the one you start with. It is what a Student Pilot Licence requires, and it is the sensible first spend of the whole process — it is cheap relative to everything after it, and it tells you early whether the rest is worth beginning.</li>
+        <li><strong>Class 1</strong> is required for a Commercial Pilot Licence and is the more demanding assessment.</li>
       </ul>
 
-      <h2>Where to Get Your DGCA Medical</h2>
-      <p>DGCA centres are in Delhi, Mumbai, Chennai, Kolkata, Hyderabad, and Bengaluru.</p>
+      <h2>What this page no longer says</h2>
+      <p>It used to list specific standards — a vision figure and a blood-pressure limit — as DGCA requirements. They were removed on 15 September 2026 because they could not be traced to the Civil Aviation Requirement that actually governs flight-crew medical examinations, and a wrong medical standard is the kind of error that makes someone abandon the idea for no reason, or spend money they should not have.</p>
+      <p>Assessment is made by a DGCA-approved examiner against that requirement, and a number of conditions that people assume are disqualifying are in fact assessed case by case. If you have a specific concern, the useful step is the Class 2 examination itself rather than a checklist online.</p>
+
+      <h2>Where the examination happens</h2>
+      <p>At a DGCA-approved centre. The current list, including which of them are in Delhi and the NCR, is on <a href="/dgca-class-2-class-1-medical">the medical page</a>.</p>
     `,
-      faqs: [],
+        faqs: [],
     },
     {
         id: 6,
-        title: 'How to Become a Pilot After 12th Science – Step-by-Step',
+        title: 'How to Become a Pilot After 12th Science',
         excerpt:
-            'A complete roadmap for 12th PCM students aspiring to become commercial pilots.',
+            'The route from Class 12 PCM to a Commercial Pilot Licence, in order. The fuller version is the after-12th page.',
         category: 'After 12th',
-        readTime: '9 min',
+        readTime: '4 min',
         date: 'Nov 15, 2024',
+        canonicalTo: '/how-to-become-a-pilot-after-12th',
         img: 'https://images.unsplash.com/photo-1559628233-100c798642d8?w=1200&q=80',
         content: `
-      <h2>Minimum Eligibility</h2>
+      <p><strong>This is a short, older summary.</strong> The fuller version is at <a href="/how-to-become-a-pilot-after-12th">how to become a pilot after 12th</a>.</p>
+
+      <h2>Minimum eligibility</h2>
       <ul>
-        <li>10+2 with Physics and Mathematics (minimum 50% marks)</li>
-        <li>Age: minimum 16 years for an SPL, 17 for a PPL, 18 for a CPL (Aircraft Rules, 1937, Schedule II, Sections B, E and J)</li>
+        <li>Class 12 with Physics and Mathematics. Without both subjects, the National Institute of Open Schooling route is the bridge, and it belongs at the front of your plan rather than the middle.</li>
+        <li>Minimum age 16 for a Student Pilot Licence, 17 for a Private Pilot Licence, 18 for a Commercial Pilot Licence — Aircraft Rules, 1937, Schedule II, Sections B, E and J.</li>
       </ul>
 
-      <h2>Step-by-Step Roadmap</h2>
-      <div class="steps-list">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <div class="step-body"><p class="step-title">Clear DGCA Medical</p></div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <div class="step-body"><p class="step-title">Research Flying Schools</p></div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <div class="step-body"><p class="step-title">Secure Funding</p></div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">4</div>
-          <div class="step-body"><p class="step-title">Student Pilot License (SPL)</p></div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">5</div>
-          <div class="step-body"><p class="step-title">Private Pilot License (PPL)</p></div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">6</div>
-          <div class="step-body"><p class="step-title">DGCA Theory Exams</p></div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">7</div>
-          <div class="step-body"><p class="step-title">Instrument Rating (IR)</p></div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">8</div>
-          <div class="step-body"><p class="step-title">CPL after 200 flight hours</p></div>
-        </div>
-      </div>
+      <h2>The order that saves money</h2>
+      <ol>
+        <li>Class 2 medical first. It is the cheapest gate and the one that can stop everything.</li>
+        <li>Computer number, then start the written papers. Neither needs a flying school and neither needs a medical certificate.</li>
+        <li>Choose a flying training organisation — check it against DGCA's published list and ranking before paying anything. See <a href="/how-to-choose-an-aviation-academy">how to check an aviation academy</a>.</li>
+        <li>Fly the 200 hours a Commercial Pilot Licence requires.</li>
+        <li>Class 1 medical, RTR (A), and the skill test.</li>
+      </ol>
 
-      <h2>Timeline</h2>
-      <p>The entire process typically takes <strong>2 to 3 years</strong>.</p>
+      <h2>On timelines</h2>
+      <p>This page used to state a fixed two-to-three-year duration. It was removed on 15 September 2026: the regulations set minimums, not durations, and how long the flying actually takes depends on aircraft availability at your school and on weather. Ask a school how many aircraft it has and how many students share them — that answer predicts your timeline better than any figure on a website.</p>
     `,
-      faqs: [],
+        faqs: [],
     },
 ];
 
@@ -554,7 +505,7 @@ export default function BlogDetail({ blog }) {
     }
 
     return (
-        <Layout title={`${blog.title} – We One Aviation`} description={blog.excerpt}>
+        <Layout title={`${blog.title} – We One Aviation`} description={blog.excerpt} canonical={blog.canonicalTo} noindex={Boolean(blog.canonicalTo)}>
             <StructuredData
                 data={{
                     '@context': 'https://schema.org',
