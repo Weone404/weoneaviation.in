@@ -85,7 +85,19 @@ Duplicates inside the set: two copies of "Aviation Jobs Besides Airline Pilot",
 three of "How Pilots Build Hours", and "How to Become a Pilot in India after
 12th" (8,100) which duplicates two existing file-based pages.
 
-**2.2 — No page for Dwarka.** Keywords 34 and 35 of the priority list are
+**2.2 — DONE 2026-09-15.** /pilot-training-in-dwarka built, without any of the
+operational detail the owner asked to keep off the site — no batch size, no
+timings, no fee, no pass rate, no placement claim. What makes it more than a
+thin location page is that three DGCA institutions a Delhi student needs are
+physically in Delhi and no competitor mentions it: the Central Examination
+Organisation at R.K. Puram (where a computer number is scrutinised, where an
+original BVC must be on file, and where a rejection is appealed in person on
+Tuesdays and Thursdays 3-5pm), four of DGCA's thirteen approved aeromedical
+centres, and the equivalence body on Kotla Marg. Entirely sourced, useful
+whether or not the reader enrols. LocalBusiness-style EducationalOrganization
+schema with the confirmed NAP, plus Article and FAQPage. Linked from the
+breadcrumb map, the HTML sitemap and /dgca-ground-classes, and in the XML
+sitemap (89 to 90 URLs). Original note: **No page for Dwarka.** Keywords 34 and 35 of the priority list are
 "best pilot training academy in dwarka" and "pilot training institute in
 dwarka", described as the Sector-7 battle. The academy is in Dwarka Sector 7
 and there is no Dwarka page; the word appears only in body copy elsewhere.

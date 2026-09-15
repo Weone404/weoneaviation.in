@@ -131,6 +131,12 @@ const whyChoose = [
 
 const blogs = [
   {
+    title: 'Pilot Training in Dwarka',
+    date: 'September 15, 2026',
+    desc: 'Ground classes from Sector 7, and the three DGCA institutions a Delhi student needs that are already in the city — the Central Examination Organisation, four approved medical centres, and the equivalence body.',
+    href: '/pilot-training-in-dwarka',
+  },
+  {
     title: 'Pilot Training in Delhi',
     date: 'February 13, 2025',
     desc: 'Flight Simulator Practice in pilot training Course. DGCA Practice Paper, Private Pilot License (PPL) Course Fees, Full Form of CPL...',

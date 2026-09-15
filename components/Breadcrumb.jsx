@@ -21,6 +21,7 @@ const labelMap = {
   'commercial-pilot-license-syllabus': 'CPL syllabus',
   'commercial-pilot-license-salary': 'CPL salary',
   'commercial-pilot-license-admission-process': 'CPL admission process',
+  'pilot-training-in-dwarka': 'Pilot training in Dwarka',
   'dgca-ground-classes': 'DGCA ground classes',
   'dgca-ground-classes-in-india': 'DGCA ground classes in India',
   'dgca-pariksha': 'DGCA Pariksha',

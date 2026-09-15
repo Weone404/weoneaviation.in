@@ -161,6 +161,7 @@ const sitemapData = [
         links: [
             { label: 'Pilot Training in India', href: '/pilot-training-in-india' },
             { label: 'Pilot Training in Delhi', href: '/pilot-training-in-delhi' },
+            { label: 'Pilot Training in Dwarka', href: '/pilot-training-in-dwarka' },
         ],
     },
     {
