@@ -3,6 +3,7 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import CadetHubLink from '../components/CadetHubLink';
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Cadet Program', title: 'Qatar Airways', highlight: 'Cadet Pilot Program', sub: 'Your Gateway to the Skies — Quality! Results!' },
@@ -35,6 +36,8 @@ export default function QatarAirwaysCadet() {
     return (
         <Layout title="Qatar Airways Cadet Pilot Program – Complete Guide | We One Aviation Academy" description="Learn everything about the Qatar Airways Cadet Pilot Program — eligibility, training locations, program focus and how We One Aviation Academy can help you get selected.">
             <HeroSlider customSlides={heroSlides} asH1={false} />
+
+            <CadetHubLink airline="Qatar Airways" />
 
             {/* Overview */}
             <section className="py-20 px-4">

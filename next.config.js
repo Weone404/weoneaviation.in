@@ -355,11 +355,13 @@ const nextConfig = {
         permanent: true,
       },
       
-      {
-        source: '/cadet-pilot-program',
-        destination: '/emirates-cadet-pilot-program',
-        permanent: true,
-      },
+      /*
+       * REMOVED 2026-09-15: /cadet-pilot-program used to 301 to
+       * /emirates-cadet-pilot-program, which sent every generic "cadet pilot
+       * program" search onto one airline's page while six airline pages
+       * competed with each other for the term. It is now a real hub page
+       * sitting above all six. Do not restore this redirect.
+       */
       
       {
         source: '/cpl-full-form',

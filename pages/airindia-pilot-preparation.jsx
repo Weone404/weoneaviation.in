@@ -3,6 +3,7 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import CadetHubLink from '../components/CadetHubLink';
 import AutoInternalLinks from '../components/AutoInternalLinks';
 
 const heroSlides = [
@@ -141,6 +142,8 @@ export default function AirIndiaPilotPreparation() {
             description="Crack your Air India pilot selection process with We One Aviation. Structured preparation for CPL holders and Type Rated pilots covering ADAPT, GD, HR & technical interviews."
         >
             <HeroSlider customSlides={heroSlides} asH1={false} />
+
+            <CadetHubLink airline="Air India" />
 
             <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
                 <div className="max-w-7xl mx-auto">

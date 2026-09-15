@@ -3,6 +3,7 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import CadetHubLink from '../components/CadetHubLink';
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Cadet Program', title: 'Emirates Cadet', highlight: 'Pilot Program', sub: 'Turn Your Dream of Flying for Emirates into Reality' },
@@ -49,6 +50,8 @@ export default function EmiratesCadet() {
     return (
         <Layout title="Emirates Cadet Pilot Program – Complete Guide | We One Aviation Academy" description="Complete guide to the Emirates Cadet Pilot Program. Learn about eligibility, training phases, costs, facilities at EFTA and how to apply for this prestigious aviation pathway.">
             <HeroSlider customSlides={heroSlides} asH1={false} />
+
+            <CadetHubLink airline="Emirates" />
 
             {/* Overview */}
             <section className="py-20 px-4">

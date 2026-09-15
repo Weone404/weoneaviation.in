@@ -109,6 +109,7 @@ const sitemapData = [
         color: 'bg-red-50 border-red-200',
         headerColor: 'bg-red-700',
         links: [
+            { label: 'Cadet Pilot Programmes (overview)', href: '/cadet-pilot-program' },
             { label: 'Emirates Cadet Pilot Program', href: '/emirates-cadet-pilot-program' },
             { label: 'Qatar Airways Cadet Pilot Program', href: '/qatar-airways-cadet-pilot-program' },
             { label: 'SpiceJet Cadet Pilot Program', href: '/spice-jet' },

@@ -106,11 +106,31 @@ Highest commercial intent of any gap on the list.
 removed as unverified), class timings, what a classroom batch actually
 includes, and whether online batches run to the same schedule.
 
-**2.3 — No cadet pilot programme hub.** Keyword 32, flagged as heavily targeted
-by Golden Epaulettes. Six airline-specific pages exist (Emirates, Qatar, Air
-India, IndiGo, SpiceJet, Air Arabia) with no hub above them, so they compete
-with each other for the generic term. Airline cadet terms change per intake, so
-any hub must cite airline sources and be refreshed each intake.
+**2.3 — DONE 2026-09-15.** /cadet-pilot-program built as a real hub above the
+six airline pages, and the 301 that sent every generic cadet search onto the
+Emirates page was removed. The hub deliberately publishes no airline-specific
+terms (no fees, intakes, quotas or bond figures) because those change per
+intake and cannot be kept true; it publishes the durable fact instead — a
+cadet programme changes selection, funding and placement, not the licence, so
+200 hours, five papers at 70%, Class 1 medical, RTR, ELP Level 4, age 18 and
+the eGCA application hold on every route. Each of the six airline pages now
+links up to it through components/CadetHubLink.jsx.
+**Still open on this cluster:** the six airline pages carry inherited,
+unsourced programme detail (guaranteed-interview wording, IELTS bands, age
+floors, fleet lists, fee and bond figures). None of it traces to an airline
+document read on a known date. These pages need the same source-or-remove pass
+the DGCA pages got — logged as 2.10.
+
+**2.10 — Six airline cadet pages are unsourced.** /emirates-cadet-pilot-program,
+/qatar-airways-cadet-pilot-program, /spice-jet, /air-arabia,
+/airindia-pilot-preparation and /indigo-pilot-preparation predate the sourcing
+discipline. They state eligibility ages, English-test bands, training aircraft,
+fee and bond figures, and in one case a guaranteed interview, with no citation
+and no date read. Airline cadet terms change per intake, so each figure must
+either be cited to that airline's own current page with the date it was read,
+or removed and replaced with a line saying the airline publishes it per intake.
+Doing this well means reading six airline sites; it is the largest remaining
+sourcing job on the site.
 
 **2.4 — No pilot career counselling page.** Keyword 50, and it matches a
 service the academy actually offers.

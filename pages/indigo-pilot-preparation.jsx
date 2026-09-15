@@ -3,6 +3,7 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import CadetHubLink from '../components/CadetHubLink';
 
 const heroSlides = [
     {
@@ -86,6 +87,8 @@ export default function IndiGoPilotPrep() {
             description="Crack the IndiGo Junior First Officer (JFO) selection process with We One Aviation's structured interview prep — ADAPT tests, Group Discussions, HR & Technical interviews for CPL holders and A320 Type Rated pilots."
         >
             <HeroSlider customSlides={heroSlides} asH1={false} />
+
+            <CadetHubLink airline="IndiGo" />
 
             {/* ── Page body ── */}
             <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">

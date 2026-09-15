@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import CadetHubLink from '../components/CadetHubLink';
 import AutoInternalLinks from '../components/AutoInternalLinks';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -156,6 +157,8 @@ export default function AirArabiaMPLPage() {
                     </div>
                 </ScrollReveal>
             </header>
+
+            <CadetHubLink airline="Air Arabia" />
 
             {/* ── Programme Overview ── */}
             <section className="py-20 px-4">

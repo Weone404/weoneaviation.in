@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import CadetHubLink from '../components/CadetHubLink';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -209,6 +210,8 @@ export default function SpiceJetCadetPage() {
                     </div>
                 </ScrollReveal>
             </header>
+
+            <CadetHubLink airline="SpiceJet" />
 
             {/* ── About the Programme ── */}
             <section className="py-20 px-4">
