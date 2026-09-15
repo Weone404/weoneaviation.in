@@ -1,6 +1,7 @@
 ﻿const existingFaqRoutes = new Set([
   '/', '/faqs', '/faqs', '/air-arabia', '/blogs', '/blogs/[id]', '/commercial-pilot-license', '/dgca-ground-classes', '/dgca-ground-classes', '/doubt',
   '/courses/atpl', '/student-pilot-license-spl',
+  '/commercial-pilot-license-eligibility',
   '/dgca-computer-number', '/dgca-full-form',
   '/dgca-ground-classes-in-india', '/dgca-pariksha', '/ecga-login-your-complete-guide',
   '/how-to-become-a-pilot-after-12th', '/lead-magnets', '/lead-magnets/dgca-exam-checklist',
@@ -333,20 +334,6 @@ const routeContent = {
     ['What does We One Aviation\'s own admission procedure include?', 'It includes initial counselling, document verification, application submission, help scheduling DGCA-mandated medical fitness assessments, an orientation and enrollment session, and support with education loans and EMI options.'],
     ['What do I need to submit when enrolling at a flying school?', 'After selecting a school, you fill out its enrollment form, provide the required documents, and make your first fee payment to begin the process.'],
     ['Does We One Aviation help with financing CPL training?', 'Yes, the page states that We One Aviation provides education loan options and EMI solutions for eligible students as part of its admission support.'],
-  ],
-},
-  '/commercial-pilot-license-eligibility': {
-  title: 'CPL Eligibility FAQs',
-  questions: [
-    ['At what age can CPL training begin?', 'The page states that training can begin at 17, while the Commercial Pilot License is issued after the candidate completes the 18th birthday.'],
-    ['What education is required for CPL eligibility?', 'Candidates need 10+2 or an equivalent qualification with Physics and Mathematics. Students without these subjects may complete them through NIOS or another authorised institution.'],
-    ['Which medical certificates are required?', 'The page states that applicants must obtain a DGCA-recognised DGCA medical certificate followed by a DGCA medical certificate, which is mandatory for CPL issuance.'],
-    ['How many flying hours are required for a CPL?', 'The page lists a minimum of 200 flying hours, including 100 hours as Pilot-in-Command, 20 hours of cross-country flying, 10 hours of instrument flying, and 5 hours of night flying.'],
-    ['Is English proficiency required?', 'Yes. Candidates must be able to read, write, and understand English, and the page identifies English Language Proficiency testing as part of the eligibility process.'],
-    ['What is the role of the Student Pilot License?', 'The Student Pilot License is an early licensing step. The page lists a minimum age of 16, an aviation-subject oral or written examination, and a DGCA medical examination for SPL eligibility.'],
-    ['What vision standard is required for the CPL medical exam?', 'The page states candidates need 6/6 vision in one eye and 6/9 vision in the other, correctable with eyeglasses if needed, along with normal hearing, blood pressure, and ECG results.'],
-    ['Can foreign nationals apply for a CPL in India?', 'Yes, there is no specific nationality restriction, but foreign nationals must obtain security clearance and, if applicable, convert licenses obtained from foreign training programs as per DGCA rules.'],
-    ['What can I do with a Student Pilot License?', 'An SPL allows candidates to begin receiving supervised flying instruction for basic flying skills, before progressing to CPL training.'],
   ],
 },
   '/air-navigation': {
