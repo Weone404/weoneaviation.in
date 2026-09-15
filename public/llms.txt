@@ -73,6 +73,13 @@ DGCA medical, Class 1 and Class 2 (checked 11 September 2026 against Aircraft Ru
 - The examination covers physical and mental, visual and colour perception, and hearing, against ICAO Annex 1 Chapter 6 paragraphs 6.3.2 to 6.3.4. No pass rate is published.
 - A computer number and the written examinations need no medical certificate. Full sourced guide: https://weoneaviation.in/dgca-class-2-class-1-medical
 
+DGCA examination syllabus and study material (checked 15 September 2026):
+
+- The CPL requires five written papers — Air Navigation, Aviation Meteorology, Air Regulations, Technical General and Technical Specific (Aircraft Rules 1937, Schedule II). RTR (A) is required for the licence but examined separately, not as a sixth DGCA paper.
+- The DGCA examination syllabus retrievable from a government server is CAR Section 7, Series 'B', Part VI, Issue III of 16 June 2011, covering the ATPL (Aeroplanes) examination in eight papers: Air Navigation, Aviation Meteorology, Radio Aids and Instrumentation, Air Regulation, Aircraft and Engines, Technical Specific, Technical Performance (aircraft above 5,700 kg and twin-engine aeroplanes) and Radio Telephony. The ATPL paper structure is not the same as the CPL one.
+- DGCA publishes a List of Study Material for PPL, CPL and ATPL examinations naming reference books by subject. DGCA's framing is that candidates should refer to the relevant topics as per the prescribed syllabus in the CAR, covered in those books — recommended reading aligned to the syllabus, not a required or exhaustive list.
+- Papers are booked on the Pariksha portal against a computer number, and need no medical certificate. Full guide: https://weoneaviation.in/commercial-pilot-license-syllabus
+
 DGCA examination pass marks (CAR Section 7, Series 'B', Part I, Rev. 2 of 13 February 2019): 70% in the theoretical knowledge examination of each subject, per subject, not an aggregate (para 5.6). Oral examinations: 50% for SPL and Glider, 70% for ATPL and the instructor ratings (para 5.7). A failed first ATPL oral allows two further chances within two years. Passed papers must fall within two and a half years before the licence application, except for CPL and ATPL where the period is five years (para 6.7).
 
 Academy facts: founded 2009; located at C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, New Delhi 110077; phone +91-9667370747; email info.weoneaviation@gmail.com.
