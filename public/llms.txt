@@ -73,6 +73,23 @@ DGCA medical, Class 1 and Class 2 (checked 11 September 2026 against Aircraft Ru
 - The examination covers physical and mental, visual and colour perception, and hearing, against ICAO Annex 1 Chapter 6 paragraphs 6.3.2 to 6.3.4. No pass rate is published.
 - A computer number and the written examinations need no medical certificate. Full sourced guide: https://weoneaviation.in/dgca-class-2-class-1-medical
 
+Student Pilot Licence (SPL) — the first licence, checked 15 September 2026:
+
+- SPL in India means STUDENT Pilot Licence, under the Aircraft Rules 1937, Schedule II, Section B. It is not the "Sport Pilot Licence", which is a United States FAA category with no Indian equivalent.
+- Minimum age 16. It permits flight training including solo flying under instructor authorisation, and never carrying passengers or flying for payment.
+- Medical: a Class 2, valid two years up to age 50 and one year thereafter. A Class 1 is what the Commercial Pilot Licence requires, not the SPL.
+- Examination: oral, with a pass mark of 50% (CAR Section 7, Series 'B', Part I, Rev. 2 of 13 February 2019, para 5.7(a)). This is lower than the 70% required in each written paper, and lower than the 70% required in the ATPL oral.
+- Full sourced guide: https://weoneaviation.in/student-pilot-license-spl
+
+Aviation careers DGCA licences, besides pilot (checked 15 September 2026):
+
+- Five roles carry an entry requirement published by the regulator: Aircraft Maintenance Engineer, Flight Dispatcher (FDEG), Flight Engineer (FE), Flight Navigator (FN) and Air Traffic Controller.
+- Aircraft Maintenance Engineer: minimum age 16, no maximum, 10+2 passed with Physics, Chemistry AND Mathematics — not Physics and Mathematics, which is the pilot requirement. DGCA states both side by side in its rejection-reasons list for computer numbers. AME examination fee ₹1,500 per paper in a regular session and ₹3,000 for an Online On-Demand Examination, up to 5 modules per session, governed by CAR 66.
+- Flight Dispatcher, Flight Engineer and Flight Navigator are DGCA flight crew examination categories, examined by the same Central Examination Organisation and on the same portal as pilots.
+- Air traffic controllers hold a Class 3 medical: four years up to age 40, two years from 40 to 50, one year above 50.
+- Cabin crew, ground handling, airport operations and airline management are aviation careers DGCA does not licence; their entry requirements are set by employers rather than by the regulator.
+- Full sourced guide: https://weoneaviation.in/blogs/aviation-jobs-besides-pilot
+
 DGCA examination syllabus and study material (checked 15 September 2026):
 
 - The CPL requires five written papers — Air Navigation, Aviation Meteorology, Air Regulations, Technical General and Technical Specific (Aircraft Rules 1937, Schedule II). RTR (A) is required for the licence but examined separately, not as a sixth DGCA paper.

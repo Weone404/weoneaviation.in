@@ -48,6 +48,21 @@ const nextConfig = {
    * { source: '/blogs/6a240cea7b692cb9fe764c82', destination: '/blogs/multi-engine-rating-explained', permanent: true },
    * { source: '/blogs/69f970e6d58c9676b0a61c01', destination: '/blogs/cpl-vs-cadet-program', permanent: true },
    *
+   * VERIFIED 2026-09-15: all four destinations above are still missing.
+   * how-pilots-build-hours, dgca-medical-requirements,
+   * multi-engine-rating-explained and cpl-vs-cadet-program do not exist as
+   * pages. Do not activate any of these lines until they do.
+   *
+   * TWO CORRECTIONS, so nobody activates this list as written:
+   *   6a8be2f757898ec159830c3e is "Aviation Safety Procedures Every Student
+   *   Must Know". Pointing it at a DGCA medical page is a topic mismatch and
+   *   would be a bad 301. Re-decide its destination; do not use the line above.
+   *
+   *   6a240cea7b692cb9fe764c82 is mapped to multi-engine-rating-explained,
+   *   which does not exist — but /blogs/multi-engine-rating-for-pilots-in-india
+   *   does. Confirm the post's actual topic before repointing it there. It
+   *   carries no keyword mappings, so there is no hurry.
+   *
    * The remaining ~14 database posts stay live and untouched pending GSC data.
    */
   async redirects() {
@@ -70,6 +85,15 @@ const nextConfig = {
        */
       { source: '/blogs/6a13dbf1ad864b831525ec3b', destination: '/blogs/aviation-jobs-besides-pilot', permanent: true },
       { source: '/blogs/6a38b7aece6bdc909efab785', destination: '/blogs/aviation-jobs-besides-pilot', permanent: true },
+      /*
+       * Added 2026-09-15. "How to Become a Pilot in India after 12th" at this
+       * ObjectId duplicates /how-to-become-a-pilot-after-12th, which already
+       * exists and is the fuller of the two flat pages (564 lines against 243
+       * at /how-to-become-a-pilot/after-12th). The ObjectId carries 8,100
+       * monthly searches in the keyword mapping and no ranking signal of its
+       * own, because it self-canonicalises to the id. No new page needed.
+       */
+      { source: '/blogs/69ef4fb93a29bf8490327d34', destination: '/how-to-become-a-pilot-after-12th', permanent: true },
 
       {
         source: '/Pilot-Course-&-Pilot-Training-in -ndia',

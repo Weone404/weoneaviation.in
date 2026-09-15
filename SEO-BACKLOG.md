@@ -63,7 +63,13 @@ Besides Airline Pilot" (23,190 volume, 24 keywords) and its duplicate, now
 live at /blogs/aviation-jobs-besides-pilot with both ObjectIds 301'd to it in
 the same commit, per the standing rule. Rebuilt around the licensed/unlicensed
 distinction no competitor draws, with AME sourced from the DGCA Pariksha AME
-FAQ. 27 posts remain; the next by volume are "Best Aviation Academy Near Me"
+FAQ. A third, "How to Become a Pilot in India after 12th" (8,100), was a straight
+duplicate of /how-to-become-a-pilot-after-12th and now 301s there — no new
+page needed. That leaves 26. Also verified that the four still-commented
+mappings in next.config.js all point at destinations that do not exist, and
+annotated two that are wrong on their face: 6a8be2f7 is an aviation-safety
+post pointed at a medical page, and 6a240cea names a multi-engine page under
+a slug that does not exist while a real one does. 26 posts remain; the next by volume are "Best Aviation Academy Near Me"
 (16,630, commercial intent — probably a landing page rather than a blog post)
 and "How to Become a Pilot in India after 12th" (8,100), which duplicates two
 existing file-based pages and should 301 rather than get a new page.
