@@ -17,7 +17,15 @@
    */
   '/cadet-pilot-program', '/dgca-class-2-class-1-medical',
   '/blogs/aviation-jobs-besides-pilot', '/faq',
-  '/how-to-choose-an-aviation-academy',
+  '/how-to-choose-an-aviation-academy', '/commercial-pilot-license-salary',
+  /*
+   * /commercial-pilot-license-salary joined this gate on 2026-09-15 when it was
+   * rebuilt with its own FAQs. Its old routeContent entry was deleted in the
+   * same edit: every answer in it restated a salary figure from the page as it
+   * then stood — 1.5-3 lakh entry, 6-10 lakh captain, four per-country bands —
+   * and none of those figures had a source. Leaving them here would have kept
+   * them shipping in an FAQPage node after the page itself had dropped them.
+   */
   '/privacy-policy', '/terms', '/sitemap', '/404',
 ]);
 
@@ -275,7 +283,7 @@ const routeContent = {
     ['What international training options are listed?', 'The page lists FAA flight training in the USA (₹45-65 lakh, 12-18 months) and SACAA training in South Africa (₹35-50 lakh, 12-18 months), with guidance for international training and DGCA licence conversion after returning to India.'],
     ['What eligibility and medical requirements are shown?', 'The page lists minimum ages of 17 for PPL and 18 for CPL, 10+2 with Physics and Mathematics, DGCA-mandated medical fitness assessments, English proficiency, and the applicable flying-hour requirements.'],
     ['Is there a scholarship available for pilot training?', 'Yes, the page lists a Topper Scholarship Program with a full money-back guarantee for Class 10 and 12 toppers, applicable on CPL and Ground Class programs, with limited seats.'],
-    ['What is the earning potential after becoming a commercial pilot?', 'The page lists starting First Officer salaries of ₹1.5-3 lakh per month, Senior First Officer salaries of ₹5-10 lakh per month, and Captain salaries of ₹12-25 lakh per month.'],
+    ['What is the earning potential after becoming a commercial pilot?', 'No Indian airline publishes a pilot pay scale, so no figure can be traced to a primary source — the rupee bands that used to be here were removed on 15 September 2026 for that reason. What is true without a figure: pay rises with command, a captain earns materially more than a first officer, and a large part of the pay is linked to hours flown, which DGCA caps at 1,000 hours a year. See the salary page for the full treatment.'],
     ['What are the three phases of CPL training listed on this page?', 'The three phases are Ground School (3-4 months), PPL Training (4-5 months), and CPL Flying (8-10 months), covering everything from ground theory to instrument rating, multi-engine rating, and airline interview preparation.'],
   ],
 },
@@ -290,7 +298,7 @@ const routeContent = {
     ['What can increase the final training cost?', 'The final cost can increase because of failed exam attempts, additional flying hours, extra simulator time, medical retesting, weather-related extensions, accommodation upgrades, and optional ratings.'],
     ['How does CPL training in India compare in cost to training abroad?', 'The page lists CPL in India at ₹40-55 lakh, PPL+CPL in India at ₹50-65 lakh, CPL in the USA at ₹80-110 lakh, and CPL in Australia at ₹70-90 lakh, alongside their typical durations.'],
     ['What discount is offered for paying the full training fee upfront?', 'The page lists a 5-10% discount for paying the full amount before the course starts, which it estimates could save ₹2-5 lakh.'],
-    ['What is the expected return on investment for CPL training?', 'Using a conservative example of a ₹50 lakh investment against an average First Officer salary of ₹2.5 lakh per month, the page estimates a break-even period of around 24 months.'],
+    ['What is the expected return on investment for CPL training?', 'This answer used to give a break-even period of around 24 months, worked from a ₹50 lakh investment and an assumed first officer salary. It was removed on 15 September 2026: the salary input was not sourced, and a financial projection built on an unsourced number is worse than no projection, because it reads as arithmetic. What can honestly be said is that the cost side is partly knowable and the income side is not, so plan against the cost — and note that a licence does not carry a job, so the clock does not start on graduation.'],
     ['What tips does the page give for reducing training costs?', 'Tips include paying upfront for a discount, applying for scholarships, taking an education loan early, avoiding flying-hour overages, skipping optional ratings until hired, sharing accommodation, and minimizing exam re-attempts.'],
   ],
 },
@@ -458,32 +466,6 @@ const routeContent = {
     ['Is CGPA used in the ICSE grading system?', 'No, CGPA is used in CBSE, not ICSE. The ICSE board gives subject-wise numeric grades only, without calculating an overall percentage.'],
   ],
 },
-  '/commercial-pilot-license-salary': {
-  title: 'Commercial Pilot License Salary FAQs',
-  questions: [
-    ['What is the starting salary after obtaining a CPL in India?', 'The page lists an entry-level First Officer or Co-Pilot salary of approximately INR 1.5-3 lakh per month. Regional airlines and charter operators may offer different starting packages.'],
-    ['How much can an experienced airline captain earn in India?', 'The page lists approximately INR 6-10 lakh per month for experienced captains at leading domestic airlines. International routes and major overseas carriers may offer higher packages.'],
-    ['What factors affect a commercial pilot salary?', 'The page identifies airline type, aircraft type, flight experience, location, and additional roles such as training captain, instructor, or examiner as major salary factors.'],
-    ['How much can commercial pilots earn abroad?', 'The page lists approximate international ranges from ₹3.3-6.6 lakh per month for new pilots and ₹8.3-16.6 lakh or more per month for experienced captains, depending on country, aircraft, employer, and exchange rates.'],
-    ['What additional benefits may pilots receive?', 'The listed benefits include health and life insurance, family travel benefits, housing or accommodation allowances, retirement plans, and training or upskilling opportunities.'],
-    ['Does a CPL guarantee a particular salary?', 'No. A CPL is required for professional pilot roles, but actual compensation depends on employer, aircraft, location, experience, flight hours, ratings, and the role offered.'],
-    ['Which countries offer the highest commercial pilot salaries?', 'The page lists Australia (₹10-18.3L+/month), the USA (₹8.3-16.6L+/month), the UAE (₹10-15L+/month), and Singapore (₹6.6-13.3L+/month) as high-paying destinations for commercial pilots.'],
-    ['Why do international airlines generally pay more than Indian airlines?', 'The page notes that pilots flying for Middle Eastern, Southeast Asian, or European airlines tend to receive larger salary packages than their Indian counterparts, partly due to aircraft type, route networks, and regional pay standards.'],
-  ],
-},
- '/commercial-pilot-license-syllabus': {
-  title: 'Commercial Pilot License Syllabus FAQs',
-  questions: [
-    ['What subjects are included in the CPL ground syllabus?', 'The page lists Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, and Radio Telephony or RTR as the main ground-training subjects.'],
-    ['What does the Air Navigation syllabus cover?', 'Air Navigation includes flight planning, radio navigation, instrument flying, GPS, and the techniques needed to plan and conduct flights safely.'],
-    ['What is included in the practical flight syllabus?', 'The practical modules include basic manoeuvres, take-offs and landings, straight-and-level flight, turns, climbs, descents, cross-country flights, instrument flying, night flying, and solo flying.'],
-    ['How many flight hours are required for the CPL syllabus?', 'The page states that students need at least 200 hours of flight training, including the required solo, cross-country, and instrument-flight components.'],
-    ['How are students prepared for DGCA examinations?', 'The page describes classroom sessions, online resources, mock tests, and instructor-led preparation designed around DGCA ground subjects.'],
-    ['Why are both ground and flight training necessary?', 'Ground training provides the theoretical knowledge for safe operations and DGCA examinations, while flight training develops the practical skills needed to operate an aircraft and complete the CPL requirements.'],
-    ['What does the Technical Specific subject cover?', 'Technical Specific covers training specific to the aircraft type a candidate operates during their flight education period, as distinct from the general aircraft knowledge covered in Technical General.'],
-    ['What does the Radio Telephony (RTR) subject in the syllabus cover?', 'RTR trains students in aviation communication, standard phraseology, and emergency procedures needed to operate aircraft radio equipment.'],
-  ],
-},
   '/your-guide-on-how-to-become-a-pilot-in-india': {
   title: 'How to Become a Pilot in India FAQs',
   questions: [
@@ -504,9 +486,9 @@ const routeContent = {
     ['What does the pilot selection process involve?', 'The process includes meeting basic eligibility, entrance exams, a personal interview, medical examination, flight school selection, ground school training, flight training, license examinations (PPL then CPL), additional ratings, and building flight hours.'],
     ['How can I become a pilot in the Indian Air Force after 12th?', 'The National Defence Academy (NDA) exam is the main route after 12th — unmarried candidates aged 16.5-19.5 with Physics and Mathematics can sit the UPSC-conducted written exam, followed by physical/medical tests and an interview, leading to 3 years of training at NDA and specialised flying training.'],
     ['What other Indian Air Force pilot entry routes exist for graduates?', 'The page lists the Combined Defence Services (CDS) exam and Air Force Common Admission Test (AFCAT) for graduates aged 20-24 (up to 26 for DGCA CPL holders under AFCAT), and NCC Special Entry for those with an Air Wing Senior Division \'C\' Certificate.'],
-    ['What is the average pilot salary in India?', 'The page lists entry-level salaries of ₹1.5-2 lakh per month, with senior/experienced pilots earning ₹1 crore or more annually, and an average annual range of ₹10-50 lakh depending on experience, aircraft, and airline.'],
+    ['What is the average pilot salary in India?', 'There is no published average. Indian airlines do not publish pilot pay scales, so the figures circulating online cannot be checked against any primary source; the ones that used to be here were removed on 15 September 2026. What DGCA does publish is the ceiling on flying: 35 hours in 7 days, 100 in 28 and 1,000 in 365, under the flight crew Flight Duty Time Limitations.'],
     ['What is the career outlook for pilots in India?', 'The page projects a 13% job growth rate through 2030, driven by fleet expansion at major airlines, growing regional connectivity, and a global pilot shortage that also creates opportunities abroad.'],
-    ['How much does pilot training cost after 12th?', 'The page lists a typical training cost range of ₹35-46 lakh, varying by flight school and training type.'],
+    ['How much does pilot training cost after 12th?', 'The range that used to be quoted here was removed on 15 September 2026 because it could not be traced to any published source, and it disagreed with the other ranges this site was quoting elsewhere. The cost transparency page sets out what is publicly comparable and what is not.'],
     ['What types of pilot careers can I pursue?', 'The page lists Commercial Pilot, Private Pilot, Military Pilot, Corporate Pilot, and Flight Instructor as the main pilot career paths, each with its own requirements and career experience.'],
   ],
 },
@@ -529,7 +511,7 @@ const routeContent = {
     ['Which subjects are required in 12th to become a pilot?', 'For the Indian pilot licence route, students need Physics, Chemistry, and Mathematics (PCM) in 12th, with a minimum of 50% marks required for DGCA eligibility. Some foreign flying schools accept any 12th pass.'],
     ['What is the minimum age to begin pilot training?', 'The page lists a minimum age of 17 years for PPL and 18 years for CPL, with different medical, education, and flight-hour requirements for each.'],
     ['What are the entrance steps after 12th?', 'The usual sequence is passing 12th with PCM, clearing the DGCA medical, enrolling in a DGCA flying school, completing ground school for the five DGCA written papers, logging the required 200 hours, clearing the DGCA CPL skill test, and receiving the CPL.'],
-    ['How much does pilot training cost after 12th?', 'The page lists ₹6-10 lakh for PPL in India, ₹40-70 lakh for CPL in India, and ₹50-90 lakh for CPL abroad, noting that fees vary by school and country, with EMI and scholarships available.'],
+    ['How much does pilot training cost after 12th?', 'Ranges like these circulate widely and none of them could be traced to a published document — see the cost transparency page, which sets out what is actually publicly comparable: IGRUA, a government academy, publishes its course fee, and DGCA publishes its own examination charges. Private flying schools publish very little, so get any quote in writing and compare it line by line.'],
     ['How long does it take to become a commercial pilot?', 'The page lists a duration of 6-12 months for PPL and 18-24 months for CPL, though exams, weather, medicals, and aircraft availability can affect the timeline.'],
     ['How many flight hours are required for PPL versus CPL?', 'The page lists a minimum of 40 flight hours for PPL and 200 hours for CPL, which for CPL includes solo, cross-country, instrument, and night flying.'],
     ['What happens after receiving a CPL?', 'After receiving the CPL from DGCA, candidates apply to airlines and go through PABT, group discussion, and interview stages before starting as a First Officer.'],

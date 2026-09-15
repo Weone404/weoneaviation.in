@@ -448,9 +448,24 @@ export default function DGCAGroundClassesInIndia() {
                                         </div>
                                     ))}
                                 </div>
+                                {/*
+                                  * REWRITTEN 2026-09-15. This block quoted monthly salary bands for
+                                  * first officers and captains and then attached them directly to
+                                  * this academy's own course — "Your DGCA Ground Classes in India
+                                  * are the first investment in this career". That is a salary claim
+                                  * tied to our own students' outcomes, which the academy does not
+                                  * make anywhere else and cannot substantiate, on top of figures no
+                                  * Indian airline publishes. Both halves are gone.
+                                  */}
                                 <div className="bg-av-light rounded-xl p-5">
-                                    <p className="text-av-blue font-semibold text-sm mb-2">💡 Pilot Salary in India</p>
-                                    <p className="text-gray-600 text-xs leading-relaxed">Starting salary for First Officers at Indian airlines ranges from <strong>₹1.5 lakh to ₹3 lakh per month</strong>. Experienced Captains earn ₹5–15 lakh per month. Your DGCA Ground Classes in India are the first investment in this career.</p>
+                                    <p className="text-av-blue font-semibold text-sm mb-2">💡 What is published about pilot pay</p>
+                                    <p className="text-gray-600 text-xs leading-relaxed">
+                                        No Indian airline publishes a pilot pay scale, so no figure online can be traced to a
+                                        primary source &mdash; this page used to quote one and no longer does. What DGCA does
+                                        publish is the ceiling: a maximum of <strong>1,000 flying hours in 365 days</strong> and
+                                        100 in any 28, under the flight crew Flight Duty Time Limitations. A large part of the
+                                        pay is hour-linked, so that is its limit.
+                                    </p>
                                 </div>
                             </section>
 
@@ -627,12 +642,13 @@ export default function DGCAGroundClassesInIndia() {
 
                         <ScrollReveal delay={500}>
                             <div className="rounded-2xl border border-gray-100 p-6">
-                                <h4 className="font-montserrat font-bold text-av-blue mb-3 text-sm">💰 Pilot Salary in India</h4>
+                                <h4 className="font-montserrat font-bold text-av-blue mb-3 text-sm">💰 Pilot pay: the published part</h4>
                                 <div className="space-y-2">
+                                    {/* Rupee bands for these three ranks were removed 2026-09-15: untraceable. */}
                                     {[
-                                        { role: 'First Officer (New)', salary: '₹1.5–3L / month' },
-                                        { role: 'Senior First Officer', salary: '₹3–6L / month' },
-                                        { role: 'Captain', salary: '₹5–15L / month' },
+                                        { role: 'Max flying, 7 days', salary: '35 hours' },
+                                        { role: 'Max flying, 28 days', salary: '100 hours' },
+                                        { role: 'Max flying, 1 year', salary: '1,000 hours' },
                                     ].map(({ role, salary }) => (
                                         <div key={role} className="flex justify-between items-center text-xs border-b border-gray-100 pb-2">
                                             <span className="text-gray-600">{role}</span>

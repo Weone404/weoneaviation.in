@@ -69,12 +69,19 @@ const durationJourney = [
   "Commercial Pilot License Issuance",
 ];
 
+/*
+ * REWRITTEN 2026-09-15 during the site-wide pay sweep. The three LPA bands here
+ * could not be traced to any published source; no Indian airline publishes a
+ * pilot pay scale. The progression is real and worth showing, so the table now
+ * describes each rank rather than pricing it. /commercial-pilot-license-salary
+ * carries the honest treatment.
+ */
 const salaryProgression = [
-  { level: "Student Pilot", range: "During training" },
-  { level: "First Officer", range: "₹12–20 LPA" },
-  { level: "Senior First Officer", range: "₹20–35 LPA" },
-  { level: "Captain", range: "₹50 LPA or more" },
-  { level: "International Airline Pilot", range: "Higher salary packages with additional allowances and benefits" },
+  { level: "Student Pilot", range: "Training. A cost, not an income." },
+  { level: "First Officer", range: "The first paid seat, flying as co-pilot. Reaching it depends on the hiring cycle, not only on you." },
+  { level: "Senior First Officer", range: "More hours and experience in the same seat, on the way to command." },
+  { level: "Captain", range: "Pilot-in-command, and the largest single step in a pilot's earnings." },
+  { level: "International Airline Pilot", range: "An overseas carrier, which first requires a licence that regulator accepts." },
 ];
 
 const careerOpportunities = [
@@ -106,7 +113,7 @@ const faqs = [
   { q: "Who is eligible for a commercial pilot course?", a: "Students who have completed 10+2 with Physics and Mathematics, meet DGCA medical standards, and satisfy the minimum age requirements are generally eligible to enroll in a commercial pilot course." },
   { q: "How long does pilot training take?", a: "Most pilot training programs are completed within 18 to 24 months, depending on weather conditions, flying schedules, and individual progress." },
   { q: "Can I pursue pilot training in Delhi?", a: "Yes. Students looking for pilot training in Delhi can receive complete counselling, admission support, and guidance from We One Aviation before joining a DGCA flying school." },
-  { q: "What is the average commercial pilot license salary?", a: "Fresh commercial pilots typically earn between ₹12–20 LPA, while experienced captains and international airline pilots can earn substantially higher salaries." },
+  { q: "What is the average commercial pilot license salary?", a: "There is no published average. Indian airlines do not publish pilot pay scales, so no salary figure anywhere can be checked against a primary source. See our salary page for what is published and what is not. A captain earns materially more than a first officer, and a large part of the pay is linked to hours flown, which DGCA caps at 1,000 hours a year." },
 ];
 
 const quickFacts = [

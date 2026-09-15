@@ -185,7 +185,7 @@ const faqs = [
     },
     {
         q: 'What is the salary of a commercial pilot?',
-        a: 'Commercial pilot salaries vary by airline, experience, and aircraft type. Entry-level first officers can earn ₹1.5–3 lakh/month, while senior captains earn ₹5–10 lakh/month or more.',
+        a: 'They vary by airline, rank, fleet, seniority, contract type and roster — and there is no published scale to quote. Indian airlines do not publish pilot pay scales, so no salary figure anywhere can be checked against a primary source. See our salary page for what is published and what is not.',
     },
     {
         q: 'Can I get a scholarship for pilot training?',

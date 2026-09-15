@@ -226,7 +226,67 @@ be 301'd to their canonical targets and removed outright. That is a deletion,
 so it is not being done without a decision. The canonical plus noindex already
 achieves most of the benefit.
 
-**2.15 — /commercial-pilot-license-salary is unsourced.** While consolidating
+**2.17 — DONE 2026-09-15. Site-wide pay sweep, and the salary page rebuilt.**
+
+/commercial-pilot-license-salary was the highest-volume page on the site (74,120
+mapped searches) and it answered the question with ₹1.5–3 lakh entry, ₹6–10 lakh
+captain and per-country monthly bands. None of it traced anywhere. It is rebuilt
+around the one thing about Indian airline pilot pay that IS published and that no
+competitor page carries: a large part of the pay is flying-hour linked, and DGCA
+caps flying hours. CAR Section 7 Series 'J' Part III, Issue III of 24 April 2019
+as revised 8 January 2024, sets 35 hours in 7 days, 100 in 28, 300 in 90 and
+1,000 in 365, with a minimum weekly rest of 48 continuous hours including two
+local nights. So the variable half of the pay has a hard, checkable ceiling.
+
+A trap for the next session, recorded in lib/facts.js as well: CAR Section 7
+Series 'J' PART I carries the same four numbers and applies to CABIN CREW. Part
+III is the flight crew one.
+
+The same figures were on eleven other surfaces, and all of them were swept in the
+same commit — components/FAQs.jsx (which renders on the home page and was the
+most widely served of them), /courses, /courses/cpl, /commercial-pilot-license,
+/pilot-course-training-in-india, /pilot-training-in-india,
+/dgca-ground-classes-in-india, /blogs/aviation-course-after-12th, and five
+entries in data/pageFaqs.js. The site now answers this question with one voice
+through lib/facts.js PAY_NOTE.
+
+Three of those deserve naming:
+- /dgca-ground-classes-in-india attached salary bands directly to this academy's
+  own course — "Your DGCA Ground Classes in India are the first investment in
+  this career". That is a salary claim tied to our own students' outcomes, which
+  the owner's standing rules bar outright.
+- /blogs/aviation-course-after-12th quoted a named-airline average, "IndiGo
+  (Example) ₹62.7 Lakhs / Year". Attributing a specific figure to a named company
+  with nothing behind it is the worst version of this problem.
+- data/pageFaqs.js carried a return-on-investment calculation — a 24-month
+  break-even worked from a ₹50 lakh cost and an assumed first officer salary. A
+  financial projection built on an unsourced input is worse than none, because it
+  reads as arithmetic.
+
+Corrected in passing: components/FAQs.jsx said the minimum age for a CPL is 17.
+It is 18 (Schedule II Section J); 17 is the PPL age. That error was on the home
+page.
+
+**2.18 — The cost ranges are the same problem and are NOT yet swept.** This is
+the next batch. /cost-transparency states plainly that the ₹40–70 lakh range
+could not be traced to any published document, while at least eight other
+surfaces still quote a cost range as fact, and they do not even agree with each
+other: ₹40–70 lakh, ₹40–55 lakh, ₹35–46 lakh, ₹35–45 lakh, ₹58–60 lakh, ₹50–90
+lakh abroad, ₹6–10 lakh and ₹7.5–10 lakh for a PPL. Files: /blogs/pilot-training-cost-in-india,
+/blogs/commercial-pilot-training-programs-complete-guide,
+/blogs/flight-school-prerequisites-admission-guide, /how-to-become-a-pilot/after-12th,
+/how-to-become-a-pilot/in-india, /flying-school/india, /pilot-training-in-india
+(five per-country fee rows), /faq, and two entries in data/pageFaqs.js. The
+site's own position is already set by /cost-transparency; everything else has to
+be brought into line with it.
+
+**Also needs the owner, found during the sweep:** data/pageFaqs.js describes a
+"Topper Scholarship Program with a full money-back guarantee" for Class 10 and 12
+toppers, and a 5–10% discount for paying the full fee upfront. Both are offers,
+so both are yours to state — but a money-back guarantee is a strong promise and
+should be one you can honour in writing. Confirm or remove.
+
+**2.15 — SUPERSEDED by 2.17. Original note: /commercial-pilot-license-salary is unsourced.** While consolidating
 /blogs/4 it became clear the destination has the same problem the source did:
 ₹1.5–3 lakh entry, ₹6–10 lakh captain, and per-country monthly bands, none of
 them traceable. It was not redirected there for that reason. This page is

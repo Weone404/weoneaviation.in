@@ -34,10 +34,16 @@ const articleSchema = {
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const stats = [
-    { num: '17+', label: 'Minimum Age', icon: '🎂' },
+    { num: '18 for CPL', label: 'Minimum Age', icon: '🎂' },
     { num: '200 hrs', label: 'Flight Hours', icon: '✈️' },
     { num: '13%', label: 'Job Growth (2030)', icon: '📈' },
-    { num: '₹35–46L', label: 'Training Cost', icon: '💰' },
+    /*
+     * REMOVED 2026-09-15: this tile read ₹35–46L for training cost. Untraceable,
+     * and it disagreed with the three other cost ranges the site was quoting
+     * elsewhere. /cost-transparency holds the honest position: only IGRUA's
+     * published fee is publicly comparable.
+     */
+    { num: '5 Papers', label: 'DGCA Written Exam', icon: '📝' },
 ];
 
 const pilotTypes = [
@@ -231,11 +237,19 @@ const ndaSelectionSteps = [
     },
 ];
 
+/*
+ * REWRITTEN 2026-09-15 during the site-wide pay sweep. This table gave four
+ * rupee figures including a named-airline average — "IndiGo (Example) ₹62.7
+ * Lakhs / Year". No Indian airline publishes a pilot pay scale, so that figure
+ * in particular was attributing a number to a named company with nothing
+ * behind it. All four are gone. What is published, and now shown here, is the
+ * regulation that governs the hour-linked part of the pay.
+ */
 const salaryData = [
-    { level: 'Entry-Level Pilots', salary: '₹1.5 – 2 Lakhs / Month', note: 'Salaries grow rapidly with experience and flight hours.' },
-    { level: 'Experienced Pilots', salary: '₹1 Crore+ / Year', note: 'Senior pilots with extensive flight hours, especially on large commercial aircraft.' },
-    { level: 'IndiGo (Example)', salary: '₹62.7 Lakhs / Year (avg)', note: 'Major carriers offer competitive pay scales.' },
-    { level: 'Annual Range', salary: '₹10 – 50 Lakhs / Year', note: 'Highly experienced pilots earn even more.' },
+    { level: 'What is published', salary: 'No pay scale, by any Indian airline', note: 'Pay is set in individual contracts and varies by rank, fleet, seniority, contract type and roster. No public document exists to check a figure against.' },
+    { level: 'What is capped', salary: '1,000 flying hours a year', note: "Under the flight crew Flight Duty Time Limitations: 35 hours in 7 days, 100 in 28, 300 in 90, 1,000 in 365. A large part of pay is hour-linked, so this is its ceiling." },
+    { level: 'What is true without a figure', salary: 'A captain earns materially more', note: 'Command is the largest single step in a pilot\u2019s earnings. The airline\u2019s own upgrade criteria sit on top of the DGCA minimum.' },
+    { level: 'What nobody can promise', salary: 'That a licence becomes a job', note: 'Hiring is the airline\u2019s decision. The wait between holding a CPL and being employed varies with the hiring cycle.' },
 ];
 
 const careerPaths = [
@@ -630,7 +644,11 @@ export default function BecomeAPilotPage() {
                             Average Pilot Salary <span className="text-av-orange">In India</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-3xl mx-auto text-sm leading-relaxed">
-                            In India, pilot salaries can vary widely, influenced by factors like experience level, type of aircraft flown, and the airline they work for. Generally, the average salary for pilots in India ranges from approximately <strong className="text-av-blue">₹10 lakhs to ₹50 lakhs annually</strong>, with highly experienced pilots earning even more.
+                            Pay varies by rank, fleet, seniority, contract type and roster &mdash; and no Indian airline
+                            publishes a pilot pay scale, so the ranges you find online cannot be traced to a primary source.
+                            This page used to quote one and no longer does. What <strong className="text-av-blue">is</strong>{' '}
+                            published is the ceiling the hour-linked part of the pay sits under: a maximum of 1,000 flying hours
+                            in 365 days, and 100 in any 28, under the flight crew Flight Duty Time Limitations.
                         </p>
                     </ScrollReveal>
 
@@ -725,7 +743,7 @@ export default function BecomeAPilotPage() {
                             <h3 className="font-montserrat font-bold text-white text-xl mb-5">Earning Potential and Job Stability</h3>
                             <div className="grid md:grid-cols-3 gap-6">
                                 {[
-                                    { icon: '💰', title: 'Competitive Salaries', desc: 'Pilot salaries in India start high and grow steadily with experience. While entry-level salaries range from ₹1.5 to ₹2 lakhs per month, senior pilots can earn over ₹1 crore annually.' },
+                                    { icon: '💰', title: 'Pay Rises With Rank', desc: 'Pay rises with command and with hours flown, and a captain earns materially more than a first officer. What the figures are is not published by any Indian airline, so this page does not quote one — see the salary page for what can and cannot be shown.' },
                                     { icon: '🔒', title: 'Job Security', desc: 'As experienced pilots approach retirement, new pilots are needed to replace them, making this a stable career with opportunities for advancement.' },
                                     { icon: '📊', title: 'Growth Opportunities', desc: 'Pilots can progress from first officers to captains, and with enough experience, can explore roles in aviation training, management, or consultancy, expanding career flexibility beyond flying.' },
                                 ].map(item => (

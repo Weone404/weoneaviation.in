@@ -66,10 +66,27 @@ const prepTips = [
     'Focus on understanding concepts rather than rote memorization, as questions can be application-based.',
 ];
 
+/*
+ * REWRITTEN 2026-09-15 during the site-wide pay sweep.
+ *
+ * This array carried three monthly and annual rupee bands, rising to crores,
+ * with paragraphs of narrative around each. Indian airlines do not publish
+ * pilot pay scales; not one of those figures could be traced to a primary
+ * source, and the site was stating eleven mutually inconsistent ranges across
+ * as many pages. All of it is gone.
+ *
+ * What replaces it is the career progression, which is real, and the one thing
+ * about pay that IS published: it is substantially linked to hours flown, and
+ * DGCA caps flying at 1,000 hours a year under the flight crew Flight Duty
+ * Time Limitations. /commercial-pilot-license-salary carries that in full.
+ *
+ * Do not reintroduce a rupee figure here without a primary source and the date
+ * it was read. Several sites agreeing with each other is not a source.
+ */
 const salaryData = [
-    { level: 'Starting Salary (Beginners)', range: '₹1.5 – 3 Lakh/month', annual: '₹18 – 36 Lakh/year', desc: "If you're just starting out with a CPL, you might not earn a lot right away. In India, new pilots (called First Officers or Junior Pilots) can make around ₹1.5 lakh to ₹3 lakh per month. That's about ₹18 lakh to ₹36 lakh per year. This is when you're still learning on the job and helping the main pilot (the Captain)." },
-    { level: 'Mid-Level Salary (With Some Experience)', range: '₹5 – 10 Lakh/month', annual: '₹60 Lakh – 1.2 Crore/year', desc: 'After a few years of flying—say 4 to 10 years—your salary goes up. You might become a Senior First Officer or even a Captain. At this stage, pilots in India can earn between ₹5 lakh to ₹10 lakh per month, which is ₹60 lakh to ₹1.2 crore per year. The more hours you fly, the more you earn!' },
-    { level: 'Top-Level Salary (Senior Pilots)', range: '₹12 – 25 Lakh/month', annual: '₹1.5 Crore – 3 Crore/year', desc: "If you've been flying for a long time (over 10-20 years) and work for a big airline, you can make a lot of money. Senior Captains flying big planes (like international flights) can earn ₹12 lakh to ₹25 lakh per month—or even more! That's over ₹1.5 crore to ₹3 crore per year. Pilots working for international airlines might earn even higher, sometimes double that amount." },
+    { level: 'Starting out — First Officer', range: 'Not published', annual: 'Varies by employer and contract', desc: "A new CPL holder joins as a First Officer, flying as co-pilot. This is the paid seat you are training towards, and reaching it is not automatic: a licence does not carry a job, and how long the wait is depends on the hiring cycle rather than on you. What a first officer is paid is not published by any Indian airline, so no honest page can give you the number." },
+    { level: 'Building experience — Senior First Officer', range: 'Not published', annual: 'Rises with rank and hours', desc: "With more hours and experience a pilot progresses towards command. Pay rises with rank, and because a large part of it is linked to hours flown, it moves with the roster and with how much the airline is flying. It cannot rise past the regulatory ceiling: 100 hours in 28 days and 1,000 hours in a year under the flight crew Flight Duty Time Limitations." },
+    { level: 'Command — Captain', range: 'Not published', annual: 'Materially above first officer', desc: "Becoming pilot-in-command is the largest single step in a pilot's earnings, and that much is true without a figure attached. The upgrade depends on the airline's own command criteria, which sit on top of the DGCA minimum rather than replacing it. Wide-body operations generally pay more than narrow-body at the same carrier, and which fleet a pilot flies usually follows seniority rather than choice." },
 ];
 
 const perks = [
@@ -85,56 +102,56 @@ const careerOptions = [
         what: 'Fly big planes like Airbus or Boeing, taking people to their destinations safely.',
         where: 'Airlines like IndiGo, Air India, SpiceJet, Vistara, or international ones if you gain more experience.',
         growth: 'Start as a First Officer (helping the Captain), and after years of flying (usually 5-10 years), you can become a Captain.',
-        salary: 'Beginners earn ₹1.5 lakh to ₹3 lakh per month. Senior pilots can make ₹10 lakh or more monthly.',
+        salary: 'Not published by Indian airlines. Pay rises with rank and is substantially linked to hours flown.',
     },
     {
         num: '2', title: 'Cargo Pilot', icon: '📦',
         what: 'Fly cargo planes for companies that deliver items across India or globally.',
         where: 'Companies like Blue Dart Aviation, Amazon Air (if it expands to India), or logistics firms like FedEx and DHL.',
         growth: "Fewer passengers mean less pressure, and you might fly at night or to unique places.",
-        salary: 'Similar to airline pilots—₹2 lakh to ₹5 lakh per month to start, growing with experience.',
+        salary: 'Not published. Broadly comparable to scheduled airline flying, with night schedules a common feature.',
     },
     {
         num: '3', title: 'Charter Pilot', icon: '🛩️',
         what: "Fly smaller planes to places that big airlines don't go, like hill stations or private airstrips.",
         where: 'Private aviation companies, rich clients, or tourism agencies.',
         growth: "You get to meet interesting people and visit offbeat locations.",
-        salary: '₹1 lakh to ₹4 lakh per month, depending on demand and hours flown.',
+        salary: 'Not published, and unusually variable because non-scheduled work depends on demand and hours flown.',
     },
     {
         num: '4', title: 'Flight Instructor', icon: '🎓',
         what: 'Teach students how to fly planes and help them get their own CPL.',
         where: 'Flight schools like IGRUA, Bombay Flying Club, or private academies.',
         growth: "You build more flying hours while earning, and it's a stable job.",
-        salary: '₹1 lakh to ₹3 lakh per month, plus extra hours can boost your income.',
+        salary: 'Not published. The real draw is that you build hours while being paid rather than paying to build them.',
     },
     {
         num: '5', title: 'Corporate Pilot', icon: '💼',
         what: 'Fly private jets or small planes for business leaders.',
         where: 'Large Indian companies like Reliance, Tata, or multinational firms.',
         growth: 'Fewer flights, more predictable schedules, and sometimes better pay.',
-        salary: '₹2 lakh to ₹6 lakh per month, depending on the company.',
+        salary: 'Not published, and set by the individual company rather than any published scale.',
     },
     {
         num: '6', title: 'Agricultural Pilot', icon: '🌾',
         what: 'Fly small planes to spray crops with water, fertilizers, or pesticides.',
         where: 'Rural areas or companies that support farmers.',
         growth: "You fly low and help grow food for the country!",
-        salary: '₹1 lakh to ₹2.5 lakh per month.',
+        salary: 'Not published. A small and seasonal field in India.',
     },
     {
         num: '7', title: 'Aerial Survey Pilot', icon: '🛰️',
         what: 'Fly over areas to collect data for maps, construction, or research.',
         where: 'Government projects, survey companies, or environmental groups.',
         growth: "You contribute to science and planning.",
-        salary: '₹1.5 lakh to ₹4 lakh per month.',
+        salary: 'Not published. Project-based work, so continuity varies more than in airline flying.',
     },
     {
         num: '8', title: 'Emergency Services Pilot (Air Ambulance)', icon: '🚑',
         what: 'Transport sick or injured people to hospitals quickly.',
         where: 'Hospitals, NGOs, or private ambulance services.',
         growth: "You help people in need.",
-        salary: '₹2 lakh to ₹5 lakh per month.',
+        salary: 'Not published. Irregular hours by the nature of the work.',
     },
 ];
 
