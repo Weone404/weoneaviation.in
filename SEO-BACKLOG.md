@@ -90,7 +90,11 @@ service the academy actually offers.
 **Needs from owner:** what the counselling session covers, how long, whether it
 is free, and what a parent leaves with.
 
-**2.5 — Cost cluster still split across three URLs.** /cost-transparency,
+**2.5 — PARTLY DONE 2026-09-15.** /cost-transparency rebuilt on sourced
+figures and a wrong DGCA fee corrected (it said ₹3,000 per paper; the fee is
+₹2,500 regular, ₹5,000 on demand). No 301s issued — which URL is canonical is
+still the owner's decision and still needs Search Console data. Original note:
+**Cost cluster still split across three URLs.** /cost-transparency,
 /blogs/pilot-training-cost-in-india and /lead-magnets/cpl-cost-breakdown all
 chase the same intent; only the blog ranks. CPL_COST in lib/facts.js holds the
 one citable benchmark (IGRUA, the government academy under the Ministry of
@@ -98,7 +102,10 @@ Civil Aviation, ₹55,00,000 ab-initio to CPL with its inclusions and exclusions
 **Needs from owner:** which URL is canonical, and written partner-school quotes
 if a private-school range is to be published as our own first-party data.
 
-**2.6 — IGRUA cluster untouched.** Capt Ahluwalia ranks 3rd for "pilot course
+**2.6 — PARTLY DONE 2026-09-15.** The IGRUA benchmark and the "government
+fees" angle are now on /cost-transparency. The IGRUA question-paper terms are
+not built and should not be: we would be hosting or linking papers we do not
+have. Original note: **IGRUA cluster untouched.** Capt Ahluwalia ranks 3rd for "pilot course
 fees in india government" (1,600) and holds the IGRUA question-paper terms
 (880 + 390). The IGRUA benchmark is already encoded; the cluster is not built.
 
