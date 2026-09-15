@@ -62,6 +62,14 @@ const nextConfig = {
       { source: '/blogs/6a01656be977bff6d3d6bd42', destination: '/blogs/best-flying-school-in-india', permanent: true },
       { source: '/blogs/6a7178c67cef5b2241a02159', destination: '/blogs/dgca-ground-school-guide', permanent: true },
       { source: '/blogs/6a06b251216e3de16875f5b0', destination: '/blogs/dgca-ground-school-guide', permanent: true },
+      /*
+       * Added 2026-09-15 with /blogs/aviation-jobs-besides-pilot, which is the
+       * rebuild of these. Two ObjectIds because the same post was authored
+       * twice; the first carries 24 keyword mappings and 23,190 monthly
+       * searches, the second 2 mappings and 140.
+       */
+      { source: '/blogs/6a13dbf1ad864b831525ec3b', destination: '/blogs/aviation-jobs-besides-pilot', permanent: true },
+      { source: '/blogs/6a38b7aece6bdc909efab785', destination: '/blogs/aviation-jobs-besides-pilot', permanent: true },
 
       {
         source: '/Pilot-Course-&-Pilot-Training-in -ndia',

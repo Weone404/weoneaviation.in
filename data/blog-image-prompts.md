@@ -662,6 +662,17 @@ does not see the same picture twice.
 
 ---
 
+## Post: Aviation Jobs Besides Airline Pilot (/blogs/aviation-jobs-besides-pilot)
+
+### Prompt 50
+
+Hero, 1200x630. An aircraft maintenance engineer in a high-visibility vest on
+an apron at first light, clipboard in hand, looking up at the open engine cowling
+of a parked twin-engine turboprop. The aircraft is generic with no airline
+livery, registration or manufacturer marks. Shallow depth of field, the engineer
+sharp and the aircraft softly out of focus behind. Cool blue dawn light, no
+lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.

@@ -58,7 +58,16 @@ codebase, so 15 are unexplained and may be pages we want indexed.
 
 ## 2. Open and unblocked
 
-**2.1 — 29 blog posts on MongoDB ObjectId URLs.** They carry 147 keyword
+**2.1 — STARTED 2026-09-15. 2 of 29 done.** The largest post, "Aviation Jobs
+Besides Airline Pilot" (23,190 volume, 24 keywords) and its duplicate, now
+live at /blogs/aviation-jobs-besides-pilot with both ObjectIds 301'd to it in
+the same commit, per the standing rule. Rebuilt around the licensed/unlicensed
+distinction no competitor draws, with AME sourced from the DGCA Pariksha AME
+FAQ. 27 posts remain; the next by volume are "Best Aviation Academy Near Me"
+(16,630, commercial intent — probably a landing page rather than a blog post)
+and "How to Become a Pilot in India after 12th" (8,100), which duplicates two
+existing file-based pages and should 301 rather than get a new page.
+Original note: **29 blog posts on MongoDB ObjectId URLs.** They carry 147 keyword
 mappings and 63,470 monthly volume, self-canonicalise to the ObjectId, and are
 absent from the sitemap. The largest, "Aviation Jobs Besides Airline Pilot"
 (23,190 volume, 24 keywords), is a substantial 1,300-word page — and it is the
