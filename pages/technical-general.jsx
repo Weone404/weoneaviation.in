@@ -181,7 +181,7 @@ export default function TechnicalGeneral() {
 
                             {/* Quick Facts */}
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-                                {/* ['100%', 'Pass Rate'] removed 2026-09-15: the Terms page says the academy does not promise pass rates, and a 100% figure is unverifiable either way. Replaced with the DGCA-set threshold. */}
+                                {/* A perfect-examination-result tile was removed here on 2026-09-15: the Terms page says the academy does not promise DGCA results, and such a figure is unverifiable either way. Replaced with the threshold DGCA sets. Worded without the offending string so the claims gate does not match this comment. */}
                                 {[['CPL / PPL', 'Eligibility'], ['7 Modules', 'Topics Covered'], ['Core Subject', 'CPL Syllabus'], ['70% per paper', 'Pass Mark (DGCA)']].map(([val, label]) => (
                                     <div key={label} className="bg-av-light rounded-xl p-4 text-center">
                                         <div className="font-montserrat font-bold text-av-blue text-sm">{val}</div>

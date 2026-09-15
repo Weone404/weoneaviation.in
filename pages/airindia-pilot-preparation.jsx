@@ -175,15 +175,16 @@ export default function AirIndiaPilotPreparation() {
                                         ['A320 / B737', 'Fleet Coverage'],
                                         ['2026', 'Batch Year'],
                                         /*
-                                         * REMOVED 2026-09-15: this cell read
-                                         * ['100%', 'Placement Focus']. Rendered, it reads as a
-                                         * 100% placement claim, which is unverifiable and which
-                                         * the academy does not make anywhere else — the scope
+                                         * REMOVED 2026-09-15: this cell paired a perfect
+                                         * percentage with a hiring-focus label, which reads as a
+                                         * total-placement claim. It is unverifiable, and the
+                                         * academy does not make it anywhere else — the scope
                                          * statement every other page is built on says hiring
                                          * decisions rest with the operator. The claims gate did
-                                         * not catch it because "100%" and "Placement Focus" are
-                                         * separate array entries, so the pattern it looks for
-                                         * never appears in one string. Do not restore it.
+                                         * not catch it because the number and the label are
+                                         * separate array entries, so the banned string never
+                                         * appeared whole. Do not restore it. This comment avoids
+                                         * the string deliberately: the gate scans compiled output.
                                          */
                                         ['Interview & sim', 'What We Prepare'],
                                     ].map(([val, label]) => (

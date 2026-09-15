@@ -19,15 +19,17 @@ const heroSlides = [
 
 /*
  * REWRITTEN 2026-09-15. This array carried four claims the academy cannot
- * substantiate and one it contradicts elsewhere on its own site:
- *   "3,000+ Pilots Trained Across India" — unverifiable, and the same class of
- *     claim as the "3000+" and "3500+" strings the claims gate already bars.
- *     The gate missed this one only because of the comma.
- *   "100% DGCA Pass Rate" — the Terms page says "We do not promise DGCA exam
- *     pass rates or results". Both cannot be true.
- *   "28 States Pan-India Reach" — no basis.
- *   "6 Months Full DGCA Syllabus" — a duration the owner has asked stay off
- *     the site, alongside batch size and timings.
+ * substantiate and one it contradicts elsewhere on its own site. Each is
+ * described rather than quoted, because the claims gate scans compiled output
+ * and a comment repeating a banned string can fail a build:
+ *   A four-figure count of pilots trained across India — unverifiable, and the
+ *     same class of claim as the thousand-plus strings the gate already bars.
+ *     The gate missed this one only because the number carried a comma.
+ *   A perfect DGCA examination result rate — the Terms page says the academy
+ *     does not promise DGCA results. Both cannot be true.
+ *   A twenty-eight-state reach — no basis.
+ *   A six-month course duration — operational detail the owner has asked stay
+ *     off the site, alongside batch size and timings.
  * What replaces them is regulation: figures a reader can check against DGCA.
  * The scholarship line was left out rather than changed, because anything
  * about what is charged or discounted is the owner's to state, not ours.

@@ -50,12 +50,14 @@ const QUICK_FACTS = [
     ['CPL / PPL', 'Eligibility'],
     ['Delhi', 'Location'],
     /*
-     * REMOVED 2026-09-15: this tile read ['100%', 'Pass Rate']. The academy's
-     * own Terms page says "We do not promise DGCA exam pass rates or results",
-     * so the site was contradicting itself, and a 100% pass rate is not
-     * something a prospective student could verify in any case. The claims gate
-     * missed it because its pattern is /95%\s*pass/ and the halves are separate
-     * array entries. Replaced with a figure that is set by regulation.
+     * REMOVED 2026-09-15: this tile asserted a perfect examination result rate.
+     * The academy's own Terms page says it does not promise DGCA examination
+     * results, so the site was contradicting itself, and a figure like that is
+     * not something a prospective student could verify in any case. The claims
+     * gate missed it because the number and the label are separate array
+     * entries. Replaced with the threshold DGCA itself sets.
+     * Worded without the offending string on purpose: the gate scans compiled
+     * output, and a comment that quotes the banned text can fail a build.
      */
     ['70% per paper', 'Pass Mark (DGCA)'],
 ];
