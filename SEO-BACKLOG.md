@@ -193,7 +193,21 @@ between "eslint says it parses" and "React says it renders". Its two Babel
 dependencies are installed with --no-save deliberately, so the dependency tree
 this build is sensitive about does not move.
 
-All nine rebuilt pages were run through it on 2026-09-15 and rendered clean.
+All ten rebuilt pages were run through it on 2026-09-15 and rendered clean.
+The harness itself was corrected in the same pass: its lib/schema stub named
+only two helpers, so a page importing generateFAQSchema reported a crash that
+was the test's fault, not the page's.
+
+### Page depth, for reference
+
+Rendered text length from the smoke test, which is a fair proxy for how much a
+reader actually gets: /dgca-computer-number 25,700 characters,
+/commercial-pilot-license-eligibility 21,000,
+/commercial-pilot-license-syllabus 15,500,
+/your-guide-on-how-to-become-a-pilot-in-india 14,600,
+/ecga-login-your-complete-guide 12,300, /dgca-class-2-class-1-medical 10,500,
+/student-pilot-license-spl 9,600, /cost-transparency 9,600,
+/blogs/aviation-jobs-besides-pilot 8,800.
 
 ## 5. Done and verified
 

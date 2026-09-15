@@ -66,7 +66,11 @@ Module._load = function (req) {
     return new Proxy({ __esModule: true, default: m }, { get: (t, p) => (p in t ? t[p] : m) });
   }
   if (/lib\/schema$/.test(req)) {
-    return { __esModule: true, generateCourseSchema: () => ({}), generateBreadcrumbSchema: () => ({}), default: {} };
+    // Any generateXSchema() helper, named or not — a stub that misses one
+    // reports a crash in the PAGE, which is a false alarm and wastes a debug.
+    return new Proxy({ __esModule: true, default: {} }, {
+      get: (t, prop) => (prop in t ? t[prop] : () => ({})),
+    });
   }
   return origLoad.apply(this, arguments);
 };
