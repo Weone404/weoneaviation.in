@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'cpl-cross-country-flight-requirement-india',
+        title: 'The CPL Cross-Country Flight Requirement in India: The 300 NM Solo Flight Explained',
+        excerpt: 'Inside the 200-hour CPL total, 20 hours must be cross-country PIC flying, and one flight within that must cover 300 nautical miles with full-stop landings at two aerodromes and a first leg beyond 100 NM. Every condition, explained.',
+        category: 'CPL flying hours',
+        readTime: '8 min',
+        date: 'Sep 15, 2026',
+        image: { src: '/blog/cpl-cross-country-flight/hero-cross-country-route.webp', width: 1200, height: 630, promptId: '50' },
+    },
+    {
         slug: 'cpl-simulator-hours-dgca-rules',
         title: 'Can Simulator Hours Count Towards Your CPL in India? DGCA Rules Explained',
         excerpt: 'Schedule II caps simulator time to 5 of the 10 instrument-time hours inside the 200-hour CPL total — every other component must be flown in an actual aeroplane. Where the cap sits, why it exists, and how it differs from the simulator-heavy training that follows the licence.',

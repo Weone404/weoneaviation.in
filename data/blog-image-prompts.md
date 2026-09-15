@@ -662,6 +662,37 @@ does not see the same picture twice.
 
 ---
 
+## Post: `/blogs/cpl-cross-country-flight-requirement-india`
+
+### Prompt 50 — Hero / OpenGraph and card
+- **File:** `public/blog/cpl-cross-country-flight/hero-cross-country-route.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A single-engine training aircraft in flight over open Indian countryside, with the outline of two distant airfields visible near the horizon on either side"
+
+> A single-engine training aeroplane in level flight, viewed from a slight
+> three-quarter angle below, crossing open Indian countryside with fields and
+> a winding river beneath it. Far in the distance on the left and right
+> horizons, two small airfields are suggested only by simple runway-strip
+> shapes, small enough to read as distant destinations rather than the main
+> subject. Wide open sky above with a few soft clouds. Orange accent limited
+> to a single stripe on the aircraft's fuselage.
+
+### Prompt 51 — Route diagram
+- **File:** `public/blog/cpl-cross-country-flight/route-diagram-three-aerodromes.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A triangular flight route diagram connecting three aerodromes, with the first leg drawn noticeably longer than the other two, illustrating the shape of a qualifying 300 nautical mile cross-country flight"
+
+> A simple flat-style map diagram on a pale background showing three small
+> circular aerodrome markers connected by thin dashed lines forming a
+> triangle. The first line, from the top marker to the bottom-left marker, is
+> drawn noticeably longer than the other two lines, making clear it is the
+> long first leg. Each aerodrome marker uses a tiny simplified runway-cross
+> icon rather than a dot. No map background detail, borders, compass rose or
+> geography — just the three markers and the triangular route on open
+> negative space. Orange accent on the long first-leg line only.
+
+---
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
