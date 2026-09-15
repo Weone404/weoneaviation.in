@@ -17,13 +17,28 @@ const heroSlides = [
     },
 ];
 
+/*
+ * REWRITTEN 2026-09-15. This array carried four claims the academy cannot
+ * substantiate and one it contradicts elsewhere on its own site:
+ *   "3,000+ Pilots Trained Across India" — unverifiable, and the same class of
+ *     claim as the "3000+" and "3500+" strings the claims gate already bars.
+ *     The gate missed this one only because of the comma.
+ *   "100% DGCA Pass Rate" — the Terms page says "We do not promise DGCA exam
+ *     pass rates or results". Both cannot be true.
+ *   "28 States Pan-India Reach" — no basis.
+ *   "6 Months Full DGCA Syllabus" — a duration the owner has asked stay off
+ *     the site, alongside batch size and timings.
+ * What replaces them is regulation: figures a reader can check against DGCA.
+ * The scholarship line was left out rather than changed, because anything
+ * about what is charged or discounted is the owner's to state, not ours.
+ */
 const quickStats = [
-    { val: '3,000+', label: 'Pilots Trained Across India' },
-    { val: '6 Months', label: 'Full DGCA Syllabus' },
-    { val: '28 States', label: 'Pan-India Reach' },
-    { val: '100%', label: 'DGCA Pass Rate' },
-    { val: '25%', label: 'Scholarship for All' },
-    { val: '5 Papers', label: 'DGCA India Exam' },
+    { val: '5 Papers', label: 'DGCA Written Examination' },
+    { val: '70%', label: 'Pass Mark, Per Paper' },
+    { val: '₹2,500', label: 'DGCA Fee Per Paper' },
+    { val: '200 Hours', label: 'Flying Required For A CPL' },
+    { val: 'Age 18', label: 'Minimum For A CPL' },
+    { val: 'Class 1', label: 'Medical For A CPL' },
 ];
 
 const subjects = [

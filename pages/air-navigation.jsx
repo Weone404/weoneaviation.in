@@ -49,7 +49,15 @@ const QUICK_FACTS = [
     ['Paper 2', 'DGCA Exam'],
     ['CPL / PPL', 'Eligibility'],
     ['Delhi', 'Location'],
-    ['100%', 'Pass Rate'],
+    /*
+     * REMOVED 2026-09-15: this tile read ['100%', 'Pass Rate']. The academy's
+     * own Terms page says "We do not promise DGCA exam pass rates or results",
+     * so the site was contradicting itself, and a 100% pass rate is not
+     * something a prospective student could verify in any case. The claims gate
+     * missed it because its pattern is /95%\s*pass/ and the halves are separate
+     * array entries. Replaced with a figure that is set by regulation.
+     */
+    ['70% per paper', 'Pass Mark (DGCA)'],
 ];
 
 const navigationTypes = [

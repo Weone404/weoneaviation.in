@@ -12,7 +12,7 @@ const eligibilityCriteria = [
     { criteria: 'Language', details: 'Fluent in English (verbal and written)' },
     { criteria: 'Education', details: '10+2 with minimum 60% in English, Physics & Mathematics' },
     { criteria: 'Passport', details: 'Must hold a valid Indian passport' },
-    { criteria: 'Medical', details: 'Clearance of DGCA medical test as per DGCA guidelines' },
+    { criteria: 'Medical', details: 'Clearance of the Class 2 medical test as per DGCA guidelines (SpiceJet\u2019s stated requirement, read 15 September 2026). A Class 1 medical is required later for the Commercial Pilot Licence itself.' },
 ];
 
 const selectionPhases = [
@@ -199,10 +199,20 @@ export default function SpiceJetCadetPage() {
                     </h1>
                     <p className="text-av-orange font-semibold text-lg mb-3">Join Spice Star Academy — And Be A Star ✈️</p>
                     <p className="text-white/70 max-w-3xl mx-auto text-sm leading-relaxed mb-6">
-                        SpiceJet's Cadet Pilot Programme is a perfect launchpad for those who want to fly high. Designed for young aspirants eyeing a seat in the cockpit — trained by <strong className="text-white">India's favourite airline</strong> with an assured job on successful completion.
+                        SpiceJet&rsquo;s Cadet Pilot Programme trains candidates from scratch and, in SpiceJet&rsquo;s own
+                        words, issues a &ldquo;Letter of Intent&rdquo; offering a First Officer role on a Q400 or B737 subject to
+                        successful completion of the programme. That is SpiceJet&rsquo;s statement about its own programme,
+                        read on 15 September 2026 &mdash; not a promise from us, and worth reading in full, with its conditions,
+                        before you commit to anything.
                     </p>
                     <div className="flex flex-wrap justify-center gap-3 mt-4">
-                        {['Assured Job Offer', 'DGCA CPL + Type Rating', 'Scholarship Available', 'Q400 & B737 Fleet'].map(tag => (
+                        {/*
+                          * "Assured Job Offer" was removed from this row on 2026-09-15. SpiceJet
+                          * does use that language about its own programme, and the page now quotes
+                          * it and attributes it in the paragraph above; a bare badge on our page
+                          * reads as our promise about another company's hiring, which it is not.
+                          */}
+                        {['Letter of Intent (SpiceJet\u2019s term)', 'DGCA CPL + Type Rating', 'Scholarship Available', 'Q400 & B737 Fleet'].map(tag => (
                             <span key={tag} className="bg-white/10 border border-white/20 text-white text-xs font-semibold px-4 py-2 rounded-full">
                                 ✓ {tag}
                             </span>
@@ -232,7 +242,14 @@ export default function SpiceJetCadetPage() {
                                     With 200 aircraft orders in process and massive expansion plans under the regional connectivity scheme, SpiceJet is all set to change the face of air travel in India — creating ample opportunities for those seeking a high-flying career.
                                 </p>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                    The Cadet Pilot Programme aims at not only providing trained professionals to the aviation industry but also an <strong className="text-av-blue">assured job with SpiceJet</strong> on completion of the course.
+                                    SpiceJet states that the programme aims to provide trained professionals to the industry
+                                    and <strong className="text-av-blue">&ldquo;an assured job with SpiceJet, on completion of
+                                    the course&rdquo;</strong>, and that a Letter of Intent offering a First Officer role on a
+                                    Q400 or B737 is handed out on joining, subject to successful completion. Those are
+                                    SpiceJet&rsquo;s words, read on its own site on 15 September 2026. Before you rely on them,
+                                    ask for the Letter of Intent&rsquo;s actual terms in writing: what &ldquo;successful
+                                    completion&rdquo; is defined as, what happens if you do not meet it, and what the offer is
+                                    conditional on. We do not employ pilots and make no promise about anyone&rsquo;s hiring.
                                 </p>
                                 <ul className="space-y-2">
                                     {keyFeatures.map((f, i) => (
@@ -471,6 +488,19 @@ export default function SpiceJetCadetPage() {
                             Programme <span className="text-av-orange">Fee Structure</span>
                         </h2>
                         <p className="text-gray-500 mt-2 text-sm">Total programme fee payable in 4 instalments. All amounts exclusive of GST and applicable taxes.</p>
+                        {/*
+                          * NOTE 2026-09-15: the instalment amounts below could not be confirmed
+                          * against Spice Star Academy's published fee page on that date — the page
+                          * did not render a schedule. They are left in place because they are
+                          * internally consistent and were presumably taken from the academy at some
+                          * point, but they carry no verification date and must not be treated as
+                          * current. Confirm at the source before quoting them to anyone.
+                          */}
+                        <p className="text-gray-500 mt-2 text-xs max-w-2xl mx-auto">
+                            Fees are set and revised by Spice Star Academy, not by us. Confirm the current schedule and what it
+                            excludes directly with the academy before paying anything, and keep DGCA&rsquo;s own examination and
+                            medical charges separate from it.
+                        </p>
                     </ScrollReveal>
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">

@@ -174,7 +174,18 @@ export default function AirIndiaPilotPreparation() {
                                         ['CPL & Type Rated', 'Who Can Join'],
                                         ['A320 / B737', 'Fleet Coverage'],
                                         ['2026', 'Batch Year'],
-                                        ['100%', 'Placement Focus'],
+                                        /*
+                                         * REMOVED 2026-09-15: this cell read
+                                         * ['100%', 'Placement Focus']. Rendered, it reads as a
+                                         * 100% placement claim, which is unverifiable and which
+                                         * the academy does not make anywhere else — the scope
+                                         * statement every other page is built on says hiring
+                                         * decisions rest with the operator. The claims gate did
+                                         * not catch it because "100%" and "Placement Focus" are
+                                         * separate array entries, so the pattern it looks for
+                                         * never appears in one string. Do not restore it.
+                                         */
+                                        ['Interview & sim', 'What We Prepare'],
                                     ].map(([val, label]) => (
                                         <div key={label} className="bg-av-light rounded-xl p-3 sm:p-4 text-center">
                                             <div className="font-montserrat font-bold text-av-blue text-xs sm:text-sm leading-snug">{val}</div>

@@ -23,13 +23,28 @@ const trainingFacilities = [
     'A multicultural aviation environment',
 ];
 
+/*
+ * CORRECTED 2026-09-15. Two problems with the version this replaces.
+ *
+ * The medical line said "Must pass a DGCA Aviation Medical Exam". That is wrong
+ * on its face: a cadet programme run by a Qatari carrier trains under the Qatar
+ * Civil Aviation Authority, not DGCA, so a DGCA medical is not what it asks
+ * for. An Indian candidate planning to fly in India later needs a DGCA medical
+ * too, but that is a separate step, not this one.
+ *
+ * The age band and English requirement carried no source. A search of Qatar
+ * Airways' own careers material on 15 September 2026 did not surface a current
+ * published criteria set; everything findable was a third-party coaching page
+ * restating figures with no citation. We do not repeat those. Where the
+ * requirement could not be verified, the entry now says so and points the
+ * reader at the airline.
+ */
 const eligibility = [
-    { icon: '🎓', label: 'Minimum Education', desc: 'High school graduate with strong grades in Math, English, and Physics' },
-    { icon: '🎂', label: 'Age', desc: 'Typically between 18 and 26 years' },
-    { icon: '🌍', label: 'Nationality', desc: 'Primarily Qatari nationals, but some international positions open occasionally' },
-    { icon: '🗣️', label: 'Language', desc: 'Fluent in English (IELTS may be required)' },
-    { icon: '🩺', label: 'Medical Fitness', desc: 'Must pass a DGCA Aviation Medical Exam' },
-    { icon: '✈️', label: 'Prior Experience', desc: 'No prior flying experience is required – the program is designed to train from zero to ATPL' },
+    { icon: '🌍', label: 'Nationality', desc: 'Qatar Airways runs a national cadet programme for Qatari nationals. International intakes are opened separately and not continuously — which one is open is the first thing to check, because it decides whether you are eligible at all.' },
+    { icon: '🎓', label: 'Education', desc: 'A school-leaving qualification with mathematics, physics and English is the usual baseline for an ab-initio cadet route.' },
+    { icon: '🩺', label: 'Medical Fitness', desc: 'A Class 1 medical accepted by the regulator that will issue the licence. For a Qatari programme that is the Qatar Civil Aviation Authority, not DGCA. If you intend to fly in India afterwards, a DGCA Class 1 and a licence conversion are a separate step to budget for.' },
+    { icon: '✈️', label: 'Prior Experience', desc: 'Ab-initio cadet routes are designed for candidates with no previous flying experience.' },
+    { icon: '📄', label: 'Age, English scores and fees', desc: 'Published by the airline per intake, and not reproduced here. We could not verify a current set against a Qatar Airways document on 15 September 2026, and a figure we cannot source is worse than an honest blank. Read the criteria on the airline\u2019s own careers site before you apply or pay anyone to prepare you.' },
 ];
 
 export default function QatarAirwaysCadet() {
@@ -143,12 +158,13 @@ export default function QatarAirwaysCadet() {
                             <div className="bg-av-blue rounded-2xl p-6 text-white">
                                 <h4 className="font-montserrat font-bold mb-4">Eligibility at a Glance</h4>
                                 <ul className="space-y-2 text-sm text-white/80">
-                                    <li>✓ Age: 18–26 years</li>
-                                    <li>✓ 12th with Math, English & Physics</li>
-                                    <li>✓ Fluent English (IELTS preferred)</li>
-                                    <li>✓ DGCA medical certificate</li>
+                                    <li>✓ 12th with mathematics, English and physics</li>
                                     <li>✓ No prior flying experience needed</li>
-                                    <li>✓ Zero to ATPL training</li>
+                                    <li>✓ Ab-initio through to airline operation</li>
+                                    <li>✓ Class 1 medical from the licensing regulator</li>
+                                    <li>&mdash; National intake: Qatari nationals</li>
+                                    <li>&mdash; International intakes: opened separately</li>
+                                    <li>&mdash; Age bands, English scores, fees: per intake, at the source</li>
                                 </ul>
                             </div>
                         </ScrollReveal>

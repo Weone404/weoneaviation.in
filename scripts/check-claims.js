@@ -120,7 +120,31 @@ const OWNS = '(our fleet|our aircraft|our simulator|we operate|owned by us|in-ho
 const RUPEES_PER_MONTH = '₹\\s*\\d[\\d.,]*(\\s*[-–to]+\\s*\\d[\\d.,]*)?\\s*(LPM|(L|lakh|Lakh|lakhs|crore|Crore)\\s*(/|per\\s+)\\s*(month|PM|p\\.m\\.))';
 const PATTERNS = [
   /3500\+/i, /3000\+/i, /500\+\s*pilots/i,
+  /*
+   * Added 2026-09-15. The two patterns above are literal digit strings, so
+   * "3,000+ Pilots Trained Across India" on /dgca-ground-classes-in-india sailed
+   * past them for want of a comma. These catch the comma-formatted forms.
+   */
+  /3,000\+/i, /3,500\+/i, /\d,\d{3}\+\s*pilots\s*trained/i,
+  /*
+   * Added 2026-09-15. "100%" above the label "Pass Rate" on /air-navigation and
+   * "100%" above "DGCA Pass Rate" on /dgca-ground-classes-in-india both survived
+   * /95%\s*pass/ because the halves are separate array entries with markup
+   * between them once rendered. The site's own Terms page says it does not
+   * promise pass rates; this makes the build enforce that.
+   */
+  /(100|99|98|97|96)\s*%?[\s\S]{0,160}pass\s*rate/i,
   /98%\s*success/i, /100%\s*result/i, /100%\s*placement/i, /95%\s*pass/i,
+  /*
+   * Added 2026-09-15. /airindia-pilot-preparation rendered a statistics tile
+   * reading "100%" above the label "Placement Focus". The pattern above never
+   * fired, because the two halves are separate array entries and the rendered
+   * HTML puts markup between them — the literal string "100% placement" does
+   * not exist anywhere. This version tolerates the markup in between. Keep the
+   * bound tight: too wide and an unrelated "100%" elsewhere on a long page
+   * will collide with the word "placement" and fail a build for nothing.
+   */
+  /100\s*%?[\s\S]{0,160}placement/i,
   /25\+\s*partner/i, /225\+\s*hours/i, /20\+\s*countries/i,
   /oldest pilot training/i, /India'?s #1/i, /India'?s premier/i,
   /aggregateRating/i, /ISO 9001/i, /www\.weoneaviation\.in/i,

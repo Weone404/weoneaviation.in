@@ -144,7 +144,57 @@ floors, fleet lists, fee and bond figures). None of it traces to an airline
 document read on a known date. These pages need the same source-or-remove pass
 the DGCA pages got — logged as 2.10.
 
-**2.10 — Six airline cadet pages are unsourced.** /emirates-cadet-pilot-program,
+**2.16 — Claims sweep, 2026-09-15. Four false or unsupportable claims removed,
+and three gaps closed in the gate that should have caught them.**
+
+Removed:
+- "Guaranteed job interview with Emirates upon successful completion", on
+  /emirates-cadet-pilot-program and again in the /emirates-cadet-pilot-program
+  FAQ content. Emirates' own release says candidates interested in opportunities
+  with the airline "will be required to pass the selection process put in place
+  by the airline". The site was asserting the opposite of the airline's own
+  statement.
+- "100% / Placement Focus" tile on /airindia-pilot-preparation.
+- "100% / Pass Rate" tiles on /air-navigation and /technical-general, and
+  "100% / DGCA Pass Rate" on /dgca-ground-classes-in-india. The academy's own
+  Terms page says "We do not promise DGCA exam pass rates or results".
+- "3,000+ Pilots Trained Across India" on /dgca-ground-classes-in-india, plus
+  "28 States Pan-India Reach" and a six-month course duration in the same tile
+  row. The duration is operational detail the owner asked to keep off the site.
+- "Job Guarantee — With partner airline (Air Arabia)" row on /air-arabia,
+  replaced with the structural difference, which is true.
+
+Gate gaps closed in scripts/check-claims.js, each of which let one of the above
+ship: the "3000+" patterns were literal digit strings and missed the
+comma-formatted "3,000+"; and both the placement and pass-rate patterns
+required the number and the word to sit in one string, while the site renders
+them as separate array entries with markup between. All three now tolerate
+intervening markup, with a tight bound so an unrelated "100%" elsewhere on a
+long page does not fail a build for nothing.
+
+**Left alone deliberately:** the "25% Scholarship for All" line on
+/dgca-ground-classes-in-india, the "100% CPL scholarship" on
+/best-flight-schools-in-usa, and "100% Loan For Flight Training" on the home
+page. Anything about what is charged, discounted or financed is the owner's to
+state. **Needs from owner:** are those three offers real and current, and on
+what terms?
+
+**2.10 — PARTLY DONE 2026-09-15.** Emirates, Qatar Airways, SpiceJet, Air
+Arabia and Air India have had their false and unsourceable claims removed or
+attributed. What was verified against a primary source and now carries a date:
+Emirates' National Cadet Pilot Programme is an Emiratisation programme for UAE
+nationals while the academy separately admits self-funded international cadets;
+SpiceJet's own site states the Letter of Intent, the "assured job" wording, age
+17–35, 10+2 with 60% in each of English, Physics and Mathematics, and a Class 2
+DGCA medical — all now quoted and attributed to SpiceJet rather than asserted by
+us. Qatar Airways could not be verified from its own material at all; the DGCA
+medical requirement stated there was simply wrong and is gone.
+
+**Still open on this cluster:** SpiceJet's four fee instalments could not be
+confirmed against Spice Star Academy's own fee page on 15 September 2026 — they
+are left in place with an explicit caution rather than deleted, and need
+confirming. IndiGo and Air India pages have not had a full sourcing pass, only
+the claims sweep. Original note: **Six airline cadet pages are unsourced.** /emirates-cadet-pilot-program,
 /qatar-airways-cadet-pilot-program, /spice-jet, /air-arabia,
 /airindia-pilot-preparation and /indigo-pilot-preparation predate the sourcing
 discipline. They state eligibility ages, English-test bands, training aircraft,
