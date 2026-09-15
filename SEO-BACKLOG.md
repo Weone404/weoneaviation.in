@@ -102,8 +102,11 @@ if a private-school range is to be published as our own first-party data.
 fees in india government" (1,600) and holds the IGRUA question-paper terms
 (880 + 390). The IGRUA benchmark is already encoded; the cluster is not built.
 
-**2.7 — /your-guide-on-how-to-become-a-pilot-in-india is the cluster leader and
-is thin.** It is the best current match for three of the 50 priority keywords —
+**2.7 — DONE 2026-09-15. /your-guide-on-how-to-become-a-pilot-in-india rebuilt
+as the cluster hub.** Six stages, each with the rule behind it, and a timeline
+section built from the floors the rules fix rather than an invented duration.
+No 301s issued for the rest of the cluster — that still needs Search Console
+data. Original note:** It is the best current match for three of the 50 priority keywords —
 "become a pilot", "how long does it take to become a pilot", "pilot career
 counselling" — and ranks 27th for "how to become a pilot" (14,800) and 40th for
 "how to become a pilot in india" (6,600). No page on the site answers how long
