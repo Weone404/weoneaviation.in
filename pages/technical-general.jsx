@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
+import DgcaPaperFacts from '../components/DgcaPaperFacts';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
@@ -261,6 +262,12 @@ export default function TechnicalGeneral() {
                                     Book Free Counselling
                                 </Link>
                             </div>
+
+                        <DgcaPaperFacts
+                            paper="Aircraft and Engines"
+                            bookSubject="Technical General"
+                            note="The CPL paper list calls this Technical General. The nearest paper in the published ATPL syllabus is Aircraft and Engines, and its headings are below — the airframe, systems, powerplant and principles-of-flight ground is the same, which is why DGCA's study material list names the same books for both."
+                        />
 
                         </ScrollReveal>
                     </div>

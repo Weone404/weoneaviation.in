@@ -2,6 +2,7 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
+import DgcaPaperFacts from '../components/DgcaPaperFacts';
 import HeroSlider from '../components/HeroSlider';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
@@ -369,6 +370,11 @@ export default function AirNavigation() {
                                     Book Free Counselling
                                 </Link>
                             </div>
+                        <DgcaPaperFacts
+                            paper="Air Navigation"
+                            bookSubject="Air Navigation"
+                        />
+
                         </ScrollReveal>
                     </div>
 

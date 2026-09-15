@@ -60,6 +60,11 @@ Module._load = function (req) {
   if (req === 'next/link' || req === 'next/image' || req === 'next/head') {
     return { __esModule: true, default: Stub(req) };
   }
+  // next/dynamic is a FACTORY, not a component: dynamic(() => import(...))
+  // returns the component. Stubbing it as a component makes the page call it,
+  // get a React element back, and render an object — which surfaces as
+  // "Element type is invalid ... got: object" and looks like a page bug.
+  if (req === 'next/dynamic') return { __esModule: true, default: () => Stub('dynamic') };
   if (req.startsWith('next/')) return { __esModule: true, default: Stub(req) };
   if (/\/components\//.test(req) || /^\.\.?\/+components/.test(req)) {
     const m = Stub(path.basename(req));

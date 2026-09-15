@@ -179,6 +179,14 @@ ignores the winners risks starving them.
 
 ---
 
+**2.9 — DONE 2026-09-15. The four DGCA subject pages.** Keywords 37 to 40 of
+the priority list, all noted there as pages every major rival has. Each now
+carries components/DgcaPaperFacts.jsx: the published syllabus headings for
+that paper, the study material DGCA itself names for that subject, the 70%
+pass mark with its clause, the fee, the five-year validity, and the 2026
+session dates. Roughly 4,200 to 4,700 characters of sourced content added per
+page, from one component rather than four copies that would drift apart.
+
 ## 4b. Verification available in this repo
 
 `npm run build` then `npm run check:claims` remains the gate, and nothing
@@ -193,7 +201,7 @@ between "eslint says it parses" and "React says it renders". Its two Babel
 dependencies are installed with --no-save deliberately, so the dependency tree
 this build is sensitive about does not move.
 
-All ten rebuilt pages were run through it on 2026-09-15 and rendered clean.
+All fourteen rebuilt pages were run through it on 2026-09-15 and rendered clean.
 The harness itself was corrected in the same pass: its lib/schema stub named
 only two helpers, so a page importing generateFAQSchema reported a crash that
 was the test's fault, not the page's.

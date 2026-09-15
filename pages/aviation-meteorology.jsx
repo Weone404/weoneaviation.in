@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
+import DgcaPaperFacts from '../components/DgcaPaperFacts';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
@@ -270,6 +271,11 @@ export default function AviationMeteorology() {
                                     Book Free Counselling
                                 </Link>
                             </div>
+
+                        <DgcaPaperFacts
+                            paper="Aviation Meteorology"
+                            bookSubject="Aviation Meteorology"
+                        />
 
                         </ScrollReveal>
                     </div>

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
+import DgcaPaperFacts from '../components/DgcaPaperFacts';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
@@ -325,6 +326,12 @@ export default function AirRegulations() {
                                     Book Free Counselling
                                 </Link>
                             </div>
+
+                        <DgcaPaperFacts
+                            paper="Air Regulation"
+                            bookSubject="Air Regulations"
+                            note="DGCA spells this paper Air Regulation in the syllabus and Air Regulations in its study material list; they are the same subject."
+                        />
 
                         </ScrollReveal>
                     </div>
