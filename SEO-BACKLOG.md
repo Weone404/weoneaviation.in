@@ -179,6 +179,22 @@ ignores the winners risks starving them.
 
 ---
 
+## 4b. Verification available in this repo
+
+`npm run build` then `npm run check:claims` remains the gate, and nothing
+reaches origin without it — the pre-push hook enforces that.
+
+Where a build is not possible (any environment without egress to
+fonts.googleapis.com cannot build this site, because `next/font` fetches
+Montserrat and Poppins at build time), `scripts/smoke-render.cjs` renders pages
+offline and fails on a crash, on the word "undefined" reaching the copy, on NaN
+and on [object Object]. It is not a substitute for the build; it closes the gap
+between "eslint says it parses" and "React says it renders". Its two Babel
+dependencies are installed with --no-save deliberately, so the dependency tree
+this build is sensitive about does not move.
+
+All nine rebuilt pages were run through it on 2026-09-15 and rendered clean.
+
 ## 5. Done and verified
 
 - lib/facts.js is the single sourced record: PARIKSHA (with the DigiLocker
