@@ -314,6 +314,36 @@ DGCA medical — all now quoted and attributed to SpiceJet rather than asserted 
 us. Qatar Airways could not be verified from its own material at all; the DGCA
 medical requirement stated there was simply wrong and is gone.
 
+**2.25 — DONE 2026-09-16. IndiGo and Air India, the two pages that had only had
+the claims sweep.** They turned out to be a different problem from the other
+four: they are not descriptions of airline cadet programmes at all, they are
+recruitment-preparation service pages for pilots who already hold a licence.
+
+Three things fixed:
+- /indigo-pilot-preparation claimed "a track record of successful selections —
+  pilots who cleared IndiGo and other major carriers after training with We One
+  Aviation". An outcome claim about third-party hiring, unsubstantiated, and
+  contradicting the scope statement. Replaced with an explicit statement of what
+  is NOT claimed. A second card claimed curriculum built on IndiGo's "known
+  selection patterns, question banks and evaluation benchmarks" — reworded to
+  drop the implied inside knowledge.
+- /airindia-pilot-preparation stated Air India's selection stages as fact. No
+  published description could be sourced, and asserting a third party's process
+  without one is the same failure as asserting their fees. Reframed as the
+  stages we prepare you for, with the reader sent to the airline.
+- A BUG OF MY OWN, from the 15 September cadet-hub batch: CadetHubLink was added
+  to both pages. It addresses someone choosing an ab-initio cadet route, while
+  these pages are for licence holders. Removed from both and replaced with a
+  note that draws the distinction and routes the cadet reader to the hub. The
+  hub's own list also implied both were cadet routes; both entries relabelled.
+
+One genuinely sourced gain: IndiGo publishes its cadet criteria on its own site
+— at least 18 and not more than 32, 10+2 with Physics and Mathematics
+compulsory, a maximum of two attempts per stage, and no promise of employment on
+that page. Now in lib/facts.js as INDIGO_CADET with the URL and the date read.
+These are the only airline-specific figures anywhere on this site, and they are
+there because the airline publishes them.
+
 **Still open on this cluster:** SpiceJet's four fee instalments could not be
 confirmed against Spice Star Academy's own fee page on 15 September 2026 — they
 are left in place with an explicit caution rather than deleted, and need

@@ -3,7 +3,7 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
-import CadetHubLink from '../components/CadetHubLink';
+import { INDIGO_CADET } from '../lib/facts';
 
 const heroSlides = [
     {
@@ -40,10 +40,18 @@ const typeRatedFeatures = [
 
 const differentiators = [
     { icon: '👨‍✈️', title: 'Airline Pilot Mentors', desc: 'Train under aviation professionals with direct airline hiring and line operations experience who understand precisely what IndiGo evaluators look for at each stage.' },
-    { icon: '🎯', title: 'IndiGo-Specific Preparation Modules', desc: "Benefit from curriculum built around IndiGo's known selection patterns, question banks, and evaluation benchmarks gathered from recent recruitment cycles." },
+    { icon: '🎯', title: 'Structured Preparation Modules', desc: "Preparation built around the stages an airline selection commonly runs — aptitude screening, group discussion, technical panel, HR interview. We do not claim inside knowledge of IndiGo's question banks or benchmarks; the airline publishes its own current process and that is what you should check." },
     { icon: '📝', title: 'Realistic Mock Tests & Simulations', desc: 'Simulate the full IndiGo JFO selection process — from psychometric tests to final panel interviews — in a structured, airline-grade training environment.' },
     { icon: '🔍', title: 'Personalized Feedback & Improvement Plan', desc: 'Receive individual feedback reports after every mock session with a tailored roadmap identifying your specific gaps and a clear plan to address them.' },
-    { icon: '✅', title: 'Proven Success-Focused Training Approach', desc: 'Our methodology is built on a track record of successful selections — pilots who cleared IndiGo and other major carriers after training with We One Aviation.' },
+    /*
+     * REPLACED 2026-09-16. This card claimed a "track record of successful
+     * selections — pilots who cleared IndiGo and other major carriers after
+     * training with We One Aviation". That is an outcome claim about third-party
+     * hiring which the academy cannot substantiate and does not make anywhere
+     * else; the scope statement every other page is built on says hiring
+     * decisions rest with the operator. Do not restore it.
+     */
+    { icon: '✅', title: 'What We Do Not Claim', desc: 'No selection rate, no success percentage, and no promise of a job. Hiring is the airline\u2019s decision and nobody outside it can commit to an outcome. What preparation changes is how ready you are on the day, which is worth having and is not the same thing.' },
 ];
 
 const whoShouldJoin = [
@@ -80,6 +88,39 @@ function AccentCard({ icon, title, desc }) {
     );
 }
 
+/*
+ * THE DISTINCTION THIS PAGE WAS BLURRING, drawn 2026-09-16.
+ *
+ * IndiGo runs two entirely separate things and the page treated them as one.
+ * Its Cadet Pilot Programme is ab-initio: it takes candidates with no licence
+ * and trains them to a CPL. Its First Officer and Junior First Officer
+ * recruitment is for people who already hold a licence. A reader arriving on an
+ * interview-preparation page is almost always in the second group, and sending
+ * them to cadet material wastes their time.
+ *
+ * The cadet criteria below are IndiGo's own, from its published page, read on
+ * 16 September 2026. Nothing else about IndiGo's selection is stated here as
+ * fact, because we could not source it.
+ */
+function IndigoRouteNote() {
+    return (
+        <section className="px-4 py-6 bg-slate-50 border-y border-slate-200">
+            <div className="max-w-4xl mx-auto text-sm text-slate-700 leading-relaxed">
+                <strong>Two different IndiGo routes &mdash; make sure you are on the right page.</strong>{' '}
+                This page is about preparing for <em>recruitment</em>, which is for pilots who already hold a licence.
+                IndiGo separately runs a <em>Cadet Pilot Programme</em> for candidates with no licence at all; IndiGo&rsquo;s
+                own page states applicants must be {INDIGO_CADET.ageRange} and have completed {INDIGO_CADET.education}, with{' '}
+                {INDIGO_CADET.attempts} If that is you, start with{' '}
+                <Link href="/cadet-pilot-program" className="text-av-blue font-semibold underline">
+                    what a cadet programme is and what it does not change
+                </Link>{' '}
+                instead. Read on {INDIGO_CADET.verifiedOn}; IndiGo publishes the current criteria per intake, so check them
+                at the source before applying.
+            </div>
+        </section>
+    );
+}
+
 export default function IndiGoPilotPrep() {
     return (
         <Layout
@@ -88,7 +129,15 @@ export default function IndiGoPilotPrep() {
         >
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
-            <CadetHubLink airline="IndiGo" />
+            {/*
+              * CadetHubLink removed 2026-09-16. It was added here on 15 September in
+              * the batch that built /cadet-pilot-program, and it was wrong on this
+              * page: it addresses someone choosing an ab-initio cadet route, while
+              * this page is for licence holders preparing for airline recruitment.
+              * Two different readers. The distinction is now drawn explicitly below
+              * instead, which is the more useful fix.
+              */}
+            <IndigoRouteNote />
 
             {/* ── Page body ── */}
             <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">

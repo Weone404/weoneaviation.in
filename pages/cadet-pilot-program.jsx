@@ -50,10 +50,20 @@ const CANONICAL = 'https://weoneaviation.in/cadet-pilot-program';
 
 const CPL = LICENCES.find((l) => l.code === 'CPL');
 
-/* The six airline-specific pages this hub sits above. */
+/*
+ * The six airline-specific pages this hub sits above.
+ *
+ * CORRECTED 2026-09-16: two of the six are not cadet programmes at all. The
+ * IndiGo and Air India pages are recruitment preparation for pilots who already
+ * hold a licence, which is a different reader from the one on this hub. They are
+ * kept in the list because they are the right destination for that reader, but
+ * they are now labelled for what they are rather than implied to be cadet routes.
+ * Getting this wrong sends someone with no licence to a page about interview
+ * technique.
+ */
 const programmes = [
-  { airline: 'IndiGo', href: '/indigo-pilot-preparation', note: 'Preparation for the IndiGo selection process.' },
-  { airline: 'Air India', href: '/airindia-pilot-preparation', note: 'Preparation for the Air India selection process.' },
+  { airline: 'IndiGo', href: '/indigo-pilot-preparation', note: 'Not a cadet route \u2014 recruitment preparation for pilots who already hold a licence. IndiGo does run a separate ab-initio cadet programme, and that page explains the difference.' },
+  { airline: 'Air India', href: '/airindia-pilot-preparation', note: 'Not a cadet route \u2014 recruitment preparation for pilots who already hold a licence.' },
   { airline: 'Emirates', href: '/emirates-cadet-pilot-program', note: 'The Emirates cadet route.' },
   { airline: 'Qatar Airways', href: '/qatar-airways-cadet-pilot-program', note: 'The Qatar Airways cadet route.' },
   { airline: 'SpiceJet', href: '/spice-jet', note: 'The SpiceJet route and what it involves.' },

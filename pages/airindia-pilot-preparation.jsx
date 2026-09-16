@@ -3,7 +3,6 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
-import CadetHubLink from '../components/CadetHubLink';
 import AutoInternalLinks from '../components/AutoInternalLinks';
 
 const heroSlides = [
@@ -17,10 +16,23 @@ const heroSlides = [
     },
 ];
 
+/*
+ * REFRAMED 2026-09-16. This array was presented as Air India's selection
+ * stages, stated as fact about another company's recruitment process. We could
+ * not source a published description of it, and asserting a third party's
+ * process without one is the same failure as asserting their fees or their
+ * eligibility bands — it simply looks less like a claim.
+ *
+ * The stages themselves are what airline selections commonly involve and are
+ * worth preparing for. So they are now labelled as what we prepare you for,
+ * with the reader told to confirm the current process with the airline. The
+ * heading that renders this array was changed in the same edit.
+ */
 const selectionStages = [
-    'Psychometric / ADAPT-style Assessments',
-    'Group Discussions (GD)',
-    'Personal Interviews (HR + Technical)',
+    'Aptitude and psychometric screening',
+    'Group discussion',
+    'Technical interview',
+    'HR interview',
 ];
 
 const cplTraining = [
@@ -135,6 +147,34 @@ function SidebarContact() {
     );
 }
 
+/*
+ * The route distinction, drawn 2026-09-16. This page is recruitment preparation
+ * for pilots who already hold a licence. A reader looking for an ab-initio
+ * cadet route is on the wrong page and should be told so rather than sold to.
+ *
+ * No Air India cadet criteria are stated here. Unlike IndiGo, which publishes
+ * its cadet age and education requirements on its own site, we could not source
+ * a current published set for Air India on 16 September 2026 — so the reader is
+ * sent to the airline rather than given a figure we cannot stand behind.
+ */
+function AirIndiaRouteNote() {
+    return (
+        <section className="px-4 py-6 bg-slate-50 border-y border-slate-200">
+            <div className="max-w-4xl mx-auto text-sm text-slate-700 leading-relaxed">
+                <strong>Make sure you are on the right page.</strong> This is about preparing for{' '}
+                <em>recruitment</em>, which is for pilots who already hold a licence. If you have no licence yet and are
+                looking at an ab-initio cadet route, start with{' '}
+                <Link href="/cadet-pilot-program" className="text-av-blue font-semibold underline">
+                    what a cadet programme is and what it does not change
+                </Link>{' '}
+                &mdash; the requirements DGCA sets are identical on every route, which is the fact most cadet marketing
+                leaves out. Current eligibility and selection details are published by the airline per intake; read them at
+                the source rather than on any coaching page, including this one.
+            </div>
+        </section>
+    );
+}
+
 export default function AirIndiaPilotPreparation() {
     return (
         <Layout
@@ -143,7 +183,14 @@ export default function AirIndiaPilotPreparation() {
         >
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
-            <CadetHubLink airline="Air India" />
+            {/*
+              * CadetHubLink removed 2026-09-16, for the same reason as on
+              * /indigo-pilot-preparation: it addresses someone choosing an ab-initio
+              * cadet route, while this page is for licence holders preparing for
+              * airline recruitment. Two different readers. Replaced with a note that
+              * draws the distinction and routes the cadet reader correctly.
+              */}
+            <AirIndiaRouteNote />
 
             <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
                 <div className="max-w-7xl mx-auto">
@@ -199,7 +246,7 @@ export default function AirIndiaPilotPreparation() {
                             {/* ── Selection Stages ── */}
                             <ScrollReveal>
                                 <h2 className="font-montserrat text-lg sm:text-xl font-bold text-av-blue mb-3">
-                                    🎯 Air India Selection Stages We Cover
+                                    🎯 Stages We Prepare You For
                                 </h2>
                                 <AutoInternalLinks currentPath="/airindia-pilot-preparation">
                                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
