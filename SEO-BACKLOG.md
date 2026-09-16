@@ -58,6 +58,32 @@ codebase, so 15 are unexplained and may be pages we want indexed.
 
 ## 2. Open and unblocked
 
+**2.37 — FLAGGED 2026-09-16. Our medical figures are one CAR revision behind.**
+The owner sent a screenshot of DGCA's own CAR index. It lists Section 7 Series
+'C' Part I at **Revision 7 dated 01.10.2025**. Every figure in
+MEDICAL_STANDARDS was read from **Revision 6 of 18 October 2022**.
+
+So the medical page may be publishing superseded standards. Nothing has been
+relabelled: changing the citation to "Rev. 7" without having read Rev. 7 would
+claim a source we have not seen, which is worse than an honest stale one. The
+flag sits in lib/facts.js above the record.
+
+**To close:** the owner downloads Series 'C' Part I Rev. 7 and attaches it.
+Re-verify every value, then update the citation and verifiedOn.
+
+Two more documents from the same index are worth having, and the owner is the
+only one who can fetch them:
+
+- **Series 'C' Part III, Rev. 1 of 08.10.2025** — Empanelment of Medical
+  Examiner for Class 1. This is the list that settles the "DGCA medical
+  examiner" titles on /about-us, in either direction.
+- **Series 'G' Part III, Issue II of 30.01.2019, Revision 2 of 18.11.2025** —
+  Aviation English Language Proficiency: Training, Test and Certification. The
+  site has no ELP page, and /blogs/6a97b53c ("Importance of Aviation English")
+  was redirected to /rtr-a on 16 September only because none could be sourced.
+  This document unblocks a real ELP page.
+
+
 **2.36 — DONE 2026-09-16. The slug renamed: /ecga-login-your-complete-guide is
 now /egca-login.** Logged as an owner decision on 15 September and taken on 16
 September.
