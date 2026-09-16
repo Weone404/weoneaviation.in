@@ -22,6 +22,7 @@
   '/icse-full-form', '/cbse-full-form',
   '/how-long-does-it-take-to-become-a-pilot', '/pilot-training-abroad', '/online-dgca-ground-classes', '/cpl-flight-training',
   '/pilot-career-counselling',
+  '/ame-aircraft-maintenance-engineer',
   /*
    * Added 2026-09-16. These twelve emit their own FAQPage node as a hand-written
    * object rather than through generateFAQSchema, so the earlier audit — which

@@ -95,6 +95,7 @@ const tocHeadings = [
 ];
 
 const related = [
+    { lead: 'For the AME route in full \u2014 the age, subjects, fees and modules DGCA sets, and the Chemistry requirement that separates it from the pilot route \u2014 see', anchor: 'the Aircraft Maintenance Engineer page', href: '/ame-aircraft-maintenance-engineer' },
     { lead: 'If the pilot route is the one you want, start with', anchor: 'every eligibility requirement in order', href: '/commercial-pilot-license-eligibility' },
     { lead: 'For the whole path from Class 12 to a licence, see', anchor: 'the full route', href: '/your-guide-on-how-to-become-a-pilot-in-india' },
     { lead: 'For the medical classes, including the Class 3 an air traffic controller holds, see', anchor: 'the medical guide', href: '/dgca-class-2-class-1-medical' },

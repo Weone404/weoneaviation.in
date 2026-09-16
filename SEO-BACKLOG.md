@@ -58,6 +58,48 @@ codebase, so 15 are unexplained and may be pages we want indexed.
 
 ## 2. Open and unblocked
 
+**2.31 — DONE 2026-09-16. /ame-aircraft-maintenance-engineer.** The largest
+sourceable gap left after the 50-keyword list was closed: roughly 27,100 monthly
+searches, covered until now by one section of a blog post, and the territory the
+competitor VFTI ranks first for.
+
+It is honest for us to publish because it says outright that we do not train
+AMEs. What it offers is what a 17-year-old choosing between the routes actually
+needs: DGCA's requirements for both, side by side, from the regulator's own
+documents.
+
+The fact that carries the page: an AME candidate needs Physics, CHEMISTRY and
+Mathematics; a pilot needs Physics and Mathematics. DGCA states both side by side
+in its own rejection-reasons document for computer numbers. A student who drops
+Chemistry at 10+2 has closed the AME door and left the pilot door open, and
+nobody tells them at the point they choose subjects. That consequence is now
+stated on the after-12th page too.
+
+Withheld: AME salary, placement, institute fees, institute counts. None
+sourceable. On whether there is an AME shortage — the Ministry has published a
+position on PILOT supply and none on engineers, so the page says so rather than
+inventing one.
+
+**2.32 — DROPPED 2026-09-16, and worth recording why.** A page on pilot eyesight
+requirements was researched and abandoned. "Can I become a pilot with glasses" is
+among the highest-volume aviation queries in India and the site does not answer
+it. DGCA's medical standards could not be retrieved: the Class 1 and Class 2
+pages are served through a JavaScript portal that returns only navigation, and
+the CAR attachment returns binary that cannot be read by the tools available
+here.
+
+Building the page anyway would have meant publishing exactly the kind of
+unsourced vision figure that was REMOVED from
+/commercial-pilot-license-eligibility on 15 September for being untraceable.
+Writing it back onto a new page would be worse than the original error, because
+it would be deliberate.
+
+**If the owner can obtain CAR Section 7 Series 'C' Part I as a readable
+document**, or any DGCA publication stating the visual acuity standard, this is
+probably the single highest-demand page the site could still add. Until then it
+stays unbuilt.
+
+
 **2.30 — DONE 2026-09-16. All 36 legacy database URLs resolved. Backlog 2.1 is
 closed.** The set that began as "29 blog posts on MongoDB ObjectId URLs", turned
 out to be 36 when the live index was read, and has been worked down across this

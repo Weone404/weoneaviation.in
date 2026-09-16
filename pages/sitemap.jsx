@@ -107,6 +107,7 @@ const sitemapData = [
             { label: 'CPL Flight Training: the 200 hours', href: '/cpl-flight-training' },
             { label: 'Online DGCA Ground Classes', href: '/online-dgca-ground-classes' },
             { label: 'Pilot Career Counselling (free)', href: '/pilot-career-counselling' },
+            { label: 'Aircraft Maintenance Engineer (AME)', href: '/ame-aircraft-maintenance-engineer' },
         ],
     },
     {
