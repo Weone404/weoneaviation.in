@@ -86,7 +86,7 @@ const myths = [
 
 const order = [
     { step: 'Confirm the education gate', detail: `${EDUCATION.requirement}. If you did not take both subjects, start the ${EDUCATION.altRoute.split('.')[0].toLowerCase()} now, because it sits on the critical path and nothing else can begin without it.` },
-    { step: 'Book the medical before you spend money', detail: MED.timingAdvice },
+    { step: 'Book the medical before you spend money', detail: MED.classOrder.advice },
     { step: 'Get a computer number', detail: `Online at the Pariksha portal from age ${PARIKSHA.basics.minAge}. Through DigiLocker it is allotted immediately; the manual route takes ${PARIKSHA.processing.days} working days. No medical certificate is needed for this.` },
     { step: 'Start the written papers', detail: `Book on Pariksha, ${inr(PARIKSHA.fees.regularPerPaper)} per paper in a regular session. Clear them one at a time — but count backwards from the licence application, because ${EXAM_RULES.paperValidity.cplAtpl.charAt(0).toLowerCase()}${EXAM_RULES.paperValidity.cplAtpl.slice(1)}` },
     { step: 'Fly the hours', detail: `${CPL_HOURS.total} hours at a flying school, with the components inside that total, and all of it inside the ${CPL_HOURS.recencyYears} years before you apply.` },
@@ -99,7 +99,7 @@ const faqs = [
     { q: 'What education do I need for a CPL?', a: `${EDUCATION.requirement} — ${EDUCATION.clause}. For the computer number application you will also need both the marksheet and the pass certificate for Class 10 and Class 12, not just one of them.` },
     { q: 'Can I become a pilot without Physics and Maths?', a: `Yes. ${EDUCATION.altRoute} The requirement is the two subjects, not the stream you originally took or the board you took them from.` },
     { q: 'Is there a maximum age to become a pilot in India?', a: `Not for the computer number — ${PARIKSHA.basics.maxAgeNote} What does change with age is the medical: a Class 1 is valid for one year up to 60 and six-monthly after that.` },
-    { q: 'Which medical do I need, Class 1 or Class 2?', a: `Both, in that order. A Class 2 covers the Student Pilot Licence and the Private Pilot Licence, so it is what lets you train. The Commercial Pilot Licence requires a Class 1. ${MED.timingAdvice}` },
+    { q: 'Which medical do I need, Class 1 or Class 2?', a: `Both, in that order. A Class 2 covers the Student Pilot Licence and the Private Pilot Licence, so it is what lets you train. The Commercial Pilot Licence requires a Class 1. ${MED.classOrder.advice}` },
     { q: 'How many exams are there for a CPL?', a: `${DGCA_PAPERS.length} written papers: ${papersSummary()}. ${RTR.note}` },
     { q: 'What is the passing mark?', a: `${EXAM_RULES.theory.statement} ${EXAM_RULES.theory.perSubject}` },
     { q: 'How long do my passed papers stay valid?', a: `${EXAM_RULES.paperValidity.general} ${EXAM_RULES.paperValidity.cplAtpl} ${EXAM_RULES.paperValidity.planningNote}` },
@@ -297,11 +297,11 @@ export default function CPLEligibility() {
                                 {' '}{MED.rules.duty}
                             </p>
                             <div className="border-l-4 border-av-orange bg-av-light rounded-r-xl p-4 mb-4">
-                                <p className="text-gray-700 text-sm leading-relaxed">{MED.timingAdvice}</p>
+                                <p className="text-gray-700 text-sm leading-relaxed">{MED.classOrder.advice}</p>
                             </div>
                             <p className={P}>
                                 The examination covers {MED.examination.groups.join(', ').toLowerCase()}. {MED.examination.standardsFrom}{' '}
-                                {MED.examination.note} DGCA lists {MED.centres.airForce.length + MED.centres.civil.length} approved
+                                {MED.examination.note} DGCA lists {MED.centres.boardingCentres.length + MED.centres.civil.length} approved
                                 centres; the full list, and which of them are in Delhi and the NCR, is on our{' '}
                                 <Link href="/dgca-class-2-class-1-medical" className={A}>Class 1 and Class 2 medical guide</Link>.
                             </p>

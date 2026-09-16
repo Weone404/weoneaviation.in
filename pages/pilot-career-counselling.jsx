@@ -56,7 +56,7 @@ const agenda = [
   },
   {
     step: 'Whether the medical is likely to be a problem',
-    detail: `Class 2 to begin, Class 1 for a Commercial Pilot Licence, at one of DGCA's ${MED.centres.airForce.length + MED.centres.civil.length} approved centres. ${MED.timingAdvice} We are not doctors and cannot assess you; what we can do is make sure you book it before you spend anything large, rather than after.`,
+    detail: `Class 2 to begin, Class 1 for a Commercial Pilot Licence, at one of DGCA's ${MED.centres.boardingCentres.length + MED.centres.civil.length} approved centres. ${MED.classOrder.advice} We are not doctors and cannot assess you; what we can do is make sure you book it before you spend anything large, rather than after.`,
     link: { href: '/dgca-class-2-class-1-medical', label: 'Class 1 and Class 2 medical' },
   },
   {

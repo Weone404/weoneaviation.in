@@ -65,8 +65,8 @@ import {
 const LAST_UPDATED = '16 September 2026';
 const CANONICAL = 'https://weoneaviation.in/pilot-training-in-delhi';
 const CEO = PARIKSHA.authority;
-const NCR_CENTRES = [...MED.centres.airForce, ...MED.centres.civil].filter((c) => /Delhi|Gurugram/.test(c.city));
-const TOTAL_CENTRES = MED.centres.airForce.length + MED.centres.civil.length;
+const NCR_CENTRES = [...MED.centres.boardingCentres, ...MED.centres.civil].filter((c) => /Delhi|Gurugram/.test(c.city));
+const TOTAL_CENTRES = MED.centres.boardingCentres.length + MED.centres.civil.length;
 
 const inDelhi = [
   {
@@ -82,7 +82,7 @@ const inDelhi = [
   {
     stage: 'The medical',
     where: `${NCR_CENTRES.length} of DGCA's ${TOTAL_CENTRES} approved centres are in Delhi and the NCR`,
-    detail: `${NCR_CENTRES.map((c) => `${c.name}, ${c.city}`).join(' · ')}. Class 2 to begin and Class 1 for a Commercial Pilot Licence, so neither means travelling. ${MED.timingAdvice}`,
+    detail: `${NCR_CENTRES.map((c) => `${c.name}, ${c.city}`).join(' · ')}. Class 2 to begin and Class 1 for a Commercial Pilot Licence, so neither means travelling. ${MED.classOrder.advice}`,
   },
   {
     stage: 'Equivalence, for international-board candidates',

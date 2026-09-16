@@ -58,30 +58,49 @@ codebase, so 15 are unexplained and may be pages we want indexed.
 
 ## 2. Open and unblocked
 
-**2.37 — FLAGGED 2026-09-16. Our medical figures are one CAR revision behind.**
-The owner sent a screenshot of DGCA's own CAR index. It lists Section 7 Series
-'C' Part I at **Revision 7 dated 01.10.2025**. Every figure in
-MEDICAL_STANDARDS was read from **Revision 6 of 18 October 2022**.
+**2.37 — CLOSED 2026-09-16. The medical CAR was obtained and the page rebuilt
+on Revision 7.**
 
-So the medical page may be publishing superseded standards. Nothing has been
-relabelled: changing the citation to "Rev. 7" without having read Rev. 7 would
-claim a source we have not seen, which is worse than an honest stale one. The
-flag sits in lib/facts.js above the record.
+The owner supplied three DGCA-issued PDFs on 16 September: Series 'C' Part I,
+Issue II of 12.10.2017 at **Revision 7 dated 01 October 2025, effective 15
+November 2025** (F. No. AV 22025/32/DMS/Med); Series 'C' Part III at Rev. 1 of
+08.10.2025; and Series 'C' Part IV at Rev. 1 of 07.10.2025. All three were read
+in full and MEDICAL_STANDARDS was rewritten against them.
 
-**To close:** the owner downloads Series 'C' Part I Rev. 7 and attaches it.
-Re-verify every value, then update the citation and verifiedOn.
+What the re-read confirmed: the three validity bands are unchanged from the
+Rev. 6 reading. What it added: the initial-issue restriction (an initial Class 1
+may not be done at any empanelled examiner — only AFCME, IAM, MEC (East) or a
+DGCA-empanelled aeromedical evaluation centre), the statutory fees, the eGCA
+booking step and the CA-34/34A/35 forms, the Class 2 investigation table by age,
+the four dispositions and the limitation wording, the 45-day window and the NOC
+rules, the 90-day appeal route, and the empanelment bar for Class 1 and Class 2
+examiners.
 
-Two more documents from the same index are worth having, and the owner is the
-only one who can fetch them:
+**The eyesight question is now answered, and the answer is that there is no
+number.** Revision 7 publishes no numeric vision, colour-perception or hearing
+figure at all. It adopts ICAO Annex 1 Chapter 6 and the AICs (Medical) by
+reference. That is stated plainly in a dedicated section of the medical page,
+which is a better answer than the invented figures in circulation. A standalone
+/pilot-eyesight page still needs one more document before it can carry numbers:
 
-- **Series 'C' Part III, Rev. 1 of 08.10.2025** — Empanelment of Medical
-  Examiner for Class 1. This is the list that settles the "DGCA medical
-  examiner" titles on /about-us, in either direction.
+- **ICAO Annex 1, Chapter 6**, or the relevant **AIC (Medical)** on the DGCA
+  website. Until one of those is read, no page on this site quotes a vision
+  figure.
+
+Still outstanding from the same index, and only the owner can fetch it:
+
 - **Series 'G' Part III, Issue II of 30.01.2019, Revision 2 of 18.11.2025** —
   Aviation English Language Proficiency: Training, Test and Certification. The
   site has no ELP page, and /blogs/6a97b53c ("Importance of Aviation English")
   was redirected to /rtr-a on 16 September only because none could be sourced.
   This document unblocks a real ELP page.
+
+On the /about-us titles: Part III gives the empanelment bar for a Class 1
+medical examiner — a post-graduate degree in aviation medicine, MCI or State
+Council registration, a DGCA board interview and a facility inspection — and
+Part IV the Class 2 bar. It does not name individuals; the empanelled lists live
+on the DGCA website. So the bar is now published on the medical page, and the
+titles stay off /about-us until someone produces a listing.
 
 
 **2.36 — DONE 2026-09-16. The slug renamed: /ecga-login-your-complete-guide is

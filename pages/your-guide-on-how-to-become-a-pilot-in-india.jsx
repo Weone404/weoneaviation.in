@@ -82,8 +82,8 @@ const stages = [
         gate: 'Class 2 to train, Class 1 for the licence',
         body: [
             'A Class 2 covers the Student Pilot Licence and the Private Pilot Licence, so it is what lets you begin. The Commercial Pilot Licence requires a Class 1.',
-            MED.timingAdvice,
-            `The examination covers ${MED.examination.groups.join(', ').toLowerCase()}. ${MED.examination.note} DGCA lists ${MED.centres.airForce.length + MED.centres.civil.length} approved centres, four of them in Delhi and the NCR.`,
+            MED.classOrder.advice,
+            `The examination covers ${MED.examination.groups.join(', ').toLowerCase()}. ${MED.examination.note} DGCA lists ${MED.centres.boardingCentres.length + MED.centres.civil.length} approved centres, four of them in Delhi and the NCR.`,
         ],
         link: { href: '/dgca-class-2-class-1-medical', label: 'Class 1 and Class 2 medical, with the centre list' },
     },
@@ -138,7 +138,7 @@ const parallel = [
 
 const faqs = [
     { q: 'How long does it take to become a pilot in India?', a: `No rule sets a duration, and any page quoting one without a source is guessing. What the rules fix are floors: ${CPL_HOURS.total} flying hours, ${PARIKSHA.calendar2026.regular.length} regular examination sessions a year plus ${PARIKSHA.calendar2026.olode.length} on-demand ones, a computer number in ${PARIKSHA.processing.days} working days or immediately through DigiLocker, and a skill test inside the six months before applying. What varies is flying-school throughput — aircraft availability, instructor availability and weather — and that is set by your school, not by DGCA. Ask your school for hours flown per student per month and you will have a better estimate than any article can give you.` },
-    { q: 'What is the first step to becoming a pilot?', a: `Two things, in this order. Confirm you have or can get 10+2 with Physics and Mathematics. Then book the medical — ${MED.timingAdvice.charAt(0).toLowerCase()}${MED.timingAdvice.slice(1)}` },
+    { q: 'What is the first step to becoming a pilot?', a: `Two things, in this order. Confirm you have or can get 10+2 with Physics and Mathematics. Then book the medical — ${MED.classOrder.advice.charAt(0).toLowerCase()}${MED.classOrder.advice.slice(1)}` },
     { q: 'How old do you have to be?', a: `To hold the licences: ${LICENCES.map((l) => `${l.code} at ${l.minAge}`).join(', ')}. To start, ${SPL.minAge} on a Student Pilot Licence, and you can apply for a computer number and begin clearing written papers from ${PARIKSHA.basics.minAge}.` },
     { q: 'Is there an upper age limit?', a: `Not on the examination side — ${PARIKSHA.basics.maxAgeNote} What changes with age is the medical renewal interval: a Class 1 is valid for one year up to 60 and six-monthly after that.` },
     { q: 'Can I become a pilot without Physics and Maths?', a: EDUCATION.altRoute },

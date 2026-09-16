@@ -91,7 +91,7 @@ const faqs = [
   { q: 'Is there an upper age limit?', a: `Not on the DGCA examination side — ${PARIKSHA.basics.maxAgeNote} What varies with age is how long a medical assessment stays valid.` },
   { q: 'How is the SPL examination conducted?', a: `As an oral examination, with a pass mark of ${SPL_ORAL.passMark}% set by ${EXAM_RULES.car.citation}, ${SPL_ORAL.clause}. This is separate from the ${DGCA_PAPERS.length} written papers that a Commercial Pilot Licence requires later, which are computer-based and carry a ${EXAM_RULES.theory.passMark}% threshold each.` },
   { q: 'Which medical certificate does an SPL need?', a: `A ${CLASS2.cls}, valid ${CLASS2.validity.toLowerCase()} It is conducted by ${CLASS2.conductedBy.toLowerCase()}` },
-  { q: 'Where can I get the medical done?', a: `DGCA publishes a list of approved centres — ${MED.centres.airForce.length + MED.centres.civil.length} of them as of ${MED.centresAsOf}, four in Delhi and the NCR. ${MED.centres.listNote}` },
+  { q: 'Where can I get the medical done?', a: `DGCA publishes a list of approved centres — ${MED.centres.boardingCentres.length + MED.centres.civil.length} of them as of ${MED.centresAsOf}, four in Delhi and the NCR. ${MED.centres.listNote}` },
   { q: 'What comes after an SPL?', a: `A Private Pilot Licence at ${PPL.minAge}, then a Commercial Pilot Licence at ${CPL.minAge}. The CPL is the one that permits flying for payment, and it requires ${CPL_HOURS.total} hours of flying, ${DGCA_PAPERS.length} written papers and ${RTR.name}.` },
   { q: 'Do I need a computer number for the SPL?', a: `The computer number is the identity used for DGCA flight crew examinations, and it can be applied for from age ${PARIKSHA.basics.minAge}. Getting it early is sensible: on the DigiLocker route it is allotted immediately, and on the manual route it takes ${PARIKSHA.processing.days} working days.` },
   { q: 'What does the SPL stage cost?', a: `DGCA's own examination fees are ${inr(PARIKSHA.fees.regularPerPaper)} per written paper in a regular session, and ${inr(PARIKSHA.fees.oralPerPaper)} for an oral paper on the second and third attempt. Flying school charges, the medical and training itself are set by the school and the medical centre, not by DGCA.` },
@@ -225,11 +225,11 @@ export default function StudentPilotLicence() {
               </div>
               <p className={P}>
                 A Class 1 is what the Commercial Pilot Licence requires, and it is the stricter of the two. Here is the part worth
-                acting on: {MED.timingAdvice}
+                acting on: {MED.classOrder.advice}
               </p>
               <p className={P}>
                 The examination covers {MED.examination.groups.join(', ').toLowerCase()}. {MED.examination.note} The full picture,
-                including DGCA&rsquo;s list of {MED.centres.airForce.length + MED.centres.civil.length} approved centres, is on our{' '}
+                including DGCA&rsquo;s list of {MED.centres.boardingCentres.length + MED.centres.civil.length} approved centres, is on our{' '}
                 <Link href="/dgca-class-2-class-1-medical" className={A}>Class 1 and Class 2 medical guide</Link>.
               </p>
 

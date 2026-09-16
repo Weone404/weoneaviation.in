@@ -51,7 +51,7 @@ const LAST_UPDATED = '15 September 2026';
 const LAST_UPDATED_ISO = '2026-09-15';
 const CANONICAL = 'https://weoneaviation.in/pilot-training-in-dwarka';
 
-const NCR_CENTRES = [...MED.centres.airForce, ...MED.centres.civil].filter((c) => /Delhi|Gurugram/.test(c.city));
+const NCR_CENTRES = [...MED.centres.boardingCentres, ...MED.centres.civil].filter((c) => /Delhi|Gurugram/.test(c.city));
 const CEO = PARIKSHA.authority;
 
 const inDelhi = [
@@ -63,7 +63,7 @@ const inDelhi = [
   {
     body: 'DGCA-approved aeromedical centres',
     where: NCR_CENTRES.map((c) => `${c.name}, ${c.city}`).join(' · '),
-    why: `Four of the ${MED.centres.airForce.length + MED.centres.civil.length} centres on DGCA's list are in Delhi and the NCR, so neither the Class 2 you need to start nor the Class 1 the Commercial Pilot Licence requires means travelling. ${MED.centres.listNote}`,
+    why: `Four of the ${MED.centres.boardingCentres.length + MED.centres.civil.length} centres on DGCA's list are in Delhi and the NCR, so neither the Class 2 you need to start nor the Class 1 the Commercial Pilot Licence requires means travelling. ${MED.centres.listNote}`,
   },
   {
     body: 'The Association of Indian Universities',
@@ -79,7 +79,7 @@ const peopleAlsoAsk = [
   },
   {
     q: 'Can I complete the DGCA process without leaving Delhi?',
-    a: `Most of it, yes, and that is unusual. The examination portal is online from anywhere. The Central Examination Organisation that processes computer numbers and hears appeals is at ${CEO.address}. Four of DGCA's ${MED.centres.airForce.length + MED.centres.civil.length} approved medical centres are in Delhi and the NCR. The equivalence certificate body, for international-board candidates, is on Kotla Marg. The flying hours are the part that happens elsewhere, at a flying school.`,
+    a: `Most of it, yes, and that is unusual. The examination portal is online from anywhere. The Central Examination Organisation that processes computer numbers and hears appeals is at ${CEO.address}. Four of DGCA's ${MED.centres.boardingCentres.length + MED.centres.civil.length} approved medical centres are in Delhi and the NCR. The equivalence certificate body, for international-board candidates, is on Kotla Marg. The flying hours are the part that happens elsewhere, at a flying school.`,
   },
   {
     q: 'What is taught in DGCA ground classes in Dwarka?',
@@ -99,7 +99,7 @@ const faqs = [
   { q: 'Which pilot courses can I start from Dwarka?', a: `The ground-school side of the whole ladder: ${LICENCES.map((l) => l.code).join(', ')}. What you cannot do from Dwarka, or from anywhere in Delhi, is the flying — that happens at a flying training organisation, and we arrange it with partner schools.` },
   { q: 'What qualification do I need before I start?', a: `${EDUCATION.requirement} — that is the requirement for a Commercial Pilot Licence. ${EDUCATION.altRoute}` },
   { q: 'How old do I have to be?', a: `${LICENCES.map((l) => `${l.code} from ${l.minAge}`).join(', ')}. A computer number for the DGCA examinations can be applied for from age ${PARIKSHA.basics.minAge}, and ${PARIKSHA.basics.maxAgeNote.charAt(0).toLowerCase()}${PARIKSHA.basics.maxAgeNote.slice(1)}` },
-  { q: 'Where do I do the medical if I live in Delhi?', a: `At one of the DGCA-approved centres. ${NCR_CENTRES.length} of the ${MED.centres.airForce.length + MED.centres.civil.length} on DGCA's list as of ${MED.centresAsOf} are in Delhi and the NCR: ${NCR_CENTRES.map((c) => `${c.name} (${c.city})`).join(', ')}. ${MED.timingAdvice}` },
+  { q: 'Where do I do the medical if I live in Delhi?', a: `At one of the DGCA-approved centres. ${NCR_CENTRES.length} of the ${MED.centres.boardingCentres.length + MED.centres.civil.length} on DGCA's list as of ${MED.centresAsOf} are in Delhi and the NCR: ${NCR_CENTRES.map((c) => `${c.name} (${c.city})`).join(', ')}. ${MED.classOrder.advice}` },
   { q: 'What do the DGCA examinations cost?', a: `${inr(PARIKSHA.fees.regularPerPaper)} per paper in a regular session and ${inr(PARIKSHA.fees.olodePerPaper)} per paper in an Online On-Demand Examination, paid through Bharatkosh. Those are DGCA's fees, not ours.` },
   { q: 'When are the 2026 examinations?', a: `Regular sessions: ${PARIKSHA.calendar2026.regular.map((r) => r.dates).join('; ')}. There are also ${PARIKSHA.calendar2026.olode.length} on-demand sessions across the year. ${PARIKSHA.calendar2026.tentative}` },
   { q: 'Does We One Aviation guarantee an airline job?', a: ACADEMY.scope },
@@ -189,7 +189,7 @@ export default function PilotTrainingInDwarka() {
 
               <QuickAnswer
                 question="Is there a pilot training institute in Dwarka, and what can you do from here?"
-                answer={`${ACADEMY.name} has run DGCA ground classes from ${ACADEMY.addressLocality}'s Sector 7 since ${ACADEMY.foundedYear}. Being in Delhi is a practical advantage rather than a slogan: the Central Examination Organisation that issues computer numbers and hears appeals is at R.K. Puram, four of DGCA's ${MED.centres.airForce.length + MED.centres.civil.length} approved medical centres are in Delhi and the NCR, and the equivalence body for international-board candidates is on Kotla Marg. The flying hours are the one part that happens elsewhere.`}
+                answer={`${ACADEMY.name} has run DGCA ground classes from ${ACADEMY.addressLocality}'s Sector 7 since ${ACADEMY.foundedYear}. Being in Delhi is a practical advantage rather than a slogan: the Central Examination Organisation that issues computer numbers and hears appeals is at R.K. Puram, four of DGCA's ${MED.centres.boardingCentres.length + MED.centres.civil.length} approved medical centres are in Delhi and the NCR, and the equivalence body for international-board candidates is on Kotla Marg. The flying hours are the one part that happens elsewhere.`}
               />
 
               <SummaryBox
@@ -200,7 +200,7 @@ export default function PilotTrainingInDwarka() {
                   `Taught here: the ${DGCA_PAPERS.length} DGCA written papers, each needing ${EXAM_RULES.theory.passMark}%`,
                   'Classroom batches run in Dwarka; students elsewhere join online batches',
                   `DGCA's Central Examination Organisation: ${CEO.address}`,
-                  `${NCR_CENTRES.length} of DGCA's ${MED.centres.airForce.length + MED.centres.civil.length} approved medical centres are in Delhi and the NCR`,
+                  `${NCR_CENTRES.length} of DGCA's ${MED.centres.boardingCentres.length + MED.centres.civil.length} approved medical centres are in Delhi and the NCR`,
                   'Flight training happens at partner flying schools, not in Dwarka',
                 ]}
               />
@@ -248,7 +248,7 @@ export default function PilotTrainingInDwarka() {
               <ol className="space-y-3 mb-6">
                 {[
                   `Confirm the education gate. ${EDUCATION.requirement}. If you did not take both subjects, the bridge route adds time and belongs at the front of your plan.`,
-                  `Book the medical at one of the Delhi or NCR centres. ${MED.timingAdvice}`,
+                  `Book the medical at one of the Delhi or NCR centres. ${MED.classOrder.advice}`,
                   `Apply for a computer number — online, from age ${PARIKSHA.basics.minAge}, no medical certificate needed. Through DigiLocker it is allotted immediately; the manual route takes ${PARIKSHA.processing.days} working days.`,
                   `Start the written papers at ${inr(PARIKSHA.fees.regularPerPaper)} each, in any of the ${PARIKSHA.calendar2026.regular.length} regular sessions or ${PARIKSHA.calendar2026.olode.length} on-demand sessions a year.`,
                   'Fly the hours at a flying school. This is the part that happens outside Delhi, and the part with the real cost attached.',

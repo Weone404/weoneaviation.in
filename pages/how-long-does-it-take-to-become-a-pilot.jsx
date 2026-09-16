@@ -56,7 +56,7 @@ const floors = [
 const expiries = [
   { what: 'Written paper passes', detail: EXAM_RULES.paperValidity.general, extra: EXAM_RULES.paperValidity.cplAtpl, rule: `${EXAM_RULES.car.citation}, ${EXAM_RULES.paperValidity.clause}` },
   { what: 'Flying hours', detail: `Hours older than ${CPL_HOURS.recencyYears} years do not count towards the ${CPL_HOURS.total}.`, extra: 'Someone who flies 120 hours, stops for six years and returns has lost them.', rule: `Schedule II, ${CPL_HOURS.clause}` },
-  { what: 'Medical certificate', detail: 'A medical is valid for a defined period and then has to be renewed, so a long gap means paying for it twice.', extra: MED.timingAdvice, rule: MED.citation },
+  { what: 'Medical certificate', detail: 'A medical is valid for a defined period and then has to be renewed, so a long gap means paying for it twice.', extra: MED.classOrder.advice, rule: MED.car.citation },
 ];
 
 const peopleAlsoAsk = [

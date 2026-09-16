@@ -52,7 +52,7 @@ const LAST_UPDATED = '15 September 2026';
 const LAST_UPDATED_ISO = '2026-09-15';
 const CANONICAL = 'https://weoneaviation.in/how-to-choose-an-aviation-academy';
 
-const totalCentres = MED.centres.airForce.length + MED.centres.civil.length;
+const totalCentres = MED.centres.boardingCentres.length + MED.centres.civil.length;
 
 /* The requirements that do not move whichever academy a student picks. */
 const unchanged = [
