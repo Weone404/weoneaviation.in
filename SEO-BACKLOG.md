@@ -58,6 +58,49 @@ codebase, so 15 are unexplained and may be pages we want indexed.
 
 ## 2. Open and unblocked
 
+**2.33 — DONE 2026-09-16. /about-us corrected, at the owner's instruction.**
+Backlog 2.12 is closed. The page body had already been rebuilt honestly; the
+problems were in its FAQ data and its team array.
+
+Two role titles claimed capabilities the academy does not have, putting the page
+in direct conflict with ACADEMY.scope:
+- "Chief Flying Instructor" is a Flying Training Organisation post. A CFI signs
+  off flight training on an operator's aircraft, and this academy operates none.
+- "DGCA medical examiner", given for three people, is a specific regulatory
+  credential from a list DGCA publishes. It could not be verified, and
+  /credentials already states that instructor licence numbers were removed
+  rather than restated for exactly this reason.
+
+Both now describe what the academy actually does. **To restore either: supply the
+evidence** — a DGCA approved-examiner listing naming the person, or an FTO
+appointment for a CFI — and the title returns with a source beside it. Not on
+assertion.
+
+The FAQ answers were rewritten: "students learn from experienced airline pilots,
+simulator instructors" (contradicted the scope statement outright), "our programs
+are aligned with DGCA requirements" (vague where the honest answer is that no
+ground school is on DGCA's approved list, ours included), and the location answer
+now carries the confirmed NAP. The {{TODO-BUSINESS-INPUT}} placeholder is
+replaced with copy that is true as written rather than a gap waiting for numbers.
+
+**Corrected in the same sweep:** /pilot-training-in-india stated the minimum age
+for a CPL as 17. It is 18; 17 is the PPL age. Same error found on the home page
+FAQ component a day earlier, which suggests it was copied. A site-wide grep now
+returns no other instance.
+
+**2.34 — BLOCKED, and not by permissions. The eyesight page still cannot be
+built.** Four routes tried on 16 September: WebFetch on the CAR attachment
+returns binary; curl from the cloud container returns 403; curl from the device
+VM returns 403 — dgca.gov.in is not on the egress allowlist for either shell; and
+the portal's HTML pages are JavaScript-rendered and return only navigation.
+
+This is an environment limit rather than an access-rights one, so elevated
+permissions do not change it. **What would unblock it:** the owner downloads CAR
+Section 7 Series 'C' Part I (or any DGCA publication stating the visual acuity
+standard) and attaches it to the session or drops it in the connected folder.
+The page gets built the same day.
+
+
 **2.31 — DONE 2026-09-16. /ame-aircraft-maintenance-engineer.** The largest
 sourceable gap left after the 50-keyword list was closed: roughly 27,100 monthly
 searches, covered until now by one section of a blog post, and the territory the

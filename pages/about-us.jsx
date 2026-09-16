@@ -27,18 +27,40 @@ const heroSlides = [
  * simulator the academy does not own, which scripts/check-claims.js bans
  * outright.
  *
- * Names and roles stay — public/llms.txt already states that this page names
- * the instructor panel. The unverifiable numbers go. Supply real, evidencable
- * credentials and they can return.
- * {{TODO-BUSINESS-INPUT}} — verified experience or licence detail per instructor
+ * Names stay — public/llms.txt already states that this page names the
+ * instructor panel. The unverifiable numbers went in Workstream C.
+ *
+ * ROLES CORRECTED 2026-09-16, at the owner's instruction to fix the details.
+ * Two role titles claimed capabilities the academy does not have, which put
+ * this page in direct conflict with ACADEMY.scope in lib/facts.js:
+ *
+ *   "Chief Flying Instructor" is a Flying Training Organisation post. A CFI
+ *   signs off flight training on an operator's aircraft. This academy does not
+ *   operate aircraft, so nobody here can hold that post. It now reads as what
+ *   the role actually is: leading the guidance on choosing and working with a
+ *   flying school.
+ *
+ *   "DGCA medical examiner", given for three people, is a specific regulatory
+ *   credential — DGCA publishes the list of approved examiners, and being on it
+ *   is a verifiable fact rather than a description. It could not be verified
+ *   here, and /credentials states that instructor licence numbers were removed
+ *   rather than restated for exactly this reason. The role now describes what
+ *   the academy actually does for a student on the medical: explain the classes,
+ *   the validity and where the approved centres are. The examination itself is
+ *   done by a DGCA-approved examiner at an approved centre, which this page now
+ *   says plainly.
+ *
+ * TO RESTORE EITHER CLAIM: supply the evidence — a DGCA approved-examiner
+ * listing naming the person, or an FTO appointment for a CFI — and the title
+ * can go back with a source beside it. Do not restore either on assertion.
  */
 const team = [
-  { name: 'Capt. Nitin', role: 'Chief Flying Instructor', exp: 'Leads flight-training guidance', img: 'RV' },
-  { name: 'Capt. Sanskar', role: 'Aviation Medical Advisor', exp: 'DGCA medical examiner', img: 'MS' },
+  { name: 'Capt. Nitin', role: 'Head of Flight-Training Guidance', exp: 'Advises on choosing a flying training organisation', img: 'RV' },
+  { name: 'Capt. Sanskar', role: 'Medical Process Advisor', exp: 'Guides students through the DGCA medical process', img: 'MS' },
   { name: 'Capt. Uday', role: 'Ground Training Head', exp: 'Leads the DGCA ground syllabus', img: 'AN' },
-  { name: 'Capt. Pankaj', role: 'Aviation Medical Advisor', exp: 'DGCA medical examiner', img: 'MS' },
+  { name: 'Capt. Pankaj', role: 'Medical Process Advisor', exp: 'Guides students through the DGCA medical process', img: 'MS' },
   { name: 'Capt. Kamal', role: 'Ground Instructor', exp: 'Technical subjects', img: 'SK' },
-  { name: 'Capt. Manoj', role: 'Aviation Medical Advisor', exp: 'DGCA medical examiner', img: 'MS' },
+  { name: 'Capt. Manoj', role: 'Medical Process Advisor', exp: 'Guides students through the DGCA medical process', img: 'MS' },
 ];
 
 function MemberCard({ member, active }) {
@@ -218,11 +240,30 @@ export default function About() {
       {/* Team Slider */}
       <section className="py-20 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <ScrollReveal className="text-center mb-12">
-            <div className="section-tag">Our Experts</div>
+          <ScrollReveal className="text-center mb-8">
+            <div className="section-tag">Who you will actually be taught by</div>
             <h2 className="font-montserrat text-3xl font-bold text-av-blue">
-              Meet Our <span className="text-av-orange">Expert Instructors</span>
+              Our <span className="text-av-orange">Instructor Panel</span>
             </h2>
+            {/*
+              * Replaced the {{TODO-BUSINESS-INPUT}} placeholder on 2026-09-16 with
+              * copy that is true as written rather than a gap waiting for numbers.
+              * If evidenced credentials are ever supplied they belong on the cards,
+              * with a source — not in this paragraph as an unattributed claim.
+              */}
+            <p className="text-gray-600 text-sm leading-relaxed max-w-3xl mx-auto mt-4">
+              You will notice there are no year-counts, type ratings or licence numbers on these cards. That is on
+              purpose. Those figures were removed from this site because they could not be evidenced, and putting them
+              back unverified would make this page worth less rather than more. What we can tell you is what each person
+              does here, which is the part that affects your week.
+            </p>
+            <p className="text-gray-600 text-sm leading-relaxed max-w-3xl mx-auto mt-3">
+              Two clarifications that matter more than a biography. Nobody here is a Chief Flying Instructor, because
+              that is a post at an organisation that operates aircraft and we do not operate any &mdash; our flight-training
+              role is helping you choose and work with a flying school. And the DGCA medical is conducted by a
+              DGCA-approved examiner at an approved centre, not by us; what our medical advisors do is explain the
+              classes, the validity and where the approved centres are, so you book the right one at the right time.
+            </p>
           </ScrollReveal>
 
           {/* Slider */}

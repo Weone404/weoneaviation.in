@@ -206,7 +206,7 @@ const faqs = [
     },
     {
         q: 'What Are The Eligibility Criteria for Pilot Training?',
-        a: 'Minimum age: 17 years for CPL | Educational qualification: 10+2 with Physics and Mathematics | Medical fitness: DGCA medical certificate from a DGCA medical examiner',
+        a: 'Minimum age: 16 for a Student Pilot Licence, 17 for a PPL, 18 for a Commercial Pilot Licence \u2014 Aircraft Rules, 1937, Schedule II, Sections B, E and J. (This answer said 17 for a CPL until 16 September 2026; it is 18, and 17 is the PPL age.) | Educational qualification: 10+2 with Physics and Mathematics | Medical fitness: a DGCA medical from a DGCA-approved examiner \u2014 Class 2 to begin, Class 1 for a CPL',
     },
     {
         q: 'What is Pilot Training Institute?',
