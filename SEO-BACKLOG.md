@@ -99,7 +99,26 @@ requirements, which is the content half of that gap. Whether to go further —
 a dedicated hub for the bare term — is a decision worth taking on data after
 this change has had time to register.
 
-**2.22 — /pilot-training-in-india is the next real job.** 133 keywords, 54,230
+**2.22 — DONE 2026-09-16.** /pilot-training-in-india rebuilt around a sourced
+core rather than extended. The diagnosis was that length was never the problem:
+1,161 lines holding 133 keywords and 54,230 of search volume with nothing above
+position 15 and 3 visits a month, and 109 of those keywords showing an AI
+Overview. It had no JSON-LD, no answer-first block, no People-also-ask, no
+sourced facts and not one table element in a page that size — and because the
+route sits in the existingFaqRoutes gate it had no FAQ structured data at all.
+
+The half that markup alone would not have fixed: the keywords it holds belong to
+pages that now exist and are stronger. "pilot course fees" to
+/cost-transparency, "best pilot training institute in india" and "aviation
+academy" to /how-to-choose-an-aviation-academy, "commercial pilot license" to
+/commercial-pilot-license. The page was competing with its own specialists. It
+now routes each sub-intent to the page that answers it and keeps the one job
+nothing else does — the national picture, built on DGCA's published FTO list and
+ranking, which no competitor page for this term carries.
+
+**Watch after deploy:** if the routing works, expect this page's keyword count
+to fall while the specialist pages rise. A drop in keywords here is the intended
+outcome, not a regression. Original note: **/pilot-training-in-india is the next real job.** 133 keywords, 54,230
 of search volume, nothing above position 15, 3 visits a month, and 109 of those
 133 keywords show an AI Overview. 1,161 lines of breadth with no depth: no
 JSON-LD, no answer-first, no People-also-ask, zero table elements and no sourced

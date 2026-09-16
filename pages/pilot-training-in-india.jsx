@@ -1,5 +1,10 @@
 import Layout from '../components/Layout';
 import HeroSlider from '../components/HeroSlider';
+import QuickAnswer from '../components/QuickAnswer';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
+import StructuredData from '../components/StructuredData';
+import { generateFAQSchema } from '../lib/schema';
+import { FTO, CPL_HOURS, DGCA_PAPERS, EXAM_RULES, EDUCATION, LICENCES, MIN_AGE, PARIKSHA, CPL_COST, papersSummary, inr } from '../lib/facts';
 import CourseCard from '../components/CourseCard';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
@@ -333,9 +338,99 @@ const usaReasons = [
     { icon: '🚀', title: 'Direct Airline Pathway', desc: 'Structured programs designed to help you secure airline jobs quickly!' },
 ];
 
+
+/*
+ * ANSWER-FIRST, SOURCED CORE AND STRUCTURED DATA — ADDED 2026-09-16.
+ *
+ * THE DIAGNOSIS, from the Semrush positions export of 2026-09-15. This page
+ * ranks for 133 keywords carrying 54,230 of search volume and holds nothing
+ * above position 15, returning 3 visits a month. 109 of those 133 keywords show
+ * an AI Overview. It is 1,161 lines long, so the problem was never length.
+ *
+ * It had no JSON-LD, no answer-first block, no People-also-ask, no sourced
+ * facts and — in a page of this size — not one table element. And because the
+ * route sits in the existingFaqRoutes gate it received no injected FAQ either,
+ * so it shipped no FAQ structured data at all.
+ *
+ * THE OTHER HALF OF THE DIAGNOSIS, which markup alone does not fix. The
+ * keywords it holds belong to pages that now exist and are stronger: "pilot
+ * course fees" to /cost-transparency, "best pilot training institute in india"
+ * and "aviation academy" to /how-to-choose-an-aviation-academy, "commercial
+ * pilot license" to /commercial-pilot-license. This page was competing with its
+ * own specialists. So the routing block below sends each sub-intent to the page
+ * that answers it properly, and this page keeps the one job nothing else does:
+ * the national picture.
+ *
+ * WHAT MAKES IT DEFENSIBLE RATHER THAN A LANDING PAGE. DGCA publishes the list
+ * of approved Flying Training Organisations and a twice-yearly ranking of them.
+ * That is the national picture, it is sourced, and no competitor page for this
+ * term carries it. The figures come from lib/facts.js FTO, read 15 September
+ * 2026. No new facts are introduced here.
+ */
+const PTI_CANONICAL = 'https://weoneaviation.in/pilot-training-in-india';
+
+const ptiPaa = [
+    {
+        q: 'Where can you train to be a pilot in India?',
+        a: `At a DGCA-approved Flying Training Organisation. DGCA publishes the list — ${FTO.count} of them as on ${FTO.listAsOf} — with each approval number, its validity dates, every flying base and the fleet by registration. The approved bases sit across ${FTO.statesWithBases.length} states including ${FTO.statesWithBases.slice(0, 6).join(', ')}. There is no approved flying base in Delhi or anywhere in the National Capital Region, so a Delhi student does the papers, the computer number and the medical locally and travels for the flying.`,
+    },
+    {
+        q: 'What does pilot training in India involve?',
+        a: `Four requirements, all set by regulation and identical wherever you enrol. ${EDUCATION.requirement} A minimum age of ${MIN_AGE.CPL} for a Commercial Pilot Licence. ${DGCA_PAPERS.length} written papers — ${papersSummary()} — each needing ${EXAM_RULES.theory.passMark}% on its own rather than an aggregate. And ${CPL_HOURS.total} hours as pilot of an aeroplane, flown within the ${CPL_HOURS.recencyYears} years before you apply.`,
+    },
+    {
+        q: 'How do you check whether a flying school in India is any good?',
+        a: `Against DGCA's own documents rather than a brochure. It publishes the approved list, and since ${FTO.ranking.notice.split('dated ')[1]} it also ranks approved schools against five weighted parameters, republished ${FTO.ranking.frequency}. The ${FTO.ranking.latestEdition} edition ranked ${FTO.ranking.ranked} organisations. Note where the weight sits: ${FTO.ranking.parameters[1].name} carries ${FTO.ranking.parameters[1].weight}% and covers aircraft utilisation and the student-to-aircraft ratio — which is what decides whether your ${CPL_HOURS.total} hours take eighteen months or four years.`,
+    },
+    {
+        q: 'What does pilot training cost in India?',
+        a: `No Indian government body publishes a market price and private schools publish nothing, so the ranges circulating online cannot be traced to a document. What can be shown: ${CPL_COST.benchmark.school}, a government academy, publishes a course fee of ${CPL_COST.benchmark.feeLabel}, and DGCA charges ${inr(PARIKSHA.fees.regularPerPaper)} per examination paper in a regular session and ${inr(PARIKSHA.fees.olodePerPaper)} on demand.`,
+    },
+    {
+        q: 'Can I do pilot training in India after 12th?',
+        a: `Yes, and it is the usual route. ${EDUCATION.requirement} ${EDUCATION.altRoute} A computer number for the DGCA examinations can be applied for from age ${PARIKSHA.basics.minAge}, before you join any flying school, so the written papers can be started first.`,
+    },
+];
+
+const ptiFaqs = [
+    { q: 'How many DGCA-approved flying schools are there in India?', a: `${FTO.count} on DGCA's published list as on ${FTO.listAsOf}. The list is republished, so check it at the source rather than trusting any page that quotes it — this one included.` },
+    { q: 'Is there a DGCA-approved flying school in Delhi?', a: `Not on the list as read on 15 September 2026. No approved flying base appears in Delhi or the NCR — not ${FTO.noBaseIn.slice(1).join(', ')}. Any Delhi address advertising flight training is arranging it elsewhere.` },
+    { q: 'What licences can I get in India?', a: LICENCES.map((l) => `${l.name} (${l.code}), minimum age ${l.minAge}`).join('; ') + ' — Aircraft Rules, 1937, Schedule II.' },
+    { q: 'How many flying hours does an Indian CPL need?', a: `${CPL_HOURS.total} hours total as pilot of an aeroplane, flown within the ${CPL_HOURS.recencyYears} years before applying. The components sit inside that total rather than adding to it: ${CPL_HOURS.components.map((c) => `${c.hours} hours ${c.label}`).join(', ')}.` },
+    { q: 'Do I need to clear the written papers before joining a flying school?', a: 'No, but starting them first costs you nothing and can save a great deal. The computer number application needs no medical certificate and no flying school, and the papers are cleared one at a time.' },
+    { q: 'Is training in India or abroad better?', a: 'They differ structurally rather than in quality. India issues a DGCA licence directly, so there is no conversion step; training abroad means converting the licence before flying commercially in India, which costs time and money a headline fee will not show. Against that, larger fleets and better year-round weather abroad often mean hours accumulate faster.' },
+    { q: 'Does We One Aviation run a flying school?', a: 'No. We teach the DGCA ground subjects and arrange flight training with partner flying schools. We do not own aircraft or simulators, we do not employ pilots, and we do not place students into airline jobs — hiring decisions rest with the operator.' },
+];
+
+const ptiRouting = [
+    { label: 'What it costs, and what is actually publishable', href: '/cost-transparency' },
+    { label: 'How to check a flying school or academy before you pay', href: '/how-to-choose-an-aviation-academy' },
+    { label: 'Commercial Pilot Licence: eligibility, gate by gate', href: '/commercial-pilot-license-eligibility' },
+    { label: 'The full route, stage by stage', href: '/your-guide-on-how-to-become-a-pilot-in-india' },
+    { label: 'DGCA written papers and the examination portal', href: '/dgca-pariksha' },
+    { label: 'Cadet pilot programmes, and what they do not change', href: '/cadet-pilot-program' },
+];
+
+const ptiArticleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Pilot Training in India: Where It Happens and What It Requires',
+    description: `DGCA approves ${FTO.count} Flying Training Organisations across ${FTO.statesWithBases.length} states and ranks them twice a year. The requirements that hold wherever you train, and how to check a school against DGCA's own documents.`,
+    inLanguage: 'en-IN',
+    dateModified: '2026-09-16',
+    articleSection: 'Pilot training in India',
+    keywords: 'pilot training in india, pilot training institute in india, commercial pilot course, dgca approved flying school, pilot course fees, best pilot training institute in india',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': PTI_CANONICAL },
+    image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+    author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+    publisher: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in', logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
+    citation: FTO.sources.slice(0, 3).map((c) => ({ '@type': 'CreativeWork', name: c.label, url: c.url })),
+};
+
 export default function Home() {
     return (
         <Layout title="We One Aviation Academy | Pilot Training Institute in India" description="DGCA pilot training in India. CPL, PPL, ATPL and SPL courses plus DGCA ground classes. Free career counselling available.">
+            <StructuredData data={[ptiArticleSchema, generateFAQSchema(ptiFaqs)]} />
             {/* Hero */}
             <HeroSlider  asH1={false}/>
 
@@ -363,6 +458,58 @@ export default function Home() {
                 <div className="text-center mt-1">
                     <span className="text-av-orange text-sm font-semibold">Clear Your Dgca Exam In First Attempt With We One Aviation Academy</span>
                 </div>
+            </section>
+
+            {/* Answer-first and the sourced national picture, added 2026-09-16. See the note at the top of this file. */}
+            <section className="px-4 pt-12 pb-4 max-w-4xl mx-auto">
+                <p className="text-xs text-gray-500 mb-4">
+                    DGCA&rsquo;s approved-organisation list and ranking read on 15 September 2026. Both are republished &mdash;
+                    check them at the source rather than trusting any page that quotes them, this one included.
+                </p>
+                <QuickAnswer question={ptiPaa[0].q} answer={ptiPaa[0].a} />
+
+                <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-3 mt-10">What DGCA publishes about flying schools in India</h2>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    This is the national picture, and it is public. Every row below can be checked against DGCA&rsquo;s own
+                    documents, which is more than any ranking of &ldquo;top institutes&rdquo; on a coaching website can offer.
+                </p>
+                <div className="overflow-x-auto mb-6">
+                    <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
+                        <tbody className="text-gray-600">
+                            {[
+                                ['Approved Flying Training Organisations', `${FTO.count}, as on ${FTO.listAsOf}`],
+                                ['States with an approved flying base', `${FTO.statesWithBases.length} — ${FTO.statesWithBases.slice(0, 8).join(', ')} and others`],
+                                ['Approved bases in Delhi or the NCR', 'None'],
+                                ['Organisations ranked by DGCA', `${FTO.ranking.ranked} in the ${FTO.ranking.latestEdition} edition, republished ${FTO.ranking.frequency}`],
+                                ['Heaviest ranking parameter', `${FTO.ranking.parameters[1].name}, ${FTO.ranking.parameters[1].weight}% — aircraft utilisation and student-to-aircraft ratio`],
+                                ['Flying hours a CPL requires', `${CPL_HOURS.total}, within the ${CPL_HOURS.recencyYears} years before you apply`],
+                                ['DGCA written papers', `${DGCA_PAPERS.length}, each needing ${EXAM_RULES.theory.passMark}% on its own`],
+                                ['DGCA examination fee', `${inr(PARIKSHA.fees.regularPerPaper)} per paper regular, ${inr(PARIKSHA.fees.olodePerPaper)} on demand`],
+                                ['One publicly comparable course fee', `${CPL_COST.benchmark.school}: ${CPL_COST.benchmark.feeLabel}`],
+                            ].map(([k, v]) => (
+                                <tr key={k} className="border-t border-gray-200 odd:bg-gray-50">
+                                    <td className="p-3 font-semibold text-av-blue align-top w-2/5">{k}</td>
+                                    <td className="p-3">{v}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                    The line worth pausing on is the Delhi one. &ldquo;Flying school near me&rdquo;, typed in Delhi, has no local
+                    answer &mdash; and any Delhi address advertising flight training is arranging it somewhere else, including us.
+                    What a Delhi student can complete locally is the computer number, the written papers and the medical.
+                </p>
+
+                <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-3 mt-10">Go straight to what you came for</h2>
+                <ul className="space-y-2 mb-4">
+                    {ptiRouting.map((r) => (
+                        <li key={r.href} className="flex gap-2 items-start text-sm text-gray-600">
+                            <span className="text-av-orange font-bold flex-shrink-0">&ndash;</span>
+                            <Link href={r.href} className="text-av-blue font-semibold hover:text-av-orange transition-colors">{r.label}</Link>
+                        </li>
+                    ))}
+                </ul>
             </section>
 
             {/* ── PILOT TRAINING INSTITUTE INTRO ── */}
@@ -1157,6 +1304,28 @@ export default function Home() {
                     </ScrollReveal>
                 </div>
             </section>
+            <section className="px-4 pb-16 max-w-4xl mx-auto">
+                <PeopleAlsoAsk items={ptiPaa} />
+                <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12">Frequently asked questions</h2>
+                <div className="space-y-3">
+                    {ptiFaqs.map((f) => (
+                        <details key={f.q} className="border border-gray-200 rounded-xl p-4">
+                            <summary className="font-semibold text-av-blue text-sm cursor-pointer">{f.q}</summary>
+                            <p className="text-gray-600 text-sm leading-relaxed mt-2">{f.a}</p>
+                        </details>
+                    ))}
+                </div>
+                <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12">Sources</h2>
+                <ul className="space-y-2">
+                    {FTO.sources.map((c) => (
+                        <li key={c.url} className="flex gap-2 items-start text-sm text-gray-600">
+                            <span className="text-av-orange font-bold flex-shrink-0">&ndash;</span>
+                            <a href={c.url} target="_blank" rel="noopener noreferrer" className="text-av-blue font-semibold hover:text-av-orange transition-colors">{c.label}</a>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+
         </Layout>
     );
 }
