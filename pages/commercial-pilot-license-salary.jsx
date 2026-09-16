@@ -305,7 +305,8 @@ export default function CPLSalaryPage() {
               </p>
               <p className={P}>
                 So the useful planning question is not &ldquo;what will I earn&rdquo; but &ldquo;how long until I am a
-                commander, and what does that depend on&rdquo;. It depends on the airline&rsquo;s own upgrade criteria, on
+                commander, and what does that depend on&rdquo; &mdash; which is the subject of{' '}
+                <Link href="/blogs/how-pilots-build-hours" className={A}>how pilots build hours after a CPL</Link>. It depends on the airline&rsquo;s own upgrade criteria, on
                 hours, and on which fleet you are allocated &mdash; none of which the licence itself decides.
               </p>
 

@@ -424,7 +424,9 @@ export default function HowToChooseAnAviationAcademy() {
                 weighing a cadet programme against paying your own way, start with{' '}
                 <Link href="/cadet-pilot-program" className={A}>cadet pilot programmes</Link>. If you are at the very
                 beginning, <Link href="/your-guide-on-how-to-become-a-pilot-in-india" className={A}>the route guide</Link>{' '}
-                sets out the stages in order, and{' '}
+                sets out the stages in order,{' '}
+                <Link href="/pilot-career-counselling" className={A}>free counselling</Link> is there if you would rather
+                talk it through, and{' '}
                 <Link href="/commercial-pilot-license-eligibility" className={A}>CPL eligibility</Link> tells you whether you
                 clear the gates before you spend anything at all.
               </p>

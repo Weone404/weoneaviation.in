@@ -222,6 +222,12 @@ export default function HowToBecomeAPilotHub() {
 
             <section className="px-4 pt-12 max-w-4xl mx-auto">
                 <QuickAnswer question={guidePaa[0].q} answer={guidePaa[0].a} />
+                <p className="text-gray-600 text-sm leading-relaxed mt-5">
+                    Three questions come up before this one and each has its own page:{' '}
+                    <Link href="/full-form-of-cpl-commercial-pilot-license" className="text-av-blue font-semibold hover:text-av-orange transition-colors">what CPL stands for and requires</Link>,{' '}
+                    <Link href="/how-long-does-it-take-to-become-a-pilot" className="text-av-blue font-semibold hover:text-av-orange transition-colors">how long the whole route takes</Link>, and{' '}
+                    <Link href="/pilot-career-counselling" className="text-av-blue font-semibold hover:text-av-orange transition-colors">free counselling if you would rather talk it through</Link>.
+                </p>
             </section>
 
             <section className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue pt-32 pb-16 px-4 text-center">

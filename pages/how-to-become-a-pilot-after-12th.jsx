@@ -71,7 +71,7 @@ const processSteps = [
 
 const eligibilityList = [
     'Completion of Class 12 from a recognized board',
-    'Physics and Mathematics at the 10+2 level',
+    'Physics and Mathematics at the 10+2 level \u2014 the subjects are the gate, not the board. CBSE and ICSE candidates meet it identically, and neither needs an equivalence certificate; only international-board candidates do.',
     'Minimum age as prescribed by DGCA for licence requirements',
     'Valid DGCA medical fitness',
     'English language proficiency',

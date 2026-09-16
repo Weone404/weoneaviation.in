@@ -472,7 +472,10 @@ export default function CPLEligibility() {
                             <h2 id="sources" className={H2}>Sources</h2>
                             <p className={P}>
                                 Read on {CHECKED_ON}. Where a figure could not be traced to one of these, it is not on this page —
-                                which is why you will not find a vision standard or a pass rate here.
+                                which is why you will not find a vision standard or a pass rate here. If you are still
+                                working out what the acronyms mean, our{' '}
+                                <Link href="/full-form-of-cpl-commercial-pilot-license" className="text-av-blue font-semibold hover:text-av-orange transition-colors">CPL full form page</Link>{' '}
+                                sets out what a Commercial Pilot Licence is and what it requires.
                             </p>
                             <ul className="space-y-2 mb-10">
                                 {[

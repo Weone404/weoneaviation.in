@@ -131,6 +131,30 @@ const whyChoose = [
 
 const blogs = [
   {
+    title: 'CPL Full Form: Commercial Pilot Licence, and What It Requires',
+    date: 'September 16, 2026',
+    desc: 'CPL stands for Commercial Pilot Licence \u2014 age 18, 10+2 with Physics and Maths, five DGCA papers at 70% each, and 200 flying hours. Plus what the same acronym means outside aviation.',
+    href: '/full-form-of-cpl-commercial-pilot-license',
+  },
+  {
+    title: 'How Pilots Build Hours After a CPL \u2014 and Why They Have To',
+    date: 'September 16, 2026',
+    desc: 'A CPL takes 200 hours and airlines want more. The reason is published: no shortage of pilots in India, but a shortage of commanders.',
+    href: '/blogs/how-pilots-build-hours',
+  },
+  {
+    title: 'CBSE and ICSE Full Forms \u2014 and Why the Board Is Not the Gate',
+    date: 'September 16, 2026',
+    desc: 'A Commercial Pilot Licence requires 10+2 with Physics and Mathematics. The subjects are the requirement; the board is not. What CBSE and ICSE stand for, how they differ, and why neither needs an equivalence certificate.',
+    href: '/cbse-full-form',
+  },
+  {
+    title: 'ICSE Full Form: Indian Certificate of Secondary Education',
+    date: 'September 16, 2026',
+    desc: 'ICSE is the Class 10 examination conducted by CISCE. What the board is, how it compares with CBSE, and what it means \u2014 and does not mean \u2014 for a pilot applicant.',
+    href: '/icse-full-form',
+  },
+  {
     title: 'Online DGCA Ground Classes: What Can Be Done Remotely',
     date: 'September 16, 2026',
     desc: 'Every step of the DGCA examination process is already location-independent \u2014 the computer number, the booking, the computer-based test and the published syllabus. What online study cannot cover, and what no ground school covers either.',

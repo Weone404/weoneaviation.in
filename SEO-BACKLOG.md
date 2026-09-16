@@ -58,6 +58,46 @@ codebase, so 15 are unexplained and may be pages we want indexed.
 
 ## 2. Open and unblocked
 
+**2.28 — URGENT, NEEDS THE OWNER. The three lead magnets take an email and give
+nothing back.** /lead-magnets/cpl-cost-breakdown, /dgca-exam-checklist and
+/pre-admission-checklist collect a name and email, show "Check your email! PDF
+downloading now...", then link to /pdfs/<file>. There is no public/pdfs
+directory and no PDF anywhere in public/. The API behind the form saves the lead
+and sends a welcome email; it does not attach or link the guide either. So every
+person who has filled that form handed over their contact details, was told it
+worked, and received nothing.
+
+Fixed on 2026-09-16 as far as it can be fixed in code: the form now checks
+whether the file exists before claiming a download, and if it does not, tells
+the person the truth and gives them the email and phone number to get it
+directly. The lead is still captured, which was the part that worked.
+
+**Needs from owner:** produce CPL-Cost-Breakdown-Guide.pdf,
+DGCA-Exam-Checklist.pdf and Pre-Admission-Checklist.pdf and drop them in
+public/pdfs/. The moment they exist the download works and the fallback never
+shows. This is a trust problem rather than an SEO one, which is why it is at the
+top of this list.
+
+**2.29 — DONE 2026-09-16. Internal link audit, and a finding that matters.**
+scripts/audit-links.cjs added. The site's second highest-traffic page,
+/full-form-of-cpl-commercial-pilot-license (731 visits a month, 230,050 of search
+volume), had exactly ONE inbound internal link — from the HTML sitemap. So did
+/icse-full-form (171,380 volume) and /cbse-full-form (150,330). Three of the four
+largest-volume pages on the site were reachable only from a sitemap page, which
+is a plausible part of why they sit at positions 46, 26 and 33.
+
+Contextual links added from the pages that should have linked them all along:
+the CPL eligibility page, the route guide, /dgca-ground-classes and the
+after-12th page, plus links to the new counselling, timeline and hour-building
+pages from their natural parents. Every page with one inbound link is now above
+one, and /student-checklists — the only real orphan in the sitemap — is linked.
+
+The audit script exists because two earlier audits in this project returned false
+all-clears from greps that were narrower than the codebase. Its header records
+the four shapes internal links take here and warns that a jump in the orphan
+count means the regex is wrong, not the site.
+
+
 **2.26 — DONE 2026-09-16. /blogs/how-pilots-build-hours built, three legacy URLs
 retired.** The three parked redirects (6a7034d8, 6a1d00f8, 6a0bf3f4) finally have
 the destination they had been waiting on since before this branch, and were

@@ -284,6 +284,10 @@ export default function PilotCareerCounselling() {
                 ))}
               </ul>
               <p className={P}>
+                Our <Link href="/student-checklists" className={A}>student checklists</Link> cover the same ground in
+                list form if you would rather work through it on paper before speaking to anyone.
+              </p>
+              <p className={P}>
                 The last one is the most useful. If there is a question you have asked three places and got three different
                 answers to, bring that &mdash; and if we cannot source the answer either, we will say so rather than guess.
                 That is the standard the rest of this site is written to.
