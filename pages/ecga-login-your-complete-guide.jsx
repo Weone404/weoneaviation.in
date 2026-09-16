@@ -1,6 +1,8 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import StructuredData from '../components/StructuredData';
+import QuickAnswer from '../components/QuickAnswer';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
 import LeadForm from '../components/LeadForm';
 import Link from 'next/link';
 import { EGCA, PARIKSHA, MEDICAL_STANDARDS as MED, ACADEMY } from '../lib/facts';
@@ -127,6 +129,41 @@ const P = 'text-gray-600 text-sm leading-relaxed mb-4';
 const TH = 'text-left p-3 font-montserrat font-bold';
 const A = 'text-av-blue font-semibold hover:text-av-orange transition-colors';
 
+/*
+ * ANSWER-FIRST AND PEOPLE-ALSO-ASK — ADDED 2026-09-16.
+ *
+ * WHY. From the Semrush positions export of 2026-09-15 this page earns 756
+ * visits a month across 7 keywords and 129,440 of search volume, sitting at
+ * position 12 for "egca login" (74,000), 20 for "egca" (49,500) and 8 for
+ * "dgca login" (2,400). Position 12 on a 74,000-volume navigational query is a
+ * page-one miss rather than a ranking problem: the searcher wants the portal
+ * and a one-line statement of what it is, and the page made them read to find
+ * it. This block puts the answer first.
+ *
+ * THE SLUG IS STILL WRONG, DELIBERATELY. The URL reads "ecga" where the query
+ * is "egca". Renaming it means 301-ing a URL that currently earns 756 visits a
+ * month, which is the owner's call and not a change to make quietly. It is
+ * logged. On-page targeting is fixed here without touching the URL.
+ */
+const egca_paa = [
+    {
+        q: 'What is eGCA login used for?',
+        a: `eGCA is the Directorate General of Civil Aviation's online licensing portal — where a pilot applies for, renews or tracks a licence, and where the electronic personnel licence is held. It is not where examinations are booked: that is DGCA Pariksha, and confusing the two is the most common and most expensive mix-up a candidate makes.`,
+    },
+    {
+        q: 'What is the difference between eGCA and DGCA Pariksha?',
+        a: 'They are two separate portals doing two separate jobs. Pariksha is the examination portal — computer number, paper booking, results. eGCA is the licensing portal — the licence application itself, renewals, endorsements and the electronic licence. A candidate uses Pariksha first and eGCA later, and needs an account on both.',
+    },
+    {
+        q: 'Is eGCA the same as DGCA login?',
+        a: 'In practice yes — people searching "dgca login" almost always mean the eGCA portal, because that is where a licence holder signs in. DGCA itself is the regulator rather than a website you log into.',
+    },
+    {
+        q: 'Who needs an eGCA account?',
+        a: 'Anyone applying for or holding an Indian flight crew licence, and the organisations that transact with DGCA on their behalf. A student who has not yet reached the licence application stage will be using Pariksha rather than eGCA.',
+    },
+];
+
 export default function EGCALoginPage() {
     return (
         <Layout
@@ -152,6 +189,10 @@ export default function EGCALoginPage() {
                     </p>
                 </ScrollReveal>
             </div>
+
+            <section className="px-4 pt-12 max-w-4xl mx-auto">
+                <QuickAnswer question={egca_paa[0].q} answer={egca_paa[0].a} />
+            </section>
 
             <section className="py-16 px-4">
                 <section className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
@@ -391,6 +432,10 @@ export default function EGCALoginPage() {
                     </div>
                 </section>
             </section>
+            <section className="px-4 pb-16 max-w-4xl mx-auto">
+                <PeopleAlsoAsk items={egca_paa} />
+            </section>
+
         </Layout>
     );
 }

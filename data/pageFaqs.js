@@ -19,6 +19,7 @@
   '/blogs/aviation-jobs-besides-pilot', '/faq',
   '/how-to-choose-an-aviation-academy', '/commercial-pilot-license-salary',
   '/full-form-of-cpl-commercial-pilot-license',
+  '/icse-full-form', '/cbse-full-form',
   /*
    * /commercial-pilot-license-salary joined this gate on 2026-09-15 when it was
    * rebuilt with its own FAQs. Its old routeContent entry was deleted in the
@@ -423,34 +424,6 @@ const routeContent = {
     ['Where does Technical General sit among the DGCA CPL written subjects?', 'It is the paper DGCA names Aircraft and Engines, one of four written subjects required under Schedule II, Section J of the Aircraft Rules, 1937, alongside Air Regulations, Air Navigation, and Meteorology.'],
     ['How many modules does the Technical General syllabus cover?', 'The syllabus is structured into 7 modules, covering aircraft structure and materials, aerodynamics and flight controls, engines and propulsion, aircraft systems, instruments and avionics, landing gear and brakes, and fire detection and protection.'],
     ['Do students get hands-on exposure to real aircraft?', 'Yes, the course includes visits to real aircraft for practical exposure to components, alongside aircraft models, system diagrams, and animations used in classroom teaching.'],
-  ],
-},
-  '/cbse-full-form': {
-  title: 'CBSE Full Form FAQs',
-  questions: [
-    ['What is the full form of CBSE?', 'CBSE stands for Central Board of Secondary Education, a national school education board in India.'],
-    ['What does the CBSE curriculum cover?', 'The page describes CBSE education from foundational classes through senior secondary school, including languages, Mathematics, Science, Social Science, vocational subjects, technology, and skill-based options.'],
-    ['Why do students choose CBSE?', 'The page highlights a common syllabus across India, NCERT textbooks, conceptual learning, competitive-exam alignment, global reach, transferable schooling, and broad recognition by Indian and international institutions.'],
-    ['What subjects are available in CBSE Classes 11 and 12?', 'The listed streams include Science, Commerce, and Humanities, with subjects such as Physics, Chemistry, Biology, Mathematics, Accountancy, Economics, History, Geography, Political Science, Psychology, and English.'],
-    ['How does the CBSE grading system work?', 'The page lists grade bands for Classes 10 and 12, including A1, A2, B1, B2, C1, C2, D, and failing E grades based on marks ranges.'],
-    ['How can students check CBSE results?', 'The page lists official result websites, SMS, and DigiLocker as ways to access provisional marksheets and certificates using the required roll-number and identity details.'],
-    ['When was CBSE established and where is it headquartered?', 'CBSE was founded in 1929 as the Board of High School and Intermediate Education, renamed CBSE in 1952, and is headquartered in New Delhi with over 27,000 affiliated schools in India and 240+ abroad.'],
-    ['How is CGPA calculated for CBSE Class 10?', 'CGPA is calculated as the sum of grade points in 5 subjects divided by 5, and can be converted to a percentage by multiplying the CGPA by 9.5.'],
-    ['What is the CBSE toll-free helpline number?', 'The page lists a toll-free number, 1800-11-8002, operational on working days from 9:30 AM to 5:00 PM, along with alternate numbers and email addresses for exam and result queries.'],
-  ],
-},
-  '/icse-full-form': {
-  title: 'ICSE Full Form FAQs',
-  questions: [
-    ['What is the full form of ICSE?', 'ICSE stands for Indian Certificate of Secondary Education, the Class 10 examination conducted by the Council for the Indian School Certificate Examinations, or CISCE.'],
-    ['What is CISCE?', 'CISCE stands for the Council for the Indian School Certificate Examinations. The page identifies it as the organisation responsible for conducting ICSE and related school examinations.'],
-    ['What are the main features of the ICSE curriculum?', 'The page describes a detailed English-medium curriculum with strong emphasis on languages, Science, Mathematics, Arts, Humanities, projects, internal assessment, practical learning, and application-based study.'],
-    ['What are the advantages of studying under ICSE?', 'The page highlights strong English skills, detailed subject knowledge, project-based learning, global recognition, broad subject choices, communication development, and preparation for competitive and international examinations.'],
-    ['What are the challenges of ICSE education?', 'The listed challenges include a broad syllabus, higher project and internal-assessment workload, fewer schools, difficult transitions to other boards, higher private-school costs, and less emphasis on regional languages.'],
-    ['How does ICSE compare with CBSE?', 'The page compares ICSE\'s detailed, language- and application-focused curriculum with CBSE\'s more concise, concept-focused, nationally available, and competitive-exam-oriented approach.'],
-    ['When was CISCE established and when was the first ICSE exam held?', 'CISCE was established in 1958, following a recommendation from the University of Cambridge, and the first ICSE exam was conducted in 1973.'],
-    ['How are ICSE Class 9 and 10 subjects structured?', 'Subjects are divided into three groups: compulsory subjects like English and a second language, two subjects chosen from a group including Mathematics and Science, and one elective from a creative or skill-based group.'],
-    ['Is CGPA used in the ICSE grading system?', 'No, CGPA is used in CBSE, not ICSE. The ICSE board gives subject-wise numeric grades only, without calculating an overall percentage.'],
   ],
 },
   '/your-guide-on-how-to-become-a-pilot-in-india': {

@@ -1,6 +1,10 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import QuickAnswer from '../components/QuickAnswer';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
+import StructuredData from '../components/StructuredData';
+import { generateFAQSchema } from '../lib/schema';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -166,12 +170,60 @@ const resultCheckMethods = [
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
+
+/*
+ * STRUCTURED DATA AND ANSWER-FIRST — ADDED 2026-09-16.
+ *
+ * WHY. From the Semrush positions export of 2026-09-15: 15 keywords and 150,330
+ * of search volume, with "cbse full form" at 135,000 sitting at position 33,
+ * returning 41 visits a month. All 15 tracked keywords show an AI Overview, and
+ * the page shipped no JSON-LD and no answer-first block.
+ * No new facts. Nothing below states anything the page did not already say.
+ */
+const cbse_CANONICAL = 'https://weoneaviation.in/cbse-full-form';
+
+const cbse_paa = [
+    { q: 'What is the full form of CBSE?', a: 'CBSE stands for Central Board of Secondary Education. It is a national-level school board in India, under the Ministry of Education, and it conducts the Class 10 and Class 12 examinations for its affiliated schools.' },
+    { q: 'Is CBSE a government board?', a: 'Yes. CBSE operates under the Ministry of Education, Government of India, which is the main structural difference from CISCE — the board behind ICSE — which is private.' },
+    { q: 'CBSE or ICSE for a pilot career?', a: 'Neither board is required or preferred. What a Commercial Pilot Licence requires is 10+2 with Physics and Mathematics, and both boards offer that combination. Choose on the student rather than on the licence.' },
+    { q: 'What is the difference between CBSE and ICSE?', a: 'CBSE is a government board with a narrower syllabus closely aligned to national entrance examinations. ICSE, conducted by the private CISCE board, carries a broader syllabus with more internal assessment and a heavier emphasis on English.' },
+    { q: 'Does CBSE need an equivalence certificate for DGCA?', a: 'No. Equivalence from the Association of Indian Universities is for international-board candidates. CBSE is an Indian board and is accepted directly.' },
+];
+
+const cbse_faqs = [
+    { q: 'What does CBSE stand for?', a: 'Central Board of Secondary Education.' },
+    { q: 'Which ministry runs CBSE?', a: 'The Ministry of Education, Government of India.' },
+    { q: 'Is CBSE accepted for a Commercial Pilot Licence?', a: 'Yes. The requirement is 10+2 with Physics and Mathematics, which CBSE offers. The board itself is not the gate; the subjects are.' },
+    { q: 'Is CBSE better than ICSE for aviation?', a: 'No board is better for aviation. The subject combination is what matters, and both boards provide it.' },
+    { q: 'What if I took Commerce or Arts in CBSE?', a: 'Without Physics and Mathematics you do not meet the Commercial Pilot Licence education gate as it stands. The National Institute of Open Schooling route is the bridge, and it should be planned first rather than discovered later.' },
+];
+
+const cbse_articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'CBSE Full Form: Central Board of Secondary Education',
+    description: 'CBSE stands for Central Board of Secondary Education, a national-level board under the Ministry of Education. What it is, how it differs from ICSE, and what it means for a pilot applicant.',
+    inLanguage: 'en-IN',
+    dateModified: '2026-09-16',
+    articleSection: 'Education boards',
+    keywords: 'cbse full form, full form of cbse, what is the full form of cbse, cbse meaning, cbse board full form, cbse vs icse',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': cbse_CANONICAL },
+    image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+    author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+    publisher: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in', logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
+    citation: [
+        { '@type': 'CreativeWork', name: 'Central Board of Secondary Education — official site', url: 'https://www.cbse.gov.in/' },
+        { '@type': 'CreativeWork', name: 'Aircraft Rules, 1937, Schedule II — Aircraft Personnel (India Code)', url: 'https://upload.indiacode.nic.in/showfile?actid=AC_CEN_36_0_00013_193422_1523351174422&type=rule&filename=aircraft_rules%2C_1937.pdf' },
+    ],
+};
+
 export default function CBSEPage() {
     return (
         <Layout
             title="CBSE Full Form Explained | Curriculum, Subjects, Board Overview, Importance & Career Relevance"
             description="CBSE stands for Central Board of Secondary Education. Learn about CBSE curriculum, subjects from Class 1–12, grading system, affiliation criteria, results 2025, and why CBSE is better than other boards."
         >
+            <StructuredData data={[cbse_articleSchema, generateFAQSchema(cbse_faqs)]} />
 
             {/* ── Hero Banner ── */}
             <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
@@ -195,6 +247,14 @@ export default function CBSEPage() {
                     <p className="text-av-orange font-bold mt-4">So, let's get started!</p>
                 </ScrollReveal>
             </header>
+
+            {/* Answer-first block, added 2026-09-16. See the note at the top of this file. */}
+            <section className="px-4 pt-12 max-w-4xl mx-auto">
+                <QuickAnswer
+                    question={cbse_paa[0].q}
+                    answer={cbse_paa[0].a}
+                />
+            </section>
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-8">
@@ -698,6 +758,19 @@ export default function CBSEPage() {
                     <ScrollReveal className="text-center">
                         <p className="text-av-blue font-semibold text-lg">There is a reason why CBSE is considered better than other boards in India.</p>
                     </ScrollReveal>
+                </div>
+            </section>
+
+            <section className="px-4 pb-16 max-w-4xl mx-auto">
+                <PeopleAlsoAsk items={cbse_paa} />
+                <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12">Frequently asked questions</h2>
+                <div className="space-y-3">
+                    {cbse_faqs.map((f) => (
+                        <details key={f.q} className="border border-gray-200 rounded-xl p-4">
+                            <summary className="font-semibold text-av-blue text-sm cursor-pointer">{f.q}</summary>
+                            <p className="text-gray-600 text-sm leading-relaxed mt-2">{f.a}</p>
+                        </details>
+                    ))}
                 </div>
             </section>
 

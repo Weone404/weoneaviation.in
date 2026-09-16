@@ -1,6 +1,10 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import QuickAnswer from '../components/QuickAnswer';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
+import StructuredData from '../components/StructuredData';
+import { generateFAQSchema } from '../lib/schema';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -167,12 +171,63 @@ const quickSummary = [
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
+
+/*
+ * STRUCTURED DATA AND ANSWER-FIRST — ADDED 2026-09-16.
+ *
+ * WHY. From the Semrush positions export of 2026-09-15 this page carries the
+ * largest untapped volume on the site: 33 keywords and 171,380 of search
+ * volume, with "icse full form" at 135,000 sitting at position 26. It returns
+ * 101 visits a month. Every one of its 25 tracked keywords shows an AI
+ * Overview, and the page shipped no JSON-LD at all and no answer-first block —
+ * so it competed for AI-Overview citations on a 135,000-volume query while
+ * giving an engine 787 lines of prose and nothing to lift.
+ * No new facts. Nothing below states anything the page did not already say.
+ */
+const icse_CANONICAL = 'https://weoneaviation.in/icse-full-form';
+
+const icse_paa = [
+    { q: 'What is the full form of ICSE?', a: 'ICSE stands for Indian Certificate of Secondary Education. It is the Class 10 examination conducted by the Council for the Indian School Certificate Examinations (CISCE), a private, non-governmental board in India.' },
+    { q: 'Is ICSE and CISCE the same thing?', a: 'No. CISCE is the board — the Council for the Indian School Certificate Examinations. ICSE is the Class 10 examination that board conducts. The Class 12 examination is the ISC, the Indian School Certificate.' },
+    { q: 'Is ICSE harder than CBSE?', a: 'They are different rather than strictly harder or easier. ICSE carries a broader syllabus with more internal assessment and a heavier emphasis on English and on written detail; CBSE is narrower and more closely aligned to national entrance examinations. Which suits a student depends on the student.' },
+    { q: 'Does the ICSE board affect pilot eligibility in India?', a: 'The board does not, but the subjects do. A Commercial Pilot Licence in India requires 10+2 with Physics and Mathematics, and that requirement is the same for an ICSE or CBSE student. What an international-board candidate needs additionally is an equivalence certificate; ICSE and CBSE candidates do not.' },
+    { q: 'Who conducts the ICSE examination?', a: 'The Council for the Indian School Certificate Examinations, CISCE. It is a private board, not a government one, and it sets its own syllabus and examination.' },
+];
+
+const icse_faqs = [
+    { q: 'What does ICSE stand for?', a: 'Indian Certificate of Secondary Education.' },
+    { q: 'What class is ICSE?', a: 'Class 10. The Class 12 examination conducted by the same board is the ISC, the Indian School Certificate.' },
+    { q: 'Is ICSE recognised for pilot training?', a: 'Yes. A Commercial Pilot Licence requires 10+2 with Physics and Mathematics, and an ICSE-then-ISC student who took both subjects meets that gate exactly as a CBSE student does.' },
+    { q: 'Do I need an equivalence certificate with an ICSE qualification?', a: 'No. Equivalence from the Association of Indian Universities is what an international-board candidate needs. ICSE and CBSE are Indian boards and are accepted directly.' },
+    { q: 'What if I did not take Physics and Maths in ICSE or ISC?', a: 'The National Institute of Open Schooling route is the bridge, and it belongs at the front of your plan rather than the middle, because it adds time before anything else can start.' },
+];
+
+const icse_articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'ICSE Full Form: Indian Certificate of Secondary Education',
+    description: 'ICSE stands for Indian Certificate of Secondary Education, the Class 10 examination conducted by the Council for the Indian School Certificate Examinations (CISCE). What the board is, how it differs from CBSE, and what it means for a pilot applicant.',
+    inLanguage: 'en-IN',
+    dateModified: '2026-09-16',
+    articleSection: 'Education boards',
+    keywords: 'icse full form, full form of icse, icse board full form, icse meaning, what is icse, cisce full form, icse vs cbse',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': icse_CANONICAL },
+    image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+    author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+    publisher: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in', logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
+    citation: [
+        { '@type': 'CreativeWork', name: 'Council for the Indian School Certificate Examinations (CISCE) — official site', url: 'https://cisce.org/' },
+        { '@type': 'CreativeWork', name: 'Aircraft Rules, 1937, Schedule II — Aircraft Personnel (India Code)', url: 'https://upload.indiacode.nic.in/showfile?actid=AC_CEN_36_0_00013_193422_1523351174422&type=rule&filename=aircraft_rules%2C_1937.pdf' },
+    ],
+};
+
 export default function ICSEPage() {
     return (
         <Layout
             title="ICSE Full Form – What is ICSE Board? Comparison with CBSE & Full Details (2025)"
             description="ICSE stands for Indian Certificate of Secondary Education. Learn about ICSE Board, CISCE, curriculum, grading system, affiliation criteria, advantages, disadvantages, and ICSE vs CBSE comparison 2025."
         >
+            <StructuredData data={[icse_articleSchema, generateFAQSchema(icse_faqs)]} />
 
             {/* ── Hero Banner ── */}
             <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
@@ -195,6 +250,14 @@ export default function ICSEPage() {
                     </p>
                 </ScrollReveal>
             </header>
+
+            {/* Answer-first block, added 2026-09-16. See the note at the top of this file. */}
+            <section className="px-4 pt-12 max-w-4xl mx-auto">
+                <QuickAnswer
+                    question={icse_paa[0].q}
+                    answer={icse_paa[0].a}
+                />
+            </section>
 
             {/* ── Stats Bar ── */}
             <div className="bg-av-blue py-8">
@@ -780,6 +843,19 @@ export default function ICSEPage() {
                             </table>
                         </div>
                     </ScrollReveal>
+                </div>
+            </section>
+
+            <section className="px-4 pb-16 max-w-4xl mx-auto">
+                <PeopleAlsoAsk items={icse_paa} />
+                <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12">Frequently asked questions</h2>
+                <div className="space-y-3">
+                    {icse_faqs.map((f) => (
+                        <details key={f.q} className="border border-gray-200 rounded-xl p-4">
+                            <summary className="font-semibold text-av-blue text-sm cursor-pointer">{f.q}</summary>
+                            <p className="text-gray-600 text-sm leading-relaxed mt-2">{f.a}</p>
+                        </details>
+                    ))}
                 </div>
             </section>
 
