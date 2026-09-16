@@ -58,6 +58,36 @@ codebase, so 15 are unexplained and may be pages we want indexed.
 
 ## 2. Open and unblocked
 
+**2.30 — DONE 2026-09-16. All 36 legacy database URLs resolved. Backlog 2.1 is
+closed.** The set that began as "29 blog posts on MongoDB ObjectId URLs", turned
+out to be 36 when the live index was read, and has been worked down across this
+branch, is finished. Verified programmatically: every ObjectId in
+data/legacy-blog-inventory.md has a matching redirect in next.config.js, 36 of
+36, zero missing.
+
+The decision to consolidate rather than rebuild was made on evidence rather than
+convenience. The Semrush positions export of 15 September shows only five
+ObjectId URLs ranking for anything across the entire site, every one with zero
+traffic, and four of those five were already redirected. They had no ranking
+value to preserve. What they had was crawl budget, against a site indexing 74
+pages out of 502 — which is the binding constraint on everything else.
+
+Nothing was deleted. Every post still exists in the database; the redirect stops
+the ObjectId being a separate self-canonicalising destination.
+
+One correction included: 6a8be2f7, "Aviation Safety Procedures Every Student Must
+Know", had a parked mapping to a DGCA medical page. That mismatch was flagged in
+this file on 15 September and has now been resolved properly — it points at
+/air-regulations, because safety procedures are regulation. No parked redirects
+remain anywhere in next.config.js.
+
+Where a destination is an imperfect match it says so on its own line in the
+config. The clearest example: "Importance of Aviation English for Pilots" points
+at /rtr-a because radio telephony is where aviation English is examined, but a
+dedicated English Language Proficiency page does not exist and would be the
+better destination if one is ever built.
+
+
 **2.28 — URGENT, NEEDS THE OWNER. The three lead magnets take an email and give
 nothing back.** /lead-magnets/cpl-cost-breakdown, /dgca-exam-checklist and
 /pre-admission-checklist collect a name and email, show "Check your email! PDF

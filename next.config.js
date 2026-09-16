@@ -42,10 +42,12 @@ const nextConfig = {
    * A line moves into the ACTIVE block above in the same commit as the rebuild
    * that gives it a destination. Never before.
    *
-   * { source: '/blogs/6a8be2f757898ec159830c3e', destination: '/blogs/dgca-medical-requirements', permanent: true },
-   *
-   * STILL MISSING as at 2026-09-16: /blogs/dgca-medical-requirements does not
-   * exist as a page. Do not activate that line until it does.
+   * RESOLVED 2026-09-16. The last parked line, 6a8be2f7 -> dgca-medical-requirements,
+   * is gone. That mapping was wrong on its face — the post is "Aviation Safety
+   * Procedures Every Student Must Know" and was pointed at a medical page — and
+   * it has been flagged as wrong in this file since 15 September. It now points
+   * at /air-regulations, which is where safety procedures actually belong, and
+   * sits in the ACTIVE block below. No parked redirects remain.
    *
    * The three "How Pilots Build Hours" lines that used to sit here were
    * activated on 2026-09-16, in the same commit as the page that finally gave
@@ -195,6 +197,65 @@ const nextConfig = {
       { source: '/blogs/6a7034d8cf8e38fea1c417a5', destination: '/blogs/how-pilots-build-hours', permanent: true },
       { source: '/blogs/6a1d00f816d7f55288a22710', destination: '/blogs/how-pilots-build-hours', permanent: true },
       { source: '/blogs/6a0bf3f4a8c579faedcb51e6', destination: '/blogs/how-pilots-build-hours', permanent: true },
+      /*
+       * ── Legacy database posts, final consolidation (added 2026-09-16) ─────
+       *
+       * EVIDENCE FOR DOING THIS AT ALL. The Semrush positions export of
+       * 2026-09-15 shows only five ObjectId URLs ranking for anything on the
+       * whole site, every one of them with zero traffic, and four of those five
+       * were already redirected. So these carry no measurable ranking value.
+       * What they do carry is crawl budget, against a site indexing 74 pages
+       * out of 502 — which is the actual constraint. Consolidating them costs
+       * nothing and stops them competing for the crawler's attention.
+       *
+       * NONE OF THESE PAGES IS DELETED. Every one of them still exists in the
+       * database; the redirect simply stops the ObjectId URL being a separate,
+       * self-canonicalising destination. If any is ever rebuilt as a real page,
+       * remove its line here.
+       *
+       * Each destination is the closest page that genuinely covers the topic.
+       * Where the match is imperfect it says so on the line.
+       */
+      /* Understanding Aircraft Instruments -> Instruments are taught inside the Technical General paper. */
+      { source: '/blogs/6a9e4f5b8c4cceb38ba8867e', destination: '/technical-general', permanent: true },
+      /* How Aircraft Fly - Explained Simply -> Principles of flight sit inside Technical General too. */
+      { source: '/blogs/6a9fab823dda771ee7446935', destination: '/technical-general', permanent: true },
+      /* Understanding NOTAMs and Aviation Weather -> Weather is the Aviation Meteorology paper; NOTAMs are read alongside it. */
+      { source: '/blogs/6a8fc922ab469e6173e4cdf5', destination: '/aviation-meteorology', permanent: true },
+      /* ATC Communication Tips for Student Pilots -> Radio telephony is the RTR (A) subject and examination. */
+      { source: '/blogs/6a966b8435559fd1bf5c4ef7', destination: '/rtr-a', permanent: true },
+      /* Importance of Aviation English for Pilots -> Closest real page: RTR (A) is where aviation English and radio phraseology are examined. Not an exact match - a dedicated English Language Proficiency page does not exist. Revisit if one is built. */
+      { source: '/blogs/6a97b53cfeec1d5104271213', destination: '/rtr-a', permanent: true },
+      /* Types of Aircraft Used in Flight Training -> The flying phase, where training aircraft are actually the subject. */
+      { source: '/blogs/6a9bb0940eca0810d01f129c', destination: '/cpl-flight-training', permanent: true },
+      /* Common Landing Errors Student Pilots Make -> Flying-phase technique. */
+      { source: '/blogs/6a59c21781d3e72d22cc9342', destination: '/cpl-flight-training', permanent: true },
+      /* How Pilots Make Decisions under Pressure -> Crew decision-making is taught in MCC, the same destination as the CRM post. */
+      { source: '/blogs/6a5b27be734839af33893f0d', destination: '/blogs/mcc-training-for-pilots-in-india', permanent: true },
+      /* Aviation Safety Procedures Every Student Must Know -> CORRECTS the old parked mapping, which pointed this at a DGCA medical page - a topic mismatch flagged in this file on 15 Sep. Safety procedures are regulation, so Air Regulations is the honest destination. */
+      { source: '/blogs/6a8be2f757898ec159830c3e', destination: '/air-regulations', permanent: true },
+      /* What Airlines Look For Beyond Flying Hours -> Exactly the subject of that post, including why hours alone are not the differentiator. */
+      { source: '/blogs/6a27a2553ef9b6fb367fc42a', destination: '/blogs/how-pilots-build-hours', permanent: true },
+      /* Career Opportunities after CPL Completion -> The sourced careers page. */
+      { source: '/blogs/6aa0fd034738ae1b6c084077', destination: '/blogs/aviation-jobs-besides-pilot', permanent: true },
+      /* Future of Aviation Careers in India -> That page now carries the published supply picture - no shortage of pilots, a shortage of commanders - which is the honest answer to a question about the future of the career. */
+      { source: '/blogs/6a75770ebc58e5c4285f7bc1', destination: '/commercial-pilot-license-salary', permanent: true },
+      /* Why India Needs More Pilots -> Same reason. The premise of the old post is contradicted by the Ministry of Civil Aviation, and the destination says so with the source. */
+      { source: '/blogs/6a117717fc65055a7709739d', destination: '/commercial-pilot-license-salary', permanent: true },
+      /* Is Pilot Career Worth It in 2026 -> The cost-versus-return question, answered with what is actually published. */
+      { source: '/blogs/6a0e90762f3b24b31805ebdf', destination: '/commercial-pilot-license-salary', permanent: true },
+      /* If I Started Pilot Training Again, I'd do this -> The page about deciding how to approach this career, with the eight decisions in order. */
+      { source: '/blogs/6a6c336593148a066f9559aa', destination: '/pilot-career-counselling', permanent: true },
+      /* Pilot Myths Busted -> Same: the page that separates what can be shown from what cannot. */
+      { source: '/blogs/6a6850dca7a285899ad63f18', destination: '/pilot-career-counselling', permanent: true },
+      /* Signs You Were Meant To Be a Pilot -> The "is this for me" question has a real page now. */
+      { source: '/blogs/6a619cc43a30c0c8e9d7e9d1', destination: '/pilot-career-counselling', permanent: true },
+      /* Discipline vs Talent in Aviation -> Same question, same destination. */
+      { source: '/blogs/6a5dc3d0e69c6a2bb320b6c0', destination: '/pilot-career-counselling', permanent: true },
+      /* What Makes a Great Airline Pilot? -> Same. */
+      { source: '/blogs/6a5474113d345ac99152ee5b', destination: '/pilot-career-counselling', permanent: true },
+      /* Can Average Students Become Great Pilots? -> Same. */
+      { source: '/blogs/6a4b2bfec6790cb574fdb500', destination: '/pilot-career-counselling', permanent: true },
 
       {
         source: '/Pilot-Course-&-Pilot-Training-in -ndia',
