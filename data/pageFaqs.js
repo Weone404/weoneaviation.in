@@ -23,6 +23,28 @@
   '/how-long-does-it-take-to-become-a-pilot', '/pilot-training-abroad', '/online-dgca-ground-classes', '/cpl-flight-training',
   '/pilot-career-counselling',
   /*
+   * Added 2026-09-16. These twelve emit their own FAQPage node as a hand-written
+   * object rather than through generateFAQSchema, so the earlier audit — which
+   * grepped for generateFAQSchema — missed every one of them. Each was shipping
+   * TWO FAQPage nodes and, worse, four generic fallback questions that nobody
+   * wrote for that page, rendered underneath its real ones.
+   *
+   * When auditing this gate in future, grep for the FAQPage type as well as for
+   * generateFAQSchema. A page can emit the node either way.
+   */
+  '/blogs/how-pilots-build-hours',
+  '/blogs/cpl-simulator-hours-dgca-rules',
+  '/blogs/cpl-cross-country-flight-requirement-india',
+  '/blogs/cpl-night-flying-hours-requirement-india',
+  '/blogs/flying-instructor-rating-for-pilots-in-india',
+  '/blogs/instrument-rating-for-pilots-in-india',
+  '/blogs/multi-engine-rating-for-pilots-in-india',
+  '/blogs/type-rating-for-pilots-in-india',
+  '/blogs/mcc-training-for-pilots-in-india',
+  '/blogs/cpl-vs-atpl-difference-india',
+  '/blogs/become-pilot-without-physics-and-maths-class-12',
+  '/commercial-pilot-license-syllabus',
+  /*
    * /commercial-pilot-license-salary joined this gate on 2026-09-15 when it was
    * rebuilt with its own FAQs. Its old routeContent entry was deleted in the
    * same edit: every answer in it restated a salary figure from the page as it

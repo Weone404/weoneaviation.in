@@ -58,6 +58,41 @@ codebase, so 15 are unexplained and may be pages we want indexed.
 
 ## 2. Open and unblocked
 
+**2.26 — DONE 2026-09-16. /blogs/how-pilots-build-hours built, three legacy URLs
+retired.** The three parked redirects (6a7034d8, 6a1d00f8, 6a0bf3f4) finally have
+the destination they had been waiting on since before this branch, and were
+activated in the same commit per the standing rule. Three ObjectId URLs on one
+topic, consolidated.
+
+The page's angle is the question nobody answers: not how to build hours but WHY,
+when 200 is what the licence requires. The answer is published — the Ministry of
+Civil Aviation's position that there is no shortage of pilots in India but there
+is a shortage of commanders. Hours are not for the licence; they are for the
+scarcity, and the scarcity is at command level. It also publishes the FDTL
+ceiling on how fast hours can accumulate once employed, and the recency rule that
+deletes hours older than five years.
+
+Deliberately withheld: any airline's minimum-hours figure (set per vacancy, moves
+with the cycle), ATPL hour figures (the Section M table was amended twice, see
+ATPL_HOURS_GUIDANCE), instructor-rating thresholds (sources disagree, none
+primary), and any cost per hour.
+
+**2.27 — DONE 2026-09-16. The duplicate-FAQPage bug was twelve pages wider than
+2.11 found.** The 15 September audit grepped for `generateFAQSchema` and found
+five pages. Twelve more emit their own FAQPage node as a hand-written object
+instead, so the grep never saw them: ten file-based blog posts,
+/commercial-pilot-license-syllabus, and the new hour-building post.
+
+Each was shipping two FAQPage nodes AND four generic fallback questions that
+nobody wrote for that page, rendered visibly beneath its real ones. Verified by
+calling getPageFAQs directly on each route rather than by inspection. All twelve
+are now gated, and re-checked the same way afterwards.
+
+**When auditing this gate in future, grep for the FAQPage type as well as for
+generateFAQSchema.** A page can emit the node either way, and the narrower grep
+gives a false all-clear. That note is now in the gate itself.
+
+
 **2.23 — DONE 2026-09-16. Four new pages for keyword-list gaps.** Built after
 mapping all 50 priority keywords against the routes that exist. Forty-six were
 already covered; four were not, and one is still blocked.

@@ -37,7 +37,7 @@ is deleted. Nothing here is redirected until its destination exists.
 | 6a87eae016c8bc859396901b | Importance of Simulator Training in Aviation | OPEN — maps to /blogs/cpl-simulator-hours-dgca-rules |
 | 6a75770ebc58e5c4285f7bc1 | Future of Aviation Careers in India | OPEN |
 | 6a7178c67cef5b2241a02159 | DGCA Ground School Guide: Everything You Need to Know | 301 -> /blogs/dgca-ground-school-guide |
-| 6a7034d8cf8e38fea1c417a5 | How Pilots Build Hours: A Complete Guide | PENDING -> /blogs/how-pilots-build-hours (does not exist) |
+| 6a7034d8cf8e38fea1c417a5 | How Pilots Build Hours: A Complete Guide | 301 -> /blogs/how-pilots-build-hours (built 16 Sep 2026) |
 | 6a6c336593148a066f9559aa | If I Started Pilot Training Again, I'd do this | OPEN — opinion piece, no regulatory content |
 | 6a6850dca7a285899ad63f18 | Pilot Myths Busted | OPEN |
 | 6a619cc43a30c0c8e9d7e9d1 | Signs You Were Meant To Be a Pilot | OPEN — opinion piece |
@@ -49,11 +49,11 @@ is deleted. Nothing here is redirected until its destination exists.
 | 6a38b7aece6bdc909efab785 | Aviation Jobs Besides Airline Pilot | 301 -> /blogs/aviation-jobs-besides-pilot |
 | 6a27a2553ef9b6fb367fc42a | What Airlines Look For Beyond Flying Hours | OPEN |
 | 6a240cea7b692cb9fe764c82 | Multi Engine Rating Explained | PENDING — the commented line names a slug that does not exist; the real page is /blogs/multi-engine-rating-for-pilots-in-india |
-| 6a1d00f816d7f55288a22710 | How Pilots Build Hours After CPL | PENDING -> /blogs/how-pilots-build-hours (does not exist) |
+| 6a1d00f816d7f55288a22710 | How Pilots Build Hours After CPL | 301 -> /blogs/how-pilots-build-hours (built 16 Sep 2026) |
 | 6a13dbf1ad864b831525ec3b | Aviation Jobs Besides Airline Pilot (duplicate) | 301 -> /blogs/aviation-jobs-besides-pilot |
 | 6a117717fc65055a7709739d | Why India Needs More Pilots | OPEN |
 | 6a0e90762f3b24b31805ebdf | Is Pilot Career Worth It in 2026 | OPEN |
-| 6a0bf3f4a8c579faedcb51e6 | How Pilots Build Hours (duplicate) | PENDING -> /blogs/how-pilots-build-hours (does not exist) |
+| 6a0bf3f4a8c579faedcb51e6 | How Pilots Build Hours (duplicate) | 301 -> /blogs/how-pilots-build-hours (built 16 Sep 2026) |
 | 6a06b251216e3de16875f5b0 | DGCA Ground School Guide – Complete Preparation | 301 -> /blogs/dgca-ground-school-guide |
 | 6a040a0da7f96236c2f7ea90 | Pilot Training Cost in India Explained | 301 -> /blogs/pilot-training-cost-in-india |
 | 6a01656be977bff6d3d6bd42 | Best Flying School in India: How to Choose the Right Aviation Academy | 301 -> /blogs/best-flying-school-in-india |

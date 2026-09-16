@@ -42,14 +42,14 @@ const nextConfig = {
    * A line moves into the ACTIVE block above in the same commit as the rebuild
    * that gives it a destination. Never before.
    *
-   * { source: '/blogs/6a7034d8cf8e38fea1c417a5', destination: '/blogs/how-pilots-build-hours', permanent: true },
-   * { source: '/blogs/6a1d00f816d7f55288a22710', destination: '/blogs/how-pilots-build-hours', permanent: true },
-   * { source: '/blogs/6a0bf3f4a8c579faedcb51e6', destination: '/blogs/how-pilots-build-hours', permanent: true },
    * { source: '/blogs/6a8be2f757898ec159830c3e', destination: '/blogs/dgca-medical-requirements', permanent: true },
    *
-   * STILL MISSING as at 2026-09-15: /blogs/how-pilots-build-hours and
-   * /blogs/dgca-medical-requirements do not exist as pages. Do not activate
-   * either line until they do.
+   * STILL MISSING as at 2026-09-16: /blogs/dgca-medical-requirements does not
+   * exist as a page. Do not activate that line until it does.
+   *
+   * The three "How Pilots Build Hours" lines that used to sit here were
+   * activated on 2026-09-16, in the same commit as the page that finally gave
+   * them a destination. They are in the ACTIVE block below.
    *
    * ONE CORRECTION, so nobody activates this list as written:
    *   6a8be2f757898ec159830c3e is "Aviation Safety Procedures Every Student
@@ -184,6 +184,17 @@ const nextConfig = {
       { source: '/blogs/6a87eae016c8bc859396901b', destination: '/blogs/cpl-simulator-hours-dgca-rules', permanent: true },
       { source: '/blogs/6a893d2e2c2fb9efee8153ca', destination: '/blogs/mcc-training-for-pilots-in-india', permanent: true },
       { source: '/blogs/6a240cea7b692cb9fe764c82', destination: '/blogs/multi-engine-rating-for-pilots-in-india', permanent: true },
+      /*
+       * Added 2026-09-16 with /blogs/how-pilots-build-hours, which is the
+       * destination these three had been parked on since before this branch.
+       * All three are the same topic authored three times through /admin/blog:
+       * "How Pilots Build Hours: A Complete Guide for Aspiring Commercial
+       * Pilots", "How Pilots Build Hours After CPL", and a third duplicate.
+       * Three ObjectId URLs splitting one topic's signal, now consolidated.
+       */
+      { source: '/blogs/6a7034d8cf8e38fea1c417a5', destination: '/blogs/how-pilots-build-hours', permanent: true },
+      { source: '/blogs/6a1d00f816d7f55288a22710', destination: '/blogs/how-pilots-build-hours', permanent: true },
+      { source: '/blogs/6a0bf3f4a8c579faedcb51e6', destination: '/blogs/how-pilots-build-hours', permanent: true },
 
       {
         source: '/Pilot-Course-&-Pilot-Training-in -ndia',

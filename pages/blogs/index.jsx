@@ -35,6 +35,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'how-pilots-build-hours',
+        title: 'How Pilots Build Hours After a CPL \u2014 and Why They Have To',
+        excerpt: 'A CPL takes 200 hours. Airlines want more, and the reason is in a government document: the Ministry of Civil Aviation states there is no shortage of pilots in India but there is a shortage of commanders. The five routes, the catch in each, and the recency rule that quietly deletes hours you have already paid for.',
+        category: 'Pilot career guide',
+        readTime: '9 min',
+        date: 'Sep 16, 2026',
+        image: { src: '/blog/how-pilots-build-hours/hero-logbook-and-horizon.webp', width: 1200, height: 630, promptId: '54' },
+    },
+    {
         slug: 'cpl-night-flying-hours-requirement-india',
         title: 'Night Flying Hours for a CPL in India: The 5-Hour Rule Explained',
         excerpt: 'Inside the 200-hour CPL total, 5 hours must be night flying as pilot-in-command, with at least 10 take-offs and 10 landings — all flown in an actual aircraft, with no simulator allowance. Where the requirement sits, and how flying schools sequence it around the weather.',
