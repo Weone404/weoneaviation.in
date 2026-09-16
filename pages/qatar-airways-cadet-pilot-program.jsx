@@ -4,6 +4,72 @@ import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import CadetHubLink from '../components/CadetHubLink';
+import QuickAnswer from '../components/QuickAnswer';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
+import StructuredData from '../components/StructuredData';
+import { generateFAQSchema } from '../lib/schema';
+import { ACADEMY, CPL_HOURS, DGCA_PAPERS, EXAM_RULES, MIN_AGE, RTR, FTO, papersSummary } from '../lib/facts';
+
+/*
+ * DEPTH RESTORED 2026-09-16.
+ *
+ * This page was cut back on 15 September when its unsourced eligibility figures
+ * were removed — an age band, an English test score and a DGCA medical
+ * requirement that was wrong on its face, since a Qatari programme licenses
+ * under the Qatar Civil Aviation Authority. That was the right removal but it
+ * left the page thin, and a content audit rendering every page surfaced it.
+ *
+ * What is added here is depth that does NOT depend on airline-specific figures
+ * we could not verify: what an ab-initio cadet route is, what it does not change
+ * about an Indian licence, and the questions to ask. Every figure comes from
+ * lib/facts.js. Do not add a Qatar Airways age band, fee or intake date without
+ * a link to the airline's own page and the date it was read.
+ */
+const qatarPaa = [
+  {
+    q: 'What is the Qatar Airways cadet pilot programme?',
+    a: 'An ab-initio route: it takes candidates with no licence and trains them towards airline flying. Qatar Airways runs a national programme for Qatari nationals and opens international intakes separately rather than continuously, so the first thing to establish is which intake is open — it decides whether you are eligible at all.',
+  },
+  {
+    q: 'Does a cadet programme change what DGCA requires?',
+    a: `No, and this is the part cadet marketing consistently leaves out. If the destination is an Indian commercial licence, the requirements are identical on every route: ${CPL_HOURS.total} hours as pilot of an aeroplane, ${DGCA_PAPERS.length} written papers at ${EXAM_RULES.theory.passMark}% each, a Class 1 medical, ${RTR.name}, and a minimum age of ${MIN_AGE.CPL}. A cadet programme changes how you are selected and funded, not the licence.`,
+  },
+  {
+    q: 'Will a Qatar Airways licence let me fly in India?',
+    a: 'Not as it stands. A licence issued under another country\u2019s regulator is not a DGCA licence, and converting it is a required step with its own time and cost that sits outside every training quote. If flying in India is the goal, put the conversion in the plan and the budget from the start.',
+  },
+  {
+    q: 'What should I ask before applying?',
+    a: `Which intake is open and whether your nationality is eligible for it; what the selection stages are and how many attempts you get; what the total cost is and what it excludes; what happens if you do not complete; and what exactly is being promised about employment. Get the answers in writing. How to check any training organisation is set out on our page about that — DGCA publishes an approved list of ${FTO.count} organisations and ranks them, which is more than most airlines publish about their cadet partners.`,
+  },
+];
+
+const qatarFaqs = [
+  { q: 'Is the Qatar Airways cadet programme open to Indians?', a: 'International intakes are opened separately from the national programme and are not continuous. Check the airline\u2019s own careers site for what is open now rather than relying on any coaching page, including this one.' },
+  { q: 'Do I need flying experience to apply?', a: 'No. Ab-initio cadet routes are designed for candidates with no previous flying experience — that is what ab-initio means.' },
+  { q: 'What medical do I need?', a: 'A Class 1 medical accepted by the regulator that will issue the licence. For a Qatari programme that is the Qatar Civil Aviation Authority, not DGCA. This page stated a DGCA medical until 15 September 2026; that was wrong and has been corrected.' },
+  { q: 'Why does this page not list the age limit and fees?', a: 'Because we could not verify a current set against a Qatar Airways document. Everything findable was a third-party coaching page restating figures with no citation, and a figure we cannot source is one we will not publish — an age band that is wrong by a year stops someone applying who was eligible.' },
+  { q: 'Does We One Aviation place students into cadet programmes?', a: ACADEMY.scope },
+];
+
+const qatarArticleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Qatar Airways Cadet Pilot Programme: What Changes and What Does Not',
+  description: 'An ab-initio cadet route changes how you are selected and funded, not what DGCA requires. The requirements that hold on every route, and the questions to ask before applying.',
+  inLanguage: 'en-IN',
+  dateModified: '2026-09-16',
+  articleSection: 'Airline cadet programmes',
+  keywords: 'qatar airways cadet pilot program, qatar airways cadet, cadet pilot programme, qatar airways pilot',
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://weoneaviation.in/qatar-airways-cadet-pilot-program' },
+  image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+  author: { '@type': 'Organization', name: ACADEMY.name, url: ACADEMY.url },
+  publisher: { '@type': 'EducationalOrganization', name: ACADEMY.name, url: ACADEMY.url, logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
+  citation: [
+    { '@type': 'CreativeWork', name: 'Aircraft Rules, 1937, Schedule II — Aircraft Personnel (India Code)', url: 'https://upload.indiacode.nic.in/showfile?actid=AC_CEN_36_0_00013_193422_1523351174422&type=rule&filename=aircraft_rules%2C_1937.pdf' },
+    { '@type': 'CreativeWork', name: FTO.sources[0].label, url: FTO.sources[0].url },
+  ],
+};
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Cadet Program', title: 'Qatar Airways', highlight: 'Cadet Pilot Program', sub: 'Your Gateway to the Skies — Quality! Results!' },
@@ -53,6 +119,22 @@ export default function QatarAirwaysCadet() {
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
             <CadetHubLink airline="Qatar Airways" />
+
+            <StructuredData data={[qatarArticleSchema, generateFAQSchema(qatarFaqs)]} />
+
+            <section className="px-4 pt-12 max-w-4xl mx-auto">
+                <QuickAnswer question={qatarPaa[0].q} answer={qatarPaa[0].a} />
+                <div className="mt-6 border border-gray-200 rounded-xl p-5 bg-gray-50">
+                    <p className="font-montserrat font-bold text-av-blue text-sm mb-2">What a cadet programme does not change</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                        If the destination is an Indian commercial licence, these hold on every route:{' '}
+                        {CPL_HOURS.total} hours as pilot of an aeroplane, {DGCA_PAPERS.length} written papers
+                        ({papersSummary()}) at {EXAM_RULES.theory.passMark}% each, a Class 1 medical, {RTR.name}, and a
+                        minimum age of {MIN_AGE.CPL}. A cadet programme changes how you are selected and funded &mdash; not
+                        the licence.
+                    </p>
+                </div>
+            </section>
 
             {/* Overview */}
             <section className="py-20 px-4">
@@ -185,6 +267,19 @@ export default function QatarAirwaysCadet() {
                     </div>
                 </div>
             </section>
+            <section className="px-4 pb-16 max-w-4xl mx-auto">
+                <PeopleAlsoAsk items={qatarPaa} />
+                <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12">Frequently asked questions</h2>
+                <div className="space-y-3">
+                    {qatarFaqs.map((f) => (
+                        <details key={f.q} className="border border-gray-200 rounded-xl p-4">
+                            <summary className="font-semibold text-av-blue text-sm cursor-pointer">{f.q}</summary>
+                            <p className="text-gray-600 text-sm leading-relaxed mt-2">{f.a}</p>
+                        </details>
+                    ))}
+                </div>
+            </section>
+
         </Layout>
     );
 }

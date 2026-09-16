@@ -1,167 +1,325 @@
-import { CityPageTemplate } from '../components/Citypagetemplate';
+import Layout from '../components/Layout';
+import Link from 'next/link';
+import Breadcrumb from '../components/Breadcrumb';
+import QuickAnswer from '../components/QuickAnswer';
+import SummaryBox from '../components/SummaryBox';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
+import LeadForm from '../components/LeadForm';
+import ScrollReveal from '../components/ScrollReveal';
+import StructuredData from '../components/StructuredData';
+import { generateFAQSchema } from '../lib/schema';
+import {
+  ACADEMY, FTO, PARIKSHA, EXAM_RULES, DGCA_PAPERS, CPL_HOURS, LICENCES, MIN_AGE,
+  EDUCATION, MEDICAL_STANDARDS as MED, CPL_COST, RTR, papersSummary, inr,
+} from '../lib/facts';
 
-export default function PilotTrainingDelhi() {
-    return (
-        <CityPageTemplate
-            city="Delhi"
+/*
+ * /pilot-training-in-delhi — REWRITTEN 2026-09-16.
+ *
+ * WHY IT WAS REWRITTEN RATHER THAN EDITED. This was the worst page on the site
+ * by claims density, and it targets keyword 27 on the owner's priority list,
+ * marked there as critical local SEO. A content audit rendering every page
+ * surfaced it. What it carried:
+ *
+ *   - "Only 20 students per batch" and "Limited seats available" — batch size,
+ *     which the owner asked on 15 Sep to keep off the site entirely.
+ *   - "INR 40 - 60 Lakh" as the cost of training, with a four-line breakdown
+ *     (flying INR 35-50 Lakh, simulator INR 3-5 Lakh). Every one of those was
+ *     removed from the rest of the site in this branch as untraceable.
+ *   - "Practice in full motion flight simulators" — the academy owns no
+ *     simulators, and scripts/check-claims.js bans the claim outright.
+ *   - "Graduates have joined major airlines, cargo operations and private
+ *     aviation companies worldwide"; "Soon, you'll be landing jobs with the
+ *     coolest airlines"; "Direct Airline Pathway ... secure airline jobs
+ *     quickly" — placement claims, three separate ones.
+ *   - "our pro instructors — real pilots with real experience" and
+ *     "DGCA-qualified aviation instructors ... who have served as pilots in
+ *     India" — contradicts ACADEMY.scope, which states no pilots are employed.
+ *   - "Top flying schools like We One Aviation" — positions a ground school as
+ *     a flying school.
+ *   - "Scholarship provided to every student"; "Full Scholarship After CPL";
+ *     "1500-Hour Flight Building at No Extra Cost" — offers we cannot verify.
+ *   - Durations throughout, and "become a pilot in as little as 15 months".
+ *   - Named airlines as destinations (IndiGo, Air India, SpiceJet, FedEx,
+ *     Blue Dart).
+ *   - Copy like "chill above the city" and "without any tension", on a page
+ *     about a decision that costs tens of lakhs.
+ *
+ * WHAT REPLACES IT, and why it is stronger rather than merely safer. Delhi has
+ * one genuinely decisive, sourced fact that no competitor page states: DGCA's
+ * published list of approved Flying Training Organisations contains no flying
+ * base in Delhi or anywhere in the NCR. So "pilot training in Delhi" cannot
+ * mean flying in Delhi, for anybody, and any Delhi address implying otherwise
+ * is arranging it elsewhere — including us. What Delhi IS unusually good for is
+ * everything either side of the flying, because three DGCA institutions sit in
+ * the city. That is the honest, useful and defensible version of this page.
+ *
+ * RELATIONSHIP TO /pilot-training-in-dwarka. That page is hyper-local and
+ * answers "what is at Sector 7". This one is city-wide and answers "what does
+ * training in Delhi actually mean". They cross-link rather than repeat.
+ *
+ * components/Citypagetemplate is now unused. It was used only by this page. Do
+ * not reintroduce it here without rebuilding the claims that lived in its props.
+ */
 
-            meta={{
-                title: 'Pilot Training Institute in Delhi 2026 | CPL, PPL, DGCA | We One Aviation',
-                description: 'DGCA pilot training in Delhi. CPL, PPL and ATPL courses plus DGCA ground classes. Scholarship options available. We One Aviation Academy.',
-            }}
+const LAST_UPDATED = '16 September 2026';
+const CANONICAL = 'https://weoneaviation.in/pilot-training-in-delhi';
+const CEO = PARIKSHA.authority;
+const NCR_CENTRES = [...MED.centres.airForce, ...MED.centres.civil].filter((c) => /Delhi|Gurugram/.test(c.city));
+const TOTAL_CENTRES = MED.centres.airForce.length + MED.centres.civil.length;
 
-            hero={{
-                image: 'https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=1920&q=80',
-                tag: 'Pilot Training in Delhi',
-                title: 'Pilot Training Institute in Delhi – 2026',
-                sub: 'CPL, PPL and DGCA ground classes in Delhi',
-            }}
+const inDelhi = [
+  {
+    stage: 'The computer number',
+    where: `DGCA's Central Examination Organisation, ${CEO.address}`,
+    detail: `Every written paper is booked against one, and it is a separate online application. Through DigiLocker it is allotted immediately; the manual route takes ${PARIKSHA.processing.days} working days. A rejection can be appealed in person here — ${PARIKSHA.rejection.appeal.inPerson.replace(', at the same address.', '.')}`,
+  },
+  {
+    stage: 'The written examinations',
+    where: 'Online, on the DGCA Pariksha portal, from anywhere',
+    detail: `${DGCA_PAPERS.length} papers — ${papersSummary()} — each needing ${EXAM_RULES.theory.passMark}% on its own rather than an aggregate, at ${inr(PARIKSHA.fees.regularPerPaper)} a paper in a regular session and ${inr(PARIKSHA.fees.olodePerPaper)} on demand. ${PARIKSHA.calendar2026.regular.length} regular sessions a year plus ${PARIKSHA.calendar2026.olode.length} on-demand ones.`,
+  },
+  {
+    stage: 'The medical',
+    where: `${NCR_CENTRES.length} of DGCA's ${TOTAL_CENTRES} approved centres are in Delhi and the NCR`,
+    detail: `${NCR_CENTRES.map((c) => `${c.name}, ${c.city}`).join(' · ')}. Class 2 to begin and Class 1 for a Commercial Pilot Licence, so neither means travelling. ${MED.timingAdvice}`,
+  },
+  {
+    stage: 'Equivalence, for international-board candidates',
+    where: `Association of Indian Universities, Kotla Marg`,
+    detail: `${PARIKSHA.aiu.whenNeeded} ${PARIKSHA.aiu.diploma} CBSE, ICSE and state-board candidates do not need this.`,
+  },
+  {
+    stage: 'The flying',
+    where: 'Not in Delhi. Not anywhere in the NCR.',
+    detail: `DGCA's published list of approved Flying Training Organisations — ${FTO.count} of them as on ${FTO.listAsOf} — contains no flying base in Delhi, ${FTO.noBaseIn.slice(1).join(', ')}. The approved bases sit across ${FTO.statesWithBases.length} states. This is the part of training that happens elsewhere, and it is where almost all the cost sits.`,
+  },
+];
 
-            intro="Are you dreaming of a career in aviation? Our Pilot Training Institute in Delhi is built for students who want to become a pilot — whether you are looking for Commercial Pilot Training, Private Pilot Training or aiming to become an airline captain. We provide all types of Pilot Training with experienced flight instructors and the latest technology available at our academy. Delhi is home to IGI Airport — one of India's busiest international airports — making it one of the greatest aviation hubs for students willing to become a pilot. We are here to train the next generation of aviation professionals."
+const peopleAlsoAsk = [
+  {
+    q: 'Can you do pilot training in Delhi?',
+    a: `Most of it, and not the flying. DGCA's approved-FTO list has no flying base in Delhi or anywhere in the NCR, so no one trains pilots to fly within the city — any Delhi address advertising flight training is arranging it elsewhere, including us. What Delhi is unusually good for is everything either side of it: the Central Examination Organisation that issues computer numbers and hears appeals is at ${CEO.address}, ${NCR_CENTRES.length} of DGCA's ${TOTAL_CENTRES} approved medical centres are in Delhi and the NCR, the written papers are sat online from anywhere, and the equivalence body for international-board candidates is on Kotla Marg.`,
+  },
+  {
+    q: 'Is there a DGCA-approved flying school in Delhi?',
+    a: `Not on DGCA's list as read on ${LAST_UPDATED}. The approved bases are spread across ${FTO.statesWithBases.length} states including ${FTO.statesWithBases.slice(0, 6).join(', ')}. Delhi's airspace and airport traffic make a training base impractical, which is why the list looks the way it does.`,
+  },
+  {
+    q: 'What does pilot training in Delhi cost?',
+    a: `No Indian government body publishes a market price and private flying schools publish nothing, so the ranges circulating online — this page carried one until 16 September 2026 — cannot be traced to a document. What can be shown: ${CPL_COST.benchmark.school}, a government academy, publishes ${CPL_COST.benchmark.feeLabel}, and DGCA charges ${inr(PARIKSHA.fees.regularPerPaper)} per examination paper. Get any private quote in writing and compare it line by line.`,
+  },
+  {
+    q: 'What are the eligibility requirements to become a pilot in Delhi?',
+    a: `The same as anywhere in India, because they are set by regulation rather than by city. ${EDUCATION.requirement} Minimum age ${MIN_AGE.CPL} for a Commercial Pilot Licence, ${MIN_AGE.SPL} for a Student Pilot Licence. ${DGCA_PAPERS.length} written papers at ${EXAM_RULES.theory.passMark}% each. ${CPL_HOURS.total} hours as pilot of an aeroplane. A Class 1 medical, and ${RTR.name}.`,
+  },
+  {
+    q: 'What should I do first if I am in Delhi?',
+    a: `Book the Class 2 medical, because it is the cheapest gate and the only one that can end the plan outright. Then apply for a computer number — it needs no medical certificate and no flying school — and start the written papers. Both of those are done without leaving the city and before committing to a flying school anywhere.`,
+  },
+];
 
-            features={[
-                { icon: '🏅', title: 'Certified Training Program', desc: 'Our institute follows the regulations set by the national aviation authority to ensure quality education and certification.' },
-                { icon: '👨‍✈️', title: 'DGCA Qualified Instructors', desc: 'Learn from DGCA-qualified instructors with real flying experience who have served as pilots in India.' },
-                { icon: '📋', title: 'Comprehensive Courses', desc: 'We offer CPL, PPL, and ATPL training — all pilot programs you need under one roof, available both offline and online.' },
-                { icon: '🚀', title: 'Career Guidance', desc: 'Our academy doesn\'t just train you — we help you launch your career. Graduates have joined major airlines, cargo operations, and private aviation companies worldwide.' },
-                { icon: '🌍', title: 'International Flying School Options', desc: 'Flight training placements with partner schools in the USA, South Africa and India, where you build the 200 hours of flying required for a Commercial Pilot Licence.' },
-                { icon: '📖', title: 'Small Batch Sizes', desc: 'Only 20 students per batch — ensuring personal attention, daily doubt sessions, and faster results for every student.' },
-                { icon: '🏢', title: 'Prime Location in Dwarka, Delhi', desc: 'Conveniently located in Dwarka, Delhi — close to IGI Airport, giving you real-world aviation exposure in India\'s top aviation hub.' },
-            ]}
+const faqs = [
+  { q: 'Why is there no flying school in Delhi?', a: `DGCA's approved-FTO list shows bases across ${FTO.statesWithBases.length} states and none in Delhi or the NCR. Delhi's controlled airspace and the traffic at IGI make a training base impractical. The practical consequence is that a Delhi student completes the papers, the computer number and the medical locally, then travels for the hours.` },
+  { q: 'What can I finish without leaving Delhi?', a: 'The computer number, all the written papers, the medical, and — for international-board candidates — the equivalence certificate. Only the flying happens elsewhere.' },
+  { q: 'Does We One Aviation run a flying school in Delhi?', a: ACADEMY.scope },
+  { q: 'Where exactly are you in Delhi?', a: `${ACADEMY.streetAddress}, ${ACADEMY.addressLocality} ${ACADEMY.postalCode}. Phone ${ACADEMY.phone}, email ${ACADEMY.email}. Teaching from Dwarka since ${ACADEMY.foundedYear}.` },
+  { q: 'How long does pilot training take?', a: 'No Indian regulation sets a duration, and this page used to quote one. What the rules set are floors and expiry windows; what actually decides your timeline is aircraft availability at your flying school. Our page on how long it takes sets out every floor, every expiry, and the one question to ask a school.' },
+  { q: 'Which licences can I prepare for from Delhi?', a: `The ground-school side of the whole ladder: ${LICENCES.map((l) => l.code).join(', ')}. The flying is the part that happens at a flying training organisation.` },
+  { q: 'Is Delhi a good place to start?', a: `For the administrative half of the process it is arguably the best in the country, and that is a real advantage rather than a slogan — three DGCA institutions a student needs are in this city. For the flying it is neutral, because everybody travels.` },
+  { q: 'Do I need Physics and Maths?', a: `${EDUCATION.requirement} ${EDUCATION.altRoute}` },
+];
 
-            courses={[
-                {
-                    num: '1', icon: '✈️',
-                    title: 'Commercial Pilot Training (CPL)',
-                    desc: 'Want to fly massive planes for big airlines? Our CPL program at the Pilot Training Institute in Delhi is your ticket to the cockpit. Our pro instructors — real pilots with real experience — teach you to handle everything like a champ. Soon, you\'ll be landing jobs with the coolest airlines!',
-                    details: [
-                        { label: 'Duration', value: '12-18 months' },
-                        { label: 'Includes', value: '200+ hours of flying, DGCA exam preparation, and soft skills training' },
-                        { label: 'Career Opportunities', value: 'Airline pilot, cargo pilot, charter pilot' },
-                    ],
-                    href: '/courses/cpl',
-                    highlight: true,
-                },
-                {
-                    num: '2', icon: '🛩️',
-                    title: 'Private Pilot Training (PPL)',
-                    desc: 'Want to fly around for fun? Our PPL program at the Pilot Training Institute in Delhi is just right for you. Take your friends up in the sky or chill above the city — we keep it simple and exciting. Fly by yourself, however you like!',
-                    details: [
-                        { label: 'Duration', value: '4-6 months' },
-                        { label: 'Includes', value: 'Minimum 40 hours of flight training' },
-                        { label: 'Best For', value: 'Individuals who want to fly privately or as a hobby' },
-                    ],
-                    href: '/ppl-full-form',
-                    highlight: false,
-                },
-                {
-                    num: '3', icon: '📚',
-                    title: 'DGCA Ground Classes',
-                    desc: 'Our DGCA Ground Classes at the Pilot Training Institute in Delhi make it super easy to learn air navigation, meteorology, and air regulations — all aligned with the DGCA syllabus. Crack your DGCA exams without any tension with We One Aviation Academy!',
-                    details: [
-                        { label: 'Duration', value: '3-6 months' },
-                        { label: 'Subjects', value: 'Air Regulations, Aviation Meteorology, Air Navigation, Technical General, Technical Specific, Radio Telephony (RTR Exam)' },
-                    ],
-                    href: '/dgca-ground-classes',
-                    highlight: false,
-                },
-                {
-                    num: '4', icon: '🏆',
-                    title: 'Type Rating & Multi-Engine Training',
-                    desc: 'Improve your flying skills with advanced aircraft training at our Pilot Training Institute in Delhi. Designed for pilots who want to enhance their abilities and qualify for commercial aviation roles.',
-                    details: [
-                        { label: 'Duration', value: '3-4 months' },
-                        { label: 'Includes', value: 'Advanced flight training in low-visibility conditions' },
-                        { label: 'Best For', value: 'Pilots looking to enhance skills and qualify for commercial aviation' },
-                    ],
-                    href: '/courses',
-                    highlight: false,
-                },
-            ]}
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Pilot Training in Delhi: What the City Can and Cannot Give You',
+  description: "DGCA's approved-FTO list has no flying base in Delhi or the NCR, so training in Delhi never means flying in Delhi. What the city does have: the Central Examination Organisation, four approved medical centres and the equivalence body.",
+  inLanguage: 'en-IN',
+  dateModified: '2026-09-16',
+  articleSection: 'Pilot training in Delhi',
+  keywords: 'pilot training in delhi, pilot training institute in delhi, best pilot training academy in delhi, dgca ground classes in delhi, flying school in delhi, aviation academy in delhi',
+  mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
+  image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+  author: { '@type': 'Organization', name: ACADEMY.name, url: ACADEMY.url },
+  publisher: { '@type': 'EducationalOrganization', name: ACADEMY.name, url: ACADEMY.url, logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
+  citation: [
+    { '@type': 'CreativeWork', name: FTO.sources[0].label, url: FTO.sources[0].url },
+    { '@type': 'CreativeWork', name: PARIKSHA.sources[0].label, url: PARIKSHA.sources[0].url },
+    { '@type': 'CreativeWork', name: MED.sources[3].label, url: MED.sources[3].url },
+  ],
+};
 
-            eligibility={[
-                { icon: '🎓', title: 'Education', desc: '10+2 with Physics & Mathematics (We can help with additional courses if needed!)' },
-                { icon: '🎂', title: 'Age', desc: '18 years for a CPL; 16 for a Student Pilot Licence' },
-                { icon: '🩺', title: 'Medical Fitness', desc: 'Must clear DGCA Medical Examinations' },
-                { icon: '🗣️', title: 'English Proficiency', desc: 'Must be able to read, write, and communicate effectively in English' },
-            ]}
+const localSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  '@id': CANONICAL,
+  name: ACADEMY.name,
+  url: ACADEMY.url,
+  telephone: ACADEMY.phone,
+  email: ACADEMY.email,
+  foundingDate: String(ACADEMY.foundedYear),
+  description: ACADEMY.scope,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: ACADEMY.streetAddress,
+    addressLocality: ACADEMY.addressLocality,
+    postalCode: ACADEMY.postalCode,
+    addressRegion: 'Delhi',
+    addressCountry: ACADEMY.addressCountry,
+  },
+  areaServed: [{ '@type': 'Place', name: 'Delhi NCR' }, { '@type': 'Country', name: 'India' }],
+};
 
-            career={{
-                intro: 'Delhi is a major aviation hub in India with IGI Airport at its heart — creating great job options for trained pilots. Once you finish your training, you can try for jobs like these:',
-                options: [
-                    { icon: '✈️', title: 'Commercial Pilot', desc: 'Fly big passenger planes for airlines like IndiGo, Air India, or SpiceJet.' },
-                    { icon: '🛩️', title: 'Private Pilot', desc: 'Work for individuals or companies flying their personal planes.' },
-                    { icon: '📦', title: 'Cargo Pilot', desc: 'Deliver goods by flying cargo planes for FedEx or Blue Dart.' },
-                    { icon: '🏫', title: 'Flight Instructor', desc: 'Teach new pilots at training schools like ours.' },
-                    { icon: '🗺️', title: 'Charter Pilot', desc: 'Fly small planes for special trips — vacations or business travel.' },
-                ],
-            }}
+const H2 = 'font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12 scroll-mt-24';
+const P = 'text-gray-600 text-sm leading-relaxed mb-4';
+const A = 'text-av-blue font-semibold hover:text-av-orange transition-colors';
 
-            syllabus={[
-                { num: '1', title: 'Air Navigation', desc: 'A important DGCA exam subject — equips pilots with the knowledge to safely navigate an aircraft from one location to another using flight planning, navigation techniques, instruments, and radio aids.' },
-                { num: '2', title: 'Air Regulations', desc: 'The rulebook for flying — provides a deep understanding of aviation laws, operational procedures, and international standards to ensure safe and legal flight operations.' },
-                { num: '3', title: 'Aviation Meteorology', desc: 'Weather is a big deal when you\'re a pilot. Learn to read atmospheric behavior, weather patterns, and forecasting techniques to make informed decisions and plan safe flights.' },
-                { num: '4', title: 'Technical General', desc: 'Get to know the "body" of the plane — covers the basics of how aircraft work, including engines, systems, and equipment.' },
-                { num: '5', title: 'Technical Specific', desc: 'Zooms in on the specific type of plane you\'ll fly — dives into your plane\'s design, controls, and performance.' },
-                { num: '6', title: 'Radio Telephony (RTR Exam)', desc: 'Learn how to communicate with ATC and other pilots using radio codes and phrases to keep everything clear and safe in the air.' },
-            ]}
+export default function PilotTrainingInDelhi() {
+  return (
+    <Layout
+      title="Pilot Training in Delhi: What the City Can and Cannot Give You"
+      description="No DGCA-approved flying base exists in Delhi or the NCR — so training in Delhi never means flying in Delhi. What the city does have, and why it still helps."
+    >
+      <StructuredData data={[localSchema, articleSchema, generateFAQSchema(faqs)]} />
 
-            fees={{
-                total: 'INR 40 – 60 Lakh',
-                breakdown: [
-                    { label: 'Ground Classes', desc: 'Navigation, rules, aviation theory', amount: 'INR 2-5 Lakhs' },
-                    { label: 'Flying Hours', desc: '200 hours of cockpit training', amount: 'INR 35-50 Lakhs' },
-                    { label: 'Simulator Training', desc: 'Practice in full motion flight simulators', amount: 'INR 3-5 Lakhs' },
-                    { label: 'Extra Gear', desc: 'Books, uniforms, medicals, DGCA exams', amount: 'INR 1-2 Lakhs' },
-                ],
-                whyChanges: [
-                    { title: 'School Reputation', desc: 'Top flying schools like We One Aviation charge premium fees for quality — but we also provide scholarships.' },
-                    { title: 'City & Location (Delhi)', desc: 'Delhi\'s metro environment and proximity to IGI Airport means pilot training costs are slightly higher compared to smaller towns.' },
-                    { title: 'Type of Aircraft', desc: 'Basic trainer aircraft vs advanced simulators — more advanced equipment means higher training costs.' },
-                    { title: 'Add-On Training', desc: 'Night flying or multi-engine training adds extra hours and cost to your program.' },
-                ],
-            }}
+      <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-24 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="section-tag justify-center">Delhi, honestly</p>
+          <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white leading-tight">
+            Pilot Training in Delhi
+          </h1>
+          <p className="text-white/70 text-sm mt-4 max-w-2xl mx-auto">
+            No approved flying base exists in this city. That sounds like bad news and mostly is not &mdash; here is what
+            Delhi actually gives you.
+          </p>
+        </div>
+      </header>
 
-            howToChoose={[
-                { icon: '🏢', title: 'Institute Infrastructure', desc: 'Check the institute\'s environment and infrastructure. What facilities do they provide for comfortable study and flying?' },
-                { icon: '👨‍🏫', title: 'Institute Instructors', desc: 'Teachers play a essential role in student success. Check the faculty level before joining — great teachers make great pilots.' },
-                { icon: '💰', title: 'Payment Flexibility', desc: 'Check their fees structure. Choose institutes that don\'t burden you all at once with flexible payment options.' },
-                { icon: '🎓', title: 'Scholarship & Loan Facility', desc: 'If an institute gives scholarship and loan facility, it makes fulfilling your dream much more affordable.' },
-            ]}
+      <section className="py-16 px-4">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
+          <article className="lg:col-span-2">
+            <ScrollReveal>
+              <Breadcrumb />
+              <p className="text-xs text-gray-500 mb-5">
+                DGCA&rsquo;s approved-organisation list, examination fees and medical centre list read on {LAST_UPDATED}.{' '}
+                <a href="#sources" className={A}>Sources below</a>.
+              </p>
 
-            whyWeOne={[
-                'Scholarship provided to every student',
-                'Flexible fees structure',
-                'DGCA-qualified aviation instructors',
-                'Well-built infrastructure in Dwarka, Delhi',
-                'Study library for students',
-                'Only 20 students per batch — personalized attention',
-                'Limited seats available — Apply Now!',
-            ]}
+              <QuickAnswer question={peopleAlsoAsk[0].q} answer={peopleAlsoAsk[0].a} />
 
-            usaBenefits={[
-                { icon: '✅', title: '40-Hour PPL Challenge!', desc: 'Complete your PPL before 40 hours and the flying school covers your Instrument Training (IR) costs!' },
-                { icon: '✅', title: 'FAA-Approved School at International Airport', desc: 'Train at a fully equipped flying school at a major international airport for real-world aviation exposure.' },
-                { icon: '✅', title: 'Accommodation Near the Airport', desc: 'Comfortable accommodation provided near the airport for your convenience — no hassle during training.' },
-                { icon: '✅', title: 'Full Scholarship After CPL', desc: 'Complete your USA CPL training and you may qualify for a FULL SCHOLARSHIP for advanced flight training!' },
-                { icon: '✅', title: '1500-Hour Flight Building at No Extra Cost!', desc: 'Build flight hours up to 1500 hours after CPL — a key requirement for airline jobs — at no additional cost!' },
-            ]}
+              <SummaryBox
+                title="Delhi, in one view"
+                items={[
+                  `No DGCA-approved flying base in Delhi or the NCR — ${FTO.count} approved organisations sit across ${FTO.statesWithBases.length} other states`,
+                  `DGCA's Central Examination Organisation is at ${CEO.address}`,
+                  `${NCR_CENTRES.length} of DGCA's ${TOTAL_CENTRES} approved medical centres are in Delhi and the NCR`,
+                  `The ${DGCA_PAPERS.length} written papers are sat online from anywhere, at ${inr(PARIKSHA.fees.regularPerPaper)} each`,
+                  'The equivalence body for international-board candidates is on Kotla Marg',
+                  'The flying, and almost all of the cost, happens outside the city',
+                ]}
+              />
 
-            usaReasons={[
-                { icon: '🚀', title: 'Globally Recognized FAA License', desc: 'Opens doors to airline careers worldwide.' },
-                { icon: '🚀', title: 'Ideal Flying Conditions', desc: 'More flying days per year for faster completion.' },
-                { icon: '🚀', title: 'Direct Airline Pathway', desc: 'Structured programs designed to help you secure airline jobs quickly!' },
-            ]}
+              <h2 id="the-fact" className={H2}>The fact that decides what this page can honestly say</h2>
+              <p className={P}>
+                DGCA publishes the list of Flying Training Organisations it has approved &mdash; {FTO.count} of them as on{' '}
+                {FTO.listAsOf}, with each approval number, its validity dates, every flying base and the fleet by
+                registration. Read the base column end to end and Delhi does not appear. Neither does{' '}
+                {FTO.noBaseIn.slice(1).join(', ')}.
+              </p>
+              <p className={P}>
+                So &ldquo;pilot training in Delhi&rdquo; cannot mean flying in Delhi, for anybody. Any Delhi address
+                advertising flight training is arranging it somewhere else &mdash; and that includes us. It is not sinister;
+                it is simply what the list says, and you should know it before you pay anyone.
+              </p>
+              <p className={P}>
+                What that leaves is more useful than it sounds, because the rest of the process is unusually concentrated
+                in this city.
+              </p>
 
-            faqs={[
-                { q: 'How long does it take to complete pilot training in Delhi?', a: 'PPL takes 4-6 months, CPL takes 12-18 months, and ATPL requires additional experience after CPL. DGCA Ground Classes take 3-6 months. With We One Aviation, students who attend regularly can become a pilot in as little as 15 months.' },
-                { q: 'What are the fees for pilot training in Delhi?', a: 'The average fees for CPL training in Delhi is INR 40–60 Lakh. This includes ground classes, 200 hours of flying, simulator training, and extra gear. We One Aviation provides scholarship and flexible payment options to make pilot training affordable.' },
-                { q: 'What is the eligibility to become a pilot in Delhi?', a: 'A Commercial Pilot Licence requires a minimum age of 18 years on the date of application (Aircraft Rules, 1937, Schedule II, Section J). Flight training can begin earlier: a Student Pilot Licence requires 16 years (Schedule II, Section B). 10+2 with Physics & Mathematics, DGCA medical clearance, and English proficiency are also required.' },
-                { q: 'What career support does We One Aviation provide in Delhi?', a: 'We run interview preparation and career guidance from the Dwarka centre: airline interview practice, licence-route planning, and help reading what an operator is asking for. We do not place students in jobs, and hiring stays with the airline.' },
-                { q: 'Can I get a scholarship for pilot training in Delhi?', a: 'Yes! We One Aviation Academy provides scholarships to every deserving student along with a flexible fees structure and loan assistance to make pilot training affordable.' },
-                { q: 'Where is We One Aviation Academy located in Delhi?', a: 'We One Aviation Academy is located in Dwarka, Delhi — close to IGI Airport, one of India\'s busiest international airports, giving students excellent real-world aviation exposure.' },
-                { q: 'What career options are available after pilot training in Delhi?', a: 'After completing pilot training, you can work as a Commercial Airline Pilot (IndiGo, Air India, SpiceJet), Private Pilot, Cargo Pilot (FedEx, Blue Dart), Flight Instructor, or Charter Pilot. Delhi\'s position as India\'s aviation hub creates excellent demand for trained pilots.' },
-            ]}
-        />
-    );
+              <h2 id="stages" className={H2}>What happens where, stage by stage</h2>
+              <div className="space-y-4 mb-6">
+                {inDelhi.map((x) => (
+                  <div key={x.stage} className="border border-gray-200 rounded-xl p-5">
+                    <p className="font-montserrat font-bold text-av-blue text-sm mb-1">{x.stage}</p>
+                    <p className="text-av-orange text-xs font-semibold leading-relaxed mb-2">{x.where}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">{x.detail}</p>
+                  </div>
+                ))}
+              </div>
+              <p className={P}>
+                Four of those five happen without leaving Delhi. For the Sector 7 specifics &mdash; addresses, appeal
+                timings at R.K. Puram, which medical centres are nearest &mdash; see{' '}
+                <Link href="/pilot-training-in-dwarka" className={A}>pilot training in Dwarka</Link>.
+              </p>
+
+              <h2 id="order" className={H2}>The order that wastes the least money from Delhi</h2>
+              <ol className="space-y-3 mb-6">
+                {[
+                  `Confirm the education gate. ${EDUCATION.requirement} If you did not take both subjects, the bridge route adds time at the front of the plan and finding out late is the expensive version.`,
+                  `Book the Class 2 medical at one of the Delhi or NCR centres. Cheapest gate, and the only one that can end the plan outright.`,
+                  `Apply for a computer number. No medical certificate needed, no flying school needed, immediate through DigiLocker.`,
+                  `Start the written papers at ${inr(PARIKSHA.fees.regularPerPaper)} each — but count backwards from your licence application so the passes do not expire before you finish flying.`,
+                  `Only then choose a flying school, on DGCA's published list and ranking rather than on a brochure. That is the decision with tens of lakhs attached.`,
+                ].map((t, i) => (
+                  <li key={t.slice(0, 30)} className="flex gap-3 items-start text-sm text-gray-600">
+                    <span className="w-6 h-6 bg-av-blue rounded-full flex items-center justify-center text-white font-bold text-xs flex-shrink-0">{i + 1}</span>{t}
+                  </li>
+                ))}
+              </ol>
+              <p className={P}>
+                How to check a school before paying is on{' '}
+                <Link href="/how-to-choose-an-aviation-academy" className={A}>this page</Link>; what the whole route looks
+                like is on <Link href="/your-guide-on-how-to-become-a-pilot-in-india" className={A}>the route guide</Link>;
+                and <Link href="/how-long-does-it-take-to-become-a-pilot" className={A}>how long it takes</Link> explains
+                why nobody can honestly give you a number of months.
+              </p>
+
+              <h2 id="removed" className={H2}>What this page used to say, and no longer does</h2>
+              <p className={P}>
+                Worth stating rather than quietly deleting. Until 16 September 2026 this page carried a batch size, a
+                cost of &ldquo;INR 40&ndash;60 Lakh&rdquo; with a four-line breakdown, full-motion simulators, three
+                separate promises about landing airline jobs, and a claim that our instructors are working pilots. None of
+                it could be substantiated: the cost ranges trace to no published document, we own no simulators, hiring is
+                the airline&rsquo;s decision, and {ACADEMY.scope.charAt(0).toLowerCase()}{ACADEMY.scope.slice(1)}
+              </p>
+              <p className={P}>
+                On cost, what can be shown is on <Link href="/cost-transparency" className={A}>our cost page</Link>:{' '}
+                {CPL_COST.benchmark.school} publishes {CPL_COST.benchmark.feeLabel}, and DGCA&rsquo;s own examination
+                charge is {inr(PARIKSHA.fees.regularPerPaper)} a paper. Everything else in this market is quoted privately
+                and should be got in writing.
+              </p>
+
+              <PeopleAlsoAsk items={peopleAlsoAsk} />
+
+              <section className="mt-10">
+                <h2 id="faqs" className={H2}>Frequently asked questions</h2>
+                <div className="space-y-3">
+                  {faqs.map((f) => (
+                    <details key={f.q} className="border border-gray-200 rounded-xl p-4">
+                      <summary className="font-semibold text-av-blue text-sm cursor-pointer">{f.q}</summary>
+                      <p className="text-gray-600 text-sm leading-relaxed mt-2">{f.a}</p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+              <h2 id="sources" className={H2}>Sources</h2>
+              <ul className="space-y-2 mb-8">
+                {articleSchema.citation.map((c) => (
+                  <li key={c.url} className="flex gap-2 items-start text-sm text-gray-600">
+                    <span className="text-av-orange font-bold flex-shrink-0">&ndash;</span>
+                    <a href={c.url} target="_blank" rel="noopener noreferrer" className={A}>{c.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
+          </article>
+          <aside className="lg:col-span-1">
+            <div className="sticky top-28"><LeadForm /></div>
+          </aside>
+        </div>
+      </section>
+    </Layout>
+  );
 }

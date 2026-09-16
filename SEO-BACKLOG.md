@@ -58,6 +58,57 @@ codebase, so 15 are unexplained and may be pages we want indexed.
 
 ## 2. Open and unblocked
 
+**2.35 — IN PROGRESS. Content depth audit across every page.**
+scripts/audit-content.cjs added: it renders every page through the same harness
+as the smoke test and reports rendered character count, headings, tables and
+which GEO/AEO structures are present, sorted thinnest first. Run it from the
+repo root. The numbers are what a crawler sees, not what the source looks like.
+
+DONE in this pass:
+
+- **/pilot-training-in-delhi — rewritten from scratch.** Keyword 27, marked
+  "critical local SEO" on the owner's own list, and it was the worst page on the
+  site by claims density. It carried: a batch size ("only 20 students per batch",
+  barred by the owner on 15 Sep), a cost of "INR 40-60 Lakh" with a four-line
+  breakdown, "full motion flight simulators" (the academy owns none, and the
+  claims gate bans it), THREE separate placement promises, "our pro instructors
+  — real pilots", "Top flying schools like We One Aviation", unverifiable
+  scholarship offers, durations throughout, named airlines as destinations, and
+  copy like "chill above the city" on a decision costing tens of lakhs.
+  Rewritten around the one decisive sourced fact: DGCA's approved-FTO list has
+  no flying base in Delhi or the NCR, so training in Delhi never means flying in
+  Delhi — for anybody. What Delhi does have is the rest of the process, unusually
+  concentrated. It also states plainly what the page used to say and why it no
+  longer does. 0 rendered chars in the audit (a harness artifact — it used
+  CityPageTemplate, now unused) to 7,746 real ones.
+- **/qatar-airways-cadet-pilot-program and /airindia-pilot-preparation** — both
+  were thin because I cut them back on 15-16 September when their unsourced
+  claims were removed. That was right; leaving them short was my debt. Depth
+  restored without adding any airline-specific figure we cannot source: what an
+  ab-initio route does not change about an Indian licence, and for Air India the
+  published supply picture and the FDTL ceiling. 3,558 to 5,352 and 3,429 to
+  4,664.
+
+STILL THIN, ranked worst first, with an honest note on each:
+
+| Page | chars | Assessment |
+|---|---|---|
+| /pilot-training-in-sri-lanka | 2,141 | Real page, linked from the home page. Claims "DGCA-recognized", "200+ flight hours", "expert faculty", "affordable fees". Needs the same treatment /pilot-training-in-delhi just got. **Highest remaining priority.** |
+| /lead-magnets/* (3 pages) | 2,410-3,378 | Thin by design — they are opt-in pages. They should still carry the substance of the guide rather than only a form, especially while the PDFs do not exist. |
+| /credentials | 3,416 | Deliberately short after the claim-strip. Arguably correct as is; worth a decision rather than a rewrite. |
+| /student-checklists | 3,904 | Useful content, no schema, no answer-first. |
+| /doubt | 1,900 | Functional Q&A tool rather than a content page. Probably correct as is. |
+| /faqs, /sitemap, /404 | 122-3,211 | Functional pages. Not content gaps. |
+| /commercial-pilot-license-admission-process | 5,089 | Has schema, no answer-first, no PAA, no sourced facts. |
+| /blogs/dgca-exam-guide | 5,296 | Same. |
+| /terms, /privacy-policy | 5,282-8,143 | Legal pages. Correct as is. |
+
+**Honest scope note:** bringing every remaining page to the standard of the
+pages rebuilt in this branch is several more sessions of work, not one. The
+audit script exists so the list is measured rather than remembered, and so
+progress can be checked by re-running it rather than by trusting a summary.
+
+
 **2.33 — DONE 2026-09-16. /about-us corrected, at the owner's instruction.**
 Backlog 2.12 is closed. The page body had already been rebuilt honestly; the
 problems were in its FAQ data and its team array.

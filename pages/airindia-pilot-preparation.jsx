@@ -3,6 +3,69 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import QuickAnswer from '../components/QuickAnswer';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
+import StructuredData from '../components/StructuredData';
+import { generateFAQSchema } from '../lib/schema';
+import { ACADEMY, CPL_HOURS, DGCA_PAPERS, EXAM_RULES, MIN_AGE, RTR, PILOT_SUPPLY, FDTL } from '../lib/facts';
+
+/*
+ * DEPTH RESTORED 2026-09-16, after a content audit rendering every page found
+ * this one thin. It was cut back on 15-16 September when a "100% placement
+ * focus" tile and an asserted description of Air India's selection stages were
+ * removed. Both removals were right; the page was left short.
+ *
+ * What is added does not depend on figures about Air India's recruitment that
+ * we cannot source. It is about what airline recruitment asks of a licence
+ * holder generally, what the licence itself requires regardless, and the
+ * published supply picture — which is the honest frame for anyone preparing for
+ * an airline selection. Every figure comes from lib/facts.js.
+ */
+const aiPaa = [
+  {
+    q: 'What does airline pilot recruitment in India involve?',
+    a: 'For a licence holder, typically aptitude and psychometric screening, a group exercise, a technical interview and an HR interview — though the exact stages, their order and the cut-offs are set by each airline per campaign and published with the vacancy. We prepare you for those stages; we do not claim to know any airline\u2019s current question bank, and you should be sceptical of anyone who does.',
+  },
+  {
+    q: 'What does the licence require, regardless of which airline you target?',
+    a: `The requirements do not move with the employer: ${CPL_HOURS.total} hours as pilot of an aeroplane, ${DGCA_PAPERS.length} DGCA written papers at ${EXAM_RULES.theory.passMark}% each, a Class 1 medical, ${RTR.name}, and a minimum age of ${MIN_AGE.CPL} for a Commercial Pilot Licence. Preparation changes how ready you are on the day. It changes nothing about the threshold.`,
+  },
+  {
+    q: 'Is there a shortage of pilots in India?',
+    a: `Not at entry level, and this is the most useful thing to understand before an airline selection. The Ministry of Civil Aviation's published position is: "${PILOT_SUPPLY.statement}" So a licence does not make you scarce, the first seat is competitive, and the scarcity that commands a premium sits at command level.`,
+  },
+  {
+    q: 'How much will I fly once hired?',
+    a: `Capped by regulation. Under ${FDTL.citation}, flight time is limited to ${FDTL.limits.map((l) => `${l.hours} hours in ${l.period}`).join(', ')}, with a minimum weekly rest of 48 continuous hours including two local nights. Worth knowing, because a large part of Indian airline pilot pay is linked to hours flown.`,
+  },
+];
+
+const aiFaqs = [
+  { q: 'Do you guarantee selection?', a: 'No. No selection rate, no success percentage and no promise of a job. Hiring is the airline\u2019s decision and nobody outside it can commit to an outcome.' },
+  { q: 'Who is this preparation for?', a: 'Pilots who already hold a licence — CPL holders and type-rated pilots preparing for airline recruitment. If you have no licence yet, you are looking for an ab-initio route instead, and the cadet page explains the difference.' },
+  { q: 'Do you know Air India\u2019s current selection process?', a: 'We prepare candidates for the stages airline selections commonly run. We do not publish a description of any airline\u2019s current process as fact, because we could not source one — the airline publishes its own criteria with each campaign and that is what you should read.' },
+  { q: 'Does preparation change what DGCA requires?', a: `No. ${CPL_HOURS.total} hours, ${DGCA_PAPERS.length} papers at ${EXAM_RULES.theory.passMark}%, a Class 1 medical and ${RTR.name} are set by regulation and identical whoever you are applying to.` },
+  { q: 'What does We One Aviation actually do?', a: ACADEMY.scope },
+];
+
+const aiArticleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Air India Pilot Recruitment Preparation: What Is Fixed and What Is Not',
+  description: 'Airline selection stages are set per campaign by the airline. What is fixed is the licence: 200 hours, five papers at 70%, a Class 1 medical and RTR. Plus the published supply picture behind the competition.',
+  inLanguage: 'en-IN',
+  dateModified: '2026-09-16',
+  articleSection: 'Airline recruitment preparation',
+  keywords: 'air india pilot recruitment, airline pilot interview preparation, air india pilot selection, cpl holder airline preparation',
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://weoneaviation.in/airindia-pilot-preparation' },
+  image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+  author: { '@type': 'Organization', name: ACADEMY.name, url: ACADEMY.url },
+  publisher: { '@type': 'EducationalOrganization', name: ACADEMY.name, url: ACADEMY.url, logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
+  citation: [
+    { '@type': 'CreativeWork', name: PILOT_SUPPLY.sources[0].label, url: PILOT_SUPPLY.sources[0].url },
+    { '@type': 'CreativeWork', name: FDTL.sources[0].label, url: FDTL.sources[0].url },
+  ],
+};
 import AutoInternalLinks from '../components/AutoInternalLinks';
 
 const heroSlides = [
@@ -191,6 +254,12 @@ export default function AirIndiaPilotPreparation() {
               * draws the distinction and routes the cadet reader correctly.
               */}
             <AirIndiaRouteNote />
+
+            <StructuredData data={[aiArticleSchema, generateFAQSchema(aiFaqs)]} />
+
+            <section className="px-4 pt-12 max-w-4xl mx-auto">
+                <QuickAnswer question={aiPaa[0].q} answer={aiPaa[0].a} />
+            </section>
 
             <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
                 <div className="max-w-7xl mx-auto">
@@ -410,6 +479,19 @@ export default function AirIndiaPilotPreparation() {
                     </div>
                 </div>
             </section>
+            <section className="px-4 pb-16 max-w-4xl mx-auto">
+                <PeopleAlsoAsk items={aiPaa} />
+                <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12">Frequently asked questions</h2>
+                <div className="space-y-3">
+                    {aiFaqs.map((f) => (
+                        <details key={f.q} className="border border-gray-200 rounded-xl p-4">
+                            <summary className="font-semibold text-av-blue text-sm cursor-pointer">{f.q}</summary>
+                            <p className="text-gray-600 text-sm leading-relaxed mt-2">{f.a}</p>
+                        </details>
+                    ))}
+                </div>
+            </section>
+
         </Layout>
     );
 }
