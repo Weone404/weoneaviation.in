@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
+import DgcaPaperFacts from '../components/DgcaPaperFacts';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
@@ -326,6 +327,12 @@ export default function AirRegulations() {
                                 </Link>
                             </div>
 
+                        <DgcaPaperFacts
+                            paper="Air Regulation"
+                            bookSubject="Air Regulations"
+                            note="DGCA spells this paper Air Regulation in the syllabus and Air Regulations in its study material list; they are the same subject."
+                        />
+
                         </ScrollReveal>
                     </div>
 
@@ -358,7 +365,7 @@ export default function AirRegulations() {
                                 <div className="text-2xl font-montserrat font-black">CPL / PPL</div>
                                 <div className="text-white/70 text-xs mt-1">ICAO + DGCA Standards</div>
                                 <div className="text-white/70 text-xs mt-1">Mock Tests & Question Bank</div>
-                                <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer"
+                                <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
                                     Get Free Counselling
                                 </a>

@@ -136,7 +136,6 @@ export default function PilotTrainingDelhi() {
                 'Well-built infrastructure in Dwarka, Delhi',
                 'Study library for students',
                 'Only 20 students per batch — personalized attention',
-                'Established on 15th Jan 2002 — 20+ years of excellence',
                 'Limited seats available — Apply Now!',
             ]}
 

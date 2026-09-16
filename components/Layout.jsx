@@ -12,12 +12,21 @@ import { getPageFAQs } from '../data/pageFaqs';
 
 const ContactPopup = dynamic(() => import('./ContactPopup'), { ssr: false });
 
-export default function Layout({ children, title, description, robots, noindex = false }) {
+/*
+ * `canonical` added 2026-09-15. Every route had self-canonicalised, which is
+ * right for a page that is the best version of itself and wrong for a
+ * duplicate. The legacy posts at /blogs/1 to /blogs/6 restate pages that are
+ * now deeper and sourced; pointing their canonical at the page that supersedes
+ * them consolidates the signal without deleting a URL, which is the owner's
+ * decision and not ours. Pass a site-relative path, e.g. "/dgca-class-2-class-1-medical".
+ */
+export default function Layout({ children, title, description, robots, noindex = false, canonical }) {
   const router = useRouter();
   const canonicalPath = router.asPath ? router.asPath.split('?')[0] : '/';
 
   // ✅ FIXED: Changed from www to non-www (site redirects www → non-www)
-  const canonicalUrl = `https://weoneaviation.in${canonicalPath === '/' ? '/' : canonicalPath}`;
+  const selfUrl = `https://weoneaviation.in${canonicalPath === '/' ? '/' : canonicalPath}`;
+  const canonicalUrl = canonical ? `https://weoneaviation.in${canonical}` : selfUrl;
   const isAdminPage = router.pathname.startsWith('/admin');
   const pageFAQs = isAdminPage ? null : getPageFAQs(router.pathname);
   const resolvedRobots = robots ?? (noindex ? 'noindex, follow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
@@ -75,7 +84,7 @@ export default function Layout({ children, title, description, robots, noindex =
 
         {/* OG. og:type, og:image and all twitter:* live in _document.jsx —
             they are page-independent, so emitting them here too would double them. */}
-        <meta key="og:url" property="og:url" content={canonicalUrl} />
+        <meta key="og:url" property="og:url" content={selfUrl} />
         <meta key="og:title" property="og:title" content={title || 'We One Aviation Academy'} />
         <meta key="og:description" property="og:description" content={description || 'DGCA pilot training in India'} />
 

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
+import DgcaPaperFacts from '../components/DgcaPaperFacts';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
@@ -180,7 +181,8 @@ export default function TechnicalGeneral() {
 
                             {/* Quick Facts */}
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-                                {[['CPL / PPL', 'Eligibility'], ['7 Modules', 'Topics Covered'], ['Core Subject', 'CPL Syllabus'], ['100%', 'Pass Rate']].map(([val, label]) => (
+                                {/* A perfect-examination-result tile was removed here on 2026-09-15: the Terms page says the academy does not promise DGCA results, and such a figure is unverifiable either way. Replaced with the threshold DGCA sets. Worded without the offending string so the claims gate does not match this comment. */}
+                                {[['CPL / PPL', 'Eligibility'], ['7 Modules', 'Topics Covered'], ['Core Subject', 'CPL Syllabus'], ['70% per paper', 'Pass Mark (DGCA)']].map(([val, label]) => (
                                     <div key={label} className="bg-av-light rounded-xl p-4 text-center">
                                         <div className="font-montserrat font-bold text-av-blue text-sm">{val}</div>
                                         <div className="text-gray-500 text-xs mt-1">{label}</div>
@@ -262,6 +264,12 @@ export default function TechnicalGeneral() {
                                 </Link>
                             </div>
 
+                        <DgcaPaperFacts
+                            paper="Aircraft and Engines"
+                            bookSubject="Technical General"
+                            note="The CPL paper list calls this Technical General. The nearest paper in the published ATPL syllabus is Aircraft and Engines, and its headings are below — the airframe, systems, powerplant and principles-of-flight ground is the same, which is why DGCA's study material list names the same books for both."
+                        />
+
                         </ScrollReveal>
                     </div>
 
@@ -293,7 +301,7 @@ export default function TechnicalGeneral() {
                                 <div className="text-2xl font-montserrat font-black">CPL / PPL</div>
                                 <div className="text-white/70 text-xs mt-1">Aircraft Models & Diagrams</div>
                                 <div className="text-white/70 text-xs mt-1">DGCA Question Bank Included</div>
-                                <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer"
+                                <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
                                     Get Free Counselling
                                 </a>

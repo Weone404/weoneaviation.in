@@ -28,9 +28,10 @@ const nextConfig = {
     ],
   },
 
-  // ── 301 redirect: enforce non-www as the canonical domain ───────────────
-  // Vercel runs this at the Edge — zero latency, no Lambda cold start.
-  // This eliminates the www vs non-www duplicate content split.
+  // The www -> apex 301 that this comment used to claim existed is now real.
+  // It lives at the top of the redirects() array below, where it can be seen.
+  // Do not describe a rule here that is not implemented; that is how this one
+  // went missing for as long as it did.
   /*
    * ── Database-post consolidation: still pending ────────────────────────────
    *
@@ -45,13 +46,56 @@ const nextConfig = {
    * { source: '/blogs/6a1d00f816d7f55288a22710', destination: '/blogs/how-pilots-build-hours', permanent: true },
    * { source: '/blogs/6a0bf3f4a8c579faedcb51e6', destination: '/blogs/how-pilots-build-hours', permanent: true },
    * { source: '/blogs/6a8be2f757898ec159830c3e', destination: '/blogs/dgca-medical-requirements', permanent: true },
-   * { source: '/blogs/6a240cea7b692cb9fe764c82', destination: '/blogs/multi-engine-rating-explained', permanent: true },
-   * { source: '/blogs/69f970e6d58c9676b0a61c01', destination: '/blogs/cpl-vs-cadet-program', permanent: true },
    *
-   * The remaining ~14 database posts stay live and untouched pending GSC data.
+   * STILL MISSING as at 2026-09-15: /blogs/how-pilots-build-hours and
+   * /blogs/dgca-medical-requirements do not exist as pages. Do not activate
+   * either line until they do.
+   *
+   * ONE CORRECTION, so nobody activates this list as written:
+   *   6a8be2f757898ec159830c3e is "Aviation Safety Procedures Every Student
+   *   Must Know". Pointing it at a DGCA medical page is a topic mismatch and
+   *   would be a bad 301. Re-decide its destination; do not use the line above.
+   *
+   * The two other lines that used to sit here — 6a240cea (Multi Engine Rating
+   * Explained) and 69f970e6 (CPL vs Cadet Program) — named destinations that
+   * never existed. Both now point at destinations that do, and have moved into
+   * the ACTIVE block below.
+   *
+   * THE FULL INVENTORY is now written down, which it was not before:
+   * data/legacy-blog-inventory.md lists all 36 database posts and all 5
+   * numeric-id posts with a status for each, read from the live blog index on
+   * 15 September 2026. Work from that file, not from memory.
    */
   async redirects() {
     return [
+      /*
+       * ── www -> apex, 301 (ADDED 2026-09-16) ───────────────────────────────
+       *
+       * This rule did not exist. A comment higher up in this file claimed it
+       * did — "301 redirect: enforce non-www as the canonical domain. Vercel
+       * runs this at the Edge" — with nothing implementing it, and no redirect
+       * in the table carried a host condition.
+       *
+       * VERIFIED LIVE on 2026-09-16 before writing this: fetching
+       * https://www.weoneaviation.in/dgca-pariksha returned the page with no
+       * redirect, and https://www.weoneaviation.in/ppl-full-form served a
+       * correct apex rel=canonical alongside "index, follow". So both hostnames
+       * were serving every route, with only a canonical hint to separate them.
+       *
+       * WHAT IT WAS COSTING, from the Semrush positions export of 2026-09-15:
+       * 371 of 857 ranking rows sat on www, carrying 295,190 of the tracked
+       * search volume, and 49 keywords ranked on www and apex at the same time.
+       * /dgca-full-form earns its traffic on the www copy while the apex copy
+       * earns none — "dgca", 90,500 volume, position 19 on www.
+       *
+       * A canonical is a hint. A 301 is not. This is the hint made binding.
+       */
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.weoneaviation.in' }],
+        destination: 'https://weoneaviation.in/:path*',
+        permanent: true,
+      },
       /*
        * ── Database-post consolidation (ACTIVE) ──────────────────────────────
        * Each ObjectId below is a post authored through /admin/blog that a
@@ -62,6 +106,84 @@ const nextConfig = {
       { source: '/blogs/6a01656be977bff6d3d6bd42', destination: '/blogs/best-flying-school-in-india', permanent: true },
       { source: '/blogs/6a7178c67cef5b2241a02159', destination: '/blogs/dgca-ground-school-guide', permanent: true },
       { source: '/blogs/6a06b251216e3de16875f5b0', destination: '/blogs/dgca-ground-school-guide', permanent: true },
+      /*
+       * Added 2026-09-15 with /blogs/aviation-jobs-besides-pilot, which is the
+       * rebuild of these. Two ObjectIds because the same post was authored
+       * twice; the first carries 24 keyword mappings and 23,190 monthly
+       * searches, the second 2 mappings and 140.
+       */
+      { source: '/blogs/6a13dbf1ad864b831525ec3b', destination: '/blogs/aviation-jobs-besides-pilot', permanent: true },
+      { source: '/blogs/6a38b7aece6bdc909efab785', destination: '/blogs/aviation-jobs-besides-pilot', permanent: true },
+      /*
+       * Added 2026-09-15. "How to Become a Pilot in India after 12th" at this
+       * ObjectId duplicates /how-to-become-a-pilot-after-12th, which already
+       * exists and is the fuller of the two flat pages (564 lines against 243
+       * at /how-to-become-a-pilot/after-12th). The ObjectId carries 8,100
+       * monthly searches in the keyword mapping and no ranking signal of its
+       * own, because it self-canonicalises to the id. No new page needed.
+       */
+      { source: '/blogs/69ef4fb93a29bf8490327d34', destination: '/how-to-become-a-pilot-after-12th', permanent: true },
+      /*
+       * Added 2026-09-15 with /how-to-choose-an-aviation-academy, which is the
+       * rebuild of this post. "Best Aviation Academy Near Me — Start Your
+       * Career in Aviation Today" carries 16,630 mapped monthly searches, the
+       * largest term on the owner's list that had no honest home. The old post
+       * answered "which academy is best" by nominating itself; the new page
+       * answers it with DGCA's own approved-FTO list and published ranking,
+       * and says plainly that a ground school — this one included — is not on
+       * that list.
+       */
+      { source: '/blogs/69f1a52df3ae4e86333eac32', destination: '/how-to-choose-an-aviation-academy', permanent: true },
+      /*
+       * Added 2026-09-16 at the owner's instruction. /blogs/4 was a legacy
+       * numeric-id post titled "Pilot Salary in India 2024 – Complete Breakdown
+       * by Airline", carrying per-airline salary bands that no Indian airline
+       * publishes. From the Semrush positions export of 2026-09-15 it held 41
+       * keywords and 42,030 of search volume — "pilot salary" alone is 27,100,
+       * at position 66 — and returned zero visits, while the real salary page
+       * held 2 keywords at position 40. The wrong URL was carrying the topic.
+       *
+       * A canonical was tried first and was the wrong instrument: the owner
+       * asked for the URL itself to change, and a numeric id is not a URL that
+       * can ever rank on its merits. The post is removed from both arrays in
+       * pages/blogs/[id].jsx and pages/blogs/index.jsx in this same commit, so
+       * nothing is generated at this path any more.
+       */
+      { source: '/blogs/4', destination: '/commercial-pilot-license-salary', permanent: true },
+      /*
+       * Added 2026-09-15. Four consolidations onto destinations that already
+       * exist and are deeper and sourced. Each source is a database post that
+       * self-canonicalises to its ObjectId, is absent from the sitemap and
+       * carries no ranking signal of its own.
+       *
+       * 69dc860c  "DGCA Subjects Coaching — Best Training for Pilot Ground
+       *           Classes in India" -> /dgca-ground-classes. Same subject,
+       *           and the destination is the service page for it.
+       * 69f970e6  "CPL vs Cadet Program: Which Is Better for Pilot Training?"
+       *           -> /cadet-pilot-program. Its old mapping named
+       *           /blogs/cpl-vs-cadet-program, which was never built. The hub
+       *           shipped on 15 Sep 2026 answers exactly this question, and
+       *           answers it without airline-specific figures that go stale.
+       * 6a87eae0  "Importance of Simulator Training in Aviation" ->
+       *           /blogs/cpl-simulator-hours-dgca-rules, which states the
+       *           Schedule II cap rather than describing simulators in general.
+       * 6a893d2e  "What is CRM (Crew Resource Management)?" ->
+       *           /blogs/mcc-training-for-pilots-in-india. Not an identical
+       *           topic: CRM is taught inside MCC rather than being the same
+       *           thing. It is the closest real page on the site, and a
+       *           near-topic 301 beats a thin orphan. Revisit if a dedicated
+       *           CRM page is ever written.
+       * 6a240cea  "Multi Engine Rating Explained" ->
+       *           /blogs/multi-engine-rating-for-pilots-in-india. This is the
+       *           correction of the old commented line, which named
+       *           /blogs/multi-engine-rating-explained — a slug that has never
+       *           existed on this site.
+       */
+      { source: '/blogs/69dc860c1f57ee917ebdcd84', destination: '/dgca-ground-classes', permanent: true },
+      { source: '/blogs/69f970e6d58c9676b0a61c01', destination: '/cadet-pilot-program', permanent: true },
+      { source: '/blogs/6a87eae016c8bc859396901b', destination: '/blogs/cpl-simulator-hours-dgca-rules', permanent: true },
+      { source: '/blogs/6a893d2e2c2fb9efee8153ca', destination: '/blogs/mcc-training-for-pilots-in-india', permanent: true },
+      { source: '/blogs/6a240cea7b692cb9fe764c82', destination: '/blogs/multi-engine-rating-for-pilots-in-india', permanent: true },
 
       {
         source: '/Pilot-Course-&-Pilot-Training-in -ndia',
@@ -323,11 +445,13 @@ const nextConfig = {
         permanent: true,
       },
       
-      {
-        source: '/cadet-pilot-program',
-        destination: '/emirates-cadet-pilot-program',
-        permanent: true,
-      },
+      /*
+       * REMOVED 2026-09-15: /cadet-pilot-program used to 301 to
+       * /emirates-cadet-pilot-program, which sent every generic "cadet pilot
+       * program" search onto one airline's page while six airline pages
+       * competed with each other for the term. It is now a real hub page
+       * sitting above all six. Do not restore this redirect.
+       */
       
       {
         source: '/cpl-full-form',
@@ -414,8 +538,10 @@ const nextConfig = {
       },
       
       {
+        // Repointed 2026-09-11 from /commercial-pilot-license-eligibility now
+        // that the medical page it was always about exists again.
         source: '/how-to-obtain-dgca-class-2-class-1-medical',
-        destination: '/commercial-pilot-license-eligibility',
+        destination: '/dgca-class-2-class-1-medical',
         permanent: true,
       },
       
@@ -582,14 +708,16 @@ const nextConfig = {
       { source: '/faq', destination: '/faqs', permanent: true },
       { source: '/pilot-course-training-in-india', destination: '/pilot-training-in-india', permanent: true },
       /*
-       * The dedicated DGCA medical-class page. Its slug, title, H1 and whole
-       * subject were the Class 1 / Class 2 distinction, which sits on the
-       * unsourced list in scripts/check-claims.js. Sanitising the copy would
-       * have left the URL asserting what the page no longer said, so the route
-       * retires to the sanitised eligibility page instead. Internal links and
-       * the Navbar entry were repointed in the same pass.
+       * RESTORED 2026-09-11. This route was retired in the 2026-08 claims pass
+       * because the Class 1 / Class 2 distinction — its whole subject — could
+       * not be sourced, and a URL that asserts what its page no longer says is
+       * worse than no URL. The CAR that sets the distinction has since been
+       * found (Section 7, Series 'C', Part I, Rev. 6 of 18 October 2022,
+       * with rules 39B and 39C behind it), so the page is back and rendered
+       * from lib/facts.js MEDICAL_STANDARDS. The redirect below is deleted
+       * rather than commented, because a 301 to the eligibility page was
+       * sending away every search for a medical class.
        */
-      { source: '/dgca-class-2-class-1-medical', destination: '/commercial-pilot-license-eligibility', permanent: true },
       /*
        * Capitalised slugs retired.
        *

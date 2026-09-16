@@ -56,3 +56,25 @@ workflow now discards it before the merge.
   change with the post; every previous blog commit does.
 - **Conflicting sources** — if secondary sources disagree on a figure, that is
   not a source. Leave the figure out and say it varies.
+
+## Topic priority and dating
+
+Added 2026-09-11, after an audit found five of eight posts from 2–11 September
+aimed at people who already hold a CPL, and every card on the blog index
+advertising a publication date in the future.
+
+- **Write for pre-CPL buyers.** The people who pay this academy are students and
+  parents deciding whether and how to start: eligibility, the 10+2 route, DGCA
+  ground subjects, computer number and exam booking, costs, medicals, choosing a
+  flying school. Post-CPL topics — type rating, MCC, IR, FIR, MER, airline
+  interviews — need a stated reason in the commit message for why that audience
+  is worth a day's post. Without one, pick a different topic.
+- **Pariksha figures come only from `PARIKSHA` in `lib/facts.js`.** Fees, session
+  dates, file sizes, age limits, processing time, rejection rules: import them.
+  If a figure you need is not in `PARIKSHA`, it has not been verified against a
+  primary source — leave it out of the post and say it varies, or add it to
+  `PARIKSHA` with its source URL first.
+- **Never publish a future date.** A post's `date` must not be later than the day
+  of the build, and the entry in `pages/blogs/index.jsx` must match the post in
+  `pages/blogs/[id].jsx` exactly. The post is the source of truth; change it
+  there first.

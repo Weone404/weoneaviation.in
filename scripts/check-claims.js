@@ -76,8 +76,16 @@
  *   r.6 age 16 + Class X; r.8(4) written then practical; r.8(5) syllabus;
  *   r.8(6) practical within three years of the written.
  *
+ * VERIFIED SINCE — 2026-09-11
+ *   - the DGCA theory pass mark. It is 70% per subject, set by CAR Section 7,
+ *     Series 'B', Part I, Rev. 2 dated 13 February 2019, para 5.6, read from
+ *     two independent copies of the DGCA-issued document (the 2019 text and
+ *     the older Rev. 3 of 7 September 2007, para 5.5) because DGCA's own CAR
+ *     library is served through a JavaScript portal that cannot be fetched.
+ *     Same pass encoded the oral marks (para 5.7) and paper validity (6.7).
+ *     It lives in lib/facts.js EXAM_RULES. Import it; do not retype it.
+ *
  * STILL UNVERIFIED — must not appear on the site until sourced
- *   - the DGCA theory pass mark (set under CAR Section 7, not in the Rules)
  *   - the Class 1 / Class 2 medical split and when each applies. Rule 39B is
  *     the instrument but delegates the standards to the Director-General; the
  *     split lives in a DGCA medical CAR served only through DGCA's
@@ -112,7 +120,31 @@ const OWNS = '(our fleet|our aircraft|our simulator|we operate|owned by us|in-ho
 const RUPEES_PER_MONTH = '₹\\s*\\d[\\d.,]*(\\s*[-–to]+\\s*\\d[\\d.,]*)?\\s*(LPM|(L|lakh|Lakh|lakhs|crore|Crore)\\s*(/|per\\s+)\\s*(month|PM|p\\.m\\.))';
 const PATTERNS = [
   /3500\+/i, /3000\+/i, /500\+\s*pilots/i,
+  /*
+   * Added 2026-09-15. The two patterns above are literal digit strings, so
+   * "3,000+ Pilots Trained Across India" on /dgca-ground-classes-in-india sailed
+   * past them for want of a comma. These catch the comma-formatted forms.
+   */
+  /3,000\+/i, /3,500\+/i, /\d,\d{3}\+\s*pilots\s*trained/i,
+  /*
+   * Added 2026-09-15. "100%" above the label "Pass Rate" on /air-navigation and
+   * "100%" above "DGCA Pass Rate" on /dgca-ground-classes-in-india both survived
+   * /95%\s*pass/ because the halves are separate array entries with markup
+   * between them once rendered. The site's own Terms page says it does not
+   * promise pass rates; this makes the build enforce that.
+   */
+  /(100|99|98|97|96)\s*%?[\s\S]{0,160}pass\s*rate/i,
   /98%\s*success/i, /100%\s*result/i, /100%\s*placement/i, /95%\s*pass/i,
+  /*
+   * Added 2026-09-15. /airindia-pilot-preparation rendered a statistics tile
+   * reading "100%" above the label "Placement Focus". The pattern above never
+   * fired, because the two halves are separate array entries and the rendered
+   * HTML puts markup between them — the literal string "100% placement" does
+   * not exist anywhere. This version tolerates the markup in between. Keep the
+   * bound tight: too wide and an unrelated "100%" elsewhere on a long page
+   * will collide with the word "placement" and fail a build for nothing.
+   */
+  /100\s*%?[\s\S]{0,160}placement/i,
   /25\+\s*partner/i, /225\+\s*hours/i, /20\+\s*countries/i,
   /oldest pilot training/i, /India'?s #1/i, /India'?s premier/i,
   /aggregateRating/i, /ISO 9001/i, /www\.weoneaviation\.in/i,

@@ -165,8 +165,15 @@ export default function InIndia() {
               <h3 className="font-montserrat text-xl font-bold text-av-blue mb-5">Training Routes Available in India</h3>
               <div className="grid md:grid-cols-2 gap-5">
                 {[
-                  { title: 'Train in India', icon: '🇮🇳', pros: ['Lower cost (₹40-70L)', 'DGCA-direct licensing', 'No conversion required', 'Family proximity', 'Multiple school options'], cons: ['Limited aircraft fleet', 'Weather disruptions', 'Longer wait times'] },
-                  { title: 'Train Abroad', icon: '🌍', pros: ['Better fleet & infrastructure', 'Faster training completion', 'International exposure', 'Better weather', 'Quality education'], cons: ['Higher cost (₹50-90L)', 'License conversion needed', 'Away from family', 'Currency risk'] },
+                  /*
+                   * Cost figures removed from both columns 2026-09-15: "₹40-70L" and
+                   * "₹50-90L" could not be traced to any published document. The
+                   * structural differences below are real and are the honest basis for
+                   * this comparison; /cost-transparency covers what can be shown about
+                   * price.
+                   */
+                  { title: 'Train in India', icon: '🇮🇳', pros: ['DGCA-direct licensing, so no conversion step', 'No visa', 'Family proximity', 'Multiple school options'], cons: ['Aircraft availability is often the constraint', 'Monsoon disrupts flying in much of the country', 'Longer wait times'] },
+                  { title: 'Train Abroad', icon: '🌍', pros: ['Larger fleets, so hours accumulate faster', 'Better year-round flying weather', 'International exposure'], cons: ['Licence conversion needed before flying commercially in India', 'Visa, accommodation and currency risk on top of the fee', 'Away from family'] },
                 ].map(route => (
                   <div key={route.title} className="bg-white rounded-2xl p-5 shadow-md border border-gray-100">
                     <h4 className="font-montserrat font-bold text-av-blue mb-3 flex items-center gap-2">{route.icon} {route.title}</h4>

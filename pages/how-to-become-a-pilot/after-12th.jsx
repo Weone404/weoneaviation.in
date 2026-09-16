@@ -199,10 +199,17 @@ export default function After12th() {
             <ScrollReveal className="mt-10">
               <h3 className="font-montserrat text-xl font-bold text-av-blue mb-4">What does pilot training cost in India?</h3>
               <div className="grid sm:grid-cols-3 gap-4">
+                {/*
+                  * REPLACED 2026-09-15. These three tiles gave cost ranges for a PPL
+                  * in India, a CPL in India and a CPL abroad. None could be traced to
+                  * a published document, and they disagreed with the four other ranges
+                  * this site quoted elsewhere. What is shown instead is what can be
+                  * sourced: DGCA's own statutory charges and IGRUA's published fee.
+                  */}
                 {[
-                  { course: 'PPL (India)', cost: '₹6-10 Lakh' },
-                  { course: 'CPL (India)', cost: '₹40-70 Lakh' },
-                  { course: 'CPL (Abroad)', cost: '₹50-90 Lakh' },
+                  { course: 'DGCA exam, per paper', cost: '₹2,500' },
+                  { course: 'On-demand exam, per paper', cost: '₹5,000' },
+                  { course: 'IGRUA published course fee', cost: '₹55,00,000' },
                 ].map(item => (
                   <div key={item.course} className="bg-av-light rounded-xl p-5 text-center">
                     <div className="font-montserrat text-2xl font-black text-av-orange">{item.cost}</div>

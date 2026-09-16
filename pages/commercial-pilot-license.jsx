@@ -176,12 +176,19 @@ const careerOptionsList = [
   "Aviation Safety Officer",
 ];
 
+/*
+ * REWRITTEN 2026-09-15. This table gave LPA figures for each rank. Indian
+ * airlines do not publish pilot pay scales; none of those numbers could be
+ * traced. The progression itself is real and worth showing, so the table now
+ * describes what each rank IS and what moves a pilot up it. Pay is handled
+ * honestly on /commercial-pilot-license-salary.
+ */
 const salaryTable = [
-  { position: "Student Pilot", salary: "Training Phase" },
-  { position: "First Officer", salary: "₹12–20 LPA" },
-  { position: "Senior First Officer", salary: "₹20–35 LPA" },
-  { position: "Captain", salary: "₹50 LPA or Higher" },
-  { position: "International Airline Pilot", salary: "Higher Salary + Benefits" },
+  { position: "Student Pilot", salary: "Training. A cost, not an income." },
+  { position: "First Officer", salary: "The first paid seat. Flies as co-pilot; the wait to reach it varies with the hiring cycle." },
+  { position: "Senior First Officer", salary: "Same seat, more experience and hours. A step on the way to command rather than a separate rank everywhere." },
+  { position: "Captain", salary: "Pilot-in-command. The largest step in the career, and the airline's own upgrade criteria sit on top of the DGCA minimum." },
+  { position: "International Airline Pilot", salary: "Overseas carrier. Requires a licence that regulator accepts, so a conversion step comes first." },
 ];
 
 const ourServicesList = [

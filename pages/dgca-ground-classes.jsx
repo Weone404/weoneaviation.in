@@ -131,6 +131,18 @@ const whyChoose = [
 
 const blogs = [
   {
+    title: 'Aviation Academy Near Me: How to Check One',
+    date: 'September 15, 2026',
+    desc: "DGCA publishes an approved flying school list and a twice-yearly ranking against five weighted parameters. How to read both, why no approved flying base is in Delhi, and the questions to ask a ground school \u2014 which is on no such list, ours included.",
+    href: '/how-to-choose-an-aviation-academy',
+  },
+  {
+    title: 'Pilot Training in Dwarka',
+    date: 'September 15, 2026',
+    desc: 'Ground classes from Sector 7, and the three DGCA institutions a Delhi student needs that are already in the city — the Central Examination Organisation, four approved medical centres, and the equivalence body.',
+    href: '/pilot-training-in-dwarka',
+  },
+  {
     title: 'Pilot Training in Delhi',
     date: 'February 13, 2025',
     desc: 'Flight Simulator Practice in pilot training Course. DGCA Practice Paper, Private Pilot License (PPL) Course Fees, Full Form of CPL...',
@@ -899,7 +911,7 @@ export default function DGCAGroundClasses() {
                 <div className="text-white/70 text-xs mt-1">Full DGCA Syllabus Coverage</div>
                 <div className="text-white/70 text-xs mt-1">25% Scholarship Available</div>
                 <a
-                  href="https://wa.me/919355611996"
+                  href="https://wa.me/919667370747"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all"

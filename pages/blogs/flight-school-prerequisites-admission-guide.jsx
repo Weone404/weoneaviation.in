@@ -528,8 +528,11 @@ export default function FlightSchoolPrerequisites() {
 
       <h2 id="cost" className={H2}>How much does flight school cost in India?</h2>
       <p>
-        Indicatively ₹40–70 lakh all in, depending mainly on where you do the flying. Three buckets,
-        and only one of them appears in most brochures.
+        The figure quoted everywhere is ₹40–70 lakh all in. It is a market estimate rather than a sourced figure — no Indian government body publishes a price for flying training and private schools publish nothing, so treat it as what quotes look
+        like rather than a price. Three buckets below, and only one of them appears in most brochures.
+        What can be shown is on our{' '}
+        <Link href="/cost-transparency" className="text-av-orange font-semibold underline">cost transparency page</Link>:{' '}
+        DGCA's statutory fees, and IGRUA's published course fee.
       </p>
 
       <div className="overflow-x-auto my-6 rounded-2xl border border-gray-200">

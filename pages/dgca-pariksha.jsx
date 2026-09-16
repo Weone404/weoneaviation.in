@@ -2,12 +2,38 @@ import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import NextImage from 'next/image';
+import QuickAnswer from '../components/QuickAnswer';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
+import StructuredData from '../components/StructuredData';
+import { generateFAQSchema } from '../lib/schema';
+import { PARIKSHA, inr, EXAM_RULES, DGCA_PAPERS, papersSummary } from '../lib/facts';
+
+/*
+ * STRUCTURED DATA AND ANSWER-FIRST ADDED 2026-09-16.
+ *
+ * WHY. From the Semrush positions export of 2026-09-15 this is the
+ * highest-traffic page on the site: 1,103 visits a month across 16 keywords
+ * and 138,600 of search volume, sitting at position 6 for "dgca pariksha"
+ * (74,000) and 9 for "pariksha dgca" (60,500). Twelve of its sixteen keywords
+ * show an AI Overview.
+ *
+ * And it shipped no JSON-LD at all. No Article node, no FAQPage — and because
+ * the route is listed in the existingFaqRoutes gate in data/pageFaqs.js,
+ * Layout was not injecting one either. It was gated out of the automatic FAQ
+ * and never given one of its own, so the single most valuable page on the site
+ * gave an answer engine nothing to lift. Its figures were already sourced;
+ * none of it was machine-readable.
+ *
+ * WHAT WAS ADDED: an answer-first block, a People-also-ask block, an Article
+ * node with citations, and a FAQPage node. No new facts — every figure below
+ * already existed in lib/facts.js with its source and the date it was read.
+ */
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const stats = [
     { num: '3–4x', label: 'Exams Per Year', icon: '📅' },
-    { num: '70%', label: 'Passing Marks', icon: '✅' },
+    { num: `${EXAM_RULES.theory.passMark}%`, label: 'Passing Marks', icon: '✅' },
     { num: 'CBT', label: 'Online Mode', icon: '💻' },
     { num: 'MCQs', label: 'Question Type', icon: '📝' },
 ];
@@ -65,29 +91,37 @@ const examPattern = [
     { label: 'Mode', value: 'Online, Computer-Based Test (CBT)' },
     { label: 'Question Type', value: 'Multiple-choice questions (MCQs)' },
     { label: 'Duration', value: 'Varies for each subject' },
-    { label: 'Passing Marks', value: 'Minimum of 70% in each subject to pass', highlight: true },
+    { label: 'Passing Marks', value: `Minimum of ${EXAM_RULES.theory.passMark}% in each subject, under ${EXAM_RULES.car.citation}, ${EXAM_RULES.theory.clause}`, highlight: true },
 ];
 
+/*
+ * The four steps DGCA actually describes, in order. The previous version told
+ * students to upload "medical certificates" at step two — nothing in the
+ * Pariksha FAQ or the Flight Crew User Manual asks for a medical certificate
+ * at any point in the examination or computer-number flow, and a student who
+ * waits for a medical before registering loses a session for no reason.
+ * Sourced from lib/facts.js PARIKSHA — see the provenance note there.
+ */
 const applySteps = [
     {
         num: '01',
-        title: 'Register on the DGCA Pariksha Portal',
-        desc: 'Create an account on the DGCA website through the DGCA exam website. Fill in all required personal and educational details.',
+        title: 'Get your computer number first',
+        desc: 'No paper can be booked without one. It is a separate online application, issued within ' + PARIKSHA.processing.days + ' working days.',
     },
     {
         num: '02',
-        title: 'Upload Required Documents',
-        desc: 'Educational certificates, ID proof, and medical certificates.',
+        title: 'Wait for the session public notice',
+        desc: 'CEO opens each session on the Pariksha portal with a public notice giving the exact application window and closing date.',
     },
     {
         num: '03',
-        title: 'Select Subjects and Exam Date',
-        desc: 'Choose the subjects you wish to appear for in the upcoming session.',
+        title: 'Fill the examination form',
+        desc: 'One application per session. Pick your papers and fill two choices of centre — the second is used if the first cannot be allotted.',
     },
     {
         num: '04',
-        title: 'Pay the Exam Fee',
-        desc: 'Submit the application fee online and confirm the payment.',
+        title: 'Pay through Bharatkosh by 2300 hrs',
+        desc: 'Payment is made only through the Government of India NTRP portal Bharatkosh. Complete it by 2300 hrs on the closing date; the fee is not refunded or adjusted afterwards.',
     },
 ];
 
@@ -99,12 +133,19 @@ const prepTips = [
     { icon: '⏱️', tip: 'Focus on Time Management: Practicing within time limits helps build confidence for the actual exam.' },
 ];
 
+/*
+ * Corrected 2026-09-11: this list previously asked for a "medical fitness
+ * certificate" and included a payment step. Neither appears in any Pariksha
+ * document for the computer-number application. The full, sourced version of
+ * this process lives on /dgca-computer-number — keep this summary short and
+ * send the reader there rather than duplicating it.
+ */
 const computerNumberSteps = [
-    { num: '01', title: 'Create a DGCA Account', desc: 'You will need to register on the DGCA portal to start the process.' },
-    { num: '02', title: 'Fill in the Details', desc: 'Provide accurate personal, educational, and medical details as required.' },
-    { num: '03', title: 'Upload Required Documents', desc: 'Submit documents such as your educational certificates, medical fitness certificate, and identity proof.' },
-    { num: '04', title: 'Payment', desc: 'Pay the applicable fees to complete the application process.' },
-    { num: '05', title: 'Computer Number Issuance', desc: 'Once your application is processed, DGCA will issue a unique computer number. This number will be required to apply for exams and track your results.' },
+    { num: '01', title: 'Register on the Pariksha portal', desc: 'NEW Candidate Registration at pariksha.dgca.gov.in. Enter your name, date of birth and parents\u2019 names exactly as on your Class 10 record.' },
+    { num: '02', title: 'Activate within 24 hours', desc: 'The activation link emailed to you is valid for 24 hours only. After that you have to register again.' },
+    { num: '03', title: 'Complete the application', desc: 'Addresses, category, nationality, any licence held, flying details and your education record with subjects.' },
+    { num: '04', title: 'Upload the documents', desc: 'Class 10 and Class 12 marksheets and pass certificates, the Board Verification Certificate for both, date-of-birth proof and address proof. Photo and signature as JPG; everything else as PDF.' },
+    { num: '05', title: 'Final Submit, then wait', desc: 'Nothing can be added afterwards. A Temporary ID is issued, and the computer number follows within ' + PARIKSHA.processing.days + ' working days of a complete application.' },
 ];
 
 const importantQueries = [
@@ -158,12 +199,67 @@ const relatedBlogs = [
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
+const LAST_CHECKED = PARIKSHA.verifiedOn.split('-').reverse().join('/');
+const CANONICAL = 'https://weoneaviation.in/dgca-pariksha';
+
+const pariksha_paa = [
+    {
+        q: 'What is DGCA Pariksha?',
+        a: `DGCA Pariksha is the online examination portal of the Directorate General of Civil Aviation, where a candidate books and sits the written papers a pilot licence requires. The papers are ${papersSummary()} — ${DGCA_PAPERS.length} in total — and each needs ${EXAM_RULES.theory.passMark}% on its own rather than an aggregate, under ${EXAM_RULES.car.citation}, ${EXAM_RULES.theory.clause}.`,
+    },
+    {
+        q: 'What is the DGCA Pariksha exam fee?',
+        a: `${inr(PARIKSHA.fees.regularPerPaper)} per paper in a regular session and ${inr(PARIKSHA.fees.olodePerPaper)} per paper in an Online On-Demand Examination, paid to the government through Bharatkosh. Oral examinations are ${inr(PARIKSHA.fees.oralPerPaper)}. Fees are not refunded and do not carry to a later session.`,
+    },
+    {
+        q: 'Do I need a computer number to book a DGCA exam?',
+        a: `Yes. No paper can be booked without one, and it is a separate online application rather than part of the exam booking. Through DigiLocker it is allotted immediately; the manual route takes ${PARIKSHA.processing.days} working days once the application is complete.`,
+    },
+    {
+        q: 'How many times a year is DGCA Pariksha held?',
+        a: `${PARIKSHA.calendar2026.regular.length} regular sessions and ${PARIKSHA.calendar2026.olode.length} Online On-Demand sessions across the year. ${PARIKSHA.calendar2026.tentative}`,
+    },
+    {
+        q: 'What is the passing mark in DGCA Pariksha?',
+        a: `${EXAM_RULES.theory.passMark}% in each paper, taken individually. There is no aggregate, so a strong paper cannot carry a weak one, and papers are cleared one at a time rather than in a single sitting.`,
+    },
+];
+
+const pariksha_faqs = [
+    { q: 'Is DGCA Pariksha the same as eGCA?', a: 'No, and confusing the two costs people time. Pariksha is the examination portal — where papers are booked and sat. eGCA is the licensing portal, where the licence application itself is made. You will need both, at different stages.' },
+    { q: 'Can I apply for a computer number without a medical certificate?', a: `Yes. The computer number application does not require a medical certificate, so the written papers can be started before the medical is done. From age ${PARIKSHA.basics.minAge}. ${PARIKSHA.basics.maxAgeNote}` },
+    { q: 'Is the DGCA Pariksha exam online?', a: 'Yes, it is a computer-based test with multiple-choice questions, booked through the Pariksha portal.' },
+    { q: 'What happens if I fail one paper?', a: `You re-sit that paper. Papers are cleared individually, so the ones you have passed stand. The fee is payable again — ${inr(PARIKSHA.fees.regularPerPaper)} in a regular session, ${inr(PARIKSHA.fees.olodePerPaper)} on demand — and you lose the cycle rather than the passes.` },
+    { q: 'How long is a DGCA paper pass valid?', a: `${EXAM_RULES.paperValidity.general} ${EXAM_RULES.paperValidity.cplAtpl} That is ${EXAM_RULES.car.citation}, ${EXAM_RULES.paperValidity.clause}. ${EXAM_RULES.paperValidity.planningNote}` },
+    { q: 'Where do I pay the DGCA examination fee?', a: `Through Bharatkosh, the government payment portal. ${PARIKSHA.fees.serviceCharge}` },
+];
+
+const pariksha_citations = PARIKSHA.sources.slice(0, 3).map((c) => ({ '@type': 'CreativeWork', name: c.label, url: c.url }));
+
+const pariksha_articleSchema_base = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'DGCA Pariksha: Exam Fees, Session Dates and How to Apply',
+    description: 'The DGCA Pariksha examination portal explained — the papers, the pass mark set by CAR, the fee per paper, the session calendar, and the computer number you cannot book without.',
+    inLanguage: 'en-IN',
+    dateModified: PARIKSHA.verifiedOn,
+    articleSection: 'DGCA examinations',
+    keywords: 'dgca pariksha, pariksha dgca, dgca exam, dgca pariksha login, dgca exam fees, dgca computer number, dgca exam dates',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
+    image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+    author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+    publisher: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in', logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
+};
+
+const pariksha_articleSchema = { ...pariksha_articleSchema_base, citation: pariksha_citations };
+
 export default function DGCAParikshaPage() {
     return (
         <Layout
-            title="DGCA Pariksha – Complete Guide 2025 | Eligibility, Syllabus, Exam Pattern"
-            description="Complete guide to DGCA Pariksha 2025. Learn about eligibility, syllabus, exam pattern, how to apply, computer number, DGCA WR office, preparation tips, and FAQs."
+            title="DGCA Pariksha 2026: Exam Fees, Dates, How to Apply"
+            description="DGCA Pariksha 2026: the four regular session dates, eight OLODE sessions, fees per paper, booking rules, eligibility, syllabus and how to apply on the portal."
         >
+            <StructuredData data={[pariksha_articleSchema, generateFAQSchema(pariksha_faqs)]} />
 
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center relative overflow-hidden">
@@ -189,6 +285,17 @@ export default function DGCAParikshaPage() {
                     </p>
                 </ScrollReveal>
             </div>
+
+            {/* Answer-first block, added 2026-09-16. See the note at the top of this file. */}
+            <section className="px-4 pt-12 max-w-4xl mx-auto">
+                <p className="text-xs text-gray-500 mb-4">
+                    Checked against DGCA Pariksha documents on {LAST_CHECKED}.
+                </p>
+                <QuickAnswer
+                    question="What is DGCA Pariksha, and what does it cost?"
+                    answer={`DGCA Pariksha is the Directorate General of Civil Aviation's own examination portal, where a candidate books and sits the written papers a pilot licence requires. There are ${DGCA_PAPERS.length} papers — ${papersSummary()} — and each needs ${EXAM_RULES.theory.passMark}% on its own rather than an aggregate, set by ${EXAM_RULES.car.citation}, ${EXAM_RULES.theory.clause}. The fee is ${inr(PARIKSHA.fees.regularPerPaper)} per paper in a regular session and ${inr(PARIKSHA.fees.olodePerPaper)} in an Online On-Demand Examination, paid to the government through Bharatkosh. Nothing can be booked without a computer number, which is a separate application — immediate through DigiLocker, or ${PARIKSHA.processing.days} working days manually. There are ${PARIKSHA.calendar2026.regular.length} regular sessions and ${PARIKSHA.calendar2026.olode.length} on-demand sessions a year.`}
+                />
+            </section>
 
             {/* ── Stats Bar ── */}
             <section className="bg-av-blue py-8">
@@ -347,6 +454,94 @@ export default function DGCAParikshaPage() {
                 </div>
             </section>
 
+            {/* ── Fees and 2026 calendar (sourced: lib/facts.js PARIKSHA) ── */}
+            <section className="py-20 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <ScrollReveal className="text-center mb-4">
+                        <div className="section-tag">Fees &amp; Dates</div>
+                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
+                            Exam Fees and <span className="text-av-orange">2026 Session Dates</span>
+                        </h2>
+                    </ScrollReveal>
+                    <p className="text-center text-gray-500 text-xs max-w-2xl mx-auto mb-10">
+                        Checked against DGCA Pariksha documents on {PARIKSHA.verifiedOn.split('-').reverse().join('/')}.{' '}
+                        <a href={PARIKSHA.portal} target="_blank" rel="noopener noreferrer" className="text-av-blue font-semibold hover:text-av-orange transition-colors">
+                            Confirm on pariksha.dgca.gov.in
+                        </a>{' '}before you pay — see our{' '}
+                        <Link href="/dgca-computer-number" className="text-av-blue font-semibold hover:text-av-orange transition-colors">
+                            computer number guide
+                        </Link>{' '}for the full sourced process.
+                    </p>
+
+                    <div className="grid lg:grid-cols-3 gap-6 mb-8">
+                        <div className="overflow-x-auto rounded-2xl shadow">
+                            <table className="w-full text-sm">
+                                <thead>
+                                    <tr className="bg-av-blue text-white">
+                                        <th className="px-5 py-3 text-left" colSpan={2}>Fee per paper</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr className="bg-white">
+                                        <td className="px-5 py-3 text-xs font-semibold text-av-blue">Regular session</td>
+                                        <td className="px-5 py-3 text-xs font-bold text-av-orange">{inr(PARIKSHA.fees.regularPerPaper)}</td>
+                                    </tr>
+                                    <tr className="bg-gray-50">
+                                        <td className="px-5 py-3 text-xs font-semibold text-av-blue">Online On-Demand (OLODE)</td>
+                                        <td className="px-5 py-3 text-xs font-bold text-av-orange">{inr(PARIKSHA.fees.olodePerPaper)}</td>
+                                    </tr>
+                                    <tr className="bg-white">
+                                        <td className="px-5 py-3 text-xs font-semibold text-av-blue">Oral paper</td>
+                                        <td className="px-5 py-3 text-xs font-bold text-av-orange">{inr(PARIKSHA.fees.oralPerPaper)}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p className="bg-white px-5 py-3 text-[11px] text-gray-500 leading-relaxed">
+                                {PARIKSHA.fees.oralNote} {PARIKSHA.fees.serviceCharge}
+                            </p>
+                        </div>
+
+                        <div className="overflow-x-auto rounded-2xl shadow">
+                            <table className="w-full text-sm">
+                                <thead>
+                                    <tr className="bg-av-blue text-white">
+                                        <th className="px-5 py-3 text-left" colSpan={2}>Regular examinations 2026</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {PARIKSHA.calendar2026.regular.map((row, i) => (
+                                        <tr key={row.session} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                                            <td className="px-5 py-3 text-xs font-semibold text-av-blue whitespace-nowrap">{row.session}</td>
+                                            <td className="px-5 py-3 text-xs text-gray-600">{row.dates}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div className="overflow-x-auto rounded-2xl shadow">
+                            <table className="w-full text-sm">
+                                <thead>
+                                    <tr className="bg-av-blue text-white">
+                                        <th className="px-5 py-3 text-left" colSpan={2}>OLODE sessions 2026</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {PARIKSHA.calendar2026.olode.map((row, i) => (
+                                        <tr key={row.session} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                                            <td className="px-5 py-3 text-xs font-semibold text-av-blue whitespace-nowrap">{row.session}</td>
+                                            <td className="px-5 py-3 text-xs text-gray-600">{row.dates}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <p className="text-center text-xs text-gray-500 max-w-3xl mx-auto">{PARIKSHA.calendar2026.tentative}</p>
+                </div>
+            </section>
+
             {/* ── Exam Pattern ── */}
             <section className="py-20 px-4 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
@@ -371,7 +566,7 @@ export default function DGCAParikshaPage() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-av-blue/80 to-transparent flex items-end p-6">
                                     <div>
                                         <p className="text-av-orange font-bold font-montserrat">Computer-Based Test</p>
-                                        <p className="text-white/80 text-xs mt-1">Online MCQ format — 70% passing marks required</p>
+                                        <p className="text-white/80 text-xs mt-1">Online MCQ format — {EXAM_RULES.theory.passMark}% passing marks required</p>
                                     </div>
                                 </div>
                             </div>
@@ -398,6 +593,71 @@ export default function DGCAParikshaPage() {
                             </div>
                         </ScrollReveal>
                     </div>
+                </div>
+            </section>
+
+            {/* ── Pass marks and paper validity (sourced: lib/facts.js EXAM_RULES) ── */}
+            <section className="py-20 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <ScrollReveal className="text-center mb-4">
+                        <div className="section-tag">Passing</div>
+                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
+                            What Counts as a <span className="text-av-orange">Pass</span>
+                        </h2>
+                    </ScrollReveal>
+                    <p className="text-center text-gray-500 text-xs max-w-3xl mx-auto mb-10">
+                        The threshold is set by {EXAM_RULES.car.citation}, not by the examination centre or the flying school.
+                    </p>
+
+                    <div className="grid lg:grid-cols-3 gap-6 mb-8">
+                        <ScrollReveal>
+                            <div className="bg-av-blue rounded-2xl p-6 text-white h-full">
+                                <p className="text-av-orange font-montserrat font-bold text-sm mb-2">Written papers</p>
+                                <p className="text-5xl font-montserrat font-black mb-3">{EXAM_RULES.theory.passMark}%</p>
+                                <p className="text-white/80 text-sm leading-relaxed mb-3">{EXAM_RULES.theory.statement}</p>
+                                <p className="text-white/60 text-xs leading-relaxed">{EXAM_RULES.theory.perSubject}</p>
+                            </div>
+                        </ScrollReveal>
+
+                        <ScrollReveal delay={120}>
+                            <div className="border border-gray-200 rounded-2xl overflow-hidden h-full">
+                                <table className="w-full text-sm">
+                                    <thead>
+                                        <tr className="bg-av-blue text-white">
+                                            <th className="px-4 py-3 text-left">Oral examination</th>
+                                            <th className="px-4 py-3 text-left">Pass mark</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {EXAM_RULES.oral.map((row, i) => (
+                                            <tr key={row.licence} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                                                <td className="px-4 py-3 text-xs font-semibold text-av-blue">{row.licence}</td>
+                                                <td className="px-4 py-3 text-xs font-bold text-av-orange whitespace-nowrap">{row.passMark}% <span className="text-gray-400 font-normal">{row.clause}</span></td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                                <p className="px-4 py-3 text-[11px] text-gray-500 leading-relaxed">{EXAM_RULES.oralRetake.statement}</p>
+                            </div>
+                        </ScrollReveal>
+
+                        <ScrollReveal delay={240}>
+                            <div className="border border-gray-200 rounded-2xl p-6 h-full">
+                                <p className="font-montserrat font-bold text-av-blue text-sm mb-3">How long a pass lasts</p>
+                                <p className="text-gray-600 text-sm leading-relaxed mb-3">{EXAM_RULES.paperValidity.general}</p>
+                                <p className="text-av-orange text-sm font-semibold leading-relaxed mb-3">{EXAM_RULES.paperValidity.cplAtpl}</p>
+                                <p className="text-gray-500 text-xs leading-relaxed mb-3">{EXAM_RULES.paperValidity.planningNote}</p>
+                                <p className="text-gray-400 text-[11px]">{EXAM_RULES.car.citation}, {EXAM_RULES.paperValidity.clause}</p>
+                            </div>
+                        </ScrollReveal>
+                    </div>
+
+                    <p className="text-center text-xs text-gray-500 max-w-3xl mx-auto">
+                        Booking, fees and documents are handled on the Pariksha portal — the sourced walkthrough is on our{' '}
+                        <Link href="/dgca-computer-number" className="text-av-blue font-semibold hover:text-av-orange transition-colors">
+                            DGCA computer number guide
+                        </Link>.
+                    </p>
                 </div>
             </section>
 
@@ -564,8 +824,8 @@ export default function DGCAParikshaPage() {
                         <div className="bg-av-blue rounded-2xl p-8 text-center">
                             <div className="text-4xl mb-3">📊</div>
                             <p className="text-av-orange font-bold text-lg font-montserrat mb-2">Passing Marks</p>
-                            <p className="text-white text-3xl font-black font-montserrat mb-2">70%</p>
-                            <p className="text-white/70 text-sm">To pass the DGCA Pariksha, you need at least 70% in each subject.</p>
+                            <p className="text-white text-3xl font-black font-montserrat mb-2">{EXAM_RULES.theory.passMark}%</p>
+                            <p className="text-white/70 text-sm">To pass, you need at least {EXAM_RULES.theory.passMark}% in each subject on its own — {EXAM_RULES.car.citation}, {EXAM_RULES.theory.clause}.</p>
                         </div>
                     </ScrollReveal>
                 </div>
@@ -622,6 +882,19 @@ export default function DGCAParikshaPage() {
                             </Link>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            <section className="px-4 pb-16 max-w-4xl mx-auto">
+                <PeopleAlsoAsk items={pariksha_paa} />
+                <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12">Frequently asked questions</h2>
+                <div className="space-y-3">
+                    {pariksha_faqs.map((f) => (
+                        <details key={f.q} className="border border-gray-200 rounded-xl p-4">
+                            <summary className="font-semibold text-av-blue text-sm cursor-pointer">{f.q}</summary>
+                            <p className="text-gray-600 text-sm leading-relaxed mt-2">{f.a}</p>
+                        </details>
+                    ))}
                 </div>
             </section>
 

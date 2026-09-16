@@ -87,7 +87,7 @@ Every form submission on the website is **automatically saved to Excel**:
 | Feature | Details |
 |---------|---------|
 | 📊 Excel Lead Saving | Auto-appends to `data/leads.xlsx` |
-| 📱 WhatsApp Integration | All forms redirect to WhatsApp (9355611996) |
+| 📱 WhatsApp Integration | All forms redirect to WhatsApp (9667370747) |
 | 📞 Click-to-Call | Floating call button |
 | 🎠 Hero Slider | Auto-play image slider on every page |
 | 💫 Animations | Scroll-triggered fade-up reveals |
@@ -172,7 +172,7 @@ npm start
 ## 📞 WhatsApp Number
 All forms connect to: **+91 93556 11996**
 
-To change the number, search for `9355611996` in the codebase and replace it.
+To change the number, search for `9667370747` in the codebase and replace it.
 
 ---
 

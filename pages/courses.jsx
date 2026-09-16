@@ -200,13 +200,22 @@ const whyWeOne = [
     { icon: '🏥', title: 'Medical Assistance', desc: 'We assist with DGCA medical fitness assessments through our approved network.' },
 ];
 
+/*
+ * REWRITTEN 2026-09-15 during the site-wide pay sweep. Each of these six roles
+ * carried a monthly rupee band. None traced to a primary source — Indian
+ * airlines and operators do not publish pay scales — and the site was stating
+ * eleven different unsourced ranges across as many pages. The `salary` key now
+ * describes what the role IS, which is true and which is what a reader choosing
+ * a course actually needs. /commercial-pilot-license-salary carries the honest
+ * treatment of pay. Do not put a band back without a source and a date.
+ */
 const careerOptions = [
-    { icon: '✈️', title: 'Airline Pilot', salary: '₹1.5–10 Lakh/mo' },
-    { icon: '📦', title: 'Cargo Pilot', salary: '₹2–5 Lakh/mo' },
-    { icon: '🛩️', title: 'Charter Pilot', salary: '₹1–4 Lakh/mo' },
-    { icon: '🎓', title: 'Flight Instructor', salary: '₹1–3 Lakh/mo' },
-    { icon: '💼', title: 'Corporate Pilot', salary: '₹2–6 Lakh/mo' },
-    { icon: '🚑', title: 'Air Ambulance', salary: '₹2–5 Lakh/mo' },
+    { icon: '✈️', title: 'Airline Pilot', salary: 'Scheduled airline operations; the seat most CPL holders are aiming for' },
+    { icon: '📦', title: 'Cargo Pilot', salary: 'Freight operations, often on night schedules' },
+    { icon: '🛩️', title: 'Charter Pilot', salary: 'Non-scheduled flights, varied routes and aircraft' },
+    { icon: '🎓', title: 'Flight Instructor', salary: 'Teaching at an FTO; the route that keeps you flying in India' },
+    { icon: '💼', title: 'Corporate Pilot', salary: 'Business aviation for a single operator or owner' },
+    { icon: '🚑', title: 'Air Ambulance', salary: 'Medical evacuation and patient transfer flights' },
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -497,7 +506,7 @@ export default function CoursesPage() {
                                 Get Free Counselling →
                             </Link>
                             <a
-                                href="https://wa.me/919355611996"
+                                href="https://wa.me/919667370747"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-block bg-white/10 border border-white/30 text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm"

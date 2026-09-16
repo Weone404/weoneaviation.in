@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
+import DgcaPaperFacts from '../components/DgcaPaperFacts';
 import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
@@ -271,6 +272,11 @@ export default function AviationMeteorology() {
                                 </Link>
                             </div>
 
+                        <DgcaPaperFacts
+                            paper="Aviation Meteorology"
+                            bookSubject="Aviation Meteorology"
+                        />
+
                         </ScrollReveal>
                     </div>
 
@@ -300,7 +306,7 @@ export default function AviationMeteorology() {
                                 <div className="text-2xl font-montserrat font-black">2–4 Weeks</div>
                                 <div className="text-white/70 text-xs mt-1">Classroom / Online / Hybrid</div>
                                 <div className="text-white/70 text-xs mt-1">METAR & TAF Decoding Included</div>
-                                <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer"
+                                <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
                                     Get Free Counselling
                                 </a>

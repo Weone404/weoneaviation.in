@@ -3,6 +3,7 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import CadetHubLink from '../components/CadetHubLink';
 
 const heroSlides = [
     { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Cadet Program', title: 'Emirates Cadet', highlight: 'Pilot Program', sub: 'Turn Your Dream of Flying for Emirates into Reality' },
@@ -22,12 +23,23 @@ const academyFacilities = [
     'Experienced international instructors',
 ];
 
+/*
+ * CORRECTED 2026-09-15. This array used to state a minimum age of 17, an IELTS
+ * 6.0 requirement and a DGCA medical as Emirates' cadet entry criteria. None
+ * of those traced to an Emirates document, and the DGCA medical is wrong on its
+ * face: training at Emirates Flight Training Academy in Dubai is not conducted
+ * under DGCA, so a DGCA medical is not what it asks for.
+ *
+ * What replaces them is what Emirates itself publishes, plus an honest note
+ * that the detailed criteria are published per intake and have to be read at
+ * the source. Do not put a number back here without a link and a date.
+ */
 const eligibility = [
-    { icon: '🎂', label: 'Age', desc: 'Minimum 17 years old' },
-    { icon: '🎓', label: 'Education', desc: 'Completed high school with strong grades in Math, Physics, and English' },
-    { icon: '🗣️', label: 'English Proficiency', desc: 'IELTS score of 6.0+ or equivalent' },
-    { icon: '🩺', label: 'Medical Fitness', desc: 'Must pass a DGCA Aviation Medical Exam' },
-    { icon: '✈️', label: 'Prior Experience', desc: 'No Prior Flight Experience Required' },
+    { icon: '🇦🇪', label: 'Nationality', desc: 'The fully sponsored National Cadet Pilot Programme is an Emiratisation programme — Emirates publishes it for UAE nationals. Emirates Flight Training Academy separately admits international cadets, who fund their own training.' },
+    { icon: '🎓', label: 'Education', desc: 'A school-leaving qualification with mathematics, physics and English is the usual starting point for any ab-initio cadet route. Emirates publishes its exact requirement per intake — read it there before applying.' },
+    { icon: '🩺', label: 'Medical Fitness', desc: 'A Class 1 medical accepted by the regulator that will issue the licence. For training in Dubai that is the UAE authority, not DGCA. An Indian candidate who later wants an Indian licence has a conversion step and a DGCA medical of its own.' },
+    { icon: '✈️', label: 'Prior Experience', desc: 'Ab-initio routes are designed for candidates with no previous flying experience.' },
+    { icon: '📄', label: 'Everything else', desc: 'Age bands, English test scores, selection stages and fees change between intakes. We do not print them here because a figure that is wrong by one intake is worse than no figure. Emirates publishes the current set on its own careers site.' },
 ];
 
 const trainingPhases = [
@@ -37,18 +49,39 @@ const trainingPhases = [
     { phase: 'Jet Orientation', desc: 'Specific Emirates fleet procedures and safety training' },
 ];
 
+/*
+ * CORRECTED 2026-09-15. The first line of this array used to read "Guaranteed
+ * job interview with Emirates upon successful completion". Emirates' own
+ * statement contradicts it: its release inviting applicants to the academy says
+ * that candidates interested in opportunities with the airline "will be
+ * required to pass the selection process put in place by the airline". A
+ * guarantee we cannot substantiate, about another company's hiring, is exactly
+ * the class of claim this site does not make. It is gone and it does not come
+ * back.
+ */
 const keyBenefits = [
-    'Guaranteed job interview with Emirates upon successful completion',
-    'World-class training facilities',
-    'Fast-track to becoming an airline pilot',
-    'Exposure to real-world aviation from day one',
-    'Potential to fly A380 or B777 aircraft in future',
+    'A structured ab-initio route, designed for candidates with no previous flying experience',
+    'Training in a jurisdiction with year-round flying weather, which is what actually governs how fast hours accumulate',
+    'A large academy fleet, so aircraft availability is less often the constraint it is elsewhere',
+    'A recognised name on the logbook, which helps at the margin and is not the same as a job',
+];
+
+/*
+ * What the route does NOT give you. Published deliberately, because it is the
+ * part a prospective cadet needs most and the part no marketing page carries.
+ */
+const keyLimits = [
+    'It is not a job. Emirates states that candidates interested in flying for the airline must pass the selection process the airline puts in place.',
+    'It does not give you an Indian licence. A licence issued in the UAE has to be converted before you can fly commercially in India, which costs time and money a headline fee will not show.',
+    'The fully sponsored programme is an Emiratisation programme for UAE nationals. An Indian candidate is looking at the self-funded academy route, not the sponsored one.',
 ];
 
 export default function EmiratesCadet() {
     return (
         <Layout title="Emirates Cadet Pilot Program – Complete Guide | We One Aviation Academy" description="Complete guide to the Emirates Cadet Pilot Program. Learn about eligibility, training phases, costs, facilities at EFTA and how to apply for this prestigious aviation pathway.">
             <HeroSlider customSlides={heroSlides} asH1={false} />
+
+            <CadetHubLink airline="Emirates" />
 
             {/* Overview */}
             <section className="py-20 px-4">
@@ -171,8 +204,9 @@ export default function EmiratesCadet() {
                             <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">What Are the Costs?</h3>
                             <ul className="space-y-2 mb-10">
                                 {[
-                                    'Emirates fully sponsors selected Emirati nationals.',
-                                    'For international students, cost details may vary and should be confirmed directly with Emirates Flight Training Academy. Estimated costs range from ₹83L–₹1.4Cr (≈ $100,000–$170,000) depending on modules, housing, and services.',
+                                    'Emirates publishes the National Cadet Pilot Programme as an Emiratisation programme — a fully sponsored route for UAE nationals.',
+                                    'International cadets at Emirates Flight Training Academy fund their own training. We do not print a figure here: the fee is set by the academy, it is revised, and the number that used to sit on this page was not traceable to any Emirates document. Ask the academy directly and get it in writing.',
+                                    'Whatever the figure, ask what it excludes — accommodation, visa, medical, examination fees, and the cost of converting the licence afterwards if you intend to fly in India.',
                                 ].map((item, i) => (
                                     <li key={i} className="flex gap-2 items-start text-sm text-gray-600">
                                         <span className="text-av-orange font-bold flex-shrink-0">–</span>
@@ -192,10 +226,35 @@ export default function EmiratesCadet() {
                                 ))}
                             </ul>
 
+                            {/* What it does not give you */}
+                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">What this route does not give you</h3>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                                This section exists because it is the part a cadet needs most and the part no brochure carries.
+                            </p>
+                            <ul className="space-y-2 mb-10">
+                                {keyLimits.map((item) => (
+                                    <li key={item.slice(0, 30)} className="flex gap-2 items-start text-sm text-gray-600">
+                                        <span className="text-av-orange font-bold flex-shrink-0">&times;</span>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+
                             {/* After Training */}
                             <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">What Happens After Training?</h3>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                A graduate holds a licence, not a job. Emirates states that candidates interested in opportunities
+                                with the airline are required to pass the selection process the airline puts in place &mdash; so
+                                completing the training is the qualification to be considered, not the outcome. Any page telling you
+                                otherwise is describing a decision that belongs to the airline.
+                            </p>
                             <p className="text-gray-600 text-sm leading-relaxed mb-10">
-                                Once cadets graduate and receive their CPL and type rating, they may be absorbed into Emirates' roster of First Officers, subject to vacancies and performance. Many cadets move on to fly long-haul routes, operating global flights alongside senior Captains.
+                                If your intention is to fly in India, add the conversion of the licence to a DGCA licence to your
+                                plan and your budget from the start. Our{' '}
+                                <Link href="/cadet-pilot-program" className="text-av-blue font-semibold underline">cadet programme overview</Link>{' '}
+                                sets out what stays the same on every route, and{' '}
+                                <Link href="/how-to-choose-an-aviation-academy" className="text-av-blue font-semibold underline">how to check an academy</Link>{' '}
+                                covers what you can verify before paying anyone.
                             </p>
 
                             {/* How to Apply */}
@@ -234,12 +293,13 @@ export default function EmiratesCadet() {
                             <div className="bg-av-blue rounded-2xl p-6 text-white">
                                 <h4 className="font-montserrat font-bold mb-4">Eligibility at a Glance</h4>
                                 <ul className="space-y-2 text-sm text-white/80">
-                                    <li>✓ Age: 18 for a CPL, 16 for a Student Pilot Licence</li>
-                                    <li>✓ 12th with Math, Physics & English</li>
-                                    <li>✓ IELTS 6.0+ (English proficiency)</li>
-                                    <li>✓ DGCA medical certificate</li>
+                                    <li>✓ 12th with mathematics, physics and English</li>
                                     <li>✓ No prior flying experience needed</li>
-                                    <li>✓ Zero to CPL + MEIR training</li>
+                                    <li>✓ Ab-initio to CPL with a multi-engine instrument rating</li>
+                                    <li>✓ Class 1 medical from the regulator issuing the licence</li>
+                                    <li>&mdash; Sponsored programme: UAE nationals</li>
+                                    <li>&mdash; International cadets: self-funded</li>
+                                    <li>&mdash; Age bands and English scores: per intake, read them at the source</li>
                                 </ul>
                             </div>
                         </ScrollReveal>
@@ -251,7 +311,7 @@ export default function EmiratesCadet() {
                                 <div className="text-2xl font-montserrat font-black">Zero to CPL</div>
                                 <div className="text-white/70 text-xs mt-1">Emirates Flight Training Academy, Dubai</div>
                                 <div className="text-white/70 text-xs mt-1">CPL + Multi-Engine Instrument Rating</div>
-                                <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer"
+                                <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
                                     Get Free Counselling
                                 </a>

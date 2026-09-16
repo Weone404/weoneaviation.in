@@ -6,7 +6,7 @@ export default function FloatingButtons() {
   return (
     <div className="fixed bottom-6 right-5 z-50 flex flex-col gap-3 items-end">
       {/* Call Button */}
-      <a href="tel:+919355611996"
+      <a href="tel:+919667370747"
         className="group flex items-center gap-2 bg-av-blue hover:bg-av-navy text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-blue-900/40 hover:pr-4"
         style={{ paddingLeft: '12px', paddingRight: '12px', paddingTop: '12px', paddingBottom: '12px' }}>
         <div className="w-6 h-6 flex items-center justify-center">
@@ -20,7 +20,7 @@ export default function FloatingButtons() {
       </a>
 
       {/* WhatsApp Button */}
-      <a href="https://wa.me/919355611996?text=Hi!%20I%20want%20to%20know%20more%20about%20pilot%20training%20at%20We%20One%20Aviation." target="_blank" rel="noopener noreferrer"
+      <a href="https://wa.me/919667370747?text=Hi!%20I%20want%20to%20know%20more%20about%20pilot%20training%20at%20We%20One%20Aviation." target="_blank" rel="noopener noreferrer"
         className="group flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-green-500/40 hover:pr-4"
         style={{ paddingLeft: '12px', paddingRight: '12px', paddingTop: '12px', paddingBottom: '12px' }}>
         <div className="w-6 h-6 flex items-center justify-center relative">

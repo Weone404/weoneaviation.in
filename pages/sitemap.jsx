@@ -80,6 +80,7 @@ const sitemapData = [
         color: 'bg-sky-50 border-sky-200',
         headerColor: 'bg-sky-700',
         links: [
+            { label: 'How to Check an Aviation Academy', href: '/how-to-choose-an-aviation-academy' },
             { label: 'Flying School Overview', href: '/flying-school/india' },
             { label: 'Flying School in India', href: '/flying-school/india' },
             { label: 'Flying School in USA', href: '/flying-school/usa' },
@@ -109,6 +110,7 @@ const sitemapData = [
         color: 'bg-red-50 border-red-200',
         headerColor: 'bg-red-700',
         links: [
+            { label: 'Cadet Pilot Programmes (overview)', href: '/cadet-pilot-program' },
             { label: 'Emirates Cadet Pilot Program', href: '/emirates-cadet-pilot-program' },
             { label: 'Qatar Airways Cadet Pilot Program', href: '/qatar-airways-cadet-pilot-program' },
             { label: 'SpiceJet Cadet Pilot Program', href: '/spice-jet' },
@@ -161,6 +163,7 @@ const sitemapData = [
         links: [
             { label: 'Pilot Training in India', href: '/pilot-training-in-india' },
             { label: 'Pilot Training in Delhi', href: '/pilot-training-in-delhi' },
+            { label: 'Pilot Training in Dwarka', href: '/pilot-training-in-dwarka' },
         ],
     },
     {

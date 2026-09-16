@@ -3,13 +3,24 @@ import Link from 'next/link';
 import NextImage from 'next/image';
 import { MongoClient } from 'mongodb';
 
+/*
+ * These five mirror the posts in pages/blogs/[id].jsx and must match them
+ * exactly. Corrected 2026-09-11: the titles and dates here read 2026 while the
+ * posts themselves read 2024, so every card advertised a publication date in
+ * the future. The post is the source of truth — change it there first, then
+ * here. Never ship a date later than the day of the build.
+ */
 const hardcodedBlogs = [
-    { id: 1, title: 'How to Become a Commercial Pilot in India – Complete 2026 Guide', excerpt: 'Everything you need to know about becoming a CPL holder in India – eligibility, DGCA exams, costs, flying hours, and career prospects.', category: 'CPL Guide', readTime: '8 min', date: 'Dec 15, 2026', img: '/how to Become a Commercial pilot in India.jpeg', faqs: [] },
-    { id: 2, title: 'DGCA Written Exams: Subjects, Pattern & Preparation Tips', excerpt: 'Prepare for the five DGCA written papers, with RTR (A) examined separately. Know the syllabus, the exam pattern, and how papers are cleared one at a time.', category: 'DGCA', readTime: '6 min', date: 'Dec 10, 2026', img: '/Dgca written exam subject pattern and preparation tips.jpeg', faqs: [] },
-    { id: 3, title: 'CPL Training in India vs Abroad – Which is Better?', excerpt: 'Pros and cons of training in India vs USA, Canada, Australia. Cost comparison, timelines, and license conversion process explained.', category: 'Training', readTime: '7 min', date: 'Dec 5, 2026', img: '/Cpl training in india vs abroad which is better.jpeg', faqs: [] },
-    { id: 4, title: 'Pilot Salary in India 2026 – Complete Breakdown by Airline', excerpt: 'How much do pilots earn in India? Salary breakdown for trainee pilots, first officers, and captains at IndiGo, Air India, SpiceJet.', category: 'Career', readTime: '5 min', date: 'Nov 28, 2026', img: '/salary.webp', faqs: [] },
-    { id: 5, title: 'Medical Requirements to Become a Pilot in India', excerpt: 'Detailed guide on DGCA medical requirements, what conditions are disqualifying, and how to prepare for the medical exam.', category: 'Medical', readTime: '6 min', date: 'Nov 20, 2026', img: '/Pilot-Salary.webp', faqs: [] },
-    // { id: 6, title: 'How to Become a Pilot After 12th Science – Step-by-Step', excerpt: 'A complete roadmap for 12th PCM students aspiring to become commercial pilots. Colleges, entrance exams, fees, and timelines.', category: 'After 12th', readTime: '9 min', date: 'Nov 15, 2026', img: '/Pilot-Salary.webp' },
+    { id: 1, title: 'How to Become a Commercial Pilot in India', excerpt: 'The licence route in outline — the education gate, the medical, the computer number, the written papers and the flying hours. The fully sourced version, with the rule behind each stage, is the route guide.', category: 'CPL Guide', readTime: '4 min', date: 'Dec 15, 2024', img: '/how to Become a Commercial pilot in India.jpeg', faqs: [] },
+    { id: 2, title: 'DGCA Written Exams: Subjects, Pattern & Preparation Tips', excerpt: 'Five DGCA written papers, with RTR (A) examined separately. The subjects, the 70% threshold per paper, and the fees DGCA charges.', category: 'DGCA', readTime: '5 min', date: 'Dec 10, 2024', img: '/Dgca written exam subject pattern and preparation tips.jpeg', faqs: [] },
+    // id 4 ("Pilot Salary in India") removed 2026-09-16: that path now 301s to
+    // /commercial-pilot-license-salary. See next.config.js.
+    { id: 3, title: 'CPL Training in India vs Abroad', excerpt: 'What actually differs between training in India and training overseas — and why the cost comparison you have read is probably unsourced.', category: 'Training', readTime: '5 min', date: 'Dec 5, 2024', img: '/Cpl training in india vs abroad which is better.jpeg', faqs: [] },
+    { id: 5, title: 'Medical Requirements to Become a Pilot in India', excerpt: 'Which DGCA medical class you need and when. The full sourced treatment, including the approved centres, is on the medical page.', category: 'Medical', readTime: '4 min', date: 'Nov 20, 2024', img: '/Pilot-Salary.webp', faqs: [] },
+    // id 6 ("How to Become a Pilot After 12th Science") is intentionally absent
+    // from this grid. It is canonicalised and noindexed to
+    // /how-to-become-a-pilot-after-12th in pages/blogs/[id].jsx, so surfacing
+    // it here would advertise a page we are asking search engines to ignore.
 ];
 
 /*
@@ -40,6 +51,15 @@ const guidePosts = [
         readTime: '8 min',
         date: 'Sep 15, 2026',
         image: { src: '/blog/cpl-cross-country-flight/hero-cross-country-route.webp', width: 1200, height: 630, promptId: '50' },
+    },
+    {
+        slug: 'aviation-jobs-besides-pilot',
+        title: 'Aviation Jobs Besides Airline Pilot: Which Ones DGCA Actually Licences',
+        excerpt: 'Five aviation roles carry an entry requirement published by the regulator — Aircraft Maintenance Engineer, Flight Dispatcher, Flight Engineer, Flight Navigator and Air Traffic Controller. The age, subjects and fees DGCA sets for each, why AME needs Chemistry and a pilot licence does not, and an honest line around the careers DGCA does not licence at all.',
+        category: 'Aviation careers',
+        readTime: '9 min',
+        date: 'Sep 15, 2026',
+        image: { src: '/blog/aviation-jobs-besides-pilot/hero-aviation-careers.webp', width: 1200, height: 630, promptId: '50' },
     },
     {
         slug: 'cpl-simulator-hours-dgca-rules',
@@ -221,7 +241,14 @@ export async function getServerSideProps() {
     return { props: { mongoBlogs } };
 }
 
-export default function BlogsIndex({ mongoBlogs }) {
+/*
+ * `mongoBlogs = []` default added 2026-09-15. getStaticProps always supplies
+ * the prop today, but the component threw "mongoBlogs is not iterable" when
+ * rendered without it — which is what happens on any path that renders this
+ * page outside the static build, and what the render smoke test hits. A
+ * missing database should degrade to the file-based posts, not a blank page.
+ */
+export default function BlogsIndex({ mongoBlogs = [] }) {
     const allBlogs = [...mongoBlogs, ...hardcodedBlogs];
 
     return (

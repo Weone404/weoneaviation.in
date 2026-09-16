@@ -1,12 +1,33 @@
 ﻿const existingFaqRoutes = new Set([
   '/', '/faqs', '/faqs', '/air-arabia', '/blogs', '/blogs/[id]', '/commercial-pilot-license', '/dgca-ground-classes', '/dgca-ground-classes', '/doubt',
   '/courses/atpl', '/student-pilot-license-spl',
+  '/commercial-pilot-license-eligibility',
   '/dgca-computer-number', '/dgca-full-form',
   '/dgca-ground-classes-in-india', '/dgca-pariksha', '/ecga-login-your-complete-guide',
   '/how-to-become-a-pilot-after-12th', '/lead-magnets', '/lead-magnets/dgca-exam-checklist',
   '/pilot-training-in-india',
   '/ppl-full-form', '/rtr-full-form-meaning-importance-and-complete-guide', '/student-checklists',
-  '/pilot-training-in-delhi', 
+  '/pilot-training-in-delhi', '/pilot-training-in-dwarka',
+  /*
+   * Added 2026-09-15. Each of these renders its own FAQ section and its own
+   * FAQPage node. Without this gate Layout injected a second FAQ block and a
+   * second FAQPage node underneath it, so the page shipped two competing
+   * FAQPage nodes and a visibly duplicated block. Any new page that writes
+   * its own FAQs must be listed here in the same commit.
+   */
+  '/cadet-pilot-program', '/dgca-class-2-class-1-medical',
+  '/blogs/aviation-jobs-besides-pilot', '/faq',
+  '/how-to-choose-an-aviation-academy', '/commercial-pilot-license-salary',
+  '/full-form-of-cpl-commercial-pilot-license',
+  '/icse-full-form', '/cbse-full-form',
+  /*
+   * /commercial-pilot-license-salary joined this gate on 2026-09-15 when it was
+   * rebuilt with its own FAQs. Its old routeContent entry was deleted in the
+   * same edit: every answer in it restated a salary figure from the page as it
+   * then stood — 1.5-3 lakh entry, 6-10 lakh captain, four per-country bands —
+   * and none of those figures had a source. Leaving them here would have kept
+   * them shipping in an FAQPage node after the page itself had dropped them.
+   */
   '/privacy-policy', '/terms', '/sitemap', '/404',
 ]);
 
@@ -30,7 +51,7 @@ const routeContent = {
     ['How quickly will We One Aviation respond to my enquiry?', 'A counsellor generally calls back within two hours during office hours. Enquiries received outside those hours are handled on the next working day.'],
     ['What is the best way to contact the academy?', 'You can submit the contact form, call +91 93555 66991, or start a WhatsApp conversation for course, medical, and admission guidance.'],
     ['What are the academy office hours?', 'The office is open Monday to Saturday from 9 AM to 7 PM and Sunday from 10 AM to 4 PM.'],
-    ['Where is the We One Aviation office located?', 'Our office is at C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077.'],
+    ['Where is the We One Aviation office located?', 'Our office is at C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, Delhi 110077.'],
     ['Can I contact the academy by email?', 'Yes, you can write to us at info.weoneaviation@gmail.com and our team will respond with the guidance you need.'],
     ['Is my information safe when I submit the contact form?', 'Yes, your details are saved securely to our system for counsellor follow-up and are never shared or spammed.'],
     ['What should I select when filling out the contact form?', 'You can choose the course you\'re interested in — such as CPL, PPL, ATPL, or DGCA Ground Classes — so our team can connect you with the right counsellor.'],
@@ -70,11 +91,11 @@ const routeContent = {
   questions: [
     ['What is the Emirates Cadet Pilot Program?', 'It is a specialized training pathway created by Emirates Airline that takes candidates with zero flying experience through ground school, flight training, simulator sessions, and Multi-Crew Cooperation training toward becoming First Officers.'],
     ['Where is Emirates cadet training conducted?', 'All training is conducted at the Emirates Flight Training Academy (EFTA) at Dubai World Central, using Diamond DA42 and Cirrus SR22 aircraft, full-flight simulators, and glass-cockpit-equipped aircraft with international instructors.'],
-    ['Who can apply for the Emirates Cadet Pilot Program?', 'Applicants generally need to be at least 17 years old, have completed high school with strong grades in Math, Physics, and English, hold an IELTS score of 6.0 or equivalent, and pass a DGCA Aviation Medical Exam. No prior flying experience is required.'],
+    ['Who can apply for the Emirates Cadet Pilot Program?', 'Emirates publishes the fully sponsored National Cadet Pilot Programme as an Emiratisation programme, for UAE nationals. Emirates Flight Training Academy separately admits international cadets, who fund their own training. The baseline for any ab-initio route is school-leaving mathematics, physics and English, no prior flying experience, and a Class 1 medical accepted by the regulator that will issue the licence — which for training in Dubai is the UAE authority, not DGCA. Age bands and English test scores are published per intake; read them on the Emirates careers site rather than here.'],
     ['What does the Emirates cadet training curriculum include?', 'The program covers ground school (aviation theory, air law, meteorology, navigation, aircraft systems), hands-on flight training, simulator training including jet transition and MCC, and Emirates-specific jet orientation. Graduates receive a CPL with Multi-Engine Instrument Rating (MEIR).'],
-    ['How much does the Emirates Flight Training Academy program cost?', 'Emirates fully sponsors selected Emirati nationals. For international students, estimated costs range from around ₹83 lakh to ₹1.4 crore (roughly $100,000-$170,000) depending on modules, housing, and services, and should be confirmed directly with EFTA.'],
-    ['What are the key benefits of the Emirates Cadet Pilot Program?', 'Benefits include a guaranteed job interview with Emirates upon successful completion, world-class training facilities, a fast-track path to becoming an airline pilot, and the potential to eventually fly aircraft like the A380 or B777.'],
-    ['What happens after completing the Emirates cadet program?', 'Graduates who receive their CPL and type rating may be absorbed into Emirates\' roster of First Officers, subject to vacancies and performance, with many going on to fly long-haul routes alongside senior Captains.'],
+    ['How much does the Emirates Flight Training Academy program cost?', 'The sponsored National Cadet Pilot Programme is published by Emirates as a fully sponsored route for UAE nationals. International cadets at the academy fund their own training. We do not print a figure: the fee is set and revised by the academy, and the range this page used to carry was not traceable to any Emirates document. Ask the academy directly, get it in writing, and ask what it excludes — accommodation, visa, medical, examinations, and licence conversion if you intend to fly in India.'],
+    ['Does the Emirates cadet route guarantee a job or an interview?', 'No, and this page previously said it guaranteed an interview, which was wrong. Emirates\' own release inviting applicants to the academy states that candidates interested in opportunities with the airline are required to pass the selection process the airline puts in place. Completing the training qualifies you to be considered; it does not commit the airline to anything. What the route does offer is a structured ab-initio path, year-round flying weather, and a large academy fleet — which is what actually governs how quickly hours accumulate.'],
+    ['What happens after completing the Emirates cadet program?', 'A graduate holds a licence, not a job, and must pass the airline\'s own selection to be hired. If the intention is to fly in India, the licence issued in the UAE has to be converted to a DGCA licence first — a step with its own time and cost that a headline training fee will not show, and one worth putting in the plan at the start rather than discovering at the end.'],
     ['How do I apply to the Emirates Cadet Pilot Program?', 'Applications are made directly through the official Emirates Flight Training Academy website, and candidates should be ready with academic documents, identification, and prepare for aptitude assessments, interviews, and medical screening.'],
   ],
 },
@@ -82,7 +103,7 @@ const routeContent = {
   title: 'Qatar Airways Cadet Pilot Program FAQs',
   questions: [
     ['What is the Qatar Airways Cadet Pilot Program?', 'It is a structured pathway described on this page as training selected candidates from the ground up to become First Officers with Qatar Airways. The programme focuses on academic performance, flight training, leadership, communication, safety, and operational discipline.'],
-    ['Who can apply for the Qatar Airways Cadet Pilot Program?', 'This page lists an age range of 18-26, high-school completion with strong grades in Mathematics, English, and Physics, fluent English, DGCA medical fitness, and nationality requirements that may prioritize Qatari nationals while occasionally opening international positions. Confirm the current official intake criteria before applying.'],
+    ['Who can apply for the Qatar Airways Cadet Pilot Program?', 'Qatar Airways runs a national cadet programme for Qatari nationals and opens international intakes separately rather than continuously, so which intake is open decides whether you are eligible at all. The baseline for an ab-initio route is school-leaving mathematics, physics and English and no prior flying experience. The medical is a Class 1 accepted by the Qatar Civil Aviation Authority, not a DGCA medical — this page used to say DGCA, which was wrong. Age bands, English scores and fees are published by the airline per intake and are not reproduced here, because a current set could not be verified against a Qatar Airways document.'],
     ['Is previous flying experience required?', 'No. The page describes the programme as a zero-to-ATPL pathway designed for candidates without prior flying experience.'],
     ['Where does Qatar Airways cadet training take place?', 'The page identifies Qatar Aeronautical Academy in Doha as the main training base and says some batches may complete parts of training in the UK, Australia, or South Africa depending on the phase and capacity. Confirm the current locations with the official programme before relying on them.'],
     ['What does the Qatar Airways cadet programme focus on?', 'The listed focus areas are academic excellence, advanced flight training, leadership and communication skills, safety, and operational discipline.'],
@@ -264,7 +285,7 @@ const routeContent = {
     ['What international training options are listed?', 'The page lists FAA flight training in the USA (₹45-65 lakh, 12-18 months) and SACAA training in South Africa (₹35-50 lakh, 12-18 months), with guidance for international training and DGCA licence conversion after returning to India.'],
     ['What eligibility and medical requirements are shown?', 'The page lists minimum ages of 17 for PPL and 18 for CPL, 10+2 with Physics and Mathematics, DGCA-mandated medical fitness assessments, English proficiency, and the applicable flying-hour requirements.'],
     ['Is there a scholarship available for pilot training?', 'Yes, the page lists a Topper Scholarship Program with a full money-back guarantee for Class 10 and 12 toppers, applicable on CPL and Ground Class programs, with limited seats.'],
-    ['What is the earning potential after becoming a commercial pilot?', 'The page lists starting First Officer salaries of ₹1.5-3 lakh per month, Senior First Officer salaries of ₹5-10 lakh per month, and Captain salaries of ₹12-25 lakh per month.'],
+    ['What is the earning potential after becoming a commercial pilot?', 'No Indian airline publishes a pilot pay scale, so no figure can be traced to a primary source — the rupee bands that used to be here were removed on 15 September 2026 for that reason. What is true without a figure: pay rises with command, a captain earns materially more than a first officer, and a large part of the pay is linked to hours flown, which DGCA caps at 1,000 hours a year. See the salary page for the full treatment.'],
     ['What are the three phases of CPL training listed on this page?', 'The three phases are Ground School (3-4 months), PPL Training (4-5 months), and CPL Flying (8-10 months), covering everything from ground theory to instrument rating, multi-engine rating, and airline interview preparation.'],
   ],
 },
@@ -279,7 +300,7 @@ const routeContent = {
     ['What can increase the final training cost?', 'The final cost can increase because of failed exam attempts, additional flying hours, extra simulator time, medical retesting, weather-related extensions, accommodation upgrades, and optional ratings.'],
     ['How does CPL training in India compare in cost to training abroad?', 'The page lists CPL in India at ₹40-55 lakh, PPL+CPL in India at ₹50-65 lakh, CPL in the USA at ₹80-110 lakh, and CPL in Australia at ₹70-90 lakh, alongside their typical durations.'],
     ['What discount is offered for paying the full training fee upfront?', 'The page lists a 5-10% discount for paying the full amount before the course starts, which it estimates could save ₹2-5 lakh.'],
-    ['What is the expected return on investment for CPL training?', 'Using a conservative example of a ₹50 lakh investment against an average First Officer salary of ₹2.5 lakh per month, the page estimates a break-even period of around 24 months.'],
+    ['What is the expected return on investment for CPL training?', 'This answer used to give a break-even period of around 24 months, worked from a ₹50 lakh investment and an assumed first officer salary. It was removed on 15 September 2026: the salary input was not sourced, and a financial projection built on an unsourced number is worse than no projection, because it reads as arithmetic. What can honestly be said is that the cost side is partly knowable and the income side is not, so plan against the cost — and note that a licence does not carry a job, so the clock does not start on graduation.'],
     ['What tips does the page give for reducing training costs?', 'Tips include paying upfront for a discount, applying for scholarships, taking an education loan early, avoiding flying-hour overages, skipping optional ratings until hired, sharing accommodation, and minimizing exam re-attempts.'],
   ],
 },
@@ -333,20 +354,6 @@ const routeContent = {
     ['What does We One Aviation\'s own admission procedure include?', 'It includes initial counselling, document verification, application submission, help scheduling DGCA-mandated medical fitness assessments, an orientation and enrollment session, and support with education loans and EMI options.'],
     ['What do I need to submit when enrolling at a flying school?', 'After selecting a school, you fill out its enrollment form, provide the required documents, and make your first fee payment to begin the process.'],
     ['Does We One Aviation help with financing CPL training?', 'Yes, the page states that We One Aviation provides education loan options and EMI solutions for eligible students as part of its admission support.'],
-  ],
-},
-  '/commercial-pilot-license-eligibility': {
-  title: 'CPL Eligibility FAQs',
-  questions: [
-    ['At what age can CPL training begin?', 'The page states that training can begin at 17, while the Commercial Pilot License is issued after the candidate completes the 18th birthday.'],
-    ['What education is required for CPL eligibility?', 'Candidates need 10+2 or an equivalent qualification with Physics and Mathematics. Students without these subjects may complete them through NIOS or another authorised institution.'],
-    ['Which medical certificates are required?', 'The page states that applicants must obtain a DGCA-recognised DGCA medical certificate followed by a DGCA medical certificate, which is mandatory for CPL issuance.'],
-    ['How many flying hours are required for a CPL?', 'The page lists a minimum of 200 flying hours, including 100 hours as Pilot-in-Command, 20 hours of cross-country flying, 10 hours of instrument flying, and 5 hours of night flying.'],
-    ['Is English proficiency required?', 'Yes. Candidates must be able to read, write, and understand English, and the page identifies English Language Proficiency testing as part of the eligibility process.'],
-    ['What is the role of the Student Pilot License?', 'The Student Pilot License is an early licensing step. The page lists a minimum age of 16, an aviation-subject oral or written examination, and a DGCA medical examination for SPL eligibility.'],
-    ['What vision standard is required for the CPL medical exam?', 'The page states candidates need 6/6 vision in one eye and 6/9 vision in the other, correctable with eyeglasses if needed, along with normal hearing, blood pressure, and ECG results.'],
-    ['Can foreign nationals apply for a CPL in India?', 'Yes, there is no specific nationality restriction, but foreign nationals must obtain security clearance and, if applicable, convert licenses obtained from foreign training programs as per DGCA rules.'],
-    ['What can I do with a Student Pilot License?', 'An SPL allows candidates to begin receiving supervised flying instruction for basic flying skills, before progressing to CPL training.'],
   ],
 },
   '/air-navigation': {
@@ -419,74 +426,6 @@ const routeContent = {
     ['Do students get hands-on exposure to real aircraft?', 'Yes, the course includes visits to real aircraft for practical exposure to components, alongside aircraft models, system diagrams, and animations used in classroom teaching.'],
   ],
 },
-  '/full-form-of-cpl-commercial-pilot-license': {
-  title: 'CPL Full Form FAQs',
-  questions: [
-    ['What is the full form of CPL in aviation?', 'In aviation, CPL stands for Commercial Pilot License. It allows a qualified pilot to fly aircraft professionally for airlines, cargo operators, charter companies, and other commercial services.'],
-    ['What are the main steps to obtain an aviation CPL?', 'The page lists applying for a DGCA Computer Number, completing DGCA-mandated medical fitness assessments, joining DGCA Ground Classes, clearing the six DGCA subject examinations, completing 200 flying hours, and applying for the licence.'],
-    ['Which DGCA subjects are listed for CPL preparation?', 'The listed subjects are Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, and RTR (Aero).'],
-    ['What can a pilot do after obtaining a CPL?', 'CPL holders can apply to airlines as First Officers, work with cargo, charter, or business-jet operators, and later pursue an ATPL for progression toward airline command.'],
-    ['Does CPL have meanings outside aviation?', 'Yes. The page lists meanings in cricket, marketing, technology, law, sports, military, education, gaming, and other fields. The correct meaning depends on the context.'],
-    ['How is an aviation CPL different from the other CPL meanings?', 'The aviation meaning is a professional pilot licence issued under DGCA regulations, while other uses refer to a T20 cricket league, a marketing cost metric, a military rank, a legal qualification, or programming and computing terms.'],
-    ['What does CPL mean in cricket?', 'In cricket, CPL stands for the Caribbean Premier League, a T20 tournament founded in 2013 featuring teams from across the Caribbean region.'],
-    ['What does CPL mean in digital marketing?', 'In marketing, CPL stands for Cost Per Lead — a metric measuring how much it costs to generate one potential customer through an ad campaign; a lower CPL means better campaign efficiency.'],
-    ['How is CPL different from a PPL?', 'A Private Pilot License (PPL) allows individuals to fly for personal use only, while a Commercial Pilot License (CPL) permits commercial, paid flying operations.'],
-  ],
-},
-  '/cbse-full-form': {
-  title: 'CBSE Full Form FAQs',
-  questions: [
-    ['What is the full form of CBSE?', 'CBSE stands for Central Board of Secondary Education, a national school education board in India.'],
-    ['What does the CBSE curriculum cover?', 'The page describes CBSE education from foundational classes through senior secondary school, including languages, Mathematics, Science, Social Science, vocational subjects, technology, and skill-based options.'],
-    ['Why do students choose CBSE?', 'The page highlights a common syllabus across India, NCERT textbooks, conceptual learning, competitive-exam alignment, global reach, transferable schooling, and broad recognition by Indian and international institutions.'],
-    ['What subjects are available in CBSE Classes 11 and 12?', 'The listed streams include Science, Commerce, and Humanities, with subjects such as Physics, Chemistry, Biology, Mathematics, Accountancy, Economics, History, Geography, Political Science, Psychology, and English.'],
-    ['How does the CBSE grading system work?', 'The page lists grade bands for Classes 10 and 12, including A1, A2, B1, B2, C1, C2, D, and failing E grades based on marks ranges.'],
-    ['How can students check CBSE results?', 'The page lists official result websites, SMS, and DigiLocker as ways to access provisional marksheets and certificates using the required roll-number and identity details.'],
-    ['When was CBSE established and where is it headquartered?', 'CBSE was founded in 1929 as the Board of High School and Intermediate Education, renamed CBSE in 1952, and is headquartered in New Delhi with over 27,000 affiliated schools in India and 240+ abroad.'],
-    ['How is CGPA calculated for CBSE Class 10?', 'CGPA is calculated as the sum of grade points in 5 subjects divided by 5, and can be converted to a percentage by multiplying the CGPA by 9.5.'],
-    ['What is the CBSE toll-free helpline number?', 'The page lists a toll-free number, 1800-11-8002, operational on working days from 9:30 AM to 5:00 PM, along with alternate numbers and email addresses for exam and result queries.'],
-  ],
-},
-  '/icse-full-form': {
-  title: 'ICSE Full Form FAQs',
-  questions: [
-    ['What is the full form of ICSE?', 'ICSE stands for Indian Certificate of Secondary Education, the Class 10 examination conducted by the Council for the Indian School Certificate Examinations, or CISCE.'],
-    ['What is CISCE?', 'CISCE stands for the Council for the Indian School Certificate Examinations. The page identifies it as the organisation responsible for conducting ICSE and related school examinations.'],
-    ['What are the main features of the ICSE curriculum?', 'The page describes a detailed English-medium curriculum with strong emphasis on languages, Science, Mathematics, Arts, Humanities, projects, internal assessment, practical learning, and application-based study.'],
-    ['What are the advantages of studying under ICSE?', 'The page highlights strong English skills, detailed subject knowledge, project-based learning, global recognition, broad subject choices, communication development, and preparation for competitive and international examinations.'],
-    ['What are the challenges of ICSE education?', 'The listed challenges include a broad syllabus, higher project and internal-assessment workload, fewer schools, difficult transitions to other boards, higher private-school costs, and less emphasis on regional languages.'],
-    ['How does ICSE compare with CBSE?', 'The page compares ICSE\'s detailed, language- and application-focused curriculum with CBSE\'s more concise, concept-focused, nationally available, and competitive-exam-oriented approach.'],
-    ['When was CISCE established and when was the first ICSE exam held?', 'CISCE was established in 1958, following a recommendation from the University of Cambridge, and the first ICSE exam was conducted in 1973.'],
-    ['How are ICSE Class 9 and 10 subjects structured?', 'Subjects are divided into three groups: compulsory subjects like English and a second language, two subjects chosen from a group including Mathematics and Science, and one elective from a creative or skill-based group.'],
-    ['Is CGPA used in the ICSE grading system?', 'No, CGPA is used in CBSE, not ICSE. The ICSE board gives subject-wise numeric grades only, without calculating an overall percentage.'],
-  ],
-},
-  '/commercial-pilot-license-salary': {
-  title: 'Commercial Pilot License Salary FAQs',
-  questions: [
-    ['What is the starting salary after obtaining a CPL in India?', 'The page lists an entry-level First Officer or Co-Pilot salary of approximately INR 1.5-3 lakh per month. Regional airlines and charter operators may offer different starting packages.'],
-    ['How much can an experienced airline captain earn in India?', 'The page lists approximately INR 6-10 lakh per month for experienced captains at leading domestic airlines. International routes and major overseas carriers may offer higher packages.'],
-    ['What factors affect a commercial pilot salary?', 'The page identifies airline type, aircraft type, flight experience, location, and additional roles such as training captain, instructor, or examiner as major salary factors.'],
-    ['How much can commercial pilots earn abroad?', 'The page lists approximate international ranges from ₹3.3-6.6 lakh per month for new pilots and ₹8.3-16.6 lakh or more per month for experienced captains, depending on country, aircraft, employer, and exchange rates.'],
-    ['What additional benefits may pilots receive?', 'The listed benefits include health and life insurance, family travel benefits, housing or accommodation allowances, retirement plans, and training or upskilling opportunities.'],
-    ['Does a CPL guarantee a particular salary?', 'No. A CPL is required for professional pilot roles, but actual compensation depends on employer, aircraft, location, experience, flight hours, ratings, and the role offered.'],
-    ['Which countries offer the highest commercial pilot salaries?', 'The page lists Australia (₹10-18.3L+/month), the USA (₹8.3-16.6L+/month), the UAE (₹10-15L+/month), and Singapore (₹6.6-13.3L+/month) as high-paying destinations for commercial pilots.'],
-    ['Why do international airlines generally pay more than Indian airlines?', 'The page notes that pilots flying for Middle Eastern, Southeast Asian, or European airlines tend to receive larger salary packages than their Indian counterparts, partly due to aircraft type, route networks, and regional pay standards.'],
-  ],
-},
- '/commercial-pilot-license-syllabus': {
-  title: 'Commercial Pilot License Syllabus FAQs',
-  questions: [
-    ['What subjects are included in the CPL ground syllabus?', 'The page lists Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, and Radio Telephony or RTR as the main ground-training subjects.'],
-    ['What does the Air Navigation syllabus cover?', 'Air Navigation includes flight planning, radio navigation, instrument flying, GPS, and the techniques needed to plan and conduct flights safely.'],
-    ['What is included in the practical flight syllabus?', 'The practical modules include basic manoeuvres, take-offs and landings, straight-and-level flight, turns, climbs, descents, cross-country flights, instrument flying, night flying, and solo flying.'],
-    ['How many flight hours are required for the CPL syllabus?', 'The page states that students need at least 200 hours of flight training, including the required solo, cross-country, and instrument-flight components.'],
-    ['How are students prepared for DGCA examinations?', 'The page describes classroom sessions, online resources, mock tests, and instructor-led preparation designed around DGCA ground subjects.'],
-    ['Why are both ground and flight training necessary?', 'Ground training provides the theoretical knowledge for safe operations and DGCA examinations, while flight training develops the practical skills needed to operate an aircraft and complete the CPL requirements.'],
-    ['What does the Technical Specific subject cover?', 'Technical Specific covers training specific to the aircraft type a candidate operates during their flight education period, as distinct from the general aircraft knowledge covered in Technical General.'],
-    ['What does the Radio Telephony (RTR) subject in the syllabus cover?', 'RTR trains students in aviation communication, standard phraseology, and emergency procedures needed to operate aircraft radio equipment.'],
-  ],
-},
   '/your-guide-on-how-to-become-a-pilot-in-india': {
   title: 'How to Become a Pilot in India FAQs',
   questions: [
@@ -507,9 +446,9 @@ const routeContent = {
     ['What does the pilot selection process involve?', 'The process includes meeting basic eligibility, entrance exams, a personal interview, medical examination, flight school selection, ground school training, flight training, license examinations (PPL then CPL), additional ratings, and building flight hours.'],
     ['How can I become a pilot in the Indian Air Force after 12th?', 'The National Defence Academy (NDA) exam is the main route after 12th — unmarried candidates aged 16.5-19.5 with Physics and Mathematics can sit the UPSC-conducted written exam, followed by physical/medical tests and an interview, leading to 3 years of training at NDA and specialised flying training.'],
     ['What other Indian Air Force pilot entry routes exist for graduates?', 'The page lists the Combined Defence Services (CDS) exam and Air Force Common Admission Test (AFCAT) for graduates aged 20-24 (up to 26 for DGCA CPL holders under AFCAT), and NCC Special Entry for those with an Air Wing Senior Division \'C\' Certificate.'],
-    ['What is the average pilot salary in India?', 'The page lists entry-level salaries of ₹1.5-2 lakh per month, with senior/experienced pilots earning ₹1 crore or more annually, and an average annual range of ₹10-50 lakh depending on experience, aircraft, and airline.'],
+    ['What is the average pilot salary in India?', 'There is no published average. Indian airlines do not publish pilot pay scales, so the figures circulating online cannot be checked against any primary source; the ones that used to be here were removed on 15 September 2026. What DGCA does publish is the ceiling on flying: 35 hours in 7 days, 100 in 28 and 1,000 in 365, under the flight crew Flight Duty Time Limitations.'],
     ['What is the career outlook for pilots in India?', 'The page projects a 13% job growth rate through 2030, driven by fleet expansion at major airlines, growing regional connectivity, and a global pilot shortage that also creates opportunities abroad.'],
-    ['How much does pilot training cost after 12th?', 'The page lists a typical training cost range of ₹35-46 lakh, varying by flight school and training type.'],
+    ['How much does pilot training cost after 12th?', 'The range that used to be quoted here was removed on 15 September 2026 because it could not be traced to any published source, and it disagreed with the other ranges this site was quoting elsewhere. The cost transparency page sets out what is publicly comparable and what is not.'],
     ['What types of pilot careers can I pursue?', 'The page lists Commercial Pilot, Private Pilot, Military Pilot, Corporate Pilot, and Flight Instructor as the main pilot career paths, each with its own requirements and career experience.'],
   ],
 },
@@ -532,7 +471,7 @@ const routeContent = {
     ['Which subjects are required in 12th to become a pilot?', 'For the Indian pilot licence route, students need Physics, Chemistry, and Mathematics (PCM) in 12th, with a minimum of 50% marks required for DGCA eligibility. Some foreign flying schools accept any 12th pass.'],
     ['What is the minimum age to begin pilot training?', 'The page lists a minimum age of 17 years for PPL and 18 years for CPL, with different medical, education, and flight-hour requirements for each.'],
     ['What are the entrance steps after 12th?', 'The usual sequence is passing 12th with PCM, clearing the DGCA medical, enrolling in a DGCA flying school, completing ground school for the five DGCA written papers, logging the required 200 hours, clearing the DGCA CPL skill test, and receiving the CPL.'],
-    ['How much does pilot training cost after 12th?', 'The page lists ₹6-10 lakh for PPL in India, ₹40-70 lakh for CPL in India, and ₹50-90 lakh for CPL abroad, noting that fees vary by school and country, with EMI and scholarships available.'],
+    ['How much does pilot training cost after 12th?', 'Ranges like these circulate widely and none of them could be traced to a published document — see the cost transparency page, which sets out what is actually publicly comparable: IGRUA, a government academy, publishes its course fee, and DGCA publishes its own examination charges. Private flying schools publish very little, so get any quote in writing and compare it line by line.'],
     ['How long does it take to become a commercial pilot?', 'The page lists a duration of 6-12 months for PPL and 18-24 months for CPL, though exams, weather, medicals, and aircraft availability can affect the timeline.'],
     ['How many flight hours are required for PPL versus CPL?', 'The page lists a minimum of 40 flight hours for PPL and 200 hours for CPL, which for CPL includes solo, cross-country, instrument, and night flying.'],
     ['What happens after receiving a CPL?', 'After receiving the CPL from DGCA, candidates apply to airlines and go through PABT, group discussion, and interview stages before starting as a First Officer.'],

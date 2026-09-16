@@ -1,297 +1,394 @@
 import Layout from '../components/Layout';
-import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import Breadcrumb from '../components/Breadcrumb';
+import QuickAnswer from '../components/QuickAnswer';
+import SummaryBox from '../components/SummaryBox';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
+import LeadForm from '../components/LeadForm';
+import ScrollReveal from '../components/ScrollReveal';
+import StructuredData from '../components/StructuredData';
+import { generateFAQSchema } from '../lib/schema';
+import {
+  ACADEMY, FDTL, PILOT_SUPPLY, CPL_HOURS, CPL_COST, PARIKSHA, EXAM_RULES, DGCA_PAPERS,
+  LICENCES, inr,
+} from '../lib/facts';
 
-// ─── Data ────────────────────────────────────────────────────────────────────
+/*
+ * /commercial-pilot-license-salary — rebuilt 2026-09-15.
+ *
+ * WHAT THIS PAGE USED TO BE. The highest-volume page on the site, 74,120
+ * mapped monthly searches, answering "what does a commercial pilot earn" with
+ * ₹1.5–3 lakh entry level, ₹6–10 lakh captain and per-country monthly bands
+ * for the USA, Australia, the UAE and Singapore. None of it traced to
+ * anything. Indian airlines do not publish pilot pay scales; the figures that
+ * circulate online originate in each other, and repeating them would be
+ * inventing a figure, which this site does not do.
+ *
+ * WHY THE HONEST VERSION IS A BETTER PAGE, NOT A WORSE ONE. There is exactly
+ * one thing about Indian airline pilot pay that is published, and it happens
+ * to be the thing that shapes it: a large part of the pay is flying-hour
+ * linked, and DGCA caps flying hours by regulation. CAR Section 7 Series 'J'
+ * Part III sets 35 hours in 7 days, 100 in 28, 300 in 90 and 1,000 in 365. So
+ * the hour-linked component has a hard, checkable ceiling. No competitor
+ * salary page carries this, because they are all busy quoting each other's
+ * numbers.
+ *
+ * The page therefore answers the real question — "can I afford this, and what
+ * will it give back" — with the side that IS knowable: the cost, which is
+ * partly published, and the regulatory ceiling on flying. It says plainly that
+ * we will not print an income figure, and why.
+ *
+ * DO NOT ADD a rupee salary figure to this page without a primary source and
+ * the date it was read. "Several sites say X" is not a source. The owner's
+ * standing rule also bars any salary claim tied to this academy's graduates.
+ *
+ * WATCH OUT: CAR Section 7 Series 'J' Part I carries the same four numbers and
+ * applies to CABIN CREW. Part III is the flight crew one. See lib/facts.js.
+ */
 
-const stats = [
-    { num: '₹1.5–3L', label: 'Entry-Level / Month', icon: '🛩️' },
-    { num: '₹6–10L', label: 'Captain / Month', icon: '✈️' },
-    { num: '₹3.3L–16.6L+', label: 'Abroad / Month', icon: '🌍' },
-    { num: 'CPL', label: 'Required License', icon: '🪪' },
+const LAST_UPDATED = '15 September 2026';
+const LAST_UPDATED_ISO = '2026-09-15';
+const CANONICAL = 'https://weoneaviation.in/commercial-pilot-license-salary';
+
+/* What moves pilot pay. Structural, and true without a figure attached. */
+const drivers = [
+  {
+    title: 'Rank',
+    detail: 'A captain is paid materially more than a first officer at the same airline. The gap is the single largest step in a pilot’s earnings, and reaching it depends on the airline’s command upgrade criteria, which sit on top of the DGCA minimum rather than replacing it.',
+  },
+  {
+    title: 'Hours flown',
+    detail: `A large part of Indian airline pilot pay is flying-hour linked rather than fixed, so it moves with the roster and with how much the airline is flying. It cannot move past the regulatory ceiling: ${FDTL.limits.map((l) => `${l.hours} hours in ${l.period}`).join(', ')}.`,
+  },
+  {
+    title: 'Fleet',
+    detail: 'Wide-body operations generally pay more than narrow-body at the same carrier. Which fleet a pilot ends up on is the airline’s allocation, not the pilot’s choice, and it usually follows seniority.',
+  },
+  {
+    title: 'Employment type',
+    detail: 'Permanent, fixed-term and contract arrangements differ in what they pay and in what they include. Two pilots on the same aircraft can be on materially different terms.',
+  },
+  {
+    title: 'The hiring cycle',
+    detail: 'A licence does not carry a job. The gap between holding a CPL and being employed as a first officer varies with the hiring cycle, and in a slow cycle it is the largest single factor in what a new CPL holder earns, because the answer is nothing.',
+  },
 ];
 
-const salaryFactors = [
-    {
-        icon: '🏢',
-        title: 'Airline Type',
-        desc: 'Pilots working for domestic airlines receive lower pay rates than those employed by international airlines.',
-    },
-    {
-        icon: '✈️',
-        title: 'Aircraft Type',
-        desc: 'Pilots operate wide-body jets (Boeing 777 or Airbus A350) which generates a higher salary compared to pilots who operate smaller aircraft.',
-    },
-    {
-        icon: '📈',
-        title: 'Experience Level',
-        desc: "A pilot's salary grows as their flight hours increase together with their professional experience.",
-    },
-    {
-        icon: '🌍',
-        title: 'Location',
-        desc: 'Pilots who fly for Middle Eastern or Southeast Asian or European airlines tend to receive bigger salary packages than their Indian counterparts.',
-    },
-    {
-        icon: '🏆',
-        title: 'Additional Roles',
-        desc: 'Training captains and instructors along with examiners may receive performance-based bonuses and additional payments through allowances.',
-    },
+const peopleAlsoAsk = [
+  {
+    q: 'What is the salary of a commercial pilot in India?',
+    a: 'There is no published answer. Indian airlines do not publish pilot pay scales, pay is negotiated and varies by rank, fleet, seniority, contract type and roster, and no public document exists that a figure could be checked against. Any page giving you an exact monthly number for a named airline is quoting something it cannot show you. What is published is the ceiling on flying hours that the hour-linked part of the pay sits under.',
+  },
+  {
+    q: 'How many hours can an airline pilot fly in a year in India?',
+    a: `A maximum of ${FDTL.limits[3].hours} hours of flight time in 365 consecutive days, under ${FDTL.citation}, ${FDTL.limits[3].clause}. The shorter limits are ${FDTL.limits.slice(0, 3).map((l) => `${l.hours} hours in ${l.period}`).join(', ')}. These are ceilings set for fatigue reasons, not targets, and most pilots fly below them.`,
+  },
+  {
+    q: 'Is there a pilot shortage in India?',
+    a: `Not at entry level. The Ministry of Civil Aviation's published position is: "${PILOT_SUPPLY.statement}" That distinction is the most useful thing on this page — it means a licence does not make you scarce, the first job is competitive, and the scarcity that commands a premium sits at command level.`,
+  },
+  {
+    q: 'How many commercial pilot licences does India issue each year?',
+    a: `${PILOT_SUPPLY.cplIssued.map((r) => `${r.year}: ${r.count.toLocaleString('en-IN')}`).join('; ')} — ${PILOT_SUPPLY.cplIssuedTotal.toLocaleString('en-IN')} in total over that period, as given to Parliament and published by PIB on 2 August 2024. The last figure is a part-year count to 17 July 2024 and should not be compared with the full years above it.`,
+  },
+  {
+    q: 'Does a captain earn more than a first officer?',
+    a: 'Yes, and it is the largest step in the career. The qualification and the responsibility differ: a captain is pilot-in-command. What the gap is in rupees at any given airline is not published.',
+  },
+  {
+    q: 'What does it cost to become a commercial pilot in India?',
+    a: `This is the side of the arithmetic that can actually be checked, which is why it is the side to plan against. The one publicly comparable figure is ${CPL_COST.benchmark.school}, whose published course fee is ${CPL_COST.benchmark.feeLabel}. Private flying schools publish little. DGCA's own charges are separate and fixed: ${inr(PARIKSHA.fees.regularPerPaper)} per examination paper, plus the medical.`,
+  },
+  {
+    q: 'Do pilots get paid during training?',
+    a: 'No. Training is a cost, not an income. A cadet programme changes who funds it and when it is repaid, not whether it is paid for. Treat any arrangement described as "earn while you train" as a question to ask in writing before signing.',
+  },
 ];
 
-const additionalBenefits = [
-    { icon: '🏥', benefit: 'Health and life insurance' },
-    { icon: '✈️', benefit: 'Travel perks for family' },
-    { icon: '🏠', benefit: 'Housing or accommodation allowance' },
-    { icon: '💰', benefit: 'Retirement and pension plans' },
-    { icon: '📚', benefit: 'Training and upskilling opportunities' },
+const faqs = [
+  { q: 'Why does this page not give a salary figure?', a: 'Because a prospective student cannot verify one. Indian airlines do not publish pilot pay scales. The numbers circulating online are copied between websites and have no primary source behind them, and this site does not print a figure it cannot show you the origin of. An honest blank is worth more than a confident guess.' },
+  { q: 'What about the figures this page used to show?', a: 'They were removed on 15 September 2026. The page carried entry-level and captain monthly bands for India and per-country bands for the USA, Australia, the UAE and Singapore. None traced to a primary source, so all of them went.' },
+  { q: 'Is pilot pay fixed or variable?', a: `Substantially variable. A large part is linked to hours flown, which is why the regulatory ceiling matters: ${FDTL.limits.map((l) => `${l.hours} hours in ${l.period}`).join(', ')}, under the flight crew Flight Duty Time Limitations. A month with a light roster is a lighter month's pay.` },
+  { q: 'What is the minimum weekly rest a pilot gets?', a: `${FDTL.weeklyRest} This was raised from 36 hours in the revision DGCA notified on 8 January 2024, which also redefined night as 0000 to 0600, cut night landings from a maximum of six to two, and capped night flight time at 8 hours. Operators had to comply by 1 June 2024.` },
+  { q: 'Does We One Aviation guarantee a salary or a job?', a: ACADEMY.scope },
+  { q: 'What should I plan against instead?', a: `The cost, which is partly published, and the requirements, which are entirely published: ${CPL_HOURS.total} hours of flying, ${DGCA_PAPERS.length} written papers at ${EXAM_RULES.theory.passMark}% each, a Class 1 medical, RTR (A), and a minimum age of ${LICENCES.find((l) => l.code === 'CPL').minAge} for the licence. Those are the numbers worth building a plan on.` },
+  { q: 'Do overseas airlines pay more?', a: 'Commonly stated, and plausible given currency and tax differences, but we have no published pay scale to show you for any of them either. A comparison also has to account for the cost of living, the tax regime, the contract type, and the licence conversion needed to fly there at all — which is why a monthly figure alone would mislead even if it were sourced.' },
 ];
 
-// ─── Component ────────────────────────────────────────────────────────────────
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Pilot Salary in India: What Is Published and What Is Not',
+  description: 'Indian airlines do not publish pilot pay scales. What the government publishes: no shortage of pilots but a shortage of commanders, and a ceiling of 1,000 flying hours a year under the flight crew FDTL.',
+  inLanguage: 'en-IN',
+  dateModified: LAST_UPDATED_ISO,
+  articleSection: 'Pilot career',
+  keywords: 'pilot salary, pilot salary in india, airline pilot salary, pilot monthly salary, pilot monthly income, airline captain salary, aviation salary, commercial pilot license salary, cpl salary in india',
+  mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
+  image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+  author: { '@type': 'Organization', name: ACADEMY.name, url: ACADEMY.url },
+  publisher: { '@type': 'EducationalOrganization', name: ACADEMY.name, url: ACADEMY.url, logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
+  citation: [...FDTL.sources, ...PILOT_SUPPLY.sources].map((c) => ({ '@type': 'CreativeWork', name: c.label, url: c.url })),
+};
+
+const H2 = 'font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12 scroll-mt-24';
+const P = 'text-gray-600 text-sm leading-relaxed mb-4';
+const A = 'text-av-blue font-semibold hover:text-av-orange transition-colors';
 
 export default function CPLSalaryPage() {
-    return (
-        <Layout
-            title="Commercial Pilot License Salary – 2025 | CPL Salary in India & Abroad"
-            description="Discover the Commercial Pilot License salary in 2025. Complete breakdown of CPL salary in India and abroad, entry-level to captain pay, salary factors, and additional benefits."
-        >
+  return (
+    <Layout
+      title="Pilot Salary in India: What Is Published, and What Is Not (2026)"
+      description="No Indian airline publishes a pilot pay scale. What the government does publish: there is no shortage of pilots but there is a shortage of commanders, and flying is capped at 1,000 hours a year."
+    >
+      <StructuredData data={[articleSchema, generateFAQSchema(faqs)]} />
 
-            {/* ── Hero Banner ── */}
-            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
-                <ScrollReveal>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <div className="section-tag">Pilot Career</div>
-                    <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                        Commercial Pilot License Salary – 2025
-                    </h1>
-                    <p className="text-white/70 max-w-3xl mx-auto text-sm leading-relaxed mb-5">
-                        Thousands of aviators interested in pursuing flight careers ask about the <strong className="text-white">Commercial pilot license</strong> salary levels in India in comparison to foreign salaries. Getting your Commercial Pilot License (CPL) brings you more than flight experience because it leads to a satisfying career as well as financial benefits.
-                    </p>
-                    <p className="text-white/60 max-w-3xl mx-auto text-sm leading-relaxed">
-                        Commercial pilot salary bases its amount on a combination of flight experience with the aircraft type and airline partnership and geographic location. A comprehensive breakdown on this page explains the earnings opportunities for CPL holders.
-                    </p>
-                </ScrollReveal>
-            </header>
+      <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-24 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="section-tag justify-center">Pilot pay, honestly</p>
+          <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white leading-tight">
+            Pilot Salary in India
+          </h1>
+          <p className="text-white/70 text-sm mt-4 max-w-2xl mx-auto">
+            Nobody publishes a pilot pay scale in India. Here is what is actually published instead &mdash; and why it
+            tells you more than the numbers you have been reading.
+          </p>
+        </div>
+      </header>
 
-            {/* ── Stats Bar ── */}
-            <div className="bg-av-blue py-8">
-                <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {stats.map(s => (
-                        <ScrollReveal key={s.label} className="text-center">
-                            <div className="text-3xl mb-1">{s.icon}</div>
-                            <div className="font-montserrat text-xl font-black text-av-orange">{s.num}</div>
-                            <div className="text-white/60 text-xs">{s.label}</div>
-                        </ScrollReveal>
+      <section className="py-16 px-4">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
+          <article className="lg:col-span-2">
+            <ScrollReveal>
+              <Breadcrumb />
+
+              <p className="text-xs text-gray-500 mb-5">
+                Flight duty limits read on {LAST_UPDATED} against the current CAR and the DGCA notification behind its
+                latest revision. <a href="#sources" className={A}>Sources below</a>.
+              </p>
+
+              <QuickAnswer
+                question="What does a commercial pilot earn in India?"
+                answer={`There is no published answer, and any page that gives you one to the lakh is quoting something it cannot show you. Indian airlines do not publish pilot pay scales; pay is negotiated and varies by rank, fleet, seniority, contract type and roster. What IS published is the regulation that governs the hour-linked part of it: under ${FDTL.citation}, a pilot may fly at most ${FDTL.limits[3].hours} hours in a year, ${FDTL.limits[1].hours} in 28 days and ${FDTL.limits[0].hours} in 7 days, with ${FDTL.weeklyRest.charAt(0).toLowerCase()}${FDTL.weeklyRest.slice(1, FDTL.weeklyRest.indexOf('(') - 1)}. Plan against the cost, which is partly published, rather than the income, which is not.`}
+              />
+
+              <SummaryBox
+                title="What can and cannot be shown"
+                items={[
+                  'Cannot be shown: any airline pilot pay scale in India. None is published.',
+                  `Can be shown: flying is capped at ${FDTL.limits[3].hours} hours in 365 days, ${FDTL.limits[2].hours} in 90, ${FDTL.limits[1].hours} in 28 and ${FDTL.limits[0].hours} in 7`,
+                  'Can be shown: minimum weekly rest of 48 continuous hours including two local nights',
+                  `Can be shown: the cost side — ${CPL_COST.benchmark.school} publishes ${CPL_COST.benchmark.feeLabel}, and DGCA charges ${inr(PARIKSHA.fees.regularPerPaper)} a paper`,
+                  `Can be shown: the government's position is "${PILOT_SUPPLY.statement}"`,
+                  `Can be shown: ${PILOT_SUPPLY.cplIssuedTotal.toLocaleString('en-IN')} Commercial Pilot Licences issued over the five-year period to July 2024`,
+                  'True without a figure: a captain earns materially more than a first officer',
+                  'True without a figure: a licence is not a job, and the wait varies with the hiring cycle',
+                ]}
+              />
+
+              <h2 id="no-figure" className={H2}>Why there is no number on this page</h2>
+              <p className={P}>
+                Until 15 September 2026 this page carried monthly bands &mdash; an entry-level range, a captain range, and
+                per-country figures for the USA, Australia, the UAE and Singapore. They have been removed, because not one
+                of them could be traced to a primary source.
+              </p>
+              <p className={P}>
+                That is not an accident of this page. Indian airlines do not publish pilot pay scales at all. Pay is set in
+                individual contracts, it differs by rank, fleet, seniority, employment type and roster, and there is no
+                public document a prospective student could check a figure against. The numbers that circulate online
+                originate in each other: one site quotes a range, the next quotes the first, and after a few iterations
+                everyone is citing everyone and nobody is citing anything.
+              </p>
+              <p className={P}>
+                We are also the wrong people to tell you what you will earn. {ACADEMY.scope} Any earnings figure from us
+                would be a claim about someone else&rsquo;s payroll.
+              </p>
+
+              <h2 id="ceiling" className={H2}>What is published: the ceiling on flying</h2>
+              <p className={P}>
+                Here is the useful part, and the part no other salary page will tell you. A large share of an Indian airline
+                pilot&rsquo;s pay is linked to hours flown rather than fixed &mdash; which means the hour-linked component has
+                a hard ceiling set by regulation, and that ceiling is public. Under {FDTL.citation}, applicable to{' '}
+                {FDTL.appliesTo}:
+              </p>
+              <div className="overflow-x-auto mb-6">
+                <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
+                  <thead className="bg-av-blue text-white">
+                    <tr>
+                      <th className="text-left p-3 font-montserrat">Period</th>
+                      <th className="text-left p-3 font-montserrat">Maximum flight time</th>
+                      <th className="text-left p-3 font-montserrat">Clause</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-gray-600">
+                    {FDTL.limits.map((l) => (
+                      <tr key={l.period} className="border-t border-gray-200 odd:bg-gray-50">
+                        <td className="p-3">{l.period}</td>
+                        <td className="p-3 font-semibold text-av-blue whitespace-nowrap">{l.hours} hours</td>
+                        <td className="p-3 whitespace-nowrap">{l.clause}</td>
+                      </tr>
                     ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className={P}>
+                Read that {FDTL.limits[3].hours}-hour annual figure carefully. It is a <em>ceiling</em> imposed for fatigue
+                reasons, not a target and not a typical year. Most pilots fly below it. But it does put a firm upper bound
+                on the variable half of the pay, which is more than any quoted salary range can honestly claim to do.
+              </p>
+              <p className={P}>{FDTL.weeklyRest}</p>
+
+              <h2 id="rev-2024" className={H2}>What changed in January 2024, and why it matters to pay</h2>
+              <p className={P}>
+                The current limits come from a revision DGCA notified on 8 January 2024, with operators required to comply
+                by 1 June 2024. It tightened the rules in five ways:
+              </p>
+              <ul className="space-y-2 mb-6">
+                {FDTL.rev2024.map((r) => (
+                  <li key={r.slice(0, 30)} className="flex gap-2 items-start text-sm text-gray-600">
+                    <span className="text-av-orange font-bold flex-shrink-0">&ndash;</span>{r}
+                  </li>
+                ))}
+              </ul>
+              <p className={P}>
+                Rest rules are a pay story as much as a safety one: a rule that increases mandatory rest reduces how much
+                any one pilot can be rostered, which is exactly the point of it. If you are reading salary figures written
+                before June 2024, they describe a rostering regime that no longer applies.
+              </p>
+
+              <h2 id="supply" className={H2}>The sentence that explains the whole pay structure</h2>
+              <p className={P}>
+                Here is something the government has said in writing and almost no page about pilot pay quotes. Asked in
+                Parliament whether India has a pilot shortage, the Ministry of Civil Aviation answered:
+              </p>
+              <blockquote className="border-l-4 border-av-orange bg-gray-50 rounded-r-xl p-5 mb-4">
+                <p className="text-av-blue text-sm leading-relaxed font-semibold">&ldquo;{PILOT_SUPPLY.statement}&rdquo;</p>
+                <p className="text-gray-500 text-xs mt-2">&mdash; {PILOT_SUPPLY.statementSource}</p>
+              </blockquote>
+              <p className={P}>
+                Read that twice, because it answers both halves of the question you are really asking. There is no shortage of
+                pilots &mdash; so a licence does not make you scarce, and the first job is competitive. There <em>is</em> a
+                shortage of commanders &mdash; so scarcity, and therefore the money, sits at command level rather than at entry
+                level. That is precisely why the step from first officer to captain is the largest one in the career, and it is
+                a structural fact rather than an opinion about salaries.
+              </p>
+              <p className={P}>
+                The supply side, from the same release: the number of Commercial Pilot Licences DGCA issued each year.
+              </p>
+              <div className="overflow-x-auto mb-4">
+                <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
+                  <thead className="bg-av-blue text-white">
+                    <tr>
+                      <th className="text-left p-3 font-montserrat">Year</th>
+                      <th className="text-left p-3 font-montserrat">Commercial Pilot Licences issued</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-gray-600">
+                    {PILOT_SUPPLY.cplIssued.map((r) => (
+                      <tr key={r.year} className="border-t border-gray-200 odd:bg-gray-50">
+                        <td className="p-3">{r.year}</td>
+                        <td className="p-3 font-semibold text-av-blue">{r.count.toLocaleString('en-IN')}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-av-blue bg-av-light">
+                      <td className="p-3 font-semibold text-av-blue">Total over the period</td>
+                      <td className="p-3 font-semibold text-av-blue">{PILOT_SUPPLY.cplIssuedTotal.toLocaleString('en-IN')}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className={P}>
+                One caution so you do not misread it: {PILOT_SUPPLY.cplIssuedNote.charAt(0).toLowerCase()}{PILOT_SUPPLY.cplIssuedNote.slice(1)}
+              </p>
+              <p className={P}>
+                {PILOT_SUPPLY.growthNote} {PILOT_SUPPLY.whatItMeans}
+              </p>
+              <p className={P}>
+                So the useful planning question is not &ldquo;what will I earn&rdquo; but &ldquo;how long until I am a
+                commander, and what does that depend on&rdquo;. It depends on the airline&rsquo;s own upgrade criteria, on
+                hours, and on which fleet you are allocated &mdash; none of which the licence itself decides.
+              </p>
+
+              <h2 id="drivers" className={H2}>What actually moves a pilot&rsquo;s pay</h2>
+              <p className={P}>
+                None of this needs a rupee figure attached to be useful. These are the variables, and they are worth
+                understanding before you sign anything.
+              </p>
+              <div className="space-y-4 mb-6">
+                {drivers.map((d) => (
+                  <div key={d.title} className="border border-gray-200 rounded-xl p-5">
+                    <p className="font-montserrat font-bold text-av-blue text-sm mb-1">{d.title}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">{d.detail}</p>
+                  </div>
+                ))}
+              </div>
+
+              <h2 id="plan" className={H2}>Plan against the cost, not the income</h2>
+              <p className={P}>
+                The arithmetic that matters before you commit runs the other way round from the one people attempt. The
+                income side is unknowable. The cost side is partly published, and it is knowable enough to decide on.
+              </p>
+              <p className={P}>
+                The one publicly comparable training figure is {CPL_COST.benchmark.school}&rsquo;s published{' '}
+                {CPL_COST.benchmark.feeLabel}. DGCA&rsquo;s own charges sit on top and are fixed:{' '}
+                {inr(PARIKSHA.fees.regularPerPaper)} per examination paper in a regular session,{' '}
+                {inr(PARIKSHA.fees.olodePerPaper)} on demand, plus the medical. The full picture, including what a quoted
+                fee usually excludes, is on <Link href="/cost-transparency" className={A}>the cost page</Link>.
+              </p>
+              <p className={P}>
+                And the requirements are entirely published: {CPL_HOURS.total} hours of flying, {DGCA_PAPERS.length} written
+                papers at {EXAM_RULES.theory.passMark}% each, a Class 1 medical, RTR (A), and a minimum age of{' '}
+                {LICENCES.find((l) => l.code === 'CPL').minAge}. Start from{' '}
+                <Link href="/commercial-pilot-license-eligibility" className={A}>CPL eligibility</Link>, and if you are
+                choosing where to train, <Link href="/how-to-choose-an-aviation-academy" className={A}>how to check an
+                aviation academy</Link> covers what you can verify before paying anyone.
+              </p>
+
+              <PeopleAlsoAsk items={peopleAlsoAsk} />
+
+              <section className="mt-10">
+                <h2 id="faqs" className={H2}>Frequently asked questions</h2>
+                <div className="space-y-3">
+                  {faqs.map((f) => (
+                    <details key={f.q} className="border border-gray-200 rounded-xl p-4">
+                      <summary className="font-semibold text-av-blue text-sm cursor-pointer">{f.q}</summary>
+                      <p className="text-gray-600 text-sm leading-relaxed mt-2">{f.a}</p>
+                    </details>
+                  ))}
                 </div>
+              </section>
+
+              <h2 id="sources" className={H2}>Sources</h2>
+              <p className={P}>Read on {LAST_UPDATED}. Everything on this page traces to one of these documents.</p>
+              <ul className="space-y-2 mb-8">
+                {[...FDTL.sources, ...PILOT_SUPPLY.sources].map((c) => (
+                  <li key={c.url} className="flex gap-2 items-start text-sm text-gray-600">
+                    <span className="text-av-orange font-bold flex-shrink-0">&ndash;</span>
+                    <a href={c.url} target="_blank" rel="noopener noreferrer" className={A}>{c.label}</a>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="bg-av-blue rounded-2xl p-6">
+                <h3 className="font-montserrat text-lg font-bold text-white mb-2">The question behind the question</h3>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  Most people asking what a pilot earns are really asking whether the training is worth committing to. That
+                  is a conversation about the cost, the timeline and your own circumstances, and it is one we will have
+                  straight with you at {ACADEMY.streetAddress}, {ACADEMY.addressLocality} {ACADEMY.postalCode} &mdash; phone{' '}
+                  {ACADEMY.phone}, or {ACADEMY.email}. We will not put a salary number in front of you, because we do not
+                  have one to give.
+                </p>
+              </div>
+            </ScrollReveal>
+          </article>
+
+          <aside className="lg:col-span-1">
+            <div className="sticky top-28">
+              <LeadForm />
             </div>
-
-            {/* ── What is a Commercial Pilot License Salary ── */}
-            <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                    <ScrollReveal>
-                        <div className="section-tag">About CPL Salary</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4 underline-orange">
-                            What is a Commercial Pilot License Salary?
-                        </h2>
-                        <p className="text-gray-600 leading-relaxed mb-4">
-                            After getting their <strong>CPL</strong> through training and certification pilots can obtain their commercial pilot license salary as monthly or yearly pay. Your career stage alongside your work location determines how much your commercial pilot license salary will be.
-                        </p>
-                        <div className="bg-av-blue rounded-2xl p-6 text-white">
-                            <p className="text-av-orange font-semibold text-sm mb-2">Limited Seat – Join Now</p>
-                            <p className="text-white/80 text-sm leading-relaxed">
-                                Start your aviation journey today and unlock one of the highest-paying professional careers in India and abroad.
-                            </p>
-                            <Link href="/contact" className="inline-block mt-4 bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">
-                                Enquiry Now →
-                            </Link>
-                        </div>
-                    </ScrollReveal>
-
-                    <ScrollReveal delay={200}>
-                        {/* India Salary Overview Cards */}
-                        <div className="space-y-5">
-                            <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-6 hover:border-av-orange/30 transition-all">
-                                <div className="flex items-center gap-3 mb-3">
-                                    <span className="text-3xl">🛩️</span>
-                                    <div>
-                                        <h3 className="font-montserrat font-bold text-av-blue">Entry-Level (First Officer / Co-Pilot)</h3>
-                                        <p className="text-av-orange font-bold text-lg">INR 1.5 – 3 Lakhs / Month</p>
-                                    </div>
-                                </div>
-                                <p className="text-gray-500 text-sm leading-relaxed">
-                                    A valid <strong>Commercial Pilot</strong> License allows freshers to begin their aviation career by piloting as First Officer or Co-Pilot. The starting salary paid by regional airlines and charter companies is normally lower than the standard amount until pilots build their skills through flying experience.
-                                </p>
-                            </div>
-
-                            <div className="bg-av-blue rounded-2xl p-6 text-white">
-                                <div className="flex items-center gap-3 mb-3">
-                                    <span className="text-3xl">✈️</span>
-                                    <div>
-                                        <h3 className="font-montserrat font-bold text-white">Experienced Captain</h3>
-                                        <p className="text-av-orange font-bold text-lg">INR 6 – 10 Lakhs / Month</p>
-                                    </div>
-                                </div>
-                                <p className="text-white/70 text-sm leading-relaxed">
-                                    Flight experience alongside collecting sufficient flight hours enables pilots to advance their position to Captain. A Captain employed at a leading domestic Indian airline receives a monthly salary between INR 6 to 10 lakhs. The salary earnings for international routes and world-class carriers typically exceed the pay of domestic routes.
-                                </p>
-                            </div>
-                        </div>
-                    </ScrollReveal>
-                </div>
-            </section>
-
-            {/* ── Salary Sections ── */}
-            <section className="py-10 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-2 gap-8 mb-12">
-                        {/* Entry Level */}
-                        <ScrollReveal>
-                            <div className="section-tag">Entry Level</div>
-                            <h2 className="font-montserrat text-3xl font-bold text-av-blue mb-4">
-                                Entry-Level Commercial Pilot <span className="text-av-orange">Salary in India</span>
-                            </h2>
-                            <p className="text-gray-600 text-sm leading-relaxed">
-                                A valid <strong>Commercial Pilot</strong> License allows freshers to begin their aviation career by piloting as First Officer or Co-Pilot. The typical salary for commercial pilots in India with their license that maintains an average range between <strong className="text-av-orange">INR 1.5 to 3 lakhs per month</strong> in their first role. The starting salary paid by regional airlines and charter companies is normally lower than the standard amount until pilots build their skills through flying experience.
-                            </p>
-                        </ScrollReveal>
-
-                        {/* Experienced */}
-                        <ScrollReveal delay={150}>
-                            <div className="section-tag">Experienced</div>
-                            <h2 className="font-montserrat text-3xl font-bold text-av-blue mb-4">
-                                Experienced Commercial <span className="text-av-orange">Pilot Salary</span>
-                            </h2>
-                            <p className="text-gray-600 text-sm leading-relaxed">
-                                Flight experience alongside collecting sufficient flight hours enables pilots to advance their position to Captain. A Captain employed at a leading domestic Indian airline receives a monthly salary between <strong className="text-av-orange">INR 6 to 10 lakhs</strong>. The salary earnings for international routes and world-class carriers typically exceed the pay of domestic routes.
-                            </p>
-                        </ScrollReveal>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Factors Influencing Salary ── */}
-            <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Salary Factors</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Factors Influencing <span className="text-av-orange">Commercial Pilot License Salary</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">These factors together establish the full compensation a pilot should receive:</p>
-                    </ScrollReveal>
-
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {salaryFactors.map((item, i) => (
-                            <ScrollReveal key={item.title} delay={i * 80}>
-                                <div className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-av-orange/30 h-full">
-                                    <div className="text-3xl mb-3">{item.icon}</div>
-                                    <h3 className="font-montserrat font-bold text-av-blue mb-2">{item.title}</h3>
-                                    <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-                                </div>
-                            </ScrollReveal>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Salary Abroad ── */}
-            <section className="py-20 px-4 bg-gradient-to-br from-av-blue via-av-navy to-av-blue">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">International</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white">
-                            Commercial Pilot <span className="text-av-orange">Salary Abroad</span>
-                        </h2>
-                    </ScrollReveal>
-
-                    <div className="grid md:grid-cols-2 gap-8 items-center">
-                        <ScrollReveal>
-                            <div className="glass rounded-2xl p-8">
-                                <p className="text-white/80 text-sm leading-relaxed mb-5">
-                                    Commercial <strong className="text-white">pilot license</strong> salaries are high in the USA and Australia as well as the UAE and Singapore.
-                                </p>
-                                <div className="space-y-4">
-                                    <div className="bg-white/10 rounded-xl p-4">
-                                        <p className="text-av-orange font-semibold text-sm mb-1">Newbie / Entry-Level Pilots</p>
-                                        <p className="font-montserrat text-white font-black text-2xl">₹3.3L – 6.6L / Month (≈ USD 4,000 – 8,000 / Month)</p>
-                                    </div>
-                                    <div className="bg-av-orange/20 border border-av-orange/40 rounded-xl p-4">
-                                        <p className="text-av-orange font-semibold text-sm mb-1">Experienced Captains</p>
-                                        <p className="font-montserrat text-white font-black text-2xl">₹8.3L – 16.6L+ / Month (≈ USD 10,000 – 20,000+ / Month)</p>
-                                        <p className="text-white/50 text-xs mt-1">According to aircraft assignments and workplace.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </ScrollReveal>
-
-                        <ScrollReveal delay={200}>
-                            <div className="space-y-4">
-                                {[
-                                    { flag: '🇺🇸', country: 'USA', pay: '₹8.3L – 16.6L+ / Month (≈ USD 10,000 – 20,000+)' },
-                                    { flag: '🇦🇺', country: 'Australia', pay: '₹10L – 18.3L+ / Month (≈ AUD 12,000 – 22,000+)' },
-                                    { flag: '🇦🇪', country: 'UAE', pay: '₹10L – 15L+ / Month (≈ USD 12,000 – 18,000+)' },
-                                    { flag: '🇸🇬', country: 'Singapore', pay: '₹6.6L – 13.3L+ / Month (≈ USD 8,000 – 16,000+)' },
-                                ].map((item, i) => (
-                                    <div key={item.country} className="glass rounded-xl p-4 flex items-center gap-4">
-                                        <span className="text-3xl">{item.flag}</span>
-                                        <div>
-                                            <p className="font-montserrat font-bold text-white">{item.country}</p>
-                                            <p className="text-av-orange font-semibold text-sm">{item.pay} / Month</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </ScrollReveal>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Additional Benefits ── */}
-            <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Benefits</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Additional <span className="text-av-orange">Benefits</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">Besides the base salary, commercial pilots often receive benefits such as:</p>
-                    </ScrollReveal>
-
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-10">
-                        {additionalBenefits.map((item, i) => (
-                            <ScrollReveal key={item.benefit} delay={i * 80}>
-                                <div className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-av-orange/30 h-full text-center">
-                                    <div className="text-3xl mb-3">{item.icon}</div>
-                                    <p className="text-gray-600 text-sm font-semibold leading-relaxed">{item.benefit}</p>
-                                </div>
-                            </ScrollReveal>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Conclusion ── */}
-            <section className="py-20 px-4 bg-gradient-to-br from-av-blue to-av-navy">
-                <div className="max-w-4xl mx-auto text-center">
-                    <ScrollReveal>
-                        <div className="section-tag">Conclusion</div>
-                        <p className="text-white/80 text-sm leading-relaxed mb-4 max-w-3xl mx-auto">
-                            A commercial pilot license salary offers among the highest professional compensation because it provides exciting travel benefits along with elevated status and employment flexibility across different countries. The sizeable investment in pilot training yields equal benefits to the pilot.
-                        </p>
-                        <p className="text-white/80 text-sm leading-relaxed mb-8 max-w-3xl mx-auto">
-                            Acquiring a CPL enables you to pursue flights either within India's borders or internationally thereby establishing a <strong className="text-av-orange">stable career with exciting opportunities.</strong>
-                        </p>
-                        <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
-                            Start Your CPL Journey →
-                        </Link>
-                    </ScrollReveal>
-                </div>
-            </section>
-
-        </Layout>
-    );
+          </aside>
+        </div>
+      </section>
+    </Layout>
+  );
 }

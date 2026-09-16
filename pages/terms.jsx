@@ -379,9 +379,9 @@ export default function TermsPage() {
                                 </p>
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     {[
-                                        { icon: '🏢', label: 'Address', value: 'C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077, India', href: null },
+                                        { icon: '🏢', label: 'Address', value: 'C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, Delhi 110077, India', href: null },
                                         { icon: '📧', label: 'Email', value: 'info.weoneaviation@gmail.com', href: 'mailto:info.weoneaviation@gmail.com' },
-                                        { icon: '📞', label: 'Phone', value: '+91-9355611996', href: 'tel:+919355611996' },
+                                        { icon: '📞', label: 'Phone', value: '+91-9667370747', href: 'tel:+919667370747' },
                                         { icon: '🌐', label: 'Website', value: 'weoneaviation.in', href: 'https://weoneaviation.in' },
                                     ].map((item, i) => (
                                         <div key={i} className="glass rounded-xl p-4 flex gap-3 items-start">
@@ -423,7 +423,7 @@ export default function TermsPage() {
                                 Contact Us →
                             </Link>
                             <a
-                                href="https://wa.me/919355611996"
+                                href="https://wa.me/919667370747"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-block bg-white border border-gray-200 text-av-blue px-8 py-3 rounded-full font-bold hover:border-av-orange hover:text-av-orange transition-all text-sm"

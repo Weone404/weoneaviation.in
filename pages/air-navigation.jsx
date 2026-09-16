@@ -2,6 +2,7 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
+import DgcaPaperFacts from '../components/DgcaPaperFacts';
 import HeroSlider from '../components/HeroSlider';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
@@ -48,7 +49,17 @@ const QUICK_FACTS = [
     ['Paper 2', 'DGCA Exam'],
     ['CPL / PPL', 'Eligibility'],
     ['Delhi', 'Location'],
-    ['100%', 'Pass Rate'],
+    /*
+     * REMOVED 2026-09-15: this tile asserted a perfect examination result rate.
+     * The academy's own Terms page says it does not promise DGCA examination
+     * results, so the site was contradicting itself, and a figure like that is
+     * not something a prospective student could verify in any case. The claims
+     * gate missed it because the number and the label are separate array
+     * entries. Replaced with the threshold DGCA itself sets.
+     * Worded without the offending string on purpose: the gate scans compiled
+     * output, and a comment that quotes the banned text can fail a build.
+     */
+    ['70% per paper', 'Pass Mark (DGCA)'],
 ];
 
 const navigationTypes = [
@@ -369,6 +380,11 @@ export default function AirNavigation() {
                                     Book Free Counselling
                                 </Link>
                             </div>
+                        <DgcaPaperFacts
+                            paper="Air Navigation"
+                            bookSubject="Air Navigation"
+                        />
+
                         </ScrollReveal>
                     </div>
 
@@ -404,7 +420,7 @@ export default function AirNavigation() {
                                 <div className="text-white/70 text-xs mt-1">VFR/IFR Charts + Simulator</div>
                                 <div className="text-white/70 text-xs mt-1">DGCA Mock Tests Included</div>
                                 <a
-                                    href="https://wa.me/919355611996"
+                                    href="https://wa.me/919667370747"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all"

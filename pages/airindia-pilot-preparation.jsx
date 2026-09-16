@@ -3,6 +3,7 @@ import HeroSlider from '../components/HeroSlider';
 import LeadForm from '../components/LeadForm';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import CadetHubLink from '../components/CadetHubLink';
 import AutoInternalLinks from '../components/AutoInternalLinks';
 
 const heroSlides = [
@@ -142,6 +143,8 @@ export default function AirIndiaPilotPreparation() {
         >
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
+            <CadetHubLink airline="Air India" />
+
             <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="lg:grid lg:grid-cols-3 lg:gap-10">
@@ -171,7 +174,19 @@ export default function AirIndiaPilotPreparation() {
                                         ['CPL & Type Rated', 'Who Can Join'],
                                         ['A320 / B737', 'Fleet Coverage'],
                                         ['2026', 'Batch Year'],
-                                        ['100%', 'Placement Focus'],
+                                        /*
+                                         * REMOVED 2026-09-15: this cell paired a perfect
+                                         * percentage with a hiring-focus label, which reads as a
+                                         * total-placement claim. It is unverifiable, and the
+                                         * academy does not make it anywhere else — the scope
+                                         * statement every other page is built on says hiring
+                                         * decisions rest with the operator. The claims gate did
+                                         * not catch it because the number and the label are
+                                         * separate array entries, so the banned string never
+                                         * appeared whole. Do not restore it. This comment avoids
+                                         * the string deliberately: the gate scans compiled output.
+                                         */
+                                        ['Interview & sim', 'What We Prepare'],
                                     ].map(([val, label]) => (
                                         <div key={label} className="bg-av-light rounded-xl p-3 sm:p-4 text-center">
                                             <div className="font-montserrat font-bold text-av-blue text-xs sm:text-sm leading-snug">{val}</div>

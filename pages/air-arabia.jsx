@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import CadetHubLink from '../components/CadetHubLink';
 import AutoInternalLinks from '../components/AutoInternalLinks';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -86,7 +87,15 @@ const mplVsAtpl = [
     { aspect: 'Licence Awarded', mpl: 'MPL(A) + Validated ATPL', atpl: 'CPL + ATPL (separate)' },
     { aspect: 'Flying Hours', mpl: '1500 hours with partner airline', atpl: '200 hrs (CPL) + build-up independently' },
     { aspect: 'Aircraft Type', mpl: 'Specific to partner airline fleet', atpl: 'Single engine → Multi engine progression' },
-    { aspect: 'Job Guarantee', mpl: 'With partner airline (Air Arabia)', atpl: 'Self-sourced after training' },
+    /*
+     * CORRECTED 2026-09-15. This row read "Job Guarantee — With partner airline
+     * (Air Arabia)". An MPL is structured around a specific airline's operation,
+     * which is a real difference from a self-funded ATPL route, but that is not
+     * the same as a guaranteed job, and we cannot substantiate a guarantee about
+     * another company's hiring. The row now states the structural difference,
+     * which is true, instead of an outcome, which is not ours to promise.
+     */
+    { aspect: 'Route to an airline', mpl: 'Structured around one airline\u2019s operation and fleet from the start; selection and any offer remain the airline\u2019s decision', atpl: 'You approach airlines yourself after the licence' },
     { aspect: 'Duration', mpl: '22–24 months', atpl: '24–36 months (variable)' },
     { aspect: 'Training Focus', mpl: 'MCC & CRM from day one', atpl: 'Single pilot operations first' },
 ];
@@ -156,6 +165,8 @@ export default function AirArabiaMPLPage() {
                     </div>
                 </ScrollReveal>
             </header>
+
+            <CadetHubLink airline="Air Arabia" />
 
             {/* ── Programme Overview ── */}
             <section className="py-20 px-4">

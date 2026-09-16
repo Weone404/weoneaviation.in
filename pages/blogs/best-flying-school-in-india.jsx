@@ -349,6 +349,13 @@ export default function BestFlyingSchoolInIndia() {
         <Link href="/cost-transparency" className="text-av-orange font-semibold underline">the cost transparency page</Link>.
       </p>
 
+      <p>
+        If you are still at the stage of deciding what kind of institution you need at all &mdash; a
+        flying school for the hours, or a ground school for the written papers &mdash; start with{' '}
+        <Link href="/how-to-choose-an-aviation-academy" className="text-av-orange font-semibold underline">how to check an aviation academy before you pay</Link>,
+        which sets out what DGCA publishes about each and what it does not.
+      </p>
+
       <h2 id="verify" className={H2}>How do you verify a flying school before paying?</h2>
       <p>
         Eight steps, in order. Steps one to four cost you nothing but time, and they eliminate most

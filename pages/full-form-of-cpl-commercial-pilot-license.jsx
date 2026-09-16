@@ -1,6 +1,90 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import QuickAnswer from '../components/QuickAnswer';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
+import StructuredData from '../components/StructuredData';
+import { generateFAQSchema } from '../lib/schema';
+import { CPL_HOURS, EDUCATION, LICENCES, MIN_AGE, DGCA_PAPERS, EXAM_RULES, papersSummary } from '../lib/facts';
+
+/*
+ * STRUCTURED DATA, ANSWER-FIRST AND THE HEAD TERM — ADDED 2026-09-16.
+ *
+ * WHY. From the Semrush positions export of 2026-09-15 this page earns 731
+ * visits a month across 13 keywords and 230,050 of search volume — the second
+ * highest on the site. It already holds position 1 for "cpl full form"
+ * (12,100). What it does not hold is the head term: "cpl" itself, 201,000
+ * volume, sits at position 46.
+ *
+ * That gap is a content gap, not an authority gap. The page answers "what does
+ * the acronym stand for" across seven industries and never answers the question
+ * behind the bare query "cpl" in an Indian context — what the licence actually
+ * requires. So the answer-first block below leads with the aviation meaning and
+ * the four hard requirements, sourced from lib/facts.js, before the
+ * disambiguation list begins.
+ *
+ * It also shipped no JSON-LD at all: no Article node, no FAQPage. Twelve of its
+ * thirteen keywords show an AI Overview, so the page was competing for
+ * AI-Overview citations while giving an engine nothing structured to lift.
+ *
+ * No new facts. Every figure below already existed in lib/facts.js with its
+ * source and the date it was read.
+ */
+
+const CPL_CANONICAL = 'https://weoneaviation.in/full-form-of-cpl-commercial-pilot-license';
+const CPL_LICENCE = LICENCES.find((l) => l.code === 'CPL');
+
+const cplPaa = [
+    {
+        q: 'What is the full form of CPL?',
+        a: 'In aviation, CPL stands for Commercial Pilot Licence — the licence that permits a pilot to fly an aeroplane for hire or reward, issued in India by the Directorate General of Civil Aviation. The same three letters mean Cost Per Lead in marketing, Caribbean Premier League in cricket, and several other things in law, technology and gaming; each is covered below.',
+    },
+    {
+        q: 'What is CPL in aviation?',
+        a: `A Commercial Pilot Licence. It is the third rung of the licence ladder — ${LICENCES.map((l) => `${l.code} from age ${l.minAge}`).join(', ')} — and the first one that permits flying for payment. ${CPL_LICENCE.permits}`,
+    },
+    {
+        q: 'What are the requirements for a CPL in India?',
+        a: `Four gates. Age ${MIN_AGE.CPL} (Aircraft Rules, 1937, Schedule II, ${CPL_LICENCE.section}). ${EDUCATION.requirement} ${DGCA_PAPERS.length} written papers, each needing ${EXAM_RULES.theory.passMark}% on its own. And ${CPL_HOURS.total} hours as pilot of an aeroplane, flown within the ${CPL_HOURS.recencyYears} years before you apply.`,
+    },
+    {
+        q: 'Is CPL the same as a pilot licence?',
+        a: 'Not quite — it is one of four. A Student Pilot Licence permits training, a Private Pilot Licence permits personal flying, a Commercial Pilot Licence permits flying for payment, and an Airline Transport Pilot Licence permits acting as pilot-in-command of a commercial aeroplane. People usually mean CPL when they say "pilot licence".',
+    },
+    {
+        q: 'How many papers are in the CPL exam?',
+        a: `${DGCA_PAPERS.length}: ${papersSummary()}. RTR (A) is required as well but is examined separately under its own rules rather than as a sixth paper. Each paper needs ${EXAM_RULES.theory.passMark}% on its own — there is no aggregate.`,
+    },
+];
+
+const cplFaqs = [
+    { q: 'What does CPL stand for in aviation?', a: 'Commercial Pilot Licence.' },
+    { q: 'What is the minimum age for a CPL in India?', a: `${MIN_AGE.CPL}, set by the Aircraft Rules, 1937, Schedule II, ${CPL_LICENCE.section}. A Student Pilot Licence can be held from ${MIN_AGE.SPL} and a Private Pilot Licence from ${MIN_AGE.PPL}.` },
+    { q: 'How many flying hours does a CPL need?', a: `${CPL_HOURS.total} hours total as pilot of an aeroplane, flown within the ${CPL_HOURS.recencyYears} years immediately before you apply. The components sit inside that total rather than adding to it: ${CPL_HOURS.components.map((c) => `${c.hours} hours ${c.label}`).join(', ')}.` },
+    { q: 'Do I need Physics and Maths for a CPL?', a: `${EDUCATION.requirement} ${EDUCATION.altRoute}` },
+    { q: 'What is CPL in marketing?', a: 'Cost Per Lead — a pricing model where an advertiser pays for each qualified lead generated rather than per click or per impression.' },
+    { q: 'What is CPL in cricket?', a: 'The Caribbean Premier League, a Twenty20 franchise competition played in the West Indies.' },
+    { q: 'Which CPL meaning is most searched?', a: 'The aviation one, by a wide margin in India. That is why this page leads with the licence and then disambiguates the other uses.' },
+];
+
+const cplArticleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'CPL Full Form: Commercial Pilot Licence, and What It Requires',
+    description: 'CPL stands for Commercial Pilot Licence in aviation — the licence that permits flying for payment. The four requirements DGCA sets for it, and what the same acronym means in marketing, cricket, law and technology.',
+    inLanguage: 'en-IN',
+    dateModified: '2026-09-16',
+    articleSection: 'Aviation acronyms',
+    keywords: 'cpl, cpl full form, cpl meaning, cpl full form in aviation, commercial pilot license full form, what is cpl',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': CPL_CANONICAL },
+    image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+    author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+    publisher: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in', logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
+    citation: [
+        { '@type': 'CreativeWork', name: 'Aircraft Rules, 1937, Schedule II — Aircraft Personnel (India Code)', url: 'https://upload.indiacode.nic.in/showfile?actid=AC_CEN_36_0_00013_193422_1523351174422&type=rule&filename=aircraft_rules%2C_1937.pdf' },
+        { '@type': 'CreativeWork', name: `${EXAM_RULES.car.citation} — pass marks for the written examinations`, url: EXAM_RULES.car.where },
+    ],
+};
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -129,9 +213,10 @@ const otherFields = [
 export default function CPLPage() {
     return (
         <Layout
-            title="CPL Full Form: Meaning in Aviation, Cricket, Marketing, and More – 2025"
-            description="CPL Full Form stands for different things in different fields. In Aviation CPL is Commercial Pilot License. Learn CPL full form in Cricket, Marketing, Defense, Law, Gaming, Technology and more."
+            title="CPL Full Form: Commercial Pilot Licence, and What It Requires"
+            description="CPL stands for Commercial Pilot Licence in aviation — age 18, 10+2 with Physics and Maths, five DGCA papers at 70% each, and 200 flying hours. Plus what CPL means in marketing, cricket, law and technology."
         >
+            <StructuredData data={[cplArticleSchema, generateFAQSchema(cplFaqs)]} />
 
             {/* ── Hero Banner ── */}
             <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
@@ -149,6 +234,14 @@ export default function CPLPage() {
                     </p>
                 </ScrollReveal>
             </header>
+
+            {/* Answer-first block, added 2026-09-16. See the note at the top of this file. */}
+            <section className="px-4 pt-12 max-w-4xl mx-auto">
+                <QuickAnswer
+                    question="What is the full form of CPL?"
+                    answer={`In aviation, CPL stands for Commercial Pilot Licence — the licence that permits a pilot to fly an aeroplane for hire or reward, issued in India by the Directorate General of Civil Aviation. Four things are required for it: a minimum age of ${MIN_AGE.CPL} (Aircraft Rules, 1937, Schedule II, ${CPL_LICENCE.section}); ${EDUCATION.requirement.charAt(0).toLowerCase()}${EDUCATION.requirement.slice(1)}; ${DGCA_PAPERS.length} written papers, each needing ${EXAM_RULES.theory.passMark}% on its own rather than an aggregate; and ${CPL_HOURS.total} hours as pilot of an aeroplane, flown within the ${CPL_HOURS.recencyYears} years before you apply. Outside aviation the same three letters mean Cost Per Lead in marketing and Caribbean Premier League in cricket, among others — each is covered below.`}
+                />
+            </section>
 
             {/* ── Intro Para ── */}
             <div className="bg-av-orange py-5 px-4 text-center">
@@ -530,6 +623,19 @@ export default function CPLPage() {
                             </p>
                         </div>
                     </ScrollReveal>
+                </div>
+            </section>
+
+            <section className="px-4 pb-16 max-w-4xl mx-auto">
+                <PeopleAlsoAsk items={cplPaa} />
+                <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12">Frequently asked questions</h2>
+                <div className="space-y-3">
+                    {cplFaqs.map((f) => (
+                        <details key={f.q} className="border border-gray-200 rounded-xl p-4">
+                            <summary className="font-semibold text-av-blue text-sm cursor-pointer">{f.q}</summary>
+                            <p className="text-gray-600 text-sm leading-relaxed mt-2">{f.a}</p>
+                        </details>
+                    ))}
                 </div>
             </section>
 

@@ -5,6 +5,8 @@ import Breadcrumb from '../components/Breadcrumb';
 import QuickAnswer from '../components/QuickAnswer';
 import SummaryBox from '../components/SummaryBox';
 import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
+import StructuredData from '../components/StructuredData';
+import { generateFAQSchema } from '../lib/schema';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -289,6 +291,42 @@ const peopleAlsoAsk = [
  * consolidation, so it carries the Course node the old /courses/ppl never had.
  * Only figures that trace to Schedule II or to the page's own copy appear here.
  */
+/*
+ * ARTICLE AND FAQPAGE NODES — ADDED 2026-09-16.
+ *
+ * WHY. From the Semrush positions export of 2026-09-15 this page earns 121
+ * visits a month across 7 keywords and 56,390 of search volume, holding
+ * position 4 for "ppl full form" (14,800) and 20 for "ppl" (40,500). It was
+ * already the best-built page in the full-form cluster — answer-first block,
+ * summary, People-also-ask and a Course node were all present.
+ *
+ * What it did not have was FAQPage markup. Verified live on 2026-09-16: the
+ * page served FAQ content in HTML with no corresponding JSON-LD. The route also
+ * sits in the existingFaqRoutes gate, so Layout was not injecting one. The
+ * questions were on the page and invisible to an engine. Seven of its seven
+ * keywords show an AI Overview.
+ *
+ * No new facts; the FAQPage node is built from the `faqs` array that was
+ * already rendering above.
+ */
+const pplArticleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'PPL Full Form: Private Pilot Licence',
+    description: 'PPL stands for Private Pilot Licence — the licence that permits personal and recreational flying but never flying for payment. What it allows, how it differs from a CPL, and where it sits on the licence ladder.',
+    inLanguage: 'en-IN',
+    dateModified: '2026-09-16',
+    articleSection: 'Aviation acronyms',
+    keywords: 'ppl, ppl full form, full form of ppl, private pilot licence, ppl meaning, ppl vs cpl',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://weoneaviation.in/ppl-full-form' },
+    image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+    author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+    publisher: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in', logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
+    citation: [
+        { '@type': 'CreativeWork', name: 'Aircraft Rules, 1937, Schedule II — Aircraft Personnel (India Code)', url: 'https://upload.indiacode.nic.in/showfile?actid=AC_CEN_36_0_00013_193422_1523351174422&type=rule&filename=aircraft_rules%2C_1937.pdf' },
+    ],
+};
+
 const pplCourseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -327,6 +365,7 @@ export default function PPLPage() {
             </div>
 
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pplCourseSchema) }} />
+            <StructuredData data={[pplArticleSchema, generateFAQSchema(faqs)]} />
 
             {/* ── What is the Full Form of PPL ── */}
             <section className="py-20 px-4">

@@ -1,6 +1,10 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
+import QuickAnswer from '../components/QuickAnswer';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
+import StructuredData from '../components/StructuredData';
+import { generateFAQSchema } from '../lib/schema';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -291,12 +295,67 @@ function BulletList({ items, dark }) {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
+
+/*
+ * STRUCTURED DATA AND ANSWER-FIRST — ADDED 2026-09-16.
+ *
+ * WHY. From the Semrush positions export of 2026-09-15 this page holds 21
+ * keywords and 120,000 of search volume — "dgca" itself at 90,500, position 19,
+ * and "dgca full form" at 22,200, position 11 — and returns 33 visits a month.
+ * Eighteen of its 21 keywords show an AI Overview. It shipped no JSON-LD, no
+ * answer-first block, and because the route sits in the existingFaqRoutes gate
+ * it received no injected FAQ either, so it had no FAQ structured data at all.
+ *
+ * Worth noting alongside this: the traffic it does earn arrives on the www copy
+ * of the URL, not apex. The www -> apex 301 added to next.config.js on the same
+ * day is the other half of this fix.
+ * No new facts. Nothing below states anything the page did not already say.
+ */
+const dgcaff_CANONICAL = 'https://weoneaviation.in/dgca-full-form';
+
+const dgcaff_paa = [
+    { q: 'What is the full form of DGCA?', a: 'DGCA stands for the Directorate General of Civil Aviation. It is the regulatory body for civil aviation in India, operating under the Ministry of Civil Aviation, and it is the authority that issues pilot licences.' },
+    { q: 'What does DGCA actually do for a pilot?', a: 'Four things a licence applicant deals with directly: it sets the written examinations and their pass mark, it issues the computer number those examinations are booked against, it approves the medical examiners and the aeromedical centres, and it issues the licence itself through the eGCA portal.' },
+    { q: 'Is DGCA the same as the Ministry of Civil Aviation?', a: 'No. DGCA is the regulator; the Ministry of Civil Aviation is the government department it sits under. The two are often confused because both appear on official aviation documents.' },
+    { q: 'Which DGCA portals will I use?', a: 'Two, and they do different jobs. DGCA Pariksha is the examination portal, where papers are booked and sat. eGCA is the licensing portal, where the licence application is made. You need both, at different stages.' },
+    { q: 'Does DGCA approve flying schools?', a: 'Yes. DGCA publishes a list of approved Flying Training Organisations and, since 2025, a ranking of them against weighted parameters, refreshed twice a year. A classroom ground school does not appear on that list.' },
+];
+
+const dgcaff_faqs = [
+    { q: 'What does DGCA stand for?', a: 'Directorate General of Civil Aviation.' },
+    { q: 'Which ministry does DGCA come under?', a: 'The Ministry of Civil Aviation, Government of India.' },
+    { q: 'Does DGCA issue pilot licences?', a: 'Yes. It is the licensing authority for Indian flight crew, and the licence application is made through its eGCA portal.' },
+    { q: 'What is the DGCA pass mark?', a: '70% in each written paper, taken individually rather than as an aggregate, under the Civil Aviation Requirement that governs the examinations.' },
+    { q: 'Is DGCA Pariksha the same as eGCA?', a: 'No. Pariksha is the examination portal and eGCA is the licensing portal. Treating them as one thing is a common and costly mix-up.' },
+    { q: 'How do I check whether a flying school is DGCA approved?', a: 'Against DGCA’s own published list of approved Flying Training Organisations, which names each approval number, its validity dates, every flying base and the fleet by registration. Do not take the claim from a brochure.' },
+];
+
+const dgcaff_articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'DGCA Full Form: Directorate General of Civil Aviation',
+    description: 'DGCA stands for the Directorate General of Civil Aviation, the Indian regulator for civil aviation safety and for pilot licensing. What it does, and which of its functions a pilot applicant actually deals with.',
+    inLanguage: 'en-IN',
+    dateModified: '2026-09-16',
+    articleSection: 'Indian aviation regulator',
+    keywords: 'dgca, dgca full form, full form of dgca, what is dgca, dgca meaning, directorate general of civil aviation',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': dgcaff_CANONICAL },
+    image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+    author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+    publisher: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in', logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
+    citation: [
+        { '@type': 'CreativeWork', name: 'Directorate General of Civil Aviation — official site', url: 'https://www.dgca.gov.in/' },
+        { '@type': 'CreativeWork', name: 'List of DGCA Approved Flying Training Organisations', url: 'https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf' },
+    ],
+};
+
 export default function DGCAPage() {
     return (
         <Layout
             title="DGCA Full Form: Meaning, Roles, Functions & Importance in Indian Aviation"
             description="Learn the DGCA full form, its meaning, history, functions, responsibilities, and role in pilot licensing and aviation safety. Complete guide for aspiring pilots."
         >
+            <StructuredData data={[dgcaff_articleSchema, generateFAQSchema(dgcaff_faqs)]} />
 
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
@@ -318,6 +377,14 @@ export default function DGCAPage() {
                     </div>
                 </ScrollReveal>
             </div>
+
+            {/* Answer-first block, added 2026-09-16. See the note at the top of this file. */}
+            <section className="px-4 pt-12 max-w-4xl mx-auto">
+                <QuickAnswer
+                    question={dgcaff_paa[0].q}
+                    answer={dgcaff_paa[0].a}
+                />
+            </section>
 
             {/* ── DGCA at a Glance ── */}
             <section className="py-20 px-4">
@@ -809,6 +876,19 @@ export default function DGCAPage() {
                             Contact Us →
                         </Link>
                     </ScrollReveal>
+                </div>
+            </section>
+
+            <section className="px-4 pb-16 max-w-4xl mx-auto">
+                <PeopleAlsoAsk items={dgcaff_paa} />
+                <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12">Frequently asked questions</h2>
+                <div className="space-y-3">
+                    {dgcaff_faqs.map((f) => (
+                        <details key={f.q} className="border border-gray-200 rounded-xl p-4">
+                            <summary className="font-semibold text-av-blue text-sm cursor-pointer">{f.q}</summary>
+                            <p className="text-gray-600 text-sm leading-relaxed mt-2">{f.a}</p>
+                        </details>
+                    ))}
                 </div>
             </section>
 

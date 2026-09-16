@@ -26,7 +26,7 @@ export default function Footer() {
               Get Free Counselling
             </Link>
 
-            <a href="https://wa.me/919355611996"
+            <a href="https://wa.me/919667370747"
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white hover:text-av-orange transition-all text-sm"
@@ -122,7 +122,7 @@ export default function Footer() {
             {/* FIX: PIN was 110075 in footer, 110077 in contact section — standardised to 110077 */}
             <div className="flex gap-3 items-start">
               <span className="text-av-orange mt-0.5 text-base">📍</span>
-              <span>C-404, 3rd Floor, Near Ramphal Chowk Road, Palam Extension, Sector-7, Dwarka, Delhi 110077, India</span>
+              <span>C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, Delhi 110077, India</span>
             </div>
             <div className="flex gap-3 items-center">
               <span className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
@@ -130,7 +130,7 @@ export default function Footer() {
                   <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.01l-2.2 2.21z" />
                 </svg>
               </span>
-              <a href="tel:+919355611996" className="hover:text-av-orange transition-colors">+91-9355611996</a>
+              <a href="tel:+919667370747" className="hover:text-av-orange transition-colors">+91-9667370747</a>
             </div>
             <div className="flex gap-3 items-center">
               <span className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">

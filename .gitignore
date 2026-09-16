@@ -1,10 +1,23 @@
 node_modules/
 .next/
 .env*
-# Keep data directory but not the leads file (sensitive)
-# data/leads.xlsx
+# Keep data directory but not the leads file: it holds submitted names, phone
+# numbers and email addresses, and this repository is public. Untracked
+# 2026-09-11; the copy already in git history is a separate problem that needs
+# a history rewrite and the owner's approval.
+data/leads.xlsx
 .vercel
 
 # Orphans left by the Cowork device bridge (FUSE cannot unlink)
 .fuse_hidden*
 _to_delete/
+
+# Scratch left behind by earlier sessions. Committed once, removed 2026-09-11.
+build*.log
+diff*.txt
+__tmp_*.js
+temp_*.js
+temp_*.py
+temp_*.ps1
+tmp-*.js
+*.bak
