@@ -24,6 +24,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'cpl-night-flying-hours-requirement-india',
+        title: 'Night Flying Hours for a CPL in India: The 5-Hour Rule Explained',
+        excerpt: 'Inside the 200-hour CPL total, 5 hours must be night flying as pilot-in-command, with at least 10 take-offs and 10 landings — all flown in an actual aircraft, with no simulator allowance. Where the requirement sits, and how flying schools sequence it around the weather.',
+        category: 'CPL flying hours',
+        readTime: '8 min',
+        date: 'Sep 16, 2026',
+        image: { src: '/blog/cpl-night-flying-hours/hero-night-approach.webp', width: 1200, height: 630, promptId: '52' },
+    },
+    {
         slug: 'cpl-cross-country-flight-requirement-india',
         title: 'The CPL Cross-Country Flight Requirement in India: The 300 NM Solo Flight Explained',
         excerpt: 'Inside the 200-hour CPL total, 20 hours must be cross-country PIC flying, and one flight within that must cover 300 nautical miles with full-stop landings at two aerodromes and a first leg beyond 100 NM. Every condition, explained.',

@@ -693,6 +693,36 @@ does not see the same picture twice.
 
 ---
 
+## Post: `/blogs/cpl-night-flying-hours-requirement-india`
+
+### Prompt 52 — Hero / OpenGraph and card
+- **File:** `public/blog/cpl-night-flying-hours/hero-night-approach.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A small single-engine training aircraft on final approach to a runway lit by runway edge lights against a dark evening sky, representing night flying training for a Commercial Pilot Licence in India"
+
+> A small single-engine training aeroplane on final approach, viewed from a
+> slight three-quarter angle, with its landing light on and the runway ahead
+> outlined by two rows of small runway edge lights. The sky above is a deep
+> navy dusk gradient with a few faint stars, not fully black. The runway and
+> ground below are simplified dark shapes with no buildings, terminal or
+> signage in view. Orange accent limited to the aircraft's landing light glow
+> only.
+
+### Prompt 53 — Ten take-offs and landings diagram
+- **File:** `public/blog/cpl-night-flying-hours/circuit-ten-cycles.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A single runway viewed from above at dusk with a repeating circuit pattern of ten small aircraft silhouettes around it, each slightly further along the loop, illustrating a repeated sequence of night take-offs and landings"
+
+> A flat top-down diagram of a single runway on a pale dusk-toned background,
+> with a thin dashed oval circuit line looping around it. Ten small identical
+> aeroplane silhouettes are placed at even intervals around the oval, each
+> rotated to face the direction of travel, suggesting one continuous repeated
+> loop rather than ten separate flights. No airfield buildings, taxiways or
+> geography — just the runway, the circuit line and the ten aircraft markers
+> on open negative space. Orange accent on the runway edge lines only.
+
+---
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
