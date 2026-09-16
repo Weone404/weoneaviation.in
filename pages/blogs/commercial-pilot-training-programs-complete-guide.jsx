@@ -216,7 +216,8 @@ export default function CommercialPilotTrainingPrograms() {
         `Written examinations: ${DGCA_PAPERS.length} DGCA papers, with ${RTR.name} examined separately`,
         `Flight time: ${CPL_HOURS.total} hours total, flown within ${CPL_HOURS.recencyYears} years of applying`,
         'Typical end-to-end duration: 18 to 24 months, though timelines slip more often than they hold',
-        'Indicative all-in cost: ₹40–70 lakh depending on where you fly, with living costs outside that',
+        'Commonly quoted all-in cost: ₹40–70 lakh — a market estimate rather than a sourced figure — no Indian government body publishes a price for flying training and private schools publish nothing, so read it as what quotes look like rather than a price',
+        'SOURCED, by contrast: DGCA charges ₹2,500 per examination paper, and IGRUA publishes a course fee of ₹55,00,000',
         `Ground classes at We One Aviation: 6 months, offline in Dwarka or online, 25% scholarship available, teaching since ${ACADEMY.foundedYear}`,
       ]}
       tocHeadings={tocHeadings}
@@ -458,9 +459,12 @@ export default function CommercialPilotTrainingPrograms() {
 
       <h2 id="cost" className={H2}>How much does commercial pilot training cost in India?</h2>
       <p>
-        Indicatively ₹40–70 lakh all in, depending mainly on where you do your flying. Only one of
-        the three buckets below is usually quoted in a brochure, and it is not the one that catches
-        families out.
+        The figure quoted everywhere is ₹40–70 lakh all in. Be clear about what it is: a market estimate rather than a sourced figure — no Indian government body publishes a price for flying training and private schools publish nothing, so every
+        range in circulation traces back to pages quoting each other. Read the three buckets below as a
+        map of what a quote contains rather than as a price list &mdash; only one of them is usually in a
+        brochure, and it is not the one that catches families out. Our{' '}
+        <Link href="/cost-transparency" className="text-av-orange font-semibold underline">cost transparency page</Link>{' '}
+        sets out what can be shown: DGCA's own fees, and IGRUA's published course fee.
       </p>
 
       <div className="overflow-x-auto my-6 rounded-2xl border border-gray-200">

@@ -10,14 +10,37 @@ import { CPL_HOURS, DGCA_PAPERS, RTR, MEDICAL, ACADEMY } from '../../lib/facts';
  * "Conclusion" heading. The redirect is prepared but not activated - see the
  * commented block in next.config.js.
  *
- * Every rupee figure here is copied from pages/cost-transparency.jsx, which is
- * the site's single fee source. Nothing is invented, and nothing is restated
- * that would need updating in two places.
+ * CORRECTED 2026-09-15. The note that used to sit here said every rupee figure
+ * was copied from pages/cost-transparency.jsx, "the site's single fee source".
+ * That is no longer true and the page was contradicting itself as a result:
+ * /cost-transparency was rebuilt on 15 September 2026 and now states plainly
+ * that it could not trace the ₹40–70 lakh range, or any market range, to a
+ * published document — no Indian government body publishes a price for flying
+ * training and private schools publish nothing. So this page was citing, as its
+ * source, a page that debunks it.
+ *
+ * WHAT WAS DONE, AND WHY IT IS NOT A DELETION. The market figures below are not
+ * removed: they are what quotes in this market actually look like, the page is
+ * the site's only ranking cost page, and stripping every number would leave a
+ * reader with nothing to compare a quote against. Instead they are now labelled
+ * for what they are — commonly quoted market estimates that we could not trace
+ * to a published document — prominently, at the top, in the answer block, and
+ * in the summary. Two categories are marked as the exception because they ARE
+ * sourced: DGCA's own statutory fees, and IGRUA's published course fee.
+ *
+ * TWO WRONG FIGURES FIXED in the same pass. The examination fee was given as
+ * ₹3,000 per paper in the ground-cost table and again in the overrun table. It
+ * is ₹2,500 in a regular session and ₹5,000 for an Online On-Demand
+ * Examination. That error was corrected on /cost-transparency in this branch
+ * and had been left standing here.
+ *
+ * DO NOT re-add a "single fee source" claim. If a market figure is ever
+ * sourced, cite the document and the date it was read, on the line itself.
  *
  * No HowTo (after-12th holds it). No FAQPage or BreadcrumbList (Layout emits both).
  */
 const DATE_PUBLISHED = '2026-08-26';
-const DATE_MODIFIED = '2026-08-26';
+const DATE_MODIFIED = '2026-09-15';
 const CANONICAL = 'https://weoneaviation.in/blogs/pilot-training-cost-in-india';
 
 const articleSchema = {
@@ -40,10 +63,14 @@ const articleSchema = {
   },
 };
 
-// Figures mirrored from pages/cost-transparency.jsx. Update there first.
+/*
+ * Market estimates unless marked SOURCED. See the file header: these describe
+ * what quotes in this market look like; they are not traceable to a published
+ * document, and the page says so to the reader.
+ */
 const groundCosts = [
   { item: `Ground class tuition (${DGCA_PAPERS.length} papers plus ${RTR.name})`, cost: '₹1,50,000 – ₹2,50,000' },
-  { item: `DGCA examination fees (${DGCA_PAPERS.length} papers at ₹3,000)`, cost: '₹25,000 – ₹30,000' },
+  { item: `DGCA examination fees, SOURCED (${DGCA_PAPERS.length} papers at ₹2,500 regular, ₹5,000 on demand)`, cost: '₹12,500 – ₹25,000' },
   { item: 'Study material and books', cost: '₹30,000 – ₹50,000' },
   { item: 'Mock tests and practice papers', cost: '₹10,000 – ₹20,000' },
   { item: 'DGCA medical assessment', cost: '₹5,000 – ₹10,000' },
@@ -76,7 +103,7 @@ const overruns = [
   { trigger: 'Extra flying hours beyond the minimum', cost: '₹1,50,000 – ₹2,00,000 per 10 hours', likelihood: 'High' },
   { trigger: 'Timeline extending on weather or unserviceability', cost: '₹20,000 – ₹30,000 per extra month', likelihood: 'High' },
   { trigger: 'Type rating after the licence', cost: '₹1,00,000 – ₹2,00,000', likelihood: 'High' },
-  { trigger: 'Failing a DGCA paper', cost: '₹3,000 per re-sit, plus a lost cycle', likelihood: 'Medium' },
+  { trigger: 'Failing a DGCA paper', cost: '₹2,500 per re-sit in a regular session (₹5,000 on demand), plus a lost cycle', likelihood: 'Medium' },
   { trigger: 'DGCA conversion after training abroad', cost: '₹50,000 – ₹1,00,000', likelihood: 'Medium if you train overseas' },
   { trigger: 'Simulator practice beyond the included hours', cost: 'Around ₹5,000 per hour', likelihood: 'Low' },
   { trigger: 'Repeating a medical assessment', cost: '₹5,000 – ₹10,000', likelihood: 'Low' },
@@ -175,11 +202,14 @@ export default function PilotTrainingCostInIndia() {
       readingTime="12 min"
       quickAnswer={{
         question: 'How much does pilot training cost in India?',
-        answer: 'Around ₹40–70 lakh from enrolment to a Commercial Pilot Licence. Flying training is roughly ₹30–40 lakh of that, ground school and examinations around ₹2–3.5 lakh, and living costs another ₹7–13 lakh across 18 to 24 months. Ratings and a type rating sit outside every CPL quote.',
+        answer: 'Nobody can tell you exactly, and you should be wary of any page that says otherwise. No Indian government body publishes a market price for flying training and private schools publish nothing, so the ₹40–70 lakh range you will see everywhere — including on this page — is a market estimate rather than a sourced figure. Two things can be shown: DGCA charges ₹2,500 per examination paper in a regular session and ₹5,000 on demand, and IGRUA, a government academy, publishes a course fee of ₹55,00,000. What the breakdown below is genuinely good for is reading a quote: knowing which lines exist, which are usually excluded, and where a quote is understated.',
       }}
       summaryTitle="The cost, in one view"
       summaryItems={[
-        'Total, enrolment to licence: roughly ₹40–70 lakh, depending mainly on where you fly',
+        'Every range below is a market estimate we could not trace to a published document — read them as what quotes look like, not as prices',
+        'SOURCED: DGCA charges ₹2,500 per examination paper, ₹5,000 on demand',
+        'SOURCED: IGRUA, a government academy, publishes a course fee of ₹55,00,000',
+        'Market estimate, total enrolment to licence: roughly ₹40–70 lakh, depending mainly on where you fly',
         'Flying training: ₹30,00,000 – ₹40,00,000, the single largest line',
         'Ground school, material and examinations: roughly ₹2,00,000 – ₹3,50,000',
         'Living costs across 18–24 months: roughly ₹7,00,000 – ₹13,00,000',
@@ -200,14 +230,24 @@ export default function PilotTrainingCostInIndia() {
 
       <h2 id="total" className={H2}>What does pilot training actually cost in India?</h2>
       <p>
-        Roughly ₹40–70 lakh from enrolment to licence. The spread is wide because one line dominates
-        everything else: flying training is billed by the hour, and hours are the only part of the
-        budget that moves freely.
+        The number you will see everywhere is roughly ₹40–70 lakh from enrolment to licence, and it is
+        worth being straight with you about what that number is. It is a market estimate. No Indian
+        government body publishes a price for flying training &mdash; we checked DGCA, the Ministry of
+        Civil Aviation, PIB and parliamentary answers, which give flying-school counts and licences
+        issued and never fees &mdash; and private schools publish nothing. Every range in circulation,
+        this one included, traces back to pages quoting each other.
       </p>
       <p>
-        Every figure on this page comes from{' '}
-        <Link href="/cost-transparency" className="text-av-orange font-semibold underline">our cost transparency page</Link>,
-        which is where we maintain them. Treat them as indicative ranges rather than a quotation —
+        So read the breakdown below as a map of what a quote contains, not as a price list. That is what
+        it is actually good for: knowing which lines exist, which are routinely left out, and where a
+        quote is understated. Two things on this page <em>are</em> sourced and are marked as such &mdash;
+        DGCA&rsquo;s statutory examination fees, and the published course fee of IGRUA, a government
+        academy. Our{' '}
+        <Link href="/cost-transparency" className="text-av-orange font-semibold underline">cost transparency page</Link>{' '}
+        sets out that position in full and gives you the questions that make two private quotes
+        comparable. The spread is wide because one line dominates everything else: flying training is
+        billed by the hour, and hours are the only part of the budget that moves freely. Treat every
+        range here as indicative rather than a quotation &mdash;
         rates move, and a school will give you its own numbers.
       </p>
 

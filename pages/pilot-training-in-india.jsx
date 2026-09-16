@@ -78,8 +78,8 @@ const flyingSchools = [
         country: 'India',
         course: 'Commercial Pilot License (CPL)',
         duration: '12-18 months',
-        fees: '₹35-45 Lakhs (approx.)',
-        highlights: 'DGCA, state-of-the-art simulators, extensive flight hours',
+        fees: 'Not published by private schools. IGRUA, a government academy, publishes ₹55,00,000.',
+        highlights: 'DGCA licence issued directly, so no conversion step afterwards',
         href: '/flying-school/india',
     },
     {
@@ -87,8 +87,8 @@ const flyingSchools = [
         country: 'USA',
         course: 'FAA CPL & ATPL Training',
         duration: '12-14 months',
-        fees: '₹67–83 Lakh (≈ $80,000–$100,000)',
-        highlights: 'Largest flight training network in the USA, guaranteed instructor job opportunities',
+        fees: 'Set by the individual school; ask for it in writing, and ask what it excludes.',
+        highlights: 'FAA licence, which must be converted before flying commercially in India',
         href: '/flying-school/usa',
     },
     {
@@ -96,7 +96,7 @@ const flyingSchools = [
         country: 'UK',
         course: 'EASA ATPL Integrated Program',
         duration: '24 months',
-        fees: '£90,000 - £120,000',
+        fees: 'Set by the individual school; ask for it in writing, and ask what it excludes.',
         highlights: 'Airline-focused training, fast-track to commercial airlines',
         href: '/flying-school/uk',
     },
@@ -105,7 +105,7 @@ const flyingSchools = [
         country: 'Australia',
         course: 'CASA CPL & ATPL',
         duration: '12-18 months',
-        fees: '₹49–65 Lakh (≈ AUD $90,000–$120,000)',
+        fees: 'Set by the individual school; ask for it in writing, and ask what it excludes.',
         highlights: 'High-quality flight training with a focus on international airline careers',
         href: '/flying-school/australia',
     },
@@ -114,7 +114,7 @@ const flyingSchools = [
         country: 'South Africa',
         course: 'SACAA CPL & ATPL',
         duration: '12-15 months',
-        fees: '₹50–67 Lakh (≈ $60,000–$80,000)',
+        fees: 'Set by the individual school; ask for it in writing, and ask what it excludes.',
         highlights: 'Affordable pilot training, international pilot job opportunities',
         href: '/flying-school/south-africa',
     },
@@ -123,8 +123,8 @@ const flyingSchools = [
         country: 'Canada',
         course: 'Transport Canada CPL & ATPL',
         duration: '18-24 months',
-        fees: '₹62–76 Lakh (≈ CAD $90,000–$110,000)',
-        highlights: 'High international reputation, direct airline placement programs',
+        fees: 'Set by the individual school; ask for it in writing, and ask what it excludes.',
+        highlights: 'Transport Canada licence, which must be converted before flying commercially in India',
         href: '/flying-school/canada',
     },
 ];
@@ -209,7 +209,7 @@ const faqs = [
     },
     {
         q: 'What are the fees for Commercial Pilot Training in India?',
-        a: 'The average fees for CPL training in India is INR 40–60 Lakh. This includes Ground Classes (INR 2-3 lakhs), 200 hours of flying (INR 35-55 lakhs), Simulator training (INR 3-5 lakhs), and extra gear like books, uniforms, medicals, DGCA exams (INR 20–50 thousand). We One Aviation also provides scholarship and flexible payment options.',
+        a: 'There is no published figure, and the ranges circulating online cannot be traced to any document — this page quoted one until 15 September 2026 and no longer does. What can be shown: DGCA charges ₹2,500 per examination paper in a regular session and ₹5,000 on demand, and IGRUA, a government academy, publishes a course fee of ₹55,00,000. Private flying schools publish nothing, so get a quote in writing and compare it line by line. Our cost transparency page sets out the questions that make two quotes comparable.',
     },
     {
         q: 'What are the career options after pilot training in India?',
@@ -304,11 +304,19 @@ const cplSyllabus = [
     { num: '6', title: 'Radio Telephony', desc: 'Pilots don\'t just fly — they talk too! Learn how to communicate with ATC and other pilots using radio codes and phrases to keep everything clear and safe.' },
 ];
 
+/*
+ * REWRITTEN 2026-09-15 during the cost sweep. Every amount in this table was
+ * untraceable, and the four of them summed to a total this site stated five
+ * different ways across as many pages. The breakdown itself is useful — it is
+ * the right way to read a quote — so the structure stays and the invented
+ * amounts are replaced by what is actually knowable per line.
+ */
 const feesBreakdown = [
-    { label: 'Ground Classes', desc: 'Navigation, rules, aviation theory', amount: 'INR 2-3 Lakhs' },
-    { label: 'Flying Hours', desc: '200 hours of cockpit training', amount: 'INR 35-55 Lakhs' },
-    { label: 'Simulator Training', desc: 'Practice in advanced flight simulators', amount: 'INR 3-5 Lakhs' },
-    { label: 'Extra Gear', desc: 'Books, uniforms, medicals, DGCA exams', amount: 'INR 20–50 Thousand' },
+    { label: 'Ground Classes', desc: 'Navigation, rules, aviation theory', amount: 'Set by the institute' },
+    { label: 'Flying Hours', desc: '200 hours of cockpit training — the line that dominates every quote', amount: 'Set by the flying school' },
+    { label: 'Simulator Training', desc: 'Only 5 of the 10 instrument hours inside the 200 may be flown on a simulator', amount: 'Set by the flying school' },
+    { label: 'DGCA examination fee', desc: 'Per paper, paid to the government through Bharatkosh', amount: 'INR 2,500 regular / 5,000 on demand' },
+    { label: 'IGRUA published course fee', desc: 'A government academy, and the one publicly comparable price', amount: 'INR 55,00,000' },
 ];
 
 const usaBenefits = [
@@ -575,7 +583,10 @@ export default function Home() {
                             Fees for Commercial Pilot Training <span className="text-av-orange">in India</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-                            Average fees for CPL training in India is <span className="font-semibold text-av-blue">INR 40 – 60 Lakh</span>. Here's a breakdown of what your training fees cover:
+                            No Indian government body publishes a market price for flying training, and private schools publish
+                            nothing, so the ranges you find online cannot be traced to a document &mdash; this page quoted one
+                            until 15 September 2026. What a quote is <span className="font-semibold text-av-blue">made of</span>{' '}
+                            is knowable, and reading it line by line is what makes two quotes comparable:
                         </p>
                     </ScrollReveal>
                     <div className="grid md:grid-cols-2 gap-8">

@@ -7,7 +7,16 @@ import Link from 'next/link';
 const stats = [
     { num: '14-16 Months', label: 'Course Duration', icon: '📅' },
     { num: '200 Hrs', label: 'Flying Hours', icon: '✈️' },
-    { num: '₹58-60 Lakhs', label: 'Course Fee', icon: '💰' },
+    /*
+     * REPLACED 2026-09-15 during the cost sweep. This tile read ₹58-60 Lakhs as
+     * a course fee. Private flying schools in India do not publish fees and no
+     * government body publishes a market price, so the figure could not be
+     * traced — and the site was quoting five different ranges across as many
+     * pages. /cost-transparency holds the position. What is shown instead is
+     * the one publicly comparable price: IGRUA is a government academy and
+     * publishes its course fee.
+     */
+    { num: '₹55,00,000', label: 'IGRUA Published Fee', icon: '💰' },
     { num: 'DGCA', label: 'Certification', icon: '🏅' },
 ];
 
