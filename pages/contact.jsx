@@ -30,7 +30,7 @@ export default function Contact() {
   };
 
   return (
-    <Layout title="Contact We One Aviation Academy | Get Free Counselling" description="Contact We One Aviation Academy for free pilot training counselling. Call, WhatsApp or visit our Delhi office.">
+    <Layout title="Contact We One Aviation Academy | Get Free Counselling" description="Contact We One Aviation Academy for free, end-to-end pilot career counselling. Call, WhatsApp or visit our Dwarka office.">
       <div className="relative h-64 md:h-80 bg-gradient-to-br from-av-blue to-av-navy flex items-center justify-center pt-16">
         <div className="text-center">
           <div className="section-tag mb-3">Get In Touch</div>

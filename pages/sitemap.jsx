@@ -106,6 +106,7 @@ const sitemapData = [
             { label: 'How Long Does It Take to Become a Pilot', href: '/how-long-does-it-take-to-become-a-pilot' },
             { label: 'CPL Flight Training: the 200 hours', href: '/cpl-flight-training' },
             { label: 'Online DGCA Ground Classes', href: '/online-dgca-ground-classes' },
+            { label: 'Pilot Career Counselling (free)', href: '/pilot-career-counselling' },
         ],
     },
     {

@@ -86,9 +86,32 @@ already covered; four were not, and one is still blocked.
   not on top of it, and presenting them as additions has readers budgeting for
   flying hours the rule does not require.
 
-**Still blocked, keyword 50:** /pilot-career-counselling. Needs from owner what
-a session actually covers, how long, whether it is free, and what a parent
-leaves with. Writing it without that would mean inventing the service.
+**2.24 — DONE 2026-09-16. Keyword 50, /pilot-career-counselling, unblocked and
+built.** The owner confirmed on 16 September that counselling is free of cost
+and guides end to end. Those are the only two service claims on the page;
+everything else is regulatory substance from lib/facts.js.
+
+It is deliberately not a contact page with a new title. It publishes the agenda
+in advance — the eight decisions a prospective pilot faces, in the order that
+wastes the least money, each with the rule or published figure behind it and a
+link to the page that sets it out in full. A reader who never makes contact
+still leaves better informed, which is the only honest basis for asking anyone
+to get in touch.
+
+It also states what counselling cannot do, and closes on the Ministry of Civil
+Aviation's own position that there is no shortage of pilots but there is a
+shortage of commanders. A counselling page implying a guaranteed career would be
+the same class of claim as the guaranteed Emirates interview removed on 15
+September.
+
+Carries Article, Service and FAQPage nodes. The Service node prices the offer at
+0 INR, which is the owner's stated fact rather than an inference.
+
+**Do not add to this page:** session length, batch size, timings, fees, pass
+rates, placement, or a count of students counselled. None of it is
+substantiated.
+
+ALL 50 KEYWORDS ON THE OWNER'S PRIORITY LIST NOW HAVE A HOME.
 
 
 **2.19 — DONE 2026-09-16. The www 301 that never existed.** next.config.js

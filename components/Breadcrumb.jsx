@@ -28,6 +28,7 @@ const labelMap = {
   'pilot-training-abroad': 'Pilot training abroad',
   'online-dgca-ground-classes': 'Online DGCA ground classes',
   'cpl-flight-training': 'CPL flight training',
+  'pilot-career-counselling': 'Pilot career counselling',
   'dgca-ground-classes': 'DGCA ground classes',
   'dgca-ground-classes-in-india': 'DGCA ground classes in India',
   'dgca-pariksha': 'DGCA Pariksha',
