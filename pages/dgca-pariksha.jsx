@@ -2,7 +2,32 @@ import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import NextImage from 'next/image';
-import { PARIKSHA, inr, EXAM_RULES } from '../lib/facts';
+import QuickAnswer from '../components/QuickAnswer';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
+import StructuredData from '../components/StructuredData';
+import { generateFAQSchema } from '../lib/schema';
+import { PARIKSHA, inr, EXAM_RULES, DGCA_PAPERS, papersSummary } from '../lib/facts';
+
+/*
+ * STRUCTURED DATA AND ANSWER-FIRST ADDED 2026-09-16.
+ *
+ * WHY. From the Semrush positions export of 2026-09-15 this is the
+ * highest-traffic page on the site: 1,103 visits a month across 16 keywords
+ * and 138,600 of search volume, sitting at position 6 for "dgca pariksha"
+ * (74,000) and 9 for "pariksha dgca" (60,500). Twelve of its sixteen keywords
+ * show an AI Overview.
+ *
+ * And it shipped no JSON-LD at all. No Article node, no FAQPage — and because
+ * the route is listed in the existingFaqRoutes gate in data/pageFaqs.js,
+ * Layout was not injecting one either. It was gated out of the automatic FAQ
+ * and never given one of its own, so the single most valuable page on the site
+ * gave an answer engine nothing to lift. Its figures were already sourced;
+ * none of it was machine-readable.
+ *
+ * WHAT WAS ADDED: an answer-first block, a People-also-ask block, an Article
+ * node with citations, and a FAQPage node. No new facts — every figure below
+ * already existed in lib/facts.js with its source and the date it was read.
+ */
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -174,12 +199,67 @@ const relatedBlogs = [
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
+const LAST_CHECKED = PARIKSHA.verifiedOn.split('-').reverse().join('/');
+const CANONICAL = 'https://weoneaviation.in/dgca-pariksha';
+
+const pariksha_paa = [
+    {
+        q: 'What is DGCA Pariksha?',
+        a: `DGCA Pariksha is the online examination portal of the Directorate General of Civil Aviation, where a candidate books and sits the written papers a pilot licence requires. The papers are ${papersSummary()} — ${DGCA_PAPERS.length} in total — and each needs ${EXAM_RULES.theory.passMark}% on its own rather than an aggregate, under ${EXAM_RULES.car.citation}, ${EXAM_RULES.theory.clause}.`,
+    },
+    {
+        q: 'What is the DGCA Pariksha exam fee?',
+        a: `${inr(PARIKSHA.fees.regularPerPaper)} per paper in a regular session and ${inr(PARIKSHA.fees.olodePerPaper)} per paper in an Online On-Demand Examination, paid to the government through Bharatkosh. Oral examinations are ${inr(PARIKSHA.fees.oralPerPaper)}. Fees are not refunded and do not carry to a later session.`,
+    },
+    {
+        q: 'Do I need a computer number to book a DGCA exam?',
+        a: `Yes. No paper can be booked without one, and it is a separate online application rather than part of the exam booking. Through DigiLocker it is allotted immediately; the manual route takes ${PARIKSHA.processing.days} working days once the application is complete.`,
+    },
+    {
+        q: 'How many times a year is DGCA Pariksha held?',
+        a: `${PARIKSHA.calendar2026.regular.length} regular sessions and ${PARIKSHA.calendar2026.olode.length} Online On-Demand sessions across the year. ${PARIKSHA.calendar2026.tentative}`,
+    },
+    {
+        q: 'What is the passing mark in DGCA Pariksha?',
+        a: `${EXAM_RULES.theory.passMark}% in each paper, taken individually. There is no aggregate, so a strong paper cannot carry a weak one, and papers are cleared one at a time rather than in a single sitting.`,
+    },
+];
+
+const pariksha_faqs = [
+    { q: 'Is DGCA Pariksha the same as eGCA?', a: 'No, and confusing the two costs people time. Pariksha is the examination portal — where papers are booked and sat. eGCA is the licensing portal, where the licence application itself is made. You will need both, at different stages.' },
+    { q: 'Can I apply for a computer number without a medical certificate?', a: `Yes. The computer number application does not require a medical certificate, so the written papers can be started before the medical is done. From age ${PARIKSHA.basics.minAge}. ${PARIKSHA.basics.maxAgeNote}` },
+    { q: 'Is the DGCA Pariksha exam online?', a: 'Yes, it is a computer-based test with multiple-choice questions, booked through the Pariksha portal.' },
+    { q: 'What happens if I fail one paper?', a: `You re-sit that paper. Papers are cleared individually, so the ones you have passed stand. The fee is payable again — ${inr(PARIKSHA.fees.regularPerPaper)} in a regular session, ${inr(PARIKSHA.fees.olodePerPaper)} on demand — and you lose the cycle rather than the passes.` },
+    { q: 'How long is a DGCA paper pass valid?', a: `${EXAM_RULES.paperValidity.general} ${EXAM_RULES.paperValidity.cplAtpl} That is ${EXAM_RULES.car.citation}, ${EXAM_RULES.paperValidity.clause}. ${EXAM_RULES.paperValidity.planningNote}` },
+    { q: 'Where do I pay the DGCA examination fee?', a: `Through Bharatkosh, the government payment portal. ${PARIKSHA.fees.serviceCharge}` },
+];
+
+const pariksha_citations = PARIKSHA.sources.slice(0, 3).map((c) => ({ '@type': 'CreativeWork', name: c.label, url: c.url }));
+
+const pariksha_articleSchema_base = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'DGCA Pariksha: Exam Fees, Session Dates and How to Apply',
+    description: 'The DGCA Pariksha examination portal explained — the papers, the pass mark set by CAR, the fee per paper, the session calendar, and the computer number you cannot book without.',
+    inLanguage: 'en-IN',
+    dateModified: PARIKSHA.verifiedOn,
+    articleSection: 'DGCA examinations',
+    keywords: 'dgca pariksha, pariksha dgca, dgca exam, dgca pariksha login, dgca exam fees, dgca computer number, dgca exam dates',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
+    image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
+    author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+    publisher: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in', logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
+};
+
+const pariksha_articleSchema = { ...pariksha_articleSchema_base, citation: pariksha_citations };
+
 export default function DGCAParikshaPage() {
     return (
         <Layout
             title="DGCA Pariksha 2026: Exam Fees, Dates, How to Apply"
             description="DGCA Pariksha 2026: the four regular session dates, eight OLODE sessions, fees per paper, booking rules, eligibility, syllabus and how to apply on the portal."
         >
+            <StructuredData data={[pariksha_articleSchema, generateFAQSchema(pariksha_faqs)]} />
 
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center relative overflow-hidden">
@@ -205,6 +285,17 @@ export default function DGCAParikshaPage() {
                     </p>
                 </ScrollReveal>
             </div>
+
+            {/* Answer-first block, added 2026-09-16. See the note at the top of this file. */}
+            <section className="px-4 pt-12 max-w-4xl mx-auto">
+                <p className="text-xs text-gray-500 mb-4">
+                    Checked against DGCA Pariksha documents on {LAST_CHECKED}.
+                </p>
+                <QuickAnswer
+                    question="What is DGCA Pariksha, and what does it cost?"
+                    answer={`DGCA Pariksha is the Directorate General of Civil Aviation's own examination portal, where a candidate books and sits the written papers a pilot licence requires. There are ${DGCA_PAPERS.length} papers — ${papersSummary()} — and each needs ${EXAM_RULES.theory.passMark}% on its own rather than an aggregate, set by ${EXAM_RULES.car.citation}, ${EXAM_RULES.theory.clause}. The fee is ${inr(PARIKSHA.fees.regularPerPaper)} per paper in a regular session and ${inr(PARIKSHA.fees.olodePerPaper)} in an Online On-Demand Examination, paid to the government through Bharatkosh. Nothing can be booked without a computer number, which is a separate application — immediate through DigiLocker, or ${PARIKSHA.processing.days} working days manually. There are ${PARIKSHA.calendar2026.regular.length} regular sessions and ${PARIKSHA.calendar2026.olode.length} on-demand sessions a year.`}
+                />
+            </section>
 
             {/* ── Stats Bar ── */}
             <section className="bg-av-blue py-8">
@@ -791,6 +882,19 @@ export default function DGCAParikshaPage() {
                             </Link>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            <section className="px-4 pb-16 max-w-4xl mx-auto">
+                <PeopleAlsoAsk items={pariksha_paa} />
+                <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12">Frequently asked questions</h2>
+                <div className="space-y-3">
+                    {pariksha_faqs.map((f) => (
+                        <details key={f.q} className="border border-gray-200 rounded-xl p-4">
+                            <summary className="font-semibold text-av-blue text-sm cursor-pointer">{f.q}</summary>
+                            <p className="text-gray-600 text-sm leading-relaxed mt-2">{f.a}</p>
+                        </details>
+                    ))}
                 </div>
             </section>
 

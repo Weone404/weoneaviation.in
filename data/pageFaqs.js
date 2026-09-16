@@ -18,6 +18,7 @@
   '/cadet-pilot-program', '/dgca-class-2-class-1-medical',
   '/blogs/aviation-jobs-besides-pilot', '/faq',
   '/how-to-choose-an-aviation-academy', '/commercial-pilot-license-salary',
+  '/full-form-of-cpl-commercial-pilot-license',
   /*
    * /commercial-pilot-license-salary joined this gate on 2026-09-15 when it was
    * rebuilt with its own FAQs. Its old routeContent entry was deleted in the
@@ -422,20 +423,6 @@ const routeContent = {
     ['Where does Technical General sit among the DGCA CPL written subjects?', 'It is the paper DGCA names Aircraft and Engines, one of four written subjects required under Schedule II, Section J of the Aircraft Rules, 1937, alongside Air Regulations, Air Navigation, and Meteorology.'],
     ['How many modules does the Technical General syllabus cover?', 'The syllabus is structured into 7 modules, covering aircraft structure and materials, aerodynamics and flight controls, engines and propulsion, aircraft systems, instruments and avionics, landing gear and brakes, and fire detection and protection.'],
     ['Do students get hands-on exposure to real aircraft?', 'Yes, the course includes visits to real aircraft for practical exposure to components, alongside aircraft models, system diagrams, and animations used in classroom teaching.'],
-  ],
-},
-  '/full-form-of-cpl-commercial-pilot-license': {
-  title: 'CPL Full Form FAQs',
-  questions: [
-    ['What is the full form of CPL in aviation?', 'In aviation, CPL stands for Commercial Pilot License. It allows a qualified pilot to fly aircraft professionally for airlines, cargo operators, charter companies, and other commercial services.'],
-    ['What are the main steps to obtain an aviation CPL?', 'The page lists applying for a DGCA Computer Number, completing DGCA-mandated medical fitness assessments, joining DGCA Ground Classes, clearing the six DGCA subject examinations, completing 200 flying hours, and applying for the licence.'],
-    ['Which DGCA subjects are listed for CPL preparation?', 'The listed subjects are Air Navigation, Aviation Meteorology, Air Regulations, Technical General, Technical Specific, and RTR (Aero).'],
-    ['What can a pilot do after obtaining a CPL?', 'CPL holders can apply to airlines as First Officers, work with cargo, charter, or business-jet operators, and later pursue an ATPL for progression toward airline command.'],
-    ['Does CPL have meanings outside aviation?', 'Yes. The page lists meanings in cricket, marketing, technology, law, sports, military, education, gaming, and other fields. The correct meaning depends on the context.'],
-    ['How is an aviation CPL different from the other CPL meanings?', 'The aviation meaning is a professional pilot licence issued under DGCA regulations, while other uses refer to a T20 cricket league, a marketing cost metric, a military rank, a legal qualification, or programming and computing terms.'],
-    ['What does CPL mean in cricket?', 'In cricket, CPL stands for the Caribbean Premier League, a T20 tournament founded in 2013 featuring teams from across the Caribbean region.'],
-    ['What does CPL mean in digital marketing?', 'In marketing, CPL stands for Cost Per Lead — a metric measuring how much it costs to generate one potential customer through an ad campaign; a lower CPL means better campaign efficiency.'],
-    ['How is CPL different from a PPL?', 'A Private Pilot License (PPL) allows individuals to fly for personal use only, while a Commercial Pilot License (CPL) permits commercial, paid flying operations.'],
   ],
 },
   '/cbse-full-form': {

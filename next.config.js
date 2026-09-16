@@ -28,9 +28,10 @@ const nextConfig = {
     ],
   },
 
-  // ── 301 redirect: enforce non-www as the canonical domain ───────────────
-  // Vercel runs this at the Edge — zero latency, no Lambda cold start.
-  // This eliminates the www vs non-www duplicate content split.
+  // The www -> apex 301 that this comment used to claim existed is now real.
+  // It lives at the top of the redirects() array below, where it can be seen.
+  // Do not describe a rule here that is not implemented; that is how this one
+  // went missing for as long as it did.
   /*
    * ── Database-post consolidation: still pending ────────────────────────────
    *
@@ -67,6 +68,34 @@ const nextConfig = {
    */
   async redirects() {
     return [
+      /*
+       * ── www -> apex, 301 (ADDED 2026-09-16) ───────────────────────────────
+       *
+       * This rule did not exist. A comment higher up in this file claimed it
+       * did — "301 redirect: enforce non-www as the canonical domain. Vercel
+       * runs this at the Edge" — with nothing implementing it, and no redirect
+       * in the table carried a host condition.
+       *
+       * VERIFIED LIVE on 2026-09-16 before writing this: fetching
+       * https://www.weoneaviation.in/dgca-pariksha returned the page with no
+       * redirect, and https://www.weoneaviation.in/ppl-full-form served a
+       * correct apex rel=canonical alongside "index, follow". So both hostnames
+       * were serving every route, with only a canonical hint to separate them.
+       *
+       * WHAT IT WAS COSTING, from the Semrush positions export of 2026-09-15:
+       * 371 of 857 ranking rows sat on www, carrying 295,190 of the tracked
+       * search volume, and 49 keywords ranked on www and apex at the same time.
+       * /dgca-full-form earns its traffic on the www copy while the apex copy
+       * earns none — "dgca", 90,500 volume, position 19 on www.
+       *
+       * A canonical is a hint. A 301 is not. This is the hint made binding.
+       */
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.weoneaviation.in' }],
+        destination: 'https://weoneaviation.in/:path*',
+        permanent: true,
+      },
       /*
        * ── Database-post consolidation (ACTIVE) ──────────────────────────────
        * Each ObjectId below is a post authored through /admin/blog that a
