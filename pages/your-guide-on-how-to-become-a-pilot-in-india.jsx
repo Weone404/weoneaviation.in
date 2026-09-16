@@ -1,6 +1,8 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
 import StructuredData from '../components/StructuredData';
+import QuickAnswer from '../components/QuickAnswer';
+import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
 import LeadForm from '../components/LeadForm';
 import Link from 'next/link';
 import {
@@ -147,6 +149,35 @@ const faqs = [
     { q: 'Does We One Aviation place students into airline jobs?', a: ACADEMY.scope },
 ];
 
+/*
+ * ANSWER-FIRST AND PEOPLE-ALSO-ASK — ADDED 2026-09-16.
+ *
+ * WHY. From the Semrush positions export of 2026-09-15 this page holds 10
+ * keywords and 24,260 of search volume, with "how to become a pilot" at 14,800
+ * sitting at position 26, returning 11 visits a month. Every one of its ten
+ * keywords shows an AI Overview. Article and FAQPage nodes were already here;
+ * what was missing was the extractable answer at the top and a People-also-ask
+ * block. Both are built from facts already on the page.
+ */
+const guidePaa = [
+    {
+        q: 'How do you become a pilot in India?',
+        a: `Six stages, and the order matters more than the speed. Confirm 10+2 with Physics and Mathematics. Clear a Class 2 medical — the cheapest gate and the one that can stop everything. Apply for a computer number, which needs no medical certificate and no flying school. Clear the ${DGCA_PAPERS.length} DGCA written papers at ${EXAM_RULES.theory.passMark}% each. Fly ${CPL_HOURS.total} hours at a flying training organisation. Then the Class 1 medical, RTR (A) and the skill test, and the licence application on eGCA.`,
+    },
+    {
+        q: 'What qualification do you need to become a pilot?',
+        a: `${EDUCATION.requirement} ${EDUCATION.altRoute}`,
+    },
+    {
+        q: 'How long does it take to become a pilot in India?',
+        a: 'No rule sets a duration, and any figure quoted without a source is a guess. The regulations fix floors — 200 flying hours, the examination session calendar, the medical validity — not durations. What actually decides your timeline is your flying school: how many aircraft it has and how many students share them. Ask a school for hours flown per student per month and you will have a better estimate than any article can give you.',
+    },
+    {
+        q: 'What is the first step to becoming a pilot?',
+        a: `Two, in this order. Confirm the education gate. Then book the Class 2 medical, because it is inexpensive relative to everything after it and it is the one result that can end the plan. Only then start spending.`,
+    },
+];
+
 const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -188,6 +219,10 @@ export default function HowToBecomeAPilotHub() {
             description="Every stage from Class 12 to a Commercial Pilot Licence, with the rule behind each one — and an honest answer to how long it takes, built from what the rules actually fix."
         >
             <StructuredData data={[articleSchema, faqSchema]} />
+
+            <section className="px-4 pt-12 max-w-4xl mx-auto">
+                <QuickAnswer question={guidePaa[0].q} answer={guidePaa[0].a} />
+            </section>
 
             <section className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue pt-32 pb-16 px-4 text-center">
                 <ScrollReveal>
@@ -410,6 +445,10 @@ export default function HowToBecomeAPilotHub() {
                     </div>
                 </section>
             </section>
+            <section className="px-4 pb-16 max-w-4xl mx-auto">
+                <PeopleAlsoAsk items={guidePaa} />
+            </section>
+
         </Layout>
     );
 }

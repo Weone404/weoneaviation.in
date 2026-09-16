@@ -22,9 +22,15 @@ import { MongoClient, ObjectId } from 'mongodb';
  *
  * Did: two things that do not need that call.
  *   1. `canonicalTo` points a post at the page that supersedes it, so the
- *      duplicate stops competing with the real page for the same query, and
- *      `noindex` keeps it out of the index while leaving the URL working for
- *      anyone holding the link. Layout applies both.
+ *      duplicate stops competing with the real page for the same query. Layout
+ *      applies it.
+ *
+ *      CORRECTED 2026-09-16: this originally set `noindex` alongside the
+ *      canonical. That is a conflicting pair of signals — a noindexed page is
+ *      dropped rather than read, so the canonical it carries may never be
+ *      honoured and the consolidation silently fails. The canonical now stands
+ *      alone, which is what actually transfers the signal to the superseding
+ *      page.
  *   2. Unsourced figures were removed. /blogs/3 printed a "₹40–80 lakhs"
  *      training cost with no source — the same figure removed from
  *      /cost-transparency in this branch. /blogs/4 printed per-airline pilot
@@ -131,6 +137,17 @@ const hardcodedBlogs = [
         category: 'Career',
         readTime: '4 min',
         date: 'Nov 28, 2024',
+        /*
+         * canonicalTo added 2026-09-16. The Semrush positions export of
+         * 2026-09-15 showed the salary cluster stranded on this legacy
+         * numeric-id post: /blogs/4 held 41 keywords and 42,030 of search
+         * volume — "pilot salary" alone is 27,100, at position 66 — while
+         * /commercial-pilot-license-salary held 2 keywords and 4,540 at
+         * position 40. The wrong page was carrying the topic, and neither was
+         * earning anything. The rebuilt salary page is now the target, so the
+         * signal consolidates onto the page that can actually answer the query.
+         */
+        canonicalTo: '/commercial-pilot-license-salary',
         img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=80',
         content: `
       <h2>What this page used to say</h2>
@@ -148,7 +165,7 @@ const hardcodedBlogs = [
       <p>Because a prospective student cannot verify one, and a figure you cannot verify is worth less than an honest blank. If a page shows you an exact monthly salary for a named airline, ask where it came from. We One Aviation does not employ pilots and does not place students into airline jobs — hiring decisions rest with the operator — so any earnings figure from us would be a claim about somebody else's payroll.</p>
 
       <h2>What to do with this</h2>
-      <p>Plan against the cost, which is knowable, rather than against the income, which is not. <a href="/cost-transparency">The cost page</a> sets out what can be shown. If you are weighing whether the career is worth the outlay, that is the honest arithmetic to do.</p>
+      <p>The full treatment of this question — including the one thing about Indian pilot pay that <em>is</em> published, the regulatory ceiling of 1,000 flying hours a year that the hour-linked part of the pay sits under — is on our <a href="/commercial-pilot-license-salary">commercial pilot salary page</a>. Plan against the cost, which is knowable, rather than against the income, which is not. <a href="/cost-transparency">The cost page</a> sets out what can be shown. If you are weighing whether the career is worth the outlay, that is the honest arithmetic to do.</p>
     `,
         faqs: [],
     },
@@ -505,7 +522,7 @@ export default function BlogDetail({ blog }) {
     }
 
     return (
-        <Layout title={`${blog.title} – We One Aviation`} description={blog.excerpt} canonical={blog.canonicalTo} noindex={Boolean(blog.canonicalTo)}>
+        <Layout title={`${blog.title} – We One Aviation`} description={blog.excerpt} canonical={blog.canonicalTo}>
             <StructuredData
                 data={{
                     '@context': 'https://schema.org',

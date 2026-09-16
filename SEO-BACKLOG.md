@@ -58,6 +58,55 @@ codebase, so 15 are unexplained and may be pages we want indexed.
 
 ## 2. Open and unblocked
 
+**2.19 — DONE 2026-09-16. The www 301 that never existed.** next.config.js
+carried a comment claiming a www-to-apex 301 ran at the Vercel edge; nothing
+implemented it and no redirect in the table of 131 carried a host condition.
+Verified live before fixing: www served every route with a correct apex
+canonical and "index, follow", and no redirect. From the Semrush positions
+export of 2026-09-15, 371 of 857 ranking rows sat on www carrying 295,190 of
+tracked volume, with 49 keywords ranking on both hostnames at once. The rule is
+now the first entry in redirects(). **Verify after deploy** that
+https://www.weoneaviation.in/dgca-pariksha returns a 301 to apex.
+
+**2.20 — DONE 2026-09-16. Structured data added to the eight highest-value
+pages.** The pattern the positions export exposed: these are not thin pages —
+400 to 1,200 lines each — but they shipped no JSON-LD and no answer-first block
+on queries where an AI Overview is already showing. /dgca-pariksha (1,103
+visits, the site's highest), /full-form-of-cpl-commercial-pilot-license (731),
+/icse-full-form, /cbse-full-form, /dgca-full-form, /ppl-full-form,
+/ecga-login-your-complete-guide and /your-guide-on-how-to-become-a-pilot-in-india
+now carry answer-first blocks, People-also-ask, Article nodes with citations and
+FAQPage nodes as each was missing them. Every figure came from lib/facts.js; no
+new facts were introduced.
+
+Note for whoever audits this: four of those routes sit in the existingFaqRoutes
+gate, which meant they were excluded from the automatic FAQ injection and had
+never been given one of their own — so they had no FAQ structured data at all.
+That is the inverse of backlog 2.11 and worth checking on any page in that gate.
+
+**2.21 — Two owner decisions this analysis surfaced.**
+
+*The misspelled slug.* /ecga-login-your-complete-guide reads "ecga" where the
+query is "egca" — 74,000 volume at position 12, 756 visits a month. Renaming
+means 301-ing a URL that is currently earning. On-page targeting has been fixed
+without touching the URL. **Needs from owner:** rename to /egca-login with a
+301, or leave it.
+
+*The head term.* "cpl" alone is 201,000 volume and sits at position 46 on
+/full-form-of-cpl-commercial-pilot-license, which already holds position 1 for
+"cpl full form". The answer-first block now leads with the licence and its four
+requirements, which is the content half of that gap. Whether to go further —
+a dedicated hub for the bare term — is a decision worth taking on data after
+this change has had time to register.
+
+**2.22 — /pilot-training-in-india is the next real job.** 133 keywords, 54,230
+of search volume, nothing above position 15, 3 visits a month, and 109 of those
+133 keywords show an AI Overview. 1,161 lines of breadth with no depth: no
+JSON-LD, no answer-first, no People-also-ask, zero table elements and no sourced
+facts. It is the largest remaining page-level gap and it needs a rebuild rather
+than an injection of markup.
+
+
 **2.1 — STARTED 2026-09-15. 12 of 41 URLs now resolved, and the set was never 29.**
 
 CORRECTION 2026-09-15: the supplied keyword spreadsheet said 29 database posts.
