@@ -401,7 +401,7 @@ export default function CPLEligibility() {
                             </ol>
                             <p className={P}>
                                 {EGCA.joinPoint} The whole application, and the two rules that most often cost a cycle, are on our{' '}
-                                <Link href="/ecga-login-your-complete-guide" className={A}>eGCA guide</Link>.
+                                <Link href="/egca-login" className={A}>eGCA guide</Link>.
                             </p>
 
                             {/* Myths */}
@@ -545,7 +545,7 @@ export default function CPLEligibility() {
                                     <li><Link href="/dgca-computer-number" className={A}>DGCA computer number</Link></li>
                                     <li><Link href="/commercial-pilot-license-syllabus" className={A}>Syllabus and study material</Link></li>
                                     <li><Link href="/dgca-pariksha" className={A}>Papers, fees and dates</Link></li>
-                                    <li><Link href="/ecga-login-your-complete-guide" className={A}>eGCA and the licence application</Link></li>
+                                    <li><Link href="/egca-login" className={A}>eGCA and the licence application</Link></li>
                                     <li><Link href="/student-pilot-license-spl" className={A}>Student Pilot Licence</Link></li>
                                     <li><Link href="/rtr-a" className={A}>{RTR.name}</Link></li>
                                 </ul>

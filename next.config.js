@@ -153,6 +153,25 @@ const nextConfig = {
        */
       { source: '/blogs/4', destination: '/commercial-pilot-license-salary', permanent: true },
       /*
+       * Added 2026-09-16 at the owner's instruction. The slug read "ecga" where
+       * the query is "egca" — "egca login" carries 74,000 monthly searches and
+       * "egca" another 49,500, and the page sat at position 12 and 20 for them
+       * while earning 756 visits a month. A misspelled slug on a navigational
+       * query is a self-inflicted handicap.
+       *
+       * This is a 301 on a URL that IS earning, which is normally a thing to
+       * avoid. It was done because the owner asked for it explicitly on
+       * 16 September, and because the upside on a 74,000-volume navigational
+       * term is large. Expect a short dip while Google reprocesses; if traffic
+       * has not recovered within about six weeks, that is worth investigating
+       * rather than accepting.
+       *
+       * Every internal reference was updated in the same commit — seven pages,
+       * data/internalLinks.js, data/pageFaqs.js, the HTML sitemap and
+       * public/llms.txt — so nothing points at the old path.
+       */
+      { source: '/ecga-login-your-complete-guide', destination: '/egca-login', permanent: true },
+      /*
        * Added 2026-09-15. Four consolidations onto destinations that already
        * exist and are deeper and sourced. Each source is a database post that
        * self-canonicalises to its ObjectId, is absent from the sitemap and

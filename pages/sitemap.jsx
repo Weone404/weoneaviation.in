@@ -43,7 +43,7 @@ const sitemapData = [
             { label: 'DGCA Pariksha / Exam Guide', href: '/dgca-pariksha' },
             { label: 'DGCA Full Form', href: '/dgca-full-form' },
             { label: 'DGCA Computer Number', href: '/dgca-computer-number' },
-            { label: 'ECGA Login Guide', href: '/ecga-login-your-complete-guide' },
+            { label: 'ECGA Login Guide', href: '/egca-login' },
         ],
     },
     {

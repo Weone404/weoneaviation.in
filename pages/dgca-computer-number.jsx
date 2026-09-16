@@ -315,7 +315,7 @@ export default function DGCAComputerNumber() {
                                 examinations under {PARIKSHA.authority.rule}, and this number is how the{' '}
                                 {PARIKSHA.authority.name.replace(', Directorate General of Civil Aviation', '')} identifies you
                                 across every paper you sit. {PARIKSHA.basics.loginAfterAllotment} The separate licensing portal is
-                                covered on our <Link href="/ecga-login-your-complete-guide" className={A}>eGCA login guide</Link>, and
+                                covered on our <Link href="/egca-login" className={A}>eGCA login guide</Link>, and
                                 the papers themselves on our <Link href="/dgca-pariksha" className={A}>DGCA Pariksha guide</Link>.
                             </p>
                             <p className={P}>
@@ -774,7 +774,7 @@ export default function DGCAComputerNumber() {
                                 <h4 className="font-montserrat font-bold text-av-blue mb-3 text-sm">Next steps</h4>
                                 <ul className="space-y-2 text-sm">
                                     <li><Link href="/dgca-pariksha" className={A}>DGCA Pariksha: papers, fees and dates</Link></li>
-                                    <li><Link href="/ecga-login-your-complete-guide" className={A}>eGCA registration and login</Link></li>
+                                    <li><Link href="/egca-login" className={A}>eGCA registration and login</Link></li>
                                     <li><Link href="/dgca-ground-classes" className={A}>DGCA ground classes</Link></li>
                                     <li><Link href="/commercial-pilot-license" className={A}>Commercial Pilot Licence (CPL)</Link></li>
                                     <li><Link href="/rtr-a" className={A}>RTR (A)</Link></li>

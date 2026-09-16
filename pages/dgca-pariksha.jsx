@@ -193,7 +193,7 @@ const relatedBlogs = [
     { label: 'How to Become a Pilot', href: '/how-to-become-a-pilot' },
     { label: 'Different Types of Pilot Licences', href: '/courses' },
     { label: 'Best DGCA Classes', href: '/best-dgca-classes' },
-    { label: 'eGCA Login', href: '/ecga-login-your-complete-guide' },
+    { label: 'eGCA Login', href: '/egca-login' },
     { label: 'Pilot Course Fees After 12th', href: '/pilot-course-fees' },
 ];
 

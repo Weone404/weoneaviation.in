@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { EGCA, PARIKSHA, MEDICAL_STANDARDS as MED, ACADEMY } from '../lib/facts';
 
 /*
- * /ecga-login-your-complete-guide — rewritten 2026-09-11 from DGCA sources.
+ * /egca-login — rewritten 2026-09-11 from DGCA sources.
  *
  * The slug is a typo, "ecga" for "eGCA". It stays. The page ranks on it, the
  * URL has history, and renaming it would trade real positions for tidiness.
@@ -30,7 +30,7 @@ import { EGCA, PARIKSHA, MEDICAL_STANDARDS as MED, ACADEMY } from '../lib/facts'
  * or a prerequisite into this file.
  */
 
-const CANONICAL = 'https://weoneaviation.in/ecga-login-your-complete-guide';
+const CANONICAL = 'https://weoneaviation.in/egca-login';
 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 function longDate(iso) {

@@ -3,7 +3,7 @@
   '/courses/atpl', '/student-pilot-license-spl',
   '/commercial-pilot-license-eligibility',
   '/dgca-computer-number', '/dgca-full-form',
-  '/dgca-ground-classes-in-india', '/dgca-pariksha', '/ecga-login-your-complete-guide',
+  '/dgca-ground-classes-in-india', '/dgca-pariksha', '/egca-login',
   '/how-to-become-a-pilot-after-12th', '/lead-magnets', '/lead-magnets/dgca-exam-checklist',
   '/pilot-training-in-india',
   '/ppl-full-form', '/rtr-full-form-meaning-importance-and-complete-guide', '/student-checklists',

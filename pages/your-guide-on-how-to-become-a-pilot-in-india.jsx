@@ -125,7 +125,7 @@ const stages = [
             `${EGCA.epl.what} It has covered the Commercial Pilot Licence since ${EGCA.epl.cplFrtolFrom} and the Airline Transport Pilot Licence since ${EGCA.epl.atplFrom}, and ${EGCA.epl.access.charAt(0).toLowerCase()}${EGCA.epl.access.slice(1)}`,
             `An ATPL comes later and has its own age: ${ATPL.minAge}. ${ATPL.permits}`,
         ],
-        link: { href: '/ecga-login-your-complete-guide', label: 'eGCA and the licence application' },
+        link: { href: '/egca-login', label: 'eGCA and the licence application' },
     },
 ];
 
@@ -443,7 +443,7 @@ export default function HowToBecomeAPilotHub() {
                                     <li><Link href="/dgca-class-2-class-1-medical" className={A}>Class 1 and Class 2 medical</Link></li>
                                     <li><Link href="/dgca-computer-number" className={A}>DGCA computer number</Link></li>
                                     <li><Link href="/commercial-pilot-license-syllabus" className={A}>Syllabus and study material</Link></li>
-                                    <li><Link href="/ecga-login-your-complete-guide" className={A}>eGCA and the licence</Link></li>
+                                    <li><Link href="/egca-login" className={A}>eGCA and the licence</Link></li>
                                     <li><Link href="/how-to-become-a-pilot-after-12th" className={A}>Straight after Class 12</Link></li>
                                 </ul>
                             </div>

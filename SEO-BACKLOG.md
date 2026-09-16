@@ -58,6 +58,30 @@ codebase, so 15 are unexplained and may be pages we want indexed.
 
 ## 2. Open and unblocked
 
+**2.36 — DONE 2026-09-16. The slug renamed: /ecga-login-your-complete-guide is
+now /egca-login.** Logged as an owner decision on 15 September and taken on 16
+September.
+
+The old slug read "ecga" where the query is "egca". "egca login" carries 74,000
+monthly searches and "egca" another 49,500; the page sat at positions 12 and 20
+for them while earning 756 visits a month. A misspelled slug on a navigational
+query is a self-inflicted handicap.
+
+This is a 301 on a URL that IS earning, which is normally the thing to avoid.
+It was done because the owner asked for it explicitly and because the upside on a
+74,000-volume navigational term is large.
+
+**WATCH THIS ONE.** Expect a short dip while Google reprocesses. If traffic has
+not recovered within roughly six weeks, that is worth investigating rather than
+accepting — check the 301 resolves, that the new URL is indexed, and that no
+internal link still points at the old path.
+
+Every internal reference was updated in the same commit: seven pages,
+data/internalLinks.js, data/pageFaqs.js (gate entry), the breadcrumb map, the
+HTML sitemap and public/llms.txt. A grep for the old slug returns nothing and
+the XML sitemap carries only the new one.
+
+
 **2.35 — IN PROGRESS. Content depth audit across every page.**
 scripts/audit-content.cjs added: it renders every page through the same harness
 as the smoke test and reports rendered character count, headings, tables and

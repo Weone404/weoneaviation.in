@@ -30,6 +30,7 @@ const labelMap = {
   'cpl-flight-training': 'CPL flight training',
   'pilot-career-counselling': 'Pilot career counselling',
   'ame-aircraft-maintenance-engineer': 'Aircraft Maintenance Engineer (AME)',
+  'egca-login': 'eGCA login',
   'dgca-ground-classes': 'DGCA ground classes',
   'dgca-ground-classes-in-india': 'DGCA ground classes in India',
   'dgca-pariksha': 'DGCA Pariksha',

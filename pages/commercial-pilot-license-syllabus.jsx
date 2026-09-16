@@ -440,7 +440,7 @@ export default function CPLSyllabusPage() {
                                     <li><Link href="/dgca-computer-number" className={A}>Get a computer number</Link></li>
                                     <li><Link href="/dgca-pariksha" className={A}>Book on Pariksha</Link></li>
                                     <li><Link href="/dgca-class-2-class-1-medical" className={A}>Medical — for the licence, not the paper</Link></li>
-                                    <li><Link href="/ecga-login-your-complete-guide" className={A}>eGCA, for the licence itself</Link></li>
+                                    <li><Link href="/egca-login" className={A}>eGCA, for the licence itself</Link></li>
                                 </ul>
                             </div>
                         </ScrollReveal>

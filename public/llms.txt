@@ -60,7 +60,7 @@ eGCA versus DGCA Pariksha — the two DGCA portals (checked 11 September 2026 ag
 - Electronic Personnel Licence: a secure digital licence with ICAO-aligned security features for authenticity, tamper prevention and real-time verification, accessed through the eGCA mobile application. Rolled out for CPL and FRTOL(R) in February 2025, and for ATPL on 21 January 2026.
 - Before a CPL application on eGCA a candidate needs: an eGCA ID; a valid Class 1 medical certificate and assessment sheet; a valid FRTOL or FRTOL(R) with RTR certificate; an e-logbook updated and e-validated by the flying training organisation; English Language Proficiency at Level 4 or above; and the written examinations conducted by the Central Examination Organisation.
 - Licence service fees are paid through Bharatkosh within 48 hours of submission. The date of submission to DGCA is the date the whole process including payment completes. There is no provision to correct an application once submitted, and e-logbook entries made after submission are not considered for that application.
-- Full sourced guide: https://weoneaviation.in/ecga-login-your-complete-guide
+- Full sourced guide: https://weoneaviation.in/egca-login
 
 DGCA medical, Class 1 and Class 2 (checked 11 September 2026 against Aircraft Rules 1937 rules 39B and 39C, CAR Section 7 Series 'C' Part I Rev. 6 of 18 October 2022, and DGCA's list of approved centres updated 27 August 2026):
 
@@ -136,7 +136,7 @@ Academy facts: founded 2009; located at C-404, 3rd Floor, Ramphal Chowk, Block C
 - https://weoneaviation.in/dgca-full-form — What the DGCA is and what it regulates.
 - https://weoneaviation.in/dgca-ground-classes-in-india — Ground-class options across India, subject coverage and how classes are structured.
 - https://weoneaviation.in/rtr-full-form-meaning-importance-and-complete-guide — What RTR (A) stands for, why it is examined separately from the DGCA papers, and how the examination is structured.
-- https://weoneaviation.in/ecga-login-your-complete-guide — Using the DGCA eGCA portal: registration, login, and the actions students complete there.
+- https://weoneaviation.in/egca-login — Using the DGCA eGCA portal: registration, login, and the actions students complete there.
 
 ## How to become a pilot
 
