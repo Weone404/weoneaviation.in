@@ -81,6 +81,7 @@ const sitemapData = [
         headerColor: 'bg-sky-700',
         links: [
             { label: 'How to Check an Aviation Academy', href: '/how-to-choose-an-aviation-academy' },
+            { label: 'Pilot Training Abroad (overview)', href: '/pilot-training-abroad' },
             { label: 'Flying School Overview', href: '/flying-school/india' },
             { label: 'Flying School in India', href: '/flying-school/india' },
             { label: 'Flying School in USA', href: '/flying-school/usa' },
@@ -102,6 +103,9 @@ const sitemapData = [
             { label: 'Your Guide on How to Become a Pilot', href: '/your-guide-on-how-to-become-a-pilot-in-india' },
             { label: 'Pilot Training Courses', href: '/pilot-training-in-india' },
             { label: 'Airline Preparation Course', href: '/airline-preparation-course' },
+            { label: 'How Long Does It Take to Become a Pilot', href: '/how-long-does-it-take-to-become-a-pilot' },
+            { label: 'CPL Flight Training: the 200 hours', href: '/cpl-flight-training' },
+            { label: 'Online DGCA Ground Classes', href: '/online-dgca-ground-classes' },
         ],
     },
     {

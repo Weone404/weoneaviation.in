@@ -58,6 +58,39 @@ codebase, so 15 are unexplained and may be pages we want indexed.
 
 ## 2. Open and unblocked
 
+**2.23 — DONE 2026-09-16. Four new pages for keyword-list gaps.** Built after
+mapping all 50 priority keywords against the routes that exist. Forty-six were
+already covered; four were not, and one is still blocked.
+
+- **/how-long-does-it-take-to-become-a-pilot** (keyword 45). Every competitor
+  answers with a duration nobody can source, because no Indian regulation sets
+  one. This page publishes what the rules DO set: floors, and — the part almost
+  nobody covers — expiry windows, since paper passes die at two and a half
+  years (five for CPL and ATPL) and hours older than five years stop counting.
+  Ends on the one question to ask a school, backed by DGCA weighting
+  Operational Aspects at 40% of its own FTO ranking.
+- **/pilot-training-abroad** (keyword 43). Five country pages existed under
+  /flying-school/ with no parent, competing with each other for the generic
+  term — the same shape the airline cadet pages had. Leads with the fact most
+  pages bury: a foreign licence is not an Indian licence, and conversion sits
+  outside every quote. No conversion fee or timeline is stated; we could not
+  source one.
+- **/online-dgca-ground-classes** (keyword 33). Reframes the question: every
+  step of the DGCA examination process is already location-independent, so
+  online is not a workaround. Balanced by what no ground school can do online
+  or otherwise. No batch size, timings, duration, fee or pass rate, per the
+  owner's standing rule.
+- **/cpl-flight-training** (keyword 42). The deep blog posts on individual
+  components existed with no page above them. Corrects the error most
+  competitor pages make: the named components sit INSIDE the 200-hour total,
+  not on top of it, and presenting them as additions has readers budgeting for
+  flying hours the rule does not require.
+
+**Still blocked, keyword 50:** /pilot-career-counselling. Needs from owner what
+a session actually covers, how long, whether it is free, and what a parent
+leaves with. Writing it without that would mean inventing the service.
+
+
 **2.19 — DONE 2026-09-16. The www 301 that never existed.** next.config.js
 carried a comment claiming a www-to-apex 301 ran at the Vercel edge; nothing
 implemented it and no redirect in the table of 131 carried a host condition.

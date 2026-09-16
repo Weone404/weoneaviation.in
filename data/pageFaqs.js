@@ -20,6 +20,7 @@
   '/how-to-choose-an-aviation-academy', '/commercial-pilot-license-salary',
   '/full-form-of-cpl-commercial-pilot-license',
   '/icse-full-form', '/cbse-full-form',
+  '/how-long-does-it-take-to-become-a-pilot', '/pilot-training-abroad', '/online-dgca-ground-classes', '/cpl-flight-training',
   /*
    * /commercial-pilot-license-salary joined this gate on 2026-09-15 when it was
    * rebuilt with its own FAQs. Its old routeContent entry was deleted in the

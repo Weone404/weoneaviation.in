@@ -131,6 +131,12 @@ const whyChoose = [
 
 const blogs = [
   {
+    title: 'Online DGCA Ground Classes: What Can Be Done Remotely',
+    date: 'September 16, 2026',
+    desc: 'Every step of the DGCA examination process is already location-independent \u2014 the computer number, the booking, the computer-based test and the published syllabus. What online study cannot cover, and what no ground school covers either.',
+    href: '/online-dgca-ground-classes',
+  },
+  {
     title: 'Aviation Academy Near Me: How to Check One',
     date: 'September 15, 2026',
     desc: "DGCA publishes an approved flying school list and a twice-yearly ranking against five weighted parameters. How to read both, why no approved flying base is in Delhi, and the questions to ask a ground school \u2014 which is on no such list, ours included.",

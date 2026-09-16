@@ -170,7 +170,7 @@ const guidePaa = [
     },
     {
         q: 'How long does it take to become a pilot in India?',
-        a: 'No rule sets a duration, and any figure quoted without a source is a guess. The regulations fix floors — 200 flying hours, the examination session calendar, the medical validity — not durations. What actually decides your timeline is your flying school: how many aircraft it has and how many students share them. Ask a school for hours flown per student per month and you will have a better estimate than any article can give you.',
+        a: 'No rule sets a duration, and any figure quoted without a source is a guess. The regulations fix floors — 200 flying hours, the examination session calendar, the medical validity — not durations. What actually decides your timeline is your flying school: how many aircraft it has and how many students share them. Our page on how long it takes sets out every floor and every expiry window, and the one question to ask a school.',
     },
     {
         q: 'What is the first step to becoming a pilot?',
