@@ -9,7 +9,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import StructuredData from '../components/StructuredData';
 import { generateFAQSchema } from '../lib/schema';
 import {
-  ACADEMY, FDTL, CPL_HOURS, CPL_COST, PARIKSHA, EXAM_RULES, DGCA_PAPERS,
+  ACADEMY, FDTL, PILOT_SUPPLY, CPL_HOURS, CPL_COST, PARIKSHA, EXAM_RULES, DGCA_PAPERS,
   LICENCES, inr,
 } from '../lib/facts';
 
@@ -84,6 +84,14 @@ const peopleAlsoAsk = [
     a: `A maximum of ${FDTL.limits[3].hours} hours of flight time in 365 consecutive days, under ${FDTL.citation}, ${FDTL.limits[3].clause}. The shorter limits are ${FDTL.limits.slice(0, 3).map((l) => `${l.hours} hours in ${l.period}`).join(', ')}. These are ceilings set for fatigue reasons, not targets, and most pilots fly below them.`,
   },
   {
+    q: 'Is there a pilot shortage in India?',
+    a: `Not at entry level. The Ministry of Civil Aviation's published position is: "${PILOT_SUPPLY.statement}" That distinction is the most useful thing on this page — it means a licence does not make you scarce, the first job is competitive, and the scarcity that commands a premium sits at command level.`,
+  },
+  {
+    q: 'How many commercial pilot licences does India issue each year?',
+    a: `${PILOT_SUPPLY.cplIssued.map((r) => `${r.year}: ${r.count.toLocaleString('en-IN')}`).join('; ')} — ${PILOT_SUPPLY.cplIssuedTotal.toLocaleString('en-IN')} in total over that period, as given to Parliament and published by PIB on 2 August 2024. The last figure is a part-year count to 17 July 2024 and should not be compared with the full years above it.`,
+  },
+  {
     q: 'Does a captain earn more than a first officer?',
     a: 'Yes, and it is the largest step in the career. The qualification and the responsibility differ: a captain is pilot-in-command. What the gap is in rupees at any given airline is not published.',
   },
@@ -110,17 +118,17 @@ const faqs = [
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Commercial Pilot Salary in India: What Is Published and What Is Not',
-  description: 'Indian airlines do not publish pilot pay scales. What is published is the ceiling on flying hours the hour-linked part of the pay sits under — 1,000 hours a year under the flight crew FDTL.',
+  headline: 'Pilot Salary in India: What Is Published and What Is Not',
+  description: 'Indian airlines do not publish pilot pay scales. What the government publishes: no shortage of pilots but a shortage of commanders, and a ceiling of 1,000 flying hours a year under the flight crew FDTL.',
   inLanguage: 'en-IN',
   dateModified: LAST_UPDATED_ISO,
   articleSection: 'Pilot career',
-  keywords: 'commercial pilot license salary, cpl salary in india, pilot salary in india, airline pilot salary india, pilot pay scale india, how much do pilots earn in india',
+  keywords: 'pilot salary, pilot salary in india, airline pilot salary, pilot monthly salary, pilot monthly income, airline captain salary, aviation salary, commercial pilot license salary, cpl salary in india',
   mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
   image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
   author: { '@type': 'Organization', name: ACADEMY.name, url: ACADEMY.url },
   publisher: { '@type': 'EducationalOrganization', name: ACADEMY.name, url: ACADEMY.url, logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
-  citation: FDTL.sources.map((c) => ({ '@type': 'CreativeWork', name: c.label, url: c.url })),
+  citation: [...FDTL.sources, ...PILOT_SUPPLY.sources].map((c) => ({ '@type': 'CreativeWork', name: c.label, url: c.url })),
 };
 
 const H2 = 'font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12 scroll-mt-24';
@@ -130,8 +138,8 @@ const A = 'text-av-blue font-semibold hover:text-av-orange transition-colors';
 export default function CPLSalaryPage() {
   return (
     <Layout
-      title="Commercial Pilot Salary in India: What Is Published, and What Is Not"
-      description="Indian airlines do not publish pilot pay scales. What DGCA does publish is the ceiling on flying hours — 1,000 a year — that the hour-linked part of a pilot's pay sits under."
+      title="Pilot Salary in India: What Is Published, and What Is Not (2026)"
+      description="No Indian airline publishes a pilot pay scale. What the government does publish: there is no shortage of pilots but there is a shortage of commanders, and flying is capped at 1,000 hours a year."
     >
       <StructuredData data={[articleSchema, generateFAQSchema(faqs)]} />
 
@@ -139,7 +147,7 @@ export default function CPLSalaryPage() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="section-tag justify-center">Pilot pay, honestly</p>
           <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white leading-tight">
-            Commercial Pilot Salary in India
+            Pilot Salary in India
           </h1>
           <p className="text-white/70 text-sm mt-4 max-w-2xl mx-auto">
             Nobody publishes a pilot pay scale in India. Here is what is actually published instead &mdash; and why it
@@ -171,6 +179,8 @@ export default function CPLSalaryPage() {
                   `Can be shown: flying is capped at ${FDTL.limits[3].hours} hours in 365 days, ${FDTL.limits[2].hours} in 90, ${FDTL.limits[1].hours} in 28 and ${FDTL.limits[0].hours} in 7`,
                   'Can be shown: minimum weekly rest of 48 continuous hours including two local nights',
                   `Can be shown: the cost side — ${CPL_COST.benchmark.school} publishes ${CPL_COST.benchmark.feeLabel}, and DGCA charges ${inr(PARIKSHA.fees.regularPerPaper)} a paper`,
+                  `Can be shown: the government's position is "${PILOT_SUPPLY.statement}"`,
+                  `Can be shown: ${PILOT_SUPPLY.cplIssuedTotal.toLocaleString('en-IN')} Commercial Pilot Licences issued over the five-year period to July 2024`,
                   'True without a figure: a captain earns materially more than a first officer',
                   'True without a figure: a licence is not a job, and the wait varies with the hiring cycle',
                 ]}
@@ -246,6 +256,59 @@ export default function CPLSalaryPage() {
                 before June 2024, they describe a rostering regime that no longer applies.
               </p>
 
+              <h2 id="supply" className={H2}>The sentence that explains the whole pay structure</h2>
+              <p className={P}>
+                Here is something the government has said in writing and almost no page about pilot pay quotes. Asked in
+                Parliament whether India has a pilot shortage, the Ministry of Civil Aviation answered:
+              </p>
+              <blockquote className="border-l-4 border-av-orange bg-gray-50 rounded-r-xl p-5 mb-4">
+                <p className="text-av-blue text-sm leading-relaxed font-semibold">&ldquo;{PILOT_SUPPLY.statement}&rdquo;</p>
+                <p className="text-gray-500 text-xs mt-2">&mdash; {PILOT_SUPPLY.statementSource}</p>
+              </blockquote>
+              <p className={P}>
+                Read that twice, because it answers both halves of the question you are really asking. There is no shortage of
+                pilots &mdash; so a licence does not make you scarce, and the first job is competitive. There <em>is</em> a
+                shortage of commanders &mdash; so scarcity, and therefore the money, sits at command level rather than at entry
+                level. That is precisely why the step from first officer to captain is the largest one in the career, and it is
+                a structural fact rather than an opinion about salaries.
+              </p>
+              <p className={P}>
+                The supply side, from the same release: the number of Commercial Pilot Licences DGCA issued each year.
+              </p>
+              <div className="overflow-x-auto mb-4">
+                <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
+                  <thead className="bg-av-blue text-white">
+                    <tr>
+                      <th className="text-left p-3 font-montserrat">Year</th>
+                      <th className="text-left p-3 font-montserrat">Commercial Pilot Licences issued</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-gray-600">
+                    {PILOT_SUPPLY.cplIssued.map((r) => (
+                      <tr key={r.year} className="border-t border-gray-200 odd:bg-gray-50">
+                        <td className="p-3">{r.year}</td>
+                        <td className="p-3 font-semibold text-av-blue">{r.count.toLocaleString('en-IN')}</td>
+                      </tr>
+                    ))}
+                    <tr className="border-t-2 border-av-blue bg-av-light">
+                      <td className="p-3 font-semibold text-av-blue">Total over the period</td>
+                      <td className="p-3 font-semibold text-av-blue">{PILOT_SUPPLY.cplIssuedTotal.toLocaleString('en-IN')}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className={P}>
+                One caution so you do not misread it: {PILOT_SUPPLY.cplIssuedNote.charAt(0).toLowerCase()}{PILOT_SUPPLY.cplIssuedNote.slice(1)}
+              </p>
+              <p className={P}>
+                {PILOT_SUPPLY.growthNote} {PILOT_SUPPLY.whatItMeans}
+              </p>
+              <p className={P}>
+                So the useful planning question is not &ldquo;what will I earn&rdquo; but &ldquo;how long until I am a
+                commander, and what does that depend on&rdquo;. It depends on the airline&rsquo;s own upgrade criteria, on
+                hours, and on which fleet you are allocated &mdash; none of which the licence itself decides.
+              </p>
+
               <h2 id="drivers" className={H2}>What actually moves a pilot&rsquo;s pay</h2>
               <p className={P}>
                 None of this needs a rupee figure attached to be useful. These are the variables, and they are worth
@@ -296,9 +359,9 @@ export default function CPLSalaryPage() {
               </section>
 
               <h2 id="sources" className={H2}>Sources</h2>
-              <p className={P}>Read on {LAST_UPDATED}. Everything on this page traces to one of these two documents.</p>
+              <p className={P}>Read on {LAST_UPDATED}. Everything on this page traces to one of these documents.</p>
               <ul className="space-y-2 mb-8">
-                {FDTL.sources.map((c) => (
+                {[...FDTL.sources, ...PILOT_SUPPLY.sources].map((c) => (
                   <li key={c.url} className="flex gap-2 items-start text-sm text-gray-600">
                     <span className="text-av-orange font-bold flex-shrink-0">&ndash;</span>
                     <a href={c.url} target="_blank" rel="noopener noreferrer" className={A}>{c.label}</a>

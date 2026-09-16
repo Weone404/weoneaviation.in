@@ -135,6 +135,22 @@ const nextConfig = {
        */
       { source: '/blogs/69f1a52df3ae4e86333eac32', destination: '/how-to-choose-an-aviation-academy', permanent: true },
       /*
+       * Added 2026-09-16 at the owner's instruction. /blogs/4 was a legacy
+       * numeric-id post titled "Pilot Salary in India 2024 – Complete Breakdown
+       * by Airline", carrying per-airline salary bands that no Indian airline
+       * publishes. From the Semrush positions export of 2026-09-15 it held 41
+       * keywords and 42,030 of search volume — "pilot salary" alone is 27,100,
+       * at position 66 — and returned zero visits, while the real salary page
+       * held 2 keywords at position 40. The wrong URL was carrying the topic.
+       *
+       * A canonical was tried first and was the wrong instrument: the owner
+       * asked for the URL itself to change, and a numeric id is not a URL that
+       * can ever rank on its merits. The post is removed from both arrays in
+       * pages/blogs/[id].jsx and pages/blogs/index.jsx in this same commit, so
+       * nothing is generated at this path any more.
+       */
+      { source: '/blogs/4', destination: '/commercial-pilot-license-salary', permanent: true },
+      /*
        * Added 2026-09-15. Four consolidations onto destinations that already
        * exist and are deeper and sourced. Each source is a database post that
        * self-canonicalises to its ObjectId, is absent from the sitemap and

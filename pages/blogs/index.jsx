@@ -13,8 +13,9 @@ import { MongoClient } from 'mongodb';
 const hardcodedBlogs = [
     { id: 1, title: 'How to Become a Commercial Pilot in India', excerpt: 'The licence route in outline — the education gate, the medical, the computer number, the written papers and the flying hours. The fully sourced version, with the rule behind each stage, is the route guide.', category: 'CPL Guide', readTime: '4 min', date: 'Dec 15, 2024', img: '/how to Become a Commercial pilot in India.jpeg', faqs: [] },
     { id: 2, title: 'DGCA Written Exams: Subjects, Pattern & Preparation Tips', excerpt: 'Five DGCA written papers, with RTR (A) examined separately. The subjects, the 70% threshold per paper, and the fees DGCA charges.', category: 'DGCA', readTime: '5 min', date: 'Dec 10, 2024', img: '/Dgca written exam subject pattern and preparation tips.jpeg', faqs: [] },
+    // id 4 ("Pilot Salary in India") removed 2026-09-16: that path now 301s to
+    // /commercial-pilot-license-salary. See next.config.js.
     { id: 3, title: 'CPL Training in India vs Abroad', excerpt: 'What actually differs between training in India and training overseas — and why the cost comparison you have read is probably unsourced.', category: 'Training', readTime: '5 min', date: 'Dec 5, 2024', img: '/Cpl training in india vs abroad which is better.jpeg', faqs: [] },
-    { id: 4, title: 'Pilot Pay in India: What Can and Cannot Be Verified', excerpt: 'Airline pilot pay scales in India are not published by the airlines. What that means for every salary figure you have read, including the ones that used to be on this page.', category: 'Career', readTime: '4 min', date: 'Nov 28, 2024', img: '/salary.webp', faqs: [] },
     { id: 5, title: 'Medical Requirements to Become a Pilot in India', excerpt: 'Which DGCA medical class you need and when. The full sourced treatment, including the approved centres, is on the medical page.', category: 'Medical', readTime: '4 min', date: 'Nov 20, 2024', img: '/Pilot-Salary.webp', faqs: [] },
     // id 6 ("How to Become a Pilot After 12th Science") is intentionally absent
     // from this grid. It is canonicalised and noindexed to

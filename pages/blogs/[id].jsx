@@ -129,46 +129,12 @@ const hardcodedBlogs = [
     `,
         faqs: [],
     },
-    {
-        id: 4,
-        title: 'Pilot Pay in India: What Can and Cannot Be Verified',
-        excerpt:
-            'Airline pilot pay scales in India are not published by the airlines. What that means for every salary figure you have read, including the ones that used to be on this page.',
-        category: 'Career',
-        readTime: '4 min',
-        date: 'Nov 28, 2024',
-        /*
-         * canonicalTo added 2026-09-16. The Semrush positions export of
-         * 2026-09-15 showed the salary cluster stranded on this legacy
-         * numeric-id post: /blogs/4 held 41 keywords and 42,030 of search
-         * volume — "pilot salary" alone is 27,100, at position 66 — while
-         * /commercial-pilot-license-salary held 2 keywords and 4,540 at
-         * position 40. The wrong page was carrying the topic, and neither was
-         * earning anything. The rebuilt salary page is now the target, so the
-         * signal consolidates onto the page that can actually answer the query.
-         */
-        canonicalTo: '/commercial-pilot-license-salary',
-        img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=80',
-        content: `
-      <h2>What this page used to say</h2>
-      <p>Until 15 September 2026 this page carried per-airline salary bands for first officers and captains, quoted to the lakh. They were removed because nothing supported them. Indian airlines do not publish pilot pay scales, the figures are negotiated and vary by fleet, seniority, contract type and roster, and no public document exists that a reader could check them against.</p>
-
-      <h2>What is actually knowable</h2>
-      <ul>
-        <li>Pay rises with command. A captain is paid materially more than a first officer at the same airline, because the responsibility and the qualification differ.</li>
-        <li>A large part of pilot pay is flying-hour linked rather than fixed, so it moves with the roster and with how much the airline is flying.</li>
-        <li>Wide-body operations generally pay more than narrow-body at the same carrier.</li>
-        <li>There is a gap between a fresh CPL holder and an employed first officer. The licence does not carry a job with it, and the wait varies with the hiring cycle.</li>
-      </ul>
-
-      <h2>Why we will not print a number</h2>
-      <p>Because a prospective student cannot verify one, and a figure you cannot verify is worth less than an honest blank. If a page shows you an exact monthly salary for a named airline, ask where it came from. We One Aviation does not employ pilots and does not place students into airline jobs — hiring decisions rest with the operator — so any earnings figure from us would be a claim about somebody else's payroll.</p>
-
-      <h2>What to do with this</h2>
-      <p>The full treatment of this question — including the one thing about Indian pilot pay that <em>is</em> published, the regulatory ceiling of 1,000 flying hours a year that the hour-linked part of the pay sits under — is on our <a href="/commercial-pilot-license-salary">commercial pilot salary page</a>. Plan against the cost, which is knowable, rather than against the income, which is not. <a href="/cost-transparency">The cost page</a> sets out what can be shown. If you are weighing whether the career is worth the outlay, that is the honest arithmetic to do.</p>
-    `,
-        faqs: [],
-    },
+    /*
+     * id 4 removed 2026-09-16. "Pilot Salary in India" now 301s to
+     * /commercial-pilot-license-salary — see the note in next.config.js. Do not
+     * re-add a numeric-id salary post; the redirect makes it unreachable and a
+     * second salary page would split the cluster again.
+     */
     {
         id: 5,
         title: 'Medical Requirements to Become a Pilot in India',
