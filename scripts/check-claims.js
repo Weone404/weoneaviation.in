@@ -132,8 +132,18 @@ const PATTERNS = [
    * /95%\s*pass/ because the halves are separate array entries with markup
    * between them once rendered. The site's own Terms page says it does not
    * promise pass rates; this makes the build enforce that.
+   *
+   * Lookbehind added 2026-09-17. Tailwind shade classes (bg-gray-100,
+   * border-gray-100) put the literal digits "100" a few dozen characters
+   * ahead of "pass rate" or "placement" inside /terms.jsx's own disclaimer
+   * boxes ("We do not promise DGCA exam pass rates or results" sits inside a
+   * border-gray-100 card) — the exact opposite of the claim this pattern
+   * hunts for, but a false positive under the old, wider match. Excluding a
+   * hyphen or word character immediately before the digits rules out
+   * "gray-100" without narrowing the genuine stat-tile-plus-label case: that
+   * "100" is always preceded by a tag boundary or whitespace, never a hyphen.
    */
-  /(100|99|98|97|96)\s*%?[\s\S]{0,160}pass\s*rate/i,
+  /(?<![-\w])(100|99|98|97|96)\s*%?[\s\S]{0,160}pass\s*rate/i,
   /98%\s*success/i, /100%\s*result/i, /100%\s*placement/i, /95%\s*pass/i,
   /*
    * Added 2026-09-15. /airindia-pilot-preparation rendered a statistics tile
@@ -143,8 +153,16 @@ const PATTERNS = [
    * not exist anywhere. This version tolerates the markup in between. Keep the
    * bound tight: too wide and an unrelated "100%" elsewhere on a long page
    * will collide with the word "placement" and fail a build for nothing.
+   *
+   * Lookbehind added 2026-09-17, same reason as the pass-rate pattern above:
+   * "bg-gray-100" and "border-gray-100" chip/card classes on /lead-magnets
+   * and /blogs/best-flying-school-in-india put a bare "100" ahead of
+   * unrelated copy that happens to contain "placement" — in both cases
+   * inside a sentence explicitly disclaiming a placement promise, not making
+   * one. Excluding a hyphen or word character before the digits removes the
+   * Tailwind-class collision without narrowing the genuine stat-tile case.
    */
-  /100\s*%?[\s\S]{0,160}placement/i,
+  /(?<![-\w])100\s*%?[\s\S]{0,160}placement/i,
   /25\+\s*partner/i, /225\+\s*hours/i, /20\+\s*countries/i,
   /oldest pilot training/i, /India'?s #1/i, /India'?s premier/i,
   /aggregateRating/i, /ISO 9001/i, /www\.weoneaviation\.in/i,

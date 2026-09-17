@@ -35,6 +35,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'bharatiya-vayuyan-adhiniyam-pilot-licensing-india',
+        title: 'Bharatiya Vayuyan Adhiniyam, 2024: What It Changes (and Does Not) for Pilot Licensing in India',
+        excerpt: 'The Aircraft Act, 1934 has been repealed and replaced. Whether that changes CPL, PPL, SPL or ATPL eligibility, what the savings clause in section 43(2) actually preserves, and the one real licensing change: where the RTR (A) exam now sits.',
+        category: 'DGCA guide',
+        readTime: '8 min',
+        date: 'Sep 17, 2026',
+        image: { src: '/blog/bharatiya-vayuyan-adhiniyam/hero-old-law-new-law.webp', width: 1200, height: 630, promptId: '55' },
+    },
+    {
         slug: 'how-pilots-build-hours',
         title: 'How Pilots Build Hours After a CPL \u2014 and Why They Have To',
         excerpt: 'A CPL takes 200 hours. Airlines want more, and the reason is in a government document: the Ministry of Civil Aviation states there is no shortage of pilots in India but there is a shortage of commanders. The five routes, the catch in each, and the recency rule that quietly deletes hours you have already paid for.',

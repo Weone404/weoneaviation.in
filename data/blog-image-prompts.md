@@ -733,6 +733,37 @@ livery, registration or manufacturer marks. Shallow depth of field, the engineer
 sharp and the aircraft softly out of focus behind. Cool blue dawn light, no
 lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
+## Post: Bharatiya Vayuyan Adhiniyam 2024 (/blogs/bharatiya-vayuyan-adhiniyam-pilot-licensing-india)
+
+### Prompt 55 — Hero / OpenGraph and card
+- **File:** `public/blog/bharatiya-vayuyan-adhiniyam/hero-old-law-new-law.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A weathered old rulebook on the left transitioning into a clean modern document on the right, with a small training aircraft silhouette flying steadily above both, unaffected by the change beneath it"
+
+> A weathered, leather-bound book with rounded worn corners sits on the left,
+> rendered in muted navy tones as if aged. On the right, a crisp clean
+> rectangular document with sharp edges sits in brighter pale blue, the two
+> connected by a single unbroken thin line running beneath them both,
+> suggesting continuity rather than a break. Above both, small and calm, a
+> single-engine training aircraft silhouette flies level from left to right,
+> untouched by the transition happening below it. Wide open negative space
+> above and around the aircraft. Orange accent limited to a thin edge-line on
+> the newer document only.
+
+### Prompt 56 — RTR (A) authority shift diagram
+- **File:** `public/blog/bharatiya-vayuyan-adhiniyam/regulator-shift-rtr.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A simple radio handset icon with an arrow moving from a small transmission-tower icon on the left to a control-tower icon on the right, illustrating the RTR (A) radio licence moving to a new administering authority"
+
+> A simple flat-style handheld radio-microphone icon sits centred at the top,
+> small and simplified with no visible buttons or labels. Below it, a single
+> curved arrow sweeps from a small generic transmission-tower icon on the left
+> side to a small rounded airport control-tower icon on the right side, both
+> rendered as plain simplified silhouettes with no windows or antenna detail
+> beyond a basic shape. Wide open pale background with generous negative space
+> around all three elements — no ground, skyline or other buildings. Orange
+> accent on the curved arrow only.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
