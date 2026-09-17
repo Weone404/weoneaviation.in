@@ -21,6 +21,7 @@
   '/full-form-of-cpl-commercial-pilot-license',
   '/icse-full-form', '/cbse-full-form',
   '/how-long-does-it-take-to-become-a-pilot', '/pilot-training-abroad', '/online-dgca-ground-classes', '/cpl-flight-training',
+  '/pilot-training-in-sri-lanka',
   '/pilot-career-counselling',
   '/ame-aircraft-maintenance-engineer',
   /*

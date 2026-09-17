@@ -53,6 +53,16 @@ const heroSlides = [
  * TO RESTORE EITHER CLAIM: supply the evidence — a DGCA approved-examiner
  * listing naming the person, or an FTO appointment for a CFI — and the title
  * can go back with a source beside it. Do not restore either on assertion.
+ *
+ * ✅ CHECKED AND CLOSED 2026-09-17. The owner supplied all three DGCA
+ * empanelment lists: the Class 1 list updated 27 August 2026 (aeromedical
+ * evaluation centres, IAF centres and the fifty-five empanelled Class 1
+ * examiners), the regional Class 2 examiner list, and the civil Class 1
+ * initial hospital list of 02 March 2023. Every name on this page was searched
+ * across all three. None appears in any of them. The "DGCA medical examiner"
+ * title therefore stays off permanently, and this is now a settled question
+ * rather than an open one — do not reopen it without a NEW DGCA listing that
+ * names the person. The three lists are cited in MEDICAL_STANDARDS.sources.
  */
 const team = [
   { name: 'Capt. Nitin', role: 'Head of Flight-Training Guidance', exp: 'Advises on choosing a flying training organisation', img: 'RV' },
@@ -263,6 +273,12 @@ export default function About() {
               role is helping you choose and work with a flying school. And the DGCA medical is conducted by a
               DGCA-approved examiner at an approved centre, not by us; what our medical advisors do is explain the
               classes, the validity and where the approved centres are, so you book the right one at the right time.
+              Nobody on this page is on DGCA&rsquo;s empanelled examiner lists, and we checked rather than assumed
+              &mdash; those lists are public, and you can check any such claim, anywhere, in about a minute. They are
+              linked from our{' '}
+              <Link href="/dgca-class-2-class-1-medical#examiners" className="text-av-blue font-semibold hover:text-av-orange transition-colors">
+                DGCA medical page
+              </Link>.
             </p>
           </ScrollReveal>
 

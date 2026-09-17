@@ -140,6 +140,14 @@ const faqs = [
         a: 'Yes, in one case: where instrument rating privileges are required. A Private Pilot Licence otherwise sits in the Class 2 list.',
     },
     {
+        q: 'Are there DGCA medical examiners in Dwarka?',
+        a: `DGCA's Class 1 examiner list carries ${MED.centres.dwarka.class1Examiners} empanelled Class 1 medical examiners with addresses in Dwarka — sectors ${MED.centres.dwarka.sectors.join(', ')} — and one more at Delhi International Airport. ${MED.centres.dwarka.note} ${MED.centres.listNote}`,
+    },
+    {
+        q: 'How do I check whether a doctor is really a DGCA medical examiner?',
+        a: `DGCA publishes the empanelled lists by name, with addresses, contact details and the date each empanelment runs to. They are linked in the sources on this page. ${MED.centres.class2ListCaution}`,
+    },
+    {
         q: 'Will I pass?',
         a: `That is the one question this page will not answer, and you should be wary of any page that does. ${MED.examination.note} Book early, be honest with the examiner, and get the answer from the people DGCA authorises to give it.`,
     },
@@ -434,6 +442,14 @@ export default function DGCAMedical() {
                                 that list as it stood on {MED.centresAsOf}. {MED.centres.listNote} We have no role in it and no view
                                 on which centre to choose.
                             </p>
+                            <div className="grid sm:grid-cols-2 gap-4 mb-5">
+                                <div className="bg-av-light border-l-4 border-av-orange rounded-r-xl p-4">
+                                    <p className="text-gray-700 text-sm leading-relaxed">{MED.centres.dgcaCounts.class1Exam}</p>
+                                </div>
+                                <div className="bg-av-light border-l-4 border-av-orange rounded-r-xl p-4">
+                                    <p className="text-gray-700 text-sm leading-relaxed">{MED.centres.dgcaCounts.class1Renewal}</p>
+                                </div>
+                            </div>
                             <div className="overflow-x-auto mb-4">
                                 <table className="w-full border border-gray-200 rounded-xl overflow-hidden text-sm">
                                     <thead>
@@ -467,6 +483,13 @@ export default function DGCAMedical() {
                             <p className={P}>
                                 If you are training from Delhi, {ncrCentres.length} of the {allCentres.length} centres above are
                                 within reach without travel: {ncrCentres.map((c) => c.name).join(', ')}.
+                            </p>
+                            <p className={P}>
+                                Closer still, if you are in south-west Delhi: DGCA&rsquo;s Class 1 examiner list carries{' '}
+                                {MED.centres.dwarka.class1Examiners} empanelled Class 1 medical examiners with addresses in Dwarka
+                                itself — sectors {MED.centres.dwarka.sectors.slice(0, -1).join(', ')} and{' '}
+                                {MED.centres.dwarka.sectors.slice(-1)} — and {MED.centres.dwarka.airport.charAt(0).toLowerCase()}
+                                {MED.centres.dwarka.airport.slice(1)} {MED.centres.dwarka.note}
                             </p>
 
                             {/* Outcomes */}
@@ -558,8 +581,13 @@ export default function DGCAMedical() {
                                 </ul>
                                 <p className="text-gray-600 text-sm leading-relaxed">{MED.examinerRequirements.class2.penalties}</p>
                             </div>
-                            <div className="border-l-4 border-av-orange bg-av-light rounded-r-xl p-4 mb-10">
+                            <div className="border-l-4 border-av-orange bg-av-light rounded-r-xl p-4 mb-4">
                                 <p className="text-gray-700 text-sm leading-relaxed">{MED.examinerRequirements.whyItMatters}</p>
+                            </div>
+                            <p className={P}>{MED.centres.class2ListStructure}</p>
+                            <div className="border-2 border-av-orange rounded-xl p-5 mb-10">
+                                <p className="font-montserrat font-bold text-av-blue text-sm mb-2">Check the date before you pay</p>
+                                <p className="text-gray-600 text-sm leading-relaxed">{MED.centres.class2ListCaution}</p>
                             </div>
 
                             {/* Rules */}
