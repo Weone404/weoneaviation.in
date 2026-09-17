@@ -488,10 +488,11 @@ export default function PilotTrainingSriLanka() {
                 <p className="text-gray-700 text-sm leading-relaxed">{ACADEMY.scope}</p>
               </div>
               <p className={P}>
-                An earlier version of this page said the opposite in several places. It claimed training recognised by
-                DGCA for licence conversion, placement success and scholarships. None of that was sourced and the first
-                of them was simply wrong, so all of it is gone. If you were here before and planned around it, the
-                conversion section above is what you actually needed to read.
+                An earlier version of this page said the opposite in several places, in the usual vocabulary: training
+                described as recognised for conversion, career outcomes we are in no position to promise, and financial
+                help nobody could confirm. None of it was sourced and the first of them was simply wrong about what the
+                regulation says, so all of it is gone. If you were here before and planned around it, the conversion
+                section above is what you actually needed to read.
               </p>
 
               <PeopleAlsoAsk items={peopleAlsoAsk} />
