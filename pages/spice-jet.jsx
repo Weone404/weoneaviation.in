@@ -93,11 +93,46 @@ const courses = [
     },
 ];
 
+/*
+ * FEE SCHEDULE — VERIFIED 2026-09-17 against Spice Star Academy's own Cadet
+ * Pilot Programme site, https://pilot.spicestaracademy.edu.in/. All four
+ * instalments, all four deadlines and every additional charge below match that
+ * page word for word. This replaces the 2026-09-15 note, which recorded that
+ * the amounts could not be confirmed because the academy's main site did not
+ * render a schedule — the main site is the CABIN CREW academy, and the cadet
+ * pilot programme lives on the pilot. subdomain. That was the reason the
+ * earlier check failed, and it is worth remembering: spicestaracademy.edu.in
+ * and pilot.spicestaracademy.edu.in are two different programmes.
+ *
+ * These are Spice Star Academy's fees, not ours. We do not collect them, we
+ * are not an agent for the programme and we earn nothing from an application.
+ * Re-check at the source before quoting them to anyone: an academy can revise
+ * a fee schedule on any day and this page carries a date for that reason.
+ */
+const FEE_VERIFIED_ON = '17 September 2026';
+const FEE_SOURCE = 'https://pilot.spicestaracademy.edu.in/';
+
 const feeStructure = [
     { instalment: '1st Instalment', amount: '₹10 Lac + taxes', note: 'Non-refundable admission fee. To be deposited within 10 days from date of letter of admission.' },
     { instalment: '2nd Instalment', amount: '₹30 Lac + taxes', note: 'To be deposited within 14 days from date of commencement of assigned batch.' },
     { instalment: '3rd Instalment', amount: '₹25 Lac + taxes', note: 'On commencement of IR phase of Flying Training or 7 months from batch commencement (whichever is earlier).' },
     { instalment: '4th Instalment', amount: '₹24.50 Lac + taxes', note: 'Within 14 days from date of CPL completion or 12 months from batch commencement (whichever is earlier).' },
+];
+
+/*
+ * The academy's own page publishes TWO different schedules for the degree
+ * route and we are not going to pretend otherwise. In the notes under the
+ * Cadet Pilot Programme table it says the first instalment for the BBA/MBA
+ * route is ₹12 Lac in place of ₹10 Lac, which implies the same four-instalment
+ * shape. It then prints a separate three-instalment table for the same route.
+ * Both are reproduced, flagged as the academy's own inconsistency, and the
+ * reader is told to get it in writing. Silently picking one would be guessing
+ * with somebody's ₹42 lakh.
+ */
+const degreeRouteSchedule = [
+    { instalment: '1st Instalment', amount: '₹42 Lac + taxes', note: 'On joining the Cadet Pilot Programme + BBA / MBA.' },
+    { instalment: '2nd Instalment', amount: '₹25 Lac + taxes', note: 'In the 9th month of the programme.' },
+    { instalment: '3rd Instalment', amount: '₹24.50 Lac + taxes', note: 'In the 12th month of the programme.' },
 ];
 
 const scholarships = [
@@ -106,7 +141,7 @@ const scholarships = [
         criteria: '96% and above aggregate in 10+2 (Physics, Maths & English) OR JEE Rank 1 to 1500',
         benefit: '₹10 Lac on 2nd + ₹10 Lac on 3rd + ₹10 Lac on 4th instalment',
         total: '₹30 Lac Total',
-        max: 'Max 4 scholarships/year',
+        max: 'Maximum 4 awarded',
         color: 'bg-av-orange',
     },
     {
@@ -114,7 +149,7 @@ const scholarships = [
         criteria: '92% and above aggregate in 10+2 (Physics, Maths & English) OR JEE Rank 1500 to 3000',
         benefit: '₹5 Lac on 2nd + ₹5 Lac on 3rd + ₹5 Lac on 4th instalment',
         total: '₹15 Lac Total',
-        max: 'Max 6 scholarships/year',
+        max: 'Maximum 6 awarded',
         color: 'bg-av-blue',
     },
 ];
@@ -488,16 +523,13 @@ export default function SpiceJetCadetPage() {
                             Programme <span className="text-av-orange">Fee Structure</span>
                         </h2>
                         <p className="text-gray-500 mt-2 text-sm">Total programme fee payable in 4 instalments. All amounts exclusive of GST and applicable taxes.</p>
-                        {/*
-                          * NOTE 2026-09-15: the instalment amounts below could not be confirmed
-                          * against Spice Star Academy's published fee page on that date — the page
-                          * did not render a schedule. They are left in place because they are
-                          * internally consistent and were presumably taken from the academy at some
-                          * point, but they carry no verification date and must not be treated as
-                          * current. Confirm at the source before quoting them to anyone.
-                          */}
                         <p className="text-gray-500 mt-2 text-xs max-w-2xl mx-auto">
-                            Fees are set and revised by Spice Star Academy, not by us. Confirm the current schedule and what it
+                            Checked against Spice Star Academy&rsquo;s own Cadet Pilot Programme page on {FEE_VERIFIED_ON}; all four
+                            instalments, the deadlines and the additional charges match it.{' '}
+                            <a href={FEE_SOURCE} target="_blank" rel="noopener noreferrer" className="text-av-blue font-semibold hover:text-av-orange transition-colors">
+                                See the academy&rsquo;s schedule
+                            </a>. Fees are set and revised by the academy, not by us &mdash; we collect nothing, we are not an agent
+                            for the programme, and we earn nothing from an application. Confirm the current schedule and what it
                             excludes directly with the academy before paying anything, and keep DGCA&rsquo;s own examination and
                             medical charges separate from it.
                         </p>
@@ -515,6 +547,38 @@ export default function SpiceJetCadetPage() {
                             </ScrollReveal>
                         ))}
                     </div>
+
+                    <ScrollReveal>
+                        <div className="bg-av-light border-l-4 border-av-orange rounded-r-2xl p-6 mb-8">
+                            <p className="font-montserrat font-bold text-av-blue text-base mb-1">₹89.50 Lac + applicable taxes</p>
+                            <p className="text-gray-600 text-sm leading-relaxed">
+                                The four instalments above, added up. GST and applicable taxes are charged on top, and the extension,
+                                housing, application and assessment charges listed below sit outside it. A scholarship, if awarded,
+                                reduces the second, third and fourth instalments rather than the admission fee.
+                            </p>
+                        </div>
+                    </ScrollReveal>
+
+                    <ScrollReveal>
+                        <div className="bg-white border-2 border-av-orange rounded-2xl p-6 mb-8">
+                            <p className="font-montserrat font-bold text-av-blue text-base mb-1">If you take the BBA or MBA route, get the schedule in writing</p>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                The academy&rsquo;s own page publishes two different things for this route. Under the table above it
+                                says the first instalment becomes ₹12 Lac in place of ₹10 Lac, which implies the same four payments.
+                                It then prints this separate three-instalment schedule for the same route. We are showing you both
+                                rather than picking one, because the difference is large and the money is yours.
+                            </p>
+                            <div className="grid sm:grid-cols-3 gap-4">
+                                {degreeRouteSchedule.map((f) => (
+                                    <div key={f.instalment} className="border border-gray-100 rounded-xl p-4">
+                                        <p className="text-gray-500 text-xs font-semibold mb-1">{f.instalment}</p>
+                                        <p className="font-montserrat font-black text-av-blue text-xl mb-2">{f.amount}</p>
+                                        <p className="text-gray-400 text-xs leading-relaxed">{f.note}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </ScrollReveal>
 
                     <ScrollReveal>
                         <div className="bg-white border border-gray-100 rounded-2xl shadow-sm p-6">
@@ -545,7 +609,7 @@ export default function SpiceJetCadetPage() {
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
                             Scholarship <span className="text-av-orange">Programme</span>
                         </h2>
-                        <p className="text-gray-500 mt-2 text-sm max-w-2xl mx-auto">SpiceJet rewards academic excellence with substantial scholarships. Up to ₹30 Lac available for top performers.</p>
+                        <p className="text-gray-500 mt-2 text-sm max-w-2xl mx-auto">The academy publishes two scholarship categories, both capped in number. A scholarship is applied to the second, third and fourth instalments — never to the non-refundable admission fee. Checked on 17 September 2026.</p>
                     </ScrollReveal>
 
                     <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -577,8 +641,8 @@ export default function SpiceJetCadetPage() {
                             <ul className="space-y-1">
                                 {[
                                     'SpiceJet reserves the right to withdraw or change the scholarship criteria or entire programme without prior intimation.',
-                                    'Number of scholarships is limited to 10 every year.',
-                                    'Category 1 students get priority if more than 4 are eligible.',
+                                    'The academy states a maximum of 4 scholarships in Category 1 and 6 in Category 2. It does not state a period, so do not assume these are annual figures.',
+                                    'If more than 4 students qualify under Category 1, they are given preference over Category 2.',
                                 ].map(note => (
                                     <li key={note} className="flex items-start gap-2 text-xs text-yellow-700">
                                         <span className="mt-0.5 flex-shrink-0">•</span><span>{note}</span>
