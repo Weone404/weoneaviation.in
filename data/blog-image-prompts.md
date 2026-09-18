@@ -764,6 +764,39 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 > around all three elements — no ground, skyline or other buildings. Orange
 > accent on the curved arrow only.
 
+## Post: English Language Proficiency Test for Pilots in India (/blogs/english-language-proficiency-test-for-pilots-in-india)
+
+### Prompt 57 — Hero / OpenGraph and card
+- **File:** `public/blog/english-language-proficiency-test-for-pilots-in-india/hero-headset-and-level-scale.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A pilot's aviation headset resting beside a simple six-step ladder diagram, with the fourth step highlighted, representing the ICAO Level 4 English proficiency threshold"
+
+> A single aviation headset with a boom microphone rests on its side on the
+> left, rendered as a simple flat icon with no visible branding. On the right,
+> a simple six-rung vertical ladder or staircase diagram rises from bottom to
+> top, each rung a plain flat rectangle of equal size with no numbers or
+> labels on them. The fourth rung from the bottom is filled solid in the
+> orange accent colour while every other rung stays pale outline only, making
+> it the single focal point of the image. Wide open pale background, generous
+> negative space around both elements, nothing touching the edges of the
+> frame.
+
+### Prompt 58 — AELP endorsement flow diagram
+- **File:** `public/blog/english-language-proficiency-test-for-pilots-in-india/aelp-endorsement-flow.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A simple flow diagram showing a candidate at an AELP training and testing organisation, with the result routing to DGCA headquarters for initial endorsement and to a regional office for renewal, both through the eGCA portal"
+
+> A simple flat-style figure icon sits on the left representing a candidate,
+> facing a small microphone-and-speech-bubble icon in front of them
+> representing the spoken assessment, both rendered with no facial detail and
+> no text in the speech bubble. Two thin curved arrows lead away from that
+> pair towards the right, one rising to a small simplified government-building
+> icon near the top right and one running to a second, smaller building icon
+> lower down, the two destination icons kept visually distinct in size only,
+> with no windows, flags or signage on either. Wide open pale background with
+> generous negative space, orange accent used only on the two connecting
+> arrows.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
