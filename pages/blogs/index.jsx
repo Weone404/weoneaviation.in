@@ -35,6 +35,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'english-language-proficiency-test-for-pilots-in-india',
+        title: 'English Language Proficiency (ELP) Test for Pilots in India: What DGCA’s Level 4 Requirement Means',
+        excerpt: 'DGCA will not move a Commercial Pilot Licence application forward without an English Language Proficiency result at ICAO Level 4 or above — tested separately from the written papers and from RTR (A), and one of the gates almost no eligibility guide mentions.',
+        category: 'Pilot eligibility',
+        readTime: '8 min',
+        date: 'Sep 18, 2026',
+        image: { src: '/blog/english-language-proficiency-test-for-pilots-in-india/hero-headset-and-level-scale.webp', width: 1200, height: 630, promptId: '57' },
+    },
+    {
         slug: 'bharatiya-vayuyan-adhiniyam-pilot-licensing-india',
         title: 'Bharatiya Vayuyan Adhiniyam, 2024: What It Changes (and Does Not) for Pilot Licensing in India',
         excerpt: 'The Aircraft Act, 1934 has been repealed and replaced. Whether that changes CPL, PPL, SPL or ATPL eligibility, what the savings clause in section 43(2) actually preserves, and the one real licensing change: where the RTR (A) exam now sits.',
