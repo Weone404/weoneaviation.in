@@ -61,7 +61,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin master
           git checkout master
-          git merge --no-ff "$GITHUB_SHA" -m "Auto-merge ${GITHUB_REF_NAME}"
+          # The source branch can include generated sitemap and blog-index
+          # updates that overlap master; keep the verified source version.
+          git merge --no-ff -X theirs "$GITHUB_SHA" -m "Auto-merge ${GITHUB_REF_NAME}"
           git push origin master
 
       - name: Delete the merged branch

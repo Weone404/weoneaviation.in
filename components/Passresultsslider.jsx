@@ -1,5 +1,3 @@
-'use client';
-
 import NextImage from 'next/image';
 import { useState, useRef, useEffect, useCallback } from 'react';
 

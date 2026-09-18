@@ -136,15 +136,6 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.6;
 }
 
-/* Swiper customization */
-.swiper-pagination-bullet-active {
-  background: var(--av-orange) !important;
-}
-
-.swiper-button-next, .swiper-button-prev {
-  color: var(--av-orange) !important;
-}
-
 /* Scroll animations */
 .reveal {
   opacity: 1;
@@ -169,17 +160,6 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(135deg, rgba(10,35,66,0.88) 0%, rgba(13,48,96,0.7) 50%, rgba(249,115,22,0.15) 100%);
 }
 
-/* Page transition */
-.page-enter {
-  opacity: 0;
-  transform: translateY(20px);
-}
-.page-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
 /* Card hover */
 .card-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -202,34 +182,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 3px;
   background: var(--av-orange);
   border-radius: 2px;
-}
-
-/* Floating WhatsApp & Call */
-.floating-btn {
-  position: fixed;
-  right: 24px;
-  z-index: 1000;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.floating-btn:hover {
-  transform: scale(1.1);
-}
-
-/* Contact popup */
-.popup-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(4px);
-}
-
-/* Nav active */
-.nav-link-active {
-  color: var(--av-orange);
 }
 
 /* Gradient text */
