@@ -160,6 +160,15 @@ const guidePosts = [
         date: 'Jan 2, 2025',
         image: { src: '/blog/aviation-course-after-12th/hero-after-12th-routes.webp', width: 1200, height: 630, promptId: '9' },
     },
+    {
+        slug: 'convert-foreign-pilot-licence-to-dgca-india',
+        title: 'How to Convert a Foreign Pilot Licence to an Indian DGCA Licence',
+        excerpt: 'A foreign CPL or ATPL does not let you fly commercially in India. The written papers, the currency test on your rating, the skill test and the RTR(A) step most guides leave out — from CAR Section 7 Series G.',
+        category: 'Licensing',
+        readTime: '9 min',
+        date: 'Sep 19, 2026',
+        image: { src: '/blog/convert-foreign-pilot-licence-to-dgca-india/hero-two-licences-one-desk.webp', width: 1200, height: 630, promptId: '59' },
+    },
 ];
 
 export async function getServerSideProps() {

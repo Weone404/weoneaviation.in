@@ -797,6 +797,40 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 > generous negative space, orange accent used only on the two connecting
 > arrows.
 
+## Post: How to Convert a Foreign Pilot Licence to an Indian DGCA Licence (/blogs/convert-foreign-pilot-licence-to-dgca-india)
+
+### Prompt 59 — Hero / OpenGraph and card
+- **File:** `public/blog/convert-foreign-pilot-licence-to-dgca-india/hero-two-licences-one-desk.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A foreign pilot licence booklet and a set of Indian DGCA examination papers laid side by side on a desk, representing the conversion process from a foreign licence to an Indian one"
+
+> A flat-style wooden desk viewed from a slight top-down angle. On the left, a
+> closed passport-style licence booklet rendered in a muted foreign-neutral
+> tone with a small generic wing-and-star emblem on the cover, no country
+> name, flag or text anywhere on it. On the right, a small stacked pile of
+> two plain rectangular examination papers, blank-faced, tied loosely with a
+> thin ribbon. Between the two, a single thin curved arrow flows from the
+> booklet on the left towards the papers on the right, suggesting a process
+> rather than a straight line. Wide open pale blue background above the
+> desk, generous negative space, nothing else on the desk surface. Orange
+> accent limited to the connecting arrow only. Absolutely no text, letters,
+> numbers, flags or country symbols anywhere in the image.
+
+### Prompt 60 — Two-paper vs five-paper comparison
+- **File:** `public/blog/convert-foreign-pilot-licence-to-dgca-india/two-paper-vs-five-paper.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "Two small stacks of examination papers of very different heights, one of two papers for a licence conversion and one of five papers for a full Indian CPL, shown side by side for comparison"
+
+> Two simple stacks of plain blank rectangular papers standing side by side
+> on a flat pale surface, viewed straight on. The left stack is short, made
+> of exactly two sheets. The right stack is noticeably taller, made of
+> exactly five sheets. Both stacks share the same width and the same flat
+> navy outline style, differing only in height, so the comparison reads
+> instantly without any numbers or labels. Wide open negative space around
+> both stacks, nothing else in the frame. Orange accent limited to a thin
+> baseline beneath both stacks only. Absolutely no text, letters or numbers
+> anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
