@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://weoneaviation.in/</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/airline-preparation-course</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -74,13 +74,13 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/best-flight-schools-in-usa</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://weoneaviation.in/blogs</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -147,6 +147,7 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/blogs/convert-foreign-pilot-licence-to-dgca-india</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -201,6 +202,11 @@
   <url>
     <loc>https://weoneaviation.in/blogs/flying-instructor-rating-for-pilots-in-india</loc>
     <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weoneaviation.in/blogs/foreign-national-nri-pilot-training-india</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -326,7 +332,7 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/courses/atpl</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -434,7 +440,7 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/flying-school/usa</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -560,7 +566,7 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/privacy-policy</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -572,7 +578,7 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/rtr-a</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -614,7 +620,7 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/terms</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

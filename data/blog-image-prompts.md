@@ -831,6 +831,54 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 > baseline beneath both stacks only. Absolutely no text, letters or numbers
 > anywhere in the image.
 
+## Post: Can a Foreign National or NRI Train to Become a Pilot in India? (/blogs/foreign-national-nri-pilot-training-india)
+
+### Prompt 61 — Hero / OpenGraph and card
+- **File:** `public/blog/foreign-national-nri-pilot-training-india/hero-passport-and-flight-log.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A passport booklet resting beside an open pilot training logbook and a small model training aircraft, representing a foreign national applying for pilot training in India"
+
+> A flat-style wooden desk viewed from a slight top-down angle. On the left, a
+> closed passport-style booklet rendered in a muted neutral navy tone with a
+> small generic wing emblem on the cover, no country name, flag or text
+> anywhere on it. On the right, an open logbook page shown as plain ruled
+> lines with no legible writing, and a small simplified single-engine
+> training aircraft silhouette resting beside it. Wide open pale blue
+> background above the desk, generous negative space, nothing else on the
+> desk surface. Orange accent limited to a single thin highlight line across
+> the logbook page. Absolutely no text, letters, numbers, flags or country
+> symbols anywhere in the image.
+
+### Prompt 62 — Three extra steps for a foreign national
+- **File:** `public/blog/foreign-national-nri-pilot-training-india/three-extra-steps.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "Three simple icons in a row — a passport, a mobile phone and a security shield — representing the three additional steps a foreign national completes before an Indian candidate's application"
+
+> Three simple flat-style icons arranged in an evenly spaced horizontal row
+> against a wide open pale background: on the left a closed passport
+> booklet icon, in the centre a plain rounded mobile phone outline with a
+> blank screen, and on the right a simple rounded shield outline with no
+> emblem inside it. All three icons share the same navy outline weight and
+> identical size, with generous negative space between and around them.
+> Orange accent used only as a thin connecting line running beneath all
+> three, left to right. Absolutely no text, letters, numbers or symbols
+> inside any of the icons.
+
+### Prompt 63 — Manual route vs DigiLocker route
+- **File:** `public/blog/foreign-national-nri-pilot-training-india/manual-vs-digilocker-route.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "Two simple paths branching from one starting point, one short path leading to an instant result and one longer path with several steps leading to the same destination, representing the DigiLocker route being closed to foreign nationals"
+
+> A single small circle on the left represents a shared starting point. From
+> it, two thin curved paths branch to the right. The upper path is short and
+> direct, rendered as a single smooth curve leading to a small filled circle
+> marked only by its solid orange fill, no label. The lower path is longer,
+> rendered with three small plain dots spaced along its length before
+> reaching a second circle at the same distance on the right, that circle
+> left as a pale outline only. Wide open pale background, generous negative
+> space above and below both paths, nothing else in the frame. Absolutely no
+> text, letters, numbers or arrowheads anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
