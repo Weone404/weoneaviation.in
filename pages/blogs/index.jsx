@@ -35,6 +35,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'foreign-national-nri-pilot-training-india',
+        title: 'Can a Foreign National or NRI Train to Become a Pilot in India?',
+        excerpt: "DGCA's Pariksha portal accepts foreign nationals for CPL training, but with extra steps an Indian candidate never sees: a passport, an Indian mobile number and a security clearance. Why an NRI's Indian passport keeps them on the ordinary route instead.",
+        category: 'Pilot eligibility',
+        readTime: '9 min',
+        date: 'Sep 22, 2026',
+        image: { src: '/blog/foreign-national-nri-pilot-training-india/hero-passport-and-flight-log.webp', width: 1200, height: 630, promptId: '61' },
+    },
+    {
         slug: 'pilot-salary-in-india',
         title: 'Pilot Salary in India 2026: Complete Guide to First Officer, Captain & Commercial Pilot Pay',
         excerpt: 'How much does a pilot earn in India? Salary breakdown for trainee pilots, First Officers, Senior First Officers, Captains, airline allowances and the key pay factors that change compensation in 2026.',
