@@ -879,6 +879,40 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 > space above and below both paths, nothing else in the frame. Absolutely no
 > text, letters, numbers or arrowheads anywhere in the image.
 
+## Post: Pilot-in-Command Hours for a CPL in India: The 100-Hour Requirement Explained (/blogs/cpl-pilot-in-command-hours-requirement-india)
+
+### Prompt 64 — Hero / OpenGraph and card
+- **File:** `public/blog/cpl-pilot-in-command-hours/hero-solo-cockpit.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A student pilot alone in the cockpit of a small single-engine training aircraft on the ground, canopy open, with no instructor visible in the second seat, representing solo pilot-in-command flying time"
+
+> A flat-style illustration of a small single-engine training aircraft parked
+> on an open apron, viewed from a three-quarter angle at eye level. The
+> cockpit canopy is open, and a single simplified South Asian student pilot
+> figure in modest professional flying attire sits alone in the pilot's seat,
+> looking forward toward the nose of the aircraft. The second seat beside
+> them is visibly empty. Wide open pale blue sky background above the apron,
+> generous negative space, no other aircraft, buildings, text or signage in
+> the frame. Orange accent limited to a single stripe along the aircraft's
+> fuselage. Absolutely no text, letters, numbers, flags or country symbols
+> anywhere in the image.
+
+### Prompt 65 — The six-month recency window
+- **File:** `public/blog/cpl-pilot-in-command-hours/six-month-window.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A simple horizontal timeline with a shaded final segment representing the six months before a CPL application date, with a cluster of small aircraft marks placed inside the shaded segment"
+
+> A single thin horizontal line drawn left to right across a wide pale
+> background, representing a timeline. Most of the line is a plain neutral
+> navy stroke, but the final segment on the right-hand side, roughly a
+> quarter of the total length, is shaded with a soft pale orange wash. Inside
+> that shaded final segment, a small cluster of three or four tiny flat-style
+> single-engine aircraft silhouettes are placed close together, all facing
+> the same direction. The rest of the line, to the left, has no marks on it
+> at all. Generous negative space above and below the timeline, nothing else
+> in the frame. Absolutely no text, letters, numbers, dates or arrowheads
+> anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
