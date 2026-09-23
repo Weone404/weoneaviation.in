@@ -35,6 +35,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'cpl-pilot-in-command-hours-requirement-india',
+        title: 'Pilot-in-Command Hours for a CPL in India: The 100-Hour Requirement Explained',
+        excerpt: 'The largest of the four CPL_HOURS components: what pilot-in-command time actually means, the 15-hour recency condition in the six months before applying, and why cross-country and night hours count toward this total rather than sitting apart from it.',
+        category: 'CPL flying hours',
+        readTime: '8 min',
+        date: 'Sep 23, 2026',
+        image: { src: '/blog/cpl-pilot-in-command-hours/hero-solo-cockpit.webp', width: 1200, height: 630, promptId: '64' },
+    },
+    {
         slug: 'foreign-national-nri-pilot-training-india',
         title: 'Can a Foreign National or NRI Train to Become a Pilot in India?',
         excerpt: "DGCA's Pariksha portal accepts foreign nationals for CPL training, but with extra steps an Indian candidate never sees: a passport, an Indian mobile number and a security clearance. Why an NRI's Indian passport keeps them on the ordinary route instead.",

@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/blogs</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -164,6 +164,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://weoneaviation.in/blogs/cpl-pilot-in-command-hours-requirement-india</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://weoneaviation.in/blogs/cpl-simulator-hours-dgca-rules</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -207,6 +212,7 @@
   </url>
   <url>
     <loc>https://weoneaviation.in/blogs/foreign-national-nri-pilot-training-india</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
