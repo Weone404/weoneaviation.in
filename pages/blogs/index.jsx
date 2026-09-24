@@ -35,6 +35,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'do-you-need-ppl-before-cpl-in-india',
+        title: 'Do You Need a PPL Before a CPL in India? What DGCA Actually Requires',
+        excerpt: "DGCA's own eGCA prerequisites for a CPL application never mention a held Private Pilot Licence. Why most flying schools still route students through PPL-level flying anyway, and when a standalone PPL genuinely makes sense.",
+        category: 'Pilot eligibility',
+        readTime: '8 min',
+        date: 'Sep 24, 2026',
+        image: { src: '/blog/ppl-before-cpl-india/hero-one-runway-one-checkpoint.webp', width: 1200, height: 630, promptId: '66' },
+    },
+    {
         slug: 'cpl-pilot-in-command-hours-requirement-india',
         title: 'Pilot-in-Command Hours for a CPL in India: The 100-Hour Requirement Explained',
         excerpt: 'The largest of the four CPL_HOURS components: what pilot-in-command time actually means, the 15-hour recency condition in the six months before applying, and why cross-country and night hours count toward this total rather than sitting apart from it.',
