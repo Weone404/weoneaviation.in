@@ -913,6 +913,51 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 > in the frame. Absolutely no text, letters, numbers, dates or arrowheads
 > anywhere in the image.
 
+## Post: Do You Need a PPL Before a CPL in India? What DGCA Actually Requires (/blogs/do-you-need-ppl-before-cpl-in-india)
+
+### Prompt 66 — Hero / OpenGraph and card
+- **File:** `public/blog/ppl-before-cpl-india/hero-one-runway-one-checkpoint.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A single continuous runway stretching into the distance with one small checkpoint marker partway along it, representing one training path with an optional milestone rather than two separate routes"
+
+> A flat-style illustration of a single long runway seen from a low angle,
+> stretching from the bottom centre of the frame up toward a pale horizon.
+> The runway is one unbroken, continuous strip — not forked or split into
+> two paths. Partway along its length, roughly a third of the way up, a
+> single small flat marker post stands beside the runway edge, simple and
+> plain, with no flag, sign or symbol on it, representing a checkpoint
+> rather than a junction. A small single-engine training aircraft sits on
+> the runway beyond the marker, facing away toward the horizon. Wide open
+> pale sky above, generous negative space on both sides. Absolutely no
+> text, letters, numbers, arrows or signage anywhere in the image.
+
+### Prompt 67 — Hours flowing into the total
+- **File:** `public/blog/ppl-before-cpl-india/hours-flowing-into-total.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A small tributary of flowing lines joining a single larger channel that continues toward one destination point, representing PPL-privilege flying hours joining the same 200-hour CPL total rather than being a separate, disconnected pool"
+
+> A flat-style abstract diagram of one thin curved navy line entering from
+> the upper left and a second, shorter pale-blue curved line entering from
+> the lower left, the two merging smoothly into a single thicker line partway
+> across the frame. That single combined line then continues alone toward a
+> small solid circle on the right-hand edge, filled in burnt orange, with no
+> label or number inside it. Wide open pale background, generous negative
+> space above and below, nothing else in the frame. Absolutely no text,
+> letters, numbers or arrowheads anywhere in the image.
+
+### Prompt 68 — Medical class fork
+- **File:** `public/blog/ppl-before-cpl-india/medical-class-fork.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text already set in code:** "Two simple paths branching from one starting point, a shorter path leading to a smaller circle and a longer path leading to a larger circle, representing the Class 2 and Class 1 medical fork between a standard PPL and a CPL"
+
+> A flat-style diagram of two thin curved lines branching from a single
+> small circle on the left-hand side. The upper branch is short and ends at
+> a small pale-outline circle close by. The lower branch is longer and ends
+> at a larger circle, filled solidly in navy, further to the right. Both
+> branches curve gently and never cross. Wide open pale background,
+> generous negative space, nothing else in the frame. Absolutely no text,
+> letters, numbers or arrowheads anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
