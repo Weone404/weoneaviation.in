@@ -958,6 +958,52 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 > generous negative space, nothing else in the frame. Absolutely no text,
 > letters, numbers or arrowheads anywhere in the image.
 
+## Post: Is There a Pilot Shortage in India? What the Government's Own Numbers Say (/blogs/pilot-shortage-in-india)
+
+### Prompt 69 — Hero / OpenGraph and card
+- **File:** `public/blog/pilot-shortage-in-india/hero-many-aircraft-one-riser.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A row of several small single-engine training aircraft on an apron, with one aircraft standing on a slightly raised platform ahead of the others, representing many new pilots entering training while a narrower few advance to command"
+
+> A flat-style illustration of five or six small single-engine training
+> aircraft, all facing the same direction, lined up in a row on an open
+> apron viewed at a low three-quarter angle. Every aircraft is rendered the
+> same size and in the same plain navy tone except one, positioned slightly
+> ahead of the row and raised on a small flat pedestal or riser, which is
+> filled in solid burnt orange. Wide open pale blue sky above, generous
+> negative space on both sides, no buildings, people, flags or signage in
+> the frame. Absolutely no text, letters, numbers or symbols anywhere in
+> the image.
+
+### Prompt 70 — CPL issuance growth
+- **File:** `public/blog/pilot-shortage-in-india/cpl-issuance-growth-bars.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A simple bar chart of six vertical bars increasing in height from left to right, the final bar accented in orange, representing the year-on-year growth in new Commercial Pilot Licences issued in India"
+
+> A flat-style abstract bar chart on a wide pale background: six simple
+> vertical rectangular bars of increasing height, evenly spaced left to
+> right, sitting on a single thin baseline. The first five bars are a plain
+> navy tone; the sixth and tallest bar on the right is filled in solid
+> burnt orange. No axis lines beyond the baseline, no gridlines, no numbers
+> or labels of any kind. Generous negative space above the bars, nothing
+> else in the frame. Absolutely no text, letters or numbers anywhere in
+> the image.
+
+### Prompt 71 — Entry to command funnel
+- **File:** `public/blog/pilot-shortage-in-india/funnel-entry-to-command.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text already set in code:** "A wide funnel with many small aircraft silhouettes clustered at the top opening, narrowing down to a single point marked only by three simple horizontal stripes at the bottom, representing many new pilots entering training and a narrower few reaching a command role"
+
+> A flat-style diagram of a wide, symmetrical funnel shape outlined in thin
+> navy lines, seen straight on. Inside the wide top opening of the funnel,
+> six or seven tiny flat single-engine aircraft silhouettes are clustered
+> together, all facing downward into the funnel. The funnel narrows
+> smoothly toward a single small point at the bottom, where it opens onto
+> three short horizontal stripes stacked one above the other, filled in
+> solid burnt orange, resembling a simple epaulette bar. Wide pale
+> background, generous negative space around the funnel, nothing else in
+> the frame. Absolutely no text, letters or numbers anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
