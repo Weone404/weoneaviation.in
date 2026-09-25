@@ -35,6 +35,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'pilot-shortage-in-india',
+        title: "Is There a Pilot Shortage in India? What the Government's Own Numbers Say",
+        excerpt: "The Ministry of Civil Aviation's own Parliament answer: no shortage of pilots overall, only of commanders on certain aircraft types. DGCA's CPL-issuance figures, and what the real bottleneck means for anyone deciding whether to train.",
+        category: 'Pilot career guide',
+        readTime: '8 min',
+        date: 'Sep 25, 2026',
+        image: { src: '/blog/pilot-shortage-in-india/hero-many-aircraft-one-riser.webp', width: 1200, height: 630, promptId: '69' },
+    },
+    {
         slug: 'do-you-need-ppl-before-cpl-in-india',
         title: 'Do You Need a PPL Before a CPL in India? What DGCA Actually Requires',
         excerpt: "DGCA's own eGCA prerequisites for a CPL application never mention a held Private Pilot Licence. Why most flying schools still route students through PPL-level flying anyway, and when a standalone PPL genuinely makes sense.",
