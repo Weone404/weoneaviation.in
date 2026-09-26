@@ -593,8 +593,11 @@ const nextConfig = {
       },
       
       {
+        // Collapsed 2026-09-26: was a 2-hop chain through
+        // /ecga-login-your-complete-guide, which itself now only redirects
+        // (see the /egca-login rename below). Point straight at the final page.
         source: '/ecga-login-your-compl',
-        destination: '/ecga-login-your-complete-guide',
+        destination: '/egca-login',
         permanent: true,
       },
       
@@ -743,8 +746,10 @@ const nextConfig = {
       },
       
       {
+        // Collapsed 2026-09-26: same 2-hop chain as /ecga-login-your-compl
+        // above — point straight at the final page instead of the retired slug.
         source: '/https-www-weoneaviation-in-ecga-login-your-complete-guide',
-        destination: '/ecga-login-your-complete-guide',
+        destination: '/egca-login',
         permanent: true,
       },
       

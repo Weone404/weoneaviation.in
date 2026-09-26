@@ -121,6 +121,8 @@ Academy facts: founded 2009; located at C-404, 3rd Floor, Ramphal Chowk, Block C
 - https://weoneaviation.in/student-pilot-license-spl — Student Pilot Licence: minimum age 16, what it permits, and how it leads to a PPL and CPL. Note: SPL in India is the Student Pilot Licence, not the United States Sport Pilot certificate.
 - https://weoneaviation.in/courses/atpl — ATPL ground preparation: minimum age 21, prerequisites, subjects, and what the licence does not give you.
 - https://weoneaviation.in/courses — All programmes in one place.
+- https://weoneaviation.in/ame-aircraft-maintenance-engineer — AME (Aircraft Maintenance Engineer): DGCA CAR 66 requirements, age, subjects, examination fees and modules, and how the Chemistry requirement at 10+2 separates it from the pilot route.
+- https://weoneaviation.in/online-dgca-ground-classes — Online DGCA ground classes: what the DGCA examination process already lets a student do remotely, and what online study cannot cover.
 
 ## CPL detail pages
 
@@ -130,6 +132,7 @@ Academy facts: founded 2009; located at C-404, 3rd Floor, Ramphal Chowk, Block C
 - https://weoneaviation.in/commercial-pilot-license-salary — Commercial pilot pay in India, described as industry-wide ranges rather than promises.
 - https://weoneaviation.in/cost-transparency — What CPL training actually costs, line by line.
 - https://weoneaviation.in/full-form-of-cpl-commercial-pilot-license — What CPL stands for, what the licence permits, and how it differs from a PPL and an ATPL.
+- https://weoneaviation.in/cpl-flight-training — How the CPL's 200 flight hours are built: each Schedule II component, the simulator cap, and what decides how long the flying phase takes.
 
 ## DGCA subject guides
 
@@ -154,6 +157,7 @@ Academy facts: founded 2009; located at C-404, 3rd Floor, Ramphal Chowk, Block C
 - https://weoneaviation.in/how-to-become-a-pilot/after-12th — Roadmap for students after 12th: eligibility, hours and cost overview.
 - https://weoneaviation.in/how-to-become-a-pilot/in-india — India-specific CPL guide covering DGCA requirements and training routes.
 - https://weoneaviation.in/your-guide-on-how-to-become-a-pilot-in-india — Longer-form guide to the whole path.
+- https://weoneaviation.in/how-long-does-it-take-to-become-a-pilot — Why no Indian regulation sets a training duration: the floors DGCA does set (200 hours, five papers at 70%, minimum ages) and why aircraft availability is the real variable.
 
 ## Flying schools by country
 
@@ -163,6 +167,7 @@ Academy facts: founded 2009; located at C-404, 3rd Floor, Ramphal Chowk, Block C
 - https://weoneaviation.in/flying-school/australia — CASA-accredited route with CPL/MEIR pathway, visa context and DGCA conversion.
 - https://weoneaviation.in/flying-school/south-africa — SACAA-based CPL pathway with staged training and DGCA conversion.
 - https://weoneaviation.in/best-flight-schools-in-usa — Comparison of United States training options.
+- https://weoneaviation.in/pilot-training-abroad — What a foreign flying-school quote leaves out: DGCA conversion is a separate step after an FAA, CASA, Transport Canada or SACAA licence, wherever you train.
 
 ## Airline cadet and interview preparation
 
@@ -176,11 +181,13 @@ Academy facts: founded 2009; located at C-404, 3rd Floor, Ramphal Chowk, Block C
 - https://weoneaviation.in/airline-preparatory-classes/cass-compass — CASS and COMPASS assessment preparation.
 - https://weoneaviation.in/air-arabia — Air Arabia pilot selection and what the process involves.
 - https://weoneaviation.in/spice-jet — SpiceJet pilot selection and what the process involves.
+- https://weoneaviation.in/cadet-pilot-program — Cadet pilot programmes versus self-sponsored CPL training: what differs, what DGCA requires identically on both routes, and the questions to ask an airline before committing.
 
 ## Locations
 
 - https://weoneaviation.in/pilot-training-in-india — Pilot training across India: routes, schools and requirements.
 - https://weoneaviation.in/pilot-training-in-delhi — Training from the Dwarka, New Delhi centre.
+- https://weoneaviation.in/pilot-training-in-dwarka — DGCA ground classes in Dwarka Sector 7, and the DGCA institutions already in Delhi: the Central Examination Organisation, four approved medical centres and the foreign-licence equivalence body.
 - https://weoneaviation.in/pilot-training-in-sri-lanka — Sri Lanka as a training destination and what DGCA conversion involves on return.
 
 ## Trust and credentials
@@ -191,6 +198,8 @@ Academy facts: founded 2009; located at C-404, 3rd Floor, Ramphal Chowk, Block C
 - https://weoneaviation.in/student-checklists — Practical checklists for each stage of the licence.
 - https://weoneaviation.in/lead-magnets — Free downloadable guides and checklists.
 - https://weoneaviation.in/blogs — Articles on DGCA exams, training routes and aviation careers.
+- https://weoneaviation.in/how-to-choose-an-aviation-academy — How to check a flying school before paying: DGCA's own approved-organisation list and five-parameter ranking, what they do not cover, and the questions to ask a ground school instead.
+- https://weoneaviation.in/pilot-career-counselling — Free, end-to-end pilot career counselling, with the full agenda published in advance: the education gate, the medical, the computer number, the DGCA papers, choosing a flying school, and what follows the licence.
 
 ## Student guides and reference
 
@@ -211,10 +220,30 @@ Academy facts: founded 2009; located at C-404, 3rd Floor, Ramphal Chowk, Block C
 - https://weoneaviation.in/blogs/what-is-pilot-training-complete-guide — What pilot training is: the SPL to ATPL licence ladder, DGCA eligibility with Schedule II clause references, the five written papers, RTR (A), the 200-hour flight-time breakdown, timelines, cost buckets and the step-by-step route from Class 12 to a Commercial Pilot Licence.
 - https://weoneaviation.in/blogs/dgca-exam-guide — Guide to the DGCA written examinations: the five papers, how they are cleared, and common preparation errors.
 - https://weoneaviation.in/blogs/aviation-course-after-12th — Aviation course options after Class 12 and how each route leads to a licence.
+- https://weoneaviation.in/blogs/become-pilot-without-physics-and-maths-class-12 — Commerce and Biology stream students are not shut out of pilot training: how the NIOS bridge route for Physics and Mathematics works, what it adds to a timeline, and the mistakes that cost a training cycle.
+- https://weoneaviation.in/blogs/bharatiya-vayuyan-adhiniyam-pilot-licensing-india — What the Bharatiya Vayuyan Adhiniyam, 2024 changes and does not change for CPL, PPL, SPL and ATPL eligibility, and the one real licensing change: where the RTR(A) exam now sits.
+- https://weoneaviation.in/blogs/convert-foreign-pilot-licence-to-dgca-india — What CAR Section 7 Series G requires to convert a foreign CPL or ATPL into a DGCA licence: the written papers, the currency test, the skill test and the RTR(A) step.
+- https://weoneaviation.in/blogs/cpl-pilot-in-command-hours-requirement-india — The 100-hour pilot-in-command requirement inside a CPL: how PIC time differs from dual instruction, the 15-hour recency condition, and how it feeds into the 200-hour total.
+- https://weoneaviation.in/blogs/cpl-cross-country-flight-requirement-india — The 20-hour cross-country PIC requirement inside a CPL, and the single 300 nautical mile qualifying flight Schedule II requires.
+- https://weoneaviation.in/blogs/cpl-night-flying-hours-requirement-india — The 5-hour night flying requirement inside a CPL: the 10 take-offs and 10 landings condition and where it sits inside the 200-hour total.
+- https://weoneaviation.in/blogs/cpl-simulator-hours-dgca-rules — How much of the 200-hour CPL requirement can be flown on a simulator under Schedule II, and why the cap exists.
+- https://weoneaviation.in/blogs/cpl-vs-atpl-difference-india — How a Commercial Pilot Licence and an Airline Transport Pilot Licence differ under DGCA rules, and why almost every pilot holds both in sequence.
+- https://weoneaviation.in/blogs/do-you-need-ppl-before-cpl-in-india — DGCA's own eGCA prerequisites for a CPL application, checked line by line, to answer whether a PPL is a required step.
+- https://weoneaviation.in/blogs/english-language-proficiency-test-for-pilots-in-india — DGCA's English Language Proficiency requirement at ICAO Level 4: what the test checks and how it differs from RTR (A).
+- https://weoneaviation.in/blogs/flying-instructor-rating-for-pilots-in-india — What a Flying Instructor Rating is, the prerequisites a CPL holder needs, and why some pilots take this route before an airline seat.
+- https://weoneaviation.in/blogs/foreign-national-nri-pilot-training-india — DGCA's Pariksha portal rules for foreign nationals training in India, and why an NRI's Indian passport keeps them on the ordinary route.
+- https://weoneaviation.in/blogs/how-pilots-build-hours — Why 200 hours is not enough for an airline seat: the five routes pilots use to build command hours, and the recency rule that can delete them.
+- https://weoneaviation.in/blogs/how-to-become-an-airline-pilot-in-india — How to become an airline pilot in India after 12th: eligibility, DGCA medical, exam process, CPL, flight training, costs and timelines.
+- https://weoneaviation.in/blogs/igrua-admission-eligibility-fees — What IGRUA asks of an applicant, its three-stage selection process, what its published course fee covers, and the odds of admission.
+- https://weoneaviation.in/blogs/instrument-rating-for-pilots-in-india — What an Instrument Rating is, how it differs from the instrument time already inside CPL hours, and why it sits between a CPL and a type rating.
+- https://weoneaviation.in/blogs/mcc-training-for-pilots-in-india — What Multi-Crew Cooperation training teaches, why airlines require it before a First Officer joins a multi-pilot flight deck, and when a CPL holder should take it.
+- https://weoneaviation.in/blogs/multi-engine-rating-for-pilots-in-india — What a multi-engine rating certifies, the prerequisites a CPL holder needs, and why airlines require it before a First Officer role.
+- https://weoneaviation.in/blogs/pilot-salary-in-india — How much a pilot earns in India: student pilot, CPL holder, First Officer, Senior First Officer and Captain pay, including allowances and cost-to-company differences.
+- https://weoneaviation.in/blogs/pilot-shortage-in-india — The Ministry of Civil Aviation's own Parliament answer on pilot supply, DGCA's yearly CPL-issuance data, and why the real bottleneck is command experience, not entry.
+- https://weoneaviation.in/blogs/type-rating-for-pilots-in-india — What a type rating is, which aircraft require one, the prerequisites a CPL holder needs, and self-sponsored versus airline-sponsored routes.
 - https://weoneaviation.in/blogs/1 — Academy article.
 - https://weoneaviation.in/blogs/2 — Academy article.
 - https://weoneaviation.in/blogs/3 — Academy article.
-- https://weoneaviation.in/blogs/4 — Academy article.
 - https://weoneaviation.in/blogs/5 — Academy article.
 - https://weoneaviation.in/blogs/6 — Academy article.
 

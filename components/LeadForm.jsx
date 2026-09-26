@@ -67,7 +67,7 @@ export default function LeadForm({ title = 'Get Free Counselling', dark = false,
           <input type="email" placeholder="Email Address" value={form.email}
             onChange={e => setForm({ ...form, email: e.target.value })} className={inputClass} />
         )}
-        <select value={form.course} onChange={e => setForm({ ...form, course: e.target.value })}
+        <select aria-label="Course of interest" value={form.course} onChange={e => setForm({ ...form, course: e.target.value })}
           className={`${inputClass} ${!form.course ? (dark ? 'text-white/50' : 'text-gray-400') : ''}`}>
           <option value="">Select Course (Optional)</option>
           <option value="Commercial Pilot License (CPL)">Commercial Pilot License (CPL)</option>

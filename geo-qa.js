@@ -43,7 +43,18 @@ const counts={},dupes=[];
 for(const r of routes){const f=['pages'+(r==='/'?'/index':r)+'.jsx','pages'+(r==='/'?'/index':r)+'.js'].find(x=>fs.existsSync(x));if(!f)continue;
  const s=fs.readFileSync(f,'utf8').replace(/\/\*[\s\S]*?\*\//g,'').replace(/\{\/\*[\s\S]*?\*\/\}/g,'');
  for(const t of ['Course','FAQPage','BreadcrumbList','BlogPosting','Article','HowTo','EducationalOrganization','WebSite']){
-  let n=(s.match(new RegExp(`['"]@type['"]:\\s*['"]${t}['"]`,'g'))||[]).length;
+  /*
+   * EducationalOrganization legitimately appears twice in plenty of pages: once
+   * as the page's own top-level node, and again nested inside an Article's
+   * publisher or a Course's provider (schema.org's own recommended shape, and
+   * required for Course by section 4.D). Counting those nested references as
+   * duplicate top-level nodes produced a false positive on every such page.
+   * Only a bare `'@type': 'EducationalOrganization'` not immediately preceded
+   * by `publisher:`/`provider:` counts as a top-level node.
+   */
+  let n=t==='EducationalOrganization'
+    ? (s.match(/(?<!publisher:[\s\S]{0,20})(?<!provider:[\s\S]{0,20})['"]@type['"]:\s*['"]EducationalOrganization['"]/g)||[]).length
+    : (s.match(new RegExp(`['"]@type['"]:\\s*['"]${t}['"]`,'g'))||[]).length;
   if(t==='Course')n+=(s.match(/generateCourseSchema\(/g)||[]).length;
   if(t==='FAQPage')n+=(s.match(/generateFAQSchema\(/g)||[]).length;
   if(t==='BreadcrumbList')n+=(s.match(/generateBreadcrumbSchema\(/g)||[]).length;

@@ -870,10 +870,10 @@ export default function CPL() {
                 Book your FREE career counselling session today and let We One Aviation help you choose the right pilot course, understand the Commercial Pilot License process, and begin your journey toward an exciting career in aviation.
               </p>
             </AutoInternalLinks>
-            <a href="/contact"
+            <Link href="/contact"
               className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm shadow-lg">
               Get Free Counselling →
-            </a>
+            </Link>
           </div>
         </section>
 
