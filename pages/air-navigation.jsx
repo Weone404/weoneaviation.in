@@ -77,7 +77,7 @@ const courseFeatures = [
     { feature: 'Live Flight Planning', detail: 'With actual VFR/IFR charts, NOT just theory' },
     { feature: 'Simulator Sessions', detail: 'Practice navigation scenarios and in-flight re-routing' },
     { feature: 'Notes & Question Bank', detail: 'Includes DGCA pattern questions & mock tests' },
-    { feature: 'Guaranteed Results', detail: 'High success rate in DGCA Navigation Paper' },
+    { feature: 'DGCA Pattern Mock Tests', detail: 'Practice papers set in the DGCA exam pattern' },
 ];
 
 const modules = [

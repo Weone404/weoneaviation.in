@@ -102,7 +102,7 @@ const flyingSchools = [
         course: 'EASA ATPL Integrated Program',
         duration: '24 months',
         fees: 'Set by the individual school; ask for it in writing, and ask what it excludes.',
-        highlights: 'Airline-focused training, fast-track to commercial airlines',
+        highlights: 'EASA licence, which must be converted before flying commercially in India',
         href: '/flying-school/uk',
     },
     {
@@ -111,7 +111,7 @@ const flyingSchools = [
         course: 'CASA CPL & ATPL',
         duration: '12-18 months',
         fees: 'Set by the individual school; ask for it in writing, and ask what it excludes.',
-        highlights: 'High-quality flight training with a focus on international airline careers',
+        highlights: 'CASA licence, which must be converted before flying commercially in India',
         href: '/flying-school/australia',
     },
     {
@@ -120,7 +120,7 @@ const flyingSchools = [
         course: 'SACAA CPL & ATPL',
         duration: '12-15 months',
         fees: 'Set by the individual school; ask for it in writing, and ask what it excludes.',
-        highlights: 'Affordable pilot training, international pilot job opportunities',
+        highlights: 'SACAA licence, which must be converted before flying commercially in India',
         href: '/flying-school/south-africa',
     },
     {
@@ -177,9 +177,9 @@ const pilotJourneySteps = [
     {
         icon: '✈️',
         title: 'Apply For Flying Schools',
-        desc: 'After Clear Dgca Exam, You Have To do 200hours of Flying From Any Flying Schools. Apply now For Do Flight Training From We One Aviation Academy.',
-        alert: 'Worry About Loan For Flying schools?',
-        alertDesc: 'We Provide 100% Loan For Flight Training From Any Country. If You Wants To do Flight Training Then We One Aviation Is Solution For You.',
+        desc: 'After clearing the DGCA exam, you complete 200 hours of flight training at a flying school. We One Aviation arranges placement with partner flying schools in India and abroad.',
+        alert: 'Worried about financing flight training?',
+        alertDesc: 'Education loan and EMI options are available for eligible students through We One Aviation. Contact us to check your eligibility and terms.',
     },
 ];
 
@@ -1005,7 +1005,7 @@ export default function Home() {
                 <div className="max-w-7xl mx-auto mt-12">
                     <ScrollReveal className="bg-av-blue rounded-2xl p-8 text-center">
                         <h3 className="font-montserrat text-2xl font-bold text-white mb-3">Enroll in Flying School</h3>
-                        <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">At Our Flying School, we train future pilots with state-of-the-art aircraft, expert instructors, and guaranteed career guidance.</p>
+                        <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">We One Aviation arranges flight training with partner flying schools in India and abroad, alongside DGCA ground classes and free career counselling.</p>
                         <Link href="/flying-school" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">Learn More</Link>
                     </ScrollReveal>
                 </div>
@@ -1033,7 +1033,7 @@ export default function Home() {
                             { icon: '✅', title: 'Flexible Payment & Loan Options', desc: 'Making your dream of becoming a pilot financially accessible with easy EMI and loan assistance.' },
                             { icon: '✅', title: 'Personalized Learning Approach', desc: 'Small batch sizes, doubt-clearing sessions, and one-on-one mentorship to ensure better understanding.' },
                             { icon: '✅', title: 'International Training Tie-Ups', desc: 'Get global exposure with flight training options in India and abroad.' },
-                            { icon: '✅', title: 'Proven Track Record of Success', desc: 'Hundreds of successful pilots flying with leading airlines, proving our commitment to excellence.' },
+                            { icon: '✅', title: 'DGCA-Approved Since 2009', desc: 'Continuous operation as a DGCA-approved ground school in Dwarka Sector 7 since 2009.' },
                         ].map((f, i) => (
                             <ScrollReveal key={f.title} delay={i * 100}>
                                 <div className="card-hover p-6 rounded-2xl border border-gray-100 bg-white shadow-sm hover:border-av-orange/30">

@@ -91,12 +91,12 @@ const dgcaSubjects = [
 
 const flyingSchools = [
   { id: 'india', flag: '🇮🇳', country: 'India', course: 'Commercial Pilot License (CPL)', duration: '12-18 months', fees: '₹35-45 Lakhs (approx.)', highlights: 'DGCA, state-of-the-art simulators, extensive flight hours', href: '/flying-school/india' },
-  { id: 'usa', flag: '🇺🇸', country: 'USA', course: 'FAA CPL & ATPL Training', duration: '12-14 months', fees: '₹67–83 Lakh (≈ $80,000–$100,000)', highlights: 'Largest flight training network in the USA, guaranteed instructor job opportunities', href: '/flying-school/usa' },
+  { id: 'usa', flag: '🇺🇸', country: 'USA', course: 'FAA CPL & ATPL Training', duration: '12-14 months', fees: '₹67–83 Lakh (≈ $80,000–$100,000)', highlights: 'FAA-approved partner schools at international airports', href: '/flying-school/usa' },
   // TODO: Create /flying-school/uk page
-  { id: 'uk', flag: '🇬🇧', country: 'UK', course: 'EASA ATPL Integrated Program', duration: '24 months', fees: '£90,000 - £120,000', highlights: 'Airline-focused training, fast-track to commercial airlines', href: '/contact' },
-  { id: 'aus', flag: '🇦🇺', country: 'Australia', course: 'CASA CPL & ATPL', duration: '12-18 months', fees: '₹49–65 Lakh (≈ AUD $90,000–$120,000)', highlights: 'High-quality flight training with a focus on international airline careers', href: '/flying-school/australia' },
-  { id: 'sa', flag: '🇿🇦', country: 'South Africa', course: 'SACAA CPL & ATPL', duration: '12-15 months', fees: '₹50–67 Lakh (≈ $60,000–$80,000)', highlights: 'Affordable pilot training, international pilot job opportunities', href: '/flying-school/south-africa' },
-  { id: 'can', flag: '🇨🇦', country: 'Canada', course: 'Transport Canada CPL & ATPL', duration: '18-24 months', fees: '₹62–76 Lakh (≈ CAD $90,000–$110,000)', highlights: 'High international reputation, direct airline placement programs', href: '/flying-school/canada' },
+  { id: 'uk', flag: '🇬🇧', country: 'UK', course: 'EASA ATPL Integrated Program', duration: '24 months', fees: '£90,000 - £120,000', highlights: 'EASA-integrated ATPL training route', href: '/contact' },
+  { id: 'aus', flag: '🇦🇺', country: 'Australia', course: 'CASA CPL & ATPL', duration: '12-18 months', fees: '₹49–65 Lakh (≈ AUD $90,000–$120,000)', highlights: 'CASA-accredited CPL/MEIR pathway with DGCA conversion', href: '/flying-school/australia' },
+  { id: 'sa', flag: '🇿🇦', country: 'South Africa', course: 'SACAA CPL & ATPL', duration: '12-15 months', fees: '₹50–67 Lakh (≈ $60,000–$80,000)', highlights: 'SACAA-based CPL pathway with staged training', href: '/flying-school/south-africa' },
+  { id: 'can', flag: '🇨🇦', country: 'Canada', course: 'Transport Canada CPL & ATPL', duration: '18-24 months', fees: '₹62–76 Lakh (≈ CAD $90,000–$110,000)', highlights: 'Transport Canada CPL/ATPL training route', href: '/flying-school/canada' },
 ];
 
 const enrollSteps = [
@@ -127,7 +127,7 @@ const pilotJourneySteps = [
   { id: 'medical', icon: '🩺', title: 'Apply For Dgca DGCA Medical', desc: 'You Have Do Your Medical Checkup From Any Approved Doctors. Below Is Full Process How To Get Dgca DGCA Medical. If You Have Issue In Dgca Medical Then You Can Contact us For Dgca Medical', alert: 'Is Your Dgca Medical Test Taking Time?', alertDesc: "Apply Dgca Medical Through We One Aviation Academy. Call On Us If You Can't Able For Dgca Medical. just Contact us for Dgca Medical" },
   { id: 'computer', icon: '🖥️', title: 'Apply For Dgca Computer Number', desc: 'To start your journey as a pilot, obtaining a DGCA Computer Number is essential. This unique identification is required to appear for DGCA exams and progress in your aviation career.', alert: 'Worry About Computer Number?', alertDesc: "If You Are Facing Any Issue While Applying Dgca Computer Numbers Then Contacts Us. Don't Be Tense About Aviation. We are Here To Solve Your All Aviation Query" },
   { id: 'exam', icon: '📝', title: 'Clear Dgca Exam', desc: 'After Applying These Both, You Have To Book Your Exam Which is Conducted By Dgca Called Dgca Exam. In Dgca Exam , You sit five written papers, and RTR (A) is examined separately.', alert: 'Issue While Apply For Dgca Paper.', alertDesc: "Can't Able To Apply Dgca Paper? Don't Worry Aviators, We One Aviation Is Here For Solve All your Aviation Problems. Just Contacts us" },
-  { id: 'flying', icon: '✈️', title: 'Apply For Flying Schools', desc: 'After Clear Dgca Exam, You Have To do 200hours of Flying From Any Flying Schools. Apply now For Do Flight Training From We One Aviation Academy.', alert: 'Worry About Loan For Flying schools?', alertDesc: 'We Provide 100% Loan For Flight Training From Any Country. If You Wants To do Flight Training Then We One Aviation Is Solution For You.' },
+  { id: 'flying', icon: '✈️', title: 'Apply For Flying Schools', desc: 'After clearing the DGCA exam, you complete 200 hours of flight training at a flying school. We One Aviation arranges placement with partner flying schools in India and abroad.', alert: 'Worried about financing flight training?', alertDesc: 'Education loan and EMI options are available for eligible students through We One Aviation. Contact us to check your eligibility and terms.' },
 ];
 
 
@@ -140,7 +140,7 @@ const whyChooseFeatures = [
   { id: 'wc6', icon: '✅', title: 'Flexible Payment & Loan Options', desc: 'Making your dream of becoming a pilot financially accessible with easy EMI and loan assistance.' },
   { id: 'wc7', icon: '✅', title: 'Personalized Learning Approach', desc: 'Small batch sizes, doubt-clearing sessions, and one-on-one mentorship to ensure better understanding.' },
   { id: 'wc8', icon: '✅', title: 'International Training Tie-Ups', desc: 'Get global exposure with flight training options in India and abroad.' },
-  { id: 'wc9', icon: '✅', title: 'Proven Track Record of Success', desc: 'Hundreds of successful pilots flying with leading airlines, proving our commitment to excellence.' },
+  { id: 'wc9', icon: '✅', title: 'DGCA-Approved Since 2009', desc: 'Continuous operation as a DGCA-approved ground school in Dwarka Sector 7 since 2009.' },
 ];
 
 const worldLocations = [
@@ -539,7 +539,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto mt-12">
             <ScrollReveal className="bg-av-blue rounded-2xl p-8 text-center">
               <h2 className="font-montserrat text-2xl font-bold text-white mb-3">Enroll in Flying School</h2>
-              <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">At Our Flying School, we train future pilots with state-of-the-art aircraft, expert instructors, and guaranteed career guidance.</p>
+              <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">We One Aviation arranges flight training with partner flying schools in India and abroad, alongside DGCA ground classes and free career counselling.</p>
               <Link href="/flying-school/india" className="button-primary inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">India Flying School Details</Link>
             </ScrollReveal>
           </div>

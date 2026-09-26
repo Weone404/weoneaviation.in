@@ -15,11 +15,9 @@ const whyChoose = [
     { icon: '👨‍✈️', title: 'Experienced Faculty', desc: 'Our institution boasts a team of seasoned instructors with extensive industry experience. These experts bring real-world insights and practical knowledge, enriching the learning experience for students.' },
     { icon: '📍', title: 'Strategic Location in Dwarka', desc: 'Situated in Dwarka, our institution benefits from a strategic location with modern amenities and a conducive learning environment, fostering a positive atmosphere for skill development.' },
     { icon: '✈️', title: 'Industry-Relevant Modules', desc: 'The course at We One Aviation is designed with industry relevance in mind. Specialized modules address current trends and challenges in the aviation sector, ensuring graduates are well-prepared for the workforce.' },
-    { icon: '🏆', title: 'Alumni Success Stories', desc: 'We One Aviation takes pride in the success stories of its alumni, who have excelled in various roles within the aviation industry. These achievements highlight the effectiveness of our training programs.' },
-    { icon: '🛩️', title: 'Hands-On Training', desc: 'Practical experience is a cornerstone of our courses. Through hands-on training, including simulator sessions and industry visits, students gain valuable exposure to real-world scenarios, enhancing their readiness for the field.' },
-    { icon: '🤝', title: 'Networking Opportunities', desc: 'Our institution facilitates networking events, connecting students with industry professionals, fellow aviators, and potential employers. Building a strong network is important in a competitive aviation industry.' },
-    { icon: '🌍', title: 'Global Recognition', desc: "We One Aviation's courses are globally recognized, opening doors for graduates to pursue opportunities not only in India but also internationally. Our reputation is a testament to the quality of education provided." },
-    { icon: '💼', title: 'Interview Preparation', desc: 'Interview preparation and career guidance at We One Aviation assists students in securing job opportunities with leading airlines globally. Our commitment extends beyond education to supporting graduates in launching their careers.' },
+    { icon: '🛩️', title: 'Mock Interviews & Assessment Practice', desc: 'Structured mock interviews and psychometric assessment practice for airline selection processes, alongside the classroom curriculum.' },
+    { icon: '🤝', title: 'Networking Opportunities', desc: 'Our institution facilitates networking events, connecting students with industry professionals and fellow aviators. Building a strong network is useful in a competitive aviation industry.' },
+    { icon: '💼', title: 'Interview Preparation', desc: 'Interview technique, licence-route planning and career guidance for pilots applying to operators. We One Aviation does not place students into airline jobs; hiring decisions rest with the operator.' },
 ];
 
 const contactWays = [

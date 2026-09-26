@@ -132,28 +132,6 @@ const courses = [
         ctaLabel: 'Explore South Africa Training →',
         bg: 'from-yellow-700 to-yellow-900',
     },
-    {
-        id: 'scholarship',
-        tag: '🎁 Scholarship Available',
-        tagColor: 'bg-purple-600',
-        icon: '🏆',
-        title: 'Topper Scholarship Program',
-        subtitle: 'Class 10 & 12 toppers fly at zero cost',
-        duration: 'Varies',
-        hours: 'All programs',
-        eligibility: 'Class 10 / 12 Toppers',
-        fee: 'Money-Back Guarantee',
-        authority: 'We One Aviation',
-        highlights: [
-            'Full money-back guarantee for toppers',
-            'Applicable on CPL & Ground Class programs',
-            'Limited seats — apply now',
-            'Free career counselling included',
-        ],
-        href: '/contact',
-        ctaLabel: 'Apply for Scholarship →',
-        bg: 'from-purple-700 to-purple-950',
-    },
 ];
 
 const syllabus = [
@@ -196,7 +174,7 @@ const whyWeOne = [
     { icon: '🌍', title: 'International Training', desc: 'We offer flight training in USA and South Africa for global exposure and FAA / SACAA certification.' },
     { icon: '👨‍✈️', title: 'Expert Instructors', desc: 'Learn from experienced commercial pilots and DGCA-certified ground instructors.' },
     { icon: '📈', title: 'Career Guidance', desc: 'Interview preparation and career guidance, including airline interview practice and counselling.' },
-    { icon: '💸', title: 'Budget Friendly', desc: 'Affordable ground classes starting at ₹2 Lakh. Scholarship available for class toppers.' },
+    { icon: '💸', title: 'Budget Friendly', desc: 'Affordable ground classes starting at ₹2 Lakh.' },
     { icon: '🏥', title: 'Medical Assistance', desc: 'We assist with DGCA medical fitness assessments through our approved network.' },
 ];
 

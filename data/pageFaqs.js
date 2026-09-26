@@ -16,7 +16,7 @@
    * its own FAQs must be listed here in the same commit.
    */
   '/cadet-pilot-program', '/dgca-class-2-class-1-medical',
-  '/blogs/aviation-jobs-besides-pilot', '/faq',
+  '/blogs/aviation-jobs-besides-pilot',
   '/how-to-choose-an-aviation-academy', '/commercial-pilot-license-salary',
   '/full-form-of-cpl-commercial-pilot-license',
   '/icse-full-form', '/cbse-full-form',
@@ -305,13 +305,12 @@ const routeContent = {
   '/courses': {
   title: 'Pilot Training Courses FAQs',
   questions: [
-    ['What pilot-training courses does We One Aviation offer?', 'The courses page lists Commercial Pilot License, Private Pilot License, DGCA Ground Classes, international flight training in the USA and South Africa, and a Topper Scholarship Program.'],
+    ['What pilot-training courses does We One Aviation offer?', 'The courses page lists Commercial Pilot License, Private Pilot License, DGCA Ground Classes, and international flight training in the USA and South Africa.'],
     ['What are the main CPL course details?', 'The listed CPL pathway takes approximately 18-24 months, includes 200 flying hours, requires 10+2 with Physics, Chemistry, and Mathematics, and is presented as a DGCA India programme costing approximately ₹40-50 lakh.'],
     ['What are the PPL course details?', 'The listed PPL programme takes approximately 6-12 months, includes around 40-50 flying hours, accepts 10+2 from any stream, and is shown at approximately ₹7.5-10 lakh.'],
     ['What do the DGCA Ground Classes cover?', 'The ground programme covers Air Navigation, Meteorology, Air Regulations, Technical General and Technical Specific, RTR (Radio Telephony) preparation, mock tests, past papers, and doubt-clearing sessions.'],
     ['What international training options are listed?', 'The page lists FAA flight training in the USA (₹45-65 lakh, 12-18 months) and SACAA training in South Africa (₹35-50 lakh, 12-18 months), with guidance for international training and DGCA licence conversion after returning to India.'],
     ['What eligibility and medical requirements are shown?', 'The page lists minimum ages of 17 for PPL and 18 for CPL, 10+2 with Physics and Mathematics, DGCA-mandated medical fitness assessments, English proficiency, and the applicable flying-hour requirements.'],
-    ['Is there a scholarship available for pilot training?', 'Yes, the page lists a Topper Scholarship Program with a full money-back guarantee for Class 10 and 12 toppers, applicable on CPL and Ground Class programs, with limited seats.'],
     ['What is the earning potential after becoming a commercial pilot?', 'No Indian airline publishes a pilot pay scale, so no figure can be traced to a primary source — the rupee bands that used to be here were removed on 15 September 2026 for that reason. What is true without a figure: pay rises with command, a captain earns materially more than a first officer, and a large part of the pay is linked to hours flown, which DGCA caps at 1,000 hours a year. See the salary page for the full treatment.'],
     ['What are the three phases of CPL training listed on this page?', 'The three phases are Ground School (3-4 months), PPL Training (4-5 months), and CPL Flying (8-10 months), covering everything from ground theory to instrument rating, multi-engine rating, and airline interview preparation.'],
   ],

@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const heroSlides = [
-    { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Flight Training Abroad', title: 'Best Flight Schools', highlight: 'in U.S.A', sub: 'Complete Your 250 Hrs of Flying Within 1.6 Years From U.S.A' },
+    { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Flight Training Abroad', title: 'Commercial Pilot License', highlight: 'in U.S.A', sub: 'FAA-Approved CPL Training in the United States' },
 ];
 
 const whyUSA = [
@@ -18,12 +18,9 @@ const whyUSA = [
 ];
 
 const exclusiveBenefits = [
-    { num: '1', title: '40-Hour PPL Challenge', desc: 'Complete your PPL within 40 hours, and your Instrument Rating (IR) training will be free, saving you thousands of dollars.' },
-    { num: '2', title: 'FAA-Approved Flying School at an International Airport', desc: 'Our partner schools are FAA-approved and located at international airports. You\'ll train in a live air traffic environment from Day 1.' },
-    { num: '3', title: 'On-Campus Accommodation', desc: 'Stay in student-friendly housing located near the airport for a safe and comfortable experience.' },
-    { num: '4', title: 'Full Scholarship After CPL', desc: 'Qualify for a 100% scholarship for advanced flight training after completing your CPL. Visit our office to check your eligibility and terms.' },
-    { num: '5', title: '1500 Hours Flight Building – FREE', desc: 'After earning your CPL, build up to 1,500 flight hours at no additional cost — a major advantage, as most airlines require 1,500 hours for hiring.' },
-    { num: '6', title: 'Train on Advanced Aircraft', desc: 'Fly Cessna 172 Glass Cockpit aircraft with GPS and autopilot systems — the same technology used by professional airline pilots.' },
+    { num: '1', title: 'FAA-Approved Flying School at an International Airport', desc: 'Our partner schools are FAA-approved and located at international airports. You\'ll train in a live air traffic environment from Day 1.' },
+    { num: '2', title: 'On-Campus Accommodation', desc: 'Stay in student-friendly housing located near the airport for a safe and comfortable experience.' },
+    { num: '3', title: 'Train on Advanced Aircraft', desc: 'Fly Cessna 172 Glass Cockpit aircraft with GPS and autopilot systems — the same technology used by professional airline pilots.' },
 ];
 
 const careerRoadmap = [
@@ -112,7 +109,7 @@ export default function USAFlightTraining() {
     const [activeAircraft, setActiveAircraft] = useState(0);
 
     return (
-        <Layout title="Commercial Pilot License in USA – FAA Approved CPL Training | We One Aviation Academy" description="Complete 250 hours of flying in 1.6 years from the USA. FAA-approved flight training in the United States with We One Aviation Academy. PPL, CPL, IR and multi-engine rating training.">
+        <Layout title="Commercial Pilot License in USA – FAA Approved CPL Training | We One Aviation Academy" description="FAA-approved Commercial Pilot Licence training in the United States, arranged through We One Aviation Academy's partner schools, with DGCA conversion guidance on return to India.">
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
@@ -122,7 +119,7 @@ export default function USAFlightTraining() {
                         <ScrollReveal>
                             <div className="section-tag">Flight Training Abroad</div>
                             <h1 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
-                                Best Flight Schools in U.S.A
+                                Commercial Pilot License Training in U.S.A
                             </h1>
                             <p className="text-gray-600 leading-relaxed mb-4 text-sm">
                                 Dreaming of becoming an airline pilot and flying high across international skies? The fastest and most trusted route to a global aviation career is through FAA-approved flight training in the United States.
@@ -133,7 +130,7 @@ export default function USAFlightTraining() {
 
                             {/* Quick Facts */}
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-                                {[['250 Hours', 'Flying Hours'], ['1.6 Years', 'Duration'], ['FAA License', 'Certification'], ['100+ Countries', 'License Accepted']].map(([val, label]) => (
+                                {[['FAA License', 'Certification'], ['PPL → CPL', 'Licence Route'], ['International Airport', 'Training Base'], ['Since 2009', 'Academy Founded']].map(([val, label]) => (
                                     <div key={label} className="bg-av-light rounded-xl p-4 text-center">
                                         <div className="font-montserrat font-bold text-av-blue text-sm">{val}</div>
                                         <div className="text-gray-500 text-xs mt-1">{label}</div>
@@ -144,7 +141,7 @@ export default function USAFlightTraining() {
                             {/* Why Choose USA */}
                             <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">Why Choose Flight Training in the USA?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                                The United States is globally recognized for its modern aviation infrastructure, advanced aircraft, and world-class flight training standards. It's one of the few countries where you can complete 250 flying hours in minimal time, under a globally accepted FAA training system.
+                                The United States is recognised for its aviation infrastructure, modern aircraft and an FAA training system accepted by regulators worldwide, including for DGCA licence conversion on return to India.
                             </p>
                             <div className="space-y-4 mb-6">
                                 {whyUSA.map((item) => (
@@ -154,10 +151,6 @@ export default function USAFlightTraining() {
                                     </div>
                                 ))}
                             </div>
-                            <div className="bg-av-orange/10 border border-av-orange/30 rounded-xl p-4 mb-10 text-center">
-                                <p className="text-av-orange font-bold text-sm">⚡ Limited Seats Available – Apply Now!</p>
-                            </div>
-
                             {/* Exclusive Benefits */}
                             <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">Exclusive Benefits at We One Aviation</h3>
                             <p className="text-gray-600 text-sm leading-relaxed mb-5">
@@ -176,10 +169,6 @@ export default function USAFlightTraining() {
                                     </div>
                                 ))}
                             </div>
-                            <div className="bg-av-orange/10 border border-av-orange/30 rounded-xl p-4 mb-10 text-center">
-                                <p className="text-av-orange font-bold text-sm">⚡ Limited Seats Available – Apply Now!</p>
-                            </div>
-
                             {/* Career Roadmap */}
                             <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">Your Career Roadmap: Step-by-Step Pilot Training in the USA</h3>
                             <div className="space-y-3 mb-10">
@@ -285,12 +274,9 @@ export default function USAFlightTraining() {
                             <div className="bg-av-blue rounded-2xl p-6 text-white">
                                 <h4 className="font-montserrat font-bold mb-4">Key Benefits</h4>
                                 <ul className="space-y-2 text-sm text-white/80">
-                                    <li>✓ FAA License — 100+ countries</li>
-                                    <li>✓ 250 hours in 1.6 years</li>
-                                    <li>✓ 40-hr PPL Challenge (Free IR)</li>
+                                    <li>✓ FAA-issued licence</li>
+                                    <li>✓ FAA-approved school at an international airport</li>
                                     <li>✓ On-campus accommodation</li>
-                                    <li>✓ 1,500 hrs flight building FREE</li>
-                                    <li>✓ 100% CPL scholarship option</li>
                                     <li>✓ Glass cockpit aircraft training</li>
                                 </ul>
                             </div>
@@ -300,8 +286,8 @@ export default function USAFlightTraining() {
                             <div className="bg-av-orange rounded-2xl p-6 text-white">
                                 <h4 className="font-montserrat font-bold mb-2">Training Highlights</h4>
                                 <p className="text-white/80 text-sm mb-3">USA FAA Pilot Training:</p>
-                                <div className="text-2xl font-montserrat font-black">250 Hours</div>
-                                <div className="text-white/70 text-xs mt-1">Complete in Just 1.6 Years</div>
+                                <div className="text-2xl font-montserrat font-black">FAA Licence</div>
+                                <div className="text-white/70 text-xs mt-1">PPL through CPL</div>
                                 <div className="text-white/70 text-xs mt-1">International Airport Training</div>
                                 <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">

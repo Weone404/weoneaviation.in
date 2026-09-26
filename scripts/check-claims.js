@@ -189,6 +189,31 @@ const PATTERNS = [
   new RegExp(`(Cessna\\s*\\d|Piper\\s*PA-)[^.]{0,60}${OWNS}`, 'i'),
   new RegExp(`${OUTCOME}[^.]{0,80}${RUPEES_PER_MONTH}`, 'i'),
   new RegExp(`${RUPEES_PER_MONTH}[^.]{0,80}${OUTCOME}`, 'i'),
+  /*
+   * Added 2026-09-26 (weekly growth routine, W39). Found live on the homepage
+   * and /pilot-training-in-india, both missed by every pattern above because
+   * none of them require a "%" character or a specific digit string —
+   * "guaranteed instructor job opportunities", "direct airline placement
+   * programs" and "Hundreds of successful pilots flying with leading
+   * airlines" are the exact class of claim section 1 forbids (job/placement
+   * guarantees, unverifiable success counts), stated in prose rather than a
+   * percentage or headcount. Also caught: a "100% Loan" financing guarantee
+   * and a "Topper Scholarship... Money-Back Guarantee" offer with no
+   * documented terms anywhere in the repo, and "Guaranteed Results" attached
+   * to an implied but unstated pass rate.
+   */
+  /*
+   * Excludes "phrased as a guaranteed job" — /how-to-choose-an-aviation-academy
+   * and /credentials both use that exact construction to WARN a reader away
+   * from any institute that makes the claim, which is the opposite of making
+   * it. Same reasoning as the other negative lookbehinds in this file: match
+   * the claim, not a sentence that names the claim to reject it.
+   */
+  /(?<!phrased as a )guaranteed\s+(instructor\s+)?job/i, /guaranteed\s+career/i,
+  /direct\s+airline\s+placement/i, /guaranteed\s+results?/i,
+  /hundreds\s+of\s+successful\s+(students|pilots|graduates)/i,
+  /proven\s+track\s+record/i, /money.?back\s+guarantee/i,
+  /100\s*%\s*loan/i,
 ];
 
 
