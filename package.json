@@ -16,6 +16,11 @@
     "start": "next start",
     "lint": "eslint .",
     "check:claims": "node scripts/check-claims.js",
+    "verify:links": "node scripts/audit-links.cjs",
+    "verify:schema": "node geo-qa.js",
+    "verify:meta": "node scripts/seo-audit.js",
+    "audit:crawl": "node scripts/audit-crawl.mjs",
+    "verify:all": "npm run lint && npm run check:claims && npm run build && npm run verify:links && npm run verify:schema && npm run verify:meta",
     "submit:indexnow": "node scripts/submit-indexnow.js"
   },
   "dependencies": {
