@@ -35,6 +35,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'igrua-admission-eligibility-fees',
+        title: 'IGRUA Admission: Eligibility, Selection Process and Fees Explained',
+        excerpt: "What India's only government-run flying academy actually asks of an applicant: the three-stage merit selection, the eligibility DGCA already sets for every CPL candidate, and what the published course fee covers that a private quote usually does not.",
+        category: 'Flying school selection',
+        readTime: '9 min',
+        date: 'Sep 26, 2026',
+        image: { src: '/blog/igrua-admission-eligibility-fees/hero-single-gate-many-aircraft.webp', width: 1200, height: 630, promptId: '72' },
+    },
+    {
         slug: 'pilot-shortage-in-india',
         title: "Is There a Pilot Shortage in India? What the Government's Own Numbers Say",
         excerpt: "The Ministry of Civil Aviation's own Parliament answer: no shortage of pilots overall, only of commanders on certain aircraft types. DGCA's CPL-issuance figures, and what the real bottleneck means for anyone deciding whether to train.",
