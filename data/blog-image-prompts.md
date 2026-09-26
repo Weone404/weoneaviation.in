@@ -1004,6 +1004,42 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 > background, generous negative space around the funnel, nothing else in
 > the frame. Absolutely no text, letters or numbers anywhere in the image.
 
+## Post: IGRUA Admission: Eligibility, Selection Process and Fees Explained (/blogs/igrua-admission-eligibility-fees)
+
+### Prompt 72 — Hero / OpenGraph and card
+- **File:** `public/blog/igrua-admission-eligibility-fees/hero-single-gate-many-aircraft.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A single training aircraft parked before a narrow open gateway, with several identical training aircraft waiting at a distance behind it, representing the one government flying academy against the wider field of private schools"
+
+> A flat-style illustration of a single small single-engine training aircraft
+> parked directly in front of a simple narrow open gateway structure — two
+> plain vertical navy posts with a thin crossbar, like an abstract gate
+> rather than a real building — positioned in the centre-left of the frame.
+> In the distance to the right, several more identical training aircraft of
+> the same size and shape sit parked in a loose row, rendered in a lighter
+> flat navy tone to suggest depth. The aircraft nearest the gate is filled
+> in solid burnt orange as the single accent; every other aircraft stays
+> plain navy. Wide open pale blue sky, generous negative space above and
+> around the gate, no buildings, people, flags or signage anywhere.
+> Absolutely no text, letters, numbers or symbols anywhere in the image.
+
+### Prompt 73 — Three-stage selection funnel
+- **File:** `public/blog/igrua-admission-eligibility-fees/three-stage-funnel.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A wide funnel narrowing through three marked checkpoints down to a small number of dots at the bottom, representing the written test, aptitude test and interview stages of IGRUA's selection process"
+
+> A flat-style diagram of a wide, symmetrical funnel outlined in thin navy
+> lines, seen straight on, similar in style to a simple hourglass narrowing
+> in three distinct steps rather than smoothly. Inside the wide top opening,
+> a loose cluster of a dozen small plain navy dots represents applicants.
+> The funnel narrows in three clear stepped stages, each marked by a thin
+> horizontal navy line crossing the funnel's width, so three distinct bands
+> are visible from top to bottom. Below the lowest band, only two or three
+> dots remain, and these final dots are filled in solid burnt orange as the
+> single accent. Wide pale background, generous negative space around the
+> funnel, nothing else in the frame. Absolutely no text, letters, numbers or
+> arrows anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
