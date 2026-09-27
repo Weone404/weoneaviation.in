@@ -35,6 +35,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'ppl-physics-maths-requirement-india',
+        title: "Do You Need Physics and Maths for a PPL in India? What DGCA's Pariksha Rules Say",
+        excerpt: "DGCA's Pariksha rules state the Physics-and-Mathematics condition for every flight crew category except one: PPL, which needs only a Class 10 pass. What that means for a standalone Private Pilot Licence, and why it doesn't remove the requirement once a CPL is the goal.",
+        category: 'Pilot eligibility',
+        readTime: '7 min',
+        date: 'Sep 27, 2026',
+        image: { src: '/blog/ppl-physics-maths-requirement/hero-class-ten-small-aircraft.webp', width: 1200, height: 630, promptId: '74' },
+    },
+    {
         slug: 'igrua-admission-eligibility-fees',
         title: 'IGRUA Admission: Eligibility, Selection Process and Fees Explained',
         excerpt: "What India's only government-run flying academy actually asks of an applicant: the three-stage merit selection, the eligibility DGCA already sets for every CPL candidate, and what the published course fee covers that a private quote usually does not.",

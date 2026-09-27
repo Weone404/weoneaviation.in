@@ -1040,6 +1040,58 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 > funnel, nothing else in the frame. Absolutely no text, letters, numbers or
 > arrows anywhere in the image.
 
+## Post: Do You Need Physics and Maths for a PPL in India? (/blogs/ppl-physics-maths-requirement-india)
+
+### Prompt 74 — Hero / OpenGraph and card
+- **File:** `public/blog/ppl-physics-maths-requirement/hero-class-ten-small-aircraft.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A single small training aircraft beside one plain certificate icon representing a Class 10 pass, with a larger aircraft silhouette in the background sitting behind two stacked closed book icons representing Physics and Mathematics"
+
+> A flat-style illustration split loosely across the frame. In the left
+> foreground, one small single-engine training aircraft in solid burnt
+> orange sits beside a simple plain rectangular certificate icon outlined
+> in navy, resting on the ground beneath the aircraft's nose — representing
+> a completed school-leaving record. In the right background, a second,
+> slightly larger aircraft silhouette in a lighter flat navy tone sits
+> further away and partly behind two identical closed book shapes, stacked
+> one on top of the other, outlined in navy with no markings. Wide pale
+> blue sky, generous negative space between the two groupings, no people,
+> no runways, no buildings. Absolutely no text, letters or numbers
+> anywhere in the image.
+
+### Prompt 75 — Two gates of different heights
+- **File:** `public/blog/ppl-physics-maths-requirement/two-gates-different-heights.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "Two simple gate outlines side by side, the left gate low and open with a single small mark representing a Class 10 pass, the right gate taller and crossed by two horizontal bars representing the Physics and Mathematics requirement for every other category"
+
+> A flat-style diagram of two simple abstract gateways side by side, each
+> just two plain vertical navy posts with a crossbar, seen straight on.
+> The left gateway is noticeably shorter, its crossbar low, with a single
+> small solid burnt orange dot resting on the crossbar. The right gateway
+> is taller, with two additional thin horizontal navy bars stacked across
+> its opening above the shorter gate's height, blocking more of the gap.
+> Both gateways stand on a plain pale blue background with generous space
+> between and around them, nothing else in the frame, no ground texture,
+> no aircraft. Absolutely no text, letters, numbers or arrows anywhere in
+> the image.
+
+### Prompt 76 — Path forking and rejoining before one gate
+- **File:** `public/blog/ppl-physics-maths-requirement/path-rejoining-single-gate.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text already set in code:** "A single path forking briefly around a small open gate, then both branches rejoining and continuing toward one larger closed gate marked with two horizontal bars, representing a PPL route that still leads back to the same Physics and Mathematics requirement for a CPL"
+
+> A flat-style top-down diagram of a single wide path in pale blue,
+> outlined in thin navy lines, running left to right. Partway along, the
+> path briefly splits into two parallel branches: the upper branch passes
+> through a small, low, fully open gate outline; the lower branch
+> continues straight with no gate at all. A short distance further on, both
+> branches rejoin into one single path again, which continues toward a
+> taller gate outline at the right edge of the frame, this one crossed by
+> two thin horizontal navy bars filled solid burnt orange. Wide pale
+> background, generous negative space above and below the path, nothing
+> else in the frame. Absolutely no text, letters, numbers or arrows
+> anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
