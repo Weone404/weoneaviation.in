@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import Layout from "../components/Layout";
 import AutoInternalLinks from "../components/AutoInternalLinks";
@@ -314,43 +315,57 @@ export default function CPL() {
       </Head>
 
       <Layout title="Commercial Pilot License (CPL) Course in India | We One Aviation" description="Complete guide to CPL training, eligibility, fees, and pilot career paths with We One Aviation Academy.">
-        <div className="bg-gray-50 min-h-screen">
+        <div className="bg-gray-50 min-h-screen cpl-page">
 
-        {/* ── HEADER ── */}
-        <header className="bg-gradient-to-br from-av-blue to-av-navy text-white text-center relative overflow-hidden"
-          style={{ paddingTop: "144px", paddingBottom: "30px" }}>
-          <div className="absolute top-0 right-0 w-64 h-64 rounded-full border-2 border-white/5 -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-44 h-44 rounded-full border-2 border-white/5 translate-y-1/2 -translate-x-1/2 pointer-events-none" />
-          <div className="max-w-7xl mx-auto px-4 relative z-10">
-            <div className="section-tag mb-3">Complete Guide</div>
-            <Breadcrumb />
-            <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white leading-tight mb-4">
-              Commercial Pilot License (CPL) in India
-            </h1>
+        {/* ── HERO ── */}
+        <header className="cpl-hero">
+          <div className="max-w-7xl mx-auto px-4 lg:px-6 relative z-10">
+            <div className="cpl-hero__top">
+              <div className="section-tag mb-3">Complete Guide</div>
+              <Breadcrumb />
+            </div>
+            <div className="cpl-hero__grid">
+              <div className="cpl-hero__content">
+                <h1 className="font-montserrat text-3xl md:text-5xl xl:text-6xl font-black text-white leading-[1.05] mb-4">
+                  Commercial Pilot License (CPL) in India
+                </h1>
+                <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl mb-6">
+                  A Commercial Pilot Licence (Aeroplanes) in India requires a minimum age of 18, Class 10+2 with Physics and Mathematics, and not less than 200 hours of flight time completed within the preceding five years. The requirements are set by the Aircraft Rules, 1937, Schedule II, Section J.
+                </p>
+                <div className="flex flex-wrap items-center gap-3 mb-6">
+                  <Link href="/contact" className="button-primary">Book a counselling call</Link>
+                  <Link href="#commercial-pilot-license-eligibility-in-india" className="button-secondary">Check eligibility</Link>
+                </div>
+                <p className="text-white/60 text-xs tracking-[0.16em] uppercase">{`Last updated: ${LAST_UPDATED}`}</p>
+                <div className="cpl-hero__meta-grid">
+                  {quickFacts.map((fact, index) => (
+                    <div key={index} className="cpl-hero__meta-item">
+                      <strong>{fact.val}</strong>
+                      <span>{fact.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="cpl-hero__visual">
+                <figure className="cpl-hero__image-frame">
+                  <Image
+                    className="cpl-hero__image"
+                    src="/redbird and simulator.jpg"
+                    alt="Modern aircraft cockpit in a flight-training simulator"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 45vw"
+                    fetchPriority="high"
+                  />
+                </figure>
+              </div>
+            </div>
           </div>
         </header>
-
-        <section className="bg-white py-10 px-4">
-          <div className="max-w-7xl mx-auto">
-            <p className="text-gray-600 leading-relaxed mb-6 text-base">
-              A Commercial Pilot Licence (Aeroplanes) in India requires a minimum age of 18, Class 10+2 with Physics and Mathematics, and not less than 200 hours of flight time completed within the preceding five years. The requirements are set by the Aircraft Rules, 1937, Schedule II, Section J.
-            </p>
-            <p className="text-gray-500 text-xs mb-0">{`Last updated: ${LAST_UPDATED}`}</p>
-          </div>
-        </section>
 
         {/* ── QUICK FACTS STRIP ── */}
         <div className="bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 py-5">
             <ArticleTOC headings={tocHeadings} />
-          </div>
-          <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4">
-            {quickFacts.map((f, i) => (
-              <div key={i} className={`py-5 text-center ${i < quickFacts.length - 1 ? "border-r border-gray-100" : ""}`}>
-                <div className="font-montserrat font-black text-lg text-av-blue">{f.val}</div>
-                <div className="text-xs text-gray-400 mt-1 uppercase tracking-widest">{f.label}</div>
-              </div>
-            ))}
           </div>
         </div>
 
@@ -375,11 +390,22 @@ export default function CPL() {
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-6">A Commercial Pilot License pathway generally involves meeting the eligibility criteria, completing the required medical and academic requirements, preparing for DGCA examinations, and building the specified flight experience through a recognized flying school.</p>
             </AutoInternalLinks>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <div className="cpl-timeline" aria-label="Commercial pilot training process timeline">
               {processSteps.map((step, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl border border-gray-100 shadow-sm p-4">
-                  <h3 className="font-montserrat font-bold text-av-blue text-sm mb-2">{step.phase}</h3>
-                  <div className="text-gray-600 text-sm leading-relaxed">{step.desc}</div>
+                <div key={i} className="cpl-timeline__item">
+                  <div className="cpl-timeline__number">{i + 1}</div>
+                  <div className="cpl-timeline__card">
+                    <h3 className="font-montserrat font-bold text-av-blue text-sm md:text-base mb-2">{step.phase}</h3>
+                    <div className="text-gray-600 text-sm leading-relaxed">{step.desc}</div>
+                    {step.topics && (
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {step.topics.map((topic, index) => (
+                          <span key={index} className="cpl-timeline__pill">{topic}</span>
+                        ))}
+                      </div>
+                    )}
+                    {step.note && <div className="mt-3 text-gray-600 text-sm leading-relaxed">{step.note}</div>}
+                  </div>
                 </div>
               ))}
             </div>
@@ -394,49 +420,23 @@ export default function CPL() {
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-6">To enroll in a Commercial Pilot License course in India and progress toward CPL issuance, candidates must satisfy applicable DGCA requirements relating to education, age, medical fitness, language proficiency, examinations, and flight training.</p>
             </AutoInternalLinks>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div className="card-hover bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex gap-3">
-                <span className="text-av-blue font-black text-lg flex-shrink-0 mt-0.5">✓</span>
-                <div>
-                  <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">Educational Qualification</h3>
-                  <div className="text-gray-500 text-xs leading-relaxed">Candidates should have completed 10+2 with Physics and Mathematics from a recognized board. Students from other streams may qualify by completing the required subjects through approved educational pathways, subject to applicable DGCA regulations.</div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+              {eligibilityItems.map((item, index) => (
+                <div key={index} className="cpl-card cpl-card--eligibility">
+                  <div className="cpl-card__icon" aria-hidden="true">
+                    {index === 0 && '🎓'}
+                    {index === 1 && '📅'}
+                    {index === 2 && '🩺'}
+                    {index === 3 && '🗣️'}
+                    {index === 4 && '📝'}
+                    {index === 5 && '✈️'}
+                  </div>
+                  <div>
+                    <h3 className="font-montserrat font-bold text-av-blue text-base mb-2">{item.label}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="card-hover bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex gap-3">
-                <span className="text-av-blue font-black text-lg flex-shrink-0 mt-0.5">✓</span>
-                <div>
-                  <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">Age Requirement</h3>
-                  <div className="text-gray-500 text-xs leading-relaxed">Students can begin planning their pilot career after completing Class 12. The minimum age for obtaining a Commercial Pilot License is determined by DGCA licensing requirements.</div>
-                </div>
-              </div>
-              <div className="card-hover bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex gap-3">
-                <span className="text-av-blue font-black text-lg flex-shrink-0 mt-0.5">✓</span>
-                <div>
-                  <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">Medical Requirements</h3>
-                  <div className="text-gray-500 text-xs leading-relaxed">Every aspiring pilot must successfully complete DGCA medical examinations. Good physical and mental fitness are essential for safe flight operations.</div>
-                </div>
-              </div>
-              <div className="card-hover bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex gap-3">
-                <span className="text-av-blue font-black text-lg flex-shrink-0 mt-0.5">✓</span>
-                <div>
-                  <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">English Language Proficiency</h3>
-                  <div className="text-gray-500 text-xs leading-relaxed">English is the international language of aviation. Good communication skills help pilots understand aviation procedures, communicate with Air Traffic Control, and operate safely.</div>
-                </div>
-              </div>
-              <div className="card-hover bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex gap-3">
-                <span className="text-av-blue font-black text-lg flex-shrink-0 mt-0.5">✓</span>
-                <div>
-                  <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">DGCA Examinations</h3>
-                  <div className="text-gray-500 text-xs leading-relaxed">The DGCA ground-school route includes written examinations covering air regulations, meteorology, navigation, and technical subjects before the flight-training stage is completed.</div>
-                </div>
-              </div>
-              <div className="card-hover bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex gap-3">
-                <span className="text-av-blue font-black text-lg flex-shrink-0 mt-0.5">✓</span>
-                <div>
-                  <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">Flight Training Requirements</h3>
-                  <div className="text-gray-500 text-xs leading-relaxed">To qualify for CPL issuance, candidates must meet the applicable flight-time requirements, complete the required practical training, and demonstrate competency in line with DGCA standards.</div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -451,31 +451,38 @@ export default function CPL() {
                 A CPL pathway includes classroom grounding, medical and regulatory preparation, flight training, and the required examination and licensing milestones. The exact sequence may vary by training school and individual's pace.
               </p>
             </AutoInternalLinks>
-            <div className="space-y-3">
+            <div className="space-y-3 cpl-process">
               {processSteps.map((step, i) => (
                 <div key={i} className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
                   <button
+                    id={`cpl-process-step-${i + 1}-trigger`}
+                    type="button"
                     onClick={() => setOpenPhase(openPhase === i ? null : i)}
                     className="w-full bg-av-blue text-white px-6 py-4 flex justify-between items-center hover:bg-av-navy transition-all"
+                    aria-expanded={openPhase === i}
+                    aria-controls={`cpl-process-step-${i + 1}-panel`}
                   >
                     <span className="font-montserrat font-bold text-sm">{step.phase}</span>
                     <span className="text-white/60 text-sm">{openPhase === i ? "▲" : "▼"}</span>
                   </button>
-                  {openPhase === i && (
-                    <div className="px-6 py-4 bg-white">
-                      <p className="text-gray-600 text-sm leading-relaxed mb-3">{step.desc}</p>
-                      {step.topics && (
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-3">
-                          {step.topics.map((t, j) => (
-                            <div key={j} className="flex items-start gap-2 text-sm text-gray-600">
-                              <span className="text-av-orange mt-0.5">▸</span> {t}
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                      {step.note && <p className="text-gray-600 text-sm leading-relaxed">{step.note}</p>}
-                    </div>
-                  )}
+                  <div
+                    id={`cpl-process-step-${i + 1}-panel`}
+                    className="px-6 py-4 bg-white"
+                    aria-labelledby={`cpl-process-step-${i + 1}-trigger`}
+                    hidden={openPhase !== i}
+                  >
+                    <p className="text-gray-600 text-sm leading-relaxed mb-3">{step.desc}</p>
+                    {step.topics && (
+                      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-3">
+                        {step.topics.map((t, j) => (
+                          <div key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                            <span className="text-av-orange mt-0.5">▸</span> {t}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {step.note && <p className="text-gray-600 text-sm leading-relaxed">{step.note}</p>}
+                  </div>
                 </div>
               ))}
             </div>
@@ -509,14 +516,28 @@ export default function CPL() {
           <div className="max-w-7xl mx-auto">
             <div className="section-tag mb-3">Training in Delhi</div>
             <h2 id="commercial-pilot-training-in-delhi" className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot Training in Delhi</h2>
-            <AutoInternalLinks currentPath="/commercial-pilot-license">
-              <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                Students searching for pilot training in Delhi can benefit from structured counselling and guidance on flying-school selection, DGCA procedures, documentation, medical requirements, and long-term course planning.
-              </p>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Whether the training is planned in India or abroad, students should compare school options, aircraft availability, training schedules, and regulatory requirements before enrolling.
-              </p>
-            </AutoInternalLinks>
+            <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-6 items-center">
+              <AutoInternalLinks currentPath="/commercial-pilot-license">
+                <div className="space-y-3">
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Students searching for pilot training in Delhi can benefit from structured counselling and guidance on flying-school selection, DGCA procedures, documentation, medical requirements, and long-term course planning.
+                  </p>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Whether the training is planned in India or abroad, students should compare school options, aircraft availability, training schedules, and regulatory requirements before enrolling.
+                  </p>
+                </div>
+              </AutoInternalLinks>
+              <div className="cpl-location-card">
+                <div className="cpl-location-card__badge">Delhi / India</div>
+                <h3 className="font-montserrat font-bold text-av-blue text-xl mb-3">Structured guidance for the full CPL journey</h3>
+                <ul className="cpl-location-card__list">
+                  <li>Medical and eligibility planning</li>
+                  <li>Ground school and DGCA exam preparation</li>
+                  <li>Flying school selection and training roadmap</li>
+                  <li>Career readiness and licensing support</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -531,22 +552,18 @@ export default function CPL() {
               </p>
             </AutoInternalLinks>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-              <div className="bg-white rounded-xl border border-gray-100 p-4">
-                <h3 className="font-montserrat font-bold text-av-blue mb-2">DGCA Exam Ground Preparation</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Focused preparation for subjects such as Air Navigation, Aviation Meteorology, Air Regulations, and Technical subjects, along with examination-oriented practice.</p>
-              </div>
-              <div className="bg-white rounded-xl border border-gray-100 p-4">
-                <h3 className="font-montserrat font-bold text-av-blue mb-2">Medical &amp; Computer Number Support</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Guidance for DGCA Computer Number processes, Class 1 and Class 2 medical requirements, and NIOS-related academic requirements where applicable.</p>
-              </div>
-              <div className="bg-white rounded-xl border border-gray-100 p-4">
-                <h3 className="font-montserrat font-bold text-av-blue mb-2">Flight Training Guidance</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Support in understanding flying-school options, flight-training requirements, aircraft training, and the process of completing the required flying hours.</p>
-              </div>
-              <div className="bg-white rounded-xl border border-gray-100 p-4">
-                <h3 className="font-montserrat font-bold text-av-blue mb-2">Career &amp; Airline Preparation</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Guidance related to Type Rating options, airline entrance preparation, simulator assessments, and other career-preparation requirements.</p>
-              </div>
+              {[
+                { title: 'DGCA Exam Ground Preparation', desc: 'Focused preparation for subjects such as Air Navigation, Aviation Meteorology, Air Regulations, and Technical subjects, along with examination-oriented practice.', icon: '📚' },
+                { title: 'Medical & Computer Number Support', desc: 'Guidance for DGCA Computer Number processes, Class 1 and Class 2 medical requirements, and NIOS-related academic requirements where applicable.', icon: '🩺' },
+                { title: 'Flight Training Guidance', desc: 'Support in understanding flying-school options, flight-training requirements, aircraft training, and the process of completing the required flying hours.', icon: '✈️' },
+                { title: 'Career & Airline Preparation', desc: 'Guidance related to Type Rating options, airline entrance preparation, simulator assessments, and other career-preparation requirements.', icon: '🚀' },
+              ].map((feature, index) => (
+                <div key={index} className="cpl-card cpl-card--feature">
+                  <div className="cpl-card__icon">{feature.icon}</div>
+                  <h3 className="font-montserrat font-bold text-av-blue text-base mb-2">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -562,13 +579,19 @@ export default function CPL() {
               </p>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">A typical CPL pathway includes:</p>
             </AutoInternalLinks>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-              {cplJourneyList.map((item, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl border border-gray-100 p-4 flex gap-3 items-start">
-                  <div className="flex-shrink-0 w-7 h-7 bg-av-orange rounded-full flex items-center justify-center text-white font-black text-xs">{i + 1}</div>
-                  <span className="text-gray-600 text-sm leading-relaxed">{item}</span>
-                </div>
-              ))}
+            <div className="cpl-duration-wrap">
+              <div className="cpl-duration__hero">
+                <span className="cpl-duration__eyebrow">Typical Timeline</span>
+                <div className="cpl-duration__value">18–24 Months</div>
+              </div>
+              <div className="cpl-duration__steps">
+                {cplJourneyList.map((item, i) => (
+                  <div key={i} className="cpl-duration__step">
+                    <span className="cpl-duration__step-number">{i + 1}</span>
+                    <span className="cpl-duration__step-label">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -583,25 +606,31 @@ export default function CPL() {
                 Pursuing a Commercial Pilot License in India involves costs associated with ground-school training, medical assessments, flying training, examinations, licensing, and other training-related expenses.
               </p>
             </AutoInternalLinks>
-            <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm mb-6">
-              <table className="w-full text-sm border-collapse">
-                <thead>
-                  <tr className="bg-av-blue text-white">
-                    <th className="px-5 py-3 text-left font-bold">Fee Component</th>
-                    <th className="px-5 py-3 text-left font-bold">Estimated Cost Range (INR)</th>
-                    <th className="px-5 py-3 text-left font-bold">Details</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="bg-white"><td className="px-5 py-3 text-gray-600">Ground School Training</td><td className="px-5 py-3 text-av-orange font-semibold">₹1.5 Lakhs – ₹2.5 Lakhs</td><td className="px-5 py-3 text-gray-600">DGCA examination preparation, ground subjects, and navigation-related training</td></tr>
-                  <tr className="bg-gray-50"><td className="px-5 py-3 text-gray-600">DGCA Class 1 &amp; 2 Medicals</td><td className="px-5 py-3 text-av-orange font-semibold">₹15,000 – ₹25,000</td><td className="px-5 py-3 text-gray-600">Medical examinations by authorized DGCA medical examiners</td></tr>
-                  <tr className="bg-white"><td className="px-5 py-3 text-gray-600">Flying Training (200 hours)</td><td className="px-5 py-3 text-av-orange font-semibold">₹35 Lakhs – ₹45 Lakhs</td><td className="px-5 py-3 text-gray-600">Aircraft flying, simulator sessions where applicable, fuel and landing-related charges</td></tr>
-                  <tr className="bg-gray-50"><td className="px-5 py-3 text-gray-600">DGCA Exam &amp; Licensing Fees</td><td className="px-5 py-3 text-av-orange font-semibold">₹20,000 – ₹30,000</td><td className="px-5 py-3 text-gray-600">Examination, skill-test and licensing-related charges</td></tr>
-                  <tr className="bg-white"><td className="px-5 py-3 text-gray-600">Total Estimated Cost</td><td className="px-5 py-3 text-av-orange font-semibold">₹38 Lakhs – ₹48 Lakhs</td><td className="px-5 py-3 text-gray-600">Approximate overall range; actual cost varies</td></tr>
-                </tbody>
-              </table>
+            <div className="cpl-price-card">
+              <div className="cpl-price-card__header">
+                <span>Estimated total investment</span>
+                <strong>₹38 Lakhs – ₹48 Lakhs</strong>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="cpl-fee-table w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="bg-av-blue text-white">
+                      <th className="px-5 py-3 text-left font-bold">Fee Component</th>
+                      <th className="px-5 py-3 text-left font-bold">Estimated Cost Range (INR)</th>
+                      <th className="px-5 py-3 text-left font-bold">Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="bg-white"><td className="px-5 py-3 text-gray-600">Ground School Training</td><td className="px-5 py-3 text-av-orange font-semibold">₹1.5 Lakhs – ₹2.5 Lakhs</td><td className="px-5 py-3 text-gray-600">DGCA examination preparation, ground subjects, and navigation-related training</td></tr>
+                    <tr className="bg-gray-50"><td className="px-5 py-3 text-gray-600">DGCA Class 1 &amp; 2 Medicals</td><td className="px-5 py-3 text-av-orange font-semibold">₹15,000 – ₹25,000</td><td className="px-5 py-3 text-gray-600">Medical examinations by authorized DGCA medical examiners</td></tr>
+                    <tr className="bg-white"><td className="px-5 py-3 text-gray-600">Flying Training (200 hours)</td><td className="px-5 py-3 text-av-orange font-semibold">₹35 Lakhs – ₹45 Lakhs</td><td className="px-5 py-3 text-gray-600">Aircraft flying, simulator sessions where applicable, fuel and landing-related charges</td></tr>
+                    <tr className="bg-gray-50"><td className="px-5 py-3 text-gray-600">DGCA Exam &amp; Licensing Fees</td><td className="px-5 py-3 text-av-orange font-semibold">₹20,000 – ₹30,000</td><td className="px-5 py-3 text-gray-600">Examination, skill-test and licensing-related charges</td></tr>
+                    <tr className="bg-white"><td className="px-5 py-3 text-gray-600">Total Estimated Cost</td><td className="px-5 py-3 text-av-orange font-semibold">₹38 Lakhs – ₹48 Lakhs</td><td className="px-5 py-3 text-gray-600">Approximate overall range; actual cost varies</td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed">These are estimated costs rather than fixed fees. The final cost can vary depending on the flying school, aircraft type, training location, training duration, accommodation, additional flight hours, and other applicable charges.</p>
+            <p className="text-gray-600 text-sm leading-relaxed mt-4">These are estimated costs rather than fixed fees. The final cost can vary depending on the flying school, aircraft type, training location, training duration, accommodation, additional flight hours, and other applicable charges.</p>
           </div>
         </section>
 
@@ -613,15 +642,25 @@ export default function CPL() {
             <AutoInternalLinks currentPath="/commercial-pilot-license">
               <p className="text-gray-600 text-sm leading-relaxed mb-4">A Commercial Pilot License in India requires a total of 200 hours of flying experience under the applicable DGCA requirements. The total includes the required cross-country, instrument, and night-flying elements as part of the licensing pathway.</p>
             </AutoInternalLinks>
-            <h3 className="font-montserrat text-lg font-bold text-av-blue mt-2 mb-2">Required Flight Experience</h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">The required flight time is built progressively through dual instruction, solo training, and supervised flight sorties. The aim is to ensure the candidate can demonstrate safe and competent operations before CPL issuance.</p>
-            <h3 className="font-montserrat text-lg font-bold text-av-blue mt-2 mb-2">Cross-Country Flying</h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">Candidates must develop cross-country flight competence and log the required navigation experience as part of the CPL pathway.</p>
-            <h3 className="font-montserrat text-lg font-bold text-av-blue mt-2 mb-2">Instrument Flying</h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">Instrument flying prepares pilots to safely operate in reduced visibility and controlled airspace conditions, which is a core professional skill requirement.</p>
-            <h3 className="font-montserrat text-lg font-bold text-av-blue mt-2 mb-2">Night Flying</h3>
-            <p className="text-gray-600 text-sm leading-relaxed mb-4">Night-flying experience is part of the required practical training and helps build the operational confidence and judgment needed for commercial flying.</p>
-            <div className="overflow-x-auto rounded-xl border border-gray-200 mb-6">
+            <div className="cpl-hour-hero">
+              <div className="cpl-hour-hero__value">200 HOURS</div>
+              <p className="cpl-hour-hero__copy">Minimum flying experience required to qualify for CPL issuance under DGCA rules.</p>
+            </div>
+            <div className="cpl-hour-grid">
+              {[
+                { value: '100 hrs', label: 'PIC', detail: 'Pilot-in-command time' },
+                { value: '20 hrs', label: 'Cross-country', detail: 'Navigation and route flying' },
+                { value: '10 hrs', label: 'Instrument', detail: 'Reduced-visibility flying' },
+                { value: '5 hrs', label: 'Night', detail: 'Night take-offs and landings' },
+              ].map((item, index) => (
+                <div key={index} className="cpl-hour-card">
+                  <div className="cpl-hour-card__value">{item.value}</div>
+                  <div className="cpl-hour-card__label">{item.label}</div>
+                  <div className="cpl-hour-card__detail">{item.detail}</div>
+                </div>
+              ))}
+            </div>
+            <div className="overflow-x-auto rounded-xl border border-gray-200 mb-6 mt-6">
               <table className="w-full text-sm">
                 <caption className="sr-only">CPL flight-time requirements</caption>
                 <thead>
@@ -673,7 +712,12 @@ export default function CPL() {
                 A Commercial Pilot License can provide a pathway into several areas of civil aviation. Career progression depends on additional flight experience, ratings, examinations, airline requirements, and applicable regulatory requirements.
               </p>
             </AutoInternalLinks>
-            <div className="grid sm:grid-cols-2 gap-4 mb-6">
+            <div className="cpl-career-path">
+              <div className="cpl-career-path__node cpl-career-path__node--primary">CPL</div>
+              <div className="cpl-career-path__arrow" aria-hidden="true">↓</div>
+              <div className="cpl-career-path__node">First Officer / Trainee</div>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-4 mb-6 mt-6">
               <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5">
                 <h3 className="font-montserrat font-bold text-av-blue mb-3">Immediate / Early-Career Opportunities</h3>
                 <ul className="text-gray-600 text-sm leading-relaxed list-disc pl-5 space-y-2">
