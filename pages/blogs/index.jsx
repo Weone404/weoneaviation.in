@@ -35,6 +35,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'how-to-become-a-flight-dispatcher-in-india',
+        title: 'How to Become a Flight Dispatcher in India: DGCA FDEG Eligibility Explained',
+        excerpt: "A Flight Dispatcher is a separate DGCA flight-crew licence, not an airline job title — age, education and registration requirements from the same Civil Aviation Requirement that governs pilot examinations, compared side by side with a CPL and an AME licence.",
+        category: 'Aviation careers',
+        readTime: '8 min',
+        date: 'Sep 28, 2026',
+        image: { src: '/blog/flight-dispatcher-india/hero-dispatcher-and-captain.webp', width: 1200, height: 630, promptId: '77' },
+    },
+    {
         slug: 'ppl-physics-maths-requirement-india',
         title: "Do You Need Physics and Maths for a PPL in India? What DGCA's Pariksha Rules Say",
         excerpt: "DGCA's Pariksha rules state the Physics-and-Mathematics condition for every flight crew category except one: PPL, which needs only a Class 10 pass. What that means for a standalone Private Pilot Licence, and why it doesn't remove the requirement once a CPL is the goal.",
