@@ -1092,6 +1092,44 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 > else in the frame. Absolutely no text, letters, numbers or arrows
 > anywhere in the image.
 
+## Post: How to Become a Flight Dispatcher in India (/blogs/how-to-become-a-flight-dispatcher-in-india)
+
+### Prompt 77 — Hero / OpenGraph and card
+- **File:** `public/blog/flight-dispatcher-india/hero-dispatcher-and-captain.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A flight dispatcher at a desk with a route map and weather chart on one side, facing a pilot in uniform on the other, both reviewing the same flight plan document"
+
+> A flat-style illustration split across the frame. On the left, a South Asian
+> flight dispatcher in modest professional clothing sits at a simple desk,
+> facing right, with a flat route-map icon and a small weather-chart icon
+> outlined in navy resting on the desk in front of them — no readable detail
+> inside either icon, just simple line shapes suggesting a map and a cloud
+> symbol. On the right, a South Asian pilot in a plain uniform with no
+> insignia stands facing left, toward the dispatcher, both figures angled
+> toward a single flat rectangular document shape placed on the desk between
+> them, as if reviewing it together. No aircraft, no airport background, no
+> cockpit — a plain interior setting with generous pale negative space above
+> and around both figures. Burnt orange accent limited to one small element
+> on the shared document only. Absolutely no text, letters or numbers
+> anywhere in the image.
+
+### Prompt 78 — Three doors, one shared portal
+- **File:** `public/blog/flight-dispatcher-india/three-doors-one-portal.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "Three separate doors of different heights leading off a single shared corridor, representing the flight dispatcher, pilot and AME routes registering through one common DGCA portal"
+
+> A flat-style diagram of a single wide horizontal corridor or platform
+> outlined in thin navy lines, seen straight on. Three separate simple door
+> outlines of noticeably different heights and widths stand side by side
+> along the corridor, evenly spaced, each a plain rectangle with no handle,
+> signage or markings. The shortest door sits on the left, a medium one in
+> the centre, and the tallest on the right. All three doors share the same
+> single corridor floor line beneath them, visually tying them to one common
+> starting point. Burnt orange accent used once, as a thin line tracing the
+> shared floor beneath all three doors. Wide pale background, generous
+> negative space above the doors, nothing else in the frame. Absolutely no
+> text, letters, numbers or arrows anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
