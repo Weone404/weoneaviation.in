@@ -1130,6 +1130,38 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 > negative space above the doors, nothing else in the frame. Absolutely no
 > text, letters, numbers or arrows anywhere in the image.
 
+## Post: Why a DGCA Computer Number Application Gets Rejected (/blogs/dgca-computer-number-rejected-reasons)
+
+### Prompt 79 — Hero / OpenGraph and card
+- **File:** `public/blog/dgca-computer-number-rejected/hero-mismatched-forms.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A student at a desk comparing a printed marksheet against an on-screen application form, with one line on each document highlighted to show they do not match"
+
+> A flat-style illustration of a young South Asian student in plain casual
+> clothing seated at a simple desk, seen from the side. On the left of the
+> desk lies a flat rectangular paper document shape with several plain
+> horizontal line bars suggesting rows of text; on the right stands a flat
+> monitor outline showing a similar form made of horizontal line bars. One
+> bar on the paper and one bar on the monitor are filled burnt orange to show
+> the two lines that do not agree. The student leans slightly forward, eyes
+> moving between the two. No aircraft, no logos, no readable content on
+> either document, just abstract bars. Generous pale negative space above and
+> around the desk. Absolutely no text, letters or numbers anywhere in the image.
+
+### Prompt 80 — Two outcomes: a loop and a restart
+- **File:** `public/blog/dgca-computer-number-rejected/two-outcomes.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A path that splits into a short loop returning to the same starting point, and a second branch that leads back to a fresh starting point at the far left, representing partial and complete rejection"
+
+> A flat-style top-down diagram of a wide pale-blue path outlined in thin navy
+> lines, running from the centre of the frame. From a single junction, the
+> upper branch makes a short, tight loop and returns to the same junction,
+> drawn with three small navy dots marking the loop. The lower branch runs
+> straight left and ends at a small, empty circular starting point outlined in
+> burnt orange at the far left edge of the frame. Nothing else in the frame,
+> wide pale background and generous negative space above and below. Absolutely
+> no text, letters, numbers or arrows anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
