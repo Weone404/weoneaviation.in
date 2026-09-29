@@ -226,7 +226,7 @@ export default function Sitemap() {
                         Site<span className="text-av-orange">map</span>
                     </h1>
                     <p className="text-white/70 text-sm">
-                        Browse all pages of We One Aviation Academy — DGCA pilot training institute
+                        Browse all pages of We One Aviation Academy — ground training and counselling in Dwarka, New Delhi
                     </p>
                     {/* Breadcrumb */}
                     <div className="mt-4 flex items-center justify-center gap-2 text-sm text-white/60">

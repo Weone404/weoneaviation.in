@@ -1,0 +1,375 @@
+{
+  "phase": "4.2",
+  "status": "CLOSED",
+  "claimsTotal": 59,
+  "approvalClaims": 14,
+  "priceClaims": 14,
+  "durationClaims": 13,
+  "serviceScopeClaims": 18,
+  "fixed": [
+    {
+      "id": "approvalClaims-1",
+      "claimType": "ACADEMY_DGCA_ACCREDITATION_SCHEMA",
+      "file": "pages/index.jsx",
+      "route": "/"
+    },
+    {
+      "id": "approvalClaims-2",
+      "claimType": "ACADEMY_APPROVAL_AND_COMPLIANCE",
+      "file": "pages/index.jsx",
+      "route": "/"
+    },
+    {
+      "id": "approvalClaims-3",
+      "claimType": "ACADEMY_DGCA_APPROVAL",
+      "file": "pages/credentials.jsx",
+      "route": "/credentials"
+    },
+    {
+      "id": "approvalClaims-4",
+      "claimType": "ACADEMY_DGCA_ACCREDITATION_VISIBLE_AND_SCHEMA",
+      "file": "pages/credentials.jsx",
+      "route": "/credentials"
+    },
+    {
+      "id": "approvalClaims-5",
+      "claimType": "ACADEMY_DGCA_INSTITUTE_STATUS",
+      "file": "pages/about-us.jsx",
+      "route": "/about-us"
+    },
+    {
+      "id": "approvalClaims-6",
+      "claimType": "INSTRUCTOR_CERTIFICATION",
+      "file": "pages/air-navigation.jsx",
+      "route": "/air-navigation"
+    },
+    {
+      "id": "approvalClaims-7",
+      "claimType": "COURSE_CERTIFICATE_RECOGNITION",
+      "file": "pages/airline-preparation-course.jsx",
+      "route": "/airline-preparation-course"
+    },
+    {
+      "id": "approvalClaims-8",
+      "claimType": "ACADEMY_DGCA_APPROVAL_FAQ_AND_SCHEMA",
+      "file": "data/pageFaqs.js",
+      "route": "/credentials"
+    },
+    {
+      "id": "approvalClaims-9",
+      "claimType": "COURSE_CERTIFICATE_RECOGNITION_FAQ",
+      "file": "data/pageFaqs.js",
+      "route": "/airline-preparation-course"
+    },
+    {
+      "id": "approvalClaims-10",
+      "claimType": "THIRD_PARTY_US_FLYING_SCHOOL_APPROVAL",
+      "file": "pages/best-flight-schools-in-usa.jsx",
+      "route": "/best-flight-schools-in-usa"
+    },
+    {
+      "id": "approvalClaims-11",
+      "claimType": "THIRD_PARTY_SOUTH_AFRICAN_FLYING_SCHOOL_APPROVAL",
+      "file": "pages/flying-school/south-africa.jsx",
+      "route": "/flying-school/south-africa"
+    },
+    {
+      "id": "approvalClaims-12",
+      "claimType": "AMBIGUOUS_CERTIFICATION_SUBJECT",
+      "file": "pages/flying-school/india.jsx",
+      "route": "/flying-school/india"
+    },
+    {
+      "id": "approvalClaims-13",
+      "claimType": "REGULATOR_APPROVAL_OF_OTHER_ENTITIES",
+      "file": "pages/about-us.jsx",
+      "route": "/about-us"
+    },
+    {
+      "id": "approvalClaims-14",
+      "claimType": "REGULATOR_APPROVAL_OF_OTHER_ENTITIES",
+      "file": "lib/facts.js",
+      "route": "Multiple pages using MEDICAL_STANDARDS"
+    },
+    {
+      "id": "priceClaims-1",
+      "claimType": "ACADEMY_AND_PARTNER_COURSE_PRICING",
+      "file": "pages/index.jsx",
+      "route": "/"
+    },
+    {
+      "id": "priceClaims-2",
+      "claimType": "ACADEMY_GROUND_CLASS_FEE_AND_SCHOLARSHIP",
+      "file": "pages/index.jsx",
+      "route": "/"
+    },
+    {
+      "id": "priceClaims-3",
+      "claimType": "MULTIPLE_COURSE_PRICES_AND_SCHOLARSHIP_PROMISE",
+      "file": "pages/courses.jsx",
+      "route": "/courses"
+    },
+    {
+      "id": "priceClaims-4",
+      "claimType": "CPL_COMPONENT_AND_TOTAL_COST_ESTIMATES",
+      "file": "pages/courses/cpl.jsx",
+      "route": "/courses/cpl"
+    },
+    {
+      "id": "priceClaims-5",
+      "claimType": "PPL_COURSE_COST_ESTIMATE",
+      "file": "pages/courses/ppl.jsx",
+      "route": "/courses/ppl"
+    },
+    {
+      "id": "priceClaims-6",
+      "claimType": "ATPL_GROUND_SCHOOL_FEE_VISIBLE_AND_SCHEMA",
+      "file": "pages/courses/atpl.jsx",
+      "route": "/courses/atpl"
+    },
+    {
+      "id": "priceClaims-7",
+      "claimType": "CPL_TOTAL_COST_FAQ_AND_SCHEMA",
+      "file": "data/pageFaqs.js",
+      "route": "/courses/cpl"
+    },
+    {
+      "id": "priceClaims-8",
+      "claimType": "MULTIPLE_COURSE_COSTS_AND_SCHOLARSHIP_FAQ",
+      "file": "data/pageFaqs.js",
+      "route": "/courses"
+    },
+    {
+      "id": "priceClaims-9",
+      "claimType": "REGULATOR_FEE_AND_THIRD_PARTY_COURSE_FEE",
+      "file": "pages/cost-transparency.jsx",
+      "route": "/cost-transparency"
+    },
+    {
+      "id": "priceClaims-10",
+      "claimType": "CPL_COST_BREAKDOWN_AND_PAYMENT_INCENTIVES",
+      "file": "pages/lead-magnets/cpl-cost-breakdown.jsx",
+      "route": "/lead-magnets/cpl-cost-breakdown"
+    },
+    {
+      "id": "priceClaims-11",
+      "claimType": "THIRD_PARTY_COURSE_PRICE_AND_CONFLICTING_LEGACY_PRICE",
+      "file": "pages/flying-school/india.jsx",
+      "route": "/flying-school/india"
+    },
+    {
+      "id": "priceClaims-12",
+      "claimType": "FREE_COUNSELLING_SERVICE_OFFER",
+      "file": "pages/pilot-career-counselling.jsx",
+      "route": "/pilot-career-counselling"
+    },
+    {
+      "id": "priceClaims-13",
+      "claimType": "STALE_COST_FAQ_AND_PAYMENT_CLAIMS",
+      "file": "data/pageFaqs.js",
+      "route": "/cost-transparency"
+    },
+    {
+      "id": "priceClaims-14",
+      "claimType": "ADMISSION_AND_CPL_BUDGET_ESTIMATES",
+      "file": "pages/lead-magnets/pre-admission-checklist.jsx",
+      "route": "/lead-magnets/pre-admission-checklist"
+    },
+    {
+      "id": "durationClaims-1",
+      "claimType": "COURSE_DURATION_VISIBLE_AND_SCHEMA_DESCRIPTION",
+      "file": "pages/index.jsx",
+      "route": "/"
+    },
+    {
+      "id": "durationClaims-2",
+      "claimType": "MULTIPLE_COURSE_DURATIONS",
+      "file": "pages/courses.jsx",
+      "route": "/courses"
+    },
+    {
+      "id": "durationClaims-3",
+      "claimType": "CONFLICTING_CPL_DURATION",
+      "file": "pages/courses/cpl.jsx",
+      "route": "/courses/cpl"
+    },
+    {
+      "id": "durationClaims-4",
+      "claimType": "PPL_COURSE_DURATION",
+      "file": "pages/courses/ppl.jsx",
+      "route": "/courses/ppl"
+    },
+    {
+      "id": "durationClaims-5",
+      "claimType": "ATPL_PROGRESSION_DURATION_AND_SCHEMA",
+      "file": "pages/courses/atpl.jsx",
+      "route": "/courses/atpl"
+    },
+    {
+      "id": "durationClaims-6",
+      "claimType": "INDIA_FLYING_TRAINING_DURATION",
+      "file": "pages/flying-school/india.jsx",
+      "route": "/flying-school/india"
+    },
+    {
+      "id": "durationClaims-7",
+      "claimType": "USA_PARTNER_COURSE_DURATION",
+      "file": "pages/flying-school/usa.jsx",
+      "route": "/flying-school/usa"
+    },
+    {
+      "id": "durationClaims-8",
+      "claimType": "AUSTRALIA_PARTNER_COURSE_DURATION",
+      "file": "pages/flying-school/australia.jsx",
+      "route": "/flying-school/australia"
+    },
+    {
+      "id": "durationClaims-9",
+      "claimType": "CANADA_PARTNER_COURSE_DURATION",
+      "file": "pages/flying-school/canada.jsx",
+      "route": "/flying-school/canada"
+    },
+    {
+      "id": "durationClaims-10",
+      "claimType": "COURSE_DURATION_FAQ_AND_SCHEMA",
+      "file": "data/pageFaqs.js",
+      "route": "/courses"
+    },
+    {
+      "id": "durationClaims-11",
+      "claimType": "CPL_DURATION_FAQ_AND_SCHEMA",
+      "file": "data/pageFaqs.js",
+      "route": "/courses/cpl"
+    },
+    {
+      "id": "durationClaims-12",
+      "claimType": "PPL_DURATION_FAQ_AND_SCHEMA",
+      "file": "data/pageFaqs.js",
+      "route": "/courses/ppl"
+    },
+    {
+      "id": "durationClaims-13",
+      "claimType": "INVALID_OR_EMPTY_COURSE_DURATION_SCHEMA",
+      "file": "pages/air-navigation.jsx; pages/air-regulations.jsx; pages/aviation-meteorology.jsx; pages/airline-preparation-course.jsx",
+      "route": "/air-navigation; /air-regulations; /aviation-meteorology; /airline-preparation-course"
+    },
+    {
+      "id": "serviceScopeClaims-1",
+      "claimType": "VERIFIED_BASELINE_SERVICE_SCOPE",
+      "file": "lib/facts.js",
+      "route": "Site-wide shared academy description"
+    },
+    {
+      "id": "serviceScopeClaims-2",
+      "claimType": "FLIGHT_TRAINING_PROVIDER_AND_SERVICE_GUARANTEE",
+      "file": "pages/index.jsx",
+      "route": "/"
+    },
+    {
+      "id": "serviceScopeClaims-3",
+      "claimType": "INTERNATIONAL_PHYSICAL_SERVICE_SCOPE",
+      "file": "pages/index.jsx",
+      "route": "/"
+    },
+    {
+      "id": "serviceScopeClaims-4",
+      "claimType": "INTERNATIONAL_DELIVERY_AND_SUPPORT_SCOPE",
+      "file": "pages/courses.jsx",
+      "route": "/courses"
+    },
+    {
+      "id": "serviceScopeClaims-5",
+      "claimType": "NATIONWIDE_PHYSICAL_TRAINING_AND_FACILITIES",
+      "file": "pages/flying-school/india.jsx",
+      "route": "/flying-school/india"
+    },
+    {
+      "id": "serviceScopeClaims-6",
+      "claimType": "USA_PHYSICAL_DELIVERY_AND_PLACEMENT",
+      "file": "pages/flying-school/usa.jsx",
+      "route": "/flying-school/usa"
+    },
+    {
+      "id": "serviceScopeClaims-7",
+      "claimType": "SOUTH_AFRICA_PARTNER_SCOPE_AND_OUTCOMES",
+      "file": "pages/flying-school/south-africa.jsx",
+      "route": "/flying-school/south-africa"
+    },
+    {
+      "id": "serviceScopeClaims-8",
+      "claimType": "INTERNATIONAL_PARTNER_SERVICE_SCOPE",
+      "file": "pages/flying-school/australia.jsx; pages/flying-school/canada.jsx",
+      "route": "/flying-school/australia; /flying-school/canada"
+    },
+    {
+      "id": "serviceScopeClaims-9",
+      "claimType": "COURSE_DELIVERY_AND_INTERNATIONAL_RECOGNITION_SCOPE",
+      "file": "pages/airline-preparation-course.jsx",
+      "route": "/airline-preparation-course"
+    },
+    {
+      "id": "serviceScopeClaims-10",
+      "claimType": "COURSE_DELIVERY_AVAILABILITY",
+      "file": "pages/airindia-pilot-preparation.jsx",
+      "route": "/airindia-pilot-preparation"
+    },
+    {
+      "id": "serviceScopeClaims-11",
+      "claimType": "LOCAL_TRAVEL_TIME_AND_ACCESS",
+      "file": "pages/pilot-training-in-delhi.jsx",
+      "route": "/pilot-training-in-delhi"
+    },
+    {
+      "id": "serviceScopeClaims-12",
+      "claimType": "ONLINE_NATIONAL_REACH_WITH_LOCAL_CLASSROOM",
+      "file": "pages/pilot-training-in-india.jsx",
+      "route": "/pilot-training-in-india"
+    },
+    {
+      "id": "serviceScopeClaims-13",
+      "claimType": "DELIVERY_SCOPE_LIMITATION",
+      "file": "pages/dgca-ground-classes-in-india.jsx",
+      "route": "/dgca-ground-classes-in-india"
+    },
+    {
+      "id": "serviceScopeClaims-14",
+      "claimType": "LOCALITY_SCOPE_LIMITATION",
+      "file": "components/LocalitySearchPage.jsx",
+      "route": "/pilot-training-near/[locality]"
+    },
+    {
+      "id": "serviceScopeClaims-15",
+      "claimType": "SHARED_SCOPE_DESCRIPTION",
+      "file": "components/Footer.jsx; components/Layout.jsx",
+      "route": "Site-wide"
+    },
+    {
+      "id": "serviceScopeClaims-16",
+      "claimType": "THIRD_PARTY_PROVIDER_SCOPE",
+      "file": "pages/air-navigation.jsx",
+      "route": "/air-navigation"
+    },
+    {
+      "id": "serviceScopeClaims-17",
+      "claimType": "COUNTRY_SPECIFIC_PARTNER_AVAILABILITY",
+      "file": "data/pageFaqs.js",
+      "route": "/courses/cpl"
+    },
+    {
+      "id": "serviceScopeClaims-18",
+      "claimType": "VERIFIED_DWARKA_CLASSROOM_SCOPE",
+      "file": "pages/pilot-training-in-dwarka.jsx",
+      "route": "/pilot-training-in-dwarka"
+    }
+  ],
+  "verifiedPreserved": [],
+  "stillUnresolved": [],
+  "productionChangesMade": true,
+  "buildPassed": true,
+  "gitDiffCheckPassed": true,
+  "localityPagesGenerated": 0,
+  "localityUrlsInSitemap": 0,
+  "nearRouteNoindex": true,
+  "deploymentPerformed": false,
+  "gitPushPerformed": false
+}

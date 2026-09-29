@@ -137,7 +137,7 @@ const faqs = [
   { q: 'I am past the usual age. Is it too late?', a: `There is no upper age limit on the DGCA examination side — ${PARIKSHA.basics.maxAgeNote} What changes with age is the medical, which is assessed by a DGCA-approved examiner rather than by us, and the commercial reality of a shorter career runway. Worth discussing honestly rather than being told either yes or no by a website.` },
   { q: 'Do you counsel students who will not train with you?', a: 'Yes. It is free and there is no obligation, and a fair amount of what is useful in a session is about flying schools, which we do not run.' },
   { q: 'What should I bring?', a: bring.join('; ') + '.' },
-  { q: 'Where and how does it happen?', a: `In person at ${ACADEMY.streetAddress}, ${ACADEMY.addressLocality} ${ACADEMY.postalCode}, or over the phone on ${ACADEMY.phone}, or by email at ${ACADEMY.email}.` },
+  { q: 'Where and how does it happen?', a: `In person at ${ACADEMY.streetAddress}, ${ACADEMY.addressLocality} ${ACADEMY.postalCode}, or over the phone on ${ACADEMY.phoneDisplay}, or by email at ${ACADEMY.email}.` },
   { q: 'Will you tell me what a pilot earns?', a: 'We will tell you what is published, which is not a salary — no Indian airline publishes a pay scale. What is published is the government’s position that there is no shortage of pilots but there is a shortage of commanders, and that is more useful for planning than any figure.' },
 ];
 
@@ -183,7 +183,6 @@ const serviceSchema = {
       addressCountry: ACADEMY.addressCountry,
     },
   },
-  areaServed: { '@type': 'Country', name: 'India' },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR', description: 'Free of cost, with no obligation to enrol' },
 };
 
@@ -330,7 +329,7 @@ export default function PilotCareerCounselling() {
               <div className="bg-av-blue rounded-2xl p-6">
                 <h3 className="font-montserrat text-lg font-bold text-white mb-2">Free, and no obligation</h3>
                 <p className="text-white/70 text-sm leading-relaxed">
-                  {ACADEMY.streetAddress}, {ACADEMY.addressLocality} {ACADEMY.postalCode}. Phone {ACADEMY.phone} or write to{' '}
+                  {ACADEMY.streetAddress}, {ACADEMY.addressLocality} {ACADEMY.postalCode}. Phone {ACADEMY.phoneDisplay} or write to{' '}
                   {ACADEMY.email}. Minimum age for a Commercial Pilot Licence is {MIN_AGE.CPL} &mdash; {CPL.permits.toLowerCase()}{' '}
                   &mdash; but there is no minimum age for a conversation about getting there.
                 </p>

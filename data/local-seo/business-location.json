@@ -1,0 +1,115 @@
+{
+  "name": "We One Aviation Academy",
+  "address": {
+    "street": "C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "postalCode": "110077",
+    "country": "India"
+  },
+  "physicalLocationVerified": true,
+  "verificationBasis": "Consistent first-party website address in academy facts, contact page, footer, organization schema, and Dwarka page. This is website verification, not an independent government or Google Business Profile verification.",
+  "source": "existing-site",
+  "sourceFiles": [
+    "lib/facts.js",
+    "lib/schema.js",
+    "pages/contact.jsx",
+    "pages/pilot-training-in-dwarka.jsx",
+    "components/Footer.jsx"
+  ],
+  "contact": {
+    "phoneNumbers": [
+      {
+        "value": "+91 96673 70747",
+        "role": "owner-confirmed primary academy/business number; active and valid",
+        "sourceFiles": [
+          "lib/facts.js",
+          "lib/schema.js",
+          "pages/pilot-training-in-dwarka.jsx",
+          "components/Footer.jsx"
+        ]
+      },
+      {
+        "value": "+91 93556 11996",
+        "role": "owner-confirmed active academy/business number for WhatsApp, leads, Air India preparation, and IndiGo preparation",
+        "sourceFiles": [
+          "lib/facts.js",
+          "components/LeadForm.jsx",
+          "components/Footer.jsx",
+          "pages/airindia-pilot-preparation.jsx",
+          "pages/indigo-pilot-preparation.jsx"
+        ]
+      }
+    ],
+    "unavailableNumbers": [
+      {
+        "values": [
+          "+91 95552 91956",
+          "+91 97179 77702"
+        ],
+        "sourceFiles": [
+          "pages/airindia-pilot-preparation.jsx",
+          "pages/indigo-pilot-preparation.jsx"
+        ],
+        "status": "Owner-confirmed unavailable; removed from active contact links and displays."
+      }
+    ],
+    "email": "info.weoneaviation@gmail.com",
+    "emailSourceFiles": [
+      "lib/facts.js",
+      "lib/schema.js",
+      "pages/pilot-training-in-dwarka.jsx",
+      "components/Footer.jsx"
+    ]
+  },
+  "training": {
+    "classroomLocation": "C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, New Delhi 110077",
+    "classroomLocationSource": "pages/pilot-training-in-dwarka.jsx",
+    "classroomDelivery": "The site states that classroom batches run in Dwarka, New Delhi.",
+    "onlineDelivery": "The website states that students outside Delhi can join online batches.",
+    "verifiedServiceArea": {
+      "physicalLocation": "Dwarka, New Delhi",
+      "onlineStudents": "Students outside Delhi are offered online batches.",
+      "localityBoundaries": [],
+      "neighborhoodCoverageVerified": false,
+      "nationwidePhysicalCoverage": false
+    },
+    "services": [
+      "DGCA ground-subject preparation",
+      "CPL, PPL and ATPL course guidance as described on the existing course pages",
+      "Flying-school guidance and arrangement of flight training with partner flying schools"
+    ],
+    "limitations": [
+      "The academy states it does not own aircraft or simulators.",
+      "Flight training occurs at partner flying schools, not at the Dwarka classroom.",
+      "No neighborhood-level service-area boundary or locality-specific student evidence is recorded."
+    ]
+  },
+  "serviceArea": {
+    "physicalBusinessLocation": {
+      "locality": "Dwarka, New Delhi",
+      "address": "C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, New Delhi 110077",
+      "delivery": "Classroom DGCA ground teaching is stated to run at the Dwarka address."
+    },
+    "actualServiceArea": {
+      "verified": [
+        "Classroom DGCA ground classes in Dwarka, New Delhi",
+        "Online batches offered to students outside Delhi",
+        "Flight training arranged with partner flying schools"
+      ],
+      "localityBoundaries": [],
+      "neighborhoodCoverageVerified": false,
+      "nationwidePhysicalCoverage": false,
+      "localitySpecificDemandVerified": false
+    },
+    "localitySeoCandidates": [],
+    "localityCandidateDataset": {
+      "file": "data/local-seo/locality-candidates.json",
+      "count": 14,
+      "role": "Geographic research candidates only; none is a verified service area or approved SEO page."
+    },
+    "geographicReferenceData": "data/local-seo/localities.json; postal/geographic evidence only, not service-area evidence",
+    "localityTargetingStatus": "No locality page is approved. Nearby localities are separately classified as geographic research candidates, not verified service areas.",
+    "note": "The Dwarka/Delhi business presence does not establish service to every locality. Candidate geography is derived independently from the academy map pin and mapped locality centers, not from PIN records. The existing Dwarka and Delhi authority pages describe the verified offer; further local pages require specific service-area evidence and distinct user value."
+  }
+}

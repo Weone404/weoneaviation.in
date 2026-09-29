@@ -5,8 +5,8 @@ import Link from 'next/link';
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const stats = [
-    { num: '14-16 Months', label: 'Course Duration', icon: '📅' },
-    { num: '200 Hrs', label: 'Flying Hours', icon: '✈️' },
+    { num: 'Varies', label: 'Provider Schedule', icon: '📅' },
+    { num: 'Verify', label: 'Current requirements', icon: '✈️' },
     /*
      * REPLACED 2026-09-15 during the cost sweep. This tile read ₹58-60 Lakhs as
      * a course fee. Private flying schools in India do not publish fees and no
@@ -17,14 +17,14 @@ const stats = [
      * publishes its course fee.
      */
     { num: '₹55,00,000', label: 'IGRUA Published Fee', icon: '💰' },
-    { num: 'DGCA', label: 'Certification', icon: '🏅' },
+    { num: 'DGCA', label: 'Licensing regulator', icon: '🏅' },
 ];
 
 const quickDetails = [
-    { sr: 1, topic: 'Program', details: 'CPL with Multi Engine Instrument Rating (CPL-MEIR)' },
-    { sr: 2, topic: 'Duration', details: '14–16 Months' },
+    { sr: 1, topic: 'Programme', details: 'Confirm current options with the selected flying school' },
+    { sr: 2, topic: 'Duration', details: 'Confirm the current schedule with the selected flying school' },
     { sr: 3, topic: 'Flying Hours', details: '200 Hours (SPL to CPL including IR and Multi-Engine)' },
-    { sr: 4, topic: 'Course Fee', details: 'INR 58 Lakhs – 60 Lakhs' },
+    { sr: 4, topic: 'Course Fee', details: 'Request a current written quote from the selected flying school' },
     { sr: 5, topic: 'Eligibility', details: '17+ years, 10+2 (Physics & Math), DGCA Medical' },
     { sr: 6, topic: 'Certification', details: 'DGCA Commercial Pilot Licence (CPL)' },
 ];
@@ -34,37 +34,37 @@ const advantages = [
         num: '1',
         icon: '🏅',
         title: 'DGCA Training',
-        desc: 'Training is fully aligned with Indian aviation standards and DGCA regulations. The DGCA CPL is recognised for both domestic airline careers and international licence conversions.',
+        desc: 'DGCA sets Indian licence requirements. Confirm current training and any licence-conversion requirements with the relevant regulators.',
     },
     {
         num: '2',
         icon: '🛩️',
-        title: 'Modern Fleet',
-        desc: 'Train on Cessna 172, Tecnam, Piper Archer, and Diamond aircraft with advanced avionics. India\'s DGCA FTOs operate modern, well-maintained fleets designed for thorough pilot development.',
+        title: 'Provider Aircraft',
+        desc: 'Aircraft and equipment vary by flying school. Request the provider’s current fleet and maintenance information directly.',
     },
     {
         num: '3',
         icon: '☀️',
-        title: '300+ Flying Days',
-        desc: 'Key training locations like Rajasthan (320+ days), Gujarat (300+ days), and Maharashtra (270+ days) offer excellent flying conditions and diverse terrain for real-world exposure.',
+        title: 'Training Conditions',
+        desc: 'Weather and operating conditions depend on the training location and season. Ask the selected school for location-specific information.',
     },
     {
         num: '4',
         icon: '🏠',
-        title: 'Close to Home',
-        desc: 'Quality training facilities are available across India, allowing you to train in familiar surroundings without the added complexity and costs of relocating internationally.',
+        title: 'Ground Classes in Dwarka',
+        desc: 'We One Aviation has a physical classroom in Dwarka, Delhi. Flight training is arranged through partner flying schools; confirm the current training location directly with the selected school.',
     },
     {
         num: '5',
         icon: '👨‍✈️',
         title: 'Experienced Instructors',
-        desc: 'India\'s DGCA FTOs employ experienced instructors with strong backgrounds in commercial aviation. Their guidance ensures you build the right skills and confidence from day one.',
+        desc: 'Instructor availability and qualifications are determined by the selected flying school. Verify them directly with the provider.',
     },
     {
         num: '6',
         icon: '🔄',
         title: 'Seamless Licence Readiness',
-        desc: 'The DGCA CPL directly qualifies graduates for airline recruitment in India. The training is designed to meet national aviation standards, providing students with quality knowledge and airline readiness.',
+        desc: 'A licence does not guarantee airline employment. Each regulator and employer sets its own requirements and makes its own decisions.',
     },
 ];
 
@@ -73,7 +73,7 @@ const trainingStages = [
         num: '1',
         code: 'Theory',
         title: 'DGCA Theory Ground Class',
-        duration: '3–4 Months',
+        duration: 'Varies by batch schedule',
         hours: 'N/A',
         focus: ['Air Navigation', 'Air Meteorology', 'Air Regulations', 'Technical General', 'Technical Specific'],
     },
@@ -81,7 +81,7 @@ const trainingStages = [
         num: '2',
         code: 'SPL',
         title: 'SPL + Oral Exam',
-        duration: '1–2 Months',
+        duration: 'Varies by provider schedule',
         hours: '0 Hrs',
         focus: ['Radio Telephony (RT) Basics', 'Pre-Flight Briefings & Safety Checks', 'Oral Exam Preparation'],
     },
@@ -89,7 +89,7 @@ const trainingStages = [
         num: '3',
         code: 'Solo',
         title: 'Solo Flight Training',
-        duration: '2 Months',
+        duration: 'Varies by provider schedule',
         hours: '15–20 Hrs',
         focus: ['Circuit flying', 'Take-offs and landings', 'Basic manoeuvres', 'Radio communication practice', 'Emergency procedures'],
     },
@@ -97,7 +97,7 @@ const trainingStages = [
         num: '4',
         code: 'CPL',
         title: 'Hour Building + Checks',
-        duration: '6 Months',
+        duration: 'Varies by provider schedule',
         hours: '20–185 Hrs',
         focus: ['Cross-country flights', 'Navigation exercises', 'Instrument flying', 'Flight planning', 'Progress checks with CFI'],
     },
@@ -105,7 +105,7 @@ const trainingStages = [
         num: '5',
         code: 'MEIR',
         title: 'Multi-Engine Rating + Checks',
-        duration: '2 Months',
+        duration: 'Varies by provider schedule',
         hours: '185–200 Hrs',
         focus: ['Asymmetric flight handling', 'Engine failure drills', 'Multi-engine instrument flying', 'Emergency procedures', 'DGCA skill test and endorsement'],
     },
@@ -116,30 +116,22 @@ const trainingSteps = [
     { step: '02', title: 'DGCA Theory Class', desc: 'Attend DGCA-prescribed ground school covering Air Regulations, Navigation, Meteorology, Technical Subjects and Human Performance.' },
     { step: '03', title: 'DGCA Theory Exam', desc: 'Sit the DGCA written papers and clear the required theory exams to progress to practical training stages.' },
     { step: '04', title: 'RTR (Radio Telephony)', desc: 'Complete the RTR/RT licence course and exam to obtain mandatory aviation radio telephony endorsement.' },
-    { step: '05', title: 'Choose Flight School', desc: 'Select a DGCA FTO based on fleet, instructor experience, placement outcomes and student support services.' },
+    { step: '05', title: 'Choose Flight School', desc: 'Check the current DGCA FTO list and compare the selected school’s written fees, schedule, aircraft, instructors, and terms directly.' },
     { step: '06', title: 'SPL', desc: 'Apply for and obtain your Student Pilot Licence after initial training and checks — this authorises supervised solo flying.' },
     { step: '07', title: 'FRTOL', desc: 'Obtain the Flight Radio Telephony Operator\'s Licence from WPC after passing the RTR exam, authorising aircraft radio operation.' },
     { step: '08', title: 'Flight Training', desc: 'Complete structured practical training from PPL through hour-building to CPL (including IR/ME), with regular checks and final DGCA skill tests.' },
 ];
 
 const locations = [
-    { city: 'Maharashtra', days: '270+ Days', climate: 'Tropical & humid', icon: '🌊' },
-    { city: 'Gujarat', days: '300+ Days', climate: 'Dry & clear', icon: '☀️' },
-    { city: 'Rajasthan', days: '320+ Days', climate: 'Arid & sunny', icon: '🏜️' },
+    { city: 'Location varies by school', days: 'Confirm school schedule', climate: 'Ask about local operating conditions', icon: '📍' },
 ];
 
 const fleet = [
-    { name: 'Cessna 172', use: 'Single-engine four-seat trainer and cross-country aircraft, ideal for PPL training, night flying, and navigation practice. Perfect for students to gain real flight experience.' },
-    { name: 'Tecnam (ME)', use: 'A modern twin-engine trainer used for Multi-Engine Rating and Instrument flight training, offering advanced avionics and an ideal platform for transitioning to complex aircraft operations.' },
-    { name: 'Piper Archer', use: 'A reliable four-seat trainer equipped with modern avionics, ideal for PPL and CPL training. Known for its stable handling and performance for navigation, cross-country, and instrument flying.' },
-    { name: 'Tecnam P-Mentor', use: 'A next-generation training aircraft featuring advanced glass cockpit avionics, ideal for ab-initio to CPL training. Efficient, safe, and designed for modern flight training.' },
-    { name: 'Diamond DA42', use: 'Used for advanced multi-engine and instrument training. The DA42 features modern avionics and high performance, preparing students for complex flight operations and airline-level proficiency.' },
+    { name: 'Aircraft selected by provider', use: 'Aircraft availability, condition, equipment, and approved use vary by school. Confirm current details directly with the selected provider.' },
 ];
 
 const schools = [
-    { name: 'Flying School 01', location: 'Maharashtra, India', fleet: '17 Aircrafts', aircraft: 'Cessna 172, Tecnam (ME), Piper Archer', hours: '200 Hrs' },
-    { name: 'Flying School 02', location: 'Gujarat, India', fleet: '10 Aircrafts', aircraft: 'Tecnam P-Mentor', hours: '200 Hrs' },
-    { name: 'Flying School 03', location: 'Rajasthan / Gujarat, India', fleet: '18 Aircrafts', aircraft: 'Cessna 172, Diamond (DA42)', hours: '200 Hrs' },
+    { name: 'Selected DGCA Flying Training Organisation', location: 'Confirm directly with provider', fleet: 'Confirm directly with provider', aircraft: 'Confirm directly with provider', hours: 'Check current DGCA requirements' },
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -147,8 +139,8 @@ const schools = [
 export default function IndiaPilotTrainingPage() {
     return (
         <Layout
-            title="Commercial Pilot Training in India – DGCA CPL with MEIR | AviationGuide"
-            description="Explore Commercial Pilot Training in India with DGCA FTOs, 200 flight hours, CPL-MEIR program, and a step-by-step guide to your pilot licence. Train close to home on modern aircraft."
+            title="CPL Flight Training in India: Provider Checklist | We One Aviation"
+            description="Compare flying-school approval, schedule, fees, aircraft, and terms. We One Aviation teaches DGCA ground subjects in Dwarka and arranges flight training through partner flying schools."
         >
 
             {/* ── Hero Banner ── */}
@@ -159,18 +151,18 @@ export default function IndiaPilotTrainingPage() {
                     <br />
                     <br />
                     <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                        Commercial Pilot Training in India
+                        Pilot Training in India: Provider Checklist
                     </h1>
                     <p className="text-white/70 max-w-3xl mx-auto text-sm leading-relaxed mb-4">
-                        The aviation industry in India is expanding at a rapid rate, providing aspiring pilots with a solid platform through DGCA flight schools and the Commercial Pilot Training course.
+                        Flight training is conducted by the selected DGCA flying school. We One Aviation teaches ground subjects in Dwarka and arranges flight training through partner flying schools.
                     </p>
-                    <p className="text-white/60 max-w-xl mx-auto text-sm mb-6">With modern aircraft and training equipment, India is an excellent place to start your flying journey.</p>
+                    <p className="text-white/60 max-w-xl mx-auto text-sm mb-6">Confirm the selected provider’s aircraft, facilities, schedule, and terms before enrolling.</p>
                     <div className="inline-block bg-av-orange/20 border border-av-orange/40 rounded-2xl px-8 py-4 mb-4">
-                        <p className="text-white/70 text-sm mb-1">Program Offered</p>
-                        <p className="font-montserrat text-2xl md:text-3xl font-black text-av-orange">CPL with Multi Engine Instrument Rating</p>
+                        <p className="text-white/70 text-sm mb-1">Programme Scope</p>
+                        <p className="font-montserrat text-xl md:text-2xl font-black text-av-orange">Confirm current options with the selected provider</p>
                     </div>
                     <p className="text-white/60 max-w-2xl mx-auto text-sm leading-relaxed mt-4">
-                        Let's explore the training structure, eligibility, stages, and why India is the right choice for your pilot career.
+                        This guide outlines questions to check with a selected school and the relevant regulators.
                     </p>
                 </ScrollReveal>
             </div>
@@ -197,13 +189,12 @@ export default function IndiaPilotTrainingPage() {
                             Why Choose India for Pilot Training?
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-4">
-                            India offers <strong>globally recognised DGCA licences</strong> with a solid pathway to both domestic and international aviation careers. Training at home means lower overall costs, no visa complexity, and a familiar environment.
+                            DGCA sets Indian pilot-licensing requirements. School approval, aircraft, facilities, schedules, and fees must be checked with each selected provider.
                         </p>
                         <p className="text-gray-600 leading-relaxed mb-6">
-                            With <strong>300+ flying days</strong> across major bases, modern fleets, and DGCA FTOs, India provides everything you need to build a strong foundation as a commercial pilot.
+                            We One Aviation has a classroom in Dwarka, Delhi, teaches DGCA ground subjects, and arranges flight training through partner flying schools. The academy does not assert physical training locations outside Dwarka.
                         </p>
                         <p className="text-gray-600 leading-relaxed mb-6">
-                            For students based in Gujarat, our Gujarat guide provides practical advice on booking simulator sessions in Ahmedabad, arranging block-flying, and coordinating DGCA Pariksha travel: <Link href="/pilot-training-in-india" className="text-av-orange font-semibold hover:underline">Pilot Training in Gujarat</Link>.
                         </p>
                         <div className="bg-av-blue rounded-2xl p-5 text-white">
                             <p className="font-montserrat font-bold text-av-orange mb-1">Program Highlight</p>
@@ -377,7 +368,7 @@ export default function IndiaPilotTrainingPage() {
                     <ScrollReveal>
                         <div className="bg-av-orange/20 border border-av-orange/40 rounded-2xl p-6 text-center">
                             <p className="font-montserrat font-bold text-white text-lg">
-                                An 8-step structured path to your <span className="text-av-orange">DGCA CPL with MEIR — ready for Indian airline careers.</span>
+                                Use this checklist to compare provider details and verify current licensing requirements.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -390,10 +381,10 @@ export default function IndiaPilotTrainingPage() {
                     <ScrollReveal className="text-center mb-12">
                         <div className="section-tag">Pilot Academies</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Pilot Academies <span className="text-av-orange">in India</span>
+                            Selecting a <span className="text-av-orange">Flying School in India</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">
-                            DGCA flying schools with modern fleets and experienced instructors.
+                            Check the current DGCA FTO list and verify school facilities, aircraft, and instructor details directly.
                         </p>
                     </ScrollReveal>
 
@@ -406,7 +397,7 @@ export default function IndiaPilotTrainingPage() {
                                     <p className={`text-sm mb-4 font-semibold ${i === 1 ? 'text-av-orange' : 'text-av-orange'}`}>{school.location}</p>
                                     <div className="space-y-2 flex-grow mb-6">
                                         {[
-                                            { label: 'Duration', val: '14–16 Months' },
+                                            { label: 'Duration', val: 'Confirm with provider' },
                                             { label: 'Fleet Size', val: school.fleet },
                                             { label: 'Aircraft', val: school.aircraft },
                                             { label: 'Flying Hours', val: school.hours },
@@ -436,7 +427,7 @@ export default function IndiaPilotTrainingPage() {
                             Popular Pilot Training <span className="text-av-orange">Locations in India</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">
-                            Choose from locations offering excellent weather conditions and flying days.
+                            Training locations and operating conditions depend on the selected flying school.
                         </p>
                     </ScrollReveal>
 
@@ -447,7 +438,7 @@ export default function IndiaPilotTrainingPage() {
                                     <div className="text-4xl mb-4">{loc.icon}</div>
                                     <h3 className="font-montserrat font-bold text-av-blue text-xl mb-2">{loc.city}</h3>
                                     <div className="inline-block bg-av-orange/10 text-av-orange font-semibold text-sm px-4 py-1 rounded-full mb-3">
-                                        {loc.days} Annual Flying Days
+                                        {loc.days}
                                     </div>
                                     <p className="text-gray-500 text-sm">{loc.climate}</p>
                                 </div>
@@ -466,7 +457,7 @@ export default function IndiaPilotTrainingPage() {
                             Types of Fleet for <span className="text-av-orange">Flight Training in India</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">
-                            Train on modern, well-maintained aircraft with advanced avionics.
+                            Aircraft, equipment, and maintenance arrangements vary by school; confirm them directly with the selected provider.
                         </p>
                     </ScrollReveal>
 

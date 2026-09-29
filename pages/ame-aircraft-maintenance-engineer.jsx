@@ -278,7 +278,7 @@ export default function AmePage() {
                   Our counselling is free and carries no obligation, and it is fine to use it to conclude that the pilot
                   route is not for you &mdash; that is a good outcome reached cheaply.{' '}
                   <Link href="/pilot-career-counselling" className="text-white font-semibold underline">What a session
-                  covers</Link>, or call {ACADEMY.phone}.
+                  covers</Link>, or call {ACADEMY.phoneDisplay}.
                 </p>
               </div>
             </ScrollReveal>

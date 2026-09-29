@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { ACADEMY } from '../lib/facts';
 import { useRouter } from 'next/router';
 
 export default function ContactPopup() {
@@ -41,7 +42,7 @@ export default function ContactPopup() {
 
     // After 10 seconds: open WhatsApp and close popup
     setTimeout(() => {
-      const whatsappUrl = `https://wa.me/919667370747?text=${msg}`;
+      const whatsappUrl = `${ACADEMY.whatsapp}?text=${msg}`;
       const a = document.createElement('a');
       a.href = whatsappUrl;
       a.target = '_blank';

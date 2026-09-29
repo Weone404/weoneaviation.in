@@ -1,5 +1,4 @@
 import Layout from '../../components/Layout';
-import StructuredData from '../../components/StructuredData';
 import ScrollReveal from '../../components/ScrollReveal';
 import Breadcrumb from '../../components/Breadcrumb';
 import QuickAnswer from '../../components/QuickAnswer';
@@ -7,7 +6,6 @@ import SummaryBox from '../../components/SummaryBox';
 import PeopleAlsoAsk from '../../components/PeopleAlsoAsk';
 import ArticleTOC from '../../components/ArticleTOC';
 import Link from 'next/link';
-import { generateCourseSchema } from '../../lib/schema';
 import { DGCA_PAPERS, RTR, MEDICAL, EDUCATION, MIN_AGE, CPL_HOURS, papersSummary } from '../../lib/facts';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -15,7 +13,7 @@ import { DGCA_PAPERS, RTR, MEDICAL, EDUCATION, MIN_AGE, CPL_HOURS, papersSummary
 const stats = [
     { num: 'TCCA', label: 'Regulator', icon: '🏅' },
     { num: '200 Hrs', label: 'Canadian CPL Minimum', icon: '✈️' },
-    { num: '18-24 Mo', label: 'Typical CPL Timeline', icon: '📅' },
+    { num: 'Varies', label: 'Provider Schedule', icon: '📅' },
     { num: 'DGCA', label: 'Conversion Route Home', icon: '🇮🇳' },
 ];
 
@@ -107,15 +105,6 @@ const peopleAlsoAsk = [
     },
 ];
 
-const courseSchema = generateCourseSchema({
-    name: 'Pilot Training in Canada — Guidance and DGCA Conversion Support',
-    description:
-        'Guidance for Indian students pursuing commercial pilot training in Canada under Transport Canada regulation, including study permit requirements, the 200-hour Canadian CPL minimum, and the DGCA conversion route on return to India.',
-    url: 'https://weoneaviation.in/flying-school/canada',
-    courseMode: 'blended',
-    duration: 'P18M',
-});
-
 // ─── Page ────────────────────────────────────────────────────────────────────
 
 export default function FlyingSchoolCanada() {
@@ -124,8 +113,6 @@ export default function FlyingSchoolCanada() {
             title="Pilot Training in Canada for Indian Students | DGCA Conversion Guide"
             description="How Indian students train for a commercial pilot licence in Canada: Transport Canada requirements, the 200-hour CPL minimum, study permit rules, and what DGCA conversion involves on return."
         >
-            <StructuredData data={courseSchema} />
-
             <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
                     <div className="section-tag">Flying School Destinations</div>
@@ -133,7 +120,7 @@ export default function FlyingSchoolCanada() {
                         Pilot Training in Canada
                     </h1>
                     <p className="text-white/70 max-w-3xl mx-auto text-sm leading-relaxed mb-4">
-                        Canada trains commercial pilots under Transport Canada regulation, across four real seasons and long cross-country legs. This page covers what the licence takes, what the study permit requires, and what still has to happen in India before you can fly for an Indian operator.
+                        This is general information about Canadian licensing, study-permit considerations, and DGCA conversion. It does not confirm a current Canadian partner school or programme.
                     </p>
                     <div className="inline-block bg-av-orange/20 border border-av-orange/40 rounded-2xl px-8 py-4">
                         <p className="text-white/70 text-sm mb-1">Canadian CPL Minimum</p>

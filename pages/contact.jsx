@@ -3,6 +3,8 @@ import ScrollReveal from '../components/ScrollReveal';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { decodeEmail } from '../utils/emailObfuscator';
+import Link from 'next/link';
+import { ACADEMY } from '../lib/facts';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', course: '', message: '' });
@@ -26,16 +28,16 @@ export default function Contact() {
     const msg = encodeURIComponent(
       `Hello We One Aviation! 👋\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email || 'N/A'}\nCourse: ${form.course || 'N/A'}\nMessage: ${form.message || 'Please guide me.'}`
     );
-    setTimeout(() => window.open(`https://wa.me/919355566991?text=${msg}`, '_blank'), 700);
+    setTimeout(() => window.open(`${ACADEMY.whatsapp}?text=${msg}`, '_blank'), 700);
   };
 
   return (
-    <Layout title="Contact We One Aviation Academy | Get Free Counselling" description="Contact We One Aviation Academy for free, end-to-end pilot career counselling. Call, WhatsApp or visit our Dwarka office.">
+    <Layout title="Contact We One Aviation Academy" description="Contact We One Aviation Academy about DGCA ground classes, the CPL pathway, online batches outside Delhi, or the Dwarka classroom.">
       <div className="relative h-64 md:h-80 bg-gradient-to-br from-av-blue to-av-navy flex items-center justify-center pt-16">
         <div className="text-center">
           <div className="section-tag mb-3">Get In Touch</div>
           <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white">Contact <span className="text-av-orange">Us</span></h1>
-          <p className="text-white/70 mt-3 text-sm">We're here to guide your aviation journey</p>
+          <p className="text-white/70 mt-3 text-sm">Ask about DGCA ground classes, the CPL pathway, or classroom and online access.</p>
         </div>
       </div>
 
@@ -43,10 +45,9 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
           <div className="lg:col-span-1 space-y-5">
             {[
-              { icon: '📍', title: 'Our Office', info: 'C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, Delhi 110077, India', action: null },
-              { icon: '📞', title: 'Call Us', info: '+91 93555 66991', action: 'tel:+919355566991' },
+              { icon: '📍', title: 'Our Classroom', info: `${ACADEMY.streetAddress}, ${ACADEMY.addressLocality}, ${ACADEMY.addressRegion} ${ACADEMY.postalCode}, India`, action: null },
+              { icon: '📞', title: 'Call Us', info: ACADEMY.phoneDisplay, action: `tel:${ACADEMY.phone}` },
               { icon: '✉️', title: 'Email', info: decodeEmail('support'), action: `javascript:window.location.href='mailto:'+decodeURIComponent('${btoa(decodeEmail('support'))}').replace(/./g,function(c){return String.fromCharCode(c.charCodeAt()-1)})` },
-              { icon: '🕐', title: 'Office Hours', info: 'Mon–Sat: 9 AM – 7 PM\nSunday: 10 AM – 4 PM', action: null },
             ].map((item, i) => (
               <ScrollReveal key={item.title} delay={i * 100}>
                 <div className="flex gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-100 card-hover">
@@ -61,17 +62,27 @@ export default function Contact() {
               </ScrollReveal>
             ))}
             <ScrollReveal delay={400}>
-              <a href="https://wa.me/919355566991" target="_blank" rel="noopener noreferrer"
+              <a href={ACADEMY.whatsapp} target="_blank" rel="noopener noreferrer"
                 className="block bg-green-500 text-white text-center py-3.5 rounded-2xl text-sm font-bold hover:bg-green-600 transition-all shadow-lg">
                 💬 Open WhatsApp Chat
               </a>
             </ScrollReveal>
+            <nav aria-label="Training information" className="rounded-2xl border border-gray-100 p-5">
+              <h2 className="mb-3 font-montserrat text-sm font-bold text-av-blue">Training information</h2>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/pilot-training-in-india" className="text-av-blue hover:text-av-orange">Pilot-training pathway in India</Link></li>
+                <li><Link href="/commercial-pilot-license" className="text-av-blue hover:text-av-orange">CPL pathway and eligibility</Link></li>
+                <li><Link href="/dgca-ground-classes" className="text-av-blue hover:text-av-orange">DGCA ground classes</Link></li>
+                <li><Link href="/pilot-training-in-delhi" className="text-av-blue hover:text-av-orange">Delhi training information</Link></li>
+                <li><Link href="/pilot-training-in-dwarka" className="text-av-blue hover:text-av-orange">Dwarka classroom details</Link></li>
+              </ul>
+            </nav>
           </div>
 
           <ScrollReveal delay={200} className="lg:col-span-2">
             <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
               <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-1">Send Us a Message</h2>
-              <p className="text-gray-400 text-sm mb-6">Your data is saved to our CRM. We'll call you within 2 hours.</p>
+              <p className="text-gray-400 text-sm mb-6">Send your enquiry through WhatsApp using the contact details you provide.</p>
 
               {status === 'success' && (
                 <div className="mb-5 p-3 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm">
@@ -113,7 +124,7 @@ export default function Contact() {
                       ? <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />Saving...</>
                       : '📱 Send via WhatsApp'}
                   </button>
-                  <p className="text-center text-xs text-gray-300 mt-3">🔒 Your data is saved securely to our system</p>
+                  <p className="text-center text-xs text-gray-300 mt-3">Your enquiry is submitted to the academy.</p>
                 </div>
               </form>
             </div>

@@ -4,6 +4,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
+import { ACADEMY } from '../lib/facts';
 
 // ─────────────────────────────────────────────
 // CityPageTemplate
@@ -30,29 +31,6 @@ export function CityPageTemplate({
     career, syllabus, fees, howToChoose, whyWeOne,
     usaBenefits, usaReasons, faqs, city,
 }) {
-    // LocalBusiness schema tailored to the city page
-    const localBusinessSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'LocalBusiness',
-        name: 'We One Aviation Academy',
-        url: 'https://weoneaviation.in',
-        telephone: '+919667370747',
-        address: {
-            '@type': 'PostalAddress',
-            streetAddress: 'C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka',
-            addressLocality: 'New Delhi',
-            addressRegion: 'Delhi',
-            postalCode: '110077',
-            addressCountry: 'IN',
-        },
-        areaServed: {
-            '@type': 'City',
-            name: city,
-        },
-        image: hero.image,
-        sameAs: ['https://www.facebook.com/share/1AokxHk8Yv/', 'https://www.instagram.com/we_one_aviation'],
-    };
-
     const faqSchema = {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
@@ -67,7 +45,6 @@ export function CityPageTemplate({
 
             {/* ── HERO ── */}
             <Head>
-                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
             </Head>
 
@@ -101,7 +78,7 @@ export function CityPageTemplate({
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-6">{intro}</p>
                         <div className="flex flex-wrap gap-3 mb-6">
-                            {['DGCA', 'Scholarship Available'].map(tag => (
+                            {['DGCA Ground Subject Guidance', 'Current Course Information'].map(tag => (
                                 <span key={tag} className="bg-av-light text-av-blue text-xs font-semibold px-4 py-2 rounded-full border border-av-sky/20">✓ {tag}</span>
                             ))}
                         </div>
@@ -116,7 +93,7 @@ export function CityPageTemplate({
                             </div>
                             <div className="absolute -top-5 -right-5 glass bg-av-blue rounded-xl p-4 shadow-xl border border-white/20">
                                 <div className="font-montserrat text-av-orange text-xl font-black">DGCA</div>
-                                <div className="text-white text-xs">Approved</div>
+                                <div className="text-white text-xs">Ground Guidance</div>
                             </div>
                         </div>
                     </ScrollReveal>
@@ -296,7 +273,7 @@ export function CityPageTemplate({
                                 <div className="mt-6 bg-av-light rounded-xl p-4 text-center">
                                     <p className="text-av-blue font-semibold text-sm">Total Estimated Cost</p>
                                     <p className="font-montserrat text-2xl font-black text-av-orange mt-1">{fees.total}</p>
-                                    <p className="text-gray-400 text-xs mt-1">Scholarship & Loan Available</p>
+                                    <p className="text-gray-400 text-xs mt-1">Fee terms vary by provider</p>
                                 </div>
                             </div>
                         </ScrollReveal>
@@ -315,7 +292,7 @@ export function CityPageTemplate({
                                     ))}
                                 </div>
                                 <Link href="/contact" className="mt-6 inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">
-                                    Get Scholarship Details
+                                    Ask for current fee details
                                 </Link>
                             </div>
                         </ScrollReveal>
@@ -460,7 +437,7 @@ export function CityPageTemplate({
                             Our aviation career counsellors will guide you through course selection, eligibility, fees, scholarships, and career prospects.
                         </p>
                         <div className="space-y-3">
-                            {['Free one-on-one career counselling', 'DGCA exam preparation guidance', 'International training options', 'Scholarship & loan assistance'].map(item => (
+                            {['Career counselling guidance', 'DGCA exam preparation guidance', 'Training-path comparison', 'Current fee and provider terms'].map(item => (
                                 <div key={item} className="flex items-center gap-3">
                                     <span className="text-av-orange">✓</span>
                                     <span className="text-white/80 text-sm">{item}</span>
@@ -469,7 +446,7 @@ export function CityPageTemplate({
                         </div>
                         <div className="mt-8 pt-6 border-t border-white/20 space-y-2 text-sm text-white/70">
                             <p>📧 <span className="font-semibold text-white">Office Mail:</span> info.weoneaviation@gmail.com</p>
-                            <p>📍 <span className="font-semibold text-white">Office Address:</span> C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, Delhi 110077, India</p>
+                            <p>📍 <span className="font-semibold text-white">Office Address:</span> {ACADEMY.streetAddress}, {ACADEMY.addressLocality}, {ACADEMY.addressRegion} {ACADEMY.postalCode}, India</p>
                         </div>
                     </ScrollReveal>
                     <ScrollReveal delay={200}>

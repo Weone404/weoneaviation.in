@@ -1,0 +1,337 @@
+{
+  "originalPdf": "Site-owner supplied original PDF (parsed directly during this run)",
+  "pdfVerification": "freshly parsed original PDF; source page numbers retained",
+  "geoNamesSource": "data/locations/source/geonames-IN.zip, IN.txt",
+  "sampleSeed": "weone-aviation-location-source-audit-2026-09",
+  "sampleSize": 20,
+  "passed": 20,
+  "failed": 0,
+  "publishableRecordsAvailable": 11412,
+  "records": [
+    {
+      "pin": "380014",
+      "postOffice": "GUJARAT VIDYA PITH(AHMD NAVAJEEVAN); NAVAJEEVAN (AHMEDABAD)",
+      "locality": "Navjivan",
+      "city": null,
+      "district": "Ahmedabad",
+      "state": "Gujarat",
+      "taluk": "Ahmadabad City",
+      "source": "PIN/post office: supplied PDF; locality: GeoNames place-name; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        174,
+        362
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "821109",
+      "postOffice": "MOHANIA",
+      "locality": "Mohania",
+      "city": null,
+      "district": "Kaimur (Bhabua)",
+      "state": "Bihar",
+      "taluk": "Mohania",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        336
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "422104",
+      "postOffice": "WAVI",
+      "locality": "Wavi",
+      "city": null,
+      "district": "Nashik",
+      "state": "Maharashtra",
+      "taluk": "Sinnar",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        555
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "641027",
+      "postOffice": "RATNAPURI",
+      "locality": "Rathinapuri",
+      "city": null,
+      "district": "Coimbatore",
+      "state": "Tamil Nadu",
+      "taluk": "Coimbatore North",
+      "source": "PIN/post office: supplied PDF; locality: GeoNames place-name; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        439
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "756034",
+      "postOffice": "NAMPO",
+      "locality": "Nampo",
+      "city": null,
+      "district": "Baleswar",
+      "state": "Odisha",
+      "taluk": "Jaleswar",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        354
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "441901",
+      "postOffice": "DEORI",
+      "locality": "Deori",
+      "city": null,
+      "district": "Gondia",
+      "state": "Maharashtra",
+      "taluk": "Deori",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        129
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "531055",
+      "postOffice": "KOTHAPETA (YELLAMANCHILI); YELLAMANCHILI",
+      "locality": "Yellamanchili",
+      "city": null,
+      "district": "Visakhapatnam",
+      "state": "Andhra Pradesh",
+      "taluk": "Yellamanchili",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        276,
+        558
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "735122",
+      "postOffice": "HALDIBARI",
+      "locality": "Haldibari",
+      "city": null,
+      "district": "Cooch Behar",
+      "state": "West Bengal",
+      "taluk": "Haldibari",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        180
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "712302",
+      "postOffice": "DHANIAKHALI",
+      "locality": "Dhaniakhali",
+      "city": null,
+      "district": "Hooghly",
+      "state": "West Bengal",
+      "taluk": "Dhaniakhali",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        133
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "311023",
+      "postOffice": "KOTHIAN",
+      "locality": "Kothian",
+      "city": null,
+      "district": "Bhilwara",
+      "state": "Rajasthan",
+      "taluk": "Bhilwara",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        277
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "572118",
+      "postOffice": "GULUR ( TMR)",
+      "locality": "Gulur ( Tmr)",
+      "city": null,
+      "district": "Tumakuru",
+      "state": "Karnataka",
+      "taluk": "Tumkur",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        175
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "632503",
+      "postOffice": "ARCOT BAZAR; ARCOT HO; ARCOT WEST; THOPPUKANA",
+      "locality": "Arcot West",
+      "city": null,
+      "district": "Vellore",
+      "state": "Tamil Nadu",
+      "taluk": "Arcot",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        25,
+        516
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "847303",
+      "postOffice": "JOGIARA",
+      "locality": "Jogiara",
+      "city": null,
+      "district": "Darbhanga",
+      "state": "Bihar",
+      "taluk": "Darbhanga",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        221
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "522324",
+      "postOffice": "KOLLURU",
+      "locality": "Kolluru",
+      "city": null,
+      "district": "Guntur",
+      "state": "Andhra Pradesh",
+      "taluk": "Kolluru",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        271
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "581337",
+      "postOffice": "IDGUNDI",
+      "locality": "Idgundi",
+      "city": null,
+      "district": "Uttara Kannada",
+      "state": "Karnataka",
+      "taluk": "Yellapur",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        197
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "811303",
+      "postOffice": "CHAKAI",
+      "locality": "Chakai",
+      "city": null,
+      "district": "Jamui",
+      "state": "Bihar",
+      "taluk": "Chakai",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        95
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "271831",
+      "postOffice": "BHINGA",
+      "locality": "Bhinga",
+      "city": null,
+      "district": "Shrawasti",
+      "state": "Uttar Pradesh",
+      "taluk": "Bhinga",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        76
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "574111",
+      "postOffice": "PADUBIDRI",
+      "locality": "Padubidri",
+      "city": null,
+      "district": "Udupi",
+      "state": "Karnataka",
+      "taluk": "Udupi",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        381
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "620006",
+      "postOffice": "AMMAMANDAPAM (SRIRANGAM); RANGA NAGAR (SRIRANGAM); SRIRAMGAM WEST; SRIRANGAM HO; SRIRANGAM NORTH",
+      "locality": "Srirangam North",
+      "city": null,
+      "district": "Tiruchirappalli",
+      "state": "Tamil Nadu",
+      "taluk": "Srirangam",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        17,
+        435,
+        493
+      ],
+      "passed": true,
+      "errors": []
+    },
+    {
+      "pin": "752090",
+      "postOffice": "KURAL",
+      "locality": "Kural",
+      "city": null,
+      "district": "Nayagarh",
+      "state": "Odisha",
+      "taluk": "Nayagarh",
+      "source": "PIN/post office: supplied PDF; locality: PDF post-office + GeoNames place-name cross-check; district: GeoNames adminName2; state: PDF + GeoNames cross-check; taluk: GeoNames adminName3",
+      "sourceConfidence": "overall medium; PIN high; post office high; locality medium; district medium; state high; taluk medium",
+      "sourcePages": [
+        286
+      ],
+      "passed": true,
+      "errors": []
+    }
+  ]
+}

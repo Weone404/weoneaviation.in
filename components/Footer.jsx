@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import NextImage from 'next/image';
 import { useEffect, useState } from 'react';
+import { ACADEMY } from '../lib/facts';
 
 export default function Footer() {
   const [currentYear, setCurrentYear] = useState(2026);
@@ -16,17 +17,17 @@ export default function Footer() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-montserrat text-2xl md:text-3xl font-bold mb-3">Ready to Take Flight?</h2>
           <p className="text-white mb-6 text-sm md:text-base">
-            Start your aviation journey with expert guidance on DGCA preparation, flying schools, and pilot career planning.
+            Ask about DGCA preparation, flying-school selection, and pilot career planning.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="bg-white text-av-orange font-bold px-8 py-3 rounded-full hover:bg-av-blue hover:text-white transition-all shadow-lg text-sm"
             >
-              Get Free Counselling
+              Contact the Academy
             </Link>
 
-            <a href="https://wa.me/919667370747"
+            <a href={ACADEMY.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white hover:text-av-orange transition-all text-sm"
@@ -45,7 +46,7 @@ export default function Footer() {
           <h3 className="font-montserrat font-bold text-av-orange text-base mb-3">We One Aviation</h3>
           <div className="border-t border-dashed border-white/20 mb-5" />
           <p className="text-white/70 text-sm leading-relaxed mb-5">
-            We One Aviation supports students who want to pursue pilot training in India and abroad. Our guidance covers DGCA ground classes, flying-school selection, and career preparation.
+            We One Aviation teaches DGCA ground subjects from its Dwarka classroom, offers online batches to students outside Delhi, and arranges flight training with partner flying schools.
           </p>
           <div className="flex gap-4">
 
@@ -119,10 +120,11 @@ export default function Footer() {
           <h4 className="font-montserrat font-bold text-av-orange text-base mb-3">How to reach us?</h4>
           <div className="border-t border-dashed border-white/20 mb-5" />
           <div className="space-y-4 text-sm text-white/70">
-            {/* FIX: PIN was 110075 in footer, 110077 in contact section — standardised to 110077 */}
             <div className="flex gap-3 items-start">
               <span className="text-av-orange mt-0.5 text-base">📍</span>
-              <span>C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, Delhi 110077, India</span>
+              <span>
+                {ACADEMY.streetAddress}, {ACADEMY.addressLocality}, {ACADEMY.addressRegion} {ACADEMY.postalCode}, India
+              </span>
             </div>
             <div className="flex gap-3 items-center">
               <span className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
@@ -130,7 +132,7 @@ export default function Footer() {
                   <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.01l-2.2 2.21z" />
                 </svg>
               </span>
-              <a href="tel:+919667370747" className="hover:text-av-orange transition-colors">+91-9667370747</a>
+              <a href="tel:+919667370747" className="hover:text-av-orange transition-colors">{ACADEMY.phoneDisplay}</a>
             </div>
             <div className="flex gap-3 items-center">
               <span className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
@@ -138,7 +140,7 @@ export default function Footer() {
                   <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.01l-2.2 2.21z" />
                 </svg>
               </span>
-              <a href="tel:+919355566991" className="hover:text-av-orange transition-colors">+91-9355566991</a>
+              <a href={`tel:${ACADEMY.whatsappPhone}`} className="hover:text-av-orange transition-colors">{ACADEMY.whatsappPhoneDisplay}</a>
             </div>
             <div className="flex gap-3 items-center">
               <span className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0">
@@ -146,7 +148,7 @@ export default function Footer() {
                   <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.01l-2.2 2.21z" />
                 </svg>
               </span>
-              <a href="tel:+919667370747" className="hover:text-av-orange transition-colors">+91-9667370747</a>
+              <a href="tel:+919667370747" className="hover:text-av-orange transition-colors">{ACADEMY.phoneDisplay}</a>
             </div>
             <div className="flex gap-3 items-center">
               <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">

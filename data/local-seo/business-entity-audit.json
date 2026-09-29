@@ -1,0 +1,135 @@
+{
+  "business": {
+    "name": "We One Aviation Academy",
+    "schemaType": "EducationalOrganization",
+    "verifiedPhysicalAddress": {
+      "street": "C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka",
+      "locality": "New Delhi",
+      "region": "Delhi",
+      "postalCode": "110077",
+      "country": "India"
+    },
+    "verificationScope": "Consistent first-party website address only; not an independent government or Google Business Profile verification.",
+    "addressVariants": {
+      "cityNames": ["New Delhi", "Delhi"],
+      "assessment": "The same Dwarka street address and PIN are used; city naming differs but the repository does not establish a second academy location.",
+      "currentPostalCode": "110077",
+      "historicalPostalCode": "110075 appeared only in a stale footer comment describing a corrected discrepancy. That comment was removed during this audit; no current address value uses it."
+    },
+    "phoneNumbers": [
+      {
+        "value": "+91 96673 70747",
+        "role": "Owner-confirmed primary academy/business number; active and valid."
+      },
+      {
+        "value": "+91 93556 11996",
+        "role": "Owner-confirmed active academy/business number for WhatsApp/lead enquiries and Air India/IndiGo preparation."
+      }
+    ],
+    "unavailableContactNumbers": [
+      {
+        "pages": [
+          "/airindia-pilot-preparation",
+          "/indigo-pilot-preparation"
+        ],
+        "values": ["+91 95552 91956", "+91 97179 77702"],
+        "status": "Owner-confirmed unavailable; not to be used as active contacts."
+      }
+    ],
+    "email": "info.weoneaviation@gmail.com"
+  },
+  "googleBusinessProfile": {
+    "repositorySignal": "The shared footer links to https://maps.google.com/?cid=10157212043930371020.",
+    "ownershipOrCurrentProfileDetailsVerified": false,
+    "independentVerification": "The public Maps CID resolves to a We One Aviation Academy listing and a map pin, but profile ownership and the listing's current fields have not been independently verified.",
+    "checklist": [
+      {
+        "item": "Exact business name",
+        "status": "VERIFIED",
+        "evidence": "First-party site and Maps CID label use We One Aviation Academy.",
+        "profileConsistency": "UNVERIFIED"
+      },
+      {
+        "item": "Exact address",
+        "status": "VERIFIED",
+        "evidence": "First-party address is consistent at C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, New Delhi, Delhi 110077.",
+        "profileConsistency": "UNVERIFIED"
+      },
+      {
+        "item": "Phone",
+        "status": "VERIFIED",
+        "evidence": "Business owner confirmed primary +91 96673 70747 and active WhatsApp/lead +91 93556 11996. The live Google Business Profile consistency remains unverified.",
+        "profileConsistency": "UNVERIFIED"
+      },
+      {
+        "item": "Website",
+        "status": "VERIFIED",
+        "evidence": "The canonical academy website is https://weoneaviation.in/.",
+        "profileConsistency": "UNVERIFIED"
+      },
+      {
+        "item": "Business category",
+        "status": "UNVERIFIED",
+        "evidence": "No current Google Business Profile category was available for independent review."
+      },
+      {
+        "item": "Google Business Profile consistency",
+        "status": "NEEDS_ACTION",
+        "evidence": "Compare the live profile name, address, phone and website against current first-party facts."
+      },
+      {
+        "item": "Map pin",
+        "status": "NEEDS_ACTION",
+        "evidence": "The Maps CID resolves to coordinates 28.5851865, 77.071156; verify that the pin marks the published C-404 address and public entrance."
+      },
+      {
+        "item": "Opening hours",
+        "status": "UNVERIFIED",
+        "evidence": "No current profile hours were available for independent review."
+      },
+      {
+        "item": "Photos",
+        "status": "UNVERIFIED",
+        "evidence": "Current Google Business Profile photos were not independently reviewed."
+      },
+      {
+        "item": "Reviews",
+        "status": "UNVERIFIED",
+        "evidence": "Current profile reviews and review responses were not independently reviewed."
+      },
+      {
+        "item": "Service area",
+        "status": "NEEDS_ACTION",
+        "evidence": "No neighborhood or Google Business Profile service-area list was independently verified; do not claim locality coverage without evidence."
+      }
+    ]
+  },
+  "deliveryAndServiceArea": {
+    "physicalClassroom": "Dwarka, New Delhi",
+    "onlineDelivery": "The website says students outside Delhi can join online batches.",
+    "flightTraining": "Arranged with partner flying schools; not represented as happening at the Dwarka classroom.",
+    "neighborhoodBoundariesVerified": false,
+    "localitySpecificDemandVerified": false,
+    "nationwidePhysicalPresenceClaimed": false
+  },
+  "structuredDataAudit": {
+    "globalOrganization": "EducationalOrganization using shared academy facts and the stable https://weoneaviation.in/#organization identifier.",
+    "website": "WebSite schema is emitted globally.",
+    "breadcrumbs": "BreadcrumbList is emitted by the shared breadcrumb component.",
+    "delhiAndDwarkaPages": "EducationalOrganization references the same stable organization identifier; their areaServed values are limited to Delhi or Dwarka, New Delhi.",
+    "localityQaPages": "WebPage and visible-content-matched FAQPage only; course references point to existing course pages.",
+    "localBusiness": "Not generated for PIN or locality pages. Removed from the legacy city template; a PIN/locality page is not evidence of a local business location.",
+    "profileVerification": "No independent Google Business Profile verification was available for this audit."
+  },
+  "reviewedFiles": [
+    "lib/facts.js",
+    "lib/schema.js",
+    "pages/_document.jsx",
+    "pages/pilot-training-in-delhi.jsx",
+    "pages/pilot-training-in-dwarka.jsx",
+    "components/Breadcrumb.jsx",
+    "components/Citypagetemplate.jsx",
+    "components/LocalitySearchPage.jsx",
+    "data/local-seo/business-location.json"
+  ]
+}

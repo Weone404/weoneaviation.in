@@ -1,0 +1,1957 @@
+{
+  "datasetPurpose": "India-wide locality search research candidates; not a service-area list or page-approval list.",
+  "geographicSources": [
+    {
+      "name": "OpenStreetMap Nominatim",
+      "url": "https://nominatim.openstreetmap.org/",
+      "role": "Place identity and locality-geography research source; query URL is not evidence that the result has been independently resolved."
+    },
+    {
+      "name": "Census of India",
+      "url": "https://censusindia.gov.in/census.website/data/census-tables",
+      "role": "Potential reference for urban geography; locality-level identities require separate verification."
+    },
+    {
+      "name": "Local Government Directory",
+      "url": "https://lgdirectory.gov.in/",
+      "role": "Administrative-unit reference; does not provide one nationally standardized named-neighborhood register."
+    }
+  ],
+  "candidateCount": 37,
+  "recommendationCounts": {
+    "REFERENCE_ONLY": 1,
+    "RESEARCH_ONLY": 34,
+    "NEEDS_VERIFICATION": 2
+  },
+  "pinDataUsedForSelection": false,
+  "candidates": [
+    {
+      "locality": "Dwarka",
+      "city": "Delhi",
+      "state": "National Capital Territory of Delhi",
+      "stateCode": "IN-DL",
+      "localityType": "sub-city/locality; type requires source validation",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Dwarka%2C+Delhi%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "HIGH",
+      "businessRelevanceBasis": "The verified classroom location is in Dwarka; this does not imply other Delhi localities are served in person.",
+      "searchIntentStatus": "PARTIALLY_RESEARCHED",
+      "contentValue": "HIGH",
+      "pageStatus": "REFERENCE_ONLY",
+      "recommendation": "REFERENCE_ONLY",
+      "evidenceStatus": "First-party academy address; locality boundary identity should be checked separately.",
+      "district": null,
+      "status": "REFERENCE_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Dwarka",
+        "pilot training near Dwarka",
+        "pilot training academy near Dwarka",
+        "CPL training near Dwarka",
+        "DGCA ground classes near Dwarka",
+        "aviation institute near Dwarka",
+        "Dwarka pilot training",
+        "Dwarka CPL training",
+        "Dwarka DGCA ground classes"
+      ],
+      "serpResearchStatus": "PARTIALLY_RESEARCHED",
+      "serpObservations": [
+        {
+          "locality": "Dwarka",
+          "city": "Delhi",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "queries": [
+            {
+              "intent": "aviation academy near Dwarka Delhi",
+              "engine": "Google",
+              "status": "OBSERVED",
+              "url": "https://www.google.com/search?q=aviation+academy+near+Dwarka+Delhi&hl=en&gl=in"
+            },
+            {
+              "intent": "pilot training near Dwarka Delhi",
+              "engine": "Google",
+              "status": "OBSERVED",
+              "url": "https://www.google.com/search?q=pilot+training+near+Dwarka+Delhi&hl=en&gl=in"
+            },
+            {
+              "intent": "CPL training near Dwarka Delhi",
+              "engine": "Google",
+              "status": "BLOCKED_BY_GOOGLE_TRAFFIC_CHALLENGE",
+              "url": "https://www.google.com/search?q=CPL+training+near+Dwarka+Delhi&hl=en&gl=in"
+            },
+            {
+              "intent": "DGCA ground classes near Dwarka Delhi",
+              "engine": "Google",
+              "status": "BLOCKED_BY_GOOGLE_TRAFFIC_CHALLENGE",
+              "url": "https://www.google.com/search?q=DGCA+ground+classes+near+Dwarka+Delhi&hl=en&gl=in"
+            },
+            {
+              "intent": "CPL training near Dwarka Delhi",
+              "engine": "Bing",
+              "status": "OBSERVED",
+              "url": "https://www.bing.com/search?q=CPL+training+near+Dwarka+Delhi"
+            },
+            {
+              "intent": "DGCA ground classes near Dwarka Delhi",
+              "engine": "Bing",
+              "status": "OBSERVED",
+              "url": "https://www.bing.com/search?q=DGCA+ground+classes+near+Dwarka+Delhi"
+            }
+          ],
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_FOR_ACADEMY_AND_PILOT_TRAINING_QUERIES",
+            "bingMapOrBusinessPanel": "OBSERVED_FOR_CPL_AND_DGCA_QUERIES",
+            "directoryResults": [
+              "Justdial"
+            ],
+            "courseOrLocationPages": [
+              "Airborne Aviation",
+              "We One Aviation",
+              "other pilot-training and DGCA course pages"
+            ],
+            "serpSatisfies": "Local business discovery and course research."
+          },
+          "visibleExamples": [
+            "We One Aviation Academy (Google academy query)",
+            "Topflyer Pilot Training Academy",
+            "CA Pilot Academy"
+          ],
+          "caveat": "Google CPL and DGCA queries hit a traffic challenge; Bing was inspected for those intents. Results are snapshots, not rankings or demand measurements."
+        }
+      ],
+      "queryObservations": [
+        {
+          "query": "aviation academy near Dwarka Delhi",
+          "engine": "Google",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "url": "https://www.google.com/search?q=aviation+academy+near+Dwarka+Delhi&hl=en&gl=in",
+          "status": "OBSERVED",
+          "searchIntentType": "MIXED",
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_FOR_ACADEMY_AND_PILOT_TRAINING_QUERIES",
+            "bingMapOrBusinessPanel": "OBSERVED_FOR_CPL_AND_DGCA_QUERIES",
+            "directoryResults": [
+              "Justdial"
+            ],
+            "courseOrLocationPages": [
+              "Airborne Aviation",
+              "We One Aviation",
+              "other pilot-training and DGCA course pages"
+            ],
+            "serpSatisfies": "Local business discovery and course research."
+          },
+          "visibleExamples": [
+            "We One Aviation Academy (Google academy query)",
+            "Topflyer Pilot Training Academy",
+            "CA Pilot Academy"
+          ],
+          "limitations": "Google CPL and DGCA queries hit a traffic challenge; Bing was inspected for those intents. Results are snapshots, not rankings or demand measurements."
+        },
+        {
+          "query": "pilot training near Dwarka Delhi",
+          "engine": "Google",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "url": "https://www.google.com/search?q=pilot+training+near+Dwarka+Delhi&hl=en&gl=in",
+          "status": "OBSERVED",
+          "searchIntentType": "MIXED",
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_FOR_ACADEMY_AND_PILOT_TRAINING_QUERIES",
+            "bingMapOrBusinessPanel": "OBSERVED_FOR_CPL_AND_DGCA_QUERIES",
+            "directoryResults": [
+              "Justdial"
+            ],
+            "courseOrLocationPages": [
+              "Airborne Aviation",
+              "We One Aviation",
+              "other pilot-training and DGCA course pages"
+            ],
+            "serpSatisfies": "Local business discovery and course research."
+          },
+          "visibleExamples": [
+            "We One Aviation Academy (Google academy query)",
+            "Topflyer Pilot Training Academy",
+            "CA Pilot Academy"
+          ],
+          "limitations": "Google CPL and DGCA queries hit a traffic challenge; Bing was inspected for those intents. Results are snapshots, not rankings or demand measurements."
+        },
+        {
+          "query": "CPL training near Dwarka Delhi",
+          "engine": "Google",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "url": "https://www.google.com/search?q=CPL+training+near+Dwarka+Delhi&hl=en&gl=in",
+          "status": "BLOCKED_BY_GOOGLE_TRAFFIC_CHALLENGE",
+          "searchIntentType": "UNKNOWN",
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_FOR_ACADEMY_AND_PILOT_TRAINING_QUERIES",
+            "bingMapOrBusinessPanel": "OBSERVED_FOR_CPL_AND_DGCA_QUERIES",
+            "directoryResults": [
+              "Justdial"
+            ],
+            "courseOrLocationPages": [
+              "Airborne Aviation",
+              "We One Aviation",
+              "other pilot-training and DGCA course pages"
+            ],
+            "serpSatisfies": "Local business discovery and course research."
+          },
+          "visibleExamples": [
+            "We One Aviation Academy (Google academy query)",
+            "Topflyer Pilot Training Academy",
+            "CA Pilot Academy"
+          ],
+          "limitations": "Google CPL and DGCA queries hit a traffic challenge; Bing was inspected for those intents. Results are snapshots, not rankings or demand measurements."
+        },
+        {
+          "query": "DGCA ground classes near Dwarka Delhi",
+          "engine": "Google",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "url": "https://www.google.com/search?q=DGCA+ground+classes+near+Dwarka+Delhi&hl=en&gl=in",
+          "status": "BLOCKED_BY_GOOGLE_TRAFFIC_CHALLENGE",
+          "searchIntentType": "UNKNOWN",
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_FOR_ACADEMY_AND_PILOT_TRAINING_QUERIES",
+            "bingMapOrBusinessPanel": "OBSERVED_FOR_CPL_AND_DGCA_QUERIES",
+            "directoryResults": [
+              "Justdial"
+            ],
+            "courseOrLocationPages": [
+              "Airborne Aviation",
+              "We One Aviation",
+              "other pilot-training and DGCA course pages"
+            ],
+            "serpSatisfies": "Local business discovery and course research."
+          },
+          "visibleExamples": [
+            "We One Aviation Academy (Google academy query)",
+            "Topflyer Pilot Training Academy",
+            "CA Pilot Academy"
+          ],
+          "limitations": "Google CPL and DGCA queries hit a traffic challenge; Bing was inspected for those intents. Results are snapshots, not rankings or demand measurements."
+        },
+        {
+          "query": "CPL training near Dwarka Delhi",
+          "engine": "Bing",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "url": "https://www.bing.com/search?q=CPL+training+near+Dwarka+Delhi",
+          "status": "OBSERVED",
+          "searchIntentType": "MIXED",
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_FOR_ACADEMY_AND_PILOT_TRAINING_QUERIES",
+            "bingMapOrBusinessPanel": "OBSERVED_FOR_CPL_AND_DGCA_QUERIES",
+            "directoryResults": [
+              "Justdial"
+            ],
+            "courseOrLocationPages": [
+              "Airborne Aviation",
+              "We One Aviation",
+              "other pilot-training and DGCA course pages"
+            ],
+            "serpSatisfies": "Local business discovery and course research."
+          },
+          "visibleExamples": [
+            "We One Aviation Academy (Google academy query)",
+            "Topflyer Pilot Training Academy",
+            "CA Pilot Academy"
+          ],
+          "limitations": "Google CPL and DGCA queries hit a traffic challenge; Bing was inspected for those intents. Results are snapshots, not rankings or demand measurements."
+        },
+        {
+          "query": "DGCA ground classes near Dwarka Delhi",
+          "engine": "Bing",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "url": "https://www.bing.com/search?q=DGCA+ground+classes+near+Dwarka+Delhi",
+          "status": "OBSERVED",
+          "searchIntentType": "MIXED",
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_FOR_ACADEMY_AND_PILOT_TRAINING_QUERIES",
+            "bingMapOrBusinessPanel": "OBSERVED_FOR_CPL_AND_DGCA_QUERIES",
+            "directoryResults": [
+              "Justdial"
+            ],
+            "courseOrLocationPages": [
+              "Airborne Aviation",
+              "We One Aviation",
+              "other pilot-training and DGCA course pages"
+            ],
+            "serpSatisfies": "Local business discovery and course research."
+          },
+          "visibleExamples": [
+            "We One Aviation Academy (Google academy query)",
+            "Topflyer Pilot Training Academy",
+            "CA Pilot Academy"
+          ],
+          "limitations": "Google CPL and DGCA queries hit a traffic challenge; Bing was inspected for those intents. Results are snapshots, not rankings or demand measurements."
+        }
+      ],
+      "searchIntentClassification": "MIXED",
+      "relationshipToAcademy": "In the same National Capital Territory as the verified Dwarka classroom; no locality-specific service relationship or distance is claimed.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Palam",
+      "city": "Delhi",
+      "state": "National Capital Territory of Delhi",
+      "stateCode": "IN-DL",
+      "localityType": "suburb label; community-mapped",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Palam%2C+Delhi%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Delhi physical classroom exists; no Palam-specific service, student-origin or demand evidence.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "OSM lookup available; identity and service relation not independently verified.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Palam",
+        "pilot training near Palam",
+        "pilot training academy near Palam",
+        "CPL training near Palam",
+        "DGCA ground classes near Palam",
+        "aviation institute near Palam",
+        "Palam pilot training",
+        "Palam CPL training",
+        "Palam DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "In the same National Capital Territory as the verified Dwarka classroom; no locality-specific service relationship or distance is claimed.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Uttam Nagar",
+      "city": "Delhi",
+      "state": "National Capital Territory of Delhi",
+      "stateCode": "IN-DL",
+      "localityType": "suburb label; community-mapped",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Uttam+Nagar%2C+Delhi%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Delhi physical classroom exists; no locality-specific service, student-origin or demand evidence.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "OSM lookup available; identity and service relation not independently verified.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Uttam Nagar",
+        "pilot training near Uttam Nagar",
+        "pilot training academy near Uttam Nagar",
+        "CPL training near Uttam Nagar",
+        "DGCA ground classes near Uttam Nagar",
+        "aviation institute near Uttam Nagar",
+        "Uttam Nagar pilot training",
+        "Uttam Nagar CPL training",
+        "Uttam Nagar DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "In the same National Capital Territory as the verified Dwarka classroom; no locality-specific service relationship or distance is claimed.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Janakpuri",
+      "city": "Delhi",
+      "state": "National Capital Territory of Delhi",
+      "stateCode": "IN-DL",
+      "localityType": "suburb label; community-mapped",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Janakpuri%2C+Delhi%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Delhi physical classroom exists; no locality-specific service, student-origin or demand evidence.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "OSM lookup available; identity and service relation not independently verified.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Janakpuri",
+        "pilot training near Janakpuri",
+        "pilot training academy near Janakpuri",
+        "CPL training near Janakpuri",
+        "DGCA ground classes near Janakpuri",
+        "aviation institute near Janakpuri",
+        "Janakpuri pilot training",
+        "Janakpuri CPL training",
+        "Janakpuri DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "In the same National Capital Territory as the verified Dwarka classroom; no locality-specific service relationship or distance is claimed.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Vikaspuri",
+      "city": "Delhi",
+      "state": "National Capital Territory of Delhi",
+      "stateCode": "IN-DL",
+      "localityType": "suburb label; community-mapped",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Vikaspuri%2C+Delhi%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Delhi physical classroom exists; no locality-specific service, student-origin or demand evidence.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "OSM lookup available; identity and service relation not independently verified.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Vikaspuri",
+        "pilot training near Vikaspuri",
+        "pilot training academy near Vikaspuri",
+        "CPL training near Vikaspuri",
+        "DGCA ground classes near Vikaspuri",
+        "aviation institute near Vikaspuri",
+        "Vikaspuri pilot training",
+        "Vikaspuri CPL training",
+        "Vikaspuri DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "In the same National Capital Territory as the verified Dwarka classroom; no locality-specific service relationship or distance is claimed.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Indrapuri",
+      "aliases": [
+        "Inderpuri"
+      ],
+      "city": "Delhi",
+      "state": "National Capital Territory of Delhi",
+      "stateCode": "IN-DL",
+      "localityType": "neighbourhood label; identity variant requires verification",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Inderpuri%2C+Delhi%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Delhi physical classroom exists; no locality-specific service, student-origin or demand evidence.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "OSM uses Indrapuri; supplied PIN data previously called Inderpuri; not treated as a PIN SEO unit.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Indrapuri",
+        "pilot training near Indrapuri",
+        "pilot training academy near Indrapuri",
+        "CPL training near Indrapuri",
+        "DGCA ground classes near Indrapuri",
+        "aviation institute near Indrapuri",
+        "Indrapuri pilot training",
+        "Indrapuri CPL training",
+        "Indrapuri DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "In the same National Capital Territory as the verified Dwarka classroom; no locality-specific service relationship or distance is claimed.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Mahipalpur",
+      "city": "Delhi",
+      "state": "National Capital Territory of Delhi",
+      "stateCode": "IN-DL",
+      "localityType": "village/place label; community-mapped",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Mahipalpur%2C+Delhi%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Delhi physical classroom exists; no locality-specific service, student-origin or demand evidence.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "OSM lookup available; identity and service relation not independently verified.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Mahipalpur",
+        "pilot training near Mahipalpur",
+        "pilot training academy near Mahipalpur",
+        "CPL training near Mahipalpur",
+        "DGCA ground classes near Mahipalpur",
+        "aviation institute near Mahipalpur",
+        "Mahipalpur pilot training",
+        "Mahipalpur CPL training",
+        "Mahipalpur DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "In the same National Capital Territory as the verified Dwarka classroom; no locality-specific service relationship or distance is claimed.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Vasant Kunj",
+      "city": "Delhi",
+      "state": "National Capital Territory of Delhi",
+      "stateCode": "IN-DL",
+      "localityType": "suburb label; community-mapped",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Vasant+Kunj%2C+Delhi%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Delhi physical classroom exists; no locality-specific service, student-origin or demand evidence.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "OSM lookup available; identity and service relation not independently verified.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Vasant Kunj",
+        "pilot training near Vasant Kunj",
+        "pilot training academy near Vasant Kunj",
+        "CPL training near Vasant Kunj",
+        "DGCA ground classes near Vasant Kunj",
+        "aviation institute near Vasant Kunj",
+        "Vasant Kunj pilot training",
+        "Vasant Kunj CPL training",
+        "Vasant Kunj DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "In the same National Capital Territory as the verified Dwarka classroom; no locality-specific service relationship or distance is claimed.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Munirka",
+      "city": "Delhi",
+      "state": "National Capital Territory of Delhi",
+      "stateCode": "IN-DL",
+      "localityType": "locality label; community-mapped",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Munirka%2C+Delhi%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Delhi physical classroom exists; no locality-specific service, student-origin or demand evidence.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "OSM lookup available; identity and service relation not independently verified.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Munirka",
+        "pilot training near Munirka",
+        "pilot training academy near Munirka",
+        "CPL training near Munirka",
+        "DGCA ground classes near Munirka",
+        "aviation institute near Munirka",
+        "Munirka pilot training",
+        "Munirka CPL training",
+        "Munirka DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "In the same National Capital Territory as the verified Dwarka classroom; no locality-specific service relationship or distance is claimed.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Najafgarh",
+      "city": "Delhi",
+      "state": "National Capital Territory of Delhi",
+      "stateCode": "IN-DL",
+      "localityType": "town/district sub-area label; boundary type requires selection",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Najafgarh%2C+Delhi%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Delhi physical classroom exists; no locality-specific service, student-origin or demand evidence.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "OSM returns multiple feature types; intended locality boundary not fixed.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Najafgarh",
+        "pilot training near Najafgarh",
+        "pilot training academy near Najafgarh",
+        "CPL training near Najafgarh",
+        "DGCA ground classes near Najafgarh",
+        "aviation institute near Najafgarh",
+        "Najafgarh pilot training",
+        "Najafgarh CPL training",
+        "Najafgarh DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "In the same National Capital Territory as the verified Dwarka classroom; no locality-specific service relationship or distance is claimed.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Laxmi Nagar",
+      "city": "Delhi",
+      "state": "National Capital Territory of Delhi",
+      "stateCode": "IN-DL",
+      "localityType": "suburb label; community-mapped",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Laxmi+Nagar%2C+Delhi%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Delhi classroom and online batches are documented generally; no Laxmi Nagar service, student-origin or demand evidence.",
+      "searchIntentStatus": "PARTIALLY_RESEARCHED",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "NEEDS_VERIFICATION",
+      "evidenceStatus": "OSM selected suburb postcode differs from supplied PDF post-office PIN 110092; identity/postal relationship needs authoritative review.",
+      "district": null,
+      "status": "NEEDS_VERIFICATION",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Laxmi Nagar",
+        "pilot training near Laxmi Nagar",
+        "pilot training academy near Laxmi Nagar",
+        "CPL training near Laxmi Nagar",
+        "DGCA ground classes near Laxmi Nagar",
+        "aviation institute near Laxmi Nagar",
+        "Laxmi Nagar pilot training",
+        "Laxmi Nagar CPL training",
+        "Laxmi Nagar DGCA ground classes"
+      ],
+      "serpResearchStatus": "PARTIALLY_RESEARCHED",
+      "serpObservations": [
+        {
+          "locality": "Laxmi Nagar",
+          "city": "Delhi",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "queries": [
+            {
+              "intent": "aviation academy near Laxmi Nagar Delhi",
+              "engine": "Google",
+              "status": "OBSERVED",
+              "url": "https://www.google.com/search?q=aviation+academy+near+Laxmi+Nagar+Delhi&hl=en&gl=in"
+            },
+            {
+              "intent": "pilot training near Laxmi Nagar Delhi",
+              "engine": "Google",
+              "status": "OBSERVED",
+              "url": "https://www.google.com/search?q=pilot+training+near+Laxmi+Nagar+Delhi&hl=en&gl=in"
+            },
+            {
+              "intent": "CPL training near Laxmi Nagar Delhi",
+              "engine": "Google",
+              "status": "OBSERVED",
+              "url": "https://www.google.com/search?q=CPL+training+near+Laxmi+Nagar+Delhi&hl=en&gl=in"
+            },
+            {
+              "intent": "DGCA ground classes near Laxmi Nagar Delhi",
+              "engine": "Bing",
+              "status": "OBSERVED",
+              "url": "https://www.bing.com/search?q=DGCA+ground+classes+near+Laxmi+Nagar+Delhi"
+            }
+          ],
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_FOR_ACADEMY_PILOT_TRAINING_AND_CPL_QUERIES",
+            "bingMapOrBusinessPanel": "OBSERVED_FOR_DGCA_QUERY",
+            "directoryResults": [
+              "Justdial",
+              "Sulekha"
+            ],
+            "courseOrLocationPages": [
+              "Ground School for Aviators",
+              "CEA Aviation Laxmi Nagar pages",
+              "Bing result with truncated title “Best Dgca ground classes in Laxmi Nagar | Aviation Training & DGCA …” and breadcrumb www.weoneaviation.com › laxmi-nagar › dgca-ground-classes; target href and domain ownership were not captured, so this is not attributed to We One Aviation."
+            ],
+            "serpSatisfies": "Local academy discovery, directory browsing and course research."
+          },
+          "visibleExamples": [
+            "Capt. Sahil Khurana Aviation Academy",
+            "CEA Aviation",
+            "a DGCA-ground-classes institute"
+          ],
+          "caveat": "The Bing card's displayed 21 km figure is reproduced only as a SERP observation, not accepted as travel/distance evidence. The weoneaviation.com result is unverified and is not assumed to be owned by We One Aviation. Search results do not establish that We One Aviation has a local facility or serves the locality in person."
+        }
+      ],
+      "queryObservations": [
+        {
+          "query": "aviation academy near Laxmi Nagar Delhi",
+          "engine": "Google",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "url": "https://www.google.com/search?q=aviation+academy+near+Laxmi+Nagar+Delhi&hl=en&gl=in",
+          "status": "OBSERVED",
+          "searchIntentType": "MIXED",
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_FOR_ACADEMY_PILOT_TRAINING_AND_CPL_QUERIES",
+            "bingMapOrBusinessPanel": "OBSERVED_FOR_DGCA_QUERY",
+            "directoryResults": [
+              "Justdial",
+              "Sulekha"
+            ],
+            "courseOrLocationPages": [
+              "Ground School for Aviators",
+              "CEA Aviation Laxmi Nagar pages",
+              "Bing result with truncated title “Best Dgca ground classes in Laxmi Nagar | Aviation Training & DGCA …” and breadcrumb www.weoneaviation.com › laxmi-nagar › dgca-ground-classes; target href and domain ownership were not captured, so this is not attributed to We One Aviation."
+            ],
+            "serpSatisfies": "Local academy discovery, directory browsing and course research."
+          },
+          "visibleExamples": [
+            "Capt. Sahil Khurana Aviation Academy",
+            "CEA Aviation",
+            "a DGCA-ground-classes institute"
+          ],
+          "limitations": "The Bing card's displayed 21 km figure is reproduced only as a SERP observation, not accepted as travel/distance evidence. The weoneaviation.com result is unverified and is not assumed to be owned by We One Aviation. Search results do not establish that We One Aviation has a local facility or serves the locality in person."
+        },
+        {
+          "query": "pilot training near Laxmi Nagar Delhi",
+          "engine": "Google",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "url": "https://www.google.com/search?q=pilot+training+near+Laxmi+Nagar+Delhi&hl=en&gl=in",
+          "status": "OBSERVED",
+          "searchIntentType": "MIXED",
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_FOR_ACADEMY_PILOT_TRAINING_AND_CPL_QUERIES",
+            "bingMapOrBusinessPanel": "OBSERVED_FOR_DGCA_QUERY",
+            "directoryResults": [
+              "Justdial",
+              "Sulekha"
+            ],
+            "courseOrLocationPages": [
+              "Ground School for Aviators",
+              "CEA Aviation Laxmi Nagar pages",
+              "Bing result with truncated title “Best Dgca ground classes in Laxmi Nagar | Aviation Training & DGCA …” and breadcrumb www.weoneaviation.com › laxmi-nagar › dgca-ground-classes; target href and domain ownership were not captured, so this is not attributed to We One Aviation."
+            ],
+            "serpSatisfies": "Local academy discovery, directory browsing and course research."
+          },
+          "visibleExamples": [
+            "Capt. Sahil Khurana Aviation Academy",
+            "CEA Aviation",
+            "a DGCA-ground-classes institute"
+          ],
+          "limitations": "The Bing card's displayed 21 km figure is reproduced only as a SERP observation, not accepted as travel/distance evidence. The weoneaviation.com result is unverified and is not assumed to be owned by We One Aviation. Search results do not establish that We One Aviation has a local facility or serves the locality in person."
+        },
+        {
+          "query": "CPL training near Laxmi Nagar Delhi",
+          "engine": "Google",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "url": "https://www.google.com/search?q=CPL+training+near+Laxmi+Nagar+Delhi&hl=en&gl=in",
+          "status": "OBSERVED",
+          "searchIntentType": "MIXED",
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_FOR_ACADEMY_PILOT_TRAINING_AND_CPL_QUERIES",
+            "bingMapOrBusinessPanel": "OBSERVED_FOR_DGCA_QUERY",
+            "directoryResults": [
+              "Justdial",
+              "Sulekha"
+            ],
+            "courseOrLocationPages": [
+              "Ground School for Aviators",
+              "CEA Aviation Laxmi Nagar pages",
+              "Bing result with truncated title “Best Dgca ground classes in Laxmi Nagar | Aviation Training & DGCA …” and breadcrumb www.weoneaviation.com › laxmi-nagar › dgca-ground-classes; target href and domain ownership were not captured, so this is not attributed to We One Aviation."
+            ],
+            "serpSatisfies": "Local academy discovery, directory browsing and course research."
+          },
+          "visibleExamples": [
+            "Capt. Sahil Khurana Aviation Academy",
+            "CEA Aviation",
+            "a DGCA-ground-classes institute"
+          ],
+          "limitations": "The Bing card's displayed 21 km figure is reproduced only as a SERP observation, not accepted as travel/distance evidence. The weoneaviation.com result is unverified and is not assumed to be owned by We One Aviation. Search results do not establish that We One Aviation has a local facility or serves the locality in person."
+        },
+        {
+          "query": "DGCA ground classes near Laxmi Nagar Delhi",
+          "engine": "Bing",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "url": "https://www.bing.com/search?q=DGCA+ground+classes+near+Laxmi+Nagar+Delhi",
+          "status": "OBSERVED",
+          "searchIntentType": "MIXED",
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_FOR_ACADEMY_PILOT_TRAINING_AND_CPL_QUERIES",
+            "bingMapOrBusinessPanel": "OBSERVED_FOR_DGCA_QUERY",
+            "directoryResults": [
+              "Justdial",
+              "Sulekha"
+            ],
+            "courseOrLocationPages": [
+              "Ground School for Aviators",
+              "CEA Aviation Laxmi Nagar pages",
+              "Bing result with truncated title “Best Dgca ground classes in Laxmi Nagar | Aviation Training & DGCA …” and breadcrumb www.weoneaviation.com › laxmi-nagar › dgca-ground-classes; target href and domain ownership were not captured, so this is not attributed to We One Aviation."
+            ],
+            "serpSatisfies": "Local academy discovery, directory browsing and course research."
+          },
+          "visibleExamples": [
+            "Capt. Sahil Khurana Aviation Academy",
+            "CEA Aviation",
+            "a DGCA-ground-classes institute"
+          ],
+          "limitations": "The Bing card's displayed 21 km figure is reproduced only as a SERP observation, not accepted as travel/distance evidence. The weoneaviation.com result is unverified and is not assumed to be owned by We One Aviation. Search results do not establish that We One Aviation has a local facility or serves the locality in person."
+        }
+      ],
+      "searchIntentClassification": "MIXED",
+      "relationshipToAcademy": "In the same National Capital Territory as the verified Dwarka classroom; no locality-specific service relationship or distance is claimed.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Lajpat Nagar",
+      "city": "Delhi",
+      "state": "National Capital Territory of Delhi",
+      "stateCode": "IN-DL",
+      "localityType": "suburb label; community-mapped",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Lajpat+Nagar%2C+Delhi%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Delhi classroom and online batches are documented generally; no Lajpat Nagar service, student-origin or demand evidence.",
+      "searchIntentStatus": "PARTIALLY_RESEARCHED",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "NEEDS_VERIFICATION",
+      "evidenceStatus": "OSM selected suburb postcode differs from supplied PDF post-office PIN 110024; locality/postal identity needs authoritative review.",
+      "district": null,
+      "status": "NEEDS_VERIFICATION",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Lajpat Nagar",
+        "pilot training near Lajpat Nagar",
+        "pilot training academy near Lajpat Nagar",
+        "CPL training near Lajpat Nagar",
+        "DGCA ground classes near Lajpat Nagar",
+        "aviation institute near Lajpat Nagar",
+        "Lajpat Nagar pilot training",
+        "Lajpat Nagar CPL training",
+        "Lajpat Nagar DGCA ground classes"
+      ],
+      "serpResearchStatus": "PARTIALLY_RESEARCHED",
+      "serpObservations": [
+        {
+          "locality": "Lajpat Nagar",
+          "city": "Delhi",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "queries": [
+            {
+              "intent": "aviation academy near Lajpat Nagar Delhi",
+              "engine": "Google",
+              "status": "OBSERVED",
+              "url": "https://www.google.com/search?q=aviation+academy+near+Lajpat+Nagar+Delhi&hl=en&gl=in"
+            },
+            {
+              "intent": "pilot training near Lajpat Nagar Delhi",
+              "engine": "Google",
+              "status": "OBSERVED",
+              "url": "https://www.google.com/search?q=pilot+training+near+Lajpat+Nagar+Delhi&hl=en&gl=in"
+            },
+            {
+              "intent": "CPL training near Lajpat Nagar Delhi",
+              "engine": "Google",
+              "status": "OBSERVED",
+              "url": "https://www.google.com/search?q=CPL+training+near+Lajpat+Nagar+Delhi&hl=en&gl=in"
+            },
+            {
+              "intent": "DGCA ground classes near Lajpat Nagar Delhi",
+              "engine": "Google",
+              "status": "OBSERVED",
+              "url": "https://www.google.com/search?q=DGCA+ground+classes+near+Lajpat+Nagar+Delhi&hl=en&gl=in"
+            }
+          ],
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_IN_ALL_FOUR_GOOGLE_QUERIES",
+            "directoryResults": [
+              "Justdial",
+              "Sulekha (some query pages)"
+            ],
+            "courseOrLocationPages": [
+              "Ground School for Aviators",
+              "pilotschool.in",
+              "Dfly International"
+            ],
+            "serpSatisfies": "Local business discovery, directory browsing and course research."
+          },
+          "visibleExamples": [
+            "Alroz Aviation",
+            "Adventure Flight Education",
+            "CEA Aviation",
+            "a DGCA-ground-classes institute"
+          ],
+          "caveat": "Search results do not establish that We One Aviation has a local facility or serves the locality in person."
+        }
+      ],
+      "queryObservations": [
+        {
+          "query": "aviation academy near Lajpat Nagar Delhi",
+          "engine": "Google",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "url": "https://www.google.com/search?q=aviation+academy+near+Lajpat+Nagar+Delhi&hl=en&gl=in",
+          "status": "OBSERVED",
+          "searchIntentType": "MIXED",
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_IN_ALL_FOUR_GOOGLE_QUERIES",
+            "directoryResults": [
+              "Justdial",
+              "Sulekha (some query pages)"
+            ],
+            "courseOrLocationPages": [
+              "Ground School for Aviators",
+              "pilotschool.in",
+              "Dfly International"
+            ],
+            "serpSatisfies": "Local business discovery, directory browsing and course research."
+          },
+          "visibleExamples": [
+            "Alroz Aviation",
+            "Adventure Flight Education",
+            "CEA Aviation",
+            "a DGCA-ground-classes institute"
+          ],
+          "limitations": "Search results do not establish that We One Aviation has a local facility or serves the locality in person."
+        },
+        {
+          "query": "pilot training near Lajpat Nagar Delhi",
+          "engine": "Google",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "url": "https://www.google.com/search?q=pilot+training+near+Lajpat+Nagar+Delhi&hl=en&gl=in",
+          "status": "OBSERVED",
+          "searchIntentType": "MIXED",
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_IN_ALL_FOUR_GOOGLE_QUERIES",
+            "directoryResults": [
+              "Justdial",
+              "Sulekha (some query pages)"
+            ],
+            "courseOrLocationPages": [
+              "Ground School for Aviators",
+              "pilotschool.in",
+              "Dfly International"
+            ],
+            "serpSatisfies": "Local business discovery, directory browsing and course research."
+          },
+          "visibleExamples": [
+            "Alroz Aviation",
+            "Adventure Flight Education",
+            "CEA Aviation",
+            "a DGCA-ground-classes institute"
+          ],
+          "limitations": "Search results do not establish that We One Aviation has a local facility or serves the locality in person."
+        },
+        {
+          "query": "CPL training near Lajpat Nagar Delhi",
+          "engine": "Google",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "url": "https://www.google.com/search?q=CPL+training+near+Lajpat+Nagar+Delhi&hl=en&gl=in",
+          "status": "OBSERVED",
+          "searchIntentType": "MIXED",
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_IN_ALL_FOUR_GOOGLE_QUERIES",
+            "directoryResults": [
+              "Justdial",
+              "Sulekha (some query pages)"
+            ],
+            "courseOrLocationPages": [
+              "Ground School for Aviators",
+              "pilotschool.in",
+              "Dfly International"
+            ],
+            "serpSatisfies": "Local business discovery, directory browsing and course research."
+          },
+          "visibleExamples": [
+            "Alroz Aviation",
+            "Adventure Flight Education",
+            "CEA Aviation",
+            "a DGCA-ground-classes institute"
+          ],
+          "limitations": "Search results do not establish that We One Aviation has a local facility or serves the locality in person."
+        },
+        {
+          "query": "DGCA ground classes near Lajpat Nagar Delhi",
+          "engine": "Google",
+          "observedAt": "2026-09-29, approximately 12:46-12:53 IST",
+          "url": "https://www.google.com/search?q=DGCA+ground+classes+near+Lajpat+Nagar+Delhi&hl=en&gl=in",
+          "status": "OBSERVED",
+          "searchIntentType": "MIXED",
+          "serpFeatures": {
+            "googlePlacesOrMap": "OBSERVED_IN_ALL_FOUR_GOOGLE_QUERIES",
+            "directoryResults": [
+              "Justdial",
+              "Sulekha (some query pages)"
+            ],
+            "courseOrLocationPages": [
+              "Ground School for Aviators",
+              "pilotschool.in",
+              "Dfly International"
+            ],
+            "serpSatisfies": "Local business discovery, directory browsing and course research."
+          },
+          "visibleExamples": [
+            "Alroz Aviation",
+            "Adventure Flight Education",
+            "CEA Aviation",
+            "a DGCA-ground-classes institute"
+          ],
+          "limitations": "Search results do not establish that We One Aviation has a local facility or serves the locality in person."
+        }
+      ],
+      "searchIntentClassification": "MIXED",
+      "relationshipToAcademy": "In the same National Capital Territory as the verified Dwarka classroom; no locality-specific service relationship or distance is claimed.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Andheri",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "stateCode": "IN-MH",
+      "localityType": "suburb; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Andheri%2C+Mumbai%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Mumbai-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; verify locality extent and distinct value.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Andheri",
+        "pilot training near Andheri",
+        "pilot training academy near Andheri",
+        "CPL training near Andheri",
+        "DGCA ground classes near Andheri",
+        "aviation institute near Andheri",
+        "Andheri pilot training",
+        "Andheri CPL training",
+        "Andheri DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Bandra",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "stateCode": "IN-MH",
+      "localityType": "suburb; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Bandra%2C+Mumbai%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Mumbai-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; verify locality extent and distinct value.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Bandra",
+        "pilot training near Bandra",
+        "pilot training academy near Bandra",
+        "CPL training near Bandra",
+        "DGCA ground classes near Bandra",
+        "aviation institute near Bandra",
+        "Bandra pilot training",
+        "Bandra CPL training",
+        "Bandra DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Thane",
+      "city": "Mumbai Metropolitan Region",
+      "state": "Maharashtra",
+      "stateCode": "IN-MH",
+      "localityType": "city within metro area",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Thane%2C+Maharashtra%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no MMR-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Separate city-vs-metro page overlap must be researched before any future page.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Thane",
+        "pilot training near Thane",
+        "pilot training academy near Thane",
+        "CPL training near Thane",
+        "DGCA ground classes near Thane",
+        "aviation institute near Thane",
+        "Thane pilot training",
+        "Thane CPL training",
+        "Thane DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Hinjawadi",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "stateCode": "IN-MH",
+      "localityType": "locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Hinjawadi%2C+Pune%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Pune-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Pune-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Hinjawadi",
+        "pilot training near Hinjawadi",
+        "pilot training academy near Hinjawadi",
+        "CPL training near Hinjawadi",
+        "DGCA ground classes near Hinjawadi",
+        "aviation institute near Hinjawadi",
+        "Hinjawadi pilot training",
+        "Hinjawadi CPL training",
+        "Hinjawadi DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Kothrud",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "stateCode": "IN-MH",
+      "localityType": "suburb/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Kothrud%2C+Pune%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Pune-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Pune-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Kothrud",
+        "pilot training near Kothrud",
+        "pilot training academy near Kothrud",
+        "CPL training near Kothrud",
+        "DGCA ground classes near Kothrud",
+        "aviation institute near Kothrud",
+        "Kothrud pilot training",
+        "Kothrud CPL training",
+        "Kothrud DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Whitefield",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "stateCode": "IN-KA",
+      "localityType": "suburb; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Whitefield%2C+Bengaluru%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Bengaluru-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Bengaluru-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Whitefield",
+        "pilot training near Whitefield",
+        "pilot training academy near Whitefield",
+        "CPL training near Whitefield",
+        "DGCA ground classes near Whitefield",
+        "aviation institute near Whitefield",
+        "Whitefield pilot training",
+        "Whitefield CPL training",
+        "Whitefield DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Electronic City",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "stateCode": "IN-KA",
+      "localityType": "township/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Electronic+City%2C+Bengaluru%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Bengaluru-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Bengaluru-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Electronic City",
+        "pilot training near Electronic City",
+        "pilot training academy near Electronic City",
+        "CPL training near Electronic City",
+        "DGCA ground classes near Electronic City",
+        "aviation institute near Electronic City",
+        "Electronic City pilot training",
+        "Electronic City CPL training",
+        "Electronic City DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Jayanagar",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "stateCode": "IN-KA",
+      "localityType": "neighbourhood/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Jayanagar%2C+Bengaluru%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Bengaluru-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Bengaluru-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Jayanagar",
+        "pilot training near Jayanagar",
+        "pilot training academy near Jayanagar",
+        "CPL training near Jayanagar",
+        "DGCA ground classes near Jayanagar",
+        "aviation institute near Jayanagar",
+        "Jayanagar pilot training",
+        "Jayanagar CPL training",
+        "Jayanagar DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Gachibowli",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "stateCode": "IN-TG",
+      "localityType": "suburb/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Gachibowli%2C+Hyderabad%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Hyderabad-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Hyderabad-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Gachibowli",
+        "pilot training near Gachibowli",
+        "pilot training academy near Gachibowli",
+        "CPL training near Gachibowli",
+        "DGCA ground classes near Gachibowli",
+        "aviation institute near Gachibowli",
+        "Gachibowli pilot training",
+        "Gachibowli CPL training",
+        "Gachibowli DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Kukatpally",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "stateCode": "IN-TG",
+      "localityType": "suburb/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Kukatpally%2C+Hyderabad%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Hyderabad-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Hyderabad-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Kukatpally",
+        "pilot training near Kukatpally",
+        "pilot training academy near Kukatpally",
+        "CPL training near Kukatpally",
+        "DGCA ground classes near Kukatpally",
+        "aviation institute near Kukatpally",
+        "Kukatpally pilot training",
+        "Kukatpally CPL training",
+        "Kukatpally DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Miyapur",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "stateCode": "IN-TG",
+      "localityType": "suburb/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Miyapur%2C+Hyderabad%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Hyderabad-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Hyderabad-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Miyapur",
+        "pilot training near Miyapur",
+        "pilot training academy near Miyapur",
+        "CPL training near Miyapur",
+        "DGCA ground classes near Miyapur",
+        "aviation institute near Miyapur",
+        "Miyapur pilot training",
+        "Miyapur CPL training",
+        "Miyapur DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "T Nagar",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "stateCode": "IN-TN",
+      "localityType": "neighbourhood/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=T+Nagar%2C+Chennai%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Chennai-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Chennai-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near T Nagar",
+        "pilot training near T Nagar",
+        "pilot training academy near T Nagar",
+        "CPL training near T Nagar",
+        "DGCA ground classes near T Nagar",
+        "aviation institute near T Nagar",
+        "T Nagar pilot training",
+        "T Nagar CPL training",
+        "T Nagar DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Tambaram",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "stateCode": "IN-TN",
+      "localityType": "suburb/city; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Tambaram%2C+Chennai%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Chennai-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Chennai-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Tambaram",
+        "pilot training near Tambaram",
+        "pilot training academy near Tambaram",
+        "CPL training near Tambaram",
+        "DGCA ground classes near Tambaram",
+        "aviation institute near Tambaram",
+        "Tambaram pilot training",
+        "Tambaram CPL training",
+        "Tambaram DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Anna Nagar",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "stateCode": "IN-TN",
+      "localityType": "neighbourhood/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Anna+Nagar%2C+Chennai%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Chennai-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Chennai-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Anna Nagar",
+        "pilot training near Anna Nagar",
+        "pilot training academy near Anna Nagar",
+        "CPL training near Anna Nagar",
+        "DGCA ground classes near Anna Nagar",
+        "aviation institute near Anna Nagar",
+        "Anna Nagar pilot training",
+        "Anna Nagar CPL training",
+        "Anna Nagar DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Salt Lake",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "stateCode": "IN-WB",
+      "localityType": "planned township/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Salt+Lake%2C+Kolkata%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Kolkata-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Kolkata-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Salt Lake",
+        "pilot training near Salt Lake",
+        "pilot training academy near Salt Lake",
+        "CPL training near Salt Lake",
+        "DGCA ground classes near Salt Lake",
+        "aviation institute near Salt Lake",
+        "Salt Lake pilot training",
+        "Salt Lake CPL training",
+        "Salt Lake DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "New Town",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "stateCode": "IN-WB",
+      "localityType": "planned township/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=New+Town%2C+Kolkata%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Kolkata-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Kolkata-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near New Town",
+        "pilot training near New Town",
+        "pilot training academy near New Town",
+        "CPL training near New Town",
+        "DGCA ground classes near New Town",
+        "aviation institute near New Town",
+        "New Town pilot training",
+        "New Town CPL training",
+        "New Town DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Behala",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "stateCode": "IN-WB",
+      "localityType": "suburb/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Behala%2C+Kolkata%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Kolkata-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Kolkata-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Behala",
+        "pilot training near Behala",
+        "pilot training academy near Behala",
+        "CPL training near Behala",
+        "DGCA ground classes near Behala",
+        "aviation institute near Behala",
+        "Behala pilot training",
+        "Behala CPL training",
+        "Behala DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Gomti Nagar",
+      "city": "Lucknow",
+      "state": "Uttar Pradesh",
+      "stateCode": "IN-UP",
+      "localityType": "neighbourhood/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Gomti+Nagar%2C+Lucknow%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Lucknow-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Lucknow-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Gomti Nagar",
+        "pilot training near Gomti Nagar",
+        "pilot training academy near Gomti Nagar",
+        "CPL training near Gomti Nagar",
+        "DGCA ground classes near Gomti Nagar",
+        "aviation institute near Gomti Nagar",
+        "Gomti Nagar pilot training",
+        "Gomti Nagar CPL training",
+        "Gomti Nagar DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Civil Lines",
+      "city": "Lucknow",
+      "state": "Uttar Pradesh",
+      "stateCode": "IN-UP",
+      "localityType": "neighbourhood label; city identity may be ambiguous",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Civil+Lines%2C+Lucknow%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Lucknow-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Common locality name in multiple Indian cities; exact Lucknow feature must be disambiguated.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Civil Lines",
+        "pilot training near Civil Lines",
+        "pilot training academy near Civil Lines",
+        "CPL training near Civil Lines",
+        "DGCA ground classes near Civil Lines",
+        "aviation institute near Civil Lines",
+        "Civil Lines pilot training",
+        "Civil Lines CPL training",
+        "Civil Lines DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Jalukbari",
+      "city": "Guwahati",
+      "state": "Assam",
+      "stateCode": "IN-AS",
+      "localityType": "locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Jalukbari%2C+Guwahati%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Guwahati-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Guwahati-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Jalukbari",
+        "pilot training near Jalukbari",
+        "pilot training academy near Jalukbari",
+        "CPL training near Jalukbari",
+        "DGCA ground classes near Jalukbari",
+        "aviation institute near Jalukbari",
+        "Jalukbari pilot training",
+        "Jalukbari CPL training",
+        "Jalukbari DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Malviya Nagar",
+      "city": "Jaipur",
+      "state": "Rajasthan",
+      "stateCode": "IN-RJ",
+      "localityType": "neighbourhood label; city identity may be ambiguous",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Malviya+Nagar%2C+Jaipur%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Jaipur-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Common locality name in multiple Indian cities; exact Jaipur feature must be disambiguated.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Malviya Nagar",
+        "pilot training near Malviya Nagar",
+        "pilot training academy near Malviya Nagar",
+        "CPL training near Malviya Nagar",
+        "DGCA ground classes near Malviya Nagar",
+        "aviation institute near Malviya Nagar",
+        "Malviya Nagar pilot training",
+        "Malviya Nagar CPL training",
+        "Malviya Nagar DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Kakkanad",
+      "city": "Kochi",
+      "state": "Kerala",
+      "stateCode": "IN-KL",
+      "localityType": "suburb/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Kakkanad%2C+Kochi%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Kochi-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Kochi-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Kakkanad",
+        "pilot training near Kakkanad",
+        "pilot training academy near Kakkanad",
+        "CPL training near Kakkanad",
+        "DGCA ground classes near Kakkanad",
+        "aviation institute near Kakkanad",
+        "Kakkanad pilot training",
+        "Kakkanad CPL training",
+        "Kakkanad DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Viman Nagar",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "stateCode": "IN-MH",
+      "localityType": "neighbourhood/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Viman+Nagar%2C+Pune%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Pune-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Pune-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Viman Nagar",
+        "pilot training near Viman Nagar",
+        "pilot training academy near Viman Nagar",
+        "CPL training near Viman Nagar",
+        "DGCA ground classes near Viman Nagar",
+        "aviation institute near Viman Nagar",
+        "Viman Nagar pilot training",
+        "Viman Nagar CPL training",
+        "Viman Nagar DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Gachibowli",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "stateCode": "IN-TG",
+      "localityType": "suburb/locality; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Gachibowli%2C+Hyderabad%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Hyderabad-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Hyderabad-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Gachibowli",
+        "pilot training near Gachibowli",
+        "pilot training academy near Gachibowli",
+        "CPL training near Gachibowli",
+        "DGCA ground classes near Gachibowli",
+        "aviation institute near Gachibowli",
+        "Gachibowli pilot training",
+        "Gachibowli CPL training",
+        "Gachibowli DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    },
+    {
+      "locality": "Andheri",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "stateCode": "IN-MH",
+      "localityType": "suburb; identity boundary to verify",
+      "geographicSources": [
+        "https://nominatim.openstreetmap.org/search?q=Andheri%2C+Mumbai%2C+India&format=jsonv2&addressdetails=1"
+      ],
+      "businessRelevance": "MEDIUM",
+      "businessRelevanceBasis": "Online batches are offered outside Delhi; no Mumbai-specific demand or physical service is verified.",
+      "searchIntentStatus": "UNKNOWN",
+      "contentValue": "UNKNOWN",
+      "pageStatus": "RESEARCH_ONLY",
+      "recommendation": "RESEARCH_ONLY",
+      "evidenceStatus": "Research seed only; compare against Mumbai-wide search intent to prevent duplicate city/locality pages.",
+      "district": null,
+      "status": "RESEARCH_ONLY",
+      "geographicConfidence": "UNVERIFIED",
+      "searchQueries": [
+        "aviation academy near Andheri",
+        "pilot training near Andheri",
+        "pilot training academy near Andheri",
+        "CPL training near Andheri",
+        "DGCA ground classes near Andheri",
+        "aviation institute near Andheri",
+        "Andheri pilot training",
+        "Andheri CPL training",
+        "Andheri DGCA ground classes"
+      ],
+      "serpResearchStatus": "UNKNOWN",
+      "serpObservations": [],
+      "queryObservations": [],
+      "searchIntentClassification": "UNKNOWN",
+      "relationshipToAcademy": "Outside the verified academy locality; online batches are documented for students outside Delhi, but city-specific access or service is not verified.",
+      "contentValueEvidence": "Unique locality-specific user value has not been established; do not create a page by substituting the locality name."
+    }
+  ]
+}

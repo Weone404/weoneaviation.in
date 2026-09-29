@@ -72,12 +72,12 @@ const navigationTypes = [
 ];
 
 const courseFeatures = [
-    { feature: 'Expert Trainers', detail: 'DGCA-certified instructors with airline experience' },
+    { feature: 'Ground-Subject Instruction', detail: 'Preparation for the DGCA Air Navigation written examination' },
     { feature: 'Full DGCA Syllabus Coverage', detail: 'From Time/Distance/Speed formulas to Radio Aids' },
     { feature: 'Live Flight Planning', detail: 'With actual VFR/IFR charts, NOT just theory' },
     { feature: 'Simulator Sessions', detail: 'Practice navigation scenarios and in-flight re-routing' },
     { feature: 'Notes & Question Bank', detail: 'Includes DGCA pattern questions & mock tests' },
-    { feature: 'Guaranteed Results', detail: 'High success rate in DGCA Navigation Paper' },
+    { feature: 'Exam Preparation Support', detail: 'Study support and practice guidance for the DGCA Navigation paper' },
 ];
 
 const modules = [
@@ -420,7 +420,7 @@ export default function AirNavigation() {
                                 <div className="text-white/70 text-xs mt-1">VFR/IFR Charts + Simulator</div>
                                 <div className="text-white/70 text-xs mt-1">DGCA Mock Tests Included</div>
                                 <a
-                                    href="https://wa.me/919667370747"
+                                    href="https://wa.me/919355611996"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all"

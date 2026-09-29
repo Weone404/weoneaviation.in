@@ -17,8 +17,8 @@ const heroSlides = [
 ];
 
 const stats = [
-    { num: '3', label: 'Training Countries', icon: '🌍' },
-    { num: '100%', label: 'DGCA', icon: '✅' },
+    { num: '1', label: 'Physical classroom: Dwarka', icon: '📍' },
+    { num: 'DGCA', label: 'Ground-subject preparation', icon: '📚' },
 ];
 
 const courses = [
@@ -29,16 +29,16 @@ const courses = [
         icon: '✈️',
         title: 'Commercial Pilot License (CPL)',
         subtitle: 'Fly for airlines professionally',
-        duration: '18–24 months',
+        duration: 'Varies by student progress and flying-school schedule',
         hours: '200 hours',
         eligibility: '10+2 PCM',
-        fee: '₹40–50 Lakh',
+        fee: 'Request current written quotes from the academy and flying school',
         authority: 'DGCA India',
         highlights: [
             'Ground school + simulator + flight training',
             'DGCA exam preparation included',
             'Airline interview preparation and career guidance',
-            'Training options in India, USA & South Africa',
+            'Flight training is arranged through partner flying schools; confirm current options',
         ],
         href: '/commercial-pilot-license',
         ctaLabel: 'Explore CPL Course →',
@@ -51,10 +51,10 @@ const courses = [
         icon: '🛩️',
         title: 'Private Pilot License (PPL)',
         subtitle: 'Your first step into the skies',
-        duration: '6–12 months',
+        duration: 'Confirm the current batch schedule',
         hours: '40–50 hours',
         eligibility: '10+2 (any stream)',
-        fee: '₹7.5–10 Lakh',
+        fee: 'Request a current written quote from the relevant provider',
         authority: 'DGCA India',
         highlights: [
             'Solo & cross-country flights',
@@ -73,10 +73,10 @@ const courses = [
         icon: '📚',
         title: 'DGCA Ground Classes',
         subtitle: 'Crack DGCA exams with expert guidance',
-        duration: '4–6 months',
+        duration: 'Confirm the current batch schedule',
         hours: '500+ hours',
         eligibility: '10+2 PCM',
-        fee: '₹2–3 Lakh',
+        fee: 'Contact the academy for current fees and availability',
         authority: 'DGCA India',
         highlights: [
             'Air Navigation, Meteorology, Air Regulations',
@@ -93,18 +93,18 @@ const courses = [
         tag: 'International',
         tagColor: 'bg-red-500',
         icon: '🇺🇸',
-        title: 'Flight Training in USA',
-        subtitle: 'FAA certified pilot training abroad',
-        duration: '12–18 months',
+        title: 'USA Flight-Training Guide',
+        subtitle: 'Review the flying-school route and verify current provider details',
+        duration: 'Varies by selected flying school',
         hours: '250+ hours',
         eligibility: '10+2 PCM + Passport',
-        fee: '₹45–65 Lakh',
+        fee: 'Request a current written quote from the selected flying school',
         authority: 'FAA (USA)',
         highlights: [
             'FAA PPL & CPL certification',
             'World-class training infrastructure',
             'Convert FAA license to DGCA on return',
-            'Visa & travel assistance provided',
+            'Confirm visa requirements and provider terms independently',
         ],
         href: '/flying-school/usa',
         ctaLabel: 'Explore USA Training →',
@@ -115,43 +115,43 @@ const courses = [
         tag: 'International',
         tagColor: 'bg-yellow-500',
         icon: '🇿🇦',
-        title: 'Flight Training in South Africa',
-        subtitle: 'Cost-effective international training',
-        duration: '12–18 months',
+        title: 'South Africa Flight-Training Guide',
+        subtitle: 'Review the flying-school route and verify current provider details',
+        duration: 'Varies by selected flying school',
         hours: '200+ hours',
         eligibility: '10+2 PCM + Passport',
-        fee: '₹35–50 Lakh',
+        fee: 'Request a current written quote from the selected flying school',
         authority: 'SACAA',
         highlights: [
-            'SACAA approved flying schools',
-            'Excellent weather for year-round flying',
-            'Budget-friendly vs USA & Australia',
-            'Convert license to DGCA on return',
+            'Check current school approval directly with the regulator',
+            'Confirm local weather and operating conditions with the school',
+            'Compare current itemized quotes directly with providers',
+            'Check applicable DGCA conversion requirements',
         ],
         href: '/flying-school/south-africa',
         ctaLabel: 'Explore South Africa Training →',
         bg: 'from-yellow-700 to-yellow-900',
     },
     {
-        id: 'scholarship',
-        tag: '🎁 Scholarship Available',
+        id: 'offers',
+        tag: 'Current offer terms',
         tagColor: 'bg-purple-600',
-        icon: '🏆',
-        title: 'Topper Scholarship Program',
-        subtitle: 'Class 10 & 12 toppers fly at zero cost',
+        icon: '📌',
+        title: 'Written Offer Terms',
+        subtitle: 'Ask for any current written terms before enrolling',
         duration: 'Varies',
         hours: 'All programs',
-        eligibility: 'Class 10 / 12 Toppers',
-        fee: 'Money-Back Guarantee',
-        authority: 'We One Aviation',
+        eligibility: 'Current provider terms apply',
+        fee: 'Confirm current written pricing and conditions',
+        authority: 'Provider-specific',
         highlights: [
-            'Full money-back guarantee for toppers',
-            'Applicable on CPL & Ground Class programs',
-            'Limited seats — apply now',
-            'Free career counselling included',
+            'Current offers must be confirmed in writing',
+            'Ask for the latest terms before deciding',
+            'Payment and scholarship conditions vary by programme',
+            'Contact the academy for current information',
         ],
         href: '/contact',
-        ctaLabel: 'Apply for Scholarship →',
+        ctaLabel: 'Ask about current options →',
         bg: 'from-purple-700 to-purple-950',
     },
 ];
@@ -159,17 +159,17 @@ const courses = [
 const syllabus = [
     {
         phase: 'Phase 1: Ground School',
-        duration: '3–4 months',
+        duration: 'Varies by batch schedule',
         topics: ['Air Navigation', 'Meteorology', 'Air Regulations', 'Technical General', 'RTR (Radio Telephony)', 'Aviation Medicine'],
     },
     {
         phase: 'Phase 2: PPL Training',
-        duration: '4–5 months',
+        duration: 'Varies by flying-school schedule',
         topics: ['Solo flights', 'Cross-country flying', 'Night flying', 'Basic instrument flying', 'Emergency procedures', 'PPL skill test'],
     },
     {
         phase: 'Phase 3: CPL Flying',
-        duration: '8–10 months',
+        duration: 'Varies by flying-school schedule',
         topics: ['Instrument Rating (IR)', 'Multi-engine rating', 'Advanced navigation', 'CPL skill test', 'Type rating prep', 'Airline interview prep'],
     },
 ];
@@ -186,18 +186,18 @@ const eligibilityList = [
 ];
 
 const salaryData = [
-    { level: 'First Officer (Beginner)', range: '₹1.5 – 3 Lakh/month', annual: '₹18 – 36 Lakh/year' },
-    { level: 'Senior First Officer', range: '₹5 – 10 Lakh/month', annual: '₹60 Lakh – 1.2 Crore/year' },
-    { level: 'Captain (Senior Pilot)', range: '₹12 – 25 Lakh/month', annual: '₹1.5 Crore – 3 Crore/year' },
+    { level: 'First Officer (Beginner)', range: 'Not published', annual: 'Varies by employer and contract' },
+    { level: 'Senior First Officer', range: 'Not published', annual: 'Varies by employer and contract' },
+    { level: 'Captain (Senior Pilot)', range: 'Not published', annual: 'Varies by employer and contract' },
 ];
 
 const whyWeOne = [
-    { icon: '🏛️', title: 'DGCA', desc: 'All our programs are fully approved and regulated by DGCA, ensuring your license is valid nationwide.' },
-    { icon: '🌍', title: 'International Training', desc: 'We offer flight training in USA and South Africa for global exposure and FAA / SACAA certification.' },
-    { icon: '👨‍✈️', title: 'Expert Instructors', desc: 'Learn from experienced commercial pilots and DGCA-certified ground instructors.' },
+    { icon: '🏛️', title: 'DGCA Ground Preparation', desc: 'The academy teaches DGCA ground subjects; the regulator sets licensing requirements and issues licences.' },
+    { icon: '🌍', title: 'Partner Flying Schools', desc: 'Flight training is arranged through partner flying schools. Confirm each school’s current status, location, availability, and terms.' },
+    { icon: '👨‍✈️', title: 'Course Guidance', desc: 'Contact the academy to confirm current course details and teaching arrangements.' },
     { icon: '📈', title: 'Career Guidance', desc: 'Interview preparation and career guidance, including airline interview practice and counselling.' },
-    { icon: '💸', title: 'Budget Friendly', desc: 'Affordable ground classes starting at ₹2 Lakh. Scholarship available for class toppers.' },
-    { icon: '🏥', title: 'Medical Assistance', desc: 'We assist with DGCA medical fitness assessments through our approved network.' },
+    { icon: '💸', title: 'Fees & Terms', desc: 'Contact the academy and selected flying school for current written fees and terms; no unverified price or discount is stated here.' },
+    { icon: '🏥', title: 'Medical Information', desc: 'DGCA medical requirements and examination locations are set or listed by the relevant authorities.' },
 ];
 
 /*
@@ -243,7 +243,7 @@ export default function CoursesPage() {
                     Pilot Training Courses in India – CPL, PPL, DGCA Ground Classes
                 </h1>
                 <p className="text-white font-medium text-sm px-4 mt-1">
-                    Explore all DGCA pilot training programs with flexible fees and international opportunities
+                    Explore DGCA ground-subject preparation, licence pathways, and partner-school flying training. Confirm current fees and provider availability directly.
                 </p>
             </div>
 
@@ -506,7 +506,7 @@ export default function CoursesPage() {
                                 Get Free Counselling →
                             </Link>
                             <a
-                                href="https://wa.me/919667370747"
+                                href="https://wa.me/919355611996"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-block bg-white/10 border border-white/30 text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm"

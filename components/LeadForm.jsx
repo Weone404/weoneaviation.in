@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { ACADEMY } from '../lib/facts';
 
 export default function LeadForm({ title = 'Get Free Counselling', dark = false, compact = false }) {
   const [form, setForm] = useState({ name: '', phone: '', email: '', course: '', message: '' });
@@ -32,7 +33,7 @@ export default function LeadForm({ title = 'Get Free Counselling', dark = false,
       `📛 Name: ${form.name}\n📞 Phone: ${form.phone}\n📧 Email: ${form.email || 'Not provided'}\n✈️ Course: ${form.course || 'Not selected'}\n💬 Message: ${form.message || 'Please guide me.'}`
     );
     setTimeout(() => {
-      window.open(`https://wa.me/919355566991?text=${msg}`, '_blank');
+      window.open(`${ACADEMY.whatsapp}?text=${msg}`, '_blank');
       setForm({ name: '', phone: '', email: '', course: '', message: '' });
     }, 800);
   };

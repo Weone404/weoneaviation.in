@@ -5,19 +5,19 @@ import Link from 'next/link';
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const stats = [
-    { num: '14-15 Months', label: 'Course Duration', icon: '📅' },
-    { num: '200-210 Hrs', label: 'Flying Hours', icon: '✈️' },
-    { num: 'ZAR 860k-995k', label: 'Course Fee', icon: '💰' },
-    { num: 'SACAA', label: 'Certification', icon: '🏅' },
+    { num: 'Varies', label: 'Provider Schedule', icon: '📅' },
+    { num: 'Confirm', label: 'Flight-hour Requirements', icon: '✈️' },
+    { num: 'Request quote', label: 'Current Provider Fee', icon: '💰' },
+    { num: 'SACAA', label: 'South African Regulator', icon: '🏅' },
 ];
 
 const quickDetails = [
     { sr: 1, topic: 'Program', details: 'CPL with Multi Engine Instrument Rating (CPL-MEIR) + Instructor Rating (CFI)' },
-    { sr: 2, topic: 'Duration', details: '14–15 Months' },
-    { sr: 3, topic: 'Flying Hours', details: '200–210 Hours (Under SACAA regulations for DGCA conversion)' },
-    { sr: 4, topic: 'Course Fee', details: 'ZAR 860k – 995k (Comprehensive training package)' },
-    { sr: 5, topic: 'Eligibility', details: '17+ years, 10+2 (Physics & Math), SACAA and DGCA medical certificates' },
-    { sr: 6, topic: 'Certification', details: 'SACAA CPL — valid for DGCA conversion' },
+    { sr: 2, topic: 'Duration', details: 'Confirm the current schedule with the selected flying school' },
+    { sr: 3, topic: 'Flying Hours', details: 'Confirm requirements with SACAA, DGCA, and the selected school' },
+    { sr: 4, topic: 'Course Fee', details: 'Request a current written quote from the selected school' },
+    { sr: 5, topic: 'Eligibility', details: 'Confirm current entry requirements with the selected school and regulators' },
+    { sr: 6, topic: 'Certification', details: 'Confirm the licence and any conversion requirements with regulators' },
 ];
 
 const advantages = [
@@ -25,37 +25,37 @@ const advantages = [
         num: '1',
         icon: '🏅',
         title: 'SACAA Training',
-        desc: 'Training follows internationally recognised SACAA standards, providing a globally credible Commercial Pilot Licence. The SACAA CPL is valid for DGCA conversion, giving Indian students a clear pathway back to airline careers in India.',
+        desc: 'Check the selected school’s current approval with SACAA and verify licence privileges and conversion requirements with the relevant regulators.',
     },
     {
         num: '2',
         icon: '🌍',
         title: 'Diverse Flying Environments',
-        desc: 'South Africa\'s varied terrain and airspace — from coastal Cape Town to the highveld of Johannesburg — build strong real-world flying skills that prepare students for complex commercial operations worldwide.',
+        desc: 'Training locations and operating conditions vary by provider. Ask the selected school for current location-specific details.',
     },
     {
         num: '3',
         icon: '☀️',
-        title: '300+ Flying Days',
-        desc: 'With Johannesburg averaging 320 flying days per year and Cape Town at 300+, South Africa offers excellent weather conditions for fast, uninterrupted course completion throughout the year.',
+        title: 'Training Conditions',
+        desc: 'Weather and flying schedules depend on location and season. Request current operating information from the selected provider.',
     },
     {
         num: '4',
         icon: '💰',
         title: 'Cost-Effective Training',
-        desc: 'South Africa offers competitive pricing compared to many international pilot training destinations. The comprehensive ZAR-denominated fee structure makes it one of the more affordable routes to a globally recognised CPL.',
+        desc: 'Fees vary by school and course scope. Request an itemized current quote and confirm what is included and excluded.',
     },
     {
         num: '5',
         icon: '🛩️',
         title: 'Modern Training Fleets',
-        desc: 'Train on a wide range of well-maintained aircraft including Cessna 172, PA-34 Seneca, Piper Archer, and Diamond DA42, with experienced instructors guiding you through every stage of the program.',
+        desc: 'Aircraft, facilities, and instructors vary by school. Verify the current fleet, instructor details, and training arrangements directly with the provider.',
     },
     {
         num: '6',
         icon: '🔄',
-        title: 'Easy DGCA Conversion',
-        desc: 'The SACAA CPL is structured to align with DGCA conversion requirements, allowing Indian students to return home and convert their licence smoothly to begin their airline career in India.',
+        title: 'DGCA Conversion Requirements',
+        desc: 'DGCA assesses licence conversion under current rules. Confirm requirements directly with DGCA and the selected school; conversion and employment are not guaranteed.',
     },
 ];
 
@@ -64,7 +64,7 @@ const trainingStages = [
         num: '1',
         code: 'PPL',
         title: 'Private Pilot License',
-        duration: '6 Months',
+        duration: 'Confirm with provider',
         hours: '0–65 Hrs',
         focus: ['Basic flight principles', 'Take-offs & landings', 'Circuit Training', 'Solo flight', 'Navigation exercises', 'Emergency Procedures'],
     },
@@ -72,7 +72,7 @@ const trainingStages = [
         num: '2',
         code: 'Night + Hour Building',
         title: 'Night Rating & PIC Hours',
-        duration: '4 Months',
+        duration: 'Confirm with provider',
         hours: '65–165 Hrs',
         focus: ['Night flying operations', 'Solo cross-country navigation', 'Instrument familiarisation', 'PIC Hours'],
     },
@@ -80,7 +80,7 @@ const trainingStages = [
         num: '3',
         code: 'IR + ME',
         title: 'Instrument Rating & Multi-Engine',
-        duration: '3 Months',
+        duration: 'Confirm with provider',
         hours: '160–205 Hrs',
         focus: ['Multi-engine handling', 'Instrument Flight Procedures', 'Precision Approaches', 'Simulator Training', 'IFR operations'],
     },
@@ -88,7 +88,7 @@ const trainingStages = [
         num: '4',
         code: 'CPL + IR Tests',
         title: 'Commercial Pilot License & Skill Tests',
-        duration: '1 Month',
+        duration: 'Confirm with provider',
         hours: '205–210 Hrs',
         focus: ['Advanced navigation and instrument flying', 'Complex aircraft handling and flight management', 'CPL & IR flight tests and check rides'],
     },
@@ -97,40 +97,26 @@ const trainingStages = [
 const trainingSteps = [
     { step: '01', title: 'DGCA Medicals', desc: 'Complete your DGCA medical certification and join reputed DGCA Ground Classes to clear theory exams.' },
     { step: '02', title: 'DGCA Theory Class', desc: 'Attend DGCA-prescribed ground school covering Air Regulations, Navigation, Meteorology, and Technical Subjects.' },
-    { step: '03', title: 'Choose Flight School', desc: 'Select a SACAA-approved flight school in South Africa. Compare fleet, instructor experience, and training environment.' },
+    { step: '03', title: 'Choose Flight School', desc: 'Check a selected school’s current approval with SACAA and verify its written course offering, facilities, and terms.' },
     { step: '04', title: 'Admission & Documentation', desc: 'Receive your Letter of Acceptance and all documents required for the South African Study Visa application.' },
     { step: '05', title: 'Study Visa Application', desc: 'Apply for your South African Study Visa, allowing you to legally stay and complete your pilot training program.' },
     { step: '06', title: 'SACAA Medicals', desc: 'On arrival, complete your SACAA Class 1 Medical with an aviation medical examiner before beginning flight training.' },
     { step: '07', title: 'ELP Test', desc: 'Take your English Language Proficiency assessment with the Chief Flying Instructor (CFI) before starting flight operations.' },
     { step: '08', title: 'Ground School', desc: 'Begin SACAA Ground School, covering Air Law, Navigation, Meteorology, and Human Performance, followed by written exams.' },
     { step: '09', title: 'Flight Training', desc: 'Complete structured practical training from PPL through Night Rating, IR, Multi-Engine, and final CPL skill tests.' },
-    { step: '10', title: 'DGCA Conversion', desc: 'Return to India and convert your SACAA CPL into a DGCA CPL by meeting conversion requirements and clearing exams.' },
+    { step: '10', title: 'DGCA Conversion', desc: 'Check current licence-conversion requirements directly with DGCA before selecting an overseas training route.' },
 ];
 
 const schools = [
-    { name: 'Flying School 01', location: 'Cape Town, South Africa', fleet: '28 Aircrafts', aircraft: 'Cessna (152, 172, 150), Piper Seneca (PA34), Tecnam', hours: '210 Hrs', duration: '15 Months' },
-    { name: 'Flying School 02', location: 'Secunda, Margate, Brakpan', fleet: '40 Aircrafts', aircraft: 'Cessna 172, Piper Cherokee, Piper Seneca', hours: '200 Hrs', duration: '12 Months' },
-    { name: 'Flying School 03', location: 'Durban, South Africa', fleet: '7 Aircrafts', aircraft: 'Cessna (172, 152), Piper Seneca (PA34), PA 140', hours: '200 Hrs', duration: '13–14 Months' },
-    { name: 'Flying School 04', location: 'Johannesburg, South Africa', fleet: '21 Aircrafts', aircraft: 'Cessna 172, PA 28, Diamond DA-42, Piper Seneca PA-34', hours: '200 Hrs', duration: '12 Months' },
-    { name: 'Flying School 05', location: 'Johannesburg, South Africa', fleet: '9 Aircrafts', aircraft: 'PA28, C172, Piper Seneca PA34', hours: '200 Hrs', duration: '14 Months' },
-    { name: 'Flying School 06', location: 'Grand Central Airport', fleet: '30 Aircrafts', aircraft: 'Cessna (172, 182), Diamond DA42, PS (PA34)', hours: '200 Hrs', duration: '10–12 Months' },
-    { name: 'Flying School 07', location: 'Johannesburg, South Africa', fleet: '22 Aircrafts', aircraft: 'Cessna 172, PA 28, PA 34, DV 20, DA42', hours: '200 Hrs', duration: '12 Months' },
+    { name: 'Selected flying school', location: 'Confirm directly with provider', fleet: 'Confirm directly with provider', aircraft: 'Confirm directly with provider', hours: 'Check current regulatory requirements', duration: 'Confirm current schedule' },
 ];
 
 const locations = [
-    { city: 'Cape Town', days: '300 Days', climate: 'Humid climate, good visibility', icon: '🏔️' },
-    { city: 'Secunda', days: '280 Days', climate: 'Clear Skies, Good for VFR', icon: '🌾' },
-    { city: 'Durban', days: '250 Days', climate: 'Sunny, Humid, Mild winters', icon: '🌊' },
-    { city: 'Johannesburg', days: '320 Days', climate: 'Sunny, good year-round conditions', icon: '🏙️' },
+    { city: 'Location varies by school', days: 'Confirm current schedule', climate: 'Check local operating conditions', icon: '📍' },
 ];
 
 const fleet = [
-    { name: 'Cessna 172', use: 'Single-engine four-seat trainer and cross-country aircraft, ideal for PPL training, night flying, and navigation practice.' },
-    { name: 'Cessna 152', use: 'Light, two-seat trainer aircraft for initial flight training and first solo hours. Helps students build confidence in basic aircraft handling.' },
-    { name: 'Cessna 150', use: 'A classic two-seat trainer used for initial flight training and circuit practice, perfect for mastering basic manoeuvres, take-offs, and landings.' },
-    { name: 'PA-34 Seneca', use: 'Twin-engine trainer for IFR and advanced flight training. Students learn complex aircraft handling and multi-engine operations.' },
-    { name: 'Piper Archer', use: 'A reliable four-seat trainer with modern avionics, ideal for PPL and CPL training. Known for stable handling and performance for navigation and instrument flying.' },
-    { name: 'Diamond DA42', use: 'Used for advanced multi-engine and instrument training with modern avionics and high performance, preparing students for airline-level proficiency.' },
+    { name: 'Aircraft selected by provider', use: 'Aircraft availability, condition, and approved use vary by school. Confirm the current fleet directly with the selected provider.' },
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -138,8 +124,8 @@ const fleet = [
 export default function SouthAfricaPilotTrainingPage() {
     return (
         <Layout
-            title="Commercial Pilot Training in South Africa – SACAA CPL with MEIR | AviationGuide"
-            description="Explore Commercial Pilot Training in South Africa with SACAA-approved FTOs, 200-210 flight hours, CPL-MEIR program, and easy DGCA conversion. Cost-effective training with 300+ flying days."
+            title="Pilot Training in South Africa: Provider and Conversion Guide | We One Aviation"
+            description="A general guide to checking South African flying-school approval, schedules, fees, facilities, and DGCA licence-conversion requirements. Verify current details with schools and regulators."
         >
 
             {/* ── Hero Banner ── */}
@@ -150,18 +136,18 @@ export default function SouthAfricaPilotTrainingPage() {
                     <br />
                     <br />
                     <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                        Commercial Pilot Training in South Africa
+                        Pilot Training in South Africa: Research Guide
                     </h1>
                     <p className="text-white/70 max-w-3xl mx-auto text-sm leading-relaxed mb-4">
-                        Specifically designed for aspiring pilots from India — SACAA-approved training from PPL to CPL, Multi Engine Rating, and Instrument Rating at leading South African flight schools with internationally recognised standards.
+                        This page provides general questions to ask when researching training in South Africa. It does not confirm a current South Africa-specific partner school or programme.
                     </p>
-                    <p className="text-white/60 max-w-xl mx-auto text-sm mb-6">A SACAA CPL valid for DGCA conversion — opening a lucrative career in aviation.</p>
+                    <p className="text-white/60 max-w-xl mx-auto text-sm mb-6">Confirm licence privileges and any DGCA conversion requirements directly with the relevant regulators.</p>
                     <div className="inline-block bg-av-orange/20 border border-av-orange/40 rounded-2xl px-8 py-4 mb-4">
-                        <p className="text-white/70 text-sm mb-1">Program Offered</p>
-                        <p className="font-montserrat text-2xl md:text-3xl font-black text-av-orange">CPL with MEIR + Instructor Rating (CFI)</p>
+                        <p className="text-white/70 text-sm mb-1">Provider Information</p>
+                        <p className="font-montserrat text-xl md:text-2xl font-black text-av-orange">No current programme is confirmed here</p>
                     </div>
                     <p className="text-white/60 max-w-2xl mx-auto text-sm leading-relaxed mt-4">
-                        Let's explore the training structure, eligibility, stages, and why South Africa is the right choice for your pilot career.
+                    Verify current school availability, course scope, fees, schedules, and licence-conversion requirements.
                     </p>
                 </ScrollReveal>
             </div>
@@ -188,14 +174,14 @@ export default function SouthAfricaPilotTrainingPage() {
                             Why Choose South Africa for Pilot Training?
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-4">
-                            South Africa offers <strong>cost-effective, world-class training with SACAA certification</strong> and excellent flying conditions year-round. With 300+ flying days and diverse terrain, it is one of the best international destinations for commercial pilot training.
+                            Check the selected school’s current approval with SACAA. Training conditions, facilities, schedules, and fees vary by provider.
                         </p>
                         <p className="text-gray-600 leading-relaxed mb-6">
-                            The <strong>SACAA CPL with MEIR</strong> is internationally recognised and can be converted to a DGCA CPL, giving Indian students a clear and efficient pathway to an airline career back home.
+                            DGCA assesses licence conversion under its current rules. Verify applicable requirements with DGCA and the selected school.
                         </p>
                         <div className="bg-av-blue rounded-2xl p-5 text-white">
                             <p className="font-montserrat font-bold text-av-orange mb-1">Program Highlight</p>
-                            <p className="text-white text-lg font-semibold">SACAA CPL-MEIR + CFI Rating — DGCA Convertible</p>
+                            <p className="text-white text-lg font-semibold">Confirm current programmes and conversion rules</p>
                         </div>
                     </ScrollReveal>
 
@@ -247,7 +233,7 @@ export default function SouthAfricaPilotTrainingPage() {
                             { icon: '🏥', title: 'Medical', desc: 'Must hold an SACAA Class 1 Medical and a DGCA medical certificate to qualify for Commercial Pilot Training.' },
                             { icon: '🛂', title: 'Visa', desc: 'South African Study Visa — which requires medicals for application — allowing full-time flight training in South Africa.' },
                             { icon: '🗣️', title: 'English (ELP)', desc: 'English Language Proficiency (ELP) assessment with the Chief Flying Instructor is required before commencing flight operations.' },
-                            { icon: '✅', title: 'Overall', desc: 'Meet all criteria above and you are ready to begin your SACAA CPL training at a recognised South African flight school.' },
+                            { icon: '✅', title: 'Overall', desc: 'Check current eligibility and approval requirements directly with the school and SACAA.' },
                         ].map((item, i) => (
                             <ScrollReveal key={item.title} delay={i * 80}>
                                 <div className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-av-orange/30 h-full flex flex-col">
@@ -270,7 +256,7 @@ export default function SouthAfricaPilotTrainingPage() {
                             Benefits of Training <span className="text-av-orange">in South Africa</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm leading-relaxed">
-                            South Africa's SACAA-approved training ecosystem combines excellent flying conditions, modern fleets, and cost-effective fees. Here's what makes it stand out:
+                            Training details depend on the selected provider. Verify approval, course scope, aircraft, schedule, fees, and conversion requirements before applying.
                         </p>
                     </ScrollReveal>
 
@@ -365,7 +351,7 @@ export default function SouthAfricaPilotTrainingPage() {
                     <ScrollReveal>
                         <div className="bg-av-orange/20 border border-av-orange/40 rounded-2xl p-6 text-center">
                             <p className="font-montserrat font-bold text-white text-lg">
-                                A 10-step structured path to your <span className="text-av-orange">SACAA CPL with MEIR — and seamless DGCA conversion back in India.</span>
+                                Steps to research a provider and verify licence requirements with SACAA and DGCA.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -381,7 +367,7 @@ export default function SouthAfricaPilotTrainingPage() {
                             Pilot Academies <span className="text-av-orange">in South Africa</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">
-                            SACAA-approved flying schools with modern fleets and experienced instructors.
+                            Verify each school’s current approval, fleet, and instructor details directly with the provider.
                         </p>
                     </ScrollReveal>
 
@@ -486,9 +472,9 @@ export default function SouthAfricaPilotTrainingPage() {
                         <ScrollReveal>
                             <div className="bg-white/10 rounded-2xl p-7 h-full border border-white/20">
                                 <div className="text-4xl mb-4">🏅</div>
-                                <h3 className="font-montserrat font-bold text-white text-xl mb-3">Globally Recognised Schools</h3>
+                                <h3 className="font-montserrat font-bold text-white text-xl mb-3">Provider Verification</h3>
                                 <p className="text-white/70 text-sm leading-relaxed">
-                                    Training is provided by globally recognised flight schools in South Africa, offering advanced training in varying weather conditions and modern aircraft that adhere to both SACAA and DGCA requirements.
+                                    This page does not identify or verify current partner schools. Confirm provider details and applicable requirements with SACAA and DGCA.
                                 </p>
                             </div>
                         </ScrollReveal>
@@ -508,7 +494,7 @@ export default function SouthAfricaPilotTrainingPage() {
                                 <div className="text-4xl mb-4">🔄</div>
                                 <h3 className="font-montserrat font-bold text-white text-xl mb-3">DGCA Conversion Ready</h3>
                                 <p className="text-white/70 text-sm leading-relaxed">
-                                    The SACAA CPL with MEIR is structured to enable students to convert their licence to a DGCA CPL upon returning to India, opening up airline career opportunities in India and across the world.
+                                    DGCA independently assesses licence-conversion applications. Conversion and employment outcomes are not guaranteed.
                                 </p>
                             </div>
                         </ScrollReveal>

@@ -1,0 +1,737 @@
+{
+  "phase": "4.1",
+  "scope": {
+    "auditOnly": true,
+    "checked": [
+      "Application source under pages/, components/, lib/, and data/pageFaqs.js",
+      "Non-production project files for .com references",
+      "Earlier Phase 4 audit evidence and current shared academy facts"
+    ],
+    "interpretation": "DGCA ground-class or regulatory references are not treated as approval claims unless they say or imply that We One Aviation itself is approved, accredited, or recognized. References to regulator-approved centres, examiners, or third-party flying schools are attributed to those other entities."
+  },
+  "approvalClaims": [
+    {
+      "file": "pages/index.jsx",
+      "route": "/",
+      "exactText": "educationalOrgSchema.accreditedBy: Directorate General of Civil Aviation (DGCA)",
+      "context": "EducationalOrganization JSON-LD associates the academy itself with DGCA using accreditedBy; the schema description also calls it a 'DGCA pilot training institute'.",
+      "claimType": "ACADEMY_DGCA_ACCREDITATION_SCHEMA",
+      "evidence": "No DGCA approval type, approval record, certificate number, or DGCA primary-source link naming We One Aviation was located in the verified project facts. The separate academy fact file establishes location and stated services, not accreditation.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/index.jsx",
+      "route": "/",
+      "exactText": "Approved Training Programs — Our courses meet all regulatory requirements",
+      "context": "Homepage feature card presents academy courses as approved training programs and asserts regulatory compliance; separate copy says 'Get approved training'.",
+      "claimType": "ACADEMY_APPROVAL_AND_COMPLIANCE",
+      "evidence": "The repository contains regulatory requirements, but no evidence that DGCA approved the academy's courses or reviewed their compliance. The phrase 'DGCA ground classes' alone is not an approval claim.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "REMOVE_OR_REWRITE_IF_UNSUPPORTED"
+    },
+    {
+      "file": "pages/credentials.jsx",
+      "route": "/credentials",
+      "exactText": "Fully DGCA aviation training institute",
+      "context": "Item under 'DGCA Accreditation' titled 'DGCA Approval Status'; shown with a verified check mark.",
+      "claimType": "ACADEMY_DGCA_APPROVAL",
+      "evidence": "No approval scope, primary-source record, or certificate number supporting this claim was found. A code comment says evidence is available on request, but does not itself provide that evidence.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/credentials.jsx",
+      "route": "/credentials",
+      "exactText": "DGCA accreditation; DGCA approval status; 'Directorate General of Civil Aviation Approval'",
+      "context": "The page metadata, hero, quick answer, summary list, credentials card, and Certifications Bar repeatedly present the academy as DGCA-accredited/approved. JSON-LD adds accreditedBy DGCA.",
+      "claimType": "ACADEMY_DGCA_ACCREDITATION_VISIBLE_AND_SCHEMA",
+      "evidence": "The page's claims are self-referential and link to DGCA's general website rather than a record naming the academy. No approval evidence is included in the project.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/about-us.jsx",
+      "route": "/about-us",
+      "exactText": "We One Aviation Academy is a DGCA pilot training institute in Dwarka.",
+      "context": "The statement appears in an answer block describing the academy; nearby text distinguishes ground teaching from flying training arranged through partner schools.",
+      "claimType": "ACADEMY_DGCA_INSTITUTE_STATUS",
+      "evidence": "The project supports DGCA ground-subject teaching at the stated Dwarka classroom, but contains no primary record establishing that the academy is a DGCA-approved flying training organisation or otherwise approved institute.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "REMOVE_OR_REWRITE_IF_UNSUPPORTED"
+    },
+    {
+      "file": "pages/air-navigation.jsx",
+      "route": "/air-navigation",
+      "exactText": "DGCA-certified instructors with airline experience",
+      "context": "Course feature data describes instructor credentials. It concerns instructors, not academy approval.",
+      "claimType": "INSTRUCTOR_CERTIFICATION",
+      "evidence": "No instructor names, licence/certificate identifiers, issuing authority, or source records were found in this claim location. The project states that instructor licence numbers were removed from credentials for lack of publishable evidence.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/airline-preparation-course.jsx",
+      "route": "/airline-preparation-course",
+      "exactText": "\"We One Aviation's courses are globally recognized\"; \"Globally Recognized Certificate\"",
+      "context": "Visible feature copy and a certificate callout imply international recognition of the academy's course/certificate.",
+      "claimType": "COURSE_CERTIFICATE_RECOGNITION",
+      "evidence": "No recognition authority, accreditation record, certificate standard, or employer acceptance evidence is cited in the project.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "REMOVE_OR_REWRITE_IF_UNSUPPORTED"
+    },
+    {
+      "file": "data/pageFaqs.js",
+      "route": "/credentials",
+      "exactText": "The page publishes We One Aviation Academy's DGCA approval status as its primary accreditation and verification credential; the page identifies the academy as a DGCA aviation training institute.",
+      "context": "FAQ text is rendered and also supplied as FAQ structured data through the shared page FAQ mechanism.",
+      "claimType": "ACADEMY_DGCA_APPROVAL_FAQ_AND_SCHEMA",
+      "evidence": "No primary-source approval record or certificate number appears with this FAQ content.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "data/pageFaqs.js",
+      "route": "/airline-preparation-course",
+      "exactText": "Yes, the course is positioned as globally recognized, which the academy says helps graduates pursue opportunities both within India and internationally.",
+      "context": "Rendered FAQ and FAQPage answer; asserts recognition and a resulting international opportunity.",
+      "claimType": "COURSE_CERTIFICATE_RECOGNITION_FAQ",
+      "evidence": "No recognition body, qualification framework, or employer evidence is cited.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "REMOVE_OR_REWRITE_IF_UNSUPPORTED"
+    },
+    {
+      "file": "pages/best-flight-schools-in-usa.jsx",
+      "route": "/best-flight-schools-in-usa",
+      "exactText": "\"FAA-approved flight training in the United States\"; \"FAA-Approved Flying School at an International Airport\"",
+      "context": "Page describes U.S. regulator approval for flying schools and promotes U.S. training options. The grammar does not establish that We One Aviation itself is FAA-approved; the schools are the claimed approved parties.",
+      "claimType": "THIRD_PARTY_US_FLYING_SCHOOL_APPROVAL",
+      "evidence": "The page does not identify the relevant school or include an FAA approval record in the cited copy. No evidence establishes a We One Aviation branch or approval.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "MEDIUM",
+      "recommendedAction": "REVIEW_CONTEXT"
+    },
+    {
+      "file": "pages/flying-school/south-africa.jsx",
+      "route": "/flying-school/south-africa",
+      "exactText": "\"SACAA-approved flight school\"; \"SACAA-approved flying schools with modern fleets and experienced instructors\"",
+      "context": "Copy attributes regulatory approval to unnamed South African flying schools, not to We One Aviation.",
+      "claimType": "THIRD_PARTY_SOUTH_AFRICAN_FLYING_SCHOOL_APPROVAL",
+      "evidence": "No named partner school, approval record, or current relationship evidence is attached to the claims. The verified baseline only says flight training is arranged through partner flying schools.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "MEDIUM",
+      "recommendedAction": "REVIEW_CONTEXT"
+    },
+    {
+      "file": "pages/flying-school/india.jsx",
+      "route": "/flying-school/india",
+      "exactText": "DGCA Certification",
+      "context": "A certification statistic/label appears on a page whose other copy describes the Indian flying-training ecosystem. It may refer to the CPL credential or DGCA, not academy approval; subject is ambiguous.",
+      "claimType": "AMBIGUOUS_CERTIFICATION_SUBJECT",
+      "evidence": "No explicit schema or surrounding label ties this to an academy approval record. The academy is not established in project facts as an FTO.",
+      "verificationStatus": "UNCLEAR",
+      "risk": "MEDIUM",
+      "recommendedAction": "REVIEW_CONTEXT"
+    },
+    {
+      "file": "pages/about-us.jsx",
+      "route": "/about-us",
+      "exactText": "DGCA-approved examiner at an approved centre",
+      "context": "Explains that medical examinations are performed by regulator-approved examiners/centres, not by We One Aviation; the academy says it explains the process.",
+      "claimType": "REGULATOR_APPROVAL_OF_OTHER_ENTITIES",
+      "evidence": "The related examiner and centre sources are documented in lib/facts.js and refer to DGCA lists; this is not an academy approval assertion.",
+      "verificationStatus": "VERIFIED BY PROJECT EVIDENCE",
+      "risk": "LOW",
+      "recommendedAction": "KEEP_IF_VERIFIED"
+    },
+    {
+      "file": "lib/facts.js",
+      "route": "Multiple pages using MEDICAL_STANDARDS",
+      "exactText": "DGCA-approved Air Force Class 1 centres; DGCA-empanelled Class 1 medical examiners",
+      "context": "Regulatory fact strings describe medical examination venues/persons and cite DGCA sources; they do not describe We One Aviation.",
+      "claimType": "REGULATOR_APPROVAL_OF_OTHER_ENTITIES",
+      "evidence": "Adjacent source metadata in lib/facts.js names DGCA inventory/list sources and an August 2026 update date.",
+      "verificationStatus": "VERIFIED BY PROJECT EVIDENCE",
+      "risk": "LOW",
+      "recommendedAction": "KEEP_IF_VERIFIED"
+    }
+  ],
+  "priceClaims": [
+    {
+      "file": "pages/index.jsx",
+      "route": "/",
+      "exactText": "DGCA CPL Ground Classes: Fees 2 Lakh to 2.95 Lakh (Scholarship Available); Course Duration 6 Months. CPL Flight Training: Fees 55 to 65 lakh (depends on country), duration 1 year abroad / 1.5 years India. Full CPL Course: fees 50–55 lakh, duration 2–3 years.",
+      "context": "Visible homepage fee-and-schedule cards. The homepage Course ItemList schema separately reuses course-card duration data, but does not include these prices.",
+      "claimType": "ACADEMY_AND_PARTNER_COURSE_PRICING",
+      "evidence": "No current academy or partner fee schedule is present in verified facts. lib/facts.js explicitly records that private flying-training market ranges are not sourced; its only published academy benchmark is IGRUA's fee.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/index.jsx",
+      "route": "/",
+      "exactText": "2 Lakh to 2.95 Lakh (Scholarship Available)",
+      "context": "Homepage repeats the ground-class amount in a separate fee card; no matching Offer/Course price is emitted by the homepage Course ItemList.",
+      "claimType": "ACADEMY_GROUND_CLASS_FEE_AND_SCHOLARSHIP",
+      "evidence": "No current fee or scholarship terms are recorded in verified project facts.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/courses.jsx",
+      "route": "/courses",
+      "exactText": "CPL ₹40–50 Lakh; PPL ₹7.5–10 Lakh; DGCA Ground Classes ₹2–3 Lakh; USA ₹45–65 Lakh; South Africa ₹35–50 Lakh; Topper Scholarship Program — Money-Back Guarantee.",
+      "context": "Visible course-card dataset. The scholarship card describes a full money-back guarantee and limited seats elsewhere in the same card.",
+      "claimType": "MULTIPLE_COURSE_PRICES_AND_SCHOLARSHIP_PROMISE",
+      "evidence": "No current academy/partner fee schedule or written scholarship policy is present in the verified facts. The amounts conflict with homepage and other route ranges. These values are visible and are not Course schema prices.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/courses/cpl.jsx",
+      "route": "/courses/cpl",
+      "exactText": "CPL ground school ₹1,50,000–₹3,00,000; flying training ₹35,00,000–₹45,00,000; complete CPL ₹40–70 lakh / ₹40,00,000–₹70,00,000. The page also lists medical, computer-number, DGCA examination, simulator, admission, licence, visa and travel cost ranges.",
+      "context": "Visible fee table, summary cards, and explanatory paragraph. The page includes a stated price estimate but does not emit a Course AggregateOffer node.",
+      "claimType": "CPL_COMPONENT_AND_TOTAL_COST_ESTIMATES",
+      "evidence": "No source for these private course/training ranges is present. The DGCA exam values conflict with current PARIKSHA facts (₹2,500 regular and ₹5,000 on-demand per paper); the page itself says figures are estimates, not quotations.",
+      "verificationStatus": "UNSUPPORTED",
+      "risk": "HIGH",
+      "recommendedAction": "REMOVE_OR_REWRITE_IF_UNSUPPORTED"
+    },
+    {
+      "file": "pages/courses/ppl.jsx",
+      "route": "/courses/ppl",
+      "exactText": "Ground Classes ₹60,000–₹1,00,000; Flying Training ₹7,00,000–₹9,00,000; Medical & Exam Fees ₹20,000–₹40,000; Total Cost ₹7.5–10 Lakhs.",
+      "context": "Visible PPL cost table. Separate data/pageFaqs.js PPL/course FAQ repeats the total estimate; no Course price schema is emitted here.",
+      "claimType": "PPL_COURSE_COST_ESTIMATE",
+      "evidence": "No current academy or partner quote and no fee source is present in verified project facts. The amount is not established by the PPL guidance facts.",
+      "verificationStatus": "UNSUPPORTED",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/courses/atpl.jsx",
+      "route": "/courses/atpl",
+      "exactText": "The ground-school component commonly runs around ₹15-25 lakh; Course schema offers AggregateOffer lowPrice 1500000 / highPrice 2500000 INR.",
+      "context": "Visible FAQ and summary card state the same approximate band; a Course JSON-LD AggregateOffer encodes the band as INR 1,500,000–2,500,000.",
+      "claimType": "ATPL_GROUND_SCHOOL_FEE_VISIBLE_AND_SCHEMA",
+      "evidence": "No current academy ATPL fee schedule or primary source is present. Project facts document a published IGRUA CPL course fee, not We One Aviation ATPL fees.",
+      "verificationStatus": "UNSUPPORTED",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "data/pageFaqs.js",
+      "route": "/courses/cpl",
+      "exactText": "A complete CPL pathway is commonly around ₹40-70 lakh, including flying, ground training, medicals, exams, and related charges.",
+      "context": "FAQ content is rendered and emitted in structured FAQ data; this repeats a complete-course range distinct from other active page ranges.",
+      "claimType": "CPL_TOTAL_COST_FAQ_AND_SCHEMA",
+      "evidence": "No current source supports the private-market total. The project cost facts say no official market price was located.",
+      "verificationStatus": "UNSUPPORTED",
+      "risk": "HIGH",
+      "recommendedAction": "REMOVE_OR_REWRITE_IF_UNSUPPORTED"
+    },
+    {
+      "file": "data/pageFaqs.js",
+      "route": "/courses",
+      "exactText": "CPL approximately ₹40-50 lakh; PPL approximately ₹7.5-10 lakh; USA ₹45-65 lakh; South Africa ₹35-50 lakh; Topper Scholarship Program with a full money-back guarantee.",
+      "context": "FAQ data duplicates/varies from the visible /courses cards and is used for rendered FAQ and FAQ structured data.",
+      "claimType": "MULTIPLE_COURSE_COSTS_AND_SCHOLARSHIP_FAQ",
+      "evidence": "No current academy/partner written price or scholarship policy is present; the values conflict with the page's own other amounts.",
+      "verificationStatus": "UNSUPPORTED",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/cost-transparency.jsx",
+      "route": "/cost-transparency",
+      "exactText": "DGCA written-paper fees: ₹2,500 regular session, ₹5,000 Online On-Demand, and the configured oral-paper fee; IGRUA ab-initio to CPL published fee: ₹55,00,000.",
+      "context": "Visible statutory fee table/FAQ and one named external academy benchmark. Schema on this route is Article/FAQPage; the figures are not encoded as a We One Course Offer.",
+      "claimType": "REGULATOR_FEE_AND_THIRD_PARTY_COURSE_FEE",
+      "evidence": "PARIKSHA and CPL_COST in lib/facts.js contain dated source metadata and URLs for the regulator fees and IGRUA published course fee (IGRUA official approved-courses page). These figures refer to DGCA/IGRUA, not We One Aviation pricing.",
+      "verificationStatus": "VERIFIED BY PROJECT EVIDENCE",
+      "risk": "LOW",
+      "recommendedAction": "KEEP_IF_VERIFIED"
+    },
+    {
+      "file": "pages/lead-magnets/cpl-cost-breakdown.jsx",
+      "route": "/lead-magnets/cpl-cost-breakdown",
+      "exactText": "India (We One Aviation) ₹40-55 Lakhs; detailed components including ground school ₹1,50,000-₹2,50,000, flying ₹30,00,000-₹40,00,000, simulator ₹2,50,000-₹3,50,000, and total ₹40-55 Lakhs; upfront discount 5-10% / ₹2-5 Lakhs; scholarships up to 50%.",
+      "context": "Visible downloadable guide preview and payment-options section; page FAQ data also repeats the India and international cost ranges. No Course schema price is emitted.",
+      "claimType": "CPL_COST_BREAKDOWN_AND_PAYMENT_INCENTIVES",
+      "evidence": "No first-party fee schedule, partner quote, discount terms, or scholarship policy is included. The source labels the price as We One Aviation despite no verified amount.",
+      "verificationStatus": "UNSUPPORTED",
+      "risk": "HIGH",
+      "recommendedAction": "REMOVE_OR_REWRITE_IF_UNSUPPORTED"
+    },
+    {
+      "file": "pages/flying-school/india.jsx",
+      "route": "/flying-school/india",
+      "exactText": "₹55,00,000 — IGRUA Published Fee",
+      "context": "Visible benchmark tile distinguishes the price as IGRUA's fee; page also contains older conflicting fee text in its quickDetails dataset ('INR 58 Lakhs – 60 Lakhs') and detailed page copy.",
+      "claimType": "THIRD_PARTY_COURSE_PRICE_AND_CONFLICTING_LEGACY_PRICE",
+      "evidence": "lib/facts.js records IGRUA's ₹55,00,000 published fee and official source URL. The competing ₹58–60 lakh text is not supported by that source and does not match the tile.",
+      "verificationStatus": "VERIFIED BY PROJECT EVIDENCE",
+      "risk": "MEDIUM",
+      "recommendedAction": "REVIEW_CONTEXT"
+    },
+    {
+      "file": "pages/pilot-career-counselling.jsx",
+      "route": "/pilot-career-counselling",
+      "exactText": "Free, and no obligation; career counselling free of cost; schema Offer price 0 INR, 'Free of cost, with no obligation to enrol'.",
+      "context": "Visible CTA/FAQ and Service/Offer structured data. This is a counselling service price, not course tuition.",
+      "claimType": "FREE_COUNSELLING_SERVICE_OFFER",
+      "evidence": "The source comment says the owner confirmed the offer on 16 September 2026, but the Phase 4 audit found no independently verifiable current offer terms or evidence attached to the schema.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "data/pageFaqs.js",
+      "route": "/cost-transparency",
+      "exactText": "Estimated CPL total ₹40-55 lakh; India ₹40-55 lakh, PPL+CPL ₹50-65 lakh, USA ₹80-110 lakh, Australia ₹70-90 lakh; upfront 5-10% discount saving ₹2-5 lakh; payment instalments, loans and scholarships.",
+      "context": "FAQ content for the cost page asserts amounts and payment options that the current visible cost-transparency page explicitly says are not sourced; this file feeds rendered/structured FAQs.",
+      "claimType": "STALE_COST_FAQ_AND_PAYMENT_CLAIMS",
+      "evidence": "The current route's source says it deliberately publishes no private-market total because the ranges could not be sourced. No supporting payment/discount policy was found.",
+      "verificationStatus": "HISTORICAL/REFERENCE",
+      "risk": "HIGH",
+      "recommendedAction": "HISTORICAL_ONLY"
+    },
+    {
+      "file": "pages/lead-magnets/pre-admission-checklist.jsx",
+      "route": "/lead-magnets/pre-admission-checklist",
+      "exactText": "Test costs roughly ₹5,000–15,000; registration fee ₹2,000-3,000; total training cost finalized ₹40-55 Lakhs; first payment usually ₹10-15 Lakhs.",
+      "context": "Visible pre-admission checklist; amounts combine medical/documentation estimates with a private CPL market estimate.",
+      "claimType": "ADMISSION_AND_CPL_BUDGET_ESTIMATES",
+      "evidence": "No source is attached to the ranges. The DGCA exam figures in PARIKSHA do not establish the separate medical/registration amounts or total private training cost.",
+      "verificationStatus": "UNSUPPORTED",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    }
+  ],
+  "durationClaims": [
+    {
+      "file": "pages/index.jsx",
+      "route": "/",
+      "exactText": "CPL 18-24 months; ATPL 6 months; DGCA Ground Classes 6-12 months; CPL Flight Training 12-18 months. Other visible cards: DGCA classes 6 months; flying abroad 1 year / India 1.5 years; full CPL 2-3 years.",
+      "context": "CourseCard data is reused in the homepage Course ItemList JSON-LD descriptions. Additional fee cards show separate conflicting durations.",
+      "claimType": "COURSE_DURATION_VISIBLE_AND_SCHEMA_DESCRIPTION",
+      "evidence": "No current academy schedule or partner-school duration source is present. These values conflict internally and with the other active course pages; the national-hub page explicitly says current course timelines are not published because terms have not been verified.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/courses.jsx",
+      "route": "/courses",
+      "exactText": "CPL 18–24 months; PPL 6–12 months; DGCA classes 4–6 months; USA 12–18 months; South Africa 12–18 months; CPL phases 3–4, 4–5, and 8–10 months.",
+      "context": "Visible course cards and phase schedule; amounts appear in the same card records.",
+      "claimType": "MULTIPLE_COURSE_DURATIONS",
+      "evidence": "No current academy timetable or named partner-school schedule supports these estimates.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/courses/cpl.jsx",
+      "route": "/courses/cpl",
+      "exactText": "Ground School 3-4 months; PPL Training 4-5 months; CPL Flying 8-10 months; another visible summary says 18-24 months; prose says the CPL course takes around 8-10 months.",
+      "context": "Visible phase table, quick-summary cards, and page prose disagree on total duration. A single end-to-end figure cannot be reconciled from the page itself.",
+      "claimType": "CONFLICTING_CPL_DURATION",
+      "evidence": "No current academy or partner-school schedule is supplied. Regulatory hour requirements do not verify an elapsed course period.",
+      "verificationStatus": "UNSUPPORTED",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/courses/ppl.jsx",
+      "route": "/courses/ppl",
+      "exactText": "Full-time (Regular) 6 to 12 months; Part-time (Weekend) 8 to 18 months.",
+      "context": "Visible PPL duration table; related /courses FAQ says approximately 6-12 months.",
+      "claimType": "PPL_COURSE_DURATION",
+      "evidence": "No current academy or partner schedule is recorded in verified facts.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/courses/atpl.jsx",
+      "route": "/courses/atpl",
+      "exactText": "Typical progression: three years or more; FAQ says 'commonly three years or more'; Course JSON-LD timeRequired 'P36M'.",
+      "context": "Visible copy describes the end-to-end time to gain command experience; schema encodes 36 months as a Course timeRequired. This conflates licence progression/experience with academy course duration.",
+      "claimType": "ATPL_PROGRESSION_DURATION_AND_SCHEMA",
+      "evidence": "The visible text says command experience, not classroom/course delivery. No source establishes a fixed academy ATPL course duration of 36 months.",
+      "verificationStatus": "UNCLEAR",
+      "risk": "HIGH",
+      "recommendedAction": "REVIEW_CONTEXT"
+    },
+    {
+      "file": "pages/flying-school/india.jsx",
+      "route": "/flying-school/india",
+      "exactText": "CPL duration 14-16 months; separate quick details 14–16 months; course stages 3–4 months, 1–2 months, 2 months, 6 months, and 2 months.",
+      "context": "Visible timeline and stage estimates; page also names an IGRUA price benchmark without establishing the academy as the training provider.",
+      "claimType": "INDIA_FLYING_TRAINING_DURATION",
+      "evidence": "No named partner schedule, source for the stage durations, or current course contract is present in the project.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/flying-school/usa.jsx",
+      "route": "/flying-school/usa",
+      "exactText": "Complete in Just 1.6 Years; 1.6 Years duration.",
+      "context": "Visible duration callout on an international flying-school page.",
+      "claimType": "USA_PARTNER_COURSE_DURATION",
+      "evidence": "No named school schedule or current partner evidence is attached to the claim.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "MEDIUM",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/flying-school/australia.jsx",
+      "route": "/flying-school/australia",
+      "exactText": "13-14 Months — Program Duration; phase entries include '0.5 Months'.",
+      "context": "Visible program duration and stage durations for foreign flying-training provision.",
+      "claimType": "AUSTRALIA_PARTNER_COURSE_DURATION",
+      "evidence": "No named partner schedule or current provider-specific course plan is attached.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "MEDIUM",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/flying-school/canada.jsx",
+      "route": "/flying-school/canada",
+      "exactText": "18-24 Mo — Typical CPL Timeline.",
+      "context": "Visible duration statistic on a foreign flying-school page.",
+      "claimType": "CANADA_PARTNER_COURSE_DURATION",
+      "evidence": "The page discusses variable weather and hour-building but does not attach a named school schedule/source to this exact range.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "MEDIUM",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "data/pageFaqs.js",
+      "route": "/courses",
+      "exactText": "CPL approximately 18-24 months; PPL approximately 6-12 months; USA and South Africa 12-18 months; phases 3-4 months, 4-5 months, and 8-10 months.",
+      "context": "Rendered FAQ content and FAQPage structured data repeat course-duration figures from older course content.",
+      "claimType": "COURSE_DURATION_FAQ_AND_SCHEMA",
+      "evidence": "No current provider schedules in project facts verify these timelines; values conflict with other page content.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "data/pageFaqs.js",
+      "route": "/courses/cpl",
+      "exactText": "A complete CPL pathway commonly takes around 18 to 24 months.",
+      "context": "FAQ answer also emitted as structured FAQ data; disagrees with /courses/cpl prose claiming 8-10 months.",
+      "claimType": "CPL_DURATION_FAQ_AND_SCHEMA",
+      "evidence": "No current schedule is supplied, and the page itself contains conflicting values.",
+      "verificationStatus": "UNSUPPORTED",
+      "risk": "HIGH",
+      "recommendedAction": "REVIEW_CONTEXT"
+    },
+    {
+      "file": "data/pageFaqs.js",
+      "route": "/courses/ppl",
+      "exactText": "The listed PPL programme takes approximately 6-12 months.",
+      "context": "FAQ content and schema; it omits the separate 8-18 month weekend duration shown in the page table.",
+      "claimType": "PPL_DURATION_FAQ_AND_SCHEMA",
+      "evidence": "No current schedule supports either period.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "MEDIUM",
+      "recommendedAction": "REVIEW_CONTEXT"
+    },
+    {
+      "file": "pages/air-navigation.jsx; pages/air-regulations.jsx; pages/aviation-meteorology.jsx; pages/airline-preparation-course.jsx",
+      "route": "/air-navigation; /air-regulations; /aviation-meteorology; /airline-preparation-course",
+      "exactText": "CourseInstance timeRequired is emitted as null because the supplied duration values use PT2M/PT3M while the shared parser expects month strings.",
+      "context": "Structured data issue documented in the Phase 4 production audit; a null timeRequired does not make a verifiable duration claim.",
+      "claimType": "INVALID_OR_EMPTY_COURSE_DURATION_SCHEMA",
+      "evidence": "lib/schema.js parser only matches month-form strings; current duration inputs on these routes do not match.",
+      "verificationStatus": "VERIFIED BY PROJECT EVIDENCE",
+      "risk": "MEDIUM",
+      "recommendedAction": "REVIEW_CONTEXT"
+    }
+  ],
+  "serviceScopeClaims": [
+    {
+      "file": "lib/facts.js",
+      "route": "Site-wide shared academy description",
+      "exactText": "We teach the DGCA ground subjects and arrange flight training with partner flying schools; classroom in Dwarka and online batches for students outside Delhi.",
+      "context": "Shared ACADEMY scope is reused in the site footer, layout metadata, and content/schema.",
+      "claimType": "VERIFIED_BASELINE_SERVICE_SCOPE",
+      "evidence": "This matches the verified business-model baseline provided for this audit: physical academy/classroom and DGCA ground teaching in Dwarka, online batches outside Delhi, and flight training arranged through partner schools.",
+      "verificationStatus": "VERIFIED BY PROJECT EVIDENCE",
+      "risk": "LOW",
+      "recommendedAction": "KEEP_IF_VERIFIED"
+    },
+    {
+      "file": "pages/index.jsx",
+      "route": "/",
+      "exactText": "Our Flying School; state-of-the-art aircraft; expert instructors; guaranteed career guidance; flying school placement with partner schools in India and abroad; 'All aviation solutions under one roof'.",
+      "context": "Homepage visible calls-to-action and service cards imply that We One operates a flying school, owns/accesses aircraft and instructors, guarantees career guidance, and provides broad placement/school services.",
+      "claimType": "FLIGHT_TRAINING_PROVIDER_AND_SERVICE_GUARANTEE",
+      "evidence": "Verified baseline says the academy arranges flying through partners; project facts and national hub explicitly say it does not own aircraft or operate a flying school and does not guarantee a job/admission. No guarantee terms or partner roster is cited.",
+      "verificationStatus": "UNSUPPORTED",
+      "risk": "HIGH",
+      "recommendedAction": "REMOVE_OR_REWRITE_IF_UNSUPPORTED"
+    },
+    {
+      "file": "pages/index.jsx",
+      "route": "/",
+      "exactText": "WorldLocations include USA, Canada, India, Sri Lanka, South Africa, and Australia; course cards link to India/USA/Canada/Australia/South Africa and characterize training as available at those locations.",
+      "context": "Homepage international and world-location sections can imply We One provides in-person training or operates locations in every named country.",
+      "claimType": "INTERNATIONAL_PHYSICAL_SERVICE_SCOPE",
+      "evidence": "Baseline establishes partner-arranged flight training, but not country-specific physical presence, branches, named partners, current availability, or service terms.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "REVIEW_CONTEXT"
+    },
+    {
+      "file": "pages/courses.jsx",
+      "route": "/courses",
+      "exactText": "Training options in India, USA & South Africa; 'FAA certified pilot training abroad'; 'SACAA approved flying schools'; visa & travel assistance provided; full money-back scholarship guarantee.",
+      "context": "Course-card data describes available countries, approvals, assistance, and a guarantee, some of which imply provider-controlled international service.",
+      "claimType": "INTERNATIONAL_DELIVERY_AND_SUPPORT_SCOPE",
+      "evidence": "Only partner-arranged flight training is in the verified baseline. No named partner, active-country availability, visa/travel service terms, or scholarship policy is documented.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/flying-school/india.jsx",
+      "route": "/flying-school/india",
+      "exactText": "Quality training facilities are available across India; training locations include Maharashtra, Gujarat, and Rajasthan; modern fleets and instructors; seamless direct airline recruitment readiness.",
+      "context": "Visible page frames nationwide FTO facilities, state-level locations and fleet as part of a We One-branded India flying-school offering.",
+      "claimType": "NATIONWIDE_PHYSICAL_TRAINING_AND_FACILITIES",
+      "evidence": "No We One branches, campuses, facilities, instructors, fleet, or service areas outside Dwarka are verified. Partner flying-school arrangement does not itself substantiate these specific locations or outcomes.",
+      "verificationStatus": "UNSUPPORTED",
+      "risk": "HIGH",
+      "recommendedAction": "REMOVE_OR_REWRITE_IF_UNSUPPORTED"
+    },
+    {
+      "file": "pages/flying-school/usa.jsx",
+      "route": "/flying-school/usa",
+      "exactText": "Commercial Pilot License in USA — FAA Approved CPL Training with We One Aviation Academy; direct airline placement; training at U.S. FAA-approved schools.",
+      "context": "Page title, visible offer and course copy link the academy brand to U.S. physical flight training and placement.",
+      "claimType": "USA_PHYSICAL_DELIVERY_AND_PLACEMENT",
+      "evidence": "The baseline allows only partner-arranged flight training; no named current partner, U.S. branch, school agreement, or placement evidence is present.",
+      "verificationStatus": "UNSUPPORTED",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/flying-school/south-africa.jsx",
+      "route": "/flying-school/south-africa",
+      "exactText": "South African training with SACAA-approved schools, modern fleets, experienced instructors, 300+ flying days, international standards, and easy DGCA conversion.",
+      "context": "Foreign course landing page describes partner/school availability, facilities, instructors, climate and conversion service.",
+      "claimType": "SOUTH_AFRICA_PARTNER_SCOPE_AND_OUTCOMES",
+      "evidence": "No partner school or current availability terms are verified in project facts. Regulatory conversion is a separate DGCA process; partner locations are not academy branches.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "REVIEW_CONTEXT"
+    },
+    {
+      "file": "pages/flying-school/australia.jsx; pages/flying-school/canada.jsx",
+      "route": "/flying-school/australia; /flying-school/canada",
+      "exactText": "Australia/CANADA programme prices, durations and flight training presented as an available We One Aviation course; pages describe counsellors helping with provider/programme choices.",
+      "context": "International flying-school routes imply access to named-country training and advisory relationships.",
+      "claimType": "INTERNATIONAL_PARTNER_SERVICE_SCOPE",
+      "evidence": "No current country-specific partner list or evidence of We One physical presence is present. Baseline only verifies that flight training is arranged through partner flying schools.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/airline-preparation-course.jsx",
+      "route": "/airline-preparation-course",
+      "exactText": "The course is offered in Dwarka, Delhi, with online and classroom options; global recognition and internationally usable certificate.",
+      "context": "Visible course FAQ/callouts imply online delivery and international acceptance, not merely an address in Dwarka.",
+      "claimType": "COURSE_DELIVERY_AND_INTERNATIONAL_RECOGNITION_SCOPE",
+      "evidence": "Baseline verifies online DGCA ground batches for students outside Delhi, not online delivery of every Airline Preparation Course module or global certificate recognition.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "REVIEW_CONTEXT"
+    },
+    {
+      "file": "pages/airindia-pilot-preparation.jsx",
+      "route": "/airindia-pilot-preparation",
+      "exactText": "Online + classroom options; 'Online + Classroom Available'; Weekend & Weekday Options.",
+      "context": "Visible Air India preparation page promises course formats and schedule options.",
+      "claimType": "COURSE_DELIVERY_AVAILABILITY",
+      "evidence": "The verified outside-Delhi online-batch fact covers DGCA ground classes; no current delivery format or schedule evidence for airline preparation is attached.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "MEDIUM",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/pilot-training-in-delhi.jsx",
+      "route": "/pilot-training-in-delhi",
+      "exactText": "Dwarka is 'a metro ride away'; students can complete the process 'without booking a train'.",
+      "context": "Local proximity/travel convenience copy relates the Delhi authority page to the academy's Dwarka classroom.",
+      "claimType": "LOCAL_TRAVEL_TIME_AND_ACCESS",
+      "evidence": "No route, timetable, travel-time, or transit source is in the verified business facts. The Phase 4 audit identified these phrases as unsupported.",
+      "verificationStatus": "UNSUPPORTED",
+      "risk": "MEDIUM",
+      "recommendedAction": "REMOVE_OR_REWRITE_IF_UNSUPPORTED"
+    },
+    {
+      "file": "pages/pilot-training-in-india.jsx",
+      "route": "/pilot-training-in-india",
+      "exactText": "Students outside Delhi can join online batches; the academy teaches ground subjects in its Dwarka classroom and arranges flight training with partners.",
+      "context": "National hub explicitly separates online access from physical classroom and partner-operated flying.",
+      "claimType": "ONLINE_NATIONAL_REACH_WITH_LOCAL_CLASSROOM",
+      "evidence": "Matches the verified business-model baseline and the shared ACADEMY scope. It does not assert nationwide physical branches.",
+      "verificationStatus": "VERIFIED BY PROJECT EVIDENCE",
+      "risk": "LOW",
+      "recommendedAction": "KEEP_IF_VERIFIED"
+    },
+    {
+      "file": "pages/dgca-ground-classes-in-india.jsx",
+      "route": "/dgca-ground-classes-in-india",
+      "exactText": "Classroom batches run at the academy's Dwarka, New Delhi location; students outside Delhi can join online batches; the academy does not claim physical branches in other cities.",
+      "context": "Visible page and FAQ explicitly delimit physical versus online delivery.",
+      "claimType": "DELIVERY_SCOPE_LIMITATION",
+      "evidence": "Matches the supplied baseline and shared business facts.",
+      "verificationStatus": "VERIFIED BY PROJECT EVIDENCE",
+      "risk": "LOW",
+      "recommendedAction": "KEEP_IF_VERIFIED"
+    },
+    {
+      "file": "components/LocalitySearchPage.jsx",
+      "route": "/pilot-training-near/[locality]",
+      "exactText": "The website says students outside Delhi can join online batches; sources do not establish a branch, office, campus, or instructor in the locality; flight training occurs at selected partner schools, not at the locality.",
+      "context": "Generated template carefully distinguishes geographic references from academy service locations; current locality input count is zero per Phase 4.",
+      "claimType": "LOCALITY_SCOPE_LIMITATION",
+      "evidence": "Matches the verified baseline and prior Phase 4 audit. No locality pages were generated in the audited build.",
+      "verificationStatus": "VERIFIED BY PROJECT EVIDENCE",
+      "risk": "LOW",
+      "recommendedAction": "KEEP_IF_VERIFIED"
+    },
+    {
+      "file": "components/Footer.jsx; components/Layout.jsx",
+      "route": "Site-wide",
+      "exactText": "We One Aviation teaches DGCA ground subjects from its Dwarka classroom, offers online batches to students outside Delhi, and arranges flight training with partner flying schools.",
+      "context": "Shared footer and default metadata state the business delivery scope without claiming other physical locations.",
+      "claimType": "SHARED_SCOPE_DESCRIPTION",
+      "evidence": "Matches the verified business-model baseline.",
+      "verificationStatus": "VERIFIED BY PROJECT EVIDENCE",
+      "risk": "LOW",
+      "recommendedAction": "KEEP_IF_VERIFIED"
+    },
+    {
+      "file": "pages/air-navigation.jsx",
+      "route": "/air-navigation",
+      "exactText": "Flying School Cadets — Under DGCA syllabus at any approved flying school.",
+      "context": "Generic copy refers to third-party flying schools rather than a We One campus or branch.",
+      "claimType": "THIRD_PARTY_PROVIDER_SCOPE",
+      "evidence": "The verified baseline states flying is arranged with partner flying schools; this wording does not identify specific schools or demonstrate a We One location.",
+      "verificationStatus": "VERIFIED BY PROJECT EVIDENCE",
+      "risk": "LOW",
+      "recommendedAction": "KEEP_IF_VERIFIED"
+    },
+    {
+      "file": "data/pageFaqs.js",
+      "route": "/courses/cpl",
+      "exactText": "Training is available in India and with partner flying schools in the USA, Canada, and Australia.",
+      "context": "FAQ answer is visible and embedded in FAQ structured data; enumerates specific active foreign partner markets.",
+      "claimType": "COUNTRY_SPECIFIC_PARTNER_AVAILABILITY",
+      "evidence": "The known baseline supports partner schools in general, but does not name countries, partners, or current availability.",
+      "verificationStatus": "NEEDS BUSINESS VERIFICATION",
+      "risk": "HIGH",
+      "recommendedAction": "BUSINESS_VERIFICATION_REQUIRED"
+    },
+    {
+      "file": "pages/pilot-training-in-dwarka.jsx",
+      "route": "/pilot-training-in-dwarka",
+      "exactText": "The academy is physically in Dwarka Sector 7; DGCA ground classes are taught at its Dwarka classroom; flight training takes place elsewhere at partner flying schools.",
+      "context": "Page explains the actual local classroom and separates flight training from it.",
+      "claimType": "VERIFIED_DWARKA_CLASSROOM_SCOPE",
+      "evidence": "Matches the verified baseline and consistent project business-location facts.",
+      "verificationStatus": "VERIFIED BY PROJECT EVIDENCE",
+      "risk": "LOW",
+      "recommendedAction": "KEEP_IF_VERIFIED"
+    }
+  ],
+  "comReferences": [
+    {
+      "file": "scripts/generate-local-search.js",
+      "route": "Not a production route",
+      "exactText": "weoneaviation.com",
+      "context": "Research tooling stores a domain ownership assessment and states repository configuration does not establish control.",
+      "claimType": "UNVERIFIED_DOMAIN_REFERENCE",
+      "evidence": "No project evidence establishes ownership or control.",
+      "verificationStatus": "UNCLEAR",
+      "risk": "INFORMATIONAL",
+      "recommendedAction": "REVIEW_CONTEXT"
+    },
+    {
+      "file": "scripts/validate-local-search.js",
+      "route": "Not a production route",
+      "exactText": "weoneaviation.com and historical URL/sitemap strings under that domain",
+      "context": "Validator contains checks for domain ownership evidence and historical URLs; these are not public page links.",
+      "claimType": "UNVERIFIED_DOMAIN_REFERENCE",
+      "evidence": "No ownership proof; current site canonical is .in.",
+      "verificationStatus": "UNCLEAR",
+      "risk": "INFORMATIONAL",
+      "recommendedAction": "REVIEW_CONTEXT"
+    },
+    {
+      "file": "data/local-seo/india-local-search-report.json; data/local-seo/india-locality-research.json; data/local-seo/local-search-report.json; data/local-seo/locality-candidates.json; data/local-seo/india-city-research.json",
+      "route": "Research/audit artifacts",
+      "exactText": "weoneaviation.com and historical research URLs attributed or queried under the .com domain",
+      "context": "Local-search datasets record observed search results, candidate URLs, or domain assessment. They do not prove ownership or represent current .in production content.",
+      "claimType": "HISTORICAL_OR_RESEARCH_DOMAIN_REFERENCE",
+      "evidence": "Project audits explicitly classify .com ownership as unverified; no .com canonical appears in production HTML per Phase 4.",
+      "verificationStatus": "HISTORICAL/REFERENCE",
+      "risk": "INFORMATIONAL",
+      "recommendedAction": "HISTORICAL_ONLY"
+    },
+    {
+      "file": "data/local-seo/india-wide-local-seo-architecture-report.json; data/local-seo/locality-page-validation-report.json; data/local-seo/phase-2-content-entity-correction-audit.json; data/local-seo/phase-3-implementation-report.json; data/local-seo/phase-4-final-production-audit.json",
+      "route": "Audit/report artifacts",
+      "exactText": "weoneaviation.com",
+      "context": "Reports preserve the unverified ownership status and prior research context; not visible production claims.",
+      "claimType": "AUDIT_REFERENCE",
+      "evidence": "The reports state ownership is unverified; Phase 4 found no .com references in built HTML.",
+      "verificationStatus": "HISTORICAL/REFERENCE",
+      "risk": "INFORMATIONAL",
+      "recommendedAction": "HISTORICAL_ONLY"
+    },
+    {
+      "file": "scripts/seedStudents.js",
+      "route": "Not a production route",
+      "exactText": "arjun.mehta@weoneaviation.com and other seeded sample email addresses using @weoneaviation.com",
+      "context": "Development seed records, not a public website domain/URL or proof of ownership.",
+      "claimType": "NON_PRODUCTION_EMAIL_REFERENCE",
+      "evidence": "No domain ownership evidence is established by sample addresses.",
+      "verificationStatus": "UNCLEAR",
+      "risk": "INFORMATIONAL",
+      "recommendedAction": "REVIEW_CONTEXT"
+    }
+  ],
+  "summary": {
+    "approvalClaimCount": 14,
+    "priceClaimCount": 14,
+    "durationClaimCount": 13,
+    "serviceScopeClaimCount": 18,
+    "approvalClaimCountMeaning": "Count of claim records in approvalClaims; some records consolidate multiple repeated page elements or references within the same file/route.",
+    "priceClaimCountMeaning": "Count of claim records in priceClaims; exactText groups line-item ranges on a single course table where individually listed amounts share one evidentiary status.",
+    "durationClaimCountMeaning": "Count of claim records in durationClaims; repeated visible and schema forms are grouped where they express the same course-period assertion.",
+    "serviceScopeClaimCountMeaning": "Count of claim records in serviceScopeClaims; records include both baseline-supported scope and potentially overbroad claims."
+  },
+  "productionChangesMade": false
+}

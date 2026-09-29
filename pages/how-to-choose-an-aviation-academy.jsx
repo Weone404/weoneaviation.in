@@ -462,7 +462,7 @@ export default function HowToChooseAnAviationAcademy() {
                 <p className="text-white/70 text-sm leading-relaxed mb-4">
                   We are at {ACADEMY.streetAddress}, {ACADEMY.addressLocality} {ACADEMY.postalCode}. If you have a flying school
                   quote in front of you and cannot tell what is missing from it, that is a useful hour whether or not you ever
-                  enrol here. Phone {ACADEMY.phone} or write to {ACADEMY.email}.
+                  enrol here. Phone {ACADEMY.phoneDisplay} or write to {ACADEMY.email}.
                 </p>
               </div>
             </ScrollReveal>

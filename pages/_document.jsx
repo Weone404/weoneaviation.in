@@ -2,33 +2,13 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import StructuredData from '../components/StructuredData';
 import { generateOrganizationSchema, generateWebsiteSchema } from '../lib/schema';
 
-/*
- * These become the organisation's `sameAs`, which is how a model ties this site
- * to the same real-world entity it encounters elsewhere. Each corroborating
- * profile strengthens that resolution, so the list should be as complete as the
- * academy's genuine presence allows.
- *
- * Two changes here (GEO audit 2026-08-11):
- *  - LinkedIn added. The company page was already linked from /credentials but
- *    was absent from the schema, so it contributed nothing.
- *  - The share/tracking query strings were stripped. `sameAs` matching is
- *    literal, and `?mibextid=…` / `?igsh=…` are per-share tokens, not the
- *    canonical profile URLs a knowledge graph records.
- */
-const footerSocialLinks = [
-  'https://www.facebook.com/share/1AokxHk8Yv/',
-  'https://www.instagram.com/we_one_aviation',
-  'https://www.linkedin.com/company/weoneaviation',
-];
-
-const twitterSite = process.env.NEXT_PUBLIC_TWITTER_SITE;
-const organizationSchema = generateOrganizationSchema({ sameAs: footerSocialLinks });
+const organizationSchema = generateOrganizationSchema();
 const websiteSchema = generateWebsiteSchema();
 
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" data-scroll-behavior="smooth">
         <Head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -87,7 +67,6 @@ class MyDocument extends Document {
           <meta property="og:image:alt" content="We One Aviation Academy — Pilot Training Institute in India" />
 
           <meta name="twitter:card" content="summary_large_image" />
-          {twitterSite ? <meta name="twitter:site" content={twitterSite} /> : null}
           <meta name="twitter:image" content="https://weoneaviation.in/og-cover.jpg" />
           <meta name="twitter:image:alt" content="We One Aviation Academy — Pilot Training Institute in India" />
 

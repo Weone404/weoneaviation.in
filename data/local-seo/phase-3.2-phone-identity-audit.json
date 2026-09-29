@@ -1,0 +1,236 @@
+{
+  "phase": "3.2",
+  "searchScope": {
+    "searched": [
+      "Exact digit strings 9667370747, 9355566991, 9555291956, and 9717977702 across project files.",
+      "wa.me, whatsapp, tel:, phoneNumber, telephone, phone, mobile, contact, and call across source, component, library, and data files.",
+      "Literal phone destinations in wa.me/ and tel: URLs."
+    ],
+    "exactPhoneDestinationFindings": "The only literal wa.me and tel: destinations found use the four requested numbers. Several components construct destinations from ACADEMY.phone/whatsapp rather than repeating digits.",
+    "rolePolicy": "role is UNKNOWN for every number. codeImpliedUsage describes labels and destinations present in code, not an independently verified business role.",
+    "reportSelfReference": "This inventory excludes this report from its file-occurrence arrays to avoid self-referential number matches. Earlier project reports mentioning the numbers are included."
+  },
+  "phoneNumbers": [
+    {
+      "number": "+91-9667370747",
+      "files": [
+        "README.md",
+        "SEO-BACKLOG.md",
+        "components/ContactPopup.jsx",
+        "components/FloatingButtons.jsx",
+        "components/Footer.jsx",
+        "components/PdfLeadMagnet.jsx",
+        "data/pageFaqs.js",
+        "data/local-seo/business-entity-audit.json",
+        "data/local-seo/business-location.json",
+        "data/local-seo/india-local-search-report.json",
+        "data/local-seo/india-locality-research.json",
+        "data/local-seo/india-wide-local-seo-architecture-report.json",
+        "data/local-seo/local-search-report.json",
+        "data/local-seo/phase-2-content-entity-correction-audit.json",
+        "data/local-seo/phase-3-implementation-report.json",
+        "data/local-seo/phase-3.1-final-safety-audit.json",
+        "lib/facts.js",
+        "pages/air-navigation.jsx",
+        "pages/air-regulations.jsx",
+        "pages/airline-preparation-course.jsx",
+        "pages/aviation-meteorology.jsx",
+        "pages/best-flight-schools-in-usa.jsx",
+        "pages/blogs/[id].jsx",
+        "pages/courses.jsx",
+        "pages/courses/atpl.jsx",
+        "pages/courses/cpl.jsx",
+        "pages/emirates-cadet-pilot-program.jsx",
+        "pages/faq.jsx",
+        "pages/flying-school/usa.jsx",
+        "pages/index.jsx",
+        "pages/privacy-policy.jsx",
+        "pages/qatar-airways-cadet-pilot-program.jsx",
+        "pages/rtr-a.jsx",
+        "pages/technical-general.jsx",
+        "pages/terms.jsx",
+        "public/llms.txt",
+        "scripts/generate-local-search.js"
+      ],
+      "usageLocations": [
+        "lib/facts.js: ACADEMY.phone is +91-9667370747; ACADEMY.whatsapp targets wa.me/919667370747.",
+        "lib/schema.js reads ACADEMY.phone for the global Organization telephone; pages/index.jsx also contains a telephone value.",
+        "Contact page uses ACADEMY.phone and ACADEMY.whatsapp for call and WhatsApp actions.",
+        "Footer displays it twice as a tel: destination and uses it for a WhatsApp CTA.",
+        "FloatingButtons provides tel: and WhatsApp actions; ContactPopup and many course/content CTA links use the WhatsApp destination.",
+        "PdfLeadMagnet, privacy-policy, terms, and page FAQs publish or reference the number.",
+        "README.md, SEO-BACKLOG.md, llms.txt, and local SEO audit/generation files describe or repeat it."
+      ],
+      "usageType": [
+        "Shared academy fact",
+        "Organization schema telephone",
+        "Visible phone/contact value",
+        "tel: link",
+        "WhatsApp destination",
+        "Contact/lead CTA",
+        "Documentation and audit references"
+      ],
+      "appearsInSchema": true,
+      "appearsOnContact": true,
+      "appearsInFooter": true,
+      "appearsInWhatsApp": true,
+      "appearsInLeadForms": true,
+      "appearsInAdsOrCampaign": false,
+      "appearsInMetadata": false,
+      "role": "UNKNOWN",
+      "codeImpliedUsage": "The shared facts and Organization schema label it as the primary academy number; code also uses it for WhatsApp, call buttons, and general enquiries. These code labels do not independently verify ownership or current operational role."
+    },
+    {
+      "number": "+91-9355566991",
+      "files": [
+        "components/Footer.jsx",
+        "components/LeadForm.jsx",
+        "data/local-seo/business-entity-audit.json",
+        "data/local-seo/business-location.json",
+        "data/local-seo/india-local-search-report.json",
+        "data/local-seo/india-locality-research.json",
+        "data/local-seo/india-wide-local-seo-architecture-report.json",
+        "data/local-seo/local-search-report.json",
+        "data/local-seo/phase-2-content-entity-correction-audit.json",
+        "data/local-seo/phase-3-implementation-report.json",
+        "data/local-seo/phase-3.1-final-safety-audit.json",
+        "pages/privacy-policy.jsx",
+        "scripts/generate-local-search.js"
+      ],
+      "usageLocations": [
+        "components/Footer.jsx: visible secondary number with a tel: link.",
+        "components/LeadForm.jsx: WhatsApp destination after form submission; this shared component is used on About, Delhi, and Dwarka pages.",
+        "pages/privacy-policy.jsx: listed beside +91-9667370747, while its tel: href targets +91-9667370747.",
+        "Business/entity records, previous audit reports, and local-search generation data note or reproduce the unresolved number."
+      ],
+      "usageType": [
+        "Visible Footer contact",
+        "tel: link",
+        "Shared lead-form WhatsApp destination",
+        "Privacy-policy contact listing",
+        "Business record and audit references"
+      ],
+      "appearsInSchema": false,
+      "appearsOnContact": false,
+      "appearsInFooter": true,
+      "appearsInWhatsApp": true,
+      "appearsInLeadForms": true,
+      "appearsInAdsOrCampaign": false,
+      "appearsInMetadata": false,
+      "role": "UNKNOWN",
+      "codeImpliedUsage": "The Footer labels it as a phone contact and the shared LeadForm sends WhatsApp enquiries to it. Code does not establish whether it is primary, secondary, sales, support, or another business line."
+    },
+    {
+      "number": "+91-9555291956",
+      "files": [
+        "data/local-seo/business-entity-audit.json",
+        "data/local-seo/business-location.json",
+        "data/local-seo/india-wide-local-seo-architecture-report.json",
+        "data/local-seo/local-search-report.json",
+        "data/local-seo/phase-3.1-final-safety-audit.json",
+        "pages/airindia-pilot-preparation.jsx",
+        "pages/indigo-pilot-preparation.jsx"
+      ],
+      "usageLocations": [
+        "pages/airindia-pilot-preparation.jsx: included in the displayed Phone value; the tel: link targets this number; two WhatsApp CTAs target it.",
+        "pages/indigo-pilot-preparation.jsx: two WhatsApp CTAs and one tel: quick-contact item target it.",
+        "Business location/entity records and earlier audits list it among additional campaign-page numbers."
+      ],
+      "usageType": [
+        "Campaign-page contact display",
+        "tel: link",
+        "WhatsApp CTA",
+        "Business record and audit references"
+      ],
+      "appearsInSchema": false,
+      "appearsOnContact": false,
+      "appearsInFooter": false,
+      "appearsInWhatsApp": true,
+      "appearsInLeadForms": false,
+      "appearsInAdsOrCampaign": true,
+      "appearsInMetadata": false,
+      "role": "UNKNOWN",
+      "codeImpliedUsage": "Air India and IndiGo pilot-preparation pages present it as a campaign-page phone contact and WhatsApp CTA. This does not establish whether it is an academy number, campaign number, or another line."
+    },
+    {
+      "number": "+91-9717977702",
+      "files": [
+        "data/local-seo/business-entity-audit.json",
+        "data/local-seo/business-location.json",
+        "data/local-seo/india-wide-local-seo-architecture-report.json",
+        "data/local-seo/local-search-report.json",
+        "data/local-seo/phase-3.1-final-safety-audit.json",
+        "pages/airindia-pilot-preparation.jsx",
+        "pages/indigo-pilot-preparation.jsx"
+      ],
+      "usageLocations": [
+        "pages/airindia-pilot-preparation.jsx: included in the displayed Phone value; the row's tel: href targets +91-9555291956, not this number.",
+        "pages/indigo-pilot-preparation.jsx: one tel: quick-contact item targets and displays this number.",
+        "Business location/entity records and earlier audits list it among additional campaign-page numbers."
+      ],
+      "usageType": [
+        "Campaign-page phone display",
+        "tel: link",
+        "Business record and audit references"
+      ],
+      "appearsInSchema": false,
+      "appearsOnContact": false,
+      "appearsInFooter": false,
+      "appearsInWhatsApp": false,
+      "appearsInLeadForms": false,
+      "appearsInAdsOrCampaign": true,
+      "appearsInMetadata": false,
+      "role": "UNKNOWN",
+      "codeImpliedUsage": "IndiGo page presents it as a quick-contact tel: number; Air India page includes it in a combined phone display but links that display to the other number. No operational role is established."
+    }
+  ],
+  "nearRouteStatus": {
+    "hubRoute": {
+      "route": "/pilot-training-near",
+      "source": "pages/pilot-training-near/index.jsx",
+      "latestBuildStatus": "Static hub emitted in the latest inspected production build.",
+      "robots": "noindex, follow",
+      "canonical": "https://weoneaviation.in/pilot-training-near",
+      "sitemapIncluded": false
+    },
+    "localityRoutes": {
+      "template": "pages/pilot-training-near/[locality].jsx",
+      "latestBuildStatus": "Template is compiled, but zero locality paths are generated.",
+      "generatedLocalityCount": 0,
+      "input": "data/local-seo/pilot-localities.json is an empty array.",
+      "sitemapUrls": [],
+      "sitemapIncluded": false
+    },
+    "verification": "Checked .next/prerender-manifest.json, .next/server/pages-manifest.json, data/local-seo/pilot-localities.json, and .generated-sitemap.xml. No files in this route or sitemap were changed."
+  },
+  "projectSearchSummary": {
+    "literalWhatsAppAndTelephoneDestinations": [
+      "wa.me/919667370747",
+      "wa.me/919355566991",
+      "wa.me/919555291956",
+      "tel:+919667370747",
+      "tel:+919355566991",
+      "tel:+919555291956",
+      "tel:+919717977702"
+    ],
+    "additionalLiteralNumberFinding": "No additional literal phone number was found in wa.me/ or tel: destinations. The phone-related term search also found dynamic destinations assembled from ACADEMY values and form fields submitted by users; user-entered form phone fields are not fixed business phone numbers.",
+    "metadataFinding": "None of the four fixed numbers was found in title, description, canonical, robots, Open Graph, or Twitter metadata for the audited pages."
+  },
+  "productionChangesMade": false,
+  "humanVerificationRequired": [
+    "Confirm current ownership/control and intended purpose of +91-9667370747; repository facts call it primary, but no external phone ownership verification was performed.",
+    "Confirm whether +91-9355566991 is controlled by the academy and whether its Footer/LeadForm WhatsApp use is intentional.",
+    "Confirm whether +91-9555291956 is an authorized Air India/IndiGo campaign contact or another type of contact.",
+    "Confirm whether +91-9717977702 is an authorized business/campaign contact and explain why the Air India combined phone display links only to +91-9555291956.",
+    "Confirm whether the campaign-page contacts should be treated as organization contact points; they are not currently present in the shared Organization schema."
+  ],
+  "auditBoundary": {
+    "productionCodeModified": false,
+    "pilotTrainingNearFilesModified": false,
+    "filesDeleted": false,
+    "gitStaged": false,
+    "deploymentPerformed": false,
+    "gitPushPerformed": false,
+    "onlyCreatedFile": "data/local-seo/phase-3.2-phone-identity-audit.json"
+  }
+}

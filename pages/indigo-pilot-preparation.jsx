@@ -255,17 +255,16 @@ export default function IndiGoPilotPrep() {
                             {/* ── Upcoming Batches ── */}
                             <ScrollReveal>
                                 <h3 className="font-montserrat text-lg sm:text-xl font-bold text-av-blue mb-3">
-                                    📅 Upcoming Batches
+                                    📅 Batch Information
                                 </h3>
                                 <div className="bg-av-light rounded-2xl p-5 sm:p-6">
                                     <div className="inline-block bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
-                                        🚨 New Batches Starting Soon
+                                        Confirm current availability
                                     </div>
                                     <div className="space-y-3">
                                         {[
-                                            ['🪑', 'Limited seats available for focused, small-batch training'],
-                                            ['📅', 'Flexible batch options — weekday and weekend schedules available'],
-                                            ['💻', 'Online and offline (classroom) training modes both available'],
+                                            ['📅', 'Contact the academy to confirm current schedule and availability'],
+                                            ['💻', 'Confirm the current delivery format with the academy'],
                                         ].map(([icon, text]) => (
                                             <div key={text} className="flex items-start gap-3 text-sm text-gray-600">
                                                 <span className="text-lg flex-shrink-0 leading-tight">{icon}</span>
@@ -274,7 +273,7 @@ export default function IndiGoPilotPrep() {
                                         ))}
                                     </div>
                                     <a
-                                        href="https://wa.me/919555291956"
+                                        href="https://wa.me/919355611996"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="mt-5 inline-block bg-av-orange text-white font-bold px-6 py-2.5 rounded-full text-sm hover:bg-av-blue transition-all"
@@ -391,14 +390,14 @@ function SidebarHighlights() {
         <div className="bg-av-orange rounded-2xl p-5 sm:p-6 text-white">
             <h4 className="font-montserrat font-bold mb-2 text-sm sm:text-base">Program Highlights</h4>
             <p className="text-white/80 text-sm mb-3">IndiGo JFO Interview Prep:</p>
-            <div className="text-2xl font-montserrat font-black">Batch 2026</div>
+            <div className="text-lg font-montserrat font-black">Current availability</div>
             <div className="mt-2 space-y-1">
-                {['Online + Classroom Modes', 'Weekday & Weekend Options', 'Limited Seats — Focused Training'].map((t) => (
+                {['Ask the academy to confirm format', 'Ask the academy to confirm schedule', 'Contact the academy for availability'].map((t) => (
                     <div key={t} className="text-white/70 text-xs">{t}</div>
                 ))}
             </div>
             <a
-                href="https://wa.me/919555291956"
+                href="https://wa.me/919355611996"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all"
@@ -415,8 +414,7 @@ function SidebarContact() {
             <h4 className="font-montserrat font-bold text-av-blue mb-4 text-sm sm:text-base">Quick Contact</h4>
             <div className="space-y-2.5 text-sm text-gray-600">
                 {[
-                    { icon: '📱', href: 'tel:+919555291956', label: '+91 9555291956' },
-                    { icon: '📱', href: 'tel:+919717977702', label: '+91 9717977702' },
+                    { icon: '📱', href: 'tel:+919355611996', label: '+91 93556 11996' },
                     { icon: '📧', href: 'mailto:info.weoneaviation@gmail.com', label: 'info.weoneaviation@gmail.com' },
                 ].map(({ icon, href, label }) => (
                     <div key={href} className="flex items-center gap-2 min-w-0">

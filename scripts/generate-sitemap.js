@@ -104,9 +104,23 @@ function extractBlogIds() {
     if (!ids.includes(match[1])) {
       ids.push(match[1]);
     }
+
   }
 
   return ids.map((id) => `/blogs/${id}`);
+}
+
+function extractIndexableLocalityRoutes() {
+  const filePath = path.join(rootDir, 'data', 'local-seo', 'pilot-localities.json');
+  if (!fs.existsSync(filePath)) return [];
+  const locations = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  return locations
+    .filter((location) => (
+      location.indexability === 'PUBLISH_INDEXABLE'
+      && location.status === 'publish'
+      && location.canonicalPath
+    ))
+    .map((location) => location.canonicalPath);
 }
 
 function normalizeRoute(route) {
@@ -207,13 +221,17 @@ function buildSitemapXml() {
   const dynamicRoutes = [
     ...extractCitySlugs(),
     ...extractBlogIds(),
+    ...extractIndexableLocalityRoutes(),
   ];
+  const noindexRoutes = new Set(['/pilot-training-near']);
 
   const allRoutes = Array.from(new Set([...routes, ...dynamicRoutes].map(normalizeRoute)))
     .filter((route) => {
       const dropped = redirected.has(route);
       if (dropped) console.log(`generate-sitemap: excluding ${route} (301)`);
-      return !dropped;
+      const noindex = noindexRoutes.has(route);
+      if (noindex) console.log(`generate-sitemap: excluding ${route} (noindex)`);
+      return !dropped && !noindex;
     })
     .sort();
 

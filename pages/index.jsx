@@ -51,10 +51,10 @@ const HomepageFAQs = dynamic(() => import('../components/FAQs'), {
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
 const courses = [
-  { id: 'cpl', icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: '18-24 months', eligibility: '10+2 (PCM)', href: '/commercial-pilot-license', highlight: true },
-  { id: 'atpl', icon: '🏆', title: 'ATPL', duration: '6 months', eligibility: 'CPL holder', href: '/courses/atpl' },
-  { id: 'dgca', icon: '📚', title: 'DGCA Ground Classes', duration: '6-12 months', eligibility: '10+2 (PCM)', href: '/dgca-ground-classes' },
-  { id: 'cpl-flight', icon: '🛩️', title: 'CPL Flight Training', duration: '12-18 months', eligibility: 'DGCA exam cleared', href: '/courses/cpl' },
+  { id: 'cpl', icon: '✈️', title: 'Commercial Pilot License (CPL)', duration: 'Varies by flying-school schedule', eligibility: '10+2 (PCM)', href: '/commercial-pilot-license', highlight: true },
+  { id: 'atpl', icon: '🏆', title: 'ATPL', duration: 'Depends on experience and exam progress', eligibility: 'CPL holder', href: '/courses/atpl' },
+  { id: 'dgca', icon: '📚', title: 'DGCA Ground Classes', duration: 'Ask about current batch schedule', eligibility: '10+2 (PCM)', href: '/dgca-ground-classes' },
+  { id: 'cpl-flight', icon: '🛩️', title: 'CPL Flight Training', duration: 'Varies by selected flying school', eligibility: 'DGCA exam cleared', href: '/courses/cpl' },
 ];
 
 
@@ -90,13 +90,13 @@ const dgcaSubjects = [
 ];
 
 const flyingSchools = [
-  { id: 'india', flag: '🇮🇳', country: 'India', course: 'Commercial Pilot License (CPL)', duration: '12-18 months', fees: '₹35-45 Lakhs (approx.)', highlights: 'DGCA, state-of-the-art simulators, extensive flight hours', href: '/flying-school/india' },
-  { id: 'usa', flag: '🇺🇸', country: 'USA', course: 'FAA CPL & ATPL Training', duration: '12-14 months', fees: '₹67–83 Lakh (≈ $80,000–$100,000)', highlights: 'Largest flight training network in the USA, guaranteed instructor job opportunities', href: '/flying-school/usa' },
+  { id: 'india', flag: '🇮🇳', country: 'India', course: 'Flight-training guide', duration: 'Varies by provider', fees: 'Request a current written quote from the flying school', highlights: 'Flight training is provided by the selected flying school', href: '/flying-school/india' },
+  { id: 'usa', flag: '🇺🇸', country: 'USA', course: 'Flight-training guide', duration: 'Varies by provider', fees: 'Request a current written quote from the flying school', highlights: 'Confirm school status, availability, and terms directly', href: '/flying-school/usa' },
   // TODO: Create /flying-school/uk page
-  { id: 'uk', flag: '🇬🇧', country: 'UK', course: 'EASA ATPL Integrated Program', duration: '24 months', fees: '£90,000 - £120,000', highlights: 'Airline-focused training, fast-track to commercial airlines', href: '/contact' },
-  { id: 'aus', flag: '🇦🇺', country: 'Australia', course: 'CASA CPL & ATPL', duration: '12-18 months', fees: '₹49–65 Lakh (≈ AUD $90,000–$120,000)', highlights: 'High-quality flight training with a focus on international airline careers', href: '/flying-school/australia' },
-  { id: 'sa', flag: '🇿🇦', country: 'South Africa', course: 'SACAA CPL & ATPL', duration: '12-15 months', fees: '₹50–67 Lakh (≈ $60,000–$80,000)', highlights: 'Affordable pilot training, international pilot job opportunities', href: '/flying-school/south-africa' },
-  { id: 'can', flag: '🇨🇦', country: 'Canada', course: 'Transport Canada CPL & ATPL', duration: '18-24 months', fees: '₹62–76 Lakh (≈ CAD $90,000–$110,000)', highlights: 'High international reputation, direct airline placement programs', href: '/flying-school/canada' },
+  { id: 'uk', flag: '🇬🇧', country: 'UK', course: 'Flight-training guide', duration: 'Varies by provider', fees: 'Request a current written quote from the flying school', highlights: 'Confirm school status, availability, and terms directly', href: '/contact' },
+  { id: 'aus', flag: '🇦🇺', country: 'Australia', course: 'Flight-training guide', duration: 'Varies by provider', fees: 'Request a current written quote from the flying school', highlights: 'Flight training is provided by the selected flying school', href: '/flying-school/australia' },
+  { id: 'sa', flag: '🇿🇦', country: 'South Africa', course: 'Flight-training guide', duration: 'Varies by provider', fees: 'Request a current written quote from the flying school', highlights: 'Flight training is provided by the selected flying school', href: '/flying-school/south-africa' },
+  { id: 'can', flag: '🇨🇦', country: 'Canada', course: 'Flight-training guide', duration: 'Varies by provider', fees: 'Request a current written quote from the flying school', highlights: 'Confirm school status, availability, and terms directly', href: '/flying-school/canada' },
 ];
 
 const enrollSteps = [
@@ -111,36 +111,36 @@ const enrollSteps = [
     id: 'step2',
     step: 'Second Step',
     title: 'Join Ground School & Ground Classes',
-    desc: 'Enroll in a recognized Ground School and attend Ground Classes to build your theoretical knowledge in subjects like Air Navigation, Meteorology, Air Regulations, and Technical General — essential for clearing DGCA exams.',
+    desc: 'Attend DGCA ground-subject classes in Dwarka or ask about online batches for students outside Delhi.',
     href: '/dgca-ground-classes',
   },
   {
     id: 'step3',
     step: 'Third Step',
     title: 'Join a Flying School',
-    desc: 'After clearing your DGCA ground exams, join a DGCA Flying School to complete your required flying hours. You must log a minimum of 200 hours of flight training to become eligible for a Commercial Pilot License (CPL).',
+    desc: 'Flight training is arranged through selected partner flying schools. Confirm the school, current availability, requirements, and terms directly before enrolling.',
     href: '/flying-school/india',
   },
 ];
 
 const pilotJourneySteps = [
-  { id: 'medical', icon: '🩺', title: 'Apply For Dgca DGCA Medical', desc: 'You Have Do Your Medical Checkup From Any Approved Doctors. Below Is Full Process How To Get Dgca DGCA Medical. If You Have Issue In Dgca Medical Then You Can Contact us For Dgca Medical', alert: 'Is Your Dgca Medical Test Taking Time?', alertDesc: "Apply Dgca Medical Through We One Aviation Academy. Call On Us If You Can't Able For Dgca Medical. just Contact us for Dgca Medical" },
-  { id: 'computer', icon: '🖥️', title: 'Apply For Dgca Computer Number', desc: 'To start your journey as a pilot, obtaining a DGCA Computer Number is essential. This unique identification is required to appear for DGCA exams and progress in your aviation career.', alert: 'Worry About Computer Number?', alertDesc: "If You Are Facing Any Issue While Applying Dgca Computer Numbers Then Contacts Us. Don't Be Tense About Aviation. We are Here To Solve Your All Aviation Query" },
-  { id: 'exam', icon: '📝', title: 'Clear Dgca Exam', desc: 'After Applying These Both, You Have To Book Your Exam Which is Conducted By Dgca Called Dgca Exam. In Dgca Exam , You sit five written papers, and RTR (A) is examined separately.', alert: 'Issue While Apply For Dgca Paper.', alertDesc: "Can't Able To Apply Dgca Paper? Don't Worry Aviators, We One Aviation Is Here For Solve All your Aviation Problems. Just Contacts us" },
-  { id: 'flying', icon: '✈️', title: 'Apply For Flying Schools', desc: 'After Clear Dgca Exam, You Have To do 200hours of Flying From Any Flying Schools. Apply now For Do Flight Training From We One Aviation Academy.', alert: 'Worry About Loan For Flying schools?', alertDesc: 'We Provide 100% Loan For Flight Training From Any Country. If You Wants To do Flight Training Then We One Aviation Is Solution For You.' },
+  { id: 'medical', icon: '🩺', title: 'Check DGCA Medical Requirements', desc: 'Review current DGCA medical requirements and use the regulator’s published process to arrange an examination.', alert: 'Medical questions?', alertDesc: 'Contact the academy for course guidance; medical assessments are handled by the relevant approved examiners.' },
+  { id: 'computer', icon: '🖥️', title: 'Apply for a DGCA Computer Number', desc: 'A DGCA Computer Number is required for the relevant examination process. Check current application requirements on the official portal.', alert: 'Computer Number questions?', alertDesc: 'The academy can provide ground-course information; confirm application rules and status through the official DGCA portal.' },
+  { id: 'exam', icon: '📝', title: 'Prepare for DGCA Examinations', desc: 'Check the current examination subjects and booking instructions on DGCA Pariksha. Ground classes provide subject preparation, not a guaranteed result.', alert: 'Examination questions?', alertDesc: 'Confirm current examination requirements and booking details through the official DGCA portal.' },
+  { id: 'flying', icon: '✈️', title: 'Choose a Flying School', desc: 'Flight training is conducted by the selected flying school. Verify its current approval status, availability, cost, and schedule directly.', alert: 'Financing questions?', alertDesc: 'Financing eligibility and terms depend on the lender and applicant; confirm directly with any lender.' },
 ];
 
 
 
 const whyChooseFeatures = [
-  { id: 'wc1', icon: '✅', title: 'Approved Training Programs', desc: 'Our courses meet all regulatory requirements to ensure a smooth path to becoming a professional pilot.' },
-  { id: 'wc2', icon: '✅', title: 'Experienced Instructors & Mentors', desc: 'Learn from seasoned airline pilots and aviation experts who provide hands-on guidance.' },
-  { id: 'wc4', icon: '✅', title: 'Interview Preparation', desc: 'Interview preparation and career guidance for applications to airlines, industry connections and career support.' },
+  { id: 'wc1', icon: '✅', title: 'DGCA Ground-Subject Preparation', desc: 'Ground classes prepare students for DGCA written examinations; licensing decisions and requirements are set by the regulator.' },
+  { id: 'wc2', icon: '✅', title: 'Ground-Subject Instruction', desc: 'Study DGCA ground subjects in the academy’s Dwarka classroom or ask about current online batches.' },
+  { id: 'wc4', icon: '✅', title: 'Interview Preparation', desc: 'Interview preparation can support candidates; each airline sets its own recruitment process and makes hiring decisions.' },
   { id: 'wc5', icon: '✅', title: 'Comprehensive CPL & DGCA Ground Classes', desc: 'Structured curriculum covering Air Navigation, Meteorology, Air Regulations, and Technical subjects.' },
-  { id: 'wc6', icon: '✅', title: 'Flexible Payment & Loan Options', desc: 'Making your dream of becoming a pilot financially accessible with easy EMI and loan assistance.' },
-  { id: 'wc7', icon: '✅', title: 'Personalized Learning Approach', desc: 'Small batch sizes, doubt-clearing sessions, and one-on-one mentorship to ensure better understanding.' },
-  { id: 'wc8', icon: '✅', title: 'International Training Tie-Ups', desc: 'Get global exposure with flight training options in India and abroad.' },
-  { id: 'wc9', icon: '✅', title: 'Proven Track Record of Success', desc: 'Hundreds of successful pilots flying with leading airlines, proving our commitment to excellence.' },
+  { id: 'wc6', icon: '✅', title: 'Current Fees & Terms', desc: 'Contact the academy and selected flying school for current written fees and payment terms.' },
+  { id: 'wc7', icon: '✅', title: 'Learning Support', desc: 'Ask the academy about current class formats, batch schedules, and available learning support.' },
+  { id: 'wc8', icon: '✅', title: 'Partner Flying Schools', desc: 'Flight training is arranged through partner flying schools; confirm current provider details and availability directly.' },
+  { id: 'wc9', icon: '✅', title: 'Student Outcomes', desc: 'Training does not guarantee a licence or job. Examination and hiring decisions rest with the relevant authorities and employers.' },
 ];
 
 const worldLocations = [
@@ -191,7 +191,7 @@ const educationalOrgSchema = {
   url: 'https://weoneaviation.in',
   logo: 'https://weoneaviation.in/Logo.webp',       // ✅ FIXED: was logo.png
   image: 'https://weoneaviation.in/og-cover.jpg',
-  description: `DGCA pilot training institute in Dwarka, New Delhi. CPL, PPL, ATPL and SPL courses plus DGCA ground classes, running since ${FOUNDED_YEAR}.`,
+  description: `Aviation education in Dwarka, New Delhi: DGCA ground-subject teaching, online batches for students outside Delhi, and flight training arranged through partner flying schools. Operating since ${FOUNDED_YEAR}.`,
   foundingDate: '2009',
   dateModified: LAST_UPDATED_ISO,
   telephone: '+919667370747',
@@ -208,11 +208,6 @@ const educationalOrgSchema = {
     '@type': 'GeoCoordinates',
     latitude: '28.5921',
     longitude: '77.0460',
-  },
-  accreditedBy: {
-    '@type': 'Organization',
-    name: 'Directorate General of Civil Aviation (DGCA)',
-    url: 'https://www.dgca.gov.in',
   },
   /*
    * aggregateRating REMOVED — do not "sync" it back.
@@ -293,7 +288,7 @@ export default function Home() {
             card title when someone shares the homepage link.
         ──────────────────────────────────────────────────────────────────── */}
         <meta key="og:title" property="og:title" content="We One Aviation | Pilot Training Institute in India" />
-        <meta key="og:description" property="og:description" content={`DGCA pilot training academy in Dwarka, New Delhi, running CPL, PPL and ATPL courses since ${FOUNDED_YEAR}. Free career counselling available.`} />
+        <meta key="og:description" property="og:description" content={`We One Aviation Academy teaches DGCA ground subjects in Dwarka, offers online batches to students outside Delhi, and arranges flight training through partner flying schools.`} />
         <meta key="og:url" property="og:url" content="https://weoneaviation.in/" />
         <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
         <meta property="og:image:width" content="1200" />
@@ -353,7 +348,7 @@ export default function Home() {
 
           {/* Direct answer. Written to stand alone if extracted. */}
           <p className="text-white/90 leading-relaxed text-sm px-4 mt-3 max-w-3xl mx-auto">
-              We One Aviation Academy is a DGCA pilot training institute in Dwarka, New Delhi, operating since 2009. It runs DGCA ground classes for the Commercial Pilot Licence written examinations and arranges flight training placements with partner schools in India and abroad. A CPL requires 200 hours of flight time and a minimum age of 18.
+              We One Aviation Academy teaches DGCA ground subjects from its classroom in Dwarka, New Delhi, and offers online batches to students outside Delhi. Flight training is arranged with partner flying schools and takes place at the selected school.
           </p>
 
           <p className="text-white/60 text-xs px-4 mt-2">{`Last updated: ${LAST_UPDATED}`}</p>
@@ -390,7 +385,7 @@ export default function Home() {
                 Our team works with students on course planning, flight-school decisions, and foundational aviation knowledge so they can make informed choices at every stage of their journey.
               </p>
               <div className="flex flex-wrap gap-3 mb-6">
-                {['DGCA', 'International Tie-ups', '24/7 Support', 'Job Placement'].map(tag => (
+                {['DGCA ground-subject teaching', 'Dwarka classroom', 'Online batches outside Delhi', 'Partner-school flight training'].map(tag => (
                   <span key={tag} className="bg-av-light text-av-blue text-xs font-semibold px-4 py-2 rounded-full border border-av-sky/20">
                     ✓ {tag}
                   </span>
@@ -425,7 +420,7 @@ export default function Home() {
                 </div>
                 <div className="absolute -top-5 -right-5 glass bg-av-blue rounded-xl p-4 shadow-xl border border-white/20">
                   <div className="font-montserrat text-av-orange text-xl font-black">DGCA</div>
-                  <div className="text-white text-xs">Approved</div>
+                  <div className="text-white text-xs">Ground subjects</div>
                 </div>
               </div>
             </ScrollReveal>
@@ -478,10 +473,10 @@ export default function Home() {
                     This is the main pilot course with exams conducted by DGCA, designed for theoretical preparation required to obtain a pilot&apos;s license.
                   </p>
                   <div className="space-y-2 mb-6 text-sm text-gray-600">
-                    <div><span className="font-semibold text-av-blue">Fees:</span> 2 Lakh to 2.95 Lakh <span className="text-av-orange font-semibold">(Scholarship Available)</span></div>
-                    <div><span className="font-semibold text-av-blue">Course Duration:</span> 6 Months</div>
-                    <div><span className="font-semibold text-av-blue">Mode:</span> Offline / Online</div>
-                    <div><span className="font-semibold text-av-blue">Batch Start:</span> Every 1st &amp; 3rd Week of Month</div>
+                    <div><span className="font-semibold text-av-blue">Fees:</span> Contact the academy for current fees and availability.</div>
+                    <div><span className="font-semibold text-av-blue">Batch schedule:</span> Confirm current dates with the academy.</div>
+                    <div><span className="font-semibold text-av-blue">Mode:</span> Classroom in Dwarka; online batches for students outside Delhi</div>
+                    <div><span className="font-semibold text-av-blue">Batch Start:</span> Confirm current dates with the academy</div>
                   </div>
                   <Link href="/dgca-ground-classes" className="button-primary mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">Course Details</Link>
                 </div>
@@ -495,9 +490,9 @@ export default function Home() {
                     After clearing the DGCA Exam, complete your flying hours from India or abroad. 200 Hours of Flying is mandatory for a Commercial Pilot Licence.
                   </p>
                   <div className="space-y-2 mb-6 text-sm text-gray-600">
-                    <div><span className="font-semibold text-av-blue">Flying Duration:</span> 1 year (Abroad) / 1.5 Years (India)</div>
-                    <div><span className="font-semibold text-av-blue">Fees:</span> 55 to 65 lakh <span className="text-gray-400">(Depends on Country)</span></div>
-                    <div><span className="font-semibold text-av-blue">Registration:</span> Every Month</div>
+                    <div><span className="font-semibold text-av-blue">Flying duration:</span> Varies by selected flying school and student progress.</div>
+                    <div><span className="font-semibold text-av-blue">Fees:</span> Request a current written quote from the selected flying school.</div>
+                    <div><span className="font-semibold text-av-blue">Registration:</span> Confirm availability with the selected school</div>
                   </div>
                   <Link href="/courses/cpl" className="button-primary mt-auto inline-block text-center bg-av-blue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">CPL Flight Training Details</Link>
                 </div>
@@ -507,11 +502,11 @@ export default function Home() {
                 <div className="bg-av-blue rounded-2xl shadow-lg p-8 h-full flex flex-col">
                   <div className="text-4xl mb-4">✈️</div>
                   <h3 className="font-montserrat text-xl font-bold text-white mb-3">Commercial Pilot Licence (CPL) Course</h3>
-                  <p className="text-white/70 text-sm leading-relaxed mb-4">Full-fledged training program including both theoretical and practical flight training. All aviation solutions under one roof.</p>
+                  <p className="text-white/70 text-sm leading-relaxed mb-4">DGCA ground-subject preparation is taught by the academy; flight training is arranged separately through partner flying schools.</p>
                   <div className="space-y-2 mb-6 text-sm text-white/80">
-                    <div><span className="font-semibold text-av-orange">Full Course Duration:</span> 2–3 Years (Depends on Country)</div>
-                    <div><span className="font-semibold text-av-orange">Full Course Fees:</span> 50–55 lakh (Depends on Country)</div>
-                    <div><span className="font-semibold text-av-orange">Batch Start:</span> Every 1st &amp; 3rd Week of Month</div>
+                    <div><span className="font-semibold text-av-orange">Training timeline:</span> Varies by student progress and flying-school schedule.</div>
+                    <div><span className="font-semibold text-av-orange">Course fees:</span> Confirm current written terms with each provider.</div>
+                    <div><span className="font-semibold text-av-orange">Batch Start:</span> Confirm current dates with the academy</div>
                   </div>
                   <Link href="/commercial-pilot-license" className="button-primary mt-auto inline-block text-center bg-av-orange text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">Course Details</Link>
                 </div>
@@ -526,7 +521,7 @@ export default function Home() {
             <ScrollReveal>
               <div className="section-tag">DGCA Ground Classes</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">Commercial Pilot License</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">✈️ Dreaming of Becoming a Commercial Pilot? Get approved training, expert mentorship and hands-on flight experience.</p>
+              <p className="text-gray-600 leading-relaxed mb-4">✈️ Explore the CPL pathway, DGCA ground-subject preparation, and flight training arranged through partner flying schools.</p>
               <Link href="/commercial-pilot-license" className="button-primary inline-block bg-av-blue text-white px-7 py-3 rounded-full font-semibold hover:bg-av-orange transition-all text-sm mr-3 mb-3">CPL Training Details</Link>
             </ScrollReveal>
             <ScrollReveal delay={150}>
@@ -538,8 +533,8 @@ export default function Home() {
           </div>
           <div className="max-w-7xl mx-auto mt-12">
             <ScrollReveal className="bg-av-blue rounded-2xl p-8 text-center">
-              <h2 className="font-montserrat text-2xl font-bold text-white mb-3">Enroll in Flying School</h2>
-              <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">At Our Flying School, we train future pilots with state-of-the-art aircraft, expert instructors, and guaranteed career guidance.</p>
+              <h2 className="font-montserrat text-2xl font-bold text-white mb-3">Flight Training Through Partner Schools</h2>
+              <p className="text-white/70 max-w-2xl mx-auto mb-6 text-sm">Flight training is arranged with partner flying schools and takes place at the selected school. Confirm its current location, availability, fees, and terms before applying.</p>
               <Link href="/flying-school/india" className="button-primary inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">India Flying School Details</Link>
             </ScrollReveal>
           </div>
@@ -580,20 +575,20 @@ export default function Home() {
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
                 What Does <span className="text-av-orange">DGCA Exam Coaching and Flight Training</span> Involve?
               </h2>
-              <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">DGCA ground classes and flying school placement for aspiring pilots.</p>
+              <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">DGCA ground classes and guidance on the separate flying-school stage.</p>
             </ScrollReveal>
             <div className="grid md:grid-cols-2 gap-8">
               <ScrollReveal>
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
                   <h3 className="font-montserrat text-xl font-bold text-av-blue mb-4">Dgca Ground Classes</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6">DGCA ground classes for the CPL subject set, running since 2009. Batch timings and fee instalments are flexible.</p>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-6">DGCA ground-subject classes are provided from the Dwarka classroom. Contact the academy to confirm current batch timings and fees.</p>
                   <Link href="/contact" className="button-primary inline-block bg-av-blue text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-av-orange transition-all">Enquiry Now</Link>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={150}>
                 <div className="bg-av-blue rounded-2xl shadow-lg p-8">
-                  <h3 className="font-montserrat text-xl font-bold text-white mb-4">Our Flying School</h3>
-                  <p className="text-white/70 text-sm leading-relaxed mb-6">Flight training placements with partner flying schools in India and abroad. We handle school selection, documentation and the DGCA licence conversion that follows.</p>
+                  <h3 className="font-montserrat text-xl font-bold text-white mb-4">Partner Flying Schools</h3>
+                  <p className="text-white/70 text-sm leading-relaxed mb-6">Flight training is arranged through partner flying schools. The selected school provides the flying; confirm current availability and terms directly with the academy and school.</p>
                   <Link href="/contact" className="button-primary inline-block bg-av-orange text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-av-blue transition-all">Enquiry Now</Link>
                 </div>
               </ScrollReveal>
@@ -708,8 +703,8 @@ export default function Home() {
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
                 🚀 Your Gateway to a Global Aviation Career – <span className="text-av-orange">Train at the Best <a href="https://www.flystar.co.in/" className="text-av-orange hover:underline">Flying Schools</a>  Worldwide!</span>
               </h2>
-              <p className="text-gray-500 mt-3 max-w-3xl mx-auto text-sm">🌍 Explore flight training centers in India, the USA, Canada, the UK, Australia, and South Africa — with structured courses designed for aspiring commercial pilots.</p>
-              <p className="text-av-orange font-semibold mt-2 text-sm">🌟 Choose a Flight School That Matches Your Goals and Country Preference!</p>
+              <p className="text-gray-500 mt-3 max-w-3xl mx-auto text-sm">These country guides provide general information only. The academy does not assert current partner availability or operate physical training centres in these countries.</p>
+              <p className="text-av-orange font-semibold mt-2 text-sm">Verify school status, current availability, fees, and terms directly with providers and regulators.</p>
             </ScrollReveal>
             <ScrollReveal>
               <ShowMoreList
@@ -719,7 +714,7 @@ export default function Home() {
                 renderItem={(school) => (
                   <div key={school.country} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 hover:border-av-orange/30 card-hover h-full flex flex-col">
                     <div className="text-4xl mb-3">{school.flag}</div>
-                    <h3 className="font-montserrat font-bold text-av-blue mb-3">Flying School in {school.country}</h3>
+                    <h3 className="font-montserrat font-bold text-av-blue mb-3">Flight-training guide: {school.country}</h3>
                     <div className="space-y-1 text-sm text-gray-600 mb-4 flex-grow">
                       <p>✅ <span className="font-semibold">Course:</span> {school.course}</p>
                       <p>✅ <span className="font-semibold">Duration:</span> {school.duration}</p>
@@ -738,17 +733,10 @@ export default function Home() {
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal className="text-center mb-10">
-              <div className="section-tag">Pan India Presence</div>
-              <h2 className="font-montserrat text-3xl font-bold text-av-blue">Where Can You Train for a Pilot Licence <span className="text-av-orange">Across India?</span></h2>
+              <div className="section-tag">India-wide pathway</div>
+              <h2 className="font-montserrat text-3xl font-bold text-av-blue">How to Plan Pilot Training <span className="text-av-orange">in India</span></h2>
             </ScrollReveal>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-              {cities.map(city => (
-                <Link key={city.name} href={city.href} className="card-hover block text-center p-4 rounded-xl border border-gray-200 bg-white hover:border-av-orange hover:text-av-orange hover:bg-orange-50 transition-all text-sm font-medium text-av-blue">
-                  📍 {city.name}
-                </Link>
-              ))}
-            </div>
-            <p className="text-gray-500 text-sm mt-4">City-level guidance on exam centres, batch timings and flying-school selection is covered on the India page: <Link href="/pilot-training-in-india" className="text-av-blue font-semibold hover:underline">Pilot Training in Bangalore</Link>.</p>
+            <p className="text-gray-500 text-sm mt-4">The academy’s physical classroom is in Dwarka, Delhi; students outside Delhi can join online batches. Flight training is arranged through partner flying schools at their selected locations. <Link href="/pilot-training-in-india" className="text-av-blue font-semibold hover:underline">Read the India pilot-training pathway</Link>.</p>
           </div>
         </section>
 
@@ -758,8 +746,8 @@ export default function Home() {
         <section className="py-20 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <ScrollReveal className="text-center mb-10">
-              <div className="section-tag">Global Presence</div>
-              <h2 className="font-montserrat text-3xl font-bold text-av-blue">Which Countries Can You Train In <span className="text-av-orange">Around the World?</span></h2>
+              <div className="section-tag">International training guides</div>
+              <h2 className="font-montserrat text-3xl font-bold text-av-blue">Researching Flight Training <span className="text-av-orange">Outside India?</span></h2>
             </ScrollReveal>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {worldLocations.map(loc => (
@@ -794,7 +782,7 @@ export default function Home() {
               </h2>
               <p className="text-white/70 mb-6 text-sm leading-relaxed">Our aviation career counsellors will guide you through course selection, eligibility, fees, scholarships, and career prospects.</p>
               <div className="space-y-3">
-                {['Free one-on-one career counselling', 'DGCA exam preparation guidance', 'International training options', 'Scholarship & loan assistance'].map(item => (
+                {['Career counselling — confirm current terms', 'DGCA ground-subject preparation', 'Partner-school flight training — confirm availability', 'Ask about current written fees and terms'].map(item => (
                   <div key={item} className="flex items-center gap-3">
                     <span className="text-av-orange">✓</span>
                     <span className="text-white/80 text-sm">{item}</span>

@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-09-29T09:31:38.903Z",
+  "totalGeographicReferences": 27465,
+  "localityCandidates": 37,
+  "candidateRecommendationCounts": {
+    "REFERENCE_ONLY": 1,
+    "RESEARCH_ONLY": 34,
+    "NEEDS_VERIFICATION": 2
+  },
+  "localitySeoCandidates": 0,
+  "approvedPilotPages": 0,
+  "indexablePages": 0,
+  "pagesComparedForSimilarity": 0,
+  "records": [],
+  "note": "This candidate model is separate from the PIN dataset. No locality page is generated until verified service relevance and unique editorial value are established."
+}

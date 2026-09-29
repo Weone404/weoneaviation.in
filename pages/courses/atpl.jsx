@@ -74,8 +74,8 @@ const faqs = [
   { q: 'Who should start ATPL preparation?', a: 'Pilots who hold a Commercial Pilot Licence and are working through the experience, examinations and ratings that airline command requires. It is not a first licence and it is not a route into aviation from scratch.' },
   { q: 'What is the minimum age for an ATPL in India?', a: 'Twenty-one years, under Schedule II, Section M of the Aircraft Rules, 1937. Two later amendments changed the experience figures in that section but left the age as it stands.' },
   { q: 'Which subjects does ATPL ground school cover?', a: 'Air Law for international operations, advanced air navigation, jet meteorology, transport-category performance, mass and balance, flight planning, principles of flight, aircraft systems and instruments, human factors and CRM, communications, and multi-crew operations.' },
-  { q: 'How long does ATPL progression take?', a: 'Commonly three years or more end to end, because the licence waits on command experience rather than on classroom time. The theory itself is a far shorter commitment than the hours behind it.' },
-  { q: 'What does ATPL preparation cost?', a: 'The ground-school component commonly runs around ₹15-25 lakh. Type rating, simulator time and hour-building sit outside that and vary with the operator and the aircraft.' },
+  { q: 'How long does ATPL progression take?', a: 'There is no single timeline. Licence progression depends on examination progress, experience requirements, and operator or flying-school schedules; confirm the current requirements before planning.' },
+  { q: 'What does ATPL preparation cost?', a: 'No current verified fee is published here. Request a written quote for ground-subject preparation and confirm any separate operator, type-rating, simulator, or flying-school costs directly with the relevant provider.' },
   { q: 'Does an ATPL guarantee a captain position?', a: 'No. The licence is a requirement for command, not an appointment to it. Operators set their own command upgrade criteria on top of the regulatory minimum, and those move with fleet size and seniority.' },
 ];
 
@@ -90,8 +90,6 @@ const atplCourseSchema = {
   educationalCredentialAwarded: 'Preparation for the DGCA Airline Transport Pilot Licence (Aeroplanes) examinations',
   coursePrerequisites: 'A Commercial Pilot Licence, and a minimum age of 21 for licence issue (Aircraft Rules, 1937, Schedule II, Section M).',
   teaches: groundSubjects.map((s) => s.subject),
-  timeRequired: 'P36M',
-  offers: { '@type': 'AggregateOffer', lowPrice: 1500000, highPrice: 2500000, priceCurrency: 'INR' },
   provider: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
   hasCourseInstance: {
     '@type': 'CourseInstance',
@@ -143,8 +141,8 @@ export default function ATPL() {
                   'Prerequisite: a Commercial Pilot Licence, plus command experience',
                   'What it permits: acting as pilot-in-command of a commercial aeroplane',
                   'Ground subjects: air law, advanced navigation, jet meteorology, transport-category performance, mass and balance, flight planning, principles of flight, systems, human factors, communications, multi-crew operations',
-                  'Typical progression: three years or more, paced by flying hours rather than classroom time',
-                  'Ground-school fee band: commonly ₹15-25 lakh, excluding type rating and simulator time',
+                  'Progression depends on experience, examination progress, and operator or flying-school schedules',
+                  'Request a current written quote for ground-subject preparation',
                   'Experience table: Section M was amended in 2020 and 2023 — confirm the current figures before planning around them',
                 ]}
               />
@@ -223,7 +221,7 @@ export default function ATPL() {
                   Talk to us about the ground subjects, the paper order that fits your roster, and where the current Section M experience table actually stands.
                 </p>
                 <a
-                  href="https://wa.me/919667370747"
+                  href="https://wa.me/919355611996"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm"
