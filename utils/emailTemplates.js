@@ -197,42 +197,7 @@ export const emailTemplates = {
               <p>Hi ${name},</p>
               
               <p>You're probably wondering: <strong>"How much will pilot training actually cost?"</strong></p>
-              <p>Here's the honest answer with complete transparency:</p>
-              
-              <div class="section">
-                <h2>📊 Total Investment: ₹40-55 Lakhs</h2>
-                <div class="cost-box">
-                  <strong>✓ Medical & Documentation:</strong> ₹13-25K
-                </div>
-                <div class="cost-box">
-                  <strong>✓ Ground School (9 subjects):</strong> ₹1.9-2.8L
-                </div>
-                <div class="cost-box">
-                  <strong>✓ Flight Training (200+ hours):</strong> ₹32.5-43.5L
-                </div>
-                <div class="cost-box">
-                  <strong>✓ Simulator Training (50+ hours):</strong> ₹2.5-3.5L
-                </div>
-                <div class="cost-box">
-                  <strong>✗ Accommodation/Living:</strong> ₹7-11L (not included)
-                </div>
-              </div>
-
-              <div class="section">
-                <h2>💳 Payment Plans That Work</h2>
-                <p><strong>Option 1: Full Payment</strong><br>Pay upfront → Save 5-10% (₹2-5 Lakhs discount!)</p>
-                <p><strong>Option 2: Semester-Based (4 payments)</strong><br>₹10-15L every 6 months</p>
-                <p><strong>Option 3: Education Loan</strong><br>Borrow up to ₹50L @ 11-14% interest</p>
-                <p><strong>Option 4: Monthly Installment Plan</strong><br>₹1.7-2.3L per month over 24 months</p>
-              </div>
-
-              <div class="section">
-                <h2>📈 ROI: Money You'll Make Back</h2>
-                <p><strong>Average First Officer Salary:</strong> ₹2-4 Lakhs/month</p>
-                <p><strong>Break-even Time:</strong> 24 months (2 years)</p>
-                <p><strong>5-Year Earnings:</strong> ₹1-2 Crores+</p>
-                <p><strong>Lifetime Potential:</strong> ₹5-10+ Crores</p>
-              </div>
+              <p>Compare current itemized quotes from the relevant academy and flying school. Fees, schedules, and payment terms vary by provider; confirm them in writing before making a decision.</p>
 
               <div class="section">
                 <a href="https://weoneaviation.in/cost-transparency" class="cta-button">📊 View Full Cost Details</a>

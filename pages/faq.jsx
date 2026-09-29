@@ -38,7 +38,7 @@ const categories = [
       { question: 'What is the approximate cost of CPL training in India?', answer: 'The ₹40-70 lakh range is what is commonly discussed, but it is a market estimate rather than a sourced figure: no Indian government body publishes a price for flying training and private schools publish nothing. What can be shown is DGCA\u2019s own charge of ₹2,500 per examination paper (₹5,000 on demand) and the ₹55,00,000 course fee published by IGRUA, a government academy. Get any private quote in writing and compare it line by line — our cost transparency page gives the questions that make two quotes comparable.' },
       { question: 'What is the approximate cost of PPL training?', answer: 'Figures around ₹7.5-10 lakh circulate, but like every private training figure in India they cannot be traced to a published document. Ask the school for its own quote in writing and for what it excludes before enrolment.' },
       { question: 'How should I compare payment options?', answer: 'Finance terms, lender conditions, and provider billing vary by programme and institution. Confirm all written terms before enrolling and compare the full cost, not only the monthly instalment.' },
-      { question: 'Are scholarships available?', answer: 'Scholarship availability, eligibility, and terms can change by course and intake. Contact the academy for the current assessment process and written conditions.' },
+      { question: 'Are any fee concessions available?', answer: 'No current concession terms are verified here. Contact the academy for current written course terms before enrolling.' },
     ],
   },
   {

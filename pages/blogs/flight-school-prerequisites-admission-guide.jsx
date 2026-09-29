@@ -219,7 +219,7 @@ export default function FlightSchoolPrerequisites() {
         'Regulatory: a DGCA computer number, obtained through the eGCA portal, before any examination',
         `Examinations: ${DGCA_PAPERS.length} written papers, with ${RTR.name} examined separately`,
         `Flight time: ${CPL_HOURS.total} hours, flown within ${CPL_HOURS.recencyYears} years of applying`,
-        `Ground classes at We One Aviation: 6 months, Dwarka or online, teaching since ${ACADEMY.foundedYear}`,
+        `Ground classes at We One Aviation: schedule varies by batch, in Dwarka or online, teaching since ${ACADEMY.foundedYear}`,
       ]}
       tocHeadings={tocHeadings}
       related={related}
@@ -562,7 +562,7 @@ export default function FlightSchoolPrerequisites() {
         type rating that sits after the CPL and outside every CPL quote, and buffer months of rent
         when the timeline slips. Itemised current figures are on{' '}
         <Link href="/cost-transparency" className="text-av-orange font-semibold underline">the cost transparency page</Link>.
-        A 25% scholarship is available on our ground classes.
+        Current academy terms should be confirmed in writing before enrolment.
       </p>
 
       <BlogImagePlaceholder
@@ -655,7 +655,7 @@ export default function FlightSchoolPrerequisites() {
       <p>
         We have taught the DGCA ground subjects from Dwarka since {ACADEMY.foundedYear}. The course
         runs six months, offline or online, with batches starting in the first and third week of each
-        month. A 25% scholarship is available, and students who do not clear a paper keep attending
+        month. Current academy terms should be confirmed in writing., and students who do not clear a paper keep attending
         classes at no further cost until they do.
       </p>
       <p>

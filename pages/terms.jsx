@@ -9,7 +9,6 @@ const sections = [
     { id: 'about', num: '02', title: 'About Us' },
     { id: 'eligibility', num: '03', title: 'Eligibility' },
     { id: 'enrollment', num: '04', title: 'Enrollment & Fees' },
-    { id: 'scholarship', num: '05', title: 'Scholarship Program' },
     { id: 'conduct', num: '06', title: 'User Conduct' },
     { id: 'ip', num: '07', title: 'Intellectual Property' },
     { id: 'disclaimers', num: '08', title: 'Disclaimers' },
@@ -35,14 +34,6 @@ const enrollmentItems = [
     { icon: '🔔', text: 'We One Aviation Academy reserves the right to change course fees with prior notice.' },
 ];
 
-const scholarshipItems = [
-    { icon: '🏆', text: 'Available for Class 10 & 12 toppers only.' },
-    { icon: '📚', text: 'Only applicable on ground class fees, not on flying training fees.' },
-    { icon: '📝', text: 'Eligibility is subject to verification of original mark sheets.' },
-    { icon: '⚠️', text: 'Any false or forged documents will lead to immediate disqualification.' },
-    { icon: '⚖️', text: 'We One Aviation Academy alone makes the final decision on eligibility.' },
-];
-
 const conductItems = [
     { icon: '🚫', text: 'Provide false or misleading information.' },
     { icon: '©️', text: 'Copy and publish content from weoneaviation.in without prior written permission.' },
@@ -62,7 +53,6 @@ const refundItems = [
     { icon: '🚫', title: 'No Refund After Batch Starts', desc: 'No fee is refundable once a batch has commenced.' },
     { icon: '💸', title: '10% Cancellation Fee', desc: 'If cancelled before batch starts, 10% of the total fee will be charged as a cancellation fee.' },
     { icon: '✅', title: 'Full Refund if We Cancel', desc: 'If We One Aviation Academy cancels a batch, the fee will be fully refunded.' },
-    { icon: '🏆', title: 'Scholarship Refund Window', desc: 'Scholarship refund requests must be sent within 30 days from the completion of the course.' },
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -71,7 +61,7 @@ export default function TermsPage() {
     return (
         <Layout
             title="Terms of Service – We One Aviation Academy | Enrollment, Fees & Policies"
-            description="Read We One Aviation Academy's Terms of Service covering enrollment, fees, scholarship program, user conduct, refund policy, and governing law."
+            description="Read We One Aviation Academy's Terms of Service covering enrollment, fees, user conduct, refund policy, and governing law."
         >
 
             {/* ── Hero Banner ── */}
@@ -199,24 +189,6 @@ export default function TermsPage() {
                                     {enrollmentItems.map((item, i) => (
                                         <div key={i} className="flex items-start gap-3 border border-gray-100 rounded-xl px-4 py-3">
                                             <span className="text-xl flex-shrink-0">{item.icon}</span>
-                                            <span className="text-gray-600 text-sm leading-relaxed">{item.text}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </ScrollReveal>
-
-                        {/* 05 Scholarship */}
-                        <ScrollReveal>
-                            <div id="scholarship" className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
-                                <div className="flex items-center gap-3 mb-4">
-                                    <span className="w-9 h-9 bg-av-blue rounded-full flex items-center justify-center text-white font-black text-sm flex-shrink-0">05</span>
-                                    <h2 className="font-montserrat font-bold text-av-blue text-xl">Scholarship Program</h2>
-                                </div>
-                                <div className="space-y-3">
-                                    {scholarshipItems.map((item, i) => (
-                                        <div key={i} className="flex items-start gap-3 bg-gray-50 rounded-xl px-4 py-3 border border-gray-100">
-                                            <span className="text-lg flex-shrink-0">{item.icon}</span>
                                             <span className="text-gray-600 text-sm leading-relaxed">{item.text}</span>
                                         </div>
                                     ))}

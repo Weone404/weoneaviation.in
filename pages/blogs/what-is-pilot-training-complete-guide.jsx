@@ -170,7 +170,7 @@ const peopleAlsoAsk = [
 const related = [
   { lead: 'If you are weighing training in India against training abroad, the full budget is broken down line by line on', anchor: 'the cost transparency page', href: '/cost-transparency' },
   { lead: 'The complete Schedule II eligibility breakdown, clause by clause, is on', anchor: 'the CPL eligibility page', href: '/commercial-pilot-license-eligibility' },
-  { lead: 'The six-month syllabus, batch schedule and scholarship are covered on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
+  { lead: 'The current syllabus, batch schedule and terms are covered on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
   { lead: 'For a step-by-step walk through the first ninety days after Class 12, read', anchor: 'the after-12th roadmap', href: '/how-to-become-a-pilot/after-12th' },
   { lead: 'The DGCA itself, its role and the examination system it runs, is explained in', anchor: 'our DGCA guide', href: '/blogs/dgca-exam-guide' },
 ];
@@ -204,7 +204,7 @@ export default function WhatIsPilotTraining() {
         `Written examinations: ${DGCA_PAPERS.length} DGCA papers, with ${RTR.name} examined separately`,
         `Flight time for a CPL: ${CPL_HOURS.total} hours total, flown within ${CPL_HOURS.recencyYears} years of applying`,
         'Typical end-to-end duration: 18 to 24 months, though timelines slip more often than they hold',
-        'Ground classes at We One Aviation: 6 months, offline in Dwarka or online, with a 25% scholarship available',
+        'Ground classes at We One Aviation: 6 months, offline in Dwarka or online, with a current terms available from the academy',
         `Teaching the DGCA ground subjects since ${ACADEMY.foundedYear}`,
       ]}
       tocHeadings={tocHeadings}
@@ -684,7 +684,7 @@ export default function WhatIsPilotTraining() {
       <p>
         We have taught the DGCA ground subjects from Dwarka since {ACADEMY.foundedYear}. The course
         runs six months, offline or online, with batches starting in the first and third week of
-        each month. A 25% scholarship is available. Students who do not clear a paper keep attending
+        each month. Current academy terms should be confirmed in writing. Students who do not clear a paper keep attending
         classes at no further cost until they do.
       </p>
       <p>

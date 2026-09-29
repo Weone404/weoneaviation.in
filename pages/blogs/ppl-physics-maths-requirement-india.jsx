@@ -90,7 +90,7 @@ const related = [
   { lead: 'If a CPL is the real goal and Physics or Maths is missing from your Class 12, the NIOS bridge route is covered in full in', anchor: 'our guide to becoming a pilot without Physics and Maths', href: '/blogs/become-pilot-without-physics-and-maths-class-12' },
   { lead: 'For whether a held PPL is a required step before a CPL at all — a different question from this one — see', anchor: 'our guide to PPL before CPL in India', href: '/blogs/do-you-need-ppl-before-cpl-in-india' },
   { lead: 'For the full admission paperwork and where the computer number sits in it, read', anchor: 'the flight school prerequisites guide', href: '/blogs/flight-school-prerequisites-admission-guide' },
-  { lead: 'The six-month syllabus and scholarship for the subjects a CPL eventually needs are on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
+  { lead: 'The six-month syllabus and current batch terms for the subjects a CPL eventually needs are on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
   { lead: 'For what a Commercial Pilot Licence itself requires beyond the subject check, see', anchor: 'the CPL course page', href: '/commercial-pilot-license' },
 ];
 

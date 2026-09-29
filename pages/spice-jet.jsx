@@ -135,25 +135,6 @@ const degreeRouteSchedule = [
     { instalment: '3rd Instalment', amount: '₹24.50 Lac + taxes', note: 'In the 12th month of the programme.' },
 ];
 
-const scholarships = [
-    {
-        category: 'Category 1',
-        criteria: '96% and above aggregate in 10+2 (Physics, Maths & English) OR JEE Rank 1 to 1500',
-        benefit: '₹10 Lac on 2nd + ₹10 Lac on 3rd + ₹10 Lac on 4th instalment',
-        total: '₹30 Lac Total',
-        max: 'Maximum 4 awarded',
-        color: 'bg-av-orange',
-    },
-    {
-        category: 'Category 2',
-        criteria: '92% and above aggregate in 10+2 (Physics, Maths & English) OR JEE Rank 1500 to 3000',
-        benefit: '₹5 Lac on 2nd + ₹5 Lac on 3rd + ₹5 Lac on 4th instalment',
-        total: '₹15 Lac Total',
-        max: 'Maximum 6 awarded',
-        color: 'bg-av-blue',
-    },
-];
-
 const curriculumPhases = [
     {
         phase: 'Phase 1',
@@ -221,7 +202,7 @@ export default function SpiceJetCadetPage() {
     return (
         <Layout
             title="SpiceJet Cadet Pilot Programme – Join Spice Star Academy | We One Aviation"
-            description="SpiceJet's Cadet Pilot Programme at Spice Star Academy — world-class pilot training with India's favourite airline. Eligibility, selection process, fee structure, scholarships and curriculum."
+            description="SpiceJet's Cadet Pilot Programme at Spice Star Academy — programme eligibility, selection process, fees and curriculum. Confirm current terms directly with the named provider."
         >
 
             {/* ── Hero Banner ── */}
@@ -553,8 +534,8 @@ export default function SpiceJetCadetPage() {
                             <p className="font-montserrat font-bold text-av-blue text-base mb-1">₹89.50 Lac + applicable taxes</p>
                             <p className="text-gray-600 text-sm leading-relaxed">
                                 The four instalments above, added up. GST and applicable taxes are charged on top, and the extension,
-                                housing, application and assessment charges listed below sit outside it. A scholarship, if awarded,
-                                reduces the second, third and fourth instalments rather than the admission fee.
+                                housing, application and assessment charges listed below sit outside it. Confirm all current
+                                payment terms directly with SpiceJet or its named training provider.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -601,56 +582,17 @@ export default function SpiceJetCadetPage() {
                 </div>
             </section>
 
-            {/* ── Scholarships ── */}
+            {/* ── Programme terms ── */}
             <section className="py-20 px-4">
                 <div className="max-w-7xl mx-auto">
                     <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Scholarship</div>
+                        <div className="section-tag">Programme terms</div>
                         <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Scholarship <span className="text-av-orange">Programme</span>
+                            Confirm current <span className="text-av-orange">terms directly</span>
                         </h2>
-                        <p className="text-gray-500 mt-2 text-sm max-w-2xl mx-auto">The academy publishes two scholarship categories, both capped in number. A scholarship is applied to the second, third and fourth instalments — never to the non-refundable admission fee. Checked on 17 September 2026.</p>
+                        <p className="text-gray-500 mt-2 text-sm max-w-2xl mx-auto">We One Aviation does not offer or administer this programme. Confirm all current eligibility, fees, financing and any concession terms directly with SpiceJet or its named training provider.</p>
                     </ScrollReveal>
 
-                    <div className="grid md:grid-cols-2 gap-8 mb-8">
-                        {scholarships.map((s, i) => (
-                            <ScrollReveal key={s.category} delay={i * 100}>
-                                <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-8 card-hover hover:border-av-orange/30">
-                                    <div className={`inline-block ${s.color} text-white text-sm font-bold px-4 py-2 rounded-full mb-5`}>{s.category}</div>
-                                    <p className="text-av-blue font-semibold text-sm mb-2">Eligibility:</p>
-                                    <p className="text-gray-600 text-sm leading-relaxed mb-5">{s.criteria}</p>
-                                    <p className="text-av-blue font-semibold text-sm mb-2">Scholarship Benefit:</p>
-                                    <p className="text-gray-600 text-sm mb-4">{s.benefit}</p>
-                                    <div className="flex items-center justify-between bg-gray-50 rounded-xl p-4">
-                                        <div>
-                                            <p className="text-av-orange font-black text-2xl">{s.total}</p>
-                                            <p className="text-gray-400 text-xs">Total Scholarship Value</p>
-                                        </div>
-                                        <div className="text-right">
-                                            <p className="text-av-blue font-bold text-sm">{s.max}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </ScrollReveal>
-                        ))}
-                    </div>
-
-                    <ScrollReveal>
-                        <div className="bg-yellow-50 border border-yellow-200 rounded-2xl p-5">
-                            <p className="text-yellow-800 font-semibold text-sm mb-2">⚠️ Disclaimer:</p>
-                            <ul className="space-y-1">
-                                {[
-                                    'SpiceJet reserves the right to withdraw or change the scholarship criteria or entire programme without prior intimation.',
-                                    'The academy states a maximum of 4 scholarships in Category 1 and 6 in Category 2. It does not state a period, so do not assume these are annual figures.',
-                                    'If more than 4 students qualify under Category 1, they are given preference over Category 2.',
-                                ].map(note => (
-                                    <li key={note} className="flex items-start gap-2 text-xs text-yellow-700">
-                                        <span className="mt-0.5 flex-shrink-0">•</span><span>{note}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </ScrollReveal>
                 </div>
             </section>
 

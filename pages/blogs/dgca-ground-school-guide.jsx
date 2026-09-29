@@ -146,7 +146,7 @@ const peopleAlsoAsk = [
 ];
 
 const related = [
-  { lead: 'The six-month syllabus, batch schedule and scholarship are on', anchor: 'our DGCA ground classes page', href: '/dgca-ground-classes' },
+  { lead: 'The six-month syllabus, batch schedule and current batch terms are on', anchor: 'our DGCA ground classes page', href: '/dgca-ground-classes' },
   { lead: 'For what the DGCA is and the examination system it runs, read', anchor: 'our DGCA guide', href: '/blogs/dgca-exam-guide' },
   { lead: 'For the computer number application and the mismatches that get it rejected, see', anchor: 'the flight school prerequisites guide', href: '/blogs/flight-school-prerequisites-admission-guide' },
   { lead: 'For what ground school costs against the rest of training, read', anchor: 'the pilot training cost breakdown', href: '/blogs/pilot-training-cost-in-india' },
@@ -405,7 +405,7 @@ export default function DgcaGroundSchoolGuide() {
       </p>
       <p>
         We have taught the DGCA ground subjects from Dwarka since {ACADEMY.foundedYear}. Six months,
-        offline or online, batches in the first and third week of each month, 25% scholarship
+        offline or online, with current batch dates and terms confirmed directly with the academy
         available. Full syllabus and schedule on{' '}
         <Link href="/dgca-ground-classes" className="text-av-orange font-semibold underline">our ground classes page</Link>.
       </p>

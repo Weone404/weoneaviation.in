@@ -217,7 +217,7 @@ export default function After12th() {
                   </div>
                 ))}
               </div>
-              <p className="text-gray-500 text-xs mt-3">* Fees vary by school and country. EMI and scholarships available. Contact us for exact current fees.</p>
+              <p className="text-gray-500 text-xs mt-3">* Fees vary by school and country. Confirm current payment terms directly with the relevant provider.</p>
             </ScrollReveal>
           </div>
 

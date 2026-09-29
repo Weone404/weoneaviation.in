@@ -64,11 +64,11 @@ class MyDocument extends Document {
           <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-          <meta property="og:image:alt" content="We One Aviation Academy — Pilot Training Institute in India" />
+          <meta property="og:image:alt" content="We One Aviation Academy — DGCA Ground Classes in Dwarka" />
 
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:image" content="https://weoneaviation.in/og-cover.jpg" />
-          <meta name="twitter:image:alt" content="We One Aviation Academy — Pilot Training Institute in India" />
+          <meta name="twitter:image:alt" content="We One Aviation Academy — DGCA Ground Classes in Dwarka" />
 
           <StructuredData data={[organizationSchema, websiteSchema]} />
 
