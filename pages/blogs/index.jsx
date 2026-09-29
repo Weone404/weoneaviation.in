@@ -35,6 +35,15 @@ const hardcodedBlogs = [
  */
 const guidePosts = [
     {
+        slug: 'dgca-computer-number-rejected-reasons',
+        title: 'Why a DGCA Computer Number Application Gets Rejected — and How to Avoid It',
+        excerpt: "Partial versus complete rejection, the three-chance rule, and the name, date-of-birth and upload mismatches DGCA's own rejection list is built around — so you can check your documents before you submit.",
+        category: 'DGCA exams',
+        readTime: '6 min',
+        date: 'Sep 29, 2026',
+        image: { src: '/blog/dgca-computer-number-rejected/hero-mismatched-forms.webp', width: 1200, height: 630, promptId: '79' },
+    },
+    {
         slug: 'how-to-become-a-flight-dispatcher-in-india',
         title: 'How to Become a Flight Dispatcher in India: DGCA FDEG Eligibility Explained',
         excerpt: "A Flight Dispatcher is a separate DGCA flight-crew licence, not an airline job title — age, education and registration requirements from the same Civil Aviation Requirement that governs pilot examinations, compared side by side with a CPL and an AME licence.",
