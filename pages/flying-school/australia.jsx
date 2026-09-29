@@ -5,19 +5,19 @@ import Link from 'next/link';
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const stats = [
-    { num: '13-14 Months', label: 'Program Duration', icon: '📅' },
-    { num: '221 Hrs', label: 'Flight Hours', icon: '✈️' },
-    { num: 'AUD 119k–125k', label: 'Program Fee', icon: '💰' },
-    { num: 'CASA', label: 'Certification', icon: '🏅' },
+    { num: 'Varies', label: 'Provider Schedule', icon: '📅' },
+    { num: 'Confirm', label: 'Flight-hour Requirements', icon: '✈️' },
+    { num: 'Request quote', label: 'Current Provider Fee', icon: '💰' },
+    { num: 'CASA', label: 'Australian Regulator', icon: '🏅' },
 ];
 
 const quickDetails = [
-    { sr: 1, topic: 'Program', details: 'CPL with Multi Engine Instrument Rating (MEIR) + Instructor Rating (CFI)' },
-    { sr: 2, topic: 'Duration', details: '13–14 Months' },
-    { sr: 3, topic: 'Flight Hours', details: '221 Hours (CASA & DGCA Standards)' },
-    { sr: 4, topic: 'Certification', details: 'CASA Licence + Diploma in Aviation' },
-    { sr: 5, topic: 'Eligibility', details: '17+ years, 10+2 (Physics & Math), IELTS 5.5/6.0' },
-    { sr: 6, topic: 'Visa', details: 'Australian Student Visa (Subclass 500)' },
+    { sr: 1, topic: 'Program', details: 'No Australia-specific partner programme is confirmed here; check current school offerings directly' },
+    { sr: 2, topic: 'Duration', details: 'Confirm the current schedule with the selected flying school' },
+    { sr: 3, topic: 'Flight Hours', details: 'Confirm requirements with CASA and the selected school' },
+    { sr: 4, topic: 'Certification', details: 'Confirm the licence and qualification awarded with the school and regulator' },
+    { sr: 5, topic: 'Eligibility', details: 'Confirm current entry requirements with the selected school' },
+    { sr: 6, topic: 'Visa', details: 'Check current requirements with Australian authorities' },
 ];
 
 const advantages = [
@@ -25,50 +25,50 @@ const advantages = [
         num: '1',
         icon: '🏅',
         title: 'CASA Certification',
-        desc: 'Australia is known all over the world for providing top-class flight training through its CASA-accredited academies. CASA licences are globally recognised, giving you international credibility the moment you graduate.',
+        desc: 'Check the selected school’s current approval with CASA and confirm the licence privileges and conversion requirements with the relevant regulators.',
     },
     {
         num: '2',
         icon: '🎓',
-        title: 'Diploma in Aviation',
-        desc: 'Unlike many countries, Australia combines a professional Diploma in Aviation with your CPL flight training. This academic qualification adds enormous value to your profile and makes your credentials stand out globally.',
+        title: 'Academic Qualifications',
+        desc: 'Qualifications included in a training pathway vary by provider. Confirm the award, eligibility, and terms directly with the school.',
     },
     {
         num: '3',
         icon: '🛩️',
         title: 'Advanced Infrastructure',
-        desc: 'Train on modern aircraft like the Diamond DA40, DA42, and Cessna 172 with state-of-the-art simulators. Australia provides the best facilities for flight training, including 40 hours of simulator training for MEIR.',
+        desc: 'Aircraft, simulators, and facilities vary by school. Confirm current equipment and included training directly with the provider.',
     },
     {
         num: '4',
         icon: '💼',
         title: 'Student Work Rights',
-        desc: 'Australia\'s Student Visa (Subclass 500) allows you to work part-time (20 hrs/week) while completing your training, helping you manage your living expenses and gain professional exposure.',
+        desc: 'Check current visa, study, and work conditions with the Australian authorities before making plans.',
     },
     {
         num: '5',
         icon: '☀️',
         title: 'Excellent Flying Conditions',
-        desc: 'Locations like Brisbane (300 flying days/year), Gold Coast (295 days) and Lismore offer diverse weather patterns and airspace experience that thoroughly prepare you for real-world commercial operations.',
+        desc: 'Weather and training schedules depend on location and provider. Request current operating information from the selected school.',
     },
     {
         num: '6',
         icon: '🔄',
-        title: 'Easy DGCA Conversion',
-        desc: 'After completing your CASA training, returning to India for DGCA licence conversion is straightforward. The CASA CPL with MEIR is designed to meet DGCA conversion requirements with minimal friction.',
+        title: 'DGCA Conversion Requirements',
+        desc: 'DGCA assesses licence conversion under its current requirements. Confirm the applicable process with DGCA and the selected school.',
     },
 ];
 
 const trainingSteps = [
     { step: '01', title: 'DGCA Medicals', desc: 'Complete your DGCA medical certification and join DGCA Ground Classes to clear theory exams.' },
     { step: '02', title: 'DGCA Theory', desc: 'Complete ground theory preparation and clear DGCA theory examinations before departure.' },
-    { step: '03', title: 'Choose Flight School', desc: 'Select a CASA-approved Australian flight school with structured Diploma programs and modern aircraft.' },
-    { step: '04', title: 'CASA Medicals', desc: 'Obtain your CASA Class 1 Medical Certificate — mandatory before commencing any flight training in Australia.' },
-    { step: '05', title: 'Admission & COE', desc: 'Receive your official offer letter (COE) after acceptance into the Diploma of Aviation CPL-A program.' },
-    { step: '06', title: 'Visa Application', desc: 'Apply for Subclass 500 Student Visa allowing you to live, study, and work part-time in Australia.' },
-    { step: '07', title: 'Ground School', desc: 'Begin theoretical training under CASA curriculum — meteorology, navigation, flight rules, and human performance.' },
-    { step: '08', title: 'Flight Training', desc: 'Progress through RPL → PPL → CPL → MEIR, completing 221 flight hours including solo, cross-country, and instrument flying.' },
-    { step: '09', title: 'DGCA Conversion', desc: 'Return to India and convert your CASA licence into a DGCA licence by meeting conversion requirements and flight checks.' },
+    { step: '03', title: 'Choose Flight School', desc: 'Check a selected school’s current approval with CASA and verify its written course offering, facilities, and terms.' },
+    { step: '04', title: 'Medical Requirements', desc: 'Confirm current medical requirements with CASA and the selected school.' },
+    { step: '05', title: 'Admission Documents', desc: 'Confirm admission documents and any required enrolment confirmation directly with the school.' },
+    { step: '06', title: 'Visa Requirements', desc: 'Check current study and visa requirements with the Australian authorities.' },
+    { step: '07', title: 'Course Content', desc: 'Request the current syllabus and schedule from the selected school.' },
+    { step: '08', title: 'Flight Training', desc: 'Training sequence, flight hours, facilities, and schedule depend on the selected school and regulator requirements.' },
+    { step: '09', title: 'DGCA Conversion', desc: 'Check current licence-conversion requirements directly with DGCA before selecting an overseas training route.' },
 ];
 
 const trainingPhases = [
@@ -76,46 +76,42 @@ const trainingPhases = [
         num: '1',
         code: 'RPL',
         title: 'Recognition of Prior Learning',
-        duration: '0.5 Months',
-        hours: '0 Hrs',
+        duration: 'Confirm with provider',
+        hours: 'Confirm with provider',
         focus: ['Initial Training', 'Basic Handling', 'Recognition Of Any Prior Experience'],
     },
     {
         num: '2',
         code: 'PPL',
         title: 'Private Pilot License',
-        duration: '3–4 Months',
-        hours: '0–55 Hrs',
+        duration: 'Confirm with provider',
+        hours: 'Confirm with provider',
         focus: ['Dual and Solo Flight', 'Basic Navigation', 'Solo Development'],
     },
     {
         num: '3',
         code: 'CPL',
         title: 'Commercial Pilot Licence + Hour Building',
-        duration: '6–7 Months',
-        hours: '55–180 Hrs',
+        duration: 'Confirm with provider',
+        hours: 'Confirm with provider',
         focus: ['Solo Cross-Country', 'Advanced Manoeuvres', 'Commercial Flight Preparation'],
     },
     {
         num: '4',
         code: 'MEIR',
         title: 'Multi-Engine + Instrument Rating',
-        duration: '3 Months',
-        hours: '180–221 Hrs',
+        duration: 'Confirm with provider',
+        hours: 'Confirm with provider',
         focus: ['40 Hrs Simulator + 21 Hrs Aircraft', 'Instrument Approaches', 'Final CPL/IR Flight Tests'],
     },
 ];
 
 const locations = [
-    { city: 'Gold Coast', days: '295 Days', climate: 'Coastal, warm & breezy', icon: '🏄' },
-    { city: 'Brisbane', days: '300 Days', climate: 'Subtropical & mostly clear', icon: '☀️' },
-    { city: 'Lismore', days: '280 Days', climate: 'Humid subtropical & mild', icon: '🌿' },
+    { city: 'Location varies by school', days: 'Confirm current schedule', climate: 'Check local operating conditions', icon: '📍' },
 ];
 
 const fleet = [
-    { name: 'Diamond DA42', use: 'Advanced multi-engine and instrument training with modern avionics and high performance, preparing students for complex flight operations and airline-level proficiency.' },
-    { name: 'Cessna 182', use: 'Equipped with modern avionics, ideal for advanced CPL and cross-country training, offering stable handling, higher performance, and reliability for professional pilot development.' },
-    { name: 'Piper Archer 44', use: 'A reliable four-seat trainer ideal for PPL and CPL training. Known for its stable handling and performance, it helps students master navigation, cross-country, and instrument flying skills.' },
+    { name: 'Aircraft selected by provider', use: 'Aircraft availability, condition, and approved use vary by school. Confirm the current fleet directly with the selected provider.' },
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -123,30 +119,30 @@ const fleet = [
 export default function AustraliaPilotTrainingPage() {
     return (
         <Layout
-            title="Pilot Training in Australia – Commercial Pilot License (CPL) | CASA Accredited | AviationGuide"
-            description="Explore Commercial Pilot Training in Australia with CASA-accredited academies, Diploma in Aviation, 221 flight hours, and easy DGCA licence conversion. Your complete guide to pilot training in Australia."
+            title="Pilot Training in Australia: Provider and Conversion Guide | We One Aviation"
+            description="A general guide to checking Australian flying-school approval, schedules, fees, visa conditions, and DGCA licence-conversion requirements. Confirm current information with providers and authorities."
         >
 
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
                 <ScrollReveal>
-                    <div className="section-tag">CASA Accredited Training</div>
+                    <div className="section-tag">Flight-training guide</div>
                     <br />
                     <br />
                     <br />
                     <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                        Commercial Pilot Training in Australia
+                        Pilot Training in Australia: Research Guide
                     </h1>
                     <p className="text-white/70 max-w-3xl mx-auto text-sm leading-relaxed mb-4">
-                        The aviation industry in Australia is known all over the world for providing top-class flight training facilities for international students through its CASA-accredited academies and Diploma in Aviation courses.
+                        This page provides general questions to ask when researching training in Australia. It does not confirm a current Australian partner school or programme.
                     </p>
                     <p className="text-white/60 max-w-xl mx-auto text-sm mb-6">It is the ideal destination for flight trainees who want a successful flying career.</p>
                     <div className="inline-block bg-av-orange/20 border border-av-orange/40 rounded-2xl px-8 py-4 mb-4">
-                        <p className="text-white/70 text-sm mb-1">Program Offered</p>
-                        <p className="font-montserrat text-2xl md:text-3xl font-black text-av-orange">CPL with MEIR + Instructor Rating</p>
+                        <p className="text-white/70 text-sm mb-1">Provider Information</p>
+                        <p className="font-montserrat text-2xl md:text-3xl font-black text-av-orange">Confirm current programmes with the selected school</p>
                     </div>
                     <p className="text-white/60 max-w-2xl mx-auto text-sm leading-relaxed mt-4">
-                        Let's understand the program structure, eligibility, training phases, and why Australia is the right choice for your pilot career.
+                        Verify the current provider, programme, schedule, fees, visa conditions, and licence-conversion rules before applying.
                     </p>
                 </ScrollReveal>
             </div>
@@ -173,14 +169,14 @@ export default function AustraliaPilotTrainingPage() {
                             Why Select Australia for Pilot Training?
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-4">
-                            Australia offers <strong>world-renowned aviation education with CASA certification</strong> and integrated academic qualifications. With its state-of-the-art aircraft and simulators, it provides the best facilities for flight training for international students.
+                            Australian flight-training providers operate under applicable national rules. Approval, facilities, aircraft, and qualifications vary by school and must be verified directly.
                         </p>
                         <p className="text-gray-600 leading-relaxed mb-6">
-                            The <strong>Diploma in Aviation</strong> combined with your CPL adds a globally recognised academic credential to your professional pilot license — a unique advantage that very few countries offer.
+                            Some providers may offer academic qualifications alongside flight training. Confirm the current qualification, accreditation, and terms directly with the provider.
                         </p>
                         <div className="bg-av-blue rounded-2xl p-5 text-white">
                             <p className="font-montserrat font-bold text-av-orange mb-1">Program Highlight</p>
-                            <p className="text-white text-lg font-semibold">CASA CPL-MEIR + Diploma in Aviation</p>
+                            <p className="text-white text-lg font-semibold">Confirm current programmes with the selected school</p>
                         </div>
                     </ScrollReveal>
 
@@ -232,7 +228,7 @@ export default function AustraliaPilotTrainingPage() {
                             { icon: '🗣️', title: 'English Proficiency', desc: 'IELTS 5.5 in each band and 6.0 overall is required for the Australian Student Visa.' },
                             { icon: '🏥', title: 'Medical', desc: 'Both the CASA Class 1 Medical and the DGCA medical certificate must be completed before commencing training.' },
                             { icon: '🛂', title: 'Visa', desc: 'Australian Student Visa (Subclass 500) allows students to study full-time and work part-time during training.' },
-                            { icon: '✅', title: 'Overall', desc: 'Meet all criteria above and you are ready to begin your pilot training journey in Australia with a CASA-approved school.' },
+                            { icon: '✅', title: 'Overall', desc: 'Check current eligibility and approval requirements directly with the school and CASA.' },
                         ].map((item, i) => (
                             <ScrollReveal key={item.title} delay={i * 80}>
                                 <div className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-av-orange/30 h-full flex flex-col">
@@ -287,7 +283,7 @@ export default function AustraliaPilotTrainingPage() {
                             Flight Training <span className="text-av-orange">Phases & Advancement</span>
                         </h2>
                         <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm leading-relaxed">
-                            Sequential advancement from RPL through to CPL with Multi-Engine Instrument Rating.
+                            Training stages and course scope depend on the selected provider. Confirm the current written course plan directly.
                         </p>
                     </ScrollReveal>
 
@@ -350,7 +346,7 @@ export default function AustraliaPilotTrainingPage() {
                     <ScrollReveal>
                         <div className="bg-av-orange/20 border border-av-orange/40 rounded-2xl p-6 text-center">
                             <p className="font-montserrat font-bold text-white text-lg">
-                                A structured 9-step path to your <span className="text-av-orange">CASA CPL with MEIR — and DGCA conversion back in India.</span>
+                                Steps to research a provider and verify licence requirements with CASA and DGCA.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -428,9 +424,9 @@ export default function AustraliaPilotTrainingPage() {
                         <ScrollReveal>
                             <div className="bg-white/10 rounded-2xl p-7 h-full border border-white/20">
                                 <div className="text-4xl mb-4">🏅</div>
-                                <h3 className="font-montserrat font-bold text-white text-xl mb-3">CASA-Approved Training</h3>
+                                <h3 className="font-montserrat font-bold text-white text-xl mb-3">Provider Approval</h3>
                                 <p className="text-white/70 text-sm leading-relaxed">
-                                    The program is conducted in CASA-approved flight schools, providing a Commercial Pilot Licence with a Multi-Engine Instrument Rating (MEIR) that can be easily adapted for DGCA requirements in India.
+                                    Verify the selected school’s current CASA approval and ask DGCA about the applicable licence-conversion process. This page does not confirm an Australia-specific partner or programme.
                                 </p>
                             </div>
                         </ScrollReveal>
@@ -438,9 +434,9 @@ export default function AustraliaPilotTrainingPage() {
                         <ScrollReveal delay={100}>
                             <div className="bg-white/10 rounded-2xl p-7 h-full border border-white/20">
                                 <div className="text-4xl mb-4">🌍</div>
-                                <h3 className="font-montserrat font-bold text-white text-xl mb-3">Global Recognition</h3>
+                                <h3 className="font-montserrat font-bold text-white text-xl mb-3">Licence Recognition</h3>
                                 <p className="text-white/70 text-sm leading-relaxed">
-                                    The CASA certification is recognised around the world. This gives budding pilots the confidence and recognition required for a successful career in the international aviation industry.
+                                    Licence privileges and recognition depend on the issuing and destination authorities. Confirm the current rules with the relevant regulators.
                                 </p>
                             </div>
                         </ScrollReveal>
@@ -450,7 +446,7 @@ export default function AustraliaPilotTrainingPage() {
                                 <div className="text-4xl mb-4">🎓</div>
                                 <h3 className="font-montserrat font-bold text-white text-xl mb-3">Designed for Indian Pilots</h3>
                                 <p className="text-white/70 text-sm leading-relaxed">
-                                    The program combines CASA flight training and a Diploma in Aviation, specifically designed for budding Indian pilots seeking a globally recognised qualification with a clear path to DGCA conversion.
+                                    Training packages and academic qualifications vary by provider. Request current written course details and verify conversion requirements with DGCA.
                                 </p>
                             </div>
                         </ScrollReveal>
@@ -467,7 +463,7 @@ export default function AustraliaPilotTrainingPage() {
                             Ready to Start Your <span className="text-av-orange">Pilot Training in Australia?</span>
                         </h2>
                         <p className="text-white/70 text-sm mb-6 leading-relaxed">
-                            Our aviation career counsellors will guide you through DGCA medicals, CASA school selection, visa application, and everything you need to become a licensed commercial pilot.
+                            The academy teaches DGCA ground subjects in Dwarka and arranges flight training through partner schools. Contact the academy to ask whether an Australia-specific arrangement is currently available, and verify visa and licence requirements with the authorities.
                         </p>
                         <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
                             Speak with a Counsellor →

@@ -7,19 +7,19 @@ import Link from 'next/link';
 import { generateCourseSchema } from '../lib/schema';
 
 const heroSlides = [
-    { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Aviation Course', title: 'Airline Preparation', highlight: 'Course In Dwarka', sub: 'Step into the world of aviation success with We One Aviation Academy' },
+    { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Aviation Course', title: 'Airline Preparation', highlight: 'Course', sub: 'Ask the academy to confirm the current syllabus, delivery format, and schedule.' },
 ];
 
 const whyChoose = [
-    { icon: '📚', title: 'Comprehensive Curriculum', desc: 'We One Aviation offers a meticulously crafted curriculum that covers all facets of airline preparation, ensuring a well-rounded education for aspiring aviation professionals.' },
-    { icon: '👨‍✈️', title: 'Experienced Faculty', desc: 'Our institution boasts a team of seasoned instructors with extensive industry experience. These experts bring real-world insights and practical knowledge, enriching the learning experience for students.' },
-    { icon: '📍', title: 'Strategic Location in Dwarka', desc: 'Situated in Dwarka, our institution benefits from a strategic location with modern amenities and a conducive learning environment, fostering a positive atmosphere for skill development.' },
-    { icon: '✈️', title: 'Industry-Relevant Modules', desc: 'The course at We One Aviation is designed with industry relevance in mind. Specialized modules address current trends and challenges in the aviation sector, ensuring graduates are well-prepared for the workforce.' },
-    { icon: '🏆', title: 'Alumni Success Stories', desc: 'We One Aviation takes pride in the success stories of its alumni, who have excelled in various roles within the aviation industry. These achievements highlight the effectiveness of our training programs.' },
-    { icon: '🛩️', title: 'Hands-On Training', desc: 'Practical experience is a cornerstone of our courses. Through hands-on training, including simulator sessions and industry visits, students gain valuable exposure to real-world scenarios, enhancing their readiness for the field.' },
-    { icon: '🤝', title: 'Networking Opportunities', desc: 'Our institution facilitates networking events, connecting students with industry professionals, fellow aviators, and potential employers. Building a strong network is important in a competitive aviation industry.' },
-    { icon: '🌍', title: 'Global Recognition', desc: "We One Aviation's courses are globally recognized, opening doors for graduates to pursue opportunities not only in India but also internationally. Our reputation is a testament to the quality of education provided." },
-    { icon: '💼', title: 'Interview Preparation', desc: 'Interview preparation and career guidance at We One Aviation assists students in securing job opportunities with leading airlines globally. Our commitment extends beyond education to supporting graduates in launching their careers.' },
+    { icon: '📚', title: 'Course Content', desc: 'Ask the academy for the current written syllabus and confirm which preparation activities are included.' },
+    { icon: '👨‍✈️', title: 'Instruction', desc: 'Confirm the current instructors, their relevant experience, and course delivery with the academy.' },
+    { icon: '📍', title: 'Academy Location', desc: 'The academy’s physical classroom is in Dwarka, Delhi. Confirm whether this course is currently delivered there.' },
+    { icon: '✈️', title: 'Course Scope', desc: 'Confirm the current course scope and any included activities before enrolling.' },
+    { icon: '🏆', title: 'Outcomes', desc: 'Course completion does not guarantee airline selection or employment; hiring decisions rest with each operator.' },
+    { icon: '🛩️', title: 'Practical Activities', desc: 'Confirm directly whether any simulator session, visit, or other practical activity is included in the current course.' },
+    { icon: '🤝', title: 'Networking', desc: 'Ask the academy whether any networking activity is currently part of the course.' },
+    { icon: '🌍', title: 'Course Focus', desc: 'The course covers aviation-career preparation and interview practice. Employers set their own recruitment requirements and make hiring decisions.' },
+    { icon: '💼', title: 'Interview Preparation', desc: 'Ask the academy to confirm the current interview-preparation content and format.' },
 ];
 
 const contactWays = [
@@ -27,9 +27,9 @@ const contactWays = [
     { icon: '📞', title: 'Phone Contact', desc: 'Give us a call to speak directly with our representatives. Dial the provided phone numbers listed on our website, and our team will be happy to assist you with any queries or concerns.' },
     { icon: '📧', title: 'Email Communication', desc: 'If you prefer written communication, you can send us an email. Visit our Contact Us page for the relevant email addresses, and our team will respond promptly to provide the information you need.' },
     { icon: '📱', title: 'Social Media Platforms', desc: 'Connect with We One Aviation through our official social media channels, such as Facebook, Twitter, or LinkedIn. Direct messages or comments on these platforms can be another effective way to get in touch.' },
-    { icon: '🏢', title: 'Visit Our Office', desc: 'For a more personal interaction, you are welcome to visit our physical office. The address is available on our website\'s Contact Us page, along with a map for easy navigation.' },
+    { icon: '🏢', title: 'Visit the Academy', desc: 'The physical classroom is in Dwarka, Delhi. Contact the academy in advance to confirm visitor access and current availability.' },
     { icon: '📝', title: 'Online Inquiry Form', desc: 'Many websites, including ours, provide an online inquiry form. Fill out the required details, ask your questions, and submit the form. This allows our team to address your specific needs efficiently.' },
-    { icon: '🎪', title: 'Attend Open Houses Or Events', desc: 'Keep an eye out for any open houses, events, or informational sessions organized by We One Aviation. These gatherings provide an excellent opportunity to meet our team, ask questions, and gather valuable insights.' },
+    { icon: '🎪', title: 'Course Information', desc: 'Contact the academy to confirm whether any information session is currently scheduled.' },
 ];
 
 const requirements = [
@@ -45,7 +45,7 @@ const requirements = [
 
 const examPrepSteps = [
     { title: 'Understand The Exam Format', desc: 'Familiarize yourself with the structure of the written exam. Know the types of questions, time constraints, and the weightage of each section. This understanding will guide your study plan.' },
-    { title: 'Review Course Materials', desc: 'Thoroughly go through the course materials provided by We One Aviation for the Airline Preparation Course In Dwarka. Pay special attention to topics emphasized in the curriculum.' },
+    { title: 'Review Course Materials', desc: 'Review the materials supplied for your course and confirm the current syllabus with the academy.' },
     { title: 'Create A Study Schedule', desc: 'Develop a study schedule that covers all relevant subjects. Allocate specific time slots for different topics to ensure comprehensive coverage.' },
     { title: 'Practice Regularly', desc: 'Practice with sample questions and previous exam papers to familiarize yourself with the exam pattern. This will improve your time management and boost your confidence.' },
     { title: 'Seek Guidance', desc: "If you encounter challenging concepts, don't hesitate to seek guidance from instructors or fellow students. Understanding key concepts is important for success." },
@@ -73,15 +73,13 @@ const pilotPrepSteps = [
 
 const courseSchema = generateCourseSchema({
   name: 'Airline Preparation Course',
-  description: 'Structured preparation for airline selection, covering written screening, psychometric assessment, group exercises and the interview stages Indian carriers use.',
+  description: 'Airline-career preparation and interview practice. Confirm current course content and format with the academy.',
   url: 'https://weoneaviation.in/airline-preparation-course',
-  courseMode: 'blended',
-  duration: 'PT3M',
 });
 
 export default function AirlinePreparation() {
     return (
-        <Layout title="Airline Preparation Course In Dwarka | We One Aviation Academy" description="Airline Preparation Course in Dwarka, New Delhi. Interview preparation and career guidance for pilots, cabin crew, and aviation professionals. Airline interview practice, licence-route planning and career guidance.">
+        <Layout title="Airline Preparation Course | We One Aviation Academy" description="Ask the academy to confirm current airline-career preparation content, delivery format, and schedule. Interview preparation does not guarantee employment.">
       <StructuredData data={courseSchema} />
 
             <HeroSlider customSlides={heroSlides} asH1={false} />
@@ -93,21 +91,21 @@ export default function AirlinePreparation() {
                         <ScrollReveal>
                             <div className="section-tag">Aviation Course</div>
                             <h1 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
-                                Airline Preparation Course In Dwarka
+                                Airline Preparation Course
                             </h1>
                             <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                                Step into the world of aviation success with We One Aviation's Airline Preparation Course in Dwarka. This comprehensive program is designed to transform aviation enthusiasts into skilled professionals ready for the global airline industry.
+                                Ask We One Aviation about the current airline-preparation course syllabus, delivery format, and schedule. The academy’s physical classroom is in Dwarka, Delhi; confirm whether this course is currently delivered there.
                             </p>
                             <p className="text-gray-600 leading-relaxed mb-4 text-sm">
                                 Beginning your aviation journey requires the right guidance — and We One Aviation stands as a trusted institution known for excellence, expertise, and experience.
                             </p>
                             <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                                Through a balanced mix of theoretical knowledge and practical training, we make your learning journey both exciting and industry-relevant.
+                                Request the current course outline before enrolling. Any preparation supports candidates but does not guarantee airline selection or employment.
                             </p>
 
                             {/* Quick Facts */}
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-                                {[['Dwarka, Delhi', 'Location'], ['All Roles', 'Coverage'], ['Global', 'Recognition'], ['Every batch', 'Interview Prep']].map(([val, label]) => (
+                                {[[ 'Confirm with academy', 'Delivery location'], ['Course-specific', 'Scope'], ['No external recognition asserted', 'Certificate status'], ['Confirm current syllabus', 'Interview preparation']].map(([val, label]) => (
                                     <div key={label} className="bg-av-light rounded-xl p-4 text-center">
                                         <div className="font-montserrat font-bold text-av-blue text-sm">{val}</div>
                                         <div className="text-gray-500 text-xs mt-1">{label}</div>
@@ -125,9 +123,9 @@ export default function AirlinePreparation() {
                             </p>
 
                             {/* Why Choose We One */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">Why Choose We One Aviation For An Airline Preparation Course In Dwarka?</h3>
+                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">What should I confirm about this airline preparation course?</h3>
                             <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                                Choosing We One Aviation for an Airline Preparation Course is a decision backed by a myriad of compelling reasons that set this institution apart. Let's explore why enrolling in We One Aviation's program is the optimal choice for individuals aspiring to excel in the aviation industry.
+                                Ask for the current syllabus, delivery format, fees, schedule, and certificate terms before enrolling. The course does not guarantee airline selection or employment.
                             </p>
                             <div className="space-y-4 mb-6">
                                 {whyChoose.map((item) => (
@@ -141,7 +139,7 @@ export default function AirlinePreparation() {
                                 ))}
                             </div>
                             <p className="text-gray-600 text-sm leading-relaxed mb-10">
-                                Choosing We One Aviation for an Airline Preparation Course in Dwarka ensures a holistic and industry-driven education. From a demanding curriculum to experienced faculty and global recognition, our institution is dedicated to nurturing the next generation of aviation professionals, providing them with the wings to soar in their careers.
+                                Confirm current course content and delivery with the academy. Course completion does not guarantee external recognition, airline selection, or employment.
                             </p>
 
                             {/* How to Contact */}
@@ -158,7 +156,7 @@ export default function AirlinePreparation() {
                                 ))}
                             </div>
                             <p className="text-gray-600 text-sm leading-relaxed mb-10">
-                                Remember, whether you prefer digital communication or face-to-face interaction, We One Aviation, home to the exceptional Airline Preparation Course In Dwarka, is committed to providing timely and helpful responses to all your queries. We look forward to assisting you on your journey towards a successful aviation career.
+                                Contact the academy to ask about the course. Confirm current delivery, availability, and response arrangements directly.
                             </p>
 
                             {/* Requirements */}
@@ -184,7 +182,7 @@ export default function AirlinePreparation() {
                             </p>
 
                             {/* How to Prepare for Written Exam */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">How to Prepare for a Written Exam for Airline Preparation Course In Dwarka?</h3>
+                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">How can I prepare for an airline selection process?</h3>
                             <p className="text-gray-600 text-sm leading-relaxed mb-5">
                                 Preparing for a written exam for an Airline Preparation Course requires a strategic approach to ensure success. Here are key steps to enhance your preparation:
                             </p>
@@ -237,7 +235,7 @@ export default function AirlinePreparation() {
                             <div className="bg-av-blue rounded-2xl p-8 text-center">
                                 <h3 className="font-montserrat text-xl font-bold text-white mb-3">Start Your Airline Preparation Journey</h3>
                                 <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-5">
-                                    To sum it up, starting the Airline Preparation Course in Dwarka with We One Aviation is like stepping into a life-changing adventure leading to a great career in aviation. The curriculum covers everything you need, the teachers are pros with real-world knowledge, and it's a fantastic start to your exciting career in aviation! ✈️
+                                    Contact the academy for current course details. Employers control their own selection processes and hiring decisions; course completion does not guarantee a job. ✈️
                                 </p>
                                 <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
                                     Book Free Counselling
@@ -272,9 +270,9 @@ export default function AirlinePreparation() {
                                 <h4 className="font-montserrat font-bold mb-2">Course Highlights</h4>
                                 <p className="text-white/80 text-sm mb-3">Airline Preparation Course:</p>
                                 <div className="text-2xl font-montserrat font-black">Dwarka, Delhi</div>
-                                <div className="text-white/70 text-xs mt-1">Globally Recognized Certificate</div>
+                                <div className="text-white/70 text-xs mt-1">Course completion certificate</div>
                                 <div className="text-white/70 text-xs mt-1">Career Guidance</div>
-                                <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer"
+                                <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
                                     Get Free Counselling
                                 </a>

@@ -123,7 +123,7 @@ const faqs = [
   { q: 'Why is there no flying school in Delhi?', a: `DGCA's approved-FTO list shows bases across ${FTO.statesWithBases.length} states and none in Delhi or the NCR. Delhi's controlled airspace and the traffic at IGI make a training base impractical. The practical consequence is that a Delhi student completes the papers, the computer number and the medical locally, then travels for the hours.` },
   { q: 'What can I finish without leaving Delhi?', a: 'The computer number, all the written papers, the medical, and — for international-board candidates — the equivalence certificate. Only the flying happens elsewhere.' },
   { q: 'Does We One Aviation run a flying school in Delhi?', a: ACADEMY.scope },
-  { q: 'Where exactly are you in Delhi?', a: `${ACADEMY.streetAddress}, ${ACADEMY.addressLocality} ${ACADEMY.postalCode}. Phone ${ACADEMY.phone}, email ${ACADEMY.email}. Teaching from Dwarka since ${ACADEMY.foundedYear}.` },
+  { q: 'Where exactly are you in Delhi?', a: `${ACADEMY.streetAddress}, ${ACADEMY.addressLocality} ${ACADEMY.postalCode}. Phone ${ACADEMY.phoneDisplay}, email ${ACADEMY.email}. Teaching from Dwarka since ${ACADEMY.foundedYear}.` },
   { q: 'How long does pilot training take?', a: 'No Indian regulation sets a duration, and this page used to quote one. What the rules set are floors and expiry windows; what actually decides your timeline is aircraft availability at your flying school. Our page on how long it takes sets out every floor, every expiry, and the one question to ask a school.' },
   { q: 'Which licences can I prepare for from Delhi?', a: `The ground-school side of the whole ladder: ${LICENCES.map((l) => l.code).join(', ')}. The flying is the part that happens at a flying training organisation.` },
   { q: 'Is Delhi a good place to start?', a: `For the administrative half of the process it is arguably the best in the country, and that is a real advantage rather than a slogan — three DGCA institutions a student needs are in this city. For the flying it is neutral, because everybody travels.` },
@@ -141,34 +141,13 @@ const articleSchema = {
   keywords: 'pilot training in delhi, pilot training institute in delhi, best pilot training academy in delhi, dgca ground classes in delhi, flying school in delhi, aviation academy in delhi',
   mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
   image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
-  author: { '@type': 'Organization', name: ACADEMY.name, url: ACADEMY.url },
-  publisher: { '@type': 'EducationalOrganization', name: ACADEMY.name, url: ACADEMY.url, logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
+  author: { '@id': 'https://weoneaviation.in/#organization' },
+  publisher: { '@id': 'https://weoneaviation.in/#organization' },
   citation: [
     { '@type': 'CreativeWork', name: FTO.sources[0].label, url: FTO.sources[0].url },
     { '@type': 'CreativeWork', name: PARIKSHA.sources[0].label, url: PARIKSHA.sources[0].url },
     { '@type': 'CreativeWork', name: MED.sources[3].label, url: MED.sources[3].url },
   ],
-};
-
-const localSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  '@id': CANONICAL,
-  name: ACADEMY.name,
-  url: ACADEMY.url,
-  telephone: ACADEMY.phone,
-  email: ACADEMY.email,
-  foundingDate: String(ACADEMY.foundedYear),
-  description: ACADEMY.scope,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: ACADEMY.streetAddress,
-    addressLocality: ACADEMY.addressLocality,
-    postalCode: ACADEMY.postalCode,
-    addressRegion: 'Delhi',
-    addressCountry: ACADEMY.addressCountry,
-  },
-  areaServed: [{ '@type': 'Place', name: 'Delhi NCR' }, { '@type': 'Country', name: 'India' }],
 };
 
 const H2 = 'font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12 scroll-mt-24';
@@ -181,7 +160,7 @@ export default function PilotTrainingInDelhi() {
       title="Pilot Training in Delhi: What the City Can and Cannot Give You"
       description="No DGCA-approved flying base exists in Delhi or the NCR — so training in Delhi never means flying in Delhi. What the city does have, and why it still helps."
     >
-      <StructuredData data={[localSchema, articleSchema, generateFAQSchema(faqs)]} />
+      <StructuredData data={[articleSchema, generateFAQSchema(faqs)]} />
 
       <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -251,6 +230,10 @@ export default function PilotTrainingInDelhi() {
                 Four of those five happen without leaving Delhi. For the Sector 7 specifics &mdash; addresses, appeal
                 timings at R.K. Puram, which medical centres are nearest &mdash; see{' '}
                 <Link href="/pilot-training-in-dwarka" className={A}>pilot training in Dwarka</Link>.
+                {' '}For the broader Indian pathway and the academy&apos;s online access outside Delhi, see{' '}
+                <Link href="/pilot-training-in-india" className={A}>pilot training in India</Link>. For the ground-class
+                syllabus, visit <Link href="/dgca-ground-classes" className={A}>DGCA ground classes</Link>; the{' '}
+                <Link href="/commercial-pilot-license" className={A}>Commercial Pilot Licence pathway</Link> explains the wider route.
               </p>
 
               <h2 id="order" className={H2}>The order that wastes the least money from Delhi</h2>

@@ -1,0 +1,3746 @@
+[
+  {
+    "locationEntityId": "IN-695039",
+    "pinCode": "695039",
+    "postOffices": [
+      "A.G. OFFICE THIRUVANANTHAPURAM"
+    ],
+    "postOfficeNames": [
+      "A.G. OFFICE THIRUVANANTHAPURAM"
+    ],
+    "state": "Kerala",
+    "city": null,
+    "district": null,
+    "locality": "A.G. Office Thiruvananthapuram",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      1
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-577585",
+    "pinCode": "577585",
+    "postOffices": [
+      "ABBINAHOLE"
+    ],
+    "postOfficeNames": [
+      "ABBINAHOLE"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Abbinahole",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      2
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-470662",
+    "pinCode": "470662",
+    "postOffices": [
+      "ABHANA"
+    ],
+    "postOfficeNames": [
+      "ABHANA"
+    ],
+    "state": "Chattisgarh",
+    "city": null,
+    "district": null,
+    "locality": "Abhana",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      2
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-332604",
+    "pinCode": "332604",
+    "postOffices": [
+      "ABHAWAS"
+    ],
+    "postOfficeNames": [
+      "ABHAWAS"
+    ],
+    "state": "Rajasthan",
+    "city": null,
+    "district": null,
+    "locality": "Abhawas",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      2
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-630601",
+    "pinCode": "630601",
+    "postOffices": [
+      "ABIRAMAM"
+    ],
+    "postOfficeNames": [
+      "ABIRAMAM"
+    ],
+    "state": "Tamilnadu",
+    "city": null,
+    "district": null,
+    "locality": "Abiramam",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      2
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-576276",
+    "pinCode": "576276",
+    "postOffices": [
+      "ACHLADY"
+    ],
+    "postOfficeNames": [
+      "ACHLADY"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Achlady",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      3
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-676526",
+    "pinCode": "676526",
+    "postOffices": [
+      "ADAKKA KUNDU"
+    ],
+    "postOfficeNames": [
+      "ADAKKA KUNDU"
+    ],
+    "state": "Kerala",
+    "city": null,
+    "district": null,
+    "locality": "Adakka Kundu",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      3
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-271404",
+    "pinCode": "271404",
+    "postOffices": [
+      "ADAMPUR"
+    ],
+    "postOfficeNames": [
+      "ADAMPUR"
+    ],
+    "state": "Uttar Pradesh",
+    "city": null,
+    "district": null,
+    "locality": "Adampur",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      3
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-580212",
+    "pinCode": "580212",
+    "postOffices": [
+      "ADARGUNCHI"
+    ],
+    "postOfficeNames": [
+      "ADARGUNCHI"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Adargunchi",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      3
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-305008",
+    "pinCode": "305008",
+    "postOffices": [
+      "ADARSHNAGAR AJMER",
+      "ALWAR GATE(AJMER)",
+      "BHAJANGANJ(AJMER)",
+      "DHOLABHATA(AJMER)",
+      "GUJARDHARTI (AJMER)",
+      "GULAB BARI AJMER",
+      "LOCO WORKSHOP AJMER",
+      "MAYO AJMER",
+      "NAGRA AJMER"
+    ],
+    "postOfficeNames": [
+      "ADARSHNAGAR AJMER",
+      "ALWAR GATE(AJMER)",
+      "BHAJANGANJ(AJMER)",
+      "DHOLABHATA(AJMER)",
+      "GUJARDHARTI (AJMER)",
+      "GULAB BARI AJMER",
+      "LOCO WORKSHOP AJMER",
+      "MAYO AJMER",
+      "NAGRA AJMER"
+    ],
+    "state": "Rajasthan",
+    "city": null,
+    "district": null,
+    "locality": "Adarshnagar Ajmer",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 0,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      3,
+      13,
+      68,
+      136,
+      174,
+      297,
+      327,
+      351
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-577177",
+    "pinCode": "577177",
+    "postOffices": [
+      "ADDAGADDE"
+    ],
+    "postOfficeNames": [
+      "ADDAGADDE"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Addagadde",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      4
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-591266",
+    "pinCode": "591266",
+    "postOffices": [
+      "ADHALLI"
+    ],
+    "postOfficeNames": [
+      "ADHALLI"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Adhalli",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      4
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-246188",
+    "pinCode": "246188",
+    "postOffices": [
+      "ADHERIYA KHAL",
+      "C.P.O A 2711(ADHERIYA KHAL)"
+    ],
+    "postOfficeNames": [
+      "ADHERIYA KHAL",
+      "C.P.O A 2711(ADHERIYA KHAL)"
+    ],
+    "state": "Uttarakhand",
+    "city": null,
+    "district": null,
+    "locality": "Adheriya Khal",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 0,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      4,
+      92
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-756140",
+    "pinCode": "756140",
+    "postOffices": [
+      "ADHUAN"
+    ],
+    "postOfficeNames": [
+      "ADHUAN"
+    ],
+    "state": "Odisha",
+    "city": null,
+    "district": null,
+    "locality": "Adhuan",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      4
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-591267",
+    "pinCode": "591267",
+    "postOffices": [
+      "ADI"
+    ],
+    "postOfficeNames": [
+      "ADI"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Adi",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      4
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-585250",
+    "pinCode": "585250",
+    "postOffices": [
+      "ADIKI"
+    ],
+    "postOfficeNames": [
+      "ADIKI"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Adiki",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      4
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-574131",
+    "pinCode": "574131",
+    "postOffices": [
+      "ADMAR"
+    ],
+    "postOfficeNames": [
+      "ADMAR"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Admar",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      4
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-575009",
+    "pinCode": "575009",
+    "postOffices": [
+      "ADYAR"
+    ],
+    "postOfficeNames": [
+      "ADYAR"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Adyar",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      5
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-230122",
+    "pinCode": "230122",
+    "postOffices": [
+      "AFIM-KI-KOTHI"
+    ],
+    "postOfficeNames": [
+      "AFIM-KI-KOTHI"
+    ],
+    "state": "Uttar Pradesh",
+    "city": null,
+    "district": null,
+    "locality": "Afim-Ki-Kothi",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      5
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-583260",
+    "pinCode": "583260",
+    "postOffices": [
+      "AGALKERA"
+    ],
+    "postOfficeNames": [
+      "AGALKERA"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Agalkera",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      5
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-768047",
+    "pinCode": "768047",
+    "postOffices": [
+      "AGALPUR"
+    ],
+    "postOfficeNames": [
+      "AGALPUR"
+    ],
+    "state": "Odisha",
+    "city": null,
+    "district": null,
+    "locality": "Agalpur",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      5
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-571485",
+    "pinCode": "571485",
+    "postOffices": [
+      "AGARA"
+    ],
+    "postOfficeNames": [
+      "AGARA"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Agara",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      5
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-571461",
+    "pinCode": "571461",
+    "postOffices": [
+      "AGASANA PURA"
+    ],
+    "postOfficeNames": [
+      "AGASANA PURA"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Agasana Pura",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      5
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-422621",
+    "pinCode": "422621",
+    "postOffices": [
+      "AGASTI S.S.K."
+    ],
+    "postOfficeNames": [
+      "AGASTI S.S.K."
+    ],
+    "state": "Maharashtra",
+    "city": null,
+    "district": null,
+    "locality": "Agasti S.S.K.",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      5
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-573160",
+    "pinCode": "573160",
+    "postOffices": [
+      "AGGUNDA"
+    ],
+    "postOfficeNames": [
+      "AGGUNDA"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Aggunda",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      5
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-581392",
+    "pinCode": "581392",
+    "postOffices": [
+      "AGHANASHINI"
+    ],
+    "postOfficeNames": [
+      "AGHANASHINI"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Aghanashini",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      5
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-244502",
+    "pinCode": "244502",
+    "postOffices": [
+      "AGHWANPUR"
+    ],
+    "postOfficeNames": [
+      "AGHWANPUR"
+    ],
+    "state": "Uttar Pradesh",
+    "city": null,
+    "district": null,
+    "locality": "Aghwanpur",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      5
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-573140",
+    "pinCode": "573140",
+    "postOffices": [
+      "AGRAHARA BELGULI"
+    ],
+    "postOfficeNames": [
+      "AGRAHARA BELGULI"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Agrahara Belguli",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      6
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-754070",
+    "pinCode": "754070",
+    "postOffices": [
+      "AGRAHAT"
+    ],
+    "postOfficeNames": [
+      "AGRAHAT"
+    ],
+    "state": "Odisha",
+    "city": null,
+    "district": null,
+    "locality": "Agrahat",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      6
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-203121",
+    "pinCode": "203121",
+    "postOffices": [
+      "AGRICULTURAL SCHOOL"
+    ],
+    "postOfficeNames": [
+      "AGRICULTURAL SCHOOL"
+    ],
+    "state": "Uttar Pradesh",
+    "city": null,
+    "district": null,
+    "locality": "Agricultural School",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      6
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-581413",
+    "pinCode": "581413",
+    "postOffices": [
+      "AGSUR"
+    ],
+    "postOfficeNames": [
+      "AGSUR"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Agsur",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      6
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-311029",
+    "pinCode": "311029",
+    "postOffices": [
+      "AGUCHA"
+    ],
+    "postOfficeNames": [
+      "AGUCHA"
+    ],
+    "state": "Rajasthan",
+    "city": null,
+    "district": null,
+    "locality": "Agucha",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      6
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-586222",
+    "pinCode": "586222",
+    "postOffices": [
+      "AHIRSANG"
+    ],
+    "postOfficeNames": [
+      "AHIRSANG"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Ahirsang",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      6
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-380003",
+    "pinCode": "380003",
+    "postOffices": [
+      "AHMEDABAD CONTT."
+    ],
+    "postOfficeNames": [
+      "AHMEDABAD CONTT."
+    ],
+    "state": "Gujarat",
+    "city": null,
+    "district": null,
+    "locality": "Ahmedabad Contt.",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      6
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-224226",
+    "pinCode": "224226",
+    "postOffices": [
+      "AHRIRAULI RANI MAU"
+    ],
+    "postOfficeNames": [
+      "AHRIRAULI RANI MAU"
+    ],
+    "state": "Uttar Pradesh",
+    "city": null,
+    "district": null,
+    "locality": "Ahrirauli Rani Mau",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      6
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-636908",
+    "pinCode": "636908",
+    "postOffices": [
+      "AHRUR BAZAR"
+    ],
+    "postOfficeNames": [
+      "AHRUR BAZAR"
+    ],
+    "state": "Tamilnadu",
+    "city": null,
+    "district": null,
+    "locality": "Ahrur Bazar",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      6
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-587138",
+    "pinCode": "587138",
+    "postOffices": [
+      "AIHOLE"
+    ],
+    "postOfficeNames": [
+      "AIHOLE"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Aihole",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      7
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-425509",
+    "pinCode": "425509",
+    "postOffices": [
+      "AINPUR"
+    ],
+    "postOfficeNames": [
+      "AINPUR"
+    ],
+    "state": "Maharashtra",
+    "city": null,
+    "district": null,
+    "locality": "Ainpur",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      7
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-576236",
+    "pinCode": "576236",
+    "postOffices": [
+      "AIRODY"
+    ],
+    "postOfficeNames": [
+      "AIRODY"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Airody",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      7
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-574245",
+    "pinCode": "574245",
+    "postOffices": [
+      "AIVARNAD"
+    ],
+    "postOfficeNames": [
+      "AIVARNAD"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Aivarnad",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      7
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-416538",
+    "pinCode": "416538",
+    "postOffices": [
+      "AJGAON"
+    ],
+    "postOfficeNames": [
+      "AJGAON"
+    ],
+    "state": "Maharashtra",
+    "city": null,
+    "district": null,
+    "locality": "Ajgaon",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      7
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-574246",
+    "pinCode": "574246",
+    "postOffices": [
+      "AJJAVARA"
+    ],
+    "postOfficeNames": [
+      "AJJAVARA"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Ajjavara",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      7
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-585366",
+    "pinCode": "585366",
+    "postOffices": [
+      "AJJERI"
+    ],
+    "postOfficeNames": [
+      "AJJERI"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Ajjeri",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      7
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-581389",
+    "pinCode": "581389",
+    "postOffices": [
+      "AJJIBAL"
+    ],
+    "postOfficeNames": [
+      "AJJIBAL"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Ajjibal",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      7
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-574475",
+    "pinCode": "574475",
+    "postOffices": [
+      "AJJIPURA"
+    ],
+    "postOfficeNames": [
+      "AJJIPURA"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Ajjipura",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      8
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-305014",
+    "pinCode": "305014",
+    "postOffices": [
+      "AJMER M.S.S HATUNDI"
+    ],
+    "postOfficeNames": [
+      "AJMER M.S.S HATUNDI"
+    ],
+    "state": "Rajasthan",
+    "city": null,
+    "district": null,
+    "locality": "Ajmer M.S.S Hatundi",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      8
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-305006",
+    "pinCode": "305006",
+    "postOffices": [
+      "AJMER SHASTRI NAGAR",
+      "ASHOK MARK AJMER",
+      "POLICE LINE AJMER",
+      "VYSHALI NAGAR AJMER"
+    ],
+    "postOfficeNames": [
+      "AJMER SHASTRI NAGAR",
+      "ASHOK MARK AJMER",
+      "POLICE LINE AJMER",
+      "VYSHALI NAGAR AJMER"
+    ],
+    "state": "Rajasthan",
+    "city": null,
+    "district": null,
+    "locality": "Ajmer Shastri Nagar",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 0,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      8,
+      28,
+      409,
+      553
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-494554",
+    "pinCode": "494554",
+    "postOffices": [
+      "AKASH NAGAR"
+    ],
+    "postOfficeNames": [
+      "AKASH NAGAR"
+    ],
+    "state": "Chattisgarh",
+    "city": null,
+    "district": null,
+    "locality": "Akash Nagar",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      8
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-813223",
+    "pinCode": "813223",
+    "postOffices": [
+      "AKBAR NAGAR"
+    ],
+    "postOfficeNames": [
+      "AKBAR NAGAR"
+    ],
+    "state": "Bihar",
+    "city": null,
+    "district": null,
+    "locality": "Akbar Nagar",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      8
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-246765",
+    "pinCode": "246765",
+    "postOffices": [
+      "AKBARA BAD"
+    ],
+    "postOfficeNames": [
+      "AKBARA BAD"
+    ],
+    "state": "Uttarakhand",
+    "city": null,
+    "district": null,
+    "locality": "Akbara Bad",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      8
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-209744",
+    "pinCode": "209744",
+    "postOffices": [
+      "AKBARPUR"
+    ],
+    "postOfficeNames": [
+      "AKBARPUR"
+    ],
+    "state": "Uttar Pradesh",
+    "city": null,
+    "district": null,
+    "locality": "Akbarpur",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      8
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-845485",
+    "pinCode": "845485",
+    "postOffices": [
+      "AKHTA"
+    ],
+    "postOfficeNames": [
+      "AKHTA"
+    ],
+    "state": "Bihar",
+    "city": null,
+    "district": null,
+    "locality": "Akhta",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      8
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-848111",
+    "pinCode": "848111",
+    "postOffices": [
+      "AKHTIARPUT"
+    ],
+    "postOfficeNames": [
+      "AKHTIARPUT"
+    ],
+    "state": "Bihar",
+    "city": null,
+    "district": null,
+    "locality": "Akhtiarput",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      8
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-641304",
+    "pinCode": "641304",
+    "postOffices": [
+      "AKKARAISENGAPALLI"
+    ],
+    "postOfficeNames": [
+      "AKKARAISENGAPALLI"
+    ],
+    "state": "Tamilnadu",
+    "city": null,
+    "district": null,
+    "locality": "Akkaraisengapalli",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      8
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-591178",
+    "pinCode": "591178",
+    "postOffices": [
+      "AKKATANGERHAL"
+    ],
+    "postOfficeNames": [
+      "AKKATANGERHAL"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Akkatangerhal",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      8
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-637417",
+    "pinCode": "637417",
+    "postOffices": [
+      "AKKIAMPATTI"
+    ],
+    "postOfficeNames": [
+      "AKKIAMPATTI"
+    ],
+    "state": "Tamilnadu",
+    "city": null,
+    "district": null,
+    "locality": "Akkiampatti",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      8
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-562124",
+    "pinCode": "562124",
+    "postOffices": [
+      "AKKUR"
+    ],
+    "postOfficeNames": [
+      "AKKUR"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Akkur",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      8
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-311607",
+    "pinCode": "311607",
+    "postOffices": [
+      "AKOLA (BHILWARA)"
+    ],
+    "postOfficeNames": [
+      "AKOLA (BHILWARA)"
+    ],
+    "state": "Rajasthan",
+    "city": null,
+    "district": null,
+    "locality": "Akola (Bhilwara)",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      9
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-221209",
+    "pinCode": "221209",
+    "postOffices": [
+      "AKORHA"
+    ],
+    "postOfficeNames": [
+      "AKORHA"
+    ],
+    "state": "Uttar Pradesh",
+    "city": null,
+    "district": null,
+    "locality": "Akorha",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      9
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-581151",
+    "pinCode": "581151",
+    "postOffices": [
+      "ALADKATTI"
+    ],
+    "postOfficeNames": [
+      "ALADKATTI"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Aladkatti",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      9
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-582237",
+    "pinCode": "582237",
+    "postOffices": [
+      "ALAGAWADI"
+    ],
+    "postOfficeNames": [
+      "ALAGAWADI"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Alagawadi",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      9
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-577148",
+    "pinCode": "577148",
+    "postOffices": [
+      "ALAGESWARA"
+    ],
+    "postOfficeNames": [
+      "ALAGESWARA"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Alageswara",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      9
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-341012",
+    "pinCode": "341012",
+    "postOffices": [
+      "ALAI"
+    ],
+    "postOfficeNames": [
+      "ALAI"
+    ],
+    "state": "Rajasthan",
+    "city": null,
+    "district": null,
+    "locality": "Alai",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      9
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-390005",
+    "pinCode": "390005",
+    "postOffices": [
+      "ALAKAPURI",
+      "VADODARA SAYAJI GANJ"
+    ],
+    "postOfficeNames": [
+      "ALAKAPURI",
+      "VADODARA SAYAJI GANJ"
+    ],
+    "state": "Gujarat",
+    "city": null,
+    "district": null,
+    "locality": "Alakapuri",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 0,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      9,
+      538
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-534000",
+    "pinCode": "534000",
+    "postOffices": [
+      "ALAMURU"
+    ],
+    "postOfficeNames": [
+      "ALAMURU"
+    ],
+    "state": "Andhra Pradesh",
+    "city": null,
+    "district": null,
+    "locality": "Alamuru",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      10
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-678637",
+    "pinCode": "678637",
+    "postOffices": [
+      "ALANGAD"
+    ],
+    "postOfficeNames": [
+      "ALANGAD"
+    ],
+    "state": "Kerala",
+    "city": null,
+    "district": null,
+    "locality": "Alangad",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      10
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-626144",
+    "pinCode": "626144",
+    "postOffices": [
+      "ALANGULAM"
+    ],
+    "postOfficeNames": [
+      "ALANGULAM"
+    ],
+    "state": "Tamilnadu",
+    "city": null,
+    "district": null,
+    "locality": "Alangulam",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      10
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-563140",
+    "pinCode": "563140",
+    "postOffices": [
+      "ALANGUR"
+    ],
+    "postOfficeNames": [
+      "ALANGUR"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Alangur",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      10
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-574284",
+    "pinCode": "574284",
+    "postOffices": [
+      "ALANKAR",
+      "POLAIPANCHYAT"
+    ],
+    "postOfficeNames": [
+      "ALANKAR",
+      "POLAIPANCHYAT"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Alankar",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 0,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      10,
+      409
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-628221",
+    "pinCode": "628221",
+    "postOffices": [
+      "ALANTALI"
+    ],
+    "postOfficeNames": [
+      "ALANTALI"
+    ],
+    "state": "Tamilnadu",
+    "city": null,
+    "district": null,
+    "locality": "Alantali",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      10
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-688010",
+    "pinCode": "688010",
+    "postOffices": [
+      "ALAPPUZHA MULLAKKAL"
+    ],
+    "postOfficeNames": [
+      "ALAPPUZHA MULLAKKAL"
+    ],
+    "state": "Kerala",
+    "city": null,
+    "district": null,
+    "locality": "Alappuzha Mullakkal",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      10
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-610211",
+    "pinCode": "610211",
+    "postOffices": [
+      "ALATHAMPADI"
+    ],
+    "postOfficeNames": [
+      "ALATHAMPADI"
+    ],
+    "state": "Tamilnadu",
+    "city": null,
+    "district": null,
+    "locality": "Alathampadi",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      10
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-614501",
+    "pinCode": "614501",
+    "postOffices": [
+      "ALATHUR(TJ)"
+    ],
+    "postOfficeNames": [
+      "ALATHUR(TJ)"
+    ],
+    "state": "Tamilnadu",
+    "city": null,
+    "district": null,
+    "locality": "Alathur(Tj)",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      10
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-691320",
+    "pinCode": "691320",
+    "postOffices": [
+      "ALAYAMON"
+    ],
+    "postOfficeNames": [
+      "ALAYAMON"
+    ],
+    "state": "Kerala",
+    "city": null,
+    "district": null,
+    "locality": "Alayamon",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      10
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-574247",
+    "pinCode": "574247",
+    "postOffices": [
+      "ALETTY"
+    ],
+    "postOfficeNames": [
+      "ALETTY"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Aletty",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      11
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-574133",
+    "pinCode": "574133",
+    "postOffices": [
+      "ALEVUR"
+    ],
+    "postOfficeNames": [
+      "ALEVUR"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Alevur",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      11
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-587321",
+    "pinCode": "587321",
+    "postOffices": [
+      "ALGUR"
+    ],
+    "postOfficeNames": [
+      "ALGUR"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Algur",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      11
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-561224",
+    "pinCode": "561224",
+    "postOffices": [
+      "ALIPURA"
+    ],
+    "postOfficeNames": [
+      "ALIPURA"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Alipura",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      11
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-611117",
+    "pinCode": "611117",
+    "postOffices": [
+      "ALIYUR"
+    ],
+    "postOfficeNames": [
+      "ALIYUR"
+    ],
+    "state": "Tamilnadu",
+    "city": null,
+    "district": null,
+    "locality": "Aliyur",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      11
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-683553",
+    "pinCode": "683553",
+    "postOffices": [
+      "ALLAPARA"
+    ],
+    "postOfficeNames": [
+      "ALLAPARA"
+    ],
+    "state": "Kerala",
+    "city": null,
+    "district": null,
+    "locality": "Allapara",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      12
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-586218",
+    "pinCode": "586218",
+    "postOffices": [
+      "ALMATTI"
+    ],
+    "postOfficeNames": [
+      "ALMATTI"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Almatti",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      12
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-585332",
+    "pinCode": "585332",
+    "postOffices": [
+      "ALNOOR",
+      "ATNOOR"
+    ],
+    "postOfficeNames": [
+      "ALNOOR",
+      "ATNOOR"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Alnoor",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 0,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      12,
+      31
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-591105",
+    "pinCode": "591105",
+    "postOffices": [
+      "ALUMINIUM FACTORY"
+    ],
+    "postOfficeNames": [
+      "ALUMINIUM FACTORY"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Aluminium Factory",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      12
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-571151",
+    "pinCode": "571151",
+    "postOffices": [
+      "ALUR (CNR)"
+    ],
+    "postOfficeNames": [
+      "ALUR (CNR)"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Alur (Cnr)",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      12
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-577573",
+    "pinCode": "577573",
+    "postOffices": [
+      "ALUR (CTD)"
+    ],
+    "postOfficeNames": [
+      "ALUR (CTD)"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Alur (Ctd)",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      12
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-680603",
+    "pinCode": "680603",
+    "postOffices": [
+      "ALUR MATTOM"
+    ],
+    "postOfficeNames": [
+      "ALUR MATTOM"
+    ],
+    "state": "Kerala",
+    "city": null,
+    "district": null,
+    "locality": "Alur Mattom",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      13
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-193508",
+    "pinCode": "193508",
+    "postOffices": [
+      "ALUSA"
+    ],
+    "postOfficeNames": [
+      "ALUSA"
+    ],
+    "state": "Jammu And Kashmir",
+    "city": null,
+    "district": null,
+    "locality": "Alusa",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      13
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-683103",
+    "pinCode": "683103",
+    "postOffices": [
+      "ALUVA NORTH"
+    ],
+    "postOfficeNames": [
+      "ALUVA NORTH"
+    ],
+    "state": "Kerala",
+    "city": null,
+    "district": null,
+    "locality": "Aluva North",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      13
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-581419",
+    "pinCode": "581419",
+    "postOffices": [
+      "ALVEKODI"
+    ],
+    "postOfficeNames": [
+      "ALVEKODI"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Alvekodi",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      13
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-571145",
+    "pinCode": "571145",
+    "postOffices": [
+      "AMACHADADI"
+    ],
+    "postOfficeNames": [
+      "AMACHADADI"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Amachadadi",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      13
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-624627",
+    "pinCode": "624627",
+    "postOffices": [
+      "AMARAPUNDI"
+    ],
+    "postOfficeNames": [
+      "AMARAPUNDI"
+    ],
+    "state": "Tamilnadu",
+    "city": null,
+    "district": null,
+    "locality": "Amarapundi",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      14
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-587130",
+    "pinCode": "587130",
+    "postOffices": [
+      "AMARAVATHI"
+    ],
+    "postOfficeNames": [
+      "AMARAVATHI"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Amaravathi",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      14
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-363622",
+    "pinCode": "363622",
+    "postOffices": [
+      "AMARPARA"
+    ],
+    "postOfficeNames": [
+      "AMARPARA"
+    ],
+    "state": "Gujarat",
+    "city": null,
+    "district": null,
+    "locality": "Amarpara",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      14
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-801117",
+    "pinCode": "801117",
+    "postOffices": [
+      "AMARPURA"
+    ],
+    "postOfficeNames": [
+      "AMARPURA"
+    ],
+    "state": "Bihar",
+    "city": null,
+    "district": null,
+    "locality": "Amarpura",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      14
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-679310",
+    "pinCode": "679310",
+    "postOffices": [
+      "AMAYUR"
+    ],
+    "postOfficeNames": [
+      "AMAYUR"
+    ],
+    "state": "Kerala",
+    "city": null,
+    "district": null,
+    "locality": "Amayur",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      14
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-444910",
+    "pinCode": "444910",
+    "postOffices": [
+      "AMBADA"
+    ],
+    "postOfficeNames": [
+      "AMBADA"
+    ],
+    "state": "Maharashtra",
+    "city": null,
+    "district": null,
+    "locality": "Ambada",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      14
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-591137",
+    "pinCode": "591137",
+    "postOffices": [
+      "AMBADGATTI"
+    ],
+    "postOfficeNames": [
+      "AMBADGATTI"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Ambadgatti",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      14
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-680723",
+    "pinCode": "680723",
+    "postOffices": [
+      "AMBALAPARA"
+    ],
+    "postOfficeNames": [
+      "AMBALAPARA"
+    ],
+    "state": "Kerala",
+    "city": null,
+    "district": null,
+    "locality": "Ambalapara",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      15
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-571492",
+    "pinCode": "571492",
+    "postOffices": [
+      "AMBALE"
+    ],
+    "postOfficeNames": [
+      "AMBALE"
+    ],
+    "state": "Karnataka",
+    "city": null,
+    "district": null,
+    "locality": "Ambale",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      15
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  },
+  {
+    "locationEntityId": "IN-416532",
+    "pinCode": "416532",
+    "postOffices": [
+      "AMBALI"
+    ],
+    "postOfficeNames": [
+      "AMBALI"
+    ],
+    "state": "Maharashtra",
+    "city": null,
+    "district": null,
+    "locality": "Ambali",
+    "taluk": null,
+    "region": null,
+    "citySource": null,
+    "districtSource": null,
+    "localitySource": null,
+    "source": "Supplied PIN PDF",
+    "sourceUrl": null,
+    "lookupTimestamp": null,
+    "sourceConfidence": "low",
+    "geoVerified": false,
+    "contentReady": false,
+    "indexable": false,
+    "published": false,
+    "qualityStatus": "needs-review",
+    "qualityTier": "D",
+    "qualityScore": 1,
+    "lookupError": "No postal offices returned",
+    "sourcePages": [
+      15
+    ],
+    "canonicalPath": null,
+    "metaTitle": null,
+    "metaDescription": null
+  }
+]

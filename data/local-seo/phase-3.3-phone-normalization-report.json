@@ -1,0 +1,262 @@
+{
+  "phase": "3.3",
+  "verifiedPhoneMapping": {
+    "primaryBusinessPhone": {
+      "number": "+91 96673 70747",
+      "e164": "+919667370747",
+      "status": "OWNER_CONFIRMED_ACTIVE"
+    },
+    "whatsappLeadPhone": {
+      "number": "+91 93556 11996",
+      "e164": "+919355611996",
+      "status": "OWNER_CONFIRMED_ACTIVE",
+      "uses": [
+        "WhatsApp and lead enquiries",
+        "Air India preparation",
+        "IndiGo preparation"
+      ]
+    },
+    "unavailableNumbers": [
+      {
+        "number": "+91 95552 91956",
+        "e164": "+919555291956",
+        "status": "OWNER_CONFIRMED_UNAVAILABLE"
+      },
+      {
+        "number": "+91 97179 77702",
+        "e164": "+919717977702",
+        "status": "OWNER_CONFIRMED_UNAVAILABLE"
+      }
+    ]
+  },
+  "phoneNumberInventory": [
+    {
+      "number": "+91 96673 70747",
+      "beforeUsage": [
+        "Shared ACADEMY fact and Organization schema primary telephone.",
+        "Contact page, Footer and general call destinations.",
+        "Also used by some pre-normalization WhatsApp destinations."
+      ],
+      "afterUsage": [
+        "Canonical primary phone in lib/facts.js, shared Organization schema, and homepage EducationalOrganization schema.",
+        "Primary call number on Contact and general business contact surfaces.",
+        "Displayed with spaces; telephone and tel: destinations use +919667370747."
+      ],
+      "activeStatus": "PRIMARY_BUSINESS_PHONE"
+    },
+    {
+      "number": "+91 93556 11996",
+      "beforeUsage": [
+        "No exact occurrence in active contact destinations before this normalization.",
+        "The previously used secondary value was the different number +91 93556 6991; see legacy inventory below."
+      ],
+      "afterUsage": [
+        "Shared WhatsApp and lead destination in ACADEMY.whatsapp, LeadForm, Contact and shared WhatsApp controls.",
+        "Visible secondary contact and tel: destination in the Footer.",
+        "Phone and WhatsApp contact on the Air India and IndiGo preparation pages.",
+        "WhatsApp destination on course and enquiry CTAs."
+      ],
+      "activeStatus": "WHATSAPP_LEAD_AND_CAMPAIGN_CONTACT"
+    },
+    {
+      "number": "+91 95552 91956",
+      "beforeUsage": [
+        "Active phone and WhatsApp destinations on the Air India preparation page.",
+        "WhatsApp destinations on the IndiGo preparation page.",
+        "Also recorded in business/location and earlier audit data."
+      ],
+      "afterUsage": [
+        "No active rendered phone, tel: or WhatsApp use.",
+        "Retained only in records that explicitly mark it unavailable and in historical audit/research artifacts."
+      ],
+      "activeStatus": "UNAVAILABLE_NOT_USED"
+    },
+    {
+      "number": "+91 97179 77702",
+      "beforeUsage": [
+        "Displayed in Air India campaign contact information and used as an IndiGo tel: contact.",
+        "Also recorded in business/location and earlier audit data."
+      ],
+      "afterUsage": [
+        "No active rendered phone, tel: or WhatsApp use.",
+        "Retained only in records that explicitly mark it unavailable and in historical audit/research artifacts."
+      ],
+      "activeStatus": "UNAVAILABLE_NOT_USED"
+    },
+    {
+      "number": "+91 93556 6991",
+      "beforeUsage": [
+        "Unverified former value displayed in the Footer and Privacy page and used by the shared LeadForm WhatsApp action."
+      ],
+      "afterUsage": [
+        "Removed from active contact surfaces; historical Phase 3.1/3.2 audit and prior research/report artifacts remain unchanged."
+      ],
+      "activeStatus": "HISTORICAL_ONLY"
+    }
+  ],
+  "filesModified": [
+    "README.md",
+    "SEO-BACKLOG.md",
+    "components/BlogAuthorBox.jsx",
+    "components/ContactPopup.jsx",
+    "components/FloatingButtons.jsx",
+    "components/Footer.jsx",
+    "components/LeadForm.jsx",
+    "components/PdfLeadMagnet.jsx",
+    "data/local-seo/business-entity-audit.json",
+    "data/local-seo/business-location.json",
+    "data/pageFaqs.js",
+    "lib/facts.js",
+    "pages/air-navigation.jsx",
+    "pages/air-regulations.jsx",
+    "pages/airindia-pilot-preparation.jsx",
+    "pages/airline-preparation-course.jsx",
+    "pages/ame-aircraft-maintenance-engineer.jsx",
+    "pages/aviation-meteorology.jsx",
+    "pages/best-flight-schools-in-usa.jsx",
+    "pages/blogs/[id].jsx",
+    "pages/commercial-pilot-license-salary.jsx",
+    "pages/contact.jsx",
+    "pages/courses.jsx",
+    "pages/courses/atpl.jsx",
+    "pages/courses/cpl.jsx",
+    "pages/emirates-cadet-pilot-program.jsx",
+    "pages/faq.jsx",
+    "pages/flying-school/usa.jsx",
+    "pages/how-to-choose-an-aviation-academy.jsx",
+    "pages/index.jsx",
+    "pages/indigo-pilot-preparation.jsx",
+    "pages/pilot-career-counselling.jsx",
+    "pages/pilot-training-in-delhi.jsx",
+    "pages/pilot-training-in-dwarka.jsx",
+    "pages/privacy-policy.jsx",
+    "pages/qatar-airways-cadet-pilot-program.jsx",
+    "pages/rtr-a.jsx",
+    "pages/technical-general.jsx",
+    "pages/terms.jsx",
+    "public/llms.txt",
+    "scripts/generate-local-search.js"
+  ],
+  "unavailableNumberOccurrencesRemovedOrReplaced": [
+    {
+      "number": "+91 95552 91956",
+      "files": [
+        "pages/airindia-pilot-preparation.jsx",
+        "pages/indigo-pilot-preparation.jsx"
+      ],
+      "result": "Active phone and WhatsApp destinations were replaced with the owner-confirmed +91 93556 11996 lead number."
+    },
+    {
+      "number": "+91 97179 77702",
+      "files": [
+        "pages/airindia-pilot-preparation.jsx",
+        "pages/indigo-pilot-preparation.jsx"
+      ],
+      "result": "Active campaign contact use was removed; the campaign pages use the owner-confirmed +91 93556 11996 contact."
+    },
+    {
+      "number": "+91 93556 6991",
+      "files": [
+        "components/Footer.jsx",
+        "components/LeadForm.jsx",
+        "pages/privacy-policy.jsx"
+      ],
+      "result": "Active use was replaced with the verified primary and lead numbers according to context; historical audit records were preserved."
+    }
+  ],
+  "primaryNumberOccurrencesNormalized": [
+    "lib/facts.js now stores the primary phone as +919667370747 and the display value as +91 96673 70747.",
+    "The homepage EducationalOrganization telephone and shared Organization telephone use the E.164 primary value.",
+    "Primary tel: links use +919667370747; general contact displays use the spaced display value."
+  ],
+  "whatsappNumberOccurrencesPreserved": [
+    "The WhatsApp destination is centralized as https://wa.me/919355611996.",
+    "LeadForm, Contact, Footer WhatsApp, ContactPopup and FloatingButtons use the verified lead destination.",
+    "Air India and IndiGo preparation contact actions use +91 93556 11996."
+  ],
+  "schemaChanges": [
+    "Organization schema continues to use ACADEMY.phone, normalized to +919667370747.",
+    "Homepage EducationalOrganization telephone normalized to +919667370747.",
+    "The lead number is not added as the Organization's single primary telephone.",
+    "No LocalBusiness schema or location schema was added."
+  ],
+  "contactFooterChanges": [
+    "Contact call action uses primary +91 96673 70747; its WhatsApp action uses lead number +91 93556 11996.",
+    "Footer presents primary and WhatsApp/lead contacts separately with matching tel: and WhatsApp destinations.",
+    "Privacy contact phone now displays only the primary number, matching its tel: destination."
+  ],
+  "sourceSearch": {
+    "scope": "Project search excluding build/dependency directories; current source, public content, business records and audit data were inspected.",
+    "activeContactDestinations": "Only +919667370747 and +919355611996 remain in built tel: links; WhatsApp links use only 919355611996.",
+    "unavailableNumberReferences": "The two unavailable values remain in current business records/generator status only to mark them unavailable, and in historical audit/research artifacts. They do not appear in rendered pages or active destinations.",
+    "historicalNumberReferences": "The superseded +91 93556 6991 remains in historical audit/research records only."
+  },
+  "validation": {
+    "businessJsonParse": {
+      "status": "PASS",
+      "files": [
+        "data/local-seo/business-location.json",
+        "data/local-seo/business-entity-audit.json",
+        "data/local-seo/phase-3.2-phone-identity-audit.json"
+      ]
+    },
+    "targetedEslint": {
+      "status": "PASS",
+      "notes": "Changed JS/JSX files passed with the known pre-existing react-hooks/set-state-in-effect warning in Footer and @next/next/no-html-link-for-pages issue in FAQ suppressed for this scoped run."
+    },
+    "gitDiffCheck": "PASS",
+    "productionBuild": {
+      "status": "PASS",
+      "notes": "Next.js production build completed. A MongoDB DNS lookup warning occurred during page-data collection but did not fail the build. Generator outputs were restored to their pre-build working-tree state."
+    },
+    "jsonLd": {
+      "status": "PASS",
+      "notes": "All 572 JSON-LD blocks in generated HTML parsed as JSON; homepage Organization/EducationalOrganization telephone is +919667370747."
+    },
+    "renderedContactValidation": {
+      "status": "PASS",
+      "telDestinations": [
+        "+919667370747",
+        "+919355611996"
+      ],
+      "whatsappDestination": "https://wa.me/919355611996",
+      "unavailableNumbersInRenderedHtml": false,
+      "contactPage": "Primary telephone and lead WhatsApp destinations match the verified mapping.",
+      "footer": "Both verified numbers are displayed with matching destinations."
+    },
+    "nearRouteValidation": {
+      "status": "PASS",
+      "hubRobots": "noindex, follow",
+      "hubCanonical": "https://weoneaviation.in/pilot-training-near",
+      "localityTemplateCompiled": true,
+      "generatedLocalityRoutes": 0,
+      "pilotLocalitiesInputCount": 0
+    },
+    "sitemapValidation": {
+      "status": "PASS",
+      "nearRouteUrls": 0,
+      "notes": "The near-route hub is excluded. The generated sitemap was restored to its pre-build state."
+    },
+    "localSearchRouteValidator": {
+      "status": "FAIL",
+      "errors": [
+        "/pilot-training-in-delhi does not link to the local-search hub.",
+        "/pilot-training-in-dwarka does not link to the local-search hub.",
+        "/dgca-ground-classes does not link to the local-search hub."
+      ],
+      "notes": "These are existing architecture-link expectations from the validator. No links or near-route architecture were changed in Phase 3.3."
+    }
+  },
+  "nearRouteVerification": {
+    "hubRemainsNoindex": true,
+    "localityPagesGenerated": 0,
+    "nearRouteSitemapUrls": 0,
+    "nearRouteFilesModified": false
+  },
+  "productionChangesMade": true,
+  "deploymentPerformed": false,
+  "gitPushPerformed": false,
+  "remainingManualVerification": [
+    "The owner confirmed the active phone mapping. The live Google Business Profile phone consistency is still not independently verified in project data."
+  ]
+}

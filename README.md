@@ -87,7 +87,7 @@ Every form submission on the website is **automatically saved to Excel**:
 | Feature | Details |
 |---------|---------|
 | 📊 Excel Lead Saving | Auto-appends to `data/leads.xlsx` |
-| 📱 WhatsApp Integration | All forms redirect to WhatsApp (9667370747) |
+| 📱 WhatsApp Integration | Lead forms redirect to WhatsApp (+91 93556 11996) |
 | 📞 Click-to-Call | Floating call button |
 | 🎠 Hero Slider | Auto-play image slider on every page |
 | 💫 Animations | Scroll-triggered fade-up reveals |
@@ -169,10 +169,9 @@ npm start
 
 ---
 
-## 📞 WhatsApp Number
-All forms connect to: **+91 93556 11996**
-
-To change the number, search for `9667370747` in the codebase and replace it.
+## 📞 Academy Contact Numbers
+- Primary academy/business phone: **+91 96673 70747**
+- WhatsApp and lead enquiries: **+91 93556 11996**
 
 ---
 

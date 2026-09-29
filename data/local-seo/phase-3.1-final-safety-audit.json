@@ -1,0 +1,336 @@
+{
+  "phase": "3.1",
+  "auditEvidence": {
+    "build": {
+      "buildId": "0r65l1Dp5_jI-Wwu4WKgL",
+      "buildArtifactTimestampLocal": "2026-09-29T14:17:19",
+      "evidence": [
+        ".next/routes-manifest.json",
+        ".next/prerender-manifest.json",
+        ".next/server/pages-manifest.json",
+        ".next/server/pages/pilot-training-near.html",
+        ".generated-sitemap.xml"
+      ],
+      "sitemapRouteCount": 112
+    },
+    "scope": "Read-only route, build, sitemap, Git, phone, and entity audit. Only this report is created. No production code, route source, sitemap, robots, Git staging, deployment, or push was changed."
+  },
+  "nearRouteAudit": {
+    "directoryExists": true,
+    "files": [
+      {
+        "path": "pages/pilot-training-near/index.jsx",
+        "purpose": "Static /pilot-training-near information hub.",
+        "gitState": "UNTRACKED; not ignored; not staged; not modified by Phase 3.",
+        "provenance": "It was present in the worktree before/during Phase 3 and was not created or edited by Phase 3. Because the file is untracked, repository history cannot establish its original creator or exact creation date.",
+        "content": "Describes the Dwarka classroom, online batches for students outside Delhi, and existing course/location links. It explicitly says locality boundaries, offices, campuses, instructors, classes, distance, and travel times are not established. Metadata uses 'Delhi and nearby areas'; the body does not claim a nearby branch or locality-specific service."
+      },
+      {
+        "path": "pages/pilot-training-near/[locality].jsx",
+        "purpose": "Static-generation template for locality-specific URLs using getStaticPaths/getStaticProps and PILOT_LOCALITIES.",
+        "gitState": "UNTRACKED; not ignored; not staged; not modified by Phase 3.",
+        "provenance": "It was present in the worktree before/during Phase 3 and was not created or edited by Phase 3. Because it is untracked, repository history cannot establish its original creator or exact creation date.",
+        "content": "Renders 'Pilot Training Near {locality}' and a GeoNames/PIN-sourced locality record. It repeatedly states that no local academy facility or dedicated locality arrangement is established; it does not promise local classes, enrollment, travel, a nearby facility, or a branch. The locality name in the H1/title and Place schema would nevertheless create locality-query relevance if any records were generated."
+      }
+    ],
+    "relatedRouteSupportFiles": [
+      {
+        "path": "components/LocalitySearchPage.jsx",
+        "role": "Shared locality page renderer; includes locality-specific title/H1, canonical, noindex, Place and FAQ schema, source-record details, and links to existing services."
+      },
+      {
+        "path": "data/local-seo/pilot-localities.json",
+        "role": "Input to getStaticPaths and locality sitemap selection.",
+        "currentState": "Empty array; zero slugs and zero selected locality pages."
+      },
+      {
+        "path": "scripts/generate-local-search.js",
+        "role": "Produces locality research data and documents the /pilot-training-near/[locality] pattern; it does not write page files."
+      },
+      {
+        "path": "scripts/generate-sitemap.js",
+        "role": "Reads pilot-localities.json and includes only records marked PUBLISH_INDEXABLE, publish, and with a canonicalPath; explicitly excludes /pilot-training-near."
+      },
+      {
+        "path": "scripts/validate-local-search.js",
+        "role": "References the template and checks noindex/sitemap/locality route conditions."
+      }
+    ],
+    "routeGeneration": {
+      "source": "pages/pilot-training-near/[locality].jsx exports getStaticPaths from PILOT_LOCALITIES.map(...); fallback is false.",
+      "currentData": "PILOT_LOCALITIES is an empty array.",
+      "latestBuild": "Next.js compiled the dynamic route template in its route manifest, but prerendered zero locality slugs. No /pilot-training-near/{locality}.html output exists.",
+      "intent": "The source is a dormant generated-locality-page mechanism plus a separate noindex hub. The repository does not establish whether the hub/template are approved for eventual production use."
+    },
+    "routes": [
+      {
+        "route": "/pilot-training-near",
+        "sourceFile": "pages/pilot-training-near/index.jsx",
+        "latestBuildStatus": "Included as a static route and emitted as .next/server/pages/pilot-training-near.html.",
+        "indexability": "NOINDEX, FOLLOW. Layout receives noindex; emitted robots meta is 'noindex, follow'. robots.txt permits public crawling, so crawlers can read this directive.",
+        "sitemapStatus": "EXCLUDED. Confirmed absent from current .generated-sitemap.xml and explicitly excluded by generate-sitemap.js.",
+        "canonical": "https://weoneaviation.in/pilot-training-near (self-canonical in source and emitted HTML).",
+        "internalLinks": {
+          "incoming": "No source-level references or rendered internal links to this route were found in pages/ or components/.",
+          "outgoing": "Links to existing DGCA, CPL, PPL, ATPL, About, Delhi, Dwarka, and Contact pages."
+        },
+        "schema": "WebPage schema references the existing website and organization IDs; shared global EducationalOrganization, BreadcrumbList, and FAQPage are also rendered. No LocalBusiness or locality-specific Place node is present on the hub."
+      },
+      {
+        "route": "/pilot-training-near/[locality]",
+        "sourceFile": "pages/pilot-training-near/[locality].jsx",
+        "latestBuildStatus": "Dynamic route template is present in .next/routes-manifest.json and .next/server/pages-manifest.json. The latest prerender manifest has the template but zero generated paths; no locality HTML/data route was emitted.",
+        "indexability": "NOINDEX, FOLLOW would be set by the shared renderer if a path were generated. No current locality page is available to index from this build.",
+        "sitemapStatus": "No locality URL is present in the current sitemap; pilot-localities.json has zero records.",
+        "canonical": "Template sets a self-canonical from each record's canonicalPath; no concrete locality canonical was emitted in the latest build.",
+        "internalLinks": {
+          "incoming": "No source-level incoming links found.",
+          "outgoing": "The template links to existing course, CPL eligibility, About, Delhi, Dwarka, and Contact routes."
+        },
+        "schema": "Template would emit WebPage with an about: Place containing the locality name and FAQPage; no concrete locality schema instance was emitted."
+      }
+    ],
+    "gitStatus": [
+      {
+        "path": "pages/pilot-training-near/index.jsx",
+        "tracked": false,
+        "modified": false,
+        "untracked": true,
+        "ignored": false,
+        "staged": false
+      },
+      {
+        "path": "pages/pilot-training-near/[locality].jsx",
+        "tracked": false,
+        "modified": false,
+        "untracked": true,
+        "ignored": false,
+        "staged": false
+      }
+    ],
+    "sitemapStatus": [
+      {
+        "route": "/pilot-training-near",
+        "included": false,
+        "reason": "Explicit noindex exclusion."
+      },
+      {
+        "route": "/pilot-training-near/[locality]",
+        "included": false,
+        "reason": "No eligible indexable/published records; current input array is empty."
+      }
+    ],
+    "indexability": [
+      {
+        "route": "/pilot-training-near",
+        "status": "Noindex, follow; static HTML emitted."
+      },
+      {
+        "route": "/pilot-training-near/[locality]",
+        "status": "Template compiled, but zero locality pages emitted. If generated, template also sets noindex, follow."
+      }
+    ],
+    "doorwayAndFabricationAssessment": {
+      "currentIndexableDoorwayPages": 0,
+      "currentGeneratedLocalityPages": 0,
+      "doorwayRisk": "The current hub is noindex and excluded from the sitemap and does not claim a local branch. The template is locality-keyword templating that could become a doorway-page risk if populated or made indexable without independent locality-specific service evidence.",
+      "fabricatedLocalRelevance": "The viewed source does not fabricate a local office or class. It uses geographic source records and expressly disclaims local availability. However, the 'Pilot Training Near {locality}' title/H1 and Place schema create a search-relevance association without a verified local service; do not enable indexable output on that basis alone.",
+      "nearMeStrategy": "No literal /pilot-training-near-me route or near-me page is present. The path uses 'near' and a Delhi-student service-information hub, not a dedicated 'near me' landing page."
+    },
+    "productionIntent": "Not established. Both route source files are untracked, but the hub was included in the latest build. A normal Git deployment from a commit will not include untracked files unless they are added; a workspace-based deployment/build could include the hub and compiled template. Confirm deployment source and route disposition before deploying.",
+    "recommendation": "Do not stage, publish, or enable locality pages as part of this audit. Keep the hub noindex and out of the sitemap unless its production purpose is explicitly approved. Before deployment, confirm whether these two untracked route sources are intended to ship; require locality-specific evidence and a separate approval before any generated locality URL is made indexable."
+  },
+  "phoneAudit": {
+    "numbers": [
+      {
+        "number": "+91-9667370747",
+        "classification": [
+          "VERIFIED",
+          "CONFLICTING",
+          "NEEDS_HUMAN_CONFIRMATION"
+        ],
+        "verifiedScope": "Repository source-of-truth ACADEMY.phone, business entity/location records, and global EducationalOrganization contactPoint designate it as the primary academy number. This is first-party repository verification, not independent ownership verification.",
+        "locations": {
+          "Footer": "Displayed as a call number; also the primary Footer WhatsApp destination.",
+          "Contact": "Current phone link and WhatsApp target use this number.",
+          "About": "Not directly printed in page copy; global Footer/schema apply. The embedded shared LeadForm opens WhatsApp to the other number.",
+          "Schema": "Global EducationalOrganization telephone on all eight Phase 3 pages; homepage also has a telephone value.",
+          "WhatsApp": "Footer, ContactPopup, FloatingButtons, and numerous course/content CTAs use this number.",
+          "Metadata": "Not present in the title, description, canonical, robots, Open Graph, or Twitter values checked on the eight pages.",
+          "Other": "Used in lib/facts.js, PdfLeadMagnet, privacy/terms pages, and several course and exam pages."
+        },
+        "conflict": "Website also publishes +91-9355566991 in Footer and uses it as the shared LeadForm WhatsApp destination; the relationship between the two numbers is unstated."
+      },
+      {
+        "number": "+91-9355566991",
+        "classification": [
+          "CONFLICTING",
+          "NEEDS_HUMAN_CONFIRMATION"
+        ],
+        "verifiedScope": "Verified only as a number published on the first-party website and recorded as a secondary number in business-location/entity audit data. Its official role and relationship to the primary number are not established.",
+        "locations": {
+          "Footer": "Displayed as a second phone number with a tel: link.",
+          "Contact": "Not used by the current Contact page call or WhatsApp actions; the page uses +91-9667370747.",
+          "About": "The page's shared LeadForm opens WhatsApp to this number.",
+          "Schema": "Not used in the global Organization schema.",
+          "WhatsApp": "Used by components/LeadForm.jsx; that shared form appears on About, Delhi, and Dwarka among the audited pages.",
+          "Metadata": "Not present in the title, description, canonical, robots, Open Graph, or Twitter values checked on the eight pages.",
+          "Other": "Also listed alongside the primary number in the privacy policy and in business-location/entity audit records."
+        },
+        "risk": "Conflicting contact destinations on the same site and within the audited page set."
+      },
+      {
+        "number": "+91-9555291956",
+        "classification": [
+          "UNVERIFIED",
+          "NEEDS_HUMAN_CONFIRMATION"
+        ],
+        "locations": {
+          "Other": "Air India and IndiGo pilot-preparation pages use it in contact/WhatsApp links; repository records do not clarify whether it is an academy contact, campaign contact, or separate offering."
+        }
+      },
+      {
+        "number": "+91-9717977702",
+        "classification": [
+          "UNVERIFIED",
+          "NEEDS_HUMAN_CONFIRMATION"
+        ],
+        "locations": {
+          "Other": "Listed on the IndiGo pilot-preparation page alongside +91-9555291956; repository records do not clarify its role."
+        }
+      }
+    ],
+    "conflicts": [
+      "Primary facts and Organization schema say +91-9667370747, while shared LeadForm WhatsApp actions use +91-9355566991.",
+      "Footer displays both +91-9667370747 and +91-9355566991 without explaining their roles.",
+      "The audited Contact page was aligned to the primary number, but About, Delhi, and Dwarka embed LeadForm and therefore route form follow-up to the secondary WhatsApp number.",
+      "Two additional unresolved numbers appear on airline-preparation pages outside the eight-page audit."
+    ],
+    "humanVerificationRequired": [
+      "Confirm whether +91-9355566991 is controlled by We One Aviation, its current purpose, and whether it should remain an alternate WhatsApp/call contact.",
+      "Confirm whether +91-9555291956 and +91-9717977702 are authorized business/campaign contacts and which offerings they represent.",
+      "Confirm current control of +91-9667370747; its primary status is supported by repository facts but has not been independently verified."
+    ]
+  },
+  "entityConsistencyAudit": {
+    "pagesChecked": [
+      "/pilot-training-in-india",
+      "/dgca-ground-classes-in-india",
+      "/commercial-pilot-license",
+      "/dgca-ground-classes",
+      "/pilot-training-in-delhi",
+      "/pilot-training-in-dwarka",
+      "/about-us",
+      "/contact"
+    ],
+    "businessName": {
+      "status": "CONSISTENT",
+      "value": "We One Aviation Academy in global EducationalOrganization schema and visible business references."
+    },
+    "websiteAndCanonical": {
+      "status": "CONSISTENT",
+      "value": "https://weoneaviation.in; each of the eight latest-built pages uses its own https://weoneaviation.in/{route} canonical. No .com target was found."
+    },
+    "address": {
+      "status": "CONSISTENT",
+      "value": "C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, New Delhi, Delhi 110077, India.",
+      "schema": "Global Organization uses the shared address and addressLocality New Delhi, addressRegion Delhi. Contact/Footer and Dwarka content use equivalent Delhi/New Delhi wording.",
+      "qualification": "First-party website consistency only; not independent government or Google Business Profile verification."
+    },
+    "phone": {
+      "status": "CONFLICTING",
+      "schemaAndSharedPrimary": "+91-9667370747",
+      "secondaryFooterAndLeadFormWhatsApp": "+91-9355566991",
+      "details": "See phoneAudit; owner confirmation is required before deployment."
+    },
+    "email": {
+      "status": "CONSISTENT",
+      "value": "info.weoneaviation@gmail.com in shared facts and Organization schema; Contact decodes the same address for display."
+    },
+    "whatsapp": {
+      "status": "CONFLICTING",
+      "primary": "Footer, Contact, ContactPopup, FloatingButtons, and many CTAs use +91-9667370747.",
+      "secondary": "Shared LeadForm uses +91-9355566991, including in About, Delhi, and Dwarka."
+    },
+    "organizationId": {
+      "status": "CONSISTENT",
+      "value": "https://weoneaviation.in/#organization",
+      "details": "Latest built HTML contains one global EducationalOrganization node with this @id on each of the eight audited pages."
+    },
+    "logo": {
+      "status": "CONSISTENT",
+      "value": "https://weoneaviation.in/Logo.webp in global Organization schema; Logo.webp exists in public assets."
+    },
+    "sameAs": {
+      "status": "CONSISTENT_WITH_OMISSION",
+      "value": "No sameAs assertion is emitted. Social profile ownership remains unverified."
+    },
+    "areaServed": {
+      "status": "CONSISTENT_WITH_OMISSION",
+      "value": "No Organization areaServed value is emitted; no nationwide or fictional service area is asserted in Organization schema."
+    },
+    "legalName": {
+      "status": "CONSISTENT_WITH_OMISSION",
+      "value": "No legalName is emitted; registered legal name remains unverified."
+    },
+    "courseProvider": {
+      "status": "CONSISTENT",
+      "value": "The only Course node among the eight pages is DGCA Ground Classes; provider @id is https://weoneaviation.in/#organization."
+    },
+    "courseModeDurationOffersPricing": {
+      "schemaStatus": "No courseMode, course duration, offers, lowPrice, or highPrice is emitted in the Course node. The CPL pathway page emits no Course offer node.",
+      "visibleContentStatus": "Pages describe classroom/online access and explicitly avoid publishing unverified academy fees or guaranteed end-to-end duration. No schema/visible-price conflict was found in the latest built eight-page set."
+    },
+    "remainingInconsistencies": [
+      "Conflicting primary/secondary call and WhatsApp numbers.",
+      "The shared LeadForm still states that the team will call within two hours; that operational promise is not in verified business facts and appears on About, Delhi, and Dwarka through the shared component.",
+      "The Dwarka meta description includes time-sensitive counts of DGCA institutions/medical centres; refresh its source/date before those counts become stale."
+    ]
+  },
+  "deploymentSafety": {
+    "critical": [
+      {
+        "issue": "Conflicting primary and secondary phone/WhatsApp destinations across shared facts, schema, Footer, Contact, and LeadForm.",
+        "evidence": "+91-9667370747 is the shared primary/schema number; +91-9355566991 remains in Footer and shared LeadForm WhatsApp actions. The number roles are unresolved.",
+        "classification": "CRITICAL per requested conflicting-phone criteria.",
+        "actionBeforeDeployment": "Obtain human confirmation of both numbers and their roles; do not guess or silently replace either."
+      }
+    ],
+    "high": [
+      {
+        "issue": "Untracked /pilot-training-near hub and locality route template are included in the latest workspace build.",
+        "evidence": "Hub is a static noindex route; dynamic template is compiled with zero generated locality pages. Both files are untracked and not ignored.",
+        "risk": "No current indexable locality doorway page exists, but a workspace-based deployment could ship the hub and future route-generation mechanism. Locality title/H1 and Place schema create a doorway risk if records are later generated/indexed without evidence.",
+        "actionBeforeDeployment": "Confirm whether the untracked route sources are intended to ship; keep noindex/sitemap exclusions and zero generated localities unless separately approved."
+      }
+    ],
+    "medium": [
+      {
+        "issue": "Shared LeadForm promises a call within two hours.",
+        "evidence": "components/LeadForm.jsx is used on About, Delhi, and Dwarka; no verified source establishes this service level.",
+        "action": "Confirm the response-time promise before relying on it as current site content."
+      },
+      {
+        "issue": "The near hub meta description references students across Delhi and nearby areas.",
+        "evidence": "The body disclaims local boundaries and facilities, but 'nearby areas' still frames a geographic service-information page.",
+        "action": "Keep the page noindex and review wording if it is ever approved for deployment."
+      },
+      {
+        "issue": "Dwarka title/description includes changing DGCA institution and medical-centre counts.",
+        "evidence": "The metadata makes dated, externally sourced counts that can become stale.",
+        "action": "Check the cited regulator data and date before deployment/publication."
+      }
+    ],
+    "clearedChecks": [
+      "No current indexable /pilot-training-near locality pages.",
+      "The hub has a self-canonical and noindex, follow directive.",
+      "Neither the hub nor a locality path appears in the current generated sitemap.",
+      "No conflicting academy address was found across the eight pages/schema.",
+      "The eight pages use the same organization @id; no unsupported sameAs, areaServed, legalName, course prices, course duration, courseMode, or Course offers were found in emitted schema.",
+      "No new routes, page edits, sitemap edits, robots edits, deletion, staging, deployment, or Git push were performed for this audit."
+    ],
+    "safeToDeploy": false,
+    "decision": "Do not proceed yet. Resolve the conflicting phone/WhatsApp roles and explicitly decide whether the untracked near-route files may ship. No current indexable locality doorway page or incorrect near-route sitemap entry was found."
+  },
+  "productionChangesMade": false
+}

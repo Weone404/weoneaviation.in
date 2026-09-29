@@ -91,7 +91,7 @@ const peopleAlsoAsk = [
   },
   {
     q: 'Where is We One Aviation in Dwarka?',
-    a: `${ACADEMY.streetAddress}, ${ACADEMY.addressLocality} ${ACADEMY.postalCode}. Phone ${ACADEMY.phone}, email ${ACADEMY.email}.`,
+    a: `${ACADEMY.streetAddress}, ${ACADEMY.addressLocality} ${ACADEMY.postalCode}. Phone ${ACADEMY.phoneDisplay}, email ${ACADEMY.email}.`,
   },
 ];
 
@@ -106,31 +106,6 @@ const faqs = [
   { q: 'How long has the academy been running?', a: `Since ${ACADEMY.foundedYear}, from Dwarka Sector 7.` },
 ];
 
-const localSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  '@id': CANONICAL,
-  name: ACADEMY.name,
-  url: ACADEMY.url,
-  telephone: ACADEMY.phone,
-  email: ACADEMY.email,
-  foundingDate: String(ACADEMY.foundedYear),
-  description: ACADEMY.scope,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: ACADEMY.streetAddress,
-    addressLocality: ACADEMY.addressLocality,
-    postalCode: ACADEMY.postalCode,
-    addressRegion: 'Delhi',
-    addressCountry: ACADEMY.addressCountry,
-  },
-  areaServed: [
-    { '@type': 'Place', name: 'Dwarka, New Delhi' },
-    { '@type': 'Place', name: 'Delhi NCR' },
-    { '@type': 'Country', name: 'India' },
-  ],
-};
-
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -142,8 +117,8 @@ const articleSchema = {
   keywords: 'pilot training in dwarka, pilot training institute in dwarka, dgca ground classes dwarka, best pilot training academy in dwarka, aviation academy dwarka, pilot training delhi',
   mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
   image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
-  author: { '@type': 'Organization', name: ACADEMY.name, url: ACADEMY.url },
-  publisher: { '@type': 'EducationalOrganization', name: ACADEMY.name, url: ACADEMY.url, logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
+  author: { '@id': 'https://weoneaviation.in/#organization' },
+  publisher: { '@id': 'https://weoneaviation.in/#organization' },
   citation: [
     { name: PARIKSHA.sources[0].label, url: PARIKSHA.sources[0].url },
     { name: MED.sources[3].label, url: MED.sources[3].url },
@@ -161,7 +136,7 @@ export default function PilotTrainingInDwarka() {
       title="Pilot Training in Dwarka, Delhi | DGCA Ground Classes"
       description="DGCA ground classes in Dwarka Sector 7 — and the three DGCA institutions a Delhi student needs that are already in the city, including four approved medical centres."
     >
-      <StructuredData data={[localSchema, articleSchema, generateFAQSchema(faqs)]} />
+      <StructuredData data={[articleSchema, generateFAQSchema(faqs)]} />
 
       <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -196,7 +171,7 @@ export default function PilotTrainingInDwarka() {
                 title="Dwarka, in short"
                 items={[
                   `Address: ${ACADEMY.streetAddress}, ${ACADEMY.addressLocality} ${ACADEMY.postalCode}`,
-                  `Phone ${ACADEMY.phone} · ${ACADEMY.email} · running since ${ACADEMY.foundedYear}`,
+                  `Phone ${ACADEMY.phoneDisplay} · ${ACADEMY.email} · running since ${ACADEMY.foundedYear}`,
                   `Taught here: the ${DGCA_PAPERS.length} DGCA written papers, each needing ${EXAM_RULES.theory.passMark}%`,
                   'Classroom batches run in Dwarka; students elsewhere join online batches',
                   `DGCA's Central Examination Organisation: ${CEO.address}`,
@@ -265,6 +240,10 @@ export default function PilotTrainingInDwarka() {
                 <Link href="/commercial-pilot-license-eligibility" className={A}>the CPL eligibility page</Link>. For Delhi more
                 broadly rather than Dwarka specifically, see{' '}
                 <Link href="/pilot-training-in-delhi" className={A}>pilot training in Delhi</Link>.
+                {' '}For the complete Indian pathway, see{' '}
+                <Link href="/pilot-training-in-india" className={A}>pilot training in India</Link>; for the course itself, see{' '}
+                <Link href="/dgca-ground-classes" className={A}>DGCA ground classes</Link> and the{' '}
+                <Link href="/commercial-pilot-license" className={A}>Commercial Pilot Licence pathway</Link>.
               </p>
 
               <PeopleAlsoAsk items={peopleAlsoAsk} />
@@ -317,7 +296,7 @@ export default function PilotTrainingInDwarka() {
               <div className="bg-av-orange rounded-2xl p-6 text-white">
                 <h4 className="font-montserrat font-bold mb-3">Find us</h4>
                 <p className="text-white/90 text-sm leading-relaxed mb-3">{ACADEMY.streetAddress}, {ACADEMY.addressLocality} {ACADEMY.postalCode}</p>
-                <p className="text-white/90 text-sm font-semibold">{ACADEMY.phone}</p>
+                <p className="text-white/90 text-sm font-semibold">{ACADEMY.phoneDisplay}</p>
                 <p className="text-white/70 text-xs mb-3">{ACADEMY.email}</p>
                 <p className="text-white/70 text-xs">Running since {ACADEMY.foundedYear}</p>
                 <a href={ACADEMY.whatsapp} target="_blank" rel="noopener noreferrer"

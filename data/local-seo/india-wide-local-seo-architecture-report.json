@@ -1,0 +1,536 @@
+{
+  "reportType": "India-wide local SEO entity and service architecture audit",
+  "createdAt": "2026-09-29",
+  "scope": {
+    "mode": "AUDIT_AND_RECOMMENDATION_ONLY",
+    "productionChangesMade": false,
+    "pagesCreated": 0,
+    "routesAdded": 0,
+    "sitemapChanged": false,
+    "deploymentOrPushPerformed": false,
+    "urlSubmissionPerformed": false,
+    "domainChangesPerformed": false,
+    "limitations": [
+      "This report audits repository first-party content and existing local-search audit records. It does not independently authenticate company registration, Google Business Profile ownership, registrar/DNS/hosting control, or partner contracts.",
+      "An online-batch statement for students outside Delhi is not evidence of a physical nationwide service area or city-specific cohorts.",
+      "No locality or city performance, demand, or ranking forecasts are made."
+    ]
+  },
+  "currentEntitySignals": {
+    "organizationName": "We One Aviation Academy",
+    "canonicalWebsite": "https://weoneaviation.in/",
+    "canonicalHostPolicy": "Repository configuration redirects www.weoneaviation.in to the apex weoneaviation.in host.",
+    "organizationSchema": {
+      "type": "EducationalOrganization",
+      "stableId": "https://weoneaviation.in/#organization",
+      "source": "lib/schema.js, emitted globally by pages/_document.jsx",
+      "signals": [
+        "Organization name and legalName",
+        "Canonical URL and logo",
+        "Postal address",
+        "Primary phone and email",
+        "Founding date",
+        "sameAs social profile URLs"
+      ],
+      "assessment": "A single global EducationalOrganization node is an appropriate entity baseline. It should remain the single stable academy identity; page-level schema should reference its @id rather than describe separate academy entities."
+    },
+    "sameAs": {
+      "schemaValues": [
+        "https://www.facebook.com/share/1AokxHk8Yv/",
+        "https://www.instagram.com/we_one_aviation",
+        "https://www.linkedin.com/company/weoneaviation"
+      ],
+      "issues": [
+        "The Facebook sameAs value is a share URL rather than a clearly canonical organization profile URL.",
+        "The LinkedIn sameAs URL differs from the Footer URL, which uses /company/we-one-aviation/; verify the correct official profile before treating either as canonical.",
+        "The Instagram username matches the Footer profile, but ownership/profile accuracy was not independently verified in this repository audit."
+      ],
+      "recommendation": "Retain only stable, verified official profile URLs in sameAs; align those exact URLs with the visible site links."
+    },
+    "physicalAddress": {
+      "street": "C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka",
+      "locality": "New Delhi",
+      "region": "Delhi",
+      "postalCode": "110077",
+      "country": "India",
+      "verificationScope": "Consistent first-party website address; not independently verified against a government record or current Google Business Profile."
+    },
+    "contact": {
+      "primaryPhoneInSharedFactsAndOrganizationSchema": "+91-9667370747",
+      "alsoPublishedPhone": "+91-9355566991",
+      "phoneRelationship": "Not stated; contact page uses the latter for calls and WhatsApp while shared facts/schema use the former as primary.",
+      "email": "info.weoneaviation@gmail.com",
+      "unresolvedOtherPageNumbers": [
+        "+91-9555291956",
+        "+91-9717977702"
+      ],
+      "unresolvedNumberContext": "Both appear on airline-preparation pages; repository evidence does not establish whether they are academy-wide, campaign or separate-service numbers."
+    },
+    "googleBusinessProfile": {
+      "repositoryEvidence": "Footer links to Google Maps CID 10157212043930371020.",
+      "listingIdentity": "A prior repository audit reports that the public CID resolves to a We One Aviation Academy listing and map pin.",
+      "ownerVerification": "UNVERIFIED",
+      "currentProfileNAPAndCategory": "UNVERIFIED",
+      "mapPinAccuracy": "Needs owner verification against the published C-404 address and public entrance.",
+      "serviceArea": "No neighborhood boundaries or profile service-area list independently verified.",
+      "hoursReviewsPhotosAndCategory": "Not independently reviewed."
+    },
+    "aboutAndContact": {
+      "aboutPage": "Describes a Dwarka, New Delhi DGCA ground-training institute, the academy's scope, and flight training arranged through partner schools. Its visible facts broadly support entity clarity.",
+      "contactPage": "Publishes the Dwarka address, two contact numbers and contact form; the form routes enquiries to CRM and opens WhatsApp.",
+      "contactConsistencyConcern": "Contact-page call/WhatsApp number differs from the shared schema's primary number. Establish which number is primary and whether the second is an additional contact, then document it consistently."
+    },
+    "domainOwnership": {
+      "weoneaviation.com": "DOMAIN_OWNERSHIP_UNVERIFIED",
+      "evidenceForPossibleAssociation": [
+        "Inspected homepage uses We One Aviation branding and links to Delhi, Dwarka and CPL pages.",
+        "A Bing result showed a Laxmi Nagar DGCA page under the .com domain."
+      ],
+      "evidencePreventingAttribution": [
+        "No legal entity, registrar, DNS, hosting, account-control or first-party ownership evidence is in the repository.",
+        "Inspected .com contact page contained unrelated aircraft-charter/plumbing content.",
+        "Inspected .com locality page has address PIN, phone and email differences from the .in first-party record.",
+        "Inspected .com apex URLs redirected to www; no redirect to weoneaviation.in was observed.",
+        "The .com locality page's canonical and sitemap signals do not establish ownership."
+      ],
+      "instruction": "Do not change, migrate, redirect, canonicalize or delete .com URLs without direct owner confirmation."
+    }
+  },
+  "currentGeographicSignals": {
+    "verifiedPhysicalBusinessLocation": "Dwarka, New Delhi, Delhi 110077; the exact address is listed under currentEntitySignals.physicalAddress.",
+    "verifiedLocationScope": "One physical academy/classroom is documented. The repository does not verify additional branches or neighborhood service boundaries.",
+    "cityCoverageClaims": "No verified nationwide physical presence. The fact that students outside Delhi can join online batches does not prove local in-person coverage in their cities.",
+    "existingGeographicAuthorityPages": [
+      {
+        "route": "/pilot-training-in-delhi",
+        "role": "Delhi-wide context and access to DGCA-related institutions; links to the Dwarka page.",
+        "geographicSchema": "EducationalOrganization with Delhi areaServed and the shared physical address.",
+        "assessment": "Useful, source-led Delhi explanation; avoid broadening the meaning of areaServed beyond what the visible content supports."
+      },
+      {
+        "route": "/pilot-training-in-dwarka",
+        "role": "Verified physical academy location and Dwarka classroom authority.",
+        "geographicSchema": "EducationalOrganization with the Dwarka address and Dwarka areaServed.",
+        "assessment": "Strongest existing local entity/location page; it explicitly distinguishes classroom teaching from partner-school flight training."
+      }
+    ],
+    "geographicResearch": "The 58-city/35-unique-locality research inventory is research evidence only, not a service-area list or justification for location pages.",
+    "cityReferencePolicy": "Do not add keyword lists or imply a branch/service location. Mention a city only when needed for a sourced, genuinely useful comparison or to clarify that online students may be outside Delhi; do not imply city-specific batches, outcomes, partners or access without evidence."
+  },
+  "currentServiceDeliverySignals": {
+    "classroom": {
+      "verifiedStatement": "The site states that DGCA ground-classroom batches run at the Dwarka address.",
+      "location": "C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, New Delhi 110077",
+      "scope": "One physical classroom location; no other classroom centers verified."
+    },
+    "online": {
+      "verifiedStatement": "The site states that students outside Delhi can join online batches.",
+      "limits": [
+        "No city-by-city coverage, cohort, student access data or city-specific online service commitment is documented.",
+        "Online availability is not a claim of nationwide physical service."
+      ]
+    },
+    "flightTraining": {
+      "verifiedStatement": "Flight training is arranged through partner flying schools.",
+      "limits": [
+        "The academy states it does not own aircraft or simulators.",
+        "Flight hours take place at partner flying schools, not the Dwarka classroom.",
+        "Specific partner locations, current arrangements and city availability are not established by this repository audit."
+      ]
+    },
+    "accessAndApplication": {
+      "verified": [
+        "Students can contact the academy through the Contact page and its counselling CTA.",
+        "The Dwarka page says students outside Delhi join online batches.",
+        "The DGCA examination portal is described as accessible from anywhere."
+      ],
+      "notEstablished": [
+        "A city-specific application route or enrollment process.",
+        "That every course or batch is available online to every applicant.",
+        "That students in every Indian city can attend a local classroom or fly with a nearby partner."
+      ]
+    }
+  },
+  "coreAuthorityPageAudit": [
+    {
+      "route": "/commercial-pilot-license",
+      "intentAndRole": "National CPL pathway, eligibility and regulatory/course guidance.",
+      "physicalAcademyLocation": "NOT_CLEARLY_EXPLAINED_ON_PAGE",
+      "classroomDelivery": "Mentions classroom grounding generically; does not clearly say the academy's classroom is in Dwarka.",
+      "onlineOutsideDelhi": "NOT_CLEARLY_EXPLAINED_ON_PAGE",
+      "flightTrainingArrangement": "Explains the generic flying-school stage and flying-school selection; does not clearly foreground the academy's partner-school arrangement or distinguish it from an academy-owned FTO.",
+      "whoCanAccessAndApply": "CPL eligibility and counselling CTA are present. A location/access distinction for students outside Delhi is not clear.",
+      "nationalClarity": "Strong national regulatory course intent; weak explanation of the academy's actual delivery model.",
+      "schema": "Course and FAQPage are emitted. Course schema uses courseMode Blended, an AggregateOffer INR 3,800,000–4,800,000 and duration property 18–24 months; confirm these are current academy-specific course facts and match visible page scope before relying on them.",
+      "internalLinking": "Contact and course/related links exist. Add no mass city links; a future contextual link to the national service/delivery hub and Dwarka location would clarify the route.",
+      "auditOutcome": "Needs clearer delivery-model explanation in a future approved content change; no edit made."
+    },
+    {
+      "route": "/dgca-ground-classes",
+      "intentAndRole": "Primary DGCA ground-course authority with subjects, eligibility, online/classroom comparison and course schema.",
+      "physicalAcademyLocation": "The page states the Dwarka classroom is the academy's listed physical location.",
+      "classroomDelivery": "Clearly presents classroom mode and identifies the Dwarka location.",
+      "onlineOutsideDelhi": "Online mode is explicit; the outside-Delhi audience relationship is less consistently stated than on the Dwarka page.",
+      "flightTrainingArrangement": "FAQ/schema copy describes theory preparation and flight-school placement/arrangement, and states the academy does not own aircraft. Keep this distinction prominent and consistent.",
+      "whoCanAccessAndApply": "Audience and online/classroom modes are described; contact CTA is present. Clarify that remote access refers to online ground classes, not a local city facility.",
+      "nationalClarity": "Course delivery modes are explained, but the page should unambiguously connect online access outside Delhi with the single Dwarka classroom.",
+      "schema": "Course and FAQPage are emitted. Course schema uses Blended mode. Reconcile Course schema mode/duration with visible course delivery facts; do not add national areaServed to the academy entity.",
+      "internalLinking": "Links to contact and related courses exist. Link to the national service/delivery hub contextually once approved.",
+      "auditOutcome": "Good course authority; clarify external-student access and separate ground teaching from partner flight training in any future approved edit."
+    },
+    {
+      "route": "/pilot-training-in-delhi",
+      "intentAndRole": "Delhi geographic authority explaining what training can and cannot happen in Delhi.",
+      "physicalAcademyLocation": "Exact Dwarka address, phone and email are included in FAQ content.",
+      "classroomDelivery": "Dwarka teaching is stated; the page explains the academy is not a flying school and no approved FTO base is in Delhi/NCR.",
+      "onlineOutsideDelhi": "Does not clearly state the online-batch availability for students outside Delhi.",
+      "flightTrainingArrangement": "Explains that flying happens elsewhere and uses the academy scope statement; make the partner arrangement explicit wherever describing the academy's own service.",
+      "whoCanAccessAndApply": "Gives useful Delhi process context and links to Dwarka; a student action/counselling route is available through existing site CTAs.",
+      "nationalClarity": "Well differentiated Delhi context; should support, not replace, an India-wide delivery hub.",
+      "schema": "EducationalOrganization with shared #organization ID, address, contact and Delhi areaServed; Article and FAQPage. Keep geographic claims aligned with visible text.",
+      "internalLinking": "Links to Dwarka and the noindex Delhi location guide; preserve contextual course/contact paths.",
+      "auditOutcome": "Strong geographic explanation. Future change should clarify remote student access without asserting Delhi-wide neighborhood coverage."
+    },
+    {
+      "route": "/pilot-training-in-dwarka",
+      "intentAndRole": "Physical academy location page and the narrowest verified geographic authority.",
+      "physicalAcademyLocation": "Exact address, phone and email are stated repeatedly.",
+      "classroomDelivery": "Clearly states classroom batches run in Dwarka.",
+      "onlineOutsideDelhi": "Clearly states students outside Delhi join online batches.",
+      "flightTrainingArrangement": "Clearly states flight training happens at partner flying schools, not in Dwarka; the academy does not own aircraft or simulators.",
+      "whoCanAccessAndApply": "Explains online access, course pathway and counselling/contact CTA.",
+      "nationalClarity": "Best existing delivery-model explanation; it should be the source of the location and access facts reused by a national page.",
+      "schema": "EducationalOrganization with shared #organization ID, exact address/contact and Dwarka areaServed; Article and FAQPage. No LocalBusiness node is generated merely for a page target.",
+      "internalLinking": "Links to DGCA Ground Classes, Delhi authority, eligibility and contact.",
+      "auditOutcome": "Strongest first-party explanation. Treat as the canonical physical-location reference."
+    }
+  ],
+  "weaknesses": [
+    {
+      "priority": "HIGH",
+      "area": "Existing India-wide route collision and unsupported claims",
+      "finding": "The site already has /pilot-training-in-india and /dgca-ground-classes-in-india. The latter's metadata claims online/offline delivery across all 28 states and a 25% scholarship; its body has a hard-coded states-served city list and related broad reach statements. Those claims are not substantiated by the verified business model, which only documents online batches outside Delhi and one physical classroom.",
+      "action": "Before expanding national SEO, audit and reconcile these existing pages against first-party evidence. Do not add a third national landing page, mass city links or route redirects in this phase."
+    },
+    {
+      "priority": "HIGH",
+      "area": "NAP and social-profile consistency",
+      "finding": "The schema's primary telephone is +91-9667370747, while the Contact page uses +91-9355566991 for calls/WhatsApp. Two further numbers appear on airline-preparation pages with unclear ownership. LinkedIn URL also differs between schema and Footer.",
+      "action": "Obtain owner confirmation of canonical contacts and official social URLs; then align website, schema, footer and Google Business Profile."
+    },
+    {
+      "priority": "HIGH",
+      "area": "CPL course entity scope",
+      "finding": "CPL Course schema marks the course Blended and includes aggregate pricing and 18–24 month duration. This could be read as one academy-delivered complete CPL product, while flight training is partner-arranged and the academy's own pricing/duration scope is not established by this audit.",
+      "action": "Confirm which offer, price and duration belong to We One Aviation versus third-party flying schools before future schema/content changes."
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "Page-level service clarity",
+      "finding": "Dwarka clearly explains physical classroom, remote students and partner-school flying. CPL and Delhi pages are less explicit about the same end-to-end model.",
+      "action": "When production changes are approved, use the same verified wording and point to the national explainer rather than repeating varying claims."
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "Google Business Profile evidence",
+      "finding": "A Maps CID link exists, but current profile ownership, category, address/phone/website consistency, map pin, hours, reviews, photos and service-area fields are not independently verified.",
+      "action": "Owner or verified manager should inspect the live profile and reconcile it with confirmed first-party facts."
+    },
+    {
+      "priority": "MEDIUM",
+      "area": "The .com domain",
+      "finding": "weoneaviation.com contains potentially legacy or compromised branded/location content, but ownership is unverified.",
+      "action": "Keep DOMAIN_OWNERSHIP_UNVERIFIED and make no domain or URL changes absent proof and explicit owner direction."
+    }
+  ],
+  "recommendedNationalArchitecture": {
+    "createNewPage": false,
+    "recommendedUrl": "/pilot-training-in-india",
+    "routeStatus": "EXISTING_ROUTE",
+    "decision": "Use the existing /pilot-training-in-india as the proposed national geographic/service-delivery hub after its existing content is audited and reconciled. Do not create another India-wide page or assume the current page is production-ready.",
+    "searchIntent": [
+      "How pilot training in India is structured and regulated",
+      "How DGCA ground preparation, CPL requirements and flight training fit together",
+      "How students outside Delhi can access We One Aviation's online ground batches",
+      "Where the academy's actual classroom is and where partner-arranged flying occurs"
+    ],
+    "purpose": "Explain the national pilot-training pathway and the academy's limited, truthful role within it: Dwarka classroom ground teaching, online ground batches for students outside Delhi, and flight training arranged through partner flying schools.",
+    "relationshipToCplPage": "The national hub explains the overall India pathway and academy delivery model; /commercial-pilot-license remains the detailed CPL eligibility, regulatory requirements and licensing authority.",
+    "relationshipToDgcaPage": "/dgca-ground-classes remains the detailed ground-subject/course authority; the national hub summarizes online versus Dwarka classroom access and links to it.",
+    "contentOutline": [
+      {
+        "section": "What pilot training in India involves",
+        "include": "Regulatory pathway at a high level; distinguish ground preparation, DGCA examinations, medical requirements and practical flight training."
+      },
+      {
+        "section": "What We One Aviation provides",
+        "include": "Ground-subject teaching and course guidance; state clearly that the academy does not own aircraft or simulators and does not make airline placements."
+      },
+      {
+        "section": "Where classroom teaching happens",
+        "include": "The single verified Dwarka address and link to /pilot-training-in-dwarka."
+      },
+      {
+        "section": "How students outside Delhi can access ground training",
+        "include": "Online batches are offered to students outside Delhi; invite applicants to confirm current batch/course availability through Contact. Do not state that every city or every course has a guaranteed batch."
+      },
+      {
+        "section": "How flight training is arranged",
+        "include": "Flight training is arranged with partner flying schools, occurs at the relevant school rather than the Dwarka classroom, and specific partner locations/availability must be confirmed."
+      },
+      {
+        "section": "CPL pathway and eligibility",
+        "include": "Concise, source-backed overview with a direct link to the CPL authority; avoid duplicating its full eligibility and regulatory treatment."
+      },
+      {
+        "section": "DGCA ground subjects and exam preparation",
+        "include": "Short overview and a direct link to the DGCA Ground Classes authority; keep operational claims to verified information."
+      },
+      {
+        "section": "How to enquire from outside Delhi",
+        "include": "Use existing Contact/counselling flow. Explain what a prospective student should ask about course, delivery mode, current batch availability and partner-school arrangements."
+      },
+      {
+        "section": "FAQs",
+        "include": "Only answer delivery/location questions from verified facts; avoid local outcomes, local batches, flight-school proximity or guaranteed availability."
+      }
+    ],
+    "internalLinkingRole": "One navigational/contextual hub linking to course authorities, the actual Delhi/Dwarka location pages, About and Contact. It should not link out to every research city.",
+    "canonicalStrategy": "Keep a single self-canonical at https://weoneaviation.in/pilot-training-in-india if the existing route is retained. Do not create a parallel national URL. Any future consolidation or redirect requires separate approval and URL-performance review.",
+    "doorwaySafeguards": [
+      "No city-name substitution or city landing-page grid.",
+      "Deliver useful national pathway and delivery-model information independently of enrollment.",
+      "State the single physical classroom and explicitly distinguish online access from physical service.",
+      "Explain partner-school flight training without inventing partner locations or implying academy-owned flight operations.",
+      "Keep course-detail pages authoritative and avoid copying their full content.",
+      "No city-specific titles, FAQs, schema areaServed entries or internal-link expansion without separately verified evidence."
+    ]
+  },
+  "recommendedInternalLinkingArchitecture": {
+    "structure": [
+      {
+        "level": "National pathway and delivery model",
+        "route": "/pilot-training-in-india",
+        "linksTo": [
+          "/commercial-pilot-license",
+          "/dgca-ground-classes",
+          "/pilot-training-in-delhi",
+          "/pilot-training-in-dwarka",
+          "/about-us",
+          "/contact"
+        ],
+        "linkPolicy": "Contextual links where each destination answers the next user question; one clear link per relevant topic, not exhaustive city links."
+      },
+      {
+        "level": "Course authorities",
+        "routes": [
+          "/commercial-pilot-license",
+          "/dgca-ground-classes"
+        ],
+        "linksTo": [
+          "/pilot-training-in-india",
+          "/pilot-training-in-dwarka",
+          "/contact"
+        ],
+        "linkPolicy": "Link from a short delivery/location explanation and the CTA. Preserve CPL and DGCA pages as the detailed course authorities."
+      },
+      {
+        "level": "Physical location authorities",
+        "routes": [
+          "/pilot-training-in-delhi",
+          "/pilot-training-in-dwarka"
+        ],
+        "linksTo": [
+          "/pilot-training-in-india",
+          "/commercial-pilot-license",
+          "/dgca-ground-classes",
+          "/contact"
+        ],
+        "linkPolicy": "Explain the actual Delhi/Dwarka location and how it fits the national pathway; no implied coverage of adjacent neighborhoods."
+      },
+      {
+        "level": "Future city pages",
+        "routes": [],
+        "linkPolicy": "None created or linked now. Consider only after a city independently passes the evidence, distinct-value and non-doorway tests."
+      }
+    ],
+    "doNot": [
+      "Create hundreds of city links or keyword-rich footer lists.",
+      "Place every city in navigation, schema areaServed, or location content merely because it is a research market.",
+      "Have the national hub compete with detailed CPL or DGCA course pages."
+    ]
+  },
+  "schemaRecommendations": {
+    "globalOrganization": {
+      "keep": "One EducationalOrganization node with stable @id https://weoneaviation.in/#organization and the verified single Dwarka address.",
+      "verifyBeforeNextChange": [
+        "Owner-confirm primary and additional phone roles.",
+        "Confirm one official email.",
+        "Confirm canonical social profile URLs before using sameAs.",
+        "Do not claim India-wide physical areaServed."
+      ]
+    },
+    "nationalHub": {
+      "recommended": [
+        "WebPage with canonical URL, meaningful name/description and publisher/mainEntity reference to the global EducationalOrganization @id.",
+        "BreadcrumbList matching visible navigation.",
+        "Course references only for the existing CPL and DGCA course entities if their visible claims and Course nodes are verified."
+      ],
+      "avoid": [
+        "LocalBusiness schema to represent all India or a city where no physical location exists.",
+        "A separate Organization/EducationalOrganization identity for each city.",
+        "areaServed listing every Indian city or state based only on online availability.",
+        "FAQPage schema for invisible, unsupported or promotional answers."
+      ]
+    },
+    "coursePages": "Keep Course schema on the actual course authorities, reference the stable academy entity, and verify course mode, duration, price, provider role and visible text before publishing.",
+    "physicalLocation": "Keep exact PostalAddress details on the academy entity and physical Delhi/Dwarka content. Use LocalBusiness only when representing the actual, eligible, verified business location—not a target geography.",
+    "breadcrumbs": "Shared Layout currently emits BreadcrumbList using the same helper as visible breadcrumbs; retain one consistent visible/schema trail."
+  },
+  "cityReferenceStrategy": {
+    "approvedApproach": "Use no city-name list as a targeting device. The national page may say students outside Delhi can join online batches because that is the verified first-party statement.",
+    "whenExamplesMayBeUseful": "Only when explaining a concrete, sourced, non-promotional point such as a verified partner-school location, a documented regulatory authority or a city-specific application/access requirement.",
+    "notSupportedNow": [
+      "Claiming We One Aviation serves Mumbai, Pune, Bengaluru, Hyderabad, Chennai, Kolkata, Jaipur, Lucknow, Guwahati or any other city in person.",
+      "Claiming city-specific online cohorts, students, success stories, reviews, demand or special access.",
+      "Repeating a list of research markets in page copy, title, schema or footer links."
+    ],
+    "policy": "The online-batch statement describes mode and broad audience location, not a city service-area declaration."
+  },
+  "nearMeStrategy": {
+    "dedicatedNearMePage": false,
+    "reality": "The website cannot guarantee visibility for near-me searches. Search engines use the searcher's location and multiple business/entity/relevance signals.",
+    "legitimateSignals": [
+      "Consistent, accurate organization name, address, primary contact and canonical domain across visible site content and structured data.",
+      "A verified Google Business Profile for the genuine physical Dwarka location, if the business meets platform eligibility and the owner confirms access.",
+      "Clear, crawlable descriptions of classroom DGCA training, online batches outside Delhi and partner-arranged flight training.",
+      "Accurate internal links between national service explanation, course authorities and real Delhi/Dwarka location pages.",
+      "Genuine official profiles and consistent links in sameAs.",
+      "Authentic, policy-compliant reviews and current profile information; no fabricated reviews or city-specific claims."
+    ],
+    "forbiddenSignals": [
+      "Near-me landing pages.",
+      "Fake branches, service locations or LocalBusiness schema on target-city pages.",
+      "Keyword-stuffed city lists or invented city-specific student/partner claims."
+    ]
+  },
+  "googleBusinessProfileRequirements": {
+    "status": "Current owner access and profile fields are not verified by this audit.",
+    "ownerChecklist": [
+      "Confirm that the listing belongs to We One Aviation Academy and that a verified manager retains access.",
+      "Compare business name, actual eligible business category, address, primary phone, canonical website and contact details against owner-confirmed first-party records.",
+      "Check that the map pin marks the real C-404 location and public entrance.",
+      "Confirm opening hours directly with the business; do not infer them from stale pages.",
+      "Use only accurate current photos and real customer reviews; do not create reviews or imply local student outcomes.",
+      "Do not set a nationwide city service-area list because online batches are available outside Delhi.",
+      "Do not create duplicate profiles for cities without actual eligible physical locations."
+    ],
+    "pendingOwnerConfirmation": [
+      "Which phone number is primary and which, if any, is an additional contact.",
+      "Whether the published office hours are current and match the profile.",
+      "Whether the current profile category and pin are accurate.",
+      "Whether any service-area settings are appropriate under current Google policy and the actual business model."
+    ]
+  },
+  "risks": [
+    {
+      "risk": "An existing India DGCA route claims availability across all 28 states and a scholarship; these claims are not established by current verified business facts.",
+      "mitigation": "Audit/reconcile the existing route before further national promotion; no change made in this phase."
+    },
+    {
+      "risk": "Duplicate nationwide intents may compete between /pilot-training-in-india, /dgca-ground-classes-in-india, and course authorities.",
+      "mitigation": "Assign one pathway/delivery hub and one detailed authority per course. Review existing page overlap before any route consolidation; do not add another URL."
+    },
+    {
+      "risk": "CPL Course schema may imply a single academy-provided blended, priced, fixed-duration end-to-end CPL product.",
+      "mitigation": "Verify provider scope, commercial offer, duration and partner role before future structured-data edits."
+    },
+    {
+      "risk": "Unresolved phone and social-profile variations weaken entity consistency.",
+      "mitigation": "Get owner-confirmed NAP and canonical profile URLs before updating schema or GBP."
+    },
+    {
+      "risk": "Online availability could be misinterpreted as physical service in all cities.",
+      "mitigation": "State the online mode and one physical classroom explicitly; do not enumerate city service areas."
+    },
+    {
+      "risk": "weoneaviation.com content may be legacy, third-party or compromised.",
+      "mitigation": "Keep DOMAIN_OWNERSHIP_UNVERIFIED. Do not alter domain URLs without direct proof and instruction."
+    },
+    {
+      "risk": "Current LocalBusiness eligibility/profile details are not independently validated.",
+      "mitigation": "Verify the genuine Dwarka profile and do not apply LocalBusiness schema to remote or target geographies."
+    }
+  ],
+  "exactImplementationPlan": [
+    {
+      "phase": 1,
+      "name": "Owner fact confirmation",
+      "changesNow": false,
+      "actions": [
+        "Confirm primary/additional phone roles, official email, current hours and social profile URLs.",
+        "Verify Google Business Profile ownership, address, category, website and pin.",
+        "Confirm exactly what online DGCA batches cover, enrollment steps and how students outside Delhi enquire.",
+        "Confirm the academy's documented partner-school relationship and which partner/location information may be named.",
+        "Verify CPL price, duration and blended-course schema claims against current visible offers and responsibility boundaries."
+      ],
+      "gate": "Do not edit production content or schema until owner facts are confirmed."
+    },
+    {
+      "phase": 2,
+      "name": "Existing national-page reconciliation",
+      "changesNow": false,
+      "actions": [
+        "Review /pilot-training-in-india as the existing national pathway/delivery hub; correct its scope only after claims are checked.",
+        "Review /dgca-ground-classes-in-india for unsupported all-28-states, scholarship, city-list and delivery claims.",
+        "Map overlap with /commercial-pilot-license and /dgca-ground-classes; retain the course pages as detailed authorities.",
+        "Make a separate decision about any consolidation only after analytics, Search Console and backlink review; no redirect is prescribed by this report."
+      ],
+      "gate": "No new national URL; preserve current route behavior pending review."
+    },
+    {
+      "phase": 3,
+      "name": "National hub content refinement",
+      "changesNow": false,
+      "actions": [
+        "If approved, refine the existing /pilot-training-in-india route using the proposed outline in this report.",
+        "Clearly separate Dwarka classroom learning, online batches for students outside Delhi and flight training at partner flying schools.",
+        "Include a practical enquiry checklist and direct course/location links.",
+        "Do not add city-name substitution, nationwide physical-service wording or unverified partner details."
+      ],
+      "gate": "Editorial and owner approval required before production changes."
+    },
+    {
+      "phase": 4,
+      "name": "Entity and schema consistency",
+      "changesNow": false,
+      "actions": [
+        "Use the existing global EducationalOrganization identity and stable @id.",
+        "Align verified sameAs URLs, NAP and physical address across site and eligible GBP.",
+        "Use WebPage/BreadcrumbList on the national hub and Course only on relevant course authorities.",
+        "Match schema exactly to visible content; do not use national areaServed or fictional LocalBusiness locations."
+      ],
+      "gate": "Validate rendered markup and schema after future approved edits."
+    },
+    {
+      "phase": 5,
+      "name": "Limited contextual linking and QA",
+      "changesNow": false,
+      "actions": [
+        "Add a small number of contextual links from national hub to CPL, DGCA, Delhi, Dwarka, About and Contact.",
+        "Add reciprocal contextual links from course/location authorities back to the hub where useful.",
+        "Check canonicals, robots, breadcrumbs, JSON-LD, sitemap, claims gate and rendered pages.",
+        "Keep future city-page research separate; require evidence and distinct user value before any page approval."
+      ],
+      "gate": "No mass internal links, route generation, indexing submission or deployment without separate approval."
+    }
+  ],
+  "finalDisposition": {
+    "recommendedNationalRoute": "/pilot-training-in-india",
+    "newPageNeeded": false,
+    "cityOrLocalityPagesRecommended": 0,
+    "productionChangesMade": false,
+    "domainOwnershipStatus": "DOMAIN_OWNERSHIP_UNVERIFIED",
+    "nextDecision": "Owner-confirm NAP, GBP, national delivery details and CPL commercial/schema facts; then separately approve any production edits."
+  }
+}

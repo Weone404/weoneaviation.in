@@ -122,7 +122,7 @@ export default function PreAdmissionChecklist() {
                       <li>✓ Chest X-ray</li>
                       <li>✓ Laboratory work</li>
                       <li>✓ Psychological evaluation</li>
-                      <li><strong>Cost: roughly ₹5,000&ndash;15,000, depending on the centre</strong></li>
+                      <li><strong>Cost: confirm current charges directly with the examination provider</strong></li>
                       <li><strong>Validity and scope: confirm with your DGCA examiner</strong></li>
                     </ul>
                   </div>
@@ -147,7 +147,7 @@ export default function PreAdmissionChecklist() {
                         <li>Upload DGCA Medical certificate</li>
                         <li>Upload educational documents (10+2)</li>
                         <li>Fill personal & training details</li>
-                        <li>Pay registration fee (₹2,000-3,000)</li>
+                        <li>Confirm current registration charges with the relevant authority</li>
                         <li>Receive unique DGCA Computer Number</li>
                         <li>Use this number for all exams</li>
                       </ol>
@@ -166,8 +166,8 @@ export default function PreAdmissionChecklist() {
                     <div>
                       <p className="font-bold text-gray-900 mb-2">Budget Checklist:</p>
                       {[
-                        '□ Total training cost finalized (₹40-55 Lakhs)',
-                        '□ First payment arranged (usually ₹10-15 Lakhs)',
+                        '□ Obtain current itemized written training quotes',
+                        '□ Review the provider’s written payment schedule and terms',
                         '□ Bank loan approval (if applicable)',
                         '□ Sponsors identified (parents, relatives)',
                         '□ Payment plan agreed with academy',

@@ -14,9 +14,9 @@ const heroSlides = [
 ];
 
 const syllabus = [
-    { phase: 'Phase 1: Ground School', duration: '3-4 months', topics: ['Air Navigation', 'Meteorology', 'Air Regulations', 'Technical General', 'RTR (Radio Telephony)', 'Aviation Medicine'] },
-    { phase: 'Phase 2: PPL Training', duration: '4-5 months', topics: ['Solo flights', 'Cross-country flying', 'Night flying', 'Basic instrument flying', 'Emergency procedures', 'PPL skill test'] },
-    { phase: 'Phase 3: CPL Flying', duration: '8-10 months', topics: ['Instrument Rating (IR)', 'Multi-engine rating', 'Advanced navigation', 'CPL skill test', 'Type rating prep', 'Airline interview prep'] },
+    { phase: 'Phase 1: Ground School', duration: 'Varies by batch schedule', topics: ['Air Navigation', 'Meteorology', 'Air Regulations', 'Technical General', 'RTR (Radio Telephony)', 'Aviation Medicine'] },
+    { phase: 'Phase 2: PPL Training', duration: 'Varies by flying-school schedule', topics: ['Solo flights', 'Cross-country flying', 'Night flying', 'Basic instrument flying', 'Emergency procedures', 'PPL skill test'] },
+    { phase: 'Phase 3: CPL Flying', duration: 'Varies by flying-school schedule', topics: ['Instrument Rating (IR)', 'Multi-engine rating', 'Advanced navigation', 'CPL skill test', 'Type rating prep', 'Airline interview prep'] },
 ];
 
 const eligibility = [
@@ -42,16 +42,15 @@ const medicalChecks = [
 ];
 
 const feeTable = [
-    { num: 1, category: 'Medical Examination Fees', cost: '₹3,000 - ₹6,000' },
-    { num: 2, category: 'Medical Examination Fees', cost: '₹5,000 - ₹10,000' },
-    { num: 3, category: 'Computer Number Registration', cost: '₹2,000 - ₹2,500' },
-    { num: 4, category: 'DGCA Exam Fees (per paper)', cost: '₹2,500 - ₹3,000' },
-    { num: 5, category: 'CPL Ground School Fees', cost: '₹1,50,000 - ₹3,00,000' },
-    { num: 6, category: 'Flying Training (200 hours)', cost: '₹35,00,000 - ₹45,00,000' },
-    { num: 7, category: 'Simulator Training', cost: '₹2,00,000 - ₹5,00,000' },
-    { num: 8, category: 'Flight School Admission Fees', cost: '₹1,00,000 - ₹2,00,000' },
-    { num: 9, category: 'License Issuance & Other DGCA Fees', cost: '₹50,000 - ₹1,00,000' },
-    { num: 10, category: 'Visa & Travel (If Training Abroad)', cost: '₹2,00,000 - ₹5,00,000' },
+    { num: 1, category: 'Medical examination', cost: 'Confirm current charges with the examination provider' },
+    { num: 2, category: 'Computer Number registration', cost: 'Check the current DGCA Pariksha fee schedule' },
+    { num: 3, category: 'DGCA examination', cost: 'Check the current DGCA Pariksha fee schedule' },
+    { num: 4, category: 'CPL ground classes', cost: 'Request a current written quote from the academy' },
+    { num: 5, category: 'Flying training', cost: 'Request a current written quote from the selected flying school' },
+    { num: 6, category: 'Simulator training', cost: 'Confirm with the selected flying school' },
+    { num: 7, category: 'Flight school admission', cost: 'Confirm with the selected flying school' },
+    { num: 8, category: 'Licence issue and related charges', cost: 'Check the applicable regulator fee schedule' },
+    { num: 9, category: 'Visa and travel, if applicable', cost: 'Confirm with the relevant provider and authorities' },
 ];
 
 const howToGet = [
@@ -101,7 +100,7 @@ const careerOptions = [
         num: '1', title: 'Airline Pilot', icon: '✈️',
         what: 'Fly big planes like Airbus or Boeing, taking people to their destinations safely.',
         where: 'Airlines like IndiGo, Air India, SpiceJet, Vistara, or international ones if you gain more experience.',
-        growth: 'Start as a First Officer (helping the Captain), and after years of flying (usually 5-10 years), you can become a Captain.',
+        growth: 'Career progression depends on experience, employer requirements, and available opportunities.',
         salary: 'Not published by Indian airlines. Pay rises with rank and is substantially linked to hours flown.',
     },
     {
@@ -172,7 +171,7 @@ const peopleAlsoAsk = [
     },
     {
         q: 'Do the 200 hours have to be flown in India?',
-        a: 'No. Section J counts total flight time as pilot of an aeroplane, wherever it was logged. Hours built with a partner school in the USA, Canada or Australia count towards the same total, and the DGCA issues the Indian licence after conversion.',
+        a: 'No. Check the current DGCA licensing rules for applicable flight-time requirements, and confirm any overseas training and conversion requirements with DGCA and the selected flying school.',
     },
     {
         q: 'What happens if my flying hours are more than five years old?',
@@ -344,12 +343,12 @@ export default function CPL() {
                                 The Commercial Pilot Licence is the licence a pilot needs to be paid to fly. We One Aviation Academy runs the DGCA ground classes for the written papers and arranges the flight training that builds the hours listed above.
                             </p>
                             <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                                Training is available in India and with partner schools in the USA, Canada and Australia. Hours flown abroad count towards the Schedule II total, and the licence is issued after conversion by the DGCA.
+                                Flight training is arranged through partner flying schools. Confirm the current school, country, availability, terms, and applicable DGCA licence-conversion requirements before applying.
                             </p>
 
                             {/* Quick Facts */}
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-                                {[['18-24 months', 'Duration'], ['200 hours', 'Min Flight Hours'], ['10+2 PCM', 'Eligibility'], ['₹40-70 Lakh', 'Course Fee']].map(([val, label]) => (
+                                {[[ 'Varies', 'Training timeline'], ['DGCA requirements', 'Flight training'], ['10+2 PCM', 'Eligibility'], ['Request a current quote', 'Course fees']].map(([val, label]) => (
                                     <div key={label} className="bg-av-light rounded-xl p-4 text-center">
                                         <div className="font-montserrat font-bold text-av-blue text-sm">{val}</div>
                                         <div className="text-gray-500 text-xs mt-1">{label}</div>
@@ -391,7 +390,7 @@ export default function CPL() {
                             {/* CPL Fees */}
                             <h2 className="font-montserrat text-xl font-bold text-av-blue mb-2">How much does CPL training cost in India?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                                What you pay depends almost entirely on where you fly, because flying is the largest line item by a wide margin. The table below breaks the India pathway down from the first medical to licence issue, so you can see which costs the DGCA fixes and which move with the school you pick.
+                                A reliable total depends on the chosen flying school, training plan, and applicable regulator charges. We do not publish an unverified total: request current written quotes from the academy and selected flying school, and check regulator fees directly.
                             </p>
 
                             {/* 1) DGCA Medical */}
@@ -407,43 +406,41 @@ export default function CPL() {
                                     </div>
                                 ))}
                             </div>
-                            <p className="text-sm text-gray-600 mb-1">💰 <span className="font-semibold text-av-blue">DGCA Medical Fees (Approximate):</span></p>
-                            <p className="text-sm text-gray-600 mb-1">DGCA Medical: ₹5,000 – ₹10,000 (at DGCA hospitals)</p>
-                            <p className="text-sm text-gray-600 mb-8">DGCA Medical: ₹3,000 – ₹6,000 (at DGCA doctors)</p>
+                            <p className="text-sm text-gray-600 mb-8">Confirm medical examination charges with the relevant examination provider.</p>
 
                             {/* 2) DGCA Exam */}
                             <h4 className="font-montserrat font-bold text-av-blue mb-3">2) DGCA CPL Exams and Fees</h4>
                             <p className="text-gray-600 text-sm leading-relaxed mb-2">
-                                You Have To Give 6 Paper of Dgca Exam. There Are Two Process of Conducting Commercial Pilot License Exam By Dgca. One is Regular Exam and Another is On-Demand Exam. Regular Exam is Happen in 4 Times in a Years and On-Demand Exam is Flexible, as per candidate's choice.
+                                Check DGCA Pariksha for the current CPL examination subjects, sessions, and applicable fees.
                             </p>
                             <p className="text-gray-600 text-sm leading-relaxed mb-8">
-                                The Fees of Regular Dgca Exam is Rs. 2500/ Subjects and Fees Of On-Demand Dgca Exam is Rs. 5000/Paper.
+                                Exam fees and booking rules can change; confirm current details in the official DGCA Pariksha portal.
                             </p>
 
                             {/* 3) Ground Classes */}
                             <h4 className="font-montserrat font-bold text-av-blue mb-3">3) Dgca Ground Classes</h4>
                             <p className="text-gray-600 text-sm leading-relaxed mb-2">
-                                If You Wants To Crack Dgca Exam Quickly Then Dgca Ground Classes is Important For You Because By The Right Guidance, You Can Clear Dgca Exam Quickly and Achieve Your Dream To Become Commercial Pilot Quickly.
+                                Ground classes cover DGCA subjects. Preparation can support study, but does not guarantee an examination result or completion timeline.
                             </p>
                             <p className="text-gray-600 text-sm leading-relaxed mb-8">
-                                Fees of Dgca Ground Classes is Different in Every Institute. So Average Fees of Dgca Ground Classes is 2.5 Lakh.
+                                Ground-class fees vary by provider. Contact the academy for a current written quote.
                             </p>
 
                             {/* 4) Flying Training */}
                             <h4 className="font-montserrat font-bold text-av-blue mb-3">4) Flying Training Duration and Fees</h4>
                             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                                The Commercial Pilot License (CPL) course takes around 8-10 months to complete. It includes 80 hours of classroom sessions and 200 hours of training, covering Simulator Training and Flying Training. This program helps you become a Commercial Pilot. However, sometimes extra hours might be required for additional checks and tests, which can increase the total fees. Most flying schools charge on an hourly basis. Candidates should budget around ₹40–70 lakh for complete CPL training in India.
+                                CPL training time and cost depend on the student’s progress and the selected flying school. Flight training is arranged through partner flying schools; request current written quotes and schedules directly from the providers.
                             </p>
 
                             {/* Fee Table */}
-                            <p className="text-sm font-semibold text-av-blue mb-3">Here is a table for Commercial Pilot Course (CPL) Fees in India:</p>
+                            <p className="text-sm font-semibold text-av-blue mb-3">Cost items to confirm with the academy, flying school, and relevant authorities:</p>
                             <div id="fee-table" className="overflow-x-auto rounded-xl border border-gray-200 mb-2">
                                 <table className="w-full text-sm">
                                     <thead>
                                         <tr className="bg-av-blue text-white">
                                             <th className="p-3 text-left text-xs font-semibold">#</th>
                                             <th className="p-3 text-left text-xs font-semibold">Expense Category</th>
-                                            <th className="p-3 text-left text-xs font-semibold">Approximate Cost (INR)</th>
+                                            <th className="p-3 text-left text-xs font-semibold">Where to confirm current charges</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -457,19 +454,19 @@ export default function CPL() {
                                     </tbody>
                                     <tfoot>
                                         <tr className="bg-av-blue">
-                                            <td colSpan={2} className="p-3 text-white text-xs font-bold">Total Estimated CPL Fees in India</td>
-                                            <td className="p-3 text-av-orange font-black text-sm">₹40,00,000 – ₹70,00,000</td>
+                                            <td colSpan={2} className="p-3 text-white text-xs font-bold">Total CPL cost</td>
+                                            <td className="p-3 text-av-orange font-black text-sm">Request itemized written quotes; total varies</td>
                                         </tr>
                                     </tfoot>
                                 </table>
                             </div>
-                            <p className="text-gray-400 text-xs mb-10">May vary depending on the flight school and location.</p>
+                            <p className="text-gray-400 text-xs mb-10">No fixed total is asserted on this page.</p>
 
                             {/* We One CTA */}
                             <div className="bg-av-blue rounded-2xl p-8 text-center mb-10">
                                 <h3 className="font-montserrat text-xl font-bold text-white mb-3">Start Your Pilot Journey With We One Aviation Academy</h3>
                                 <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-3">
-                                    We One Aviation Academy is a DGCA pilot training institute. We offer DGCA ground classes, commercial pilot training, and aviation courses designed to help you achieve your dream of flying. With expert instructors, state-of-the-art facilities, and a structured training program, we prepare you for a successful aviation career.
+                                    We One Aviation Academy teaches DGCA ground subjects in Dwarka. Flight training is arranged through partner flying schools; their facilities, instructors, schedules, and terms should be confirmed directly with the selected school.
                                 </p>
                                 <p className="text-white/60 text-sm mb-5">Join us and take the first step toward the skies! ✈️</p>
                                 <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
@@ -558,7 +555,7 @@ export default function CPL() {
                             <aside className="bg-av-blue rounded-2xl p-8 text-center my-10">
                                 <h3 className="font-montserrat text-xl font-bold text-white mb-3">Start Your Commercial Flight Training With We One Aviation Academy</h3>
                                 <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-3">
-                                    We One Aviation Academy is a DGCA pilot training institute in Dwarka, New Delhi. We teach the ground subjects for the DGCA papers and place students with flying schools in India and abroad for the 200 hours.
+                                    We One Aviation Academy teaches DGCA ground subjects in Dwarka. Flight training is arranged through partner flying schools; confirm the current school and terms directly.
                                 </p>
                                 <p className="text-white/60 text-sm mb-5">Join us and take the first step toward the skies! ✈️</p>
                                 <Link href="/flying-school" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
@@ -598,7 +595,7 @@ export default function CPL() {
                             <div className="bg-av-orange rounded-2xl p-6 text-white">
                                 <h4 className="font-montserrat font-bold mb-2">Career After CPL</h4>
                                 <p className="text-white/80 text-sm mb-3">Talk through licence routes, timelines and what the CPL leads to.</p>
-                                <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer"
+                                <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
                                     Get Career Counselling
                                 </a>

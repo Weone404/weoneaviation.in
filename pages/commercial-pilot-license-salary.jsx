@@ -376,7 +376,7 @@ export default function CPLSalaryPage() {
                   Most people asking what a pilot earns are really asking whether the training is worth committing to. That
                   is a conversation about the cost, the timeline and your own circumstances, and it is one we will have
                   straight with you at {ACADEMY.streetAddress}, {ACADEMY.addressLocality} {ACADEMY.postalCode} &mdash; phone{' '}
-                  {ACADEMY.phone}, or {ACADEMY.email}. We will not put a salary number in front of you, because we do not
+                  {ACADEMY.phoneDisplay}, or {ACADEMY.email}. We will not put a salary number in front of you, because we do not
                   have one to give.
                 </p>
               </div>

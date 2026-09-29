@@ -7,112 +7,64 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const heroSlides = [
-    { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Flight Training Abroad', title: 'Best Flight Schools', highlight: 'in U.S.A', sub: 'Complete Your 250 Hrs of Flying Within 1.6 Years From U.S.A' },
+    { id: 1, image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1920&q=80', tag: 'Flight Training Guide', title: 'Pilot Training', highlight: 'in the USA', sub: 'Provider schedules, costs, approvals, and conversion requirements vary; verify them directly.' },
 ];
 
 const whyUSA = [
-    { icon: '🌍', title: 'Globally Recognized FAA License', desc: 'The Federal Aviation Administration (FAA) license is highly respected worldwide and accepted by airlines in over 100 countries.' },
-    { icon: '☀️', title: 'Ideal Flying Weather', desc: 'With over 300 sunny days a year in key training locations, students enjoy more consistent flying schedules, leading to faster course completion.' },
-    { icon: '✈️', title: 'Modern Aircraft & Technology', desc: 'Students train on Cessna 172 Glass Cockpit aircraft, gaining hands-on experience with the latest avionics used by major airlines.' },
-    { icon: '🚀', title: 'Direct Airline Pathway', desc: 'U.S. flight schools offer structured programs designed to help you progress from Private Pilot License (PPL) to Commercial Pilot License (CPL) and beyond—often in under 18 months.' },
+    { icon: '🌍', title: 'Licence and Conversion', desc: 'Licence privileges and recognition depend on the issuing authority, destination regulator, and applicable conversion rules. Verify requirements with the regulators.' },
+    { icon: '☀️', title: 'Training Schedules', desc: 'Completion time depends on the selected provider, student progress, weather, and aircraft availability. Request a current schedule from the school.' },
+    { icon: '✈️', title: 'Aircraft and Facilities', desc: 'Aircraft, simulators, and facilities differ by school. Confirm the provider’s current equipment and included training in writing.' },
+    { icon: '🚀', title: 'Choosing a Provider', desc: 'Compare regulator status, current availability, written fees, schedules, and licence-conversion requirements directly with each school.' },
 ];
 
 const exclusiveBenefits = [
-    { num: '1', title: '40-Hour PPL Challenge', desc: 'Complete your PPL within 40 hours, and your Instrument Rating (IR) training will be free, saving you thousands of dollars.' },
-    { num: '2', title: 'FAA-Approved Flying School at an International Airport', desc: 'Our partner schools are FAA-approved and located at international airports. You\'ll train in a live air traffic environment from Day 1.' },
-    { num: '3', title: 'On-Campus Accommodation', desc: 'Stay in student-friendly housing located near the airport for a safe and comfortable experience.' },
-    { num: '4', title: 'Full Scholarship After CPL', desc: 'Qualify for a 100% scholarship for advanced flight training after completing your CPL. Visit our office to check your eligibility and terms.' },
-    { num: '5', title: '1500 Hours Flight Building – FREE', desc: 'After earning your CPL, build up to 1,500 flight hours at no additional cost — a major advantage, as most airlines require 1,500 hours for hiring.' },
-    { num: '6', title: 'Train on Advanced Aircraft', desc: 'Fly Cessna 172 Glass Cockpit aircraft with GPS and autopilot systems — the same technology used by professional airline pilots.' },
+    { num: '1', title: 'Provider Approval', desc: 'Check a school’s current approval directly with the FAA and relevant state or local authorities.' },
+    { num: '2', title: 'Airport and Training Environment', desc: 'Confirm the school’s airport, operating environment, and training location before making arrangements.' },
+    { num: '3', title: 'Accommodation', desc: 'Ask the selected school whether accommodation is available and obtain its terms directly.' },
+    { num: '4', title: 'Scholarship Terms', desc: 'No scholarship or complimentary training is promised on this page. Verify any written offer with its issuer.' },
+    { num: '5', title: 'Hour Building', desc: 'Confirm flight-hour requirements with the licensing authority and the selected school.' },
+    { num: '6', title: 'Aircraft and Equipment', desc: 'Aircraft and equipment depend on the selected school; request its current inventory and training plan.' },
 ];
 
 const careerRoadmap = [
     { step: '01', title: 'Private Pilot License (PPL)', desc: 'Learn the basics of flying.' },
     { step: '02', title: 'Instrument Rating (IR)', desc: 'Master navigation in low-visibility conditions.' },
     { step: '03', title: 'Commercial Pilot License (CPL)', desc: 'Become eligible for professional flying.' },
-    { step: '04', title: 'Flight Instructor Rating (Optional)', desc: 'Earn while building hours.' },
-    { step: '05', title: '1,500-Hour Flight Building', desc: 'Gain required experience for airline interviews.' },
-    { step: '06', title: 'Apply for Airline Jobs Worldwide', desc: 'With FAA credentials, your career options are global.' },
+    { step: '04', title: 'Additional Ratings', desc: 'Confirm any rating requirements with the relevant authority and selected provider.' },
+    { step: '05', title: 'Build Required Experience', desc: 'Confirm current experience requirements with the relevant licensing authority.' },
+    { step: '06', title: 'Review Employment Requirements', desc: 'Employers set their own eligibility and recruitment requirements; a licence does not guarantee a job.' },
 ];
 
 const whoShouldChoose = [
-    'Students aiming for fast-track aviation careers',
-    'Aspiring pilots wanting to fly internationally',
-    'Graduates seeking FAA licenses and job-ready training',
-    'Indian students looking for cost-effective, high-quality training',
+    'Students researching flight-training options and licensing requirements',
+    'Applicants comparing provider approval and programme availability',
+    'Readers verifying fees, schedules, and facilities before applying',
+    'Indian students checking licence-conversion requirements with DGCA',
 ];
 
 const aircraftList = [
     {
-        name: 'Cessna 152',
-        type: 'Two-Seater, Single Engine',
-        usedFor: 'PPL',
-        description: 'A compact American aircraft with tricycle landing gear, ideal for new pilots.',
-        benefits: 'Low-cost training, easy handling, widely used for basic flying lessons.',
-        image: 'https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=800&q=80',
-    },
-    {
-        name: 'Cessna 172 Skyhawk',
-        type: 'Four-Seater, Single Engine',
-        usedFor: 'PPL / CPL',
-        description: 'The world\'s most popular training aircraft featuring a glass cockpit with GPS and autopilot.',
-        benefits: 'Advanced avionics training, glass cockpit experience, widely accepted by airlines.',
-        image: 'https://images.unsplash.com/photo-1559628233-100c798642d8?w=800&q=80',
-    },
-    {
-        name: 'Tecnam P2006T',
-        type: 'Four-Seater, Twin Engine',
-        usedFor: 'Multi-Engine Rating',
-        description: 'A modern Italian twin-engine aircraft designed for multi-engine training with advanced avionics.',
-        benefits: 'Multi-engine experience, fuel-efficient, prepares pilots for airline twin-engine operations.',
+        name: 'Provider-specific aircraft',
+        type: 'Confirm with selected school',
+        usedFor: 'Depends on programme',
+        description: 'Aircraft and simulator availability varies by school. Confirm the current fleet and included training directly with the provider.',
+        benefits: 'Verify aircraft, equipment, maintenance, and training scope in writing.',
         image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80',
-    },
-    {
-        name: 'Tecnam P2008',
-        type: 'Two-Seater, Single Engine',
-        usedFor: 'PPL / Hour Building',
-        description: 'A lightweight modern aircraft ideal for hour building and basic pilot training.',
-        benefits: 'Fuel-efficient, modern design, ideal for solo and cross-country flying.',
-        image: 'https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=800&q=80',
-    },
-    {
-        name: 'Piper PA-34 Seneca',
-        type: 'Six-Seater, Twin Engine',
-        usedFor: 'Multi-Engine / CPL',
-        description: 'A reliable twin-engine aircraft used for advanced commercial pilot training and instrument flying.',
-        benefits: 'High performance, twin-engine proficiency, ideal for CPL and IFR training.',
-        image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80',
-    },
-    {
-        name: 'Piper Archer / PA-28',
-        type: 'Four-Seater, Single Engine',
-        usedFor: 'PPL / CPL / Hour Building',
-        description: 'A versatile, hard-wearing training aircraft widely used across U.S. flight schools for all training phases.',
-        benefits: 'Cost-efficient hour building, sturdy build, excellent visibility from cockpit.',
-        image: 'https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=800&q=80',
-    },
-    {
-        name: 'Redbird / Elite Simulators',
-        type: 'Full Flight Simulator',
-        usedFor: 'IR / Instrument Training',
-        description: 'State-of-the-art flight simulators used for instrument rating training, emergency procedures, and cockpit familiarization.',
-        benefits: 'Risk-free practice, cost-effective instrument training, realistic cockpit environment.',
-        image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80',
     },
 ];
 
 const trainingBenefits = [
-    { icon: '✅', title: 'Designed for Students', desc: 'Each aircraft is selected for its safety, simplicity, and beginner-friendly controls.' },
-    { icon: '✅', title: 'Cost-Efficient Hour Building', desc: 'Aircraft like the Cessna 152 and Piper Archer help you complete required hours affordably.' },
-    { icon: '✅', title: 'Modern Glass Cockpit Training', desc: 'Get hands-on with GPS navigation and digital flight displays, just like airline jets.' },
-    { icon: '✅', title: 'Multi-Engine Readiness', desc: 'Aircraft like Tecnam P2006 and Piper Seneca prepare you for twin-engine operations and airline career paths.' },
+    { icon: '✅', title: 'Provider Approval', desc: 'Check each selected school’s current approval directly with the FAA.' },
+    { icon: '✅', title: 'Training Schedule', desc: 'Request the school’s current written course schedule and completion assumptions.' },
+    { icon: '✅', title: 'Aircraft and Equipment', desc: 'Confirm the provider’s current fleet, equipment, and maintenance arrangements.' },
+    { icon: '✅', title: 'Licence Conversion', desc: 'Verify applicable licence-conversion requirements with DGCA before enrolling.' },
 ];
 
 export default function USAFlightTraining() {
     const [activeAircraft, setActiveAircraft] = useState(0);
 
     return (
-        <Layout title="Commercial Pilot License in USA – FAA Approved CPL Training | We One Aviation Academy" description="Complete 250 hours of flying in 1.6 years from the USA. FAA-approved flight training in the United States with We One Aviation Academy. PPL, CPL, IR and multi-engine rating training.">
+        <Layout         title="Pilot Training in the USA: Provider and Conversion Guide | We One Aviation" description="Review flight-training provider approval, schedules, written costs, and licence-conversion requirements for training in the USA. Verify current details directly with the selected school and regulators.">
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
@@ -122,18 +74,18 @@ export default function USAFlightTraining() {
                         <ScrollReveal>
                             <div className="section-tag">Flight Training Abroad</div>
                             <h1 className="font-montserrat text-3xl font-bold text-av-blue mb-4 underline-orange">
-                                Best Flight Schools in U.S.A
+                                Flight Training in the USA: Research Guide
                             </h1>
                             <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                                Dreaming of becoming an airline pilot and flying high across international skies? The fastest and most trusted route to a global aviation career is through FAA-approved flight training in the United States.
+                                This guide explains questions to research before considering flight training in the USA. It does not confirm a current USA-specific partner school or programme.
                             </p>
                             <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                                At We One Aviation Academy, we proudly partner with top flying schools in the U.S.A to provide Indian students with world-class pilot training, exclusive benefits, and a direct pathway to airlines.
+                                We One Aviation teaches DGCA ground subjects in Dwarka and arranges flight training through partner flying schools. Contact the academy to ask whether a USA-specific arrangement is currently available.
                             </p>
 
                             {/* Quick Facts */}
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-                                {[['250 Hours', 'Flying Hours'], ['1.6 Years', 'Duration'], ['FAA License', 'Certification'], ['100+ Countries', 'License Accepted']].map(([val, label]) => (
+                                {[[ 'Confirm with regulator', 'Flight-hour requirements'], ['Varies by provider', 'Schedule'], ['Confirm with FAA', 'School approval'], ['Confirm with regulators', 'Licence recognition']].map(([val, label]) => (
                                     <div key={label} className="bg-av-light rounded-xl p-4 text-center">
                                         <div className="font-montserrat font-bold text-av-blue text-sm">{val}</div>
                                         <div className="text-gray-500 text-xs mt-1">{label}</div>
@@ -144,7 +96,7 @@ export default function USAFlightTraining() {
                             {/* Why Choose USA */}
                             <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">Why Choose Flight Training in the USA?</h2>
                             <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                                The United States is globally recognized for its modern aviation infrastructure, advanced aircraft, and world-class flight training standards. It's one of the few countries where you can complete 250 flying hours in minimal time, under a globally accepted FAA training system.
+                                Schools, aircraft, facilities, course schedules, and fees vary. Verify the selected school’s current FAA status and request written details directly.
                             </p>
                             <div className="space-y-4 mb-6">
                                 {whyUSA.map((item) => (
@@ -155,13 +107,13 @@ export default function USAFlightTraining() {
                                 ))}
                             </div>
                             <div className="bg-av-orange/10 border border-av-orange/30 rounded-xl p-4 mb-10 text-center">
-                                <p className="text-av-orange font-bold text-sm">⚡ Limited Seats Available – Apply Now!</p>
+                                <p className="text-av-orange font-bold text-sm">Confirm current provider availability before making plans.</p>
                             </div>
 
                             {/* Exclusive Benefits */}
-                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">Exclusive Benefits at We One Aviation</h3>
+                            <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">What to Verify with a Flying School</h3>
                             <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                                At We One Aviation, we don't just offer pilot training — we offer a career-building experience backed by exclusive advantages designed for your success.
+                                Obtain written confirmation of the school, course, fees, schedule, equipment, accommodation, and refund terms before paying a deposit.
                             </p>
                             <div className="space-y-4 mb-6">
                                 {exclusiveBenefits.map((item) => (
@@ -177,7 +129,7 @@ export default function USAFlightTraining() {
                                 ))}
                             </div>
                             <div className="bg-av-orange/10 border border-av-orange/30 rounded-xl p-4 mb-10 text-center">
-                                <p className="text-av-orange font-bold text-sm">⚡ Limited Seats Available – Apply Now!</p>
+                                <p className="text-av-orange font-bold text-sm">Verify current provider availability before applying.</p>
                             </div>
 
                             {/* Career Roadmap */}
@@ -205,7 +157,7 @@ export default function USAFlightTraining() {
                             {/* Aircraft Used */}
                             <h3 className="font-montserrat text-xl font-bold text-av-blue mb-3">List of Aircraft Used for Flight Training in the USA & Their Benefits</h3>
                             <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                                Top flight schools in the USA — including our partnered academies — use modern, well-maintained aircraft that are equipped with advanced flight instruments and are widely used by aviation authorities across the globe for professional pilot training.
+                                Aircraft and simulators differ by school. This page does not publish or confirm the fleet of any current partner.
                             </p>
 
                             {/* Aircraft Tabs */}
@@ -265,7 +217,7 @@ export default function USAFlightTraining() {
                             <div className="bg-av-blue rounded-2xl p-8 text-center">
                                 <h3 className="font-montserrat text-xl font-bold text-white mb-3">Start Your USA Flight Training Journey</h3>
                                 <p className="text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-5">
-                                    We One Aviation Academy arranges USA flight training placements. Get expert guidance, FAA license pathway support, and direct airline career preparation. ✈️
+                                    This guide does not confirm a current USA-specific partner or placement service. Verify provider details and licence requirements directly with the relevant school and regulators. ✈️
                                 </p>
                                 <Link href="/contact" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-av-blue transition-all text-sm">
                                     Contact Now
@@ -278,20 +230,20 @@ export default function USAFlightTraining() {
                     {/* Sidebar */}
                     <div className="space-y-6">
                         <ScrollReveal delay={200}>
-                            <LeadForm title="Apply for USA Training" />
+                            <LeadForm title="Ask about the USA training route" />
                         </ScrollReveal>
 
                         <ScrollReveal delay={300}>
                             <div className="bg-av-blue rounded-2xl p-6 text-white">
                                 <h4 className="font-montserrat font-bold mb-4">Key Benefits</h4>
                                 <ul className="space-y-2 text-sm text-white/80">
-                                    <li>✓ FAA License — 100+ countries</li>
-                                    <li>✓ 250 hours in 1.6 years</li>
-                                    <li>✓ 40-hr PPL Challenge (Free IR)</li>
-                                    <li>✓ On-campus accommodation</li>
-                                    <li>✓ 1,500 hrs flight building FREE</li>
-                                    <li>✓ 100% CPL scholarship option</li>
-                                    <li>✓ Glass cockpit aircraft training</li>
+                                    <li>✓ Verify current school approval</li>
+                                    <li>✓ Request written schedule and fees</li>
+                                    <li>✓ Confirm aircraft and facility access</li>
+                                    <li>✓ Check visa and accommodation terms</li>
+                                    <li>✓ Verify current flight-hour requirements</li>
+                                    <li>✓ Check scholarship terms with the issuer</li>
+                                    <li>✓ Confirm DGCA conversion requirements</li>
                                 </ul>
                             </div>
                         </ScrollReveal>
@@ -299,13 +251,13 @@ export default function USAFlightTraining() {
                         <ScrollReveal delay={400}>
                             <div className="bg-av-orange rounded-2xl p-6 text-white">
                                 <h4 className="font-montserrat font-bold mb-2">Training Highlights</h4>
-                                <p className="text-white/80 text-sm mb-3">USA FAA Pilot Training:</p>
-                                <div className="text-2xl font-montserrat font-black">250 Hours</div>
-                                <div className="text-white/70 text-xs mt-1">Complete in Just 1.6 Years</div>
-                                <div className="text-white/70 text-xs mt-1">International Airport Training</div>
-                                <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer"
+                                <p className="text-white/80 text-sm mb-3">Researching training in the USA:</p>
+                                <div className="text-xl font-montserrat font-black">Verify with the school</div>
+                                <div className="text-white/70 text-xs mt-1">Schedule and requirements vary</div>
+                                <div className="text-white/70 text-xs mt-1">Confirm location and facilities directly</div>
+                                <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer"
                                     className="mt-4 block bg-white text-av-orange font-bold text-center py-2.5 rounded-xl text-sm hover:bg-gray-100 transition-all">
-                                    Get Free Counselling
+                                    Ask About Current Options
                                 </a>
                             </div>
                         </ScrollReveal>

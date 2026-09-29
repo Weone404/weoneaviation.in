@@ -19,10 +19,10 @@ import Breadcrumb from '../components/Breadcrumb';
 
 const credentials = [
   {
-    category: 'DGCA Accreditation',
+    category: 'DGCA Ground-Subject Teaching',
     icon: '✅',
     items: [
-      { title: 'DGCA Approval Status', detail: 'Fully DGCA aviation training institute', verified: true },
+      { title: 'Ground-class scope', detail: 'DGCA ground-subject teaching from the Dwarka classroom; online batches are available for students outside Delhi.', verified: true },
       // "Last Audited: Q4 2024 — Full Compliance" removed (GEO audit 2026-08-11):
       // an audit date that never advances reads as abandoned rather than
       // reassuring. Restore it with a real date when there is one to publish.
@@ -90,7 +90,7 @@ const verificationChecklist = [
 ];
 
 const certifications = [
-  { name: 'DGCA', icon: '🏛️', description: 'Directorate General of Civil Aviation Approval' },
+  { name: 'DGCA Ground Classes', icon: '📚', description: 'Preparation for DGCA written examinations' },
 ];
 
 export default function CredentialsPage() {
@@ -107,9 +107,9 @@ export default function CredentialsPage() {
     <>
       <Head>
         <title>Credentials & Verification – We One Aviation Academy</title>
-        <meta name="description" content="Published credentials of We One Aviation Academy: DGCA approval status and years in operation, from its Dwarka, New Delhi address." />
+        <meta name="description" content="We One Aviation Academy's stated Dwarka location, DGCA ground-subject teaching, online batches, and years in operation." />
         <meta key="og:title" property="og:title" content="Credentials & Verification – We One Aviation Academy" />
-        <meta key="og:description" property="og:description" content="Credentials for We One Aviation Academy: DGCA approval status and years in operation." />
+        <meta key="og:description" property="og:description" content="We One Aviation Academy's stated Dwarka location, DGCA ground-subject teaching, online batches, and years in operation." />
         <meta key="og:url" property="og:url" content="https://weoneaviation.in/credentials" />
 
         {/* Schema: Organization with credentials */}
@@ -119,20 +119,15 @@ export default function CredentialsPage() {
             '@type': 'EducationalOrganization',
             name: 'We One Aviation Academy',
             url: 'https://weoneaviation.in',
-            accreditedBy: {
-              '@type': 'Organization',
-              name: 'Directorate General of Civil Aviation (DGCA)',
-              url: 'https://www.dgca.gov.in',
-            },
             /* Same URL string as _document.jsx's sameAs — entity matching is
                literal, so the two must not disagree on the host. */
             sameAs: ['https://www.linkedin.com/company/weoneaviation'],
-            description: 'DGCA pilot training institute in Dwarka, New Delhi, publishing its approval status and years in operation.',
+            description: 'Aviation education organization teaching DGCA ground subjects from its Dwarka classroom and offering online batches to students outside Delhi.',
           })
         }} />
       </Head>
 
-      <Layout title="Credentials & Verification – We One Aviation Academy" description="Published credentials: DGCA approval status and years in operation.">
+      <Layout title="Credentials & Verification – We One Aviation Academy" description="Published information about We One Aviation Academy's Dwarka classroom, DGCA ground-subject teaching, and years in operation.">
         {/* Hero */}
         <div className="bg-gradient-to-br from-av-blue to-av-navy py-20 px-4">
           <div className="max-w-5xl mx-auto text-center text-white">
@@ -140,7 +135,7 @@ export default function CredentialsPage() {
               Our Credentials & <span className="text-av-orange">Verifications</span>
             </h1>
             <p className="text-white/80 text-lg max-w-3xl mx-auto leading-relaxed">
-              Here we publish what can actually be checked: our DGCA accreditation and how long we have been operating. Anything we cannot evidence has been removed from this page rather than restated.
+              Here we describe the academy's stated location, teaching scope, and years in operation. DGCA sets examination and licensing requirements; We One Aviation provides ground-subject preparation.
             </p>
           </div>
         </div>
@@ -150,15 +145,17 @@ export default function CredentialsPage() {
           <div className="max-w-4xl mx-auto">
             <Breadcrumb />
             <QuickAnswer
-              question="What can We One Aviation actually prove about itself?"
-              answer={`Two things, and we will evidence both on request: DGCA approval status, and continuous operation since ${FOUNDED_YEAR} from our Dwarka, New Delhi address. Instructor licence numbers, testimonials and training statistics were removed from this site rather than restated without proof.`}
+              question="What does We One Aviation provide?"
+              answer={`We One Aviation teaches DGCA ground subjects from its Dwarka, New Delhi classroom and offers online batches to students outside Delhi. Flight training is arranged through partner flying schools. The academy does not claim to operate a flying school.`}
             />
 
             <SummaryBox
-              title="What we publish, and what we deliberately do not"
+              title="Our teaching scope"
               items={[
-                `DGCA approval status — evidenced on request`,
-                `Continuous operation since ${FOUNDED_YEAR} — ${YEARS_LABEL} years, evidenced on request`,
+              'DGCA ground-subject teaching from the Dwarka classroom',
+              'Online batches for students outside Delhi',
+              'Flight training arranged through partner flying schools',
+              `Operating since ${FOUNDED_YEAR} — ${YEARS_LABEL} years`,
                 `Address: ${ACADEMY.streetAddress}, ${ACADEMY.addressLocality} ${ACADEMY.postalCode}`,
                 'NOT published: instructor licence numbers (available on request instead of on a page anyone can copy)',
                 'NOT published: pass rates, placement rates or student counts — we could not substantiate them, so they were deleted rather than revised downward',

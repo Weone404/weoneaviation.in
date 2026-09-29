@@ -104,8 +104,8 @@ export default function About() {
 
   return (
     <Layout
-      title="About We One Aviation Academy | DGCA Pilot Training Institute"
-      description={`We One Aviation Academy is a DGCA pilot training institute in Dwarka, New Delhi, operating for ${YEARS_LABEL} years.`}
+      title="About We One Aviation Academy | DGCA Ground Classes in Dwarka"
+      description="We One Aviation Academy teaches DGCA ground subjects from its Dwarka classroom, offers online batches to students outside Delhi, and arranges flight training through partner flying schools."
     >
       <HeroSlider customSlides={heroSlides} asH1={false} />
 
@@ -121,7 +121,7 @@ export default function About() {
 
           <QuickAnswer
             question="What is We One Aviation Academy, and what does it actually do?"
-            answer={`We One Aviation Academy is a DGCA pilot training institute in Dwarka, New Delhi, operating since ${ACADEMY.foundedYear}. We teach the DGCA ground subjects for the written examinations behind a Commercial Pilot Licence, and we place students with partner flying schools for the flying hours.`}
+            answer={`We One Aviation Academy teaches DGCA ground subjects from its classroom in Dwarka, New Delhi, offers online batches to students outside Delhi, and arranges flight training through partner flying schools.`}
           />
 
           <SummaryBox
@@ -130,19 +130,27 @@ export default function About() {
               `Founded ${ACADEMY.foundedYear}, operating continuously since — one of two facts our credentials page can evidence on request`,
               `Located at ${ACADEMY.streetAddress}, ${ACADEMY.addressLocality} ${ACADEMY.postalCode}`,
               `We teach: the ${papersSummary()} written papers, plus RTR (A) preparation`,
-              'We arrange: flight training with partner schools in India, the USA, Canada, Australia and South Africa',
+              'We arrange flight training with partner flying schools; the flying takes place at the selected school',
               'We do NOT own aircraft or simulators — the flying happens at partner flying schools',
               'We do NOT employ pilots or place students into airline jobs — hiring rests with the operator',
               'What we provide instead: classroom teaching, examination preparation, licence-route planning, interview preparation and career guidance',
             ]}
           />
+          <nav aria-label="Training information" className="mb-8 flex flex-wrap gap-4 text-sm">
+            <Link href="/pilot-training-in-india" className="font-semibold text-av-blue underline decoration-av-orange underline-offset-4 hover:text-av-orange">Pilot-training pathway in India</Link>
+            <Link href="/commercial-pilot-license" className="font-semibold text-av-blue underline decoration-av-orange underline-offset-4 hover:text-av-orange">CPL pathway</Link>
+            <Link href="/dgca-ground-classes" className="font-semibold text-av-blue underline decoration-av-orange underline-offset-4 hover:text-av-orange">DGCA ground classes</Link>
+            <Link href="/pilot-training-in-delhi" className="font-semibold text-av-blue underline decoration-av-orange underline-offset-4 hover:text-av-orange">Delhi training information</Link>
+            <Link href="/pilot-training-in-dwarka" className="font-semibold text-av-blue underline decoration-av-orange underline-offset-4 hover:text-av-orange">Dwarka classroom details</Link>
+            <Link href="/contact" className="font-semibold text-av-blue underline decoration-av-orange underline-offset-4 hover:text-av-orange">Contact the academy</Link>
+          </nav>
 
           <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">What does a ground school actually do — and what does it not?</h2>
           <p className="text-gray-600 text-sm leading-relaxed mb-4">
             This is the question worth settling before you pay anyone anything, because the answer decides who you talk to next. A ground school teaches theory. A flying school provides aircraft and instructors and puts hours in your logbook. The DGCA issues the licence. Three different organisations, three different jobs, and an academy that blurs them is doing you no favours.
           </p>
           <p className="text-gray-600 text-sm leading-relaxed mb-4">
-            We are the first of those three. Our instructors teach the written papers, run mock examinations in the DGCA pattern, and sit with students until the difficult topics land. When the theory is behind you, we help you choose a flying school and prepare the application — in India or abroad, depending on your budget, your timeline and how you weigh a conversion step against a longer wait for weather.
+            We are the first of those three. We teach DGCA ground subjects and can help students understand the next steps for selecting a flying school. Flight training is arranged with partner flying schools and takes place at the selected school; confirm the current school, location, admission requirements, and terms before applying.
           </p>
           <p className="text-gray-600 text-sm leading-relaxed mb-8">
             What we will not tell you is that we can hand you an airline job. Nobody can. Airlines run their own selection, on their own schedule, against their own criteria. We prepare you for that process and we are candid about where our part ends.
@@ -179,10 +187,7 @@ export default function About() {
 
           <h2 className="font-montserrat text-xl font-bold text-av-blue mb-3">How do we teach?</h2>
           <p className="text-gray-600 text-sm leading-relaxed mb-4">
-            Instructor-led sessions rather than recorded playlists, in both classroom and online modes. Every session leaves room for questions, because aviation theory rewards the student who asks why a rule exists over the one who memorises it. Mock examinations run in the DGCA pattern and under time pressure, which is the only way to find out whether you actually know a subject or merely recognise it.
-          </p>
-          <p className="text-gray-600 text-sm leading-relaxed mb-4">
-            Progress is tracked between mocks. That matters more than it sounds: it is what tells a student in week four that Air Navigation needs more time, while there is still time to give it. A student who discovers the same thing the week before the paper has run out of options.
+            DGCA ground classes are taught in the academy&apos;s Dwarka classroom, with online batches stated for students outside Delhi. Contact the academy to confirm current batch formats and availability.
           </p>
           <p className="text-gray-600 text-sm leading-relaxed mb-8">
             Before any of it, book the {MEDICAL.short}. {MEDICAL.advice}
@@ -334,16 +339,16 @@ export default function About() {
         </div>
       </section>
 
-      {/* Accreditations */}
+      {/* Teaching scope */}
       <section className="py-16 px-4 bg-av-blue">
         <div className="max-w-5xl mx-auto text-center">
           <ScrollReveal>
-            <div className="section-tag">Recognitions</div>
+            <div className="section-tag">Teaching scope</div>
             <h2 className="font-montserrat text-3xl font-bold text-white mb-10">
-              Approvals & Accreditations
+              DGCA Ground-Subject Preparation
             </h2>
             <div className="flex flex-wrap justify-center gap-4">
-              {['DGCA'].map(item => (
+              {['Ground classes in Dwarka', 'Online batches outside Delhi'].map(item => (
                 <div key={item} className="glass rounded-full px-5 py-2.5 text-white text-sm font-medium border border-white/20">
                   ✓ {item}
                 </div>

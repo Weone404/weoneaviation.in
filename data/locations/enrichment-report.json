@@ -1,0 +1,62 @@
+{
+  "sourceRecords": 27145,
+  "uniquePins": 20926,
+  "duplicatePinGroups": 2426,
+  "geoNamesPostalRecords": 155570,
+  "geoNamesUniquePins": 19238,
+  "successfullyEnriched": 11414,
+  "geoNamesSourceCoverage": 17227,
+  "geoNamesNoMatch": 3699,
+  "notConfidentlyEnriched": 9512,
+  "missingCity": 20926,
+  "missingDistrict": 9366,
+  "missingLocality": 9366,
+  "missingState": 178,
+  "missingRegion": 20926,
+  "stateConflicts": 915,
+  "pdfStateConflicts": 156,
+  "geoNamesStateConflicts": 759,
+  "pdfStateConflictGroups": 156,
+  "conflictingPdfStatesOnPublishRecords": 0,
+  "localityGeoNamesFallbacks": 559,
+  "qualityCounts": {
+    "publish": 11412,
+    "review": 9512,
+    "exclude": 2
+  },
+  "contentQualityCounts": {
+    "PUBLISH_INDEXABLE": 0,
+    "PUBLISH_NON_INDEXABLE": 11402,
+    "REVIEW": 9522,
+    "EXCLUDE": 2
+  },
+  "lookupTimestamp": "2026-09-29T05:47:57.905Z",
+  "source": "https://download.geonames.org/export/zip/IN.zip",
+  "sourceCatalog": {
+    "ownerPdf": {
+      "name": "India PIN Code List PDF supplied by the site owner",
+      "reference": "data/locations/pin-records.json; sourcePage on each entity",
+      "fields": [
+        "pinCode",
+        "postOfficeNames",
+        "state"
+      ]
+    },
+    "geoNames": {
+      "name": "GeoNames India Postal Code dataset",
+      "url": "https://download.geonames.org/export/zip/IN.zip",
+      "licenseUrl": "https://download.geonames.org/export/zip/readme.txt",
+      "license": "Creative Commons Attribution 4.0",
+      "fields": [
+        "placeName",
+        "adminName2 district",
+        "adminName3 taluk",
+        "latitude",
+        "longitude",
+        "accuracy"
+      ],
+      "limitations": "Secondary source; provided as-is without accuracy, timeliness or completeness warranty; placeName is not a separate city field."
+    }
+  },
+  "note": "GeoNames is a secondary dataset; entries are not described as official India Post records. Coordinates are approximate and never rendered as an academy location."
+}

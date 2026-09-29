@@ -6,6 +6,7 @@ node_modules/
 # 2026-09-11; the copy already in git history is a separate problem that needs
 # a history rewrite and the owner's approval.
 data/leads.xlsx
+data/locations/*cache.json
 .vercel
 
 # Orphans left by the Cowork device bridge (FUSE cannot unlink)

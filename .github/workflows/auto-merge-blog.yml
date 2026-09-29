@@ -51,12 +51,9 @@ jobs:
 
       - name: Merge into master
         run: |
-          # The build above regenerates .generated-sitemap.xml, which is tracked.
-          # That leaves the tree dirty, and `git checkout master` then aborts with
-          # "local changes would be overwritten". Discard the regenerated copy —
-          # the committed one is what master should carry, and Vercel regenerates
-          # it on its own build anyway.
-          git checkout -- .generated-sitemap.xml
+          # The build regenerates tracked sitemap and local-search reports, so
+          # discard those generated copies before switching to master.
+          git checkout -- .generated-sitemap.xml data/local-seo/india-local-search-report.json data/local-seo/local-search-report.json
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin master

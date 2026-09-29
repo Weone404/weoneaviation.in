@@ -919,6 +919,7 @@ reader actually gets: /dgca-computer-number 25,700 characters,
   /ecga-login-your-complete-guide, /commercial-pilot-license-syllabus and
   /commercial-pilot-license-eligibility rebuilt from primary sources.
 - The medical page restored from a 301 and added to the sitemap (87 → 88 URLs).
-- One NAP everywhere: 9667370747, the Google Business number, across 30 files;
-  the address aligned across 11; the "established 2002" claim removed.
+- Primary academy phone normalized to +91 96673 70747; owner-confirmed
+  WhatsApp/lead contact +91 93556 11996 retained for lead and campaign flows.
+  The address was aligned across 11 files; the "established 2002" claim removed.
 - The 70% pass mark moved off the unverified list and cited to its CAR clause.

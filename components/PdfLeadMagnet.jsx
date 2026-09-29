@@ -119,7 +119,7 @@ export default function PdfLeadMagnet({
           Thanks &mdash; your request is saved. This guide is not available as an instant download at the
           moment, so rather than leave you waiting on a file that will not arrive: write to{' '}
           <a href="mailto:info.weoneaviation@gmail.com" className="font-semibold underline">info.weoneaviation@gmail.com</a>{' '}
-          or call <a href="tel:+919667370747" className="font-semibold underline">+91-9667370747</a> and we will send it
+          or call <a href="tel:+919667370747" className="font-semibold underline">+91 96673 70747</a> and we will send it
           to you directly.
         </div>
       )}

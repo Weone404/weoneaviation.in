@@ -1,0 +1,35 @@
+{
+  "academyName": "We One Aviation Academy",
+  "streetAddress": "C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka",
+  "locality": "Dwarka, Palam Extension, Sector-7",
+  "city": "New Delhi",
+  "state": "Delhi",
+  "postalCode": "110077",
+  "country": "India",
+  "latitude": 28.5851865,
+  "longitude": 77.071156,
+  "addressSource": {
+    "type": "First-party website",
+    "files": [
+      "lib/facts.js",
+      "lib/schema.js",
+      "pages/contact.jsx",
+      "pages/pilot-training-in-dwarka.jsx",
+      "components/Footer.jsx"
+    ],
+    "verification": "The same street address and PIN are published across the listed site sources; this is not independent government verification."
+  },
+  "coordinateSource": {
+    "type": "Google Maps place pin",
+    "url": "https://www.google.com/maps?cid=10157212043930371020",
+    "placeName": "We One Aviation Academy",
+    "coordinatesFromResolvedMapUrl": "https://www.google.com/maps/place/We+One+Aviation+Academy/@28.5851865,77.071156,17z/",
+    "retrievedAt": "2026-09-29",
+    "verificationLimit": "The Maps CID resolves to a listing with these coordinates, but listing ownership and the pin's exact match to the published street address have not been independently confirmed."
+  },
+  "confidence": {
+    "address": "high",
+    "coordinates": "medium",
+    "overall": "medium"
+  }
+}

@@ -155,7 +155,7 @@ export default function TermsPage() {
                                     <h2 className="font-montserrat font-bold text-av-blue text-xl">About Us</h2>
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                    We One Aviation Academy is a DGCA pilot training institute based in New Delhi, India. We provide ground classes and career counselling with avenues for CPL, PPL, and international flight training programs.
+                                    We One Aviation Academy is a ground-training and counselling institute based in Dwarka, New Delhi, India. We provide DGCA ground classes and career counselling. Flight training is arranged through selected partner flying schools.
                                 </p>
                                 <div className="bg-av-blue rounded-xl px-5 py-4 flex items-center gap-3">
                                     <span className="text-2xl flex-shrink-0">✈️</span>
@@ -381,7 +381,7 @@ export default function TermsPage() {
                                     {[
                                         { icon: '🏢', label: 'Address', value: 'C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, Delhi 110077, India', href: null },
                                         { icon: '📧', label: 'Email', value: 'info.weoneaviation@gmail.com', href: 'mailto:info.weoneaviation@gmail.com' },
-                                        { icon: '📞', label: 'Phone', value: '+91-9667370747', href: 'tel:+919667370747' },
+                                        { icon: '📞', label: 'Phone', value: '+91 96673 70747', href: 'tel:+919667370747' },
                                         { icon: '🌐', label: 'Website', value: 'weoneaviation.in', href: 'https://weoneaviation.in' },
                                     ].map((item, i) => (
                                         <div key={i} className="glass rounded-xl p-4 flex gap-3 items-start">
@@ -423,7 +423,7 @@ export default function TermsPage() {
                                 Contact Us →
                             </Link>
                             <a
-                                href="https://wa.me/919667370747"
+                                href="https://wa.me/919355611996"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-block bg-white border border-gray-200 text-av-blue px-8 py-3 rounded-full font-bold hover:border-av-orange hover:text-av-orange transition-all text-sm"

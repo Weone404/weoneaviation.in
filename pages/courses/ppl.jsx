@@ -44,15 +44,15 @@ const pplSubjects = [
 ];
 
 const pplCost = [
-    { type: 'Ground Classes', cost: '₹60,000 – ₹1,00,000' },
-    { type: 'Flying Training (40-50 hrs)', cost: '₹7,00,000 – ₹9,00,000' },
-    { type: 'Medical & Exam Fees', cost: '₹20,000 – ₹40,000' },
-    { type: 'Total Cost', cost: '₹7.5 – ₹10 Lakhs' },
+    { type: 'Ground Classes', cost: 'Request a current written quote from the academy' },
+    { type: 'Flying Training', cost: 'Request a current written quote from the selected flying school' },
+    { type: 'Medical & Exam Fees', cost: 'Confirm charges with the relevant providers and regulator' },
+    { type: 'Total Cost', cost: 'Varies; obtain itemized written quotes' },
 ];
 
 const pplDuration = [
-    { type: 'Full-time (Regular)', duration: '6 to 12 months' },
-    { type: 'Part-time (Weekend)', duration: '8 to 18 months' },
+    { type: 'Full-time (Regular)', duration: 'Confirm current flying-school schedule' },
+    { type: 'Part-time (Weekend)', duration: 'Confirm current flying-school schedule' },
 ];
 
 const pplCareerScope = [

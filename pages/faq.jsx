@@ -37,7 +37,7 @@ const categories = [
       { question: 'How long does ATPL progression take?', answer: 'The complete progression toward an ATPL commonly spans 36 months or more because it includes advanced theory, flight-hour building, simulator work, and airline experience.' },
       { question: 'What is the approximate cost of CPL training in India?', answer: 'The ₹40-70 lakh range is what is commonly discussed, but it is a market estimate rather than a sourced figure: no Indian government body publishes a price for flying training and private schools publish nothing. What can be shown is DGCA\u2019s own charge of ₹2,500 per examination paper (₹5,000 on demand) and the ₹55,00,000 course fee published by IGRUA, a government academy. Get any private quote in writing and compare it line by line — our cost transparency page gives the questions that make two quotes comparable.' },
       { question: 'What is the approximate cost of PPL training?', answer: 'Figures around ₹7.5-10 lakh circulate, but like every private training figure in India they cannot be traced to a published document. Ask the school for its own quote in writing and for what it excludes before enrolment.' },
-      { question: 'Do you offer EMI or loan assistance?', answer: 'EMI and loan guidance may be available through current academy or finance-partner arrangements. Please confirm the available lenders, eligibility, documents, interest, and repayment terms before making a decision.' },
+      { question: 'How should I compare payment options?', answer: 'Finance terms, lender conditions, and provider billing vary by programme and institution. Confirm all written terms before enrolling and compare the full cost, not only the monthly instalment.' },
       { question: 'Are scholarships available?', answer: 'Scholarship availability, eligibility, and terms can change by course and intake. Contact the academy for the current assessment process and written conditions.' },
     ],
   },
@@ -144,7 +144,7 @@ export default function FAQPage() {
             <p className="text-white/70 text-sm mb-6">Speak with the We One Aviation team about your eligibility, course, and next step.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href="/contact" className="bg-av-orange text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-orange-600 transition-all">Contact Us</a>
-              <a href="https://wa.me/919667370747" target="_blank" rel="noopener noreferrer" className="border border-white/40 text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-white hover:text-av-blue transition-all">WhatsApp Us</a>
+              <a href="https://wa.me/919355611996" target="_blank" rel="noopener noreferrer" className="border border-white/40 text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-white hover:text-av-blue transition-all">WhatsApp Us</a>
             </div>
           </div>
         </ScrollReveal>

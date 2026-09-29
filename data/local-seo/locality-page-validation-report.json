@@ -1,0 +1,201 @@
+{
+  "generatedAt": "2026-09-29T09:31:38.903Z",
+  "sourceAudit": {
+    "totalEnrichedPins": 20926,
+    "pdfStateConflictPins": 156,
+    "conflictsMissingReview": 0,
+    "fieldProvenanceIssues": 0,
+    "publishableLocalityProvenanceIssues": 0,
+    "legacyCacheUsedByCurrentPipeline": false,
+    "legacyCacheReaderFiles": []
+  },
+  "localSeo": {
+    "geographicReferences": 27465,
+    "actualLocalityCandidates": 37,
+    "candidatesByRecommendation": {
+      "REFERENCE_ONLY": 1,
+      "RESEARCH_ONLY": 34,
+      "NEEDS_VERIFICATION": 2
+    },
+    "selectedPilotPages": 0,
+    "indexableLocalityPages": 0,
+    "laxmiNagarRecords": 2,
+    "lajpatNagarRecords": 1,
+    "localityRouteTemplatePresent": true,
+    "emittedLocalityRoutes": 0
+  },
+  "indiaWideResearch": {
+    "stateAndUnionTerritoryCount": 36,
+    "cityCount": 58,
+    "localityCount": 37,
+    "potentialCityCandidates": 0,
+    "potentialLocalityCandidates": 0,
+    "referenceOnlyLocations": 2,
+    "rejectedLocations": 0,
+    "observedCityMarketSnapshots": 9,
+    "observedCityQueryCount": 36,
+    "observedLocalityMarketSnapshots": 3,
+    "observedLocalityQueryCount": 12,
+    "blockedLocalitySerpAttempts": 2,
+    "laxmiNagarAlternateDomain": {
+      "domain": "weoneaviation.com",
+      "classification": "UNVERIFIED_OLD_OR_ALTERNATE_DOMAIN",
+      "ownershipStatus": "UNVERIFIED",
+      "verifiedSiteRouteStatus": "404",
+      "pagesAttributedToVerifiedBusiness": false,
+      "sitemapDeclaredPageCount": 268973,
+      "domainContentRisk": "Potential legacy or compromised mass-published geo/service content; ownership and actual indexed count remain unverified."
+    },
+    "pagesCreated": 0
+  },
+  "sitemap": {
+    "totalRoutes": 112,
+    "pinStyleRoutes": 0,
+    "localityRoutes": 0,
+    "noindexHubIncluded": false
+  },
+  "oldPinRoute": {
+    "sourceRouteExists": false,
+    "publicSample": "The corresponding public host URL returned HTTP 404. The previously shared localhost:3010 route stopped responding after the current build; no current public page was found.",
+    "indexedStatus": "Not independently verified; no Search Console data is available in the repository.",
+    "redirectDecision": "No blanket redirect added. Historical records were from an unlaunched pilot and the checked public sample returns 404. Add a route-specific 301 only if Search Console/backlink evidence identifies a URL with search value and an equivalent destination."
+  },
+  "existingPageQa": [
+    {
+      "route": "/pilot-training-near",
+      "missing": false,
+      "title": "Pilot Training for Delhi Students: Service Area and Classroom | We One Aviation",
+      "description": "Where We One Aviation teaches, how its online batches work, and what students across Delhi and nearby areas should know before enquiring.",
+      "canonical": "https://weoneaviation.in/pilot-training-near",
+      "robots": "noindex, follow",
+      "h1": "Pilot Training for Delhi Students: Where Training Happens",
+      "h2Count": 4,
+      "schemaTypes": [
+        "BreadcrumbList",
+        "EducationalOrganization",
+        "WebSite",
+        "WebPage",
+        "FAQPage"
+      ],
+      "issues": []
+    },
+    {
+      "route": "/pilot-training-in-delhi",
+      "missing": false,
+      "title": "Pilot Training in Delhi: What the City Can and Cannot Give You",
+      "description": "No DGCA-approved flying base exists in Delhi or the NCR — so training in Delhi never means flying in Delhi. What the city does have, and why it still helps.",
+      "canonical": "https://weoneaviation.in/pilot-training-in-delhi",
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "h1": "Pilot Training in Delhi",
+      "h2Count": 11,
+      "schemaTypes": [
+        "BreadcrumbList",
+        "EducationalOrganization",
+        "WebSite",
+        "Article",
+        "FAQPage"
+      ],
+      "issues": []
+    },
+    {
+      "route": "/pilot-training-in-dwarka",
+      "missing": false,
+      "title": "Pilot Training in Dwarka, Delhi | DGCA Ground Classes",
+      "description": "DGCA ground classes in Dwarka Sector 7 — and the three DGCA institutions a Delhi student needs that are already in the city, including four approved medical centres.",
+      "canonical": "https://weoneaviation.in/pilot-training-in-dwarka",
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "h1": "Pilot Training in Dwarka",
+      "h2Count": 10,
+      "schemaTypes": [
+        "BreadcrumbList",
+        "EducationalOrganization",
+        "WebSite",
+        "Article",
+        "FAQPage"
+      ],
+      "issues": []
+    },
+    {
+      "route": "/commercial-pilot-license",
+      "missing": false,
+      "title": "Commercial Pilot Licence (CPL) Pathway in India | We One Aviation",
+      "description": "Understand Indian CPL eligibility, DGCA written-paper preparation, required flight experience, and We One Aviation’s Dwarka classroom, online batches, and partner-arranged flight training.",
+      "canonical": "https://weoneaviation.in/commercial-pilot-license",
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "h1": "Commercial Pilot Licence (CPL) in India",
+      "h2Count": 6,
+      "schemaTypes": [
+        "BreadcrumbList",
+        "EducationalOrganization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "FAQPage"
+      ],
+      "issues": []
+    },
+    {
+      "route": "/dgca-ground-classes",
+      "missing": false,
+      "title": "DGCA Ground Classes | We One Aviation Academy",
+      "description": "Prepare for the five DGCA written papers with We One Aviation Academy. Classroom batches are held in Dwarka, New Delhi; students outside Delhi can join online.",
+      "canonical": "https://weoneaviation.in/dgca-ground-classes",
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "h1": "DGCA Ground Classes",
+      "h2Count": 4,
+      "schemaTypes": [
+        "BreadcrumbList",
+        "EducationalOrganization",
+        "WebSite",
+        "Course",
+        "FAQPage"
+      ],
+      "issues": []
+    },
+    {
+      "route": "/contact",
+      "missing": false,
+      "title": "Contact We One Aviation Academy",
+      "description": "Contact We One Aviation Academy about DGCA ground classes, the CPL pathway, online batches outside Delhi, or the Dwarka classroom.",
+      "canonical": "https://weoneaviation.in/contact",
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "h1": "Contact Us",
+      "h2Count": 7,
+      "schemaTypes": [
+        "BreadcrumbList",
+        "EducationalOrganization",
+        "WebSite",
+        "FAQPage"
+      ],
+      "issues": []
+    },
+    {
+      "route": "/about-us",
+      "missing": false,
+      "title": "About We One Aviation Academy | DGCA Pilot Training Institute",
+      "description": "We One Aviation Academy is a DGCA pilot training institute in Dwarka, New Delhi, operating for 17+ years.",
+      "canonical": "https://weoneaviation.in/about-us",
+      "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+      "h1": "About We One Aviation Academy",
+      "h2Count": 12,
+      "schemaTypes": [
+        "BreadcrumbList",
+        "EducationalOrganization",
+        "WebSite",
+        "FAQPage"
+      ],
+      "issues": []
+    }
+  ],
+  "duplicateContent": {
+    "pagesCompared": 0,
+    "comparison": "No locality pages are currently generated, so there is no pairwise page similarity result to report.",
+    "priorFifteenPageDraft": "Retired without publication. Its template substituted locality names without evidence of a locality-specific service or use case.",
+    "nextStep": "Measure normalized rendered-body 5-word-shingle Jaccard similarity and repeated paragraphs, headings, FAQs, introductions and conclusions only after a candidate passes the service-area gate."
+  },
+  "errors": [
+    "/pilot-training-in-delhi does not link to the local-search hub.",
+    "/pilot-training-in-dwarka does not link to the local-search hub.",
+    "/dgca-ground-classes does not link to the local-search hub."
+  ]
+}

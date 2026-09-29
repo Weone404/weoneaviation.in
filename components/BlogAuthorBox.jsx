@@ -30,7 +30,7 @@ export default function BlogAuthorBox() {
         <div>
           <dt className="font-semibold text-av-blue inline">Phone: </dt>
           <dd className="inline text-gray-600">
-            <a href={`tel:${ACADEMY.phone}`} className="hover:text-av-orange">{ACADEMY.phone}</a>
+            <a href={`tel:${ACADEMY.phone}`} className="hover:text-av-orange">{ACADEMY.phoneDisplay}</a>
           </dd>
         </div>
         <div>

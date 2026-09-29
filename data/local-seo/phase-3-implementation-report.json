@@ -1,0 +1,189 @@
+{
+  "phase": 3,
+  "implementationPlan": [
+    "Retain /pilot-training-in-india as the single national hub and limit edits to existing audited routes and shared entity/metadata surfaces.",
+    "Replace unsupported nationwide, offer, partner, and outcome language only with the verified Dwarka classroom, online-batch, DGCA-ground-training, and partner-arranged-flight-training model.",
+    "Align schema and internal links with the existing organization and service routes without creating geographic routes.",
+    "Run targeted lint, npm build, route/link checks, JSON-LD parsing, and diff validation while restoring build-generated research and sitemap files to their pre-build state."
+  ],
+  "filesModified": [
+    "pages/pilot-training-in-india.jsx",
+    "pages/dgca-ground-classes-in-india.jsx",
+    "pages/commercial-pilot-license.jsx",
+    "pages/dgca-ground-classes.jsx",
+    "pages/about-us.jsx",
+    "pages/contact.jsx",
+    "pages/pilot-training-in-delhi.jsx",
+    "pages/pilot-training-in-dwarka.jsx",
+    "pages/_document.jsx",
+    "components/Layout.jsx",
+    "components/Footer.jsx",
+    "lib/schema.js",
+    "data/pageFaqs.js",
+    "data/local-seo/phase-3-implementation-report.json"
+  ],
+  "claimsRemoved": [
+    {
+      "route": "/dgca-ground-classes-in-india",
+      "claims": [
+        "Online and offline availability across all 28 states / every Indian state and union territory.",
+        "A 24-city roster and \"+ Every Indian State\" presented as a verified service-area list.",
+        "A universal 25% scholarship, six-month completion, academy fees, EMI/loan availability, free repeat classes/materials, recordings, and unsupported batch/support promises.",
+        "A named flying-school roster presented as current approved schools, partners, or an academy-operated nationwide option.",
+        "A nearest designated DGCA exam centre in each student's state and the unsourced six-core-subject description."
+      ]
+    },
+    {
+      "route": "/pilot-training-in-india",
+      "claims": [
+        "First-attempt DGCA exam success and limited-seat claims.",
+        "Universal or up-to-25% scholarships, unverified fees/loans, and fixed course-duration offers.",
+        "Unverified instructor/facility/library/technology claims, USA-student claims, and flight-training placement since 2009.",
+        "Named flying-school examples or course cards that could imply We One Aviation owns, operates, or automatically places students into a flying school."
+      ]
+    },
+    {
+      "route": "/dgca-ground-classes",
+      "claims": [
+        "Unverified academy price, scholarship, duration, free-repeat, and other offer-benefit claims from visible copy and Course schema."
+      ]
+    },
+    {
+      "route": "/commercial-pilot-license",
+      "claims": [
+        "Unsupported CPL price and fixed 18–24 month duration as a single academy Course offer, including the AggregateOffer and blended-delivery implication."
+      ]
+    },
+    {
+      "route": "/about-us",
+      "claims": [
+        "Unverified named partner-country/service availability and wording that described partner flight training as student placement.",
+        "Unverified instructional-method, mock-exam, and progress-tracking promises not established by the verified business model."
+      ]
+    },
+    {
+      "route": "/contact and shared footer",
+      "claims": [
+        "Two-hour callback, free/end-to-end counselling, and unsupported office-hours promises.",
+        "The Contact page's unsupported secure-storage assurance and the Footer's free-counselling/expert-guidance language."
+      ]
+    }
+  ],
+  "claimsRewritten": [
+    {
+      "claim": "Nationwide physical or universal state coverage",
+      "replacement": "One stated physical classroom in Dwarka, New Delhi; online batches are stated for students outside Delhi. No other city is represented as a physical branch or classroom."
+    },
+    {
+      "claim": "We One Aviation as a flying-school operator or owner",
+      "replacement": "The academy teaches DGCA ground subjects and arranges flight training with partner flying schools; flying occurs at the selected school. Current school, location, terms, and availability must be confirmed before applying."
+    },
+    {
+      "claim": "Six DGCA core subjects",
+      "replacement": "Five DGCA written papers, with RTR (A) preparation described separately."
+    },
+    {
+      "claim": "Contact page's published +91-9355566991 as the primary contact",
+      "replacement": "The Contact page now uses the verified shared primary number +91-9667370747 for call and WhatsApp actions. A second number remains in the Footer pending owner confirmation of its role."
+    },
+    {
+      "claim": "Office address without delivery context",
+      "replacement": "The Contact page labels the verified Dwarka address as the academy classroom."
+    },
+    {
+      "claim": "About/Contact FAQs with unsupported operational promises",
+      "replacement": "Visible FAQs now describe verified location, online access outside Delhi, academy scope, contact channels, and the need to confirm current availability; they do not promise callback times, office hours, or data-security terms."
+    },
+    {
+      "claim": "Footer's India-and-abroad broad reach statement",
+      "replacement": "The Footer now describes DGCA ground teaching from Dwarka, online batches for students outside Delhi, and partner-arranged flight training."
+    }
+  ],
+  "schemaChanges": [
+    "Kept one global EducationalOrganization using https://weoneaviation.in/#organization, the verified academy name, canonical URL, existing public logo, Dwarka postal address, primary telephone, email, and supported founding date.",
+    "Removed unverified legalName, areaServed, and empty/unverified sameAs assertions; no LocalBusiness or fictional location schema was added.",
+    "Course providers now reference the stable organization @id. Removed unverified course prices, duration, mode, and scholarship/offer properties; the CPL pathway is not represented as one academy-delivered Course offer.",
+    "Added/retained page-level WebPage, Article, and visible-content-matched FAQPage relationships to the stable organization where applicable.",
+    "Removed duplicate page-level EducationalOrganization descriptions from Delhi and Dwarka pages; retained the global organization as the single entity source.",
+    "BreadcrumbList continues to be emitted from the same helper used for visible breadcrumb navigation.",
+    "About and Contact FAQ content was corrected so generated FAQPage answers match the visible, supported content."
+  ],
+  "internalLinkChanges": [
+    "National hub links to the CPL authority, detailed DGCA ground-class service, Delhi, Dwarka, About, and Contact using existing routes.",
+    "National DGCA page links to the national hub, detailed ground-class service, CPL pathway, Delhi, and Dwarka.",
+    "CPL and detailed DGCA pages link between the national pathway, service, and existing physical-location authorities.",
+    "Delhi and Dwarka pages link upward to the national hub and CPL pathway and across to the relevant DGCA/location pages.",
+    "About and Contact provide contextual links to the national hub, CPL, DGCA service, Delhi, and Dwarka; shared navigation remains available.",
+    "Removed the Coimbatore anchor/target mismatch; no route was added to repair it."
+  ],
+  "metadataChanges": [
+    "Updated the national, DGCA India, CPL, DGCA service, About, and Contact titles/descriptions to describe the actual service boundary without city lists, free counselling, or nationwide physical-presence claims.",
+    "Added route-specific Twitter title and description handling in Layout alongside existing keyed Open Graph metadata.",
+    "Preserved the .in self-canonical, existing robots behavior, and www-to-apex handling; made no canonical, redirect, or domain change involving weoneaviation.com."
+  ],
+  "businessEntityChanges": [
+    "Used the shared ACADEMY address, primary phone, WhatsApp URL, email, organization name, and verified scope in the updated Contact and shared entity descriptions.",
+    "Confirmed the decoded Contact email is the same info.weoneaviation@gmail.com address in shared facts.",
+    "Updated the Footer to remove unsupported free/expert-counselling wording and avoid an unverified India-and-abroad service statement.",
+    "Social URLs remain visible in the Footer but are not asserted as sameAs; profile ownership and the second Footer phone still require owner verification."
+  ],
+  "routesCreated": 0,
+  "cityPagesCreated": 0,
+  "localityPagesCreated": 0,
+  "nearMePagesCreated": 0,
+  "productionChanges": true,
+  "deploymentPerformed": false,
+  "gitPushPerformed": false,
+  "existingRouteCaveat": {
+    "createdOrModifiedInPhase3": false,
+    "preExistingUntrackedFilesSeenByBuild": [
+      "pages/pilot-training-near/index.jsx",
+      "pages/pilot-training-near/[locality].jsx"
+    ],
+    "note": "These pre-existing untracked route files were not created or edited in Phase 3, but Next.js included them in the build route manifest. Review them separately before any deployment; this report does not certify them as appropriate."
+  },
+  "validation": {
+    "npmBuild": {
+      "status": "passed",
+      "command": "npm run build",
+      "notes": "Next.js 16.3.4 compiled and generated all static pages. Page-data collection logged a non-fatal MongoDB DNS ECONNREFUSED warning. Build-generated local-search JSON and .generated-sitemap.xml were snapshotted and restored, preserving their pre-build worktree contents."
+    },
+    "eslint": {
+      "status": "passed_for_implementation_files_with_preexisting_footer_exception",
+      "command": "npx eslint on the Phase 3 pages, Layout, schema, and FAQ data; Footer linted with react-hooks/set-state-in-effect disabled",
+      "notes": "Implementation files passed. Unfiltered Footer lint still reports a pre-existing react-hooks/set-state-in-effect error at the existing currentYear effect; this unrelated behavior was not changed."
+    },
+    "jsonLd": {
+      "status": "passed",
+      "pagesParsed": 8,
+      "jsonLdBlocksParsed": 40,
+      "notes": "Built JSON-LD blocks parsed as JSON; no EducationalOrganization sameAs assertion remained. No external Schema.org Validator or Google Rich Results Test was run."
+    },
+    "internalLinks": {
+      "status": "passed",
+      "auditedPages": 8,
+      "notes": "All statically declared internal Link destinations in the audited pages resolve to existing Pages Router files."
+    },
+    "routeBuild": {
+      "status": "passed",
+      "notes": "Next.js build compiled all eight audited routes. It also reported the pre-existing untracked /pilot-training-near routes noted above."
+    },
+    "gitDiffCheck": {
+      "status": "passed",
+      "command": "git diff --check"
+    },
+    "domainSitemapRobots": {
+      "status": "passed",
+      "notes": "No weoneaviation.com, robots.txt, or sitemap source changes were made. Build generator outputs were restored to their pre-build state."
+    }
+  },
+  "remainingManualVerification": [
+    "Confirm the legal registered organization name before adding legalName to schema.",
+    "Confirm ownership and canonical URLs for the Facebook, Instagram, and LinkedIn profiles before using them as sameAs.",
+    "Confirm the role and ongoing use of +91-9355566991, which remains as a second number in the Footer; Contact and Organization schema use the shared primary +91-9667370747.",
+    "Confirm Google Business Profile ownership and current name, address/pin, phone, website, category, hours, and photos directly with the owner.",
+    "Confirm current online-batch availability and the identity/current agreement/terms of each flying-school partner before publishing named partners or availability promises.",
+    "Verify current fees, scholarships, loans/EMI, class schedules, duration, seat availability, free resources, and repeat-class terms before publishing any such offer.",
+    "Review the pre-existing untracked pages/pilot-training-near routes before deployment; they were not part of this implementation."
+  ]
+}

@@ -9,10 +9,10 @@ export default function CostBreakdownGuide() {
     <>
       <Head>
         <title>CPL Training Cost Breakdown India vs Abroad - Free PDF | We One Aviation</title>
-        <meta name="description" content="Free CPL cost breakdown guide comparing India vs USA vs Australia pilot training. Detailed fee breakdown, hidden costs, and payment options." />
+        <meta name="description" content="A guide to comparing CPL training quotes, cost categories, and provider terms in India and abroad." />
       </Head>
 
-      <Layout title="CPL Cost Breakdown: India vs Abroad" description="Complete cost breakdown for Commercial Pilot License training in India vs USA vs Australia. All-in fees, hidden costs, and payment plans.">
+      <Layout title="CPL Cost Guide: Comparing Provider Quotes" description="Learn how to compare itemized CPL training quotes, cost categories, and provider terms. Prices and schedules must be confirmed directly with providers.">
         
         {/* Hero */}
         <div className="relative h-80 overflow-hidden flex items-center justify-center pt-16 bg-gradient-to-br from-av-orange to-orange-700">
@@ -22,7 +22,7 @@ export default function CostBreakdownGuide() {
               CPL Cost Breakdown Guide
             </h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Complete fee comparison: India vs USA vs Australia vs Canada
+              Compare written quotes and training terms
             </p>
           </div>
         </div>
@@ -35,16 +35,16 @@ export default function CostBreakdownGuide() {
             <div className="lg:col-span-2 space-y-8">
               <ScrollReveal>
                 <p className="text-gray-600 leading-relaxed text-lg mb-6">
-                  The cost of pilot training varies dramatically based on location, facilities, and training scope. This guide breaks down all expenses so you can make an informed decision.
+                  Private flying-school prices and schedules vary by provider. This guide identifies cost categories to check; it does not publish unverified country totals or represent current partner availability.
                 </p>
 
                 {/* Cost Summary Cards */}
                 <div className="grid md:grid-cols-2 gap-4 mb-8">
                   {[
-                    { location: '🇮🇳 India (We One Aviation)', cost: '₹40-55 Lakhs', duration: '18-24 months', pros: 'Affordable, DGCA-direct, family close' },
-                    { location: '🇺🇸 USA (Florida)', cost: '$100-130K', duration: '12-18 months', pros: 'Best infrastructure, faster completion' },
-                    { location: '🇦🇺 Australia (Queensland)', cost: 'A$80-100K', duration: '12-15 months', pros: 'Good weather, quality facilities' },
-                    { location: '🇨🇦 Canada (Ontario)', cost: 'C$90-120K', duration: '14-18 months', pros: 'International recognition, structured' },
+                    { location: '🇮🇳 India', cost: 'Request current written quotes', duration: 'Confirm provider schedule', pros: 'Compare itemized scope and terms' },
+                    { location: '🇺🇸 USA', cost: 'Request current written quotes', duration: 'Confirm provider schedule', pros: 'Verify provider status and terms' },
+                    { location: '🇦🇺 Australia', cost: 'Request current written quotes', duration: 'Confirm provider schedule', pros: 'Verify provider status and terms' },
+                    { location: '🇨🇦 Canada', cost: 'Request current written quotes', duration: 'Confirm provider schedule', pros: 'Verify provider status and terms' },
                   ].map((item, i) => (
                     <div key={i} className="bg-gradient-to-br from-av-light to-white rounded-lg p-4 border border-gray-200">
                       <p className="font-bold text-av-blue mb-1">{item.location}</p>
@@ -60,20 +60,19 @@ export default function CostBreakdownGuide() {
               <ScrollReveal>
                 <div className="bg-white rounded-xl border-2 border-av-blue p-6">
                   <h3 className="font-montserrat font-bold text-lg text-av-blue mb-4">
-                    💰 Detailed Cost Breakdown - India (We One Aviation)
+                    💰 CPL Cost Categories to Confirm
                   </h3>
                   
                   <div className="space-y-3">
                     {[
-                      { item: 'Medical Examination Fees', cost: '₹15,000 - ₹20,000' },
-                      { item: 'DGCA Ground School Fees', cost: '₹1,50,000 - ₹2,50,000' },
-                      { item: 'DGCA Exam Fees (5 papers × ₹3,000)', cost: '₹25,000 - ₹30,000' },
-                      { item: 'Flying Training (200+ hours)', cost: '₹30,00,000 - ₹40,00,000' },
-                      { item: 'Simulator Training (50+ hours)', cost: '₹2,50,000 - ₹3,50,000' },
-                      { item: 'Instrument Rating (IR) Add-on', cost: '₹3,00,000 - ₹4,50,000' },
-                      { item: 'Type Rating (Optional, A320/B737)', cost: '₹1,00,000 - ₹2,00,000' },
-                      { item: 'Accommodation & Travel (18-24 months)', cost: '₹5,00,000 - ₹8,00,000' },
-                      { item: 'Books, Materials, Miscellaneous', cost: '₹50,000 - ₹75,000' },
+                      { item: 'Medical examination', cost: 'Confirm with the examination provider' },
+                      { item: 'DGCA ground classes', cost: 'Request a current written quote from the academy' },
+                      { item: 'DGCA examination fees', cost: 'Check the current official Pariksha fee schedule' },
+                      { item: 'Flying training', cost: 'Request a current written quote from the selected school' },
+                      { item: 'Simulator training, if applicable', cost: 'Confirm scope and charges with the school' },
+                      { item: 'Additional ratings, if applicable', cost: 'Confirm requirements and charges with the relevant provider' },
+                      { item: 'Accommodation and travel', cost: 'Confirm location-specific costs independently' },
+                      { item: 'Materials and other charges', cost: 'Request an itemized list of inclusions and exclusions' },
                     ].map((row, i) => (
                       <div key={i} className="flex justify-between py-2 border-b border-gray-100 last:border-b-0">
                         <span className="text-gray-700">{row.item}</span>
@@ -84,7 +83,7 @@ export default function CostBreakdownGuide() {
 
                   <div className="mt-4 pt-4 border-t-2 border-av-orange flex justify-between">
                     <span className="font-bold text-lg text-gray-900">Total:</span>
-                    <span className="font-black text-2xl text-av-orange">₹40-55 Lakhs</span>
+                    <span className="font-black text-xl text-av-orange">No verified total; compare written quotes</span>
                   </div>
                 </div>
               </ScrollReveal>
@@ -123,11 +122,9 @@ export default function CostBreakdownGuide() {
                   </h3>
                   <div className="space-y-3">
                     {[
-                      { plan: 'Pay in Full', benefit: '5-10% discount (₹2-5 Lakhs savings)', timeline: 'Before course starts' },
-                      { plan: 'Semester Basis', benefit: 'Split into 3-4 payments', timeline: 'As training progresses' },
-                      { plan: 'Bank Loans', benefit: 'Axis, ICICI, SBI offer education loans', timeline: 'High interest ~11-14%' },
-                      { plan: 'Installment Plans', benefit: 'Pay monthly over 24 months', timeline: 'Flexible payment schedule' },
-                      { plan: 'Scholarships', benefit: 'Up to 50% waiver for merit', timeline: 'Apply during admission' },
+                      { plan: 'Payment terms', benefit: 'Confirm current terms directly with each provider', timeline: 'Obtain written terms before paying' },
+                      { plan: 'Education finance', benefit: 'Check eligibility and terms with the lender', timeline: 'Lender criteria and rates vary' },
+                      { plan: 'Scholarships or discounts', benefit: 'No current offer is verified here', timeline: 'Confirm any written offer with its issuer' },
                     ].map((opt, i) => (
                       <div key={i} className="bg-white rounded-lg p-4 border border-gray-100">
                         <p className="font-bold text-av-blue mb-1">{opt.plan}</p>
@@ -157,10 +154,10 @@ export default function CostBreakdownGuide() {
                     </thead>
                     <tbody className="space-y-1">
                       {[
-                        { country: '🇮🇳 India', cost: '₹40-55L', dur: '18-24m', pro: 'Affordable', con: 'Weather delays' },
-                        { country: '🇺🇸 USA', cost: '₹80-110L', dur: '12-18m', pro: 'Best infrastructure', con: 'Visa hassle' },
-                        { country: '🇦🇺 Australia', cost: '₹70-90L', dur: '12-15m', pro: 'Good balance', con: 'Far from home' },
-                        { country: '🇨🇦 Canada', cost: '₹85-120L', dur: '14-18m', pro: 'Quality training', con: 'Cold weather' },
+                        { country: '🇮🇳 India', cost: 'Confirm with provider', dur: 'Confirm with provider', pro: 'Compare quote scope', con: 'Terms vary by school' },
+                        { country: '🇺🇸 USA', cost: 'Confirm with provider', dur: 'Confirm with provider', pro: 'Verify school status', con: 'Confirm visa rules' },
+                        { country: '🇦🇺 Australia', cost: 'Confirm with provider', dur: 'Confirm with provider', pro: 'Verify school status', con: 'Confirm visa rules' },
+                        { country: '🇨🇦 Canada', cost: 'Confirm with provider', dur: 'Confirm with provider', pro: 'Verify school status', con: 'Confirm visa rules' },
                       ].map((row, i) => (
                         <tr key={i} className="border-b border-gray-100 hover:bg-gray-50">
                           <td className="p-2 font-bold">{row.country}</td>
@@ -182,7 +179,7 @@ export default function CostBreakdownGuide() {
               <div className="sticky top-20">
                 <PdfLeadMagnet
                   title="Get Cost Breakdown PDF"
-                  description="Download the complete cost breakdown guide with comparison charts, hidden costs, and payment plans."
+                  description="Download a guide to comparing written quotes, cost categories, and provider terms."
                   pdfFileName="CPL-Cost-Breakdown-Guide.pdf"
                   icon="💰"
                   dark={false}
@@ -191,10 +188,10 @@ export default function CostBreakdownGuide() {
                 {/* CTA */}
                 <div className="mt-6 p-4 bg-av-orange/10 rounded-xl text-center">
                   <p className="text-sm text-gray-700 mb-3">
-                    Want a personalized cost estimate?
+                    Want help comparing written quotes?
                   </p>
                   <Link href="/contact" className="inline-block bg-av-orange text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition text-sm font-semibold">
-                    Get Free Quote
+                    Contact the Academy
                   </Link>
                 </div>
               </div>

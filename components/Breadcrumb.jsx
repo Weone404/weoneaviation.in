@@ -99,7 +99,7 @@ export default function Breadcrumb({ override = null }) {
               ) : (
                 <>
                   <span className="text-gray-400">/</span>
-                  {item.href && item.href !== path ? (
+                  {index !== items.length - 1 && item.href ? (
                     <Link href={item.href} className="text-av-blue hover:underline">{item.label}</Link>
                   ) : (
                     <span className="text-gray-700">{item.label}</span>

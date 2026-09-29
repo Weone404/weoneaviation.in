@@ -1,0 +1,1080 @@
+{
+  "phase": "4",
+  "auditDate": "2026-09-29",
+  "scope": "Audit only. No production source or route changes were made.",
+  "routeInventory": {
+    "productionBuild": {
+      "buildManifestRoutePatterns": 128,
+      "prerenderedHtmlOutputs": 120,
+      "generatedLocalityPaths": 0,
+      "generatedBlogPostPaths": [
+        "/blogs/1",
+        "/blogs/2",
+        "/blogs/3",
+        "/blogs/5",
+        "/blogs/6"
+      ]
+    },
+    "routePatterns": [
+      "/",
+      "/404",
+      "/_app",
+      "/_document",
+      "/_error",
+      "/about-us",
+      "/admin/blog",
+      "/admin/dashboard",
+      "/admin/login",
+      "/air-arabia",
+      "/air-navigation",
+      "/air-regulations",
+      "/airindia-pilot-preparation",
+      "/airline-preparation-course",
+      "/airline-preparatory-classes/cass-compass",
+      "/airline-preparatory-classes/interview-preparation",
+      "/airline-preparatory-classes/psychometry",
+      "/ame-aircraft-maintenance-engineer",
+      "/api/blogs",
+      "/api/cron/send-emails",
+      "/api/doubt",
+      "/api/save-lead",
+      "/api/save-lead-magnet",
+      "/api/send-welcome-email",
+      "/aviation-meteorology",
+      "/best-flight-schools-in-usa",
+      "/blogs",
+      "/blogs/[id]",
+      "/blogs/aviation-course-after-12th",
+      "/blogs/aviation-jobs-besides-pilot",
+      "/blogs/become-pilot-without-physics-and-maths-class-12",
+      "/blogs/best-flying-school-in-india",
+      "/blogs/bharatiya-vayuyan-adhiniyam-pilot-licensing-india",
+      "/blogs/commercial-pilot-training-programs-complete-guide",
+      "/blogs/convert-foreign-pilot-licence-to-dgca-india",
+      "/blogs/cpl-cross-country-flight-requirement-india",
+      "/blogs/cpl-night-flying-hours-requirement-india",
+      "/blogs/cpl-pilot-in-command-hours-requirement-india",
+      "/blogs/cpl-simulator-hours-dgca-rules",
+      "/blogs/cpl-vs-atpl-difference-india",
+      "/blogs/dgca-exam-guide",
+      "/blogs/dgca-ground-school-guide",
+      "/blogs/do-you-need-ppl-before-cpl-in-india",
+      "/blogs/english-language-proficiency-test-for-pilots-in-india",
+      "/blogs/flight-school-prerequisites-admission-guide",
+      "/blogs/flying-instructor-rating-for-pilots-in-india",
+      "/blogs/foreign-national-nri-pilot-training-india",
+      "/blogs/how-pilots-build-hours",
+      "/blogs/how-to-become-a-flight-dispatcher-in-india",
+      "/blogs/how-to-become-an-airline-pilot-in-india",
+      "/blogs/igrua-admission-eligibility-fees",
+      "/blogs/instrument-rating-for-pilots-in-india",
+      "/blogs/mcc-training-for-pilots-in-india",
+      "/blogs/multi-engine-rating-for-pilots-in-india",
+      "/blogs/pilot-salary-in-india",
+      "/blogs/pilot-salary-in-india-2026",
+      "/blogs/pilot-shortage-in-india",
+      "/blogs/pilot-training-cost-in-india",
+      "/blogs/ppl-physics-maths-requirement-india",
+      "/blogs/type-rating-for-pilots-in-india",
+      "/blogs/what-is-pilot-training-complete-guide",
+      "/cadet-pilot-program",
+      "/cbse-full-form",
+      "/commercial-pilot-license",
+      "/commercial-pilot-license-admission-process",
+      "/commercial-pilot-license-eligibility",
+      "/commercial-pilot-license-salary",
+      "/commercial-pilot-license-syllabus",
+      "/contact",
+      "/cost-transparency",
+      "/courses",
+      "/courses/atpl",
+      "/courses/cpl",
+      "/courses/ppl",
+      "/cpl-flight-training",
+      "/credentials",
+      "/dgca-class-2-class-1-medical",
+      "/dgca-computer-number",
+      "/dgca-full-form",
+      "/dgca-ground-classes",
+      "/dgca-ground-classes-in-india",
+      "/dgca-pariksha",
+      "/doubt",
+      "/egca-login",
+      "/emirates-cadet-pilot-program",
+      "/faq",
+      "/faqs",
+      "/flying-school/australia",
+      "/flying-school/canada",
+      "/flying-school/india",
+      "/flying-school/south-africa",
+      "/flying-school/usa",
+      "/full-form-of-cpl-commercial-pilot-license",
+      "/how-long-does-it-take-to-become-a-pilot",
+      "/how-to-become-a-pilot-after-12th",
+      "/how-to-become-a-pilot/after-12th",
+      "/how-to-become-a-pilot/in-india",
+      "/how-to-choose-an-aviation-academy",
+      "/icse-full-form",
+      "/indigo-pilot-preparation",
+      "/lead-magnets",
+      "/lead-magnets/cpl-cost-breakdown",
+      "/lead-magnets/dgca-exam-checklist",
+      "/lead-magnets/pre-admission-checklist",
+      "/online-dgca-ground-classes",
+      "/pilot-career-counselling",
+      "/pilot-course-training-in-india",
+      "/pilot-training-abroad",
+      "/pilot-training-in-delhi",
+      "/pilot-training-in-dwarka",
+      "/pilot-training-in-india",
+      "/pilot-training-in-sri-lanka",
+      "/pilot-training-near",
+      "/pilot-training-near/[locality]",
+      "/ppl-full-form",
+      "/privacy-policy",
+      "/qatar-airways-cadet-pilot-program",
+      "/rtr-a",
+      "/rtr-full-form-meaning-importance-and-complete-guide",
+      "/sitemap",
+      "/robots.txt",
+      "/sitemap.xml",
+      "/spice-jet",
+      "/student-checklists",
+      "/student-pilot-license-spl",
+      "/technical-general",
+      "/terms",
+      "/your-guide-on-how-to-become-a-pilot-in-india"
+    ],
+    "classificationRules": [
+      {
+        "classification": "dynamic template",
+        "routes": [
+          "/blogs/[id]",
+          "/pilot-training-near/[locality]"
+        ],
+        "notes": "The blog template has five generated static ID paths in this build. The locality template has zero generated paths."
+      },
+      {
+        "classification": "blog",
+        "routes": [
+          "/blogs",
+          "/blogs/[id]",
+          "/blogs/*"
+        ],
+        "notes": "File-based blog posts and the dynamic legacy blog template."
+      },
+      {
+        "classification": "course page",
+        "routes": [
+          "/commercial-pilot-license",
+          "/commercial-pilot-license-*",
+          "/courses",
+          "/courses/*",
+          "/cpl-flight-training",
+          "/dgca-ground-classes",
+          "/dgca-ground-classes-in-india",
+          "/online-dgca-ground-classes",
+          "/pilot-career-counselling",
+          "/rtr-a",
+          "/student-pilot-license-spl"
+        ],
+        "notes": "Routes describing course or training offers; some are detailed subject, licence, or counselling pages."
+      },
+      {
+        "classification": "local SEO page",
+        "routes": [
+          "/pilot-training-in-india",
+          "/pilot-training-in-delhi",
+          "/pilot-training-in-dwarka",
+          "/pilot-training-near",
+          "/pilot-training-near/[locality]"
+        ]
+      },
+      {
+        "classification": "utility page or endpoint",
+        "routes": [
+          "/404",
+          "/_app",
+          "/_document",
+          "/_error",
+          "/admin/*",
+          "/api/*",
+          "/doubt",
+          "/lead-magnets",
+          "/lead-magnets/*",
+          "/robots.txt",
+          "/sitemap",
+          "/sitemap.xml"
+        ],
+        "notes": "Admin/API/framework routes are not ordinary content pages. The public /doubt and /sitemap pages are served as HTML."
+      },
+      {
+        "classification": "indexable production page",
+        "routes": "All remaining static content routes in routePatterns, unless listed as a redirect or noindex route below."
+      }
+    ],
+    "redirectsAndExceptions": [
+      {
+        "route": "/pilot-course-training-in-india",
+        "productionBehavior": "301 redirect to /pilot-training-in-india",
+        "sitemap": false,
+        "classification": "legacy national-intent source; not an active competing production page"
+      },
+      {
+        "route": "/faq",
+        "productionBehavior": "301 redirect to /faqs",
+        "sitemap": false
+      },
+      {
+        "route": "/courses/ppl",
+        "productionBehavior": "301 redirect",
+        "sitemap": false
+      },
+      {
+        "route": "/500",
+        "productionBehavior": "Next.js error HTML artifact, not a pages-manifest route",
+        "indexability": "not treated as a public content route"
+      }
+    ],
+    "researchAuditArtifacts": {
+      "classification": "research/audit artifact, not a production route",
+      "locations": [
+        "data/local-seo/*.json",
+        "data/local-seo/phase-*.json",
+        "data/locations/*"
+      ],
+      "robotsControl": "The served robots.txt disallows /data/."
+    }
+  },
+  "indexabilityAudit": {
+    "builtHtmlRobotsCounts": {
+      "indexFollow": 114,
+      "noindexFollow": 1,
+      "noindexNofollow": 3,
+      "robotsMetaMissing": [
+        "/doubt",
+        "/500"
+      ]
+    },
+    "noindexRoutes": [
+      {
+        "route": "/pilot-training-near",
+        "robots": "noindex, follow",
+        "canonical": "https://weoneaviation.in/pilot-training-near",
+        "sitemap": false
+      },
+      {
+        "route": "/admin/blog",
+        "robots": "noindex, nofollow",
+        "canonical": "missing"
+      },
+      {
+        "route": "/admin/dashboard",
+        "robots": "noindex, nofollow",
+        "canonical": "missing"
+      },
+      {
+        "route": "/admin/login",
+        "robots": "noindex, nofollow",
+        "canonical": "missing"
+      }
+    ],
+    "otherIndexabilityFindings": [
+      {
+        "route": "/doubt",
+        "status": "No robots meta; defaults to indexability. Self-canonical is present and the URL is in the sitemap.",
+        "classification": "public utility/form page"
+      },
+      {
+        "route": "/pilot-training-near/[locality]",
+        "status": "Dynamic template compiled but emits no paths. If a path were generated, its shared Layout would output noindex, follow."
+      }
+    ],
+    "xRobotsTag": "No X-Robots-Tag was returned for checked production pages; HTML meta robots directives are present where configured."
+  },
+  "sitemapAudit": {
+    "endpoint": {
+      "url": "/sitemap.xml",
+      "statusCode": 200,
+      "urlCount": 112
+    },
+    "generatedSitemap": {
+      "generator": "scripts/generate-sitemap.js",
+      "buildGeneration": "PASS",
+      "pilotTrainingNearHubPresent": false,
+      "pilotTrainingNearLocalityUrls": [],
+      "noindexAdminRoutesPresent": false
+    },
+    "noindexPagesAccidentallyInSitemap": [],
+    "canonicalizedLegacyBlogSourcesInSitemap": [
+      {
+        "route": "/blogs/1",
+        "canonical": "https://weoneaviation.in/your-guide-on-how-to-become-a-pilot-in-india"
+      },
+      {
+        "route": "/blogs/2",
+        "canonical": "https://weoneaviation.in/blogs/dgca-ground-school-guide"
+      },
+      {
+        "route": "/blogs/5",
+        "canonical": "https://weoneaviation.in/dgca-class-2-class-1-medical"
+      },
+      {
+        "route": "/blogs/6",
+        "canonical": "https://weoneaviation.in/how-to-become-a-pilot-after-12th"
+      }
+    ],
+    "notes": "The four canonicalized legacy source URLs remain index, follow and are listed in the sitemap along with their canonical targets. /blogs/6 is not noindex in built HTML despite a nearby source comment saying it is noindexed."
+  },
+  "robotsAudit": {
+    "endpoint": {
+      "url": "/robots.txt",
+      "statusCode": 200,
+      "source": "pages/robots.txt.js",
+      "staticPublicRobotsFileExists": false
+    },
+    "observedRules": [
+      "User-agent * is allowed to crawl by default.",
+      "Disallows /api/, /admin/, /data/, /tag/, /author/, /_next/data/, and selected files/query parameters.",
+      "Disallows query URLs containing sort= or page=; no user-facing paginated content route was found in source.",
+      "Declares https://weoneaviation.in/sitemap.xml.",
+      "Does not block /pilot-training-near, allowing crawlers to see its noindex directive."
+    ],
+    "assessment": "No crawl block was found for the verified national or Delhi/Dwarka content pages."
+  },
+  "canonicalAudit": {
+    "builtHtmlCanonicalTagDuplicates": [],
+    "missingCanonicalRoutes": [
+      "/admin/blog",
+      "/admin/dashboard",
+      "/admin/login",
+      "/500"
+    ],
+    "missingCanonicalAssessment": "Admin routes are noindex, nofollow. /500 is an error artifact, not a public content route.",
+    "duplicateCanonicalTargets": [
+      {
+        "canonical": "https://weoneaviation.in/your-guide-on-how-to-become-a-pilot-in-india",
+        "routes": [
+          "/blogs/1",
+          "/your-guide-on-how-to-become-a-pilot-in-india"
+        ],
+        "targetAssessment": "Equivalent long-form guide exists; source URL should not also be advertised in sitemap."
+      },
+      {
+        "canonical": "https://weoneaviation.in/blogs/dgca-ground-school-guide",
+        "routes": [
+          "/blogs/2",
+          "/blogs/dgca-ground-school-guide"
+        ]
+      },
+      {
+        "canonical": "https://weoneaviation.in/dgca-class-2-class-1-medical",
+        "routes": [
+          "/blogs/5",
+          "/dgca-class-2-class-1-medical"
+        ]
+      },
+      {
+        "canonical": "https://weoneaviation.in/how-to-become-a-pilot-after-12th",
+        "routes": [
+          "/blogs/6",
+          "/how-to-become-a-pilot-after-12th"
+        ]
+      }
+    ],
+    "domainConsistency": "Built canonical tags use https://weoneaviation.in. No canonical points to weoneaviation.com."
+  },
+  "nationalHubAudit": {
+    "route": "/pilot-training-in-india",
+    "canonical": "https://weoneaviation.in/pilot-training-in-india",
+    "indexability": "index, follow",
+    "sitemap": true,
+    "title": "Pilot Training in India: Pathway & Training Access | We One Aviation",
+    "h1": "Pilot Training in India: Pathway and How to Access Training",
+    "mainIntent": "National explanation of the Indian pilot pathway and how to access the academy's DGCA ground teaching, Dwarka classroom, online batches outside Delhi, and separately arranged flying training.",
+    "internalLinks": [
+      {
+        "anchor": "DGCA ground-class details",
+        "target": "/dgca-ground-classes"
+      },
+      {
+        "anchor": "Read the CPL pathway guide",
+        "target": "/commercial-pilot-license"
+      },
+      {
+        "anchor": "Delhi training and local pathway",
+        "target": "/pilot-training-in-delhi"
+      },
+      {
+        "anchor": "Dwarka classroom details",
+        "target": "/pilot-training-in-dwarka"
+      },
+      {
+        "anchor": "Contact the academy",
+        "target": "/contact"
+      }
+    ],
+    "schema": [
+      "WebPage",
+      "Article",
+      "FAQPage",
+      "BreadcrumbList",
+      "site-wide EducationalOrganization and WebSite"
+    ],
+    "claimsAssessment": {
+      "physicalPresence": "One stated classroom at the Dwarka, New Delhi address; consistent with business-location.json.",
+      "onlineAccess": "States online batches for students outside Delhi; no physical branches are claimed.",
+      "flightTraining": "States partner-arranged flight training and explicitly says the academy does not own or operate a flying school.",
+      "unsupportedNationwidePhysicalServiceClaims": []
+    },
+    "competingNationalIntent": [
+      {
+        "route": "/pilot-course-training-in-india",
+        "assessment": "301 redirects to this hub and is excluded from the sitemap; not an active competing route."
+      },
+      {
+        "route": "/your-guide-on-how-to-become-a-pilot-in-india",
+        "assessment": "Indexable how-to/licensing guide with distinct procedural intent, although it shares broad India pilot-pathway terms."
+      },
+      {
+        "route": "/how-to-become-a-pilot/in-india",
+        "assessment": "Indexable step-by-step HowTo content, distinct from the academy's national service/access hub."
+      },
+      {
+        "route": "/dgca-ground-classes-in-india",
+        "assessment": "Separate indexable class-intent page; overlaps the primary /dgca-ground-classes offer and may split course-intent relevance."
+      }
+    ],
+    "singleNationalAuthority": true
+  },
+  "delhiDwarkaAudit": {
+    "routes": [
+      {
+        "route": "/pilot-training-in-delhi",
+        "canonical": "https://weoneaviation.in/pilot-training-in-delhi",
+        "indexability": "index, follow",
+        "sitemap": true,
+        "distinctIntent": "City-wide explanation of the regulatory/exam/medical steps available in Delhi and why the flying stage occurs outside the city.",
+        "observedLinks": [
+          {
+            "anchor": "pilot training in Dwarka",
+            "target": "/pilot-training-in-dwarka"
+          },
+          {
+            "anchor": "pilot training in India",
+            "target": "/pilot-training-in-india"
+          },
+          {
+            "anchor": "DGCA ground classes",
+            "target": "/dgca-ground-classes"
+          },
+          {
+            "anchor": "Commercial Pilot Licence pathway",
+            "target": "/commercial-pilot-license"
+          }
+        ]
+      },
+      {
+        "route": "/pilot-training-in-dwarka",
+        "canonical": "https://weoneaviation.in/pilot-training-in-dwarka",
+        "indexability": "index, follow",
+        "sitemap": true,
+        "distinctIntent": "The actual Dwarka classroom and what a student can complete in Delhi; distinguishes ground teaching from flight training elsewhere.",
+        "observedLinks": [
+          {
+            "anchor": "pilot training in Delhi",
+            "target": "/pilot-training-in-delhi"
+          },
+          {
+            "anchor": "pilot training in India",
+            "target": "/pilot-training-in-india"
+          },
+          {
+            "anchor": "DGCA ground classes",
+            "target": "/dgca-ground-classes"
+          },
+          {
+            "anchor": "Commercial Pilot Licence pathway",
+            "target": "/commercial-pilot-license"
+          }
+        ]
+      }
+    ],
+    "verifiedClaims": [
+      "The stated physical classroom is in Dwarka, New Delhi, at the address recorded in business-location.json.",
+      "Classroom DGCA ground classes and online access for students outside Delhi are consistent with the current business-location facts.",
+      "The pages say flying occurs at selected partner flying schools, not at the Dwarka classroom; no named FTO ownership or automatic placement is claimed."
+    ],
+    "unsupportedClaimsFound": [
+      {
+        "claim": "Dwarka is 'a metro ride away' / a student can complete the process 'without booking a train'.",
+        "source": "pages/pilot-training-in-delhi.jsx and pages/pilot-training-in-dwarka.jsx",
+        "assessment": "No travel-time, route, or transit evidence is present in the verified business facts; these are peripheral copy claims, not evidence of a second location."
+      }
+    ],
+    "notFound": [
+      "Additional academy branches or campuses",
+      "Local instructors or separate local facilities",
+      "A locality/service-radius boundary",
+      "Local reviews or locality-specific student evidence",
+      "A local training guarantee"
+    ]
+  },
+  "pilotTrainingNearAudit": {
+    "sourceFiles": [
+      "pages/pilot-training-near/index.jsx",
+      "pages/pilot-training-near/[locality].jsx",
+      "components/LocalitySearchPage.jsx",
+      "data/local-seo/pilot-localities.json"
+    ],
+    "hub": {
+      "route": "/pilot-training-near",
+      "built": true,
+      "robots": "noindex, follow",
+      "canonical": "https://weoneaviation.in/pilot-training-near",
+      "inSitemap": false
+    },
+    "localityTemplate": {
+      "compiled": true,
+      "fallback": false,
+      "inputCount": 0,
+      "generatedPaths": [],
+      "builtHtmlPaths": [],
+      "testPath": "/pilot-training-near/inderpuri",
+      "testResponseStatus": 404
+    },
+    "sitemapLocalityUrls": [],
+    "builtHubHtmlContainsNoindex": true,
+    "doorwayRiskAssessment": "No current indexable near/locality pages. The hub and template explicitly distinguish geographic references from actual service areas and state that no locality-level branch, class, instructor, distance, or travel time is established. The dormant template remains a future publication control to monitor.",
+    "fabricatedLocalityContentFound": false,
+    "sitemapGeneratorInteraction": "Current input is empty. If the dataset later marks records PUBLISH_INDEXABLE, generate-sitemap.js will add their canonical paths, while LocalitySearchPage still sets noindex. This dormant condition could put future noindex locality pages in the sitemap."
+  },
+  "validatorLinkAudit": {
+    "validatorExpectation": "scripts/validate-local-search.js expects /pilot-training-in-delhi, /pilot-training-in-dwarka, and /dgca-ground-classes to link to /pilot-training-near.",
+    "pages": [
+      {
+        "route": "/pilot-training-in-delhi",
+        "existingRelevantLinks": [
+          {
+            "anchor": "pilot training in Dwarka",
+            "target": "/pilot-training-in-dwarka"
+          },
+          {
+            "anchor": "pilot training in India",
+            "target": "/pilot-training-in-india"
+          },
+          {
+            "anchor": "DGCA ground classes",
+            "target": "/dgca-ground-classes"
+          },
+          {
+            "anchor": "Commercial Pilot Licence pathway",
+            "target": "/commercial-pilot-license"
+          }
+        ],
+        "linksToNearHub": false
+      },
+      {
+        "route": "/pilot-training-in-dwarka",
+        "existingRelevantLinks": [
+          {
+            "anchor": "pilot training in Delhi",
+            "target": "/pilot-training-in-delhi"
+          },
+          {
+            "anchor": "pilot training in India",
+            "target": "/pilot-training-in-india"
+          },
+          {
+            "anchor": "DGCA ground classes",
+            "target": "/dgca-ground-classes"
+          },
+          {
+            "anchor": "Commercial Pilot Licence pathway",
+            "target": "/commercial-pilot-license"
+          }
+        ],
+        "linksToNearHub": false
+      },
+      {
+        "route": "/dgca-ground-classes",
+        "existingRelevantLinks": [
+          {
+            "anchor": "Pilot-training pathway in India",
+            "target": "/pilot-training-in-india"
+          },
+          {
+            "anchor": "Delhi training information",
+            "target": "/pilot-training-in-delhi"
+          },
+          {
+            "anchor": "Dwarka classroom details",
+            "target": "/pilot-training-in-dwarka"
+          },
+          {
+            "anchor": "CPL pathway guide",
+            "target": "/commercial-pilot-license"
+          }
+        ],
+        "linksToNearHub": false
+      }
+    ],
+    "seoRisk": "No. These pages link to indexable, relevant authority/course pages. Requiring links to the noindex near hub would increase unnecessary /near propagation; the validator assertion is not an SEO requirement."
+  },
+  "phoneAudit": {
+    "confirmedMapping": [
+      {
+        "number": "+91 96673 70747",
+        "status": "PRIMARY_ACADEMY_BUSINESS_NUMBER",
+        "renderedOccurrences": {
+          "digitsFiles": 120,
+          "digitsOccurrences": 501,
+          "formattedFiles": 115,
+          "formattedOccurrences": 277
+        },
+        "activeDestinations": {
+          "tel": "+919667370747",
+          "whatsapp": false,
+          "schema": "Primary EducationalOrganization telephone"
+        }
+      },
+      {
+        "number": "+91 93556 11996",
+        "status": "ACTIVE_ACADEMY_WHATSAPP_LEAD_AND_CAMPAIGN_NUMBER",
+        "renderedOccurrences": {
+          "digitsFiles": 115,
+          "digitsOccurrences": 393,
+          "formattedFiles": 115,
+          "formattedOccurrences": 121
+        },
+        "activeDestinations": {
+          "tel": "+919355611996",
+          "whatsapp": "https://wa.me/919355611996",
+          "contexts": [
+            "Shared WhatsApp/lead flow",
+            "Air India preparation",
+            "IndiGo preparation"
+          ]
+        }
+      },
+      {
+        "number": "+91 93556 6991",
+        "status": "SUPERSEDED_HISTORICAL_ONLY",
+        "renderedOccurrences": 0,
+        "activeTelOrWhatsAppDestination": false,
+        "currentReferences": [
+          "Earlier Phase 3.1/3.2/3.3 reports",
+          "Local-search research/report artifacts"
+        ]
+      },
+      {
+        "number": "+91 95552 91956",
+        "status": "OWNER_CONFIRMED_UNAVAILABLE",
+        "renderedOccurrences": 0,
+        "activeTelOrWhatsAppDestination": false,
+        "currentReferences": [
+          "Business records explicitly mark it unavailable",
+          "Generator status and historical audit/research files"
+        ]
+      },
+      {
+        "number": "+91 97179 77702",
+        "status": "OWNER_CONFIRMED_UNAVAILABLE",
+        "renderedOccurrences": 0,
+        "activeTelOrWhatsAppDestination": false,
+        "currentReferences": [
+          "Business records explicitly mark it unavailable",
+          "Generator status and historical audit/research files"
+        ]
+      }
+    ],
+    "renderedDestinationCounts": {
+      "tel:+919667370747": 379,
+      "tel:+919355611996": 119,
+      "wa.me/919355611996": 274,
+      "unavailableOrSupersededDestinations": []
+    },
+    "entitySchemaAssessment": "The site-wide EducationalOrganization telephone is +919667370747. The secondary lead number is visible and used for lead/WhatsApp actions but is not substituted as the Organization's single primary telephone.",
+    "documentationAndAuditReferences": "Historical reports retain old values as audit evidence. Current business-location.json/business-entity-audit.json mark the two owner-confirmed unavailable numbers unavailable; these references do not appear as active rendered contact destinations."
+  },
+  "schemaAudit": {
+    "validation": {
+      "jsonLdBlocksParsed": 572,
+      "invalidJsonLdBlocks": 0,
+      "status": "PASS"
+    },
+    "observedTypes": {
+      "EducationalOrganization": 206,
+      "Organization": 72,
+      "WebSite": 120,
+      "WebPage": 75,
+      "BreadcrumbList": 115,
+      "Course": 15,
+      "CourseInstance": 9,
+      "FAQPage": 116,
+      "Article": 38,
+      "BlogPosting": 38,
+      "LocalBusiness": 0,
+      "AggregateOffer": 1,
+      "Service": 1
+    },
+    "organizationConsistency": {
+      "globalName": "We One Aviation Academy",
+      "globalUrl": "https://weoneaviation.in",
+      "globalTelephone": "+919667370747",
+      "globalEmail": "info.weoneaviation@gmail.com",
+      "globalAddress": "C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, New Delhi 110077",
+      "logo": "https://weoneaviation.in/Logo.webp",
+      "assessment": "Core global Organization/EducationalOrganization name, URL, phone, email, logo, street address and postal code agree with current business facts. No LocalBusiness or additional branch location schema was found."
+    },
+    "issues": [
+      {
+        "severity": "HIGH",
+        "route": "/",
+        "finding": "Homepage EducationalOrganization schema asserts accreditedBy DGCA. The Credentials page also claims DGCA accreditation/approval, but the reviewed business facts do not contain an approval type, certificate number, or primary-source evidence.",
+        "visibleContent": "The homepage calls the academy a DGCA pilot training institute; /credentials says DGCA approval status/accreditation is verified.",
+        "assessment": "The schema and visible entity claim are not substantiated by the verified business facts supplied for this audit."
+      },
+      {
+        "severity": "HIGH",
+        "route": "/courses/atpl",
+        "finding": "Course schema emits AggregateOffer lowPrice 1500000/highPrice 2500000 INR. The same ₹15-25 lakh band is visible on-page, but no primary source or matching verified fee fact exists in the project.",
+        "otherCourseData": "Schema also says timeRequired P36M and a blended CourseInstance at Dwarka; visible copy describes ATPL progression as commonly three years or more, but does not establish a current academy course duration or current fee."
+      },
+      {
+        "severity": "MEDIUM",
+        "routes": [
+          "/air-navigation",
+          "/air-regulations",
+          "/airline-preparation-course",
+          "/aviation-meteorology"
+        ],
+        "finding": "Four CourseInstance nodes contain timeRequired: null. Their duration inputs use PT2M/PT3M while the shared duration parser expects month strings and returns null.",
+        "assessment": "JSON is parseable, but null is not a meaningful course duration and the intended duration semantics are unclear."
+      },
+      {
+        "severity": "MEDIUM",
+        "routes": [
+        "/",
+        "/credentials"
+        ],
+        "finding": "The homepage course-provider nodes use sameAs equal to the site's own URL, while credentials declares LinkedIn company/weoneaviation and the Footer links to company/we-one-aviation/. The global Organization schema does not use a consistent social-profile set.",
+        "assessment": "Conflicting or self-referential sameAs signals do not reliably identify the verified social entity."
+      },
+      {
+        "severity": "MEDIUM",
+        "route": "/",
+        "finding": "Homepage Organization schema includes geo coordinates 28.5921, 77.0460. The current business-entity audit records the Maps CID coordinate as 28.5851865, 77.071156 and explicitly says the live pin/address match still needs verification.",
+        "assessment": "The schema point and recorded Maps CID point differ; the published street address itself is consistent."
+      },
+      {
+        "severity": "MEDIUM",
+        "route": "/pilot-career-counselling",
+        "finding": "Service schema declares areaServed Country India and an Offer price of 0. The project verifies online batches for students outside Delhi, but does not independently verify nationwide counselling availability or a no-obligation free counselling offer.",
+        "assessment": "Schema scope and price claims go beyond the verified business facts."
+      },
+      {
+        "severity": "LOW",
+        "route": "/courses/ppl",
+        "finding": "The PPL CourseInstance schema names Dwarka, New Delhi as its location. The project's business facts verify the Dwarka classroom and PPL guidance, but flight training is arranged at selected FTOs elsewhere.",
+        "assessment": "The schema does not itself distinguish classroom/theory delivery from the flying stage."
+      }
+    ]
+  },
+  "internalLinkAudit": {
+    "nationalAndLocalArchitecture": {
+      "hub": "/pilot-training-in-india",
+      "linksTo": [
+        "/dgca-ground-classes",
+        "/commercial-pilot-license",
+        "/pilot-training-in-delhi",
+        "/pilot-training-in-dwarka",
+        "/about-us",
+        "/contact"
+      ],
+      "nearRoutePropagation": "No links from the Delhi, Dwarka, or DGCA Ground Classes pages point to /pilot-training-near. The near hub itself links outward to the existing pages."
+    },
+    "intentAssessment": [
+      {
+        "routes": [
+          "/pilot-training-in-delhi",
+          "/pilot-training-in-dwarka"
+        ],
+        "assessment": "Distinct city-wide administrative/regulatory intent versus the verified Dwarka classroom; cross-links use descriptive anchors."
+      },
+      {
+        "routes": [
+          "/dgca-ground-classes",
+          "/dgca-ground-classes-in-india"
+        ],
+        "assessment": "Both are indexable, self-canonical and in the sitemap. They describe the same academy class offer, Dwarka classroom and online access outside Delhi; the India page is not evidence of nationwide physical availability. This is a course-intent overlap risk."
+      }
+    ],
+    "mismatches": [
+      {
+        "file": "pages/courses.jsx",
+        "anchors": [
+          "pilot training in Mumbai",
+          "pilot training in Bangalore",
+          "pilot training in Chhattisgarh"
+        ],
+        "target": "/pilot-training-in-india",
+        "finding": "These city anchors all point to the national hub, while adjacent copy promises location-specific advice and schedules that the target page does not provide."
+      },
+      {
+        "file": "public/llms.txt",
+        "finding": "The file describes DGCA class options as 'across India' and says classes are roughly six months, while verified facts establish the Dwarka classroom and online batches for students outside Delhi, not nationwide physical access or a verified duration."
+      }
+    ],
+    "doorwayOrCircularArchitecture": "No generated locality URLs, near-hub propagation, or circular noindex-hub links were found."
+  },
+  "businessEntityConsistencyAudit": {
+    "businessName": {
+      "schema": "We One Aviation Academy",
+      "visibleBrandVariants": [
+        "We One Aviation",
+        "We One Aviation Academy"
+      ],
+      "assessment": "Consistent brand abbreviation/full academy name; no conflicting business identity found."
+    },
+    "website": "Built canonical/schema URLs use https://weoneaviation.in.",
+    "address": "Core visible and global-schema address is C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, New Delhi 110077; no second branch address found. Address country values appear as India/IN, which are equivalent representations.",
+    "phone": "Primary schema/call identity is +91 96673 70747; +91 93556 11996 remains a visible lead/WhatsApp number. Unavailable values do not render.",
+    "email": "Global schema and shared business facts use info.weoneaviation@gmail.com; decoded Contact page email matches this value.",
+    "whatsapp": "Rendered WhatsApp links use only https://wa.me/919355611996.",
+    "socialProfiles": {
+      "footer": [
+        "https://www.linkedin.com/company/we-one-aviation/",
+        "https://www.instagram.com/we_one_aviation",
+        "Facebook profile URL"
+      ],
+      "credentialsSameAs": [
+        "https://www.linkedin.com/company/weoneaviation"
+      ],
+      "assessment": "The LinkedIn URL slug differs between footer and credentials schema; live profile identity is not independently verified."
+    },
+    "comDomain": {
+      "domain": "weoneaviation.com",
+      "ownershipStatus": "DOMAIN_OWNERSHIP_UNVERIFIED",
+      "renderedProductionReferences": [],
+      "repositoryReferences": "Limited to local SEO research/audit artifacts and old-domain observations.",
+      "changesMade": false
+    }
+  },
+  "googleBusinessProfileVerification": {
+    "status": "External Google Business Profile verification required.",
+    "repositoryEvidence": "The entity audit says current profile fields and pin/address consistency have not been independently verified.",
+    "verificationClaimed": false
+  },
+  "buildValidation": {
+    "npmRunBuild": {
+      "status": "PASS",
+      "details": "Local-search and sitemap generators ran; Next.js production build compiled and generated all 120 HTML outputs."
+    },
+    "nonFatalBuildWarning": "MongoDB DNS/SRV query returned ECONNREFUSED during page-data collection; the build continued and completed successfully.",
+    "jsonLd": {
+      "status": "PASS",
+      "blocksParsed": 572,
+      "invalidBlocks": 0
+    },
+    "sitemapGeneration": {
+      "status": "PASS",
+      "endpointStatus": 200,
+      "urlCount": 112,
+      "nearRouteUrls": 0
+    },
+    "robotsGeneration": {
+      "status": "PASS",
+      "endpointStatus": 200,
+      "source": "pages/robots.txt.js"
+    },
+    "canonicalTags": {
+      "duplicateTags": 0,
+      "wrongDomainCanonicals": 0,
+      "intentionalLegacyCanonicalSourcesInSitemap": 4
+    },
+    "localityGeneration": {
+      "status": "PASS",
+      "inputCount": 0,
+      "generatedPaths": 0,
+      "unapprovedNearPathResponse": 404
+    },
+    "generatedOutputPreservation": {
+      "status": "PASS",
+      "details": "Build-mutated .generated-sitemap.xml and local-search generator outputs were restored byte-for-byte to their pre-build state."
+    }
+  },
+  "seoRisks": [
+    {
+      "severity": "HIGH",
+      "id": "unverified-dgca-approval-claim",
+      "evidence": "pages/index.jsx marks DGCA as accreditedBy; pages/credentials.jsx states fully DGCA-approved/accredited. Reviewed business facts contain no approval type, certificate number, or primary-source proof.",
+      "affectedRouteOrFile": [
+        "/",
+        "/credentials",
+        "pages/index.jsx",
+        "pages/credentials.jsx"
+      ],
+      "whyItMatters": "An unsubstantiated regulator approval/accreditation claim changes the academy's apparent legal and business status and is repeated in visible copy and structured data.",
+      "recommendedNextAction": "Obtain and verify the exact DGCA approval scope and certificate/reference, or remove the claim if it cannot be substantiated."
+    },
+    {
+      "severity": "HIGH",
+      "id": "unverified-course-costs-and-durations",
+      "evidence": "pages/courses/atpl.jsx publishes a ₹15-25 lakh range and schema AggregateOffer ₹1,500,000-₹2,500,000 without a verified project fee source. Homepage course schema emits durations such as 18-24 months and 6-12 months; the visible homepage also contains international training fees, durations, simulator/job-placement claims, and scholarship/loan assistance. These claims are not present in the verified business facts and conflict with pages that say terms vary or are unpublished.",
+      "affectedRouteOrFile": [
+        "/courses/atpl",
+        "/",
+        "pages/courses/atpl.jsx",
+        "pages/index.jsx"
+      ],
+      "whyItMatters": "Students may rely on unverified price, duration, training-facility, placement, scholarship, or loan claims when making high-cost decisions; schema can surface the price as a structured offer.",
+      "recommendedNextAction": "Verify each currently visible course-specific figure/offer against current primary business terms and remove unsupported claims from visible content and schema."
+    },
+    {
+      "severity": "HIGH",
+      "id": "unverified-service-scope-and-free-offer",
+      "evidence": "The /pilot-career-counselling Service schema sets areaServed to Country India and Offer price to 0. Verified business facts support online batches outside Delhi, but do not establish India-wide counselling coverage or a free/no-obligation counselling offer.",
+      "affectedRouteOrFile": [
+        "/pilot-career-counselling",
+        "pages/pilot-career-counselling.jsx"
+      ],
+      "whyItMatters": "This expands stated service coverage and commercial terms beyond documented facts and creates a conflicting nationwide entity signal.",
+      "recommendedNextAction": "Confirm counselling coverage and price with the business owner; retain schema only for verified terms."
+    },
+    {
+      "severity": "MEDIUM",
+      "id": "canonicalized-blog-urls-in-sitemap",
+      "evidence": "/blogs/1, /blogs/2, /blogs/5 and /blogs/6 are index, follow, have canonicals to other pages, and still appear in the 112-URL sitemap.",
+      "affectedRouteOrFile": [
+        "/blogs/1",
+        "/blogs/2",
+        "/blogs/5",
+        "/blogs/6",
+        "scripts/generate-sitemap.js",
+        ".generated-sitemap.xml"
+      ],
+      "whyItMatters": "The sitemap promotes URLs that each page's canonical tells crawlers are not the preferred version. /blogs/6 also contradicts the blog index comment that it is noindexed.",
+      "recommendedNextAction": "Align sitemap eligibility with canonical targets and verify legacy post indexing/canonical handling."
+    },
+    {
+      "severity": "MEDIUM",
+      "id": "locality-template-sitemap-control-mismatch",
+      "evidence": "LocalitySearchPage always sets noindex, follow, while generate-sitemap.js includes locality canonical paths marked PUBLISH_INDEXABLE/status publish. Input is currently empty, so no affected URL exists today.",
+      "affectedRouteOrFile": [
+        "components/LocalitySearchPage.jsx",
+        "pages/pilot-training-near/[locality].jsx",
+        "scripts/generate-sitemap.js",
+        "data/local-seo/pilot-localities.json"
+      ],
+      "whyItMatters": "If locality records are ever enabled, a generated noindex page could also be advertised in the sitemap.",
+      "recommendedNextAction": "Before any future locality publication, make route robots state and sitemap eligibility use the same publication policy."
+    },
+    {
+      "severity": "MEDIUM",
+      "id": "ambiguous-social-and-geographic-schema-signals",
+      "evidence": "Homepage schema uses sameAs equal to the academy's own website; footer and credentials use different LinkedIn company URL slugs. Homepage schema geo coordinates 28.5921, 77.0460 differ from the Maps CID coordinates recorded in business-entity-audit.json (28.5851865, 77.071156); the audit itself says the pin needs verification.",
+      "affectedRouteOrFile": [
+        "/",
+        "/credentials",
+        "pages/index.jsx",
+        "pages/credentials.jsx",
+        "components/Footer.jsx",
+        "data/local-seo/business-entity-audit.json"
+      ],
+      "whyItMatters": "Search systems may receive conflicting social entity identifiers and location points even though the written street address agrees.",
+      "recommendedNextAction": "Verify the canonical social profile URL and academy map pin, then align entity schema to those verified references."
+    },
+    {
+      "severity": "MEDIUM",
+      "id": "duplicate-dgca-ground-class-intent",
+      "evidence": "/dgca-ground-classes and /dgca-ground-classes-in-india are both indexable, self-canonical, sitemap-listed, and describe the same Dwarka classroom plus online availability outside Delhi.",
+      "affectedRouteOrFile": [
+        "/dgca-ground-classes",
+        "/dgca-ground-classes-in-india"
+      ],
+      "whyItMatters": "The near-identical offer and national phrasing can divide relevance between two pages without adding a verified second delivery location.",
+      "recommendedNextAction": "Clarify their separate search intent and unique user value; consolidate only if the business accepts that content decision."
+    },
+    {
+      "severity": "MEDIUM",
+      "id": "city-anchor-mismatch-and-national-scope-copy",
+      "evidence": "pages/courses.jsx links the anchors 'pilot training in Mumbai', 'pilot training in Bangalore', and 'pilot training in Chhattisgarh' to /pilot-training-in-india while promising location-specific advice and schedules. public/llms.txt describes class options 'across India' and a roughly six-month duration.",
+      "affectedRouteOrFile": [
+        "/courses",
+        "pages/courses.jsx",
+        "public/llms.txt"
+      ],
+      "whyItMatters": "The anchors and scope phrasing can imply locality-specific schedules or nationwide physical delivery that the linked national hub and verified facts do not establish.",
+      "recommendedNextAction": "Align anchors and machine-readable summary copy with the actual single classroom plus online access outside Delhi."
+    },
+    {
+      "severity": "LOW",
+      "id": "public-utility-route-default-indexable",
+      "evidence": "/doubt returns 200, has a self-canonical and is listed in the sitemap, but its built HTML has no robots meta.",
+      "affectedRouteOrFile": [
+        "/doubt",
+        "pages/doubt.jsx",
+        "scripts/generate-sitemap.js"
+      ],
+      "whyItMatters": "A form/utility route is implicitly indexable; this may be intentional, but no explicit indexing decision is recorded.",
+      "recommendedNextAction": "Confirm whether the public utility page is intended as a search landing page; set indexing and sitemap policy accordingly."
+    },
+    {
+      "severity": "INFORMATIONAL",
+      "id": "validator-expects-links-to-noindex-hub",
+      "evidence": "scripts/validate-local-search.js fails its link expectation because Delhi, Dwarka and DGCA Ground Classes do not link to /pilot-training-near. They instead link to the indexable national hub and relevant Delhi/Dwarka/course authorities.",
+      "affectedRouteOrFile": [
+        "/pilot-training-in-delhi",
+        "/pilot-training-in-dwarka",
+        "/dgca-ground-classes",
+        "scripts/validate-local-search.js"
+      ],
+      "whyItMatters": "There is no SEO harm in not linking to a noindex hub; the assertion is a validator-policy mismatch, not a production linking defect.",
+      "recommendedNextAction": "Review the validator's expectation separately from production routing; do not add near-hub links solely to satisfy it."
+    }
+  ],
+  "deploymentSafety": {
+    "critical": [],
+    "high": [
+      "Unverified DGCA approval/accreditation claims",
+      "Unverified course prices, durations and service promises",
+      "Unverified India-wide counselling scope and free-offer schema"
+    ],
+    "medium": [
+      "Canonicalized blog source URLs remain in sitemap",
+      "Dormant locality template and sitemap policy can diverge if input is populated",
+      "Conflicting social-profile and geographic schema signals",
+      "Overlapping DGCA ground-class pages",
+      "City-anchor and nationwide-scope copy mismatch"
+    ],
+    "low": [
+      "Public /doubt utility route has no explicit robots meta"
+    ],
+    "informational": [
+      "Three validator link expectations point to a noindex hub and are not SEO requirements",
+      "External Google Business Profile verification is still required",
+      "weoneaviation.com ownership remains unverified; no .com content was found in built HTML"
+    ],
+    "safeToDeploy": false,
+    "decision": "Do not treat this repository as production SEO-safe until the high-severity business-claim facts are verified and the affected visible/schema claims are resolved. This is an audit recommendation only; no fixes were made."
+  },
+  "auditBoundary": {
+    "productionChangesMade": false,
+    "codeChangesMade": false,
+    "pagesCreated": 0,
+    "pagesDeleted": 0,
+    "sitemapChangesMade": false,
+    "robotsChangesMade": false,
+    "canonicalChangesMade": false,
+    "phoneChangesMade": false,
+    "pilotTrainingNearChangesMade": false,
+    "deploymentPerformed": false,
+    "gitPushPerformed": false,
+    "stagingPerformed": false,
+    "buildGeneratedFilesRestoredToPreAuditBytes": true,
+    "preExistingWorktreeWasDirty": true,
+    "onlyNewFileFromThisAudit": "data/local-seo/phase-4-final-production-audit.json"
+  },
+  "productionChangesMade": false
+}
