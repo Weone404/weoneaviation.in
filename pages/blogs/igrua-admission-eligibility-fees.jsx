@@ -121,7 +121,7 @@ const related = [
   { lead: 'For choosing and verifying any DGCA-approved flying school, including how to read its FTO ranking, see', anchor: 'our guide to choosing a flying school', href: '/blogs/best-flying-school-in-india' },
   { lead: 'For the admission paperwork every route shares — the computer number, the medical and the documents — read', anchor: 'the flight school prerequisites guide', href: '/blogs/flight-school-prerequisites-admission-guide' },
   { lead: 'If Physics and Maths are the gap rather than the seat, our guide on', anchor: 'the NIOS bridge route', href: '/blogs/become-pilot-without-physics-and-maths-class-12' },
-  { lead: 'The six-month DGCA ground school syllabus and scholarship we teach from Dwarka are on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
+  { lead: 'The six-month DGCA ground school syllabus and current batch terms we teach from Dwarka are on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
 ];
 
 const tocHeadings = [

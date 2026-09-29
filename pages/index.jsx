@@ -68,15 +68,6 @@ const courses = [
  */
 const cities = [
   { name: 'Delhi', href: '/pilot-training-in-delhi' },
-  { name: 'Mumbai', href: '/pilot-training-in-india' },
-  { name: 'Bangalore', href: '/pilot-training-in-india' },
-  { name: 'Hyderabad', href: '/pilot-training-in-india' },
-  { name: 'Chennai', href: '/pilot-training-in-india' },
-  { name: 'Pune', href: '/pilot-training-in-india' },
-  { name: 'Kolkata', href: '/pilot-training-in-india' },
-  { name: 'Jaipur', href: '/pilot-training-in-india' },
-  { name: 'Nagpur', href: '/pilot-training-in-india' },
-  { name: 'Kerala', href: '/pilot-training-in-india' },
 ];
 
 const dgcaSubjects = [
@@ -287,21 +278,21 @@ export default function Home() {
             Without these, Facebook/LinkedIn/WhatsApp show a blank preview
             card title when someone shares the homepage link.
         ──────────────────────────────────────────────────────────────────── */}
-        <meta key="og:title" property="og:title" content="We One Aviation | Pilot Training Institute in India" />
+        <meta key="og:title" property="og:title" content="We One Aviation | DGCA Ground Classes in Dwarka" />
         <meta key="og:description" property="og:description" content={`We One Aviation Academy teaches DGCA ground subjects in Dwarka, offers online batches to students outside Delhi, and arranges flight training through partner flying schools.`} />
         <meta key="og:url" property="og:url" content="https://weoneaviation.in/" />
         <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="We One Aviation Academy — Pilot Training Institute in India" />
+        <meta property="og:image:alt" content="We One Aviation Academy — DGCA Ground Classes in Dwarka" />
 
         {/* ── Twitter Card — page-specific ─────────────────────────────────
             ✅ SEO FIX 2c: twitter:title and twitter:description were missing.
             Without them, Twitter/X falls back to the <title> tag which is OK
             but LinkedIn and some WhatsApp versions show no description at all.
         ──────────────────────────────────────────────────────────────────── */}
-        <meta name="twitter:title" content="We One Aviation | Pilot Training Institute in India" />
-        <meta name="twitter:description" content="Start your pilot career with We One Aviation. Explore CPL courses, pilot training, DGCA ground classes, eligibility, fees and aviation career guidance in India." />
+        <meta name="twitter:title" content="We One Aviation | DGCA Ground Classes in Dwarka" />
+        <meta name="twitter:description" content="We One Aviation provides DGCA ground-subject preparation from its Dwarka, Delhi classroom, online batches outside Delhi, and partner-school flight-training guidance." />
         {/* twitter:image and twitter:image:alt are page-independent and emitted
             once in _document.jsx; repeating the identical tag here shipped it twice. */}
 
@@ -313,8 +304,8 @@ export default function Home() {
       </Head>
 
       <Layout
-        title="We One Aviation | Pilot Training Institute in India"
-        description="Start your pilot career with We One Aviation. Explore CPL courses, pilot training, DGCA ground classes, eligibility, fees and aviation career guidance in India."
+        title="We One Aviation | DGCA Ground Classes in Dwarka"
+        description="We One Aviation provides DGCA ground-subject preparation from its Dwarka, Delhi classroom, online batches outside Delhi, and partner-school flight-training guidance."
       >
 
         {/* HERO */}
@@ -322,10 +313,8 @@ export default function Home() {
 
         <section className="bg-white py-4 px-4">
           <div className="max-w-7xl mx-auto text-sm text-gray-600">
-            Explore local pilot training paths in{' '}
-            <Link href="/pilot-training-in-india" className="text-av-blue hover:text-av-orange underline">Mumbai</Link>,{' '}
-            <Link href="/pilot-training-in-india" className="text-av-blue hover:text-av-orange underline">Bangalore</Link>, and{' '}
-            <Link href="/pilot-training-in-india" className="text-av-blue hover:text-av-orange underline">Chennai</Link> for city-specific DGCA preparation and career guidance.
+            We One Aviation is a Delhi/Dwarka-based academy. Classroom DGCA ground-subject preparation is offered in Dwarka,
+            with online availability outside Delhi where applicable; flight training is arranged through partner flying schools.
           </div>
         </section>
 
@@ -356,10 +345,10 @@ export default function Home() {
             Learn about DGCA ground classes, CPL pathways, and the steps needed to build a structured aviation career.
           </p>
           <Link
-            href="/courses/cpl#fee-table"
+            href="/contact"
             className="button-secondary inline-block mt-2 bg-white/90 text-av-orange font-bold px-6 py-2 rounded-full text-sm hover:bg-av-blue hover:text-white transition-all"
           >
-            See full fee breakdown →
+            Ask about current course terms →
           </Link>
           <Link
             href="/contact"
@@ -433,10 +422,10 @@ export default function Home() {
             <ScrollReveal className="text-center mb-12">
               <div className="section-tag">Our Programs</div>
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                Which <span className="text-av-orange">Aviation Career Path</span> Should You Choose?
+                Which <span className="text-av-orange">Aviation Path</span> Should You Explore?
               </h2>
               <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-                From Private Pilot to Airline Captain – we have the right course for every aspiring aviator
+                Explore DGCA ground-subject preparation and partner flying-school pathways.
               </p>
             </ScrollReveal>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -780,7 +769,7 @@ export default function Home() {
               <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white mb-4">
                 Take the First Step <span className="text-av-orange">Towards the Sky</span>
               </h2>
-              <p className="text-white/70 mb-6 text-sm leading-relaxed">Our aviation career counsellors will guide you through course selection, eligibility, fees, scholarships, and career prospects.</p>
+              <p className="text-white/70 mb-6 text-sm leading-relaxed">Our aviation career counsellors will guide you through course selection, eligibility, current terms, and career prospects.</p>
               <div className="space-y-3">
                 {['Career counselling — confirm current terms', 'DGCA ground-subject preparation', 'Partner-school flight training — confirm availability', 'Ask about current written fees and terms'].map(item => (
                   <div key={item} className="flex items-center gap-3">

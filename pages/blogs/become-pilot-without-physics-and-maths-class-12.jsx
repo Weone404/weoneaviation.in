@@ -83,7 +83,7 @@ const related = [
   { lead: 'For the full admission paperwork and the order it happens in, read', anchor: 'the flight school prerequisites guide', href: '/blogs/flight-school-prerequisites-admission-guide' },
   { lead: 'For the licence ladder and how eligibility fits the wider training path, see', anchor: 'our complete guide to pilot training', href: '/blogs/what-is-pilot-training-complete-guide' },
   { lead: 'For every other route open to a student right after Class 12, read', anchor: 'our aviation courses after 12th guide', href: '/blogs/aviation-course-after-12th' },
-  { lead: 'Once your eligibility is confirmed, the six-month syllabus and scholarship are covered on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
+  { lead: 'Once your eligibility is confirmed, the current syllabus and batch terms are covered on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
   { lead: 'For what a Commercial Pilot Licence itself requires beyond the subject check, see', anchor: 'the CPL course page', href: '/commercial-pilot-license' },
 ];
 

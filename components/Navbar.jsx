@@ -319,7 +319,7 @@ export default function Navbar() {
             
             {/* CTA */}
             <Link href="/contact" className="button-primary ml-2 shrink-0 whitespace-nowrap rounded-full bg-av-orange px-5 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-orange-500/30">
-              Register for Scholarship
+              Contact the Academy
             </Link>
           </nav>
 

@@ -117,7 +117,7 @@ const related = [
   { lead: 'For the full licence ladder and how Schedule II sets each stage, read', anchor: 'our complete guide to pilot training', href: '/blogs/what-is-pilot-training-complete-guide' },
   { lead: 'For how a Commercial and an Airline Transport licence differ under the same Schedule, see', anchor: 'our CPL vs ATPL guide', href: '/blogs/cpl-vs-atpl-difference-india' },
   { lead: 'The computer number process this Act left untouched is covered step by step in', anchor: 'the flight school prerequisites guide', href: '/blogs/flight-school-prerequisites-admission-guide' },
-  { lead: 'The six-month ground-school syllabus and scholarship are on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
+  { lead: 'The six-month ground-school syllabus and current batch terms are on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
   { lead: 'For what a Commercial Pilot Licence itself requires, see', anchor: 'the CPL course page', href: '/commercial-pilot-license' },
 ];
 

@@ -434,7 +434,7 @@ export function CityPageTemplate({
                             Start Your Aviation Journey <span className="text-av-orange">in {city}</span>
                         </h2>
                         <p className="text-white/70 mb-6 text-sm leading-relaxed">
-                            Our aviation career counsellors will guide you through course selection, eligibility, fees, scholarships, and career prospects.
+                            Our aviation career counsellors will guide you through course selection, eligibility, current terms, and career prospects.
                         </p>
                         <div className="space-y-3">
                             {['Career counselling guidance', 'DGCA exam preparation guidance', 'Training-path comparison', 'Current fee and provider terms'].map(item => (

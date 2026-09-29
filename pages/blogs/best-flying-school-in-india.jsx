@@ -153,7 +153,7 @@ const related = [
   { lead: 'For the admission paperwork and the order it has to happen in, see', anchor: 'the flight school prerequisites guide', href: '/blogs/flight-school-prerequisites-admission-guide' },
   { lead: 'For what any of this costs, line by line, read', anchor: 'the pilot training cost breakdown', href: '/blogs/pilot-training-cost-in-india' },
   { lead: 'Flying school options by country are compared on', anchor: 'our India flying school page', href: '/flying-school/india' },
-  { lead: 'The six-month ground syllabus and the scholarship are covered on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
+  { lead: 'The six-month ground syllabus and current batch terms are covered on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
 ];
 
 const H2 = 'font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24';
@@ -428,7 +428,7 @@ export default function BestFlyingSchoolInIndia() {
       </p>
       <p>
         We have taught the DGCA ground subjects from Dwarka since {ACADEMY.foundedYear}. The course
-        runs six months, offline or online, with a 25% scholarship available and classes continuing
+        has a schedule confirmed directly with the academy, offline or online, with current terms and attendance support confirmed before enrolment
         at no further cost for students who have not yet cleared a paper. We also help students run
         the verification process on this page against their own shortlist.
       </p>

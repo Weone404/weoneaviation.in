@@ -113,7 +113,7 @@ const reduceCost = [
   { move: 'Clear the written papers before the flying phase', saving: 'Ground study is a fraction of an hour in an aircraft. Every month spent studying while also paying flying-school rent is money spent twice.' },
   { move: 'Fly consistently rather than in bursts', saving: 'Long gaps mean re-learning, and re-learning is billed at the full rate. Consistency is the cheapest thing you control.' },
   { move: 'Book the medical before any deposit', saving: `A medical costs a fraction of a deposit. ${MEDICAL.advice}` },
-  { move: 'Take the scholarship you qualify for', saving: 'A 25% scholarship is available on our ground classes. Ask about it before enrolling, not after.' },
+  { move: 'Confirm current academy terms', saving: 'Current academy terms should be confirmed in writing before enrolment. Ask about it before enrolling, not after.' },
   { move: 'Agree the extra-hours rate up front', saving: 'Almost every student needs some. Negotiating the rate at enrolment costs nothing; negotiating it at hour 190 costs whatever they ask.' },
   { move: 'Tie payments to training milestones', saving: 'A large advance is money at risk. A milestone schedule keeps your bargaining position and limits what a disruption can cost you.' },
 ];
@@ -179,7 +179,7 @@ const related = [
   { lead: 'For what training involves and how the licences differ, read', anchor: 'our complete guide to pilot training', href: '/blogs/what-is-pilot-training-complete-guide' },
   { lead: 'For choosing and verifying a flying school, see', anchor: 'our guide to commercial pilot training programmes', href: '/blogs/commercial-pilot-training-programs-complete-guide' },
   { lead: 'For the admission paperwork and its sequence, read', anchor: 'the flight school prerequisites guide', href: '/blogs/flight-school-prerequisites-admission-guide' },
-  { lead: 'The six-month syllabus and the scholarship are covered on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
+  { lead: 'The six-month syllabus and current batch terms are covered on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
 ];
 
 const H2 = 'font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24';
@@ -215,7 +215,7 @@ export default function PilotTrainingCostInIndia() {
         'Living costs across 18–24 months: roughly ₹7,00,000 – ₹13,00,000',
         'Type rating: ₹1,00,000 – ₹2,00,000, and never inside a CPL quote',
         'Most likely overrun: extra flying hours, at ₹1,50,000 – ₹2,00,000 per 10 hours',
-        'A 25% scholarship is available on our ground classes',
+        'Current academy terms should be confirmed in writing before enrolment.',
       ]}
       tocHeadings={tocHeadings}
       related={related}
@@ -533,7 +533,7 @@ export default function PilotTrainingCostInIndia() {
       <p>
         We have taught the DGCA ground subjects from Dwarka since {ACADEMY.foundedYear}. The course
         runs six months, offline or online, with batches starting in the first and third week of each
-        month. A 25% scholarship is available, and students who do not clear a paper keep attending
+        month. Current academy terms should be confirmed in writing., and students who do not clear a paper keep attending
         classes at no further cost until they do — which removes one of the overruns in the table
         above entirely.
       </p>

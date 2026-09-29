@@ -64,7 +64,7 @@ const paperNotes = {
 
 const timeline = [
   { stage: 'Counselling, medical and computer number', typical: '4–8 weeks', note: 'Runs in parallel. The medical decides whether the rest is worth funding.' },
-  { stage: 'Ground classes', typical: '6 months', note: 'Offline in Dwarka or online. Papers are attempted during and after, across examination cycles.' },
+  { stage: 'Ground classes', typical: 'Varies by batch and examination cycle', note: 'Offline in Dwarka or online. Confirm current schedule with the academy.' },
   { stage: 'Clearing the written papers', typical: 'Varies widely', note: 'Cleared individually, not in one sitting. Attempt pattern matters more than total study hours.' },
   { stage: 'Flight training to 200 hours', typical: '12–18 months in India, often near 12 abroad', note: 'Weather, aircraft serviceability and instructor availability set the real pace.' },
   { stage: 'Skill test and licence file', typical: '4–12 weeks', note: 'Document verification is where a disorganised logbook costs months.' },
@@ -184,7 +184,7 @@ const related = [
   { lead: 'For the definitions rather than the programme choice — what training is, and how the licences differ — start with', anchor: 'our complete guide to pilot training', href: '/blogs/what-is-pilot-training-complete-guide' },
   { lead: 'Every cost line, broken down individually, sits on', anchor: 'the cost transparency page', href: '/cost-transparency' },
   { lead: 'The full Schedule II eligibility breakdown, clause by clause, is on', anchor: 'the CPL eligibility page', href: '/commercial-pilot-license-eligibility' },
-  { lead: 'The six-month syllabus, batch schedule and scholarship are covered on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
+  { lead: 'The current syllabus, batch schedule and terms are covered on', anchor: 'the DGCA ground classes page', href: '/dgca-ground-classes' },
   { lead: 'For the first ninety days after Class 12, step by step, read', anchor: 'the after-12th roadmap', href: '/how-to-become-a-pilot/after-12th' },
 ];
 
@@ -218,7 +218,7 @@ export default function CommercialPilotTrainingPrograms() {
         'Typical end-to-end duration: 18 to 24 months, though timelines slip more often than they hold',
         'Commonly quoted all-in cost: ₹40–70 lakh — a market estimate rather than a sourced figure — no Indian government body publishes a price for flying training and private schools publish nothing, so read it as what quotes look like rather than a price',
         'SOURCED, by contrast: DGCA charges ₹2,500 per examination paper, and IGRUA publishes a course fee of ₹55,00,000',
-        `Ground classes at We One Aviation: 6 months, offline in Dwarka or online, 25% scholarship available, teaching since ${ACADEMY.foundedYear}`,
+        `Ground classes at We One Aviation: schedule varies by batch and examination cycle, offline in Dwarka or online, teaching since ${ACADEMY.foundedYear}`,
       ]}
       tocHeadings={tocHeadings}
       related={related}
@@ -500,8 +500,8 @@ export default function CommercialPilotTrainingPrograms() {
       <p>
         Line-by-line current figures are kept on{' '}
         <Link href="/cost-transparency" className="text-av-orange font-semibold underline">the cost transparency page</Link>{' '}
-        rather than repeated here, so there is a single place to update when they move. A 25%
-        scholarship is available on our ground classes.
+        rather than repeated here, so there is a single place to update when they move. Confirm
+        current academy terms in writing before enrolment.
       </p>
 
       <BlogImagePlaceholder
@@ -690,8 +690,8 @@ export default function CommercialPilotTrainingPrograms() {
       <h2 id="why-weone" className={H2}>Why choose We One Aviation for the ground stage?</h2>
       <p>
         We have taught the DGCA ground subjects from Dwarka since {ACADEMY.foundedYear}. The course
-        runs six months, offline or online, with batches starting in the first and third week of
-        each month. A 25% scholarship is available, and students who do not clear a paper keep
+        has batch dates confirmed directly with the academy, offline or online, with current terms confirmed before enrolment
+        each month. Current academy terms should be confirmed in writing., and students who do not clear a paper keep
         attending classes at no further cost until they do.
       </p>
       <p>
