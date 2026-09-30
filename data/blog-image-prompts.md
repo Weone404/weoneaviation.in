@@ -1194,6 +1194,16 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 > Nothing else in the frame, wide negative space above and below. Absolutely
 > no text, letters, numbers or arrows anywhere in the image.
 
+## Post: CPL Training India vs Abroad 2026 — `/blogs/cpl-training-india-vs-abroad`
+
+### Prompt 83 — hero, two routes side by side
+
+- **File:** `/blog/cpl-training-india-vs-abroad/hero-two-routes.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** Two training routes drawn side by side: an Indian flying school leading straight to a DGCA licence, and an overseas school leading to a foreign licence with a conversion step before the DGCA licence
+
+> A wide flat-vector diagram of two parallel routes running left to right across the frame. The upper route starts at a small Indian flying-school hangar with a single-engine trainer on the apron and runs in one unbroken line to a simple licence-card shape at the right edge. The lower route starts at an overseas hangar, runs to a licence-card shape two thirds of the way across, and then passes through a distinct gate or checkpoint marker before reaching an identical licence card at the right edge — the extra step is the whole point of the picture and must read clearly as an interruption in an otherwise identical journey. Keep the two routes the same length overall so the image does not imply one is faster. Compose with the routes occupying the middle band and generous empty space above and below. Calm, explanatory mood, not competitive. Do not draw flags, country outlines, maps, airline liveries or any recognisable brand. Do not draw people. Flat vector illustration, navy #0a2342 and pale blue #e0f0ff as the base palette with burnt orange #b45309 as the single accent, Indian aviation training context, generous negative space, absolutely NO text, letters or numbers anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.

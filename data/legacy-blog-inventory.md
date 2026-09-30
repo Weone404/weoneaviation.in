@@ -96,6 +96,13 @@ There is a sixth, /blogs/6 ("How to Become a Pilot After 12th Science"), which
 is live but absent from the index grid because its card is commented out there.
 It had been missing from every count of this set.
 
+UPDATE 2026-09-30: the numeric ids are now redirected, not just canonicalised.
+/blogs/1 -> /blogs/how-to-become-an-airline-pilot-in-india, /blogs/2 ->
+/blogs/dgca-exam-guide, /blogs/3 -> /blogs/cpl-training-india-vs-abroad (a new
+post written for it), /blogs/5 -> /dgca-class-2-class-1-medical, /blogs/6 ->
+/how-to-become-a-pilot-after-12th. /blogs/4 was already redirected on 16
+September. Every blog URL on this site now carries a keyword.
+
 RESOLVED 2026-09-15, short of deletion. /blogs/1, /blogs/2, /blogs/5 and
 /blogs/6 now carry a canonical to the page that supersedes them, plus noindex,
 so they stop competing for the same queries while the URLs keep working.
