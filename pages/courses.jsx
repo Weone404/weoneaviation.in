@@ -147,7 +147,7 @@ const courses = [
         highlights: [
             'Current offers must be confirmed in writing',
             'Ask for the latest terms before deciding',
-            'Payment and scholarship conditions vary by programme',
+            'No scholarship offer is confirmed on this page; verify any current written offer and conditions with its provider',
             'Contact the academy for current information',
         ],
         href: '/contact',

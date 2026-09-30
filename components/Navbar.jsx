@@ -6,10 +6,10 @@ import { useRouter } from 'next/router';
 const tickerMessages = [
   ' DGCA ground classes for Indian students',
   ' CPL, PPL, and ATPL guidance available',
-  ' Flying school and medical support for pilot aspirants',
+  ' DGCA exam and flying-school guidance for pilot aspirants',
   ' Career counselling for pilot training in India and abroad',
   ' Online and offline batches for DGCA preparation',
-  ' Admissions open for upcoming aviation training batches',
+  ' Ask about current DGCA ground-class availability',
   ' Study plans designed around DGCA exam readiness',
 ];
 
@@ -25,7 +25,6 @@ const courses = [
       { label: 'Air Regulations', href: '/air-regulations' },
       { label: 'Technical General', href: '/technical-general' },
       { label: 'RTR (A)', href: '/rtr-a' },
-      { label: 'Commercial Pilot License Simulator', href: '/courses' },
     ],
   },
   {
@@ -68,9 +67,11 @@ const howTo = [
   { label: 'Apply For DGCA Computer Number', href: '/dgca-computer-number' },
   { label: 'DGCA Medical & Eligibility', href: '/commercial-pilot-license-eligibility' },
   { label: 'Join DGCA CPL Ground Classes', href: '/dgca-ground-classes' },
-  { label: 'Join Flying School', href: '/best-flight-schools-in-usa' },
+  { label: 'Flying-school guidance in India', href: '/flying-school/india' },
   { label: 'After 12th', href: '/how-to-become-a-pilot/after-12th' },
   { label: 'In India', href: '/how-to-become-a-pilot/in-india' },
+  { label: 'Pilot training in Delhi', href: '/pilot-training-in-delhi' },
+  { label: 'Dwarka classroom details', href: '/pilot-training-in-dwarka' },
 ];
 
 // External exam/practice links grouped together

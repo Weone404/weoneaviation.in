@@ -8,6 +8,7 @@ import LeadForm from '../../components/LeadForm';
 import ScrollReveal from '../../components/ScrollReveal';
 import StructuredData from '../../components/StructuredData';
 import { generateFAQSchema } from '../../lib/schema';
+import { ACADEMY } from '../../lib/facts';
 
 /*
  * REWRITTEN FROM A 16-LINE STUB.
@@ -94,7 +95,17 @@ const atplCourseSchema = {
   hasCourseInstance: {
     '@type': 'CourseInstance',
     courseMode: 'blended',
-    location: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'Dwarka, New Delhi', addressCountry: 'IN' } },
+    location: {
+      '@type': 'Place',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: ACADEMY.streetAddress,
+        addressLocality: ACADEMY.addressLocality,
+        addressRegion: ACADEMY.addressRegion,
+        postalCode: ACADEMY.postalCode,
+        addressCountry: 'IN',
+      },
+    },
   },
 };
 

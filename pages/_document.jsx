@@ -1,9 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import StructuredData from '../components/StructuredData';
-import { generateOrganizationSchema, generateWebsiteSchema } from '../lib/schema';
-
-const organizationSchema = generateOrganizationSchema();
-const websiteSchema = generateWebsiteSchema();
 
 class MyDocument extends Document {
   render() {
@@ -69,8 +64,6 @@ class MyDocument extends Document {
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:image" content="https://weoneaviation.in/og-cover.jpg" />
           <meta name="twitter:image:alt" content="We One Aviation Academy — DGCA Ground Classes in Dwarka" />
-
-          <StructuredData data={[organizationSchema, websiteSchema]} />
 
           {/*
             Quill's stylesheet was pulled from unpkg here, on every public page.

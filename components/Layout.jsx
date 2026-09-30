@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import FAQSection from './FAQSection';
 import StructuredData from './StructuredData';
 import { buildBreadcrumbItems } from './Breadcrumb';
-import { generateBreadcrumbSchema } from '../lib/schema';
+import { generateSiteSchemaGraph } from '../lib/schema';
 import { getPageFAQs } from '../data/pageFaqs';
 
 const ContactPopup = dynamic(() => import('./ContactPopup'), { ssr: false });
@@ -22,14 +22,14 @@ const ContactPopup = dynamic(() => import('./ContactPopup'), { ssr: false });
  */
 export default function Layout({ children, title, description, robots, noindex = false, canonical }) {
   const router = useRouter();
-  const canonicalPath = router.asPath ? router.asPath.split('?')[0] : '/';
+  const canonicalPath = router.asPath ? router.asPath.split(/[?#]/)[0] : '/';
 
-  // ✅ FIXED: Changed from www to non-www (site redirects www → non-www)
   const selfUrl = `https://weoneaviation.in${canonicalPath === '/' ? '/' : canonicalPath}`;
-  const canonicalUrl = canonical ? `https://weoneaviation.in${canonical}` : selfUrl;
+  const canonicalUrl = canonical ? new URL(canonical, 'https://weoneaviation.in').href : selfUrl;
   const isAdminPage = router.pathname.startsWith('/admin');
   const pageFAQs = isAdminPage ? null : getPageFAQs(router.pathname);
   const resolvedRobots = robots ?? (noindex ? 'noindex, follow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+  const includeFaqSchema = !/\bnoindex\b/i.test(resolvedRobots);
 
   /*
    * BreadcrumbList for every route.
@@ -45,12 +45,19 @@ export default function Layout({ children, title, description, robots, noindex =
    * whose trail is just "Home", and /admin, which is noindex anyway.
    */
   const breadcrumbItems = buildBreadcrumbItems(canonicalPath);
-  const breadcrumbSchema = (!isAdminPage && breadcrumbItems.length > 1)
-    ? generateBreadcrumbSchema(breadcrumbItems.map((item) => ({
-        name: item.label,
-        url: `https://weoneaviation.in${item.href}`,
-      })))
-    : null;
+   const shouldEmitSiteSchema = !isAdminPage
+     && !/\bnoindex\b/i.test(resolvedRobots)
+     && canonicalUrl === selfUrl;
+   const siteSchema = shouldEmitSiteSchema
+     ? generateSiteSchemaGraph({
+         page: {
+           url: canonicalUrl,
+           name: title || 'We One Aviation',
+           description: description || 'DGCA ground classes in Dwarka, New Delhi, and flight training arranged through partner flying schools.',
+         },
+         breadcrumbItems,
+       })
+     : null;
   /*
    * The Organization node USED TO BE BUILT HERE and emitted on every page, in
    * parallel with the one _document.jsx builds from lib/schema.js. Two nodes
@@ -90,13 +97,13 @@ export default function Layout({ children, title, description, robots, noindex =
         <meta key="twitter:title" name="twitter:title" content={title || 'We One Aviation Academy'} />
         <meta key="twitter:description" name="twitter:description" content={description || 'DGCA pilot training in India'} />
 
-        {breadcrumbSchema && <StructuredData data={breadcrumbSchema} />}
+        {siteSchema && <StructuredData data={siteSchema} />}
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
       <main className="min-h-screen">{children}</main>
-      {pageFAQs && <FAQSection faqs={pageFAQs.faqs} title={pageFAQs.title} />}
+      {pageFAQs && <FAQSection faqs={pageFAQs.faqs} title={pageFAQs.title} includeSchema={includeFaqSchema} />}
       <Footer />
       <FloatingButtons />
       {!isAdminPage && <ContactPopup />}

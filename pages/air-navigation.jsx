@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
@@ -177,9 +176,7 @@ export default function AirNavigation() {
         >
       <StructuredData data={courseSchema} />
 
-            <Head>
-                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-            </Head>
+            <StructuredData data={articleSchema} />
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}

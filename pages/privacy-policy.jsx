@@ -26,7 +26,6 @@ const personalInfo = [
     { icon: '📞', item: 'Phone Number' },
     { icon: '📍', item: 'City / State' },
     { icon: '✈️', item: 'Course of Interest (CPL, PPL, Ground Classes etc.)' },
-    { icon: '📝', item: 'Class 10 / 12 Marks (for Scholarship Applications)' },
 ];
 
 const autoInfo = [
@@ -40,7 +39,6 @@ const autoInfo = [
 
 const usageItems = [
     { icon: '💬', title: 'Respond to Your Enquiries', desc: 'Our counsellors use your contact details to call, WhatsApp or email you about pilot training programmes.' },
-    { icon: '🎓', title: 'Process Scholarship Applications', desc: 'We verify eligibility by checking your academic details.' },
     { icon: '📢', title: 'Send Course Updates', desc: 'Notify you about new batches, offers and aviation news.' },
     { icon: '📈', title: 'Improve Our Website', desc: 'Analyse traffic and user behaviour to improve content and user experience.' },
     { icon: '⚖️', title: 'Comply with Legal Obligations', desc: 'For maintaining records as required by Indian law.' },
@@ -69,7 +67,6 @@ const thirdPartyTools = [
 
 const retentionItems = [
     { icon: '📋', type: 'Enquiry Data', duration: 'Up to 2 years', desc: 'Kept for follow-up and counselling purposes.' },
-    { icon: '🏆', type: 'Scholarship Application Data', duration: 'Duration of the scholarship', desc: 'Retained throughout the scholarship program.' },
     { icon: '📊', type: 'Analytics Data', duration: '26 months', desc: 'According to the default settings of Google Analytics.' },
 ];
 
@@ -177,7 +174,7 @@ export default function PrivacyPolicyPage() {
                                     <h2 className="font-montserrat font-bold text-av-blue text-xl">Types of Information We Collect</h2>
                                 </div>
                                 <p className="text-gray-600 text-sm leading-relaxed mb-5">
-                                    We collect information that you voluntarily provide to us when you fill in our contact or enquiry forms, apply for a scholarship or course, contact us via WhatsApp, phone or email, or sign up for newsletters and updates.
+                                    We collect information that you voluntarily provide to us when you fill in our contact or enquiry forms, apply for a course, contact us via WhatsApp, phone or email, or sign up for newsletters and updates.
                                 </p>
 
                                 <h3 className="font-montserrat font-bold text-av-blue text-sm mb-3">Personal Information</h3>

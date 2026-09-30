@@ -500,14 +500,9 @@ export default function BlogDetail({ blog }) {
                     datePublished: blog.datePublishedISO,
                     dateModified: blog.dateModifiedISO,
                     articleSection: blog.category,
-                    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://weoneaviation.in/blogs/${blog.id}` },
-                    author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
-                    publisher: {
-                        '@type': 'EducationalOrganization',
-                        name: 'We One Aviation Academy',
-                        url: 'https://weoneaviation.in',
-                        logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
-                    },
+                    mainEntityOfPage: { '@id': `https://weoneaviation.in/blogs/${blog.id}#webpage` },
+                    author: { '@id': 'https://weoneaviation.in/#organization' },
+                    publisher: { '@id': 'https://weoneaviation.in/#organization' },
                 }}
             />
             {/* Hero */}

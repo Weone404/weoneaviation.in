@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
 import HeroSlider from '../components/HeroSlider';
@@ -110,9 +109,7 @@ export default function RTRAero() {
         >
       <StructuredData data={courseSchema} />
 
-            <Head>
-                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-            </Head>
+            <StructuredData data={articleSchema} />
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
             <section className="py-20 px-4">

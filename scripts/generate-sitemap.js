@@ -97,35 +97,31 @@ function extractBlogIds() {
 
   const source = fs.readFileSync(filePath, 'utf8');
   const ids = [];
-  const idRegex = /id:\s*['"`]?(\d+?)['"`]?/g;
+  const arrayStart = source.indexOf('const hardcodedBlogs = [');
+  const arrayEnd = source.indexOf('\n];', arrayStart);
+  if (arrayStart === -1 || arrayEnd === -1) return ids;
+
+  const entries = source.slice(arrayStart, arrayEnd);
+  const entryRegex = /^    \{\r?\n([\s\S]*?)^    \},?\s*$/gm;
   let match;
 
-  while ((match = idRegex.exec(source))) {
-    if (!ids.includes(match[1])) {
-      ids.push(match[1]);
-    }
-
+  while ((match = entryRegex.exec(entries))) {
+    const id = match[1].match(/^\s*id:\s*(\d+),/m)?.[1];
+    if (!id || /^\s*canonicalTo\s*:/m.test(match[1]) || /^\s*noindex\s*:/m.test(match[1])) continue;
+    if (!ids.includes(id)) ids.push(id);
   }
 
   return ids.map((id) => `/blogs/${id}`);
 }
 
-function extractIndexableLocalityRoutes() {
-  const filePath = path.join(rootDir, 'data', 'local-seo', 'pilot-localities.json');
-  if (!fs.existsSync(filePath)) return [];
-  const locations = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  return locations
-    .filter((location) => (
-      location.indexability === 'PUBLISH_INDEXABLE'
-      && location.status === 'publish'
-      && location.canonicalPath
-    ))
-    .map((location) => location.canonicalPath);
-}
-
 function normalizeRoute(route) {
   if (route === '/') return route;
   return route.replace(/\/+$/, '');
+}
+
+function isExcludedRoute(route) {
+  return /^\/(?:pilot-training-near(?:\/|$)|pincode(?:\/|$)|aviation-academy-near(?:\/|$)|api(?:\/|$)|admin(?:\/|$)|_next(?:\/|$)|robots\.txt$|sitemap\.xml$|404$)/i.test(route)
+    || /(?:^|\/)\d{6}(?:\/|$)/.test(route);
 }
 
 function getSourceFileForRoute(route) {
@@ -144,6 +140,108 @@ function getSourceFileForRoute(route) {
   }
 
   return null;
+}
+
+function sourceDeclaresNoindexOrNonSelfCanonical(route, relativeFilePath) {
+  if (!relativeFilePath) return false;
+  const source = fs.readFileSync(path.join(rootDir, relativeFilePath), 'utf8');
+  const layoutTag = source.match(/<Layout\b[^>]*>/s)?.[0];
+
+  if (layoutTag && /\bnoindex(?:\s|=|\/?>)/i.test(layoutTag)) return true;
+
+  const robotsTags = source.match(/<meta\b[^>]*>/gi) || [];
+  if (robotsTags.some((tag) => (
+    /\bname\s*=\s*["']robots["']/i.test(tag)
+    && /\bcontent\s*=\s*["'][^"']*\bnoindex\b/i.test(tag)
+  ))) return true;
+
+  const canonical = layoutTag?.match(/\bcanonical\s*=\s*["']([^"']+)["']/i)?.[1];
+  if (canonical) {
+    const canonicalPath = /^https?:\/\//i.test(canonical)
+      ? new URL(canonical).pathname
+      : canonical;
+    return normalizeRoute(canonicalPath) !== route;
+  }
+
+  return false;
+}
+
+function getAttribute(tag, attribute) {
+  return tag.match(new RegExp(`\\b${attribute}\\s*=\\s*(["'])(.*?)\\1`, 'i'))?.[2] || null;
+}
+
+async function validateProductionRoute(route) {
+  const url = `${host}${route}`;
+  const response = await fetch(url, {
+    redirect: 'manual',
+    signal: AbortSignal.timeout(10000),
+  });
+  if (response.status !== 200) {
+    console.log(`generate-sitemap: excluding ${route} (production HTTP ${response.status})`);
+    return null;
+  }
+
+  const html = await response.text();
+  const canonicalTag = (html.match(/<link\b[^>]*>/gi) || [])
+    .find((tag) => /\brel\s*=\s*["']canonical["']/i.test(tag));
+  const canonical = canonicalTag && getAttribute(canonicalTag, 'href');
+  if (canonical !== url) {
+    console.log(`generate-sitemap: excluding ${route} (production canonical is not self-referencing)`);
+    return null;
+  }
+
+  const robotsTag = (html.match(/<meta\b[^>]*>/gi) || [])
+    .find((tag) => /\bname\s*=\s*["']robots["']/i.test(tag));
+  if (robotsTag && /\bnoindex\b/i.test(getAttribute(robotsTag, 'content') || '')) {
+    console.log(`generate-sitemap: excluding ${route} (production noindex)`);
+    return null;
+  }
+
+  return route;
+}
+
+async function validateProductionRoutes(routes) {
+  const validated = await Promise.all(routes.map((route) => validateProductionRoute(route)));
+  return validated.filter(Boolean);
+}
+
+async function discoverProductionOnlyBlogRoutes(localRoutes) {
+  const [sitemapResponse, blogIndexResponse] = await Promise.all([
+    fetch(`${host}/sitemap.xml`, { signal: AbortSignal.timeout(10000) }),
+    fetch(`${host}/blogs`, { signal: AbortSignal.timeout(10000) }),
+  ]);
+  if (!sitemapResponse.ok) {
+    throw new Error(`production sitemap returned HTTP ${sitemapResponse.status}`);
+  }
+  if (!blogIndexResponse.ok) {
+    throw new Error(`production blog index returned HTTP ${blogIndexResponse.status}`);
+  }
+
+  const sitemapXml = await sitemapResponse.text();
+  const blogIndexHtml = await blogIndexResponse.text();
+  const sitemapLocations = Array.from(sitemapXml.matchAll(/<loc>(.*?)<\/loc>/gi), (match) => match[1].trim());
+  const blogIndexLocations = Array.from(blogIndexHtml.matchAll(/\bhref\s*=\s*(["'])(.*?)\1/gi), (match) => match[2])
+    .filter((href) => /^\/blogs\//i.test(href) || href.startsWith(`${host}/blogs/`))
+    .map((href) => new URL(href, `${host}/blogs`).href);
+  const candidates = Array.from(new Set([...sitemapLocations, ...blogIndexLocations]))
+    .map((location) => {
+      try {
+        const url = new URL(location);
+        if (url.origin !== host || url.search || url.hash) return null;
+        const route = normalizeRoute(url.pathname);
+        if (!/^\/blogs\/[a-z0-9]+(?:-[a-z0-9]+)*$/i.test(route) || isExcludedRoute(route)) return null;
+        return { route, url: url.href };
+      } catch (error) {
+        console.warn(`generate-sitemap: ignoring invalid production sitemap location "${location}": ${error.message}`);
+        return null;
+      }
+    })
+    .filter((candidate) => candidate && !localRoutes.has(candidate.route));
+
+  const validated = await validateProductionRoutes(candidates.map(({ route }) => route));
+  validated.forEach((route) => console.log(`generate-sitemap: including verified production-only route ${route}`));
+
+  return validated;
 }
 
 function getLastCommitDate(relativeFilePath) {
@@ -202,7 +300,9 @@ function redirectSources() {
       // Compare EXACTLY. Do not normalise the trailing slash: a source of
       // '/courses/' is a trailing-slash normaliser pointing AT the live
       // '/courses', so treating them as equal would delist a real page.
-      if (!m[1].includes(':') && !m[1].includes('*') && !m[1].endsWith('/')) out.add(m[1]);
+      if (!m[1].includes(':') && !m[1].includes('*') && !m[1].endsWith('/')) {
+        out.add(m[1].toLowerCase());
+      }
     }
     return out;
   } catch (e) {
@@ -211,33 +311,40 @@ function redirectSources() {
   }
 }
 
-function buildSitemapXml() {
+async function buildSitemapXml() {
   const redirected = redirectSources();
   const pageFiles = collectPageFiles(pagesDir);
-  const routes = pageFiles
-    .map(pageFileToRoute)
-    .filter(Boolean);
+  const sourceRoutes = pageFiles
+    .map((filePath) => ({
+      route: pageFileToRoute(filePath),
+      filePath: toPosixPath(path.relative(rootDir, filePath)),
+    }))
+    .filter(({ route }) => route);
 
-  const dynamicRoutes = [
+  const dynamicRoutes = await validateProductionRoutes([
     ...extractCitySlugs(),
     ...extractBlogIds(),
-    ...extractIndexableLocalityRoutes(),
-  ];
-  const noindexRoutes = new Set(['/pilot-training-near']);
+  ]);
 
-  const allRoutes = Array.from(new Set([...routes, ...dynamicRoutes].map(normalizeRoute)))
+  const localRoutes = new Set([...sourceRoutes.map(({ route }) => route), ...dynamicRoutes].map(normalizeRoute));
+  const sourceFileByRoute = new Map(sourceRoutes.map(({ route, filePath }) => [normalizeRoute(route), filePath]));
+  const productionOnlyRoutes = await discoverProductionOnlyBlogRoutes(localRoutes);
+
+  const allRoutes = Array.from(new Set([...localRoutes, ...productionOnlyRoutes]))
     .filter((route) => {
-      const dropped = redirected.has(route);
+      const dropped = redirected.has(route.toLowerCase());
       if (dropped) console.log(`generate-sitemap: excluding ${route} (301)`);
-      const noindex = noindexRoutes.has(route);
-      if (noindex) console.log(`generate-sitemap: excluding ${route} (noindex)`);
-      return !dropped && !noindex;
+      const sourceFile = sourceFileByRoute.get(route) || getSourceFileForRoute(route);
+      const notIndexable = isExcludedRoute(route) || sourceDeclaresNoindexOrNonSelfCanonical(route, sourceFile);
+      if (notIndexable) console.log(`generate-sitemap: excluding ${route} (noindex, non-self-canonical, or excluded route)`);
+      return !dropped && !notIndexable;
     })
     .sort();
 
   const urlsXml = allRoutes
     .map((route) => {
-      const sourceFile = getLastCommitDate(getSourceFileForRoute(route)) ? getSourceFileForRoute(route) : null;
+      const candidateFile = sourceFileByRoute.get(route) || getSourceFileForRoute(route);
+      const sourceFile = getLastCommitDate(candidateFile) ? candidateFile : null;
       const lastmod = getLastCommitDate(sourceFile);
       const lastmodXml = lastmod ? `    <lastmod>${lastmod}</lastmod>\n` : '';
 
@@ -250,8 +357,13 @@ function buildSitemapXml() {
 
 function main() {
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-  fs.writeFileSync(outputPath, buildSitemapXml(), 'utf8');
-  console.log(`Wrote ${toPosixPath(path.relative(rootDir, outputPath))}`);
+  return buildSitemapXml().then((xml) => {
+    fs.writeFileSync(outputPath, xml, 'utf8');
+    console.log(`Wrote ${toPosixPath(path.relative(rootDir, outputPath))} (${(xml.match(/<url>/g) || []).length} URLs)`);
+  });
 }
 
-main();
+main().catch((error) => {
+  console.error('generate-sitemap: failed to build sitemap:', error.message);
+  process.exitCode = 1;
+});

@@ -7,24 +7,13 @@ import { generateFAQSchema } from '../lib/schema';
 
 const canonicalUrl = `${ACADEMY.url}/commercial-pilot-license`;
 
-const pageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    '@id': canonicalUrl,
-    url: canonicalUrl,
-    name: 'Commercial Pilot Licence (CPL) Pathway in India',
-    about: { '@id': `${ACADEMY.url}/#organization` },
-    publisher: { '@id': `${ACADEMY.url}/#organization` },
-    inLanguage: 'en-IN',
-};
-
 const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     '@id': `${canonicalUrl}#article`,
     headline: 'Commercial Pilot Licence (CPL) Pathway in India',
     description: 'Eligibility, DGCA ground preparation, required flight experience, and how We One Aviation’s classroom and online teaching relate to partner-arranged flight training.',
-    mainEntityOfPage: { '@id': canonicalUrl },
+    mainEntityOfPage: { '@id': `${canonicalUrl}#webpage` },
     author: { '@id': `${ACADEMY.url}/#organization` },
     publisher: { '@id': `${ACADEMY.url}/#organization` },
     dateModified: '2026-09-29',
@@ -69,7 +58,7 @@ export default function CommercialPilotLicense() {
             title="Commercial Pilot Licence (CPL) Pathway in India | We One Aviation"
             description="Understand Indian CPL eligibility, DGCA written-paper preparation, required flight experience, and We One Aviation’s Dwarka classroom, online batches, and partner-arranged flight training."
         >
-            <StructuredData data={[pageSchema, articleSchema, generateFAQSchema(faqItems)]} />
+            <StructuredData data={[articleSchema, generateFAQSchema(faqItems)]} />
 
             <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue px-4 py-14 text-white">
                 <div className="mx-auto max-w-5xl">

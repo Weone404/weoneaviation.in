@@ -2,6 +2,16 @@ import { useState } from "react";
 import Head from "next/head";
 import DoubtChat from "../../components/DoubtChat/page.jsx";
 import FAQSection from "../../components/FAQSection";
+import StructuredData from "../../components/StructuredData";
+import { generateSiteSchemaGraph } from "../../lib/schema";
+
+const pageSchema = generateSiteSchemaGraph({
+    page: {
+        url: "https://weoneaviation.in/doubt",
+        name: "Doubt Solver | DGCA Aviation",
+        description: "AI-powered DGCA aviation doubt solver",
+    },
+});
 
 const TOPICS = [
     { label: "Air Regulations", icon: "📜", color: "#6366f1" },
@@ -28,6 +38,7 @@ export default function DoubtPage() {
                 <meta property="og:title" content="Doubt Solver | DGCA Aviation" />
                 <meta property="og:description" content="AI-powered DGCA aviation doubt solver" />
                 <meta property="og:type" content="website" />
+                <StructuredData data={pageSchema} />
             </Head>
 
             <header style={styles.page}>
