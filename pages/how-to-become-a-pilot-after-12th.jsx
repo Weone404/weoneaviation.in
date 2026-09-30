@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
 import { generateHowToSchema } from '../lib/schema';
@@ -173,9 +172,7 @@ export default function BecomeAPilotPage() {
         >
             <StructuredData data={howToSchema} />
 
-            <Head>
-                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-            </Head>
+            <StructuredData data={articleSchema} />
 
             {/* ── Hero Banner ── */}
             <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">

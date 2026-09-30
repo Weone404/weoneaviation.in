@@ -6,17 +6,6 @@ import { generateFAQSchema } from '../lib/schema';
 
 const canonicalUrl = `${ACADEMY.url}/pilot-training-in-india`;
 
-const pageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    '@id': canonicalUrl,
-    url: canonicalUrl,
-    name: 'Pilot Training in India: Pathway and How to Access Training',
-    about: { '@id': `${ACADEMY.url}/#organization` },
-    publisher: { '@id': `${ACADEMY.url}/#organization` },
-    inLanguage: 'en-IN',
-};
-
 const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -24,8 +13,8 @@ const articleSchema = {
     headline: 'Pilot Training in India: Pathway and How to Access Training',
     description: 'The Indian pilot-training pathway, DGCA ground preparation, the academy’s Dwarka classroom, online batches for students outside Delhi, and partner-arranged flying training.',
     inLanguage: 'en-IN',
-    dateModified: '2026-09-29',
-    mainEntityOfPage: { '@id': canonicalUrl },
+    dateModified: '2026-09-30',
+    mainEntityOfPage: { '@id': `${canonicalUrl}#webpage` },
     author: { '@id': `${ACADEMY.url}/#organization` },
     publisher: { '@id': `${ACADEMY.url}/#organization` },
     image: { '@type': 'ImageObject', url: `${ACADEMY.url}/Logo.webp` },
@@ -45,6 +34,10 @@ const faqs = [
         a: 'No. We One Aviation teaches DGCA ground subjects and arranges flight training with partner flying schools. It does not own aircraft or operate a flying school; flight training takes place at the selected flying school.',
     },
     {
+        q: 'Is We One Aviation a pilot school in India?',
+        a: `We One Aviation is an aviation education academy that teaches DGCA ground subjects from its Dwarka classroom and offers online batches to students outside Delhi. It does not operate a flying school or a DGCA-approved Flying Training Organisation; flight training is arranged with partner flying schools and takes place at the selected school.`,
+    },
+    {
         q: 'What are the main stages of the CPL pathway in India?',
         a: `The pathway includes meeting the eligibility requirements, preparing for and passing the ${DGCA_PAPERS.length} DGCA written papers, completing the required flight training at a flying training organisation, and applying for the licence under the applicable rules. The academy teaches ground subjects and can arrange flight training with partner flying schools.`,
     },
@@ -61,7 +54,7 @@ export default function PilotTrainingInIndia() {
             title="Pilot Training in India: Pathway & Training Access | We One Aviation"
             description="Understand the pilot-training pathway in India, DGCA ground preparation, classroom classes in Dwarka, online batches for students outside Delhi, and how flight training is arranged."
         >
-            <StructuredData data={[pageSchema, articleSchema, generateFAQSchema(faqs)]} />
+            <StructuredData data={[articleSchema, generateFAQSchema(faqs)]} />
 
             <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue px-4 py-16 text-white">
                 <div className="mx-auto max-w-5xl">
@@ -82,6 +75,9 @@ export default function PilotTrainingInIndia() {
                 <h2 className={headingClass}>What We One Aviation provides</h2>
                 <p className={paragraphClass}>
                     We One Aviation Academy is an aviation education organization. It teaches the DGCA ground subjects and arranges flight training with partner flying schools. The academy does not own aircraft or simulators, operate a flying school, employ pilots, or place students into airline jobs; airline hiring decisions rest with the operator.
+                </p>
+                <p className={paragraphClass}>
+                    People comparing a pilot school or pilot academy in India should distinguish DGCA ground-subject teaching from the flying stage. We One Aviation provides ground preparation and guidance; it is not a flying training organisation, and students complete flight training at the selected partner school.
                 </p>
                 <div className="grid gap-5 md:grid-cols-2">
                     <article className="rounded-2xl border border-gray-200 p-6">

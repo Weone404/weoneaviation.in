@@ -112,19 +112,6 @@ export default function CredentialsPage() {
         <meta key="og:description" property="og:description" content="We One Aviation Academy's stated Dwarka location, DGCA ground-subject teaching, online batches, and years in operation." />
         <meta key="og:url" property="og:url" content="https://weoneaviation.in/credentials" />
 
-        {/* Schema: Organization with credentials */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'EducationalOrganization',
-            name: 'We One Aviation Academy',
-            url: 'https://weoneaviation.in',
-            /* Same URL string as _document.jsx's sameAs — entity matching is
-               literal, so the two must not disagree on the host. */
-            sameAs: ['https://www.linkedin.com/company/weoneaviation'],
-            description: 'Aviation education organization teaching DGCA ground subjects from its Dwarka classroom and offering online batches to students outside Delhi.',
-          })
-        }} />
       </Head>
 
       <Layout title="Credentials & Verification – We One Aviation Academy" description="Published information about We One Aviation Academy's Dwarka classroom, DGCA ground-subject teaching, and years in operation.">

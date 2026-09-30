@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
 import DgcaPaperFacts from '../components/DgcaPaperFacts';
@@ -120,9 +119,7 @@ export default function TechnicalGeneral() {
         <Layout title="Technical General — DGCA CPL/PPL All Details 2025 | We One Aviation Academy" description="Complete guide to Technical General for DGCA CPL & PPL exams. Covers aircraft structure, aerodynamics, engines, systems, instruments, landing gear and fire protection at We One Aviation Academy.">
       <StructuredData data={courseSchema} />
 
-            <Head>
-                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-            </Head>
+            <StructuredData data={articleSchema} />
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}

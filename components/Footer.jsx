@@ -1,14 +1,10 @@
 import Link from 'next/link';
 import NextImage from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ACADEMY } from '../lib/facts';
 
 export default function Footer() {
-  const [currentYear, setCurrentYear] = useState(2026);
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
+  const [currentYear] = useState(() => new Date().getFullYear());
 
   return (
     <footer className="bg-av-blue text-white">
@@ -94,6 +90,10 @@ export default function Footer() {
             {[
               { label: 'Home', href: '/' },
               { label: 'About Us', href: '/about-us' },
+              { label: 'Pilot training in India', href: '/pilot-training-in-india' },
+              { label: 'Pilot training in Delhi', href: '/pilot-training-in-delhi' },
+              { label: 'Dwarka classroom', href: '/pilot-training-in-dwarka' },
+              { label: 'DGCA ground classes', href: '/dgca-ground-classes' },
               { label: 'Training Programs', href: '/courses' },
               { label: 'Blog', href: '/blogs' },
               { label: 'FAQ', href: '/faqs' },

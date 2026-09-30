@@ -24,17 +24,6 @@ const faqItems = [
     },
 ];
 
-const pageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    '@id': canonicalUrl,
-    url: canonicalUrl,
-    name: 'DGCA Ground Classes in India | We One Aviation Academy',
-    about: { '@id': `${ACADEMY.url}/#organization` },
-    publisher: { '@id': `${ACADEMY.url}/#organization` },
-    inLanguage: 'en-IN',
-};
-
 const headingClass = 'mb-4 font-montserrat text-2xl font-bold text-av-blue';
 const paragraphClass = 'mb-4 text-sm leading-7 text-gray-600';
 const linkClass = 'font-semibold text-av-blue underline decoration-av-orange underline-offset-4 hover:text-av-orange';
@@ -45,7 +34,7 @@ export default function DGCAGroundClassesInIndia() {
             title="DGCA Ground Classes in India | We One Aviation Academy"
             description="Learn what DGCA ground classes cover, where We One Aviation holds classroom batches in Dwarka, and how students outside Delhi can join online."
         >
-            <StructuredData data={[pageSchema, generateFAQSchema(faqItems)]} />
+            <StructuredData data={generateFAQSchema(faqItems)} />
 
             <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue px-4 py-16 text-white">
                 <div className="mx-auto max-w-5xl">

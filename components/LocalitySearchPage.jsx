@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Layout from './Layout';
 import Breadcrumb from './Breadcrumb';
-import StructuredData from './StructuredData';
 import business from '../data/local-seo/business-location.json';
 
 const COURSES = [
@@ -35,7 +34,6 @@ const ACADEMY_LINKS = [
 ];
 
 export default function LocalitySearchPage({ locality }) {
-  const canonical = `https://weoneaviation.in${locality.canonicalPath}`;
   const faqs = [
     {
       question: `Does We One Aviation have a classroom or branch in ${locality.name}?`,
@@ -50,48 +48,6 @@ export default function LocalitySearchPage({ locality }) {
       answer: 'We One Aviation says it arranges flight training with partner flying schools. The flying takes place at those schools, not at the Dwarka classroom or at the locality named on this page.',
     },
   ];
-  const schema = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebPage',
-      '@id': `${canonical}#webpage`,
-      url: canonical,
-      name: locality.metaTitle,
-      description: locality.metaDescription,
-      isPartOf: { '@id': 'https://weoneaviation.in/#website' },
-      about: {
-        '@type': 'Place',
-        name: locality.name,
-        ...(locality.district ? {
-          containedInPlace: { '@type': 'AdministrativeArea', name: locality.district },
-        } : {}),
-        ...(locality.state ? {
-          address: {
-            '@type': 'PostalAddress',
-            addressRegion: locality.state,
-            addressCountry: 'IN',
-          },
-        } : {}),
-      },
-      publisher: { '@id': 'https://weoneaviation.in/#organization' },
-      mentions: COURSES.map((course) => ({
-        '@type': 'Course',
-        name: course.title,
-        url: `https://weoneaviation.in${course.href}`,
-        provider: { '@id': 'https://weoneaviation.in/#organization' },
-      })),
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-      })),
-    },
-  ];
-
   return (
     <Layout
       title={locality.metaTitle}
@@ -99,7 +55,6 @@ export default function LocalitySearchPage({ locality }) {
       canonical={locality.canonicalPath}
       noindex
     >
-      <StructuredData data={schema} />
       <main className="px-4 py-12">
         <div className="mx-auto max-w-5xl">
           <Breadcrumb />

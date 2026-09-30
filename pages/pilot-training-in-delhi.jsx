@@ -139,7 +139,7 @@ const articleSchema = {
   dateModified: '2026-09-16',
   articleSection: 'Pilot training in Delhi',
   keywords: 'pilot training in delhi, pilot training institute in delhi, best pilot training academy in delhi, dgca ground classes in delhi, flying school in delhi, aviation academy in delhi',
-  mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
+  mainEntityOfPage: { '@id': `${CANONICAL}#webpage` },
   image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
   author: { '@id': 'https://weoneaviation.in/#organization' },
   publisher: { '@id': 'https://weoneaviation.in/#organization' },
@@ -198,6 +198,21 @@ export default function PilotTrainingInDelhi() {
                   'The flying, and almost all of the cost, happens outside the city',
                 ]}
               />
+
+              <section className="my-8 rounded-xl border border-gray-200 bg-gray-50 p-5">
+                <h2 className="font-montserrat text-xl font-bold text-av-blue">Where We One Aviation fits in Delhi</h2>
+                <p className={`${P} mb-0 mt-3`}>
+                  We One Aviation’s physical classroom is at {ACADEMY.streetAddress}, {ACADEMY.addressLocality},
+                  {' '}{ACADEMY.addressRegion} {ACADEMY.postalCode}. It teaches DGCA ground subjects there and offers
+                  online batches to students outside Delhi. Flight training is arranged through partner flying schools
+                  and takes place at the selected school, not at the Dwarka classroom.
+                </p>
+                <p className={`${P} mb-0 mt-3`}>
+                  Call <a className={A} href={`tel:${ACADEMY.phone}`}>{ACADEMY.phoneDisplay}</a> or see the{' '}
+                  <Link href="/pilot-training-in-dwarka" className={A}>Dwarka classroom details</Link> and{' '}
+                  <Link href="/dgca-ground-classes" className={A}>DGCA ground-class information</Link>.
+                </p>
+              </section>
 
               <h2 id="the-fact" className={H2}>The fact that decides what this page can honestly say</h2>
               <p className={P}>

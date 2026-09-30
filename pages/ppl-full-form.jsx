@@ -327,23 +327,6 @@ const pplArticleSchema = {
     ],
 };
 
-const pplCourseSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Course',
-    name: 'Private Pilot Licence (PPL) Training',
-    description: 'Private Pilot Licence (Aeroplanes) training and DGCA ground school. Minimum age 17 under Schedule II, Section E of the Aircraft Rules, 1937. Covers ground subjects, flight training, and the route on to a Commercial Pilot Licence.',
-    inLanguage: 'en-IN',
-    url: 'https://weoneaviation.in/ppl-full-form',
-    educationalCredentialAwarded: 'Private Pilot Licence (Aeroplanes), issued by the DGCA',
-    teaches: ['Air Regulations', 'Aviation Meteorology', 'Air Navigation', 'Aircraft Technical Knowledge', 'Radio Telephony'],
-    provider: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
-    hasCourseInstance: {
-        '@type': 'CourseInstance',
-        courseMode: 'onsite',
-        location: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'Dwarka, New Delhi', addressCountry: 'IN' } },
-    },
-};
-
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function PPLPage() {
@@ -364,7 +347,6 @@ export default function PPLPage() {
                 </ScrollReveal>
             </div>
 
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pplCourseSchema) }} />
             <StructuredData data={[pplArticleSchema, generateFAQSchema(faqs)]} />
 
             {/* ── What is the Full Form of PPL ── */}

@@ -1,18 +1,4 @@
-/**
- * index.jsx — Performance-Optimized Homepage
- * We One Aviation Academy
- * Compatible with: Next.js 14.2.3
- *
- * SEO FIXES APPLIED (on top of previous fixes):
- * 1. Head: Removed duplicate preconnects (already in _document.jsx)
- * 2. Head: Added page-specific canonical, og:title, og:description,
- *          og:url, og:image (absolute URL), twitter:title, twitter:description
- * 3. Head: Added BreadcrumbList schema for homepage
- * 4. educationalOrgSchema: Fixed logo URL (was logo.png, actual file is Logo.webp)
- * 5. educationalOrgSchema: aggregateRating removed (GEO audit 2026-08-11) — see note below
- * 6. H1: Added keyword-focused <h1> in tagline banner (HeroSlider owns the hero section)
- * 7. Contact section uses the current Gmail contact address.
- */
+/** Homepage for We One Aviation Academy. */
 
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
@@ -22,8 +8,6 @@ import HeroSlider from '../components/HeroSlider';
 import CourseCard from '../components/CourseCard';
 import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
-import Head from 'next/head';
-import { FOUNDED_YEAR } from '../data/academy';
 import ShowMoreList from '../components/ShowMoreList';
 
 // ─── LAZY LOAD HEAVY BELOW-FOLD COMPONENTS ───────────────────────────────────
@@ -31,16 +15,6 @@ import ShowMoreList from '../components/ShowMoreList';
 const LeadForm = dynamic(() => import('../components/LeadForm'), {
   ssr: false,
   loading: () => <div className="h-64 bg-white/10 rounded-2xl animate-pulse" />,
-});
-
-const HomepagePartnerLogos = dynamic(() => import('../components/Partnerlogos'), {
-  ssr: true,
-  loading: () => <div className="h-24 bg-gray-100 animate-pulse" />,
-});
-
-const HomepagePassResults = dynamic(() => import('../components/Passresultsslider'), {
-  ssr: false,
-  loading: () => <div className="h-40 bg-gray-100 rounded-2xl animate-pulse my-4" />,
 });
 
 const HomepageFAQs = dynamic(() => import('../components/FAQs'), {
@@ -162,99 +136,7 @@ const pilotRoutes = [
   },
 ];
 
-const LAST_UPDATED = 'August 19, 2026';
-const LAST_UPDATED_ISO = '2026-08-19';
-
-// ─── SCHEMA MARKUP ────────────────────────────────────────────────────────────
-// Defined at module level — created once, not on every render.
-
-
-
-
-// ─────────────────────────────────────────────────────────────────────────────
-// ✅ SEO FIX 4: logo URL was 'logo.png' — actual file is 'Logo.webp'
-// GEO audit 2026-08-11: aggregateRating removed — see the note in the object
-// ─────────────────────────────────────────────────────────────────────────────
-const educationalOrgSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  name: 'We One Aviation Academy',
-  url: 'https://weoneaviation.in',
-  logo: 'https://weoneaviation.in/Logo.webp',       // ✅ FIXED: was logo.png
-  image: 'https://weoneaviation.in/og-cover.jpg',
-  description: `Aviation education in Dwarka, New Delhi: DGCA ground-subject teaching, online batches for students outside Delhi, and flight training arranged through partner flying schools. Operating since ${FOUNDED_YEAR}.`,
-  foundingDate: '2009',
-  dateModified: LAST_UPDATED_ISO,
-  telephone: '+919667370747',
-  email: 'info.weoneaviation@gmail.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka',
-    addressLocality: 'New Delhi',
-    addressRegion: 'Delhi',
-    postalCode: '110077',
-    addressCountry: 'IN',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: '28.5921',
-    longitude: '77.0460',
-  },
-  /*
-   * aggregateRating REMOVED — do not "sync" it back.
-   *
-   * It claimed a 4.9 rating whose review count was simply the site's old
-   * pilots-trained figure reused, and there was not one Review node anywhere
-   * on the site to support it. It was also an organisation rating itself, which
-   * Google's structured-data policy disallows for self-serving Organization
-   * markup, and third-party data does not corroborate the number either
-   * (Justdial: 5.0 across ~1,300 ratings; ProvenExpert: 4.6 from 5).
-   *
-   * A rating a model can trivially cross-check and find wrong damages trust
-   * scoring more than having no rating at all, and it risks a manual action.
-   * To restore one, collect real first-party reviews and mark them up as
-   * individual Review nodes, or cite Justdial's figure on-page as an
-   * attributed third-party number rather than declaring it as your own.
-   */
-};
-
-const courseListSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  name: 'Aviation Courses at We One Aviation Academy',
-  itemListElement: courses.map((c, idx) => ({
-    '@type': 'ListItem',
-    position: idx + 1,
-    item: {
-      '@type': 'Course',
-      name: c.title,
-      description: `${c.title} training. Duration: ${c.duration}. Eligibility: ${c.eligibility}.`,
-      url: `https://weoneaviation.in${c.href}`,
-      provider: {
-        '@type': 'Organization',
-        name: 'We One Aviation Academy',
-        sameAs: 'https://weoneaviation.in',
-      },
-    },
-  })),
-};
-
-// ─────────────────────────────────────────────────────────────────────────────
-// ✅ SEO FIX 3: BreadcrumbList schema for homepage
-// Tells Google this is the root page — anchors the site hierarchy
-// ─────────────────────────────────────────────────────────────────────────────
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Home',
-      item: 'https://weoneaviation.in',
-    },
-  ],
-};
+const LAST_UPDATED = 'September 30, 2026';
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 
@@ -263,46 +145,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        {/*
-         * ✅ SEO FIX 1: Removed duplicate preconnects.
-         * fonts.googleapis.com and fonts.gstatic.com preconnects
-         * are already declared in pages/_document.jsx.
-         * Duplicate preconnects in every page Head cause extra
-         * network hints and console warnings — removed here.
-         */}
-
-        {/* ── Open Graph — page-specific ───────────────────────────────────────
-            ✅ SEO FIX 2b: OG title/description/url missing from this page.
-            _document.jsx only sets og:image and og:type as global defaults.
-            Without these, Facebook/LinkedIn/WhatsApp show a blank preview
-            card title when someone shares the homepage link.
-        ──────────────────────────────────────────────────────────────────── */}
-        <meta key="og:title" property="og:title" content="We One Aviation | DGCA Ground Classes in Dwarka" />
-        <meta key="og:description" property="og:description" content={`We One Aviation Academy teaches DGCA ground subjects in Dwarka, offers online batches to students outside Delhi, and arranges flight training through partner flying schools.`} />
-        <meta key="og:url" property="og:url" content="https://weoneaviation.in/" />
-        <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="We One Aviation Academy — DGCA Ground Classes in Dwarka" />
-
-        {/* ── Twitter Card — page-specific ─────────────────────────────────
-            ✅ SEO FIX 2c: twitter:title and twitter:description were missing.
-            Without them, Twitter/X falls back to the <title> tag which is OK
-            but LinkedIn and some WhatsApp versions show no description at all.
-        ──────────────────────────────────────────────────────────────────── */}
-        <meta name="twitter:title" content="We One Aviation | DGCA Ground Classes in Dwarka" />
-        <meta name="twitter:description" content="We One Aviation provides DGCA ground-subject preparation from its Dwarka, Delhi classroom, online batches outside Delhi, and partner-school flight-training guidance." />
-        {/* twitter:image and twitter:image:alt are page-independent and emitted
-            once in _document.jsx; repeating the identical tag here shipped it twice. */}
-
-        {/* ── Schema Markup ─────────────────────────────────────────────── */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrgSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseListSchema) }} />
-        {/* ✅ SEO FIX 3: BreadcrumbList schema — new addition */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      </Head>
-
       <Layout
         title="We One Aviation | DGCA Ground Classes in Dwarka"
         description="We One Aviation provides DGCA ground-subject preparation from its Dwarka, Delhi classroom, online batches outside Delhi, and partner-school flight-training guidance."
@@ -332,7 +174,7 @@ export default function Home() {
           {/* The page's single <h1>. HeroSlider is passed asH1={false} above so
               its heading renders as <h2>, leaving exactly one <h1> per route. */}
           <h1 className="text-white font-bold text-xl px-4">
-            Pilot training guidance for India’s next generation of aviators
+            Pilot Training in India
           </h1>
 
           {/* Direct answer. Written to stand alone if extracted. */}
@@ -437,8 +279,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <HomepagePartnerLogos />
 
         {/* COURSE FEE & SCHEDULE */}
         <section className="py-20 px-4">
@@ -725,11 +565,16 @@ export default function Home() {
               <div className="section-tag">India-wide pathway</div>
               <h2 className="font-montserrat text-3xl font-bold text-av-blue">How to Plan Pilot Training <span className="text-av-orange">in India</span></h2>
             </ScrollReveal>
-            <p className="text-gray-500 text-sm mt-4">The academy’s physical classroom is in Dwarka, Delhi; students outside Delhi can join online batches. Flight training is arranged through partner flying schools at their selected locations. <Link href="/pilot-training-in-india" className="text-av-blue font-semibold hover:underline">Read the India pilot-training pathway</Link>.</p>
+            <p className="text-gray-500 text-sm mt-4">
+              The academy’s physical classroom is in Dwarka, Delhi; students outside Delhi can join online batches.
+              Flight training is arranged through partner flying schools at their selected locations. Start with the{' '}
+              <Link href="/pilot-training-in-india" className="text-av-blue font-semibold hover:underline">India pilot-training pathway</Link>,
+              then review the <Link href="/pilot-training-in-delhi" className="text-av-blue font-semibold hover:underline">Delhi training context</Link>,
+              <Link href="/pilot-training-in-dwarka" className="ml-1 text-av-blue font-semibold hover:underline">Dwarka classroom details</Link>,
+              and <Link href="/dgca-ground-classes" className="ml-1 text-av-blue font-semibold hover:underline">DGCA ground classes</Link>.
+            </p>
           </div>
         </section>
-
-        <HomepagePassResults />
 
         {/* WORLD LOCATIONS */}
         <section className="py-20 px-4 bg-gray-50">
@@ -786,7 +631,7 @@ export default function Home() {
 
             <ScrollReveal delay={200}>
               <div className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20">
-                <h2 className="font-montserrat font-bold text-white text-center mb-4">BOOK Your SEAT FOR SCHOLARSHIP</h2>
+                <h2 className="font-montserrat font-bold text-white text-center mb-4">Ask About DGCA Ground Classes</h2>
                 <p className="text-white/70 text-center text-sm mb-4">Join Dgca Ground Classes</p>
                 <LeadForm isDark={true} />
               </div>

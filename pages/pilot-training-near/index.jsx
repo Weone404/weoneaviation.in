@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Layout from '../../components/Layout';
 import Breadcrumb from '../../components/Breadcrumb';
-import StructuredData from '../../components/StructuredData';
 import business from '../../data/local-seo/business-location.json';
 
 const usefulLinks = [
@@ -16,19 +15,6 @@ const usefulLinks = [
 ];
 
 export default function PilotTrainingNearHub() {
-  const canonical = 'https://weoneaviation.in/pilot-training-near';
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    '@id': `${canonical}#webpage`,
-    url: canonical,
-    name: 'Pilot Training for Delhi Students: Service Area and Classroom | We One Aviation',
-    description: 'Where We One Aviation teaches, how its online batches work, and what students across Delhi and nearby areas should know before enquiring.',
-    isPartOf: { '@id': 'https://weoneaviation.in/#website' },
-    publisher: { '@id': 'https://weoneaviation.in/#organization' },
-    about: { '@id': 'https://weoneaviation.in/#organization' },
-  };
-
   return (
     <Layout
       title="Pilot Training for Delhi Students: Service Area and Classroom | We One Aviation"
@@ -36,7 +22,6 @@ export default function PilotTrainingNearHub() {
       canonical="/pilot-training-near"
       noindex
     >
-      <StructuredData data={schema} />
       <main className="px-4 py-12">
         <div className="mx-auto max-w-5xl">
           <Breadcrumb />

@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
 import DgcaPaperFacts from '../components/DgcaPaperFacts';
@@ -127,9 +126,7 @@ export default function AirRegulations() {
         <Layout title="Air Regulations – Complete Guide for DGCA Exams | We One Aviation Academy" description="Complete guide to Air Regulations for DGCA CPL/PPL exams. Covers ICAO, Chicago Convention, DGCA structure, Rules of the Air, airspace classification, licensing rules and more.">
       <StructuredData data={courseSchema} />
 
-            <Head>
-                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-            </Head>
+            <StructuredData data={articleSchema} />
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}

@@ -115,7 +115,7 @@ const articleSchema = {
   dateModified: LAST_UPDATED_ISO,
   articleSection: 'Pilot training in Delhi',
   keywords: 'pilot training in dwarka, pilot training institute in dwarka, dgca ground classes dwarka, best pilot training academy in dwarka, aviation academy dwarka, pilot training delhi',
-  mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
+  mainEntityOfPage: { '@id': `${CANONICAL}#webpage` },
   image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
   author: { '@id': 'https://weoneaviation.in/#organization' },
   publisher: { '@id': 'https://weoneaviation.in/#organization' },

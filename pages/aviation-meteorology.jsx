@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
 import DgcaPaperFacts from '../components/DgcaPaperFacts';
@@ -93,9 +92,7 @@ export default function AviationMeteorology() {
         <Layout title="Aviation Meteorology Course — DGCA CPL/PPL | We One Aviation Academy" description="DGCA Aviation Meteorology course in Delhi. Learn weather patterns, METAR/TAF decoding, wind systems, turbulence and more for CPL & PPL exams at We One Aviation Academy.">
       <StructuredData data={courseSchema} />
 
-            <Head>
-                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-            </Head>
+            <StructuredData data={articleSchema} />
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}

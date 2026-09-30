@@ -1,5 +1,5 @@
-import Head from 'next/head';
 import Layout from '../../components/Layout';
+import StructuredData from '../../components/StructuredData';
 import HeroSlider from '../../components/HeroSlider';
 import LeadForm from '../../components/LeadForm';
 import ScrollReveal from '../../components/ScrollReveal';
@@ -200,9 +200,7 @@ const cplCourseSchema = {
 export default function CPL() {
     return (
         <Layout title="CPL Training in India: Eligibility, 200 Hours, Fees | We One Aviation" description="Commercial Pilot Licence requirements in India under the Aircraft Rules, 1937: minimum age 18, 10+2 with Physics and Maths, 200 hours of flight time, DGCA papers and RTR (A). Ground classes in Dwarka, New Delhi.">
-            <Head>
-                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(cplCourseSchema) }} />
-            </Head>
+            <StructuredData data={cplCourseSchema} />
             <HeroSlider customSlides={heroSlides} asH1={false} />
 
             {/* Overview */}
