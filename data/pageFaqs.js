@@ -36,6 +36,7 @@
    * generateFAQSchema. A page can emit the node either way.
    */
   '/blogs/how-pilots-build-hours',
+  '/blogs/cpl-training-india-vs-abroad',
   '/blogs/cpl-simulator-hours-dgca-rules',
   '/blogs/cpl-cross-country-flight-requirement-india',
   '/blogs/cpl-night-flying-hours-requirement-india',
