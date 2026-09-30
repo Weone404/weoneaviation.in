@@ -1162,6 +1162,38 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 > wide pale background and generous negative space above and below. Absolutely
 > no text, letters, numbers or arrows anywhere in the image.
 
+## Post: How to Change Your Details on a DGCA Computer Number Profile (/blogs/change-details-dgca-computer-number-profile)
+
+### Prompt 81 — Hero / OpenGraph and card
+- **File:** `public/blog/change-details-dgca-computer-number-profile/hero-two-lanes.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A student at a laptop with a profile screen in front of them, one short lane of details marked as changeable at once and a longer lane passing through a checkpoint"
+
+> A flat-style illustration of a young South Asian student in plain casual
+> clothing seated at a simple desk on the left of the frame, seen from the
+> side, using an open laptop. From the laptop screen, two horizontal lanes
+> run to the right across the pale background. The upper lane is short,
+> three small navy dots ending in an open end. The lower lane is longer,
+> passes through a plain navy gate shape (a simple checkpoint arch) and
+> continues beyond it, with burnt orange used only on the gate. No aircraft,
+> no logos, no readable content on the screen, just abstract bars. Generous
+> pale negative space above and below the lanes. Absolutely no text, letters,
+> numbers or arrows anywhere in the image.
+
+### Prompt 82 — Four-step request flow
+- **File:** `public/blog/change-details-dgca-computer-number-profile/request-flow.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A simple left-to-right flow of four steps: a request raised on a laptop, a form arriving by email, documents attached, and a decision returning to the student"
+
+> A flat-style diagram of four evenly spaced navy line-icons in a row on a
+> pale blue background, joined by a thin navy line. From left to right: a
+> laptop outline, an envelope outline, a paper sheet with a paperclip shape,
+> and a rounded tick-mark shape inside a circle outlined in burnt orange as
+> the single accent. Below the row, a thin curved line returns from the last
+> icon to a small simple student head-and-shoulders outline at the far left.
+> Nothing else in the frame, wide negative space above and below. Absolutely
+> no text, letters, numbers or arrows anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.

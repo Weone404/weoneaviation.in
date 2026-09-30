@@ -241,6 +241,15 @@ const guidePosts = [
         date: 'Sep 19, 2026',
         image: { src: '/blog/convert-foreign-pilot-licence-to-dgca-india/hero-two-licences-one-desk.webp', width: 1200, height: 630, promptId: '59' },
     },
+    {
+        slug: 'change-details-dgca-computer-number-profile',
+        title: 'How to Change Your Details on a DGCA Computer Number Profile',
+        excerpt: 'Which details on your Pariksha profile you can change yourself, which need Central Examination Organisation approval, and how the Profile Update Form works.',
+        category: 'DGCA exams',
+        readTime: '5 min',
+        date: 'Sep 30, 2026',
+        image: { src: '/blog/change-details-dgca-computer-number-profile/hero-two-lanes.webp', width: 1200, height: 630, promptId: '81' },
+    },
 ];
 
 export async function getServerSideProps() {
