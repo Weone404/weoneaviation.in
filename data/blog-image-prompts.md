@@ -1204,6 +1204,39 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A wide flat-vector diagram of two parallel routes running left to right across the frame. The upper route starts at a small Indian flying-school hangar with a single-engine trainer on the apron and runs in one unbroken line to a simple licence-card shape at the right edge. The lower route starts at an overseas hangar, runs to a licence-card shape two thirds of the way across, and then passes through a distinct gate or checkpoint marker before reaching an identical licence card at the right edge — the extra step is the whole point of the picture and must read clearly as an interruption in an otherwise identical journey. Keep the two routes the same length overall so the image does not imply one is faster. Compose with the routes occupying the middle band and generous empty space above and below. Calm, explanatory mood, not competitive. Do not draw flags, country outlines, maps, airline liveries or any recognisable brand. Do not draw people. Flat vector illustration, navy #0a2342 and pale blue #e0f0ff as the base palette with burnt orange #b45309 as the single accent, Indian aviation training context, generous negative space, absolutely NO text, letters or numbers anywhere in the image.
 
+## Post: DGCA Exam Payment Failed? How the Pariksha Refund Works (/blogs/dgca-exam-payment-failed-refund)
+
+### Prompt 84 — Hero / OpenGraph and card
+- **File:** `public/blog/dgca-exam-payment-failed-refund/hero-payment-no-confirmation.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A student at a laptop with a payment tick on one side of a gap and an empty exam confirmation slot on the other, joined by a thin refund path looping back"
+
+> A flat-style illustration of a young South Asian student in plain casual
+> clothing seated at a simple desk on the left of the frame, seen from the
+> side, using an open laptop. From the laptop, a thin navy line runs to the
+> right and passes a small circle with a tick shape, then reaches a gap, and
+> beyond the gap sits an empty dashed-outline rectangle (an unfilled slot).
+> A thin burnt orange curved line leaves the tick circle, loops under the gap
+> and returns towards the student, used as the only accent. No aircraft, no
+> logos, no readable content on the screen, just abstract bars. Generous
+> pale negative space above and below. Calm, reassuring mood. Absolutely no
+> text, letters, numbers, currency symbols or arrows anywhere in the image.
+
+### Prompt 85 — Refund request steps
+- **File:** `public/blog/dgca-exam-payment-failed-refund/refund-request-steps.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A left-to-right flow of four steps: a failed transaction picked from a list, bank details entered, a receipt and ID proof attached, and the money returning to the student"
+
+> A flat-style diagram of four evenly spaced navy line-icons in a row on a
+> pale blue background, joined by a thin navy line. From left to right: a
+> short list outline with one row highlighted, a bank building outline, two
+> overlapping paper sheets with a paperclip shape, and a simple coin shape
+> inside a circle outlined in burnt orange as the single accent. Below the
+> row, a thin curved line returns from the last icon to a small simple
+> student head-and-shoulders outline at the far left. Nothing else in the
+> frame, wide negative space above and below. Absolutely no text, letters,
+> numbers, currency symbols or arrows anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.

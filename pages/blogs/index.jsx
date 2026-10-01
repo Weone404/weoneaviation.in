@@ -255,6 +255,15 @@ const guidePosts = [
         date: 'Sep 30, 2026',
         image: { src: '/blog/change-details-dgca-computer-number-profile/hero-two-lanes.webp', width: 1200, height: 630, promptId: '81' },
     },
+    {
+        slug: 'dgca-exam-payment-failed-refund',
+        title: 'DGCA Exam Payment Failed? How the Pariksha Refund Works',
+        excerpt: 'Money left your account but the exam booking did not register. The one case DGCA refunds, how the request is filed from your login, and why a submitted form is never refunded.',
+        category: 'DGCA exams',
+        readTime: '5 min',
+        date: 'Oct 1, 2026',
+        image: { src: '/blog/dgca-exam-payment-failed-refund/hero-payment-no-confirmation.webp', width: 1200, height: 630, promptId: '84' },
+    },
 ];
 
 export async function getServerSideProps() {
