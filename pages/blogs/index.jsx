@@ -255,6 +255,15 @@ const guidePosts = [
         date: 'Sep 30, 2026',
         image: { src: '/blog/change-details-dgca-computer-number-profile/hero-two-lanes.webp', width: 1200, height: 630, promptId: '81' },
     },
+    {
+        slug: 'dgca-exam-fee-refund-failed-payment',
+        title: 'DGCA Exam Fee Refund: What Happens If a Payment Fails or You Miss the Session',
+        excerpt: 'DGCA refunds an examination fee only when the Bharatkosh payment succeeded but no service was delivered. What qualifies, how to claim it, and why a missed session is not refunded.',
+        category: 'DGCA exams',
+        readTime: '5 min',
+        date: 'Oct 2, 2026',
+        image: { src: '/blog/dgca-exam-fee-refund-failed-payment/hero-payment-fork.webp', width: 1200, height: 630, promptId: '84' },
+    },
 ];
 
 export async function getServerSideProps() {
