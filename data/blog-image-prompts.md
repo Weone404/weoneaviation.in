@@ -1204,6 +1204,32 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A wide flat-vector diagram of two parallel routes running left to right across the frame. The upper route starts at a small Indian flying-school hangar with a single-engine trainer on the apron and runs in one unbroken line to a simple licence-card shape at the right edge. The lower route starts at an overseas hangar, runs to a licence-card shape two thirds of the way across, and then passes through a distinct gate or checkpoint marker before reaching an identical licence card at the right edge — the extra step is the whole point of the picture and must read clearly as an interruption in an otherwise identical journey. Keep the two routes the same length overall so the image does not imply one is faster. Compose with the routes occupying the middle band and generous empty space above and below. Calm, explanatory mood, not competitive. Do not draw flags, country outlines, maps, airline liveries or any recognisable brand. Do not draw people. Flat vector illustration, navy #0a2342 and pale blue #e0f0ff as the base palette with burnt orange #b45309 as the single accent, Indian aviation training context, generous negative space, absolutely NO text, letters or numbers anywhere in the image.
 
+## Post: DGCA Exam Fee Refund: What Happens If a Payment Fails or You Miss the Session — `/blogs/dgca-exam-fee-refund-failed-payment`
+
+### Prompt 84 — hero, payment fork
+
+- **File:** `/blog/dgca-exam-fee-refund-failed-payment/hero-payment-fork.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** A single payment arrow splitting into two paths: one that reaches a completed exam application card, and one that stops at a broken link with a return arrow looping back toward the payer
+
+> A wide flat-vector diagram. On the left, a simple coin or banknote shape sends one arrow to the centre, where the arrow forks. The upper branch runs to the right edge and ends at a neat application-form card with a tick-shaped mark. The lower branch stops mid-frame at a visibly broken link, and from there a curved return arrow loops back toward the left, ending near the coin shape. The orange accent is used only on the return arrow. Centre the fork, leave generous empty space above and below, and keep the mood calm and reassuring rather than alarming. Do not draw people, bank logos, rupee symbols, flags or recognisable brands.
+
+### Prompt 85 — refund or no refund signposts
+
+- **File:** `/blog/dgca-exam-fee-refund-failed-payment/refund-or-no-refund.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** Two simple signposts at a fork: the left sign shows a broken payment link with a return arrow, the right sign shows a completed form and a calendar page with a closed lock
+
+> A flat-vector scene of one path forking into two, each with a plain wooden-style signpost. The left signpost carries a pictogram of a broken chain link with a small return arrow; the right signpost carries a completed form beside a calendar page with a closed padlock. Both paths are the same width so neither looks preferred. Place the fork on a thirds line with open sky above. The single orange accent sits on the return arrow. No people, no text, no real-world logos.
+
+### Prompt 86 — receipt and checklist
+
+- **File:** `/blog/dgca-exam-fee-refund-failed-payment/receipt-and-checklist.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A desk scene from above: a printed payment receipt, an ID card, a blank bank passbook and a laptop showing an empty form, laid out as a checklist before a refund claim
+
+> A top-down flat-vector desk scene. From left to right, evenly spaced with clear gaps: a printed receipt with blank lines, a plain ID card with a generic silhouette, a closed passbook, and a laptop showing an empty form outline. A thin dotted line connects the four items in order to suggest a checklist; the orange accent is a single tick mark beside the receipt. Plain pale-blue desk surface, plenty of negative space around the group. Avoid real bank, government or airline logos; leave every line on the documents as abstract grey bars.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
