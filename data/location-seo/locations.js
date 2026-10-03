@@ -5,6 +5,7 @@ import {
   DGCA_CLASS1_CENTRE_SOURCE,
   DGCA_CLASS1_CENTRES_AS_OF,
   DGCA_CLASS1_CIVIL_CENTRES,
+  DGCA_CLASS1_INITIAL_ISSUE_CENTRE_DETAILS,
 } from './medical-centres.js';
 
 export const LOCATION_SITEMAP_SLUGS = [
@@ -71,9 +72,8 @@ function createMedicalGuidanceLocation({
   const renewalContext = renewalStations.length
     ? `${DGCA_CLASS1_AIR_FORCE_RENEWAL_NOTE} These station entries are for renewals and do not replace checking the applicable civil-centre scope above.`
     : null;
-  const initialIssueContext = city === 'Bengaluru'
-    ? 'DGCA separately lists the Institute of Aerospace Medicine (IAM), Bengaluru among the Class 1 initial-issue centres. The initial-issue route is restricted; confirm your individual case against current DGCA guidance.'
-    : null;
+  const initialIssueCentres = DGCA_CLASS1_INITIAL_ISSUE_CENTRE_DETAILS
+    .filter((centre) => centre.city.toLowerCase() === city.toLowerCase());
   const indexable = !indexabilityReview;
   const rejectedServices = { ...cityServiceRejectionReasons };
   if (indexabilityReview?.reason) {
@@ -121,10 +121,10 @@ function createMedicalGuidanceLocation({
           detail: `Listed at ${stationCity}; the CAR identifies non-boarding Air Force stations as renewal centres.`,
         })),
       }] : []),
-      ...(initialIssueContext ? [{
-        title: 'A separate initial-issue route in Bengaluru',
-        body: initialIssueContext,
-      }] : []),
+      ...initialIssueCentres.map(({ sectionTitle, context }) => ({
+        title: sectionTitle,
+        body: context,
+      })),
     ],
     localDescription:
       `This guide uses DGCA’s dated medical-centre inventory to compare the Class 1 medical entries relevant to students planning pilot training in ${city}. It does not claim a local academy or flying-school presence.`,
@@ -742,6 +742,8 @@ export const LOCATION_RELATIONSHIPS = [
   'online',
   'service-area',
   'informational',
+  'research-only',
+  'unsupported',
 ];
 
 export const LOCATION_TYPES = ['city', 'locality'];

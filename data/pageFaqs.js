@@ -624,8 +624,6 @@ function fallbackContent(pathname) {
 export function getPageFAQs(pathname) {
   if (
     existingFaqRoutes.has(pathname)
-    || pathname === '/pilot-training-in/[city]'
-    || pathname === '/pilot-training/[city]/[locality]'
   ) return null;
   const content = routeContent[pathname] || fallbackContent(pathname);
   return { title: content.title, faqs: content.questions.map(([question, answer]) => ({ question, answer })) };

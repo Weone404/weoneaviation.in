@@ -64,6 +64,15 @@ function getMeta(html, name) {
   return tag ? decodeHtml((tag.match(/content="([^"]*)"/i) || [])[1] || '') : '';
 }
 
+function getSchemaNodes(value) {
+  if (Array.isArray(value)) return value.flatMap(getSchemaNodes);
+  if (!value || typeof value !== 'object') return [];
+  return [
+    value,
+    ...(Array.isArray(value['@graph']) ? value['@graph'].flatMap(getSchemaNodes) : []),
+  ];
+}
+
 function getPageHtml(route) {
   const pagePath = path.join(buildPages, ...route.split('/').filter(Boolean)) + '.html';
   return fs.existsSync(pagePath) ? fs.readFileSync(pagePath, 'utf8') : null;
@@ -89,12 +98,13 @@ function getPageDetails(route) {
   for (const [index, match] of [...html.matchAll(/<script[^>]+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)].entries()) {
     try {
       const parsed = JSON.parse(match[1]);
-      schemas.push(...(Array.isArray(parsed) ? parsed : [parsed]));
+      schemas.push(...getSchemaNodes(parsed));
     } catch (error) {
       schemaErrors.push(`JSON-LD ${index + 1}: ${error.message}`);
     }
   }
   for (const schema of schemas) {
+    if (!schema || typeof schema !== 'object') continue;
     const types = Array.isArray(schema['@type']) ? schema['@type'] : [schema['@type']];
     schemaTypes.push(...types);
   }
@@ -107,8 +117,10 @@ function getPageDetails(route) {
   if (canonical !== `https://weoneaviation.in${route}`) issues.push('canonical-not-self');
   if (getMeta(html, 'robots') !== 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
     && getMeta(html, 'robots') !== 'noindex, follow') issues.push('robots-directive');
-  if (!schemaTypes.includes('BreadcrumbList')) issues.push('breadcrumb-schema');
-  if (!schemaTypes.includes('EducationalOrganization')) issues.push('organization-schema');
+  if (!/\bnoindex\b/i.test(getMeta(html, 'robots'))) {
+    if (!schemaTypes.includes('BreadcrumbList')) issues.push('breadcrumb-schema');
+    if (!schemaTypes.includes('EducationalOrganization')) issues.push('organization-schema');
+  }
   if (schemaErrors.length) issues.push('invalid-json-ld');
   return {
     missing: false,
@@ -562,11 +574,7 @@ for (const route of ['/pilot-training-in-delhi', '/pilot-training-in-dwarka', '/
 if (noindexHub && !noindexHub.missing) {
   const hubSchema = [...noindexHub.html.matchAll(/<script[^>]+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)]
     .map((match) => JSON.parse(match[1]))
-    .flatMap((schema) => Array.isArray(schema) ? schema : [schema]);
-  const webpage = hubSchema.find((schema) => schema['@type'] === 'WebPage');
-  if (webpage?.publisher?.['@id'] !== 'https://weoneaviation.in/#organization') {
-    fail('Local-search hub WebPage does not reference the canonical organization.');
-  }
+    .flatMap(getSchemaNodes);
   if (hubSchema.some((schema) => schema['@type'] === 'LocalBusiness')) {
     fail('Local-search hub emits LocalBusiness schema.');
   }

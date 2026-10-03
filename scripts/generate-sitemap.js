@@ -73,25 +73,6 @@ function pageFileToRoute(filePath) {
   return `/${relPath}`;
 }
 
-function extractCitySlugs() {
-  const filePath = path.join(pagesDir, 'pilot-training-in', '[city].jsx');
-  if (!fs.existsSync(filePath)) return [];
-
-  const source = fs.readFileSync(filePath, 'utf8');
-  const slugs = [];
-  const regex = /^\s*([a-z0-9-]+)\s*:/gm;
-  let match;
-
-  while ((match = regex.exec(source))) {
-    const slug = match[1];
-    if (!slugs.includes(slug)) {
-      slugs.push(slug);
-    }
-  }
-
-  return slugs.map((slug) => `/pilot-training-in/${slug}`);
-}
-
 function extractBlogIds() {
   const filePath = path.join(pagesDir, 'blogs', '[id].jsx');
   if (!fs.existsSync(filePath)) return [];
@@ -314,10 +295,8 @@ function redirectSources() {
 
 async function buildSitemapXml() {
   const {
-    getIndexableLocationServicePairs,
-    LOCATION_SITEMAP_SLUGS,
+    getApprovedLocationServicePairs,
   } = await import('../lib/locationSeo.js');
-  const approvedLocationServiceSlugs = new Set(LOCATION_SITEMAP_SLUGS);
   const redirected = redirectSources();
   const pageFiles = collectPageFiles(pagesDir);
   const sourceRoutes = pageFiles
@@ -326,8 +305,7 @@ async function buildSitemapXml() {
       filePath: toPosixPath(path.relative(rootDir, filePath)),
     }))
     .filter(({ route }) => route);
-  const locationServiceRoutes = getIndexableLocationServicePairs()
-    .filter(({ location }) => approvedLocationServiceSlugs.has(location.slug))
+  const locationServiceRoutes = getApprovedLocationServicePairs()
     .map(({ location, service }) => ({
       route: `/${location.slug}/${service.slug}`,
       filePath: locationServicePagePath,
@@ -335,7 +313,6 @@ async function buildSitemapXml() {
     .filter(({ route }) => !isExcludedRoute(route) && !redirected.has(route.toLowerCase()));
 
   const dynamicRoutes = await validateProductionRoutes([
-    ...extractCitySlugs(),
     ...extractBlogIds(),
   ]);
 

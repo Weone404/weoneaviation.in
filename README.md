@@ -56,7 +56,7 @@ Every form submission on the website is **automatically saved to Excel**:
 2. **Contact page form**
 3. **Scroll popup** (appears at 30% scroll, once per session)
 4. **All course page forms** (CPL, PPL, ATPL, SPL, DGCA)
-5. **City page forms** (all 13 city pages)
+5. **Location × aviation-intent pages** (shared template; only approved combinations are generated)
 
 ---
 
@@ -75,10 +75,9 @@ Every form submission on the website is **automatically saved to Excel**:
 | `/courses/dgca-ground-classes` | DGCA Ground Classes |
 | `/how-to-become-a-pilot/after-12th` | How to Become a Pilot After 12th |
 | `/how-to-become-a-pilot/in-india` | How to Become a Pilot in India |
-| `/pilot-training-in/delhi` | Pilot Training in Delhi |
-| `/pilot-training-in/mumbai` | Pilot Training in Mumbai |
-| `/pilot-training-in/bangalore` | Pilot Training in Bangalore |
-| `/pilot-training-in/hyderabad` | + 10 more cities... |
+| `/pilot-training-in-delhi` | Delhi pilot-training authority guide |
+| `/pilot-training-in-dwarka` | Dwarka classroom authority guide |
+| `/{location}/{service}` | Shared location × aviation-intent route; only approved pairs are generated |
 
 ---
 
@@ -93,7 +92,7 @@ Every form submission on the website is **automatically saved to Excel**:
 | 💫 Animations | Scroll-triggered fade-up reveals |
 | 🖱️ Custom Cursor | Animated dot + trailing ring |
 | 🪟 Contact Popup | Fires at 30% scroll, once per session |
-| 📍 13 City Pages | SEO pages with dynamic routing |
+| 📍 Location × aviation intent | Shared route with geographic, service, relationship, differentiation, and indexability gates |
 | 📱 Fully Responsive | Mobile, tablet, desktop |
 | 🔍 SEO Optimized | Unique meta title + description per page |
 
@@ -134,8 +133,10 @@ weoneaviation/
 │   ├── how-to-become-a-pilot/
 │   │   ├── after-12th.jsx
 │   │   └── in-india.jsx
-│   └── pilot-training-in/
-│       └── [city].jsx      ← Dynamic (13 cities)
+│   ├── [location]/
+│   │   └── [service].jsx   ← Shared, allowlisted location × intent route
+│   ├── pilot-training-in-delhi.jsx
+│   └── pilot-training-in-dwarka.jsx  ← Preserved authority pages
 │
 ├── styles/
 │   └── globals.css

@@ -9,13 +9,10 @@ const siteOrigin = 'https://weoneaviation.in';
 
 async function getExpectedLocationRoutes() {
   const {
-    getIndexableLocationServicePairs,
+    getApprovedLocationServicePairs,
     INTERNATIONAL_LOCATION_CANDIDATES,
-    LOCATION_SITEMAP_SLUGS,
   } = await import('../lib/locationSeo.js');
-  const approvedLocationSlugs = new Set(LOCATION_SITEMAP_SLUGS);
-  return getIndexableLocationServicePairs()
-    .filter(({ location }) => approvedLocationSlugs.has(location.slug))
+  return getApprovedLocationServicePairs()
     .map(({ location, service }) => `/${location.slug}/${service.slug}`)
     .sort();
 }
@@ -57,9 +54,11 @@ async function main() {
   const expectedLocationRoutes = await getExpectedLocationRoutes();
   const {
     INTERNATIONAL_LOCATION_CANDIDATES,
-    LOCATION_SITEMAP_SLUGS,
+    getApprovedLocationServicePairs,
   } = await import('../lib/locationSeo.js');
-  const approvedLocationSlugs = new Set(LOCATION_SITEMAP_SLUGS);
+  const approvedLocationSlugs = new Set(
+    getApprovedLocationServicePairs().map(({ location }) => location.slug),
+  );
   const xml = fs.readFileSync(sitemapPath, 'utf8');
   const locations = readSitemapLocations(xml);
 

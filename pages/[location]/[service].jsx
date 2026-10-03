@@ -4,9 +4,9 @@ import FAQSection from '../../components/FAQSection';
 import LeadForm from '../../components/LeadForm';
 import Layout from '../../components/Layout';
 import { ACADEMY } from '../../lib/facts';
+import { buildLocationPageModel } from '../../lib/locationEngine';
 import {
-  formatLocationServiceTemplate,
-  getIndexableLocationServicePairs,
+  getApprovedLocationServicePairs,
   getLocationBySlug,
   getLocationServiceContent,
   getRelatedLocations,
@@ -26,8 +26,11 @@ function InfoSection({ title, children }) {
   );
 }
 
-function RelationshipNote({ location }) {
-  if (location.relationship === 'physical') {
+function RelationshipNote({ location, relationship }) {
+  const physicalPresenceVerified = location.physicalAcademy === true
+    || location.physicalPresence?.verified === true;
+
+  if (relationship === 'physical' && physicalPresenceVerified) {
     return (
       <p>
         The academy’s documented physical teaching location is {ACADEMY.streetAddress},{' '}
@@ -37,11 +40,15 @@ function RelationshipNote({ location }) {
     );
   }
 
-  if (location.relationship === 'online') {
+  if (relationship === 'physical') {
+    return <p>The record is marked physical, but verified premises details are unavailable; this is not a branch or flying-school claim.</p>;
+  }
+
+  if (relationship === 'online') {
     return <p>This page describes online access only; it does not imply a local office, classroom or flying school.</p>;
   }
 
-  if (location.relationship === 'service-area') {
+  if (relationship === 'service-area') {
     return <p>This page describes the documented service relationship only; it does not imply a local office, classroom or flying school.</p>;
   }
 
@@ -56,21 +63,12 @@ function RelationshipNote({ location }) {
 }
 
 function LocationServicePage({ location, service, content }) {
-  const title = content.seoTitle
-    || formatLocationServiceTemplate(service.titleTemplate, location);
-  const description = content.seoDescription
-    || formatLocationServiceTemplate(service.descriptionTemplate, location);
-  const canonical = `${SITE_URL}/${location.slug}/${service.slug}`;
-  const breadcrumbOverride = [
-    { href: location.authorityPath, label: location.authorityLabel || location.city },
-    {
-      href: `/${location.slug}/${service.slug}`,
-      label: content.breadcrumbLabel || service.shortName,
-    },
-  ];
-
-  const faqs = [...content.faqs, ...location.localFAQs]
-    .filter((faq, index, allFaqs) => allFaqs.findIndex((item) => item.question === faq.question) === index);
+  const pageModel = buildLocationPageModel({
+    location,
+    service,
+    content,
+    siteOrigin: SITE_URL,
+  });
 
   const relatedServices = getRelatedServices(service)
     .filter((relatedService) => isLocationServiceIndexable(location, relatedService));
@@ -80,22 +78,26 @@ function LocationServicePage({ location, service, content }) {
 
   return (
     <Layout
-      title={title}
-      description={description}
-      canonical={canonical}
+      title={pageModel.metadata.title}
+      description={pageModel.metadata.description}
+      canonical={pageModel.metadata.canonical}
+      robots={pageModel.metadata.robots}
       includeDefaultFAQs={false}
-      breadcrumbOverride={breadcrumbOverride}
-      schemaFaqItems={faqs}
+      breadcrumbOverride={pageModel.breadcrumbs}
+      schemaFaqItems={pageModel.schema.faqItems}
     >
-      <div className="mx-auto max-w-5xl px-4 py-10 md:py-14">
-        <Breadcrumb override={breadcrumbOverride} />
+      <div
+        className="mx-auto max-w-5xl px-4 py-10 md:py-14"
+        data-location-template={pageModel.template}
+      >
+        <Breadcrumb override={pageModel.breadcrumbs} />
 
         <header className="rounded-2xl bg-av-blue px-6 py-10 text-white md:px-12">
           <p className="text-sm uppercase tracking-wide text-av-orange">
             {location.city}{location.state !== location.city ? `, ${location.state}` : ''}, {location.country} · {service.shortName}
           </p>
           <h1 className="mt-3 font-montserrat text-3xl font-black md:text-5xl">
-            {content.h1 || formatLocationServiceTemplate(service.h1Template, location)}
+            {pageModel.metadata.h1}
           </h1>
           <p className="mt-5 max-w-3xl text-white/85">{content.introduction}</p>
           <Link
@@ -106,16 +108,13 @@ function LocationServicePage({ location, service, content }) {
           </Link>
         </header>
 
-        {location.relationship === 'physical' && (
+        {pageModel.template === 'local-service' && pageModel.serviceGuidance.length > 0 && (
           <InfoSection title={`The ${service.name} pathway`}>
-            <p>{service.serviceExplanation}</p>
-            <p>{service.dgcaPathway}</p>
-            <p>{service.eligibility}</p>
             <p>
-              Confirm current requirements with DGCA and the selected flying training
-              organisation before making training commitments.
+              Confirm current requirements with {pageModel.regulatoryContext.authority} and
+              the selected flying training organisation before making training commitments.
             </p>
-            {service.flightTrainingApplicable && <p>{service.flightTrainingPathway}</p>}
+            {pageModel.serviceGuidance.map((guidance) => <p key={guidance}>{guidance}</p>)}
           </InfoSection>
         )}
 
@@ -123,20 +122,45 @@ function LocationServicePage({ location, service, content }) {
           <p>{content.localApplication || content.localContext}</p>
         </InfoSection>
 
+        {(pageModel.inheritedFactNotice || pageModel.verifiedFacts.length > 0) && (
+          <InfoSection title={`Verified aviation context for ${location.city}`}>
+            {pageModel.inheritedFactNotice && <p>{pageModel.inheritedFactNotice}</p>}
+            {pageModel.verifiedFacts.map((fact) => (
+              <p key={`${fact.sourceLocationSlug}-${fact.source}`}>
+                {fact.text} <span className="text-sm text-gray-500">Context from {fact.sourceLocation}.</span>
+              </p>
+            ))}
+          </InfoSection>
+        )}
+
+        {pageModel.regulatoryContext && (
+          <InfoSection title={`Regulatory context for ${pageModel.regulatoryContext.country}`}>
+            <p>
+              The aviation regulatory authority recorded for {pageModel.regulatoryContext.country} is{' '}
+              {pageModel.regulatoryContext.authority}. Confirm current requirements with that authority.
+            </p>
+          </InfoSection>
+        )}
+
         <InfoSection title="Training offer and location relationship">
-          <p>{service.serviceExplanation}</p>
-          <RelationshipNote location={location} />
+          <p>
+            {pageModel.regulatoryContext?.country === 'India'
+              ? service.serviceExplanation
+              : content.introduction}
+          </p>
+          <RelationshipNote location={location} relationship={pageModel.relationship} />
         </InfoSection>
 
         <InfoSection title={`Local information for ${location.city}`}>
-          {location.relationship === 'physical' && (
+          {pageModel.relationship === 'physical'
+            && (location.physicalAcademy === true || location.physicalPresence?.verified === true) && (
             <address className="not-italic">
               <span className="font-semibold text-av-blue">Documented classroom address:</span>{' '}
               {ACADEMY.streetAddress}, {ACADEMY.addressLocality}, {ACADEMY.addressRegion}{' '}
               {ACADEMY.postalCode}, {ACADEMY.addressCountry}.
             </address>
           )}
-          {location.localSections.map((section) => (
+          {(location.localSections || []).map((section) => (
             <div key={section.title} className="space-y-3">
               <h3 className="pt-2 font-semibold text-av-blue">{section.title}</h3>
               <p>{section.body}</p>
@@ -153,7 +177,7 @@ function LocationServicePage({ location, service, content }) {
               {section.closing && <p>{section.closing}</p>}
             </div>
           ))}
-          {location.sourceLinks?.map((source) => (
+          {(location.sourceLinks || []).map((source) => (
             <p key={source.href}>
               Source:{' '}
               <a
@@ -169,7 +193,7 @@ function LocationServicePage({ location, service, content }) {
         </InfoSection>
 
         <FAQSection
-          faqs={faqs}
+          faqs={pageModel.faqs}
           title={`${service.shortName} questions for ${location.city}`}
           idPrefix={`${location.slug}-${service.slug}-faq`}
           includeSchema={false}
@@ -192,7 +216,7 @@ function LocationServicePage({ location, service, content }) {
           )}
           <h3 className="pt-3 font-semibold text-av-blue">Related guides</h3>
           <div className="space-y-2">
-            {content.internalLinks.map((item) => (
+            {pageModel.links.map((item) => (
               <p key={item.href}>
                 {item.context}{' '}
                 <Link href={item.href} className="font-semibold text-av-blue underline">
@@ -269,7 +293,7 @@ export default LocationServicePage;
 
 export function getStaticPaths() {
   return {
-    paths: getIndexableLocationServicePairs().map(({ location, service }) => ({
+    paths: getApprovedLocationServicePairs().map(({ location, service }) => ({
       params: { location: location.slug, service: service.slug },
     })),
     fallback: false,
