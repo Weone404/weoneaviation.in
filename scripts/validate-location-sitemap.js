@@ -78,11 +78,28 @@ async function main() {
   });
 
   for (const candidate of INTERNATIONAL_LOCATION_CANDIDATES) {
-    assert.ok(!approvedLocationSlugs.has(candidate.slug), `International candidate must not be sitemap-approved: ${candidate.slug}`);
-    assert.ok(
-      !parsedUrls.some((url) => url.pathname.startsWith(`/${candidate.slug}/`)),
-      `Sitemap must not contain a non-indexable international candidate: ${candidate.slug}`,
+    const approvedRoutes = expectedLocationRoutes.filter(
+      (route) => route.startsWith(`/${candidate.slug}/`),
     );
+    const sitemapRoutes = parsedUrls
+      .map(({ pathname }) => pathname)
+      .filter((route) => route.startsWith(`/${candidate.slug}/`))
+      .sort();
+
+    if (approvedRoutes.length > 0) {
+      assert.ok(approvedLocationSlugs.has(candidate.slug));
+      assert.deepEqual(
+        sitemapRoutes,
+        approvedRoutes,
+        `Sitemap must contain only the approved route(s) for promoted candidate ${candidate.slug}.`,
+      );
+    } else {
+      assert.equal(
+        sitemapRoutes.length,
+        0,
+        `Sitemap must not contain a non-indexable international candidate: ${candidate.slug}`,
+      );
+    }
   }
 
   const locationRoutes = parsedUrls

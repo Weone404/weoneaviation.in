@@ -10,6 +10,7 @@ export const SERVICES = [
       'Understand the difference between DGCA ground classes and flying schools in {city}, {state}. We One Aviation arranges flight training with partner schools; it does not operate a flying school.',
     h1Template: 'Pilot School Information for {city}',
     indexable: false,
+    regulatoryJurisdiction: 'India',
     serviceExplanation:
       'A flying school conducts flight training. We One Aviation teaches DGCA ground subjects and can arrange flight training with partner flying schools; it does not operate a flying school.',
     dgcaPathway:
@@ -39,6 +40,7 @@ export const SERVICES = [
       'Explore pilot-training guidance for {city}, {state}: DGCA ground preparation at the documented Dwarka classroom and flight training arranged with partner schools.',
     h1Template: 'Pilot Training Guidance for {city}',
     indexable: true,
+    regulatoryJurisdiction: 'India',
     serviceExplanation:
       'Pilot training for a commercial licence combines regulatory eligibility, DGCA written examinations and flight training at a flying training organisation. We One Aviation teaches DGCA ground subjects and arranges flight training with partner schools.',
     dgcaPathway:
@@ -69,6 +71,7 @@ export const SERVICES = [
       'Learn about DGCA ground classes in {city}, {state}. Classroom batches are held at the academy’s Dwarka address; online availability is described on the course page.',
     h1Template: 'DGCA Ground Classes for {city}',
     indexable: true,
+    regulatoryJurisdiction: 'India',
     serviceExplanation:
       'DGCA ground classes prepare students for the DGCA written papers. We One Aviation teaches the ground subjects; DGCA sets the examinations and licensing requirements. RTR (A) preparation is described separately from the written papers.',
     dgcaPathway:
@@ -98,6 +101,7 @@ export const SERVICES = [
       'Review the commercial-pilot training pathway for {city}, {state}. We One Aviation teaches DGCA ground subjects and arranges flight training with partner flying schools.',
     h1Template: 'Commercial Pilot Training Guidance for {city}',
     indexable: true,
+    regulatoryJurisdiction: 'India',
     serviceExplanation:
       'Commercial pilot training for a CPL includes eligibility and medical checks, DGCA theory examinations, required flight training and the applicable skill test. We One Aviation provides DGCA ground-subject preparation and arranges the flying stage with partner schools.',
     dgcaPathway:
@@ -128,6 +132,7 @@ export const SERVICES = [
       'Understand CPL ground preparation and the separate flying stage for students in {city}, {state}. Flight training is arranged with partner flying schools.',
     h1Template: 'CPL Training Guidance for {city}',
     indexable: true,
+    regulatoryJurisdiction: 'India',
     serviceExplanation:
       'A Commercial Pilot Licence pathway includes eligibility, medical assessment, DGCA written examinations, flight training and applicable skill tests. We One Aviation teaches DGCA ground subjects and arranges flight training with partner flying schools.',
     dgcaPathway:

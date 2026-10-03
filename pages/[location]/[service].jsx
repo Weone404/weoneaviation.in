@@ -8,6 +8,7 @@ import { buildLocationPageModel } from '../../lib/locationEngine';
 import {
   getApprovedLocationServicePairs,
   getLocationBySlug,
+  getLocationEngineContext,
   getLocationServiceContent,
   getRelatedLocations,
   getRelatedServices,
@@ -26,7 +27,11 @@ function InfoSection({ title, children }) {
   );
 }
 
-function RelationshipNote({ location, relationship }) {
+function RelationshipNote({ location, relationship, content }) {
+  if (content.relationshipStatement) {
+    return <p>{content.relationshipStatement}</p>;
+  }
+
   const physicalPresenceVerified = location.physicalAcademy === true
     || location.physicalPresence?.verified === true;
 
@@ -62,12 +67,20 @@ function RelationshipNote({ location, relationship }) {
   );
 }
 
-function LocationServicePage({ location, service, content }) {
+function LocationServicePage({
+  location,
+  service,
+  content,
+  engineLocations,
+  geographicDataValidated,
+}) {
   const pageModel = buildLocationPageModel({
     location,
     service,
     content,
     siteOrigin: SITE_URL,
+    locations: engineLocations,
+    geographicDataValidated,
   });
 
   const relatedServices = getRelatedServices(service)
@@ -148,7 +161,11 @@ function LocationServicePage({ location, service, content }) {
               ? service.serviceExplanation
               : content.introduction}
           </p>
-          <RelationshipNote location={location} relationship={pageModel.relationship} />
+          <RelationshipNote
+            location={location}
+            relationship={pageModel.relationship}
+            content={content}
+          />
         </InfoSection>
 
         <InfoSection title={`Local information for ${location.city}`}>
@@ -309,12 +326,15 @@ export function getStaticProps({ params }) {
   }
 
   const content = getLocationServiceContent(location, service);
+  const { locations, geographicDataValidated } = getLocationEngineContext(location);
 
   return {
     props: {
       location,
       service,
       content,
+      engineLocations: locations,
+      geographicDataValidated,
     },
   };
 }
