@@ -211,6 +211,8 @@ export default function PilotTrainingInDelhi() {
                   Call <a className={A} href={`tel:${ACADEMY.phone}`}>{ACADEMY.phoneDisplay}</a> or see the{' '}
                   <Link href="/pilot-training-in-dwarka" className={A}>Dwarka classroom details</Link> and{' '}
                   <Link href="/dgca-ground-classes" className={A}>DGCA ground-class information</Link>.
+                  {' '}For classroom and online access details for students across Delhi, see the{' '}
+                  <Link href="/pilot-training-near" className={A}>Delhi training-location guide</Link>.
                 </p>
               </section>
 

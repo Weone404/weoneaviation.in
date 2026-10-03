@@ -321,7 +321,7 @@ const nextConfig = {
       // /pilot-training-in/<city> routes point straight at the hub rather than
       // at their flat twin, because the flat twin is itself redirected.
 
-      // 13 nested routes (pages/pilot-training-in/[city].jsx, now deleted)
+      // Retain redirects from the former nested city-guide URLs.
       { source: '/pilot-training-in/bangalore', destination: '/pilot-training-in-india', permanent: true },
       { source: '/pilot-training-in/chennai', destination: '/pilot-training-in-india', permanent: true },
       { source: '/pilot-training-in/delhi', destination: '/pilot-training-in-delhi', permanent: true },

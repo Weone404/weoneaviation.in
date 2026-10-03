@@ -97,6 +97,7 @@ export default function DGCAGroundClasses() {
                         <Link href="/pilot-training-in-india" className={linkClass}>Pilot-training pathway in India</Link>
                         <Link href="/pilot-training-in-delhi" className={linkClass}>Delhi training information</Link>
                         <Link href="/pilot-training-in-dwarka" className={linkClass}>Dwarka classroom details</Link>
+                        <Link href="/pilot-training-near" className={linkClass}>Classroom and online access across Delhi</Link>
                         <Link href="/about-us" className={linkClass}>About the academy</Link>
                         <Link href="/contact" className={linkClass}>Contact and ask about current course terms</Link>
                     </div>

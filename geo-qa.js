@@ -58,7 +58,7 @@ const setKeys=[...pf.slice(0,pf.indexOf('const routeContent')).matchAll(/'(\/[^'
 const rcKeys=[...pf.matchAll(/^\s*'(\/[^']*)':\s*\{/gm)].map(m=>m[1]);
 const oS=setKeys.filter(k=>redir[k]),oR=rcKeys.filter(k=>redir[k]);
 const shadow=rcKeys.filter(k=>setKeys.includes(k)),dup=rcKeys.filter((k,i)=>rcKeys.indexOf(k)!==i);
-const dead=setKeys.concat(rcKeys).filter(k=>!live(k)&&!redir[k]&&k!=='/pilot-training-in/[city]'&&!k.includes('['));
+const dead=setKeys.concat(rcKeys).filter(k=>!live(k)&&!redir[k]&&!k.includes('['));
 oS.length?bad('Set members that 301: '+oS.join(', ')):ok('no 301d routes in existingFaqRoutes');
 oR.length?bad('routeContent keys that 301: '+oR.join(', ')):ok('no 301d routes in routeContent');
 shadow.length?bad('routeContent shadowed by Set: '+shadow.join(', ')):ok('no unreachable routeContent entries');

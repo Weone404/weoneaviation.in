@@ -17,6 +17,16 @@ export const DGCA_CLASS1_INITIAL_ISSUE_CENTRES = [
   'DGCA-empanelled Aeromedical Evaluation Centre',
 ];
 
+export const DGCA_CLASS1_INITIAL_ISSUE_CENTRE_DETAILS = [
+  {
+    name: 'Institute of Aerospace Medicine (IAM)',
+    city: 'Bengaluru',
+    sectionTitle: 'A separate initial-issue route in Bengaluru',
+    context:
+      'DGCA separately lists the Institute of Aerospace Medicine (IAM), Bengaluru among the restricted Class 1 initial-issue centres. Confirm your individual case against current DGCA guidance.',
+  },
+];
+
 export const DGCA_CLASS1_AIR_FORCE_RENEWAL_NOTE =
   "Appendix 'B' of the CAR lists twenty Air Force medical examination centres. The first three are the boarding centres; the remaining Senior Medical Officer stations are used for renewals.";
 

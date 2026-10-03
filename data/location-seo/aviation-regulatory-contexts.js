@@ -1,0 +1,42 @@
+export const AVIATION_REGULATORY_CONTEXTS = {
+  India: {
+    country: 'India',
+    countryCode: 'IN',
+    authority: 'Directorate General of Civil Aviation (DGCA)',
+    jurisdiction: 'India',
+    source: 'https://www.dgca.gov.in/',
+    reviewedAt: '2026-10-03',
+  },
+  'United States': {
+    country: 'United States',
+    countryCode: 'US',
+    authority: 'Federal Aviation Administration (FAA)',
+    jurisdiction: 'United States',
+    source: 'https://www.faa.gov/',
+    reviewedAt: '2026-10-03',
+  },
+  'United Kingdom': {
+    country: 'United Kingdom',
+    countryCode: 'GB',
+    authority: 'UK Civil Aviation Authority (CAA)',
+    jurisdiction: 'United Kingdom',
+    source: 'https://www.caa.co.uk/',
+    reviewedAt: '2026-10-03',
+  },
+  Canada: {
+    country: 'Canada',
+    countryCode: 'CA',
+    authority: 'Transport Canada',
+    jurisdiction: 'Canada',
+    source: 'https://tc.canada.ca/en/aviation',
+    reviewedAt: '2026-10-03',
+  },
+  Australia: {
+    country: 'Australia',
+    countryCode: 'AU',
+    authority: 'Civil Aviation Safety Authority (CASA)',
+    jurisdiction: 'Australia',
+    source: 'https://www.casa.gov.au/',
+    reviewedAt: '2026-10-03',
+  },
+};

@@ -243,6 +243,7 @@ export default function PilotTrainingInDwarka() {
                 {' '}For the complete Indian pathway, see{' '}
                 <Link href="/pilot-training-in-india" className={A}>pilot training in India</Link>; for the course itself, see{' '}
                 <Link href="/dgca-ground-classes" className={A}>DGCA ground classes</Link> and the{' '}
+                <Link href="/pilot-training-near" className={A}>Delhi classroom and online access guide</Link>, plus the{' '}
                 <Link href="/commercial-pilot-license" className={A}>Commercial Pilot Licence pathway</Link>.
               </p>
 

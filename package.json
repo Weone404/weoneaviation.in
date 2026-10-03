@@ -17,6 +17,8 @@
     "enrich:locations": "node scripts/enrich-locations.js",
     "validate:local-search": "node scripts/validate-local-search.js",
     "validate:locations": "npm run validate:local-search",
+    "test:location-engine": "node scripts/test-location-engine.js",
+    "test:location-scale": "node scripts/test-location-scale.js",
     "verify:location-sample": "node scripts/verify-location-sample.js",
     "build": "npm run generate:local-search && npm run generate:sitemap && next build --webpack && npm run validate:sitemap",
     "start": "next start",

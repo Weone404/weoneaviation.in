@@ -52,6 +52,14 @@ provenance. No geographic field falls back to this cache. Since GeoNames uses
 a settlement `place name` rather than a distinct city field, city stays null
 unless a future source explicitly supplies it.
 
+The canonical adapter in `lib/geographicSourceAdapters.js` can normalize
+GeoNames India postal TSV rows into geographic-reference records for controlled
+tests and ingestion. It skips postal codes whose rows have conflicting
+administrative assignments. This adapter output is distinct from the
+owner-supplied PIN list and the enrichment artifacts described above; it does
+not establish academy presence, approve a route, or feed production routing or
+the sitemap.
+
 Conflicting nonblank state values in the supplied PDF set `stateConflict`,
 preserve all source-state values, lower state confidence and force the record
 to REVIEW. GeoNames may be recorded as a cross-check but cannot erase a PDF
