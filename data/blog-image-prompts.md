@@ -1230,6 +1230,32 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A top-down flat-vector desk scene. From left to right, evenly spaced with clear gaps: a printed receipt with blank lines, a plain ID card with a generic silhouette, a closed passbook, and a laptop showing an empty form outline. A thin dotted line connects the four items in order to suggest a checklist; the orange accent is a single tick mark beside the receipt. Plain pale-blue desk surface, plenty of negative space around the group. Avoid real bank, government or airline logos; leave every line on the documents as abstract grey bars.
 
+## Post: DGCA exam pass validity (`/blogs/dgca-exam-pass-validity-cpl-five-years`)
+
+### Prompt 87 — hero, five-year window
+
+- **File:** `/blog/dgca-exam-pass-validity-cpl-five-years/hero-five-year-window.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** A horizontal timeline with five exam sheets stacked inside a bracketed window that ends at a licence application folder on the right, and one older sheet falling outside the bracket on the left
+
+> A wide flat-vector timeline running left to right. Five identical exam sheets sit grouped inside a wide square bracket in the centre-right, the bracket ending at a closed application folder on the right edge. One older sheet sits alone to the left of the bracket, slightly faded and tilted, clearly outside it. The orange accent is used only on the bracket. Pale-blue background, generous empty space above and below, calm mood. Sheets show abstract grey bars only. No people, no clocks with numerals, no logos.
+
+### Prompt 88 — window slides back
+
+- **File:** `/blog/dgca-exam-pass-validity-cpl-five-years/window-slides-back.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** Two stacked timelines: on the first a five-year bracket covers all exam sheets, on the second the bracket has moved right and the earliest sheet sits outside it
+
+> Two horizontal timelines stacked vertically with equal spacing. Top: five exam sheets evenly spaced, all inside a navy bracket. Bottom: the same five sheets in the same positions, but the bracket has shifted right so the leftmost sheet falls outside it and is drawn faded. A thin orange arrow between the two timelines points downward. Flat vector, thirds composition, lots of negative space. No people, no numerals, no text.
+
+### Prompt 89 — dated results tracker
+
+- **File:** `/blog/dgca-exam-pass-validity-cpl-five-years/dated-results-tracker.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A desk seen from above with a wall-calendar style planner, five result slips arranged in a row, and a small light aircraft model pointing toward a folder
+
+> A top-down flat-vector desk scene. On the left a blank grid planner, in the centre five result slips in an even row with abstract grey bars, on the right a closed folder with a small single-engine trainer aircraft model resting beside it, nose pointing at the folder. One orange tick mark on the leftmost slip. Pale-blue desk, wide margins. No text, letters, numerals, logos or people.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
