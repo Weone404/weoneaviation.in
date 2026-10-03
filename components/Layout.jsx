@@ -20,14 +20,24 @@ const ContactPopup = dynamic(() => import('./ContactPopup'), { ssr: false });
  * them consolidates the signal without deleting a URL, which is the owner's
  * decision and not ours. Pass a site-relative path, e.g. "/dgca-class-2-class-1-medical".
  */
-export default function Layout({ children, title, description, robots, noindex = false, canonical }) {
+export default function Layout({
+  children,
+  title,
+  description,
+  robots,
+  noindex = false,
+  canonical,
+  includeDefaultFAQs = true,
+  breadcrumbOverride = null,
+  schemaFaqItems = null,
+}) {
   const router = useRouter();
   const canonicalPath = router.asPath ? router.asPath.split(/[?#]/)[0] : '/';
 
   const selfUrl = `https://weoneaviation.in${canonicalPath === '/' ? '/' : canonicalPath}`;
   const canonicalUrl = canonical ? new URL(canonical, 'https://weoneaviation.in').href : selfUrl;
   const isAdminPage = router.pathname.startsWith('/admin');
-  const pageFAQs = isAdminPage ? null : getPageFAQs(router.pathname);
+  const pageFAQs = isAdminPage || !includeDefaultFAQs ? null : getPageFAQs(router.pathname);
   const resolvedRobots = robots ?? (noindex ? 'noindex, follow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
   const includeFaqSchema = !/\bnoindex\b/i.test(resolvedRobots);
 
@@ -44,7 +54,7 @@ export default function Layout({ children, title, description, robots, noindex =
    * Skipped where a trail would be meaningless or unwanted: the homepage,
    * whose trail is just "Home", and /admin, which is noindex anyway.
    */
-  const breadcrumbItems = buildBreadcrumbItems(canonicalPath);
+  const breadcrumbItems = buildBreadcrumbItems(canonicalPath, breadcrumbOverride);
    const shouldEmitSiteSchema = !isAdminPage
      && !/\bnoindex\b/i.test(resolvedRobots)
      && canonicalUrl === selfUrl;
@@ -56,6 +66,7 @@ export default function Layout({ children, title, description, robots, noindex =
            description: description || 'DGCA ground classes in Dwarka, New Delhi, and flight training arranged through partner flying schools.',
          },
          breadcrumbItems,
+         faqArray: schemaFaqItems,
        })
      : null;
   /*
@@ -91,7 +102,7 @@ export default function Layout({ children, title, description, robots, noindex =
 
         {/* OG. og:type, og:image and all twitter:* live in _document.jsx —
             they are page-independent, so emitting them here too would double them. */}
-        <meta key="og:url" property="og:url" content={selfUrl} />
+        <meta key="og:url" property="og:url" content={canonicalUrl} />
         <meta key="og:title" property="og:title" content={title || 'We One Aviation Academy'} />
         <meta key="og:description" property="og:description" content={description || 'DGCA pilot training in India'} />
         <meta key="twitter:title" name="twitter:title" content={title || 'We One Aviation Academy'} />
