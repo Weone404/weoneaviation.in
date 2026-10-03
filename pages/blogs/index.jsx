@@ -11,12 +11,8 @@ import { MongoClient } from 'mongodb';
  * here. Never ship a date later than the day of the build.
  */
 const hardcodedBlogs = [
-    { id: 1, title: 'How to Become a Commercial Pilot in India', excerpt: 'The licence route in outline — the education gate, the medical, the computer number, the written papers and the flying hours. The fully sourced version, with the rule behind each stage, is the route guide.', category: 'CPL Guide', readTime: '4 min', date: 'Dec 15, 2024', img: '/how to Become a Commercial pilot in India.jpeg', faqs: [] },
-    { id: 2, title: 'DGCA Written Exams: Subjects, Pattern & Preparation Tips', excerpt: 'Five DGCA written papers, with RTR (A) examined separately. The subjects, the 70% threshold per paper, and the fees DGCA charges.', category: 'DGCA', readTime: '5 min', date: 'Dec 10, 2024', img: '/Dgca written exam subject pattern and preparation tips.jpeg', faqs: [] },
     // id 4 ("Pilot Salary in India") removed 2026-09-16: that path now 301s to
     // /commercial-pilot-license-salary. See next.config.js.
-    { id: 3, title: 'CPL Training in India vs Abroad', excerpt: 'What actually differs between training in India and training overseas — and why the cost comparison you have read is probably unsourced.', category: 'Training', readTime: '5 min', date: 'Dec 5, 2024', img: '/Cpl training in india vs abroad which is better.jpeg', faqs: [] },
-    { id: 5, title: 'Medical Requirements to Become a Pilot in India', excerpt: 'Which DGCA medical class you need and when. The full sourced treatment, including the approved centres, is on the medical page.', category: 'Medical', readTime: '4 min', date: 'Nov 20, 2024', img: '/Pilot-Salary.webp', faqs: [] },
     // id 6 ("How to Become a Pilot After 12th Science") is intentionally absent
     // from this grid. It is canonicalised and noindexed to
     // /how-to-become-a-pilot-after-12th in pages/blogs/[id].jsx, so surfacing
@@ -34,6 +30,24 @@ const hardcodedBlogs = [
  * card swaps to next/image with no layout change.
  */
 const guidePosts = [
+    {
+        slug: 'cpl-training-india-vs-abroad',
+        title: 'CPL Training India vs Abroad 2026',
+        excerpt: 'A course abroad ends with that country\u2019s licence, not a DGCA one. What genuinely differs, the conversion DGCA actually requires \u2014 two written papers instead of five, a skill test in India, a radio certificate and a currency rule \u2014 and the question worth asking either way.',
+        category: 'Pilot training abroad',
+        readTime: '9 min',
+        date: 'Sep 30, 2026',
+        image: { src: '/blog/cpl-training-india-vs-abroad/hero-two-routes.webp', width: 1200, height: 630, promptId: '83' },
+    },
+    {
+        slug: 'dgca-computer-number-rejected-reasons',
+        title: 'Why a DGCA Computer Number Application Gets Rejected — and How to Avoid It',
+        excerpt: "Partial versus complete rejection, the three-chance rule, and the name, date-of-birth and upload mismatches DGCA's own rejection list is built around — so you can check your documents before you submit.",
+        category: 'DGCA exams',
+        readTime: '6 min',
+        date: 'Sep 29, 2026',
+        image: { src: '/blog/dgca-computer-number-rejected/hero-mismatched-forms.webp', width: 1200, height: 630, promptId: '79' },
+    },
     {
         slug: 'how-to-become-a-flight-dispatcher-in-india',
         title: 'How to Become a Flight Dispatcher in India: DGCA FDEG Eligibility Explained',
@@ -231,6 +245,33 @@ const guidePosts = [
         readTime: '9 min',
         date: 'Sep 19, 2026',
         image: { src: '/blog/convert-foreign-pilot-licence-to-dgca-india/hero-two-licences-one-desk.webp', width: 1200, height: 630, promptId: '59' },
+    },
+    {
+        slug: 'change-details-dgca-computer-number-profile',
+        title: 'How to Change Your Details on a DGCA Computer Number Profile',
+        excerpt: 'Which details on your Pariksha profile you can change yourself, which need Central Examination Organisation approval, and how the Profile Update Form works.',
+        category: 'DGCA exams',
+        readTime: '5 min',
+        date: 'Sep 30, 2026',
+        image: { src: '/blog/change-details-dgca-computer-number-profile/hero-two-lanes.webp', width: 1200, height: 630, promptId: '81' },
+    },
+    {
+        slug: 'dgca-exam-fee-refund-failed-payment',
+        title: 'DGCA Exam Fee Refund: What Happens If a Payment Fails or You Miss the Session',
+        excerpt: 'DGCA refunds an examination fee only when the Bharatkosh payment succeeded but no service was delivered. What qualifies, how to claim it, and why a missed session is not refunded.',
+        category: 'DGCA exams',
+        readTime: '5 min',
+        date: 'Oct 2, 2026',
+        image: { src: '/blog/dgca-exam-fee-refund-failed-payment/hero-payment-fork.webp', width: 1200, height: 630, promptId: '84' },
+    },
+    {
+        slug: 'dgca-exam-pass-validity-cpl-five-years',
+        title: 'How Long Does a DGCA Exam Pass Stay Valid? The 5-Year Rule for CPL Papers',
+        excerpt: 'A cleared DGCA theory paper expires. Five years for a CPL or ATPL, two and a half for other licences, counted back from your application. How to plan the exams around your flying.',
+        category: 'DGCA exams',
+        readTime: '6 min',
+        date: 'Oct 3, 2026',
+        image: { src: '/blog/dgca-exam-pass-validity-cpl-five-years/hero-five-year-window.webp', width: 1200, height: 630, promptId: '87' },
     },
 ];
 

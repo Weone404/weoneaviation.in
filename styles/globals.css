@@ -32,7 +32,17 @@ body {
   background: #fff;
   color: #1a1a2e;
   overflow-x: hidden;
-  word-break: break-word;
+  /*
+   * overflow-wrap, not word-break. The old value, word-break: break-word, is
+   * non-standard and lets the browser split any word at any letter when it
+   * sizes table columns. Every table with a short label column beside long
+   * text collapsed that column to one character ("As pe ct", "Wh at trig
+   * gers it") on phones and desktops alike. overflow-wrap: break-word still
+   * breaks a long URL or email that would otherwise overflow, but only when
+   * it has to, so column widths are sized from whole words. Changed
+   * 2026-09-30; tested at 320, 375, 768 and 1280px.
+   */
+  overflow-wrap: break-word;
   min-height: 100vh;
 }
 

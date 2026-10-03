@@ -1130,6 +1130,132 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 > negative space above the doors, nothing else in the frame. Absolutely no
 > text, letters, numbers or arrows anywhere in the image.
 
+## Post: Why a DGCA Computer Number Application Gets Rejected (/blogs/dgca-computer-number-rejected-reasons)
+
+### Prompt 79 — Hero / OpenGraph and card
+- **File:** `public/blog/dgca-computer-number-rejected/hero-mismatched-forms.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A student at a desk comparing a printed marksheet against an on-screen application form, with one line on each document highlighted to show they do not match"
+
+> A flat-style illustration of a young South Asian student in plain casual
+> clothing seated at a simple desk, seen from the side. On the left of the
+> desk lies a flat rectangular paper document shape with several plain
+> horizontal line bars suggesting rows of text; on the right stands a flat
+> monitor outline showing a similar form made of horizontal line bars. One
+> bar on the paper and one bar on the monitor are filled burnt orange to show
+> the two lines that do not agree. The student leans slightly forward, eyes
+> moving between the two. No aircraft, no logos, no readable content on
+> either document, just abstract bars. Generous pale negative space above and
+> around the desk. Absolutely no text, letters or numbers anywhere in the image.
+
+### Prompt 80 — Two outcomes: a loop and a restart
+- **File:** `public/blog/dgca-computer-number-rejected/two-outcomes.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A path that splits into a short loop returning to the same starting point, and a second branch that leads back to a fresh starting point at the far left, representing partial and complete rejection"
+
+> A flat-style top-down diagram of a wide pale-blue path outlined in thin navy
+> lines, running from the centre of the frame. From a single junction, the
+> upper branch makes a short, tight loop and returns to the same junction,
+> drawn with three small navy dots marking the loop. The lower branch runs
+> straight left and ends at a small, empty circular starting point outlined in
+> burnt orange at the far left edge of the frame. Nothing else in the frame,
+> wide pale background and generous negative space above and below. Absolutely
+> no text, letters, numbers or arrows anywhere in the image.
+
+## Post: How to Change Your Details on a DGCA Computer Number Profile (/blogs/change-details-dgca-computer-number-profile)
+
+### Prompt 81 — Hero / OpenGraph and card
+- **File:** `public/blog/change-details-dgca-computer-number-profile/hero-two-lanes.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text already set in code:** "A student at a laptop with a profile screen in front of them, one short lane of details marked as changeable at once and a longer lane passing through a checkpoint"
+
+> A flat-style illustration of a young South Asian student in plain casual
+> clothing seated at a simple desk on the left of the frame, seen from the
+> side, using an open laptop. From the laptop screen, two horizontal lanes
+> run to the right across the pale background. The upper lane is short,
+> three small navy dots ending in an open end. The lower lane is longer,
+> passes through a plain navy gate shape (a simple checkpoint arch) and
+> continues beyond it, with burnt orange used only on the gate. No aircraft,
+> no logos, no readable content on the screen, just abstract bars. Generous
+> pale negative space above and below the lanes. Absolutely no text, letters,
+> numbers or arrows anywhere in the image.
+
+### Prompt 82 — Four-step request flow
+- **File:** `public/blog/change-details-dgca-computer-number-profile/request-flow.webp`
+- **Dimensions:** 1200 × 800
+- **Alt text already set in code:** "A simple left-to-right flow of four steps: a request raised on a laptop, a form arriving by email, documents attached, and a decision returning to the student"
+
+> A flat-style diagram of four evenly spaced navy line-icons in a row on a
+> pale blue background, joined by a thin navy line. From left to right: a
+> laptop outline, an envelope outline, a paper sheet with a paperclip shape,
+> and a rounded tick-mark shape inside a circle outlined in burnt orange as
+> the single accent. Below the row, a thin curved line returns from the last
+> icon to a small simple student head-and-shoulders outline at the far left.
+> Nothing else in the frame, wide negative space above and below. Absolutely
+> no text, letters, numbers or arrows anywhere in the image.
+
+## Post: CPL Training India vs Abroad 2026 — `/blogs/cpl-training-india-vs-abroad`
+
+### Prompt 83 — hero, two routes side by side
+
+- **File:** `/blog/cpl-training-india-vs-abroad/hero-two-routes.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** Two training routes drawn side by side: an Indian flying school leading straight to a DGCA licence, and an overseas school leading to a foreign licence with a conversion step before the DGCA licence
+
+> A wide flat-vector diagram of two parallel routes running left to right across the frame. The upper route starts at a small Indian flying-school hangar with a single-engine trainer on the apron and runs in one unbroken line to a simple licence-card shape at the right edge. The lower route starts at an overseas hangar, runs to a licence-card shape two thirds of the way across, and then passes through a distinct gate or checkpoint marker before reaching an identical licence card at the right edge — the extra step is the whole point of the picture and must read clearly as an interruption in an otherwise identical journey. Keep the two routes the same length overall so the image does not imply one is faster. Compose with the routes occupying the middle band and generous empty space above and below. Calm, explanatory mood, not competitive. Do not draw flags, country outlines, maps, airline liveries or any recognisable brand. Do not draw people. Flat vector illustration, navy #0a2342 and pale blue #e0f0ff as the base palette with burnt orange #b45309 as the single accent, Indian aviation training context, generous negative space, absolutely NO text, letters or numbers anywhere in the image.
+
+## Post: DGCA Exam Fee Refund: What Happens If a Payment Fails or You Miss the Session — `/blogs/dgca-exam-fee-refund-failed-payment`
+
+### Prompt 84 — hero, payment fork
+
+- **File:** `/blog/dgca-exam-fee-refund-failed-payment/hero-payment-fork.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** A single payment arrow splitting into two paths: one that reaches a completed exam application card, and one that stops at a broken link with a return arrow looping back toward the payer
+
+> A wide flat-vector diagram. On the left, a simple coin or banknote shape sends one arrow to the centre, where the arrow forks. The upper branch runs to the right edge and ends at a neat application-form card with a tick-shaped mark. The lower branch stops mid-frame at a visibly broken link, and from there a curved return arrow loops back toward the left, ending near the coin shape. The orange accent is used only on the return arrow. Centre the fork, leave generous empty space above and below, and keep the mood calm and reassuring rather than alarming. Do not draw people, bank logos, rupee symbols, flags or recognisable brands.
+
+### Prompt 85 — refund or no refund signposts
+
+- **File:** `/blog/dgca-exam-fee-refund-failed-payment/refund-or-no-refund.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** Two simple signposts at a fork: the left sign shows a broken payment link with a return arrow, the right sign shows a completed form and a calendar page with a closed lock
+
+> A flat-vector scene of one path forking into two, each with a plain wooden-style signpost. The left signpost carries a pictogram of a broken chain link with a small return arrow; the right signpost carries a completed form beside a calendar page with a closed padlock. Both paths are the same width so neither looks preferred. Place the fork on a thirds line with open sky above. The single orange accent sits on the return arrow. No people, no text, no real-world logos.
+
+### Prompt 86 — receipt and checklist
+
+- **File:** `/blog/dgca-exam-fee-refund-failed-payment/receipt-and-checklist.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A desk scene from above: a printed payment receipt, an ID card, a blank bank passbook and a laptop showing an empty form, laid out as a checklist before a refund claim
+
+> A top-down flat-vector desk scene. From left to right, evenly spaced with clear gaps: a printed receipt with blank lines, a plain ID card with a generic silhouette, a closed passbook, and a laptop showing an empty form outline. A thin dotted line connects the four items in order to suggest a checklist; the orange accent is a single tick mark beside the receipt. Plain pale-blue desk surface, plenty of negative space around the group. Avoid real bank, government or airline logos; leave every line on the documents as abstract grey bars.
+
+## Post: DGCA exam pass validity (`/blogs/dgca-exam-pass-validity-cpl-five-years`)
+
+### Prompt 87 — hero, five-year window
+
+- **File:** `/blog/dgca-exam-pass-validity-cpl-five-years/hero-five-year-window.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** A horizontal timeline with five exam sheets stacked inside a bracketed window that ends at a licence application folder on the right, and one older sheet falling outside the bracket on the left
+
+> A wide flat-vector timeline running left to right. Five identical exam sheets sit grouped inside a wide square bracket in the centre-right, the bracket ending at a closed application folder on the right edge. One older sheet sits alone to the left of the bracket, slightly faded and tilted, clearly outside it. The orange accent is used only on the bracket. Pale-blue background, generous empty space above and below, calm mood. Sheets show abstract grey bars only. No people, no clocks with numerals, no logos.
+
+### Prompt 88 — window slides back
+
+- **File:** `/blog/dgca-exam-pass-validity-cpl-five-years/window-slides-back.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** Two stacked timelines: on the first a five-year bracket covers all exam sheets, on the second the bracket has moved right and the earliest sheet sits outside it
+
+> Two horizontal timelines stacked vertically with equal spacing. Top: five exam sheets evenly spaced, all inside a navy bracket. Bottom: the same five sheets in the same positions, but the bracket has shifted right so the leftmost sheet falls outside it and is drawn faded. A thin orange arrow between the two timelines points downward. Flat vector, thirds composition, lots of negative space. No people, no numerals, no text.
+
+### Prompt 89 — dated results tracker
+
+- **File:** `/blog/dgca-exam-pass-validity-cpl-five-years/dated-results-tracker.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A desk seen from above with a wall-calendar style planner, five result slips arranged in a row, and a small light aircraft model pointing toward a folder
+
+> A top-down flat-vector desk scene. On the left a blank grid planner, in the centre five result slips in an even row with abstract grey bars, on the right a closed folder with a small single-engine trainer aircraft model resting beside it, nose pointing at the folder. One orange tick mark on the leftmost slip. Pale-blue desk, wide margins. No text, letters, numerals, logos or people.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.

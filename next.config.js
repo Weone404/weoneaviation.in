@@ -153,6 +153,23 @@ const nextConfig = {
        */
       { source: '/blogs/4', destination: '/commercial-pilot-license-salary', permanent: true },
       /*
+       * Added 2026-09-30, completing the numeric-id retirement the owner
+       * ordered. /blogs/1, /blogs/2, /blogs/5 and /blogs/6 have carried a
+       * canonical to their superseding page since 15 September; a canonical is
+       * a hint and a 308 is not, so they now redirect. /blogs/3 had no
+       * superseding page, so one was written for it in this same commit at
+       * /blogs/cpl-training-india-vs-abroad.
+       *
+       * The static entries stay in pages/blogs/[id].jsx. They become
+       * unreachable — redirects run before routing — and they are the rollback
+       * path if any of these destinations is ever retired.
+       */
+      { source: '/blogs/1', destination: '/blogs/how-to-become-an-airline-pilot-in-india', permanent: true },
+      { source: '/blogs/2', destination: '/blogs/dgca-exam-guide', permanent: true },
+      { source: '/blogs/3', destination: '/blogs/cpl-training-india-vs-abroad', permanent: true },
+      { source: '/blogs/5', destination: '/dgca-class-2-class-1-medical', permanent: true },
+      { source: '/blogs/6', destination: '/how-to-become-a-pilot-after-12th', permanent: true },
+      /*
        * Added 2026-09-16 at the owner's instruction. The slug read "ecga" where
        * the query is "egca" — "egca login" carries 74,000 monthly searches and
        * "egca" another 49,500, and the page sat at position 12 and 20 for them
