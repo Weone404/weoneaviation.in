@@ -264,6 +264,15 @@ const guidePosts = [
         date: 'Oct 2, 2026',
         image: { src: '/blog/dgca-exam-fee-refund-failed-payment/hero-payment-fork.webp', width: 1200, height: 630, promptId: '84' },
     },
+    {
+        slug: 'dgca-exam-pass-validity-cpl-five-years',
+        title: 'How Long Does a DGCA Exam Pass Stay Valid? The 5-Year Rule for CPL Papers',
+        excerpt: 'A cleared DGCA theory paper expires. Five years for a CPL or ATPL, two and a half for other licences, counted back from your application. How to plan the exams around your flying.',
+        category: 'DGCA exams',
+        readTime: '6 min',
+        date: 'Oct 3, 2026',
+        image: { src: '/blog/dgca-exam-pass-validity-cpl-five-years/hero-five-year-window.webp', width: 1200, height: 630, promptId: '87' },
+    },
 ];
 
 export async function getServerSideProps() {
