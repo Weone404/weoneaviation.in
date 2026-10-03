@@ -7,6 +7,46 @@ indexability check and a data-integrity validator. The single
 location/service pairs from that shared data. The sitemap generator uses the
 same eligibility helper to include those routes.
 
+`npm run validate:location-expansion` is the build preflight for production
+location data. It renders every explicitly indexable location/service pair
+through the shared page model, checks the business-claim and regulatory gates,
+compares non-grandfathered content against the other pages for that service,
+and verifies the separate sitemap allowlist. Only the ten existing production
+routes are grandfathered from a new differentiation assessment. India and
+international research registries are evaluated across the configured service
+intents but remain isolated from route generation until their records are
+deliberately migrated and pass these gates.
+
+## Global expansion research and promotion
+
+`geography/global-pilot.js` is a sourced, explicitly incomplete pilot across
+ten countries. `aviation-evidence.js`, `global-aviation-intents.js`, and
+`aviation-regulatory-contexts.js` provide separately validated aviation
+evidence, intent policies, and country-level regulator context. These
+registries support evaluation only; a gazetteer record, airport, regulator, or
+independent training organization does not establish We One Aviation's
+presence, partner, or service delivery in a market.
+
+`lib/geographicSourceAdapters.js` includes a bounded GeoNames `allCountries`
+TSV adapter. It requires configured countries and explicit administrative
+parents, records GeoNames CC BY 4.0 attribution, and rejects rows with unknown
+parents, unsupported feature types, invalid coordinates, or malformed fields.
+The adapter does not write into production geography or routing automatically.
+
+`production-candidate-registry.js` evaluates the location-by-intent research
+matrix through the promotion gates and exports only complete, explicitly
+reviewed production candidate records. As of the current pilot, no candidates
+pass: the research matrix is not itself a source of indexable URLs. New
+production candidates require first-party evidence for the service
+relationship, jurisdiction-appropriate facts, complete differentiated
+content, claim-safe metadata, and explicit indexability approval. Only then
+can the existing route and sitemap selectors expose a pair; geography,
+renderability, and an aviation entity listing alone never do.
+
+Run `npm run test:global-location-expansion` for the pilot, bounded-ingestion,
+promotion-gate, and synthetic stress checks. Synthetic stress fixtures remain
+test-only and must not be imported by the production route or sitemap.
+
 `india-candidates.js` is a separate research-only registry of 30 candidate
 markets. It is deliberately not imported by `lib/locationSeo.js`, the dynamic
 route or sitemap generation. All candidates remain non-indexable and support

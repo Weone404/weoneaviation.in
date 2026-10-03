@@ -163,7 +163,7 @@ async function main() {
   assert.equal(sitemapGeneratorSource.includes('getApprovedLocationServicePairs()'), true);
   assert.equal(/extractCitySlugs|\[city\]/.test(sitemapGeneratorSource), false);
   assert.equal(/city\s*===\s*['"]Bengaluru['"]/.test(productionLocationsSource), false);
-  assert.equal(approvedRoutesBefore.length, 10);
+  assert.equal(approvedRoutesBefore.length, 16);
   assert.deepEqual(approvedRoutesBefore, productionRoutesBefore);
   const bengaluruMedicalGuide = productionData.LOCATIONS.find(({ slug }) => slug === 'bengaluru');
   assert.ok(bengaluruMedicalGuide.localSections.some(({ title, body }) => (
@@ -872,7 +872,7 @@ async function main() {
   assert.equal(productionSafety.testFixtureLocationsAbsentFromProductionRoutesAndSitemap, true);
   assert.equal(productionSafety.sourcedGeographyAbsentFromProductionRoutesAndSitemap, true);
   assert.equal(productionSafety.pinAndNearPagesInSitemap, 0);
-  assert.equal(productionSafety.generatedSitemapUrlsBefore, 128);
+  assert.equal(productionSafety.generatedSitemapUrlsBefore, 134);
 
   const resolverTotal = resolverSuccess.valid + resolverSuccess.failed + resolverSuccess.ambiguous;
   const output = {

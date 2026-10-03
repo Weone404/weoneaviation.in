@@ -33,7 +33,7 @@ async function main() {
   const { REAL_GEOGRAPHIC_SAMPLE } = realGeography;
   const realRecords = REAL_GEOGRAPHIC_SAMPLE.records;
   const ambiguousRealAliases = geographicData.findAmbiguousGeographicAliases(realRecords);
-  const routeBaseline = [
+  const legacyRouteBaseline = [
     '/delhi/pilot-training',
     '/delhi/dgca-ground-classes',
     '/delhi/commercial-pilot-training',
@@ -45,15 +45,24 @@ async function main() {
     '/mumbai/pilot-training',
     '/bengaluru/pilot-training',
   ];
+  const routeBaseline = [
+    ...legacyRouteBaseline,
+    '/ahmedabad/pilot-training',
+    '/kolkata/pilot-training',
+    '/thiruvananthapuram/pilot-training',
+    '/ranchi/pilot-training',
+    '/dehradun/pilot-training',
+    '/dubai/pilot-training',
+  ];
 
   assert.deepEqual(
     locationSeo.getIndexableLocationServiceRoutes().sort(),
     routeBaseline.sort(),
-    'The geographic engine must preserve the ten production-approved routes.',
+    'The geographic engine must preserve approved routes and include only promoted data-backed pages.',
   );
   assert.deepEqual(
     [...indexabilityPolicy.GEOGRAPHIC_INDEXABILITY_POLICY.existingDifferentiationExemptRoutes].sort(),
-    [...routeBaseline].sort(),
+    [...legacyRouteBaseline].sort(),
   );
   assert.equal(LOCATION_SITEMAP_SLUGS.length, 4);
   assert.equal(REAL_GEOGRAPHIC_SAMPLE.datasetKind, 'real-geographic-sample');
@@ -151,6 +160,11 @@ async function main() {
       'United Kingdom': 'UK Civil Aviation Authority (CAA)',
       Canada: 'Transport Canada',
       Australia: 'Civil Aviation Safety Authority (CASA)',
+      Singapore: 'Civil Aviation Authority of Singapore (CAAS)',
+      'United Arab Emirates': 'United Arab Emirates General Civil Aviation Authority (GCAA)',
+      France: 'Direction générale de l’aviation civile (DGAC), within the EASA framework',
+      Germany: 'Luftfahrt-Bundesamt (LBA), within the EASA framework',
+      Japan: 'Japan Civil Aviation Bureau (JCAB)',
     },
   );
   for (const [slug, authority] of [
@@ -215,11 +229,16 @@ async function main() {
   assert.ok(realMumbaiPage.serviceGuidance.length > 0);
   const productionRouteModels = routeBaseline.map((route) => {
     const [locationSlug, serviceSlug] = route.slice(1).split('/');
-    const location = engine.resolveLocation(locationSlug);
-    const service = engine.resolveServiceIntent(serviceSlug);
-    return engine.buildLocationPageModel({ location, service });
+    const location = locationSeo.getLocationBySlug(locationSlug);
+    const service = locationSeo.getServiceBySlug(serviceSlug);
+    const modelContext = locationSeo.getLocationEngineContext(location);
+    return engine.buildLocationPageModel({
+      location,
+      service,
+      ...modelContext,
+    });
   });
-  assert.equal(productionRouteModels.length, 10);
+  assert.equal(productionRouteModels.length, 16);
   assert.ok(productionRouteModels.every(({ productionSitemapEligible }) => productionSitemapEligible));
   assert.deepEqual(engine.validateGeographicNodes(ENGINE_TEST_LOCATIONS), []);
   assert.equal(new Set(ENGINE_TEST_LOCATIONS.map(({ id }) => id)).size, ENGINE_TEST_LOCATIONS.length);
@@ -573,7 +592,7 @@ async function main() {
   assert.match(routeSource, /pageModel\.metadata\.h1/);
   assert.match(routeSource, /pageModel\.verifiedFacts/);
   assert.match(routeSource, /pageModel\.regulatoryContext/);
-  assert.match(routeSource, /RelationshipNote location=\{location\} relationship=\{pageModel\.relationship\}/);
+  assert.match(routeSource, /RelationshipNote\s+location=\{location\}\s+relationship=\{pageModel\.relationship\}\s+content=\{content\}/);
   assert.equal((routeSource.match(/function LocationServicePage\(/g) || []).length, 1);
   const sitemapGeneratorSource = fs.readFileSync(
     path.join(__dirname, 'generate-sitemap.js'),
