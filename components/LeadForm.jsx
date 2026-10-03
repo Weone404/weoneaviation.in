@@ -2,7 +2,12 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { ACADEMY } from '../lib/facts';
 
-export default function LeadForm({ title = 'Get Free Counselling', dark = false, compact = false }) {
+export default function LeadForm({
+  title = 'Get Free Counselling',
+  dark = false,
+  compact = false,
+  source,
+}) {
   const [form, setForm] = useState({ name: '', phone: '', email: '', course: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
@@ -17,7 +22,7 @@ export default function LeadForm({ title = 'Get Free Counselling', dark = false,
       const res = await fetch('/api/save-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, source: router.pathname }),
+        body: JSON.stringify({ ...form, source: source || router.pathname }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Server error');

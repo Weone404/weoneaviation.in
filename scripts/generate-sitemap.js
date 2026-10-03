@@ -5,6 +5,7 @@ const { execFileSync } = require('child_process');
 const rootDir = path.resolve(__dirname, '..');
 const pagesDir = path.join(rootDir, 'pages');
 const outputPath = path.join(rootDir, '.generated-sitemap.xml');
+const locationServicePagePath = toPosixPath(path.relative(rootDir, path.join(pagesDir, '[location]', '[service].jsx')));
 /*
  * Apex, not www. This script writes .generated-sitemap.xml, which
  * pages/sitemap.xml.js serves in preference to everything else — so this one
@@ -312,6 +313,11 @@ function redirectSources() {
 }
 
 async function buildSitemapXml() {
+  const {
+    getIndexableLocationServicePairs,
+    LOCATION_SITEMAP_SLUGS,
+  } = await import('../lib/locationSeo.js');
+  const approvedLocationServiceSlugs = new Set(LOCATION_SITEMAP_SLUGS);
   const redirected = redirectSources();
   const pageFiles = collectPageFiles(pagesDir);
   const sourceRoutes = pageFiles
@@ -320,14 +326,28 @@ async function buildSitemapXml() {
       filePath: toPosixPath(path.relative(rootDir, filePath)),
     }))
     .filter(({ route }) => route);
+  const locationServiceRoutes = getIndexableLocationServicePairs()
+    .filter(({ location }) => approvedLocationServiceSlugs.has(location.slug))
+    .map(({ location, service }) => ({
+      route: `/${location.slug}/${service.slug}`,
+      filePath: locationServicePagePath,
+    }))
+    .filter(({ route }) => !isExcludedRoute(route) && !redirected.has(route.toLowerCase()));
 
   const dynamicRoutes = await validateProductionRoutes([
     ...extractCitySlugs(),
     ...extractBlogIds(),
   ]);
 
-  const localRoutes = new Set([...sourceRoutes.map(({ route }) => route), ...dynamicRoutes].map(normalizeRoute));
-  const sourceFileByRoute = new Map(sourceRoutes.map(({ route, filePath }) => [normalizeRoute(route), filePath]));
+  const localRoutes = new Set([
+    ...sourceRoutes.map(({ route }) => route),
+    ...locationServiceRoutes.map(({ route }) => route),
+    ...dynamicRoutes,
+  ].map(normalizeRoute));
+  const sourceFileByRoute = new Map(
+    [...sourceRoutes, ...locationServiceRoutes]
+      .map(({ route, filePath }) => [normalizeRoute(route), filePath]),
+  );
   const productionOnlyRoutes = await discoverProductionOnlyBlogRoutes(localRoutes);
 
   const allRoutes = Array.from(new Set([...localRoutes, ...productionOnlyRoutes]))
