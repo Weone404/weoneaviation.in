@@ -273,6 +273,15 @@ const guidePosts = [
         date: 'Oct 3, 2026',
         image: { src: '/blog/dgca-exam-pass-validity-cpl-five-years/hero-five-year-window.webp', width: 1200, height: 630, promptId: '87' },
     },
+    {
+        slug: 'dgca-regular-vs-on-demand-exam-session',
+        title: 'Regular vs On-Demand DGCA Exam Session: Which Should You Book?',
+        excerpt: 'DGCA lists four regular and eight on-demand exam sessions for 2026, and the on-demand fee is double. What each costs, the gaps between sessions, and when paying more is worth it.',
+        category: 'DGCA exams',
+        readTime: '6 min',
+        date: 'Oct 6, 2026',
+        image: { src: '/blog/dgca-regular-vs-on-demand-exam-session/hero-two-session-lanes.webp', width: 1200, height: 630, promptId: '90' },
+    },
 ];
 
 export async function getServerSideProps() {

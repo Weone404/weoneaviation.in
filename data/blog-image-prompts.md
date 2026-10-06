@@ -1256,6 +1256,32 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A top-down flat-vector desk scene. On the left a blank grid planner, in the centre five result slips in an even row with abstract grey bars, on the right a closed folder with a small single-engine trainer aircraft model resting beside it, nose pointing at the folder. One orange tick mark on the leftmost slip. Pale-blue desk, wide margins. No text, letters, numerals, logos or people.
 
+## Post: Regular vs on-demand DGCA exam session (`/blogs/dgca-regular-vs-on-demand-exam-session`)
+
+### Prompt 90 — hero, two session lanes
+
+- **File:** `/blog/dgca-regular-vs-on-demand-exam-session/hero-two-session-lanes.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** Two horizontal lanes on a calendar strip: a sparse lane with four large markers and a denser lane with eight small markers, both leading to the same exam desk
+
+> A wide flat-vector scene. Two parallel horizontal lanes run left to right across a pale-blue calendar strip. The upper lane carries four large, widely spaced navy markers; the lower lane carries eight small markers, closely spaced, with the orange accent on the lower lane's markers only. Both lanes converge on a single plain exam desk with an empty chair on the right edge. Generous empty space above and below, calm mood. No people, no numerals, no logos, no text.
+
+### Prompt 91 — calendar gaps
+
+- **File:** `/blog/dgca-regular-vs-on-demand-exam-session/calendar-gaps.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A year laid out as twelve blocks with four wide markers for regular sessions and eight narrow markers for on-demand sessions, showing the shorter gaps between the narrow ones
+
+> A flat-vector year strip made of twelve equal blank blocks in a row. Above the strip, four wide navy markers sit at even intervals. Below the strip, eight narrow markers sit at uneven, closer intervals, one orange marker among them as the single accent. Thin dotted guide lines connect markers to the blocks. Pale-blue background, wide margins, thirds composition. Blocks are plain with no labels. No text, letters, numerals or logos.
+
+### Prompt 92 — decision fork
+
+- **File:** `/blog/dgca-regular-vs-on-demand-exam-session/decision-fork.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A student at a fork in a path: a wide, slow road toward a distant calendar on one side and a short, steeper road with a small coin marker on the other
+
+> A flat-vector landscape with a South Asian student seen from behind in modest clothing, standing at a fork. The left road is wide and gently winding toward a distant blank calendar tile on the horizon; the right road is short and steeper, ending at a nearer calendar tile, with a single orange coin-shaped marker beside it. A small single-engine trainer aircraft flies high in the pale-blue sky. Ample negative space. No text, numerals, currency symbols, logos or signage.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
