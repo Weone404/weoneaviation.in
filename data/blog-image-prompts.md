@@ -1282,6 +1282,32 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector landscape with a South Asian student seen from behind in modest clothing, standing at a fork. The left road is wide and gently winding toward a distant blank calendar tile on the horizon; the right road is short and steeper, ending at a nearer calendar tile, with a single orange coin-shaped marker beside it. A small single-engine trainer aircraft flies high in the pale-blue sky. Ample negative space. No text, numerals, currency symbols, logos or signage.
 
+## Post: Board Verification Certificate for a DGCA computer number (`/blogs/board-verification-certificate-dgca-computer-number`)
+
+### Prompt 93 — hero, BVC document trail
+
+- **File:** `public/blog/board-verification-certificate-dgca-computer-number/hero-bvc-document-trail.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** A student holding a school marksheet while a stamped letter travels from a school board building to a DGCA office, shown as a simple path between two buildings
+
+> A flat-vector scene. On the left, a South Asian student in a plain shirt holds a blank rectangular marksheet. In the centre, a dotted path curves across pale-blue negative space with one plain envelope carrying a round orange seal on it. On the right, a simple government office building with a small control-tower silhouette behind it. A small single-engine trainer aircraft crosses the upper sky. No text, numerals, logos or signage anywhere.
+
+### Prompt 94 — three addressee paths
+
+- **File:** `public/blog/board-verification-certificate-dgca-computer-number/three-addressee-paths.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** One envelope splitting into three paths that lead to a government office, a flying school desk and a student's hands
+
+> A flat-vector diagram-style illustration. A single plain envelope sits at the left centre. Three clean paths fan out from it to the right: the top path to a small government office building, the middle path to a desk with a miniature trainer aircraft model on it, the bottom path to a pair of open hands. One orange seal on the envelope is the only accent. Wide margins. No text, numerals, logos or signage.
+
+### Prompt 95 — DigiLocker versus manual
+
+- **File:** `public/blog/board-verification-certificate-dgca-computer-number/digilocker-vs-manual.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** Two routes from a student to a DGCA office: a short digital path on one side and a longer paper path with a stamped letter on the other
+
+> A flat-vector landscape. A South Asian student stands at the left. Two routes lead to a DGCA-style office on the right: the upper route is short and straight, drawn as a thin line of small phone-shaped nodes; the lower route is longer and winding, carrying a single envelope with an orange seal. Pale-blue sky, generous negative space. No text, numerals, logos or signage.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
