@@ -282,6 +282,15 @@ const guidePosts = [
         date: 'Oct 6, 2026',
         image: { src: '/blog/dgca-regular-vs-on-demand-exam-session/hero-two-session-lanes.webp', width: 1200, height: 630, promptId: '90' },
     },
+    {
+        slug: 'board-verification-certificate-dgca-computer-number',
+        title: 'Board Verification Certificate for a DGCA Computer Number: Who Needs It and How It Works',
+        excerpt: 'The BVC is the document that trips up manual computer number applications. Who needs it, the three ways it is addressed, and when DigiLocker waives it.',
+        category: 'DGCA computer number',
+        readTime: '6 min',
+        date: 'Oct 7, 2026',
+        image: { src: '/blog/board-verification-certificate-dgca-computer-number/hero-bvc-document-trail.webp', width: 1200, height: 630, promptId: '93' },
+    },
 ];
 
 export async function getServerSideProps() {
