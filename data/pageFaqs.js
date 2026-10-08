@@ -461,20 +461,11 @@ const routeContent = {
     ['Why choose We One Aviation to become a pilot?', 'The page cites training programmes recognised in the industry, an emphasis on safety and professionalism, hands-on practical training, and interview preparation with career guidance.'],
   ],
 },
-  '/blogs/aviation-course-after-12th': {
-  title: 'How to Become a Pilot After 12th FAQs',
-  questions: [
-    ['What are the eligibility requirements to become a pilot after 12th?', 'Candidates need a minimum age of 16 for a Student Pilot Licence (18 for CPL), completion of 12th grade with Physics and Mathematics, and a DGCA medical certificate from a DGCA doctor.'],
-    ['What are the physical eligibility requirements to become a pilot?', 'For both male and female candidates, the page lists a minimum height of 5 feet 5 inches (165 cm), BMI between 18.5-25, normal color vision, 6/6 visual acuity in each eye, and hearing at or below 20 decibels.'],
-    ['What does the pilot selection process involve?', 'The process includes meeting basic eligibility, entrance exams, a personal interview, medical examination, flight school selection, ground school training, flight training, license examinations (PPL then CPL), additional ratings, and building flight hours.'],
-    ['How can I become a pilot in the Indian Air Force after 12th?', 'The National Defence Academy (NDA) exam is the main route after 12th — unmarried candidates aged 16.5-19.5 with Physics and Mathematics can sit the UPSC-conducted written exam, followed by physical/medical tests and an interview, leading to 3 years of training at NDA and specialised flying training.'],
-    ['What other Indian Air Force pilot entry routes exist for graduates?', 'The page lists the Combined Defence Services (CDS) exam and Air Force Common Admission Test (AFCAT) for graduates aged 20-24 (up to 26 for DGCA CPL holders under AFCAT), and NCC Special Entry for those with an Air Wing Senior Division \'C\' Certificate.'],
-    ['What is the average pilot salary in India?', 'There is no published average. Indian airlines do not publish pilot pay scales, so the figures circulating online cannot be checked against any primary source; the ones that used to be here were removed on 15 September 2026. What DGCA does publish is the ceiling on flying: 35 hours in 7 days, 100 in 28 and 1,000 in 365, under the flight crew Flight Duty Time Limitations.'],
-    ['What is the career outlook for pilots in India?', 'The page projects a 13% job growth rate through 2030, driven by fleet expansion at major airlines, growing regional connectivity, and a global pilot shortage that also creates opportunities abroad.'],
-    ['How much does pilot training cost after 12th?', 'The range that used to be quoted here was removed on 15 September 2026 because it could not be traced to any published source, and it disagreed with the other ranges this site was quoting elsewhere. The cost transparency page sets out what is publicly comparable and what is not.'],
-    ['What types of pilot careers can I pursue?', 'The page lists Commercial Pilot, Private Pilot, Military Pilot, Corporate Pilot, and Flight Instructor as the main pilot career paths, each with its own requirements and career experience.'],
-  ],
-},
+  /*
+   * '/blogs/aviation-course-after-12th' removed 2026-10-08. Its answers repeated
+   * a physical-standards table and a "13% job growth" figure that no source
+   * supports; the rewritten post emits its own FAQPage from peopleAlsoAsk.
+   */
   '/blogs/dgca-exam-guide': {
   title: 'DGCA Full Form FAQs',
   questions: [

@@ -6,6 +6,8 @@ import SummaryBox from './SummaryBox';
 import ArticleTOC from './ArticleTOC';
 import BlogAuthorBox from './BlogAuthorBox';
 import StructuredData from './StructuredData';
+import BlogCta from './BlogCta';
+import BlogSources from './BlogSources';
 
 /**
  * Shared shell for hand-written blog posts.
@@ -16,6 +18,16 @@ import StructuredData from './StructuredData';
  *
  * BreadcrumbList schema also comes from Layout. This component renders only the
  * visible breadcrumb trail.
+ *
+ * UPDATED 2026-10-08 (data/blog-standard.md). Two exceptions to the note above:
+ *   - A post that passes its own FAQPage node in `schema` (built from its
+ *     peopleAlsoAsk array) turns Layout's FAQ injection off. Before this, every
+ *     post not listed in pageFaqs.js existingFaqRoutes shipped a SECOND FAQPage
+ *     node and a visible block of four generic fallback questions
+ *     ("What is Board Verification Certificate Dgca Computer Number?").
+ *   - The bottom call to action, the primary-sources list and a visible
+ *     "Last updated" date are rendered here so every post carries them the
+ *     same way.
  */
 export default function BlogPostLayout({
   title,
@@ -31,6 +43,9 @@ export default function BlogPostLayout({
   summaryItems = [],
   tocHeadings = [],
   related = [],
+  sources = [],
+  sourcesCheckedOn,
+  bottomCta = {},
   children,
 }) {
   const fmt = (iso) =>
@@ -38,8 +53,12 @@ export default function BlogPostLayout({
       day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',
     });
 
+  const schemaList = Array.isArray(schema) ? schema : schema ? [schema] : [];
+  const ownsFaq = schemaList.some((node) => node && node['@type'] === 'FAQPage');
+  const lastUpdated = dateModified || datePublished;
+
   return (
-    <Layout title={title} description={description}>
+    <Layout title={title} description={description} includeDefaultFAQs={!ownsFaq}>
       {schema ? <StructuredData data={schema} /> : null}
 
       <article className="px-4 py-10 md:py-14">
@@ -58,14 +77,11 @@ export default function BlogPostLayout({
               </h1>
               <p className="mt-4 text-sm text-gray-500">
                 By <span className="font-semibold text-av-blue">We One Aviation Academy</span>
-                {' '}&middot;{' '}
-                <time dateTime={datePublished}>{fmt(datePublished)}</time>
-                {dateModified && dateModified !== datePublished ? (
-                  <>
-                    {' '}&middot; updated <time dateTime={dateModified}>{fmt(dateModified)}</time>
-                  </>
-                ) : null}
+                {' '}&middot; Published <time dateTime={datePublished}>{fmt(datePublished)}</time>
                 {readingTime ? <> &middot; {readingTime} read</> : null}
+              </p>
+              <p className="mt-1 text-sm font-semibold text-av-blue">
+                Last updated: <time dateTime={lastUpdated}>{fmt(lastUpdated)}</time>
               </p>
             </header>
 
@@ -86,6 +102,8 @@ export default function BlogPostLayout({
               {children}
             </div>
 
+            {bottomCta === false ? null : <BlogCta variant="bottom" {...bottomCta} />}
+
             {related.length ? (
               <section className="mt-16" aria-labelledby="related-guides">
                 <h2 id="related-guides" className="font-montserrat text-2xl font-bold text-av-blue mb-4">
@@ -103,6 +121,8 @@ export default function BlogPostLayout({
                 </ul>
               </section>
             ) : null}
+
+            <BlogSources sources={sources} checkedOn={sourcesCheckedOn} />
 
             <BlogAuthorBox />
           </div>

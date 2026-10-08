@@ -1,796 +1,492 @@
-import Layout from '../../components/Layout';
-import ScrollReveal from '../../components/ScrollReveal';
 import Link from 'next/link';
-import StructuredData from '../../components/StructuredData';
+import BlogPostLayout from '../../components/BlogPostLayout';
+import BlogImagePlaceholder from '../../components/BlogImagePlaceholder';
+import PeopleAlsoAsk from '../../components/PeopleAlsoAsk';
+import BlogCta from '../../components/BlogCta';
+import Ext from '../../components/Ext';
+import {
+  ACADEMY, LICENCES, EDUCATION, PARIKSHA, MEDICAL_STANDARDS, AVIATION_CAREERS,
+  CPL_HOURS, DGCA_PAPERS, RTR, CPL_COST, COST_NOTE, EGCA, FTO, inr,
+} from '../../lib/facts';
+
 /*
- * BlogPosting. This route is a hand-written page rather than a CMS record, so
- * the dates are constants maintained here. Update dateModified when the copy
- * changes — a dateModified that never moves is worse than none, because it
- * tells a crawler the page is stale.
+ * /blogs/aviation-course-after-12th — REWRITTEN 2026-10-08 to data/blog-standard.md.
+ *
+ * WHAT CHANGED AND WHY.
+ *   - Intent. The old page was titled "How to Become a Pilot After 12th" and so
+ *     competed with /how-to-become-a-pilot-after-12th, the page that owns that
+ *     query. Every internal link to this URL already called it "our aviation
+ *     courses after 12th guide", and the slug says the same. It is now that: a
+ *     decision guide comparing the routes a Class 12 student can actually start,
+ *     and it sends the pilot-route reader to the page that owns it.
+ *   - Claims removed, none restated: a physical-standards table (165 cm height,
+ *     BMI 18.5-25, 6/6 vision, 20 dB hearing) that no DGCA document states — the
+ *     medical CAR publishes no numeric vision figure, see MEDICAL_STANDARDS; a
+ *     "13% job growth to 2030" tile; NDA, CDS, AFCAT and NCC age bands and
+ *     commission terms typed from memory; "200-250 flight hours"; a ten-step
+ *     "selection process" with entrance exams no regulator sets; about forty
+ *     emoji. Air Force entry is now described by who sets it, with a link to the
+ *     body that publishes the current notification.
+ *   - Its pageFaqs.js routeContent entry repeated the same unsourced figures and
+ *     was deleted in the same commit; this page now emits its own FAQPage.
+ *
+ * Every figure below is imported from lib/facts.js.
  */
 const DATE_PUBLISHED = '2025-01-02';
-const DATE_MODIFIED = '2026-08-24';
+const DATE_MODIFIED = '2026-10-08';
+const CANONICAL = 'https://weoneaviation.in/blogs/aviation-course-after-12th';
+
+const SPL = LICENCES.find((l) => l.code === 'SPL');
+const PPL = LICENCES.find((l) => l.code === 'PPL');
+const CPL = LICENCES.find((l) => l.code === 'CPL');
+const AME = AVIATION_CAREERS.licensed.find((c) => c.role.startsWith('Aircraft Maintenance'));
+const class1 = MEDICAL_STANDARDS.classes.find((c) => c.cls === 'Class 1');
+const class2 = MEDICAL_STANDARDS.classes.find((c) => c.cls === 'Class 2');
+const igrua = CPL_COST.benchmark;
+
+// Lower-case the first letter only, and leave acronyms (DGCA, RTR, AME) alone.
+const lc = (t) => (/^[A-Z]{2}/.test(t) ? t : t.charAt(0).toLowerCase() + t.slice(1));
+const HOURS_PHRASE = {
+  '1(e)(i)': 'as pilot-in-command',
+  '1(e)(ii)': 'of cross-country flying as pilot-in-command',
+  '1(e)(iii)': 'of instrument time',
+  '1(e)(iv)': 'at night',
+};
+
+const hoursParts = CPL_HOURS.components.map((c) => `${c.hours} hours ${HOURS_PHRASE[c.clause]}`);
+const hoursList = `${hoursParts.slice(0, -1).join(', ')} and ${hoursParts[hoursParts.length - 1]}`;
+
+const TITLE = 'Aviation Courses After 12th in India: Which Route Needs What';
 
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  headline: 'How to Become a Pilot After 12th in India',
-  description: 'Routes into a flying career after Class 12 in India: pilot types, eligibility, physical requirements, entrance and selection processes, and the DGCA licence chain.',
+  headline: TITLE,
+  description:
+    'Aviation courses after 12th in India compared: commercial pilot, private pilot, aircraft maintenance engineer, flight dispatcher and Air Force entry, with the subjects, minimum age and medical each one needs.',
   inLanguage: 'en-IN',
   datePublished: DATE_PUBLISHED,
   dateModified: DATE_MODIFIED,
-  articleSection: 'Pilot career guide',
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://weoneaviation.in/blogs/aviation-course-after-12th' },
-  author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
+  articleSection: 'After 12th',
+  keywords: 'aviation courses after 12th, aviation course after 12th in India, pilot course after 12th, AME course after 12th, aviation career after 12th',
+  mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
+  image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/blog/aviation-course-after-12th/hero-after-12th-routes.webp' },
+  author: { '@type': 'Organization', name: ACADEMY.name, url: ACADEMY.url },
   publisher: {
-    '@type': 'EducationalOrganization',
-    name: 'We One Aviation Academy',
-    url: 'https://weoneaviation.in',
+    '@type': 'EducationalOrganization', name: ACADEMY.name, url: ACADEMY.url,
     logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
   },
 };
 
-
-// ─── Data ────────────────────────────────────────────────────────────────────
-
-const stats = [
-    { num: '18 for CPL', label: 'Minimum Age', icon: '🎂' },
-    { num: '200 hrs', label: 'Flight Hours', icon: '✈️' },
-    { num: '13%', label: 'Job Growth (2030)', icon: '📈' },
-    /*
-     * REMOVED 2026-09-15: this tile read ₹35–46L for training cost. Untraceable,
-     * and it disagreed with the three other cost ranges the site was quoting
-     * elsewhere. /cost-transparency holds the honest position: only IGRUA's
-     * published fee is publicly comparable.
-     */
-    { num: '5 Papers', label: 'DGCA Written Exam', icon: '📝' },
+const peopleAlsoAsk = [
+  {
+    q: 'Which aviation course can I do after 12th?',
+    a: `After Class 12 you can start the commercial pilot route (CPL), a private pilot licence (PPL), aircraft maintenance engineering (AME), or apply for Air Force pilot entry through the UPSC. A flight dispatcher licence is also open, but it has its own higher minimum age. Each route has different subject, age and medical requirements.`,
+  },
+  {
+    q: 'Which subjects do I need in 12th to become a commercial pilot in India?',
+    a: `A Commercial Pilot Licence needs ${EDUCATION.requirement} (Aircraft Rules, 1937, Schedule II, ${EDUCATION.clause}). There is no minimum percentage in that rule. ${EDUCATION.altRoute}`,
+  },
+  {
+    q: 'Do I need Chemistry for an aviation course after 12th?',
+    a: `Chemistry depends on the course. The pilot categories on the DGCA Pariksha portal need Physics and Mathematics in 10+2. An Aircraft Maintenance Engineer candidate needs ${lc(AME.education)}`,
+  },
+  {
+    q: 'Can I start pilot training at 16 or 17?',
+    a: `Yes. The Student Pilot Licence has a minimum age of ${SPL.minAge} and the Private Pilot Licence ${PPL.minAge}, and the DGCA computer number can be applied for from ${PARIKSHA.basics.minAge}. The Commercial Pilot Licence itself cannot be issued before ${CPL.minAge}, so a student who starts early still receives the CPL at ${CPL.minAge} at the earliest.`,
+  },
+  {
+    q: 'Which medical do I need for an aviation course after 12th?',
+    a: `A commercial pilot needs a DGCA Class 1 medical; a student or private pilot needs a Class 2. The initial Class 1 is done only at the centres DGCA lists for initial issue, and the fee DGCA lists for it at the Air Force centres is ${MEDICAL_STANDARDS.fees.rows[0].label}. Book it before paying any flying school, because a disqualifying finding after a deposit is expensive.`,
+  },
+  {
+    q: 'How much does an aviation course after 12th cost?',
+    a: `${COST_NOTE} For a reference point, IGRUA publishes ${igrua.feeLabel} for its ab-initio to CPL course, which excludes items such as uniform, study material, DGCA fees, hostel and messing.`,
+  },
+  {
+    q: 'Is a BSc in Aviation the same as a pilot licence?',
+    a: `No. A pilot licence is issued by DGCA under Schedule II of the Aircraft Rules, 1937, after the written papers, the radio telephony examination, the medical and the flying hours. A degree, in aviation or anything else, does not replace any of those steps, so ask any degree provider which DGCA licence its course leads to.`,
+  },
+  {
+    q: 'How do I join the Indian Air Force as a pilot after 12th?',
+    a: `Entry to the Air Force flying branch straight after Class 12 is through the National Defence Academy examination conducted by the UPSC. The age band, subjects and medical standards are set in each UPSC notification and change between cycles, so read the current notification on upsc.gov.in rather than a figure copied onto a website.`,
+  },
 ];
 
-const pilotTypes = [
-    { icon: '✈️', title: 'Commercial Pilot', desc: 'Flies passenger and cargo aircraft for airlines.' },
-    { icon: '🛩️', title: 'Private Pilot', desc: 'Operates aircraft for personal or recreational use.' },
-    { icon: '🎖️', title: 'Military Pilot', desc: 'Serves the country by flying for the armed forces.' },
-    { icon: '💼', title: 'Corporate Pilot', desc: 'Pilots for business and corporate travel.' },
-    { icon: '🎓', title: 'Flight Instructor', desc: 'Trains others in aviation and flight skills.' },
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: peopleAlsoAsk.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+
+const routes = [
+  {
+    route: 'Commercial pilot (CPL)',
+    subjects: 'Physics and Mathematics in 10+2',
+    age: `${CPL.minAge} for the licence; training can start earlier`,
+    medical: 'DGCA Class 1',
+    regulator: 'DGCA',
+  },
+  {
+    route: 'Private pilot (PPL)',
+    subjects: 'Class 10 pass',
+    age: `${PPL.minAge}`,
+    medical: 'DGCA Class 2',
+    regulator: 'DGCA',
+  },
+  {
+    route: 'Aircraft maintenance engineer (AME)',
+    subjects: 'Physics, Chemistry and Mathematics in 10+2',
+    age: `${AME.minAge} to register as a candidate`,
+    medical: 'Not stated in the sources we read',
+    regulator: 'DGCA',
+  },
+  {
+    route: 'Flight dispatcher (FDEG)',
+    subjects: 'Physics and Mathematics in 10+2',
+    age: 'Higher than the CPL; see the dispatcher guide',
+    medical: 'Not stated in the sources we read',
+    regulator: 'DGCA',
+  },
+  {
+    route: 'Air Force pilot',
+    subjects: 'Set in each UPSC notification',
+    age: 'Set in each UPSC notification',
+    medical: 'Armed forces standards',
+    regulator: 'UPSC and the Indian Air Force',
+  },
 ];
 
-const physicalRequirements = [
-    { requirement: 'Minimum Height', male: '5 feet 5 inches (165 cm)', female: '5 feet 5 inches (165 cm)' },
-    { requirement: 'Body Mass Index (BMI)', male: '18.5 – 25', female: '18.5 – 25' },
-    { requirement: 'Color Vision', male: 'Normal color vision', female: 'Normal color vision' },
-    { requirement: 'Visual Acuity', male: '6/6 vision in each eye', female: '6/6 vision in each eye' },
-    { requirement: 'Hearing', male: 'Good hearing with ≤20 decibels', female: 'Good hearing with ≤20 decibels' },
-    { requirement: 'General Health', male: 'Physically fit, free of major conditions', female: 'Physically fit, free of major conditions' },
+const related = [
+  { lead: 'The pilot route step by step, from Class 12 to the licence, is on', anchor: 'how to become a pilot after 12th', href: '/how-to-become-a-pilot-after-12th' },
+  { lead: 'If Physics or Mathematics is missing from your marksheet, read', anchor: 'becoming a pilot without Physics and Maths in Class 12', href: '/blogs/become-pilot-without-physics-and-maths-class-12' },
+  { lead: 'The licensed careers other than flying are compared in', anchor: 'aviation jobs besides pilot', href: '/blogs/aviation-jobs-besides-pilot' },
+  { lead: 'The flight dispatcher licence, with its own age rule, is covered in', anchor: 'how to become a flight dispatcher in India', href: '/blogs/how-to-become-a-flight-dispatcher-in-india' },
+  { lead: 'What a CPL actually costs, and what can be compared, is in', anchor: 'our pilot training cost breakdown', href: '/blogs/pilot-training-cost-in-india' },
 ];
 
-const selectionSteps = [
-    {
-        num: '1',
-        icon: '✅',
-        title: 'Meeting Basic Eligibility Criteria',
-        desc: 'Age, educational qualifications (12th with Physics & Maths), and DGCA medical certificate from a DGCA doctor are mandatory to begin the pilot selection process.',
-    },
-    {
-        num: '2',
-        icon: '📝',
-        title: 'Entrance Exams',
-        desc: 'Written exams test knowledge in Physics, Mathematics, English, aviation theory, aerodynamics, and navigation. Some schools also include a general aptitude test.',
-    },
-    {
-        num: '3',
-        icon: '🗣️',
-        title: 'Personal Interview',
-        desc: 'Assesses personality, motivation, communication skills, career goals, passion for flying, and ability to handle stress and responsibility.',
-    },
-    {
-        num: '4',
-        icon: '🩺',
-        title: 'Medical Examination',
-        desc: 'DGCA Medical for Student Pilots and DGCA Medical for Commercial Pilots. Includes vision tests, ECG, blood tests, and hearing tests.',
-    },
-    {
-        num: '5',
-        icon: '🏫',
-        title: 'Flight School Selection and Enrollment',
-        desc: 'Evaluate schools based on reputation, training programs, instructor qualifications, costs, and facilities. Enroll after choosing your flight school.',
-    },
-    {
-        num: '6',
-        icon: '📚',
-        title: 'Ground School Training',
-        desc: 'Covers Aerodynamics, Aircraft Systems, Navigation, Meteorology, and Aviation Regulations. Can last from a few months to a year.',
-    },
-    {
-        num: '7',
-        icon: '✈️',
-        title: 'Flight Training',
-        desc: 'Includes basic maneuvers, advanced maneuvers, and solo flights under the supervision of a certified flight instructor.',
-    },
-    {
-        num: '8',
-        icon: '🪪',
-        title: 'License Examinations',
-        desc: 'Pass PPL (Private Pilot License) first, then CPL (Commercial Pilot License) exams after accumulating 200–250 flight hours.',
-    },
-    {
-        num: '9',
-        icon: '⭐',
-        title: 'Obtaining Additional Ratings',
-        desc: 'Multi-engine Rating (ME) for larger aircraft and Instrument Rating (IR) for flying under Instrument Flight Rules (IFR).',
-    },
-    {
-        num: '10',
-        icon: '📊',
-        title: 'Building Flight Hours and Experience',
-        desc: 'After CPL, accumulate additional flying hours as a flight instructor or co-pilot to qualify for First Officer or Captain positions.',
-    },
+const tocHeadings = [
+  { id: 'routes', title: 'Which aviation courses can you start after 12th?' },
+  { id: 'subjects', title: 'Which subjects does each route need?' },
+  { id: 'pilot', title: 'What does the commercial pilot route involve?' },
+  { id: 'medical', title: 'Which medical comes first?' },
+  { id: 'other-routes', title: 'AME, dispatcher and Air Force entry' },
+  { id: 'degree', title: 'Is an aviation degree a licence?' },
+  { id: 'cost', title: 'What can and cannot be said about cost' },
+  { id: 'first-month', title: 'What to do in your first month after results' },
 ];
 
-const flightTrainingTypes = [
-    { icon: '📚', title: 'Ground School', desc: 'Covers theoretical topics like aircraft systems, meteorology, and air traffic control.' },
-    { icon: '🛩️', title: 'Flight Lessons', desc: 'Hands-on flying under instructor supervision.' },
-    { icon: '🧑‍✈️', title: 'Solo Flights', desc: "After mastering basics, you'll reach a major milestone by flying solo." },
+const sources = [
+  ...PARIKSHA.sources.slice(0, 3),
+  MEDICAL_STANDARDS.sources[2],
+  ...AVIATION_CAREERS.sources.slice(0, 1),
+  FTO.sources[0],
+  { label: 'IGRUA — approved courses and fees (Indira Gandhi Rashtriya Uran Akademi)', url: igrua.source },
+  { label: 'Union Public Service Commission — examination notifications', url: 'https://upsc.gov.in' },
 ];
 
-const advantages = [
-    {
-        icon: '🌟',
-        title: '1. Exciting and Fulfilling Career',
-        desc: 'Flying is a unique, challenging, and rewarding career. Pilots have the chance to experience the joy of being up in the air, navigating through different weather conditions, and landing at destinations all over the world. Every day is different, with new routes, unique situations, and opportunities to continually build skills.',
-    },
-    {
-        icon: '💰',
-        title: '2. Competitive Salary and Benefits',
-        desc: 'Pilots are among the highest-paid professionals in the transportation industry. Airlines and commercial carriers offer competitive salaries, which often increase with experience and seniority. Benefits typically include health insurance, retirement plans, and paid vacation, ensuring long-term financial security and work-life balance.',
-    },
-    {
-        icon: '🌍',
-        title: '3. Travel and Adventure',
-        desc: 'Pilots have the chance to see the world from above, exploring different cities and countries as part of their job. Many pilots enjoy time off at various destinations, providing an opportunity to explore new cultures, cuisines, and landscapes. This lifestyle offers a sense of freedom and adventure, attracting those with a passion for exploration.',
-    },
-    {
-        icon: '📈',
-        title: '4. High Demand for Pilots',
-        desc: 'The demand for pilots is expected to grow significantly in the coming years due to the increase in air travel and the retirement of many seasoned pilots. Job security is a major advantage, as airlines, private companies, and cargo operators all need qualified pilots to meet growing industry needs.',
-    },
-    {
-        icon: '🕐',
-        title: '5. Flexible Work Schedule',
-        desc: "Unlike traditional 9-to-5 jobs, pilots often have flexible work schedules. While the hours can be long, pilots also enjoy extended breaks between flights, allowing time to rest, travel, or spend time with family.",
-    },
-];
+const H2 = 'font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24';
+const H3 = 'font-montserrat text-xl font-bold text-av-blue mt-8 mb-3';
+const TABLE = 'w-full text-left text-sm border-collapse';
+const TH = 'px-4 py-3 font-montserrat font-bold bg-av-blue text-white';
+const TD = 'px-4 py-3 align-top border-t border-gray-100 text-gray-600';
+const LINK = 'text-av-orange font-semibold underline';
 
-const tips = [
-    {
-        icon: '📅',
-        title: '1. Start Planning Early',
-        desc: 'The earlier you start preparing, the better. Research the qualifications, requirements, and costs involved in pilot training. Starting early gives you more time to save money and explore various training programs.',
-    },
-    {
-        icon: '🤝',
-        title: '2. Connect with the Aviation Community',
-        desc: 'Joining aviation clubs, attending airshows, or volunteering at local airports can be great ways to meet people, gain knowledge, and build connections within the aviation community. Many pilots, instructors, and aviation professionals are happy to share advice and insights on the profession.',
-    },
-    {
-        icon: '🎓',
-        title: '3. Seek Mentorship and Advice from Experienced Pilots',
-        desc: 'Talking to pilots can give you a realistic idea of what the job is like and what to expect in training. They can also offer guidance on career paths, flight schools, and industry trends.',
-    },
-    {
-        icon: '💪',
-        title: '4. Stay Persistent and Dedicated',
-        desc: "Becoming a pilot is a time-consuming and costly process, but the rewards are worth it. Stay focused on your goal, and don't get discouraged by challenges along the way. Dedication and hard work will help you achieve your dream of flying.",
-    },
-];
+export default function AviationCourseAfter12th() {
+  return (
+    <BlogPostLayout
+      title="Aviation Courses After 12th in India: Eligibility by Route"
+      description="Aviation courses after 12th in India compared: CPL, PPL, AME, flight dispatcher and Air Force entry, with the subjects, age and medical each one needs."
+      schema={[articleSchema, faqSchema]}
+      heading={TITLE}
+      category="After 12th"
+      datePublished={DATE_PUBLISHED}
+      dateModified={DATE_MODIFIED}
+      readingTime="9 min"
+      quickAnswer={{
+        question: 'Which aviation courses can you do after 12th in India?',
+        answer: `The main routes are the commercial pilot licence (needs Physics and Mathematics in 10+2, licence at ${CPL.minAge}), the private pilot licence (Class 10, age ${PPL.minAge}), aircraft maintenance engineering (Physics, Chemistry and Mathematics), the flight dispatcher licence, and Air Force entry through the UPSC. Each has its own subject, age and medical rule.`,
+      }}
+      summaryTitle="The routes in one view"
+      summaryItems={[
+        `CPL: ${EDUCATION.requirement}; licence issued at ${CPL.minAge} at the earliest; Class 1 medical.`,
+        `PPL: Class 10 is enough for the DGCA paperwork; minimum age ${PPL.minAge}; Class 2 medical.`,
+        'AME: Physics, Chemistry and Mathematics in 10+2 — the one route where Chemistry is required.',
+        'Air Force pilot: eligibility is set by the UPSC in each notification, not by DGCA.',
+        `Sources: Aircraft Rules, 1937, Schedule II and DGCA Pariksha documents, read ${PARIKSHA.verifiedOn}; DGCA medical CAR, read ${MEDICAL_STANDARDS.verifiedOn}.`,
+      ]}
+      tocHeadings={tocHeadings}
+      related={related}
+      sources={sources}
+      sourcesCheckedOn="8 October 2026"
+    >
+      <p>
+        Results are out, and the advice arrives from every side at once. A relative says aviation
+        means a pilot licence, a coaching flyer advertises a "pilot course after 12th", a
+        friend is joining an AME college, and somebody else mentions the Air Force. They are
+        not versions of the same thing. Each aviation course after 12th sits under a different rule,
+        asks for different Class 12 subjects, starts at a different age and needs a different
+        medical. This guide lines the real routes up side by side, from the documents that govern
+        them, so you can see which ones your marksheet already opens and what to do first.
+      </p>
 
-const iafRoutes = [
-    {
-        num: '1',
-        icon: '🏛️',
-        title: 'National Defence Academy (NDA) Exam',
-        eligibility: 'Unmarried males and females between 16.5 and 19.5 years of age.',
-        education: 'Completed 12th grade from a recognized board with Physics and Mathematics.',
-        selection: 'Conducted by UPSC twice a year. Written exam → physical and medical tests → interview.',
-        training: 'Three years at NDA in Khadakwasla, then specialized flying training at IAF academies. Awarded B.Tech degree and commissioned as PCOs.',
-    },
-    {
-        num: '2',
-        icon: '🎖️',
-        title: 'Combined Defence Services (CDS) Exam',
-        eligibility: 'Candidates must be between 20 and 24 years old with a graduation degree in any discipline.',
-        education: 'A bachelor\'s degree from a recognized university.',
-        selection: 'UPSC conducts CDS written exam twice a year. Physical and medical tests → interview.',
-        training: 'Training at the Air Force Academy, followed by specialized flying training. Commissioned as PCOs.',
-    },
-    {
-        num: '3',
-        icon: '✈️',
-        title: 'Air Force Common Admission Test (AFCAT)',
-        eligibility: 'Male and female candidates between 20 and 24 years old. For candidates holding a valid DGCA CPL, the age limit extends to 26 years.',
-        education: 'A bachelor\'s degree from a recognized university.',
-        selection: 'IAF conducts AFCAT written test twice a year. Physical and medical evaluations → interview.',
-        training: 'Training at Air Force Academy with additional flying instruction. Graduates receive a Short Service Commission (SSC) for 14 years, with no possibility of extension.',
-    },
-    {
-        num: '4',
-        icon: '🎗️',
-        title: 'NCC Special Entry',
-        eligibility: 'Male candidates with an Air Wing Senior Division \'C\' Certificate from NCC. Both male and female candidates can apply for SSC.',
-        education: 'NCC Air Wing Senior Division \'C\' Certificate.',
-        selection: 'Apply online through the NCC website. Physical and medical evaluations → interview.',
-        training: 'Training at Air Force Academy with specialized flying training. Male candidates commissioned as PCOs; both male and female receive Short Service Commission for 14-year term.',
-    },
-];
+      <BlogCta variant="top" />
 
-const ndaSelectionSteps = [
-    {
-        title: 'Written Exam',
-        desc: 'Conducted twice a year by UPSC. Tests Mathematics (fundamental and advanced concepts) and General Ability Test (GAT) covering English, general knowledge, and current affairs.',
-    },
-    {
-        title: 'Physical and Medical Examinations',
-        desc: 'Physical Fitness Tests including running, push-ups, and sit-ups. In-depth medical assessment examining both physical and mental fitness.',
-    },
-    {
-        title: 'Personal Interview',
-        desc: 'Assesses leadership potential, communication skills, confidence, and motivation for a career in the Air Force.',
-    },
-];
+      <BlogImagePlaceholder
+        src="/blog/aviation-course-after-12th/hero-after-12th-routes.webp"
+        width={1200}
+        height={630}
+        alt="A student holding a Class 12 marksheet at a fork of signposted paths leading to a small trainer aircraft, a maintenance hangar and an operations desk"
+        promptId="9"
+      />
 
-/*
- * REWRITTEN 2026-09-15 during the site-wide pay sweep. This table gave four
- * rupee figures including a named-airline average — "IndiGo (Example) ₹62.7
- * Lakhs / Year". No Indian airline publishes a pilot pay scale, so that figure
- * in particular was attributing a number to a named company with nothing
- * behind it. All four are gone. What is published, and now shown here, is the
- * regulation that governs the hour-linked part of the pay.
- */
-const salaryData = [
-    { level: 'What is published', salary: 'No pay scale, by any Indian airline', note: 'Pay is set in individual contracts and varies by rank, fleet, seniority, contract type and roster. No public document exists to check a figure against.' },
-    { level: 'What is capped', salary: '1,000 flying hours a year', note: "Under the flight crew Flight Duty Time Limitations: 35 hours in 7 days, 100 in 28, 300 in 90, 1,000 in 365. A large part of pay is hour-linked, so this is its ceiling." },
-    { level: 'What is true without a figure', salary: 'A captain earns materially more', note: 'Command is the largest single step in a pilot\u2019s earnings. The airline\u2019s own upgrade criteria sit on top of the DGCA minimum.' },
-    { level: 'What nobody can promise', salary: 'That a licence becomes a job', note: 'Hiring is the airline\u2019s decision. The wait between holding a CPL and being employed varies with the hiring cycle.' },
-];
+      <h2 id="routes" className={H2}>Which aviation courses can you start after 12th?</h2>
+      <p>
+        Five aviation routes can be started straight after Class 12 in India: the commercial pilot
+        licence, the private pilot licence, aircraft maintenance engineering, the flight dispatcher
+        licence and Air Force pilot entry. The first four are licensed by DGCA; the Air Force route is
+        run by the UPSC and the Indian Air Force under their own rules.
+      </p>
+      <div className="overflow-x-auto my-6 rounded-2xl border border-gray-200">
+        <table className={TABLE}>
+          <caption className="sr-only">Aviation routes open after Class 12 in India, with subjects, minimum age, medical and the body that sets the rules</caption>
+          <thead>
+            <tr>
+              <th scope="col" className={TH}>Route</th>
+              <th scope="col" className={TH}>Class 12 subjects</th>
+              <th scope="col" className={TH}>Minimum age</th>
+              <th scope="col" className={TH}>Medical</th>
+              <th scope="col" className={TH}>Rules set by</th>
+            </tr>
+          </thead>
+          <tbody>
+            {routes.map((r, i) => (
+              <tr key={r.route} className={i % 2 ? 'bg-gray-50' : 'bg-white'}>
+                <td className={`${TD} font-semibold text-av-blue`}>{r.route}</td>
+                <td className={TD}>{r.subjects}</td>
+                <td className={TD}>{r.age}</td>
+                <td className={TD}>{r.medical}</td>
+                <td className={TD}>{r.regulator}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Cabin crew, ground handling and airport operations are real aviation careers too, and many
+        students start them after Class 12. {AVIATION_CAREERS.notLicensedNote.split('. ').slice(1).join('. ')}
+        {' '}Our guide to{' '}
+        <Link href="/blogs/aviation-jobs-besides-pilot" className={LINK}>aviation jobs besides pilot</Link>{' '}
+        draws that line career by career.
+      </p>
 
-const careerPaths = [
-    { icon: '✈️', title: 'Commercial Airlines', desc: 'The most common career path, offering high earning potential, extensive travel opportunities, and stable schedules.' },
-    { icon: '📦', title: 'Cargo Pilots', desc: 'Cargo airlines such as Blue Dart and SpiceJet\'s cargo division offer competitive salaries and may have more flexible schedules.' },
-    { icon: '💼', title: 'Corporate and Charter Pilots', desc: 'Work for private charter companies or as corporate pilots for businesses, enjoying diverse destinations and schedules.' },
-    { icon: '🎓', title: 'Pilot Instructors', desc: 'Experienced pilots can transition into training roles at flight schools or within airlines, training the next generation of pilots.' },
-];
+      <h2 id="subjects" className={H2}>Which Class 12 subjects does each aviation route need?</h2>
+      <p>
+        Physics and Mathematics in 10+2 are required for every DGCA flight crew route except the
+        private pilot licence, and the aircraft maintenance engineer route adds Chemistry. DGCA sets no
+        minimum percentage for the pilot licence in Schedule II; the subject has to be passed, from a
+        recognised board.
+      </p>
+      <p>
+        DGCA states both requirements side by side in its own{' '}
+        <Ext href={PARIKSHA.sources[2].url}>list of reasons for rejecting computer number applications</Ext>,
+        which is the clearest place to see them. Every pilot category other than the PPL needs{' '}
+        {EDUCATION.requirement}. The PPL needs only the Class 10 pass. An AME candidate needs{' '}
+        {lc(AME.education)}
+      </p>
+      <h3 className={H3}>What if Physics or Mathematics is missing?</h3>
+      <p>
+        A Commerce or Biology student is not shut out of the pilot route. {EDUCATION.altRoute} The
+        detail, including what the computer number application then needs, is in our guide to{' '}
+        <Link href="/blogs/become-pilot-without-physics-and-maths-class-12" className={LINK}>
+          becoming a pilot without Physics and Maths in Class 12
+        </Link>. A standalone private pilot licence is the exception, and{' '}
+        <Link href="/blogs/ppl-physics-maths-requirement-india" className={LINK}>the PPL subject rule</Link>{' '}
+        explains why it does not carry over once a CPL becomes the goal.
+      </p>
 
-// ─── Component ────────────────────────────────────────────────────────────────
+      <h2 id="pilot" className={H2}>What does the commercial pilot route involve after 12th?</h2>
+      <p>
+        The commercial pilot route after 12th has five parts that DGCA checks before it issues the
+        licence: the {DGCA_PAPERS.length} written papers, the {RTR.name} radio telephony examination,
+        a Class 1 medical, {CPL_HOURS.total} hours of flying, and a minimum age of {CPL.minAge}. None of
+        them is replaced by a course certificate or a degree.
+      </p>
+      <ul className="list-disc pl-5 space-y-3 text-gray-700">
+        <li><strong>The written papers.</strong> {DGCA_PAPERS.join(', ')}, booked through the{' '}
+          <Ext href={PARIKSHA.portal}>DGCA Pariksha portal</Ext> with a computer number you can apply for from age {PARIKSHA.basics.minAge}.
+        </li>
+        <li><strong>Radio telephony.</strong> {RTR.note}</li>
+        <li><strong>Flying.</strong> {CPL_HOURS.total} hours in total, including {hoursList}. Those sit inside the {CPL_HOURS.total}, not on top of it.</li>
+        <li><strong>The licence application.</strong> Made on{' '}
+          <Ext href={EGCA.url}>eGCA</Ext>, DGCA&rsquo;s licensing portal, once the papers, medical, radio licence and logbook are complete.
+        </li>
+      </ul>
+      <p>
+        Ground subjects and flying can run in either order, and many students clear papers while they
+        wait for a flying slot. The full sequence, with the documents for each step, is on our page on{' '}
+        <Link href="/how-to-become-a-pilot-after-12th" className={LINK}>how to become a pilot after 12th</Link>,
+        and the eligibility conditions are set out line by line on{' '}
+        <Link href="/commercial-pilot-license-eligibility" className={LINK}>CPL eligibility</Link>.
+      </p>
 
-export default function BecomeAPilotPage() {
-    return (
-        <Layout
-            title="How to Become a Pilot After 12th? – Complete Guide 2025 | India"
-            description="Complete guide on how to become a pilot after 12th in India. Covers types of pilots, eligibility, physical requirements, selection process, IAF routes, salary, career outlook, and training costs."
-        >
-            <StructuredData data={articleSchema} />
+      <BlogCta
+        variant="mid"
+        title="Starting with the DGCA papers?"
+        text="Most students begin the ground subjects while they wait for a flying slot. We teach all five written subjects from Dwarka and online, in batches that fit around a flying school's schedule."
+      />
 
+      <h2 id="medical" className={H2}>Which medical should you take first after 12th?</h2>
+      <p>
+        The DGCA Class 1 medical should come first for anyone aiming at a commercial licence, before any
+        money goes to a flying school. A student pilot licence only needs a Class 2, but a Class 2 is
+        not a prerequisite for the Class 1, and finding a disqualifying condition after paying a deposit
+        is an expensive way to learn it.
+      </p>
+      <div className="overflow-x-auto my-6 rounded-2xl border border-gray-200">
+        <table className={TABLE}>
+          <caption className="sr-only">DGCA medical classes for pilots, the licences each covers, and validity</caption>
+          <thead>
+            <tr>
+              <th scope="col" className={TH}>Class</th>
+              <th scope="col" className={TH}>Needed for</th>
+              <th scope="col" className={TH}>Validity</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[class1, class2].map((c, i) => (
+              <tr key={c.cls} className={i % 2 ? 'bg-gray-50' : 'bg-white'}>
+                <td className={`${TD} font-semibold text-av-blue`}>{c.cls}</td>
+                <td className={TD}>{c.licences.join('; ')}</td>
+                <td className={TD}>{c.validity}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p>
+        The{' '}
+        <Ext href={MEDICAL_STANDARDS.sources[2].url}>DGCA medical CAR</Ext> publishes no numeric
+        eyesight, colour-vision or hearing figure; it adopts the ICAO Annex 1 standards and
+        DGCA&rsquo;s medical circulars by reference. That matters after Class 12, because many websites
+        print such a figure as though DGCA had set it. Which centres can do an initial Class 1, and what it costs, are on our{' '}
+        <Link href="/dgca-class-2-class-1-medical" className={LINK}>Class 1 and Class 2 medical guide</Link>.
+      </p>
 
-            {/* ── Hero Banner ── */}
-            <header className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center">
-                <ScrollReveal>
-                    <div className="section-tag">Pilot Career Guide</div>
-                    <h1 className="font-montserrat text-4xl md:text-6xl font-black text-white mb-4 leading-[3] drop-shadow-lg" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
-                        How to Become a Pilot After 12th?
-                    </h1>
-                    <p className="text-white/70 max-w-3xl mx-auto text-sm leading-relaxed mb-4">
-                        In this article, we'll guide you on how to become a pilot after 12th grade in India. This guide covers the different types of pilots, eligibility requirements, training types, career prospects, and much more.
-                    </p>
-                    <p className="text-white/60 max-w-3xl mx-auto text-sm leading-relaxed">
-                        Flying airplanes is a dream many people hold, captivated by the freedom, excitement, and perspective it offers. If you're one of those who envision a career as a pilot, you're in the right place! Becoming a pilot requires dedication, hard work, and specific qualifications, but with the right steps, you can achieve this incredible goal.
-                    </p>
-                </ScrollReveal>
-            </header>
+      <h2 id="other-routes" className={H2}>How do AME, flight dispatcher and Air Force entry differ?</h2>
+      <p>
+        Aircraft maintenance engineering, flight dispatch and Air Force flying are three different
+        careers with three different gatekeepers. AME and dispatch are DGCA licences examined on the
+        same Pariksha portal as pilots; Air Force entry is a recruitment process run by the UPSC and
+        the Indian Air Force.
+      </p>
+      <h3 className={H3}>Aircraft maintenance engineer</h3>
+      <p>
+        An aircraft maintenance engineer {lc(AME.what)} A candidate can register from age {AME.minAge},
+        and no maximum age applies.{' '}
+        The papers cost {inr(AME.examFeeRegular)} each in a regular session, against {inr(PARIKSHA.fees.regularPerPaper)} for
+        a pilot paper, and the licence is governed by {AME.governedBy}. DGCA&rsquo;s own{' '}
+        <Ext href={AVIATION_CAREERS.sources[0].url}>AME examination FAQ</Ext> is the document to read first, and our{' '}
+        <Link href="/ame-aircraft-maintenance-engineer" className={LINK}>AME page</Link> sets it out in full.
+      </p>
+      <h3 className={H3}>Flight dispatcher</h3>
+      <p>
+        A flight dispatcher plans and releases flights with the captain. It is a separate DGCA flight
+        crew licence with the same Physics and Mathematics condition as a pilot, but a higher minimum
+        age, so a student leaving school cannot hold it straight away. Our guide on{' '}
+        <Link href="/blogs/how-to-become-a-flight-dispatcher-in-india" className={LINK}>becoming a flight dispatcher in India</Link>{' '}
+        gives the age and education rule with its source.
+      </p>
+      <h3 className={H3}>Air Force pilot</h3>
+      <p>
+        The Air Force route after Class 12 runs through the National Defence Academy examination,
+        conducted by the{' '}
+        <Ext href="https://upsc.gov.in">Union Public Service Commission</Ext>. The age band, subject
+        conditions and medical standards are published in each UPSC notification and can change
+        between cycles, so we do not reproduce them here. Read the notification for the cycle you are
+        applying in; it is the only version that binds.
+      </p>
 
-            {/* ── Stats Bar ── */}
-            <section className="bg-av-blue py-8">
-                <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {stats.map(s => (
-                        <ScrollReveal key={s.label} className="text-center">
-                            <div className="text-3xl mb-1">{s.icon}</div>
-                            <div className="font-montserrat text-xl font-black text-av-orange">{s.num}</div>
-                            <div className="text-white/60 text-xs">{s.label}</div>
-                        </ScrollReveal>
-                    ))}
-                </div>
-            </section>
+      <h2 id="degree" className={H2}>Is a BSc in Aviation the same as a pilot licence?</h2>
+      <p>
+        A BSc in Aviation is not a pilot licence and does not lead to one by itself. DGCA issues a
+        licence under Schedule II of the Aircraft Rules, 1937, after the written papers, the radio
+        telephony examination, the medical and the flying hours, and a degree does not stand in for any
+        of them.
+      </p>
+      <p>
+        Some degree programmes are run alongside flying training, and that combination can suit a
+        student who wants a graduate qualification as a fallback. The question to ask any provider is
+        simple: which DGCA licence does this course end in, and which of the steps above are included
+        in the fee? If the answer is none, the course is an academic qualification about aviation, not
+        a route into a cockpit.
+      </p>
 
-            {/* ── Types of Pilots ── */}
-            <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Pilot Roles</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Types of <span className="text-av-orange">Pilots</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">Depending on your career goals, you can pursue one of these pilot roles:</p>
-                    </ScrollReveal>
+      <h2 id="cost" className={H2}>What does an aviation course after 12th cost?</h2>
+      <p>
+        No Indian government body publishes a market price for pilot training, and private flying
+        schools do not publish their fees, so any single figure you see online cannot be traced to a
+        document. Two things are published: DGCA&rsquo;s own statutory fees and the course fee of IGRUA,
+        a government academy.
+      </p>
+      <p>
+        IGRUA publishes {igrua.feeLabel} for its ab-initio to CPL course (fixed wing) on its{' '}
+        <Ext href={igrua.source}>approved courses page</Ext>. What that figure does and does not cover is
+        the useful part, because it shows how much sits outside a headline number:
+      </p>
+      <div className="grid sm:grid-cols-2 gap-4 my-6">
+        <div className="rounded-2xl border border-gray-200 p-5">
+          <p className="font-montserrat font-bold text-av-blue mb-2">Included in the IGRUA fee</p>
+          <ul className="list-disc pl-5 space-y-1 text-base text-gray-700">
+            {igrua.includes.map((x) => <li key={x}>{x}</li>)}
+          </ul>
+        </div>
+        <div className="rounded-2xl border border-gray-200 p-5">
+          <p className="font-montserrat font-bold text-av-blue mb-2">Not included</p>
+          <ul className="list-disc pl-5 space-y-1 text-base text-gray-700">
+            {igrua.excludes.map((x) => <li key={x}>{x}</li>)}
+          </ul>
+        </div>
+      </div>
+      <p>
+        DGCA charges {inr(PARIKSHA.fees.regularPerPaper)} per written paper in a regular session and{' '}
+        {inr(PARIKSHA.fees.olodePerPaper)} on demand. Use those as the fixed points, and get every
+        private quote in writing against the same list of questions; our{' '}
+        <Link href="/blogs/pilot-training-cost-in-india" className={LINK}>pilot training cost breakdown</Link>{' '}
+        gives that list. As for pay after training, Indian airlines do not publish pilot pay scales, so
+        we print no salary figure; our{' '}
+        <Link href="/commercial-pilot-license-salary" className={LINK}>pilot salary page</Link> explains
+        what is published instead.
+      </p>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
-                        {pilotTypes.map((item, i) => (
-                            <ScrollReveal key={item.title} delay={i * 80}>
-                                <div className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-av-orange/30 h-full text-center">
-                                    <div className="text-3xl mb-3">{item.icon}</div>
-                                    <h3 className="font-montserrat font-bold text-av-blue mb-2 text-sm">{item.title}</h3>
-                                    <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
-                                </div>
-                            </ScrollReveal>
-                        ))}
-                    </div>
+      <h2 id="first-month" className={H2}>What to do in your first month after results</h2>
+      <p>
+        The first month after Class 12 results is best spent on the steps that cost little and rule
+        things out early: the medical, the computer number and an honest look at your subjects. Each of
+        these can stop a route outright, and each is cheaper to learn about now than after an admission
+        fee.
+      </p>
+      <ol className="list-decimal pl-5 space-y-3 text-gray-700">
+        <li><strong>Check your marksheet against the route.</strong> Physics and Mathematics for a pilot or dispatcher; Physics, Chemistry and Mathematics for AME.</li>
+        <li><strong>Book the medical the route needs.</strong> For a commercial pilot, that is the Class 1 initial at a centre DGCA lists for initial issue.</li>
+        <li><strong>Apply for a DGCA computer number</strong> if you are on a pilot route. On the DigiLocker route the number is allotted immediately on successful submission; on the manual route it is issued within {PARIKSHA.processing.days} working days of a complete application. Our{' '}
+          <Link href="/dgca-computer-number" className={LINK}>computer number guide</Link> walks through both.
+        </li>
+        <li><strong>Collect written quotes</strong> from the flying schools you are considering, and check each one against DGCA&rsquo;s own{' '}
+          <Ext href={FTO.sources[0].url}>list of approved flying training organisations</Ext> before paying anything.</li>
+      </ol>
+      <p>
+        None of these steps commits you to a route. Together they tell you, within weeks, which routes
+        your subjects, your medical and your budget actually leave open, and that is a better footing for
+        the next three years than anybody&rsquo;s brochure.
+      </p>
+      <p className="border-l-2 border-gray-300 pl-4 text-base text-gray-600">{ACADEMY.scope}</p>
 
-                    <ScrollReveal className="mt-5">
-                        <p className="text-center text-gray-500 text-sm">Each role comes with its own set of requirements and offers unique career experiences.</p>
-                    </ScrollReveal>
-                </div>
-            </section>
-
-            <section className="py-6 px-4">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                            If you are from the Northeast and want regional guidance, our Assam page lists local flying clubs, common exam-centre choices around Guwahati, and travel tips for students: <Link href="/pilot-training-in-india" className="text-av-blue font-semibold hover:underline">Pilot Training in Assam</Link>.
-                        </p>
-                    </ScrollReveal>
-                </div>
-            </section>
-
-            {/* ── Eligibility Requirements ── */}
-            <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Eligibility</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Eligibility Requirements to Become a <span className="text-av-orange">Pilot in India</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">To begin your journey, you must meet the following criteria:</p>
-                    </ScrollReveal>
-
-                    <div className="grid md:grid-cols-2 gap-10 items-start">
-                        <ScrollReveal>
-                            <div className="space-y-4">
-                                {[
-                                    { icon: '🎂', label: 'Age', value: '16 years for a Student Pilot Licence; 18 for a Commercial Pilot Licence.' },
-                                    { icon: '📚', label: 'Education', value: 'Completion of 12th grade with Physics and Mathematics.' },
-                                    { icon: '🩺', label: 'Medical', value: 'Obtain a DGCA medical certificate from a DGCA doctor.' },
-                                ].map(item => (
-                                    <div key={item.label} className="flex items-start gap-4 p-4 bg-av-light rounded-xl border border-av-sky/20">
-                                        <span className="text-2xl flex-shrink-0">{item.icon}</span>
-                                        <p className="text-sm text-gray-600"><strong className="text-av-blue">{item.label}:</strong> {item.value}</p>
-                                    </div>
-                                ))}
-                                <p className="text-gray-500 text-sm leading-relaxed mt-2">These basic requirements will ensure you qualify for the initial stages of pilot training.</p>
-                            </div>
-                        </ScrollReveal>
-
-                        {/* Physical Requirements Table */}
-                        <ScrollReveal delay={200}>
-                            <h3 className="font-montserrat font-bold text-av-blue text-xl mb-4">Physical Eligibility Requirements for Males &amp; Females</h3>
-                            <p className="text-gray-500 text-sm mb-4">Both male and female pilots must meet specific physical criteria to be eligible:</p>
-                            <div className="overflow-x-auto rounded-2xl shadow">
-                                <table className="w-full text-sm">
-                                    <thead>
-                                        <tr className="bg-av-blue text-white">
-                                            <th className="px-4 py-3 text-left">Requirement</th>
-                                            <th className="px-4 py-3 text-left">Male</th>
-                                            <th className="px-4 py-3 text-left">Female</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {physicalRequirements.map((row, i) => (
-                                            <tr key={row.requirement} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                                                <td className="px-4 py-3 font-semibold text-av-blue text-xs">{row.requirement}</td>
-                                                <td className="px-4 py-3 text-gray-600 text-xs">{row.male}</td>
-                                                <td className="px-4 py-3 text-gray-600 text-xs">{row.female}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                            <p className="text-gray-400 text-xs mt-3">Meeting these standards is necessary to ensure safety in the cockpit.</p>
-                        </ScrollReveal>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Selection Process ── */}
-            <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-6">
-                        <div className="section-tag">Selection Process</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Selection Process to <span className="text-av-orange">Become a Pilot</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3 max-w-3xl mx-auto text-sm leading-relaxed">
-                            Becoming a pilot is an exciting and challenging journey, and the selection process is one of the most important steps in achieving this dream. Whether you aspire to be a commercial pilot, private pilot, or even a pilot in the Indian Air Force, the process includes several stages that assess your physical, mental, and academic readiness for flight training.
-                        </p>
-                        <p className="text-gray-500 mt-2 text-sm font-semibold">Here's a detailed look at the selection process to become a pilot:</p>
-                    </ScrollReveal>
-
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {selectionSteps.map((step, i) => (
-                            <ScrollReveal key={step.num} delay={i * 60}>
-                                <div className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-av-orange/30 h-full flex flex-col">
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <div className="w-9 h-9 bg-av-blue rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">{step.num}</div>
-                                        <span className="text-2xl">{step.icon}</span>
-                                    </div>
-                                    <h3 className="font-montserrat font-bold text-av-blue mb-2 text-sm">{step.title}</h3>
-                                    <p className="text-gray-500 text-xs leading-relaxed flex-grow">{step.desc}</p>
-                                </div>
-                            </ScrollReveal>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Types of Flight Training ── */}
-            <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Training Types</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Types of <span className="text-av-orange">Flight Training</span>
-                        </h2>
-                    </ScrollReveal>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {flightTrainingTypes.map((item, i) => (
-                            <ScrollReveal key={item.title} delay={i * 100}>
-                                <div className="bg-av-blue rounded-2xl p-8 text-center h-full">
-                                    <div className="text-4xl mb-4">{item.icon}</div>
-                                    <h3 className="font-montserrat font-bold text-white text-lg mb-3">{item.title}</h3>
-                                    <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
-                                </div>
-                            </ScrollReveal>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Advantages ── */}
-            <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-8">
-                        <div className="section-tag">Why Become a Pilot</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Advantages of <span className="text-av-orange">Becoming a Pilot</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3 max-w-3xl mx-auto text-sm leading-relaxed">
-                            Many people dream of becoming a pilot, and it's easy to see why. For some, it's the thrill of flying; for others, it's the chance to travel, meet people, and enjoy a career with strong earning potential. Here's a look at some of the key benefits of choosing a career as a pilot:
-                        </p>
-                    </ScrollReveal>
-
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {advantages.map((item, i) => (
-                            <ScrollReveal key={item.title} delay={i * 80}>
-                                <div className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-av-orange/30 h-full">
-                                    <div className="text-2xl mb-3">{item.icon}</div>
-                                    <h3 className="font-montserrat font-bold text-av-blue mb-2 text-sm">{item.title}</h3>
-                                    <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
-                                </div>
-                            </ScrollReveal>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Tips ── */}
-            <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Tips</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Tips for <span className="text-av-orange">Becoming a Pilot</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">Getting into a pilot career requires dedication, planning, and preparation. Here are some helpful tips to guide you on your journey:</p>
-                    </ScrollReveal>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {tips.map((item, i) => (
-                            <ScrollReveal key={item.title} delay={i * 80}>
-                                <div className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-av-orange/30 h-full">
-                                    <div className="text-3xl mb-3">{item.icon}</div>
-                                    <h3 className="font-montserrat font-bold text-av-blue mb-2 text-sm">{item.title}</h3>
-                                    <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
-                                </div>
-                            </ScrollReveal>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Indian Air Force ── */}
-            <section className="py-20 px-4 bg-gradient-to-br from-av-blue via-av-navy to-av-blue">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-6">
-                        <div className="section-tag">Indian Air Force</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white">
-                            How to Become a Pilot in the <span className="text-av-orange">Indian Air Force</span>
-                        </h2>
-                        <p className="text-white/60 mt-3 max-w-3xl mx-auto text-sm leading-relaxed">
-                            If you're interested in becoming a pilot but prefer serving in a governmental sector instead of commercial aviation, you can explore a career as a pilot in the Indian Air Force (IAF). There are several entry pathways to join the IAF as a pilot, each with specific eligibility requirements, selection processes, and training programs.
-                        </p>
-                    </ScrollReveal>
-
-                    <div className="grid md:grid-cols-2 gap-6 mb-10">
-                        {iafRoutes.map((route, i) => (
-                            <ScrollReveal key={route.title} delay={i * 80}>
-                                <div className="glass rounded-2xl p-6 h-full">
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <div className="w-8 h-8 bg-av-orange rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">{route.num}</div>
-                                        <span className="text-2xl">{route.icon}</span>
-                                        <h3 className="font-montserrat font-bold text-white text-sm leading-[3]">{route.title}</h3>
-                                    </div>
-                                    <div className="space-y-2">
-                                        <div><p className="text-av-orange text-xs font-semibold">Eligibility:</p><p className="text-white/70 text-xs leading-relaxed">{route.eligibility}</p></div>
-                                        <div><p className="text-av-orange text-xs font-semibold">Educational Requirements:</p><p className="text-white/70 text-xs leading-relaxed">{route.education}</p></div>
-                                        <div><p className="text-av-orange text-xs font-semibold">Selection Process:</p><p className="text-white/70 text-xs leading-relaxed">{route.selection}</p></div>
-                                        <div><p className="text-av-orange text-xs font-semibold">Training:</p><p className="text-white/70 text-xs leading-relaxed">{route.training}</p></div>
-                                    </div>
-                                </div>
-                            </ScrollReveal>
-                        ))}
-                    </div>
-
-                    <ScrollReveal>
-                        <div className="glass rounded-2xl p-6 text-center">
-                            <p className="text-white/70 text-sm mb-3">Alongside the academic and entrance requirements, candidates must meet strict medical and physical standards including minimum and maximum limits for height and weight, eyesight requirements, and other health criteria.</p>
-                            <p className="text-white/60 text-sm mb-3">For further information on exams and eligibility, you can refer to the official websites:</p>
-                            <div className="flex flex-wrap justify-center gap-4">
-                                <a href="https://upsc.gov.in/" target="_blank" rel="noopener noreferrer" className="text-av-orange text-sm font-semibold hover:underline">UPSC: upsc.gov.in</a>
-                                <a href="https://afcat.cdac.in/" target="_blank" rel="noopener noreferrer" className="text-av-orange text-sm font-semibold hover:underline">IAF (AFCAT): afcat.cdac.in</a>
-                            </div>
-                        </div>
-                    </ScrollReveal>
-                </div>
-            </section>
-
-            {/* ── How to Become IAF Pilot After 12th ── */}
-            <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-10">
-                        <div className="section-tag">After 12th – IAF</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            How To Become A Pilot In The Indian Air Force <span className="text-av-orange">After 12th?</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3 max-w-3xl mx-auto text-sm leading-relaxed">
-                            If you dream of becoming a pilot in the Indian Air Force (IAF) right after 12th grade, the <strong>National Defence Academy (NDA)</strong> is the key path forward. The NDA exam offers a prestigious entry point into a career as an IAF pilot, with a structured pathway that combines rigorous training and comprehensive education.
-                        </p>
-                    </ScrollReveal>
-
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {/* Eligibility */}
-                        <ScrollReveal>
-                            <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-7 h-full">
-                                <h3 className="font-montserrat font-bold text-av-blue text-lg mb-4">1) Eligibility Criteria:</h3>
-                                <div className="space-y-3">
-                                    {[
-                                        { label: 'Gender and Marital Status', value: 'Unmarried male and female candidates are eligible.' },
-                                        { label: 'Age Requirement', value: '16.5 to 19.5 years.' },
-                                        { label: 'Educational Qualification', value: 'Completion of Class 12 with Physics and Mathematics from a recognized board is mandatory.' },
-                                    ].map(item => (
-                                        <div key={item.label} className="p-3 bg-av-light rounded-lg border border-av-sky/20">
-                                            <p className="text-av-blue font-semibold text-xs">{item.label}</p>
-                                            <p className="text-gray-600 text-xs mt-0.5">{item.value}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </ScrollReveal>
-
-                        {/* Selection Process */}
-                        <ScrollReveal delay={100}>
-                            <div className="bg-av-blue rounded-2xl p-7 text-white h-full">
-                                <h3 className="font-montserrat font-bold text-white text-lg mb-4">2) Step-by-Step Selection Process:</h3>
-                                <div className="space-y-4">
-                                    {ndaSelectionSteps.map((s, i) => (
-                                        <div key={s.title} className="flex items-start gap-3">
-                                            <div className="w-6 h-6 bg-av-orange rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">{i + 1}</div>
-                                            <div>
-                                                <p className="text-av-orange font-semibold text-xs">{s.title}</p>
-                                                <p className="text-white/70 text-xs leading-relaxed mt-0.5">{s.desc}</p>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </ScrollReveal>
-
-                        {/* Training & Career Path */}
-                        <ScrollReveal delay={200}>
-                            <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-7 h-full">
-                                <h3 className="font-montserrat font-bold text-av-blue text-lg mb-4">3) Training and Career Path:</h3>
-                                <div className="space-y-4">
-                                    <div className="p-3 bg-av-light rounded-lg border border-av-sky/20">
-                                        <p className="text-av-blue font-semibold text-xs mb-1">National Defence Academy (NDA) Training:</p>
-                                        <p className="text-gray-600 text-xs leading-relaxed">Successful candidates join the NDA in Khadakwasla for a three-year intensive program covering academic studies, physical training, military drills, and leadership development. Graduates earn a B.Tech. degree and are commissioned as PCOs.</p>
-                                    </div>
-                                    <div className="p-3 bg-av-light rounded-lg border border-av-sky/20">
-                                        <p className="text-av-blue font-semibold text-xs mb-1">Specialized Flying Training:</p>
-                                        <p className="text-gray-600 text-xs leading-relaxed">After graduation from the NDA, candidates proceed to IAF academies for advanced flying training, where they receive the skills and experience required to become IAF pilots.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </ScrollReveal>
-                    </div>
-
-                    <ScrollReveal className="mt-8">
-                        <div className="bg-av-blue rounded-2xl p-6">
-                            <h4 className="font-montserrat font-bold text-white mb-4 text-center">Important Tips for Aspiring Candidates:</h4>
-                            <div className="grid md:grid-cols-2 gap-4">
-                                {[
-                                    'The NDA entrance exam is highly competitive, demanding focused preparation, particularly in mathematics and general knowledge.',
-                                    'Physical endurance and mental resilience are essential for the selection process, training, and eventual responsibilities as an Air Force pilot.',
-                                ].map((tip, i) => (
-                                    <div key={i} className="flex items-start gap-2 text-white/80 text-sm">
-                                        <span className="text-av-orange mt-0.5 flex-shrink-0">✓</span><span>{tip}</span>
-                                    </div>
-                                ))}
-                            </div>
-                            <p className="text-white/60 text-xs text-center mt-4">In conclusion, becoming a pilot in the Indian Air Force through the NDA is a rewarding journey that combines academic excellence, physical fitness, and determination. With structured training, a competitive selection process, and dedication, you can achieve your dream of serving as a pilot in the IAF.</p>
-                        </div>
-                    </ScrollReveal>
-                </div>
-            </section>
-
-            {/* ── Average Pilot Salary ── */}
-            <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-10">
-                        <div className="section-tag">Salary</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Average Pilot Salary <span className="text-av-orange">In India</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3 max-w-3xl mx-auto text-sm leading-relaxed">
-                            Pay varies by rank, fleet, seniority, contract type and roster &mdash; and no Indian airline
-                            publishes a pilot pay scale, so the ranges you find online cannot be traced to a primary source.
-                            This page used to quote one and no longer does. What <strong className="text-av-blue">is</strong>{' '}
-                            published is the ceiling the hour-linked part of the pay sits under: a maximum of 1,000 flying hours
-                            in 365 days, and 100 in any 28, under the flight crew Flight Duty Time Limitations.
-                        </p>
-                    </ScrollReveal>
-
-                    <div className="grid md:grid-cols-2 gap-8 mb-10">
-                        <ScrollReveal>
-                            <div className="overflow-x-auto rounded-2xl shadow">
-                                <table className="w-full text-sm">
-                                    <thead>
-                                        <tr className="bg-av-blue text-white">
-                                            <th className="px-5 py-3 text-left">Level</th>
-                                            <th className="px-5 py-3 text-left">Salary</th>
-                                            <th className="px-5 py-3 text-left">Note</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {salaryData.map((row, i) => (
-                                            <tr key={row.level} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                                                <td className="px-5 py-3 font-semibold text-av-blue text-xs">{row.level}</td>
-                                                <td className="px-5 py-3 font-bold text-av-orange text-sm">{row.salary}</td>
-                                                <td className="px-5 py-3 text-gray-500 text-xs">{row.note}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </ScrollReveal>
-
-                        <ScrollReveal delay={150}>
-                            <div className="bg-av-blue rounded-2xl p-8 text-white h-full">
-                                <h3 className="font-montserrat font-bold text-white text-xl mb-4">Factors Impacting Pilot Salaries in India:</h3>
-                                <div className="space-y-3">
-                                    {[
-                                        { label: 'Experience Level', desc: 'As pilots progress from junior to senior levels, their pay packages increase considerably.' },
-                                        { label: 'Aircraft Size', desc: 'Larger aircraft require more skill and training, which is often rewarded with higher pay.' },
-                                        { label: 'Type of Airline', desc: 'Major airlines offer higher pay than smaller, regional carriers.' },
-                                    ].map(item => (
-                                        <div key={item.label} className="bg-white/10 rounded-xl p-4">
-                                            <p className="text-av-orange font-semibold text-sm">{item.label}</p>
-                                            <p className="text-white/70 text-xs mt-1 leading-relaxed">{item.desc}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                                <p className="text-white/50 text-xs mt-4">In conclusion, pilot salaries in India start at competitive levels and can grow exponentially with experience, aircraft type, and airline affiliation.</p>
-                            </div>
-                        </ScrollReveal>
-                    </div>
-
-                    <ScrollReveal>
-                        <div className="bg-av-light border border-av-sky/20 rounded-2xl p-5 text-center">
-                            <Link href="/commercial-pilot-license-salary" className="text-av-blue font-semibold text-sm hover:text-av-orange transition-colors">
-                                Know About Commercial Pilot Salary: Everything You Need to Know (Country Wise) →
-                            </Link>
-                        </div>
-                    </ScrollReveal>
-                </div>
-            </section>
-
-            {/* ── Career Outlook ── */}
-            <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Career Outlook</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Career Outlook <span className="text-av-orange">for Pilots</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">The pilot job market in India is strong, with a projected growth rate of <strong>13%</strong> through 2030.</p>
-                    </ScrollReveal>
-
-                    {/* High Demand */}
-                    <ScrollReveal className="mb-8">
-                        <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-8">
-                            <h3 className="font-montserrat font-bold text-av-blue text-xl mb-5">High Demand for Trained Pilots</h3>
-                            <div className="grid md:grid-cols-3 gap-6">
-                                {[
-                                    { icon: '🌍', title: 'Expanding Aviation Industry', desc: "India is rapidly becoming a global aviation hub, with new domestic and international routes constantly being added. The Indian government's push to increase regional connectivity and infrastructure development at airports across the country has also contributed to this growth." },
-                                    { icon: '✈️', title: 'Increasing Fleet Size', desc: 'Major airlines like IndiGo, Air India, and SpiceJet have large-scale expansion plans and are adding hundreds of new aircraft to their fleets, which means a need for more pilots to operate these planes.' },
-                                    { icon: '🌐', title: 'Global Pilot Shortage', desc: 'The worldwide pilot shortage is also a factor, making skilled Indian pilots more in demand both domestically and internationally. Many Indian pilots have opportunities to work abroad as airlines in other countries face shortages as well.' },
-                                ].map((item, i) => (
-                                    <div key={item.title} className="flex flex-col">
-                                        <div className="text-2xl mb-2">{item.icon}</div>
-                                        <h4 className="font-montserrat font-bold text-av-blue mb-1 text-sm">{item.title}</h4>
-                                        <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </ScrollReveal>
-
-                    {/* Earning & Job Stability */}
-                    <ScrollReveal className="mb-8">
-                        <div className="bg-av-blue rounded-2xl p-8 text-white">
-                            <h3 className="font-montserrat font-bold text-white text-xl mb-5">Earning Potential and Job Stability</h3>
-                            <div className="grid md:grid-cols-3 gap-6">
-                                {[
-                                    { icon: '💰', title: 'Pay Rises With Rank', desc: 'Pay rises with command and with hours flown, and a captain earns materially more than a first officer. What the figures are is not published by any Indian airline, so this page does not quote one — see the salary page for what can and cannot be shown.' },
-                                    { icon: '🔒', title: 'Job Security', desc: 'As experienced pilots approach retirement, new pilots are needed to replace them, making this a stable career with opportunities for advancement.' },
-                                    { icon: '📊', title: 'Growth Opportunities', desc: 'Pilots can progress from first officers to captains, and with enough experience, can explore roles in aviation training, management, or consultancy, expanding career flexibility beyond flying.' },
-                                ].map(item => (
-                                    <div key={item.title}>
-                                        <div className="text-2xl mb-2">{item.icon}</div>
-                                        <h4 className="font-montserrat font-bold text-white mb-1 text-sm">{item.title}</h4>
-                                        <p className="text-white/70 text-xs leading-relaxed">{item.desc}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </ScrollReveal>
-
-                    {/* Diverse Career Paths */}
-                    <ScrollReveal>
-                        <h3 className="font-montserrat font-bold text-av-blue text-xl mb-5">Diverse Career Paths within Aviation</h3>
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                            {careerPaths.map((item, i) => (
-                                <div key={item.title} className="card-hover bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:border-av-orange/30 h-full">
-                                    <div className="text-2xl mb-3">{item.icon}</div>
-                                    <h4 className="font-montserrat font-bold text-av-blue mb-2 text-sm">{item.title}</h4>
-                                    <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </ScrollReveal>
-                </div>
-            </section>
-
-            {/* ── Cost of Pilot Training ── */}
-            <section className="py-20 px-4 bg-gradient-to-br from-av-blue to-av-navy">
-                <div className="max-w-4xl mx-auto text-center">
-                    <ScrollReveal>
-                        <div className="section-tag">Training Cost</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white mb-5">
-                            Cost of <span className="text-av-orange">Pilot Training</span>
-                        </h2>
-                        <p className="text-white/80 text-sm leading-relaxed mb-6">
-                            Pilot training can be expensive, typically ranging from <strong className="text-av-orange text-lg">₹35 lakhs to ₹46 lakhs</strong>. Costs vary by flight school and training type but are a necessary investment for this high-demand career.
-                        </p>
-                        <Link href="/courses/cpl" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
-                            Wants To Know Pilot Course Fees in India →
-                        </Link>
-                    </ScrollReveal>
-                </div>
-            </section>
-
-        </Layout>
-    );
+      <PeopleAlsoAsk items={peopleAlsoAsk} />
+    </BlogPostLayout>
+  );
 }
