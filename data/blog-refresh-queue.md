@@ -19,6 +19,15 @@ DONE with the date and branch.
 
 ## Queue
 
+### P0 — full rewrite to data/blog-standard.md (owner request, 2026-10-08)
+
+The owner asked for every post to be rewritten to the new standard and pushed
+in batches on `claude/blog-enhance-2026-10-08-bN` branches. Progress is tracked
+in the P2/P3 lines below as each post is done. The two salary URLs are no
+longer on HOLD: the owner decided on 2026-10-08 to rebuild
+`/blogs/pilot-salary-in-india` with sourced facts only and 301 the `-2026` URL
+to it.
+
 ### P1 — owner decision needed
 
 - **HOLD** — `/blogs/pilot-salary-in-india` and `/blogs/pilot-salary-in-india-2026`
@@ -44,7 +53,9 @@ edit.
 - **TODO** — `/blogs/cpl-vs-atpl-difference-india` — UPGRADE.
 - **TODO** — `/blogs/type-rating-for-pilots-in-india` — UPGRADE.
 - **TODO** — `/blogs/mcc-training-for-pilots-in-india` — UPGRADE.
-- **TODO** — `/blogs/aviation-course-after-12th` — UPGRADE.
+- **DONE 2026-10-08** — `/blogs/aviation-course-after-12th` — rewritten to
+  `data/blog-standard.md` as a route-comparison guide (it had been competing
+  with /how-to-become-a-pilot-after-12th). Branch: `claude/blog-enhance-2026-10-08-b0`.
 
 ### P3 — already at or near the standard, touch only if a figure moves
 

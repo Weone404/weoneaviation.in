@@ -8,6 +8,14 @@ import { useState } from 'react';
 export default function BlogImagePlaceholder({ src, width, height, alt, promptId, caption }) {
   const [showPlaceholder, setShowPlaceholder] = useState(false);
 
+  /*
+   * 2026-10-08: the dashed placeholder printed the file path and prompt number
+   * to readers on the live site for every post whose image had not been made
+   * yet. It is a working aid for whoever generates the images, so it now shows
+   * in development only; in production a missing image renders nothing.
+   */
+  if (showPlaceholder && process.env.NODE_ENV === 'production') return null;
+
   if (showPlaceholder) {
     return (
       <figure className="my-10">

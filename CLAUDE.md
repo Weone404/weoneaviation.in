@@ -34,6 +34,16 @@ Fixed 2026-09-02: the Build step regenerates the tracked
 `.generated-sitemap.xml`, which made `git checkout master` abort every run. The
 workflow now discards it before the merge.
 
+## Every post follows data/blog-standard.md
+
+Added 2026-10-08. Read `data/blog-standard.md` before writing. In short:
+problem-led intro (the Quick Answer stays above it), `<BlogCta variant="top" />`
+after the intro and `variant="mid"` after a key section (the bottom one comes
+from the layout), question-form H2s whose first sentence answers the question,
+3–5 inline primary-source links with `<Ext>`, a `sources` prop taken from
+`lib/facts.js`, FAQ count sized to length, meta title ≤ 60 and description
+140–160 characters, and no closing heading called "Conclusion".
+
 ## Things earlier runs got wrong
 
 - **Topic overlap** — check `pages/` at the repo root too, not just

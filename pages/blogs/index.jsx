@@ -230,11 +230,12 @@ const guidePosts = [
     },
     {
         slug: 'aviation-course-after-12th',
-        title: 'Aviation Courses After 12th in India',
-        excerpt: 'Which aviation courses are open after Class 12, what each route leads to, and how the licence path differs from an academic aviation degree.',
+        title: 'Aviation Courses After 12th in India: Which Route Needs What',
+        excerpt: 'Commercial pilot, private pilot, AME, flight dispatcher and Air Force entry, side by side: the Class 12 subjects, minimum age and medical each route needs, and what to do in the first month after results.',
         category: 'After 12th',
         readTime: '9 min',
         date: 'Jan 2, 2025',
+        updated: 'Oct 8, 2026',
         image: { src: '/blog/aviation-course-after-12th/hero-after-12th-routes.webp', width: 1200, height: 630, promptId: '9' },
     },
     {
@@ -334,11 +335,20 @@ export async function getServerSideProps() {
  * page outside the static build, and what the render smoke test hits. A
  * missing database should degrade to the file-based posts, not a blank page.
  */
+/*
+ * Newest first, by the later of publication and last update. Added 2026-10-08:
+ * the array is appended to by the daily routine, so the grid used to show the
+ * oldest guides first and each new post at the very bottom. `updated` is
+ * optional on an entry; when present it must equal the post's DATE_MODIFIED.
+ */
+const byRecency = (p) => new Date(p.updated || p.date).getTime() || 0;
+const sortedGuides = [...guidePosts].sort((a, b) => byRecency(b) - byRecency(a));
+
 export default function BlogsIndex({ mongoBlogs = [] }) {
     const allBlogs = [...mongoBlogs, ...hardcodedBlogs];
 
     return (
-        <Layout title="Blogs – We One Aviation" description="Aviation blogs, pilot guides, DGCA tips and more.">
+        <Layout title="Pilot Training Blog: DGCA Exams, CPL and Careers" description="Guides for students starting pilot training in India: CPL eligibility, DGCA exams, computer number, medicals, costs and flying schools, checked against DGCA.">
             {/* Hero */}
             <div className="relative bg-gradient-to-br from-av-blue to-av-navy pt-32 pb-16 px-4 text-center text-white">
                 <h1 className="font-montserrat text-4xl md:text-5xl font-black mb-4 text-white drop-shadow-lg">Aviation Blogs</h1>
@@ -360,7 +370,7 @@ export default function BlogsIndex({ mongoBlogs = [] }) {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {guidePosts.map((post) => (
+                    {sortedGuides.map((post) => (
                         <Link
                             href={`/blogs/${post.slug}`}
                             key={post.slug}
@@ -385,7 +395,7 @@ export default function BlogsIndex({ mongoBlogs = [] }) {
                                 </h3>
                                 <p className="text-gray-500 text-sm mb-4 flex-1">{post.excerpt}</p>
                                 <div className="flex items-center justify-between text-xs text-gray-400">
-                                    <span>&#128197; {post.date}</span>
+                                    <span>&#128197; {post.updated ? `Updated ${post.updated}` : post.date}</span>
                                     <span>&#9201; {post.readTime} read</span>
                                 </div>
                             </div>
