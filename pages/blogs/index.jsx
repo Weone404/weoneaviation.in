@@ -113,12 +113,13 @@ const guidePosts = [
     },
     {
         slug: 'pilot-salary-in-india',
-        title: 'Pilot Salary in India 2026: Complete Guide to First Officer, Captain & Commercial Pilot Pay',
-        excerpt: 'How much does a pilot earn in India? Salary breakdown for trainee pilots, First Officers, Senior First Officers, Captains, airline allowances and the key pay factors that change compensation in 2026.',
+        title: 'Pilot Salary in India: How to Read a Pay Figure Before You Fund Training',
+        excerpt: 'No Indian airline publishes a pilot pay scale. How to read the salary figures families meet, what DGCA does publish, what to check in a real offer, and how to plan training money from the side you can verify.',
         category: 'Pilot career guide',
-        readTime: '7 min',
+        readTime: '8 min',
         date: 'Sep 5, 2026',
-        image: { src: '/salary.webp', width: 1200, height: 630, promptId: '1' },
+        updated: 'Oct 8, 2026',
+        // image removed 2026-10-08: /salary.webp printed unsourced pay bands beside airline logos.
     },
     {
         slug: 'mcc-training-for-pilots-in-india',
@@ -212,21 +213,23 @@ const guidePosts = [
     },
     {
         slug: 'how-to-become-an-airline-pilot-in-india',
-        title: 'How to Become an Airline Pilot in India: Complete 2026 Guide',
-        excerpt: 'Step-by-step roadmap after 12th: educational eligibility, DGCA medical, DGCA exams, flight training, CPL, cost, timeline and airline selection realities.',
+        title: 'How to Become an Airline Pilot in India (2027): From Class 12 to the Right Seat',
+        excerpt: "The DGCA licence requirements in the order to tackle them, then what airlines add after the CPL: selection, cadet criteria, type training, duty-time limits and the government's own words on pilot supply.",
         category: 'Pilot career guide',
         readTime: '12 min',
         date: 'Sep 1, 2026',
-        image: { src: '/blog/how-to-become-an-airline-pilot-in-india/hero-pilot-roadmap.webp', width: 1200, height: 630, promptId: '1' },
+        updated: 'Oct 8, 2026',
+        // image removed 2026-10-08: its baked-in text contradicted the rewritten post.
     },
     {
         slug: 'dgca-exam-guide',
-        title: 'DGCA Full Form and What the DGCA Does',
-        excerpt: 'What the Directorate General of Civil Aviation is, its role in pilot licensing and safety oversight, and how it governs the examinations behind an Indian pilot licence.',
-        category: 'DGCA guide',
-        readTime: '8 min',
+        title: 'DGCA Exam Guide: Papers, Pass Mark, Fees, Sessions and How to Book',
+        excerpt: 'The five CPL papers, the 70% pass mark in each with no aggregate, the fee per paper, the session calendar, the booking rules and the five-year life of a pass, all from the DGCA CAR and the Pariksha portal.',
+        category: 'DGCA exams',
+        readTime: '9 min',
         date: 'Jan 2, 2025',
-        image: { src: '/blog/dgca-exam-guide/hero-dgca-regulator.webp', width: 1200, height: 630, promptId: '8' },
+        updated: 'Oct 8, 2026',
+        // image removed 2026-10-08: its baked-in text contradicted the rewritten post.
     },
     {
         slug: 'aviation-course-after-12th',
@@ -236,7 +239,7 @@ const guidePosts = [
         readTime: '9 min',
         date: 'Jan 2, 2025',
         updated: 'Oct 8, 2026',
-        image: { src: '/blog/aviation-course-after-12th/hero-after-12th-routes.webp', width: 1200, height: 630, promptId: '9' },
+        // image removed 2026-10-08: its baked-in text contradicted the rewritten post.
     },
     {
         slug: 'convert-foreign-pilot-licence-to-dgca-india',
@@ -377,14 +380,24 @@ export default function BlogsIndex({ mongoBlogs = [] }) {
                             className="group border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col"
                         >
                             <div className="relative h-48 overflow-hidden border-b border-gray-200 bg-white">
-                                <NextImage
-                                    src={post.image.src}
-                                    alt={post.title}
-                                    width={post.image.width}
-                                    height={post.image.height}
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                />
+                                {post.image ? (
+                                    <NextImage
+                                        src={post.image.src}
+                                        alt={post.title}
+                                        width={post.image.width}
+                                        height={post.image.height}
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    />
+                                ) : (
+                                    /*
+                                     * No image: a type-only tile. Used where the old hero image
+                                     * carried text that contradicts the rewritten post (2026-10-08).
+                                     */
+                                    <div className="w-full h-full bg-gradient-to-br from-av-blue to-av-navy flex items-end p-5" aria-hidden="true">
+                                        <p className="font-montserrat text-white/90 text-lg font-bold leading-snug line-clamp-3">{post.title}</p>
+                                    </div>
+                                )}
                                 <span className="absolute top-3 left-3 bg-av-orange text-white text-xs font-bold px-3 py-1 rounded-full">
                                     {post.category}
                                 </span>

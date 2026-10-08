@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import BlogPostLayout from '../../components/BlogPostLayout';
-import BlogImagePlaceholder from '../../components/BlogImagePlaceholder';
 import PeopleAlsoAsk from '../../components/PeopleAlsoAsk';
 import BlogCta from '../../components/BlogCta';
 import Ext from '../../components/Ext';
+import IgruaFeeBox from '../../components/IgruaFeeBox';
 import {
   ACADEMY, LICENCES, EDUCATION, PARIKSHA, MEDICAL_STANDARDS, AVIATION_CAREERS,
   CPL_HOURS, DGCA_PAPERS, RTR, CPL_COST, COST_NOTE, EGCA, FTO, inr,
@@ -70,7 +70,7 @@ const articleSchema = {
   articleSection: 'After 12th',
   keywords: 'aviation courses after 12th, aviation course after 12th in India, pilot course after 12th, AME course after 12th, aviation career after 12th',
   mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
-  image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/blog/aviation-course-after-12th/hero-after-12th-routes.webp' },
+  image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
   author: { '@type': 'Organization', name: ACADEMY.name, url: ACADEMY.url },
   publisher: {
     '@type': 'EducationalOrganization', name: ACADEMY.name, url: ACADEMY.url,
@@ -236,13 +236,6 @@ export default function AviationCourseAfter12th() {
 
       <BlogCta variant="top" />
 
-      <BlogImagePlaceholder
-        src="/blog/aviation-course-after-12th/hero-after-12th-routes.webp"
-        width={1200}
-        height={630}
-        alt="A student holding a Class 12 marksheet at a fork of signposted paths leading to a small trainer aircraft, a maintenance hangar and an operations desk"
-        promptId="9"
-      />
 
       <h2 id="routes" className={H2}>Which aviation courses can you start after 12th?</h2>
       <p>
@@ -434,24 +427,10 @@ export default function AviationCourseAfter12th() {
         a government academy.
       </p>
       <p>
-        IGRUA publishes {igrua.feeLabel} for its ab-initio to CPL course (fixed wing) on its{' '}
-        <Ext href={igrua.source}>approved courses page</Ext>. What that figure does and does not cover is
-        the useful part, because it shows how much sits outside a headline number:
+        IGRUA&rsquo;s figure is the useful one, because what it leaves out shows how much sits outside
+        any headline number:
       </p>
-      <div className="grid sm:grid-cols-2 gap-4 my-6">
-        <div className="rounded-2xl border border-gray-200 p-5">
-          <p className="font-montserrat font-bold text-av-blue mb-2">Included in the IGRUA fee</p>
-          <ul className="list-disc pl-5 space-y-1 text-base text-gray-700">
-            {igrua.includes.map((x) => <li key={x}>{x}</li>)}
-          </ul>
-        </div>
-        <div className="rounded-2xl border border-gray-200 p-5">
-          <p className="font-montserrat font-bold text-av-blue mb-2">Not included</p>
-          <ul className="list-disc pl-5 space-y-1 text-base text-gray-700">
-            {igrua.excludes.map((x) => <li key={x}>{x}</li>)}
-          </ul>
-        </div>
-      </div>
+      <IgruaFeeBox />
       <p>
         DGCA charges {inr(PARIKSHA.fees.regularPerPaper)} per written paper in a regular session and{' '}
         {inr(PARIKSHA.fees.olodePerPaper)} on demand. Use those as the fixed points, and get every

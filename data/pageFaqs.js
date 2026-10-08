@@ -466,19 +466,11 @@ const routeContent = {
    * a physical-standards table and a "13% job growth" figure that no source
    * supports; the rewritten post emits its own FAQPage from peopleAlsoAsk.
    */
-  '/blogs/dgca-exam-guide': {
-  title: 'DGCA Full Form FAQs',
-  questions: [
-    ['What is the full form of DGCA?', 'DGCA stands for Directorate General of Civil Aviation, the top regulatory authority for civil aviation in India, operating under the Ministry of Civil Aviation.'],
-    ['When was DGCA founded and where is it headquartered?', 'DGCA was founded in 1971 and is headquartered in New Delhi, near Safdarjung Airport, with regional offices in Mumbai, Kolkata, Chennai, and Hyderabad.'],
-    ['What are DGCA\'s main functions?', 'DGCA issues pilot licenses, certifies aircraft, monitors aviation training institutes, sets and enforces safety standards, handles passenger complaints, and investigates aviation incidents.'],
-    ['Which pilot licenses does DGCA issue?', 'DGCA issues all pilot licenses in India, including the Student Pilot License (SPL), Private Pilot License (PPL), Commercial Pilot License (CPL), and Airline Transport Pilot License (ATPL), after exams and flying-hour requirements are met.'],
-    ['What does DGCA check before an aircraft can fly in India?', 'DGCA certifies aircraft to ensure they are safe and ready to operate before they are allowed to fly in Indian airspace.'],
-    ['What is a pilot\'s typical journey with DGCA?', 'It involves getting admission to a DGCA flying school, passing DGCA-mandated medical fitness assessments, clearing DGCA exams (Air Navigation, Meteorology, Regulations, etc.), logging the required flying hours (typically 200 for CPL), and receiving the license from DGCA.'],
-    ['Does DGCA follow international aviation standards?', 'Yes, DGCA works closely with ICAO (International Civil Aviation Organization) to keep India aligned with global aviation safety standards.'],
-    ['What is DGCA\'s official website?', 'DGCA\'s official website is dgca.gov.in.'],
-  ],
-},
+  /*
+   * '/blogs/dgca-exam-guide' removed 2026-10-08. The route is gated in
+   * existingFaqRoutes, so these "DGCA full form" answers never rendered, but they
+   * still shipped in the shared bundle, including an unsourced founding year.
+   */
   '/how-to-become-a-pilot/after-12th': {
   title: 'Becoming a Pilot After 12th: FAQs',
   questions: [
