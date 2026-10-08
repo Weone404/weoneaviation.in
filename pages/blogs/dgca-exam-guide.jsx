@@ -163,14 +163,7 @@ export default function DGCAExamGuide() {
         with a plan that keeps your passes alive until your licence application goes in.
       </p>
 
-      <BlogCta
-        variant="top"
-        eyebrow="Free checklist"
-        title="The DGCA exam checklist"
-        text="Computer number, documents, session choice, fee and the day itself, in one list you can tick through before your first booking."
-        href="/lead-magnets/dgca-exam-checklist"
-        label="Open the exam checklist"
-      />
+      <BlogCta variant="top" />
 
 
       <h2 id="papers" className={H2}>Which DGCA papers do you have to pass for a CPL?</h2>
@@ -289,7 +282,7 @@ export default function DGCAExamGuide() {
       <BlogCta
         variant="mid"
         title="Preparing for the five papers?"
-        text="We teach Air Navigation, Meteorology, Air Regulations and both Technical papers from our Dwarka classroom and online, timed to the DGCA session calendar."
+        text="We teach Air Navigation, Meteorology, Air Regulations and both Technical papers from our Dwarka classroom and online."
       />
 
       <h2 id="booking" className={H2}>How do you book a DGCA exam?</h2>

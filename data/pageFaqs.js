@@ -513,45 +513,9 @@ const routeContent = {
   // '/blogs/what-is-pilot-training-complete-guide' removed 2026-10-08: the post emits its own FAQPage.
   // '/blogs/commercial-pilot-training-programs-complete-guide' removed 2026-10-08: the post emits its own FAQPage.
   // '/blogs/flight-school-prerequisites-admission-guide' removed 2026-10-08: the post emits its own FAQPage.
-  '/blogs/pilot-training-cost-in-india': {
-  title: 'Pilot Training Cost: FAQs',
-  questions: [
-    ['Why is flying training so much more expensive than ground school?', 'Because an aircraft, its fuel, its maintenance and an instructor are all being consumed by the hour while you fly, and none of that scales across a class the way a ground lesson does. Ground school teaches thirty students at once; a training flight teaches one.'],
-    ['Does the quoted fee cover the whole path to a licence?', 'Rarely. Most quotes cover flying to the syllabus minimum and stop there. The instrument rating is sometimes inside, a type rating never is, and living costs sit outside every school invoice. Ask what the fee does not include - it is a more useful question than what it does.'],
-    ['What is the difference between airborne time and block time billing?', 'Block time is charged from engine start to engine shutdown, airborne time only from wheels-up to touchdown. Taxiing, holding and run-ups fall in the gap. Across two hundred hours that difference is substantial, and schools rarely volunteer which basis they use.'],
-    ['Can I pay for pilot training in instalments?', 'Most schools accept a schedule rather than a lump sum. Ask for one tied to training milestones rather than to calendar dates, so that a disruption at the school does not leave you having paid for training you have not received.'],
-    ['Is training abroad cheaper once everything is counted?', 'Not reliably. Hourly rates may look lower, and then living costs, visa expenses and DGCA conversion add back. Compare the total cost to a usable Indian licence rather than the headline training fee, and include the months you will spend on conversion after returning.'],
-    ['How much should a family budget above the quoted fee?', 'Enough to absorb extra flying hours and several extra months of living costs, since both are more likely than not. A budget that only balances if nothing goes wrong is the most common reason students pause training partway through.'],
-    ['Do scholarships meaningfully reduce the total?', 'A ground-school scholarship reduces the smallest of the three buckets, so it helps without transforming the total. What reduces the total materially is flying consistently and clearing the written papers before the expensive phase begins.'],
-    ['What happens to my money if I stop training partway?', 'It depends entirely on what you signed. This is why refund conditions and a milestone-linked payment schedule matter more than a discount for paying in advance. Get both in writing before any large transfer.'],
-  ],
-},
-  '/blogs/best-flying-school-in-india': {
-  title: 'Choosing a Flying School: FAQs',
-  questions: [
-    ['Is DGCA approval enough to judge a flying school by?', 'No. Approval confirms the organisation meets the regulatory standard to train, which every school worth considering also meets. It says nothing about how often aircraft are serviceable, how long instructors stay, or how many students finish on time. Approval is where the shortlist starts, not where it ends.'],
-    ['What is the DGCA FTO ranking and how should I use it?', 'It is published ranking information comparing approved Flying Training Organisations on measured criteria. Use it to build a shortlist, then verify the current position yourself - fleet serviceability and instructor retention move faster than a publication cycle, and a placing quoted without naming its edition is being quoted selectively.'],
-    ['What single number best predicts how fast I will finish?', 'The ratio of serviceable aircraft to active students. It decides how often you fly, and flying frequency decides your timeline more than syllabus length, instructor quality or your own ability. Ask for both numbers and divide them yourself.'],
-    ['How many flying days does weather typically cost at an Indian base?', 'It varies by region and season - fog in the north, monsoon in the west and east, heat limits in central India. There is no national figure worth quoting. Ask each shortlisted school how many days it lost last year and in which months; a school that tracks it will answer.'],
-    ['Should I visit a flying school before enrolling?', 'If you can, and unannounced on a weekday morning rather than on a scheduled tour. What you are looking for is how many aircraft are flying, how many are in the hangar, and whether students are waiting around. Thirty minutes of that tells you more than any brochure.'],
-    ['What should never appear in a flying school\'s marketing?', 'A guaranteed airline job, a placement percentage, or any promise about employment. Hiring decisions rest with the operator, so a school promising an outcome is promising something it does not control. Treat it as a signal about everything else it says.'],
-    ['Does it matter whether maintenance is in-house or outsourced?', 'It affects turnaround, which affects serviceability, which affects how often you fly. In-house engineering usually returns an aircraft to line faster. Ask what the arrangement is and what the typical turnaround has been, rather than assuming either model is better.'],
-    ['Can I keep ground school and flying school separate?', 'Yes, and many students do. The DGCA examines the written papers regardless of where you studied for them, so the two are separable decisions. Clearing theory first usually costs less overall, because ground study is a fraction of the price of an hour in an aircraft.'],
-  ],
-},
-  '/blogs/dgca-ground-school-guide': {
-  title: 'DGCA Ground School: FAQs',
-  questions: [
-    ['How many papers do I attempt in one examination cycle?', 'Two suits most students. Papers clear individually, so small groups across successive cycles spreads the load instead of concentrating it. Attempting all five at once is the most reliable way to turn a six-month ground phase into an eighteen-month one.'],
-    ['Which paper should I start studying first?', 'Air Navigation, on day one. It is the most calculation-heavy paper and the one that punishes a late start hardest, because what it examines is speed rather than volume. Air Regulations can be left later - it is mostly memory work and responds well to a short intensive run.'],
-    ['Is a failed paper recorded against my other papers?', 'No. Each paper stands alone, so a failure in one does not affect passes already secured or attempts in others. Keep attempting the remaining papers rather than pausing the whole plan while you re-prepare the failed one.'],
-    ['How do I know whether I failed on knowledge or on time?', 'Ask yourself how many questions you left unanswered. Running out of time needs timed drills; wrong answers on questions you completed need the underlying concept. The two failures look identical on a result slip and need opposite responses, so diagnose before re-booking.'],
-    ['Do I need to nominate an aircraft type before ground school?', 'Not to begin. You need it before Technical Specific, which is examined against the type named in your application. Most students settle it once their flying school is chosen, since the type they will train on is the natural nomination.'],
-    ['Can I study for the DGCA papers entirely on my own?', 'Some students do, and it takes longer for most. What self-study rarely provides is timed mock tests marked by someone who has sat the paper, and a person to ask when a Navigation method will not come out. Those two things are what the six months buy.'],
-    ['How much mathematics does ground school involve?', 'Enough that Class 12 Mathematics is a genuine requirement. Air Navigation is applied trigonometry and vector work; Technical General is applied physics. Neither exceeds school level, but both are examined at speed, which is a different skill from doing them slowly.'],
-    ['Should I finish all papers before starting to fly?', 'Not necessarily. Flying can begin once your medical and computer number are in place, and the phases overlap well - weather cancellations become study time. What is usually unwise is the reverse: leaving all theory until after the flying, when you are paying rent at a flying school to revise.'],
-  ],
-},
+  // '/blogs/pilot-training-cost-in-india' removed 2026-10-08: the post emits its own FAQPage.
+  // '/blogs/best-flying-school-in-india' removed 2026-10-08: the post emits its own FAQPage.
+  // '/blogs/dgca-ground-school-guide' removed 2026-10-08: the post emits its own FAQPage.
 };
 
 function fallbackContent(pathname) {

@@ -2,7 +2,10 @@ import Link from 'next/link';
 import BlogPostLayout from '../../components/BlogPostLayout';
 import BlogImagePlaceholder from '../../components/BlogImagePlaceholder';
 import PeopleAlsoAsk from '../../components/PeopleAlsoAsk';
-import { CPL_HOURS, DGCA_PAPERS, RTR, MEDICAL, ACADEMY } from '../../lib/facts';
+import BlogCta from '../../components/BlogCta';
+import Ext from '../../components/Ext';
+import { CPL_HOURS, DGCA_PAPERS, RTR, MEDICAL, ACADEMY, FTO, CPL_COST } from '../../lib/facts';
+import { H3, LINK, TABLE_WRAP, TD_HEAD, listJoin, articleSchemaFor, faqSchemaFrom } from '../../lib/blogKit';
 
 /*
  * Replaces the database post at /blogs/6a01656be977bff6d3d6bd42 (~1,400 words,
@@ -16,42 +19,40 @@ import { CPL_HOURS, DGCA_PAPERS, RTR, MEDICAL, ACADEMY } from '../../lib/facts';
  * ranking actually measures, how approval differs from ranking differs from
  * reputation, what geography does to a timeline, and the red flags.
  *
- * No HowTo (after-12th holds it). No FAQPage or BreadcrumbList (Layout emits both).
+ * No HowTo (after-12th holds it).
+ *
+ * UPDATED 2026-10-08 to data/blog-standard.md: problem-led intro, the three
+ * CTAs, DGCA's FTO list and ranking stated from lib/facts.js FTO (count,
+ * parameters and weights, categories, the Delhi/NCR finding) with the
+ * documents linked, its own FAQPage from peopleAlsoAsk (the pageFaqs.js entry
+ * is deleted), and a garbled closing paragraph about academy terms replaced.
  */
 const DATE_PUBLISHED = '2026-08-26';
-const DATE_MODIFIED = '2026-08-26';
-const CANONICAL = 'https://weoneaviation.in/blogs/best-flying-school-in-india';
+const DATE_MODIFIED = '2026-10-08';
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: 'Best Flying School in India: How to Choose One (2026)',
-  description:
-    'How to choose a flying school in India: what DGCA approval does and does not tell you, how to read the FTO ranking, what geography does to your timeline, the red flags, and the questions that separate schools before you pay.',
-  inLanguage: 'en-IN',
+const HEADING = 'Best Flying School in India (2027): How to Choose One Using DGCA\u2019s Own Data';
+const DESCRIPTION = 'How to choose the best flying school in India: DGCA\u2019s approved list and ranking, fleet ratio, weather losses, red flags and the questions to ask before paying.';
+const articleSchema = articleSchemaFor({
+  slug: 'best-flying-school-in-india',
+  headline: HEADING,
+  description: DESCRIPTION,
   datePublished: DATE_PUBLISHED,
   dateModified: DATE_MODIFIED,
-  articleSection: 'Flying school selection',
-  keywords: 'best flying school in India, how to choose flying school, DGCA flying schools, FTO ranking, flying training organisation India',
-  mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
-  image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
-  author: { '@type': 'Organization', name: ACADEMY.name, url: ACADEMY.url },
-  publisher: {
-    '@type': 'EducationalOrganization', name: ACADEMY.name, url: ACADEMY.url,
-    logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
-  },
-};
+  section: 'Flying school selection',
+  keywords: 'best flying school in India, how to choose a flying school, DGCA approved flying schools, DGCA FTO ranking, flying training organisation India',
+  image: '/blog/best-flying-school/hero-school-comparison.webp',
+});
 
 const threeSignals = [
   {
     signal: 'DGCA approval',
     means: 'The organisation meets the regulatory standard to conduct flight training and issue training records the DGCA will accept.',
     doesNotMean: 'That it flies often, maintains well, retains instructors, or finishes students on time. Approval is a floor.',
-    howToCheck: 'Verify the approval directly with the regulator. A certificate image on a website is not verification.',
+    howToCheck: `Find the school on DGCA\u2019s published list of ${FTO.count} approved organisations (as on ${FTO.listAsOf}) and read its approval validity dates there. A certificate image on a website is not verification.`,
   },
   {
     signal: 'FTO ranking',
-    means: 'The DGCA publishes ranking information comparing approved training organisations on measured criteria.',
+    means: `DGCA ranks approved organisations ${FTO.ranking.frequency} on five weighted parameters, from operations and safety to student support.`,
     doesNotMean: 'That a high placing in one edition holds in the next, or that the criteria weight what matters to you.',
     howToCheck: 'Read the current edition yourself. A school quoting a placing without naming the edition is quoting whichever one suited it.',
   },
@@ -127,6 +128,18 @@ const tocHeadings = [
 
 const peopleAlsoAsk = [
   {
+    q: 'Which is the best flying school in India?',
+    a: `No single flying school in India is best for every student. DGCA publishes a list of ${FTO.count} approved flying training organisations and ranks them ${FTO.ranking.frequency}; within that list, the right school is the one with a good aircraft-to-student ratio, few weather and maintenance losses, and recent batches that finished on time.`,
+  },
+  {
+    q: 'How do I check whether a flying school is DGCA approved?',
+    a: `Look the school up on DGCA\u2019s published list of approved flying training organisations, which names ${FTO.count} organisations as on ${FTO.listAsOf} with their flying bases, approval numbers and validity dates. ${FTO.groundSchoolNote}`,
+  },
+  {
+    q: 'Is there a DGCA-approved flying school in Delhi?',
+    a: `DGCA\u2019s list of approved flying training organisations, as on ${FTO.listAsOf}, shows no flying base in ${listJoin(FTO.noBaseIn, 'or')}. A student from Delhi NCR therefore flies at a base in another state, even if ground classes are taken in Delhi.`,
+  },
+  {
     q: 'Is it worth training further from home for a better fleet ratio?',
     a: 'Usually yes. Proximity saves money and helps morale across an eighteen-month course, but a materially worse aircraft-to-student ratio costs you months, and months cost more than the travel does. Treat location as a tie-breaker between comparable schools, not as a reason to accept a slower one.',
   },
@@ -148,6 +161,10 @@ const peopleAlsoAsk = [
   },
 ];
 
+const faqSchema = faqSchemaFrom(peopleAlsoAsk);
+
+const sources = [...FTO.sources, { label: 'IGRUA — approved courses and fees (Indira Gandhi Rashtriya Uran Akademi)', url: CPL_COST.benchmark.source }];
+
 const related = [
   { lead: 'For what the whole programme involves and how the stages fit together, read', anchor: 'our guide to commercial pilot training programmes', href: '/blogs/commercial-pilot-training-programs-complete-guide' },
   { lead: 'For the admission paperwork and the order it has to happen in, see', anchor: 'the flight school prerequisites guide', href: '/blogs/flight-school-prerequisites-admission-guide' },
@@ -164,31 +181,47 @@ const TD = 'px-4 py-3 align-top border-t border-gray-100 text-gray-600';
 export default function BestFlyingSchoolInIndia() {
   return (
     <BlogPostLayout
-      title="Best Flying School in India: How to Choose One (2026)"
-      description="How to choose a flying school in India: what DGCA approval really tells you, how to read the FTO ranking, what geography does to your timeline, red flags, and the questions that separate schools."
-      schema={articleSchema}
-      heading="Best Flying School in India: How to Choose One (2026)"
+      title="Best Flying School in India: How to Choose (2027)"
+      description={DESCRIPTION}
+      schema={[articleSchema, faqSchema]}
+      heading={HEADING}
       category="Flying school selection"
       datePublished={DATE_PUBLISHED}
       dateModified={DATE_MODIFIED}
       readingTime="13 min"
       quickAnswer={{
         question: 'Which is the best flying school in India?',
-        answer: 'There is no single best one. Every school worth considering is DGCA, so approval cannot be your deciding factor. What separates them is fleet-to-student ratio, daily serviceability, instructor turnover, weather losses at that base, and whether recent batches finished on time. Those figures are obtainable — you have to ask for them.',
+        answer: `There is no single best flying school in India. Start from DGCA's list of ${FTO.count} approved organisations and its twice-yearly ranking, then compare what decides your timeline: aircraft-to-student ratio, daily serviceability, instructor turnover, weather losses at that base, and whether recent batches finished on time. Ask for those figures in writing.`,
       }}
       summaryTitle="How to judge a flying school"
       summaryItems={[
-        'DGCA approval is a floor, not a ranking — every credible school has it',
-        'The FTO ranking is worth reading, but read the current edition yourself',
+        `DGCA lists ${FTO.count} approved flying training organisations (as on ${FTO.listAsOf}); approval is a floor, not a ranking`,
+        `DGCA ranks them ${FTO.ranking.frequency}; the ${FTO.ranking.latestEdition} edition ranked ${FTO.ranking.ranked}`,
+        `No approved flying base in Delhi or the rest of NCR`,
         'Fleet-to-student ratio predicts flying frequency better than fleet size does',
         'Ask for average hours to licence last year, never the syllabus minimum',
         'Weather losses at that specific base decide whether the quoted duration is achievable',
         'Payment tied to training milestones, never a large advance for a discount',
         'No school can promise an airline job, because no school controls that decision',
+        `Sources: DGCA FTO list and ranking, read ${FTO.verifiedOn}`,
       ]}
       tocHeadings={tocHeadings}
       related={related}
+      sources={sources}
+      sourcesCheckedOn="8 October 2026"
     >
+      <p>
+        Every flying school brochure looks the same from the kitchen table: a row of white aircraft, a
+        smiling instructor, a placement line, a fee. Families compare the photographs and the fee, pick
+        one, and find out in month four that the school has twice as many students as its aircraft can
+        carry. Choosing the best flying school in India is not about finding the most impressive
+        brochure; it is about asking a handful of questions whose answers decide how often you will
+        actually fly. DGCA publishes more of those answers than most families realise, and this guide
+        shows where to find them and what to ask for the rest.
+      </p>
+
+      <BlogCta variant="top" />
+
       <BlogImagePlaceholder
         src="/blog/best-flying-school/hero-school-comparison.webp"
         width={1200}
@@ -199,9 +232,16 @@ export default function BestFlyingSchoolInIndia() {
 
       <h2 id="no-single-best" className={H2}>Is there a single best flying school in India?</h2>
       <p>
-        No, and any page that names one is either selling that school or guessing. What exists is a
-        set of DGCA organisations that differ enormously in how often you will actually fly,
-        and a set of measurable questions that expose the difference before you pay.
+        There is no single best flying school in India, and any page that names one is either selling
+        that school or guessing. What exists is DGCA&rsquo;s{' '}
+        <Ext href={FTO.sources[0].url}>list of {FTO.count} approved flying training organisations</Ext>,
+        which differ enormously in how often you will fly, and a set of measurable questions that expose
+        the difference before you pay.
+      </p>
+      <p>
+        One finding from that list matters to every reader in the capital: it shows no approved flying
+        base in {listJoin(FTO.noBaseIn, 'or')}. A Delhi student flies elsewhere, whatever an institute&rsquo;s
+        address suggests.
       </p>
       <p>
         The mistake almost every family makes is comparing brochures. Brochures compare aircraft
@@ -242,24 +282,51 @@ export default function BestFlyingSchoolInIndia() {
 
       <h2 id="ranking" className={H2}>How should you read the DGCA FTO ranking?</h2>
       <p>
-        The DGCA publishes ranking information comparing approved Flying Training Organisations. It
-        is a genuinely useful document and it is widely misused, in three specific ways.
+        DGCA&rsquo;s FTO ranking scores approved flying training organisations {FTO.ranking.frequency} on
+        five weighted parameters, under{' '}
+        <Ext href={FTO.sources[1].url}>{FTO.ranking.notice}</Ext>. It is useful for building a shortlist
+        and widely misused as a verdict.
       </p>
+      <div className={TABLE_WRAP}>
+        <table className={TABLE}>
+          <caption className="sr-only">Parameters and weights in DGCA's ranking of flying training organisations</caption>
+          <thead>
+            <tr>
+              <th scope="col" className={TH}>Parameter</th>
+              <th scope="col" className={TH}>Weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            {FTO.ranking.parameters.map((r, i) => (
+              <tr key={r.name} className={i % 2 ? 'bg-gray-50' : 'bg-white'}>
+                <td className={TD_HEAD}>{r.name}</td>
+                <td className={TD}>{r.weight}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <p>
-        First, editions change. A placing from an earlier edition is history, not status, and a
-        school quoting a number without naming the edition has chosen the edition that flatters it.
-        Read the current one yourself.
+        The{' '}
+        <Ext href={FTO.sources[2].url}>{FTO.ranking.latestEdition} edition</Ext> ranked {FTO.ranking.ranked}{' '}
+        organisations ({FTO.ranking.categories.map((c) => `${c.label}: ${c.count}`).join(', ')}). {FTO.ranking.exclusion}{' '}
+        We do not reprint the order, because it changes with each edition. Three cautions when you read it:
       </p>
+      <h3 className={H3}>Editions change</h3>
       <p>
-        Second, the ranking weights criteria that may not be your criteria. A school ranked highly on
-        aggregate can still be the wrong choice for you if it sits in a region whose weather pattern
-        does not suit your available window, or if its student roll has grown faster than its fleet
-        since the assessment period.
+        A placing from an earlier edition is history, not status. A school quoting a rank without naming
+        the edition has chosen the edition that flatters it; read the current one yourself.
       </p>
+      <h3 className={H3}>The weights may not be your weights</h3>
       <p>
-        Third, a ranking is a snapshot of an assessment period, not of this morning. Fleet
-        serviceability and instructor retention both move faster than a publication cycle. Use the
-        ranking to build a shortlist, then verify the current position yourself with the questions
+        Operational aspects carry {FTO.ranking.parameters.find((r) => r.name === 'Operational Aspects').weight}% of the
+        score, but a school ranked well overall can still be wrong for you if its base loses your available
+        months to weather, or if its student roll has grown faster than its fleet since the assessment.
+      </p>
+      <h3 className={H3}>A ranking is a snapshot</h3>
+      <p>
+        Serviceability and instructor retention move faster than a twice-yearly publication. Use the
+        ranking to build the shortlist, then verify each school&rsquo;s current position with the questions
         further down this page.
       </p>
 
@@ -356,6 +423,12 @@ export default function BestFlyingSchoolInIndia() {
         which sets out what DGCA publishes about each and what it does not.
       </p>
 
+      <BlogCta
+        variant="mid"
+        title="Ground school does not have to be at the flying school"
+        text="The DGCA papers are examined by the regulator wherever you study. We teach all five from Dwarka and online, so you can choose a flying school on its flying alone."
+      />
+
       <h2 id="verify" className={H2}>How do you verify a flying school before paying?</h2>
       <p>
         Eight steps, in order. Steps one to four cost you nothing but time, and they eliminate most
@@ -427,10 +500,8 @@ export default function BestFlyingSchoolInIndia() {
         cancellations.
       </p>
       <p>
-        We have taught the DGCA ground subjects from Dwarka since {ACADEMY.foundedYear}. The course
-        has a schedule confirmed directly with the academy, offline or online, with current terms and attendance support confirmed before enrolment
-        at no further cost for students who have not yet cleared a paper. We also help students run
-        the verification process on this page against their own shortlist.
+        We have taught the DGCA ground subjects from Dwarka since {ACADEMY.foundedYear}, and we help
+        students run the verification process on this page against their own shortlist.
       </p>
       <p className="border-l-2 border-gray-300 pl-4 text-base text-gray-600">{ACADEMY.scope}</p>
 

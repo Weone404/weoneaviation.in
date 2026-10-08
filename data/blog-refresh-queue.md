@@ -42,14 +42,14 @@ in the H1, a cycle note, quick facts, and any figure reconciled against
 `lib/facts.js`. URLs and datePublished stay; set dateModified to the day of the
 edit.
 
-- **TODO** — `/blogs/pilot-training-cost-in-india` — UPGRADE — year in H1, cycle note.
+- **DONE 2026-10-08** — `/blogs/pilot-training-cost-in-india` — rewritten to the standard. Branch: `claude/blog-enhance-2026-10-08-b3`.
 - **DONE 2026-10-08** — `/blogs/commercial-pilot-training-programs-complete-guide` — rewritten to the standard. Branch: `claude/blog-enhance-2026-10-08-b2`.
 - **DONE 2026-10-08** — `/blogs/how-to-become-an-airline-pilot-in-india` — rewritten to
   the standard; now covers what sits between the CPL and the airline seat.
   Branch: `claude/blog-enhance-2026-10-08-b1`.
 - **DONE 2026-10-08** — `/blogs/flight-school-prerequisites-admission-guide` — rewritten to the standard. Branch: `claude/blog-enhance-2026-10-08-b2`.
-- **TODO** — `/blogs/dgca-ground-school-guide` — UPGRADE.
-- **TODO** — `/blogs/best-flying-school-in-india` — UPGRADE.
+- **DONE 2026-10-08** — `/blogs/dgca-ground-school-guide` — rewritten to the standard. Branch: `claude/blog-enhance-2026-10-08-b3`.
+- **DONE 2026-10-08** — `/blogs/best-flying-school-in-india` — rewritten to the standard. Branch: `claude/blog-enhance-2026-10-08-b3`.
 - **DONE 2026-10-08** — `/blogs/what-is-pilot-training-complete-guide` — rewritten to the standard. Branch: `claude/blog-enhance-2026-10-08-b2`.
 - **TODO** — `/blogs/cpl-vs-atpl-difference-india` — UPGRADE.
 - **TODO** — `/blogs/type-rating-for-pilots-in-india` — UPGRADE.

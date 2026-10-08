@@ -287,7 +287,7 @@ export default function HowToBecomeAnAirlinePilotIndia() {
       <BlogCta
         variant="mid"
         title="The papers are the part you can start now"
-        text="Students often clear the DGCA written papers while they wait for a medical date or a flying slot. We teach all five subjects from Dwarka and online, in batches built around that wait."
+        text="Students often clear the DGCA written papers while they wait for a medical date or a flying slot. We teach all five subjects from Dwarka and online."
       />
 
       <h2 id="after-cpl" className={H2}>What happens between the CPL and the airline?</h2>

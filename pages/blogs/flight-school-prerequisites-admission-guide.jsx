@@ -182,14 +182,7 @@ export default function FlightSchoolPrerequisites() {
         school you already know you can finish.
       </p>
 
-      <BlogCta
-        variant="top"
-        eyebrow="Free checklist"
-        title="The pre-admission checklist"
-        text="The same steps as this guide, as a list you can tick through before paying any flying school."
-        href="/lead-magnets/pre-admission-checklist"
-        label="Open the checklist"
-      />
+      <BlogCta variant="top" />
 
       <h2 id="prerequisites" className={H2}>What are the prerequisites for flight school in India?</h2>
       <p>

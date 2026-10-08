@@ -330,7 +330,7 @@ export default function AviationCourseAfter12th() {
       <BlogCta
         variant="mid"
         title="Starting with the DGCA papers?"
-        text="Most students begin the ground subjects while they wait for a flying slot. We teach all five written subjects from Dwarka and online, in batches that fit around a flying school's schedule."
+        text="Most students begin the ground subjects while they wait for a flying slot. We teach all five written subjects from Dwarka and online."
       />
 
       <h2 id="medical" className={H2}>Which medical should you take first after 12th?</h2>

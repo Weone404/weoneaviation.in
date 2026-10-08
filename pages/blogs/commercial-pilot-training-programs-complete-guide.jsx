@@ -187,14 +187,7 @@ export default function CommercialPilotTrainingPrograms() {
         against DGCA&rsquo;s own records, and the questions that make two quotes comparable.
       </p>
 
-      <BlogCta
-        variant="top"
-        eyebrow="Free checklist"
-        title="The pre-admission checklist"
-        text="Everything to settle before paying a flying school deposit: medical, computer number, documents and the questions to put in writing."
-        href="/lead-magnets/pre-admission-checklist"
-        label="Open the checklist"
-      />
+      <BlogCta variant="top" />
 
       <h2 id="what-is" className={H2}>What is a commercial pilot training programme?</h2>
       <p>
