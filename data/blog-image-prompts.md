@@ -1308,6 +1308,32 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector landscape. A South Asian student stands at the left. Two routes lead to a DGCA-style office on the right: the upper route is short and straight, drawn as a thin line of small phone-shaped nodes; the lower route is longer and winding, carrying a single envelope with an orange seal. Pale-blue sky, generous negative space. No text, numerals, logos or signage.
 
+## Post: Which books DGCA recommends for the CPL exams (`/blogs/dgca-recommended-books-cpl-exams`)
+
+### Prompt 96 — hero, book stack and five papers
+
+- **File:** `public/blog/dgca-recommended-books-cpl-exams/hero-book-stack-five-papers.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** A student at a desk with a stack of plain-covered reference books beside five blank folders, with a small trainer aircraft model on the shelf behind
+
+> A flat-vector scene. A South Asian student in a plain shirt sits at a desk on the left, a tidy stack of plain-covered reference books beside them. On the right edge, five blank folders stand in a row, one with an orange tab as the single accent. On a shelf behind the desk, a small single-engine trainer aircraft model. Pale-blue wall, generous negative space across the top. Calm, focused mood. No text, numerals, logos or book titles anywhere; every cover and folder is blank.
+
+### Prompt 97 — list headings to papers
+
+- **File:** `public/blog/dgca-recommended-books-cpl-exams/list-headings-to-papers.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** Five book spines on the left joined by lines to five blank folders on the right, with one line crossing over to a different folder
+
+> A flat-vector diagram-style illustration. Five blank navy book spines stand in a vertical row on the left. Five blank pale folders stand in a vertical row on the right. Thin straight lines connect each spine to the folder level with it, except one spine whose line is drawn in orange and angles across to a different folder, the only accent. Wide margins, centred composition on a pale-blue background. No text, numerals, labels or logos.
+
+### Prompt 98 — one series per subject
+
+- **File:** `public/blog/dgca-recommended-books-cpl-exams/one-series-per-subject.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A desk with five neat single-colour book stacks, one per subject, next to a lone open rulebook and a student's hand holding a pencil
+
+> A flat-vector top-down view of a desk. Five neat stacks of plain books, each stack in a single navy tone, sit in a row along the upper half. In front of them lies one open, blank-paged rulebook, with a student's hand (South Asian, modest sleeve) holding a pencil above it. One orange bookmark ribbon on the open book is the only accent. Pale-blue desk surface, generous margins. No text, numerals, logos or book titles.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
