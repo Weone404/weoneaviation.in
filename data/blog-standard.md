@@ -38,7 +38,9 @@ the claims gate win. Every post — new or rewritten — meets this before it sh
    once. Say what the post will settle. The Quick Answer above already answers;
    the intro does not repeat it.
 2. **Top CTA** — `<BlogCta variant="top" />` right after the intro. Helpful,
-   free, no pitch. Override the text when a more specific free resource fits.
+   free, no pitch. It points at /student-checklists. Do not point it at the
+   /lead-magnets/* pages: their PDFs do not exist yet (see PdfLeadMagnet.jsx),
+   so the reader would hand over an email address and receive nothing.
 3. **H2 sections.** Every H2 maps to a question a student or parent actually
    asks; use the question form where it reads naturally. The **first one or two
    sentences under each H2 answer that question directly** in 40–50 words, in
