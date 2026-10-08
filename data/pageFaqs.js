@@ -510,45 +510,9 @@ const routeContent = {
     ['Does DGCA Ground Classes offer both online and offline modes?', 'Yes, the DGCA Ground Classes program is offered in both online and offline modes, including mock tests and doubt-clearing sessions.'],
   ],
 },
-  '/blogs/what-is-pilot-training-complete-guide': {
-  title: 'Pilot Training in India: FAQs',
-  questions: [
-    ['Is pilot training a college degree?', 'No. A pilot licence is issued by the DGCA against written examinations, a medical fitness assessment and logged flight time. It carries no academic credit and no university awards it. Some students take an aviation degree alongside their licence, but the two are separate qualifications serving separate purposes.'],
-    ['Can I start pilot training after 12th?', 'Yes, with Physics and Mathematics at 10+2 level. Students from Biology or Commerce streams clear both subjects as private candidates through NIOS and then apply. Ground classes can begin at 17; the Commercial Pilot Licence itself requires 18.'],
-    ['What is the difference between PPL and CPL?', 'A Private Pilot Licence permits personal and recreational flying and never permits flying for payment. A Commercial Pilot Licence permits paid flying. PPL hours count towards the commercial flight-time total, which is why taking the PPL first costs little extra when it is planned properly.'],
-    ['Do I need to clear the DGCA exams before I start flying?', 'Not strictly. Flight training can begin once the medical assessment and the DGCA computer number are in place. Most students clear the written papers first anyway, because ground study is far cheaper than an hour in an aircraft and weather-driven gaps in flying are the only study time you get.'],
-    ['What is RTR (A), and is it one of the DGCA papers?', 'No. RTR (A) is the Radio Telephone Operator (Restricted) certificate, examined separately under its own rules and required for licence issue. Counting it among the written papers is the most common planning error students make, and it leads them to prepare for an examination structure that does not exist.'],
-    ['Is pilot training in India cheaper than training abroad?', 'Not reliably, once conversion is counted. Ground study costs much the same either way. Flying rates vary by country, and overseas training adds visa costs, higher living expenses and a licence conversion on return. Compare the total cost to a usable Indian licence rather than the headline training fee.'],
-    ['What happens if I fail a DGCA paper?', 'You retake it. Papers are cleared individually rather than in a single sitting, so a failed paper does not affect the ones you have already passed. At We One Aviation, students who do not clear a paper keep attending classes at no further cost until they do.'],
-    ['Can commerce students become pilots?', 'Yes. The requirement is Physics and Mathematics at 10+2 level, not a science stream as such. Commerce and Biology students clear both subjects as private candidates through NIOS and then apply on the same footing as anyone else. It adds time rather than closing the door.'],
-  ],
-},
-  '/blogs/commercial-pilot-training-programs-complete-guide': {
-  title: 'Choosing a Commercial Pilot Training Program: FAQs',
-  questions: [
-    ['Do flying schools provide airline placement after CPL training?', 'No. A CPL is a licence, not a job offer. Airlines run their own selection - written screening, assessment, interview and a simulator check - and a type rating on the operator\'s aircraft sits between the licence and the seat. Treat any institute promising airline placement as describing something it does not control.'],
-    ['What should I verify before paying a flying school deposit?', 'Approval status checked with the regulator rather than from a certificate image, the average total hours students actually logged to licence last year, how many finished within the quoted timeline, the student-to-aircraft ratio, and written fee terms covering inclusions, payment schedule and refunds. A school that will not answer these in writing has told you something.'],
-    ['What does the student-to-aircraft ratio tell me?', 'It predicts how often you will actually fly, which decides your timeline more than the syllabus does. A large fleet photographed well means little if the student roll has grown faster than the fleet. Ask for both numbers and work out the ratio yourself.'],
-    ['Is a DGCA flying school automatically a good one?', 'Approval is a floor, not a ranking. It confirms the organisation meets the regulatory standard to train; it says nothing about aircraft serviceability, instructor turnover, scheduling discipline or how long students take to finish. Every school worth considering is approved, so approval cannot be your deciding factor.'],
-    ['Can I do ground classes at one institute and flying at another?', 'Yes, and many students do. The written papers are examined by the DGCA regardless of where you studied for them, so ground school and flying school are separable choices. Clearing theory before the expensive flying phase is often the cheaper sequence.'],
-    ['What is an FTO, and how is it different from a ground school?', 'A Flying Training Organisation is approved to conduct flight training and put hours in your logbook. A ground school teaches the theory behind the written examinations and does not fly aircraft. Both stages are required; they are frequently run by different organisations.'],
-    ['How do I check whether a school\'s stated timelines are realistic?', 'Ask for the completion record of the batch that enrolled two years ago, not the syllabus duration. Then ask how many aircraft were unserviceable on an average day last month, and how many flying days were lost to weather last season. Those three answers predict your own timeline.'],
-    ['What happens to my training if a flying school loses approval midway?', 'Hours already logged and examinations already cleared remain yours - they sit with the DGCA and in your logbook, not with the school. What you can lose is prepaid fees, which is why payment schedules tied to training milestones are safer than large advances.'],
-  ],
-},
-  '/blogs/flight-school-prerequisites-admission-guide': {
-  title: 'Flight School Admission: FAQs',
-  questions: [
-    ['How long does a DGCA computer number application take?', 'Processing times vary with the volume the portal is handling, and the application is outside your control once submitted. What you can control is submitting it once, correctly. Apply well before the examination cycle you are aiming at rather than in the weeks before it, and start ground classes while it processes.'],
-    ['Why do computer number applications get rejected?', 'Almost always a mismatch rather than a missing qualification. A name spelled differently between Class 10, Class 12 and Aadhaar, a date of birth that disagrees across records, or a scan too cropped or compressed to read. Lay the three documents side by side and compare them character by character before applying.'],
-    ['Does my name have to match exactly across all my documents?', 'Yes, and this is worth resolving before you apply anywhere. An expanded initial, a dropped surname or a changed spelling will surface at the computer number stage and again at licence issue. Correcting a school record takes weeks; correcting it after a rejection costs those weeks plus a missed examination cycle.'],
-    ['Can I do pilot training if I wear spectacles?', 'Vision that corrects to the required standard is assessed on the corrected result, so spectacles are not in themselves a barrier. Declare your prescription at the assessment rather than leaving it to be found. It surfaces either way, and a declaration made late reads very differently from one made openly.'],
-    ['Can I apply to a flying school before my medical is complete?', 'You can enquire and shortlist, but do not pay. The medical is what determines whether the rest of the path is open to you, and a deposit paid before it is a deposit at risk. Sequence the medical first, then commit money.'],
-    ['Do I need a passport for pilot training in India?', 'Not for training within India, though it is one of the identity documents a school may accept. You will need one if you train abroad or if you intend to convert or use your licence outside India later, and applying for it early costs nothing and removes a delay from a decision you may make later.'],
-    ['What should a flying school admission letter actually specify?', 'The total fee and exactly what it includes, the payment schedule tied to training milestones rather than dates, the hourly rate for instruction beyond the syllabus minimum, refund conditions, and what happens if training is interrupted. Anything agreed verbally and absent from the letter does not exist.'],
-    ['Can I start ground classes before I finish Class 12?', 'Many students do, in the gap between the final examinations and the results. It uses months that would otherwise be idle, and it means the written papers can be attempted as soon as the computer number is in place. The licence age applies at issue, not at enrolment.'],
-  ],
-},
+  // '/blogs/what-is-pilot-training-complete-guide' removed 2026-10-08: the post emits its own FAQPage.
+  // '/blogs/commercial-pilot-training-programs-complete-guide' removed 2026-10-08: the post emits its own FAQPage.
+  // '/blogs/flight-school-prerequisites-admission-guide' removed 2026-10-08: the post emits its own FAQPage.
   '/blogs/pilot-training-cost-in-india': {
   title: 'Pilot Training Cost: FAQs',
   questions: [
