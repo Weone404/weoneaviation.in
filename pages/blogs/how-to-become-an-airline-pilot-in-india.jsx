@@ -1,490 +1,426 @@
 import Link from 'next/link';
 import BlogPostLayout from '../../components/BlogPostLayout';
-import BlogImagePlaceholder from '../../components/BlogImagePlaceholder';
+import PeopleAlsoAsk from '../../components/PeopleAlsoAsk';
+import BlogCta from '../../components/BlogCta';
+import Ext from '../../components/Ext';
+import IgruaFeeBox from '../../components/IgruaFeeBox';
+import {
+  ACADEMY, LICENCES, EDUCATION, PARIKSHA, EGCA, EXAM_RULES, MEDICAL_STANDARDS, CPL_HOURS, DGCA_PAPERS,
+  RTR, FTO, INDIGO_CADET, PILOT_SUPPLY, FDTL, ATPL_HOURS_GUIDANCE, CPL_COST, COST_NOTE, inr,
+} from '../../lib/facts';
+import {
+  H2, H3, TABLE, TABLE_WRAP, TH, TD, TD_HEAD, LINK, UL, OL, SCOPE,
+  lc, listJoin, articleSchemaFor, faqSchemaFrom,
+} from '../../lib/blogKit';
 
+/*
+ * /blogs/how-to-become-an-airline-pilot-in-india — REWRITTEN 2026-10-08 to
+ * data/blog-standard.md. Also the destination of the retired /blogs/1, so it
+ * carries that post's intent.
+ *
+ * WHAT CHANGED. The 2026-09-01 version was correct but generic: eleven steps
+ * that each said "check the applicable requirements" without stating one, no
+ * figure, no source, no FAQ and three emoji tiles. It now states the DGCA
+ * requirements from lib/facts.js and spends its depth on the part that makes
+ * this page different from /how-to-become-a-pilot-after-12th: what sits
+ * between a CPL and an airline seat — airline selection, the published IndiGo
+ * cadet criteria, the government's own statement on pilot supply, the flight
+ * duty limits, and the ATPL step to command.
+ *
+ * NOT HERE, ON PURPOSE: salary figures (PAY_NOTE), a market price for
+ * training (COST_NOTE), type-rating prices, hiring timelines, any airline's
+ * selection stages other than what IndiGo publishes, and ATPL hour figures
+ * (ATPL_HOURS_GUIDANCE).
+ */
+const SLUG = 'how-to-become-an-airline-pilot-in-india';
 const DATE_PUBLISHED = '2026-09-01';
-const DATE_MODIFIED = '2026-09-01';
-const CANONICAL = 'https://weoneaviation.in/blogs/how-to-become-an-airline-pilot-in-india';
+const DATE_MODIFIED = '2026-10-08';
+const HEADING = 'How to Become an Airline Pilot in India (2027): From Class 12 to the Right Seat';
+const DESCRIPTION = 'How to become an airline pilot in India: DGCA licence requirements, the order to tackle them, and what airlines add after the CPL, from official sources.';
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: 'How to Become an Airline Pilot in India: Complete 2026 Guide',
-  description:
-    'How to become an airline pilot in India after 12th: eligibility, DGCA medical, DGCA exam process, CPL, flight training, costs, timelines, and airline pathway with realistic career guidance.',
-  inLanguage: 'en-IN',
-  datePublished: DATE_PUBLISHED,
-  dateModified: DATE_MODIFIED,
-  articleSection: 'Pilot career guide',
-  keywords:
-    'how to become an airline pilot in India, airline pilot after 12th, CPL in India, DGCA medical, DGCA exams, flight training, airline pilot salary, pilot career India',
-  mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
-  image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
-  author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
-  publisher: {
-    '@type': 'EducationalOrganization',
-    name: 'We One Aviation Academy',
-    url: 'https://weoneaviation.in',
-    logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
-  },
+const CPL = LICENCES.find((l) => l.code === 'CPL');
+const ATPL = LICENCES.find((l) => l.code === 'ATPL');
+const class1 = MEDICAL_STANDARDS.classes.find((c) => c.cls === 'Class 1');
+const igrua = CPL_COST.benchmark;
+const fullYears = PILOT_SUPPLY.cplIssued.filter((r) => /^\d{4}$/.test(r.year));
+const firstYear = fullYears[0];
+const lastFullYear = fullYears[fullYears.length - 1];
+
+const HOURS_PHRASE = {
+  '1(e)(i)': 'as pilot-in-command',
+  '1(e)(ii)': 'of cross-country as pilot-in-command',
+  '1(e)(iii)': 'of instrument time',
+  '1(e)(iv)': 'at night',
 };
 
-const tocHeadings = [
-  { id: 'what-is-an-airline-pilot', title: 'What is an airline pilot?' },
-  { id: 'airline-pilot-eligibility', title: 'Eligibility in India' },
-  { id: 'basic-requirements', title: 'Basic requirements' },
-  { id: 'after-12th-roadmap', title: 'Roadmap after Class 12' },
-  { id: 'dgca-exam-process', title: 'Dgca exam process' },
-  { id: 'flight-training', title: 'Flight training' },
-  { id: 'cpl-and-airline-job', title: 'CPL is not a job' },
-  { id: 'costs-and-timeline', title: 'Costs and timeline' },
-  { id: 'india-vs-abroad', title: 'India vs abroad' },
-  { id: 'how-to-choose-a-school', title: 'How to choose a flying school' },
-  { id: 'common-mistakes', title: 'Common mistakes' },
-  { id: 'final-advice', title: 'Final advice' },
+const articleSchema = articleSchemaFor({
+  slug: SLUG,
+  headline: HEADING,
+  description: DESCRIPTION,
+  datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
+  section: 'Pilot career guide',
+  keywords: 'how to become an airline pilot in India, airline pilot after 12th, airline pilot requirements India, CPL to airline, cadet pilot programme, DGCA CPL requirements',
+});
+
+const peopleAlsoAsk = [
+  {
+    q: 'What qualifications do you need to become an airline pilot in India?',
+    a: `An airline pilot in India first needs a DGCA Commercial Pilot Licence: minimum age ${CPL.minAge}, ${EDUCATION.requirement}, a Class 1 medical, the ${DGCA_PAPERS.length} DGCA written papers at ${EXAM_RULES.theory.passMark}% each, ${RTR.name}, English Language Proficiency at Level 4 or above and ${CPL_HOURS.total} hours of flying. The airline then runs its own selection and type training.`,
+  },
+  {
+    q: 'Does a CPL guarantee an airline job in India?',
+    a: `No. A Commercial Pilot Licence is the legal minimum to be paid to fly; it is not an offer of employment. Airlines run their own selection, and the Ministry of Civil Aviation has told Parliament that there is no shortage of pilots in India, only of commanders on certain aircraft types, so the first job is competitive.`,
+  },
+  {
+    q: 'Can I become an airline pilot without Physics and Maths?',
+    a: `Not without them, but you can add them. The CPL requires Physics and Mathematics at 10+2 level. ${EDUCATION.altRoute} Airline cadet programmes ask for the same subjects; IndiGo, for example, publishes 10+2 with Physics and Mathematics as compulsory.`,
+  },
+  {
+    q: 'What is the age limit to become an airline pilot in India?',
+    a: `DGCA sets a minimum age of ${CPL.minAge} for the CPL and ${ATPL.minAge} for the ATPL, and no maximum age to apply for a DGCA computer number. Airlines set their own upper limits for cadet schemes: IndiGo publishes ${INDIGO_CADET.ageRange} for its cadet programme.`,
+  },
+  {
+    q: 'What is a cadet pilot programme?',
+    a: `A cadet pilot programme is an airline-run route in which the airline selects candidates first and then sends them through CPL training with partner schools. It changes how you are selected and funded, not the DGCA licence you receive, and IndiGo's own page does not promise employment with IndiGo at the end of it.`,
+  },
+  {
+    q: 'How many hours does an airline pilot fly in India?',
+    a: `DGCA caps a scheduled airline pilot's flight time at ${FDTL.limits.map((l) => `${l.hours} hours in ${l.period}`).join(', ')}, under the flight crew Flight Duty Time Limitations CAR revised on 8 January 2024. These are ceilings, not targets.`,
+  },
+  {
+    q: 'How do you become a captain at an Indian airline?',
+    a: `Command requires an Airline Transport Pilot Licence, which DGCA issues from age ${ATPL.minAge}, and the airline's own upgrade criteria on top. The ATPL experience table was amended in 2020 and 2023, so confirm current hour figures against the notified Schedule rather than an older website.`,
+  },
+  {
+    q: 'How much does it cost to become an airline pilot in India?',
+    a: `${COST_NOTE} IGRUA, a government academy, publishes ${igrua.feeLabel} for ab-initio to CPL training, with uniform, study material, DGCA fees, hostel and messing extra. Airline type ratings are separate and vary by airline and contract.`,
+  },
 ];
 
-const summaryItems = [
-  'Class 12 with Physics and Mathematics is the usual starting point for the CPL pathway.',
-  'Medical fitness is one of the first real checkpoints and should be checked early.',
-  'The DGCA examination process involves registration, ground training, the written papers and a separate RTR (A) requirement.',
-  'A CPL is a professional licence, not a guarantee of airline employment.',
-  'Training duration and cost vary widely depending on school, aircraft availability, weather and experience-building time.',
-  'A realistic airline pathway is: CPL → experience → airline selection → type-rating/training → First Officer.',
+const faqSchema = faqSchemaFrom(peopleAlsoAsk);
+
+const stages = [
+  { stage: 'Commercial Pilot Licence', setBy: 'DGCA, under the Aircraft Rules, 1937', published: 'Age, education, medical, papers, radio, English, flying hours' },
+  { stage: 'Airline selection', setBy: 'Each airline', published: 'Varies; IndiGo publishes its cadet age band and subjects' },
+  { stage: 'Type rating and line training', setBy: 'The airline and DGCA', published: 'Required for the aircraft type; cost and bond terms vary by airline' },
+  { stage: 'First Officer', setBy: 'The airline', published: 'Flight time capped by the DGCA duty-time CAR' },
+  { stage: 'Captain', setBy: 'DGCA (ATPL) and the airline', published: `ATPL from age ${ATPL.minAge}; airline upgrade criteria on top` },
 ];
 
 const related = [
-  { lead: 'If you are comparing the full route after 12th, read the practical roadmap on', anchor: 'our after-12th guide', href: '/blogs/aviation-course-after-12th' },
-  { lead: 'For the legal and exam side, see', anchor: 'our DGCA guide', href: '/blogs/dgca-exam-guide' },
-  { lead: 'For the full training pathway in India, compare the cost and route on', anchor: 'the CPL and pilot training cost pages', href: '/cost-transparency' },
+  { lead: 'Every route open after Class 12, side by side, is in', anchor: 'aviation courses after 12th', href: '/blogs/aviation-course-after-12th' },
+  { lead: 'The five written papers, pass mark and sessions are in', anchor: 'our DGCA exam guide', href: '/blogs/dgca-exam-guide' },
+  { lead: 'How an airline cadet route differs from the self-funded one is on', anchor: 'the cadet pilot programme page', href: '/cadet-pilot-program' },
+  { lead: 'What happens after the CPL on the airline side is in', anchor: 'the type rating guide', href: '/blogs/type-rating-for-pilots-in-india' },
+  { lead: 'The licence that comes before command is explained in', anchor: 'CPL vs ATPL', href: '/blogs/cpl-vs-atpl-difference-india' },
 ];
 
-const airlinePilotCareerSteps = [
-  'Student Pilot Licence (SPL)',
-  'Ground classes and DGCA exam preparation',
-  'Commercial Pilot Licence (CPL)',
-  'Flight experience and additional qualifications',
-  'Airline selection and assessment',
-  'Aircraft-specific training / type rating',
-  'First Officer',
-  'Senior First Officer',
-  'Captain',
+const tocHeadings = [
+  { id: 'what-it-takes', title: 'What does it take to become an airline pilot?' },
+  { id: 'dgca-requirements', title: 'What DGCA requires for the CPL' },
+  { id: 'order', title: 'In what order should you do the steps?' },
+  { id: 'after-cpl', title: 'What happens between the CPL and the airline?' },
+  { id: 'shortage', title: 'Is there a pilot shortage in India?' },
+  { id: 'duty', title: 'How much does an airline pilot fly?' },
+  { id: 'captain', title: 'How do you become a captain?' },
+  { id: 'cost', title: 'What does the route cost?' },
+  { id: 'short-version', title: 'The short version' },
 ];
 
-const costs = [
-  { item: 'DGCA ground training', detail: 'Theoretical preparation, study material, mock tests and examination prep.' },
-  { item: 'Medical examinations', detail: 'DGCA medical costs and any repeat checks or additional investigations.' },
-  { item: 'Flight training', detail: 'Aircraft hire, instructor charges, simulator time and flying-hours expenses.' },
-  { item: 'Living and travel', detail: 'Accommodation, food, transport and training-related living costs.' },
-  { item: 'Licensing and extra training', detail: 'Computer number, exam fees, licence issuance and possible additional ratings.' },
-];
-
-const commonMistakes = [
-  'Starting training without checking medical eligibility.',
-  'Choosing a flying school only for the lowest advertised price.',
-  'Believing a CPL guarantees an airline job.',
-  'Ignoring DGCA theory because the syllabus feels long.',
-  'Failing to understand the real cost of hours, delays and repeat training.',
-  'Not checking conversion and visa requirements for overseas training.',
+const sources = [
+  PARIKSHA.sources[1],
+  EGCA.sources[3],
+  { label: `${EXAM_RULES.car.citation} — ${EXAM_RULES.car.title} (DGCA)`, url: EXAM_RULES.car.where },
+  FTO.sources[0],
+  FTO.sources[1],
+  INDIGO_CADET.source,
+  PILOT_SUPPLY.sources[0],
+  FDTL.sources[0],
+  { label: 'IGRUA — approved courses and fees (Indira Gandhi Rashtriya Uran Akademi)', url: igrua.source },
 ];
 
 export default function HowToBecomeAnAirlinePilotIndia() {
   return (
     <BlogPostLayout
-      title="How to Become an Airline Pilot in India: Eligibility & Cost"
-      description="How to become an airline pilot in India after 12th. Explore DGCA medical, exam process, CPL, flight training, cost breakdown, timeline and airline career steps."
-      schema={articleSchema}
-      heading="How to Become an Airline Pilot in India: Complete 2026 Guide"
+      title="How to Become an Airline Pilot in India: 2027 Guide"
+      description={DESCRIPTION}
+      schema={[articleSchema, faqSchema]}
+      heading={HEADING}
       category="Pilot career guide"
       datePublished={DATE_PUBLISHED}
       dateModified={DATE_MODIFIED}
       readingTime="12 min"
       quickAnswer={{
         question: 'How do you become an airline pilot in India?',
-        answer:
-          'Most students start after Class 12 by checking educational eligibility, medical fitness, DGCA exam registration and ground training. They then complete flight training, obtain a Commercial Pilot Licence, build experience, clear airline selection and complete aircraft-specific training before starting as a First Officer.',
+        answer: `Earn a DGCA Commercial Pilot Licence first: age ${CPL.minAge}, Physics and Mathematics at 10+2, a Class 1 medical, ${DGCA_PAPERS.length} written papers, ${RTR.name} and ${CPL_HOURS.total} flying hours. Then clear an airline's own selection, complete type training on its aircraft, and fly as a First Officer. Command later needs an ATPL, from age ${ATPL.minAge}.`,
       }}
-      summaryTitle="Key facts at a glance"
-      summaryItems={summaryItems}
+      summaryTitle="The route in one view"
+      summaryItems={[
+        `The CPL is DGCA's minimum to fly for pay: age ${CPL.minAge}, Class 1 medical, ${DGCA_PAPERS.length} papers at ${EXAM_RULES.theory.passMark}% each, ${CPL_HOURS.total} hours.`,
+        'Airlines select separately; a CPL is not a job offer.',
+        `The government told Parliament there is no pilot shortage, only a shortage of commanders on some types.`,
+        `Scheduled airline flying is capped at ${FDTL.limits[3].hours} hours in ${FDTL.limits[3].period}.`,
+        `Command needs an ATPL, issued from age ${ATPL.minAge}.`,
+        `Sources: Aircraft Rules Schedule II, DGCA CARs and Pariksha documents, PIB; read between ${EXAM_RULES.verifiedOn} and ${PILOT_SUPPLY.verifiedOn}.`,
+      ]}
       tocHeadings={tocHeadings}
       related={related}
+      sources={sources}
+      sourcesCheckedOn="8 October 2026"
     >
-      <BlogImagePlaceholder
-        src="/blog/how-to-become-an-airline-pilot-in-india/hero-pilot-roadmap.webp"
-        width={1200}
-        height={630}
-        alt="Pilot career roadmap with route from Class 12 to CPL and airline First Officer position"
-        promptId="1"
+      <p>
+        Ask a room of Class 12 students how to become an airline pilot and most will describe one step:
+        get a commercial licence, then join an airline. Their parents usually picture the same thing, and
+        budget for it. The licence is real and it is the hard part, but it is not the airline. Between a
+        DGCA Commercial Pilot Licence and the right-hand seat of an airliner sit the airline&rsquo;s own
+        selection, type training on its aircraft, and a job market the government itself describes in
+        plain terms. This guide sets out how to become an airline pilot in India in the order it actually
+        happens, with every requirement taken from the document that sets it, so you can plan the money
+        and the years with your eyes open.
+      </p>
+
+      <BlogCta variant="top" />
+
+
+      <h2 id="what-it-takes" className={H2}>What does it take to become an airline pilot in India?</h2>
+      <p>
+        Becoming an airline pilot in India takes two separate things: a DGCA Commercial Pilot Licence,
+        which the regulator issues when you meet Schedule II of the Aircraft Rules, 1937, and selection
+        by an airline, which each airline decides for itself. The first is a published standard; the
+        second is a hiring decision.
+      </p>
+      <div className={TABLE_WRAP}>
+        <table className={TABLE}>
+          <caption className="sr-only">Stages from licence to airline captain, who sets each one, and what is published about it</caption>
+          <thead>
+            <tr>
+              <th scope="col" className={TH}>Stage</th>
+              <th scope="col" className={TH}>Who sets it</th>
+              <th scope="col" className={TH}>What is published</th>
+            </tr>
+          </thead>
+          <tbody>
+            {stages.map((r, i) => (
+              <tr key={r.stage} className={i % 2 ? 'bg-gray-50' : 'bg-white'}>
+                <td className={TD_HEAD}>{r.stage}</td>
+                <td className={TD}>{r.setBy}</td>
+                <td className={TD}>{r.published}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Most of a student&rsquo;s money and time goes into the first row. The rows after it are where
+        expectations go wrong, so this guide covers both.
+      </p>
+
+      <h2 id="dgca-requirements" className={H2}>What does DGCA require for a Commercial Pilot Licence?</h2>
+      <p>
+        DGCA issues a Commercial Pilot Licence to a candidate aged at least {CPL.minAge} who holds{' '}
+        {EDUCATION.requirement}, a Class 1 medical, passes in the {DGCA_PAPERS.length} written papers,
+        the {RTR.name} radio examination, English Language Proficiency at Level 4 or above, and{' '}
+        {CPL_HOURS.total} hours of flying logged within the {CPL_HOURS.recencyYears} years before applying.
+      </p>
+      <ul className={UL}>
+        <li>
+          <strong>The written papers.</strong> {listJoin(DGCA_PAPERS)}. {EXAM_RULES.theory.perSubject}{' '}
+          The pass mark comes from the{' '}
+          <Ext href={EXAM_RULES.car.where}>DGCA examinations CAR</Ext>, {EXAM_RULES.theory.clause}.
+        </li>
+        <li>
+          <strong>The flying.</strong> {CPL_HOURS.total} hours in total, of which{' '}
+          {listJoin(CPL_HOURS.components.map((c) => `${c.hours} hours ${HOURS_PHRASE[c.clause]}`))} are part of the{' '}
+          {CPL_HOURS.total}, not added to it.
+        </li>
+        <li><strong>Radio telephony.</strong> {RTR.note}</li>
+        <li>
+          <strong>The medical.</strong> Class 1, valid {lc(class1.validity.split('. ')[0])}. Our{' '}
+          <Link href="/dgca-class-2-class-1-medical" className={LINK}>Class 1 medical guide</Link> lists where an initial one can be done.
+        </li>
+      </ul>
+      <p>
+        The licence application itself is made on eGCA, and DGCA&rsquo;s{' '}
+        <Ext href={EGCA.sources[3].url}>eGCA user manual for the CPL application</Ext> lists what has to be
+        in place before it will go through:
+      </p>
+      <ol className={OL}>
+        {EGCA.cplPrerequisites.map((p) => <li key={p}>{p}</li>)}
+      </ol>
+      <p>
+        The full eligibility picture, clause by clause, is on our{' '}
+        <Link href="/commercial-pilot-license-eligibility" className={LINK}>CPL eligibility page</Link>.
+      </p>
+
+      <h2 id="order" className={H2}>In what order should you do the steps?</h2>
+      <p>
+        The safest order is the one that tests the cheapest disqualifiers first: the Class 1 medical,
+        then the DGCA computer number, then the written papers alongside choosing a flying school, and
+        only then the flying itself. A student who reverses that order risks paying for flying before
+        learning that a medical or a document problem stands in the way.
+      </p>
+      <ol className={OL}>
+        <li>
+          <strong>Class 1 medical, initial issue.</strong> {MEDICAL_STANDARDS.classOrder.advice}
+        </li>
+        <li>
+          <strong>DGCA computer number.</strong> Apply on the{' '}
+          <Ext href={PARIKSHA.portal}>Pariksha portal</Ext> from age {PARIKSHA.basics.minAge}. On the
+          DigiLocker route it is allotted immediately on successful submission; on the manual route,
+          within {PARIKSHA.processing.days} working days. Our{' '}
+          <Link href="/dgca-computer-number" className={LINK}>computer number guide</Link> covers both.
+        </li>
+        <li>
+          <strong>Ground subjects and papers.</strong> Each paper costs {inr(PARIKSHA.fees.regularPerPaper)} in a regular
+          session. {EXAM_RULES.paperValidity.cplAtpl} {EXAM_RULES.paperValidity.planningNote}
+        </li>
+        <li>
+          <strong>Choose the flying school.</strong> Check it on DGCA&rsquo;s{' '}
+          <Ext href={FTO.sources[0].url}>list of approved flying training organisations</Ext>, which named{' '}
+          {FTO.count} organisations as on {FTO.listAsOf}, and on DGCA&rsquo;s twice-yearly ranking.
+        </li>
+        <li><strong>Fly the {CPL_HOURS.total} hours,</strong> with the radio and English examinations alongside.</li>
+        <li><strong>Apply for the licence on eGCA</strong> once the e-logbook is validated by the school.</li>
+      </ol>
+
+      <BlogCta
+        variant="mid"
+        title="The papers are the part you can start now"
+        text="Students often clear the DGCA written papers while they wait for a medical date or a flying slot. We teach all five subjects from Dwarka and online, in batches built around that wait."
       />
 
-      <section id="what-is-an-airline-pilot">
-        <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24">
-          What is an airline pilot?
-        </h2>
-        <p>
-          An airline pilot is a professionally qualified pilot who operates passenger or cargo aircraft for an airline. In most
-          airline structures, a pilot starts in a junior role and progresses through airline-specific checks, experience building
-          and operational training toward senior roles.
-        </p>
-        <p>
-          A simplified route is: Student Pilot → CPL Holder → Experience Building → Airline Selection → First Officer → Senior First
-          Officer → Captain.
-        </p>
-        <div className="mt-6 rounded-2xl bg-av-light border border-av-sky/20 p-5">
-          <p className="font-semibold text-av-blue">Important:</p>
-          <p className="mt-2 text-gray-700">
-            Getting a Commercial Pilot Licence is a major milestone, but it does not automatically guarantee an airline job. Airline
-            employment depends on separate recruitment, medical, assessment and aircraft-specific training requirements.
-          </p>
-        </div>
-      </section>
+      <h2 id="after-cpl" className={H2}>What happens between the CPL and the airline?</h2>
+      <p>
+        After the CPL, an airline pilot in India still has to be selected by an airline and trained on
+        its aircraft type. Airlines recruit either licence holders directly or cadets they select before
+        training, and each sets its own criteria, so the licence opens the door to applying rather than
+        to the job.
+      </p>
+      <h3 className={H3}>Airline cadet programmes</h3>
+      <p>
+        A cadet programme reverses the order: the airline selects first and the cadet trains towards the
+        CPL afterwards. IndiGo is the one airline whose criteria we have been able to read on its own{' '}
+        <Ext href={INDIGO_CADET.source.url}>cadet programme page</Ext>: candidates must be{' '}
+        {INDIGO_CADET.ageRange}, must have {INDIGO_CADET.education}, and are allowed {INDIGO_CADET.attempts}{' '}
+        {INDIGO_CADET.employmentNote} Our{' '}
+        <Link href="/cadet-pilot-program" className={LINK}>cadet pilot programme page</Link> explains what such a
+        route changes and what it does not.
+      </p>
+      <h3 className={H3}>Type rating and line training</h3>
+      <p>
+        An airliner is flown on a type rating for that aircraft, earned in training the airline arranges
+        or requires. Who pays for it, and on what bond or contract, differs by airline and by intake, and
+        no airline publishes a standard figure, so we give none. The{' '}
+        <Link href="/blogs/type-rating-for-pilots-in-india" className={LINK}>type rating guide</Link> and{' '}
+        <Link href="/blogs/mcc-training-for-pilots-in-india" className={LINK}>the MCC guide</Link> cover what
+        the training involves.
+      </p>
 
-      <section id="airline-pilot-eligibility">
-        <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24">
-          Airline pilot eligibility in India
-        </h2>
-        <p>
-          Before starting pilot training, students should check their eligibility carefully. The key requirement for the CPL route is
-          the required 10+2 education with Physics and Mathematics, or an accepted equivalent route as defined by the applicable
-          DGCA requirements.
-        </p>
-        <p>
-          This means students should not assume that any Class 12 stream automatically qualifies them. If a student did not take
-          Physics and Mathematics in school, they should confirm the accepted route before making a major financial commitment.
-        </p>
-
-        <div className="overflow-x-auto mt-6">
-          <table className="w-full text-left text-sm border-collapse rounded-xl overflow-hidden border border-gray-200">
-            <thead>
-              <tr className="bg-av-blue text-white">
-                <th className="px-4 py-3">Requirement</th>
-                <th className="px-4 py-3">What it means</th>
+      <h2 id="shortage" className={H2}>Is there a pilot shortage in India?</h2>
+      <p>
+        India does not have a general pilot shortage, according to the Ministry of Civil Aviation. In a
+        reply to Parliament published by PIB on 2 August 2024, it said: &ldquo;{PILOT_SUPPLY.statement}&rdquo;
+      </p>
+      <div className={TABLE_WRAP}>
+        <table className={TABLE}>
+          <caption className="sr-only">Commercial Pilot Licences issued by DGCA by year, as given to Parliament</caption>
+          <thead>
+            <tr>
+              <th scope="col" className={TH}>Year</th>
+              <th scope="col" className={TH}>CPLs issued</th>
+            </tr>
+          </thead>
+          <tbody>
+            {PILOT_SUPPLY.cplIssued.map((r, i) => (
+              <tr key={r.year} className={i % 2 ? 'bg-gray-50' : 'bg-white'}>
+                <td className={TD_HEAD}>{r.year}</td>
+                <td className={TD}>{r.count.toLocaleString('en-IN')}</td>
               </tr>
-            </thead>
-            <tbody>
-              <tr className="bg-white">
-                <td className="px-4 py-3 font-semibold text-av-blue">Education</td>
-                <td className="px-4 py-3 text-gray-600">10+2 with Physics and Mathematics, or an accepted equivalent route under DGCA requirements.</td>
-              </tr>
-              <tr className="bg-gray-50">
-                <td className="px-4 py-3 font-semibold text-av-blue">Medical fitness</td>
-                <td className="px-4 py-3 text-gray-600">You must meet the DGCA medical standards relevant to the licence stage.</td>
-              </tr>
-              <tr className="bg-white">
-                <td className="px-4 py-3 font-semibold text-av-blue">DGCA exams</td>
-                <td className="px-4 py-3 text-gray-600">You must pass the required written papers and complete the applicable RTR (A) or related requirements.</td>
-              </tr>
-              <tr className="bg-gray-50">
-                <td className="px-4 py-3 font-semibold text-av-blue">Flight training</td>
-                <td className="px-4 py-3 text-gray-600">You need the practical flying experience and skill test required for the licence.</td>
-              </tr>
-              <tr className="bg-white">
-                <td className="px-4 py-3 font-semibold text-av-blue">License</td>
-                <td className="px-4 py-3 text-gray-600">Your CPL is the core professional licence, but airline roles add their own conditions.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section id="basic-requirements">
-        <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24">
-          What are the basic requirements to become an airline pilot?
-        </h2>
-        <p>
-          The exact requirements depend on the licence, training stage and airline, but aspiring airline pilots should plan for the
-          following:
-        </p>
-        <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-          <li>Educational qualification: 10+2 with the required subjects, including Physics and Mathematics for the CPL pathway.</li>
-          <li>Medical fitness: you must satisfy the applicable DGCA medical standards.</li>
-          <li>DGCA examination requirements: clear the relevant flight-crew examination process.</li>
-          <li>Flight training: complete the practical training and required flight experience.</li>
-          <li>CPL: obtain the Commercial Pilot Licence after satisfying the published requirements.</li>
-          <li>Airline selection: meet the recruitment requirements of the airline you want to join.</li>
-          <li>Additional airline requirements: some airlines or aircraft types may require extra assessments, training or type-ratings.</li>
-        </ul>
-      </section>
-
-      <section id="after-12th-roadmap">
-        <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24">
-          How to become an airline pilot after 12th
-        </h2>
-
-        <div className="space-y-6 mt-6">
-          <div className="rounded-2xl border border-gray-200 p-5">
-            <p className="font-montserrat text-lg font-bold text-av-blue">Step 1: Complete Class 12 with Physics and Mathematics</p>
-            <p className="mt-2 text-gray-700">
-              Your academic eligibility is the first major checkpoint. For the CPL pathway, the published DGCA-related requirements
-              set out the needed education level and subject combination. Do not take this lightly.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-gray-200 p-5">
-            <p className="font-montserrat text-lg font-bold text-av-blue">Step 2: Check your DGCA medical eligibility</p>
-            <p className="mt-2 text-gray-700">
-              Medical fitness is one of the most important parts of the pilot-training journey. Vision, hearing, cardiovascular
-              health, general physical health and other medical considerations all matter. It is wise to understand your position
-              early rather than making a large financial investment before confirming your suitability.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-gray-200 p-5">
-            <p className="font-montserrat text-lg font-bold text-av-blue">Step 3: Understand the DGCA computer number and examination process</p>
-            <p className="mt-2 text-gray-700">
-              The DGCA flight-crew examination system uses the Pariksha portal and a Computer Number is an essential part of the
-              process. Your documents and educational details must be accurate before you apply.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-gray-200 p-5">
-            <p className="font-montserrat text-lg font-bold text-av-blue">Step 4: Join DGCA ground training</p>
-            <p className="mt-2 text-gray-700">
-              Before flying, aspiring professional pilots need strong theoretical knowledge. DGCA ground training covers subjects
-              such as Air Regulations, Air Navigation, Aviation Meteorology and Technical papers. This is where pilots learn the
-              logic behind aviation operations rather than memorising questions in isolation.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-gray-200 p-5">
-            <p className="font-montserrat text-lg font-bold text-av-blue">Step 5: Clear the applicable DGCA examinations</p>
-            <p className="mt-2 text-gray-700">
-              After preparing the subject set, candidates need to pass the required DGCA examination requirements. The best approach
-              is real preparation: understand the syllabus, practise regularly, revise consistently and test your weak areas before
-              every attempt.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-gray-200 p-5">
-            <p className="font-montserrat text-lg font-bold text-av-blue">Step 6: Complete flight training</p>
-            <p className="mt-2 text-gray-700">
-              Once the applicable requirements are met and the training pathway is chosen, students complete practical flight
-              training. This includes aircraft handling, navigation, emergency procedures, cross-country flying, instrument work and
-              operational decision-making.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-gray-200 p-5">
-            <p className="font-montserrat text-lg font-bold text-av-blue">Step 7: Meet the requirements for a CPL</p>
-            <p className="mt-2 text-gray-700">
-              The Commercial Pilot Licence is a major professional milestone. For aeroplane CPL, the applicable DGCA requirements
-              include prescribed flight experience, examinations, a skill test and documentary compliance. A CPL is not the same as
-              a job offer.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-gray-200 p-5">
-            <p className="font-montserrat text-lg font-bold text-av-blue">Step 8: Build experience</p>
-            <p className="mt-2 text-gray-700">
-              After obtaining a CPL, the next stage is often experience building and qualification planning. This may include flying
-              in different operations, accumulating hours and preparing for airline recruitment. The right path depends on your target
-              airline and the requirements in force at the time.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-gray-200 p-5">
-            <p className="font-montserrat text-lg font-bold text-av-blue">Step 9: Prepare for airline selection</p>
-            <p className="mt-2 text-gray-700">
-              Airlines may use different recruitment processes. Depending on the operator, selection can include application review,
-              technical and aptitude assessment, communication checks, interviews and simulator-based evaluation. The necessary
-              preparation should be treated as a serious professional exercise.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-gray-200 p-5">
-            <p className="font-montserrat text-lg font-bold text-av-blue">Step 10: Complete aircraft-specific training</p>
-            <p className="mt-2 text-gray-700">
-              Airline operations involve specific aircraft types. Depending on the airline and recruitment pathway, a pilot may need
-              aircraft-specific training or a type-rating before operating a given aircraft type.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-gray-200 p-5">
-            <p className="font-montserrat text-lg font-bold text-av-blue">Step 11: Start as a First Officer</p>
-            <p className="mt-2 text-gray-700">
-              After meeting the regulatory and company requirements, pilots can begin as a First Officer. The long-term career then
-              develops through experience, additional training, operational checks and the gradual progression toward captaincy.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="dgca-exam-process">
-        <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24">
-          DGCA exam process and ground training
-        </h2>
-        <p>
-          The DGCA exam process is built around the subject set that must be cleared before a pilot can move to the next stage of a
-          professional licence pathway. It is not just a set of memorisation questions. A pilot needs to understand aircraft systems,
-          navigation, meteorology, regulations and safe decision-making.
-        </p>
-        <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-          <li>Apply for the DGCA Computer Number through the official examination registration route.</li>
-          <li>Join DGCA ground classes and begin regular mock tests.</li>
-          <li>Attempt the required written papers across examination cycles.</li>
-          <li>Prepare for RTR (A) or the applicable radio telephony requirement separately.</li>
-          <li>Use the ground phase to build understanding before the flying phase begins.</li>
-        </ul>
-      </section>
-
-      <section id="flight-training">
-        <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24">
-          Flight training: what actually happens
-        </h2>
-        <p>
-          Flight training develops more than machine handling. It builds the practical judgement that has to hold in changing weather,
-          varied airspace and operational stress. Training should not be seen as a simple checklist of flying hours; it is the stage
-          where a student becomes an operational pilot.
-        </p>
-
-        <div className="grid md:grid-cols-3 gap-4 mt-6">
-          <div className="rounded-2xl border border-gray-200 p-5 bg-gray-50">
-            <p className="text-2xl mb-2">📚</p>
-            <p className="font-montserrat font-bold text-av-blue">Ground school</p>
-            <p className="mt-2 text-gray-600 text-sm">Covers theory, regulations, navigation, aircraft systems and forecasting.</p>
-          </div>
-          <div className="rounded-2xl border border-gray-200 p-5 bg-gray-50">
-            <p className="text-2xl mb-2">🛩️</p>
-            <p className="font-montserrat font-bold text-av-blue">Flight lessons</p>
-            <p className="mt-2 text-gray-600 text-sm">Practical instruction under the supervision of a certified instructor.</p>
-          </div>
-          <div className="rounded-2xl border border-gray-200 p-5 bg-gray-50">
-            <p className="text-2xl mb-2">🧑‍✈️</p>
-            <p className="font-montserrat font-bold text-av-blue">Solo flights</p>
-            <p className="mt-2 text-gray-600 text-sm">A major milestone, after the student has shown readiness and control.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="cpl-and-airline-job">
-        <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24">
-          CPL is not the same as a guaranteed airline job
-        </h2>
-        <p>
-          This is one of the most important truths in pilot training. A CPL is a professional pilot licence. An airline pilot role
-          is an employment outcome that depends on a rider set of operational, regulatory and employer-specific criteria.
-        </p>
-        <p>
-          In practical terms, the path is not: CPL → job. It is closer to: CPL → build experience → meet airline selection criteria →
-          airline training → First Officer.
-        </p>
-      </section>
-
-      <section id="costs-and-timeline">
-        <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24">
-          Costs and timeline: be realistic
-        </h2>
-        <p>
-          There is no single fixed cost for becoming an airline pilot in India. Your investment depends on the training school,
-          aircraft availability, weather, instructor capacity, location, flying hours and whether there are delays, re-attempts or extra
-          training costs.
-        </p>
-
-        <div className="mt-6 overflow-x-auto">
-          <table className="w-full text-left text-sm border-collapse rounded-xl overflow-hidden border border-gray-200">
-            <thead>
-              <tr className="bg-av-blue text-white">
-                <th className="px-4 py-3">Cost area</th>
-                <th className="px-4 py-3">What it includes</th>
-              </tr>
-            </thead>
-            <tbody>
-              {costs.map((row, index) => (
-                <tr key={row.item} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                  <td className="px-4 py-3 font-semibold text-av-blue align-top">{row.item}</td>
-                  <td className="px-4 py-3 text-gray-600 align-top">{row.detail}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        <p className="mt-6 text-gray-700">
-          The total duration also varies. Some students move quickly; others face delays because of medicals, weather, scheduling,
-          aircraft availability and examination attempts. A realistic plan is more useful than a fixed promise that the whole journey
-          will be complete in a few months.
-        </p>
-      </section>
-
-      <section id="india-vs-abroad">
-        <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24">
-          India vs abroad: which training route is better?
-        </h2>
-        <p>
-          Indian students may choose to train in India or abroad. Both routes have advantages and challenges, and the chosen route
-          should be based on your budget, training quality, living costs and DGCA conversion steps.
-        </p>
-        <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-          <li>India: familiar regulatory environment, easier family support and usually lower living costs.</li>
-          <li>Abroad: can offer different weather patterns, aircraft availability and a different cost structure, but involves more planning around visas, conversion and living expenses.</li>
-          <li>Always verify the current DGCA conversion requirements before committing to an overseas school.</li>
-        </ul>
-      </section>
-
-      <section id="how-to-choose-a-school">
-        <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24">
-          How to choose the best flying school in India
-        </h2>
-        <p>
-          Don’t choose a flying school only on its lowest fee or biggest advertisement. A better school is one that is transparent,
-          operationally reliable and realistic about time and cost.
-        </p>
-        <ul className="list-disc pl-6 space-y-2 mt-4 text-gray-700">
-          <li>Verify the school’s current regulatory status through official sources.</li>
-          <li>Ask about aircraft availability, maintenance and actual serviceability.</li>
-          <li>Check instructor availability and training delays rather than trusting the brochure.</li>
-          <li>Ask for a complete fee structure, including likely extra costs.</li>
-          <li>Review training timelines realistically instead of accepting a “quick fix” promise.</li>
-        </ul>
-      </section>
-
-      <section id="common-mistakes">
-        <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24">
-          Common mistakes students make
-        </h2>
-        <ul className="list-disc pl-6 space-y-2 text-gray-700">
-          {commonMistakes.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
-
-      <section id="final-advice">
-        <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mt-12 mb-4 scroll-mt-24">
-          Final advice for aspiring airline pilots
-        </h2>
-        <p>
-          Becoming an airline pilot is a long-term professional commitment. The most important decision is not whether you can start,
-          but whether you can build a realistic, financially sustainable path from eligibility and ground training to flying hours,
-          selection and airline progression.
-        </p>
-        <p>
-          Your goal should not simply be to get a CPL. Your real goal should be to build a credible route from student pilot to
-          First Officer and then continue building toward a long-term airline career.
-        </p>
-
-        <div className="mt-6 rounded-2xl bg-av-blue p-5 text-white">
-          <p className="font-montserrat font-bold text-av-orange mb-2">The realistic airline pilot roadmap</p>
-          <ul className="list-disc pl-6 space-y-2 text-white/90">
-            {airlinePilotCareerSteps.map((step) => (
-              <li key={step}>{step}</li>
             ))}
-          </ul>
-        </div>
-      </section>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Licences issued went from {firstYear.count.toLocaleString('en-IN')} in {firstYear.year} to{' '}
+        {lastFullYear.count.toLocaleString('en-IN')} in {lastFullYear.year}. {PILOT_SUPPLY.cplIssuedNote}{' '}
+        {PILOT_SUPPLY.whatItMeans} The figures are in the{' '}
+        <Ext href={PILOT_SUPPLY.sources[0].url}>PIB release</Ext> itself, and our post on the{' '}
+        <Link href="/blogs/pilot-shortage-in-india" className={LINK}>pilot shortage question</Link> goes further.
+      </p>
 
-      <section className="mt-12">
-        <h2 className="font-montserrat text-2xl md:text-3xl font-bold text-av-blue mb-4">Ready to start?</h2>
-        <p className="text-gray-700">
-          Speak with a qualified aviation counsellor to understand your eligibility, the DGCA route, expected cost and the most
-          suitable training pathway before making a major investment.
-        </p>
-        <div className="mt-6">
-          <Link href="/contact" className="inline-flex items-center rounded-full bg-av-orange text-white font-semibold px-6 py-3 hover:bg-orange-600 transition-colors">
-            Contact We One Aviation
-          </Link>
-        </div>
-      </section>
+      <h2 id="duty" className={H2}>How many hours does an airline pilot fly in India?</h2>
+      <p>
+        An airline pilot in India may fly at most {FDTL.limits[0].hours} hours in {FDTL.limits[0].period} and{' '}
+        {FDTL.limits[3].hours} hours in {FDTL.limits[3].period}, under DGCA&rsquo;s{' '}
+        <Ext href={FDTL.sources[0].url}>Flight Duty Time Limitations CAR for flight crew</Ext>, which
+        applies to {FDTL.appliesTo}.
+      </p>
+      <div className={TABLE_WRAP}>
+        <table className={TABLE}>
+          <caption className="sr-only">Maximum cumulative flight time for flight crew in scheduled air transport, by period</caption>
+          <thead>
+            <tr>
+              <th scope="col" className={TH}>Period</th>
+              <th scope="col" className={TH}>Maximum flight time</th>
+              <th scope="col" className={TH}>Clause</th>
+            </tr>
+          </thead>
+          <tbody>
+            {FDTL.limits.map((l, i) => (
+              <tr key={l.period} className={i % 2 ? 'bg-gray-50' : 'bg-white'}>
+                <td className={TD_HEAD}>{l.period}</td>
+                <td className={TD}>{l.hours} hours</td>
+                <td className={TD}>{l.clause}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p>
+        {FDTL.weeklyRest} Because much of an airline pilot&rsquo;s pay is linked to flying hours and no
+        Indian airline publishes a pay scale, these ceilings are the one published number that shapes
+        it; our <Link href="/commercial-pilot-license-salary" className={LINK}>pilot salary page</Link>{' '}
+        explains why we print no salary figure.
+      </p>
+
+      <h2 id="captain" className={H2}>How do you become a captain at an Indian airline?</h2>
+      <p>
+        Becoming a captain at an Indian airline requires an Airline Transport Pilot Licence, which DGCA
+        issues from age {ATPL.minAge}, together with the airline&rsquo;s own command-upgrade criteria.
+        The ATPL is the licence that permits acting as pilot-in-command of a commercial aeroplane.
+      </p>
+      <p>
+        {ATPL_HOURS_GUIDANCE} The written papers count towards it too: a pass stays usable for five
+        years for a CPL or ATPL application. The differences between the two licences are laid out in{' '}
+        <Link href="/blogs/cpl-vs-atpl-difference-india" className={LINK}>CPL vs ATPL</Link>.
+      </p>
+
+      <h2 id="cost" className={H2}>What does it cost to become an airline pilot in India?</h2>
+      <p>
+        No Indian government body publishes a market price for airline pilot training, and private
+        flying schools do not publish their fees. The published reference point is IGRUA, a government
+        academy, whose published fee is set out below with what it does and does not cover.
+      </p>
+      <IgruaFeeBox />
+      <p>
+        Type rating costs after the CPL sit outside it altogether. Before comparing any two quotes,
+        get both answers to the same questions; the first three to ask are:{' '}
+        {listJoin(CPL_COST.askYourSchool.slice(0, 3).map((q) => `"${q}"`))}. The full list is in our{' '}
+        <Link href="/blogs/pilot-training-cost-in-india" className={LINK}>pilot training cost breakdown</Link>.
+      </p>
+
+      <h2 id="short-version" className={H2}>The short version for a Class 12 student</h2>
+      <p>
+        The licence is a published standard you can plan against, and the airline seat is a selection
+        you prepare for. Book the Class 1 medical first, get your computer number, start the papers, and
+        choose a flying school from DGCA&rsquo;s own list. Treat any promise of a guaranteed airline job
+        with the scepticism the government&rsquo;s own figures suggest, and you will make better decisions
+        at every step after that.
+      </p>
+      <p className={SCOPE}>{ACADEMY.scope}</p>
+
+      <PeopleAlsoAsk items={peopleAlsoAsk} />
     </BlogPostLayout>
   );
 }

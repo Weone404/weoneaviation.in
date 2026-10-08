@@ -30,10 +30,10 @@ to it.
 
 ### P1 — owner decision needed
 
-- **HOLD** — `/blogs/pilot-salary-in-india` and `/blogs/pilot-salary-in-india-2026`
-  — two live pages on one intent. House rules ban salary or income projections.
-  Owner must decide which survives and whether a sourced market-rate reference is
-  permitted. Do not touch either until this line says otherwise.
+- **DONE 2026-10-08** — `/blogs/pilot-salary-in-india` rebuilt with no pay figures
+  (owner's decision) as a guide to reading salary claims before funding training;
+  `/blogs/pilot-salary-in-india-2026` deleted and 301'd to it. Branch:
+  `claude/blog-enhance-2026-10-08-b1`.
 
 ### P2 — year-sensitive slug posts, UPGRADE in place
 
@@ -44,8 +44,9 @@ edit.
 
 - **TODO** — `/blogs/pilot-training-cost-in-india` — UPGRADE — year in H1, cycle note.
 - **TODO** — `/blogs/commercial-pilot-training-programs-complete-guide` — UPGRADE.
-- **TODO** — `/blogs/how-to-become-an-airline-pilot-in-india` — UPGRADE. Now also the
-  destination of `/blogs/1`, so it carries that post's intent.
+- **DONE 2026-10-08** — `/blogs/how-to-become-an-airline-pilot-in-india` — rewritten to
+  the standard; now covers what sits between the CPL and the airline seat.
+  Branch: `claude/blog-enhance-2026-10-08-b1`.
 - **TODO** — `/blogs/flight-school-prerequisites-admission-guide` — UPGRADE.
 - **TODO** — `/blogs/dgca-ground-school-guide` — UPGRADE.
 - **TODO** — `/blogs/best-flying-school-in-india` — UPGRADE.

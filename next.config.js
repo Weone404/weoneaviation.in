@@ -153,6 +153,13 @@ const nextConfig = {
        */
       { source: '/blogs/4', destination: '/commercial-pilot-license-salary', permanent: true },
       /*
+       * Added 2026-10-08 on the owner's decision. Two blog URLs served one
+       * salary page; /blogs/pilot-salary-in-india was rebuilt with sourced facts
+       * only and the dated duplicate now points at it. The -2026 page file is
+       * deleted in the same commit.
+       */
+      { source: '/blogs/pilot-salary-in-india-2026', destination: '/blogs/pilot-salary-in-india', permanent: true },
+      /*
        * Added 2026-09-30, completing the numeric-id retirement the owner
        * ordered. /blogs/1, /blogs/2, /blogs/5 and /blogs/6 have carried a
        * canonical to their superseding page since 15 September; a canonical is
