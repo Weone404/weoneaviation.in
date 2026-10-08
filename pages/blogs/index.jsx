@@ -291,6 +291,15 @@ const guidePosts = [
         date: 'Oct 7, 2026',
         image: { src: '/blog/board-verification-certificate-dgca-computer-number/hero-bvc-document-trail.webp', width: 1200, height: 630, promptId: '93' },
     },
+    {
+        slug: 'dgca-recommended-books-cpl-exams',
+        title: 'Which Books Does DGCA Recommend for the CPL Exams? Reading the Official List',
+        excerpt: "DGCA publishes its own study-material list for the CPL written exams. What it names under each heading, where it does not line up with the five papers, and what it leaves out.",
+        category: 'DGCA exams',
+        readTime: '7 min',
+        date: 'Oct 8, 2026',
+        image: { src: '/blog/dgca-recommended-books-cpl-exams/hero-book-stack-five-papers.webp', width: 1200, height: 630, promptId: '96' },
+    },
 ];
 
 export async function getServerSideProps() {
