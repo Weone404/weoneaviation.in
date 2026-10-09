@@ -310,6 +310,15 @@ const guidePosts = [
         date: 'Oct 8, 2026',
         image: { src: '/blog/dgca-recommended-books-cpl-exams/hero-book-stack-five-papers.webp', width: 1200, height: 630, promptId: '96' },
     },
+    {
+        slug: 'age-limit-to-become-a-pilot-in-india',
+        title: 'Age Limit to Become a Pilot in India: Minimum and Maximum, Licence by Licence',
+        excerpt: "The minimum age for each pilot licence, what DGCA's Pariksha rules say about a maximum age, and what changes as you get older: the medical and the airline cadet limits.",
+        category: 'Pilot eligibility',
+        readTime: '7 min',
+        date: 'Oct 9, 2026',
+        image: { src: '/blog/age-limit-pilot-india/hero-two-students-one-runway.webp', width: 1200, height: 630, promptId: '99' },
+    },
 ];
 
 export async function getServerSideProps() {

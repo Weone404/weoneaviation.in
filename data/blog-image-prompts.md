@@ -1334,6 +1334,24 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector top-down view of a desk. Five neat stacks of plain books, each stack in a single navy tone, sit in a row along the upper half. In front of them lies one open, blank-paged rulebook, with a student's hand (South Asian, modest sleeve) holding a pencil above it. One orange bookmark ribbon on the open book is the only accent. Pale-blue desk surface, generous margins. No text, numerals, logos or book titles.
 
+## Post: Age limit to become a pilot in India (`/blogs/age-limit-to-become-a-pilot-in-india`)
+
+### Prompt 99 — hero, two students one runway
+
+- **File:** `public/blog/age-limit-pilot-india/hero-two-students-one-runway.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** A teenage student and a working adult standing side by side on a small airfield apron in front of a single-engine trainer aircraft
+
+> A flat-vector scene on a small Indian flying-school apron. On the left stands a teenage South Asian student in a plain school-style shirt; on the right an adult in a modest collared shirt and trousers, clearly older, holding a folder. They stand side by side facing a single-engine high-wing trainer aircraft in the centre-background, its propeller and wing struts clearly drawn. A thin orange stripe along the aircraft fuselage is the single accent. Pale-blue sky, a low navy hangar silhouette on the far right, generous empty sky across the top third. Calm, hopeful mood. No text, letters, numerals, logos or registration marks anywhere; the folder and aircraft are blank. Do not show airline livery or airliners. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
+### Prompt 100 — age ladder of licences
+
+- **File:** `public/blog/age-limit-pilot-india/age-ladder-licences.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A short staircase of four steps rising from left to right, each step topped by a different small aircraft icon, with a figure standing on the second step
+
+> A flat-vector diagram-style illustration. A staircase of four evenly spaced steps rises from the lower left to the upper right on a pale-blue background. Each step is topped by a simple navy aircraft silhouette that grows slightly larger as the steps rise: a glider, a small single-engine plane, a twin-engine plane and a small airliner. A South Asian student figure in plain clothing stands on the second step, looking up the stairs; that figure's shirt is the single burnt-orange accent. Wide margins, centred composition, generous negative space above and to the left. No text, letters, numerals, labels, age markers or logos anywhere in the image. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
