@@ -77,6 +77,7 @@ const tocHeadings = [
   { id: 'what', title: 'What is the DigiLocker route to a computer number?' },
   { id: 'who', title: 'Who qualifies for it?' },
   { id: 'fetched', title: 'What does DigiLocker fill in, and what do you still upload?' },
+  { id: 'steps', title: 'How do you register by the DigiLocker route?' },
   { id: 'fails', title: 'What happens when the instant route fails?' },
   { id: 'compare', title: 'Which route should you plan for?' },
   { id: 'this-week', title: 'What to do this week' },
@@ -93,7 +94,7 @@ export default function DgcaComputerNumberDigilockerInstantRoute() {
   return (
     <BlogPostLayout
       title="DGCA Computer Number Through DigiLocker: Who Qualifies"
-      description="How the DigiLocker route to a DGCA computer number works: who qualifies, what it fetches, what you still upload and the manual fallback when records do not match."
+      description="How the DigiLocker route to a DGCA computer number works: who qualifies, what it fetches, what you still upload and the manual fallback if records differ."
       schema={[articleSchema, faqSchema]}
       heading="DGCA Computer Number Through DigiLocker: Who Gets It Instantly and What Happens If It Fails"
       category="DGCA exams"
@@ -232,6 +233,27 @@ export default function DgcaComputerNumberDigilockerInstantRoute() {
         alt="A phone on the left sending a stack of documents to a laptop, while a student's hand on the right holds a photograph and a signed card"
         promptId="102"
       />
+
+      <h2 id="steps" className={H2}>How do you register by the DigiLocker route?</h2>
+      <p>
+        You register on the Pariksha portal, choose the DigiLocker option on the registration page,
+        let the portal fetch your records, upload a photograph and signature, and submit. The
+        portal&rsquo;s own sequence for the manual form is below; the DigiLocker route replaces the
+        document-upload and waiting steps but keeps the same opening and closing.
+      </p>
+      <ol className="list-decimal pl-5 space-y-3 text-gray-700">
+        <li>Check DigiLocker first. Confirm both Class 10 and Class 12 documents are present and that your Aadhaar is linked.</li>
+        <li>Open the registration page on the <Ext href={PARIKSHA.portal}>Pariksha portal</Ext> and pick &ldquo;{DL.label}&rdquo;.</li>
+        <li>Let the portal fetch your name, date of birth, marks, address and Aadhaar photograph. Read each field against your marksheet before moving on.</li>
+        <li>Upload your photograph and signature within the size limits in the table above.</li>
+        <li>Submit. On success the system allots the number at once; on a mismatch it tells you the application will be handled manually.</li>
+      </ol>
+      <p>
+        Two cautions apply. The manual form warns that nothing can be added after Final Submit,
+        and the same sense of care applies here: {lc(PARIKSHA.uploads.finalSubmit)} And one email address and one mobile
+        number can belong to only one candidate, so do not register a sibling or friend on yours.
+        {' '}{PARIKSHA.basics.oneEmailOneMobile}
+      </p>
 
       <h2 id="fails" className={H2}>What happens when the instant route fails?</h2>
       <p>
