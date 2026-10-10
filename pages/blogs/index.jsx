@@ -319,6 +319,15 @@ const guidePosts = [
         date: 'Oct 9, 2026',
         image: { src: '/blog/age-limit-pilot-india/hero-two-students-one-runway.webp', width: 1200, height: 630, promptId: '99' },
     },
+    {
+        slug: 'dgca-computer-number-digilocker-instant-route',
+        title: 'DGCA Computer Number Through DigiLocker: Who Gets It Instantly and What Happens If It Fails',
+        excerpt: "The DigiLocker route can allot a DGCA computer number the moment you submit. Who qualifies, what it fetches, what you still upload, and the manual fallback when your records do not match.",
+        category: 'DGCA exams',
+        readTime: '6 min',
+        date: 'Oct 10, 2026',
+        image: { src: '/blog/dgca-computer-number-digilocker/hero-two-routes-one-gate.webp', width: 1200, height: 630, promptId: '101' },
+    },
 ];
 
 export async function getServerSideProps() {
