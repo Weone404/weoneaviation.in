@@ -1352,6 +1352,24 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector diagram-style illustration. A staircase of four evenly spaced steps rises from the lower left to the upper right on a pale-blue background. Each step is topped by a simple navy aircraft silhouette that grows slightly larger as the steps rise: a glider, a small single-engine plane, a twin-engine plane and a small airliner. A South Asian student figure in plain clothing stands on the second step, looking up the stairs; that figure's shirt is the single burnt-orange accent. Wide margins, centred composition, generous negative space above and to the left. No text, letters, numerals, labels, age markers or logos anywhere in the image. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
 
+## Post: DGCA computer number through DigiLocker (`/blogs/dgca-computer-number-digilocker-instant-route`)
+
+### Prompt 101 — hero, two routes one gate
+
+- **File:** `public/blog/dgca-computer-number-digilocker/hero-two-routes-one-gate.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** Two paths leading to one gate: a short direct path from a phone and a longer path via a stack of documents
+
+> A flat-vector scene on a pale-blue background. On the right, a plain navy gate stands in an open field. Two paths lead to it from the left. The upper path is short and straight, starting at a simple navy smartphone silhouette and drawn in burnt orange as the single accent. The lower path is longer and winds past a tall stack of blank navy document sheets before reaching the same gate. No people. Keep the centre and lower right clear for cropping to a card thumbnail. Nothing on the phone screen, the gate or the sheets may carry any marks.
+
+### Prompt 102 — what is fetched and what is uploaded
+
+- **File:** `public/blog/dgca-computer-number-digilocker/fetched-and-uploaded.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A phone on the left sending a stack of documents to a laptop, while a student's hand on the right holds a photograph and a signed card
+
+> A flat-vector horizontal composition. On the left, a navy smartphone sends three blank document sheets along a thin dotted arc towards a navy laptop in the centre. On the right, a South Asian student's hand (modest sleeve) holds up a blank passport-style photograph frame and a plain card with a single curved pen stroke on it, with one orange accent on the card edge. Leave generous empty pale-blue space above and below. The photograph frame must be empty and the card must not contain any letters.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
