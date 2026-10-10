@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
-import { ACADEMY, DGCA_PAPERS, RTR, papersSummary } from '../lib/facts';
+import { ACADEMY, DGCA_PAPERS, EXAM_RULES, RTR, papersSummary } from '../lib/facts';
 import { generateCourseSchema, generateFAQSchema } from '../lib/schema';
 
 const canonicalUrl = `${ACADEMY.url}/dgca-ground-classes`;
@@ -20,6 +20,14 @@ const faqItems = [
     {
         q: 'What are DGCA ground classes?',
         a: `They are theory preparation for the DGCA written papers: ${papersSummary()}. ${RTR.name} preparation is separate from the written papers.`,
+    },
+    {
+        q: 'What is the pass mark in the DGCA written papers?',
+        a: `${EXAM_RULES.theory.statement} ${EXAM_RULES.theory.perSubject} Source: ${EXAM_RULES.car.citation}.`,
+    },
+    {
+        q: 'How long does a DGCA written-paper pass stay valid?',
+        a: `${EXAM_RULES.paperValidity.general} ${EXAM_RULES.paperValidity.cplAtpl} Source: ${EXAM_RULES.car.citation}, ${EXAM_RULES.paperValidity.clause}.`,
     },
     {
         q: 'Where are classroom DGCA ground classes held?',
@@ -45,7 +53,7 @@ const paragraphClass = 'mb-4 text-sm leading-7 text-gray-600';
 export default function DGCAGroundClasses() {
     return (
         <Layout
-            title="DGCA Ground Classes | We One Aviation Academy"
+            title="DGCA Ground Classes in Dwarka, Delhi | We One Aviation"
             description="Prepare for the five DGCA written papers with We One Aviation Academy. Classroom batches are held in Dwarka, New Delhi; students outside Delhi can join online."
         >
             <StructuredData data={[courseSchema, generateFAQSchema(faqItems)]} />
@@ -82,6 +90,35 @@ export default function DGCAGroundClasses() {
                     <p className={paragraphClass}>
                         For the full licence route, eligibility and regulatory stages, read the{' '}
                         <Link href="/commercial-pilot-license" className={linkClass}>CPL pathway guide</Link>.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 className="mb-4 font-montserrat text-2xl font-bold text-av-blue">What is the pass mark in the DGCA written papers?</h2>
+                    <p className={paragraphClass}>
+                        {EXAM_RULES.theory.passMark}% in each subject. {EXAM_RULES.theory.perSubject}
+                    </p>
+                    <p className={paragraphClass}>
+                        This comes from {EXAM_RULES.car.citation} ({EXAM_RULES.car.title}), {EXAM_RULES.theory.clause}. Plan your revision paper by paper: a weak subject has to be passed on its own marks.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 className="mb-4 font-montserrat text-2xl font-bold text-av-blue">How long does a passed paper stay valid?</h2>
+                    <p className={paragraphClass}>
+                        For a CPL or ATPL application, written papers must fall within the five years before the application date. For other licences the window is two and a half years. {EXAM_RULES.paperValidity.planningNote}
+                    </p>
+                    <p className={paragraphClass}>
+                        Source: {EXAM_RULES.car.citation}, {EXAM_RULES.paperValidity.clause}. Figures last checked against the CAR on {EXAM_RULES.verifiedOn}.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 className="mb-4 font-montserrat text-2xl font-bold text-av-blue">What do you need before you can book a DGCA paper?</h2>
+                    <p className={paragraphClass}>
+                        A DGCA computer number, issued through the Pariksha and eGCA portals. Class attendance does not replace it. Start with the{' '}
+                        <Link href="/dgca-computer-number" className={linkClass}>computer number guide</Link>, then read how{' '}
+                        <Link href="/dgca-pariksha" className={linkClass}>DGCA Pariksha</Link> examination booking works.
                     </p>
                 </section>
 
