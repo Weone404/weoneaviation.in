@@ -328,6 +328,15 @@ const guidePosts = [
         date: 'Oct 10, 2026',
         image: { src: '/blog/dgca-computer-number-digilocker/hero-two-routes-one-gate.webp', width: 1200, height: 630, promptId: '101' },
     },
+    {
+        slug: 'dgca-exam-pass-marks-and-retakes-cpl',
+        title: 'DGCA Exam Pass Marks and Retakes: What Happens If You Fail a CPL Paper',
+        excerpt: "DGCA wants 70% in each CPL paper, with no aggregate to rescue a weak subject. How the rule is applied, what a retake costs, which 2026 sessions are listed next and how long a cleared paper lasts.",
+        category: 'DGCA exams',
+        readTime: '6 min',
+        date: 'Oct 11, 2026',
+        image: { src: '/blog/dgca-exam-pass-marks-and-retakes-cpl/hero-five-papers-one-bar.webp', width: 1200, height: 630, promptId: '103' },
+    },
 ];
 
 export async function getServerSideProps() {

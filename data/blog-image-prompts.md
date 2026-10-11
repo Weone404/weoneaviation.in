@@ -1370,6 +1370,24 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector horizontal composition. On the left, a navy smartphone sends three blank document sheets along a thin dotted arc towards a navy laptop in the centre. On the right, a South Asian student's hand (modest sleeve) holds up a blank passport-style photograph frame and a plain card with a single curved pen stroke on it, with one orange accent on the card edge. Leave generous empty pale-blue space above and below. The photograph frame must be empty and the card must not contain any letters.
 
+## Post: DGCA exam pass marks and retakes (`/blogs/dgca-exam-pass-marks-and-retakes-cpl`)
+
+### Prompt 103 — hero, five papers one bar
+
+- **File:** `public/blog/dgca-exam-pass-marks-and-retakes-cpl/hero-five-papers-one-bar.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** Five upright exam papers standing in a row against a single horizontal bar, four reaching above it and one falling just below
+
+> A flat-vector scene on a pale-blue background. Five tall, blank navy paper sheets stand upright side by side in the lower half, like bars in a chart. A single thin horizontal navy line crosses all five at the same height. Four sheets rise slightly above the line; the fifth, second from the right, stops just below it and is the only one drawn in burnt orange. No people. Keep the left third and the top clear for cropping to a card thumbnail. The sheets and the line must carry no marks, numbers, ticks or letters.
+
+### Prompt 104 — one paper back in the queue
+
+- **File:** `public/blog/dgca-exam-pass-marks-and-retakes-cpl/one-paper-back-in-queue.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A student's hand placing one exam paper back into a tray beside a desk calendar, while four completed papers sit in a separate stack beside it
+
+> A flat-vector desk scene from slightly above. On the left, a neat stack of four blank navy-edged sheets rests on a pale-blue desk. In the centre, a South Asian student's hand (modest sleeve) lowers a single sheet with one burnt-orange edge into a shallow navy tray. On the right, a plain desk calendar shows only an empty grid of blank squares. Generous empty pale-blue space above and below. No faces. Nothing on the sheets, tray or calendar may carry any letters or numbers.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
