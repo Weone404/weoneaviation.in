@@ -1388,6 +1388,24 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector desk scene from slightly above. On the left, a neat stack of four blank navy-edged sheets rests on a pale-blue desk. In the centre, a South Asian student's hand (modest sleeve) lowers a single sheet with one burnt-orange edge into a shallow navy tray. On the right, a plain desk calendar shows only an empty grid of blank squares. Generous empty pale-blue space above and below. No faces. Nothing on the sheets, tray or calendar may carry any letters or numbers.
 
+## Post: CPL application on eGCA (`/blogs/cpl-application-egca-prerequisites-checklist`)
+
+### Prompt 105 — hero, six gates one path
+
+- **File:** `public/blog/cpl-application-egca-prerequisites/hero-six-gates-one-path.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** A single path running through six identical gates in a row towards a distant plain building, the last gate drawn in a different colour
+
+> A flat-vector scene on a pale-blue background. A single straight path runs from the lower left towards the upper right through six identical, plain navy gateways spaced evenly along it. The sixth and last gateway is the only one drawn in burnt orange. At the end of the path, small and distant, stands a simple navy building with a flat roof. No people. Keep the top third and the left edge clear for cropping to a card thumbnail. The gateways and the building must carry no marks, signs, numbers or letters. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
+### Prompt 106 — application sections in order
+
+- **File:** `public/blog/cpl-application-egca-prerequisites/application-sections-in-order.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** Five document cards laid out left to right on a desk, joined by a thin line, with a student's hand resting on the third card
+
+> A flat-vector desk scene from slightly above. Five blank navy-edged cards sit in a row from left to right on a pale-blue desk, joined by one thin navy line running behind them. A South Asian student's hand (modest sleeve) rests on the third card, whose edge is the single burnt-orange accent. Generous empty pale-blue space above and below. No faces. Nothing on the cards or the desk may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
