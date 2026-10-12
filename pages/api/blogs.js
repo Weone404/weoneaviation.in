@@ -3,12 +3,22 @@ import formidable from 'formidable'
 import { v2 as cloudinary } from 'cloudinary'
 
 
-cloudinary.config({
-    cloud_name: 'dw8f4vrth',
-    api_key: '646332872161894',
-    api_secret: 'pc8mCXoKkQpleIwwWs_lCHLnljc',
-    secure: true
-})
+function configureCloudinary() {
+    const cloudName = process.env.CLOUDINARY_CLOUD_NAME
+    const apiKey = process.env.CLOUDINARY_API_KEY
+    const apiSecret = process.env.CLOUDINARY_API_SECRET
+
+    if (!cloudName || !apiKey || !apiSecret) {
+        throw new Error('CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, and CLOUDINARY_API_SECRET are required for blog image uploads.')
+    }
+
+    cloudinary.config({
+        cloud_name: cloudName,
+        api_key: apiKey,
+        api_secret: apiSecret,
+        secure: true
+    })
+}
 
 export const config = { api: { bodyParser: false } }
 
@@ -70,6 +80,7 @@ export default async function handler(req, res) {
 
                 if (files.coverImage) {
                     const file = Array.isArray(files.coverImage) ? files.coverImage[0] : files.coverImage
+                    configureCloudinary()
                     const uploaded = await cloudinary.uploader.upload(file.filepath, { folder: 'weoneaviation/blogs' })
                     updateData.coverImage = uploaded.secure_url
                 }
@@ -113,6 +124,7 @@ export default async function handler(req, res) {
             let coverImage = ''
             if (files.coverImage) {
                 const file = Array.isArray(files.coverImage) ? files.coverImage[0] : files.coverImage
+                configureCloudinary()
                 const uploaded = await cloudinary.uploader.upload(file.filepath, { folder: 'weoneaviation/blogs' })
                 coverImage = uploaded.secure_url
             }

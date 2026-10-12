@@ -7,6 +7,7 @@ import {
 
 const blogRouteSource = readFileSync(new URL('../pages/blogs/[id].jsx', import.meta.url), 'utf8');
 const blogIndexSource = readFileSync(new URL('../pages/blogs/index.jsx', import.meta.url), 'utf8');
+const blogApiSource = readFileSync(new URL('../pages/api/blogs.js', import.meta.url), 'utf8');
 const nextConfigSource = readFileSync(new URL('../next.config.js', import.meta.url), 'utf8');
 
 assert.match(blogRouteSource, /const id = String\(params\.id\);/);
@@ -19,6 +20,11 @@ assert.doesNotMatch(blogIndexSource, /catch\s*\(/);
 assert.match(blogRouteSource, /canonical=\{blog\.canonicalTo\}/);
 assert.match(blogRouteSource, /'@type': 'BlogPosting'/);
 assert.match(nextConfigSource, /source: '\/blogs\/4'/);
+assert.match(blogApiSource, /process\.env\.CLOUDINARY_CLOUD_NAME/);
+assert.match(blogApiSource, /process\.env\.CLOUDINARY_API_KEY/);
+assert.match(blogApiSource, /process\.env\.CLOUDINARY_API_SECRET/);
+assert.doesNotMatch(blogApiSource, /(?:cloud_name|api_key|api_secret)\s*:\s*['"]/);
+assert.equal((blogApiSource.match(/configureCloudinary\(\)/g) || []).length, 3);
 
 const configuredUri = process.env.MONGODB_URI;
 delete process.env.MONGODB_URI;
