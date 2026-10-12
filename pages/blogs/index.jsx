@@ -1,7 +1,7 @@
 import Layout from '../../components/Layout';
 import Link from 'next/link';
 import NextImage from 'next/image';
-import { MongoClient } from 'mongodb';
+import { getMongoBlogIndex } from '../../lib/blogPosts';
 
 /*
  * These five mirror the posts in pages/blogs/[id].jsx and must match them
@@ -349,27 +349,7 @@ const guidePosts = [
 ];
 
 export async function getServerSideProps() {
-    let mongoBlogs = [];
-    try {
-        const client = new MongoClient(process.env.MONGODB_URI);
-        await client.connect();
-        const db = client.db('weoneaviation');
-        const raw = await db.collection('blogs').find({}).sort({ createdAt: -1 }).toArray();
-        mongoBlogs = raw.map((b) => ({
-            id: b._id.toString(),
-            title: b.title,
-            excerpt: b.excerpt || '',
-            category: b.category || 'Blog',
-            readTime: '5 min',
-            date: new Date(b.createdAt).toDateString(),
-            img: b.coverImage || 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80',
-            faqs: Array.isArray(b.faqs) ? b.faqs : [],
-        }));
-        client.close();
-    } catch (e) {
-        console.error('MongoDB fetch error:', e);
-    }
-
+    const mongoBlogs = await getMongoBlogIndex();
     return { props: { mongoBlogs } };
 }
 
