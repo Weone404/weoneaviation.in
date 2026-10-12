@@ -177,7 +177,8 @@ async function main() {
   assert.ok(requestedRealPlaceNames.every((name) => (
     realGeographicRecords.some((record) => record.name === name)
   )));
-  assert.equal(routeSource.includes('buildLocationPageModel'), true);
+  assert.equal(routeSource.includes('resolveGeographicServicePage'), true);
+  assert.equal(routeSource.includes('prepareLocationServicePageResult'), true);
   assert.equal(routeSource.includes('getApprovedLocationServicePairs()'), true);
   assert.equal(routeSource.includes('scale-test-fixtures'), false);
   assert.equal(sitemapGeneratorSource.includes('getApprovedLocationServicePairs()'), true);
