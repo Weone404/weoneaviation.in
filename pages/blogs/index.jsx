@@ -337,6 +337,15 @@ const guidePosts = [
         date: 'Oct 11, 2026',
         image: { src: '/blog/dgca-exam-pass-marks-and-retakes-cpl/hero-five-papers-one-bar.webp', width: 1200, height: 630, promptId: '103' },
     },
+    {
+        slug: 'cpl-application-egca-prerequisites-checklist',
+        title: 'CPL Application on eGCA: The Six Things That Must Be Ready First',
+        excerpt: "Six gates stand between your last exam and a CPL application that goes through on eGCA. Who supplies each one, the five sections of the form, the 48-hour payment window and why a submitted form cannot be edited.",
+        category: 'CPL licensing',
+        readTime: '6 min',
+        date: 'Oct 12, 2026',
+        image: { src: '/blog/cpl-application-egca-prerequisites/hero-six-gates-one-path.webp', width: 1200, height: 630, promptId: '105' },
+    },
 ];
 
 export async function getServerSideProps() {
