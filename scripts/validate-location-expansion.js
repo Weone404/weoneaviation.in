@@ -97,7 +97,7 @@ async function main() {
     const hierarchy = engine.resolveLocationHierarchy(location, engineContext.locations) || [];
     assert.ok(
       hierarchy.some(({ type }) => type === 'country')
-        && hierarchy.some(({ type }) => ['city', 'locality'].includes(type)),
+        && hierarchy.some(({ type }) => ['city', 'locality', 'populated-place'].includes(type)),
       `${location.slug}/${service.slug} has no resolvable country-to-place hierarchy.`,
     );
 

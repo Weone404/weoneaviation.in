@@ -1,0 +1,1377 @@
+{
+  "version": 1,
+  "observedAt": "2026-10-08T08:48:21.681Z",
+  "source": "approved geographic route snapshot evaluated against live resolver and page model",
+  "snapshotIndexableRoutes": 112,
+  "conflictCount": 75,
+  "classificationCounts": {
+    "insufficient evidence": 71,
+    "resolver mismatch": 4
+  },
+  "evidenceTierCounts": {
+    "THIN": 37,
+    "MEDIUM": 11,
+    "NO_PROFILE": 27
+  },
+  "conflicts": [
+    {
+      "route": "/abu-dhabi/pilot-training",
+      "approvedRecordId": "geo:city:abu-dhabi",
+      "resolvedRecordId": "geo:city:abu-dhabi",
+      "locationName": "Abu Dhabi",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/adelaide/pilot-training",
+      "approvedRecordId": "geo:city:au-adelaide",
+      "resolvedRecordId": "geo:city:au-adelaide",
+      "locationName": "Adelaide",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23.5,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/atlanta/pilot-training",
+      "approvedRecordId": "geo:city:us-atlanta",
+      "resolvedRecordId": "geo:city:us-atlanta",
+      "locationName": "Atlanta",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22.8,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/berlin/pilot-training",
+      "approvedRecordId": "geo:city:berlin",
+      "resolvedRecordId": "geo:city:berlin",
+      "locationName": "Berlin",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page.",
+      "evidenceTier": "MEDIUM",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22.5,
+      "qualityBlockers": [
+        "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/birmingham/pilot-training",
+      "approvedRecordId": "geo:city:gb-birmingham",
+      "resolvedRecordId": "geo:city:gb-birmingham",
+      "locationName": "Birmingham",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page.",
+      "evidenceTier": "MEDIUM",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 20.6,
+      "qualityBlockers": [
+        "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/boston/pilot-training",
+      "approvedRecordId": "geo:city:us-boston",
+      "resolvedRecordId": "geo:city:us-boston",
+      "locationName": "Boston",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23.3,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/brisbane/pilot-training",
+      "approvedRecordId": "geo:city:au-brisbane",
+      "resolvedRecordId": "geo:city:au-brisbane",
+      "locationName": "Brisbane",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23.5,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/calgary/pilot-training",
+      "approvedRecordId": "geo:city:ca-calgary",
+      "resolvedRecordId": "geo:city:ca-calgary",
+      "locationName": "Calgary",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/changi/pilot-training",
+      "approvedRecordId": "geo:locality:singapore-changi",
+      "resolvedRecordId": "geo:locality:singapore-changi",
+      "locationName": "Changi",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page.",
+      "evidenceTier": "MEDIUM",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22,
+      "qualityBlockers": [
+        "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/chicago/pilot-training",
+      "approvedRecordId": "geo:city:us-chicago",
+      "resolvedRecordId": "geo:city:us-chicago",
+      "locationName": "Chicago",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22.9,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/dallas/pilot-training",
+      "approvedRecordId": "geo:city:us-dallas",
+      "resolvedRecordId": "geo:city:us-dallas",
+      "locationName": "Dallas",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23.4,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/denver/pilot-training",
+      "approvedRecordId": "geo:city:us-denver",
+      "resolvedRecordId": "geo:city:us-denver",
+      "locationName": "Denver",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23.4,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/edinburgh/pilot-training",
+      "approvedRecordId": "geo:city:gb-edinburgh",
+      "resolvedRecordId": "geo:city:gb-edinburgh",
+      "locationName": "Edinburgh",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page.",
+      "evidenceTier": "MEDIUM",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 20.8,
+      "qualityBlockers": [
+        "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/gachibowli/commercial-pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:node:701232038",
+      "locationName": "Gachibowli",
+      "service": "commercial-pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 38.2,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/gachibowli/cpl-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:node:701232038",
+      "locationName": "Gachibowli",
+      "service": "cpl-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 38.3,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/gachibowli/dgca-ground-classes",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:node:701232038",
+      "locationName": "Gachibowli",
+      "service": "dgca-ground-classes",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 39.9,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/gachibowli/pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:node:701232038",
+      "locationName": "Gachibowli",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "locationEvidenceProfile did not meet the geographic page quality threshold. Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 35.8,
+      "qualityBlockers": [
+        "locationEvidenceProfile did not meet the geographic page quality threshold.",
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/ghaziabad/commercial-pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:1271308",
+      "locationName": "Ghāziābād",
+      "service": "commercial-pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 36.2,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/ghaziabad/cpl-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:1271308",
+      "locationName": "Ghāziābād",
+      "service": "cpl-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 36.2,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/ghaziabad/dgca-ground-classes",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:1271308",
+      "locationName": "Ghāziābād",
+      "service": "dgca-ground-classes",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 37.9,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/ghaziabad/pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:1271308",
+      "locationName": "Ghāziābād",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "locationEvidenceProfile did not meet the geographic page quality threshold. Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 36.1,
+      "qualityBlockers": [
+        "locationEvidenceProfile did not meet the geographic page quality threshold.",
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/glasgow/pilot-training",
+      "approvedRecordId": "geo:city:gb-glasgow",
+      "resolvedRecordId": "geo:city:gb-glasgow",
+      "locationName": "Glasgow",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 24.2,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/houston/pilot-training",
+      "approvedRecordId": "geo:city:us-houston",
+      "resolvedRecordId": "geo:city:us-houston",
+      "locationName": "Houston",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23.2,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/karol-bagh/commercial-pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:relation:3478656",
+      "locationName": "Karol Bagh",
+      "service": "commercial-pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 38.4,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/karol-bagh/cpl-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:relation:3478656",
+      "locationName": "Karol Bagh",
+      "service": "cpl-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 38.4,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/karol-bagh/dgca-ground-classes",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:relation:3478656",
+      "locationName": "Karol Bagh",
+      "service": "dgca-ground-classes",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 40,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/karol-bagh/pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:relation:3478656",
+      "locationName": "Karol Bagh",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "locationEvidenceProfile did not meet the geographic page quality threshold. Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 35.2,
+      "qualityBlockers": [
+        "locationEvidenceProfile did not meet the geographic page quality threshold.",
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/las-vegas/pilot-training",
+      "approvedRecordId": "geo:city:us-las-vegas",
+      "resolvedRecordId": "geo:city:us-las-vegas",
+      "locationName": "Las Vegas",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23.4,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/london/pilot-training",
+      "approvedRecordId": "geo:city:london",
+      "resolvedRecordId": "geo:city:london",
+      "locationName": "London",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page.",
+      "evidenceTier": "MEDIUM",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 20.5,
+      "qualityBlockers": [
+        "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/los-angeles/pilot-training",
+      "approvedRecordId": "geo:city:us-los-angeles",
+      "resolvedRecordId": "geo:city:us-los-angeles",
+      "locationName": "Los Angeles",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22.6,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/lyon/pilot-training",
+      "approvedRecordId": "geo:city:lyon",
+      "resolvedRecordId": "geo:city:lyon",
+      "locationName": "Lyon",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23.9,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/manchester/pilot-training",
+      "approvedRecordId": "geo:city:gb-manchester",
+      "resolvedRecordId": "geo:city:gb-manchester",
+      "locationName": "Manchester",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page.",
+      "evidenceTier": "MEDIUM",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 20.7,
+      "qualityBlockers": [
+        "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/manhattan/pilot-training",
+      "approvedRecordId": "geo:locality:manhattan",
+      "resolvedRecordId": "geo:locality:manhattan",
+      "locationName": "Manhattan",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22.8,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/mayur-vihar/commercial-pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:admin3:07.093.6084",
+      "locationName": "Mayur Vihar",
+      "service": "commercial-pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 36.6,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/mayur-vihar/cpl-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:admin3:07.093.6084",
+      "locationName": "Mayur Vihar",
+      "service": "cpl-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 36.6,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/mayur-vihar/dgca-ground-classes",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:admin3:07.093.6084",
+      "locationName": "Mayur Vihar",
+      "service": "dgca-ground-classes",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 38.3,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/mayur-vihar/pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:admin3:07.093.6084",
+      "locationName": "Mayur Vihar",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "locationEvidenceProfile did not meet the geographic page quality threshold. Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 34.4,
+      "qualityBlockers": [
+        "locationEvidenceProfile did not meet the geographic page quality threshold.",
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/melbourne/pilot-training",
+      "approvedRecordId": "geo:city:au-melbourne",
+      "resolvedRecordId": "geo:city:au-melbourne",
+      "locationName": "Melbourne",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23.6,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/miami/pilot-training",
+      "approvedRecordId": "geo:city:us-miami",
+      "resolvedRecordId": "geo:city:us-miami",
+      "locationName": "Miami",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23.5,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/munich/pilot-training",
+      "approvedRecordId": "geo:city:munich",
+      "resolvedRecordId": "geo:city:munich",
+      "locationName": "Munich",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/new-york-city/pilot-training",
+      "approvedRecordId": "geo:city:new-york-city",
+      "resolvedRecordId": "geo:city:new-york-city",
+      "locationName": "New York City",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page.",
+      "evidenceTier": "MEDIUM",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22,
+      "qualityBlockers": [
+        "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/orlando/pilot-training",
+      "approvedRecordId": "geo:city:us-orlando",
+      "resolvedRecordId": "geo:city:us-orlando",
+      "locationName": "Orlando",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22.6,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/osaka/pilot-training",
+      "approvedRecordId": "geo:city:osaka",
+      "resolvedRecordId": "geo:city:osaka",
+      "locationName": "Osaka",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22.6,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/ottawa/pilot-training",
+      "approvedRecordId": "geo:city:ca-ottawa",
+      "resolvedRecordId": "geo:city:ca-ottawa",
+      "locationName": "Ottawa",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22.5,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/paris/pilot-training",
+      "approvedRecordId": "geo:city:paris",
+      "resolvedRecordId": "geo:city:paris",
+      "locationName": "Paris",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page.",
+      "evidenceTier": "MEDIUM",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23.4,
+      "qualityBlockers": [
+        "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/perth/pilot-training",
+      "approvedRecordId": "geo:city:au-perth",
+      "resolvedRecordId": "geo:city:au-perth",
+      "locationName": "Perth",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23.6,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/phoenix/pilot-training",
+      "approvedRecordId": "geo:city:us-phoenix",
+      "resolvedRecordId": "geo:city:us-phoenix",
+      "locationName": "Phoenix",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/rajouri-garden/commercial-pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:admin3:07.096.449",
+      "locationName": "Rajouri Garden",
+      "service": "commercial-pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 36.6,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/rajouri-garden/cpl-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:admin3:07.096.449",
+      "locationName": "Rajouri Garden",
+      "service": "cpl-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 36.6,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/rajouri-garden/dgca-ground-classes",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:admin3:07.096.449",
+      "locationName": "Rajouri Garden",
+      "service": "dgca-ground-classes",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 38.3,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/rajouri-garden/pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:admin3:07.096.449",
+      "locationName": "Rajouri Garden",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "locationEvidenceProfile did not meet the geographic page quality threshold. Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 34.6,
+      "qualityBlockers": [
+        "locationEvidenceProfile did not meet the geographic page quality threshold.",
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/rohini/commercial-pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:12069922",
+      "locationName": "Rohini",
+      "service": "commercial-pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 37.3,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/rohini/cpl-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:12069922",
+      "locationName": "Rohini",
+      "service": "cpl-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 37.3,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/rohini/dgca-ground-classes",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:12069922",
+      "locationName": "Rohini",
+      "service": "dgca-ground-classes",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 38.9,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/rohini/pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:geonames:IN:12069922",
+      "locationName": "Rohini",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "locationEvidenceProfile did not meet the geographic page quality threshold. Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 35.9,
+      "qualityBlockers": [
+        "locationEvidenceProfile did not meet the geographic page quality threshold.",
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/saket/commercial-pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:relation:3662630",
+      "locationName": "Saket",
+      "service": "commercial-pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 38.4,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/saket/cpl-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:relation:3662630",
+      "locationName": "Saket",
+      "service": "cpl-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 38.4,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/saket/dgca-ground-classes",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:relation:3662630",
+      "locationName": "Saket",
+      "service": "dgca-ground-classes",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 40,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/saket/pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:relation:3662630",
+      "locationName": "Saket",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "locationEvidenceProfile did not meet the geographic page quality threshold. Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 35.4,
+      "qualityBlockers": [
+        "locationEvidenceProfile did not meet the geographic page quality threshold.",
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/san-francisco/pilot-training",
+      "approvedRecordId": "geo:city:us-san-francisco",
+      "resolvedRecordId": "geo:city:us-san-francisco",
+      "locationName": "San Francisco",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22.9,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/seattle/pilot-training",
+      "approvedRecordId": "geo:city:us-seattle",
+      "resolvedRecordId": "geo:city:us-seattle",
+      "locationName": "Seattle",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22.6,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/shahdara/commercial-pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:relation:3812951",
+      "locationName": "Shahdara",
+      "service": "commercial-pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 38.4,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/shahdara/cpl-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:relation:3812951",
+      "locationName": "Shahdara",
+      "service": "cpl-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 38.4,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/shahdara/dgca-ground-classes",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:relation:3812951",
+      "locationName": "Shahdara",
+      "service": "dgca-ground-classes",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 40,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/shahdara/pilot-training",
+      "approvedRecordId": null,
+      "resolvedRecordId": "geo:osm:relation:3812951",
+      "locationName": "Shahdara",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "locationEvidenceProfile did not meet the geographic page quality threshold. Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 35.3,
+      "qualityBlockers": [
+        "locationEvidenceProfile did not meet the geographic page quality threshold.",
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/sharjah/pilot-training",
+      "approvedRecordId": "geo:city:ae-sharjah",
+      "resolvedRecordId": "geo:city:ae-sharjah",
+      "locationName": "Sharjah",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 23.5,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/singapore-city/pilot-training",
+      "approvedRecordId": "geo:city:singapore",
+      "resolvedRecordId": "geo:city:singapore",
+      "locationName": "Singapore City",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22.7,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/srinagar/commercial-pilot-training",
+      "approvedRecordId": "geo:geonames:IN:1255634",
+      "resolvedRecordId": "geo:geonames:IN:1465843",
+      "locationName": "Srinagar",
+      "service": "commercial-pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "resolver mismatch",
+      "failureReason": "Approval candidate ID geo:geonames:IN:1255634 and resolver ID geo:geonames:IN:1465843 identify different registry records. aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 37.1,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke approval; preserve the distinct registry identities and prevent the route from resolving to the unrelated record."
+    },
+    {
+      "route": "/srinagar/cpl-training",
+      "approvedRecordId": "geo:geonames:IN:1255634",
+      "resolvedRecordId": "geo:geonames:IN:1465843",
+      "locationName": "Srinagar",
+      "service": "cpl-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "resolver mismatch",
+      "failureReason": "Approval candidate ID geo:geonames:IN:1255634 and resolver ID geo:geonames:IN:1465843 identify different registry records. aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 37.2,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke approval; preserve the distinct registry identities and prevent the route from resolving to the unrelated record."
+    },
+    {
+      "route": "/srinagar/dgca-ground-classes",
+      "approvedRecordId": "geo:geonames:IN:1255634",
+      "resolvedRecordId": "geo:geonames:IN:1465843",
+      "locationName": "Srinagar",
+      "service": "dgca-ground-classes",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "resolver mismatch",
+      "failureReason": "Approval candidate ID geo:geonames:IN:1255634 and resolver ID geo:geonames:IN:1465843 identify different registry records. aviationContext did not meet the geographic page quality threshold.",
+      "evidenceTier": null,
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 38.9,
+      "qualityBlockers": [
+        "aviationContext did not meet the geographic page quality threshold."
+      ],
+      "recommendedAction": "Revoke approval; preserve the distinct registry identities and prevent the route from resolving to the unrelated record."
+    },
+    {
+      "route": "/srinagar/pilot-training",
+      "approvedRecordId": "geo:geonames:IN:1255634",
+      "resolvedRecordId": "geo:geonames:IN:1465843",
+      "locationName": "Srinagar",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "resolver mismatch",
+      "failureReason": "Approval candidate ID geo:geonames:IN:1255634 and resolver ID geo:geonames:IN:1465843 identify different registry records. locationEvidenceProfile did not meet the geographic page quality threshold. Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 35.9,
+      "qualityBlockers": [
+        "locationEvidenceProfile did not meet the geographic page quality threshold.",
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke approval; preserve the distinct registry identities and prevent the route from resolving to the unrelated record."
+    },
+    {
+      "route": "/sydney/pilot-training",
+      "approvedRecordId": "geo:city:sydney",
+      "resolvedRecordId": "geo:city:sydney",
+      "locationName": "Sydney",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page.",
+      "evidenceTier": "MEDIUM",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22.5,
+      "qualityBlockers": [
+        "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/tokyo/pilot-training",
+      "approvedRecordId": "geo:city:tokyo",
+      "resolvedRecordId": "geo:city:tokyo",
+      "locationName": "Tokyo",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page.",
+      "evidenceTier": "MEDIUM",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 21.5,
+      "qualityBlockers": [
+        "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/toronto/pilot-training",
+      "approvedRecordId": "geo:city:toronto",
+      "resolvedRecordId": "geo:city:toronto",
+      "locationName": "Toronto",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page.",
+      "evidenceTier": "MEDIUM",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 21.8,
+      "qualityBlockers": [
+        "Some source-attributed aviation context exists, but the profile lacks the combination of direct, location-specific evidence needed for a strong page."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    },
+    {
+      "route": "/vancouver/pilot-training",
+      "approvedRecordId": "geo:city:ca-vancouver",
+      "resolvedRecordId": "geo:city:ca-vancouver",
+      "locationName": "Vancouver",
+      "service": "pilot-training",
+      "approvalSource": "approved-geographic-routes",
+      "actualModelState": "NOINDEX",
+      "classification": "insufficient evidence",
+      "failureReason": "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points.",
+      "evidenceTier": "THIN",
+      "differentiationStatus": "PASSED",
+      "similarityPercent": 22.6,
+      "qualityBlockers": [
+        "Available evidence is limited to geographic identity, hierarchy, regulator mapping, generic training guidance, or unverified gazetteer points."
+      ],
+      "recommendedAction": "Revoke the stale approval and keep the route NOINDEX; reconsider only after verified evidence and all current quality gates pass."
+    }
+  ]
+}

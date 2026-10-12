@@ -5,6 +5,14 @@ const { execFileSync } = require('child_process');
 const rootDir = path.resolve(__dirname, '..');
 const pagesDir = path.join(rootDir, 'pages');
 const outputPath = path.join(rootDir, '.generated-sitemap.xml');
+const generatedSitemapsDir = path.join(rootDir, 'public', 'generated-sitemaps');
+const approvedGeographicRoutesPath = path.join(
+  rootDir,
+  'data',
+  'location-seo',
+  'geography',
+  'approved-geographic-sitemap-routes.json',
+);
 const locationServicePagePath = toPosixPath(path.relative(rootDir, path.join(pagesDir, '[location]', '[service].jsx')));
 /*
  * Apex, not www. This script writes .generated-sitemap.xml, which
@@ -14,6 +22,7 @@ const locationServicePagePath = toPosixPath(path.relative(rootDir, path.join(pag
  * at redirects and disagreed with the canonical tags on the pages themselves.
  */
 const host = 'https://weoneaviation.in';
+const sitemapUrlLimit = 50000;
 const ignoredFiles = new Set([
   '_app.js',
   '_app.jsx',
@@ -25,6 +34,8 @@ const ignoredFiles = new Set([
   'robots.txt.js',
 ]);
 const ignoredDirs = new Set(['api', 'admin', '_next']);
+const sourceContentCache = new Map();
+const lastCommitDateCache = new Map();
 
 function toPosixPath(filePath) {
   return filePath.split(path.sep).join('/');
@@ -126,7 +137,11 @@ function getSourceFileForRoute(route) {
 
 function sourceDeclaresNoindexOrNonSelfCanonical(route, relativeFilePath) {
   if (!relativeFilePath) return false;
-  const source = fs.readFileSync(path.join(rootDir, relativeFilePath), 'utf8');
+  let source = sourceContentCache.get(relativeFilePath);
+  if (!source) {
+    source = fs.readFileSync(path.join(rootDir, relativeFilePath), 'utf8');
+    sourceContentCache.set(relativeFilePath, source);
+  }
   const layoutTag = source.match(/<Layout\b[^>]*>/s)?.[0];
 
   if (layoutTag && /\bnoindex(?:\s|=|\/?>)/i.test(layoutTag)) return true;
@@ -228,6 +243,9 @@ async function discoverProductionOnlyBlogRoutes(localRoutes) {
 
 function getLastCommitDate(relativeFilePath) {
   if (!relativeFilePath) return null;
+  if (lastCommitDateCache.has(relativeFilePath)) {
+    return lastCommitDateCache.get(relativeFilePath);
+  }
 
   try {
     const output = execFileSync('git', ['log', '-1', '--format=%cd', '--date=short', '--', relativeFilePath], {
@@ -236,8 +254,11 @@ function getLastCommitDate(relativeFilePath) {
       stdio: ['ignore', 'pipe', 'pipe'],
     }).trim();
 
-    return output || null;
+    const date = output || null;
+    lastCommitDateCache.set(relativeFilePath, date);
+    return date;
   } catch {
+    lastCommitDateCache.set(relativeFilePath, null);
     return null;
   }
 }
@@ -297,6 +318,67 @@ async function buildSitemapXml() {
   const {
     getApprovedLocationServicePairs,
   } = await import('../lib/locationSeo.js');
+  const {
+    getProductionRouteApproval,
+  } = await import('../data/location-seo/production-route-approvals.js');
+  if (!fs.existsSync(approvedGeographicRoutesPath)) {
+    throw new Error(
+      'The quality-approved geographic sitemap cache is missing. Run "npm run cache:approved-geographic-sitemap" first.',
+    );
+  }
+  const approvedGeographicCache = JSON.parse(
+    fs.readFileSync(approvedGeographicRoutesPath, 'utf8'),
+  );
+  if (approvedGeographicCache.version !== 3
+    || !/^[a-f0-9]{64}$/.test(approvedGeographicCache.sourceFingerprint || '')
+    || !Array.isArray(approvedGeographicCache.approvedRoutes)) {
+    throw new Error('The quality-approved geographic sitemap cache has an unsupported format.');
+  }
+  const { INDEXABLE_ROBOTS_DIRECTIVE } = await import(
+    '../data/location-seo/geographic-indexability-policy.js'
+  );
+  const approvedGeographicRoutes = new Set();
+  for (const entry of approvedGeographicCache.approvedRoutes) {
+    if (typeof entry?.route !== 'string') {
+      throw new Error('Invalid geographic sitemap cache entry: route must be a string.');
+    }
+    const [, locationSlug, serviceSlug, extra] = entry.route.split('/');
+    const approvalContext = entry.registry === 'world-geographic-index'
+      ? {
+        registryBacked: true,
+        location: {
+          id: entry.recordId,
+          registryRecordId: entry.recordId,
+          registrySlug: entry.locationSlug,
+          slug: entry.locationSlug,
+          countryCode: entry.countryCode,
+        },
+        service: { slug: entry.serviceSlug },
+      }
+      : null;
+    const approval = getProductionRouteApproval(entry.route, approvalContext);
+    if (entry?.state !== 'INDEXABLE'
+      || entry.qualityPassed !== true
+      || typeof entry.route !== 'string'
+      || !/^\/[a-z0-9-]+\/[a-z0-9-]+$/.test(entry.route)
+      || extra
+      || (entry.registry === 'world-geographic-index'
+        && (entry.locationSlug !== locationSlug
+          || entry.serviceSlug !== serviceSlug
+          || entry.canonicalPath !== entry.route
+          || entry.canonicalUrl !== `${host}${entry.route}`
+          || entry.robots !== INDEXABLE_ROBOTS_DIRECTIVE))
+      || entry.canonicalPath !== entry.route
+      || entry.canonicalUrl !== `${host}${entry.route}`
+      || entry.robots !== INDEXABLE_ROBOTS_DIRECTIVE
+      || !approval.approved
+      || approval.source !== entry.approvalSource) {
+      throw new Error(
+        `Invalid or unapproved entry in geographic sitemap cache: ${entry?.route || '(missing route)'}.`,
+      );
+    }
+    approvedGeographicRoutes.add(entry.route);
+  }
   const redirected = redirectSources();
   const pageFiles = collectPageFiles(pagesDir);
   const sourceRoutes = pageFiles
@@ -305,58 +387,127 @@ async function buildSitemapXml() {
       filePath: toPosixPath(path.relative(rootDir, filePath)),
     }))
     .filter(({ route }) => route);
-  const locationServiceRoutes = getApprovedLocationServicePairs()
+  const curatedLocationServiceRoutes = getApprovedLocationServicePairs()
     .map(({ location, service }) => ({
       route: `/${location.slug}/${service.slug}`,
       filePath: locationServicePagePath,
     }))
-    .filter(({ route }) => !isExcludedRoute(route) && !redirected.has(route.toLowerCase()));
-
+    .filter(({ route }) => approvedGeographicRoutes.has(route)
+      && !isExcludedRoute(route)
+      && !redirected.has(route.toLowerCase()));
   const dynamicRoutes = await validateProductionRoutes([
     ...extractBlogIds(),
   ]);
 
   const localRoutes = new Set([
     ...sourceRoutes.map(({ route }) => route),
-    ...locationServiceRoutes.map(({ route }) => route),
+    ...curatedLocationServiceRoutes.map(({ route }) => route),
     ...dynamicRoutes,
   ].map(normalizeRoute));
   const sourceFileByRoute = new Map(
-    [...sourceRoutes, ...locationServiceRoutes]
+    [...sourceRoutes, ...curatedLocationServiceRoutes]
       .map(({ route, filePath }) => [normalizeRoute(route), filePath]),
   );
   const productionOnlyRoutes = await discoverProductionOnlyBlogRoutes(localRoutes);
 
-  const allRoutes = Array.from(new Set([...localRoutes, ...productionOnlyRoutes]))
-    .filter((route) => {
-      const dropped = redirected.has(route.toLowerCase());
-      if (dropped) console.log(`generate-sitemap: excluding ${route} (301)`);
-      const sourceFile = sourceFileByRoute.get(route) || getSourceFileForRoute(route);
-      const notIndexable = isExcludedRoute(route) || sourceDeclaresNoindexOrNonSelfCanonical(route, sourceFile);
-      if (notIndexable) console.log(`generate-sitemap: excluding ${route} (noindex, non-self-canonical, or excluded route)`);
-      return !dropped && !notIndexable;
-    })
+  const baseRoutes = [...new Set([...localRoutes, ...productionOnlyRoutes])]
     .sort();
+  const baseRouteSet = new Set(baseRoutes);
+  const writtenBaseRoutes = new Set();
+  const sitemapFiles = [];
+  let currentChunk = [];
+  let eligibleRegistryRoutes = 0;
+  let totalUrlCount = 0;
 
-  const urlsXml = allRoutes
-    .map((route) => {
-      const candidateFile = sourceFileByRoute.get(route) || getSourceFileForRoute(route);
-      const sourceFile = getLastCommitDate(candidateFile) ? candidateFile : null;
-      const lastmod = getLastCommitDate(sourceFile);
+  const renderUrl = (route, candidateFile) => {
+      const lastmod = getLastCommitDate(candidateFile);
       const lastmodXml = lastmod ? `    <lastmod>${lastmod}</lastmod>\n` : '';
 
       return `  <url>\n    <loc>${host}${route}</loc>\n${lastmodXml}    <changefreq>${getChangefreq(route)}</changefreq>\n    <priority>${getPriority(route)}</priority>\n  </url>`;
-    })
-    .join('\n');
+  };
 
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlsXml}\n</urlset>`;
+  const writeChunk = () => {
+    if (!currentChunk.length) return;
+    fs.mkdirSync(generatedSitemapsDir, { recursive: true });
+    const fileName = `locations-${String(sitemapFiles.length + 1).padStart(4, '0')}.xml`;
+    const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${currentChunk.join('\n')}\n</urlset>`;
+    fs.writeFileSync(path.join(generatedSitemapsDir, fileName), sitemapXml, 'utf8');
+    sitemapFiles.push(fileName);
+    currentChunk = [];
+  };
+
+  const addRoute = (route, candidateFile, { registry = false } = {}) => {
+    const normalizedRoute = normalizeRoute(route);
+    if ((registry && baseRouteSet.has(normalizedRoute))
+      || (!registry && writtenBaseRoutes.has(normalizedRoute))) return false;
+    if (redirected.has(normalizedRoute.toLowerCase())) {
+      if (!registry) console.log(`generate-sitemap: excluding ${normalizedRoute} (301)`);
+      return false;
+    }
+    if (isExcludedRoute(normalizedRoute)
+      || sourceDeclaresNoindexOrNonSelfCanonical(normalizedRoute, candidateFile)) {
+      if (!registry) {
+        console.log(`generate-sitemap: excluding ${normalizedRoute} (noindex, non-self-canonical, or excluded route)`);
+      }
+      return false;
+    }
+    if (!registry) writtenBaseRoutes.add(normalizedRoute);
+    currentChunk.push(renderUrl(normalizedRoute, candidateFile));
+    totalUrlCount += 1;
+    if (registry) eligibleRegistryRoutes += 1;
+    if (currentChunk.length >= sitemapUrlLimit) writeChunk();
+    return true;
+  };
+
+  for (const route of baseRoutes) {
+    const candidateFile = sourceFileByRoute.get(route) || getSourceFileForRoute(route);
+    addRoute(route, candidateFile);
+  }
+  for (const entry of approvedGeographicCache.approvedRoutes) {
+    addRoute(entry.route, locationServicePagePath, { registry: true });
+  }
+  console.log(
+    `generate-sitemap: read ${approvedGeographicCache.approvedRoutes.length} prequalified geographic routes; ${eligibleRegistryRoutes} were sitemap eligible.`,
+  );
+
+  if (currentChunk.length) writeChunk();
+
+  const currentChunkFiles = new Set(sitemapFiles);
+  if (fs.existsSync(generatedSitemapsDir)) {
+    for (const fileName of fs.readdirSync(generatedSitemapsDir)) {
+      if (/^locations-\d{4}\.xml$/.test(fileName) && !currentChunkFiles.has(fileName)) {
+        fs.unlinkSync(path.join(generatedSitemapsDir, fileName));
+      }
+    }
+  }
+
+  if (sitemapFiles.length) {
+    const sitemapEntries = sitemapFiles.map((fileName) => (
+      `  <sitemap>\n    <loc>${host}/generated-sitemaps/${fileName}</loc>\n  </sitemap>`
+    ));
+    return {
+      xml: `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries.join('\n')}\n</sitemapindex>`,
+      totalUrlCount,
+      eligibleRegistryRoutes,
+      sitemapCount: sitemapFiles.length,
+    };
+  }
+
+  return {
+    xml: `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${currentChunk.join('\n')}\n</urlset>`,
+    totalUrlCount,
+    eligibleRegistryRoutes,
+    sitemapCount: 1,
+  };
 }
 
 function main() {
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-  return buildSitemapXml().then((xml) => {
+  return buildSitemapXml().then(({ xml, totalUrlCount, eligibleRegistryRoutes, sitemapCount }) => {
     fs.writeFileSync(outputPath, xml, 'utf8');
-    console.log(`Wrote ${toPosixPath(path.relative(rootDir, outputPath))} (${(xml.match(/<url>/g) || []).length} URLs)`);
+    console.log(
+      `Wrote ${toPosixPath(path.relative(rootDir, outputPath))} (${totalUrlCount} URLs; ${eligibleRegistryRoutes} registry-backed; ${sitemapCount} sitemap file(s)).`,
+    );
   });
 }
 

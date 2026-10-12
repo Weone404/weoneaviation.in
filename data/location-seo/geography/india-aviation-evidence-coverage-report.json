@@ -1,0 +1,4747 @@
+{
+  "schemaVersion": 1,
+  "phase": "4G",
+  "reviewedAt": "2026-10-08",
+  "scope": "India only; existing DGCA medical lists plus source-listed bases from the DGCA approved-FTO roster dated 3 October 2026.",
+  "ingestion": {
+    "method": "Exact source-listed place name + optional explicit geographic level and state are resolved against the India geographic registry. Explicitly conflicting/unresolved source entries are retained as ambiguous or unmatched; a record is emitted only after exact location, country, state, and hierarchy validation.",
+    "sourceRows": 94,
+    "emittedRecords": 73,
+    "emittedRecordsByType": {
+      "medical-centre": 27,
+      "flight-school": 24,
+      "flying-club": 9,
+      "pilot-training-organization": 13
+    },
+    "newlyAddedPilotTrainingRecords": 46,
+    "newlyAddedAirportOrAerodromeRecords": 0,
+    "newlyCoveredPilotTrainingLocations": 36,
+    "pilotTrainingSource": {
+      "publisher": "Directorate General of Civil Aviation (DGCA)",
+      "title": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceDate": "2026-10-03",
+      "sourceDateBasis": "The PDF heading states \"As on 03.10.2026\".",
+      "pdfCreatedAt": "2026-10-03T13:49:39Z",
+      "objectLastModifiedAt": "2026-10-06T09:06:41Z",
+      "verificationDate": "2026-10-08",
+      "url": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceRows": 64
+    },
+    "unmatchedEvidence": [
+      {
+        "evidenceId": "aviation:fto:dgca-roster:skynex-aero-pvt-ltd-mahsana",
+        "name": "Skynex Aero Pvt. Ltd.",
+        "sourcePlace": {
+          "name": "Mahsana",
+          "state": "Gujarat"
+        },
+        "sourceBase": "Mahsana, Gujarat",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "No exact city/town/populated-place/village/district/subdistrict registry match in Gujarat."
+      }
+    ],
+    "ambiguousEvidence": [
+      {
+        "evidenceId": "aviation:medical:dgca-class1-renewal:air-force-station-chakeri-kanpur",
+        "name": "Air Force Station Chakeri",
+        "sourcePlace": {
+          "name": "Kanpur",
+          "state": null
+        },
+        "sourceBase": null,
+        "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+        "sourcePublisher": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+        "reason": "Exact populated-place name has multiple registry matches."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:avyanna-aviation-pvt-ltd-kishangarh",
+        "name": "Avyanna Aviation Pvt. Ltd.",
+        "sourcePlace": {
+          "name": "Kishangarh",
+          "state": "Rajasthan"
+        },
+        "sourceBase": "Site-2, Kishangarh Airport, Ajmer",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "Exact populated-place name and state has multiple registry matches."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:banasthali-vidyapith-gliding-flying-club-old-technical-block-dharwad-karnataka",
+        "name": "Banasthali Vidyapith Gliding & Flying Club",
+        "sourcePlace": null,
+        "sourceBase": "Old Technical Block, Dharwad, Karnataka",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The organization name and the source-listed base locality conflict; do not assign it to Banasthali or Dharwad without resolving the source record."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:blue-ray-aviation-pvt-ltd-mehsana-airstrip-ahmedabad-gujarat",
+        "name": "Blue Ray Aviation Pvt. Ltd.",
+        "sourcePlace": null,
+        "sourceBase": "Mehsana Airstrip, Ahmedabad, Gujarat",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The listed airstrip name and city field identify different locations."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:blue-ray-aviation-pvt-ltd-dhule-airstrip-mumbai-maharashtra",
+        "name": "Blue Ray Aviation Pvt. Ltd.",
+        "sourcePlace": null,
+        "sourceBase": "Dhule Airstrip, Mumbai, Maharashtra",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The listed airstrip name and city field identify different locations."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:the-bombay-flying-club-dhule-airstrip-mumbai-maharashtra",
+        "name": "The Bombay Flying Club",
+        "sourcePlace": null,
+        "sourceBase": "Dhule Airstrip, Mumbai, Maharashtra",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The listed airstrip name and city field identify different locations."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:chetak-aviation-a-unit-of-sultan-education-society-aligarh",
+        "name": "Chetak Aviation (A unit of Sultan Education Society)",
+        "sourcePlace": {
+          "name": "Aligarh",
+          "state": "Uttar Pradesh"
+        },
+        "sourceBase": "Dhanipur Airstrip, Aligarh, Uttar Pradesh",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "Exact populated-place name and state has multiple registry matches."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:flytech-aviation-academy-nagarjuna-sagar-airfield-guntur-andhra-pradesh",
+        "name": "Flytech Aviation Academy",
+        "sourcePlace": null,
+        "sourceBase": "Nagarjuna Sagar Airfield, Guntur, Andhra Pradesh",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The roster associates an airfield name with a separate city label; the exact registry location is not established by this entry."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:fstc-flying-school-pvt-ltd-chaudhary-bansi-lal-airport-village-gujrani-bhiwani-haryana",
+        "name": "FSTC Flying School Pvt. Ltd.",
+        "sourcePlace": null,
+        "sourceBase": "Chaudhary Bansi Lal Airport, Village Gujrani, Bhiwani, Haryana",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The source identifies both a village and a city/airport label; the exact registry record for the named base needs confirmation."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:garg-aviations-ltd-kanpur",
+        "name": "Garg Aviations Ltd.",
+        "sourcePlace": {
+          "name": "Kanpur",
+          "state": "Uttar Pradesh"
+        },
+        "sourceBase": "Civil Aerodrome, Kanpur, Uttar Pradesh",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "Exact populated-place name and state has multiple registry matches."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:jet-serve-aviation-pvt-ltd-jalgaon",
+        "name": "Jet Serve Aviation Pvt. Ltd.",
+        "sourcePlace": {
+          "name": "Jalgaon",
+          "state": "Maharashtra"
+        },
+        "sourceBase": "Flyola Aviation Academy, Jalgaon Airport, Maharashtra",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "Exact populated-place name and state has multiple registry matches."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:pioneer-flying-academy-pvt-ltd-aligarh",
+        "name": "Pioneer Flying Academy Pvt. Ltd.",
+        "sourcePlace": {
+          "name": "Aligarh",
+          "state": "Uttar Pradesh"
+        },
+        "sourceBase": "Dhanipur Airstrip, Aligarh, Uttar Pradesh",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "Exact populated-place name and state has multiple registry matches."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:redbird-flight-training-academy-pvt-ltd-seoni",
+        "name": "Redbird Flight Training Academy Pvt. Ltd.",
+        "sourcePlace": {
+          "name": "Seoni",
+          "state": "Madhya Pradesh"
+        },
+        "sourceBase": "Suktara Airport, Seoni, Madhya Pradesh",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "Exact populated-place name and state has multiple registry matches."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:sha-shib-flying-academy-guna",
+        "name": "Sha-Shib Flying Academy",
+        "sourcePlace": {
+          "name": "Guna",
+          "state": "Madhya Pradesh"
+        },
+        "sourceBase": "Guna Airport, Madhya Pradesh",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "Exact populated-place name and state has multiple registry matches."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:skynex-aero-pvt-ltd-jalgaon",
+        "name": "Skynex Aero Pvt. Ltd.",
+        "sourcePlace": {
+          "name": "Jalgaon",
+          "state": "Maharashtra"
+        },
+        "sourceBase": "Jalgaon Airport, Jalgaon, Maharashtra",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "Exact populated-place name and state has multiple registry matches."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:svkm-nmims-academy-of-aviation-shirpur",
+        "name": "SVKM NMIMS Academy of Aviation",
+        "sourcePlace": {
+          "name": "Shirpur",
+          "state": "Maharashtra"
+        },
+        "sourceBase": "Shirpur Airstrip, District Dhule, Maharashtra",
+        "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+        "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "Exact populated-place name and state has multiple registry matches."
+      }
+    ],
+    "duplicateEvidence": [
+      {
+        "evidenceId": "aviation:medical:dgca-class1-renewal:air-force-station-agra",
+        "existingEvidenceId": "aviation:medical:agra-renewal",
+        "reason": "Same medical-centre name, exact registry place, evidence type, and source URL already exist."
+      },
+      {
+        "evidenceId": "aviation:medical:dgca-class1-renewal:hq-sac-u-iaf-akkulam-thiruvananthapuram",
+        "existingEvidenceId": "aviation:medical:thiruvananthapuram-akkulam-renewal",
+        "reason": "Same medical-centre name, exact registry place, evidence type, and source URL already exist."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:the-bombay-flying-club-mumbai",
+        "existingEvidenceId": "aviation:fto:bombay-flying-club",
+        "reason": "Same flight-school name, exact registry place, evidence type, and source URL already exist."
+      },
+      {
+        "evidenceId": "aviation:fto:dgca-roster:flytech-aviation-academy-hyderabad",
+        "existingEvidenceId": "aviation:fto:flytech-nadergul",
+        "reason": "Same flight-school name, exact registry place, evidence type, and source URL already exist."
+      }
+    ],
+    "invalidGeographicMappings": [],
+    "regionalContextPolicy": "A record is labeled regional-context where the source lists a separately named base or only supports regional association. Descendant routes also receive inherited evidence as regional-context. No unverified nearby or state-wide relationships are added."
+  },
+  "coverage": {
+    "before": {
+      "evidenceRecords": 23,
+      "pilotTrainingEvidenceRecords": 5,
+      "airportOrAerodromeEvidenceRecords": 13,
+      "directEvidenceRecords": 20,
+      "regionalEvidenceRecords": 3,
+      "uniqueGeographicLocations": 15,
+      "states": [
+        "Chhattisgarh",
+        "Delhi",
+        "Gujarat",
+        "Jammu and Kashmir",
+        "Jharkhand",
+        "Kerala",
+        "Maharashtra",
+        "Punjab",
+        "Telangana",
+        "Uttar Pradesh",
+        "Uttarakhand",
+        "West Bengal"
+      ],
+      "stateCount": 12,
+      "districtsOrCities": [
+        {
+          "name": "Mumbai",
+          "type": "city",
+          "state": "Maharashtra"
+        },
+        {
+          "name": "Hyderabad",
+          "type": "city",
+          "state": "Telangana"
+        },
+        {
+          "name": "Fursatganj",
+          "type": "town",
+          "state": "Uttar Pradesh"
+        },
+        {
+          "name": "Ahmedabad",
+          "type": "city",
+          "state": "Gujarat"
+        },
+        {
+          "name": "Lucknow",
+          "type": "city",
+          "state": "Uttar Pradesh"
+        },
+        {
+          "name": "Kolkata",
+          "type": "city",
+          "state": "West Bengal"
+        },
+        {
+          "name": "Panagarh",
+          "type": "city",
+          "state": "West Bengal"
+        },
+        {
+          "name": "Thiruvananthapuram",
+          "type": "city",
+          "state": "Kerala"
+        },
+        {
+          "name": "Ranchi",
+          "type": "city",
+          "state": "Jharkhand"
+        },
+        {
+          "name": "Dehradun",
+          "type": "city",
+          "state": "Uttarakhand"
+        },
+        {
+          "name": "Srinagar",
+          "type": "city",
+          "state": "Jammu and Kashmir"
+        },
+        {
+          "name": "Amritsar",
+          "type": "city",
+          "state": "Punjab"
+        },
+        {
+          "name": "Agra",
+          "type": "city",
+          "state": "Uttar Pradesh"
+        },
+        {
+          "name": "Raipur",
+          "type": "city",
+          "state": "Chhattisgarh"
+        }
+      ],
+      "districtsOrCitiesCount": 14,
+      "directEvidenceLocations": 13,
+      "regionalContextLocations": 3,
+      "evidenceTypes": [
+        "aerodrome",
+        "airport",
+        "aviation-organization",
+        "flight-school",
+        "medical-centre"
+      ],
+      "sourceDomains": [
+        "aim-india.aai.aero",
+        "ccsia-lucknow.adaniairports.com",
+        "csmia.adaniairports.com",
+        "public-prd-dgca.s3.ap-south-1.amazonaws.com",
+        "svpia-ahmedabad.adaniairports.com",
+        "thiruvananthapuram.adaniairports.com",
+        "tourism.jharkhand.gov.in",
+        "www.aai.aero",
+        "www.dgca.gov.in",
+        "www.hyderabad.aero",
+        "www.newdelhiairport.in"
+      ]
+    },
+    "after": {
+      "evidenceRecords": 96,
+      "newlyAddedEvidenceRecords": 73,
+      "newlyAddedEvidenceRecordsByType": {
+        "medical-centre": 27,
+        "flight-school": 24,
+        "flying-club": 9,
+        "pilot-training-organization": 13
+      },
+      "pilotTrainingEvidenceRecords": 51,
+      "newlyAddedPilotTrainingEvidenceRecords": 46,
+      "newlyCoveredPilotTrainingLocations": 36,
+      "airportOrAerodromeEvidenceRecords": 13,
+      "directEvidenceRecords": 82,
+      "regionalEvidenceRecords": 14,
+      "uniqueGeographicLocations": 60,
+      "newlyEvidenceBackedLocations": 45,
+      "newlyEvidenceBackedLocationDetails": [
+        {
+          "name": "New Delhi",
+          "type": "city",
+          "state": "Delhi",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:07",
+              "name": "Delhi",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:07.094",
+              "name": "New Delhi",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:07.094.443",
+              "name": "Chanakya Puri",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1261481",
+              "name": "New Delhi",
+              "type": "city"
+            }
+          ]
+        },
+        {
+          "name": "Gurugram",
+          "type": "city",
+          "state": "Haryana",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:10",
+              "name": "Haryana",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:10.086",
+              "name": "Gurugram district",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:10.086.417",
+              "name": "Gurugram",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1270642",
+              "name": "Gurugram",
+              "type": "city"
+            }
+          ]
+        },
+        {
+          "name": "Chennai",
+          "type": "city",
+          "state": "Tamil Nadu",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:25",
+              "name": "Tamil Nadu",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:25.603",
+              "name": "Chennai",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:1264527",
+              "name": "Chennai",
+              "type": "city"
+            }
+          ]
+        },
+        {
+          "name": "Bengaluru",
+          "type": "city",
+          "state": "Karnataka",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:19",
+              "name": "Karnataka",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:19.572",
+              "name": "Bangalore Urban",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:1277333",
+              "name": "Bengaluru",
+              "type": "city"
+            }
+          ]
+        },
+        {
+          "name": "Indore",
+          "type": "populated-place",
+          "state": "Madhya Pradesh",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:35",
+              "name": "Madhya Pradesh",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:35.439",
+              "name": "Indore",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:35.439.3543",
+              "name": "Indore",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1269743",
+              "name": "Indore",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Pune",
+          "type": "populated-place",
+          "state": "Maharashtra",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:16",
+              "name": "Maharashtra",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:16.521",
+              "name": "Pune Division",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:16.521.4194",
+              "name": "Pune City",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1259229",
+              "name": "Pune",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Ghāziābād",
+          "type": "city",
+          "state": "Uttar Pradesh",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:36",
+              "name": "Uttar Pradesh",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:36.140",
+              "name": "Ghāziābād",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:36.140.739",
+              "name": "Ghāziābād",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1271308",
+              "name": "Ghāziābād",
+              "type": "city"
+            }
+          ]
+        },
+        {
+          "name": "Secunderabad",
+          "type": "populated-place",
+          "state": "Telangana",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:40",
+              "name": "Telangana",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:40.700",
+              "name": "Medchal Malkajgiri",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:40.700.4521",
+              "name": "Malkajgiri",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1256922",
+              "name": "Secunderabad",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Chandigarh",
+          "type": "city",
+          "state": "Chandigarh",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:05",
+              "name": "Chandigarh",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:05.055",
+              "name": "Chandigarh",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:05.055.277",
+              "name": "Chandigarh",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1274746",
+              "name": "Chandigarh",
+              "type": "city"
+            }
+          ]
+        },
+        {
+          "name": "Gandhinagar",
+          "type": "city",
+          "state": "Gujarat",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:09",
+              "name": "Gujarat",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:09.473",
+              "name": "Gāndhīnagar",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:09.473.3775",
+              "name": "Gandhinagar",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1271715",
+              "name": "Gandhinagar",
+              "type": "city"
+            }
+          ]
+        },
+        {
+          "name": "Jorhat",
+          "type": "populated-place",
+          "state": "Assam",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:03",
+              "name": "Assam",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:03.312",
+              "name": "Jorhat",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:03.312.2077",
+              "name": "Jorhat West",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1268820",
+              "name": "Jorhat",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Bārāmati",
+          "type": "populated-place",
+          "state": "Maharashtra",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:16",
+              "name": "Maharashtra",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:16.521",
+              "name": "Pune Division",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:16.521.4199",
+              "name": "Baramati",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1277091",
+              "name": "Bārāmati",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Jamshedpur",
+          "type": "populated-place",
+          "state": "Jharkhand",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:38",
+              "name": "Jharkhand",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:38.357",
+              "name": "Purba Singhbhum",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:38.357.2606",
+              "name": "Golmuri Cum Jugsalai",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1269300",
+              "name": "Jamshedpur",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Shamshabad",
+          "type": "populated-place",
+          "state": "Telangana",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:40",
+              "name": "Telangana",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:40.537",
+              "name": "Rangareddi",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:40.537.4526",
+              "name": "Saroornagar",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:7648816",
+              "name": "Shamshabad",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Kalaburagi",
+          "type": "populated-place",
+          "state": "Karnataka",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:19",
+              "name": "Karnataka",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:19.579",
+              "name": "Gulbarga",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:19.579.0403",
+              "name": "Kalburgi",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1270752",
+              "name": "Kalaburagi",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Karād",
+          "type": "populated-place",
+          "state": "Maharashtra",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:16",
+              "name": "Maharashtra",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:16.527",
+              "name": "Satara Division",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:16.527.4265",
+              "name": "Karad",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1267904",
+              "name": "Karād",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Patna",
+          "type": "city",
+          "state": "Bihar",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:34",
+              "name": "Bihar",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:34.230",
+              "name": "Patna",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:34.230.1400",
+              "name": "Patna Rural",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1260086",
+              "name": "Patna",
+              "type": "city"
+            }
+          ]
+        },
+        {
+          "name": "Tonk",
+          "type": "district",
+          "state": "Rajasthan",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:24",
+              "name": "Rajasthan",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:24.120",
+              "name": "Tonk",
+              "type": "district"
+            }
+          ]
+        },
+        {
+          "name": "Sāgar",
+          "type": "district",
+          "state": "Madhya Pradesh",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:35",
+              "name": "Madhya Pradesh",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:35.427",
+              "name": "Sāgar",
+              "type": "district"
+            }
+          ]
+        },
+        {
+          "name": "Neemuch",
+          "type": "district",
+          "state": "Madhya Pradesh",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:35",
+              "name": "Madhya Pradesh",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:35.432",
+              "name": "Neemuch",
+              "type": "district"
+            }
+          ]
+        },
+        {
+          "name": "Bhavnagar",
+          "type": "populated-place",
+          "state": "Gujarat",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:09",
+              "name": "Gujarat",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:09.481",
+              "name": "Bhāvnagar",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:09.481.3854",
+              "name": "Bhavnagar",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1276032",
+              "name": "Bhavnagar",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Bhilwara",
+          "type": "populated-place",
+          "state": "Rajasthan",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:24",
+              "name": "Rajasthan",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:24.122",
+              "name": "Bhilwara District",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:24.122.634",
+              "name": "Bhilwara",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1275960",
+              "name": "Bhilwara",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Salem",
+          "type": "district",
+          "state": "Tamil Nadu",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:25",
+              "name": "Tamil Nadu",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:25.608",
+              "name": "Salem",
+              "type": "district"
+            }
+          ]
+        },
+        {
+          "name": "Ayodhya",
+          "type": "populated-place",
+          "state": "Uttar Pradesh",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:36",
+              "name": "Uttar Pradesh",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:36.177",
+              "name": "Ayodhya",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:36.177.905",
+              "name": "Faizabad",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1278094",
+              "name": "Ayodhya",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Rewa",
+          "type": "populated-place",
+          "state": "Madhya Pradesh",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:35",
+              "name": "Madhya Pradesh",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:35.430",
+              "name": "Rewa",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:35.430.7041",
+              "name": "Huzur Nagar",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1258182",
+              "name": "Rewa",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Narnaul",
+          "type": "populated-place",
+          "state": "Haryana",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:10",
+              "name": "Haryana",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:10.084",
+              "name": "Mahendragarh",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:10.084.412",
+              "name": "Narnaul",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1261772",
+              "name": "Narnaul",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Dhenkānāl",
+          "type": "populated-place",
+          "state": "Odisha",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:21",
+              "name": "Odisha",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:21.383",
+              "name": "Dhenkānāl",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:21.383.2999",
+              "name": "Dhenkanal Sadar",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1272780",
+              "name": "Dhenkānāl",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Bhubaneswar",
+          "type": "city",
+          "state": "Odisha",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:21",
+              "name": "Odisha",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:21.386",
+              "name": "Khordha",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:21.386.3055",
+              "name": "Bhubaneswar M Corp",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1275817",
+              "name": "Bhubaneswar",
+              "type": "city"
+            }
+          ]
+        },
+        {
+          "name": "Vadodara",
+          "type": "populated-place",
+          "state": "Gujarat",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:09",
+              "name": "Gujarat",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:09.486",
+              "name": "Vadodara",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:09.486.3898",
+              "name": "Vadodara Rural",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1253573",
+              "name": "Vadodara",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Amreli",
+          "type": "city",
+          "state": "Gujarat",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:09",
+              "name": "Gujarat",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:09.480",
+              "name": "Amreli",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:09.480.3843",
+              "name": "Amreli",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1278715",
+              "name": "Amreli",
+              "type": "city"
+            }
+          ]
+        },
+        {
+          "name": "Karnāl",
+          "type": "district",
+          "state": "Haryana",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:10",
+              "name": "Haryana",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:10.074",
+              "name": "Karnāl",
+              "type": "district"
+            }
+          ]
+        },
+        {
+          "name": "Hisar",
+          "type": "populated-place",
+          "state": "Haryana",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:10",
+              "name": "Haryana",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:10.080",
+              "name": "Hisār",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:10.080.394",
+              "name": "Hisar",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1270022",
+              "name": "Hisar",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Pinjaur",
+          "type": "populated-place",
+          "state": "Haryana",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:10",
+              "name": "Haryana",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:10.069",
+              "name": "Panchkula",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:10.069.356",
+              "name": "Kalka",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1259630",
+              "name": "Pinjaur",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Khajuraho Group of Monuments",
+          "type": "populated-place",
+          "state": "Madhya Pradesh",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:35",
+              "name": "Madhya Pradesh",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:35.425",
+              "name": "Chhatarpur",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:35.425.3430",
+              "name": "Rajnagar",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1267154",
+              "name": "Khajuraho Group of Monuments",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Fursatganj",
+          "type": "populated-place",
+          "state": "Uttar Pradesh",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:36",
+              "name": "Uttar Pradesh",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:36.640",
+              "name": "Amethi",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:36.640.824",
+              "name": "Tiloi",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:10575532",
+              "name": "Fursatganj",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Gondiā",
+          "type": "populated-place",
+          "state": "Maharashtra",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:16",
+              "name": "Maharashtra",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:16.507",
+              "name": "Gondiya",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:16.507.4046",
+              "name": "Gondiya",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1270990",
+              "name": "Gondiā",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Dumka",
+          "type": "populated-place",
+          "state": "Jharkhand",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:38",
+              "name": "Jharkhand",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:38.362",
+              "name": "Dumka",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:38.362.2673",
+              "name": "Dumka",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1272237",
+              "name": "Dumka",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Bhopal",
+          "type": "city",
+          "state": "Madhya Pradesh",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:35",
+              "name": "Madhya Pradesh",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:35.444",
+              "name": "Bhopāl",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:35.444.3581",
+              "name": "Huzur",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1275841",
+              "name": "Bhopal",
+              "type": "city"
+            }
+          ]
+        },
+        {
+          "name": "Nagpur",
+          "type": "city",
+          "state": "Maharashtra",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:16",
+              "name": "Maharashtra",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:16.505",
+              "name": "Nagpur Division",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:16.505.4032",
+              "name": "Nagpur Urban",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1262180",
+              "name": "Nagpur",
+              "type": "city"
+            }
+          ]
+        },
+        {
+          "name": "Chandrāpur",
+          "type": "populated-place",
+          "state": "Maharashtra",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:16",
+              "name": "Maharashtra",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:16.511",
+              "name": "Nanded",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:16.511.4096",
+              "name": "Kinwat",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:10523844",
+              "name": "Chandrāpur",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Mysuru",
+          "type": "city",
+          "state": "Karnataka",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:19",
+              "name": "Karnataka",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:19.577",
+              "name": "Mysore",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:19.577.2604",
+              "name": "Mysuru",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1262321",
+              "name": "Mysuru",
+              "type": "city"
+            }
+          ]
+        },
+        {
+          "name": "Patiāla",
+          "type": "populated-place",
+          "state": "Punjab",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:23",
+              "name": "Punjab",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:23.048",
+              "name": "Patiala",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:23.048.253",
+              "name": "Patiala",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1260107",
+              "name": "Patiāla",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Amritsar",
+          "type": "populated-place",
+          "state": "Punjab",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:23",
+              "name": "Punjab",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:23.049",
+              "name": "Amritsar",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:23.049.256",
+              "name": "Amritsar I",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1278710",
+              "name": "Amritsar",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "North Lakhimpur",
+          "type": "populated-place",
+          "state": "Assam",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:03",
+              "name": "Assam",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:03.307",
+              "name": "Lakhimpur",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:03.307.2052",
+              "name": "North Lakhimpur",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1261181",
+              "name": "North Lakhimpur",
+              "type": "populated-place"
+            }
+          ]
+        },
+        {
+          "name": "Belagavi",
+          "type": "populated-place",
+          "state": "Karnataka",
+          "geography": [
+            {
+              "id": "geo:geonames:IN:country",
+              "name": "India",
+              "type": "country"
+            },
+            {
+              "id": "geo:geonames:IN:admin1:19",
+              "name": "Karnataka",
+              "type": "state"
+            },
+            {
+              "id": "geo:geonames:IN:admin2:19.555",
+              "name": "Belgaum",
+              "type": "district"
+            },
+            {
+              "id": "geo:geonames:IN:admin3:19.555.0106",
+              "name": "Belagavi",
+              "type": "subdistrict"
+            },
+            {
+              "id": "geo:geonames:IN:1276533",
+              "name": "Belagavi",
+              "type": "populated-place"
+            }
+          ]
+        }
+      ],
+      "states": [
+        "Assam",
+        "Bihar",
+        "Chandigarh",
+        "Chhattisgarh",
+        "Delhi",
+        "Gujarat",
+        "Haryana",
+        "Jammu and Kashmir",
+        "Jharkhand",
+        "Karnataka",
+        "Kerala",
+        "Madhya Pradesh",
+        "Maharashtra",
+        "Odisha",
+        "Punjab",
+        "Rajasthan",
+        "Tamil Nadu",
+        "Telangana",
+        "Uttar Pradesh",
+        "Uttarakhand",
+        "West Bengal"
+      ],
+      "stateCount": 21,
+      "districtsOrCities": [
+        {
+          "name": "Mumbai",
+          "type": "city",
+          "state": "Maharashtra"
+        },
+        {
+          "name": "Hyderabad",
+          "type": "city",
+          "state": "Telangana"
+        },
+        {
+          "name": "Fursatganj",
+          "type": "town",
+          "state": "Uttar Pradesh"
+        },
+        {
+          "name": "Ahmedabad",
+          "type": "city",
+          "state": "Gujarat"
+        },
+        {
+          "name": "Lucknow",
+          "type": "city",
+          "state": "Uttar Pradesh"
+        },
+        {
+          "name": "Kolkata",
+          "type": "city",
+          "state": "West Bengal"
+        },
+        {
+          "name": "Panagarh",
+          "type": "city",
+          "state": "West Bengal"
+        },
+        {
+          "name": "Thiruvananthapuram",
+          "type": "city",
+          "state": "Kerala"
+        },
+        {
+          "name": "Ranchi",
+          "type": "city",
+          "state": "Jharkhand"
+        },
+        {
+          "name": "Dehradun",
+          "type": "city",
+          "state": "Uttarakhand"
+        },
+        {
+          "name": "Srinagar",
+          "type": "city",
+          "state": "Jammu and Kashmir"
+        },
+        {
+          "name": "Amritsar",
+          "type": "city",
+          "state": "Punjab"
+        },
+        {
+          "name": "Agra",
+          "type": "city",
+          "state": "Uttar Pradesh"
+        },
+        {
+          "name": "Raipur",
+          "type": "city",
+          "state": "Chhattisgarh"
+        },
+        {
+          "name": "New Delhi",
+          "type": "city",
+          "state": "Delhi"
+        },
+        {
+          "name": "Gurugram",
+          "type": "city",
+          "state": "Haryana"
+        },
+        {
+          "name": "Chennai",
+          "type": "city",
+          "state": "Tamil Nadu"
+        },
+        {
+          "name": "Bengaluru",
+          "type": "city",
+          "state": "Karnataka"
+        },
+        {
+          "name": "Indore",
+          "type": "populated-place",
+          "state": "Madhya Pradesh"
+        },
+        {
+          "name": "Pune",
+          "type": "populated-place",
+          "state": "Maharashtra"
+        },
+        {
+          "name": "Ghāziābād",
+          "type": "city",
+          "state": "Uttar Pradesh"
+        },
+        {
+          "name": "Secunderabad",
+          "type": "populated-place",
+          "state": "Telangana"
+        },
+        {
+          "name": "Chandigarh",
+          "type": "city",
+          "state": "Chandigarh"
+        },
+        {
+          "name": "Gandhinagar",
+          "type": "city",
+          "state": "Gujarat"
+        },
+        {
+          "name": "Jorhat",
+          "type": "populated-place",
+          "state": "Assam"
+        },
+        {
+          "name": "Bārāmati",
+          "type": "populated-place",
+          "state": "Maharashtra"
+        },
+        {
+          "name": "Jamshedpur",
+          "type": "populated-place",
+          "state": "Jharkhand"
+        },
+        {
+          "name": "Shamshabad",
+          "type": "populated-place",
+          "state": "Telangana"
+        },
+        {
+          "name": "Kalaburagi",
+          "type": "populated-place",
+          "state": "Karnataka"
+        },
+        {
+          "name": "Karād",
+          "type": "populated-place",
+          "state": "Maharashtra"
+        },
+        {
+          "name": "Patna",
+          "type": "city",
+          "state": "Bihar"
+        },
+        {
+          "name": "Tonk",
+          "type": "district",
+          "state": "Rajasthan"
+        },
+        {
+          "name": "Sāgar",
+          "type": "district",
+          "state": "Madhya Pradesh"
+        },
+        {
+          "name": "Neemuch",
+          "type": "district",
+          "state": "Madhya Pradesh"
+        },
+        {
+          "name": "Bhavnagar",
+          "type": "populated-place",
+          "state": "Gujarat"
+        },
+        {
+          "name": "Bhilwara",
+          "type": "populated-place",
+          "state": "Rajasthan"
+        },
+        {
+          "name": "Salem",
+          "type": "district",
+          "state": "Tamil Nadu"
+        },
+        {
+          "name": "Ayodhya",
+          "type": "populated-place",
+          "state": "Uttar Pradesh"
+        },
+        {
+          "name": "Rewa",
+          "type": "populated-place",
+          "state": "Madhya Pradesh"
+        },
+        {
+          "name": "Narnaul",
+          "type": "populated-place",
+          "state": "Haryana"
+        },
+        {
+          "name": "Dhenkānāl",
+          "type": "populated-place",
+          "state": "Odisha"
+        },
+        {
+          "name": "Bhubaneswar",
+          "type": "city",
+          "state": "Odisha"
+        },
+        {
+          "name": "Vadodara",
+          "type": "populated-place",
+          "state": "Gujarat"
+        },
+        {
+          "name": "Amreli",
+          "type": "city",
+          "state": "Gujarat"
+        },
+        {
+          "name": "Karnāl",
+          "type": "district",
+          "state": "Haryana"
+        },
+        {
+          "name": "Hisar",
+          "type": "populated-place",
+          "state": "Haryana"
+        },
+        {
+          "name": "Pinjaur",
+          "type": "populated-place",
+          "state": "Haryana"
+        },
+        {
+          "name": "Khajuraho Group of Monuments",
+          "type": "populated-place",
+          "state": "Madhya Pradesh"
+        },
+        {
+          "name": "Fursatganj",
+          "type": "populated-place",
+          "state": "Uttar Pradesh"
+        },
+        {
+          "name": "Gondiā",
+          "type": "populated-place",
+          "state": "Maharashtra"
+        },
+        {
+          "name": "Dumka",
+          "type": "populated-place",
+          "state": "Jharkhand"
+        },
+        {
+          "name": "Bhopal",
+          "type": "city",
+          "state": "Madhya Pradesh"
+        },
+        {
+          "name": "Nagpur",
+          "type": "city",
+          "state": "Maharashtra"
+        },
+        {
+          "name": "Chandrāpur",
+          "type": "populated-place",
+          "state": "Maharashtra"
+        },
+        {
+          "name": "Mysuru",
+          "type": "city",
+          "state": "Karnataka"
+        },
+        {
+          "name": "Patiāla",
+          "type": "populated-place",
+          "state": "Punjab"
+        },
+        {
+          "name": "Amritsar",
+          "type": "populated-place",
+          "state": "Punjab"
+        },
+        {
+          "name": "North Lakhimpur",
+          "type": "populated-place",
+          "state": "Assam"
+        },
+        {
+          "name": "Belagavi",
+          "type": "populated-place",
+          "state": "Karnataka"
+        }
+      ],
+      "districtsOrCitiesCount": 59,
+      "directEvidenceLocations": 55,
+      "regionalContextLocations": 12,
+      "evidenceTypes": [
+        "aerodrome",
+        "airport",
+        "aviation-organization",
+        "flight-school",
+        "flying-club",
+        "medical-centre",
+        "pilot-training-organization"
+      ],
+      "sourceDomains": [
+        "aim-india.aai.aero",
+        "ccsia-lucknow.adaniairports.com",
+        "csmia.adaniairports.com",
+        "public-prd-dgca.s3.ap-south-1.amazonaws.com",
+        "svpia-ahmedabad.adaniairports.com",
+        "thiruvananthapuram.adaniairports.com",
+        "tourism.jharkhand.gov.in",
+        "www.aai.aero",
+        "www.dgca.gov.in",
+        "www.hyderabad.aero",
+        "www.newdelhiairport.in"
+      ]
+    }
+  },
+  "addedRecords": [
+    {
+      "id": "aviation:medical:dgca-class1-civil:dr-balabhai-nanavati-hospital-mumbai",
+      "name": "Dr. Balabhai Nanavati Hospital",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1275339",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:16",
+          "name": "Maharashtra",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:1275339",
+          "name": "Mumbai",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA approved aeromedical evaluation centres, Class 1 Air Force medical examination centres, IAF boarding centres and DGCA empanelled Class 1 examiners, updated 27 August 2026 (DGCA)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/medical/class1/Class1.pdf",
+      "sourceDate": "2026-08-27",
+      "sourceGroup": "DGCA Class 1 civil centres"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-civil:indraprastha-apollo-hospital-new-delhi",
+      "name": "Indraprastha Apollo Hospital",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1261481",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:07",
+          "name": "Delhi",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:07.094",
+          "name": "New Delhi",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:07.094.443",
+          "name": "Chanakya Puri",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1261481",
+          "name": "New Delhi",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA approved aeromedical evaluation centres, Class 1 Air Force medical examination centres, IAF boarding centres and DGCA empanelled Class 1 examiners, updated 27 August 2026 (DGCA)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/medical/class1/Class1.pdf",
+      "sourceDate": "2026-08-27",
+      "sourceGroup": "DGCA Class 1 civil centres"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-civil:max-multi-specialty-centre-new-delhi",
+      "name": "Max Multi Specialty Centre",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1261481",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:07",
+          "name": "Delhi",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:07.094",
+          "name": "New Delhi",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:07.094.443",
+          "name": "Chanakya Puri",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1261481",
+          "name": "New Delhi",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA approved aeromedical evaluation centres, Class 1 Air Force medical examination centres, IAF boarding centres and DGCA empanelled Class 1 examiners, updated 27 August 2026 (DGCA)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/medical/class1/Class1.pdf",
+      "sourceDate": "2026-08-27",
+      "sourceGroup": "DGCA Class 1 civil centres"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-civil:medanta-the-medicity-gurugram",
+      "name": "Medanta — The Medicity",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1270642",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:10",
+          "name": "Haryana",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:10.086",
+          "name": "Gurugram district",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:10.086.417",
+          "name": "Gurugram",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1270642",
+          "name": "Gurugram",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA approved aeromedical evaluation centres, Class 1 Air Force medical examination centres, IAF boarding centres and DGCA empanelled Class 1 examiners, updated 27 August 2026 (DGCA)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/medical/class1/Class1.pdf",
+      "sourceDate": "2026-08-27",
+      "sourceGroup": "DGCA Class 1 civil centres"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-civil:apollo-aphc-block-chennai",
+      "name": "Apollo APHC Block",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1264527",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:25",
+          "name": "Tamil Nadu",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:25.603",
+          "name": "Chennai",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:1264527",
+          "name": "Chennai",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA approved aeromedical evaluation centres, Class 1 Air Force medical examination centres, IAF boarding centres and DGCA empanelled Class 1 examiners, updated 27 August 2026 (DGCA)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/medical/class1/Class1.pdf",
+      "sourceDate": "2026-08-27",
+      "sourceGroup": "DGCA Class 1 civil centres"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-civil:apollo-hospitals-bengaluru",
+      "name": "Apollo Hospitals",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1277333",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:19",
+          "name": "Karnataka",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:19.572",
+          "name": "Bangalore Urban",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:1277333",
+          "name": "Bengaluru",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA approved aeromedical evaluation centres, Class 1 Air Force medical examination centres, IAF boarding centres and DGCA empanelled Class 1 examiners, updated 27 August 2026 (DGCA)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/medical/class1/Class1.pdf",
+      "sourceDate": "2026-08-27",
+      "sourceGroup": "DGCA Class 1 civil centres"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-civil:apollo-hospitals-hyderabad",
+      "name": "Apollo Hospitals",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1269843",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:40",
+          "name": "Telangana",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:40.536",
+          "name": "Hyderābād",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:1269843",
+          "name": "Hyderabad",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA approved aeromedical evaluation centres, Class 1 Air Force medical examination centres, IAF boarding centres and DGCA empanelled Class 1 examiners, updated 27 August 2026 (DGCA)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/medical/class1/Class1.pdf",
+      "sourceDate": "2026-08-27",
+      "sourceGroup": "DGCA Class 1 civil centres"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-civil:apollo-hospitals-indore",
+      "name": "Apollo Hospitals",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1269743",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:35",
+          "name": "Madhya Pradesh",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:35.439",
+          "name": "Indore",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:35.439.3543",
+          "name": "Indore",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1269743",
+          "name": "Indore",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA approved aeromedical evaluation centres, Class 1 Air Force medical examination centres, IAF boarding centres and DGCA empanelled Class 1 examiners, updated 27 August 2026 (DGCA)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/medical/class1/Class1.pdf",
+      "sourceDate": "2026-08-27",
+      "sourceGroup": "DGCA Class 1 civil centres"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-civil:grant-medical-foundation-ruby-hall-clinic-pune",
+      "name": "Grant Medical Foundation, Ruby Hall Clinic",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1259229",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:16",
+          "name": "Maharashtra",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:16.521",
+          "name": "Pune Division",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:16.521.4194",
+          "name": "Pune City",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1259229",
+          "name": "Pune",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA approved aeromedical evaluation centres, Class 1 Air Force medical examination centres, IAF boarding centres and DGCA empanelled Class 1 examiners, updated 27 August 2026 (DGCA)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/medical/class1/Class1.pdf",
+      "sourceDate": "2026-08-27",
+      "sourceGroup": "DGCA Class 1 civil centres"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-civil:v-m-medical-centre-mirra-s-aeromedical-centre-mumbai",
+      "name": "V M Medical Centre, Mirra's Aeromedical Centre",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1275339",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:16",
+          "name": "Maharashtra",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:1275339",
+          "name": "Mumbai",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA approved aeromedical evaluation centres, Class 1 Air Force medical examination centres, IAF boarding centres and DGCA empanelled Class 1 examiners, updated 27 August 2026 (DGCA)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/medical/class1/Class1.pdf",
+      "sourceDate": "2026-08-27",
+      "sourceGroup": "DGCA Class 1 civil centres"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-renewal:air-force-station-palam-new-delhi",
+      "name": "Air Force Station Palam",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1261481",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:07",
+          "name": "Delhi",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:07.094",
+          "name": "New Delhi",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:07.094.443",
+          "name": "Chanakya Puri",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1261481",
+          "name": "New Delhi",
+          "type": "city"
+        }
+      ],
+      "relationship": "regional-context",
+      "source": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+      "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+      "sourceDate": null,
+      "sourceGroup": "DGCA CAR Appendix B Class 1 renewal stations"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-renewal:no-1-aeromedical-training-centre-air-force-station-hindan-ghaziabad",
+      "name": "No. 1 Aeromedical Training Centre, Air Force Station Hindan",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1271308",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:36",
+          "name": "Uttar Pradesh",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:36.140",
+          "name": "Ghāziābād",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:36.140.739",
+          "name": "Ghāziābād",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1271308",
+          "name": "Ghāziābād",
+          "type": "city"
+        }
+      ],
+      "relationship": "regional-context",
+      "source": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+      "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+      "sourceDate": null,
+      "sourceGroup": "DGCA CAR Appendix B Class 1 renewal stations"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-renewal:air-force-station-rajokri-new-delhi",
+      "name": "Air Force Station Rajokri",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1261481",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:07",
+          "name": "Delhi",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:07.094",
+          "name": "New Delhi",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:07.094.443",
+          "name": "Chanakya Puri",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1261481",
+          "name": "New Delhi",
+          "type": "city"
+        }
+      ],
+      "relationship": "regional-context",
+      "source": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+      "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+      "sourceDate": null,
+      "sourceGroup": "DGCA CAR Appendix B Class 1 renewal stations"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-renewal:54-asp-air-force-station-gurugram",
+      "name": "54 ASP, Air Force Station",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1270642",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:10",
+          "name": "Haryana",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:10.086",
+          "name": "Gurugram district",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:10.086.417",
+          "name": "Gurugram",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1270642",
+          "name": "Gurugram",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+      "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+      "sourceDate": null,
+      "sourceGroup": "DGCA CAR Appendix B Class 1 renewal stations"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-renewal:air-force-station-cotton-green-mumbai",
+      "name": "Air Force Station Cotton Green",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1275339",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:16",
+          "name": "Maharashtra",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:1275339",
+          "name": "Mumbai",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+      "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+      "sourceDate": null,
+      "sourceGroup": "DGCA CAR Appendix B Class 1 renewal stations"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-renewal:air-force-station-lohegaon-pune",
+      "name": "Air Force Station Lohegaon",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1259229",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:16",
+          "name": "Maharashtra",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:16.521",
+          "name": "Pune Division",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:16.521.4194",
+          "name": "Pune City",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1259229",
+          "name": "Pune",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "regional-context",
+      "source": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+      "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+      "sourceDate": null,
+      "sourceGroup": "DGCA CAR Appendix B Class 1 renewal stations"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-renewal:air-force-station-thane-mumbai",
+      "name": "Air Force Station Thane",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1275339",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:16",
+          "name": "Maharashtra",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:1275339",
+          "name": "Mumbai",
+          "type": "city"
+        }
+      ],
+      "relationship": "regional-context",
+      "source": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+      "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+      "sourceDate": null,
+      "sourceGroup": "DGCA CAR Appendix B Class 1 renewal stations"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-renewal:air-force-station-tambaram-chennai",
+      "name": "Air Force Station Tambaram",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1264527",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:25",
+          "name": "Tamil Nadu",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:25.603",
+          "name": "Chennai",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:1264527",
+          "name": "Chennai",
+          "type": "city"
+        }
+      ],
+      "relationship": "regional-context",
+      "source": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+      "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+      "sourceDate": null,
+      "sourceGroup": "DGCA CAR Appendix B Class 1 renewal stations"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-renewal:air-force-station-yelahanka-bengaluru",
+      "name": "Air Force Station Yelahanka",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1277333",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:19",
+          "name": "Karnataka",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:19.572",
+          "name": "Bangalore Urban",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:1277333",
+          "name": "Bengaluru",
+          "type": "city"
+        }
+      ],
+      "relationship": "regional-context",
+      "source": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+      "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+      "sourceDate": null,
+      "sourceGroup": "DGCA CAR Appendix B Class 1 renewal stations"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-renewal:air-force-station-begumpet-secunderabad",
+      "name": "Air Force Station Begumpet",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1256922",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:40",
+          "name": "Telangana",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:40.700",
+          "name": "Medchal Malkajgiri",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:40.700.4521",
+          "name": "Malkajgiri",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1256922",
+          "name": "Secunderabad",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "regional-context",
+      "source": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+      "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+      "sourceDate": null,
+      "sourceGroup": "DGCA CAR Appendix B Class 1 renewal stations"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-renewal:air-force-station-hakimpet-secunderabad",
+      "name": "Air Force Station Hakimpet",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1256922",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:40",
+          "name": "Telangana",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:40.700",
+          "name": "Medchal Malkajgiri",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:40.700.4521",
+          "name": "Malkajgiri",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1256922",
+          "name": "Secunderabad",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "regional-context",
+      "source": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+      "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+      "sourceDate": null,
+      "sourceGroup": "DGCA CAR Appendix B Class 1 renewal stations"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-renewal:air-force-station-chandigarh",
+      "name": "Air Force Station",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1274746",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:05",
+          "name": "Chandigarh",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:05.055",
+          "name": "Chandigarh",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:05.055.277",
+          "name": "Chandigarh",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1274746",
+          "name": "Chandigarh",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+      "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+      "sourceDate": null,
+      "sourceGroup": "DGCA CAR Appendix B Class 1 renewal stations"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-renewal:air-force-station-barrackpore-kolkata",
+      "name": "Air Force Station Barrackpore",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1275004",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:28",
+          "name": "West Bengal",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:28.342",
+          "name": "Kolkata",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:28.342.999",
+          "name": "Kolkata",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1275004",
+          "name": "Kolkata",
+          "type": "city"
+        }
+      ],
+      "relationship": "regional-context",
+      "source": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+      "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+      "sourceDate": null,
+      "sourceGroup": "DGCA CAR Appendix B Class 1 renewal stations"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-renewal:smc-hq-swac-u-iaf-chiloda-gandhinagar",
+      "name": "SMC, HQ SWAC (U) IAF, Chiloda",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1271715",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:09",
+          "name": "Gujarat",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:09.473",
+          "name": "Gāndhīnagar",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:09.473.3775",
+          "name": "Gandhinagar",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1271715",
+          "name": "Gandhinagar",
+          "type": "city"
+        }
+      ],
+      "relationship": "regional-context",
+      "source": "CAR Section 7, Series 'C', Part I, Issue II — Medical Requirements and Examination for Flight Crew / Air Traffic Controller Licences and Ratings (DGCA)",
+      "sourceUrl": "https://www.dgca.gov.in/digigov-portal/?dynamicPage=civilAviationRequirements%2F6%2F0%2FviewDynamicRulesReq",
+      "sourceDate": null,
+      "sourceGroup": "DGCA CAR Appendix B Class 1 renewal stations"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-initial:afcme-new-delhi",
+      "name": "AFCME",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1261481",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:07",
+          "name": "Delhi",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:07.094",
+          "name": "New Delhi",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:07.094.443",
+          "name": "Chanakya Puri",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1261481",
+          "name": "New Delhi",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA approved aeromedical evaluation centres, Class 1 Air Force medical examination centres, IAF boarding centres and DGCA empanelled Class 1 examiners, updated 27 August 2026 (DGCA)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/medical/class1/Class1.pdf",
+      "sourceDate": "2026-08-27",
+      "sourceGroup": "DGCA Class 1 initial-issue centres"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-initial:iam-bengaluru",
+      "name": "IAM",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1277333",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:19",
+          "name": "Karnataka",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:19.572",
+          "name": "Bangalore Urban",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:1277333",
+          "name": "Bengaluru",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA approved aeromedical evaluation centres, Class 1 Air Force medical examination centres, IAF boarding centres and DGCA empanelled Class 1 examiners, updated 27 August 2026 (DGCA)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/medical/class1/Class1.pdf",
+      "sourceDate": "2026-08-27",
+      "sourceGroup": "DGCA Class 1 initial-issue centres"
+    },
+    {
+      "id": "aviation:medical:dgca-class1-initial:mec-east-jorhat",
+      "name": "MEC (East)",
+      "type": "medical-centre",
+      "locationId": "geo:geonames:IN:1268820",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:03",
+          "name": "Assam",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:03.312",
+          "name": "Jorhat",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:03.312.2077",
+          "name": "Jorhat West",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1268820",
+          "name": "Jorhat",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA approved aeromedical evaluation centres, Class 1 Air Force medical examination centres, IAF boarding centres and DGCA empanelled Class 1 examiners, updated 27 August 2026 (DGCA)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/medical/class1/Class1.pdf",
+      "sourceDate": "2026-08-27",
+      "sourceGroup": "DGCA Class 1 initial-issue centres"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:academy-of-carver-aviation-pvt-ltd-baramati",
+      "name": "Academy of Carver Aviation Pvt. Ltd.",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1277091",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:16",
+          "name": "Maharashtra",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:16.521",
+          "name": "Pune Division",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:16.521.4199",
+          "name": "Baramati",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1277091",
+          "name": "Bārāmati",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:alchemist-aviation-pvt-ltd-jamshedpur",
+      "name": "Alchemist Aviation Pvt. Ltd.",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1269300",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:38",
+          "name": "Jharkhand",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:38.357",
+          "name": "Purba Singhbhum",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:38.357.2606",
+          "name": "Golmuri Cum Jugsalai",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1269300",
+          "name": "Jamshedpur",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:asia-pacific-flight-training-academy-ltd-shamshabad",
+      "name": "Asia Pacific Flight Training Academy Ltd.",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:7648816",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:40",
+          "name": "Telangana",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:40.537",
+          "name": "Rangareddi",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:40.537.4526",
+          "name": "Saroornagar",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:7648816",
+          "name": "Shamshabad",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:asia-pacific-flight-training-academy-ltd-kalaburagi",
+      "name": "Asia Pacific Flight Training Academy Ltd.",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1270752",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:19",
+          "name": "Karnataka",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:19.579",
+          "name": "Gulbarga",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:19.579.0403",
+          "name": "Kalburgi",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1270752",
+          "name": "Kalaburagi",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:ambitions-flying-club-pvt-ltd-karad",
+      "name": "Ambitions Flying Club Pvt. Ltd.",
+      "type": "flying-club",
+      "locationId": "geo:geonames:IN:1267904",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:16",
+          "name": "Maharashtra",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:16.527",
+          "name": "Satara Division",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:16.527.4265",
+          "name": "Karad",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1267904",
+          "name": "Karād",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:arca-global-aviation-private-limited-hyderabad",
+      "name": "ARCA Global Aviation Private Limited",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1269843",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:40",
+          "name": "Telangana",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:40.536",
+          "name": "Hyderābād",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:1269843",
+          "name": "Hyderabad",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:aviation-connectivity-and-infrastructure-developers-pvt-ltd-patna",
+      "name": "Aviation Connectivity and Infrastructure Developers Pvt. Ltd.",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1260086",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:34",
+          "name": "Bihar",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:34.230",
+          "name": "Patna",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:34.230.1400",
+          "name": "Patna Rural",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1260086",
+          "name": "Patna",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:bihar-flying-institute-tonk",
+      "name": "Bihar Flying Institute",
+      "type": "pilot-training-organization",
+      "locationId": "geo:geonames:IN:admin2:24.120",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:24",
+          "name": "Rajasthan",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:24.120",
+          "name": "Tonk",
+          "type": "district"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:chimes-aviation-academy-sagar",
+      "name": "Chimes Aviation Academy",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:admin2:35.427",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:35",
+          "name": "Madhya Pradesh",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:35.427",
+          "name": "Sāgar",
+          "type": "district"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:chimes-aviation-academy-neemuch",
+      "name": "Chimes Aviation Academy",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:admin2:35.432",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:35",
+          "name": "Madhya Pradesh",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:35.432",
+          "name": "Neemuch",
+          "type": "district"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:dunes-aviation-academy-a-unit-of-ganpat-care-foundation-bhavnagar",
+      "name": "Dunes Aviation Academy (A unit of Ganpat Care Foundation)",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1276032",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:09",
+          "name": "Gujarat",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:09.481",
+          "name": "Bhāvnagar",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:09.481.3854",
+          "name": "Bhavnagar",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1276032",
+          "name": "Bhavnagar",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:dunes-aviation-academy-a-unit-of-ganpat-care-foundation-bhilwara",
+      "name": "Dunes Aviation Academy (A unit of Ganpat Care Foundation)",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1275960",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:24",
+          "name": "Rajasthan",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:24.122",
+          "name": "Bhilwara District",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:24.122.634",
+          "name": "Bhilwara",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1275960",
+          "name": "Bhilwara",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:ekvi-air-training-organisation-pvt-ltd-salem",
+      "name": "Ekvi Air Training Organisation Pvt. Ltd.",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:admin2:25.608",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:25",
+          "name": "Tamil Nadu",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:25.608",
+          "name": "Salem",
+          "type": "district"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:falcon-aviation-academy-ayodhya",
+      "name": "Falcon Aviation Academy",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1278094",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:36",
+          "name": "Uttar Pradesh",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:36.177",
+          "name": "Ayodhya",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:36.177.905",
+          "name": "Faizabad",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1278094",
+          "name": "Ayodhya",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:falcon-aviation-academy-rewa",
+      "name": "Falcon Aviation Academy",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1258182",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:35",
+          "name": "Madhya Pradesh",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:35.430",
+          "name": "Rewa",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:35.430.7041",
+          "name": "Huzur Nagar",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1258182",
+          "name": "Rewa",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:fstc-flying-school-pvt-ltd-narnaul",
+      "name": "FSTC Flying School Pvt. Ltd.",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1261772",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:10",
+          "name": "Haryana",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:10.084",
+          "name": "Mahendragarh",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:10.084.412",
+          "name": "Narnaul",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1261772",
+          "name": "Narnaul",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:government-aviation-training-institute-dhenkanal",
+      "name": "Government Aviation Training Institute",
+      "type": "pilot-training-organization",
+      "locationId": "geo:geonames:IN:1272780",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:21",
+          "name": "Odisha",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:21.383",
+          "name": "Dhenkānāl",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:21.383.2999",
+          "name": "Dhenkanal Sadar",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1272780",
+          "name": "Dhenkānāl",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:government-aviation-training-institute-bhubaneswar",
+      "name": "Government Aviation Training Institute",
+      "type": "pilot-training-organization",
+      "locationId": "geo:geonames:IN:1275817",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:21",
+          "name": "Odisha",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:21.386",
+          "name": "Khordha",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:21.386.3055",
+          "name": "Bhubaneswar M Corp",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1275817",
+          "name": "Bhubaneswar",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:the-gujarat-flying-club-vadodara",
+      "name": "The Gujarat Flying Club",
+      "type": "flying-club",
+      "locationId": "geo:geonames:IN:1253573",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:09",
+          "name": "Gujarat",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:09.486",
+          "name": "Vadodara",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:09.486.3898",
+          "name": "Vadodara Rural",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1253573",
+          "name": "Vadodara",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:the-gujarat-flying-club-amreli",
+      "name": "The Gujarat Flying Club",
+      "type": "flying-club",
+      "locationId": "geo:geonames:IN:1278715",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:09",
+          "name": "Gujarat",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:09.480",
+          "name": "Amreli",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:09.480.3843",
+          "name": "Amreli",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1278715",
+          "name": "Amreli",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:government-flying-training-school-bengaluru",
+      "name": "Government Flying Training School",
+      "type": "pilot-training-organization",
+      "locationId": "geo:geonames:IN:1277333",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:19",
+          "name": "Karnataka",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:19.572",
+          "name": "Bangalore Urban",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:1277333",
+          "name": "Bengaluru",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:haryana-institute-of-civil-aviation-karnal",
+      "name": "Haryana Institute of Civil Aviation",
+      "type": "pilot-training-organization",
+      "locationId": "geo:geonames:IN:admin2:10.074",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:10",
+          "name": "Haryana",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:10.074",
+          "name": "Karnāl",
+          "type": "district"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:haryana-institute-of-civil-aviation-hisar",
+      "name": "Haryana Institute of Civil Aviation",
+      "type": "pilot-training-organization",
+      "locationId": "geo:geonames:IN:1270022",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:10",
+          "name": "Haryana",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:10.080",
+          "name": "Hisār",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:10.080.394",
+          "name": "Hisar",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1270022",
+          "name": "Hisar",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:haryana-institute-of-civil-aviation-pinjore",
+      "name": "Haryana Institute of Civil Aviation",
+      "type": "pilot-training-organization",
+      "locationId": "geo:geonames:IN:1259630",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:10",
+          "name": "Haryana",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:10.069",
+          "name": "Panchkula",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:10.069.356",
+          "name": "Kalka",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1259630",
+          "name": "Pinjaur",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:indian-flying-academy-a-unit-of-shaurya-flight-sim-pvt-ltd-khajuraho",
+      "name": "Indian Flying Academy (A unit of Shaurya Flight Sim Pvt. Ltd.)",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1267154",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:35",
+          "name": "Madhya Pradesh",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:35.425",
+          "name": "Chhatarpur",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:35.425.3430",
+          "name": "Rajnagar",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1267154",
+          "name": "Khajuraho Group of Monuments",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:indira-gandhi-rashtriya-uran-akademi-fursatganj",
+      "name": "Indira Gandhi Rashtriya Uran Akademi",
+      "type": "pilot-training-organization",
+      "locationId": "geo:geonames:IN:10575532",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:36",
+          "name": "Uttar Pradesh",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:36.640",
+          "name": "Amethi",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:36.640.824",
+          "name": "Tiloi",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:10575532",
+          "name": "Fursatganj",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:indira-gandhi-rashtriya-uran-akademi-gondia",
+      "name": "Indira Gandhi Rashtriya Uran Akademi",
+      "type": "pilot-training-organization",
+      "locationId": "geo:geonames:IN:1270990",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:16",
+          "name": "Maharashtra",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:16.507",
+          "name": "Gondiya",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:16.507.4046",
+          "name": "Gondiya",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1270990",
+          "name": "Gondiā",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:indira-gandhi-rashtriya-uran-akademi-kalaburagi",
+      "name": "Indira Gandhi Rashtriya Uran Akademi",
+      "type": "pilot-training-organization",
+      "locationId": "geo:geonames:IN:1270752",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:19",
+          "name": "Karnataka",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:19.579",
+          "name": "Gulbarga",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:19.579.0403",
+          "name": "Kalburgi",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1270752",
+          "name": "Kalaburagi",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:jet-serve-aviation-pvt-ltd-khajuraho",
+      "name": "Jet Serve Aviation Pvt. Ltd.",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1267154",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:35",
+          "name": "Madhya Pradesh",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:35.425",
+          "name": "Chhatarpur",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:35.425.3430",
+          "name": "Rajnagar",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1267154",
+          "name": "Khajuraho Group of Monuments",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:jharkhand-flying-institute-dumka",
+      "name": "Jharkhand Flying Institute",
+      "type": "pilot-training-organization",
+      "locationId": "geo:geonames:IN:1272237",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:38",
+          "name": "Jharkhand",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:38.362",
+          "name": "Dumka",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:38.362.2673",
+          "name": "Dumka",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1272237",
+          "name": "Dumka",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:the-madhya-pradesh-flying-club-ltd-indore",
+      "name": "The Madhya Pradesh Flying Club Ltd.",
+      "type": "flying-club",
+      "locationId": "geo:geonames:IN:1269743",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:35",
+          "name": "Madhya Pradesh",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:35.439",
+          "name": "Indore",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:35.439.3543",
+          "name": "Indore",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1269743",
+          "name": "Indore",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:the-madhya-pradesh-flying-club-ltd-bhopal",
+      "name": "The Madhya Pradesh Flying Club Ltd.",
+      "type": "flying-club",
+      "locationId": "geo:geonames:IN:1275841",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:35",
+          "name": "Madhya Pradesh",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:35.444",
+          "name": "Bhopāl",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:35.444.3581",
+          "name": "Huzur",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1275841",
+          "name": "Bhopal",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:nagpur-flying-club-nagpur",
+      "name": "Nagpur Flying Club",
+      "type": "flying-club",
+      "locationId": "geo:geonames:IN:1262180",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:16",
+          "name": "Maharashtra",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:16.505",
+          "name": "Nagpur Division",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:16.505.4032",
+          "name": "Nagpur Urban",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1262180",
+          "name": "Nagpur",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:nagpur-flying-club-chandrapur",
+      "name": "Nagpur Flying Club",
+      "type": "flying-club",
+      "locationId": "geo:geonames:IN:10523844",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:16",
+          "name": "Maharashtra",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:16.511",
+          "name": "Nanded",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:16.511.4096",
+          "name": "Kinwat",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:10523844",
+          "name": "Chandrāpur",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:national-flying-training-institute-pvt-ltd-gondia",
+      "name": "National Flying Training Institute Pvt. Ltd.",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1270990",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:16",
+          "name": "Maharashtra",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:16.507",
+          "name": "Gondiya",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:16.507.4046",
+          "name": "Gondiya",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1270990",
+          "name": "Gondiā",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:orient-flight-aviation-academy-mysuru",
+      "name": "Orient Flight Aviation Academy",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1262321",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:19",
+          "name": "Karnataka",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:19.577",
+          "name": "Mysore",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:19.577.2604",
+          "name": "Mysuru",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1262321",
+          "name": "Mysuru",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:patiala-aviation-club-patiala",
+      "name": "Patiala Aviation Club",
+      "type": "flying-club",
+      "locationId": "geo:geonames:IN:1260107",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:23",
+          "name": "Punjab",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:23.048",
+          "name": "Patiala",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:23.048.253",
+          "name": "Patiala",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1260107",
+          "name": "Patiāla",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:patiala-aviation-club-amritsar",
+      "name": "Patiala Aviation Club",
+      "type": "flying-club",
+      "locationId": "geo:geonames:IN:1278710",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:23",
+          "name": "Punjab",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:23.049",
+          "name": "Amritsar",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:23.049.256",
+          "name": "Amritsar I",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1278710",
+          "name": "Amritsar",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:rajiv-gandhi-academy-for-aviation-technology-thiruvananthapuram",
+      "name": "Rajiv Gandhi Academy for Aviation Technology",
+      "type": "pilot-training-organization",
+      "locationId": "geo:geonames:IN:1254163",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:13",
+          "name": "Kerala",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:13.601",
+          "name": "Thiruvananthapuram",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:13.601.5691",
+          "name": "Thiruvananthapuram",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1254163",
+          "name": "Thiruvananthapuram",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:redbird-flight-training-academy-pvt-ltd-baramati",
+      "name": "Redbird Flight Training Academy Pvt. Ltd.",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1277091",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:16",
+          "name": "Maharashtra",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:16.521",
+          "name": "Pune Division",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:16.521.4199",
+          "name": "Baramati",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1277091",
+          "name": "Bārāmati",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:redbird-flight-training-academy-pvt-ltd-north-lakhimpur",
+      "name": "Redbird Flight Training Academy Pvt. Ltd.",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1261181",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:03",
+          "name": "Assam",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:03.307",
+          "name": "Lakhimpur",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:03.307.2052",
+          "name": "North Lakhimpur",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1261181",
+          "name": "North Lakhimpur",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:redbird-flight-training-academy-pvt-ltd-kalaburagi",
+      "name": "Redbird Flight Training Academy Pvt. Ltd.",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1270752",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:19",
+          "name": "Karnataka",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:19.579",
+          "name": "Gulbarga",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:19.579.0403",
+          "name": "Kalburgi",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1270752",
+          "name": "Kalaburagi",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:redbird-flight-training-academy-pvt-ltd-belagavi",
+      "name": "Redbird Flight Training Academy Pvt. Ltd.",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1276533",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:19",
+          "name": "Karnataka",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:19.555",
+          "name": "Belgaum",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:19.555.0106",
+          "name": "Belagavi",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1276533",
+          "name": "Belagavi",
+          "type": "populated-place"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:telangana-state-aviation-academy-hyderabad",
+      "name": "Telangana State Aviation Academy",
+      "type": "pilot-training-organization",
+      "locationId": "geo:geonames:IN:1269843",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:40",
+          "name": "Telangana",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:40.536",
+          "name": "Hyderābād",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:1269843",
+          "name": "Hyderabad",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:vision-flying-training-institute-amreli",
+      "name": "Vision Flying Training Institute",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1278715",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:09",
+          "name": "Gujarat",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:09.480",
+          "name": "Amreli",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:09.480.3843",
+          "name": "Amreli",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1278715",
+          "name": "Amreli",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    },
+    {
+      "id": "aviation:fto:dgca-roster:wings-aviation-pvt-ltd-hyderabad",
+      "name": "Wings Aviation Pvt. Ltd.",
+      "type": "flight-school",
+      "locationId": "geo:geonames:IN:1269843",
+      "geography": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:40",
+          "name": "Telangana",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:40.536",
+          "name": "Hyderābād",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:1269843",
+          "name": "Hyderabad",
+          "type": "city"
+        }
+      ],
+      "relationship": "located-within",
+      "source": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourceDate": "2026-10-03",
+      "sourceGroup": "DGCA approved flying training organization roster"
+    }
+  ]
+}

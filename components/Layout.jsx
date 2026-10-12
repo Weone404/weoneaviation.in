@@ -55,20 +55,20 @@ export default function Layout({
    * whose trail is just "Home", and /admin, which is noindex anyway.
    */
   const breadcrumbItems = buildBreadcrumbItems(canonicalPath, breadcrumbOverride);
-   const shouldEmitSiteSchema = !isAdminPage
-     && !/\bnoindex\b/i.test(resolvedRobots)
-     && canonicalUrl === selfUrl;
-   const siteSchema = shouldEmitSiteSchema
-     ? generateSiteSchemaGraph({
-         page: {
-           url: canonicalUrl,
-           name: title || 'We One Aviation',
-           description: description || 'DGCA ground classes in Dwarka, New Delhi, and flight training arranged through partner flying schools.',
-         },
-         breadcrumbItems,
-         faqArray: schemaFaqItems,
-       })
-     : null;
+  const shouldEmitSiteSchema = !isAdminPage
+    && !/\bnoindex\b/i.test(resolvedRobots)
+    && canonicalUrl === selfUrl;
+  const siteSchema = shouldEmitSiteSchema
+    ? generateSiteSchemaGraph({
+        page: {
+          url: canonicalUrl,
+          name: title || 'We One Aviation',
+          description: description || 'DGCA ground classes in Dwarka, New Delhi, and flight training arranged through partner flying schools.',
+        },
+        breadcrumbItems,
+        faqArray: schemaFaqItems,
+      })
+    : null;
   /*
    * The Organization node USED TO BE BUILT HERE and emitted on every page, in
    * parallel with the one _document.jsx builds from lib/schema.js. Two nodes

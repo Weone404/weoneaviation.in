@@ -6,7 +6,16 @@ node_modules/
 # 2026-09-11; the copy already in git history is a separate problem that needs
 # a history rewrite and the owner's approval.
 data/leads.xlsx
+data/location-seo/geography/india-geographic-index.sqlite
+data/location-seo/geography/india-geographic-index.sqlite.tmp
+data/location-seo/geography/india-geographic-index/
+data/location-seo/geography/india-geographic-index.tmp/
 data/locations/*cache.json
+data/location-seo/geography/world-geographic-index.sqlite*
+data/location-seo/geography/approved-geographic-sitemap-routes.json
+data/locations/source/geonames-*
+data/locations/source/provisioned/
+/public/generated-sitemaps/
 .vercel
 
 # Orphans left by the Cowork device bridge (FUSE cannot unlink)

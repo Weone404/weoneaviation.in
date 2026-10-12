@@ -5,11 +5,14 @@ import { GLOBAL_GEOGRAPHIC_PILOT } from './geography/global-pilot.js';
 import { AVIATION_REGULATORY_CONTEXTS } from './aviation-regulatory-contexts.js';
 import { SERVICES } from './services.js';
 import { LOCATIONS } from './locations.js';
+import { isProductionRouteApproved } from './production-route-approvals.js';
+import { INDIA_AVIATION_CANDIDATE_GEOGRAPHY } from './geography/india-aviation-candidate-geography.js';
 import {
   buildLocationPromotionSnapshot,
   evaluateLocationPromotions,
   promoteLocationCandidates,
 } from '../../lib/locationPromotionPipeline.js';
+import { resolveHierarchy } from '../../lib/geographicData.js';
 
 const geographyById = new Map(
   GLOBAL_GEOGRAPHIC_PILOT.records.map((record) => [record.id, record]),
@@ -94,18 +97,130 @@ export const GLOBAL_LOCATION_SERVICE_EVALUATIONS = Object.freeze(
     })),
 );
 
-const productionCandidateInputs = AVIATION_MARKET_PAGE_CANDIDATES.map((candidate) => ({
-    location: candidate.location,
-    service: GLOBAL_AVIATION_INTENTS.find(({ slug }) => slug === 'pilot-training'),
-    geographicRecords: GLOBAL_GEOGRAPHIC_PILOT.records,
-    aviationEvidence: candidate.aviationEvidence,
+function productionCandidateInput(candidate) {
+  const selectedCandidate = INDIA_AVIATION_CANDIDATE_GEOGRAPHY.candidates
+    .find(({ marketSlug }) => marketSlug === candidate.productionLocation.slug);
+  const indiaRecord = selectedCandidate
+    ? INDIA_AVIATION_CANDIDATE_GEOGRAPHY.records.find(({ id }) => (
+      id === selectedCandidate.recordId
+    ))
+    : null;
+  const service = GLOBAL_AVIATION_INTENTS.find(({ slug }) => slug === 'pilot-training');
+  const productionService = SERVICES.find(({ slug }) => slug === candidate.productionService.slug);
+  if (!indiaRecord) {
+    return {
+      location: candidate.location,
+      service,
+      geographicRecords: GLOBAL_GEOGRAPHIC_PILOT.records,
+      aviationEvidence: candidate.aviationEvidence,
+      serviceRelationship: candidate.serviceRelationship,
+      regulatoryContext: candidate.regulatoryContext,
+      content: candidate.content,
+      comparisons: [],
+      productionLocation: candidate.productionLocation,
+      productionService,
+    };
+  }
+
+  const indiaHierarchy = resolveHierarchy(
+    indiaRecord,
+    INDIA_AVIATION_CANDIDATE_GEOGRAPHY.records,
+  );
+  const stateRecord = indiaHierarchy.find(({ type }) => type === 'state');
+  const districtRecord = indiaHierarchy.find(({ type }) => type === 'district');
+  const registryLocation = (location) => ({
+    ...location,
+    id: indiaRecord.id,
+    name: indiaRecord.name,
+    canonicalName: indiaRecord.canonicalName,
+    type: indiaRecord.type,
+    parentId: indiaRecord.parentId,
+    parentIds: indiaRecord.parentIds,
+    country: indiaRecord.country,
+    countryCode: indiaRecord.countryCode,
+    state: stateRecord?.name || location.state,
+    district: districtRecord?.name || location.district || null,
+    geographicSource: indiaRecord.source,
+    geographicSourceUrl: indiaRecord.sourceUrl,
+    geographicSourceDate: indiaRecord.sourceDate,
+    geographicConfidence: indiaRecord.confidence,
+    geographicStatus: indiaRecord.status,
+  });
+  const location = registryLocation(candidate.location);
+  const content = {
+    ...candidate.content,
+    geographicType: indiaRecord.type,
+    geographicContext: indiaHierarchy.map(({ id, name, type, sourceLinks = [] }) => ({
+      id,
+      name,
+      type,
+      sourceLinks,
+    })),
+    locationAviationContent: {
+      ...candidate.content.locationAviationContent,
+      geographicLevel: indiaRecord.type,
+      geographicContext: indiaHierarchy.map(({ id, name, type, sourceLinks = [] }) => ({
+        id,
+        name,
+        type,
+        sources: sourceLinks.map(({ publisher, href }) => ({ publisher, href })),
+      })),
+    },
+    schema: {
+      ...candidate.content.schema,
+      breadcrumbItems: indiaHierarchy.map(({ name }) => name),
+    },
+  };
+  const productionLocation = {
+    ...registryLocation(candidate.productionLocation),
+    locationType: indiaRecord.type,
+    sourceLinks: [...new Map([
+      ...(candidate.productionLocation.sourceLinks || []),
+      ...(candidate.content.locationAviationContent?.sourceLinks || []).map(({
+        href,
+        publisher,
+        title,
+      }) => ({
+        href,
+        label: `${publisher}: ${title}`,
+      })),
+      ...(indiaRecord.sourceLinks || []).map(({ href, publisher, title }) => ({
+        href,
+        label: `${publisher}: ${title}`,
+      })),
+    ].map((source) => [source.href, source])).values()],
+    serviceContent: {
+      ...candidate.productionLocation.serviceContent,
+      'pilot-training': content,
+    },
+  };
+  const aviationEvidence = candidate.aviationEvidence.map((record) => ({
+    ...record,
+    locationId: record.locationId === candidate.location.id
+      ? indiaRecord.id
+      : record.locationId,
+    relatedLocationIds: (record.relatedLocationIds || []).map((id) => (
+      id === candidate.location.id ? indiaRecord.id : id
+    )),
+    sourceGeographicLocationId: record.locationId,
+  }));
+  return {
+    location,
+    service,
+    geographicRecords: INDIA_AVIATION_CANDIDATE_GEOGRAPHY.records,
+    aviationEvidence,
     serviceRelationship: candidate.serviceRelationship,
     regulatoryContext: candidate.regulatoryContext,
-    content: candidate.content,
+    content,
     comparisons: [],
-    productionLocation: candidate.productionLocation,
-    productionService: SERVICES.find(({ slug }) => slug === candidate.productionService.slug),
-  }));
+    productionLocation,
+    productionService,
+  };
+}
+
+const productionCandidateInputs = AVIATION_MARKET_PAGE_CANDIDATES.map(
+  productionCandidateInput,
+);
 const productionCandidateSnapshots = productionCandidateInputs.map(
   (candidate) => buildLocationPromotionSnapshot(candidate),
 );
@@ -119,16 +234,48 @@ export const PRODUCTION_LOCATION_PROMOTION_INPUTS = Object.freeze(
   })),
 );
 
-const productionPromotion = promoteLocationCandidates(PRODUCTION_LOCATION_PROMOTION_INPUTS, {
-  geographicRecords: GLOBAL_GEOGRAPHIC_PILOT.records,
+const promotionOptions = {
   aviationEvidence: AVIATION_EVIDENCE_RECORDS,
   availableProductionServiceSlugs: SERVICES.map(({ slug }) => slug),
-});
+};
+const indiaPromotion = promoteLocationCandidates(
+  PRODUCTION_LOCATION_PROMOTION_INPUTS.filter(({ location }) => location.countryCode === 'IN'),
+  {
+    ...promotionOptions,
+    geographicRecords: INDIA_AVIATION_CANDIDATE_GEOGRAPHY.records,
+  },
+);
+const internationalPromotion = promoteLocationCandidates(
+  PRODUCTION_LOCATION_PROMOTION_INPUTS.filter(({ location }) => location.countryCode !== 'IN'),
+  {
+    ...promotionOptions,
+    geographicRecords: GLOBAL_GEOGRAPHIC_PILOT.records,
+  },
+);
+const evaluationsByRoute = new Map(
+  [...indiaPromotion.evaluations, ...internationalPromotion.evaluations].map((evaluation) => [
+    `/${evaluation.locationSlug}/${evaluation.serviceSlug}`,
+    evaluation,
+  ]),
+);
+const productionPromotion = {
+  evaluations: PRODUCTION_LOCATION_PROMOTION_INPUTS.map((candidate) => (
+    evaluationsByRoute.get(`/${candidate.location.slug}/${candidate.service.slug}`)
+  )),
+  promotedPairs: [
+    ...indiaPromotion.promotedPairs,
+    ...internationalPromotion.promotedPairs,
+  ],
+};
 export const PRODUCTION_LOCATION_PROMOTION_EVALUATIONS = Object.freeze(
   productionPromotion.evaluations,
 );
 export const PROMOTED_PRODUCTION_LOCATION_SERVICE_PAIRS = Object.freeze(
-  productionPromotion.promotedPairs.map((pair) => Object.freeze({
+  productionPromotion.promotedPairs
+    .filter(({ location, service }) => (
+      isProductionRouteApproved(`/${location.slug}/${service.slug}`)
+    ))
+    .map((pair) => Object.freeze({
     ...pair,
     location: Object.freeze({
       ...pair.location,
@@ -138,5 +285,5 @@ export const PROMOTED_PRODUCTION_LOCATION_SERVICE_PAIRS = Object.freeze(
         metrics: pair.promotion.differentiation,
       }),
     }),
-  })),
+    })),
 );

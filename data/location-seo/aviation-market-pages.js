@@ -270,6 +270,7 @@ function createPageContent(location, entry, items, hierarchy, regulatoryContext)
     },
   ];
   const localFacts = facts.map(({ text, evidenceId }) => ({ fact: text, evidenceId }));
+  const localApplication = `Students researching pilot training from ${location.name} should distinguish local airport infrastructure, independent training providers, and the licensing route they intend to follow. ${entry.localConsiderations}`;
   const sections = [
     {
       title: `Airport and aerodrome context in ${location.name}`,
@@ -295,8 +296,8 @@ function createPageContent(location, entry, items, hierarchy, regulatoryContext)
     sections[1].evidenceIds = [items.find(({ type }) => type === 'aviation-authority')?.id]
       .filter(Boolean);
   }
-  const title = `Pilot training context: ${location.name} | We One Aviation`;
-  const description = `${airports[0]?.name || location.name} and ${regulatoryContext.authority} licensing context. No local We One Aviation branch is claimed.`;
+  const title = `Pilot training in ${location.name} | We One Aviation`;
+  const description = `Pilot training in ${location.name}: local aviation facts and ${regulatoryContext.authority} licensing. No local We One Aviation service is claimed.`;
   const aviationAuthority = {
     name: regulatoryContext.authority,
     authority: regulatoryContext.authority,
@@ -352,6 +353,59 @@ function createPageContent(location, entry, items, hierarchy, regulatoryContext)
     faqs: localFAQs,
     sourceReferences: uniqueSourceReferences,
   };
+  const locationAviationContent = {
+    geographicLevel: location.type,
+    locationOverview: localAviationProfile.locationOverview,
+    geographicContext: hierarchy.map(({ id, name, type, sourceLinks = [] }) => ({
+      id,
+      name,
+      type,
+      sources: sourceLinks.map(({ publisher, href }) => ({ publisher, href })),
+    })),
+    aviationRelevance: localAviationProfile.aviationEcosystem,
+    aviationFacts: localFacts.map(({ fact, evidenceId }) => ({
+      fact,
+      evidenceId,
+      evidence: sourceReference(evidenceById(evidenceId)),
+    })),
+    nearbyAviationHubs: items
+      .filter(({ geographicRelationship }) => geographicRelationship === 'regional-context')
+      .map((item) => sourceReference(item)),
+    airportContext: airports.map((item) => sourceReference(item)),
+    trainingInfrastructure: trainingOrganizations.map((item) => sourceReference(item)),
+    medicalContext: items
+      .filter(({ type }) => type === 'medical-centre')
+      .map((item) => sourceReference(item)),
+    regulatoryContext: {
+      country: regulatoryContext.country,
+      authority: regulatoryContext.authority,
+      source: regulatoryContext.source,
+      reviewedAt: regulatoryContext.reviewedAt,
+    },
+    studentPathway: {
+      explanation: localAviationProfile.pilotTrainingPathway,
+      licensingContext: localAviationProfile.licenceContext,
+      medicalContext: localAviationProfile.medicalRequirements,
+      examContext: localAviationProfile.examContext,
+    },
+    howStudentsFromLocationCanTrain: localApplication,
+    physicalVsOnlineExplanation: relationshipStatement,
+    flightTrainingExplanation: localAviationProfile.flightTrainingInfrastructure,
+    ftoSelectionGuidance: localAviationProfile.localTrainingConsiderations,
+    localFaqs: localFAQs,
+    sourceLinks: uniqueSourceReferences,
+    sourceDates: uniqueSourceReferences.map(({ title, href, sourceDate }) => ({
+      title,
+      href,
+      sourceDate: sourceDate || null,
+    })),
+    confidence: {
+      geography: location.status || null,
+      aviationEvidence: 'primary-source-attributed',
+      aviationFactCount: localFacts.length,
+      sourceCount: new Set(uniqueSourceReferences.map(({ href }) => href)).size,
+    },
+  };
   const internalLinks = [
     {
       href: '/pilot-training-in-india',
@@ -375,16 +429,17 @@ function createPageContent(location, entry, items, hierarchy, regulatoryContext)
     seoDescription: description,
     title,
     description,
-    h1: `Pilot training and aviation infrastructure in ${location.name}`,
+    h1: `Pilot training in ${location.name}: verified local context and pathway`,
     introduction: `${facts[0].text} This guide separates verified local aviation facilities and training references from the licensing rules set by ${regulatoryContext.authority}; it does not represent a local We One Aviation branch or training service.`,
     localContext: entry.localConsiderations,
-    localApplication: `Students researching pilot training from ${location.name} should distinguish local airport infrastructure, independent training providers, and the licensing route they intend to follow. ${entry.localConsiderations}`,
+    localApplication,
     trainingMode: 'Informational guidance only. Confirm local licensing and training requirements with the responsible aviation authority and independently verify each provider.',
     relationshipStatement,
     regulatoryContext: `The aviation authority recorded for ${location.country} is ${regulatoryContext.authority}. Its local rules are distinct from DGCA licensing in India.`,
     localFacts,
     sections,
     localAviationProfile,
+    locationAviationContent,
     faqs: localFAQs,
     internalLinks,
     canonicalPath: `/${location.slug}/pilot-training`,

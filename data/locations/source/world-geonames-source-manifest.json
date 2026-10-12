@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "allCountries": {
+    "url": "https://download.geonames.org/export/dump/allCountries.zip",
+    "sha256": "ffd344fb9beb2827305aa3ce4e2ec949199e19fc4d0b3b7f23fd62e8de7e1295",
+    "file": "geonames-allCountries.zip",
+    "archiveEntry": "allCountries.txt"
+  },
+  "countryInfo": {
+    "url": "https://download.geonames.org/export/dump/countryInfo.txt",
+    "sha256": "93bafc525813f22e4711ff9ed6d626343094ce48c26388dc7c49189b3d7d5512",
+    "file": "geonames-countryInfo.txt",
+    "columns": 17,
+    "countryCodeColumn": 0,
+    "countryNameColumn": 4
+  },
+  "admin1": {
+    "url": "https://download.geonames.org/export/dump/admin1CodesASCII.txt",
+    "sha256": "1da92a6323a5fec3176f3f743bf4cf4040fd56a876da55e46fbca23c863aa60a",
+    "file": "geonames-admin1CodesASCII.txt",
+    "columns": 4
+  },
+  "admin2": {
+    "url": "https://download.geonames.org/export/dump/admin2Codes.txt",
+    "sha256": "a2c9cc3cefbeca82f4af9637ab68ae4975cc78444289bc4f62718e76c59b8488",
+    "file": "geonames-admin2Codes.txt",
+    "columns": 4
+  }
+}

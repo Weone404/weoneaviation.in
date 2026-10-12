@@ -9,6 +9,12 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
+  outputFileTracingIncludes: {
+    '/[location]/[service]': [
+      './data/location-seo/geography/india-geographic-index.sqlite',
+      './data/location-seo/geography/india-geographic-index/**',
+    ],
+  },
 
   images: {
     formats: ['image/avif', 'image/webp'],

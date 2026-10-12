@@ -1,0 +1,400 @@
+{
+  "schemaVersion": 1,
+  "batch": 1,
+  "generatedAt": "2026-10-08T05:00:14.772Z",
+  "selection": {
+    "method": "Deterministic stratified selection from supported rows; 50% India and 50% worldwide, then proportional country/geographic-level quotas and systematic positions within each stratum.",
+    "requested": 10000,
+    "evaluated": 10000,
+    "sourceClassification": "data\\location-seo\\geography\\pilot-training-support-classification.jsonl.gz",
+    "sourceClassificationGeneratedAt": "2026-10-07T10:39:59.484Z",
+    "sourceClassificationRows": 5225887,
+    "sourceSupportedRows": 1065758,
+    "registrySupportedCounts": {
+      "india": 574431,
+      "worldwide": 491327
+    },
+    "registryTargets": {
+      "india": 5000,
+      "worldwide": 5000
+    },
+    "strata": {
+      "india|IN|subdistrict": {
+        "available": 6891,
+        "selected": 60
+      },
+      "india|IN|city": {
+        "available": 209,
+        "selected": 2
+      },
+      "india|IN|populated-place": {
+        "available": 545900,
+        "selected": 4752
+      },
+      "india|IN|district": {
+        "available": 763,
+        "selected": 7
+      },
+      "india|IN|state": {
+        "available": 36,
+        "selected": 0
+      },
+      "india|IN|postal-area": {
+        "available": 17954,
+        "selected": 156
+      },
+      "india|IN|village": {
+        "available": 22,
+        "selected": 0
+      },
+      "india|IN|neighborhood": {
+        "available": 9,
+        "selected": 0
+      },
+      "india|IN|locality": {
+        "available": 2645,
+        "selected": 23
+      },
+      "india|IN|country": {
+        "available": 1,
+        "selected": 0
+      },
+      "india|IN|town": {
+        "available": 1,
+        "selected": 0
+      },
+      "worldwide|US|district": {
+        "available": 3143,
+        "selected": 32
+      },
+      "worldwide|FR|district": {
+        "available": 96,
+        "selected": 1
+      },
+      "worldwide|DE|city": {
+        "available": 72117,
+        "selected": 734
+      },
+      "worldwide|GB|district": {
+        "available": 185,
+        "selected": 2
+      },
+      "worldwide|JP|city": {
+        "available": 32416,
+        "selected": 330
+      },
+      "worldwide|GB|locality": {
+        "available": 2143,
+        "selected": 22
+      },
+      "worldwide|CA|district": {
+        "available": 1641,
+        "selected": 17
+      },
+      "worldwide|AU|city": {
+        "available": 13628,
+        "selected": 139
+      },
+      "worldwide|DE|locality": {
+        "available": 3899,
+        "selected": 40
+      },
+      "worldwide|JP|locality": {
+        "available": 12635,
+        "selected": 129
+      },
+      "worldwide|US|locality": {
+        "available": 252,
+        "selected": 3
+      },
+      "worldwide|GB|neighborhood": {
+        "available": 9389,
+        "selected": 96
+      },
+      "worldwide|AU|locality": {
+        "available": 1133,
+        "selected": 12
+      },
+      "worldwide|US|city": {
+        "available": 168577,
+        "selected": 1716
+      },
+      "worldwide|US|state": {
+        "available": 51,
+        "selected": 1
+      },
+      "worldwide|AU|district": {
+        "available": 540,
+        "selected": 6
+      },
+      "worldwide|FR|neighborhood": {
+        "available": 1128,
+        "selected": 12
+      },
+      "worldwide|JP|state": {
+        "available": 47,
+        "selected": 0
+      },
+      "worldwide|FR|locality": {
+        "available": 335,
+        "selected": 3
+      },
+      "worldwide|SG|city": {
+        "available": 137,
+        "selected": 1
+      },
+      "worldwide|CA|locality": {
+        "available": 4754,
+        "selected": 48
+      },
+      "worldwide|AE|district": {
+        "available": 28,
+        "selected": 0
+      },
+      "worldwide|CA|neighborhood": {
+        "available": 1992,
+        "selected": 20
+      },
+      "worldwide|SG|locality": {
+        "available": 26,
+        "selected": 0
+      },
+      "worldwide|FR|city": {
+        "available": 79912,
+        "selected": 813
+      },
+      "worldwide|SG|neighborhood": {
+        "available": 218,
+        "selected": 2
+      },
+      "worldwide|DE|district": {
+        "available": 19,
+        "selected": 0
+      },
+      "worldwide|CA|city": {
+        "available": 14955,
+        "selected": 152
+      },
+      "worldwide|GB|city": {
+        "available": 32151,
+        "selected": 327
+      },
+      "worldwide|AU|neighborhood": {
+        "available": 4440,
+        "selected": 45
+      },
+      "worldwide|AE|neighborhood": {
+        "available": 1983,
+        "selected": 20
+      },
+      "worldwide|JP|neighborhood": {
+        "available": 5716,
+        "selected": 58
+      },
+      "worldwide|DE|state": {
+        "available": 16,
+        "selected": 0
+      },
+      "worldwide|US|neighborhood": {
+        "available": 15148,
+        "selected": 154
+      },
+      "worldwide|DE|neighborhood": {
+        "available": 4830,
+        "selected": 49
+      },
+      "worldwide|CA|state": {
+        "available": 13,
+        "selected": 0
+      },
+      "worldwide|FR|state": {
+        "available": 13,
+        "selected": 0
+      },
+      "worldwide|JP|district": {
+        "available": 1190,
+        "selected": 12
+      },
+      "worldwide|AU|state": {
+        "available": 8,
+        "selected": 0
+      },
+      "worldwide|AE|state": {
+        "available": 7,
+        "selected": 0
+      },
+      "worldwide|AE|locality": {
+        "available": 5,
+        "selected": 0
+      },
+      "worldwide|AE|city": {
+        "available": 398,
+        "selected": 4
+      },
+      "worldwide|GB|state": {
+        "available": 4,
+        "selected": 0
+      },
+      "worldwide|AE|country": {
+        "available": 1,
+        "selected": 0
+      },
+      "worldwide|AU|country": {
+        "available": 1,
+        "selected": 0
+      },
+      "worldwide|CA|country": {
+        "available": 1,
+        "selected": 0
+      },
+      "worldwide|DE|country": {
+        "available": 1,
+        "selected": 0
+      },
+      "worldwide|FR|country": {
+        "available": 1,
+        "selected": 0
+      },
+      "worldwide|GB|country": {
+        "available": 1,
+        "selected": 0
+      },
+      "worldwide|JP|country": {
+        "available": 1,
+        "selected": 0
+      },
+      "worldwide|SG|country": {
+        "available": 1,
+        "selected": 0
+      },
+      "worldwide|US|country": {
+        "available": 1,
+        "selected": 0
+      }
+    },
+    "evaluatedByRegistry": {
+      "india": 5000,
+      "worldwide": 5000
+    },
+    "evaluatedByCountry": {
+      "IN|India": 5000,
+      "AE|United Arab Emirates": 24,
+      "AU|Australia": 202,
+      "CA|Canada": 237,
+      "DE|Germany": 823,
+      "FR|France": 829,
+      "GB|United Kingdom": 447,
+      "JP|Japan": 529,
+      "SG|Singapore": 3,
+      "US|United States": 1906
+    },
+    "evaluatedByGeographicLevel": {
+      "district": 77,
+      "subdistrict": 60,
+      "populated-place": 4752,
+      "city": 4218,
+      "locality": 280,
+      "postal-area": 156,
+      "neighborhood": 456,
+      "state": 1
+    }
+  },
+  "totalCandidates": 3,
+  "sitemapModified": false,
+  "candidates": [
+    {
+      "locationId": "geoname:3012849",
+      "slug": "ille-et-vilaine",
+      "route": "/ille-et-vilaine/pilot-training",
+      "location": "Ille-et-Vilaine",
+      "hierarchy": [
+        {
+          "name": "France",
+          "type": "country"
+        },
+        {
+          "name": "Bretagne",
+          "type": "state"
+        },
+        {
+          "name": "Ille-et-Vilaine",
+          "type": "district"
+        }
+      ],
+      "country": "France",
+      "countryCode": "FR",
+      "regulator": "Direction générale de l’aviation civile (DGAC), within the EASA framework",
+      "qualityScore": 96,
+      "differentiationScore": 81.9,
+      "normalizedSimilarityPercent": 18.1,
+      "visibleWordCount": 1444,
+      "claimsSafetyPassed": true,
+      "approvedIndexableCandidate": true,
+      "addedToSitemap": false
+    },
+    {
+      "locationId": "geoname:2649298",
+      "slug": "county-of-flintshire",
+      "route": "/county-of-flintshire/pilot-training",
+      "location": "County of Flintshire",
+      "hierarchy": [
+        {
+          "name": "United Kingdom",
+          "type": "country"
+        },
+        {
+          "name": "Wales",
+          "type": "state"
+        },
+        {
+          "name": "County of Flintshire",
+          "type": "district"
+        }
+      ],
+      "country": "United Kingdom",
+      "countryCode": "GB",
+      "regulator": "UK Civil Aviation Authority (CAA)",
+      "qualityScore": 96,
+      "differentiationScore": 82.8,
+      "normalizedSimilarityPercent": 17.2,
+      "visibleWordCount": 1383,
+      "claimsSafetyPassed": true,
+      "approvedIndexableCandidate": true,
+      "addedToSitemap": false
+    },
+    {
+      "locationId": "geoname:12523340",
+      "slug": "north-okeechobee",
+      "route": "/north-okeechobee/pilot-training",
+      "location": "North Okeechobee",
+      "hierarchy": [
+        {
+          "name": "United States",
+          "type": "country"
+        },
+        {
+          "name": "Florida",
+          "type": "state"
+        },
+        {
+          "name": "Okeechobee County",
+          "type": "district"
+        },
+        {
+          "name": "North Okeechobee",
+          "type": "locality"
+        }
+      ],
+      "country": "United States",
+      "countryCode": "US",
+      "regulator": "Federal Aviation Administration (FAA)",
+      "qualityScore": 96,
+      "differentiationScore": 83.1,
+      "normalizedSimilarityPercent": 16.9,
+      "visibleWordCount": 1383,
+      "claimsSafetyPassed": true,
+      "approvedIndexableCandidate": true,
+      "addedToSitemap": false
+    }
+  ]
+}

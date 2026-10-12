@@ -28,7 +28,7 @@ async function main() {
     import('../lib/locationContentDifferentiation.js'),
     import('../lib/locationIndexabilityPolicy.js'),
   ]);
-  const { LOCATIONS, LOCATION_SITEMAP_SLUGS } = locationData;
+  const { LOCATIONS } = locationData;
   const { ENGINE_TEST_LOCATIONS, ENGINE_TEST_SERVICES } = fixtures;
   const { REAL_GEOGRAPHIC_SAMPLE } = realGeography;
   const realRecords = REAL_GEOGRAPHIC_SAMPLE.records;
@@ -42,18 +42,22 @@ async function main() {
     '/dwarka/dgca-ground-classes',
     '/dwarka/commercial-pilot-training',
     '/dwarka/cpl-training',
-    '/mumbai/pilot-training',
-    '/bengaluru/pilot-training',
   ];
   const routeBaseline = [
     ...legacyRouteBaseline,
     '/ahmedabad/pilot-training',
+    '/hyderabad/pilot-training',
+    '/lucknow/pilot-training',
     '/kolkata/pilot-training',
     '/thiruvananthapuram/pilot-training',
     '/ranchi/pilot-training',
     '/dehradun/pilot-training',
+    '/amritsar/pilot-training',
+    '/agra/pilot-training',
     '/dubai/pilot-training',
   ];
+  const differentiationExemptRouteBaseline = legacyRouteBaseline
+    .filter((route) => !route.endsWith('/pilot-training'));
 
   assert.deepEqual(
     locationSeo.getIndexableLocationServiceRoutes().sort(),
@@ -62,9 +66,9 @@ async function main() {
   );
   assert.deepEqual(
     [...indexabilityPolicy.GEOGRAPHIC_INDEXABILITY_POLICY.existingDifferentiationExemptRoutes].sort(),
-    [...legacyRouteBaseline].sort(),
+    differentiationExemptRouteBaseline.sort(),
   );
-  assert.equal(LOCATION_SITEMAP_SLUGS.length, 4);
+  assert.equal(locationSeo.LOCATION_SITEMAP_SLUGS.length, 2);
   assert.equal(REAL_GEOGRAPHIC_SAMPLE.datasetKind, 'real-geographic-sample');
   assert.equal(geographicData.validateGeographicData(realRecords).length, 0);
   assert.equal(REAL_GEOGRAPHIC_SAMPLE.records.length, 32);
@@ -229,17 +233,72 @@ async function main() {
   assert.ok(realMumbaiPage.serviceGuidance.length > 0);
   const productionRouteModels = routeBaseline.map((route) => {
     const [locationSlug, serviceSlug] = route.slice(1).split('/');
-    const location = locationSeo.getLocationBySlug(locationSlug);
+    const location = locationSeo.getLocationForService(locationSlug, serviceSlug);
     const service = locationSeo.getServiceBySlug(serviceSlug);
     const modelContext = locationSeo.getLocationEngineContext(location);
-    return engine.buildLocationPageModel({
+    const resolution = engine.resolveLocationService(location, service, modelContext.locations);
+    const model = engine.buildLocationPageModel({
       location,
       service,
       ...modelContext,
     });
+    assert.equal(model.canRender, resolution.canRender, `${route}: resolver and model renderability agree.`);
+    assert.equal(model.supportStatus, resolution.supportStatus, `${route}: resolver and model support agree.`);
+    assert.equal(model.indexability, resolution.indexability, `${route}: resolver and model indexability agree.`);
+    assert.equal(model.metadata.canonical, `https://weoneaviation.in${route}`, `${route}: canonical is correct.`);
+    assert.equal(model.metadata.robots.startsWith('index'), true, `${route}: indexed page has indexable robots.`);
+    assert.equal(model.sitemapEligible, model.productionSitemapEligible, `${route}: sitemap state matches model.`);
+    assert.equal(model.sitemapEligible, true, `${route}: approved production route remains sitemap eligible.`);
+    return model;
   });
-  assert.equal(productionRouteModels.length, 16);
-  assert.ok(productionRouteModels.every(({ productionSitemapEligible }) => productionSitemapEligible));
+  assert.equal(productionRouteModels.length, routeBaseline.length);
+  assert.ok(productionRouteModels.every(({ renderable, supportStatus, indexability }) => (
+    renderable && supportStatus === 'SUPPORTED' && indexability === 'INDEXABLE'
+  )));
+  for (const slug of ['delhi', 'dwarka']) {
+    const location = locationSeo.getLocationBySlug(slug);
+    const model = productionRouteModels.find(({ metadata }) => (
+      metadata.canonical === `https://weoneaviation.in/${slug}/pilot-training`
+    ));
+    assert.ok(location.localSections?.length, `${slug}: curated page has location-specific evidence sections.`);
+    assert.ok(model.faqs.some(({ question }) => question.toLowerCase().includes(slug)), `${slug}: FAQ is location-specific.`);
+    assert.equal(model.state, 'INDEXABLE', `${slug}: curated, evidence-backed page remains indexable.`);
+  }
+  const bengaluru = locationSeo.getLocationBySlug('bengaluru');
+  const bengaluruService = locationSeo.getServiceBySlug('pilot-training');
+  const bengaluruModel = engine.buildLocationPageModel({
+    location: bengaluru,
+    service: bengaluruService,
+    content: locationSeo.getLocationServiceContent(bengaluru, bengaluruService),
+    ...locationSeo.getLocationEngineContext(bengaluru),
+  });
+  assert.notEqual(bengaluruModel.indexability, 'INDEXABLE');
+  assert.match(bengaluruModel.metadata.robots, /^noindex, follow/);
+  assert.equal(bengaluruModel.sitemapEligible, false);
+  const mumbai = locationSeo.getLocationForService('mumbai', 'pilot-training');
+  const mumbaiPage = engine.buildLocationPageModel({
+    location: mumbai,
+    service: locationSeo.getServiceBySlug('pilot-training'),
+    content: locationSeo.getLocationServiceContent(
+      mumbai,
+      locationSeo.getServiceBySlug('pilot-training'),
+    ),
+    ...locationSeo.getLocationEngineContext(mumbai),
+  });
+  assert.equal(mumbaiPage.renderable, true);
+  assert.equal(mumbaiPage.supportStatus, 'SUPPORTED');
+  assert.equal(mumbaiPage.indexability, 'NOINDEX');
+  assert.equal(mumbaiPage.sitemapEligible, false);
+  const delhi = locationSeo.getLocationBySlug('delhi');
+  const delhiPilotTraining = locationSeo.getServiceBySlug('pilot-training');
+  const thinDelhiModel = engine.buildLocationPageModel({
+    location: { ...delhi, localSections: [], localFAQs: [] },
+    service: delhiPilotTraining,
+  });
+  assert.equal(thinDelhiModel.renderable, true);
+  assert.equal(thinDelhiModel.indexability, 'NOINDEX');
+  assert.match(thinDelhiModel.metadata.robots, /^noindex, follow/);
+  assert.equal(thinDelhiModel.sitemapEligible, false);
   assert.deepEqual(engine.validateGeographicNodes(ENGINE_TEST_LOCATIONS), []);
   assert.equal(new Set(ENGINE_TEST_LOCATIONS.map(({ id }) => id)).size, ENGINE_TEST_LOCATIONS.length);
   assert.equal(new Set(ENGINE_TEST_LOCATIONS.map(({ slug }) => slug)).size, ENGINE_TEST_LOCATIONS.length);
@@ -588,7 +647,8 @@ async function main() {
     'utf8',
   );
   assert.match(routeSource, /function LocationServicePage\(/);
-  assert.match(routeSource, /buildLocationPageModel\(/);
+  assert.match(routeSource, /prepareLocationServicePageResult\(/);
+  assert.match(routeSource, /pageModel=\{pageModel\}/);
   assert.match(routeSource, /pageModel\.metadata\.h1/);
   assert.match(routeSource, /pageModel\.verifiedFacts/);
   assert.match(routeSource, /pageModel\.regulatoryContext/);
@@ -744,7 +804,9 @@ async function main() {
     locations: ENGINE_TEST_LOCATIONS,
   });
   assert.equal(indexabilityProbe.canRender, true);
-  assert.equal(indexabilityProbe.indexability, 'INDEXABLE');
+  assert.equal(indexabilityProbe.indexability, 'NOINDEX');
+  assert.equal(indexabilityProbe.productionApproval.approved, false);
+  assert.match(indexabilityProbe.metadata.robots, /^noindex, follow/);
   assert.equal(indexabilityProbe.productionSitemapEligible, false);
   const unassessedCandidate = engine.buildLocationPageModel({
     location: {
@@ -756,12 +818,15 @@ async function main() {
     locations: ENGINE_TEST_LOCATIONS,
     geographicDataValidated: true,
   });
-  assert.equal(unassessedCandidate.indexability, 'CONTENT_DIFFERENTIATION_REQUIRED');
+  assert.equal(unassessedCandidate.indexability, 'NOINDEX');
+  assert.equal(unassessedCandidate.renderable, true);
+  assert.match(unassessedCandidate.metadata.robots, /^noindex, follow/);
   assert.equal(unassessedCandidate.productionSitemapEligible, false);
 
   const statusCoverage = {
-    'RENDERABLE + INDEXABLE': indexabilityProbe.canRender
-      && indexabilityProbe.indexability === 'INDEXABLE',
+    'RENDERABLE + UNAPPROVED': indexabilityProbe.canRender
+      && !indexabilityProbe.productionApproval.approved
+      && indexabilityProbe.indexability === 'NOINDEX',
     'RENDERABLE + NOINDEX': modelsByLocationAndService.get('fixture-andheri:pilot-training').canRender
       && modelsByLocationAndService.get('fixture-andheri:pilot-training').indexability === 'NOINDEX',
     'RENDERABLE + INFORMATIONAL': modelsByLocationAndService.get('fixture-mumbai:pilot-training').canRender
@@ -972,7 +1037,10 @@ async function main() {
         inherited: false,
       }],
       regulatoryText: 'Example regulator',
-      faqs: [{ question: 'Which local aviation records should a student confirm?' }],
+      faqs: [
+        { question: 'Which local aviation records should a student confirm?' },
+        { question: 'What does the local airport access record establish?' },
+      ],
       sections: [{
         title: 'Local airport access evidence',
         body: 'Synthetic test-only detail about the local airport access route.',
@@ -1010,7 +1078,7 @@ async function main() {
       sections: [],
     }],
   });
-  assert.equal(locationNameOnlyDifference.metrics.exactDuplicatePercent, 0);
+  assert.equal(locationNameOnlyDifference.metrics.exactDuplicatePercent, 100);
   assert.equal(locationNameOnlyDifference.metrics.normalizedSimilarityPercent, 100);
   assert.equal(locationNameOnlyDifference.status, 'CONTENT_DIFFERENTIATION_REQUIRED');
   const differentiationBlockedPage = engine.buildLocationPageModel({
@@ -1069,7 +1137,7 @@ async function main() {
     indexabilityApproved: true,
     sitemapAllowlisted: true,
   });
-  assert.equal(noDifferentiationPipeline.status, 'CONTENT_DIFFERENTIATION_REQUIRED');
+  assert.equal(noDifferentiationPipeline.status, 'NOINDEX');
 
   for (const type of ['postal-area', ...engine.POSTAL_TYPE_ALIASES]) {
     const postalNode = {
@@ -1277,7 +1345,7 @@ async function main() {
     currentProductionRoutes: {
       count: locationSeo.getIndexableLocationServiceRoutes().length,
       unchanged: productionRoutesStillExact,
-      allTenRoutesStillSitemapEligible: productionRouteModels.every(
+      allApprovedRoutesStillSitemapEligible: productionRouteModels.every(
         ({ productionSitemapEligible }) => productionSitemapEligible,
       ),
       fixtureLocationsAddedToProductionData: false,
@@ -1287,7 +1355,7 @@ async function main() {
         pipelineStatus: unassessedCandidate.indexabilityPipeline.status,
         sitemapEligible: unassessedCandidate.productionSitemapEligible,
       },
-      sitemapAllowlistCount: LOCATION_SITEMAP_SLUGS.length,
+      sitemapAllowlistCount: locationSeo.LOCATION_SITEMAP_SLUGS.length,
     },
     representativePilotTrainingResults: comparisonPages.map(({ name, model }) => ({
       location: name,

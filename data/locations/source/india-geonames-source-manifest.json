@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "gazetteer": {
+    "url": "https://download.geonames.org/export/dump/IN.zip",
+    "sha256": "392ba54ed9e0795b194c2d57981c9ce525b54d9eeb4f573ca6fa177a75257742",
+    "provisionedFile": "geonames-india-gazetteer.zip",
+    "archiveEntry": "IN.txt",
+    "columns": 19,
+    "countryColumn": 8,
+    "countryCode": "IN"
+  },
+  "postal": {
+    "upstreamUrl": "https://download.geonames.org/export/zip/IN.zip",
+    "sha256": "e23a9c5ec7b1cd4f33043942e0850fe1eb1561a6dad1f33839b8633170044faa",
+    "repositoryFile": "geonames-IN.zip",
+    "archiveEntry": "IN.txt",
+    "columns": 12,
+    "countryColumn": 0,
+    "countryCode": "IN",
+    "retrieval": "tracked-repository-snapshot",
+    "notes": "Pinned to the tracked repository archive. The upstream URL currently serves a newer snapshot with a different checksum; this URL is provenance, not a byte-for-byte download location. Do not replace the tracked file without a reviewed source/data update."
+  },
+  "admin1": {
+    "url": "https://download.geonames.org/export/dump/admin1CodesASCII.txt",
+    "sha256": "1da92a6323a5fec3176f3f743bf4cf4040fd56a876da55e46fbca23c863aa60a",
+    "provisionedFile": "geonames-admin1-codes.txt",
+    "columns": 4
+  },
+  "admin2": {
+    "url": "https://download.geonames.org/export/dump/admin2Codes.txt",
+    "sha256": "2fbfc577d4d3f7d2db4a5aef851631521c89d3cbbeb5c33bf658054ee05b5af0",
+    "provisionedFile": "geonames-admin2-codes.txt",
+    "columns": 4
+  }
+}

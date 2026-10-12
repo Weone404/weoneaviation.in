@@ -79,6 +79,7 @@ async function main() {
     intentsModule,
     registry,
     locationSeo,
+    approvals,
   ] = await Promise.all([
     import('../lib/geographicData.js'),
     import('../lib/geographicSourceAdapters.js'),
@@ -88,6 +89,7 @@ async function main() {
     import('../data/location-seo/global-aviation-intents.js'),
     import('../data/location-seo/production-candidate-registry.js'),
     import('../lib/locationSeo.js'),
+    import('../data/location-seo/production-route-approvals.js'),
   ]);
 
   const globalRecords = sampleModule.GLOBAL_GEOGRAPHIC_PILOT.records;
@@ -113,7 +115,10 @@ async function main() {
   )));
   assert.equal(globalEvidence.length, 46);
   assert.equal(registry.GLOBAL_LOCATION_SERVICE_EVALUATIONS.length, 243);
-  assert.equal(registry.PROMOTED_PRODUCTION_LOCATION_SERVICE_PAIRS.length, 6);
+  assert.equal(registry.PROMOTED_PRODUCTION_LOCATION_SERVICE_PAIRS.length, 10);
+  assert.ok(registry.PROMOTED_PRODUCTION_LOCATION_SERVICE_PAIRS.every(({ location, service }) => (
+    approvals.isProductionRouteApproved(`/${location.slug}/${service.slug}`)
+  )), 'Every promoted pair must have an explicit current production approval.');
 
   const statusCounts = registry.GLOBAL_LOCATION_SERVICE_EVALUATIONS.reduce((counts, item) => {
     counts[item.status] = (counts[item.status] || 0) + 1;
@@ -582,9 +587,9 @@ async function main() {
   });
 
   const productionRoutes = locationSeo.getApprovedLocationServiceRoutes();
-  assert.equal(productionRoutes.length, 16);
-  assert.equal(new Set(productionRoutes).size, 16);
-  assert.equal(registry.PROMOTED_PRODUCTION_LOCATION_SERVICE_PAIRS.length, 6);
+  assert.equal(productionRoutes.length, 18);
+  assert.equal(new Set(productionRoutes).size, 18);
+  assert.equal(registry.PROMOTED_PRODUCTION_LOCATION_SERVICE_PAIRS.length, 10);
 
   console.log(JSON.stringify({
     globalPilot: {

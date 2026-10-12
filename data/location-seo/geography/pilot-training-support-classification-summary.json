@@ -1,0 +1,4193 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-07T10:39:59.484Z",
+  "service": "pilot-training",
+  "evidenceDefinition": "A GeoNames airport point within 100 km of the location coordinates; this does not verify a training provider, approval, or We One Aviation presence.",
+  "totalLocationsEvaluated": 5225887,
+  "counts": {
+    "SUPPORTED": 1065758,
+    "NOT_SUPPORTED": 0,
+    "RESEARCH": 4160129,
+    "REJECTED": 0,
+    "AMBIGUOUS": 0
+  },
+  "countryWiseCounts": {
+    "IN|India": {
+      "country": "India",
+      "countryCode": "IN",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "counts": {
+        "SUPPORTED": 574431,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 0,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AD|Andorra": {
+      "country": "Andorra",
+      "countryCode": "AD",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 80,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AE|United Arab Emirates": {
+      "country": "United Arab Emirates",
+      "countryCode": "AE",
+      "regulator": "United Arab Emirates General Civil Aviation Authority (GCAA)",
+      "counts": {
+        "SUPPORTED": 2422,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 0,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AF|Afghanistan": {
+      "country": "Afghanistan",
+      "countryCode": "AF",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 31940,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AG|Antigua and Barbuda": {
+      "country": "Antigua and Barbuda",
+      "countryCode": "AG",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 199,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AI|Anguilla": {
+      "country": "Anguilla",
+      "countryCode": "AI",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 60,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AL|Albania": {
+      "country": "Albania",
+      "countryCode": "AL",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 4509,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AM|Armenia": {
+      "country": "Armenia",
+      "countryCode": "AM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1431,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AO|Angola": {
+      "country": "Angola",
+      "countryCode": "AO",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 17321,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AQ|Antarctica": {
+      "country": "Antarctica",
+      "countryCode": "AQ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 33,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AR|Argentina": {
+      "country": "Argentina",
+      "countryCode": "AR",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 15405,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AS|American Samoa": {
+      "country": "American Samoa",
+      "countryCode": "AS",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 147,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AT|Austria": {
+      "country": "Austria",
+      "countryCode": "AT",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 20974,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AU|Australia": {
+      "country": "Australia",
+      "countryCode": "AU",
+      "regulator": "Civil Aviation Safety Authority (CASA)",
+      "counts": {
+        "SUPPORTED": 19750,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 0,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AW|Aruba": {
+      "country": "Aruba",
+      "countryCode": "AW",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 173,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AX|Aland Islands": {
+      "country": "Aland Islands",
+      "countryCode": "AX",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 358,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AZ|Azerbaijan": {
+      "country": "Azerbaijan",
+      "countryCode": "AZ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 5161,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BA|Bosnia and Herzegovina": {
+      "country": "Bosnia and Herzegovina",
+      "countryCode": "BA",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 21435,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BB|Barbados": {
+      "country": "Barbados",
+      "countryCode": "BB",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 599,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BD|Bangladesh": {
+      "country": "Bangladesh",
+      "countryCode": "BD",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 49117,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BE|Belgium": {
+      "country": "Belgium",
+      "countryCode": "BE",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 12666,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BF|Burkina Faso": {
+      "country": "Burkina Faso",
+      "countryCode": "BF",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 10456,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BG|Bulgaria": {
+      "country": "Bulgaria",
+      "countryCode": "BG",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 7446,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BH|Bahrain": {
+      "country": "Bahrain",
+      "countryCode": "BH",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 128,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BI|Burundi": {
+      "country": "Burundi",
+      "countryCode": "BI",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 7113,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BJ|Benin": {
+      "country": "Benin",
+      "countryCode": "BJ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 3850,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BL|Saint Barthelemy": {
+      "country": "Saint Barthelemy",
+      "countryCode": "BL",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 30,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BM|Bermuda": {
+      "country": "Bermuda",
+      "countryCode": "BM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 43,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BN|Brunei": {
+      "country": "Brunei",
+      "countryCode": "BN",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 410,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BO|Bolivia": {
+      "country": "Bolivia",
+      "countryCode": "BO",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 25894,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BQ|Bonaire, Saint Eustatius and Saba ": {
+      "country": "Bonaire, Saint Eustatius and Saba ",
+      "countryCode": "BQ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 123,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BR|Brazil": {
+      "country": "Brazil",
+      "countryCode": "BR",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 77975,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BS|Bahamas": {
+      "country": "Bahamas",
+      "countryCode": "BS",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 385,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BT|Bhutan": {
+      "country": "Bhutan",
+      "countryCode": "BT",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 301,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BV|Bouvet Island": {
+      "country": "Bouvet Island",
+      "countryCode": "BV",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BW|Botswana": {
+      "country": "Botswana",
+      "countryCode": "BW",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1859,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BY|Belarus": {
+      "country": "Belarus",
+      "countryCode": "BY",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 25728,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "BZ|Belize": {
+      "country": "Belize",
+      "countryCode": "BZ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 531,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CA|Canada": {
+      "country": "Canada",
+      "countryCode": "CA",
+      "regulator": "Transport Canada",
+      "counts": {
+        "SUPPORTED": 23356,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 0,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CC|Cocos Islands": {
+      "country": "Cocos Islands",
+      "countryCode": "CC",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 3,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CD|Democratic Republic of the Congo": {
+      "country": "Democratic Republic of the Congo",
+      "countryCode": "CD",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 37365,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CF|Central African Republic": {
+      "country": "Central African Republic",
+      "countryCode": "CF",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 5786,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CG|Republic of the Congo": {
+      "country": "Republic of the Congo",
+      "countryCode": "CG",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 5883,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CH|Switzerland": {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 13358,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CI|Ivory Coast": {
+      "country": "Ivory Coast",
+      "countryCode": "CI",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 12119,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CK|Cook Islands": {
+      "country": "Cook Islands",
+      "countryCode": "CK",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 76,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CL|Chile": {
+      "country": "Chile",
+      "countryCode": "CL",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 7003,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CM|Cameroon": {
+      "country": "Cameroon",
+      "countryCode": "CM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 14437,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CN|China": {
+      "country": "China",
+      "countryCode": "CN",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 884188,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CO|Colombia": {
+      "country": "Colombia",
+      "countryCode": "CO",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 37085,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CR|Costa Rica": {
+      "country": "Costa Rica",
+      "countryCode": "CR",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 5871,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CU|Cuba": {
+      "country": "Cuba",
+      "countryCode": "CU",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 16245,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CV|Cabo Verde": {
+      "country": "Cabo Verde",
+      "countryCode": "CV",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2901,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CW|Curacao": {
+      "country": "Curacao",
+      "countryCode": "CW",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 101,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CX|Christmas Island": {
+      "country": "Christmas Island",
+      "countryCode": "CX",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 7,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CY|Cyprus": {
+      "country": "Cyprus",
+      "countryCode": "CY",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1428,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CZ|Czechia": {
+      "country": "Czechia",
+      "countryCode": "CZ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 16738,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "DE|Germany": {
+      "country": "Germany",
+      "countryCode": "DE",
+      "regulator": "Luftfahrt-Bundesamt (LBA), within the EASA framework",
+      "counts": {
+        "SUPPORTED": 80882,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 0,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "DJ|Djibouti": {
+      "country": "Djibouti",
+      "countryCode": "DJ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 80,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "DK|Denmark": {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 7380,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "DM|Dominica": {
+      "country": "Dominica",
+      "countryCode": "DM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 143,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "DO|Dominican Republic": {
+      "country": "Dominican Republic",
+      "countryCode": "DO",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 8126,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "DZ|Algeria": {
+      "country": "Algeria",
+      "countryCode": "DZ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 8911,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "EC|Ecuador": {
+      "country": "Ecuador",
+      "countryCode": "EC",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 11703,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "EE|Estonia": {
+      "country": "Estonia",
+      "countryCode": "EE",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 7183,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "EG|Egypt": {
+      "country": "Egypt",
+      "countryCode": "EG",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 12211,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "EH|Western Sahara": {
+      "country": "Western Sahara",
+      "countryCode": "EH",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 50,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "ER|Eritrea": {
+      "country": "Eritrea",
+      "countryCode": "ER",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1431,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "ES|Spain": {
+      "country": "Spain",
+      "countryCode": "ES",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 30702,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "ET|Ethiopia": {
+      "country": "Ethiopia",
+      "countryCode": "ET",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 11242,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "FI|Finland": {
+      "country": "Finland",
+      "countryCode": "FI",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 29249,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "FJ|Fiji": {
+      "country": "Fiji",
+      "countryCode": "FJ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2262,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "FK|Falkland Islands": {
+      "country": "Falkland Islands",
+      "countryCode": "FK",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 58,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "FM|Micronesia": {
+      "country": "Micronesia",
+      "countryCode": "FM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 549,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "FO|Faroe Islands": {
+      "country": "Faroe Islands",
+      "countryCode": "FO",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 218,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "FR|France": {
+      "country": "France",
+      "countryCode": "FR",
+      "regulator": "Direction générale de l’aviation civile (DGAC), within the EASA framework",
+      "counts": {
+        "SUPPORTED": 81485,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 0,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GA|Gabon": {
+      "country": "Gabon",
+      "countryCode": "GA",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 3994,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GB|United Kingdom": {
+      "country": "United Kingdom",
+      "countryCode": "GB",
+      "regulator": "UK Civil Aviation Authority (CAA)",
+      "counts": {
+        "SUPPORTED": 43873,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 0,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GD|Grenada": {
+      "country": "Grenada",
+      "countryCode": "GD",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 308,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GE|Georgia": {
+      "country": "Georgia",
+      "countryCode": "GE",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 5469,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GF|French Guiana": {
+      "country": "French Guiana",
+      "countryCode": "GF",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 674,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GG|Guernsey": {
+      "country": "Guernsey",
+      "countryCode": "GG",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 273,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GH|Ghana": {
+      "country": "Ghana",
+      "countryCode": "GH",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 16246,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GI|Gibraltar": {
+      "country": "Gibraltar",
+      "countryCode": "GI",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 11,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GL|Greenland": {
+      "country": "Greenland",
+      "countryCode": "GL",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 213,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GM|Gambia": {
+      "country": "Gambia",
+      "countryCode": "GM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2059,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GN|Guinea": {
+      "country": "Guinea",
+      "countryCode": "GN",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 6854,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GP|Guadeloupe": {
+      "country": "Guadeloupe",
+      "countryCode": "GP",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1582,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GQ|Equatorial Guinea": {
+      "country": "Equatorial Guinea",
+      "countryCode": "GQ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2089,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GR|Greece": {
+      "country": "Greece",
+      "countryCode": "GR",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 15067,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GS|South Georgia and the South Sandwich Islands": {
+      "country": "South Georgia and the South Sandwich Islands",
+      "countryCode": "GS",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 4,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GT|Guatemala": {
+      "country": "Guatemala",
+      "countryCode": "GT",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 17314,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GU|Guam": {
+      "country": "Guam",
+      "countryCode": "GU",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 147,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GW|Guinea-Bissau": {
+      "country": "Guinea-Bissau",
+      "countryCode": "GW",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 3938,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "GY|Guyana": {
+      "country": "Guyana",
+      "countryCode": "GY",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 918,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "HK|Hong Kong": {
+      "country": "Hong Kong",
+      "countryCode": "HK",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1360,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "HM|Heard Island and McDonald Islands": {
+      "country": "Heard Island and McDonald Islands",
+      "countryCode": "HM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "HN|Honduras": {
+      "country": "Honduras",
+      "countryCode": "HN",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 13282,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "HR|Croatia": {
+      "country": "Croatia",
+      "countryCode": "HR",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 12122,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "HT|Haiti": {
+      "country": "Haiti",
+      "countryCode": "HT",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 10998,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "HU|Hungary": {
+      "country": "Hungary",
+      "countryCode": "HU",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 16231,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "ID|Indonesia": {
+      "country": "Indonesia",
+      "countryCode": "ID",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 258139,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "IE|Ireland": {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 12187,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "IL|Israel": {
+      "country": "Israel",
+      "countryCode": "IL",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1671,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "IM|Isle of Man": {
+      "country": "Isle of Man",
+      "countryCode": "IM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 68,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "IO|British Indian Ocean Territory": {
+      "country": "British Indian Ocean Territory",
+      "countryCode": "IO",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 4,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "IQ|Iraq": {
+      "country": "Iraq",
+      "countryCode": "IQ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 22526,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "IR|Iran": {
+      "country": "Iran",
+      "countryCode": "IR",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 75493,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "IS|Iceland": {
+      "country": "Iceland",
+      "countryCode": "IS",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 189,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "IT|Italy": {
+      "country": "Italy",
+      "countryCode": "IT",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 62955,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "JE|Jersey": {
+      "country": "Jersey",
+      "countryCode": "JE",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 98,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "JM|Jamaica": {
+      "country": "Jamaica",
+      "countryCode": "JM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 4457,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "JO|Jordan": {
+      "country": "Jordan",
+      "countryCode": "JO",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1818,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "JP|Japan": {
+      "country": "Japan",
+      "countryCode": "JP",
+      "regulator": "Japan Civil Aviation Bureau (JCAB)",
+      "counts": {
+        "SUPPORTED": 52005,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 0,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "KE|Kenya": {
+      "country": "Kenya",
+      "countryCode": "KE",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 7033,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "KG|Kyrgyzstan": {
+      "country": "Kyrgyzstan",
+      "countryCode": "KG",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2565,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "KH|Cambodia": {
+      "country": "Cambodia",
+      "countryCode": "KH",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 11438,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "KI|Kiribati": {
+      "country": "Kiribati",
+      "countryCode": "KI",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 229,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "KM|Comoros": {
+      "country": "Comoros",
+      "countryCode": "KM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 398,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "KN|Saint Kitts and Nevis": {
+      "country": "Saint Kitts and Nevis",
+      "countryCode": "KN",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 144,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "KP|North Korea": {
+      "country": "North Korea",
+      "countryCode": "KP",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 34931,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "KR|South Korea": {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 62879,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "XK|Kosovo": {
+      "country": "Kosovo",
+      "countryCode": "XK",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2644,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "KW|Kuwait": {
+      "country": "Kuwait",
+      "countryCode": "KW",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 242,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "KY|Cayman Islands": {
+      "country": "Cayman Islands",
+      "countryCode": "KY",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 87,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "KZ|Kazakhstan": {
+      "country": "Kazakhstan",
+      "countryCode": "KZ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 13758,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "LA|Laos": {
+      "country": "Laos",
+      "countryCode": "LA",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 13497,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "LB|Lebanon": {
+      "country": "Lebanon",
+      "countryCode": "LB",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 3750,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "LC|Saint Lucia": {
+      "country": "Saint Lucia",
+      "countryCode": "LC",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 894,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "LI|Liechtenstein": {
+      "country": "Liechtenstein",
+      "countryCode": "LI",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 373,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "LK|Sri Lanka": {
+      "country": "Sri Lanka",
+      "countryCode": "LK",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 17870,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "LR|Liberia": {
+      "country": "Liberia",
+      "countryCode": "LR",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 6563,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "LS|Lesotho": {
+      "country": "Lesotho",
+      "countryCode": "LS",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 426,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "LT|Lithuania": {
+      "country": "Lithuania",
+      "countryCode": "LT",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 20830,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "LU|Luxembourg": {
+      "country": "Luxembourg",
+      "countryCode": "LU",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 810,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "LV|Latvia": {
+      "country": "Latvia",
+      "countryCode": "LV",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 8374,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "LY|Libya": {
+      "country": "Libya",
+      "countryCode": "LY",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 930,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MA|Morocco": {
+      "country": "Morocco",
+      "countryCode": "MA",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 46645,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MC|Monaco": {
+      "country": "Monaco",
+      "countryCode": "MC",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 16,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MD|Moldova": {
+      "country": "Moldova",
+      "countryCode": "MD",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1851,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "ME|Montenegro": {
+      "country": "Montenegro",
+      "countryCode": "ME",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 4041,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MF|Saint Martin": {
+      "country": "Saint Martin",
+      "countryCode": "MF",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 63,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MG|Madagascar": {
+      "country": "Madagascar",
+      "countryCode": "MG",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 24316,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MH|Marshall Islands": {
+      "country": "Marshall Islands",
+      "countryCode": "MH",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 145,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MK|North Macedonia": {
+      "country": "North Macedonia",
+      "countryCode": "MK",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2715,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "ML|Mali": {
+      "country": "Mali",
+      "countryCode": "ML",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 15859,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MM|Myanmar": {
+      "country": "Myanmar",
+      "countryCode": "MM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 54717,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MN|Mongolia": {
+      "country": "Mongolia",
+      "countryCode": "MN",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1943,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MO|Macao": {
+      "country": "Macao",
+      "countryCode": "MO",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 18,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MP|Northern Mariana Islands": {
+      "country": "Northern Mariana Islands",
+      "countryCode": "MP",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 65,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MQ|Martinique": {
+      "country": "Martinique",
+      "countryCode": "MQ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1297,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MR|Mauritania": {
+      "country": "Mauritania",
+      "countryCode": "MR",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 7706,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MS|Montserrat": {
+      "country": "Montserrat",
+      "countryCode": "MS",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 64,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MT|Malta": {
+      "country": "Malta",
+      "countryCode": "MT",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 356,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MU|Mauritius": {
+      "country": "Mauritius",
+      "countryCode": "MU",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 573,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MV|Maldives": {
+      "country": "Maldives",
+      "countryCode": "MV",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 140,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MW|Malawi": {
+      "country": "Malawi",
+      "countryCode": "MW",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 8012,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MX|Mexico": {
+      "country": "Mexico",
+      "countryCode": "MX",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 301985,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MY|Malaysia": {
+      "country": "Malaysia",
+      "countryCode": "MY",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 21730,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "MZ|Mozambique": {
+      "country": "Mozambique",
+      "countryCode": "MZ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 22852,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "NA|Namibia": {
+      "country": "Namibia",
+      "countryCode": "NA",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2970,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "NC|New Caledonia": {
+      "country": "New Caledonia",
+      "countryCode": "NC",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 777,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "NE|Niger": {
+      "country": "Niger",
+      "countryCode": "NE",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 13139,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "NF|Norfolk Island": {
+      "country": "Norfolk Island",
+      "countryCode": "NF",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 5,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "NG|Nigeria": {
+      "country": "Nigeria",
+      "countryCode": "NG",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 62167,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "NI|Nicaragua": {
+      "country": "Nicaragua",
+      "countryCode": "NI",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2783,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "NL|The Netherlands": {
+      "country": "The Netherlands",
+      "countryCode": "NL",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 8145,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "NO|Norway": {
+      "country": "Norway",
+      "countryCode": "NO",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 14175,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "NP|Nepal": {
+      "country": "Nepal",
+      "countryCode": "NP",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 87846,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "NR|Nauru": {
+      "country": "Nauru",
+      "countryCode": "NR",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 30,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "NU|Niue": {
+      "country": "Niue",
+      "countryCode": "NU",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 50,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "NZ|New Zealand": {
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 3120,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "OM|Oman": {
+      "country": "Oman",
+      "countryCode": "OM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 6014,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "PA|Panama": {
+      "country": "Panama",
+      "countryCode": "PA",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 13335,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "PE|Peru": {
+      "country": "Peru",
+      "countryCode": "PE",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 47676,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "PF|French Polynesia": {
+      "country": "French Polynesia",
+      "countryCode": "PF",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 460,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "PG|Papua New Guinea": {
+      "country": "Papua New Guinea",
+      "countryCode": "PG",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 11656,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "PH|Philippines": {
+      "country": "Philippines",
+      "countryCode": "PH",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 44473,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "PK|Pakistan": {
+      "country": "Pakistan",
+      "countryCode": "PK",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 149469,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "PL|Poland": {
+      "country": "Poland",
+      "countryCode": "PL",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 48108,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "PM|Saint Pierre and Miquelon": {
+      "country": "Saint Pierre and Miquelon",
+      "countryCode": "PM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 11,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "PN|Pitcairn": {
+      "country": "Pitcairn",
+      "countryCode": "PN",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "PR|Puerto Rico": {
+      "country": "Puerto Rico",
+      "countryCode": "PR",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 3456,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "PS|Palestinian Territory": {
+      "country": "Palestinian Territory",
+      "countryCode": "PS",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1064,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "PT|Portugal": {
+      "country": "Portugal",
+      "countryCode": "PT",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 16936,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "PW|Palau": {
+      "country": "Palau",
+      "countryCode": "PW",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 102,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "PY|Paraguay": {
+      "country": "Paraguay",
+      "countryCode": "PY",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 7104,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "QA|Qatar": {
+      "country": "Qatar",
+      "countryCode": "QA",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 269,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "RE|Reunion": {
+      "country": "Reunion",
+      "countryCode": "RE",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 786,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "RO|Romania": {
+      "country": "Romania",
+      "countryCode": "RO",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 21463,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "RS|Serbia": {
+      "country": "Serbia",
+      "countryCode": "RS",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 9537,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "RU|Russia": {
+      "country": "Russia",
+      "countryCode": "RU",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 194850,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "RW|Rwanda": {
+      "country": "Rwanda",
+      "countryCode": "RW",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 10266,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SA|Saudi Arabia": {
+      "country": "Saudi Arabia",
+      "countryCode": "SA",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 5211,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SB|Solomon Islands": {
+      "country": "Solomon Islands",
+      "countryCode": "SB",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2743,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SC|Seychelles": {
+      "country": "Seychelles",
+      "countryCode": "SC",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 81,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SD|Sudan": {
+      "country": "Sudan",
+      "countryCode": "SD",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 7982,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SS|South Sudan": {
+      "country": "South Sudan",
+      "countryCode": "SS",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 5348,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SE|Sweden": {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 28764,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SG|Singapore": {
+      "country": "Singapore",
+      "countryCode": "SG",
+      "regulator": "Civil Aviation Authority of Singapore (CAAS)",
+      "counts": {
+        "SUPPORTED": 382,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 0,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SH|Saint Helena": {
+      "country": "Saint Helena",
+      "countryCode": "SH",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 32,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SI|Slovenia": {
+      "country": "Slovenia",
+      "countryCode": "SI",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 6810,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SJ|Svalbard and Jan Mayen": {
+      "country": "Svalbard and Jan Mayen",
+      "countryCode": "SJ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 18,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SK|Slovakia": {
+      "country": "Slovakia",
+      "countryCode": "SK",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 5126,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SL|Sierra Leone": {
+      "country": "Sierra Leone",
+      "countryCode": "SL",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 14407,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SM|San Marino": {
+      "country": "San Marino",
+      "countryCode": "SM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 34,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SN|Senegal": {
+      "country": "Senegal",
+      "countryCode": "SN",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 11848,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SO|Somalia": {
+      "country": "Somalia",
+      "countryCode": "SO",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 4615,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SR|Suriname": {
+      "country": "Suriname",
+      "countryCode": "SR",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 605,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "ST|Sao Tome and Principe": {
+      "country": "Sao Tome and Principe",
+      "countryCode": "ST",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 573,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SV|El Salvador": {
+      "country": "El Salvador",
+      "countryCode": "SV",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 4948,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SX|Sint Maarten": {
+      "country": "Sint Maarten",
+      "countryCode": "SX",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 63,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SY|Syria": {
+      "country": "Syria",
+      "countryCode": "SY",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 11670,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "SZ|Eswatini": {
+      "country": "Eswatini",
+      "countryCode": "SZ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 746,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TC|Turks and Caicos Islands": {
+      "country": "Turks and Caicos Islands",
+      "countryCode": "TC",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 42,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TD|Chad": {
+      "country": "Chad",
+      "countryCode": "TD",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 12431,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TF|French Southern Territories": {
+      "country": "French Southern Territories",
+      "countryCode": "TF",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 14,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TG|Togo": {
+      "country": "Togo",
+      "countryCode": "TG",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 4254,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TH|Thailand": {
+      "country": "Thailand",
+      "countryCode": "TH",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 88261,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TJ|Tajikistan": {
+      "country": "Tajikistan",
+      "countryCode": "TJ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2836,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TK|Tokelau": {
+      "country": "Tokelau",
+      "countryCode": "TK",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 9,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TL|Timor Leste": {
+      "country": "Timor Leste",
+      "countryCode": "TL",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 3498,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TM|Turkmenistan": {
+      "country": "Turkmenistan",
+      "countryCode": "TM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1503,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TN|Tunisia": {
+      "country": "Tunisia",
+      "countryCode": "TN",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2510,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TO|Tonga": {
+      "country": "Tonga",
+      "countryCode": "TO",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 178,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TR|Turkey": {
+      "country": "Turkey",
+      "countryCode": "TR",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 55500,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TT|Trinidad and Tobago": {
+      "country": "Trinidad and Tobago",
+      "countryCode": "TT",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 512,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TV|Tuvalu": {
+      "country": "Tuvalu",
+      "countryCode": "TV",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 36,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TW|Taiwan": {
+      "country": "Taiwan",
+      "countryCode": "TW",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 16125,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "TZ|Tanzania": {
+      "country": "Tanzania",
+      "countryCode": "TZ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 7960,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "UA|Ukraine": {
+      "country": "Ukraine",
+      "countryCode": "UA",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 33494,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "UG|Uganda": {
+      "country": "Uganda",
+      "countryCode": "UG",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 11582,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "UM|United States Minor Outlying Islands": {
+      "country": "United States Minor Outlying Islands",
+      "countryCode": "UM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 17,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "US|United States": {
+      "country": "United States",
+      "countryCode": "US",
+      "regulator": "Federal Aviation Administration (FAA)",
+      "counts": {
+        "SUPPORTED": 187172,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 0,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "UY|Uruguay": {
+      "country": "Uruguay",
+      "countryCode": "UY",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1232,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "UZ|Uzbekistan": {
+      "country": "Uzbekistan",
+      "countryCode": "UZ",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 8236,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "VA|Vatican": {
+      "country": "Vatican",
+      "countryCode": "VA",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "VC|Saint Vincent and the Grenadines": {
+      "country": "Saint Vincent and the Grenadines",
+      "countryCode": "VC",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 172,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "VE|Venezuela": {
+      "country": "Venezuela",
+      "countryCode": "VE",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 25885,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "VG|British Virgin Islands": {
+      "country": "British Virgin Islands",
+      "countryCode": "VG",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 143,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "VI|U.S. Virgin Islands": {
+      "country": "U.S. Virgin Islands",
+      "countryCode": "VI",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 246,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "VN|Vietnam": {
+      "country": "Vietnam",
+      "countryCode": "VN",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 42253,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "VU|Vanuatu": {
+      "country": "Vanuatu",
+      "countryCode": "VU",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1914,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "WF|Wallis and Futuna": {
+      "country": "Wallis and Futuna",
+      "countryCode": "WF",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 108,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "WS|Samoa": {
+      "country": "Samoa",
+      "countryCode": "WS",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 434,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "YE|Yemen": {
+      "country": "Yemen",
+      "countryCode": "YE",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 81268,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "YT|Mayotte": {
+      "country": "Mayotte",
+      "countryCode": "YT",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 174,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "ZA|South Africa": {
+      "country": "South Africa",
+      "countryCode": "ZA",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 13588,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "ZM|Zambia": {
+      "country": "Zambia",
+      "countryCode": "ZM",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 13164,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "ZW|Zimbabwe": {
+      "country": "Zimbabwe",
+      "countryCode": "ZW",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 2172,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "CS|Serbia and Montenegro": {
+      "country": "Serbia and Montenegro",
+      "countryCode": "CS",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    },
+    "AN|Netherlands Antilles": {
+      "country": "Netherlands Antilles",
+      "countryCode": "AN",
+      "regulator": null,
+      "counts": {
+        "SUPPORTED": 0,
+        "NOT_SUPPORTED": 0,
+        "RESEARCH": 1,
+        "REJECTED": 0,
+        "AMBIGUOUS": 0
+      }
+    }
+  },
+  "levelWiseCounts": {
+    "state": {
+      "SUPPORTED": 195,
+      "NOT_SUPPORTED": 0,
+      "RESEARCH": 3670,
+      "REJECTED": 0,
+      "AMBIGUOUS": 0
+    },
+    "district": {
+      "SUPPORTED": 7605,
+      "NOT_SUPPORTED": 0,
+      "RESEARCH": 40038,
+      "REJECTED": 0,
+      "AMBIGUOUS": 0
+    },
+    "subdistrict": {
+      "SUPPORTED": 6891,
+      "NOT_SUPPORTED": 0,
+      "RESEARCH": 0,
+      "REJECTED": 0,
+      "AMBIGUOUS": 0
+    },
+    "country": {
+      "SUPPORTED": 10,
+      "NOT_SUPPORTED": 0,
+      "RESEARCH": 242,
+      "REJECTED": 0,
+      "AMBIGUOUS": 0
+    },
+    "populated-place": {
+      "SUPPORTED": 545900,
+      "NOT_SUPPORTED": 0,
+      "RESEARCH": 0,
+      "REJECTED": 0,
+      "AMBIGUOUS": 0
+    },
+    "city": {
+      "SUPPORTED": 414500,
+      "NOT_SUPPORTED": 0,
+      "RESEARCH": 3840575,
+      "REJECTED": 0,
+      "AMBIGUOUS": 0
+    },
+    "locality": {
+      "SUPPORTED": 27827,
+      "NOT_SUPPORTED": 0,
+      "RESEARCH": 151429,
+      "REJECTED": 0,
+      "AMBIGUOUS": 0
+    },
+    "village": {
+      "SUPPORTED": 22,
+      "NOT_SUPPORTED": 0,
+      "RESEARCH": 0,
+      "REJECTED": 0,
+      "AMBIGUOUS": 0
+    },
+    "postal-area": {
+      "SUPPORTED": 17954,
+      "NOT_SUPPORTED": 0,
+      "RESEARCH": 0,
+      "REJECTED": 0,
+      "AMBIGUOUS": 0
+    },
+    "neighborhood": {
+      "SUPPORTED": 44853,
+      "NOT_SUPPORTED": 0,
+      "RESEARCH": 124175,
+      "REJECTED": 0,
+      "AMBIGUOUS": 0
+    },
+    "town": {
+      "SUPPORTED": 1,
+      "NOT_SUPPORTED": 0,
+      "RESEARCH": 0,
+      "REJECTED": 0,
+      "AMBIGUOUS": 0
+    }
+  },
+  "regulatorCoverage": {
+    "Directorate General of Civil Aviation (DGCA)": {
+      "locations": 574431,
+      "countries": [
+        "IN|India"
+      ],
+      "countryCount": 1
+    },
+    "United Arab Emirates General Civil Aviation Authority (GCAA)": {
+      "locations": 2422,
+      "countries": [
+        "AE|United Arab Emirates"
+      ],
+      "countryCount": 1
+    },
+    "Civil Aviation Safety Authority (CASA)": {
+      "locations": 19750,
+      "countries": [
+        "AU|Australia"
+      ],
+      "countryCount": 1
+    },
+    "Transport Canada": {
+      "locations": 23356,
+      "countries": [
+        "CA|Canada"
+      ],
+      "countryCount": 1
+    },
+    "Luftfahrt-Bundesamt (LBA), within the EASA framework": {
+      "locations": 80882,
+      "countries": [
+        "DE|Germany"
+      ],
+      "countryCount": 1
+    },
+    "Direction générale de l’aviation civile (DGAC), within the EASA framework": {
+      "locations": 81485,
+      "countries": [
+        "FR|France"
+      ],
+      "countryCount": 1
+    },
+    "UK Civil Aviation Authority (CAA)": {
+      "locations": 43873,
+      "countries": [
+        "GB|United Kingdom"
+      ],
+      "countryCount": 1
+    },
+    "Japan Civil Aviation Bureau (JCAB)": {
+      "locations": 52005,
+      "countries": [
+        "JP|Japan"
+      ],
+      "countryCount": 1
+    },
+    "Civil Aviation Authority of Singapore (CAAS)": {
+      "locations": 382,
+      "countries": [
+        "SG|Singapore"
+      ],
+      "countryCount": 1
+    },
+    "Federal Aviation Administration (FAA)": {
+      "locations": 187172,
+      "countries": [
+        "US|United States"
+      ],
+      "countryCount": 1
+    }
+  },
+  "regulatorCountryCoverage": {
+    "IN|India": "Directorate General of Civil Aviation (DGCA)",
+    "AE|United Arab Emirates": "United Arab Emirates General Civil Aviation Authority (GCAA)",
+    "AU|Australia": "Civil Aviation Safety Authority (CASA)",
+    "CA|Canada": "Transport Canada",
+    "DE|Germany": "Luftfahrt-Bundesamt (LBA), within the EASA framework",
+    "FR|France": "Direction générale de l’aviation civile (DGAC), within the EASA framework",
+    "GB|United Kingdom": "UK Civil Aviation Authority (CAA)",
+    "JP|Japan": "Japan Civil Aviation Bureau (JCAB)",
+    "SG|Singapore": "Civil Aviation Authority of Singapore (CAAS)",
+    "US|United States": "Federal Aviation Administration (FAA)"
+  },
+  "locationsWithMissingRegulator": 4160129,
+  "missingRegulatorSamples": [
+    {
+      "locationId": "geoname:3041565",
+      "locationName": "Andorra",
+      "slug": "andorra",
+      "country": "Andorra",
+      "countryCode": "AD",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Andorra.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:1149361",
+      "locationName": "Afghanistan",
+      "slug": "afghanistan",
+      "country": "Afghanistan",
+      "countryCode": "AF",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Afghanistan.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:3576396",
+      "locationName": "Antigua and Barbuda",
+      "slug": "antigua-and-barbuda",
+      "country": "Antigua and Barbuda",
+      "countryCode": "AG",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Antigua and Barbuda.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:3573511",
+      "locationName": "Anguilla",
+      "slug": "anguilla",
+      "country": "Anguilla",
+      "countryCode": "AI",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Anguilla.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:783754",
+      "locationName": "Albania",
+      "slug": "albania",
+      "country": "Albania",
+      "countryCode": "AL",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Albania.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:174982",
+      "locationName": "Armenia",
+      "slug": "armenia",
+      "country": "Armenia",
+      "countryCode": "AM",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Armenia.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:3351879",
+      "locationName": "Angola",
+      "slug": "angola",
+      "country": "Angola",
+      "countryCode": "AO",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Angola.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:6697173",
+      "locationName": "Antarctica",
+      "slug": "antarctica",
+      "country": "Antarctica",
+      "countryCode": "AQ",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Antarctica.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:3865483",
+      "locationName": "Argentina",
+      "slug": "argentina",
+      "country": "Argentina",
+      "countryCode": "AR",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Argentina.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:5880801",
+      "locationName": "American Samoa",
+      "slug": "american-samoa",
+      "country": "American Samoa",
+      "countryCode": "AS",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for American Samoa.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:2782113",
+      "locationName": "Austria",
+      "slug": "austria",
+      "country": "Austria",
+      "countryCode": "AT",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Austria.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:3577279",
+      "locationName": "Aruba",
+      "slug": "aruba",
+      "country": "Aruba",
+      "countryCode": "AW",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Aruba.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:661882",
+      "locationName": "Aland Islands",
+      "slug": "aland-islands",
+      "country": "Aland Islands",
+      "countryCode": "AX",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Aland Islands.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:587116",
+      "locationName": "Azerbaijan",
+      "slug": "azerbaijan",
+      "country": "Azerbaijan",
+      "countryCode": "AZ",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Azerbaijan.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:3277605",
+      "locationName": "Bosnia and Herzegovina",
+      "slug": "bosnia-and-herzegovina",
+      "country": "Bosnia and Herzegovina",
+      "countryCode": "BA",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Bosnia and Herzegovina.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:3374084",
+      "locationName": "Barbados",
+      "slug": "barbados",
+      "country": "Barbados",
+      "countryCode": "BB",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Barbados.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:1210997",
+      "locationName": "Bangladesh",
+      "slug": "bangladesh",
+      "country": "Bangladesh",
+      "countryCode": "BD",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Bangladesh.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:2802361",
+      "locationName": "Belgium",
+      "slug": "belgium",
+      "country": "Belgium",
+      "countryCode": "BE",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Belgium.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:2361809",
+      "locationName": "Burkina Faso",
+      "slug": "burkina-faso",
+      "country": "Burkina Faso",
+      "countryCode": "BF",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Burkina Faso.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geoname:732800",
+      "locationName": "Bulgaria",
+      "slug": "bulgaria",
+      "country": "Bulgaria",
+      "countryCode": "BG",
+      "geographicLevel": "country",
+      "parentLocation": null,
+      "regulator": null,
+      "reason": "No country-specific aviation regulatory context is configured for Bulgaria.",
+      "evidenceAvailable": false
+    }
+  ],
+  "locationsWithMissingEvidence": 471814,
+  "missingEvidenceSamples": [
+    {
+      "locationId": "geo:geonames:IN:admin1:28",
+      "locationName": "West Bengal",
+      "slug": "india-west-bengal-28",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:36",
+      "locationName": "Uttar Pradesh",
+      "slug": "india-uttar-pradesh-36",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:26",
+      "locationName": "Tripura",
+      "slug": "india-tripura-26",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:40",
+      "locationName": "Telangana",
+      "slug": "india-telangana-40",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:25",
+      "locationName": "Tamil Nadu",
+      "slug": "india-tamil-nadu-25",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:29",
+      "locationName": "Sikkim",
+      "slug": "india-sikkim-29",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:24",
+      "locationName": "Rajasthan",
+      "slug": "india-rajasthan-24",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:23",
+      "locationName": "Punjab",
+      "slug": "india-punjab-23",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:22",
+      "locationName": "Puducherry",
+      "slug": "india-puducherry-22",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:21",
+      "locationName": "Odisha",
+      "slug": "india-odisha-21",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:20",
+      "locationName": "Nagaland",
+      "slug": "india-nagaland-20",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:31",
+      "locationName": "Mizoram",
+      "slug": "india-mizoram-31",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:18",
+      "locationName": "Meghalaya",
+      "slug": "india-meghalaya-18",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:17",
+      "locationName": "Manipur",
+      "slug": "india-manipur-17",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:16",
+      "locationName": "Maharashtra",
+      "slug": "india-maharashtra-16",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:35",
+      "locationName": "Madhya Pradesh",
+      "slug": "india-madhya-pradesh-35",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:14",
+      "locationName": "Lakshadweep",
+      "slug": "india-lakshadweep-14",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:13",
+      "locationName": "Kerala",
+      "slug": "india-kerala-13",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:19",
+      "locationName": "Karnataka",
+      "slug": "india-karnataka-19",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    },
+    {
+      "locationId": "geo:geonames:IN:admin1:12",
+      "locationName": "Jammu and Kashmir",
+      "slug": "india-jammu-and-kashmir-12",
+      "country": "India",
+      "countryCode": "IN",
+      "geographicLevel": "state",
+      "parentLocation": "India",
+      "regulator": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+      "evidenceAvailable": false
+    }
+  ],
+  "samples": {
+    "SUPPORTED": [
+      {
+        "locationId": "geo:geonames:IN:admin1:28",
+        "locationName": "West Bengal",
+        "slug": "india-west-bengal-28",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:36",
+        "locationName": "Uttar Pradesh",
+        "slug": "india-uttar-pradesh-36",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:26",
+        "locationName": "Tripura",
+        "slug": "india-tripura-26",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:40",
+        "locationName": "Telangana",
+        "slug": "india-telangana-40",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:25",
+        "locationName": "Tamil Nadu",
+        "slug": "india-tamil-nadu-25",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:29",
+        "locationName": "Sikkim",
+        "slug": "india-sikkim-29",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:24",
+        "locationName": "Rajasthan",
+        "slug": "india-rajasthan-24",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:23",
+        "locationName": "Punjab",
+        "slug": "india-punjab-23",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:22",
+        "locationName": "Puducherry",
+        "slug": "india-puducherry-22",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:21",
+        "locationName": "Odisha",
+        "slug": "india-odisha-21",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:20",
+        "locationName": "Nagaland",
+        "slug": "india-nagaland-20",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:31",
+        "locationName": "Mizoram",
+        "slug": "india-mizoram-31",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:18",
+        "locationName": "Meghalaya",
+        "slug": "india-meghalaya-18",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:17",
+        "locationName": "Manipur",
+        "slug": "india-manipur-17",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:16",
+        "locationName": "Maharashtra",
+        "slug": "india-maharashtra-16",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:35",
+        "locationName": "Madhya Pradesh",
+        "slug": "india-madhya-pradesh-35",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:14",
+        "locationName": "Lakshadweep",
+        "slug": "india-lakshadweep-14",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:13",
+        "locationName": "Kerala",
+        "slug": "india-kerala-13",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:19",
+        "locationName": "Karnataka",
+        "slug": "india-karnataka-19",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geo:geonames:IN:admin1:12",
+        "locationName": "Jammu and Kashmir",
+        "slug": "india-jammu-and-kashmir-12",
+        "country": "India",
+        "countryCode": "IN",
+        "geographicLevel": "state",
+        "parentLocation": "India",
+        "regulator": "Directorate General of Civil Aviation (DGCA)",
+        "reason": "The sourced location has a valid country hierarchy and a configured national aviation regulator; support is informational only.",
+        "evidenceAvailable": false
+      }
+    ],
+    "NOT_SUPPORTED": [],
+    "RESEARCH": [
+      {
+        "locationId": "geoname:3041565",
+        "locationName": "Andorra",
+        "slug": "andorra",
+        "country": "Andorra",
+        "countryCode": "AD",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Andorra.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:1149361",
+        "locationName": "Afghanistan",
+        "slug": "afghanistan",
+        "country": "Afghanistan",
+        "countryCode": "AF",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Afghanistan.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:3576396",
+        "locationName": "Antigua and Barbuda",
+        "slug": "antigua-and-barbuda",
+        "country": "Antigua and Barbuda",
+        "countryCode": "AG",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Antigua and Barbuda.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:3573511",
+        "locationName": "Anguilla",
+        "slug": "anguilla",
+        "country": "Anguilla",
+        "countryCode": "AI",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Anguilla.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:783754",
+        "locationName": "Albania",
+        "slug": "albania",
+        "country": "Albania",
+        "countryCode": "AL",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Albania.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:174982",
+        "locationName": "Armenia",
+        "slug": "armenia",
+        "country": "Armenia",
+        "countryCode": "AM",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Armenia.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:3351879",
+        "locationName": "Angola",
+        "slug": "angola",
+        "country": "Angola",
+        "countryCode": "AO",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Angola.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:6697173",
+        "locationName": "Antarctica",
+        "slug": "antarctica",
+        "country": "Antarctica",
+        "countryCode": "AQ",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Antarctica.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:3865483",
+        "locationName": "Argentina",
+        "slug": "argentina",
+        "country": "Argentina",
+        "countryCode": "AR",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Argentina.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:5880801",
+        "locationName": "American Samoa",
+        "slug": "american-samoa",
+        "country": "American Samoa",
+        "countryCode": "AS",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for American Samoa.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:2782113",
+        "locationName": "Austria",
+        "slug": "austria",
+        "country": "Austria",
+        "countryCode": "AT",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Austria.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:3577279",
+        "locationName": "Aruba",
+        "slug": "aruba",
+        "country": "Aruba",
+        "countryCode": "AW",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Aruba.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:661882",
+        "locationName": "Aland Islands",
+        "slug": "aland-islands",
+        "country": "Aland Islands",
+        "countryCode": "AX",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Aland Islands.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:587116",
+        "locationName": "Azerbaijan",
+        "slug": "azerbaijan",
+        "country": "Azerbaijan",
+        "countryCode": "AZ",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Azerbaijan.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:3277605",
+        "locationName": "Bosnia and Herzegovina",
+        "slug": "bosnia-and-herzegovina",
+        "country": "Bosnia and Herzegovina",
+        "countryCode": "BA",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Bosnia and Herzegovina.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:3374084",
+        "locationName": "Barbados",
+        "slug": "barbados",
+        "country": "Barbados",
+        "countryCode": "BB",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Barbados.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:1210997",
+        "locationName": "Bangladesh",
+        "slug": "bangladesh",
+        "country": "Bangladesh",
+        "countryCode": "BD",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Bangladesh.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:2802361",
+        "locationName": "Belgium",
+        "slug": "belgium",
+        "country": "Belgium",
+        "countryCode": "BE",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Belgium.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:2361809",
+        "locationName": "Burkina Faso",
+        "slug": "burkina-faso",
+        "country": "Burkina Faso",
+        "countryCode": "BF",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Burkina Faso.",
+        "evidenceAvailable": false
+      },
+      {
+        "locationId": "geoname:732800",
+        "locationName": "Bulgaria",
+        "slug": "bulgaria",
+        "country": "Bulgaria",
+        "countryCode": "BG",
+        "geographicLevel": "country",
+        "parentLocation": null,
+        "regulator": null,
+        "reason": "No country-specific aviation regulatory context is configured for Bulgaria.",
+        "evidenceAvailable": false
+      }
+    ],
+    "REJECTED": [],
+    "AMBIGUOUS": []
+  },
+  "sourceRegistries": {
+    "india": {
+      "declaredRecordCount": 574431,
+      "evaluatedRecordCount": 574431
+    },
+    "worldwide": {
+      "declaredRecordCount": 5201256,
+      "evaluatedRecordCount": 4651456
+    },
+    "worldwideAirportPoints": 23574,
+    "note": "The India subset is excluded from the worldwide scan to prevent duplicate classifications."
+  },
+  "runtimeSeconds": 359.5,
+  "reportFile": "data\\location-seo\\geography\\pilot-training-support-classification.jsonl.gz",
+  "reportCompression": "gzip-compressed JSON Lines; one object per registry location."
+}

@@ -3,7 +3,7 @@ import StructuredData from '../../components/StructuredData';
 import FAQSection from '../../components/FAQSection';
 import Link from 'next/link';
 import NextImage from 'next/image';
-import { MongoClient, ObjectId } from 'mongodb';
+import { getMongoBlogServerProps } from '../../lib/blogPosts';
 
 /*
  * ── Static blog data ──────────────────────────────────────────────────────
@@ -385,88 +385,16 @@ function ArticleCTA() {
 }
 
 // ─────────────────────────────────────────────
-// Data fetching (SSG)
+// Data fetching (request-time SSR)
 // ─────────────────────────────────────────────
 
-export async function getStaticPaths() {
-    let mongoPaths = [];
-
-    try {
-        const client = new MongoClient(process.env.MONGODB_URI);
-        await client.connect();
-        const db = client.db('weoneaviation');
-        const mongoBlogs = await db.collection('blogs').find({}).toArray();
-        mongoPaths = mongoBlogs.map((b) => ({ params: { id: b._id.toString() } }));
-        await client.close();
-    } catch (e) {
-        console.error('MongoDB path fetch error:', e.message);
-    }
-
-    const hardcodedPaths = hardcodedBlogs.map((b) => ({
-        params: { id: String(b.id) },
-    }));
-
-    return {
-        paths: [...hardcodedPaths, ...mongoPaths],
-        fallback: 'blocking',
-    };
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
+    const id = String(params.id);
     // Check hardcoded blogs first
-    const hardcoded = hardcodedBlogs.find((b) => b.id === Number(params.id));
+    const hardcoded = hardcodedBlogs.find((b) => String(b.id) === id);
     if (hardcoded) return { props: { blog: hardcoded } };
 
-    // Fall back to MongoDB
-    try {
-        const client = new MongoClient(process.env.MONGODB_URI);
-        await client.connect();
-        const db = client.db('weoneaviation');
-        const raw = await db
-            .collection('blogs')
-            .findOne({ _id: new ObjectId(params.id) });
-        await client.close();
-
-        if (!raw) return { notFound: true };
-
-        const displayDate = raw.updatedAt
-            ? `${new Date(raw.updatedAt).toDateString()} (edited)`
-            : new Date(raw.createdAt).toDateString();
-
-        /*
-         * Machine-readable siblings of displayDate. BlogPosting wants ISO-8601;
-         * "Mon Dec 15 2024 (edited)" is for the reader, not for a crawler.
-         * dateModified falls back to createdAt so the field is never absent —
-         * an Article node without dates is the one Google reliably ignores.
-         */
-        const datePublishedISO = new Date(raw.createdAt).toISOString();
-        const dateModifiedISO = new Date(raw.updatedAt || raw.createdAt).toISOString();
-
-        return {
-            props: {
-                blog: {
-                    id: raw._id.toString(),
-                    title: raw.title,
-                    excerpt: raw.excerpt || '',
-                    category: raw.category || 'Blog',
-                    readTime: '5 min',
-                    date: displayDate,
-                    datePublishedISO,
-                    dateModifiedISO,
-                    img:
-                        raw.coverImage ||
-                        'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80',
-                    content: raw.content,
-                    slug: raw.slug || '',
-                    faqs: Array.isArray(raw.faqs) ? raw.faqs : [],
-                },
-            },
-            revalidate: 30,
-        };
-    } catch (e) {
-        console.error('MongoDB blog fetch error:', e.message);
-        return { notFound: true };
-    }
+    return getMongoBlogServerProps(id);
 }
 
 // ─────────────────────────────────────────────

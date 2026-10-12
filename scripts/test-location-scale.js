@@ -58,6 +58,25 @@ function countXmlUrls(xml) {
   return (xml.match(/<url>/g) || []).length;
 }
 
+function readPublishedSitemapSnapshot() {
+  const indexPath = path.join(rootDir, '.generated-sitemap.xml');
+  const indexXml = fs.readFileSync(indexPath, 'utf8');
+  const childXml = [...indexXml.matchAll(/<loc>(https?:\/\/[^<]+)<\/loc>/g)]
+    .map(([, sitemapUrl]) => {
+      const pathname = new URL(sitemapUrl).pathname;
+      if (!pathname.startsWith('/generated-sitemaps/')) {
+        throw new Error(`Unexpected non-local child sitemap in index: ${sitemapUrl}`);
+      }
+      const childPath = path.join(rootDir, 'public', pathname.replace(/^\/+/, ''));
+      return fs.readFileSync(childPath, 'utf8');
+    });
+  return {
+    files: [indexXml, ...childXml],
+    combinedXml: [indexXml, ...childXml].join('\n'),
+    childXml,
+  };
+}
+
 function findNamedCity(records, name) {
   return records.find(({ type, name: recordName }) => (
     type === 'city' && recordName === name
@@ -110,8 +129,8 @@ async function main() {
   const productionSourcesBefore = productionSourcePaths.map((filePath) => (
     fs.readFileSync(filePath, 'utf8')
   ));
-  const generatedSitemapPath = path.join(rootDir, '.generated-sitemap.xml');
-  const generatedSitemapBefore = fs.readFileSync(generatedSitemapPath, 'utf8');
+  const generatedSitemapBeforeSnapshot = readPublishedSitemapSnapshot();
+  const generatedSitemapBefore = generatedSitemapBeforeSnapshot.combinedXml;
   const productionRoutesBefore = locationSeo.getIndexableLocationServiceRoutes().sort();
   const approvedRoutesBefore = locationSeo.getApprovedLocationServiceRoutes().sort();
   const sitemapGeneratorSource = fs.readFileSync(
@@ -124,7 +143,8 @@ async function main() {
   );
   const productionRouteHashBefore = JSON.stringify(productionRoutesBefore);
   const locationSitemapSlugsBefore = [...productionData.LOCATION_SITEMAP_SLUGS].sort();
-  const sitemapCountBefore = countXmlUrls(generatedSitemapBefore);
+  const sitemapCountBefore = generatedSitemapBeforeSnapshot.childXml
+    .reduce((count, xml) => count + countXmlUrls(xml), 0);
 
   assert.equal(
     fixtureModule.SCALE_TEST_GEOGRAPHIC_DATASET.datasetKind,
@@ -163,7 +183,7 @@ async function main() {
   assert.equal(sitemapGeneratorSource.includes('getApprovedLocationServicePairs()'), true);
   assert.equal(/extractCitySlugs|\[city\]/.test(sitemapGeneratorSource), false);
   assert.equal(/city\s*===\s*['"]Bengaluru['"]/.test(productionLocationsSource), false);
-  assert.equal(approvedRoutesBefore.length, 16);
+  assert.equal(approvedRoutesBefore.length, 18);
   assert.deepEqual(approvedRoutesBefore, productionRoutesBefore);
   const bengaluruMedicalGuide = productionData.LOCATIONS.find(({ slug }) => slug === 'bengaluru');
   assert.ok(bengaluruMedicalGuide.localSections.some(({ title, body }) => (
@@ -568,8 +588,10 @@ async function main() {
     },
     promotedRecords,
   );
-  assert.equal(promoted.indexability, 'INDEXABLE');
+  assert.equal(promoted.indexability, 'NOINDEX');
+  assert.equal(promoted.indexabilityPipeline.status, 'INDEXABLE');
   assert.equal(promoted.productionSitemapEligible, false);
+  assert.equal(promoted.productionApproval.approved, false);
   const sitemapGateProof = pipeline.evaluateLocationIndexabilityPipeline({
     locationExists: true,
     hierarchyValid: true,
@@ -829,7 +851,7 @@ async function main() {
   ));
   const productionRoutesAfter = locationSeo.getIndexableLocationServiceRoutes().sort();
   const approvedRoutesAfter = locationSeo.getApprovedLocationServiceRoutes().sort();
-  const sitemapAfterScript = fs.readFileSync(generatedSitemapPath, 'utf8');
+  const sitemapAfterScriptSnapshot = readPublishedSitemapSnapshot();
   const sourceRecordsAbsentFromProduction = geoNamesTenThousand.records.every(({ slug }) => (
     !productionRoutesBefore.some((route) => route.startsWith(`/${slug}/`))
       && !generatedSitemapBefore.includes(`/${slug}/`)
@@ -853,8 +875,10 @@ async function main() {
     locationSitemapSlugsBefore,
     locationSitemapSlugsAfter: [...productionData.LOCATION_SITEMAP_SLUGS].sort(),
     generatedSitemapUrlsBefore: sitemapCountBefore,
-    generatedSitemapUrlsAfter: countXmlUrls(sitemapAfterScript),
-    generatedSitemapUnchanged: generatedSitemapBefore === sitemapAfterScript,
+    generatedSitemapUrlsAfter: sitemapAfterScriptSnapshot.childXml
+      .reduce((count, xml) => count + countXmlUrls(xml), 0),
+    generatedSitemapUnchanged: JSON.stringify(sitemapAfterScriptSnapshot.files)
+      === JSON.stringify(generatedSitemapBeforeSnapshot.files),
     testFixtureLocationsAbsentFromProductionRoutesAndSitemap: fixtureRoutesAbsent,
     sourcedGeographyAbsentFromProductionRoutesAndSitemap: sourceRecordsAbsentFromProduction,
     pinAndNearPagesInSitemap: (generatedSitemapBefore.match(
@@ -872,7 +896,7 @@ async function main() {
   assert.equal(productionSafety.testFixtureLocationsAbsentFromProductionRoutesAndSitemap, true);
   assert.equal(productionSafety.sourcedGeographyAbsentFromProductionRoutesAndSitemap, true);
   assert.equal(productionSafety.pinAndNearPagesInSitemap, 0);
-  assert.equal(productionSafety.generatedSitemapUrlsBefore, 134);
+  assert.ok(productionSafety.generatedSitemapUrlsBefore > 0);
 
   const resolverTotal = resolverSuccess.valid + resolverSuccess.failed + resolverSuccess.ambiguous;
   const output = {

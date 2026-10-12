@@ -1,0 +1,901 @@
+{
+  "schemaVersion": 1,
+  "phase": "4N",
+  "generatedAt": "2026-10-08T11:11:34.314Z",
+  "scope": {
+    "requestedNewCandidateLimit": 100,
+    "totalNewCandidatesEvaluated": 4,
+    "sourceBackedTrainingLocationsDiscovered": 38,
+    "sourceBackedTrainingLocationsPreviouslyAudited": 34,
+    "priorAuditCandidateCount": 70,
+    "selection": "Exact India registry IDs with verified pilot-training evidence, excluding IDs already in the Phase 4L audit. Alternate record IDs are evaluated separately and are never merged by name alone.",
+    "sourceInventory": {
+      "dgcaFtoRosterOrganizations": 41,
+      "dgcaFtoRosterBaseRows": 64,
+      "normalizedIndiaEvidenceRecords": 73,
+      "distinctNormalizedTrainingLocationIds": 38,
+      "baseIndiaAviationEvidenceRecords": 23,
+      "baseIndiaEvidenceLocationIds": 15,
+      "baseEvidenceLocationIdsNotInPriorAudit": 0
+    }
+  },
+  "source": {
+    "publisher": "Directorate General of Civil Aviation (DGCA)",
+    "title": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+    "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+    "sourceDate": "2026-10-03",
+    "sourceDateBasis": "The PDF heading states \"As on 03.10.2026\".",
+    "pdfCreatedAt": "2026-10-03T13:49:39Z",
+    "objectLastModifiedAt": "2026-10-06T09:06:41Z",
+    "verificationDate": "2026-10-08",
+    "status": "VERIFIED_CURRENT_AS_OF_SOURCE_DATE",
+    "scopeNote": "The roster supports source-listed organization/base relationships as of its stated date. It does not establish ongoing operations, admissions, or current course availability."
+  },
+  "policy": {
+    "similarityThresholdPercent": 80,
+    "productionApprovalChanged": false,
+    "sitemapChanged": false,
+    "tierAloneGrantsIndexability": false,
+    "medicalEvidenceAloneQualifiesStrong": false
+  },
+  "summary": {
+    "totalCandidates": 4,
+    "newlyDiscoveredByExactRecordId": 4,
+    "genuinelyNewPlaceNamesComparedWithPhase4L": 0,
+    "potentialDuplicateIdentityCandidates": 4,
+    "tierCounts": {
+      "STRONG": 3,
+      "MEDIUM": 1,
+      "THIN": 0
+    },
+    "indexabilityCounts": {
+      "INDEXABLE": 0,
+      "NOINDEX": 4
+    },
+    "qualityQualifiedButNotApproved": [
+      {
+        "location": "Hyderabad",
+        "locationId": "geo:geonames:IN:1269843",
+        "route": "/geonames-in-hyderabad-1269843/pilot-training",
+        "evidenceTier": "STRONG",
+        "similarityPercent": 40.7
+      },
+      {
+        "location": "Amritsar",
+        "locationId": "geo:geonames:IN:1278710",
+        "route": "/geonames-in-amritsar-1278710/pilot-training",
+        "evidenceTier": "STRONG",
+        "similarityPercent": 41.3
+      },
+      {
+        "location": "Thiruvananthapuram",
+        "locationId": "geo:geonames:IN:1254163",
+        "route": "/geonames-in-thiruvananthapuram-1254163/pilot-training",
+        "evidenceTier": "STRONG",
+        "similarityPercent": 45.9
+      }
+    ],
+    "newlyApprovedProductionRoutes": 0,
+    "unresolvedSourceRows": 18,
+    "unresolvedSourceRowsByStatus": {
+      "AMBIGUOUS": 15,
+      "UNMATCHED": 1,
+      "DUPLICATE": 2
+    },
+    "medicalOnlyUnseenLocationsExcluded": 2,
+    "resolverConflicts": 0,
+    "unsupportedClaims": 0,
+    "exactDuplicateCandidateRecords": 0
+  },
+  "previouslyAuditedRosterLocations": [
+    {
+      "location": "Bārāmati",
+      "state": "Maharashtra",
+      "locationId": "geo:geonames:IN:1277091",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Jamshedpur",
+      "state": "Jharkhand",
+      "locationId": "geo:geonames:IN:1269300",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Shamshabad",
+      "state": "Telangana",
+      "locationId": "geo:geonames:IN:7648816",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Kalaburagi",
+      "state": "Karnataka",
+      "locationId": "geo:geonames:IN:1270752",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Karād",
+      "state": "Maharashtra",
+      "locationId": "geo:geonames:IN:1267904",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Patna",
+      "state": "Bihar",
+      "locationId": "geo:geonames:IN:1260086",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Tonk",
+      "state": "Rajasthan",
+      "locationId": "geo:geonames:IN:admin2:24.120",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Sāgar",
+      "state": "Madhya Pradesh",
+      "locationId": "geo:geonames:IN:admin2:35.427",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Neemuch",
+      "state": "Madhya Pradesh",
+      "locationId": "geo:geonames:IN:admin2:35.432",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Bhavnagar",
+      "state": "Gujarat",
+      "locationId": "geo:geonames:IN:1276032",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Bhilwara",
+      "state": "Rajasthan",
+      "locationId": "geo:geonames:IN:1275960",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Salem",
+      "state": "Tamil Nadu",
+      "locationId": "geo:geonames:IN:admin2:25.608",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Ayodhya",
+      "state": "Uttar Pradesh",
+      "locationId": "geo:geonames:IN:1278094",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Rewa",
+      "state": "Madhya Pradesh",
+      "locationId": "geo:geonames:IN:1258182",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Narnaul",
+      "state": "Haryana",
+      "locationId": "geo:geonames:IN:1261772",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Dhenkānāl",
+      "state": "Odisha",
+      "locationId": "geo:geonames:IN:1272780",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Bhubaneswar",
+      "state": "Odisha",
+      "locationId": "geo:geonames:IN:1275817",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Vadodara",
+      "state": "Gujarat",
+      "locationId": "geo:geonames:IN:1253573",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Amreli",
+      "state": "Gujarat",
+      "locationId": "geo:geonames:IN:1278715",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Bengaluru",
+      "state": "Karnataka",
+      "locationId": "geo:geonames:IN:1277333",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Karnāl",
+      "state": "Haryana",
+      "locationId": "geo:geonames:IN:admin2:10.074",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Hisar",
+      "state": "Haryana",
+      "locationId": "geo:geonames:IN:1270022",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Pinjaur",
+      "state": "Haryana",
+      "locationId": "geo:geonames:IN:1259630",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Khajuraho Group of Monuments",
+      "state": "Madhya Pradesh",
+      "locationId": "geo:geonames:IN:1267154",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Gondiā",
+      "state": "Maharashtra",
+      "locationId": "geo:geonames:IN:1270990",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Dumka",
+      "state": "Jharkhand",
+      "locationId": "geo:geonames:IN:1272237",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Indore",
+      "state": "Madhya Pradesh",
+      "locationId": "geo:geonames:IN:1269743",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Bhopal",
+      "state": "Madhya Pradesh",
+      "locationId": "geo:geonames:IN:1275841",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Nagpur",
+      "state": "Maharashtra",
+      "locationId": "geo:geonames:IN:1262180",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Chandrāpur",
+      "state": "Maharashtra",
+      "locationId": "geo:geonames:IN:10523844",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Mysuru",
+      "state": "Karnataka",
+      "locationId": "geo:geonames:IN:1262321",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Patiāla",
+      "state": "Punjab",
+      "locationId": "geo:geonames:IN:1260107",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "North Lakhimpur",
+      "state": "Assam",
+      "locationId": "geo:geonames:IN:1261181",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    },
+    {
+      "location": "Belagavi",
+      "state": "Karnataka",
+      "locationId": "geo:geonames:IN:1276533",
+      "priorCandidateTier": "MEDIUM",
+      "priorIndexabilityState": "NOINDEX"
+    }
+  ],
+  "medicalOnlyUnseenLocations": [
+    {
+      "locationId": "geo:geonames:IN:1275339",
+      "location": "Mumbai",
+      "state": "Maharashtra",
+      "evidenceType": "medical-centre",
+      "status": "EXCLUDED_MEDICAL_SUPPORT_ONLY",
+      "reason": "Medical evidence alone is not eligible to establish a new pilot-training candidate."
+    },
+    {
+      "locationId": "geo:geonames:IN:1275004",
+      "location": "Kolkata",
+      "state": "West Bengal",
+      "evidenceType": "medical-centre",
+      "status": "EXCLUDED_MEDICAL_SUPPORT_ONLY",
+      "reason": "Medical evidence alone is not eligible to establish a new pilot-training candidate."
+    }
+  ],
+  "unresolvedFtoSourceRows": [
+    {
+      "evidenceId": "aviation:fto:dgca-roster:avyanna-aviation-pvt-ltd-kishangarh",
+      "name": "Avyanna Aviation Pvt. Ltd.",
+      "sourcePlace": {
+        "name": "Kishangarh",
+        "state": "Rajasthan"
+      },
+      "sourceBase": "Site-2, Kishangarh Airport, Ajmer",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "Exact populated-place name and state has multiple registry matches.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:banasthali-vidyapith-gliding-flying-club-old-technical-block-dharwad-karnataka",
+      "name": "Banasthali Vidyapith Gliding & Flying Club",
+      "sourcePlace": null,
+      "sourceBase": "Old Technical Block, Dharwad, Karnataka",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The organization name and the source-listed base locality conflict; do not assign it to Banasthali or Dharwad without resolving the source record.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:blue-ray-aviation-pvt-ltd-mehsana-airstrip-ahmedabad-gujarat",
+      "name": "Blue Ray Aviation Pvt. Ltd.",
+      "sourcePlace": null,
+      "sourceBase": "Mehsana Airstrip, Ahmedabad, Gujarat",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The listed airstrip name and city field identify different locations.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:blue-ray-aviation-pvt-ltd-dhule-airstrip-mumbai-maharashtra",
+      "name": "Blue Ray Aviation Pvt. Ltd.",
+      "sourcePlace": null,
+      "sourceBase": "Dhule Airstrip, Mumbai, Maharashtra",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The listed airstrip name and city field identify different locations.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:the-bombay-flying-club-dhule-airstrip-mumbai-maharashtra",
+      "name": "The Bombay Flying Club",
+      "sourcePlace": null,
+      "sourceBase": "Dhule Airstrip, Mumbai, Maharashtra",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The listed airstrip name and city field identify different locations.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:chetak-aviation-a-unit-of-sultan-education-society-aligarh",
+      "name": "Chetak Aviation (A unit of Sultan Education Society)",
+      "sourcePlace": {
+        "name": "Aligarh",
+        "state": "Uttar Pradesh"
+      },
+      "sourceBase": "Dhanipur Airstrip, Aligarh, Uttar Pradesh",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "Exact populated-place name and state has multiple registry matches.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:flytech-aviation-academy-nagarjuna-sagar-airfield-guntur-andhra-pradesh",
+      "name": "Flytech Aviation Academy",
+      "sourcePlace": null,
+      "sourceBase": "Nagarjuna Sagar Airfield, Guntur, Andhra Pradesh",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The roster associates an airfield name with a separate city label; the exact registry location is not established by this entry.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:fstc-flying-school-pvt-ltd-chaudhary-bansi-lal-airport-village-gujrani-bhiwani-haryana",
+      "name": "FSTC Flying School Pvt. Ltd.",
+      "sourcePlace": null,
+      "sourceBase": "Chaudhary Bansi Lal Airport, Village Gujrani, Bhiwani, Haryana",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "The source identifies both a village and a city/airport label; the exact registry record for the named base needs confirmation.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:garg-aviations-ltd-kanpur",
+      "name": "Garg Aviations Ltd.",
+      "sourcePlace": {
+        "name": "Kanpur",
+        "state": "Uttar Pradesh"
+      },
+      "sourceBase": "Civil Aerodrome, Kanpur, Uttar Pradesh",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "Exact populated-place name and state has multiple registry matches.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:jet-serve-aviation-pvt-ltd-jalgaon",
+      "name": "Jet Serve Aviation Pvt. Ltd.",
+      "sourcePlace": {
+        "name": "Jalgaon",
+        "state": "Maharashtra"
+      },
+      "sourceBase": "Flyola Aviation Academy, Jalgaon Airport, Maharashtra",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "Exact populated-place name and state has multiple registry matches.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:pioneer-flying-academy-pvt-ltd-aligarh",
+      "name": "Pioneer Flying Academy Pvt. Ltd.",
+      "sourcePlace": {
+        "name": "Aligarh",
+        "state": "Uttar Pradesh"
+      },
+      "sourceBase": "Dhanipur Airstrip, Aligarh, Uttar Pradesh",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "Exact populated-place name and state has multiple registry matches.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:redbird-flight-training-academy-pvt-ltd-seoni",
+      "name": "Redbird Flight Training Academy Pvt. Ltd.",
+      "sourcePlace": {
+        "name": "Seoni",
+        "state": "Madhya Pradesh"
+      },
+      "sourceBase": "Suktara Airport, Seoni, Madhya Pradesh",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "Exact populated-place name and state has multiple registry matches.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:sha-shib-flying-academy-guna",
+      "name": "Sha-Shib Flying Academy",
+      "sourcePlace": {
+        "name": "Guna",
+        "state": "Madhya Pradesh"
+      },
+      "sourceBase": "Guna Airport, Madhya Pradesh",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "Exact populated-place name and state has multiple registry matches.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:skynex-aero-pvt-ltd-jalgaon",
+      "name": "Skynex Aero Pvt. Ltd.",
+      "sourcePlace": {
+        "name": "Jalgaon",
+        "state": "Maharashtra"
+      },
+      "sourceBase": "Jalgaon Airport, Jalgaon, Maharashtra",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "Exact populated-place name and state has multiple registry matches.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:svkm-nmims-academy-of-aviation-shirpur",
+      "name": "SVKM NMIMS Academy of Aviation",
+      "sourcePlace": {
+        "name": "Shirpur",
+        "state": "Maharashtra"
+      },
+      "sourceBase": "Shirpur Airstrip, District Dhule, Maharashtra",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "Exact populated-place name and state has multiple registry matches.",
+      "mappingStatus": "AMBIGUOUS"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:skynex-aero-pvt-ltd-mahsana",
+      "name": "Skynex Aero Pvt. Ltd.",
+      "sourcePlace": {
+        "name": "Mahsana",
+        "state": "Gujarat"
+      },
+      "sourceBase": "Mahsana, Gujarat",
+      "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+      "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+      "reason": "No exact city/town/populated-place/village/district/subdistrict registry match in Gujarat.",
+      "mappingStatus": "UNMATCHED"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:the-bombay-flying-club-mumbai",
+      "existingEvidenceId": "aviation:fto:bombay-flying-club",
+      "reason": "Same flight-school name, exact registry place, evidence type, and source URL already exist.",
+      "mappingStatus": "DUPLICATE"
+    },
+    {
+      "evidenceId": "aviation:fto:dgca-roster:flytech-aviation-academy-hyderabad",
+      "existingEvidenceId": "aviation:fto:flytech-nadergul",
+      "reason": "Same flight-school name, exact registry place, evidence type, and source URL already exist.",
+      "mappingStatus": "DUPLICATE"
+    }
+  ],
+  "candidates": [
+    {
+      "location": "Hyderabad",
+      "locationId": "geo:geonames:IN:1269843",
+      "route": "/geonames-in-hyderabad-1269843/pilot-training",
+      "country": "India",
+      "countryCode": "IN",
+      "state": "Telangana",
+      "geographicType": "city",
+      "hierarchy": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:40",
+          "name": "Telangana",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:40.536",
+          "name": "Hyderābād",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:1269843",
+          "name": "Hyderabad",
+          "type": "city"
+        }
+      ],
+      "geographicIdentityValid": true,
+      "hierarchyValid": true,
+      "regulator": {
+        "country": "India",
+        "authority": "Directorate General of Civil Aviation (DGCA)",
+        "source": "https://www.dgca.gov.in/"
+      },
+      "evidenceTier": "STRONG",
+      "evidenceScore": 100,
+      "qualityGatePassed": true,
+      "qualityScore": 100,
+      "differentiationPassed": true,
+      "similarityPercent": 40.7,
+      "similarityThresholdPercent": 80,
+      "directTrainingEvidenceCount": 3,
+      "regionalTrainingEvidenceCount": 0,
+      "evidence": [
+        {
+          "id": "aviation:fto:dgca-roster:arca-global-aviation-private-limited-hyderabad",
+          "name": "ARCA Global Aviation Private Limited",
+          "type": "flight-school",
+          "relationship": "located-within",
+          "geographicRecordId": "geo:geonames:IN:1269843",
+          "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+          "sourceTitle": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+          "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+          "sourceDate": "2026-10-03",
+          "sourceDateBasis": "The PDF heading states \"As on 03.10.2026\".",
+          "verificationDate": "2026-10-08",
+          "verificationStatus": "primary-source-listed",
+          "fact": "The DGCA roster dated 2026-10-03 lists ARCA Global Aviation Private Limited at Hangar 3, Begumpet Airport, Begumpet, Hyderabad. The entry is date-specific and does not establish current operations, admissions, course availability, or a relationship with We One Aviation.",
+          "attributionNote": "DGCA approved flying training organization roster; source-listed base: Hangar 3, Begumpet Airport, Begumpet, Hyderabad. This is an independent organization listed by DGCA, not a We One Aviation facility, service, partnership, or training location. The dated roster does not establish current operations or course availability."
+        },
+        {
+          "id": "aviation:fto:dgca-roster:telangana-state-aviation-academy-hyderabad",
+          "name": "Telangana State Aviation Academy",
+          "type": "pilot-training-organization",
+          "relationship": "located-within",
+          "geographicRecordId": "geo:geonames:IN:1269843",
+          "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+          "sourceTitle": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+          "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+          "sourceDate": "2026-10-03",
+          "sourceDateBasis": "The PDF heading states \"As on 03.10.2026\".",
+          "verificationDate": "2026-10-08",
+          "verificationStatus": "primary-source-listed",
+          "fact": "The DGCA roster dated 2026-10-03 lists Telangana State Aviation Academy at Begumpet Airport, Hyderabad, Telangana. The entry is date-specific and does not establish current operations, admissions, course availability, or a relationship with We One Aviation.",
+          "attributionNote": "DGCA approved flying training organization roster; source-listed base: Begumpet Airport, Hyderabad, Telangana. This is an independent organization listed by DGCA, not a We One Aviation facility, service, partnership, or training location. The dated roster does not establish current operations or course availability."
+        },
+        {
+          "id": "aviation:fto:dgca-roster:wings-aviation-pvt-ltd-hyderabad",
+          "name": "Wings Aviation Pvt. Ltd.",
+          "type": "flight-school",
+          "relationship": "located-within",
+          "geographicRecordId": "geo:geonames:IN:1269843",
+          "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+          "sourceTitle": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+          "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+          "sourceDate": "2026-10-03",
+          "sourceDateBasis": "The PDF heading states \"As on 03.10.2026\".",
+          "verificationDate": "2026-10-08",
+          "verificationStatus": "primary-source-listed",
+          "fact": "The DGCA roster dated 2026-10-03 lists Wings Aviation Pvt. Ltd. at Begumpet Airport, Hyderabad, Telangana. The entry is date-specific and does not establish current operations, admissions, course availability, or a relationship with We One Aviation.",
+          "attributionNote": "DGCA approved flying training organization roster; source-listed base: Begumpet Airport, Hyderabad, Telangana. This is an independent organization listed by DGCA, not a We One Aviation facility, service, partnership, or training location. The dated roster does not establish current operations or course availability."
+        }
+      ],
+      "unsupportedClaims": [],
+      "qualityQualified": true,
+      "productionApproved": false,
+      "indexabilityState": "NOINDEX",
+      "sitemapEligible": false,
+      "priorCandidateRecordId": "geo:city:in-hyderabad",
+      "potentialDuplicateIdentity": true,
+      "duplicateIdentityNote": "Country, state, and normalized place name match a prior audited record, but record IDs differ. Kept separate; no identity merge or approval inferred.",
+      "priorCandidateState": "INDEXABLE",
+      "priorCandidateTier": "STRONG"
+    },
+    {
+      "location": "Fursatganj",
+      "locationId": "geo:geonames:IN:10575532",
+      "route": "/geonames-in-fursatganj-10575532/pilot-training",
+      "country": "India",
+      "countryCode": "IN",
+      "state": "Uttar Pradesh",
+      "geographicType": "populated-place",
+      "hierarchy": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:36",
+          "name": "Uttar Pradesh",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:36.640",
+          "name": "Amethi",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:36.640.824",
+          "name": "Tiloi",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:10575532",
+          "name": "Fursatganj",
+          "type": "populated-place"
+        }
+      ],
+      "geographicIdentityValid": true,
+      "hierarchyValid": true,
+      "regulator": {
+        "country": "India",
+        "authority": "Directorate General of Civil Aviation (DGCA)",
+        "source": "https://www.dgca.gov.in/"
+      },
+      "evidenceTier": "MEDIUM",
+      "evidenceScore": 80,
+      "qualityGatePassed": false,
+      "qualityScore": 100,
+      "differentiationPassed": true,
+      "similarityPercent": 38.7,
+      "similarityThresholdPercent": 80,
+      "directTrainingEvidenceCount": 1,
+      "regionalTrainingEvidenceCount": 0,
+      "evidence": [
+        {
+          "id": "aviation:fto:dgca-roster:indira-gandhi-rashtriya-uran-akademi-fursatganj",
+          "name": "Indira Gandhi Rashtriya Uran Akademi",
+          "type": "pilot-training-organization",
+          "relationship": "located-within",
+          "geographicRecordId": "geo:geonames:IN:10575532",
+          "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+          "sourceTitle": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+          "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+          "sourceDate": "2026-10-03",
+          "sourceDateBasis": "The PDF heading states \"As on 03.10.2026\".",
+          "verificationDate": "2026-10-08",
+          "verificationStatus": "primary-source-listed",
+          "fact": "The DGCA roster dated 2026-10-03 lists Indira Gandhi Rashtriya Uran Akademi at Fursatganj Airfield, Raebareli, Amethi, Uttar Pradesh. The entry is date-specific and does not establish current operations, admissions, course availability, or a relationship with We One Aviation.",
+          "attributionNote": "DGCA approved flying training organization roster; source-listed base: Fursatganj Airfield, Raebareli, Amethi, Uttar Pradesh. This is an independent organization listed by DGCA, not a We One Aviation facility, service, partnership, or training location. The dated roster does not establish current operations or course availability."
+        }
+      ],
+      "unsupportedClaims": [],
+      "qualityQualified": false,
+      "productionApproved": false,
+      "indexabilityState": "NOINDEX",
+      "sitemapEligible": false,
+      "priorCandidateRecordId": "geo:town:fursatganj",
+      "potentialDuplicateIdentity": true,
+      "duplicateIdentityNote": "Country, state, and normalized place name match a prior audited record, but record IDs differ. Kept separate; no identity merge or approval inferred.",
+      "priorCandidateState": "NOINDEX",
+      "priorCandidateTier": "MEDIUM"
+    },
+    {
+      "location": "Amritsar",
+      "locationId": "geo:geonames:IN:1278710",
+      "route": "/geonames-in-amritsar-1278710/pilot-training",
+      "country": "India",
+      "countryCode": "IN",
+      "state": "Punjab",
+      "geographicType": "populated-place",
+      "hierarchy": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:23",
+          "name": "Punjab",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:23.049",
+          "name": "Amritsar",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:23.049.256",
+          "name": "Amritsar I",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1278710",
+          "name": "Amritsar",
+          "type": "populated-place"
+        }
+      ],
+      "geographicIdentityValid": true,
+      "hierarchyValid": true,
+      "regulator": {
+        "country": "India",
+        "authority": "Directorate General of Civil Aviation (DGCA)",
+        "source": "https://www.dgca.gov.in/"
+      },
+      "evidenceTier": "STRONG",
+      "evidenceScore": 90,
+      "qualityGatePassed": true,
+      "qualityScore": 100,
+      "differentiationPassed": true,
+      "similarityPercent": 41.3,
+      "similarityThresholdPercent": 80,
+      "directTrainingEvidenceCount": 1,
+      "regionalTrainingEvidenceCount": 0,
+      "evidence": [
+        {
+          "id": "aviation:fto:dgca-roster:patiala-aviation-club-amritsar",
+          "name": "Patiala Aviation Club",
+          "type": "flying-club",
+          "relationship": "located-within",
+          "geographicRecordId": "geo:geonames:IN:1278710",
+          "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+          "sourceTitle": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+          "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+          "sourceDate": "2026-10-03",
+          "sourceDateBasis": "The PDF heading states \"As on 03.10.2026\".",
+          "verificationDate": "2026-10-08",
+          "verificationStatus": "primary-source-listed",
+          "fact": "The DGCA roster dated 2026-10-03 lists Patiala Aviation Club at Sri Guru Ram Das Jee International Airport, Amritsar, Punjab. The entry is date-specific and does not establish current operations, admissions, course availability, or a relationship with We One Aviation.",
+          "attributionNote": "DGCA approved flying training organization roster; source-listed base: Sri Guru Ram Das Jee International Airport, Amritsar, Punjab. This is an independent organization listed by DGCA, not a We One Aviation facility, service, partnership, or training location. The dated roster does not establish current operations or course availability."
+        }
+      ],
+      "unsupportedClaims": [],
+      "qualityQualified": true,
+      "productionApproved": false,
+      "indexabilityState": "NOINDEX",
+      "sitemapEligible": false,
+      "priorCandidateRecordId": "geo:city:in-amritsar",
+      "potentialDuplicateIdentity": true,
+      "duplicateIdentityNote": "Country, state, and normalized place name match a prior audited record, but record IDs differ. Kept separate; no identity merge or approval inferred.",
+      "priorCandidateState": "INDEXABLE",
+      "priorCandidateTier": "STRONG"
+    },
+    {
+      "location": "Thiruvananthapuram",
+      "locationId": "geo:geonames:IN:1254163",
+      "route": "/geonames-in-thiruvananthapuram-1254163/pilot-training",
+      "country": "India",
+      "countryCode": "IN",
+      "state": "Kerala",
+      "geographicType": "city",
+      "hierarchy": [
+        {
+          "id": "geo:geonames:IN:country",
+          "name": "India",
+          "type": "country"
+        },
+        {
+          "id": "geo:geonames:IN:admin1:13",
+          "name": "Kerala",
+          "type": "state"
+        },
+        {
+          "id": "geo:geonames:IN:admin2:13.601",
+          "name": "Thiruvananthapuram",
+          "type": "district"
+        },
+        {
+          "id": "geo:geonames:IN:admin3:13.601.5691",
+          "name": "Thiruvananthapuram",
+          "type": "subdistrict"
+        },
+        {
+          "id": "geo:geonames:IN:1254163",
+          "name": "Thiruvananthapuram",
+          "type": "city"
+        }
+      ],
+      "geographicIdentityValid": true,
+      "hierarchyValid": true,
+      "regulator": {
+        "country": "India",
+        "authority": "Directorate General of Civil Aviation (DGCA)",
+        "source": "https://www.dgca.gov.in/"
+      },
+      "evidenceTier": "STRONG",
+      "evidenceScore": 90,
+      "qualityGatePassed": true,
+      "qualityScore": 100,
+      "differentiationPassed": true,
+      "similarityPercent": 45.9,
+      "similarityThresholdPercent": 80,
+      "directTrainingEvidenceCount": 1,
+      "regionalTrainingEvidenceCount": 0,
+      "evidence": [
+        {
+          "id": "aviation:fto:dgca-roster:rajiv-gandhi-academy-for-aviation-technology-thiruvananthapuram",
+          "name": "Rajiv Gandhi Academy for Aviation Technology",
+          "type": "pilot-training-organization",
+          "relationship": "located-within",
+          "geographicRecordId": "geo:geonames:IN:1254163",
+          "sourcePublisher": "Directorate General of Civil Aviation (DGCA)",
+          "sourceTitle": "List of DGCA Approved Flying Training Organisations (As on 03.10.2026)",
+          "sourceUrl": "https://public-prd-dgca.s3.ap-south-1.amazonaws.com/InventoryList/personal/training/pilot/flrTrainOrgs/flyclub.pdf",
+          "sourceDate": "2026-10-03",
+          "sourceDateBasis": "The PDF heading states \"As on 03.10.2026\".",
+          "verificationDate": "2026-10-08",
+          "verificationStatus": "primary-source-listed",
+          "fact": "The DGCA roster dated 2026-10-03 lists Rajiv Gandhi Academy for Aviation Technology at International Airport, Thiruvananthapuram, Kerala. The entry is date-specific and does not establish current operations, admissions, course availability, or a relationship with We One Aviation.",
+          "attributionNote": "DGCA approved flying training organization roster; source-listed base: International Airport, Thiruvananthapuram, Kerala. This is an independent organization listed by DGCA, not a We One Aviation facility, service, partnership, or training location. The dated roster does not establish current operations or course availability."
+        }
+      ],
+      "unsupportedClaims": [],
+      "qualityQualified": true,
+      "productionApproved": false,
+      "indexabilityState": "NOINDEX",
+      "sitemapEligible": false,
+      "priorCandidateRecordId": "geo:city:in-thiruvananthapuram",
+      "potentialDuplicateIdentity": true,
+      "duplicateIdentityNote": "Country, state, and normalized place name match a prior audited record, but record IDs differ. Kept separate; no identity merge or approval inferred.",
+      "priorCandidateState": "INDEXABLE",
+      "priorCandidateTier": "STRONG"
+    }
+  ]
+}
