@@ -346,6 +346,15 @@ const guidePosts = [
         date: 'Oct 12, 2026',
         image: { src: '/blog/cpl-application-egca-prerequisites/hero-six-gates-one-path.webp', width: 1200, height: 630, promptId: '105' },
     },
+    {
+        slug: 'dgca-hard-copy-documents-computer-number-exam-form',
+        title: 'Do You Have to Post Documents to DGCA? Computer Number vs Exam Form',
+        excerpt: "The computer number needs no hard copy and no attestation, but a new candidate's exam application still has a paper rule. What each step needs, why older pages disagree, and the one that can cost you a session.",
+        category: 'DGCA exams',
+        readTime: '6 min',
+        date: 'Oct 13, 2026',
+        image: { src: '/blog/dgca-hard-copy-documents-computer-number-exam-form/hero-two-desks-one-envelope.webp', width: 1200, height: 630, promptId: '107' },
+    },
 ];
 
 export async function getServerSideProps() {

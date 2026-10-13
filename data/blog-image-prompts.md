@@ -1406,6 +1406,16 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector desk scene from slightly above. Five blank navy-edged cards sit in a row from left to right on a pale-blue desk, joined by one thin navy line running behind them. A South Asian student's hand (modest sleeve) rests on the third card, whose edge is the single burnt-orange accent. Generous empty pale-blue space above and below. No faces. Nothing on the cards or the desk may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
 
+## Post: Do you have to post documents to DGCA? (`/blogs/dgca-hard-copy-documents-computer-number-exam-form`)
+
+### Prompt 107 — hero, two desks one envelope
+
+- **File:** `public/blog/dgca-hard-copy-documents-computer-number-exam-form/hero-two-desks-one-envelope.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** Two desks side by side, one with only a laptop and the other with a laptop and a sealed envelope waiting beside it
+
+> A flat-vector scene on a pale-blue background showing two identical navy desks side by side, seen from the front. The left desk holds only an open laptop. The right desk holds an identical open laptop and, beside it, one plain sealed envelope drawn in burnt orange as the single accent. No people. A wide band of empty pale blue above both desks and at the left edge, so the image survives cropping to a card thumbnail. The laptops, envelope and desks must carry no screens content, stamps, addresses, marks, numbers or letters. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
