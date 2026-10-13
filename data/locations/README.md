@@ -138,7 +138,11 @@ The provisioner pins GeoNames URLs and SHA-256 checksums in
 `source/india-geonames-source-manifest.json`, validates the downloads and
 archive contents, and stores downloaded inputs in the ignored
 `source/provisioned/` cache. It validates the tracked postal archive without
-replacing it. The build also requires the tracked
+replacing it. GeoNames periodically refreshes the India gazetteer at the same
+URL; when a pinned checksum no longer matches, verify the HTTPS archive and
+its extracted rows before updating the pin. Do not copy a checksum from a
+failed build log without validating that exact source version. The build also
+requires the tracked
 `data/location-seo/geography/india-locality-overlay.json`; this resolution-only
 OSM input must retain its source and license metadata and is never generated
 by the provisioner.
