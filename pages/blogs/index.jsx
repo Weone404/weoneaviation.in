@@ -346,6 +346,15 @@ const guidePosts = [
         date: 'Oct 12, 2026',
         image: { src: '/blog/cpl-application-egca-prerequisites/hero-six-gates-one-path.webp', width: 1200, height: 630, promptId: '105' },
     },
+    {
+        slug: 'pariksha-registration-otp-activation-link-24-hours',
+        title: 'Pariksha Registration: OTP, the 24-Hour Activation Link and Your Temporary ID',
+        excerpt: "The first stretch of registering on DGCA Pariksha runs on a clock. The OTP to an Indian mobile, the activation link that lasts 24 hours, the password rule, and the Temporary ID that becomes your P- login.",
+        category: 'DGCA exams',
+        readTime: '5 min',
+        date: 'Oct 14, 2026',
+        image: { src: '/blog/pariksha-registration-otp-activation/hero-one-clock-four-steps.webp', width: 1200, height: 630, promptId: '107' },
+    },
 ];
 
 export async function getServerSideProps() {

@@ -1406,6 +1406,24 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector desk scene from slightly above. Five blank navy-edged cards sit in a row from left to right on a pale-blue desk, joined by one thin navy line running behind them. A South Asian student's hand (modest sleeve) rests on the third card, whose edge is the single burnt-orange accent. Generous empty pale-blue space above and below. No faces. Nothing on the cards or the desk may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
 
+## Post: Pariksha registration, OTP and activation link (`/blogs/pariksha-registration-otp-activation-link-24-hours`)
+
+### Prompt 107 — hero, one clock four steps
+
+- **File:** `public/blog/pariksha-registration-otp-activation/hero-one-clock-four-steps.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** Four stepping stones crossing a stream towards a small building, with a round clock face standing over the second stone
+
+> A flat-vector scene on a pale-blue background. Four plain navy stepping stones cross a calm stream from the lower left towards a small, simple navy building with a flat roof on the upper right bank. Above the second stone stands a large round blank clock face on a short post; the clock face is the only burnt-orange element and has no hands, ticks or numerals, just a plain disc with a thin rim. No people. Keep the top third and the left edge clear for cropping to a card thumbnail. Nothing in the scene may carry any marks, signs or letters.
+
+### Prompt 108 — temporary ID to computer number
+
+- **File:** `public/blog/pariksha-registration-otp-activation/temporary-id-to-computer-number.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A small paper tag on a string beside a larger identity card, both resting on a desk next to an open laptop
+
+> A flat-vector desk scene from slightly above. On the left, a small blank navy-edged paper tag with a loop of string lies on a pale-blue desk. In the centre, a larger blank identity card with an empty rounded square where a photo would go and a burnt-orange edge is the single accent. On the right, an open navy laptop shows a plain pale screen with no content. Generous empty pale-blue space above and below. No people, no hands. The tag, card and laptop screen must carry no letters, numbers or symbols.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
