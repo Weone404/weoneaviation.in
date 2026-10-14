@@ -2,13 +2,13 @@
   "version": 1,
   "allCountries": {
     "url": "https://download.geonames.org/export/dump/allCountries.zip",
-    "sha256": "ffd344fb9beb2827305aa3ce4e2ec949199e19fc4d0b3b7f23fd62e8de7e1295",
+    "sha256": "5d7304c271e502f4f53e3410d632e6b91f057208da44c520653b76bac271fa45",
     "file": "geonames-allCountries.zip",
     "archiveEntry": "allCountries.txt"
   },
   "countryInfo": {
     "url": "https://download.geonames.org/export/dump/countryInfo.txt",
-    "sha256": "93bafc525813f22e4711ff9ed6d626343094ce48c26388dc7c49189b3d7d5512",
+    "sha256": "c5997ea659df5bcf42509eb937064d172b2a998bb873608603e8421d714a9974",
     "file": "geonames-countryInfo.txt",
     "columns": 17,
     "countryCodeColumn": 0,
@@ -22,7 +22,7 @@
   },
   "admin2": {
     "url": "https://download.geonames.org/export/dump/admin2Codes.txt",
-    "sha256": "a2c9cc3cefbeca82f4af9637ab68ae4975cc78444289bc4f62718e76c59b8488",
+    "sha256": "0dbb9988fa9388021efe026ed16de0b89f56314f2dfd0abb4a51e17b8c55f29f",
     "file": "geonames-admin2Codes.txt",
     "columns": 4
   }

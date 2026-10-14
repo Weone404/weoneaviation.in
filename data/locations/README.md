@@ -138,10 +138,21 @@ The provisioner pins GeoNames URLs and SHA-256 checksums in
 `source/india-geonames-source-manifest.json`, validates the downloads and
 archive contents, and stores downloaded inputs in the ignored
 `source/provisioned/` cache. It validates the tracked postal archive without
-replacing it. The build also requires the tracked
+replacing it. GeoNames periodically refreshes the India gazetteer at the same
+URL; when a pinned checksum no longer matches, verify the HTTPS archive and
+its extracted rows before updating the pin. Do not copy a checksum from a
+failed build log without validating that exact source version. The build also
+requires the tracked
 `data/location-seo/geography/india-locality-overlay.json`; this resolution-only
 OSM input must retain its source and license metadata and is never generated
 by the provisioner.
+
+For mutable tabular GeoNames sources such as `admin2Codes.txt`, fetch the
+official HTTPS URL twice independently and compare the complete-file SHA-256
+hashes. Before updating a pin, confirm both responses are complete UTF-8 text
+with the expected four tab-separated code, name, ASCII-name and GeoNames-ID
+fields, and check that India administrative codes and IDs remain consistent
+with the generated India geography registry.
 
 The test validates the complete registry and its parent chains, tests
 resolution and all four core intent models on stratified 1,000-, 5,000-, and
@@ -260,4 +271,7 @@ content without materializing its much larger extracted text file during
 source validation. The sources are published by GeoNames at mutable URLs, so
 a future upstream snapshot that no longer
 matches the recorded pins fails closed and requires a reviewed manifest
-update. No large source archive is stored in Git.
+update. Before changing a pin, compare two independent downloads by complete
+file hash; confirm the archive contains the required entry and the tabular
+files have the expected UTF-8 row and field structure. No large source archive
+is stored in Git.
