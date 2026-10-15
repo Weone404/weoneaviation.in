@@ -68,13 +68,29 @@ Worldwide sitemap quality decisions are stored in the compressed
 is valid only when its provenance identifies a full quality evaluation, its
 checksum and source fingerprint match, and its registry summary is current.
 Legacy route caches cannot establish that provenance and are never adopted.
+The fingerprint uses normalized relative paths, LF-normalized text, selected
+pilot-training source Markdown, the active evaluator dependencies, and pinned
+geographic source manifests. It deliberately excludes Node patch versions:
+the evaluator does not base publication decisions on runtime-version-specific
+results. Bump `WORLDWIDE_PUBLICATION_EVALUATION_COMPATIBILITY_VERSION` if a
+future evaluator change makes runtime compatibility relevant. Registry
+identity is covered by its pinned source manifests, India geographic build
+inputs and builder, plus the current worldwide registry summary. Worldwide
+source archives are verified against their pinned SHA-256 values during
+provisioning rather than re-hashed on each cache read.
+
 The normal cache step reuses a valid inventory and independently rechecks
-explicit route approvals; a missing or stale inventory triggers a full
-evaluation. After a content, policy, source-manifest or evaluator change,
-regenerate and include the resulting inventory with that source change using
-`npm run cache:approved-geographic-sitemap -- --refresh`. Do not leave the
-inventory as an untracked local-only build input or edit it to manufacture
-approvals.
+explicit route approvals. A missing, stale, corrupt or invalid inventory
+triggers a complete quality evaluation before replacement; other read or
+evaluation errors fail the build. Inventory and checksum writes use temporary
+files followed by atomic renames, so an interrupted update fails checksum
+validation instead of being trusted. After a content, policy, source-manifest
+or evaluator change, regenerate and include the resulting inventory with that
+source change using `npm run cache:approved-geographic-sitemap -- --refresh`.
+The `auto-merge-blog` workflow persists any refreshed inventory in the verified
+commit merged to `master`, so Vercel reuses the approved cache rather than
+repeating the worldwide evaluation. Do not leave the inventory as an
+untracked local-only build input or edit it to manufacture approvals.
 
 The source manifests pin expected SHA-256 values, but the GeoNames download
 URLs currently point to mutable latest archives. Provisioning fails closed

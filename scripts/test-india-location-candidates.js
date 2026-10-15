@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import { StringDecoder } from 'node:string_decoder';
 import { fileURLToPath } from 'node:url';
 import { loadIndiaGeographicRegistry } from '../lib/indiaGeographicRegistry.js';
 import {
@@ -25,6 +26,7 @@ const reportPath = path.join(
   'india-location-candidate-report.json',
 );
 const sitemapPath = path.join(rootDirectory, '.generated-sitemap.xml');
+const generatedSitemapsDirectory = path.join(rootDirectory, 'public', 'generated-sitemaps');
 const siteOrigin = 'https://weoneaviation.in';
 const serviceSlugs = [
   'pilot-training',
@@ -78,22 +80,166 @@ const namedReferences = [
   { name: 'Amritsar', state: 'Punjab' },
 ];
 
-function sha256(value) {
-  return crypto.createHash('sha256').update(value).digest('hex');
+async function visitUrlsetLocations(filePath, source, visit, hash) {
+  const stream = fs.createReadStream(filePath);
+  const decoder = new StringDecoder('utf8');
+  const openingTagPattern = /^\s*<\?xml version="1\.0" encoding="UTF-8"\?>\s*<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/;
+  let buffered = '';
+  let openingTagConsumed = false;
+  let closingTagConsumed = false;
+  let urlCount = 0;
+
+  const processBuffered = (final = false) => {
+    if (closingTagConsumed) {
+      assert.equal(buffered.trim(), '', `${source} has trailing XML content.`);
+      buffered = '';
+      return;
+    }
+
+    if (!openingTagConsumed) {
+      const openingTag = openingTagPattern.exec(buffered);
+      if (!openingTag) {
+        if (final) assert.fail(`${source} must be a sitemap URL set.`);
+        return;
+      }
+      buffered = buffered.slice(openingTag[0].length);
+      openingTagConsumed = true;
+    }
+
+    while (true) {
+      const urlStart = buffered.indexOf('<url>');
+      const closingTagIndex = buffered.indexOf('</urlset>');
+      if (closingTagIndex !== -1 && (urlStart === -1 || closingTagIndex < urlStart)) {
+        assert.equal(
+          buffered.slice(0, closingTagIndex).trim(),
+          '',
+          `${source} contains malformed XML outside URL entries.`,
+        );
+        buffered = buffered.slice(closingTagIndex + '</urlset>'.length);
+        closingTagConsumed = true;
+        assert.equal(buffered.trim(), '', `${source} has trailing XML content.`);
+        buffered = '';
+        return;
+      }
+
+      if (urlStart === -1) {
+        const retainedLength = Math.min(buffered.length, '</urlset>'.length - 1);
+        const discarded = buffered.slice(0, buffered.length - retainedLength);
+        assert.equal(
+          discarded.trim(),
+          '',
+          `${source} contains malformed XML outside URL entries.`,
+        );
+        buffered = buffered.slice(buffered.length - retainedLength);
+        if (final) {
+          assert.fail(`${source} has no closing urlset tag.`);
+        }
+        return;
+      }
+
+      assert.equal(
+        buffered.slice(0, urlStart).trim(),
+        '',
+        `${source} contains malformed XML outside URL entries.`,
+      );
+      const urlEnd = buffered.indexOf('</url>', urlStart + '<url>'.length);
+      if (urlEnd === -1) {
+        buffered = buffered.slice(urlStart);
+        if (final) assert.fail(`${source} contains an unclosed URL entry.`);
+        return;
+      }
+
+      const block = buffered.slice(urlStart + '<url>'.length, urlEnd);
+      const locations = [...block.matchAll(/<loc>([^<]+)<\/loc>/g)];
+      assert.equal(locations.length, 1, `${source} URL entries must contain exactly one loc.`);
+      assert.match(
+        block,
+        /^\s*<loc>[^<]+<\/loc>(?:\s*<(?:lastmod|changefreq|priority)>[^<]*<\/(?:lastmod|changefreq|priority)>)*\s*$/,
+        `${source} contains unsupported URL entry fields.`,
+      );
+      visit(locations[0][1]);
+      buffered = buffered.slice(urlEnd + '</url>'.length);
+      urlCount += 1;
+    }
+  };
+
+  hash.update(path.relative(rootDirectory, filePath).split(path.sep).join('/'));
+  hash.update('\0');
+  for await (const chunk of stream) {
+    hash.update(chunk);
+    buffered += decoder.write(chunk);
+    processBuffered();
+  }
+  buffered += decoder.end();
+  processBuffered(true);
+  assert.ok(openingTagConsumed, `${source} must be a sitemap URL set.`);
+  assert.ok(closingTagConsumed, `${source} has no closing urlset tag.`);
+  hash.update('\0');
+  return urlCount;
 }
 
-function sitemapRoutes(xml) {
-  return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)]
-    .map(([, url]) => url);
-}
+async function readSitemapSnapshot() {
+  const indexXml = fs.readFileSync(sitemapPath, 'utf8');
+  const hash = crypto.createHash('sha256');
+  const addFileToHash = (filePath, contents) => {
+    hash.update(path.relative(rootDirectory, filePath).split(path.sep).join('/'));
+    hash.update('\0');
+    hash.update(contents);
+    hash.update('\0');
+  };
+  addFileToHash(sitemapPath, indexXml);
+  const locationPaths = [];
+  const addUrl = (url) => {
+    const parsedUrl = new URL(url);
+    assert.equal(parsedUrl.origin, siteOrigin, 'Sitemap URLs must use the canonical site origin.');
+    assert.equal(parsedUrl.search, '', 'Sitemap URLs must not have query strings.');
+    assert.equal(parsedUrl.hash, '', 'Sitemap URLs must not have fragments.');
+    const pathname = parsedUrl.pathname;
+    const [, , serviceSlug, extra] = pathname.split('/');
+    if (serviceSlugs.includes(serviceSlug) && !extra) locationPaths.push(pathname);
+  };
+  let sitemapUrlCount = 0;
+  if (/<urlset\b/.test(indexXml)) {
+    sitemapUrlCount = await visitUrlsetLocations(sitemapPath, sitemapPath, addUrl, hash);
+  } else {
+    assert.match(
+      indexXml,
+      /^<\?xml version="1\.0" encoding="UTF-8"\?>\s*<sitemapindex xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">[\s\S]*<\/sitemapindex>\s*$/,
+      'Generated sitemap index is malformed.',
+    );
+    const sitemapBlocks = [...indexXml.matchAll(/<sitemap>([\s\S]*?)<\/sitemap>/g)];
+    assert.ok(sitemapBlocks.length > 0, 'Generated sitemap index must reference child sitemaps.');
+    const remainingXml = indexXml.replace(/<sitemap>[\s\S]*?<\/sitemap>/g, '').replace(
+      /^<\?xml version="1\.0" encoding="UTF-8"\?>\s*<sitemapindex xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">|<\/sitemapindex>\s*$/g,
+      '',
+    );
+    assert.equal(remainingXml.trim(), '', 'Sitemap index contains malformed XML outside child entries.');
+    const childPaths = new Set();
+    for (const [, block] of sitemapBlocks) {
+      const locations = [...block.matchAll(/<loc>([^<]+)<\/loc>/g)];
+      assert.equal(locations.length, 1, 'Each sitemap index entry must contain exactly one loc.');
+      const childUrl = new URL(locations[0][1]);
+      assert.equal(childUrl.origin, siteOrigin, 'Child sitemaps must use the canonical site origin.');
+      assert.match(
+        childUrl.pathname,
+        /^\/generated-sitemaps\/locations-\d{4}\.xml$/,
+        'Sitemap index must reference generated location shards.',
+      );
+      assert.equal(childUrl.search, '', 'Child sitemap URLs must not have query strings.');
+      assert.equal(childUrl.hash, '', 'Child sitemap URLs must not have fragments.');
+      assert.ok(!childPaths.has(childUrl.pathname), `Sitemap index repeats ${childUrl.pathname}.`);
+      childPaths.add(childUrl.pathname);
 
-function locationRoutes(urls) {
-  return urls.map((url) => new URL(url).pathname)
-    .filter((pathname) => {
-      const [, , serviceSlug, extra] = pathname.split('/');
-      return serviceSlugs.includes(serviceSlug) && !extra;
-    })
-    .sort();
+      const childPath = path.join(generatedSitemapsDirectory, path.basename(childUrl.pathname));
+      sitemapUrlCount += await visitUrlsetLocations(childPath, childPath, addUrl, hash);
+    }
+  }
+
+  return {
+    locationPaths: locationPaths.sort(),
+    sitemapUrlCount,
+    sha256: hash.digest('hex'),
+  };
 }
 
 function stateGeographyCoverage(records) {
@@ -227,8 +373,8 @@ function namedLocationResult(reference, records, batch, services) {
 }
 
 async function main() {
-  const initialSitemap = fs.readFileSync(sitemapPath, 'utf8');
-  const initialSitemapHash = sha256(initialSitemap);
+  const initialSitemap = await readSitemapSnapshot();
+  const initialSitemapHash = initialSitemap.sha256;
   const registry = await loadIndiaGeographicRegistry();
   const batch = buildIndiaLocationCandidateBatch({ records: registry.records });
   const services = SERVICES.filter(({ slug }) => serviceSlugs.includes(slug));
@@ -252,8 +398,7 @@ async function main() {
   const approvedRoutes = getApprovedLocationServicePairs()
     .map(({ location, service }) => `/${location.slug}/${service.slug}`)
     .sort();
-  const initialUrls = sitemapRoutes(initialSitemap);
-  const sitemapLocationPaths = locationRoutes(initialUrls);
+  const sitemapLocationPaths = initialSitemap.locationPaths;
   assert.deepEqual(
     sitemapLocationPaths,
     approvedRoutes,
@@ -277,8 +422,8 @@ async function main() {
     );
   }
 
-  const afterSitemap = fs.readFileSync(sitemapPath, 'utf8');
-  assert.equal(sha256(afterSitemap), initialSitemapHash, 'Evaluation must not modify sitemap content.');
+  const afterSitemap = await readSitemapSnapshot();
+  assert.equal(afterSitemap.sha256, initialSitemapHash, 'Evaluation must not modify sitemap content.');
   const productionSimilarities = PRODUCTION_LOCATION_PROMOTION_EVALUATIONS
     .filter(({ locationSlug, serviceSlug }) => (
       serviceSlug === 'pilot-training'
@@ -331,7 +476,7 @@ async function main() {
       approvedLocationServiceRoutes: approvedRoutes.length,
       sitemapLocationServiceRoutes: sitemapLocationPaths.length,
       indiaProductionRoutes,
-      sitemapUrlCount: initialUrls.length,
+      sitemapUrlCount: initialSitemap.sitemapUrlCount,
       sitemapSha256: initialSitemapHash,
       sitemapMatchesAllowlist: true,
       sitemapUnchangedDuringEvaluation: true,

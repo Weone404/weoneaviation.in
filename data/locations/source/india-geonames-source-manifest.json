@@ -28,7 +28,7 @@
   },
   "admin2": {
     "url": "https://download.geonames.org/export/dump/admin2Codes.txt",
-    "sha256": "2fbfc577d4d3f7d2db4a5aef851631521c89d3cbbeb5c33bf658054ee05b5af0",
+    "sha256": "0dbb9988fa9388021efe026ed16de0b89f56314f2dfd0abb4a51e17b8c55f29f",
     "provisionedFile": "geonames-admin2-codes.txt",
     "columns": 4
   }

@@ -19,11 +19,10 @@ concurrency:
 jobs:
   verify-and-merge:
     runs-on: ubuntu-latest
-    # A normal run finishes in well under a minute. Without a bound, a runner
-    # that stalls mid-step (seen twice on 2026-09-04, both times stuck on
-    # `npm ci` with zero progress) blocks this job — and, via the concurrency
-    # group above, every later push — for GitHub's full default timeout.
-    timeout-minutes: 15
+    # A source or registry change can require a full worldwide publication
+    # quality evaluation (~15 minutes for 265K routes), plus the production
+    # build. Keep enough room for the validated refresh and normal build steps.
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -43,6 +42,16 @@ jobs:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: npm run build
 
+      - name: Inventory fingerprint and integrity tests
+        run: npm run test:worldwide-publication-inventory
+
+      - name: Persist refreshed worldwide publication inventory
+        run: |
+          git add data/location-seo/geography/worldwide-publication-inventory.json.gz data/location-seo/geography/worldwide-publication-inventory.json.gz.sha256
+          if ! git diff --cached --quiet; then
+            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "chore: refresh worldwide publication inventory" -m "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
+          fi
+
       # The claims gate. Deliberately NOT wired to postbuild in this repo —
       # see the header comment in scripts/check-claims.js. Running it here
       # keeps the gate without touching the Vercel build.
@@ -51,16 +60,18 @@ jobs:
 
       - name: Merge into master
         run: |
-          # The build regenerates tracked sitemap and local-search reports, so
-          # discard those generated copies before switching to master.
-          git checkout -- .generated-sitemap.xml data/local-seo/india-local-search-report.json data/local-seo/local-search-report.json
+          SOURCE_SHA="$(git rev-parse HEAD)"
+          # The build regenerates tracked sitemap, India geography, and
+          # local-search reports, so discard those generated copies before
+          # switching to master.
+          git checkout -- .generated-sitemap.xml data/location-seo/geography/india-geography.json.gz data/local-seo/india-local-search-report.json data/local-seo/local-search-report.json
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin master
           git checkout master
           # The source branch can include generated sitemap and blog-index
           # updates that overlap master; keep the verified source version.
-          git merge --no-ff -X theirs "$GITHUB_SHA" -m "Auto-merge ${GITHUB_REF_NAME}"
+          git merge --no-ff -X theirs "$SOURCE_SHA" -m "Auto-merge ${GITHUB_REF_NAME}"
           git push origin master
 
       - name: Delete the merged branch

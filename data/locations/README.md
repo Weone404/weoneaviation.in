@@ -147,6 +147,13 @@ requires the tracked
 OSM input must retain its source and license metadata and is never generated
 by the provisioner.
 
+For mutable tabular GeoNames sources such as `admin2Codes.txt`, fetch the
+official HTTPS URL twice independently and compare the complete-file SHA-256
+hashes. Before updating a pin, confirm both responses are complete UTF-8 text
+with the expected four tab-separated code, name, ASCII-name and GeoNames-ID
+fields, and check that India administrative codes and IDs remain consistent
+with the generated India geography registry.
+
 The test validates the complete registry and its parent chains, tests
 resolution and all four core intent models on stratified 1,000-, 5,000-, and
 10,000-record samples, and verifies canonical/noindex/sitemap isolation.

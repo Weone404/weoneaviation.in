@@ -685,12 +685,10 @@ const nextConfig = {
         permanent: true,
       },
       
-      {
-        source: '/pilot-salary-in-india',
-        destination: '/pilot-training-in-india',
-        permanent: true,
-      },
-      
+      /*
+       * This route now has its own article page, so it is intentionally left
+       * without a redirect.
+       */
       {
         source: '/pilot-training',
         destination: '/courses/atpl',
