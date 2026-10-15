@@ -57,6 +57,20 @@ async function main() {
     }),
     /expected at least 4/,
   );
+  assert.throws(
+    () => validateTabularBuffer(Buffer.from('<!doctype html><html><body>Not found</body></html>'), {
+      sourceName: 'html-error-test',
+      columns: 4,
+    }),
+    /HTML error page/,
+  );
+  assert.throws(
+    () => validateTabularBuffer(Buffer.from([0xc3, 0x28]), {
+      sourceName: 'invalid-utf8-test',
+      columns: 4,
+    }),
+    /not valid UTF-8/,
+  );
   await assert.rejects(
     validateArchiveBuffer(Buffer.from('not a zip'), {
       id: 'invalid-archive-test',
@@ -64,6 +78,14 @@ async function main() {
       columns: 19,
     }),
     /not a valid GeoNames ZIP archive/,
+  );
+  await assert.rejects(
+    validateArchiveBuffer(Buffer.from('<html><body>Gateway error</body></html>'), {
+      id: 'html-archive-test',
+      archiveEntry: 'IN.txt',
+      columns: 19,
+    }),
+    /HTML error page/,
   );
 
   console.log(JSON.stringify({

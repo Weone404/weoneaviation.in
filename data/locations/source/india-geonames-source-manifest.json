@@ -2,12 +2,13 @@
   "version": 1,
   "gazetteer": {
     "url": "https://download.geonames.org/export/dump/IN.zip",
-    "sha256": "738f48ab5bc86a4325beaf013ce0a0f25119eceeeff9cd3d96f86991690df998",
+    "sha256": "239a078141082d57aa3cda7844e75fa791ddbfc23955ad684c2e38385c8944a9",
     "provisionedFile": "geonames-india-gazetteer.zip",
     "archiveEntry": "IN.txt",
     "columns": 19,
     "countryColumn": 8,
-    "countryCode": "IN"
+    "countryCode": "IN",
+    "notes": "Updated 2026-10-15 after GeoNames refreshed the ZIP entry timestamps. Two independent HTTP 200 downloads matched this pin; IN.txt and readme.txt were byte-identical to the previous pinned archive."
   },
   "postal": {
     "upstreamUrl": "https://download.geonames.org/export/zip/IN.zip",

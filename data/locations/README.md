@@ -139,8 +139,11 @@ The provisioner pins GeoNames URLs and SHA-256 checksums in
 archive contents, and stores downloaded inputs in the ignored
 `source/provisioned/` cache. It validates the tracked postal archive without
 replacing it. GeoNames periodically refreshes the India gazetteer at the same
-URL; when a pinned checksum no longer matches, verify the HTTPS archive and
-its extracted rows before updating the pin. Do not copy a checksum from a
+URL. The 2026-10-15 checksum update records a ZIP timestamp refresh: two
+independent HTTPS downloads passed ZIP CRC and row validation, and the
+extracted `IN.txt` and `readme.txt` were byte-identical to the previous pinned
+archive. When a pinned checksum no longer matches, verify the HTTPS archive
+and its extracted rows before updating the pin. Do not copy a checksum from a
 failed build log without validating that exact source version. The build also
 requires the tracked
 `data/location-seo/geography/india-locality-overlay.json`; this resolution-only

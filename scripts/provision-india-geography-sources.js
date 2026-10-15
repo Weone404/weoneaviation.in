@@ -12,8 +12,24 @@ function sha256(buffer) {
   return createHash('sha256').update(buffer).digest('hex');
 }
 
+function assertNotHtml(buffer, sourceName) {
+  const prefix = buffer.subarray(0, 512).toString('utf8').replace(/^\uFEFF/, '').trimStart();
+  if (/^(?:<!doctype\s+html\b|<html\b|<head\b|<body\b)/i.test(prefix)) {
+    throw new Error(`${sourceName} returned an HTML error page instead of a GeoNames source.`);
+  }
+}
+
+function decodeSourceText(buffer, sourceName) {
+  assertNotHtml(buffer, sourceName);
+  try {
+    return new TextDecoder('utf-8', { fatal: true }).decode(buffer);
+  } catch (error) {
+    throw new Error(`${sourceName} is not valid UTF-8 GeoNames data: ${error.message}`);
+  }
+}
+
 function validateTabularBuffer(buffer, { sourceName, columns, countryColumn, countryCode }) {
-  const text = buffer.toString('utf8');
+  const text = decodeSourceText(buffer, sourceName);
   const rows = text.split(/\r?\n/).filter(Boolean);
   if (!rows.length) throw new Error(`${sourceName} is empty.`);
   for (let index = 0; index < rows.length; index += 1) {
@@ -29,6 +45,7 @@ function validateTabularBuffer(buffer, { sourceName, columns, countryColumn, cou
 }
 
 async function validateArchiveBuffer(buffer, source) {
+  assertNotHtml(buffer, source.id);
   let archive;
   try {
     archive = await JSZip.loadAsync(buffer, { checkCRC32: true });
@@ -81,23 +98,31 @@ async function downloadPinnedSource(source, filePath) {
     };
   }
 
-  const response = await fetch(source.url, { signal: AbortSignal.timeout(120_000) });
+  let response;
+  try {
+    response = await fetch(source.url, { signal: AbortSignal.timeout(120_000) });
+  } catch (error) {
+    throw new Error(`${source.id} download failed from ${source.url}: ${error.message}`);
+  }
   if (!response.ok) {
     throw new Error(`${source.id} download failed: HTTP ${response.status} from ${source.url}`);
   }
-  const buffer = Buffer.from(await response.arrayBuffer());
-  const actualHash = sha256(buffer);
-  if (actualHash !== source.sha256) {
-    throw new Error(
-      `${source.id} download checksum mismatch: expected ${source.sha256}, received ${actualHash}; source ${source.url} may have changed.`,
-    );
+  if (/^text\/html(?:;|$)/i.test(response.headers.get('content-type') || '')) {
+    throw new Error(`${source.id} download returned HTML instead of a GeoNames source: ${source.url}`);
   }
+  const buffer = Buffer.from(await response.arrayBuffer());
   const details = source.archiveEntry
     ? await validateArchiveBuffer(buffer, { ...source, id: source.id })
     : {
       rows: validateTabularBuffer(buffer, { ...source, sourceName: source.id }),
       bytes: buffer.length,
     };
+  const actualHash = sha256(buffer);
+  if (actualHash !== source.sha256) {
+    throw new Error(
+      `${source.id} download checksum mismatch: expected ${source.sha256}, received ${actualHash}; source ${source.url} may have changed.`,
+    );
+  }
 
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   const temporaryPath = `${filePath}.tmp-${process.pid}`;
