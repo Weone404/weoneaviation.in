@@ -346,6 +346,15 @@ const guidePosts = [
         date: 'Oct 12, 2026',
         image: { src: '/blog/cpl-application-egca-prerequisites/hero-six-gates-one-path.webp', width: 1200, height: 630, promptId: '105' },
     },
+    {
+        slug: 'class-1-medical-before-joining-flying-school',
+        title: 'Class 1 Medical Before Flying School: Where to Take It and in What Order',
+        excerpt: "Why the initial Class 1 medical is the safest first step before a flying school deposit, the four kinds of centre DGCA allows for it, whether a Class 2 has to come first, and the statutory fee.",
+        category: 'Pilot medicals',
+        readTime: '6 min',
+        date: 'Oct 15, 2026',
+        image: { src: '/blog/class-1-medical-before-flying-school/hero-medical-before-deposit.webp', width: 1200, height: 630, promptId: '107' },
+    },
 ];
 
 export async function getServerSideProps() {

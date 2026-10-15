@@ -1406,6 +1406,32 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector desk scene from slightly above. Five blank navy-edged cards sit in a row from left to right on a pale-blue desk, joined by one thin navy line running behind them. A South Asian student's hand (modest sleeve) rests on the third card, whose edge is the single burnt-orange accent. Generous empty pale-blue space above and below. No faces. Nothing on the cards or the desk may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
 
+## Post: Class 1 medical before flying school (`/blogs/class-1-medical-before-joining-flying-school`)
+
+### Prompt 107 — hero, medical before deposit
+
+- **File:** `public/blog/class-1-medical-before-flying-school/hero-medical-before-deposit.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** A student standing at a fork in a path, one branch leading to a medical examination building and the other to a flying school hangar, with the medical branch marked in a different colour
+
+> A flat-vector scene on a pale-blue background. On the left, a small South Asian student seen from behind (modest clothing, no face detail) stands where a path forks. The branch running to the upper left leads to a plain low navy building with a flat roof, drawn as a clinic with a simple cross-free doorway; this branch is the only element in burnt orange. The branch running to the upper right leads to a larger navy hangar with a single small training aircraft parked beside it. Generous empty pale-blue sky across the top third for cropping. Neither building may carry any sign, symbol, number or letter. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
+### Prompt 108 — four kinds of initial centre
+
+- **File:** `public/blog/class-1-medical-before-flying-school/four-kinds-of-initial-centre.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** Four identical plain buildings in a row on a map-like background, connected by a single route line, with one building drawn in a different colour
+
+> A flat-vector overhead scene on a pale-blue, map-like background with a few soft rounded land shapes and no labels. Four identical plain navy buildings with flat roofs sit in a roughly even row from left to right, joined by one thin navy route line that curves between them. The third building is the single burnt-orange focal point. Generous empty pale-blue space above and below. No people. No names, pins with letters, compass marks, numbers or any lettering on the map or buildings. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
+### Prompt 109 — medical then school
+
+- **File:** `public/blog/class-1-medical-before-flying-school/medical-then-school.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** Two stepping stones across a stream, the first stone a plain clinic building and the second a small training aircraft, with a student's foot on the first
+
+> A flat-vector side-on scene on a pale-blue background with a calm navy stream running left to right across the lower half. Two flat stepping stones cross the stream. On the left stone stands a small plain navy clinic building with a flat roof; a South Asian student's foot in a simple shoe rests on that stone's edge, which is the single burnt-orange accent. On the right stone sits a small single-engine training aircraft in navy, seen from the side. Generous empty pale-blue space above. No faces, no signs, no numbers or letters on the building or aircraft. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
