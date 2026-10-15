@@ -31,6 +31,12 @@ const OUTPUT_PATH = path.resolve(
 const SITE_ORIGIN = 'https://weoneaviation.in';
 const SERVICES_BY_SLUG = new Map(SERVICES.map((service) => [service.slug, service]));
 const refreshRequested = process.argv.includes('--refresh');
+const REFRESHABLE_INVENTORY_ERRORS = new Set([
+  'WORLDWIDE_PUBLICATION_INVENTORY_MISSING',
+  'WORLDWIDE_PUBLICATION_INVENTORY_STALE',
+  'WORLDWIDE_PUBLICATION_INVENTORY_CORRUPT',
+  'WORLDWIDE_PUBLICATION_INVENTORY_INVALID',
+]);
 if (process.argv.includes('--adopt-existing-cache')) {
   throw new Error(
     'Legacy cache adoption is disabled because it cannot establish evaluation provenance. '
@@ -251,13 +257,23 @@ async function evaluateFullInventory(fingerprint, registry) {
 
 async function main() {
   const { fingerprint, registry } = computeWorldwidePublicationFingerprint();
-  const { inventoryPath } = getWorldwidePublicationInventoryPaths();
+  const { inventoryPath, checksumPath } = getWorldwidePublicationInventoryPaths();
   let inventory;
   let explicitEntries;
   let rejectedCounts = { unresolved: 0, notIndexable: 0 };
   let evaluationElapsedMs = null;
-  if (!refreshRequested && fs.existsSync(inventoryPath)) {
-    inventory = readWorldwidePublicationInventory();
+  if (!refreshRequested && (fs.existsSync(inventoryPath) || fs.existsSync(checksumPath))) {
+    try {
+      inventory = readWorldwidePublicationInventory();
+    } catch (error) {
+      if (!REFRESHABLE_INVENTORY_ERRORS.has(error.code)) throw error;
+      console.log(
+        `Worldwide publication inventory is not reusable (${error.message}); `
+        + 'rerunning the full quality evaluation.',
+      );
+    }
+  }
+  if (inventory) {
     const explicit = await buildExplicitApprovalEntries();
     explicitEntries = explicit.entries;
     rejectedCounts = explicit.rejectedCounts;

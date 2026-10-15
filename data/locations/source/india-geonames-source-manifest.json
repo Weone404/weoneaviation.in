@@ -2,7 +2,7 @@
   "version": 1,
   "gazetteer": {
     "url": "https://download.geonames.org/export/dump/IN.zip",
-    "sha256": "392ba54ed9e0795b194c2d57981c9ce525b54d9eeb4f573ca6fa177a75257742",
+    "sha256": "239a078141082d57aa3cda7844e75fa791ddbfc23955ad684c2e38385c8944a9",
     "provisionedFile": "geonames-india-gazetteer.zip",
     "archiveEntry": "IN.txt",
     "columns": 19,
@@ -28,7 +28,7 @@
   },
   "admin2": {
     "url": "https://download.geonames.org/export/dump/admin2Codes.txt",
-    "sha256": "2fbfc577d4d3f7d2db4a5aef851631521c89d3cbbeb5c33bf658054ee05b5af0",
+    "sha256": "0dbb9988fa9388021efe026ed16de0b89f56314f2dfd0abb4a51e17b8c55f29f",
     "provisionedFile": "geonames-admin2-codes.txt",
     "columns": 4
   }

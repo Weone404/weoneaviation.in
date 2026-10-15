@@ -10,6 +10,7 @@ import {
 import { buildLocationPageModel } from '../lib/locationEngine.js';
 import { SERVICES } from '../data/location-seo/services.js';
 import { INDIA_DYNAMIC_SERVICE_POLICIES } from '../data/location-seo/india-dynamic-service-policies.js';
+import { AVIATION_EVIDENCE_RECORDS } from '../data/location-seo/aviation-evidence.js';
 import {
   getLocationBySlug,
   getLocationEngineContext,
@@ -331,7 +332,7 @@ async function main() {
   const registryLoadMs = performance.now() - registryLoadStarted;
   const heapAfterRegistryLoad = process.memoryUsage().heapUsed;
   assert.equal(registry.complete, true);
-  assert.equal(registry.recordCount, 574430);
+  assert.equal(registry.recordCount, 574432);
   const resolverWarmupStarted = performance.now();
   await resolveIndiaGeographicRoute(registry.records[0].slug);
   const resolverWarmupMs = performance.now() - resolverWarmupStarted;
@@ -458,7 +459,6 @@ async function main() {
   const regionalEvidenceCases = [
     ['Hyderabad', 'Telangana', 'aviation:fto:flytech-nadergul'],
     ['Lucknow', 'Uttar Pradesh', 'aviation:fto:igrua-fursatganj'],
-    ['Kolkata', 'West Bengal', 'aviation:fto:panagarh-chetak-pioneer'],
   ];
   const regionalEvidenceResults = [];
   for (const [name, state, evidenceId] of regionalEvidenceCases) {
@@ -475,6 +475,22 @@ async function main() {
     );
     regionalEvidenceResults.push({ location: name, evidenceId, relationship: 'regional-context' });
   }
+  const historicalPanagarhEvidence = AVIATION_EVIDENCE_RECORDS.find(
+    ({ id }) => id === 'aviation:fto:panagarh-chetak-pioneer',
+  );
+  assert.equal(
+    historicalPanagarhEvidence?.verificationStatus,
+    'unverified-source-reference',
+    'The superseded Panagarh roster reference must remain explicitly unverified.',
+  );
+  const kolkata = namedRecord(registry.records, 'Kolkata', 'city', 'West Bengal');
+  const kolkataResult = await exerciseRecord(kolkata, { measure: false });
+  assert.ok(
+    !kolkataResult.page.content.locationAviationContent.nearbyAviationHubs.some(
+      ({ evidenceId }) => evidenceId === historicalPanagarhEvidence.id,
+    ),
+    'The superseded Panagarh roster reference must not be published as regional context for Kolkata.',
+  );
 
   const laxmiNagar = await resolveIndiaGeographicRoute('laxmi-nagar');
   assert.equal(laxmiNagar.location?.type, 'neighborhood');
@@ -487,7 +503,7 @@ async function main() {
   }
   assert.equal(gtbNagar?.location || null, null, 'GTB Nagar must not be guessed.');
   const gachibowli = await resolveIndiaGeographicRoute('gachibowli');
-  assert.equal(gachibowli.location?.type, 'postal-area');
+  assert.equal(gachibowli.location?.type, 'neighborhood');
 
   let ambiguous = 0;
   for (const reference of ['gtb-nagar', 'varanasi']) {
@@ -710,7 +726,9 @@ async function main() {
 
   assert.deepEqual(scaleResults.map(({ sampleSize }) => sampleSize), sampleSizes);
   assert.ok(scaleResults.every(({ renderable }) => renderable > 0));
-  assert.ok(scaleResults.every(({ indexable }) => indexable > 0));
+  assert.ok(scaleResults.every(({ indexable, sitemapEligible }) => (
+    indexable === sitemapEligible
+  )));
   console.log(JSON.stringify({
     result: 'PASS',
     registryRecords: registry.recordCount,
@@ -724,7 +742,7 @@ async function main() {
     namedAliasTests: {
       laxmiNagar: 'RESOLVED',
       gtbNagar: 'NOT_FOUND',
-      gachibowli: 'POSTAL_ONLY',
+      gachibowli: 'NEIGHBORHOOD',
       ambiguousOrMissingFailClosed: ambiguous,
     },
     serviceMatrix,
