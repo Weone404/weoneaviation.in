@@ -2,9 +2,10 @@
   "version": 1,
   "allCountries": {
     "url": "https://download.geonames.org/export/dump/allCountries.zip",
-    "sha256": "ffd344fb9beb2827305aa3ce4e2ec949199e19fc4d0b3b7f23fd62e8de7e1295",
+    "sha256": "2fbf54cea14028837ed0571fc424402fd6a84afe09ed5208b0553bcd2815223b",
     "file": "geonames-allCountries.zip",
-    "archiveEntry": "allCountries.txt"
+    "archiveEntry": "allCountries.txt",
+    "notes": "Updated 2026-10-15 after an official HTTP 200 refresh. The 422029404-byte archive extracts to a valid allCountries.txt with 13472418 rows (up from 13472285 in the previous pin); the source data changed, not just ZIP metadata."
   },
   "countryInfo": {
     "url": "https://download.geonames.org/export/dump/countryInfo.txt",
