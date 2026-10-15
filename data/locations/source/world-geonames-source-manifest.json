@@ -9,11 +9,12 @@
   },
   "countryInfo": {
     "url": "https://download.geonames.org/export/dump/countryInfo.txt",
-    "sha256": "93bafc525813f22e4711ff9ed6d626343094ce48c26388dc7c49189b3d7d5512",
+    "sha256": "c55f638cfaafb4fe45a9aa15120a0f1f78e8a34a8e1847d7b9320cf740fbc9ab",
     "file": "geonames-countryInfo.txt",
     "columns": 17,
     "countryCodeColumn": 0,
-    "countryNameColumn": 4
+    "countryNameColumn": 4,
+    "notes": "Updated 2026-10-15 after an official HTTP 200 refresh. The 31690-byte CRLF file retains all 252 country records and the index parser's country-code, country-name, and GeoNames ID fields; changes are population/postal-code data."
   },
   "admin1": {
     "url": "https://download.geonames.org/export/dump/admin1CodesASCII.txt",
