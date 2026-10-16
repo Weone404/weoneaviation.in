@@ -1406,6 +1406,24 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector desk scene from slightly above. Five blank navy-edged cards sit in a row from left to right on a pale-blue desk, joined by one thin navy line running behind them. A South Asian student's hand (modest sleeve) rests on the third card, whose edge is the single burnt-orange accent. Generous empty pale-blue space above and below. No faces. Nothing on the cards or the desk may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
 
+## Post: DGCA Technical Specific paper (`/blogs/dgca-technical-specific-paper-cpl`)
+
+### Prompt 107 — hero, one aircraft five papers
+
+- **File:** `public/blog/dgca-technical-specific-paper-cpl/hero-one-aircraft-five-papers.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** Five blank exam papers in a row on a desk with a small single-engine training aircraft model standing on the fifth one
+
+> A flat-vector scene on a pale-blue background. Five identical blank navy-edged exam sheets lie side by side in a row across the lower half, slightly overlapping like a fanned hand. On the right-most sheet stands a small, simple high-wing single-engine training aircraft model in burnt orange, the only orange object in the scene. The other four sheets are plain navy and white. No people. Keep the top third and the left edge clear for cropping to a card thumbnail. The sheets and the model must carry no marks, registration letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
+### Prompt 108 — general books and one manual
+
+- **File:** `public/blog/dgca-technical-specific-paper-cpl/general-books-and-one-manual.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A tall stack of four blank textbooks on the left and a single slim spiral-bound manual on the right, with a small aircraft model between them
+
+> A flat-vector desk scene seen straight on. On the left, a tall stack of four thick blank navy textbooks with plain covers. On the right, a single slim spiral-bound manual with a burnt-orange cover leaning upright. Between them in the centre, a small simple single-engine aircraft model in pale navy and white. Pale-blue background with generous empty space above and to the right. No people. Covers, spines and the model must carry no titles, numbers, registration marks or letters. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.

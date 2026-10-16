@@ -346,6 +346,15 @@ const guidePosts = [
         date: 'Oct 12, 2026',
         image: { src: '/blog/cpl-application-egca-prerequisites/hero-six-gates-one-path.webp', width: 1200, height: 630, promptId: '105' },
     },
+    {
+        slug: 'dgca-technical-specific-paper-cpl',
+        title: 'DGCA Technical Specific Paper: What It Covers and How It Works',
+        excerpt: "The last CPL paper on DGCA's list is the only one tied to a particular aircraft. What DGCA's own syllabus says it covers, how it differs from Technical General, the one-specific-paper-per-session booking rule, the pass mark and the five-year window.",
+        category: 'DGCA exams',
+        readTime: '6 min',
+        date: 'Oct 16, 2026',
+        image: { src: '/blog/dgca-technical-specific-paper-cpl/hero-one-aircraft-five-papers.webp', width: 1200, height: 630, promptId: '107' },
+    },
 ];
 
 export async function getServerSideProps() {
