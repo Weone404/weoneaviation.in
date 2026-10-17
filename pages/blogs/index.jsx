@@ -346,6 +346,15 @@ const guidePosts = [
         date: 'Oct 12, 2026',
         image: { src: '/blog/cpl-application-egca-prerequisites/hero-six-gates-one-path.webp', width: 1200, height: 630, promptId: '105' },
     },
+    {
+        slug: 'diploma-holder-pilot-eligibility-india',
+        title: 'Can a Diploma Holder Become a Pilot in India? What DGCA\u2019s Documents Say',
+        excerpt: "A diploma can stand in for Class 12 only with a 10+2 equivalence certificate, and Physics and Maths still apply. Which office issues it, the documents to upload, what gets an application rejected and what DGCA leaves unsaid.",
+        category: 'Pilot eligibility',
+        readTime: '6 min',
+        date: 'Oct 17, 2026',
+        image: { src: '/blog/diploma-holder-pilot-eligibility/hero-diploma-to-licence.webp', width: 1200, height: 630, promptId: '107' },
+    },
 ];
 
 export async function getServerSideProps() {

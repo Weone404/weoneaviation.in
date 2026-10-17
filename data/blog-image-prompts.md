@@ -1406,6 +1406,24 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector desk scene from slightly above. Five blank navy-edged cards sit in a row from left to right on a pale-blue desk, joined by one thin navy line running behind them. A South Asian student's hand (modest sleeve) rests on the third card, whose edge is the single burnt-orange accent. Generous empty pale-blue space above and below. No faces. Nothing on the cards or the desk may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
 
+## Post: Diploma holder pilot eligibility (`/blogs/diploma-holder-pilot-eligibility-india`)
+
+### Prompt 107 — hero, diploma to licence
+
+- **File:** `public/blog/diploma-holder-pilot-eligibility/hero-diploma-to-licence.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** A rolled certificate passing through a narrow gate in a low wall, with a long runway visible beyond it and the gate frame in a different colour
+
+> A flat-vector scene on a pale-blue background. A low navy wall runs across the lower half from left to right with one narrow gateway in its centre; the gateway frame is the only burnt-orange element. A plain rolled certificate tied with a thin navy ribbon is drawn mid-way through the gateway. Beyond the wall a long straight runway recedes towards the upper right, with a small single-engine training aircraft on it. No people. Keep the top third and the left edge clear for cropping to a card thumbnail. The certificate, wall and runway must carry no marks, seals, numbers or letters.
+
+### Prompt 108 — documents in order
+
+- **File:** `public/blog/diploma-holder-pilot-eligibility/documents-in-order.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** Four blank documents stacked in a neat fan on a desk beside an open envelope, with one document edged in a different colour
+
+> A flat-vector desk scene from slightly above. Four blank sheets with navy edges are fanned in a neat overlapping stack in the centre of a pale-blue desk, an open plain envelope lying to their right. The third sheet from the left has a burnt-orange edge and is the only accent. Generous empty pale-blue space around the objects. No people, no hands. Nothing on the sheets or envelope may carry any letters, numbers, stamps or symbols.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
