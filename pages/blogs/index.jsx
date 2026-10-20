@@ -346,6 +346,15 @@ const guidePosts = [
         date: 'Oct 12, 2026',
         image: { src: '/blog/cpl-application-egca-prerequisites/hero-six-gates-one-path.webp', width: 1200, height: 630, promptId: '105' },
     },
+    {
+        slug: 'international-board-students-pilot-aiu-equivalence-india',
+        title: 'Pilot Eligibility After IB, Cambridge or a US Board: The AIU Equivalence Step',
+        excerpt: "Studied IB, Cambridge or an American high school? What the AIU equivalence certificate adds, how the board's verification reaches DGCA, and why the DigiLocker instant route usually does not apply.",
+        category: 'Eligibility',
+        readTime: '6 min',
+        date: 'Oct 20, 2026',
+        image: { src: '/blog/international-board-students-pilot-aiu-equivalence/hero-two-certificates-one-desk.webp', width: 1200, height: 630, promptId: '107' },
+    },
 ];
 
 export async function getServerSideProps() {

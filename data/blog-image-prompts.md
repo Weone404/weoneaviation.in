@@ -1406,6 +1406,24 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector desk scene from slightly above. Five blank navy-edged cards sit in a row from left to right on a pale-blue desk, joined by one thin navy line running behind them. A South Asian student's hand (modest sleeve) rests on the third card, whose edge is the single burnt-orange accent. Generous empty pale-blue space above and below. No faces. Nothing on the cards or the desk may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
 
+## Post: International-board students and the AIU equivalence step (`/blogs/international-board-students-pilot-aiu-equivalence-india`)
+
+### Prompt 107 — hero, two certificates one desk
+
+- **File:** `public/blog/international-board-students-pilot-aiu-equivalence/hero-two-certificates-one-desk.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** Two different school certificate folders on a desk joined by a single stamp-like seal, with a small aeroplane silhouette in the background window
+
+> A flat-vector desk scene on a pale-blue background. Two blank folders sit side by side on a navy desk: the left one is plain navy, the right one has a thin pale-blue border to suggest a different school system. A single round burnt-orange seal sits across the gap between them, touching both. Behind the desk a large window shows a small navy aeroplane silhouette in a pale sky. No people. Keep the top third and the left edge clear for cropping to a card thumbnail. The folders and seal must carry no marks, crests, numbers or letters. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
+### Prompt 108 — documents in order
+
+- **File:** `public/blog/international-board-students-pilot-aiu-equivalence/documents-in-order.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** Four flat document cards laid out left to right on a desk, the third one slightly raised, with an envelope arriving from the right edge
+
+> A flat-vector desk scene from slightly above. Four blank navy-edged cards sit in a row from left to right on a pale-blue desk; the third is raised a few millimetres and its edge is the single burnt-orange accent. A plain navy envelope enters from the right edge of the frame, as if being delivered. Generous empty pale-blue space above and below. No people, no faces. Nothing on the cards or envelope may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
