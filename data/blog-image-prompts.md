@@ -1406,6 +1406,24 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector desk scene from slightly above. Five blank navy-edged cards sit in a row from left to right on a pale-blue desk, joined by one thin navy line running behind them. A South Asian student's hand (modest sleeve) rests on the third card, whose edge is the single burnt-orange accent. Generous empty pale-blue space above and below. No faces. Nothing on the cards or the desk may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
 
+## Post: DGCA Technical Specific paper (`/blogs/dgca-technical-specific-paper-cpl`)
+
+### Prompt 107 — hero, one aircraft five papers
+
+- **File:** `public/blog/dgca-technical-specific-paper/hero-one-aircraft-five-papers.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** Five document sheets in a row with one connected by a thin line to a single small aeroplane on a runway
+
+> A flat-vector scene on a pale-blue background. Along the upper half, five identical blank navy-edged sheets stand in a row, evenly spaced. The fifth sheet, on the right, has a burnt-orange edge and a thin line running down from it to a small single-engine training aeroplane parked on a plain runway strip in the lower right. The other four sheets have no lines. Generous empty pale-blue space on the left and across the top for cropping to a card thumbnail. No people. Nothing on the sheets or the aeroplane may carry any letters, numbers, markings or logos. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
+### Prompt 108 — general versus specific
+
+- **File:** `public/blog/dgca-technical-specific-paper/general-versus-specific.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A student's hand pointing at a single small aeroplane drawn beside a wide set of general aircraft parts on a desk
+
+> A flat-vector desk scene from slightly above. On the left half of a pale-blue desk, a loose spread of plain navy outline shapes: a propeller, a wing section, a small engine block and a wheel, laid out neatly. On the right half, one small single-engine aeroplane outline in navy with a burnt-orange stripe on its tail. A South Asian student's hand (modest sleeve) points at the aeroplane. Generous empty pale-blue space above and below. No faces. Nothing may carry any letters, numbers or markings. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.

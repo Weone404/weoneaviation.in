@@ -346,6 +346,15 @@ const guidePosts = [
         date: 'Oct 12, 2026',
         image: { src: '/blog/cpl-application-egca-prerequisites/hero-six-gates-one-path.webp', width: 1200, height: 630, promptId: '105' },
     },
+    {
+        slug: 'dgca-technical-specific-paper-cpl',
+        title: 'DGCA Technical Specific Paper for the CPL: Which Aircraft It Covers and When to Take It',
+        excerpt: "Technical Specific is the one CPL paper tied to a single aircraft. What it covers, why DGCA's book list has no heading for it, how it is booked and when to sit it.",
+        category: 'DGCA exams',
+        readTime: '6 min',
+        date: 'Oct 21, 2026',
+        image: { src: '/blog/dgca-technical-specific-paper/hero-one-aircraft-five-papers.webp', width: 1200, height: 630, promptId: '107' },
+    },
 ];
 
 export async function getServerSideProps() {
