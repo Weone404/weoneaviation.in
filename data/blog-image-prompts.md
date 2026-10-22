@@ -1406,6 +1406,24 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector desk scene from slightly above. Five blank navy-edged cards sit in a row from left to right on a pale-blue desk, joined by one thin navy line running behind them. A South Asian student's hand (modest sleeve) rests on the third card, whose edge is the single burnt-orange accent. Generous empty pale-blue space above and below. No faces. Nothing on the cards or the desk may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
 
+## Post: /blogs/pilot-after-10th-class-11-stream-india
+
+### Prompt 107 — hero, fork after Class 10
+
+- **File:** `public/blog/pilot-after-10th-class-11-stream/hero-fork-after-class-ten.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** A student in school uniform standing at a fork in a path, one branch leading straight to a small training aircraft and the other bending towards a short detour before rejoining it
+
+> A flat-vector landscape on a pale-blue background. On the left, a South Asian student in a plain navy school uniform, seen from behind, stands where a single path splits in two. The right-hand upper branch runs straight to a small single-engine training aircraft parked on a simple apron at the far right. The lower branch curves through one short loop and rejoins the first branch just before the aircraft; the aircraft's nose stripe is the single burnt-orange accent. Keep the top third and the left edge clear for cropping to a card thumbnail. No faces, no school building signage, no street signs. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
+### Prompt 108 — two routes, one requirement
+
+- **File:** `public/blog/pilot-after-10th-class-11-stream/two-routes-one-requirement.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** Two parallel paths from a school gate to the same aerodrome, the left path straight and short, the right path passing through one extra small checkpoint before joining it
+
+> A flat-vector scene seen from slightly above on a pale-blue ground. At the left edge stands a plain navy school gate; at the right edge, a simple navy aerodrome with one small training aircraft. Two paths connect them: the upper one is straight and short, the lower one is slightly longer and passes through a single small navy archway, drawn in burnt orange as the only accent. Generous empty pale-blue space above and below. No people. The gate, archway and aerodrome must carry no marks, signs, numbers or letters. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.

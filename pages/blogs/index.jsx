@@ -346,6 +346,15 @@ const guidePosts = [
         date: 'Oct 12, 2026',
         image: { src: '/blog/cpl-application-egca-prerequisites/hero-six-gates-one-path.webp', width: 1200, height: 630, promptId: '105' },
     },
+    {
+        slug: 'pilot-after-10th-class-11-stream-india',
+        title: 'Can You Become a Pilot After 10th in India? What to Choose in Class 11',
+        excerpt: "A Class 10 pass alone does not lead to a CPL, but the stream you pick in Class 11 decides whether the route stays direct. What DGCA asks for at each stage, and what the Commerce, Arts or Biology bridge adds.",
+        category: 'Pilot eligibility',
+        readTime: '6 min',
+        date: 'Oct 22, 2026',
+        image: { src: '/blog/pilot-after-10th-class-11-stream/hero-fork-after-class-ten.webp', width: 1200, height: 630, promptId: '107' },
+    },
 ];
 
 export async function getServerSideProps() {
