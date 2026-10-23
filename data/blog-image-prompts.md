@@ -1406,6 +1406,24 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector desk scene from slightly above. Five blank navy-edged cards sit in a row from left to right on a pale-blue desk, joined by one thin navy line running behind them. A South Asian student's hand (modest sleeve) rests on the third card, whose edge is the single burnt-orange accent. Generous empty pale-blue space above and below. No faces. Nothing on the cards or the desk may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
 
+## Post: DGCA Pariksha photo, signature and upload limits (`/blogs/dgca-pariksha-photo-signature-size-upload-limits`)
+
+### Prompt 107 — hero, files sorted by size
+
+- **File:** `public/blog/dgca-pariksha-photo-signature-size-upload-limits/hero-files-sorted-by-size.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** A tidy row of document folders of different thicknesses on a desk beside a small photo frame and a signature card
+
+> A flat-vector desk scene from slightly above on a pale-blue background. Along the middle runs a tidy row of five plain navy document folders of clearly different thicknesses, thinnest on the left and thickest on the right. To the left of the row sits a small, empty portrait photo frame with a plain white centre, and next to it a narrow, wide card with a single burnt-orange edge. No people. Keep the top third and the right edge clear for cropping to a card thumbnail. Nothing on the folders, frame or card may carry any marks, numbers or letters. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
+### Prompt 108 — photo and signature frames
+
+- **File:** `public/blog/dgca-pariksha-photo-signature-size-upload-limits/photo-and-signature-frames.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A plain white-background portrait frame and a wide thin signature strip laid side by side on a desk next to a scanner
+
+> A flat-vector desk scene from slightly above. On the left, a tall rectangular portrait frame with a plain white centre and a navy border. In the middle, a wide, thin horizontal strip with a white centre and a burnt-orange border. On the right, a simple flat navy flatbed scanner with its lid slightly open. Pale-blue desk, generous empty space above and below. No people and no faces. The frame, strip and scanner must carry no marks, numbers, symbols or letters. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.

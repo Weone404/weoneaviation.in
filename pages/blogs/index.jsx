@@ -346,6 +346,15 @@ const guidePosts = [
         date: 'Oct 12, 2026',
         image: { src: '/blog/cpl-application-egca-prerequisites/hero-six-gates-one-path.webp', width: 1200, height: 630, promptId: '105' },
     },
+    {
+        slug: 'dgca-pariksha-photo-signature-size-upload-limits',
+        title: 'DGCA Computer Number Photo and Signature Size: Every Upload Limit',
+        excerpt: 'The JPG limits for the photograph and signature, the PDF cap for each kind of document, what a wrong file costs you, and why nothing can be added after Final Submit.',
+        category: 'DGCA exams',
+        readTime: '6 min',
+        date: 'Oct 23, 2026',
+        image: { src: '/blog/dgca-pariksha-photo-signature-size-upload-limits/hero-files-sorted-by-size.webp', width: 1200, height: 630, promptId: '107' },
+    },
 ];
 
 export async function getServerSideProps() {
