@@ -54,7 +54,7 @@
         "status": "Owner-confirmed unavailable; removed from active contact links and displays."
       }
     ],
-    "email": "info.weoneaviation@gmail.com",
+    "email": "info@weoneaviation.in",
     "emailSourceFiles": [
       "lib/facts.js",
       "lib/schema.js",

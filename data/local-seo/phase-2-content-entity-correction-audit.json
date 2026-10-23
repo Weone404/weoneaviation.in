@@ -49,7 +49,7 @@
       "primarySharedFactAndSchemaPhone": "+91-9667370747",
       "contactPageAndFooterPhone": "+91-9355566991",
       "status": "Both numbers are published first-party, but their roles and relationship are not stated consistently.",
-      "email": "info.weoneaviation@gmail.com is used in shared facts and entity records; the Contact page displays a decoded support address whose equivalence should be owner-confirmed."
+      "email": "info@weoneaviation.in is used in shared facts and entity records; the Contact page displays a decoded support address whose equivalence should be owner-confirmed."
     }
   },
   "pageAudits": [
@@ -525,7 +525,7 @@
       "assessment": "Footer URLs contain tracking/share parameters while schema uses clean forms; the LinkedIn URL also differs (weoneaviation versus we-one-aviation). Confirm that each exact profile is controlled by the academy, then use stable profile URLs consistently. Do not assert ownership from a URL string."
     },
     "address": "Shared organization schema and business-location record agree on the Dwarka address, New Delhi, Delhi 110077. Delhi/Dwarka page schemas reuse the same organization @id.",
-    "telephoneAndEmail": "Schema/shared facts use +91-9667370747; Contact/footer also use +91-9355566991. Additional numbers appear on airline-specific pages. Confirm roles and align schema and visible contact destinations. Shared email is info.weoneaviation@gmail.com; confirm Contact's decoded email matches it.",
+    "telephoneAndEmail": "Schema/shared facts use +91-9667370747; Contact/footer also use +91-9355566991. Additional numbers appear on airline-specific pages. Confirm roles and align schema and visible contact destinations. Shared email is info@weoneaviation.in; confirm Contact's decoded email matches it.",
     "urlAndCanonical": "Schema SITE_URL is https://weoneaviation.in. Layout emits a self-canonical from the path with query removed; www redirects to apex. No audited route requires a cross-canonical based on reviewed evidence.",
     "courseSchema": "DGCA ground Course uses a provider EducationalOrganization by name and URL and includes mode/duration, price range, and scholarship properties that need current evidence. CPL Course uses direct courseMode and an AggregateOffer/duration range that do not clearly distinguish academy tuition from the full partner-delivered CPL pathway. Course provider references should use the stable organization @id.",
     "breadcrumbSchema": "Layout emits BreadcrumbList on non-home, non-admin routes; the final crumb omits item URL per helper behavior. Ensure visual trail and structured trail continue to be generated from the same helper.",

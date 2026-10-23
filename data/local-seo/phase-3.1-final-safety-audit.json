@@ -245,7 +245,7 @@
     },
     "email": {
       "status": "CONSISTENT",
-      "value": "info.weoneaviation@gmail.com in shared facts and Organization schema; Contact decodes the same address for display."
+      "value": "info@weoneaviation.in in shared facts and Organization schema; Contact decodes the same address for display."
     },
     "whatsapp": {
       "status": "CONFLICTING",

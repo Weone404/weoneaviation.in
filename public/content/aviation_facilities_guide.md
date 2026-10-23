@@ -183,6 +183,6 @@ Whether you are preparing for your DGCA written examinations or evaluating fligh
 
 * 📍 **Classroom Base:** C-404, 3rd Floor, Ramphal Chowk, Sector-7, Dwarka, New Delhi
 * 💻 **Online Batches:** Available for students across India and overseas
-* 📞 **Contact:** +91-9667370747 | info.weoneaviation@gmail.com
+* 📞 **Contact:** +91-9667370747 | info@weoneaviation.in
 
 [Contact We One Aviation for Free Pilot Counselling](https://weoneaviation.in/)

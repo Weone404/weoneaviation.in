@@ -74,7 +74,7 @@ const routeContent = {
   '/contact': {
   title: 'Contact We One Aviation: FAQs',
   questions: [
-    ['How can I contact We One Aviation Academy?', 'Use the contact form, call the primary academy number +91 96673 70747, or message the WhatsApp and lead number +91 93556 11996. You can also write to info.weoneaviation@gmail.com.'],
+    ['How can I contact We One Aviation Academy?', 'Use the contact form, call the primary academy number +91 96673 70747, or message the WhatsApp and lead number +91 93556 11996. You can also write to info@weoneaviation.in.'],
     ['Where is the academy located?', 'The academy’s stated physical classroom is at C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, New Delhi, Delhi 110077.'],
     ['Can I ask about online DGCA ground classes from outside Delhi?', 'Yes. The academy states that students outside Delhi can join online batches. Use the contact form or primary phone number to ask about current access.'],
     ['What should I include in a contact-form enquiry?', 'Select the course topic you are asking about and include the contact details needed for a reply. The form opens a WhatsApp message with the enquiry details.'],
@@ -333,7 +333,7 @@ const routeContent = {
     ['What information is published on the We One Aviation credentials page?', 'The page describes the academy’s Dwarka classroom, DGCA ground-subject teaching, online batches for students outside Delhi, and years in operation.'],
     ['How long has We One Aviation been operating?', 'The page publishes the academy\'s founded year and years of operation using the academy data maintained on the site.'],
     ['What is the academy’s relationship to DGCA?', 'DGCA sets the relevant examinations and licensing requirements. We One Aviation teaches DGCA ground subjects; this page does not claim that the academy is DGCA-approved or accredited.'],
-    ['How can I request credential verification?', 'Verification enquiries can be sent to info.weoneaviation@gmail.com using the contact information published on the page.'],
+    ['How can I request credential verification?', 'Verification enquiries can be sent to info@weoneaviation.in using the contact information published on the page.'],
     ['What information is deliberately excluded from the page?', 'The page states that unsupported certification, trade-body, and partnership claims have been removed rather than published without evidence.'],
     ['When was the credentials page last updated?', 'The page currently displays a manually maintained last-updated label of August 19, 2026.'],
     ['Where does We One Aviation conduct its DGCA ground classes?', 'The page\'s closing section states that DGCA ground classes are conducted in Dwarka, New Delhi.'],

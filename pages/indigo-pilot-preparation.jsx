@@ -415,7 +415,7 @@ function SidebarContact() {
             <div className="space-y-2.5 text-sm text-gray-600">
                 {[
                     { icon: '📱', href: 'tel:+919355611996', label: '+91 93556 11996' },
-                    { icon: '📧', href: 'mailto:info.weoneaviation@gmail.com', label: 'info.weoneaviation@gmail.com' },
+                    { icon: '📧', href: 'mailto:info@weoneaviation.in', label: 'info@weoneaviation.in' },
                 ].map(({ icon, href, label }) => (
                     <div key={href} className="flex items-center gap-2 min-w-0">
                         <span className="flex-shrink-0">{icon}</span>

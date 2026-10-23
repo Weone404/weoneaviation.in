@@ -32,7 +32,7 @@
 
 We One Aviation uses Gmail SMTP for sending emails. Follow these steps:
 
-1. Go to **myaccount.google.com** (logged in as info.weoneaviation@gmail.com)
+1. Go to **myaccount.google.com** (logged in as info@weoneaviation.in)
 2. Click **Security** in the left menu
 3. Enable **2-Step Verification** (if not already enabled)
 4. Go back to Security → **App passwords**
@@ -46,7 +46,7 @@ Create/update `.env.local` file in project root:
 
 ```bash
 # Email Configuration
-GMAIL_USER=info.weoneaviation@gmail.com
+GMAIL_USER=info@weoneaviation.in
 GMAIL_PASSWORD=your-16-character-app-password-here
 
 # Cron Job Security (generate a random token)

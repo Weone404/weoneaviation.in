@@ -137,7 +137,7 @@ const whoShouldJoin = [
 const contactDetails = [
     { icon: '📱', label: 'Phone', value: '+91 93556 11996', href: 'tel:+919355611996' },
     { icon: '🌐', label: 'Website', value: 'weoneaviation.in', href: 'https://weoneaviation.in' },
-    { icon: '📧', label: 'Email', value: 'info.weoneaviation@gmail.com', href: 'mailto:info.weoneaviation@gmail.com' },
+    { icon: '📧', label: 'Email', value: 'info@weoneaviation.in', href: 'mailto:info@weoneaviation.in' },
     { icon: '📸', label: 'Instagram', value: '@topflyer_pilot', href: 'https://www.instagram.com/topflyer_pilot' },
 ];
 

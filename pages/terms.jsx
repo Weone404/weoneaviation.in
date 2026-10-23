@@ -108,7 +108,7 @@ export default function TermsPage() {
                                 <div className="mt-5 pt-5 border-t border-gray-100">
                                     <p className="text-xs text-gray-400 mb-3">Questions about these terms?</p>
                                     <a
-                                        href="mailto:info.weoneaviation@gmail.com"
+                                        href="mailto:info@weoneaviation.in"
                                         className="block bg-av-blue text-white text-center py-2.5 rounded-xl text-xs font-bold hover:bg-av-orange transition-all"
                                     >
                                         Contact Us →
@@ -285,10 +285,10 @@ export default function TermsPage() {
                                         <p className="text-white/60 text-xs mt-0.5">Send your enrollment details and reason to our email.</p>
                                     </div>
                                     <a
-                                        href="mailto:info.weoneaviation@gmail.com"
+                                        href="mailto:info@weoneaviation.in"
                                         className="flex-shrink-0 bg-av-orange text-white px-5 py-2.5 rounded-xl text-xs font-bold hover:bg-white hover:text-av-blue transition-all"
                                     >
-                                        info.weoneaviation@gmail.com
+                                        info@weoneaviation.in
                                     </a>
                                 </div>
                             </div>
@@ -352,7 +352,7 @@ export default function TermsPage() {
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     {[
                                         { icon: '🏢', label: 'Address', value: 'C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, Delhi 110077, India', href: null },
-                                        { icon: '📧', label: 'Email', value: 'info.weoneaviation@gmail.com', href: 'mailto:info.weoneaviation@gmail.com' },
+                                        { icon: '📧', label: 'Email', value: 'info@weoneaviation.in', href: 'mailto:info@weoneaviation.in' },
                                         { icon: '📞', label: 'Phone', value: '+91 96673 70747', href: 'tel:+919667370747' },
                                         { icon: '🌐', label: 'Website', value: 'weoneaviation.in', href: 'https://weoneaviation.in' },
                                     ].map((item, i) => (

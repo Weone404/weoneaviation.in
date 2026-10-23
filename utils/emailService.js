@@ -20,7 +20,7 @@ const createTransporter = () => {
     port: 465,
     secure: true,
     auth: {
-      user: process.env.GMAIL_USER, // info.weoneaviation@gmail.com
+      user: process.env.GMAIL_USER, // info@weoneaviation.in
       pass: process.env.GMAIL_PASSWORD, // 16-char app password from Google
     },
   });
@@ -48,12 +48,12 @@ export const sendEmail = async (options) => {
     }
 
     const mailOptions = {
-      from: process.env.GMAIL_USER || 'info.weoneaviation@gmail.com',
+      from: process.env.GMAIL_USER || 'info@weoneaviation.in',
       to: options.to,
       subject: options.subject,
       html: options.html,
       text: options.text || 'Email body',
-      replyTo: 'info.weoneaviation@gmail.com',
+      replyTo: 'info@weoneaviation.in',
     };
 
     const info = await transporter.sendMail(mailOptions);

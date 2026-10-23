@@ -464,7 +464,7 @@ export default function PrivacyPolicyPage() {
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     {[
                                         { icon: '🏢', label: 'Address', value: 'C-404, 3rd Floor, Ramphal Chowk, Block C, Palam Extension, Sector-7, Dwarka, Delhi 110077, India' },
-                                        { icon: '📧', label: 'Email', value: 'info.weoneaviation@gmail.com', href: 'mailto:info.weoneaviation@gmail.com' },
+                                        { icon: '📧', label: 'Email', value: 'info@weoneaviation.in', href: 'mailto:info@weoneaviation.in' },
                                         { icon: '📞', label: 'Phone', value: '+91 96673 70747', href: 'tel:+919667370747' },
                                         { icon: '🌐', label: 'Website', value: 'weoneaviation.in', href: 'https://weoneaviation.in' },
                                     ].map((item, i) => (

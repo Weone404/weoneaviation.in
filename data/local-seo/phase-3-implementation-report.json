@@ -123,7 +123,7 @@
   ],
   "businessEntityChanges": [
     "Used the shared ACADEMY address, primary phone, WhatsApp URL, email, organization name, and verified scope in the updated Contact and shared entity descriptions.",
-    "Confirmed the decoded Contact email is the same info.weoneaviation@gmail.com address in shared facts.",
+    "Confirmed the decoded Contact email is the same info@weoneaviation.in address in shared facts.",
     "Updated the Footer to remove unsupported free/expert-counselling wording and avoid an unverified India-and-abroad service statement.",
     "Social URLs remain visible in the Footer but are not asserted as sameAs; profile ownership and the second Footer phone still require owner verification."
   ],

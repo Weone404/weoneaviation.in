@@ -445,7 +445,7 @@ export function CityPageTemplate({
                             ))}
                         </div>
                         <div className="mt-8 pt-6 border-t border-white/20 space-y-2 text-sm text-white/70">
-                            <p>📧 <span className="font-semibold text-white">Office Mail:</span> info.weoneaviation@gmail.com</p>
+                            <p>📧 <span className="font-semibold text-white">Office Mail:</span> info@weoneaviation.in</p>
                             <p>📍 <span className="font-semibold text-white">Office Address:</span> {ACADEMY.streetAddress}, {ACADEMY.addressLocality}, {ACADEMY.addressRegion} {ACADEMY.postalCode}, India</p>
                         </div>
                     </ScrollReveal>

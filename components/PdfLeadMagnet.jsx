@@ -118,7 +118,7 @@ export default function PdfLeadMagnet({
         <div className="mb-4 p-3 bg-amber-50 border border-amber-300 rounded-lg text-amber-800 text-sm text-center leading-relaxed">
           Thanks &mdash; your request is saved. This guide is not available as an instant download at the
           moment, so rather than leave you waiting on a file that will not arrive: write to{' '}
-          <a href="mailto:info.weoneaviation@gmail.com" className="font-semibold underline">info.weoneaviation@gmail.com</a>{' '}
+          <a href="mailto:info@weoneaviation.in" className="font-semibold underline">info@weoneaviation.in</a>{' '}
           or call <a href="tel:+919667370747" className="font-semibold underline">+91 96673 70747</a> and we will send it
           to you directly.
         </div>
