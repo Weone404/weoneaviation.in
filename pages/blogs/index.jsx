@@ -346,6 +346,15 @@ const guidePosts = [
         date: 'Oct 12, 2026',
         image: { src: '/blog/cpl-application-egca-prerequisites/hero-six-gates-one-path.webp', width: 1200, height: 630, promptId: '105' },
     },
+    {
+        slug: 'can-girls-become-pilots-in-india',
+        title: 'Can a Girl Become a Pilot in India? Eligibility, Medical and Training',
+        excerpt: "The CPL rules on age, education, medical, exams and flying hours are the same for girls and boys. What is different in practice: the medical procedure, name matching on DGCA documents, and what a family should ask a flying school.",
+        category: 'Pilot eligibility',
+        readTime: '6 min',
+        date: 'Oct 24, 2026',
+        image: { src: '/blog/can-girls-become-pilots-in-india/hero-one-path-two-students.webp', width: 1200, height: 630, promptId: '107' },
+    },
 ];
 
 export async function getServerSideProps() {

@@ -1406,6 +1406,24 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector desk scene from slightly above. Five blank navy-edged cards sit in a row from left to right on a pale-blue desk, joined by one thin navy line running behind them. A South Asian student's hand (modest sleeve) rests on the third card, whose edge is the single burnt-orange accent. Generous empty pale-blue space above and below. No faces. Nothing on the cards or the desk may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
 
+## Post: Can girls become pilots in India (`/blogs/can-girls-become-pilots-in-india`)
+
+### Prompt 107 — hero, one path two students
+
+- **File:** `public/blog/can-girls-become-pilots-in-india/hero-one-path-two-students.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** Two students walking side by side along one runway towards a small training aircraft, one of them a girl in a school-style uniform
+
+> A flat-vector scene on a pale-blue background. A single straight runway runs from the lower left towards the centre-right. Two South Asian students walk side by side along it, seen from behind and slightly to the side, one a girl with a plain braid and one a boy, both in simple navy school-style uniforms with a small burnt-orange bag strap as the only accent. At the end of the runway stands one small, simple navy single-engine training aircraft, side-on. Keep the top third and the left edge clear for cropping to a card thumbnail. No faces in detail, no logos on the aircraft or uniforms, and no marks, signs or letters anywhere. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
+### Prompt 108 — documents matching names
+
+- **File:** `public/blog/can-girls-become-pilots-in-india/documents-matching-names.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A desk with a Class 10 marksheet, a passport and an identity card laid side by side, with a hand tracing a line across the three
+
+> A flat-vector desk scene from slightly above. Three blank rectangular documents lie side by side on a pale-blue desk: a navy-edged sheet on the left, a small navy booklet in the centre and a navy card on the right. A South Asian student's hand (modest sleeve) moves a thin burnt-orange line from the first document across the second to the third, as if checking that they match. Generous empty pale-blue space above and below. No faces. The documents must be completely blank, with no names, photographs, numbers, symbols or letters. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
