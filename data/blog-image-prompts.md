@@ -1406,6 +1406,24 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector desk scene from slightly above. Five blank navy-edged cards sit in a row from left to right on a pale-blue desk, joined by one thin navy line running behind them. A South Asian student's hand (modest sleeve) rests on the third card, whose edge is the single burnt-orange accent. Generous empty pale-blue space above and below. No faces. Nothing on the cards or the desk may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
 
+## Post: Minimum percentage in Class 12 (`/blogs/minimum-percentage-class-12-to-become-pilot-india`)
+
+### Prompt 107 — hero, marksheet and subjects
+
+- **File:** `public/blog/minimum-percentage-class-12-pilot/hero-marksheet-and-subjects.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** A student holding a blank marksheet beside two upright books, one drawn in a different colour, with a small training aircraft in the distance
+
+> A flat-vector scene on a pale-blue background. On the left, a South Asian student (modest school-style clothing, no face detail) holds up a plain blank sheet of paper. Beside them stand two upright closed books, one navy and one burnt orange, with plain spines. In the distance on the right, small and simple, a navy single-engine training aircraft sits on a flat runway line. Generous empty pale-blue space across the top and the right edge for cropping to a card thumbnail. The sheet, the book spines and the aircraft must carry no marks, numbers, symbols or letters. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
+### Prompt 108 — who decides the cut-off
+
+- **File:** `public/blog/minimum-percentage-class-12-pilot/who-decides-the-cutoff.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** Three plain doorways of different sizes in a row, each with a small blank card pinned beside it, and a student standing before the middle one
+
+> A flat-vector scene on a pale-blue background. Three plain navy doorways of three different sizes stand side by side on a flat ground line. Beside each doorway hangs one small blank card. A South Asian student (modest clothing, seen from behind, no face) stands in front of the middle doorway, whose card edge is the single burnt-orange accent. Generous empty pale-blue space above. The cards and doorways must carry no marks, numbers or letters. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.

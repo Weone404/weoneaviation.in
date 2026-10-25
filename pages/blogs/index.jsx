@@ -346,6 +346,15 @@ const guidePosts = [
         date: 'Oct 12, 2026',
         image: { src: '/blog/cpl-application-egca-prerequisites/hero-six-gates-one-path.webp', width: 1200, height: 630, promptId: '105' },
     },
+    {
+        slug: 'minimum-percentage-class-12-to-become-pilot-india',
+        title: 'Minimum Percentage in Class 12 to Become a Pilot in India',
+        excerpt: "Does DGCA set a minimum Class 12 percentage for a pilot licence? What it asks for instead, who actually sets marks cut-offs, and how to get a school's rule in writing before you pay.",
+        category: 'Eligibility',
+        readTime: '5 min',
+        date: 'Oct 25, 2026',
+        image: { src: '/blog/minimum-percentage-class-12-pilot/hero-marksheet-and-subjects.webp', width: 1200, height: 630, promptId: '107' },
+    },
 ];
 
 export async function getServerSideProps() {
