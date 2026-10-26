@@ -346,6 +346,15 @@ const guidePosts = [
         date: 'Oct 12, 2026',
         image: { src: '/blog/cpl-application-egca-prerequisites/hero-six-gates-one-path.webp', width: 1200, height: 630, promptId: '105' },
     },
+    {
+        slug: 'where-to-take-first-dgca-class-1-medical-delhi',
+        title: 'Where to Take Your First DGCA Class 1 Medical in Delhi NCR',
+        excerpt: "DGCA allows the first Class 1 medical only at AFCME, IAM, MEC (East) and approved aeromedical evaluation centres. Which of them a Delhi student can use, why a nearby examiner cannot do it, and why to book it before paying a school.",
+        category: 'DGCA medical',
+        readTime: '6 min',
+        date: 'Oct 26, 2026',
+        image: { src: '/blog/where-to-take-first-dgca-class-1-medical-delhi/hero-one-door-first-medical.webp', width: 1200, height: 630, promptId: '107' },
+    },
 ];
 
 export async function getServerSideProps() {

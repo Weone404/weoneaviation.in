@@ -1406,6 +1406,32 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector desk scene from slightly above. Five blank navy-edged cards sit in a row from left to right on a pale-blue desk, joined by one thin navy line running behind them. A South Asian student's hand (modest sleeve) rests on the third card, whose edge is the single burnt-orange accent. Generous empty pale-blue space above and below. No faces. Nothing on the cards or the desk may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
 
+## Post: Where to take the first DGCA Class 1 medical (`/blogs/where-to-take-first-dgca-class-1-medical-delhi`)
+
+### Prompt 107 — hero, one door for the first medical
+
+- **File:** `public/blog/where-to-take-first-dgca-class-1-medical-delhi/hero-one-door-first-medical.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** Several ordinary doors along a street, with one larger navy door in the centre drawn in a different colour and a student's hand reaching towards it
+
+> A flat-vector street scene, viewed straight on. A row of five plain, identical, pale-blue doors with thin navy frames runs across the image. In the exact centre stands one taller, wider navy door whose frame is the single burnt-orange accent. A South Asian student in a plain shirt, seen from behind and slightly to the left, reaches a hand towards the central door. No faces. Keep the top third and the left edge clear for cropping to a card thumbnail. The doors, walls and street must carry no signs, numbers, handles with markings or letters. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
+### Prompt 108 — Delhi region centres
+
+- **File:** `public/blog/where-to-take-first-dgca-class-1-medical-delhi/delhi-ncr-centre-map.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A simple abstract map of the Delhi region with three pins joined to a central pin by thin lines, one pin in burnt orange
+
+> A flat-vector abstract map on a pale-blue background. A soft rounded navy outline suggests a city region, with a thin curved line for a river and two crossing lines for main roads. One central pin sits in the middle; three smaller pins sit around it, joined to it by thin navy lines. Exactly one of the outer pins is burnt orange. Generous empty space at the edges. No landmarks that need labels, no street names, no compass, no legend. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
+### Prompt 109 — medical before the deposit
+
+- **File:** `public/blog/where-to-take-first-dgca-class-1-medical-delhi/medical-before-deposit.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A desk seen from above with a folded medical form, a passport-size photograph holder and a closed chequebook placed to the right of them
+
+> A flat-vector top-down desk scene on a pale-blue surface. On the left, a folded blank form with a navy edge; in the middle, a small photograph holder showing only a plain navy silhouette; on the right, a closed chequebook-style booklet whose cover is the single burnt-orange accent. Items are evenly spaced with a thin navy line passing from left to right behind them to suggest order. Generous empty space around. No people, no hands. Nothing on the form, holder or booklet may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
