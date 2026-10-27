@@ -1406,6 +1406,24 @@ lens flare, no text, no logos. The subject is the engineer, not the aeroplane.
 
 > A flat-vector desk scene from slightly above. Five blank navy-edged cards sit in a row from left to right on a pale-blue desk, joined by one thin navy line running behind them. A South Asian student's hand (modest sleeve) rests on the third card, whose edge is the single burnt-orange accent. Generous empty pale-blue space above and below. No faces. Nothing on the cards or the desk may carry any letters, numbers or symbols. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
 
+## Post: Minimum percentage in Class 12 (`/blogs/minimum-percentage-class-12-pilot-india`)
+
+### Prompt 107 — hero, marksheet and gate
+
+- **File:** `public/blog/minimum-percentage-class-12-pilot-india/hero-marksheet-and-gate.webp`
+- **Dimensions:** 1200 × 630
+- **Alt text:** A blank marksheet-style sheet on a desk beside a small gate outline, with a student's hand passing the sheet towards the gate and a distant training aircraft in the background
+
+> A flat-vector scene on a pale-blue background. On the left, a plain navy-edged blank sheet lies on a desk and a South Asian student's hand (modest sleeve) lifts it towards the centre. In the centre, a simple navy gateway stands open. On the right, small and distant, a single-engine training aircraft sits on a flat runway line, its tail the single burnt-orange accent. Keep the top third clear for cropping to a card thumbnail. No faces. The sheet, gateway and aircraft must carry no marks, numbers or letters. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
+### Prompt 108 — record checked, not scored
+
+- **File:** `public/blog/minimum-percentage-class-12-pilot-india/record-checked-not-score.webp`
+- **Dimensions:** 1200 × 675
+- **Alt text:** A marksheet-style sheet with a magnifying glass over its edge and a ruler, beside a tick-shaped mark, showing the record being checked for completeness rather than for a score
+
+> A flat-vector desk scene from slightly above. In the centre, a blank navy-edged sheet lies on a pale-blue desk. A round magnifying glass rests over one corner of the sheet, and a plain ruler lies along its lower edge. To the right, a simple tick shape in burnt orange is the only accent. Generous empty pale-blue space on the left and above. No people. Nothing on the sheet or ruler may carry any letters, numbers or tick marks other than the single orange tick. Flat vector, navy #0a2342 and pale blue #e0f0ff base, burnt orange #b45309 accent, absolutely NO text or letters anywhere in the image.
+
 ## Adding images for a new post
 
 1. Create `public/blog/<post-slug>/` and keep every file for that post inside it.
