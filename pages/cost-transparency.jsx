@@ -252,6 +252,7 @@ export default function CostTransparency() {
                                 Related reading on this site, kept separate deliberately while we work out which page should own this
                                 topic: <Link href="/blogs/pilot-training-cost-in-india" className={A}>our cost breakdown by line item</Link>{' '}
                                 and <Link href="/lead-magnets/cpl-cost-breakdown" className={A}>the CPL cost worksheet</Link>.
+                                {' '}For financing, see our <Link href="/pilot-training-loan-in-india" className={A}>pilot-training loan checklist</Link>.
                             </p>
 
                             <h2 id="faqs" className={H2}>Frequently asked questions</h2>
