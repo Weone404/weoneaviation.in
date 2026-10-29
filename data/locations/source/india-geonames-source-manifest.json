@@ -2,7 +2,11 @@
   "version": 1,
   "gazetteer": {
     "url": "https://download.geonames.org/export/dump/IN.zip",
-    "sha256": "239a078141082d57aa3cda7844e75fa791ddbfc23955ad684c2e38385c8944a9",
+    "sha256": "9e7dc558058b1c252b8fd9de2b418189756e5afeeb9311ac7a3c23960311d267",
+    "checksumAlgorithm": "SHA-256",
+    "verifiedAt": "2026-10-29",
+    "sourceVersion": "GeoNames export retrieved 2026-10-29",
+    "notes": "Two independent HTTP 200 application/zip downloads matched this checksum. ZIP CRCs and the 19-column IN.txt country-code format passed validation for 660062 India rows. GeoNames data is licensed CC BY 4.0.",
     "provisionedFile": "geonames-india-gazetteer.zip",
     "archiveEntry": "IN.txt",
     "columns": 19,
@@ -22,13 +26,21 @@
   },
   "admin1": {
     "url": "https://download.geonames.org/export/dump/admin1CodesASCII.txt",
-    "sha256": "1da92a6323a5fec3176f3f743bf4cf4040fd56a876da55e46fbca23c863aa60a",
+    "sha256": "2e4867f5397acb056ea26377601b57af37cb4c81399770225018e9e439e91ad3",
+    "checksumAlgorithm": "SHA-256",
+    "verifiedAt": "2026-10-29",
+    "sourceVersion": "GeoNames admin1CodesASCII export retrieved 2026-10-29",
+    "notes": "Two independent HTTP 200 text/plain downloads matched this checksum and contained 3865 valid four-column rows. Source: https://download.geonames.org/export/dump/admin1CodesASCII.txt.",
     "provisionedFile": "geonames-admin1-codes.txt",
     "columns": 4
   },
   "admin2": {
     "url": "https://download.geonames.org/export/dump/admin2Codes.txt",
-    "sha256": "0dbb9988fa9388021efe026ed16de0b89f56314f2dfd0abb4a51e17b8c55f29f",
+    "sha256": "e0cd374c39ea78dfd878edfbdcd339f7bdd4016f0147c90fc6a5e45eb7f10279",
+    "checksumAlgorithm": "SHA-256",
+    "verifiedAt": "2026-10-29",
+    "sourceVersion": "GeoNames admin2Codes export retrieved 2026-10-29",
+    "notes": "Two independent HTTP 200 text/plain downloads matched this checksum and contained 47762 valid four-column rows. Source: https://download.geonames.org/export/dump/admin2Codes.txt.",
     "provisionedFile": "geonames-admin2-codes.txt",
     "columns": 4
   }
