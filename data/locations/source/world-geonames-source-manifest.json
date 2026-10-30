@@ -2,13 +2,13 @@
   "version": 1,
   "allCountries": {
     "url": "https://download.geonames.org/export/dump/allCountries.zip",
-    "sha256": "61c8d059333d071369eea5b2850d7893ce8dc08b392e26680a18dc53b73b5e65",
+    "sha256": "2be9c961e3d762ac9d34302698e8e3c305ab5d6eb57534aaf0ff79da047812ca",
     "file": "geonames-allCountries.zip",
     "archiveEntry": "allCountries.txt",
     "checksumAlgorithm": "SHA-256",
-    "verifiedAt": "2026-10-29",
-    "sourceVersion": "GeoNames allCountries export retrieved 2026-10-29",
-    "notes": "Two independent HTTP 200 application/zip downloads matched this checksum and contained allCountries.txt. The verified archive is 422507192 bytes. Source: https://download.geonames.org/export/dump/allCountries.zip."
+    "verifiedAt": "2026-10-30",
+    "sourceVersion": "GeoNames allCountries export retrieved 2026-10-30",
+    "notes": "The 2026-10-30 HTTP 200 download matched this checksum, was 422509342 bytes, and contained allCountries.txt. GeoNames serves this filename as a mutable latest export. Source: https://download.geonames.org/export/dump/allCountries.zip."
   },
   "countryInfo": {
     "url": "https://download.geonames.org/export/dump/countryInfo.txt",

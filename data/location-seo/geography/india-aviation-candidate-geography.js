@@ -1,6 +1,6 @@
 export const INDIA_AVIATION_CANDIDATE_GEOGRAPHY = Object.freeze({
   "datasetRole": "Small generated hierarchy subset from the India registry for curated aviation-page promotion; not a separate geography source.",
-  "sourceRegistryRecordCount": 574432,
+  "sourceRegistryRecordCount": 574466,
   "candidates": [
     {
       "marketSlug": "ahmedabad",

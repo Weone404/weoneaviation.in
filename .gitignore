@@ -12,6 +12,7 @@ data/location-seo/geography/india-geographic-index/
 data/location-seo/geography/india-geographic-index.tmp/
 data/locations/*cache.json
 data/location-seo/geography/world-geographic-index.sqlite*
+data/location-seo/geography/*-geographic-runtime-index.sqlite*
 data/location-seo/geography/approved-geographic-sitemap-routes.json
 data/locations/source/geonames-*
 data/locations/source/provisioned/

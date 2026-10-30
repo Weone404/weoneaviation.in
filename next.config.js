@@ -10,9 +10,18 @@ const nextConfig = {
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
   outputFileTracingIncludes: {
-    '/[location]/[service]': [
-      './data/location-seo/geography/india-geographic-index.sqlite',
+    '/\\[location\\]/\\[service\\]': [
+      './data/location-seo/geography/india-geographic-runtime-index.sqlite',
+      './data/location-seo/geography/world-geographic-runtime-index.sqlite',
+    ],
+  },
+  // Full gazetteers remain build-time inputs; only route-scoped runtime indexes ship.
+  outputFileTracingExcludes: {
+    '/\\[location\\]/\\[service\\]': [
+      './data/location-seo/geography/world-geographic-index.sqlite*',
+      './data/location-seo/geography/india-geographic-index.sqlite*',
       './data/location-seo/geography/india-geographic-index/**',
+      './data/location-seo/geography/india-geography.json.gz',
     ],
   },
 

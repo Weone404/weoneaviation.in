@@ -211,6 +211,10 @@ export function getProductionRouteApproval(route, context = null) {
   };
 }
 
+export function getExplicitNoindexProductionRoutes() {
+  return [...EXPLICIT_NOINDEX_ROUTES].sort();
+}
+
 export function finalizeProductionRouteApproval(route, {
   indexability,
   sitemapEligible,

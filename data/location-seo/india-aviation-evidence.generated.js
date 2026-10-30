@@ -1634,7 +1634,7 @@ export const INDIA_AVIATION_EVIDENCE_RECORDS = Object.freeze(
       },
       {
         "id": "geo:geonames:IN:admin2:38.357",
-        "name": "Purba Singhbhum",
+        "name": "Purbi Singhbhum",
         "type": "district"
       },
       {

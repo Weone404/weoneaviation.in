@@ -92,6 +92,17 @@ commit merged to `master`, so Vercel reuses the approved cache rather than
 repeating the worldwide evaluation. Do not leave the inventory as an
 untracked local-only build input or edit it to manufacture approvals.
 
+The full India and worldwide SQLite indexes are build-time evaluation inputs,
+not serverless-function assets. After generating the final approved route
+cache, `npm run build:geographic-runtime-index` creates compact runtime
+indexes containing approved route identities, required hierarchy and collision
+records, explicitly reviewed noindex exceptions, and airport references for
+countries represented by published routes. Dynamic requests use these subsets;
+build-time evaluation and sitemap generation continue to use the full
+registries. `npm run build` verifies
+runtime route parity and fails if the geographic route function trace includes
+the full indexes or exceeds 225 MiB uncompressed.
+
 The source manifests pin expected SHA-256 values, but the GeoNames download
 URLs currently point to mutable latest archives. Provisioning fails closed
 when upstream bytes differ; a pin alone does not make the upstream artifact

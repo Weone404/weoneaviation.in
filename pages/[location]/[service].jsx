@@ -659,7 +659,11 @@ export function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
-  const result = await resolveGeographicServicePage(params);
+export async function getStaticProps(context) {
+  const result = await resolveGeographicServicePage({
+    ...context.params,
+    useRuntimeIndex: process.env.NODE_ENV === 'production'
+      && context.revalidateReason !== 'build',
+  });
   return prepareLocationServicePageResult(result, SITE_URL);
 }
