@@ -2,11 +2,11 @@
   "version": 1,
   "gazetteer": {
     "url": "https://download.geonames.org/export/dump/IN.zip",
-    "sha256": "9e7dc558058b1c252b8fd9de2b418189756e5afeeb9311ac7a3c23960311d267",
+    "sha256": "4f06453dec37d52f7063577edeaf0cc45ac6a73e8943ea89febd81f25e3c7d56",
     "checksumAlgorithm": "SHA-256",
-    "verifiedAt": "2026-10-29",
-    "sourceVersion": "GeoNames export retrieved 2026-10-29",
-    "notes": "Two independent HTTP 200 application/zip downloads matched this checksum. ZIP CRCs and the 19-column IN.txt country-code format passed validation for 660062 India rows. GeoNames data is licensed CC BY 4.0.",
+    "verifiedAt": "2026-10-31",
+    "sourceVersion": "GeoNames export retrieved 2026-10-31",
+    "notes": "A direct HTTP 200 download matched this checksum. ZIP CRCs and the 19-column IN.txt country-code format passed validation for 660062 India rows. GeoNames data is licensed CC BY 4.0.",
     "provisionedFile": "geonames-india-gazetteer.zip",
     "archiveEntry": "IN.txt",
     "columns": 19,
@@ -36,11 +36,11 @@
   },
   "admin2": {
     "url": "https://download.geonames.org/export/dump/admin2Codes.txt",
-    "sha256": "e0cd374c39ea78dfd878edfbdcd339f7bdd4016f0147c90fc6a5e45eb7f10279",
+    "sha256": "9fe333c9601e6daffd8cb2307f593dcdee048347efd899cea94863824eb172e2",
     "checksumAlgorithm": "SHA-256",
-    "verifiedAt": "2026-10-29",
-    "sourceVersion": "GeoNames admin2Codes export retrieved 2026-10-29",
-    "notes": "Two independent HTTP 200 text/plain downloads matched this checksum and contained 47762 valid four-column rows. Source: https://download.geonames.org/export/dump/admin2Codes.txt.",
+    "verifiedAt": "2026-10-31",
+    "sourceVersion": "GeoNames admin2Codes export retrieved 2026-10-31",
+    "notes": "A direct HTTP 200 text/plain download matched this checksum and contained 47762 valid four-column rows. Source: https://download.geonames.org/export/dump/admin2Codes.txt.",
     "provisionedFile": "geonames-admin2-codes.txt",
     "columns": 4
   }
