@@ -2,25 +2,25 @@
   "version": 1,
   "allCountries": {
     "url": "https://download.geonames.org/export/dump/allCountries.zip",
-    "sha256": "6f1353e93ab6d56e43a495675de40bdcbddadc42b97c91a8de3134158b4f247d",
+    "sha256": "4e2ccc61c8d53edc5d83b1bfba4267f0f072a0e00786402bdf034787a478720e",
     "file": "geonames-allCountries.zip",
     "archiveEntry": "allCountries.txt",
     "checksumAlgorithm": "SHA-256",
-    "verifiedAt": "2026-10-31",
-    "sourceVersion": "GeoNames allCountries export retrieved 2026-10-31",
-    "notes": "The retrieved archive matched this SHA-256 and the current upstream Content-Length of 422510929 bytes, and contains allCountries.txt. Source: https://download.geonames.org/export/dump/allCountries.zip."
+    "verifiedAt": "2026-11-02",
+    "sourceVersion": "GeoNames allCountries export retrieved 2026-11-02",
+    "notes": "Two independent HTTP 200 application/zip downloads matched this SHA-256 and the upstream Content-Length of 422513744 bytes. Source: https://download.geonames.org/export/dump/allCountries.zip."
   },
   "countryInfo": {
     "url": "https://download.geonames.org/export/dump/countryInfo.txt",
-    "sha256": "5c710efde90ee4cca15001c9f6a97ae7a74c7020b365504913ddc3afeb6d3671",
+    "sha256": "79f8f59ea01cbb40438bf1856dd6c2ff201f03f8fc72d0530b2646aaf603ef04",
     "file": "geonames-countryInfo.txt",
     "columns": 17,
     "countryCodeColumn": 0,
     "countryNameColumn": 4,
     "checksumAlgorithm": "SHA-256",
-    "verifiedAt": "2026-10-29",
-    "sourceVersion": "GeoNames countryInfo export retrieved 2026-10-29",
-    "notes": "Two independent HTTP 200 text/plain downloads matched this checksum and contained 252 valid rows with 17 tab-separated fields. Source: https://download.geonames.org/export/dump/countryInfo.txt."
+    "verifiedAt": "2026-11-02",
+    "sourceVersion": "GeoNames countryInfo export retrieved 2026-11-02",
+    "notes": "Two independent HTTP 200 text/plain downloads matched this SHA-256 and contained 252 valid rows with 17 tab-separated fields. Source: https://download.geonames.org/export/dump/countryInfo.txt."
   },
   "admin1": {
     "url": "https://download.geonames.org/export/dump/admin1CodesASCII.txt",
@@ -34,12 +34,12 @@
   },
   "admin2": {
     "url": "https://download.geonames.org/export/dump/admin2Codes.txt",
-    "sha256": "9fe333c9601e6daffd8cb2307f593dcdee048347efd899cea94863824eb172e2",
+    "sha256": "5d736e11a7f6f0497804745d4ee9721f72bb0ae45d372863cb0949b915c67d07",
     "file": "geonames-admin2Codes.txt",
     "columns": 4,
     "checksumAlgorithm": "SHA-256",
-    "verifiedAt": "2026-10-31",
-    "sourceVersion": "GeoNames admin2Codes export retrieved 2026-10-31",
-    "notes": "A direct HTTP 200 text/plain download matched this checksum and contained 47762 valid four-column rows. Source: https://download.geonames.org/export/dump/admin2Codes.txt."
+    "verifiedAt": "2026-11-02",
+    "sourceVersion": "GeoNames admin2Codes export retrieved 2026-11-02",
+    "notes": "Two independent HTTP 200 text/plain downloads matched this SHA-256 and contained 47760 valid four-column rows. Source: https://download.geonames.org/export/dump/admin2Codes.txt."
   }
 }
