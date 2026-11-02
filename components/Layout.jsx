@@ -30,6 +30,8 @@ export default function Layout({
   includeDefaultFAQs = true,
   breadcrumbOverride = null,
   schemaFaqItems = null,
+  socialImage = 'https://weoneaviation.in/og-cover.jpg',
+  socialImageAlt = 'We One Aviation Academy — DGCA Ground Classes in Dwarka',
 }) {
   const router = useRouter();
   const canonicalPath = router.asPath ? router.asPath.split(/[?#]/)[0] : '/';
@@ -107,6 +109,12 @@ export default function Layout({
         <meta key="og:description" property="og:description" content={description || 'DGCA pilot training in India'} />
         <meta key="twitter:title" name="twitter:title" content={title || 'We One Aviation Academy'} />
         <meta key="twitter:description" name="twitter:description" content={description || 'DGCA pilot training in India'} />
+        <meta key="og:image" property="og:image" content={socialImage} />
+        <meta key="og:image:width" property="og:image:width" content="1200" />
+        <meta key="og:image:height" property="og:image:height" content="630" />
+        <meta key="og:image:alt" property="og:image:alt" content={socialImageAlt} />
+        <meta key="twitter:image" name="twitter:image" content={socialImage} />
+        <meta key="twitter:image:alt" name="twitter:image:alt" content={socialImageAlt} />
 
         {siteSchema && <StructuredData data={siteSchema} />}
 

@@ -56,14 +56,7 @@ class MyDocument extends Document {
           {/* Global metadata defaults are intentionally minimal to avoid duplicate OG/Twitter tags across pages. */}
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content="We One Aviation" />
-          <meta property="og:image" content="https://weoneaviation.in/og-cover.jpg" />
-          <meta property="og:image:width" content="1200" />
-          <meta property="og:image:height" content="630" />
-          <meta property="og:image:alt" content="We One Aviation Academy — DGCA Ground Classes in Dwarka" />
-
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:image" content="https://weoneaviation.in/og-cover.jpg" />
-          <meta name="twitter:image:alt" content="We One Aviation Academy — DGCA Ground Classes in Dwarka" />
 
           {/*
             Quill's stylesheet was pulled from unpkg here, on every public page.
