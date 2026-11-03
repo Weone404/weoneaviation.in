@@ -245,11 +245,11 @@ export default function Home() {
                     className="w-full h-auto object-contain"
                   />
                 </div>
-                <div className="absolute -bottom-5 -left-5 bg-av-orange rounded-xl p-4 shadow-xl">
+                <div className="absolute bottom-0 left-0 xl:-bottom-5 xl:-left-5 bg-av-orange rounded-xl p-4 shadow-xl">
                   <div className="font-montserrat text-white text-xl font-black">16+</div>
                   <div className="text-white/80 text-xs">Years of Excellence</div>
                 </div>
-                <div className="absolute -top-5 -right-5 glass bg-av-blue rounded-xl p-4 shadow-xl border border-white/20">
+                <div className="absolute top-0 right-0 xl:-top-5 xl:-right-4 glass bg-av-blue rounded-xl p-4 shadow-xl border border-white/20">
                   <div className="font-montserrat text-av-orange text-xl font-black">DGCA</div>
                   <div className="text-white text-xs">Ground subjects</div>
                 </div>

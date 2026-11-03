@@ -891,10 +891,15 @@ export default function AirIndiaCadetPilotProgramPage() {
         }
 
         .article-card {
+          min-width: 0;
           background: #ffffff;
           border-radius: 24px;
           padding: 32px 28px;
           box-shadow: 0 22px 52px rgba(17, 32, 51, 0.08);
+        }
+
+        .article-column {
+          min-width: 0;
         }
 
         .article-card > p, .article-card li, .article-card td, .article-card th {
@@ -953,7 +958,9 @@ export default function AirIndiaCadetPilotProgramPage() {
         }
 
         .table-scroll {
+          width: 100%;
           max-width: 100%;
+          min-width: 0;
           margin: 1rem 0 2rem;
           overflow-x: auto;
           border: 1px solid #d9e4f0;
@@ -1088,7 +1095,7 @@ export default function AirIndiaCadetPilotProgramPage() {
         @media (max-width: 980px) {
           .hero-content,
           .content-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1fr);
           }
 
           .sidebar-column {
