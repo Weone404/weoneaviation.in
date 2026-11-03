@@ -30,6 +30,8 @@ export default function Layout({
   includeDefaultFAQs = true,
   breadcrumbOverride = null,
   schemaFaqItems = null,
+  solidNavbar = false,
+  tickerInFlow = false,
   socialImage = 'https://weoneaviation.in/og-cover.jpg',
   socialImageAlt = 'We One Aviation Academy — DGCA Ground Classes in Dwarka',
 }) {
@@ -120,7 +122,7 @@ export default function Layout({
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+      <Navbar solid={solidNavbar} tickerInFlow={tickerInFlow} />
       <main className="min-h-screen">{children}</main>
       {pageFAQs && <FAQSection faqs={pageFAQs.faqs} title={pageFAQs.title} includeSchema={includeFaqSchema} />}
       <Footer />

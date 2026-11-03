@@ -1,903 +1,367 @@
-import Layout from '../components/Layout';
-import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
-import NextImage from 'next/image';
-import QuickAnswer from '../components/QuickAnswer';
-import PeopleAlsoAsk from '../components/PeopleAlsoAsk';
+import Layout from '../components/Layout';
 import StructuredData from '../components/StructuredData';
 import { generateFAQSchema } from '../lib/schema';
-import { PARIKSHA, inr, EXAM_RULES, DGCA_PAPERS, papersSummary } from '../lib/facts';
 
-/*
- * STRUCTURED DATA AND ANSWER-FIRST ADDED 2026-09-16.
- *
- * WHY. From the Semrush positions export of 2026-09-15 this is the
- * highest-traffic page on the site: 1,103 visits a month across 16 keywords
- * and 138,600 of search volume, sitting at position 6 for "dgca pariksha"
- * (74,000) and 9 for "pariksha dgca" (60,500). Twelve of its sixteen keywords
- * show an AI Overview.
- *
- * And it shipped no JSON-LD at all. No Article node, no FAQPage — and because
- * the route is listed in the existingFaqRoutes gate in data/pageFaqs.js,
- * Layout was not injecting one either. It was gated out of the automatic FAQ
- * and never given one of its own, so the single most valuable page on the site
- * gave an answer engine nothing to lift. Its figures were already sourced;
- * none of it was machine-readable.
- *
- * WHAT WAS ADDED: an answer-first block, a People-also-ask block, an Article
- * node with citations, and a FAQPage node. No new facts — every figure below
- * already existed in lib/facts.js with its source and the date it was read.
- */
-
-// ─── Data ────────────────────────────────────────────────────────────────────
-
-const stats = [
-    { num: '3–4x', label: 'Exams Per Year', icon: '📅' },
-    { num: `${EXAM_RULES.theory.passMark}%`, label: 'Passing Marks', icon: '✅' },
-    { num: 'CBT', label: 'Online Mode', icon: '💻' },
-    { num: 'MCQs', label: 'Question Type', icon: '📝' },
-];
-
-const keyDetails = [
-    { label: 'Conducted By', value: 'Directorate General of Civil Aviation (DGCA)' },
-    { label: 'Frequency', value: 'Three to four times a year' },
-    { label: 'Mode of Exam', value: 'Online (CBT – Computer-Based Test)' },
-    { label: 'Languages', value: 'Primarily in English' },
-    { label: 'Types of Licenses', value: 'CPL, PPL, Instrument Rating (IR), Flight Radio Telephony Operator\'s License (FRTOL)' },
-];
-
-const eligibility = [
-    { icon: '🎂', label: 'Age Requirement', value: 'Minimum age is 17 for PPL and 18 for CPL.' },
-    { icon: '📚', label: 'Educational Qualification', value: 'At least 10+2 with Physics and Mathematics (or equivalent).' },
-    { icon: '🩺', label: 'Medical Fitness', value: 'Must hold a valid a DGCA medical certificate from DGCA medical examiners.' },
-];
-
-const syllabusTopics = [
-    {
-        icon: '🗺️',
-        title: 'Air Navigation',
-        points: [
-            'Principles of navigation, calculations, map reading',
-            'Understanding global and regional aviation systems',
-        ],
-    },
-    {
-        icon: '⚖️',
-        title: 'Air Regulations',
-        points: [
-            'International Civil Aviation Organization (ICAO) regulations',
-            'Indian aviation laws and DGCA guidelines',
-        ],
-    },
-    {
-        icon: '🌦️',
-        title: 'Meteorology',
-        points: [
-            'Weather patterns, forecasts, and impact on flight',
-            'Understanding atmospheric conditions and meteorological instruments',
-        ],
-    },
-    {
-        icon: '⚙️',
-        title: 'Technical General & Specific',
-        points: [
-            'Aircraft structure, engines, and technical systems',
-            'Operational knowledge of specific aircraft types',
-        ],
-    },
-];
-
-const examPattern = [
-    { label: 'Mode', value: 'Online, Computer-Based Test (CBT)' },
-    { label: 'Question Type', value: 'Multiple-choice questions (MCQs)' },
-    { label: 'Duration', value: 'Varies for each subject' },
-    { label: 'Passing Marks', value: `Minimum of ${EXAM_RULES.theory.passMark}% in each subject, under ${EXAM_RULES.car.citation}, ${EXAM_RULES.theory.clause}`, highlight: true },
-];
-
-/*
- * The four steps DGCA actually describes, in order. The previous version told
- * students to upload "medical certificates" at step two — nothing in the
- * Pariksha FAQ or the Flight Crew User Manual asks for a medical certificate
- * at any point in the examination or computer-number flow, and a student who
- * waits for a medical before registering loses a session for no reason.
- * Sourced from lib/facts.js PARIKSHA — see the provenance note there.
- */
-const applySteps = [
-    {
-        num: '01',
-        title: 'Get your computer number first',
-        desc: 'No paper can be booked without one. It is a separate online application, issued within ' + PARIKSHA.processing.days + ' working days.',
-    },
-    {
-        num: '02',
-        title: 'Wait for the session public notice',
-        desc: 'CEO opens each session on the Pariksha portal with a public notice giving the exact application window and closing date.',
-    },
-    {
-        num: '03',
-        title: 'Fill the examination form',
-        desc: 'One application per session. Pick your papers and fill two choices of centre — the second is used if the first cannot be allotted.',
-    },
-    {
-        num: '04',
-        title: 'Pay through Bharatkosh by 2300 hrs',
-        desc: 'Payment is made only through the Government of India NTRP portal Bharatkosh. Complete it by 2300 hrs on the closing date; the fee is not refunded or adjusted afterwards.',
-    },
-];
-
-const prepTips = [
-    { icon: '📖', tip: 'Understand the Syllabus Thoroughly: Go through the topics in detail to ensure comprehensive coverage.' },
-    { icon: '📚', tip: 'Use Standard Study Material: DGCA recommended books and pilot training manuals are essential.' },
-    { icon: '🧪', tip: 'Take Practice Tests: Regular practice tests can help gauge your preparation level.' },
-    { icon: '🏫', tip: 'Attend DGCA Ground Classes: Enrolling in a ground school or training academy can provide structured guidance.' },
-    { icon: '⏱️', tip: 'Focus on Time Management: Practicing within time limits helps build confidence for the actual exam.' },
-];
-
-/*
- * Corrected 2026-09-11: this list previously asked for a "medical fitness
- * certificate" and included a payment step. Neither appears in any Pariksha
- * document for the computer-number application. The full, sourced version of
- * this process lives on /dgca-computer-number — keep this summary short and
- * send the reader there rather than duplicating it.
- */
-const computerNumberSteps = [
-    { num: '01', title: 'Register on the Pariksha portal', desc: 'NEW Candidate Registration at pariksha.dgca.gov.in. Enter your name, date of birth and parents\u2019 names exactly as on your Class 10 record.' },
-    { num: '02', title: 'Activate within 24 hours', desc: 'The activation link emailed to you is valid for 24 hours only. After that you have to register again.' },
-    { num: '03', title: 'Complete the application', desc: 'Addresses, category, nationality, any licence held, flying details and your education record with subjects.' },
-    { num: '04', title: 'Upload the documents', desc: 'Class 10 and Class 12 marksheets and pass certificates, the Board Verification Certificate for both, date-of-birth proof and address proof. Photo and signature as JPG; everything else as PDF.' },
-    { num: '05', title: 'Final Submit, then wait', desc: 'Nothing can be added afterwards. A Temporary ID is issued, and the computer number follows within ' + PARIKSHA.processing.days + ' working days of a complete application.' },
-];
-
-const importantQueries = [
-    {
-        num: '1',
-        title: 'What is DGCA Exam?',
-        content: 'The DGCA exam refers to the series of exams required to obtain aviation licenses, including the Commercial Pilot License (CPL), Private Pilot License (PPL), and others. These exams are conducted by the Directorate General of Civil Aviation (DGCA), India\'s aviation regulatory body. The DGCA Pariksha tests candidates on subjects like Air Navigation, Meteorology, Air Regulations, and Aircraft Technical Knowledge.',
-        extra: [
-            { label: 'Purpose', value: 'The purpose of the DGCA exam is to ensure that candidates possess the required knowledge to operate an aircraft safely and in compliance with international and national aviation regulations.' },
-            { label: 'Subjects Covered', value: 'Air Navigation, Air Regulations, Technical Knowledge, Meteorology, and other relevant subjects related to aviation.' },
-        ],
-    },
-    {
-        num: '3',
-        title: 'DGCA Entrance Exam',
-        content: 'The DGCA entrance exam is a key part of the process for becoming a pilot in India. It is designed to assess your theoretical knowledge in various subjects related to aviation. The entrance exam, or DGCA Pariksha, tests candidates on their understanding of technical aspects of flying, regulatory requirements, and meteorology, among other things.',
-        extra: [
-            { label: 'Eligibility', value: 'Candidates must meet specific requirements, such as completing their 12th standard with Physics and Mathematics and obtaining a medical certificate.' },
-            { label: 'Mode', value: 'The exam is typically held online and is computer-based (CBT).' },
-            { label: 'Frequency', value: 'It is held several times a year, allowing candidates multiple opportunities to appear.' },
-        ],
-    },
-    {
-        num: '4',
-        title: 'How to Get Computer Number DGCA?',
-        content: 'If you\'re wondering how to get a computer number DGCA, the process is simple and involves registering on the official DGCA website. After completing the online application and submitting necessary documents, DGCA will provide you with a unique computer number.',
-        extra: [
-            { label: 'Why is it Important?', value: 'Your computer number is your unique identifier in the DGCA database, and it will be used for all future exam-related processes. You will need it to apply for DGCA exams and receive your results.' },
-            { label: 'Steps to Obtain', value: 'Follow the same procedure outlined above for registration and document submission.' },
-        ],
-    },
-    {
-        num: '5',
-        title: 'DGCA WR Office',
-        content: 'The DGCA WR office refers to the DGCA Western Regional office. It is one of the regional offices of the Directorate General of Civil Aviation that handles administrative work related to aviation exams, training, and licensure. If you\'re based in the western region of India, this office will be your point of contact for all DGCA-related services.',
-        extra: [
-            { label: 'Role', value: 'The DGCA WR office plays a key role in processing applications for exams, medical certificates, and flight training licenses.' },
-            { label: 'Location', value: 'The office is based in Mumbai, Maharashtra, and serves candidates from states like Gujarat, Maharashtra, Madhya Pradesh, and others.' },
-            { label: 'Contacting DGCA WR Office', value: 'Candidates can reach out to this office for assistance with exam procedures, documents, and other inquiries related to the DGCA Pariksha.' },
-        ],
-    },
-];
-
-const relatedBlogs = [
-    { label: 'How to Become a Pilot', href: '/how-to-become-a-pilot' },
-    { label: 'Different Types of Pilot Licences', href: '/courses' },
-    { label: 'Best DGCA Classes', href: '/best-dgca-classes' },
-    { label: 'eGCA Login', href: '/egca-login' },
-    { label: 'Pilot Course Fees After 12th', href: '/pilot-course-fees' },
-];
-
-// ─── Component ────────────────────────────────────────────────────────────────
-
-const LAST_CHECKED = PARIKSHA.verifiedOn.split('-').reverse().join('/');
-const CANONICAL = 'https://weoneaviation.in/dgca-pariksha';
-
-const pariksha_paa = [
+const faqItems = [
     {
         q: 'What is DGCA Pariksha?',
-        a: `DGCA Pariksha is the online examination portal of the Directorate General of Civil Aviation, where a candidate books and sits the written papers a pilot licence requires. The papers are ${papersSummary()} — ${DGCA_PAPERS.length} in total — and each needs ${EXAM_RULES.theory.passMark}% on its own rather than an aggregate, under ${EXAM_RULES.car.citation}, ${EXAM_RULES.theory.clause}.`,
+        a: 'DGCA Pariksha is the official online examination portal managed by the Central Examination Organisation (CEO) under the Directorate General of Civil Aviation. It allows candidate pilots and aircraft maintenance engineers in India to apply for, schedule, and view results for mandatory licensing examinations.',
     },
     {
-        q: 'What is the DGCA Pariksha exam fee?',
-        a: `${inr(PARIKSHA.fees.regularPerPaper)} per paper in a regular session and ${inr(PARIKSHA.fees.olodePerPaper)} per paper in an Online On-Demand Examination, paid to the government through Bharatkosh. Oral examinations are ${inr(PARIKSHA.fees.oralPerPaper)}. Fees are not refunded and do not carry to a later session.`,
+        q: 'How do I register for DGCA Pariksha?',
+        a: 'Registration requires an approved DGCA Computer Number. Candidates log into the portal, upload required identification and qualification documents, submit signatures and photographs following official specifications, and await profile verification by the Central Examination Organisation.',
     },
     {
-        q: 'Do I need a computer number to book a DGCA exam?',
-        a: `Yes. No paper can be booked without one, and it is a separate online application rather than part of the exam booking. Through DigiLocker it is allotted immediately; the manual route takes ${PARIKSHA.processing.days} working days once the application is complete.`,
+        q: 'How can I log in to the DGCA examination portal?',
+        a: 'Visit the official Pariksha portal, enter your registered User ID (or Computer Number) along with your password, solve the security CAPTCHA, and submit. Ensure your browser allows pop-ups and scripts for the portal to function properly.',
     },
     {
-        q: 'How many times a year is DGCA Pariksha held?',
-        a: `${PARIKSHA.calendar2026.regular.length} regular sessions and ${PARIKSHA.calendar2026.olode.length} Online On-Demand sessions across the year. ${PARIKSHA.calendar2026.tentative}`,
+        q: 'Is a Computer Number required for DGCA examinations?',
+        a: 'Yes. A valid DGCA Computer Number is a mandatory prerequisite before you can register on the Pariksha portal or apply for any pilot licensing examination.',
     },
     {
-        q: 'What is the passing mark in DGCA Pariksha?',
-        a: `${EXAM_RULES.theory.passMark}% in each paper, taken individually. There is no aggregate, so a strong paper cannot carry a weak one, and papers are cleared one at a time rather than in a single sitting.`,
+        q: 'What is the difference between eGCA and DGCA Pariksha?',
+        a: 'eGCA is the overarching digital portal handling pilot licensing, medical assessments, logbooks, and regulatory approvals. DGCA Pariksha specifically handles ground subject examinations, seat allocation, exam schedules, hall tickets, and exam results.',
+    },
+    {
+        q: 'How can I apply for DGCA examinations?',
+        a: 'Once an examination session notification is released, log into your Pariksha candidate profile, select the open session, choose your required subjects and preferred exam centre, pay the prescribed fee online, and submit the application before the deadline.',
+    },
+    {
+        q: 'Where can I check DGCA examination fees?',
+        a: 'Exam fees are listed in the official DGCA Public Notices and session schedules released prior to each exam quarter. Payment is processed directly through the Bharatkosh portal integrated into the examination system.',
+    },
+    {
+        q: 'How can I download my DGCA admit card?',
+        a: 'Log into your candidate portal 7 to 10 days before your scheduled examination date. Navigate to the “Admit Card” section, verify your exam details, download the PDF admit card, and print a clear physical copy.',
+    },
+    {
+        q: 'How can I check DGCA examination results?',
+        a: 'Results are published on the official Pariksha portal after grading is complete. Candidates can check individual mark breakdowns inside their candidate portal or view public result schedules published on the official website.',
+    },
+    {
+        q: 'What should I do if I cannot log in?',
+        a: 'Verify that your caps lock is off and your credentials are accurate. Try clearing browser cache or using an incognito window. If the account is locked, use the “Forgot Password” link to reset your credentials via your registered email.',
+    },
+    {
+        q: 'What happens if my examination payment is unsuccessful?',
+        a: 'If money is deducted but your status shows pending, wait 24 to 48 hours for bank reconciliation before paying again. Check your transaction history inside the portal or contact the portal technical support line with your transaction reference number.',
+    },
+    {
+        q: 'How many subjects are required for CPL?',
+        a: 'Commercial Pilot License candidates must pass Air Navigation, Air Meteorology, Air Regulations, Aviation Technical General, and Technical Specific examinations, along with Radio Telephony Restricted (RTR-A) conducted by WPC.',
+    },
+    {
+        q: 'Where can I find the DGCA CPL syllabus?',
+        a: 'You can view the complete subject breakdown and topic distribution on our dedicated Commercial Pilot License Syllabus page or consult Civil Aviation Requirements (CAR) Section 7 Series G.',
+    },
+    {
+        q: 'Can I prepare for DGCA examinations online?',
+        a: 'Yes. Interactive live classes, mock exam simulators, and guided study modules allow students across India to prepare thoroughly for DGCA ground tests.',
+    },
+    {
+        q: 'Where can I get help preparing for DGCA ground subjects?',
+        a: 'We One Aviation provides structured ground training conducted by experienced flight instructors and subject experts in Dwarka, Delhi, as well as live online classes.',
     },
 ];
 
-const pariksha_faqs = [
-    { q: 'Is DGCA Pariksha the same as eGCA?', a: 'No, and confusing the two costs people time. Pariksha is the examination portal — where papers are booked and sat. eGCA is the licensing portal, where the licence application itself is made. You will need both, at different stages.' },
-    { q: 'Can I apply for a computer number without a medical certificate?', a: `Yes. The computer number application does not require a medical certificate, so the written papers can be started before the medical is done. From age ${PARIKSHA.basics.minAge}. ${PARIKSHA.basics.maxAgeNote}` },
-    { q: 'Is the DGCA Pariksha exam online?', a: 'Yes, it is a computer-based test with multiple-choice questions, booked through the Pariksha portal.' },
-    { q: 'What happens if I fail one paper?', a: `You re-sit that paper. Papers are cleared individually, so the ones you have passed stand. The fee is payable again — ${inr(PARIKSHA.fees.regularPerPaper)} in a regular session, ${inr(PARIKSHA.fees.olodePerPaper)} on demand — and you lose the cycle rather than the passes.` },
-    { q: 'How long is a DGCA paper pass valid?', a: `${EXAM_RULES.paperValidity.general} ${EXAM_RULES.paperValidity.cplAtpl} That is ${EXAM_RULES.car.citation}, ${EXAM_RULES.paperValidity.clause}. ${EXAM_RULES.paperValidity.planningNote}` },
-    { q: 'Where do I pay the DGCA examination fee?', a: `Through Bharatkosh, the government payment portal. ${PARIKSHA.fees.serviceCharge}` },
-];
-
-const pariksha_citations = PARIKSHA.sources.slice(0, 3).map((c) => ({ '@type': 'CreativeWork', name: c.label, url: c.url }));
-
-const pariksha_articleSchema_base = {
+const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: 'DGCA Pariksha: Exam Fees, Session Dates and How to Apply',
-    description: 'The DGCA Pariksha examination portal explained — the papers, the pass mark set by CAR, the fee per paper, the session calendar, and the computer number you cannot book without.',
+    '@id': 'https://weoneaviation.in/dgca-pariksha/#article',
+    isPartOf: {
+        '@type': 'WebPage',
+        '@id': 'https://weoneaviation.in/dgca-pariksha',
+    },
+    headline: 'DGCA Pariksha: Registration, Login, Exam Application, Fees and Complete Guide',
+    description: 'Comprehensive guide for commercial pilot candidates navigating the Directorate General of Civil Aviation (DGCA) examination portal.',
+    publisher: {
+        '@type': 'Organization',
+        name: 'We One Aviation',
+        url: 'https://weoneaviation.in/',
+    },
     inLanguage: 'en-IN',
-    dateModified: PARIKSHA.verifiedOn,
-    articleSection: 'DGCA examinations',
-    keywords: 'dgca pariksha, pariksha dgca, dgca exam, dgca pariksha login, dgca exam fees, dgca computer number, dgca exam dates',
-    mainEntityOfPage: { '@type': 'WebPage', '@id': CANONICAL },
-    image: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' },
-    author: { '@type': 'Organization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in' },
-    publisher: { '@type': 'EducationalOrganization', name: 'We One Aviation Academy', url: 'https://weoneaviation.in', logo: { '@type': 'ImageObject', url: 'https://weoneaviation.in/Logo.webp' } },
 };
 
-const pariksha_articleSchema = { ...pariksha_articleSchema_base, citation: pariksha_citations };
+const officialPortal = 'https://pariksha.dgca.gov.in/';
+
+const checklist = [
+    'An approved DGCA Computer Number.',
+    'An active, accessible personal email address and mobile number.',
+    'Scanned soft copies of educational marksheets (10th and 12th standard with Physics and Mathematics).',
+    'A recent passport-sized photograph and signature scan meeting official pixel size and format requirements.',
+];
+
+const registrationSteps = [
+    'Access the official Pariksha registration link during open administrative windows.',
+    'Enter your assigned Computer Number, full legal name, date of birth, and official email ID exactly as registered during your computer number application.',
+    'Validate your details using the One-Time Password (OTP) sent to your registered email and mobile number.',
+    'Upload required personal identification documents along with your photograph and signature scan.',
+    'Create a secure password adhering to portal complexity rules.',
+    'Submit your profile for verification by the CEO office. Profile activation usually occurs after system and staff verification.',
+];
+
+const examSubjects = [
+    { subject: 'Air Navigation', href: '/air-navigation', description: 'Covers practical flight planning, dead reckoning, radio navigation aids, mass and balance calculations, and flight performance dynamics.' },
+    { subject: 'Air Meteorology', href: '/aviation-meteorology', description: 'Focuses on atmospheric thermodynamics, weather systems, cloud structures, METAR/TAF interpretation, hazards, and jet streams.' },
+    { subject: 'Air Regulations', href: '/air-regulations', description: 'Teaches international and Indian civil aviation laws, rules of the air, airspace classifications, ATC procedures, and operational regulations.' },
+    { subject: 'Technical General', href: '/technical-general', description: 'Details airframe construction, aircraft engines, electrical systems, hydraulics, flight control mechanisms, and cockpit instrumentation.' },
+    { subject: 'Technical Specific', description: 'Evaluates specific technical mechanics, operational limits, and emergency procedures for a particular aircraft type (e.g., Cessna 172 or Piper Seneca).' },
+    { subject: 'Radio Telephony Restricted (RTR-A)', href: '/rtr-a', description: 'Evaluates pilot radio transmission procedures and aviation communication jargon. (Conducted separately by the Wireless Monitoring Organisation under the WPC wing).' },
+];
+
+const troubleshootingRows = [
+    ['Unable to Log In', 'Incorrect User ID/Password; Browser caching errors; Suspended profile.', 'Caps lock key status; Password accuracy; Browser incognito mode.', 'Use “Forgot Password” link on login screen; clear browser history.'],
+    ['Registration Incomplete', 'Incomplete uploaded files; Discrepancy between marksheets & application.', 'File sizes (under mandatory KB limits); Spelling of full name.', 'Re-crop photo/signature scans; ensure names match official marksheets.'],
+    ['Computer Number Not Linked', 'Mismatch in demographic details; Profile verification still pending.', 'CEO computer number approval letter details versus profile text.', 'Allow 5–7 working days for administrative database syncing; write to CEO support.'],
+    ['Payment Failed / Debited', 'Bank server timeout; Session timeout during gateway transfer.', 'Bank account statement; Debited transaction reference number.', 'Wait 24–48 hours for automatic status reconciliation before retrying.'],
+    ['Exam Application Unavailable', 'Session window closed; Computer Number not verified; Age/qualification limits.', 'Official DGCA session public notice for open application dates.', 'Confirm application window dates; ensure profile state shows “Approved”.'],
+    ['Admit Card Not Generating', 'Fee payment not reflected; Application not fully submitted; Exam center assignment pending.', 'Application status tab in candidate portal (must state “Paid”).', 'Verify payment receipt; write to CEO exam section email with transaction proof.'],
+    ['Result Not Displayed', 'Marking process under review; Result withheld due to documentation mismatch.', 'Public result notices; Candidate message notifications.', 'Check public PDF result listings; contact CEO helpdesk if roll number is missing.'],
+];
+
+function ContentSection({ title, children, className = '' }) {
+    return (
+        <section className={`py-10 ${className}`}>
+            <h2 className="mb-4 font-montserrat text-2xl font-bold text-av-blue md:text-3xl">{title}</h2>
+            <div className="space-y-4 text-sm leading-7 text-gray-700">{children}</div>
+        </section>
+    );
+}
+
+function NumberedList({ items }) {
+    return (
+        <ol className="list-decimal space-y-3 pl-6">
+            {items.map((item, index) => <li key={index}>{item}</li>)}
+        </ol>
+    );
+}
 
 export default function DGCAParikshaPage() {
     return (
         <Layout
-            title="DGCA Pariksha 2026: Exam Fees, Dates, How to Apply"
-            description="DGCA Pariksha 2026: the four regular session dates, eight OLODE sessions, fees per paper, booking rules, eligibility, syllabus and how to apply on the portal."
+            title="DGCA Pariksha Guide: Registration, Login, Exam Application & Fees"
+            description="Complete guide to DGCA Pariksha for CPL candidates. Learn registration steps, exam login, applying for sessions, fee structures, admit card downloads, and results."
+            canonical="/dgca-pariksha"
+            includeDefaultFAQs={false}
+            solidNavbar
+            tickerInFlow
         >
-            <StructuredData data={[pariksha_articleSchema, generateFAQSchema(pariksha_faqs)]} />
+            <StructuredData data={[articleSchema, generateFAQSchema(faqItems)]} />
 
-            {/* ── Hero Banner ── */}
-            <div className="bg-gradient-to-br from-av-blue via-av-navy to-av-blue py-20 px-4 text-center relative overflow-hidden">
-                <div className="absolute inset-0 opacity-5">
-                    <div className="absolute top-10 left-10 w-40 h-40 border border-white rounded-full" />
-                    <div className="absolute bottom-10 right-10 w-60 h-60 border border-white rounded-full" />
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 border border-white rounded-full" />
-                </div>
-                <ScrollReveal className="relative z-10">
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <div className="section-tag">Aviation Exam Guide</div>
-                    <h1 className="font-montserrat text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-                        DGCA Pariksha
+            <article className="mx-auto max-w-5xl px-4 py-12 md:py-16">
+                <header className="mb-8 border-b border-gray-200 pb-8">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-av-orange">DGCA Examination Guide</p>
+                    <h1 className="font-montserrat text-3xl font-black leading-tight text-av-blue md:text-5xl">
+                        DGCA Pariksha: Registration, Login, Exam Application, Fees and Complete Guide
                     </h1>
-                    <p className="text-white/70 max-w-3xl mx-auto text-sm leading-relaxed mb-5">
-                        The DGCA Pariksha is a pivotal examination for aspiring licensed pilots in India. Conducted by the <strong className="text-white">Directorate General of Civil Aviation (DGCA)</strong>, this exam assesses essential knowledge on aviation, ensuring that all pilots maintain high safety standards and understanding of aeronautical principles.
+                    <p className="mt-6 text-base leading-7 text-gray-700">
+                        A <Link className="font-semibold text-av-orange underline" href="/commercial-pilot-license">Commercial Pilot License (CPL)</Link> in India demands rigorous theoretical knowledge alongside practical flight hours. The Central Examination Organisation (CEO), functioning under the Directorate General of Civil Aviation (DGCA), assesses this theoretical understanding through computer-based examinations.
                     </p>
-                    <p className="text-white/60 max-w-2xl mx-auto text-sm">
-                        Let's explore all the essential details about DGCA Pariksha, from eligibility and syllabus to preparation tips and FAQs.
+                    <p className="mt-4 text-base leading-7 text-gray-700">
+                        All candidate pilot applications, scheduling, seat bookings, admit cards, and examination results are managed through the official DGCA Pariksha portal. Navigating this portal efficiently avoids administrative delays and ensures your flight training stays on schedule. This guide walks you through every stage of the Pariksha portal workflow—from registering your profile to clearing your final ground subject.
                     </p>
-                </ScrollReveal>
-            </div>
+                </header>
 
-            {/* Answer-first block, added 2026-09-16. See the note at the top of this file. */}
-            <section className="px-4 pt-12 max-w-4xl mx-auto">
-                <p className="text-xs text-gray-500 mb-4">
-                    Checked against DGCA Pariksha documents on {LAST_CHECKED}.
-                </p>
-                <QuickAnswer
-                    question="What is DGCA Pariksha, and what does it cost?"
-                    answer={`DGCA Pariksha is the Directorate General of Civil Aviation's own examination portal, where a candidate books and sits the written papers a pilot licence requires. There are ${DGCA_PAPERS.length} papers — ${papersSummary()} — and each needs ${EXAM_RULES.theory.passMark}% on its own rather than an aggregate, set by ${EXAM_RULES.car.citation}, ${EXAM_RULES.theory.clause}. The fee is ${inr(PARIKSHA.fees.regularPerPaper)} per paper in a regular session and ${inr(PARIKSHA.fees.olodePerPaper)} in an Online On-Demand Examination, paid to the government through Bharatkosh. Nothing can be booked without a computer number, which is a separate application — immediate through DigiLocker, or ${PARIKSHA.processing.days} working days manually. There are ${PARIKSHA.calendar2026.regular.length} regular sessions and ${PARIKSHA.calendar2026.olode.length} on-demand sessions a year.`}
-                />
-            </section>
-
-            {/* ── Stats Bar ── */}
-            <section className="bg-av-blue py-8">
-                <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {stats.map(s => (
-                        <ScrollReveal key={s.label} className="text-center">
-                            <div className="text-3xl mb-1">{s.icon}</div>
-                            <div className="font-montserrat text-xl font-black text-av-orange">{s.num}</div>
-                            <div className="text-white/60 text-xs">{s.label}</div>
-                        </ScrollReveal>
-                    ))}
-                </div>
-            </section>
-
-            {/* ── What is + Why Important ── */}
-            <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <ScrollReveal>
-                            <div className="section-tag">About</div>
-                            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue mb-4">
-                                What is <span className="text-av-orange">DGCA Pariksha?</span>
-                            </h2>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                                The DGCA Pariksha is a series of exams required to obtain various aviation licenses in India, such as the <strong>Commercial Pilot License (CPL)</strong>, <strong>Private Pilot License (PPL)</strong>, and other ratings. This examination covers multiple subjects to ensure candidates have a solid foundation in aviation theory and practice.
-                            </p>
-
-                            <div className="section-tag">Importance</div>
-                            <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-4 mt-2">
-                                Why is DGCA Pariksha <span className="text-av-orange">Important?</span>
-                            </h2>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                DGCA Pariksha serves as a gatekeeper for aviation standards in India. Passing it demonstrates a pilot's proficiency in the core subjects essential for flight safety, technical know-how, and regulatory compliance. It also qualifies them for advanced training stages.
-                            </p>
-
-                            <Link href="https://dgcaexam.com/" target="_blank" className="inline-block bg-av-orange text-white px-6 py-3 rounded-full font-semibold text-sm hover:bg-av-blue transition-all">
-                                CPL ATPL Mock Test Series →
-                            </Link>
-                        </ScrollReveal>
-
-                        <ScrollReveal delay={200}>
-                            <div className="relative rounded-2xl overflow-hidden shadow-2xl mb-6">
-                                <NextImage
-                                    src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80"
-                                    alt="Aviation student preparing for DGCA Pariksha exam"
-                                    width={600}
-                                    height={400}
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                    className="w-full h-64 object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-av-blue/80 to-transparent flex items-end p-6">
-                                    <div>
-                                        <p className="text-av-orange font-bold font-montserrat">DGCA Pariksha</p>
-                                        <p className="text-white/80 text-xs">India's Aviation Licensing Exam</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Key Details Table */}
-                            <div className="overflow-x-auto rounded-2xl shadow">
-                                <table className="w-full text-sm">
-                                    <thead>
-                                        <tr className="bg-av-blue text-white">
-                                            <th className="px-4 py-3 text-left" colSpan={2}>Key Details about DGCA Pariksha</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {keyDetails.map((row, i) => (
-                                            <tr key={row.label} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                                                <td className="px-4 py-3 font-semibold text-av-blue text-xs w-1/3">{row.label}</td>
-                                                <td className="px-4 py-3 text-gray-600 text-xs">{row.value}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </ScrollReveal>
+                <ContentSection title="What Is DGCA Pariksha?">
+                    <p>
+                        DGCA Pariksha is the dedicated electronic examination management portal operated by the Central Examination Organisation (CEO). Its primary responsibility is managing national pilot licensing examinations across established testing centres in India.
+                    </p>
+                    <p>
+                        Passing these theoretical examinations is a regulatory prerequisite for issuing private, commercial, and airline transport pilot licences. Candidates must demonstrate proficiency in ground subjects before or during flight training to ensure they understand atmospheric physics, aviation law, navigation mathematics, and aircraft systems.
+                    </p>
+                    <div className="grid gap-5 rounded-xl bg-gray-50 p-5 md:grid-cols-2">
+                        <div>
+                            <h3 className="mb-3 font-bold text-av-blue">eGCA (Main Regulatory Portal)</h3>
+                            <ul className="list-disc space-y-1 pl-5">
+                                <li>Computer Numbers</li><li>Medical Assessments</li><li>Pilot Logbooks</li><li>License Issuance</li><li>Rating Endorsements</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 className="mb-3 font-bold text-av-blue">DGCA Pariksha (Exam Organisation)</h3>
+                            <ul className="list-disc space-y-1 pl-5">
+                                <li>Online Exam Sessions</li><li>Candidate Login</li><li>Seat Reservation</li><li>Hall Tickets &amp; Cards</li><li>Ground Subject Marks</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </ContentSection>
 
-            {/* ── Eligibility ── */}
-            <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Eligibility</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Eligibility <span className="text-av-orange">Criteria</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">To appear for the DGCA Pariksha, candidates must meet specific eligibility requirements:</p>
-                    </ScrollReveal>
+                <ContentSection title="The Difference Between eGCA and DGCA Pariksha" className="border-t border-gray-100">
+                    <p>While both portals belong to the Indian civil aviation regulatory ecosystem, they serve distinct operational functions:</p>
+                    <ul className="list-disc space-y-3 pl-6">
+                        <li><strong><Link className="text-av-orange underline" href="/egca-login">eGCA (e-Governance for Civil Aviation)</Link>:</strong> The primary digital platform handling medical assessments, computer number generation, e-logbooks, flight school tracking, and license issuance. For a walkthrough, see our <Link className="text-av-orange underline" href="/egca-login">eGCA login guide</Link>.</li>
+                        <li><strong>DGCA Pariksha:</strong> The specialized sub-portal dedicated strictly to ground subject examinations, seat allocation, hall tickets, session scheduling, and candidate scorecards.</li>
+                    </ul>
+                </ContentSection>
 
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {eligibility.map((item, i) => (
-                            <ScrollReveal key={item.label} delay={i * 100}>
-                                <div className="card-hover bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-av-orange/30 h-full text-center">
-                                    <div className="text-4xl mb-3">{item.icon}</div>
-                                    <h3 className="font-montserrat font-bold text-av-blue mb-2 text-sm">{item.label}</h3>
-                                    <p className="text-gray-500 text-sm leading-relaxed">{item.value}</p>
-                                </div>
-                            </ScrollReveal>
+                <ContentSection title="DGCA Pariksha Registration Process" className="border-t border-gray-100">
+                    <p>Before applying for an examination session, candidates must set up an active profile on the Pariksha candidate portal. Registration is a one-time setup that links your regulatory profile with your examination record.</p>
+                    <h3 className="font-bold text-av-blue">Prerequisites</h3>
+                    <ul className="list-disc space-y-2 pl-6">
+                        {checklist.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                    <h3 className="font-bold text-av-blue">Step-by-Step Profile Registration</h3>
+                    <NumberedList items={registrationSteps} />
+                    <h3 className="font-bold text-av-blue">Common Registration Errors to Avoid</h3>
+                    <ul className="space-y-3">
+                        <li><strong>Name Mismatches:</strong> Entering names differently from Class 10/12 marksheets or Computer Number approval certificates will cause system rejection.</li>
+                        <li><strong>Image Sizing Issues:</strong> Uploading uncropped photographs or blurred signature scans stalls approval. Follow the exact DPI and file size limits (typically JPEG/PNG format, under specified KB limits) listed on the upload page.</li>
+                        <li><strong>Inaccessible Email Accounts:</strong> Registering with temporary or rarely checked email accounts leads to missed exam notifications, seat confirmations, and password reset links.</li>
+                    </ul>
+                </ContentSection>
+
+                <ContentSection title="DGCA Pariksha Login Process" className="border-t border-gray-100">
+                    <p>Registered candidates access their portal for candidate history, seat availability, admit cards, and published results.</p>
+                    <h3 className="font-bold text-av-blue">Accessing the Portal</h3>
+                    <NumberedList items={[
+                        <>Navigate directly to the official portal landing page: <a className="text-av-orange underline" href={officialPortal} target="_blank" rel="noopener noreferrer">DGCA Pariksha Portal</a>.</>,
+                        'Select Candidate Login from the main navigation interface.',
+                        'Input your registered User ID (or Computer Number) and Password.',
+                        'Solve the visual CAPTCHA code shown on screen.',
+                        'Click Login to enter your candidate dashboard.',
+                    ]} />
+                    <h3 className="font-bold text-av-blue">Troubleshooting Login Errors</h3>
+                    <ul className="list-disc space-y-2 pl-6">
+                        <li><strong>Invalid Credentials:</strong> Verify that Caps Lock is disabled. If login continues to fail, use the Forgot Password tool on the homepage. Reset instructions are dispatched instantly to your registered email.</li>
+                        <li><strong>Account Lockout:</strong> Repeated incorrect login attempts block access for security reasons. Wait for the mandatory lockout duration (typically 30 to 60 minutes) before attempting a reset.</li>
+                        <li><strong>Page Script and Browser Errors:</strong> The Pariksha portal functions best on desktop browsers like modern Chrome, Edge, or Firefox. Clear your browser cache and cookies, or open an incognito session if buttons freeze during submission.</li>
+                    </ul>
+                </ContentSection>
+
+                <ContentSection title="DGCA Computer Number" className="border-t border-gray-100">
+                    <p>A DGCA Computer Number is a unique regulatory identifier assigned to aspiring aviators by the Central Examination Organisation. It serves as your permanent index number for all theoretical examinations, flight test endorsements, and license applications.</p>
+                    <p>You cannot register on the Pariksha portal or apply for pilot ground subject exams without an active Computer Number.</p>
+                    <p>For a complete guide on eligibility rules, document verification, board equivalence certificates, and application steps, read our <Link className="font-semibold text-av-orange underline" href="/dgca-computer-number">detailed guide to applying for a DGCA Computer Number</Link>.</p>
+                </ContentSection>
+
+                <ContentSection title="How to Apply for DGCA Examinations" className="border-t border-gray-100">
+                    <p>Ground examinations are conducted quarterly (On-Demand and General Sessions). CEO publishes official Public Notices announcing session registration windows, exam dates, and seat matrix allocations.</p>
+                    <h3 className="font-bold text-av-blue">Application Walkthrough</h3>
+                    <ol className="list-decimal space-y-3 pl-6">
+                        <li><strong>Monitor Announcements:</strong> Check the portal regularly for Public Notices detailing session schedules and opening times for registration.</li>
+                        <li><strong>Dashboard Selection:</strong> Log into your profile during the candidate application window and click Apply for Examination.</li>
+                        <li><strong>Choose Subject &amp; Category:</strong> Select the appropriate licensing category (e.g., CPL Aircraft) and choose the specific ground subject you intend to sit for.</li>
+                        <li><strong>Select Exam Centre &amp; Slot:</strong> Select your preferred testing city and preferred time slot from available vacancies. Slots fill rapidly; booking early in the window is advised.</li>
+                        <li><strong>Review Details:</strong> Carefully double-check your chosen exam center, language medium, and subject selection. Once payment is initiated, subject and centre choices are locked.</li>
+                        <li><strong>Complete Online Payment:</strong> Process the exam fee through the integrated online payment gateway.</li>
+                        <li><strong>Verify Final Application Status:</strong> Confirm that your application state changes to Submitted/Paid in your application history tab, and download your payment acknowledgement receipt.</li>
+                    </ol>
+                </ContentSection>
+
+                <ContentSection title="DGCA Examination Fees" className="border-t border-gray-100">
+                    <p>Examination fees are set by regulatory directives and processed through integrated government payment gateways (Bharatkosh).</p>
+                    <ul className="list-disc space-y-2 pl-6">
+                        <li><strong>Current Fee Rules:</strong> Fees are assessed on a per-subject basis. Candidates should verify exact, current fee amounts from the official DGCA Public Notice issued for each examination cycle.</li>
+                        <li><strong>Payment Processing:</strong> Payments are made online using debit cards, credit cards, net banking, or UPI via Bharatkosh integration.</li>
+                    </ul>
+                    <h3 className="font-bold text-av-blue">Handling Payment Deductions Without Receipt</h3>
+                    <p>If funds are debited from your bank account but your Pariksha dashboard shows Payment Pending or Failed:</p>
+                    <ol className="list-decimal space-y-2 pl-6">
+                        <li>Do not initiate immediate duplicate payments.</li>
+                        <li>Wait 24 to 48 hours for automated banking reconciliation to update the transaction status.</li>
+                        <li>Check your bank transaction statement for a Bharatkosh transaction reference number.</li>
+                        <li>If the status remains unpaid after 48 hours, contact the CEO helpdesk with your reference number and Computer Number before the registration window closes.</li>
+                    </ol>
+                </ContentSection>
+
+                <ContentSection title="DGCA Exam Admit Card" className="border-t border-gray-100">
+                    <p>Admit cards (Hall Tickets) are generated digitally several days before the start of an examination session.</p>
+                    <h3 className="font-bold text-av-blue">Access and Download</h3>
+                    <ol className="list-decimal space-y-2 pl-6">
+                        <li>Log into the Pariksha portal 7 to 10 days before your scheduled examination date.</li>
+                        <li>Navigate to the Admit Card / Hall Ticket tab.</li>
+                        <li>Click Download Admit Card to save the document as a PDF.</li>
+                    </ol>
+                    <h3 className="font-bold text-av-blue">Critical Verification Checks</h3>
+                    <p>Verify that all details on your admit card match your official identification:</p>
+                    <ul className="list-disc space-y-2 pl-6">
+                        <li>Candidate Name and Computer Number</li><li>Subject, Exam Center Name, and Full Address</li><li>Exam Date, Batch Time, and Reporting Time</li><li>Candidate Photograph and Signature Clarity</li>
+                    </ul>
+                    <p>If you spot errors or your admit card fails to generate despite a confirmed application, submit a query to the CEO technical help desk immediately.</p>
+                </ContentSection>
+
+                <ContentSection title="Examination Day Guidelines" className="border-t border-gray-100">
+                    <p>Candidate pilots must bring the following items to the examination venue:</p>
+                    <ul className="list-disc space-y-2 pl-6">
+                        <li>Two clean, high-resolution physical printouts of the Admit Card.</li>
+                        <li>Original government-issued photo identity card (Aadhaar Card, Passport, or Voter ID).</li>
+                        <li>Original DGCA Computer Number allotment letter (if requested).</li>
+                        <li>Standard non-programmable writing materials (refer to specific exam guidelines regarding scientific calculators or navigation plotters for Air Navigation modules).</li>
+                    </ul>
+                    <p>Electronic devices, smartwatches, mobile phones, and unauthorized reference material are strictly prohibited inside the hall.</p>
+                </ContentSection>
+
+                <ContentSection title="DGCA Exam Results" className="border-t border-gray-100">
+                    <p>Following computer-based testing, answer keys are processed through automated evaluation systems. Results are declared publicly on the portal weeks after the examination window closes.</p>
+                    <h3 className="font-bold text-av-blue">Accessing Marks and Verification</h3>
+                    <ul className="list-disc space-y-2 pl-6">
+                        <li><strong>Portal Result View:</strong> Log into your candidate profile and navigate to View Results / Score Card to view your score percentage and pass/fail standing.</li>
+                        <li><strong>Passing Criteria:</strong> Ground examinations require a minimum score of 70% to clear a subject.</li>
+                        <li><strong>Public Schedules:</strong> CEO also releases comprehensive session result sheets listing candidate performance by Computer Number.</li>
+                    </ul>
+                </ContentSection>
+
+                <ContentSection title="DGCA Examination Subjects and Syllabus" className="border-t border-gray-100">
+                    <p>Commercial Pilot License (CPL) ground preparation covers five core theoretical subjects conducted by the DGCA, alongside a dedicated radio communications paper handled by the Ministry of Communications:</p>
+                    <ul className="space-y-4">
+                        {examSubjects.map(({ subject, href, description }) => (
+                            <li key={subject}><strong>{href ? <Link className="text-av-orange underline" href={href}>{subject}</Link> : subject}:</strong> {description}</li>
+                        ))}
+                    </ul>
+                    <p>To study the complete topic breakdown, chapter weightage, and current reference material, visit our complete <Link className="font-semibold text-av-orange underline" href="/commercial-pilot-license-syllabus">Commercial Pilot License (CPL) Syllabus Guide</Link> or consult <a className="text-av-orange underline" href="https://www.dgca.gov.in/digigov-portal/" target="_blank" rel="noopener noreferrer">Civil Aviation Requirements (CAR) Section 7 Series G</a>.</p>
+                </ContentSection>
+
+                <ContentSection title="Troubleshooting Common DGCA Pariksha Issues" className="border-t border-gray-100">
+                    <div className="overflow-x-auto">
+                        <table className="w-full min-w-[720px] border-collapse text-left text-xs">
+                            <thead><tr className="bg-av-blue text-white">
+                                <th className="p-3">Issue Experienced</th><th className="p-3">Possible Causes</th><th className="p-3">What Candidate Should Check</th><th className="p-3">Action / Escalation Route</th>
+                            </tr></thead>
+                            <tbody>
+                                {troubleshootingRows.map((row) => (
+                                    <tr key={row[0]} className="border-b border-gray-200 odd:bg-white even:bg-gray-50">
+                                        {row.map((cell) => <td key={cell} className="p-3 align-top">{cell}</td>)}
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </ContentSection>
+
+                <ContentSection title="How to Prepare for DGCA Examinations" className="border-t border-gray-100">
+                    <p>Ground exams assess operational knowledge under strict time constraints. Rote memorisation is rarely enough—exams focus on practical scenarios, flight calculations, and regulatory application.</p>
+                    <h3 className="font-bold text-av-blue">Strategic Preparation Guidelines</h3>
+                    <ul className="list-disc space-y-3 pl-6">
+                        <li><strong>Understand Syllabus Foundations:</strong> Start with the underlying principles of atmospheric physics, flight dynamics, and civil aviation rules rather than jumping straight into question banks.</li>
+                        <li><strong>Structure Your Timeline:</strong> Dedicate focused preparation blocks to each subject. Air Navigation and Technical General typically require longer, math-heavy preparation periods.</li>
+                        <li><strong>Practice Under Timed Conditions:</strong> Take timed mock examinations to build speed and accuracy. Online platforms like <a className="text-av-orange underline" href="https://www.dgcaexam.com/" target="_blank" rel="noopener noreferrer">DGCAExam.com</a> allow candidates to attempt practice papers patterned after the computer-based testing format.</li>
+                        <li><strong>Analyze Errors systematically:</strong> When attempting mock tests, review incorrect answers to uncover and fix fundamental conceptual gaps.</li>
+                    </ul>
+                </ContentSection>
+
+                <ContentSection title="Preparing with We One Aviation" className="border-t border-gray-100">
+                    <p>We One Aviation provides structured ground training for candidates preparing for DGCA pilot examinations.</p>
+                    <ul className="list-disc space-y-3 pl-6">
+                        <li><strong><Link className="text-av-orange underline" href="/dgca-ground-classes">Classroom Ground Classes</Link>:</strong> In-person coaching at our academy in Dwarka, New Delhi, led by ground instructors and experienced aviation professionals.</li>
+                        <li><strong><Link className="text-av-orange underline" href="/online-dgca-ground-classes">Online Interactive Classes</Link>:</strong> Real-time distance learning options designed for students living outside the National Capital Region or balancing flight training hours.</li>
+                        <li><strong>Structured Module Materials:</strong> Access systematically compiled subject notes, numerical practice problem sets, and targeted exam revision sessions.</li>
+                    </ul>
+                    <p>Learn more about our upcoming classroom batch dates or online modules by visiting the <Link className="font-semibold text-av-orange underline" href="/">We One Aviation main aviation training portal</Link>.</p>
+                </ContentSection>
+
+                <section className="border-t border-gray-100 py-10" aria-labelledby="pariksha-faq">
+                    <h2 id="pariksha-faq" className="mb-6 font-montserrat text-2xl font-bold text-av-blue md:text-3xl">Frequently Asked Questions</h2>
+                    <div className="space-y-5">
+                        {faqItems.map(({ q, a }) => (
+                            <section key={q}>
+                                <h3 className="font-bold text-av-blue">{q}</h3>
+                                <p className="mt-1 text-sm leading-7 text-gray-700">{a}</p>
+                            </section>
                         ))}
                     </div>
-                </div>
-            </section>
-
-            {/* ── Syllabus ── */}
-            <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Syllabus</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Syllabus for <span className="text-av-orange">DGCA Pariksha</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">The syllabus for DGCA Pariksha covers critical topics across different subjects. Here's a breakdown:</p>
-                    </ScrollReveal>
-
-                    <div className="grid md:grid-cols-2 gap-10 items-center">
-                        <ScrollReveal>
-                            <div className="grid sm:grid-cols-2 gap-5">
-                                {syllabusTopics.map((item, i) => (
-                                    <div key={item.title} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 card-hover hover:border-av-orange/30">
-                                        <div className="text-3xl mb-2">{item.icon}</div>
-                                        <h3 className="font-montserrat font-bold text-av-blue mb-2 text-sm">{item.title}</h3>
-                                        <ul className="space-y-1">
-                                            {item.points.map(p => (
-                                                <li key={p} className="flex items-start gap-2 text-gray-500 text-xs">
-                                                    <span className="text-av-orange mt-0.5 flex-shrink-0">•</span><span>{p}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                ))}
-                            </div>
-                        </ScrollReveal>
-
-                        <ScrollReveal delay={200}>
-                            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                                <NextImage
-                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
-                                    alt="Aviation navigation charts and instruments for DGCA exam"
-                                    width={600}
-                                    height={600}
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                    className="w-full h-80 object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-av-navy/80 to-transparent flex items-end p-6">
-                                    <div>
-                                        <p className="text-av-orange font-bold font-montserrat">4 Core Subjects</p>
-                                        <p className="text-white/80 text-xs mt-1">Air Navigation · Air Regulations · Meteorology · Technical</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </ScrollReveal>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Fees and 2026 calendar (sourced: lib/facts.js PARIKSHA) ── */}
-            <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-4">
-                        <div className="section-tag">Fees &amp; Dates</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Exam Fees and <span className="text-av-orange">2026 Session Dates</span>
-                        </h2>
-                    </ScrollReveal>
-                    <p className="text-center text-gray-500 text-xs max-w-2xl mx-auto mb-10">
-                        Checked against DGCA Pariksha documents on {PARIKSHA.verifiedOn.split('-').reverse().join('/')}.{' '}
-                        <a href={PARIKSHA.portal} target="_blank" rel="noopener noreferrer" className="text-av-blue font-semibold hover:text-av-orange transition-colors">
-                            Confirm on pariksha.dgca.gov.in
-                        </a>{' '}before you pay — see our{' '}
-                        <Link href="/dgca-computer-number" className="text-av-blue font-semibold hover:text-av-orange transition-colors">
-                            computer number guide
-                        </Link>{' '}for the full sourced process.
-                    </p>
-
-                    <div className="grid lg:grid-cols-3 gap-6 mb-8">
-                        <div className="overflow-x-auto rounded-2xl shadow">
-                            <table className="w-full text-sm">
-                                <thead>
-                                    <tr className="bg-av-blue text-white">
-                                        <th className="px-5 py-3 text-left" colSpan={2}>Fee per paper</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr className="bg-white">
-                                        <td className="px-5 py-3 text-xs font-semibold text-av-blue">Regular session</td>
-                                        <td className="px-5 py-3 text-xs font-bold text-av-orange">{inr(PARIKSHA.fees.regularPerPaper)}</td>
-                                    </tr>
-                                    <tr className="bg-gray-50">
-                                        <td className="px-5 py-3 text-xs font-semibold text-av-blue">Online On-Demand (OLODE)</td>
-                                        <td className="px-5 py-3 text-xs font-bold text-av-orange">{inr(PARIKSHA.fees.olodePerPaper)}</td>
-                                    </tr>
-                                    <tr className="bg-white">
-                                        <td className="px-5 py-3 text-xs font-semibold text-av-blue">Oral paper</td>
-                                        <td className="px-5 py-3 text-xs font-bold text-av-orange">{inr(PARIKSHA.fees.oralPerPaper)}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p className="bg-white px-5 py-3 text-[11px] text-gray-500 leading-relaxed">
-                                {PARIKSHA.fees.oralNote} {PARIKSHA.fees.serviceCharge}
-                            </p>
-                        </div>
-
-                        <div className="overflow-x-auto rounded-2xl shadow">
-                            <table className="w-full text-sm">
-                                <thead>
-                                    <tr className="bg-av-blue text-white">
-                                        <th className="px-5 py-3 text-left" colSpan={2}>Regular examinations 2026</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {PARIKSHA.calendar2026.regular.map((row, i) => (
-                                        <tr key={row.session} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                                            <td className="px-5 py-3 text-xs font-semibold text-av-blue whitespace-nowrap">{row.session}</td>
-                                            <td className="px-5 py-3 text-xs text-gray-600">{row.dates}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div className="overflow-x-auto rounded-2xl shadow">
-                            <table className="w-full text-sm">
-                                <thead>
-                                    <tr className="bg-av-blue text-white">
-                                        <th className="px-5 py-3 text-left" colSpan={2}>OLODE sessions 2026</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {PARIKSHA.calendar2026.olode.map((row, i) => (
-                                        <tr key={row.session} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                                            <td className="px-5 py-3 text-xs font-semibold text-av-blue whitespace-nowrap">{row.session}</td>
-                                            <td className="px-5 py-3 text-xs text-gray-600">{row.dates}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <p className="text-center text-xs text-gray-500 max-w-3xl mx-auto">{PARIKSHA.calendar2026.tentative}</p>
-                </div>
-            </section>
-
-            {/* ── Exam Pattern ── */}
-            <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Exam Pattern</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Exam Pattern and <span className="text-av-orange">Marking Scheme</span>
-                        </h2>
-                    </ScrollReveal>
-
-                    <div className="grid md:grid-cols-2 gap-10 items-center">
-                        <ScrollReveal>
-                            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                                <NextImage
-                                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80"
-                                    alt="Computer based test CBT aviation DGCA exam"
-                                    width={600}
-                                    height={500}
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                    className="w-full h-72 object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-av-blue/80 to-transparent flex items-end p-6">
-                                    <div>
-                                        <p className="text-av-orange font-bold font-montserrat">Computer-Based Test</p>
-                                        <p className="text-white/80 text-xs mt-1">Online MCQ format — {EXAM_RULES.theory.passMark}% passing marks required</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </ScrollReveal>
-
-                        <ScrollReveal delay={200}>
-                            <div className="overflow-x-auto rounded-2xl shadow">
-                                <table className="w-full text-sm">
-                                    <thead>
-                                        <tr className="bg-av-blue text-white">
-                                            <th className="px-5 py-3 text-left">Parameter</th>
-                                            <th className="px-5 py-3 text-left">Details</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {examPattern.map((row, i) => (
-                                            <tr key={row.label} className={`${row.highlight ? 'bg-av-orange/10' : i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
-                                                <td className={`px-5 py-3 font-semibold text-xs ${row.highlight ? 'text-av-orange' : 'text-av-blue'}`}>{row.label}</td>
-                                                <td className={`px-5 py-3 text-xs font-medium ${row.highlight ? 'text-av-orange font-bold' : 'text-gray-600'}`}>{row.value}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </ScrollReveal>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Pass marks and paper validity (sourced: lib/facts.js EXAM_RULES) ── */}
-            <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-4">
-                        <div className="section-tag">Passing</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            What Counts as a <span className="text-av-orange">Pass</span>
-                        </h2>
-                    </ScrollReveal>
-                    <p className="text-center text-gray-500 text-xs max-w-3xl mx-auto mb-10">
-                        The threshold is set by {EXAM_RULES.car.citation}, not by the examination centre or the flying school.
-                    </p>
-
-                    <div className="grid lg:grid-cols-3 gap-6 mb-8">
-                        <ScrollReveal>
-                            <div className="bg-av-blue rounded-2xl p-6 text-white h-full">
-                                <p className="text-av-orange font-montserrat font-bold text-sm mb-2">Written papers</p>
-                                <p className="text-5xl font-montserrat font-black mb-3">{EXAM_RULES.theory.passMark}%</p>
-                                <p className="text-white/80 text-sm leading-relaxed mb-3">{EXAM_RULES.theory.statement}</p>
-                                <p className="text-white/60 text-xs leading-relaxed">{EXAM_RULES.theory.perSubject}</p>
-                            </div>
-                        </ScrollReveal>
-
-                        <ScrollReveal delay={120}>
-                            <div className="border border-gray-200 rounded-2xl overflow-hidden h-full">
-                                <table className="w-full text-sm">
-                                    <thead>
-                                        <tr className="bg-av-blue text-white">
-                                            <th className="px-4 py-3 text-left">Oral examination</th>
-                                            <th className="px-4 py-3 text-left">Pass mark</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {EXAM_RULES.oral.map((row, i) => (
-                                            <tr key={row.licence} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                                                <td className="px-4 py-3 text-xs font-semibold text-av-blue">{row.licence}</td>
-                                                <td className="px-4 py-3 text-xs font-bold text-av-orange whitespace-nowrap">{row.passMark}% <span className="text-gray-400 font-normal">{row.clause}</span></td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                                <p className="px-4 py-3 text-[11px] text-gray-500 leading-relaxed">{EXAM_RULES.oralRetake.statement}</p>
-                            </div>
-                        </ScrollReveal>
-
-                        <ScrollReveal delay={240}>
-                            <div className="border border-gray-200 rounded-2xl p-6 h-full">
-                                <p className="font-montserrat font-bold text-av-blue text-sm mb-3">How long a pass lasts</p>
-                                <p className="text-gray-600 text-sm leading-relaxed mb-3">{EXAM_RULES.paperValidity.general}</p>
-                                <p className="text-av-orange text-sm font-semibold leading-relaxed mb-3">{EXAM_RULES.paperValidity.cplAtpl}</p>
-                                <p className="text-gray-500 text-xs leading-relaxed mb-3">{EXAM_RULES.paperValidity.planningNote}</p>
-                                <p className="text-gray-400 text-[11px]">{EXAM_RULES.car.citation}, {EXAM_RULES.paperValidity.clause}</p>
-                            </div>
-                        </ScrollReveal>
-                    </div>
-
-                    <p className="text-center text-xs text-gray-500 max-w-3xl mx-auto">
-                        Booking, fees and documents are handled on the Pariksha portal — the sourced walkthrough is on our{' '}
-                        <Link href="/dgca-computer-number" className="text-av-blue font-semibold hover:text-av-orange transition-colors">
-                            DGCA computer number guide
-                        </Link>.
-                    </p>
-                </div>
-            </section>
-
-            {/* ── How to Apply ── */}
-            <section className="py-20 px-4 bg-gradient-to-br from-av-blue via-av-navy to-av-blue">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Application</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white">
-                            How to Apply for <span className="text-av-orange">DGCA Pariksha?</span>
-                        </h2>
-                    </ScrollReveal>
-
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                        {applySteps.map((step, i) => (
-                            <ScrollReveal key={step.num} delay={i * 80}>
-                                <div className="glass rounded-2xl p-6 text-center h-full flex flex-col items-center">
-                                    <div className="w-12 h-12 bg-av-orange rounded-full flex items-center justify-center text-white font-black text-lg mb-4 flex-shrink-0">{step.num}</div>
-                                    <h3 className="font-montserrat font-bold text-white text-sm mb-2">{step.title}</h3>
-                                    <p className="text-white/70 text-xs leading-relaxed">{step.desc}</p>
-                                </div>
-                            </ScrollReveal>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Preparation Tips ── */}
-            <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">Preparation</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Preparation Tips for <span className="text-av-orange">DGCA Pariksha</span>
-                        </h2>
-                    </ScrollReveal>
-
-                    <div className="grid md:grid-cols-2 gap-10 items-center">
-                        <ScrollReveal>
-                            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                                <NextImage
-                                    src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80"
-                                    alt="Pilot student studying for DGCA exam with books"
-                                    width={600}
-                                    height={600}
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                    className="w-full h-80 object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-av-navy/80 to-transparent flex items-end p-6">
-                                    <div>
-                                        <p className="text-av-orange font-bold font-montserrat">Crack the DGCA Exam</p>
-                                        <p className="text-white/80 text-xs mt-1">Smart preparation leads to success</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </ScrollReveal>
-
-                        <ScrollReveal delay={200}>
-                            <div className="space-y-4">
-                                {prepTips.map((item, i) => (
-                                    <div key={i} className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100 card-hover hover:border-av-orange/30">
-                                        <span className="text-2xl flex-shrink-0">{item.icon}</span>
-                                        <p className="text-gray-600 text-sm leading-relaxed">{item.tip}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </ScrollReveal>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Computer Number Section ── */}
-            <section className="py-20 px-4">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-10">
-                        <div className="section-tag">Computer Number</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            How to Apply for <span className="text-av-orange">Computer Number DGCA?</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm leading-relaxed">
-                            To begin your DGCA Pariksha journey, you must first obtain a computer number, which is essential for applying for any aviation-related exams under DGCA. Here's how you can apply for the computer number:
-                        </p>
-                    </ScrollReveal>
-
-                    <div className="grid md:grid-cols-2 gap-10 items-start">
-                        <ScrollReveal>
-                            <div className="space-y-4">
-                                {computerNumberSteps.map((step, i) => (
-                                    <div key={step.num} className="flex items-start gap-4 p-5 bg-av-light rounded-xl border border-av-sky/20 card-hover hover:border-av-orange/30">
-                                        <div className="w-9 h-9 bg-av-orange rounded-full flex items-center justify-center text-white font-black text-sm flex-shrink-0">{step.num}</div>
-                                        <section>
-                                            <h3 className="font-montserrat font-bold text-av-blue text-sm mb-1">{step.title}</h3>
-                                            <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
-                                        </section>
-                                    </div>
-                                ))}
-                            </div>
-                        </ScrollReveal>
-
-                        <ScrollReveal delay={200}>
-                            <div className="bg-av-blue rounded-2xl p-8 text-white">
-                                <div className="text-4xl mb-4">🔢</div>
-                                <h3 className="font-montserrat font-bold text-white text-xl mb-3">Why is the Computer Number Important?</h3>
-                                <p className="text-white/80 text-sm leading-relaxed mb-5">
-                                    Your computer number is your <strong className="text-av-orange">unique identifier in the DGCA database</strong>, and it will be used for all future exam-related processes. You will need it to apply for DGCA exams and receive your results.
-                                </p>
-                                <div className="bg-white/10 rounded-xl p-4">
-                                    <p className="text-white/70 text-xs leading-relaxed">Steps to Obtain: Follow the same procedure outlined for registration and document submission on the official DGCA portal.</p>
-                                </div>
-                            </div>
-                        </ScrollReveal>
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Important Queries ── */}
-            <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">More Details</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            DGCA Pariksha – Related <span className="text-av-orange">Important Queries</span>
-                        </h2>
-                        <p className="text-gray-500 mt-3 max-w-3xl mx-auto text-sm leading-relaxed">
-                            The DGCA Pariksha is a important examination for aspiring pilots in India, conducted by the Directorate General of Civil Aviation (DGCA). To make it easier for candidates, it's important to understand the key steps, procedures, and requirements involved, as well as the relevant terms like "computer number," DGCA regional offices, and the DGCA entrance exam itself.
-                        </p>
-                    </ScrollReveal>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {importantQueries.map((item, i) => (
-                            <ScrollReveal key={item.num} delay={i * 80}>
-                                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 card-hover hover:border-av-orange/30 h-full">
-                                    <div className="flex items-center gap-3 mb-3">
-                                        <div className="w-8 h-8 bg-av-blue rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">{item.num}</div>
-                                        <h3 className="font-montserrat font-bold text-av-blue text-sm leading-snug">{item.title}</h3>
-                                    </div>
-                                    <p className="text-gray-600 text-xs leading-relaxed mb-3">{item.content}</p>
-                                    <div className="space-y-2">
-                                        {item.extra.map(e => (
-                                            <div key={e.label} className="p-2 bg-av-light rounded-lg border border-av-sky/20">
-                                                <span className="text-av-orange font-semibold text-xs">{e.label}: </span>
-                                                <span className="text-gray-500 text-xs">{e.value}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </ScrollReveal>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── FAQ ── */}
-            <section className="py-20 px-4">
-                <div className="max-w-4xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">FAQ</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-av-blue">
-                            Frequently Asked <span className="text-av-orange">Questions</span>
-                        </h2>
-                    </ScrollReveal>
-
-                    <ScrollReveal>
-                        <div className="bg-av-blue rounded-2xl p-8 text-center">
-                            <div className="text-4xl mb-3">📊</div>
-                            <p className="text-av-orange font-bold text-lg font-montserrat mb-2">Passing Marks</p>
-                            <p className="text-white text-3xl font-black font-montserrat mb-2">{EXAM_RULES.theory.passMark}%</p>
-                            <p className="text-white/70 text-sm">To pass, you need at least {EXAM_RULES.theory.passMark}% in each subject on its own — {EXAM_RULES.car.citation}, {EXAM_RULES.theory.clause}.</p>
-                        </div>
-                    </ScrollReveal>
-                </div>
-            </section>
-
-            {/* ── CTA ── */}
-            <section className="py-20 px-4 bg-gradient-to-br from-av-blue via-av-navy to-av-blue">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-12">
-                        <div className="section-tag">We One Aviation</div>
-                        <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-white">
-                            Prepare Yourself for DGCA Pariksha and <span className="text-av-orange">Practice Online</span>
-                        </h2>
-                        <p className="text-white/60 mt-3 text-sm max-w-xl mx-auto">Experience of 20+ Years as a Pilot Trainer – Capt. Nitin Rana</p>
-                        <div className="flex flex-wrap justify-center gap-4 mt-6">
-                            <a href="https://dgcaexam.com/" target="_blank" rel="noopener noreferrer" className="inline-block bg-av-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
-                                Practice Test →
-                            </a>
-                            <Link href="/contact" className="inline-block bg-white/10 border border-white/30 text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-av-blue transition-all text-sm">
-                                Apply Now →
-                            </Link>
-                        </div>
-                    </ScrollReveal>
-
-                    {/* Courses */}
-                    <ScrollReveal>
-                        <div className="glass rounded-2xl p-8">
-                            <h3 className="font-montserrat font-bold text-white text-xl mb-5 text-center">Our Courses</h3>
-                            <div className="flex flex-wrap justify-center gap-3">
-                                {[
-                                    'Commercial Pilot Training', 'Personality Development', 'Airline Preparation',
-                                    'Cadet Program', 'Radio Telephony', 'DGCA Ground Classes',
-                                    'Air Transport Pilot Licence', 'Pilot Training',
-                                ].map(course => (
-                                    <span key={course} className="bg-white/10 text-white/80 text-xs px-4 py-2 rounded-full border border-white/20">{course}</span>
-                                ))}
-                            </div>
-                        </div>
-                    </ScrollReveal>
-                </div>
-            </section>
-
-            {/* ── Related Blogs ── */}
-            <section className="py-16 px-4 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <ScrollReveal className="text-center mb-8">
-                        <h3 className="font-montserrat font-bold text-av-blue text-xl">Our Blogs</h3>
-                    </ScrollReveal>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                        {relatedBlogs.map(blog => (
-                            <Link key={blog.href} href={blog.href} className="card-hover bg-white rounded-xl border border-gray-100 shadow-sm p-4 flex items-center gap-3 hover:border-av-orange/30 transition-all group">
-                                <span className="text-xl">✈️</span>
-                                <span className="font-semibold text-av-blue text-xs group-hover:text-av-orange transition-colors leading-snug">{blog.label}</span>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            <section className="px-4 pb-16 max-w-4xl mx-auto">
-                <PeopleAlsoAsk items={pariksha_paa} />
-                <h2 className="font-montserrat text-2xl font-bold text-av-blue mb-4 mt-12">Frequently asked questions</h2>
-                <div className="space-y-3">
-                    {pariksha_faqs.map((f) => (
-                        <details key={f.q} className="border border-gray-200 rounded-xl p-4">
-                            <summary className="font-semibold text-av-blue text-sm cursor-pointer">{f.q}</summary>
-                            <p className="text-gray-600 text-sm leading-relaxed mt-2">{f.a}</p>
-                        </details>
-                    ))}
-                </div>
-            </section>
-
+                </section>
+            </article>
         </Layout>
     );
 }

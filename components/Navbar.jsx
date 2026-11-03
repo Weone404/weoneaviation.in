@@ -195,7 +195,7 @@ function BreakingNewsTicker() {
   );
 }
 
-export default function Navbar() {
+export default function Navbar({ solid = false, tickerInFlow = false }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [courseOpen, setCourseOpen] = useState(false);
@@ -220,9 +220,10 @@ export default function Navbar() {
     router.pathname === href || router.pathname.startsWith(href + '/');
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50">
       {/* ── Main Navbar ── */}
-      <div className={`transition-all duration-300 ${scrolled ? 'bg-av-blue shadow-2xl py-2' : 'bg-transparent py-2'}`}>
+      <div className={`transition-all duration-300 ${scrolled || solid ? 'bg-av-blue shadow-2xl py-2' : 'bg-transparent py-2'}`}>
         <div className="mx-auto flex w-full items-center justify-between px-4 sm:px-8 lg:px-16">
 
           {/* Logo */}
@@ -336,7 +337,7 @@ export default function Navbar() {
       </div>
 
       {/* ── Breaking News Ticker ── */}
-      <BreakingNewsTicker />
+      {!tickerInFlow && <BreakingNewsTicker />}
 
       {/* ── Mobile Menu ── */}
       {menuOpen && (
@@ -435,6 +436,13 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </header>
+      </header>
+      {tickerInFlow && (
+        <>
+          <div aria-hidden="true" className="h-20" />
+          <BreakingNewsTicker />
+        </>
+      )}
+    </>
   );
 }
