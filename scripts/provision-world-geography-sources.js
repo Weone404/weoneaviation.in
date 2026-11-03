@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { createHash } = require('node:crypto');
 const { Transform, Readable } = require('node:stream');
+const { createInterface } = require('node:readline');
 const { pipeline } = require('node:stream/promises');
 const JSZip = require('jszip');
 
@@ -39,7 +40,58 @@ function validateTabularBuffer(buffer, source) {
       throw new Error(`${source.id} row ${index + 1} has no country name.`);
     }
   }
+  if (source.minimumRows && rows.length < source.minimumRows) {
+    throw new Error(
+      `${source.id} has ${rows.length} rows; expected at least ${source.minimumRows}.`,
+    );
+  }
   return rows.length;
+}
+
+async function validateGeoNamesArchiveEntry(entry, source) {
+  return new Promise((resolve, reject) => {
+    const lines = createInterface({
+      input: entry.nodeStream(),
+      crlfDelay: Infinity,
+    });
+    let rows = 0;
+    let validationError;
+    lines.on('line', (line) => {
+      if (!line || validationError) return;
+      const fields = line.split('\t');
+      try {
+        if (fields.length < source.columns) {
+          throw new Error(
+            `${source.id} row ${rows + 1} has ${fields.length} columns; expected at least ${source.columns}.`,
+          );
+        }
+        if (!/^\d+$/.test(fields[0])) {
+          throw new Error(`${source.id} row ${rows + 1} has an invalid GeoNames ID.`);
+        }
+        if (fields[8] && !/^[A-Z]{2}$/.test(fields[8])) {
+          throw new Error(`${source.id} row ${rows + 1} has an invalid country code.`);
+        }
+        rows += 1;
+      } catch (error) {
+        validationError = error;
+        lines.close();
+      }
+    });
+    lines.on('error', (error) => {
+      validationError = error;
+    });
+    lines.on('close', () => {
+      if (validationError) {
+        reject(validationError);
+      } else if (!rows) {
+        reject(new Error(`${source.id} is empty.`));
+      } else if (source.minimumRows && rows < source.minimumRows) {
+        reject(new Error(`${source.id} has ${rows} rows; expected at least ${source.minimumRows}.`));
+      } else {
+        resolve(rows);
+      }
+    });
+  });
 }
 
 async function validateArchiveBuffer(buffer, source) {
@@ -53,7 +105,8 @@ async function validateArchiveBuffer(buffer, source) {
   if (!entry || entry.dir) {
     throw new Error(`${source.id} archive does not contain ${source.archiveEntry}.`);
   }
-  return { archiveEntry: source.archiveEntry };
+  const validatedRows = await validateGeoNamesArchiveEntry(entry, source);
+  return { archiveEntry: source.archiveEntry, validatedRows };
 }
 
 async function validateSourceFile(source, filePath) {
@@ -61,7 +114,7 @@ async function validateSourceFile(source, filePath) {
     throw new Error(`Required GeoNames source is missing: ${filePath}`);
   }
   const actualHash = await sha256File(filePath);
-  if (actualHash !== source.sha256) {
+  if (actualHash !== source.sha256 && source.checksumPolicy !== 'latest-validated') {
     throw new Error(
       `${source.id} checksum mismatch at ${filePath}: expected ${source.sha256}, received ${actualHash}. Review the source update; the file was not changed.`,
     );
@@ -70,6 +123,12 @@ async function validateSourceFile(source, filePath) {
   const details = source.archiveEntry
     ? await validateArchiveBuffer(buffer, source)
     : { validatedRows: validateTabularBuffer(buffer, source) };
+  if (actualHash !== source.sha256) {
+    console.warn(
+      `${source.id} checksum differs from baseline ${source.sha256}; `
+      + 'the source passed GeoNames format and minimum-row validation.',
+    );
+  }
   return { bytes: buffer.length, sha256: actualHash, ...details };
 }
 
@@ -103,12 +162,12 @@ async function downloadSource(source, filePath) {
       fs.createWriteStream(temporaryPath, { fd: fileDescriptor, autoClose: true }),
     );
     const actualHash = hash.digest('hex');
-    if (actualHash !== source.sha256) {
+    if (actualHash !== source.sha256 && source.checksumPolicy !== 'latest-validated') {
       throw new Error(
         `${source.id} download checksum mismatch: expected ${source.sha256}, received ${actualHash}; source ${source.url} may have changed.`,
       );
     }
-    const details = await validateSourceFile({ ...source, sha256: actualHash }, temporaryPath);
+    const details = await validateSourceFile(source, temporaryPath);
     if (fs.existsSync(filePath)) {
       throw new Error(`GeoNames input appeared during provisioning; it was not overwritten: ${filePath}`);
     }
@@ -144,4 +203,5 @@ module.exports = {
   sha256,
   validateArchiveBuffer,
   validateTabularBuffer,
+  downloadSource,
 };

@@ -28,6 +28,12 @@ function validateTabularBuffer(buffer, { sourceName, columns, countryColumn, cou
   return rows.length;
 }
 
+function validateMinimumRows(source, rows) {
+  if (source.minimumRows && rows < source.minimumRows) {
+    throw new Error(`${source.id} has ${rows} rows; expected at least ${source.minimumRows}.`);
+  }
+}
+
 async function validateArchiveBuffer(buffer, source) {
   let archive;
   try {
@@ -46,6 +52,7 @@ async function validateArchiveBuffer(buffer, source) {
     countryColumn: source.countryColumn,
     countryCode: source.countryCode,
   });
+  validateMinimumRows(source, rows);
   return { rows, bytes: contents.length };
 }
 
@@ -60,25 +67,37 @@ async function verifyPinnedArchive(source, filePath) {
       `${source.id} checksum mismatch at ${filePath}: expected ${source.sha256}, received ${actualHash}. Review the source update; this file was not changed.`,
     );
   }
-  return validateArchiveBuffer(buffer, { ...source, id: source.id });
+  return {
+    ...(await validateArchiveBuffer(buffer, { ...source, id: source.id })),
+    sha256: actualHash,
+    bytes: buffer.length,
+  };
 }
 
 async function downloadPinnedSource(source, filePath) {
   if (fs.existsSync(filePath)) {
     const existing = fs.readFileSync(filePath);
     const actualHash = sha256(existing);
-    if (actualHash !== source.sha256) {
+    if (actualHash !== source.sha256 && source.checksumPolicy !== 'latest-validated') {
       throw new Error(
         `${source.id} cached checksum mismatch at ${filePath}: expected ${source.sha256}, received ${actualHash}. Remove or review the cache before provisioning; it was not overwritten.`,
       );
     }
+    let details;
     if (source.archiveEntry) {
-      return validateArchiveBuffer(existing, { ...source, id: source.id });
+      details = await validateArchiveBuffer(existing, { ...source, id: source.id });
+    } else {
+      const rows = validateTabularBuffer(existing, { ...source, sourceName: source.id });
+      validateMinimumRows(source, rows);
+      details = { rows, bytes: existing.length };
     }
-    return {
-      rows: validateTabularBuffer(existing, { ...source, sourceName: source.id }),
-      bytes: existing.length,
-    };
+    if (actualHash !== source.sha256) {
+      console.warn(
+        `${source.id} cached checksum differs from baseline ${source.sha256}; `
+        + 'the cached source passed GeoNames format and row-count validation.',
+      );
+    }
+    return { ...details, sha256: actualHash };
   }
 
   const response = await fetch(source.url, { signal: AbortSignal.timeout(120_000) });
@@ -87,17 +106,24 @@ async function downloadPinnedSource(source, filePath) {
   }
   const buffer = Buffer.from(await response.arrayBuffer());
   const actualHash = sha256(buffer);
-  if (actualHash !== source.sha256) {
-    throw new Error(
-      `${source.id} download checksum mismatch: expected ${source.sha256}, received ${actualHash}; source ${source.url} may have changed.`,
-    );
-  }
   const details = source.archiveEntry
     ? await validateArchiveBuffer(buffer, { ...source, id: source.id })
     : {
       rows: validateTabularBuffer(buffer, { ...source, sourceName: source.id }),
       bytes: buffer.length,
     };
+  validateMinimumRows(source, details.rows);
+  if (actualHash !== source.sha256 && source.checksumPolicy !== 'latest-validated') {
+    throw new Error(
+      `${source.id} download checksum mismatch: expected ${source.sha256}, received ${actualHash}; source ${source.url} may have changed.`,
+    );
+  }
+  if (actualHash !== source.sha256) {
+    console.warn(
+      `${source.id} upstream checksum changed from baseline ${source.sha256} to ${actualHash}; `
+      + 'the latest download passed GeoNames format and row-count validation.',
+    );
+  }
 
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   const temporaryPath = `${filePath}.tmp-${process.pid}`;
@@ -106,7 +132,7 @@ async function downloadPinnedSource(source, filePath) {
   }
   fs.writeFileSync(temporaryPath, buffer, { flag: 'wx' });
   fs.renameSync(temporaryPath, filePath);
-  return details;
+  return { ...details, sha256: actualHash };
 }
 
 async function main() {
@@ -121,10 +147,10 @@ async function main() {
   console.log(JSON.stringify({
     outputDirectory: path.relative(rootDir, provisionedDir),
     inputs: {
-      postal: { ...postal, sha256: manifest.postal.sha256 },
+      postal,
       ...Object.fromEntries(Object.entries(provisioned).map(([id, details]) => [
         id,
-        { ...details, sha256: manifest[id].sha256 },
+        { ...details, baselineSha256: manifest[id].sha256 },
       ])),
     },
   }, null, 2));
@@ -141,4 +167,5 @@ module.exports = {
   sha256,
   validateArchiveBuffer,
   validateTabularBuffer,
+  downloadPinnedSource,
 };

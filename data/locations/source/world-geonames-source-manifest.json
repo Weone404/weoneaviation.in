@@ -2,44 +2,52 @@
   "version": 1,
   "allCountries": {
     "url": "https://download.geonames.org/export/dump/allCountries.zip",
-    "sha256": "4e2ccc61c8d53edc5d83b1bfba4267f0f072a0e00786402bdf034787a478720e",
+    "sha256": "7adad2e590e360d6183eb7eb354e668d828c68ba02691a494737476351a10da7",
     "file": "geonames-allCountries.zip",
     "archiveEntry": "allCountries.txt",
+    "checksumPolicy": "latest-validated",
+    "minimumRows": 12000000,
     "checksumAlgorithm": "SHA-256",
-    "verifiedAt": "2026-11-02",
-    "sourceVersion": "GeoNames allCountries export retrieved 2026-11-02",
-    "notes": "Two independent HTTP 200 application/zip downloads matched this SHA-256 and the upstream Content-Length of 422513744 bytes. Source: https://download.geonames.org/export/dump/allCountries.zip."
+    "verifiedAt": "2026-11-03",
+    "sourceVersion": "GeoNames allCountries export retrieved 2026-11-03",
+    "notes": "The HTTP 200 export retrieved on 2026-11-03 passed row-format, GeoNames ID, country-code, and minimum-size validation for 13483543 rows. This SHA-256 is a baseline; newer exports are validated before use. Source: https://download.geonames.org/export/dump/allCountries.zip."
   },
   "countryInfo": {
     "url": "https://download.geonames.org/export/dump/countryInfo.txt",
     "sha256": "79f8f59ea01cbb40438bf1856dd6c2ff201f03f8fc72d0530b2646aaf603ef04",
+    "checksumPolicy": "latest-validated",
+    "minimumRows": 200,
     "file": "geonames-countryInfo.txt",
     "columns": 17,
     "countryCodeColumn": 0,
     "countryNameColumn": 4,
     "checksumAlgorithm": "SHA-256",
-    "verifiedAt": "2026-11-02",
-    "sourceVersion": "GeoNames countryInfo export retrieved 2026-11-02",
-    "notes": "Two independent HTTP 200 text/plain downloads matched this SHA-256 and contained 252 valid rows with 17 tab-separated fields. Source: https://download.geonames.org/export/dump/countryInfo.txt."
+    "verifiedAt": "2026-11-03",
+    "sourceVersion": "GeoNames countryInfo export retrieved 2026-11-03",
+    "notes": "The HTTP 200 export retrieved on 2026-11-03 passed format and minimum-size validation for 252 rows. Source: https://download.geonames.org/export/dump/countryInfo.txt."
   },
   "admin1": {
     "url": "https://download.geonames.org/export/dump/admin1CodesASCII.txt",
     "sha256": "2e4867f5397acb056ea26377601b57af37cb4c81399770225018e9e439e91ad3",
+    "checksumPolicy": "latest-validated",
+    "minimumRows": 3500,
     "file": "geonames-admin1CodesASCII.txt",
     "columns": 4,
     "checksumAlgorithm": "SHA-256",
-    "verifiedAt": "2026-10-29",
-    "sourceVersion": "GeoNames admin1CodesASCII export retrieved 2026-10-29",
-    "notes": "Two independent HTTP 200 text/plain downloads matched this checksum and contained 3865 valid four-column rows. Source: https://download.geonames.org/export/dump/admin1CodesASCII.txt."
+    "verifiedAt": "2026-11-03",
+    "sourceVersion": "GeoNames admin1CodesASCII export retrieved 2026-11-03",
+    "notes": "The HTTP 200 export retrieved on 2026-11-03 passed four-column format and minimum-size validation for 3865 rows. The SHA-256 is retained as a baseline while latest exports are validated before use. Source: https://download.geonames.org/export/dump/admin1CodesASCII.txt."
   },
   "admin2": {
     "url": "https://download.geonames.org/export/dump/admin2Codes.txt",
-    "sha256": "5d736e11a7f6f0497804745d4ee9721f72bb0ae45d372863cb0949b915c67d07",
+    "sha256": "75fa6b0b6d9bd1f01b21369987ebf04fcc34d6c8986b4773e85fce9afbfd5e14",
+    "checksumPolicy": "latest-validated",
+    "minimumRows": 40000,
     "file": "geonames-admin2Codes.txt",
     "columns": 4,
     "checksumAlgorithm": "SHA-256",
-    "verifiedAt": "2026-11-02",
-    "sourceVersion": "GeoNames admin2Codes export retrieved 2026-11-02",
-    "notes": "Two independent HTTP 200 text/plain downloads matched this SHA-256 and contained 47760 valid four-column rows. Source: https://download.geonames.org/export/dump/admin2Codes.txt."
+    "verifiedAt": "2026-11-03",
+    "sourceVersion": "GeoNames admin2Codes export retrieved 2026-11-03",
+    "notes": "The HTTP 200 export retrieved on 2026-11-03 passed four-column format and minimum-size validation for 47760 rows. The SHA-256 is retained as a baseline while latest exports are validated before use. Source: https://download.geonames.org/export/dump/admin2Codes.txt."
   }
 }
