@@ -13,6 +13,7 @@ const nextConfig = {
     '/[location]/[service]': [
       './data/location-seo/geography/india-geographic-index.sqlite',
       './data/location-seo/geography/india-geographic-index/**',
+      './public/content/**/*.md',
     ],
   },
 
