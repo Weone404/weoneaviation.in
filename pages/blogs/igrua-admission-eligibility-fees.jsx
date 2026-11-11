@@ -170,7 +170,7 @@ export default function IgruaAdmissionEligibilityFees() {
       related={related}
     >
       <BlogImagePlaceholder
-        src="/blog/igrua-admission-eligibility-fees/hero-single-gate-many-aircraft.webp"
+        src="/blog/igrua-admission-eligibility-fees/hero-single-gate-many-aircraft_converted.webp"
         width={1200}
         height={630}
         alt="A single training aircraft parked before a narrow open gateway, with several identical training aircraft waiting at a distance behind it, representing the one government flying academy against the wider field of private schools"
@@ -271,7 +271,7 @@ export default function IgruaAdmissionEligibilityFees() {
       </div>
 
       <BlogImagePlaceholder
-        src="/blog/igrua-admission-eligibility-fees/three-stage-funnel.webp"
+        src="/blog/igrua-admission-eligibility-fees/three-stage-funnel_converted.webp"
         width={1200}
         height={800}
         alt="A wide funnel narrowing through three marked checkpoints down to a small number of dots at the bottom, representing the written test, aptitude test and interview stages of IGRUA's selection process"
