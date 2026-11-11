@@ -34,6 +34,23 @@ function validateMinimumRows(source, rows) {
   }
 }
 
+async function fetchSourceWithRetry(source) {
+  const attempts = 3;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      const response = await fetch(source.url, { signal: AbortSignal.timeout(120_000) });
+      if ((response.status < 500 && response.status !== 429) || attempt === attempts) return response;
+      console.warn(`${source.id} download returned HTTP ${response.status}; retrying (${attempt}/${attempts - 1}).`);
+    } catch (error) {
+      if (attempt === attempts) throw error;
+      console.warn(`${source.id} download attempt ${attempt} failed: ${error.message}; retrying.`);
+    }
+    // GeoNames' mutable export endpoints occasionally fail while the rest of the build can proceed.
+    await new Promise((resolve) => setTimeout(resolve, attempt * 1_000));
+  }
+  throw new Error(`${source.id} download failed after ${attempts} attempts.`);
+}
+
 async function validateArchiveBuffer(buffer, source) {
   let archive;
   try {
@@ -100,7 +117,7 @@ async function downloadPinnedSource(source, filePath) {
     return { ...details, sha256: actualHash };
   }
 
-  const response = await fetch(source.url, { signal: AbortSignal.timeout(120_000) });
+  const response = await fetchSourceWithRetry(source);
   if (!response.ok) {
     throw new Error(`${source.id} download failed: HTTP ${response.status} from ${source.url}`);
   }
@@ -168,4 +185,5 @@ module.exports = {
   validateArchiveBuffer,
   validateTabularBuffer,
   downloadPinnedSource,
+  fetchSourceWithRetry,
 };
