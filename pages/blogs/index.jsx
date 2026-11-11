@@ -73,7 +73,7 @@ const guidePosts = [
         category: 'Flying school selection',
         readTime: '9 min',
         date: 'Sep 26, 2026',
-        image: { src: '/blog/igrua-admission-eligibility-fees/hero-single-gate-many-aircraft.webp', width: 1200, height: 630, promptId: '72' },
+        image: { src: '/blog/igrua-admission-eligibility-fees/hero-single-gate-many-aircraft_converted.webp', width: 1200, height: 630, promptId: '72' },
     },
     {
         slug: 'pilot-shortage-in-india',
