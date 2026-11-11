@@ -100,7 +100,7 @@ const guidePosts = [
         category: 'CPL flying hours',
         readTime: '8 min',
         date: 'Sep 23, 2026',
-        image: { src: '/blog/cpl-pilot-in-command-hours/hero-solo-cockpit.webp', width: 1200, height: 630, promptId: '64' },
+        image: { src: '/blog/cpl-pilot-in-command-hours/solo-pilot-in-command-cockpit.webp', width: 1200, height: 630, promptId: '64' },
     },
     {
         slug: 'foreign-national-nri-pilot-training-india',

@@ -149,7 +149,7 @@ export default function CplPilotInCommandHoursRequirementIndia() {
       related={related}
     >
       <BlogImagePlaceholder
-        src="/blog/cpl-pilot-in-command-hours/hero-solo-cockpit.webp"
+        src="/blog/cpl-pilot-in-command-hours/solo-pilot-in-command-cockpit.webp"
         width={1200}
         height={630}
         alt="A student pilot alone in the cockpit of a small single-engine training aircraft on the ground, canopy open, with no instructor visible in the second seat, representing solo pilot-in-command flying time"
@@ -266,7 +266,7 @@ export default function CplPilotInCommandHoursRequirementIndia() {
       </p>
 
       <BlogImagePlaceholder
-        src="/blog/cpl-pilot-in-command-hours/six-month-window.webp"
+        src="/blog/cpl-pilot-in-command-hours/six-month-pic-recency-timeline.webp"
         width={1200}
         height={800}
         alt="A simple horizontal timeline with a shaded final segment representing the six months before a CPL application date, with a cluster of small aircraft marks placed inside the shaded segment"
