@@ -122,6 +122,21 @@ async function main() {
     assert.equal(updatedDetails.sha256, sha256(updatedArchive));
     assert.deepEqual(fs.readFileSync(cachePath), updatedArchive, 'A changed source is cached after validation.');
 
+    const retryPath = path.join(cacheDir, 'retry-gazetteer.zip');
+    let downloadAttempts = 0;
+    global.fetch = async () => {
+      downloadAttempts += 1;
+      if (downloadAttempts === 1) throw new TypeError('fetch failed');
+      return new Response(updatedArchive, {
+        status: 200,
+        headers: { 'content-type': 'application/zip' },
+      });
+    };
+    const retryDetails = await downloadPinnedSource(source, retryPath);
+    assert.equal(downloadAttempts, 2, 'Transient network errors are retried.');
+    assert.equal(retryDetails.sha256, sha256(updatedArchive));
+    assert.deepEqual(fs.readFileSync(retryPath), updatedArchive);
+
     await assert.rejects(
       downloadPinnedSource({ ...source, checksumPolicy: undefined }, strictPath),
       /checksum mismatch/,
