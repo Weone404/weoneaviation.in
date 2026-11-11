@@ -82,7 +82,7 @@ const guidePosts = [
         category: 'Pilot career guide',
         readTime: '8 min',
         date: 'Sep 25, 2026',
-        image: { src: '/blog/pilot-shortage-in-india/hero-many-aircraft-one-riser.webp', width: 1200, height: 630, promptId: '69' },
+        image: { src: '/blog/pilot-shortage-in-india/hero-many-aircraft-one-riser_converted.webp', width: 1200, height: 630, promptId: '69' },
     },
     {
         slug: 'do-you-need-ppl-before-cpl-in-india',

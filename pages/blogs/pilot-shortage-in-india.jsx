@@ -149,7 +149,7 @@ export default function PilotShortageInIndia() {
       related={related}
     >
       <BlogImagePlaceholder
-        src="/blog/pilot-shortage-in-india/hero-many-aircraft-one-riser.webp"
+        src="/blog/pilot-shortage-in-india/hero-many-aircraft-one-riser_converted.webp"
         width={1200}
         height={630}
         alt="A row of several small single-engine training aircraft on an apron, with one aircraft standing on a slightly raised platform ahead of the others, representing many new pilots entering training while a narrower few advance to command"
@@ -211,7 +211,7 @@ export default function PilotShortageInIndia() {
       </p>
 
       <BlogImagePlaceholder
-        src="/blog/pilot-shortage-in-india/cpl-issuance-growth-bars.webp"
+        src="/blog/pilot-shortage-in-india/cpl-issuance-growth-bars_converted.webp"
         width={1200}
         height={800}
         alt="A simple bar chart of six vertical bars increasing in height from left to right, the final bar accented in orange, representing the year-on-year growth in new Commercial Pilot Licences issued in India"
@@ -292,7 +292,7 @@ export default function PilotShortageInIndia() {
       </p>
 
       <BlogImagePlaceholder
-        src="/blog/pilot-shortage-in-india/funnel-entry-to-command.webp"
+        src="/blog/pilot-shortage-in-india/funnel-entry-to-command_converted.webp"
         width={1200}
         height={675}
         alt="A wide funnel with many small aircraft silhouettes clustered at the top opening, narrowing down to a single point marked only by three simple horizontal stripes at the bottom, representing many new pilots entering training and a narrower few reaching a command role"
