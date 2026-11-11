@@ -46,7 +46,7 @@ const guidePosts = [
         category: 'DGCA exams',
         readTime: '6 min',
         date: 'Sep 29, 2026',
-        image: { src: '/blog/dgca-computer-number-rejected/hero-mismatched-forms.webp', width: 1200, height: 630, promptId: '79' },
+        image: { src: '/blog/dgca-computer-number-rejected-reasons/hero-document-mismatch.webp', width: 1200, height: 630, promptId: '79' },
     },
     {
         slug: 'how-to-become-a-flight-dispatcher-in-india',

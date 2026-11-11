@@ -140,7 +140,7 @@ export default function DgcaComputerNumberRejectedReasons() {
       related={related}
     >
       <BlogImagePlaceholder
-        src="/blog/dgca-computer-number-rejected/hero-mismatched-forms.webp"
+        src="/blog/dgca-computer-number-rejected-reasons/hero-document-mismatch.webp"
         width={1200}
         height={630}
         alt="A student at a desk comparing a printed marksheet against an on-screen application form, with one line on each document highlighted to show they do not match"
@@ -220,7 +220,7 @@ export default function DgcaComputerNumberRejectedReasons() {
       </p>
 
       <BlogImagePlaceholder
-        src="/blog/dgca-computer-number-rejected/two-outcomes.webp"
+        src="/blog/dgca-computer-number-rejected-reasons/partial-vs-complete-rejection.webp"
         width={1200}
         height={800}
         alt="A path that splits into a short loop returning to the same starting point, and a second branch that leads back to a fresh starting point at the far left, representing partial and complete rejection"
