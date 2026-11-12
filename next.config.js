@@ -914,6 +914,8 @@ const nextConfig = {
               "frame-ancestors 'self' https://tecmicra.com https://*.tecmicra.com",
 
               "connect-src 'self'" +
+              // CRM ADS intake (lib/adAttribution.js): ad enquiries go to this one Edge Function only.
+              ' https://syytqcadmtgowckdnbqh.supabase.co' +
               ' https://www.googleadservices.com' +
               ' https://google.co.in' +
               ' https://www.google.co.in' +

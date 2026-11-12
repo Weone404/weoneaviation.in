@@ -1,15 +1,20 @@
 import Layout from '../components/Layout';
 import ScrollReveal from '../components/ScrollReveal';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { decodeEmail } from '../utils/emailObfuscator';
 import Link from 'next/link';
 import { ACADEMY } from '../lib/facts';
+import { routeEnquiry, newSubmissionId } from '../lib/adAttribution';
+import AdConsent from '../components/AdConsent';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', course: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
+  const [adConsent, setAdConsent] = useState(false);
+  const started = useRef(0);
+  useEffect(() => { started.current = Date.now(); }, []);
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -17,12 +22,9 @@ export default function Contact() {
     setLoading(true);
     setStatus(null);
     try {
-      const res = await fetch('/api/save-lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, source: 'contact-page' }),
-      });
-      setStatus(res.ok ? 'success' : 'error');
+      const r = await routeEnquiry({ fields: form, source: 'contact-page', adDataSharing: adConsent,
+        submissionId: newSubmissionId(), startedAt: started.current });
+      setStatus(r.ok ? 'success' : 'error');
     } catch { setStatus('error'); }
     setLoading(false);
     const msg = encodeURIComponent(
@@ -117,6 +119,7 @@ export default function Contact() {
                 <textarea placeholder="Your Message" value={form.message}
                   onChange={e => setForm({ ...form, message: e.target.value })}
                   className="sm:col-span-2 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-av-orange transition-all h-28 resize-none" />
+                <AdConsent checked={adConsent} onChange={setAdConsent} style={{ gridColumn: '1 / -1' }} />
                 <div className="sm:col-span-2">
                   <button type="submit" disabled={loading}
                     className="w-full bg-av-orange hover:bg-orange-600 text-white font-bold py-4 rounded-xl transition-all shadow-lg text-sm flex items-center justify-center gap-2">

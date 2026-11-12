@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ACADEMY } from '../lib/facts';
+import { routeEnquiry, newSubmissionId } from '../lib/adAttribution';
+import AdConsent from './AdConsent';
 import { useRouter } from 'next/router';
 
 export default function ContactPopup() {
@@ -7,6 +9,9 @@ export default function ContactPopup() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', course: '' });
   const [loading, setLoading] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [adConsent, setAdConsent] = useState(false);
+  const started = useRef(0);
+  useEffect(() => { started.current = Date.now(); }, []);
   const router = useRouter();
 
   useEffect(() => {
@@ -30,11 +35,8 @@ export default function ContactPopup() {
     );
 
     try {
-      await fetch('/api/save-lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, source: 'popup - ' + router.pathname }),
-      });
+      await routeEnquiry({ fields: form, source: 'popup - ' + router.pathname, adDataSharing: adConsent,
+        submissionId: newSubmissionId(), startedAt: started.current });
     } catch { }
 
     setLoading(false);
@@ -235,6 +237,7 @@ export default function ContactPopup() {
               <option>IndiGo Adapt test Preparation</option>
             </select>
 
+            <AdConsent checked={adConsent} onChange={setAdConsent} />
             <button
               type="submit"
               disabled={loading || saved}

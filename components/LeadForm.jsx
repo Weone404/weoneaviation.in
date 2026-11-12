@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { ACADEMY } from '../lib/facts';
+import { routeEnquiry, newSubmissionId } from '../lib/adAttribution';
+import AdConsent from './AdConsent';
 
 export default function LeadForm({
   title = 'Get Free Counselling',
@@ -11,6 +13,10 @@ export default function LeadForm({
   const [form, setForm] = useState({ name: '', phone: '', email: '', course: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
+  const [adConsent, setAdConsent] = useState(false);
+  const started = useRef(0);
+  useEffect(() => { started.current = Date.now(); }, []);
+  const submissionId = useRef(null);
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -19,13 +25,11 @@ export default function LeadForm({
     setStatus(null);
 
     try {
-      const res = await fetch('/api/save-lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, source: source || router.pathname }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Server error');
+      submissionId.current = submissionId.current || newSubmissionId();
+      const r = await routeEnquiry({ fields: form, source: source || router.pathname, adDataSharing: adConsent,
+        submissionId: submissionId.current, startedAt: started.current });
+      if (!r.ok) throw new Error('Server error');
+      submissionId.current = null;
       setStatus('success');
     } catch (err) {
       setStatus('error');
@@ -89,6 +93,7 @@ export default function LeadForm({
             onChange={e => setForm({ ...form, message: e.target.value })}
             className={`${inputClass} h-20 resize-none`} />
         )}
+        <AdConsent checked={adConsent} onChange={setAdConsent} dark={dark} />
         <button type="submit" disabled={loading}
           className={`w-full font-bold py-4 rounded-xl transition-all shadow-lg text-sm flex items-center justify-center gap-2 bg-av-orange hover:bg-orange-600 text-white ${loading ? 'opacity-60 cursor-wait' : 'hover:shadow-orange-400/30 hover:scale-[1.02]'}`}>
           {loading ? (

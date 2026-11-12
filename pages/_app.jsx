@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Script from 'next/script';
 import dynamic from 'next/dynamic';
+import { captureAttribution } from '../lib/adAttribution';
 import { Montserrat, Poppins } from 'next/font/google';
 
 /*
@@ -44,6 +45,14 @@ const FloatingDoubtChat = dynamic(
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+
+  // Ad attribution for the CRM's ADS section (lib/adAttribution.js): records ad click IDs / UTMs
+  // from the landing URL. Visits without them change nothing.
+  useEffect(() => {
+    captureAttribution();
+    router.events.on('routeChangeComplete', captureAttribution);
+    return () => router.events.off('routeChangeComplete', captureAttribution);
+  }, [router.events]);
 
   useEffect(() => {
     const cursor = document.createElement('div');
